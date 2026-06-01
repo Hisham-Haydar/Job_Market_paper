@@ -1,0 +1,19 @@
+Panel,Statistic,Value
+A - Welfare Distribution,Mean monthly welfare,€1718
+A - Welfare Distribution,Median monthly welfare,€1681
+A - Welfare Distribution,10th percentile,€1079
+A - Welfare Distribution,90th percentile,€2452
+A - Welfare Distribution,Disposable-income Gini,0.164
+A - Welfare Distribution,Opportunity-sensitive welfare Gini,0.186
+B - Counterfactual Gini,Baseline,0.186
+B - Counterfactual Gini,Opportunity equalized,0.151
+B - Counterfactual Gini,Preference equalized,0.140
+B - Counterfactual Gini,Both equalized,0.097
+B - Shapley Decomposition,Opportunity heterogeneity — absolute contribution,0.039
+B - Shapley Decomposition,Opportunity heterogeneity — share of explained reduction,43.8%
+B - Shapley Decomposition,Opportunity heterogeneity — share of baseline Gini,21.0%
+B - Shapley Decomposition,Preference heterogeneity — absolute contribution,0.050
+B - Shapley Decomposition,Preference heterogeneity — share of explained reduction,56.2%
+B - Shapley Decomposition,Preference heterogeneity — share of baseline Gini,26.9%
+B - Shapley Decomposition,Residual/common component (both equalized),0.097
+B - Shapley Decomposition,Residual — share of baseline Gini,52.2%

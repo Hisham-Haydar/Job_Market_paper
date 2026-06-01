@@ -1,0 +1,9 @@
+Parameter,Estimate,SE,Significance
+Log disposable income,2.946,0.188,***
+Log leisure (Type 1),1.428,0.116,***
+Type 2 shift in leisure coefficient,0.612,0.141,***
+Age/10 × log leisure,0.084,0.029,***
+(Age/10)² × log leisure,-0.010,0.003,***
+Work fixed cost,-1.324,0.182,***
+Latent Type 2 logit intercept,-0.447,0.118,***
+Implied Type 2 population share,0.390,0.028,***

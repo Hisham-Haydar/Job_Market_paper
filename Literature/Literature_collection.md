@@ -1,0 +1,4043 @@
+# Literature Collection
+
+Short prefatory note:
+- generated from synthesized paper extracts
+- grouped by paper
+- sorted alphabetically by first author family name
+
+## Table of Contents
+
+1. [Aaberge, Dagsvik & Strøm (1995) — Labor Supply Responses and Welfare Effects of Tax Reforms](#rolf-aaberge-john-k-dagsvik-and-steinar-strøm-1995--labor-supply-responses-and-welfare-effects-of-tax-reforms)
+2. [Aaberge, Colombino & Strøm (1999) — Labour Supply in Italy](#rolf-aaberge-ugo-colombino-and-steinar-strøm-1999--labour-supply-in-italy-an-empirical-analysis-of-joint-household-decisions-with-taxes-and-quantity-constraints)
+3. [Aaberge, Colombino & Strøm (2000) — Flat Tax: Italy, Norway, Sweden](#rolf-aaberge-ugo-colombino-and-steinar-strøm-2000--labour-supply-responses-and-welfare-effects-from-replacing-current-tax-rules-by-a-flat-tax-empirical-evidence-from-italy-norway-and-sweden)
+4. [Aaberge, Colombino & Strøm (2004) — Do More Equal Slices Shrink the Cake?](#rolf-aaberge-ugo-colombino-and-steinar-strøm-2004--do-more-equal-slices-shrink-the-cake-an-empirical-investigation-of-tax-transfer-reform-proposals-in-italy)
+5. [Aaberge & Colombino (2006) — Designing Optimal Taxes](#rolf-aaberge-and-ugo-colombino-2006--designing-optimal-taxes-with-a-microeconometric-model-of-household-labour-supply)
+6. [Aaberge, Colombino & Wennemo (2009) — Evaluating Choice Sets](#r-aaberge-u-colombino-and-t-wennemo-2009--evaluating-alternative-representations-of-the-choice-sets-in-models-of-labor-supply)
+7. [Aaberge & Colombino (2011) — Empirical Optimal Income Taxation (Norway)](#rolf-aaberge-and-ugo-colombino-2011--empirical-optimal-income-taxation-a-microeconometric-application-to-norway)
+8. [Aaberge & Colombino (2012) — Family Background and Optimal Taxes](#rolf-aaberge-and-ugo-colombino-2012--accounting-for-family-background-when-designing-optimal-income-taxes-a-microeconometric-simulation-analysis)
+9. [Aaberge & Colombino (2013) — Optimal Income Taxes via Labour Supply Model](#rolf-aaberge-and-ugo-colombino-2013--using-a-microeconometric-model-of-household-labour-supply-to-design-optimal-income-taxes)
+10. [Aaberge & Colombino (2018) — Structural Labour Supply and Microsimulation](#rolf-aaberge-and-ugo-colombino-2018--structural-labour-supply-models-and-microsimulation)
+11. [Audoly et al. (2025) — Shapley-Owen-Shorrocks Decomposition](#richard-audoly-rory-mcgee-sergio-ocampo-and-gonzalo-paz-pardo-2025--a-practitioners-note-on-the-shapley-owen-shorrocks-decomposition)
+12. [Bargain & Orsini (2006) — In-work Policies in Europe](#olivier-bargain-and-kristian-orsini-2006--in-work-policies-in-europe-killing-two-birds-with-one-stone)
+13. [Bargain et al. (2010) — Making Work Pay in a Rationed Market](#olivier-bargain-marco-caliendo-peter-haan-and-kristian-orsini-2010--making-work-pay-in-a-rationed-labor-market)
+14. [Bargain & Doorley (2013) — RD Design and Youth Inactivity](#olivier-bargain-and-karina-doorley-2013--putting-structure-on-the-rd-design-social-transfers-and-youth-inactivity-in-france)
+15. [Bargain et al. (2013) — Welfare, Labor Supply and Heterogeneous Preferences](#olivier-bargain-andré-decoster-mathias-dolls-dirk-neumann-andreas-peichl-and-sebastian-siegloch-2013--welfare-labor-supply-and-heterogeneous-preferences-evidence-for-europe-and-the-us)
+16. [Bargain et al. (2014) — Inequality Aversion across Countries](#olivier-bargain-mathias-dolls-dirk-neumann-andreas-peichl-and-sebastian-siegloch-2014--comparing-inequality-aversion-across-countries-when-labor-supply-responses-differ)
+17. [Bargain & Peichl (2016) — Own-wage Labor Supply Elasticities](#olivier-bargain-and-andreas-peichl-2016--own-wage-labor-supply-elasticities-variation-across-time-and-estimation-methods)
+18. [Becker, Philipson & Soares (2005) — Quantity and Quality of Life](#gary-s-becker-tomas-j-philipson-and-rodrigo-r-soares-2005--the-quantity-and-quality-of-life-and-the-evolution-of-world-inequality)
+19. [Beffy et al. (2019) — Labour Supply with Restricted Choices](#magali-beffy-richard-blundell-antoine-bozio-guy-laroque-and-maxime-tô-2019--labour-supply-and-taxation-with-restricted-choices)
+20. [Bhattacharya (2015) — Nonparametric Welfare Analysis](#debopam-bhattacharya-2015--nonparametric-welfare-analysis-for-discrete-choice)
+21. [Bhattacharya (2018) — Empirical Welfare Analysis for Discrete Choice](#debopam-bhattacharya-2018--empirical-welfare-analysis-for-discrete-choice-some-general-results)
+22. [Bloemen (2000) — Labour Supply with Job Offer Restrictions](#hans-g-bloemen-2000--a-model-of-labour-supply-with-job-offer-restrictions)
+23. [Bloemen (2008) — Job Search and Hours Restrictions](#hans-g-bloemen-2008--job-search-hours-restrictions-and-desired-hours-of-work)
+24. [Blomquist & Newey (2002) — Nonparametric Estimation with Nonlinear Budget Sets](#sören-blomquist-and-whitney-newey-2002--nonparametric-estimation-with-nonlinear-budget-sets)
+25. [Blundell et al. (2000) — Working Families' Tax Credit](#richard-blundell-alan-duncan-julian-mccrae-and-costas-meghir-2000--the-labour-market-impact-of-the-working-families-tax-credit)
+26. [Blundell (2006) — Earned Income Tax Credit Policies](#richard-blundell-2006--earned-income-tax-credit-policies-impact-and-optimality)
+27. [Bourguignon & Spadaro (2006) — Microsimulation and Redistribution](#françois-bourguignon-and-amedeo-spadaro-2006--microsimulation-as-a-tool-for-evaluating-redistribution-policies)
+28. [Bourguignon, Ferreira & Menéndez (2007) — Inequality of Opportunity in Brazil](#françois-bourguignon-francisco-h-g-ferreira-and-marta-menéndez-2007--inequality-of-opportunity-in-brazil)
+29. [Brunori, Ferreira & Peragine (2013) — IOp across Countries](#paolo-brunori-francisco-h-g-ferreira-and-vito-peragine-2013--inequality-of-opportunity-income-inequality-and-economic-mobility-some-international-comparisons)
+30. [Capéau, Decoster & Dekkers (2016) — RURO Model (Belgium)](#bart-capéau-andré-decoster-and-gijs-dekkers-2016--estimating-and-simulating-with-a-random-utility-random-opportunity-model-of-job-choice-presentation-and-application-to-belgium)
+31. [Capéau & Decoster (2016) — Re-tiring and Job Opportunities](#bart-capéau-and-andré-decoster-2016--getting-tired-of-work-or-re-tiring-in-absence-of-decent-job-opportunities)
+32. [Capéau et al. (2021) — Nonparametric Welfare (Levels and Differences)](#bart-capéau-liebrecht-de-sadeleer-sebastiaan-maes-and-andré-decoster-2021--nonparametric-welfare-analysis-for-discrete-choice-levels-and-differences-of-individual-and-social-welfare)
+33. [Carpantier & Sapata (2016) — Empirical Welfare When Preferences Matter](#jean-françois-carpantier-and-christelle-sapata-2016--empirical-welfare-analysis-when-preferences-matter)
+34. [Chetty (2009) — Sufficient Statistics for Welfare Analysis](#raj-chetty-2009--sufficient-statistics-for-welfare-analysis-a-bridge-between-structural-and-reduced-form-methods)
+35. [Choné & Laroque (2010) — Negative Marginal Tax Rates](#philippe-choné-and-guy-laroque-2010--negative-marginal-tax-rates-and-heterogeneity)
+36. [Dagsvik & Karlström (2005) — Compensating Variation in Random Utility](#john-k-dagsvik-and-anders-karlström-2005--compensating-variation-and-hicksian-choice-probabilities-in-random-utility-models-that-are-nonlinear-in-income)
+37. [Dagsvik & Strøm (2006) — Sectoral Labour Supply](#john-k-dagsvik-and-steinar-strøm-2006--sectoral-labour-supply-choice-restrictions-and-functional-form)
+38. [Dagsvik et al. (2014) — Modeling Labor Supply as Latent Jobs](#john-k-dagsvik-zhiyang-jia-tom-kornstad-and-thor-o-thoresen-2014--theoretical-and-practical-arguments-for-modeling-labor-supply-as-a-choice-among-latent-jobs)
+39. [Dagsvik & Jia (2016) — Latent Jobs: Identification](#john-k-dagsvik-and-zhiyang-jia-2016--labor-supply-as-a-choice-among-latent-jobs-unobserved-heterogeneity-and-identification)
+40. [Decancq, Fleurbaey & Schokkaert (2015) — Happiness and Equivalent Incomes](#koen-decancq-marc-fleurbaey-and-erik-schokkaert-2015--happiness-equivalent-incomes-and-respect-for-individual-preferences)
+41. [Decancq & Schokkaert (2016) — Beyond GDP (Equivalent Incomes)](#koen-decancq-and-erik-schokkaert-2016--beyond-gdp-using-equivalent-incomes-to-measure-well-being-in-europe)
+42. [Durand (2015) — OECD Better Life Initiative](#martine-durand-2015--the-oecd-better-life-initiative-hows-life-and-the-measurement-of-well-being)
+43. [Ferreira & Gignoux (2011) — Measurement of IOp (Latin America)](#francisco-h-g-ferreira-and-jérémie-gignoux-2011--the-measurement-of-inequality-of-opportunity-theory-and-an-application-to-latin-america)
+44. [Fleurbaey (1995a) — Equal Opportunity or Equal Social Outcome?](#marc-fleurbaey-1995--equal-opportunity-or-equal-social-outcome)
+45. [Fleurbaey (1995b) — Three Solutions for the Compensation Problem](#marc-fleurbaey-1995--three-solutions-for-the-compensation-problem)
+46. [Fleurbaey & Maniquet (2006) — Fair Income Tax](#marc-fleurbaey-and-françois-maniquet-2006--fair-income-tax)
+47. [Fleurbaey & Maniquet (2007) — Help the Low Skilled or the Hardworking](#marc-fleurbaey-and-françois-maniquet-2007--help-the-low-skilled-or-let-the-hardworking-thrive-a-study-of-fairness-in-optimal-income-taxation)
+48. [Fleurbaey (2009) — Beyond GDP](#marc-fleurbaey-2009--beyond-gdp-the-quest-for-a-measure-of-social-welfare)
+49. [Fleurbaey & Gaulier (2009) — International Comparisons by Equivalent Incomes](#marc-fleurbaey-and-guillaume-gaulier-2009--international-comparisons-of-living-standards-by-equivalent-incomes)
+50. [Fleurbaey & Maniquet (2011) — Ch. 11: Income Taxation](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-11-income-taxation)
+51. [Fleurbaey & Maniquet (2011) — Ch. 10: Unequal Skills](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-10-unequal-skills)
+52. [Fleurbaey & Maniquet (2017) — Fairness and Well-being Measurement](#marc-fleurbaey-and-françois-maniquet-2017--fairness-and-well-being-measurement)
+53. [Fleurbaey & Maniquet (2018a) — Inequality-averse Well-being](#marc-fleurbaey-and-françois-maniquet-2018--inequality-averse-well-being-measurement)
+54. [Fleurbaey & Maniquet (2018b) — Optimal Taxation and Fairness](#marc-fleurbaey-and-françois-maniquet-2018--optimal-income-taxation-theory-and-principles-of-fairness)
+55. [Fleurbaey & Maniquet (2019) — Non-classical Goods](#marc-fleurbaey-and-françois-maniquet-2019--well-being-measurement-with-non-classical-goods)
+56. [Immervoll et al. (2007) — Welfare Reform in Europe](#herwig-immervoll-henrik-jacobsen-kleven-claus-thustrup-kreiner-and-emmanuel-saez-2007--welfare-reform-in-european-countries-a-microsimulation-analysis)
+57. [Jacquet, Jia & Thoresen (2026) — Responsibility in Fairness Measurement](#laurence-jacquet-zhiyang-jia-and-thor-o-thoresen-2026--how-much-does-responsibility-matter-in-fairness-measurement)
+58. [Jones & Klenow (2016) — Beyond GDP? Welfare across Countries](#charles-i-jones-and-peter-j-klenow-2016--beyond-gdp-welfare-across-countries-and-time)
+59. [Löffler, Peichl & Siegloch (2014) — Wage Exogeneity](#max-löffler-andreas-peichl-and-sebastian-siegloch-2014--structural-labor-supply-models-and-wage-exogeneity)
+60. [Löffler, Peichl & Siegloch (2018) — Sensitivity of Labour Supply Estimates](#max-löffler-andreas-peichl-and-sebastian-siegloch-2018--the-sensitivity-of-structural-labor-supply-estimations-to-modeling-assumptions)
+61. [Maniquet (2008) — Social Orderings for Indivisible Objects](#françois-maniquet-2008--social-orderings-for-the-assignment-of-indivisible-objects)
+62. [Mas & Pallais (2017) — Valuing Alternative Work Arrangements](#alexandre-mas-and-amanda-pallais-2017--valuing-alternative-work-arrangements)
+63. [Peichl & Siegloch (2012) — Labor Demand Effects](#andreas-peichl-and-sebastian-siegloch-2012--accounting-for-labor-demand-effects-in-structural-labor-supply-models)
+64. [Roemer (2002) — Equality of Opportunity: A Progress Report](#john-e-roemer-2002--equality-of-opportunity-a-progress-report)
+65. [Roemer & Trannoy (2016) — Equality of Opportunity: Theory and Measurement](#john-e-roemer-and-alain-trannoy-2016--equality-of-opportunity-theory-and-measurement)
+66. [Saez (2002) — Optimal Income Transfer Programs](#emmanuel-saez-2002--optimal-income-transfer-programs-intensive-versus-extensive-labor-supply-responses)
+67. [Saez & Stantcheva (2016) — Generalized Social Marginal Welfare Weights](#emmanuel-saez-and-stefanie-stantcheva-2016--generalized-social-marginal-welfare-weights-for-optimal-tax-theory)
+68. [Sher (2024) — Inconsistency of GSMWW](#itai-sher-2024--generalized-social-marginal-welfare-weights-imply-inconsistent-comparisons-of-tax-policies)
+69. [Shorrocks (2013) — Shapley Value Decomposition](#anthony-f-shorrocks-2013--decomposition-procedures-for-distributional-analysis-a-unified-framework-based-on-the-shapley-value)
+70. [Sutherland & Figari (2013) — EUROMOD](#holly-sutherland-and-francesco-figari-2013--euromod-the-european-union-tax-benefit-microsimulation-model)
+71. [Valletta (2009) — Fair Solution to the Compensation Problem](#giacomo-valletta-2009--a-fair-solution-to-the-compensation-problem)
+72. [Van Soest (1995) — Structural Models of Family Labor Supply](#arthur-van-soest-1995--structural-models-of-family-labor-supply-a-discrete-choice-approach)
+
+---
+
+## Rolf Aaberge, John K. Dagsvik, and Steinar Strøm (1995) — Labor Supply Responses and Welfare Effects of Tax Reforms
+
+**Source extracts merged:** Aaberge_colombino_1995.md; Aaberge_Dagsvik_Strom_1995.md; Aaberge_et_el_1995.md; markdowns/Aaberge_Dagsvik_Strom_1995.md
+
+### Full citation
+Aaberge, Rolf, John K. Dagsvik, and Steinar Strøm. 1995. “Labor Supply Responses and Welfare Effects of Tax Reforms.” The Scandinavian Journal of Economics 97(4): 635–659.
+
+### One-sentence contribution
+The paper develops and estimates for Norway a structural labour-supply model with heterogeneous opportunity sets and non-pecuniary job attributes, and uses it to evaluate the behavioural, income-distribution, and welfare effects of replacing the 1979 progressive income tax by either a revenue-neutral proportional tax or the 1992 tax system.
+
+### Core research question
+How large were the labour-supply distortions created by the Norwegian progressive wage-income tax system of 1979, and what are the behavioural, distributional, and welfare consequences of replacing that system by either a revenue-neutral proportional wage tax or the actual 1992 tax system?
+
+### Economic setting and context
+The paper studies Norway, with particular attention to the movement during the 1980s and early 1990s toward less progressive taxation of wage income. The benchmark system is the 1979 Norwegian tax system, when top marginal tax rates were extremely high by later standards. The reforms considered are a hypothetical proportional tax and the actual 1992 tax rules. The broader context is the Scandinavian welfare-state debate on the trade-off between redistribution and efficiency.
+
+### Model / theoretical framework
+The model class is a structural random-utility labour-supply model in which labour supply is represented as a discrete choice among feasible “job packages.” Each job package is characterized by hours of work, wage rates, and non-pecuniary attributes. The model allows for non-convex budget sets, joint decisions by husbands and wives, and heterogeneous opportunity sets. The paper is explicit that this framework differs from conventional labour-supply models in which consumption and leisure are the only choice variables. Here, agents may have preferences over qualitative job characteristics, and quantity constraints in the labour market are recognized through differential availability of jobs across workers. This means the feasible set is not universal and depends on market opportunities and worker qualifications.
+
+### Key objects
+The main behavioural objects are the household utility function over consumption, male hours, female hours, and job attributes; the tax function (f) mapping gross income into after-tax income; and the opportunity sets (B_i(h,w)) of feasible jobs for each worker. The job-choice probabilities depend on both the structural utility term (\psi(\cdot)) and the opportunity-density terms (g(h,w)), (g_0), and their couple analogues. The key welfare object is equivalent variation (EV), defined as the amount of non-taxable income that would have to be added under the initial tax system to make the household indifferent between the initial and alternative tax systems. EV is therefore a household-specific money-metric welfare change.
+
+### Data
+The model is estimated on Norwegian labour-market and tax-return data from 1979 for married couples. The paper repeatedly states that the empirical application concerns married couples and that the model is estimated on 1979 data for that group. Figures 1–3 compare observed and simulated distributions of female hours, male hours, and household consumption. The paper does not provide in the parsed text a detailed sample-size description comparable to later papers.
+
+### Identification / empirical strategy
+Identification is structural and primarily parametric. The model is estimated from observed labour-supply outcomes, wages, taxes, and household characteristics, under assumptions on the distribution of the random utility components and on the structure of opportunity densities. There is no quasi-experimental identification strategy. A central identification issue in the paper is the separation of the systematic utility component from the opportunity-density component. The authors explicitly state that full identification requires additional assumptions about the distribution of offered hours.
+
+### Treatment of preferences
+Preferences are modeled explicitly and flexibly through the deterministic part of utility, which depends on household consumption, male leisure, female leisure, age, children, and spouse interaction. The model also includes unobserved heterogeneity through random taste shifters over job opportunities. However, the paper does not use heterogeneous preferences as the direct welfare object for social evaluation. Instead, it derives household-specific EV from indirect random utilities.
+
+### Treatment of opportunities / constraints
+The paper explicitly models labour supply as choice among feasible job packages. Jobs differ by wage, hours, and non-pecuniary attributes, and different types of jobs are not equally available to each agent. Opportunity sets differ because qualifications differ and jobs require different qualifications. The paper therefore does not assume a universal common choice set. Nor does it assume that workers freely choose any hours value on a budget line.
+
+### Welfare / normative object
+The paper is positive with explicit welfare applications. Its welfare object is household-level equivalent variation. EV is defined as the amount of non-taxable income that would make the household indifferent between the initial and reformed tax systems. This welfare measure incorporates both consumption and leisure changes caused by behavioural responses.
+
+### Main findings
+The headline result is that replacing the 1979 Norwegian wage-income tax system by a revenue-neutral proportional tax generates large behavioural responses, especially among low-income households and especially among married women. Table 4 reports that female participation rises from 74.2% to 84.3%, male participation from 93.7% to 99.5%, female annual hours from 1,043 to 1,642, male annual hours from 2,132 to 2,790, and gross household income from NOK 136,279 to NOK 208,449. The mean equivalent variation from this proportional-tax reform is NOK 25,956, equal to 63.8% of 1979 tax revenue. This is very large. The authors interpret this as evidence that proportional taxation would remove a substantial part of the labour-supply distortions created by the 1979 system.
+
+### Main limitations
+A first limitation is that the policy simulations are partial equilibrium. The opportunity density is kept fixed, so the model assumes that supply creates its own demand. This is a major modelling restriction, especially if tax reforms would in reality affect the distribution of offered jobs or wages. A second limitation is that the opportunity densities are parametrically specified.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it shows that a structural labour-supply model with explicit opportunity constraints can produce very different conclusions depending on whether one looks at disposable income inequality or welfare gains. It is extremely useful for model design. It gives a clear formal template for treating jobs as packages with hours, wages, and non-pecuniary characteristics, and for representing feasible opportunities statistically rather than assuming a universal hours choice set. It is useful because it explicitly discusses the identification problem between structural utility and opportunity density.
+
+### Relation to opportunities vs preferences
+This paper is one of the strongest early positive contributions in the literature to the opportunities-versus-preferences distinction. It explicitly models opportunities through feasible job packages and opportunity densities rather than absorbing all labour-supply differences into tastes. At the same time, it does not convert that distinction into a normative theory of which inequalities should be compensated. So it is best read as a foundational empirical paper that creates the structure you would need before building an opportunity-sensitive well-being measure.
+
+### Quick takeaway
+Provides the foundational empirical template for modeling labour supply as choice among feasible job packages with heterogeneous opportunity sets and non-pecuniary attributes, using equivalent variation as the welfare metric. It directly supports the W(z,R,A;y) architecture by showing how opportunity densities and structural utility jointly determine labour-supply outcomes and welfare effects of tax reforms.
+
+
+---
+
+## Rolf Aaberge, Ugo Colombino, and Steinar Strøm (1999) — Labour Supply in Italy: An Empirical Analysis of Joint Household Decisions, with Taxes and Quantity Constraints
+
+**Source extracts merged:** Aaberge_Colombino_Strom_1999.md; Aaberge_er_al_1999.md; Aaberge_et_al_1999.md; markdowns/Aaberge_Colombino_Strom_1999.md
+
+### Full citation
+Aaberge, Rolf, Ugo Colombino, and Steinar Strøm. 1999. “Labour Supply in Italy: An Empirical Analysis of Joint Household Decisions, with Taxes and Quantity Constraints.” Journal of Applied Econometrics 14(4): 403–422.
+
+### One-sentence contribution
+The paper develops and estimates for Italy a joint household labour-supply model in which couples choose among jobs characterized by hours, wages, and non-pecuniary attributes under exact tax rules and quantity constraints, and it shows that female labour supply is much more elastic than male labour supply, especially in poor households.
+
+### Core research question
+How do taxes affect joint household labour supply in Italy when one explicitly accounts for non-convex budget sets, quantity constraints, heterogeneous job opportunities, and simultaneous labour-supply decisions of husbands and wives?
+
+### Economic setting and context
+The paper studies Italy using the 1987 Survey of Household Income and Wealth conducted by the Bank of Italy. The authors emphasize that this was the first nationwide Italian survey available to them with both income and hours information sufficient to compute wages and estimate a structural model of labour supply with taxes. They position the paper against earlier Italian studies that either used local samples, ignored taxes, ignored non-convexities, or modeled only wives’ labour supply rather than joint decisions. The policy context is the 1987 Italian tax and benefit system.
+
+### Model / theoretical framework
+The model class is a structural random-utility labour-supply model with quantity constraints and random opportunity sets. A household faces a set of market and non-market opportunities. Each market opportunity is characterized by fixed hours of work, a wage rate, and other job characteristics; non-market opportunities have zero hours and zero wage. Utility over an opportunity takes the multiplicative form where (v_i) is the deterministic component and (\varepsilon_{ij}) is a random taste shifter. The household chooses the opportunity that maximizes utility subject to the tax-based budget constraint (C=f(wh,I)).
+
+### Key objects
+The key positive objects are the household utility function (U_i(C,h,j)), its deterministic component (v_i(C,h)), the tax function (f(\cdot)), and the opportunity objects (g(h,w)) and (g_0), which summarize the distribution and relative abundance of feasible market opportunities versus non-market opportunities. In the couple version, the opportunity density extends to ((h_F,h_M,w_F,w_M)). A central conceptual object is the distinction between the preference term and the opportunity term in the labour-supply density. The choice probability is proportional to the utility term (\Psi_i(h,w)) times the opportunity term (g_i(h,w)), scaled by the relative number of market opportunities (g_{0i}).
+
+### Data
+The data come from the 1987 Bank of Italy Survey of Household Income and Wealth. The sample consists of 2,953 married-couple households after excluding households in which self-employment income exceeds 20% of gross household income. For included households, self-employment income is added to net household income and treated as exogenous. Husbands’ and wives’ ages are restricted to 20–68.
+
+### Identification / empirical strategy
+The paper is unusually explicit about identification. It shows, within the theoretical model, that the non-participation probability under a benchmark “fair environment” and the observed unemployment and participation rates can identify the relative abundance of market opportunities (g_0) nonparametrically. It also shows that, under separability of the deterministic utility component in income and leisure, variation in fixed costs of work can identify the income-utility component (v_1(\cdot)) nonparametrically, and that once (v_1) is identified, the conditional wage density (g_1(w\mid h)) can also be identified. However, identification is only partly nonparametric.
+
+### Treatment of preferences
+Preferences are modeled explicitly through the deterministic utility component. The systematic utility function depends on household consumption, male leisure, female leisure, age of both spouses, and the number of children below and above age six. The functional form is flexible and non-separable in consumption and leisure because participation indicators enter the consumption term, partly to capture the possibility of non-reported income in the underground economy. Preference heterogeneity is present, but mostly through observed covariates and random taste shifters attached to opportunities.
+
+### Treatment of opportunities / constraints
+The paper models opportunities explicitly. Individuals do not choose any hours level freely along a budget line. They choose among available jobs, and the number and characteristics of these jobs may vary across individuals. Jobs are characterized by hours, wages, and non-pecuniary attributes, and opportunity sets may differ because of skills, education, age, and local labour-market conditions. The paper therefore does not assume a universal choice set.
+
+### Welfare / normative object
+The paper is mainly positive with some distributional applications. It reports labour-supply effects, gross and disposable income changes, and Gini coefficients under alternative tax systems, but it does not define individual welfare through a common welfare function and does not aggregate welfare through an explicit social welfare criterion. This means the paper is not directly useful for responsibility for opportunities, compensation for opportunities, or reference opportunity sets at the normative level. It is also not a decomposition paper in the sense of decomposing inequality into opportunities and preferences.
+
+### Main findings
+The central empirical finding is that male labour supply is rather inelastic while female labour supply, especially participation, is much more elastic. Table IV reports aggregate uncompensated own-wage elasticities of 0.053 for male unconditional hours and 0.737 for female unconditional hours, with strong negative cross-wage effects that offset much of the own-wage response. When all wages rise by 1%, male unconditional labour supply is nearly unchanged and female labour supply rises only modestly once cross-effects are taken into account. A second major finding is that elasticities depend strongly on household income. Table V shows that the largest labour-supply responses are found for women in the poorest households.
+
+### Main limitations
+A first limitation is that the opportunity structure is only partially observed and partly imposed parametrically. In particular, the independence of offered hours and wages is assumed, and the distribution of offered hours is modeled as uniform with a full-time peak. The authors themselves state that testing the independence assumption would require better firm-level or institutional information. A second limitation is that the model is not used with an explicit welfare metric.
+
+### Relevance for my JMP
+This is a very strong paper for framing the empirical side of the project because it explicitly rejects the idea that labour supply should be modeled as unconstrained choice along a budget set. It shows how job opportunities and hours restrictions can be made central. It is highly useful for model design. The paper gives an early operational template for representing job opportunities by distributions over hours and wages, and for estimating joint household decisions under taxes and quantity constraints.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant to the opportunities-versus-preferences distinction on the positive side. It does not collapse all observed heterogeneity into preferences. Instead, it explicitly models labour-supply outcomes as the result of both utility differences and differences in the opportunity set, including hours restrictions and job availability. But it does not turn that distinction into a normative theory.
+
+### Quick takeaway
+Gives the first operational RURO-style estimation for Italy, showing that female labour supply elasticities are much larger than male ones and that observed hours reflect quantity constraints and heterogeneous job opportunities rather than unconstrained preference-driven choice. It provides a direct empirical template for separating the opportunity density from preferences in the choice probability.
+
+
+---
+
+## Rolf Aaberge, Ugo Colombino, and Steinar Strøm (2000) — Labour Supply Responses and Welfare Effects from Replacing Current Tax Rules by a Flat Tax: Empirical Evidence from Italy, Norway and Sweden
+
+**Source extracts merged:** Aaberge_Colombino_Strom_2000.md; Aaberge_et_al_2000.md; markdowns/Aaberge_Colombino_Strom_2000.md
+
+### Full citation
+Aaberge, Rolf, Ugo Colombino, and Steinar Strøm. 2000. “Labour Supply Responses and Welfare Effects from Replacing Current Tax Rules by a Flat Tax: Empirical Evidence from Italy, Norway and Sweden.” Journal of Population Economics 13: 595–621.
+
+### One-sentence contribution
+The paper uses structurally estimated joint labour-supply models for married couples in Italy, Norway, and Sweden to simulate labour-supply and welfare effects of replacing the existing progressive labour-income tax systems by revenue-neutral flat taxes, showing strong cross-country heterogeneity and a sharp decline in labour-supply responsiveness with pre-reform income.
+
+### Core research question
+What are the labour-supply, distributional, and welfare consequences of replacing the country-specific current labour-income tax systems in Italy, Norway, and Sweden by revenue-neutral flat taxes, when behaviour is modeled with structural household labour-supply models that allow heterogeneous preferences and constrained job opportunities?
+
+### Economic setting and context
+The paper is a cross-country comparison for three European countries with different labour-market institutions and different degrees of tax progressivity. The substantive policy question is whether ongoing movements toward less progressive taxation can be justified on efficiency grounds, especially in a context of European integration and possible tax competition. The application is limited to married couples. The authors focus on this group because married women are considered more responsive to tax incentives than many other groups and therefore particularly informative for labour-supply reform analysis.
+
+### Model / theoretical framework
+The model class is a structural discrete-choice / random-opportunities labour-supply model in which households choose among discrete “job packages.” A job package is characterized by wage rates, hours of work, and other non-pecuniary job attributes. The household maximizes utility over these job packages subject to the tax-based budget constraint. This is not a standard continuous-hours Hausman-style model. The paper stresses four distinguishing features: flexible utility functional forms, exact representation of tax and transfer systems, restrictions on offered hours in the market, and joint decisions of married couples. Quantity constraints are central.
+
+### Key objects
+The main economic objects are the household utility function over consumption and spouses’ leisure, the tax function mapping gross to disposable income, the opportunity densities over wage offers and offered hours, and the household-level equivalent variation used to measure welfare change. A central modelling object is the opportunity density for job packages. Offered wages and offered hours are not treated as universally available. Instead, the set of feasible opportunities is represented statistically, and this opportunity structure is allowed to differ across households.
+
+### Data
+The paper estimates country-specific labour-supply models on household microdata for married couples from Italy, Norway, and Sweden. The data years are 1987 for Italy, 1986 for Norway, and 1981 for Sweden. Households with self-employment income above 20% of total gross income are excluded. For the retained households, self-employment and capital income are added to net household income and treated as exogenous.
+
+### Identification / empirical strategy
+Identification is structural and predominantly parametric. The paper does not use quasi-experimental variation. The model is identified through cross-household variation in observed wages, hours, demographics, education, and tax schedules, together with maintained assumptions on the functional form of utility and on the opportunity densities for offered wages and hours. The identification of labour-supply responses is therefore inseparable from the model structure. Because both preferences and opportunities are partly unobserved, elasticities and welfare effects are obtained by stochastic simulation rather than by design-based causal variation.
+
+### Treatment of preferences
+Preferences are explicitly heterogeneous. The structural utility functions differ across countries and allow household behaviour to depend on consumption, leisure of both spouses, age, and other household characteristics. Unobserved heterogeneity is also present, since some components of utility vary randomly from the econometrician’s perspective. However, the paper’s treatment of preferences is behavioural rather than ethical.
+
+### Treatment of opportunities / constraints
+Opportunities are not assumed universal. Households face job packages characterized by wage rates, hours, and other attributes, and the opportunity sets differ across individuals. The model explicitly incorporates restrictions on offered hours and random opportunity sets. The paper is clear that labour-market rigidity matters. Offered hours are drawn from market distributions with country-specific structures.
+
+### Welfare / normative object
+The paper is positive with welfare applications. Welfare is measured by household-level equivalent variation rather than by estimated utility levels directly. The authors explicitly note that the model allows the distribution of welfare gains and losses to be studied, and they emphasize the importance of heterogeneity in these welfare effects. This is not an explicit theory of responsibility versus compensation.
+
+### Main findings
+The first major finding is that female labour supply is more responsive than male labour supply in all three countries, but responsiveness declines sharply with pre-reform disposable income. In all three countries, the poorest households have much larger elasticities than the richest households. The second main finding is that the cross-country labour-supply effects of a flat tax differ substantially. Labour-supply responses are strongest in Norway, especially for women, and weaker in Italy and Sweden. The paper attributes this to differences in tax systems, labour-market institutions, and opportunity sets, including hours rigidities.
+
+### Main limitations
+A first limitation is that the analysis is restricted to married couples. Singles are not included, and the welfare conclusions are therefore not population-wide. This matters for external validity and for broader policy interpretation. A second limitation is that the policy simulations are partial-equilibrium.
+
+### Relevance for my JMP
+This paper is highly useful for framing a structural empirical project on jobs, taxation, and welfare because it shows that cross-country differences in tax effects cannot be understood without modelling both preferences and opportunity structures. It is very useful for model design. It operationalizes job-package choice, random opportunity sets, and hours restrictions in a way that is much closer to RURO-style modelling than standard labour-supply models. It is useful mainly as an example of structural identification and internally consistent counterfactual simulation.
+
+### Relation to opportunities vs preferences
+This paper is very useful for the positive side of the opportunities-versus-preferences distinction. It does not collapse all heterogeneity into tastes. Instead, it explicitly models both heterogeneous preferences and heterogeneous opportunity sets. That is a major reason it remains relevant.
+
+### Quick takeaway
+Demonstrates through cross-country structural estimation (Italy, Norway, Sweden) that flat-tax effects on labour supply and welfare differ substantially once heterogeneous opportunity sets and hours restrictions are modeled alongside heterogeneous preferences. This directly motivates the JMP's case that both the A and R components of W(z,R,A;y) must vary across countries.
+
+
+---
+
+## Rolf Aaberge, Ugo Colombino, and Steinar Strøm (2004) — Do more equal slices shrink the cake? An empirical investigation of tax-transfer reform proposals in Italy
+
+**Source extracts merged:** Aaberge_Colombino_Strom_2004.md; Aaberge_et_al_2004.md; markdowns/Aaberge_Colombino_Strom_2004.md
+
+### Full citation
+Aaberge, Rolf, Ugo Colombino, and Steinar Strøm. 2004. “Do more equal slices shrink the cake? An empirical investigation of tax-transfer reform proposals in Italy.” Journal of Population Economics 17: 767–785.
+
+### One-sentence contribution
+The paper uses a structural household labour-supply model for Italian married couples to evaluate three stylized reforms—a flat tax, a negative income tax, and a workfare scheme—and finds scope to improve on the 1993 Italian system on both efficiency and equality grounds, with the largest behavioural responses coming from poor and middle-income households rather than from rich households.
+
+### Core research question
+Can one design stylized tax-transfer reforms for Italy that improve both efficiency and equality once household behavioural responses are taken into account, and what do such reforms imply for the distribution of welfare gains and losses across married-couple households?
+
+### Economic setting and context
+The setting is Italy in the early 1990s. The paper is motivated by Italian policy debates around two issues: reducing the efficiency costs of progressive taxation and redesigning a poorly targeted, insufficiently transparent income-support system. The authors emphasize that these two objectives need not be opposed and that some reform packages combine flatter taxation with more systematic basic-income support. The empirical benchmark is the 1993 Italian personal income tax and transfer system.
+
+### Model / theoretical framework
+The model class is a structural microeconometric household labour-supply model with simultaneous spousal decisions, quantity constraints on hours, and heterogeneous opportunity sets. The household chooses a “job” from a choice set (X_i). Each opportunity contains the wife’s wage and hours, the husband’s wage and hours, and unobserved job characteristics. Net income is generated by applying a tax-transfer rule to gross earnings and exogenous income, and the household chooses the alternative that maximizes utility. This is a positive behavioural model combined with an explicit normative evaluation layer.
+
+### Key objects
+The main behavioural objects are the household utility function over net consumption and spouses’ hours/leisure, the household-specific opportunity set (X_i), the tax-transfer rule (R_k), and the estimated choice probabilities over job packages. The main welfare objects are the equivalent income (y_i^k), the comparable welfare gain (CWG_i=y_i^1-y_i^0), and the family of rank-dependent social welfare functions (W_{b,k}). The associated inequality measures (C_{b,k}) and the proportionate social gain (n_b) are used to decompose reform effects into efficiency and equality components. The main policy objects are three stylized reforms: a flat tax (FT), a negative income tax (NIT), and a workfare scheme (WF).
+
+### Data
+The paper uses 2,160 married couples from the 1993 Bank of Italy Survey of Household Income and Wealth. The sample is restricted to couples aged 18–54. The paper states that the model is pre-estimated on these data and then used for reform simulations. The empirical object is household-level, not individual-level singles/couples pooled together.
+
+### Identification / empirical strategy
+Identification is structural and simulation-based, not quasi-experimental. The paper relies on a previously estimated microeconometric labour-supply model in which preferences and opportunity-set parameters are inferred from observed household choices under the 1993 regime. The reform analysis then solves the household choice problem under alternative tax rules subject to a constant-revenue constraint. The crucial assumptions are therefore the maintained functional form of utility, the statistical representation of choice sets and job availability, and the adequacy of the reference-household welfare-comparison device. There is no claim of clean design-based identification of reform effects in the reduced-form sense.
+
+### Treatment of preferences
+Preferences enter through the structural household utility function and are allowed to be flexible enough to generate a wide range of labour-supply responses. The paper stresses that the utility specification is meant to avoid imposing a priori a specific pattern of labour-supply response with respect to wages or incomes. However, the welfare analysis is not simply based on each household’s estimated utility level. The paper moves from the behavioural model to equivalent-income comparisons using a reference household and a reference environment.
+
+### Treatment of opportunities / constraints
+The paper explicitly models constraints in the choice of hours and different availability of job types. The household’s choice set contains jobs with different hours, wages, and unobserved characteristics, and different households face different opportunity sets. These are not merely budget-set differences; they are differences in feasible job opportunities. This means the paper does model opportunities explicitly on the positive side. It does not assume a universal choice set.
+
+### Welfare / normative object
+The paper is explicitly normative. Welfare is measured through equivalent incomes defined with respect to a reference household, a reference tax-transfer system, and the prices and opportunities faced by that reference household. Comparable welfare gains are then defined as the difference between reform and status-quo equivalent incomes. The social evaluation layer uses rank-dependent social welfare functions (W_{b,k}) and associated inequality measures (C_{b,k}).
+
+### Main findings
+All three reforms—FT, NIT, and WF—generate positive overall social gains relative to the 1993 Italian system. In the paper’s terminology, all are more efficient than the status quo, since average comparable welfare gains are positive. The distributional ranking of reforms differs sharply. FT is efficient but disequalising. NIT and WF are both efficient and equalising relative to the 1993 regime.
+
+### Main limitations
+A first limitation is that the analysis is confined to married couples. The welfare and behavioural findings do not immediately generalize to singles or to a broader population. A second limitation is that the welfare metric is a reference-based money-metric measure. This is sophisticated relative to simple income comparisons, but it still depends on a particular reference-state construction and on interpersonal comparability assumptions.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it shows that a structurally estimated labour-supply model can produce reform evaluations in which equality and efficiency need not trade off mechanically. It is very useful for model design because it incorporates simultaneous household decisions, constrained hours choice, and heterogeneous opportunity sets. That is close to the latent-jobs logic relevant to your research. It is useful mainly as an example of structurally disciplined policy evaluation rather than as a source of quasi-experimental identification.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant on the positive side because it does not collapse behaviour into preferences alone. The authors explicitly model constrained job opportunities and show that those constraints are crucial for understanding reform responses, especially in lower deciles. On the normative side, however, the paper still operates through reference-based equivalent income and social welfare indexes, not through an explicit normative theory of how opportunities versus preferences should be treated.
+
+### Quick takeaway
+Shows that structurally estimated labour-supply models with constrained job opportunities can identify reforms that improve both efficiency and equality, using equivalent-income welfare comparisons and rank-dependent social welfare functions. Directly relevant because it operationalizes the normative evaluation layer of W(z,R,A;y) through reference-household equivalent incomes applied to Italian reform simulations.
+
+
+---
+
+## Rolf Aaberge and Ugo Colombino (2006) — Designing Optimal Taxes with a Microeconometric Model of Household Labour Supply
+
+**Source extracts merged:** Aaberge_Colombino_2006.md; Aaberge_colombino_2006.md; markdowns/Aaberge_Colombino_2006.md
+
+### Full citation
+Aaberge, Rolf, and Ugo Colombino. 2006. Designing Optimal Taxes with a Microeconometric Model of Household Labour Supply. Discussion Papers No. 475, Statistics Norway, Research Department.
+
+### One-sentence contribution
+The paper uses a structural RURO-style labour-supply model for Norway to numerically search for optimal piecewise-linear income-tax schedules under both equality-of-outcome and equality-of-opportunity criteria, finding surprisingly similar tax schedules across the two welfare criteria.
+
+### Core research question
+Can optimal income-tax schedules be designed empirically by maximizing social welfare over a class of tax rules using a flexible structural model of household labour supply, and how do the resulting schedules differ under equality-of-outcome and equality-of-opportunity criteria?
+
+### Economic setting and context
+The paper studies Norway, using household microdata for 1994 and holding fixed the contemporaneous transfer, income-support, and social-assistance system while varying the personal income-tax schedule. The exercise is explicitly application-specific rather than intended as a universally valid closed-form result. The empirical environment includes both single individuals and couples, and the authors emphasize that joint household decisions, quantity constraints, and detailed tax rules matter for tax design. The paper is therefore located in the structural public-economics tradition rather than in reduced-form policy evaluation.
+
+### Model / theoretical framework
+The model class is a structural random-utility labour-supply model that extends the standard multinomial logit framework. For a single person, the agent chooses among jobs characterized by hours (h), wage (w), and other job or match characteristics (j), subject to the budget constraint (c=f(wh,I)), where (I) is exogenous non-labour income and (f) is the tax rule. The choice set (B) includes market and non-market opportunities. A central feature is that the feasible opportunity set is not treated as a universal deterministic menu. Instead, because the analyst does not observe the full set (B), the paper represents it through a probability density (p(h,w,j)) over available opportunities.
+
+### Key objects
+The main positive objects are the household-specific utility functions, the stochastic random-utility component, the disposable-income mapping (f), and the opportunity density (p(h,w,j)). The choice density combines systematic utility and availability, so realized choice depends jointly on preferences and opportunities. The main normative objects are the common individual welfare function (V), the rank-dependent equality-of-outcome social welfare functions (W_k), and the equality-of-opportunity counterparts (\widetilde{W}_k). The EOp criterion relies on a partition of individuals into circumstance types and interprets within-type rank as effort.
+
+### Data
+The paper uses Norwegian household microdata for 1994. The abstract states that the model is based on Norwegian household data for 1994. The appendix says estimation uses the 1995 Survey of Level of Living, which appears to be the survey source containing 1994 income information. There is some ambiguity about age coverage.
+
+### Identification / empirical strategy
+Identification is structural and mainly parametric. The model is estimated by maximum likelihood using the random-utility choice density implied by the utility specification, the opportunity density, and the extreme-value assumption for the stochastic utility component. Wage offers are modelled parametrically, and hours opportunities are also given a parametric structure. The paper does not rely on quasi-experimental variation. Instead, it relies on functional-form assumptions, exclusion and structure embedded in wage, hours, and opportunity densities, and on observed variation in household characteristics and choices.
+
+### Treatment of preferences
+Preferences are heterogeneous in the behavioural model. The paper estimates different utility functions for single females, single males, and couples, and allows utility to depend on consumption, leisure, age, sector, and family composition. Thus, the behavioural side is explicitly preference-heterogeneous. However, the paper is equally explicit that heterogeneous behavioural utility functions cannot simply be treated as interpersonally comparable welfare functions.
+
+### Treatment of opportunities / constraints
+The paper models opportunities explicitly on the positive side through the density (p(h,w,j)) of available jobs. The analyst does not observe the full opportunity set (B), so opportunities are represented probabilistically. This allows job availability to differ across individuals and allows for quantity constraints and hours restrictions in the labour market. The paper therefore does not assume a universal identical choice set. Nor does it reduce labour supply to a choice over hours alone.
+
+### Welfare / normative object
+The paper is explicitly normative in its tax-design stage. The individual welfare object is a common welfare function (V(c,h,s)), adjusted for age, children, and public-sector work, with couples’ income divided by (\sqrt{2}) to allow interpersonal comparability across heterogeneous households. The function is increasing and concave in income and leisure. Table 4.1 on page 14 reports the estimated parameters.
+
+### Main findings
+The core policy finding is that the computed optimal tax rules are more progressive than the 1994 Norwegian schedule. Under both EO and EOp criteria, the optimal rules imply lower marginal tax rates on low and average income levels and higher rates on sufficiently high incomes, while also delivering a lower average tax rate than the current system. In the unconstrained optimization, the top marginal tax rate always becomes 100 percent. Even when the authors impose the practical restriction (\tau_3 \le 0.6), the same broad pattern remains: relatively low bottom and middle rates, higher top rates, and substantial gross-income expansion through labour-supply responses. A useful clarification from the alternate extract is that the EO and EOp optima are closer than one might initially expect, so the main differences lie more in normative interpretation than in the broad shape of the schedule.
+
+### Main limitations
+A first limitation is that the paper uses two different opportunity concepts without integrating them into a single explicit welfare framework. On the behavioural side, opportunities are latent job densities; on the normative side, opportunities are circumstances proxied by father’s education. This is interesting, but also conceptually fragmented. A second limitation is that equality of opportunity is operationalized through only one observed circumstance variable, father’s education.
+
+### Relevance for my JMP
+This paper is very useful for framing a bridge between structural labour-supply estimation and fairness-based policy evaluation. It shows that one can keep a rich behavioural model and still impose an explicitly responsibility-sensitive social criterion. It is highly useful for model design because it represents opportunities as latent job densities rather than collapsing the problem into one wage per person and a universal hours menu. That feature is close to the kind of latent-job modelling that is relevant for RURO-style work.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant here because it does not simply treat all heterogeneity as preference heterogeneity. It explicitly allows both preferences and opportunities to vary across decision units. That is already a major conceptual advance over many structural labour-supply models. But it stops short of giving a unified empirical or normative theory of opportunities versus preferences.
+
+### Quick takeaway
+Bridges structural RURO-style labour supply with fairness-based optimal tax design by numerically searching for optimal piecewise-linear schedules under both equality-of-outcome and equality-of-opportunity criteria in Norway. Directly relevant because it shows how latent job densities (the A component) can coexist with a separate normative welfare layer that distinguishes compensation for circumstances from responsibility for preferences.
+
+
+---
+
+## R. Aaberge, U. Colombino, and T. Wennemo (2009) — Evaluating Alternative Representations of the Choice Sets in Models of Labor Supply
+
+**Source extracts merged:** Aaberge_Colombino_Wennemo_2009.md; Aaberge_et_al_2009.md; markdowns/Aaberge_Colombino_Wennemo_2009.md
+
+### Full citation
+Aaberge, R., U. Colombino, and T. Wennemo. 2009. “Evaluating Alternative Representations of the Choice Sets in Models of Labor Supply.” Journal of Economic Surveys 23(3): 586–612.
+
+### One-sentence contribution
+The paper compares 16 discrete-choice labour-supply variants and shows that choice-set specification has little effect on in-sample fit but large effects on out-of-sample tax-policy predictions, with sampled alternatives and explicit opportunity-density features performing best.
+
+### Core research question
+How much do alternative empirical representations of the choice set in discrete-choice labour-supply models affect model fit and, more importantly, out-of-sample policy prediction performance?
+
+### Economic setting and context
+The paper is methodological rather than a substantive country study. Its empirical core is a previously estimated model of married/cohabiting females’ labour supply in Norway, based on the 1995 Norwegian Survey of Level of Living, with ages restricted to 20–62. That model is treated as the “true” data-generating process for the simulation exercises. The policy context is tax reform evaluation.
+
+### Model / theoretical framework
+The model class is a random-utility discrete-choice labour-supply model. In the basic formulation, the individual chooses among opportunities characterized by hours of work and possibly other job attributes, and utility is written as with (f) the tax-transfer rule, (w) the wage rate, (h) hours, and (j) unobserved job or individual characteristics. Under the Type I extreme-value assumption, choice probabilities take a multinomial-logit form. A central theoretical issue is whether the analyst treats all alternatives as equally available or instead introduces an opportunity density (p(h)). The paper is explicit that many applications assume equal availability of all hour values, while other approaches allow for heterogeneous accessibility of alternatives through a density of opportunities that may differ across individuals.
+
+### Key objects
+The main objects are the systematic utility function (v), the stochastic term (\varepsilon), the tax-transfer mapping (f), and the opportunity density (p(h)). The paper’s central conceptual distinction is between the preference component (v) and the opportunity-side component (p(h)) in the choice probability. A second key object is the representation of the choice set itself. The paper compares fixed alternatives versus sampled alternatives, 6 versus 24 alternatives, and models with or without a “job” dummy and “peaks” dummies that capture non-uniform availability of work opportunities.
+
+### Data
+The underlying “true” model is estimated on 1,842 married/cohabiting females from the 1995 Norwegian Survey of Level of Living, with ages 20–62. Husbands’ behaviour and non-labour income are treated as exogenous in the simplified application used here. The paper then generates simulated samples from that estimated model. In the Monte Carlo exercise, 30 samples of 1,842 observations are drawn.
+
+### Identification / empirical strategy
+This is not an identification paper in the causal-inference sense. The paper does not use quasi-experimental variation. Its logic is instead methodological: treat one structurally estimated model as the data-generating process, estimate alternative models with different choice-set representations on simulated samples, and compare their prediction errors. Identification of the substantive behavioural parameters in the “true” model remains structural and parametric. The key paper-specific contribution is not new identification of preferences or constraints, but evaluation of specification error induced by alternative representations of the choice set.
+
+### Treatment of preferences
+Preferences are represented through the systematic utility function (v(f(wh,I),h)), with consumption, leisure, age, and children entering the specification. The paper keeps the preference specification fixed across the competing models in order to isolate the effect of alternative choice-set representations. This is methodologically important because the exercise is not about comparing different utility forms but about comparing different representations of opportunities. Thus, the paper treats preferences as stable structural primitives within the simulation design.
+
+### Treatment of opportunities / constraints
+The paper explicitly studies whether one should assume that all hour values are equally available or instead allow availability to vary across hours and across individuals through an opportunity density (p(h)). The authors stress that much of the literature assumes equal availability, while their own line of work allows individual-specific densities of opportunities. In the “true” model, the opportunity set is represented by a density in which market opportunities are distinguished from non-market opportunities and where full-time and part-time hours receive additional mass through peaks dummies. This implies that not all work-hour options are equally accessible, and the model is designed to reflect labour-market structure rather than pure unconstrained choice. The paper therefore models opportunities explicitly, though in a simplified one-dimensional hours form rather than as a full job-set object with multiple attributes.
+
+### Welfare / normative object
+The paper is mainly positive and methodological. It is motivated by welfare and tax-policy evaluation, but it does not introduce an explicit welfare measure, social welfare function, or normative criterion in the paper itself. The performance metrics are participation, hours, and disposable income prediction errors. Accordingly, the paper is not explicitly normative.
+
+### Main findings
+The headline result, stated already in the abstract and confirmed by the simulations, is that alternative representations of the choice set have little impact on the fitting of observed values but a much larger impact on out-of-sample prediction performance. Models based on sampled alternatives and non-uniform opportunity densities, especially specifications with job and hours-peaks dummies, outperform simpler fixed-grid models in reform simulations. The broader implication is that policy counterfactuals are far more fragile to choice-set misspecification than standard in-sample fit statistics suggest. Tables 2-7 illustrate these patterns for participation, hours, and disposable income.
+
+### Main limitations
+A first limitation is that the simulation exercise is explicitly application-specific. The authors themselves note that the results are likely to be application-specific rather than fully general. The paper is therefore best used as strong methodological evidence, not as a universal theorem about all discrete-choice labour-supply models. A second limitation is that the opportunity side is simplified.
+
+### Relevance for my JMP
+This paper is one of the strongest methodological references for arguing that empirical treatment of feasible sets is not a secondary detail. If the project aims to say something about opportunities, then how the choice set is represented econometrically is central. It is highly useful for model design. It directly supports using sampled alternatives rather than fixed grids, and it supports introducing heterogeneous opportunity densities rather than assuming equal availability of all options.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant to the opportunities-versus-preferences distinction on the positive side. It explicitly treats the representation of opportunities as separate from the representation of preferences and shows that this distinction matters for policy simulation. It is less useful on the normative side. The paper does not ask how welfare should treat inequalities arising from opportunities versus preferences.
+
+### Quick takeaway
+Provides the strongest direct evidence that choice-set specification matters far more for out-of-sample tax-reform predictions than for in-sample fit, with sampled alternatives and explicit opportunity densities outperforming fixed grids. This justifies modeling the feasible set A carefully in the JMP rather than treating it as a secondary specification detail.
+
+
+---
+
+## Rolf Aaberge and Ugo Colombino (2011) — Empirical Optimal Income Taxation: A Microeconometric Application to Norway
+
+**Source extracts merged:** Aaberg_colombino_2011.md; Aaberge_colombino_2011.md; Aaberge_Colombino_2011.md; markdowns/Aaberge_Colombino_2011.md
+
+### Full citation
+Aaberge, Rolf, and Ugo Colombino. 2011. Empirical Optimal Income Taxation: A Microeconometric Application to Norway. ChilD Working Paper No. 16/2011.
+
+### One-sentence contribution
+The paper uses a structural random-utility labour-supply model with heterogeneous preferences and heterogeneous job opportunities to compute optimal income-tax schedules for Norway directly by simulation, rather than by plugging empirical elasticities into analytical optimal-tax formulas.
+
+### Core research question
+How can one identify empirically optimal income-tax rules, under alternative inequality-averse social welfare criteria and a fixed public-budget constraint, by using a flexible microeconometric model of household labour supply that allows heterogeneous preferences and heterogeneous job opportunities?
+
+### Economic setting and context
+The setting is Norway. The model is estimated on detailed Norwegian household data for 1994, and the behavioural sample includes 1,842 couples, 309 single females, and 312 single males. The out-of-sample validation uses 2001 outcomes predicted from the model estimated on 1994 data. The policy problem is the design of personal income taxation while keeping total net tax revenue fixed and leaving the main 1994 transfer structure unchanged.
+
+### Model / theoretical framework
+The model is a structural random-utility labour-supply model that extends the standard multinomial logit framework. For a single household, the agent chooses among jobs characterized by wage (w), hours (h), observed job characteristics (s), and unobserved match characteristics (j), subject to the budget constraint (c=f(wh,I)), where (I) is exogenous non-labour income and (f) is the tax rule. The feasible environment is denoted (B), the set of available opportunities, including non-market opportunities with (w=0) and (h=0). The model is positive at the behavioural level and normative at the tax-design level. A central feature is that the feasible set is not treated as identical across individuals.
+
+### Key objects
+The main positive objects are the household-specific utility function (U), its systematic part (v), the random component (\varepsilon), the opportunity density (p(h,w,s)), the tax rule (f), and the realised choice ((c,h,s,j)). The choice density is proportional to the systematic attractiveness of a job times its availability, which is the key formal device used to integrate preferences and opportunities in the econometric model. The main welfare objects are the common individual welfare function (V(y,h)), where (y) is equivalent after-tax income and (h) maps into leisure, and the rank-dependent social welfare functions (W_i), which differ by their degree of inequality aversion. The policy object is a 9-parameter piecewise-linear tax rule with exemption level, four marginal tax rates, three kink points, and a lump-sum transfer or tax.
+
+### Data
+The data come from the 1995 Norwegian Survey of Level of Living, with detailed income information from tax records. The estimation sample is restricted to individuals aged 20 to 62. Self-employed individuals and those receiving permanent disability benefits are excluded. The sample contains 1,842 couples, 309 single females, and 312 single males.
+
+### Identification / empirical strategy
+Identification is structural and mainly parametric. The model is estimated by maximum likelihood from the choice densities implied by the random-utility specification and the opportunity densities. The crucial identifying assumptions are the Type III extreme-value distribution for the stochastic component, the parametric specification of preferences, the parametric wage-offer distributions, and the parametric opportunity densities for jobs, hours, and sectors. There is no quasi-experimental source of identification. The paper’s identification strategy therefore does not separately observe true feasible sets or directly observe effort.
+
+### Treatment of preferences
+Preferences are explicitly heterogeneous in the behavioural model. The paper allows observed and unobserved heterogeneity in tastes, different preference structures across singles and couples, and spouse interaction in the couple utility function. The functional form is flexible enough to generate backward-bending labour supply, and the paper explicitly interprets some weakly negative wage responses in the middle of the single-person income distribution as cases where income effects dominate substitution effects. Tables 2.3 and 2.4 report the preference parameter estimates, and Table 3.1 reports the resulting heterogeneity in wage elasticities.
+
+### Treatment of opportunities / constraints
+The paper models opportunities explicitly, though not as directly observed individual feasible sets. The opportunity set (B) is represented through a probability density (p(h,w,s)), and the choice probability is proportional to utility attractiveness times availability. This means that labour-supply behaviour depends not only on tastes and the budget set but also on the statistical distribution of available jobs. The paper is explicit that the number and characteristics of opportunities may differ across individuals and that the framework is compatible with quantity constraints and involuntary unemployment. The paper therefore does not assume a universal identical choice set.
+
+### Welfare / normative object
+The paper is positive with explicit welfare applications. The normative object is a common individual welfare function where (y) is equivalent after-tax income and (L) is leisure. For singles, (y) is disposable income; for married or cohabiting individuals, household disposable income is divided by (\sqrt{2}). The function is used only for welfare evaluation, not for simulating behaviour.
+
+### Main findings
+The main substantive finding is that all optimal tax schedules are progressive, with monotonically increasing marginal tax rates. Compared to the 1994 Norwegian tax system, the optimal rules imply a lower average tax rate, lower marginal rates on low and average incomes, and higher marginal rates on sufficiently high incomes. Under the constraint imposed in the paper, the top optimal marginal tax rate is 75 percent above roughly 700,000 NOK and applies to only about 1.8 percent of taxpayers. Table 5.1 on page 33 contains the main optimal-tax results. The behavioural mechanism is that labour-supply elasticities decline sharply with income, and married women in particular are much more elastic than married men.
+
+### Main limitations
+The first limitation is identification. The model is behaviourally rich, but identification is structural and parametric rather than quasi-experimental. The paper does not separately identify preferences and opportunities in a nonparametric or institutionally grounded causal sense. The second limitation is the treatment of opportunities.
+
+### Relevance for my JMP
+This paper is highly useful for framing the empirical side of a jobs-and-wellbeing project. It shows that one can build a structural model where realized choices are generated by heterogeneous preferences and heterogeneous opportunities, and then impose a separate normative welfare criterion for policy evaluation. That positive/normative split is directly relevant for the project. It is especially useful for model design because it does not collapse labour supply into a choice over hours at a fixed wage.
+
+### Relation to opportunities vs preferences
+This paper is very useful on the positive side of the opportunities-versus-preferences distinction. It does not simply treat all heterogeneity as taste heterogeneity. Instead, it explicitly allows heterogeneity in both behavioural preferences and job opportunities, and it makes opportunity availability enter the choice density directly. On the normative side, however, it does not develop a full fairness theory separating what should be compensated from what should be respected.
+
+### Quick takeaway
+Computes empirically optimal progressive income taxes for Norway by iteratively maximizing rank-dependent social welfare through a structural random-utility model with heterogeneous preferences and latent job opportunities. Directly relevant because it demonstrates the full positive-to-normative pipeline: estimate behaviour from heterogeneous preferences and opportunity densities, then impose a separate common welfare function for policy evaluation--exactly the architecture the JMP needs.
+
+
+---
+
+## Rolf Aaberge and Ugo Colombino (2012) — Accounting for family background when designing optimal income taxes: a microeconometric simulation analysis
+
+**Source extracts merged:** Aaberge_colombino_2012.md; Aaberge_Colombino_2012.md; markdowns/Aaberge_Colombino_2012.md
+
+### Full citation
+Aaberge, Rolf, and Ugo Colombino. 2012. “Accounting for family background when designing optimal income taxes: a microeconometric simulation analysis.” Journal of Population Economics 25: 741–761.
+
+### One-sentence contribution
+The paper develops an extended equality-of-opportunity criterion that accounts for inequality both between and within circumstance types, applies it to Italian data with a structural labour-supply model, and shows that equality of outcome can be more interventionist than equality of opportunity in second-best tax design.
+
+### Core research question
+What income tax-transfer rule is optimal, within second-best rules that depend only on income, when the social objective is equality of opportunity defined with respect to family background rather than equality of outcome?
+
+### Economic setting and context
+The empirical application is Italy, using 1993 data from the Bank of Italy Survey of Household Income and Wealth. The paper considers single females, single males, and couples aged 19–54, and uses estimated labour-supply models to simulate behavioural responses to alternative tax-transfer rules. The comparison is between equality-of-opportunity and equality-of-outcome tax design, with family background proxied by father’s education. The policy environment is explicitly second-best.
+
+### Model / theoretical framework
+The paper combines a normative EOp/EO framework with a positive microeconometric labour-supply model. The labour-supply model is not rederived in the article itself because it is described in the electronic supplementary material, but the paper states clearly that it is a relatively sophisticated household labour-supply model that treats singles and couples, models partners’ decisions jointly, and accounts for quantity constraints on hours. The agent chooses labour supply under alternative tax rules, and the model is used as a simulation engine for counterfactual tax design. The normative exercise is not to estimate preferences from scratch within the paper, but to use the estimated model to simulate how disposable incomes and labour supply would change under alternative rules. Equivalent incomes are then constructed and evaluated by EOp or EO criteria.
+
+### Key objects
+The main normative objects are the EO rank-dependent social welfare functions (W_k), the pure EOp welfare function (\widetilde{W}_\infty), and the extended EOp welfare functions (\widetilde{W}_k). The EO functions aggregate the full income distribution, while the EOp functions focus on the worst-off type distribution defined pointwise across effort ranks. The key type object is family background, proxied by father’s education. Individuals are partitioned into three types: less than 5 years of paternal education, 5–8 years, and more than 8 years.
+
+### Data
+The paper uses the 1993 Bank of Italy Survey of Household Income and Wealth. The sample includes single females, single males, and couples aged 19–54, and is intended to cover approximately the labour force. The paper itself does not provide the full underlying estimation details in the main text; those are delegated to the electronic supplementary material. Father’s education is the key circumstance variable used to define EOp types.
+
+### Identification / empirical strategy
+Identification is mainly structural and simulation-based. The paper does not rely on quasi-experimental variation in the modern causal-inference sense. Instead, it relies on an estimated microeconometric labour-supply model and then simulates behavioural responses under counterfactual tax rules. The crucial assumptions are therefore those embedded in the estimated household labour-supply model and in the normative partition of individuals into types by father’s education. Normative identification of opportunity disadvantage is also narrow.
+
+### Treatment of preferences
+The paper does not center its contribution on preference heterogeneity as an object of direct welfare decomposition. Preferences enter through the underlying microeconometric labour-supply model, which is rich enough to simulate heterogeneous labour-supply responses across singles and couples. The main text repeatedly emphasizes heterogeneous labour-supply behaviour and notes that these heterogeneous responses are crucial in shaping the optimal tax rules. However, the normative analysis is not preference-based in the sense of taking heterogeneous utility functions as the welfare object.
+
+### Treatment of opportunities / constraints
+Normatively, opportunities are treated as “circumstances” beyond individual control, operationalized by paternal education. This is the paper’s central opportunity concept. Individuals are divided into three types by family background, and EOp seeks to reduce differences attributable to those circumstances while treating within-type rank as effort. Positively, the paper also uses a labour-supply model that accounts for quantity constraints on hours and jointly models partners’ decisions. This means the empirical model does contain constrained opportunities in the labour-market sense.
+
+### Welfare / normative object
+The paper is explicitly normative. Its main normative contribution is the development of an extended EOp criterion that lies between pure EOp and more conventional EO. The pure EOp criterion focuses on the average income of the worst-off type-specific rank distribution: The extended EOp criterion instead applies the same family of inequality-averse rank weights used under EO: This allows concern for inequality within the worst-off distribution as well as between types. Under EO, the paper uses the rank-dependent welfare functions with the familiar Bonferroni-, Gini-, and utilitarian-type cases.
+
+### Main findings
+The paper's central empirical finding is that EOp does not mechanically imply less redistribution than EO, and in some simulations the ranking is reversed. Because disadvantaged types can also be relatively labour-supply elastic, EOp-optimal policies may rely more on lump-sum taxation and less on marginal-rate redistribution, making EO look more interventionist. The paper is explicit that its results do not conform to the common expectation that EO is always more redistributive than EOp. For two-parameter affine tax rules, the EOp optimum depends strongly on the inequality-aversion parameter (k); when (k >= 3), the optimal rule collapses to a pure lump-sum tax with zero marginal tax rate.
+
+### Main limitations
+A first limitation is that the opportunity concept is narrow. The paper equates circumstances with father’s education, which is reasonable as a proxy for family background but clearly incomplete as a measure of opportunity. A second limitation is that welfare is income-based. The paper itself notes in the conclusion that policy prescriptions might change if the value of leisure were included in the measurement of individual welfare, especially because some tax rules generate large labour-supply responses.
+
+### Relevance for my JMP
+This paper is highly useful for framing the compensation-versus-responsibility part of the JMP. It gives a concrete example of how a policy evaluation can be made sensitive to background circumstances without letting the tax rule directly depend on those circumstances. It is moderately useful for model design. The underlying microeconometric model includes joint household labour supply and quantity constraints, which is relevant.
+
+### Relation to opportunities vs preferences
+This paper is more useful for opportunities than for preferences. It does not principally ask how heterogeneous preferences should be treated normatively. Instead, it asks how redistribution should respond to inequality generated by background circumstances versus effort. But the opportunity notion remains type-based and circumstance-based, not feasible-set-based.
+
+### Quick takeaway
+Shows that equality-of-opportunity optimal taxation can be less redistributive than equality-of-outcome taxation when disadvantaged types are also labour-supply elastic, using Italian structural microsimulation with family-background types. Directly relevant for the JMP's normative layer because it operationalizes the compensation-versus-responsibility distinction through an extended EOp criterion applied to a behavioural model with quantity constraints.
+
+
+---
+
+## Rolf Aaberge and Ugo Colombino (2013) — Using a Microeconometric Model of Household Labour Supply to Design Optimal Income Taxes
+
+**Source extracts merged:** 1_Aaberge_colombino_2013.md; Aaberge and Colombino - 2013.md; Aaberge_Colombino_2013.md; markdowns/Aaberge_Colombino_2013.md
+
+### Full citation
+Aaberge, Rolf, and Ugo Colombino. 2013. “Using a Microeconometric Model of Household Labour Supply to Design Optimal Income Taxes.” The Scandinavian Journal of Economics 115(2): 449–475.
+
+### One-sentence contribution
+The paper replaces closed-form optimal-tax formulas with a simulated optimum obtained by iteratively running a structural random-utility labour-supply model with heterogeneous preferences and opportunity densities, under a balanced public-budget constraint, for Norway.
+
+### Core research question
+How can one design optimal income-tax schedules empirically by using a flexible microeconometric model of household labour supply, rather than relying on restrictive analytical optimal-tax formulas calibrated with external elasticity inputs?
+
+### Economic setting and context
+The empirical setting is Norway. The behavioural model is estimated on 1994 data from the 1995 Norwegian Survey of Level of Living, with income information from tax records. The authors restrict the sample to individuals aged 20 to 62, exclude the self-employed and those receiving permanent disability benefits, and include couples as well as single women and single men. The sample contains 1,842 couples, 309 single females, and 312 single males.
+
+### Model / theoretical framework
+The model class is a structural random-utility discrete-choice labour-supply model with continuous job attributes and explicit opportunity densities. For expositional purposes, the paper writes the single-person problem as choosing a job characterized by wage rate (w), hours (h), observed job characteristics (s), and unobserved match characteristics (j), to maximize subject to where (I) is exogenous non-labour income, (f) is the tax rule, and (B) is the set of available opportunities, including non-market opportunities. The framework is positive at the behavioural level and normative at the policy-design level. Behaviour is generated by household-specific utility maximization under heterogeneous preferences and constraints. Normative evaluation is then imposed by the social planner through a common welfare function and a social welfare aggregator.
+
+### Key objects
+The main behavioural objects are the utility function (U), the systematic component (v), the random component (\varepsilon(j)), the tax rule (f), and the job-opportunity density (p(h,w,s)). The choice density is proportional to systematic attractiveness times opportunity density, so availability enters directly in the likelihood contribution. The key welfare object is the planner’s common individual welfare function (V(y,h)), where (y) is equivalent after-tax income and (h) maps into leisure (L=1-(h/0.8736)). The planner then aggregates individual welfare levels using rank-dependent social welfare functions (W_k), including Bonferroni-like, Gini-like, and utilitarian cases.
+
+### Data
+The estimation uses 1994 Norwegian data from the 1995 Norwegian Survey of Level of Living, including detailed tax-record income data. The out-of-sample validation uses 2001 covariates from the 2002 Norwegian Survey of Level of Living to predict 2001 outcomes under the new tax schedule. The sample used for estimation includes 1,842 couples, 309 single females, and 312 single males. Ages are restricted to 20–62.
+
+### Identification / empirical strategy
+Identification is primarily structural and parametric. The likelihood contribution comes from the probability density of observed job choices, where the probability of choosing ((h,w,s)) depends on the systematic utility component and the opportunity density (p(h,w,s)), under a type III extreme value assumption for the unobserved match term. Thus, identification relies on functional-form assumptions, the extreme-value structure, and the parametric specification of both preferences and opportunity densities. There is no quasi-experimental identification in the modern reduced-form sense. The paper’s strategy is instead to estimate a flexible structural model and then simulate behavioural responses to alternative tax rules.
+
+### Treatment of preferences
+The paper allows heterogeneous preferences in the behavioural model. Preferences over consumption, leisure, and job characteristics vary across households, and the model includes both observed and unobserved heterogeneity. The systematic component is flexible, and the random component captures utility-relevant match features unobserved by the analyst. However, these heterogeneous estimated utility functions are not used directly as interpersonally comparable welfare measures.
+
+### Treatment of opportunities / constraints
+It does model opportunities explicitly, though in a probabilistic rather than directly observed set-theoretic way. The household chooses from a set (B) of jobs and non-market opportunities, and the analyst represents this choice set through the density (p(h,w,s)) of available jobs. Jobs may differ by hours, wage rates, and other characteristics; the number and composition of available jobs may differ across agents. The paper therefore does not assume a universal deterministic common choice set. Instead, opportunities are heterogeneous across individuals, but they are latent and modeled statistically.
+
+### Welfare / normative object
+The paper is positive with explicit welfare applications. Its normative object is not utility as estimated from the behavioural model, but a planner-imposed common individual welfare function (V(y,h)) defined over equivalent after-tax income and leisure. Couples’ income is equivalized by dividing by (\sqrt{2}), and the welfare function is estimated using the same sample conditional on estimated opportunity densities. These individual welfare levels are then aggregated using rank-dependent social welfare functions with alternative weight profiles corresponding to Bonferroni-like, Gini-like, more moderate inequality aversion, and utilitarian aggregation.
+
+### Main findings
+The main substantive result is that the computed optimal tax schedules feature monotonically increasing marginal tax rates, negative marginal rates on the lowest income bracket, and a 100 percent top marginal tax rate on very high incomes under all social-welfare criteria considered. Relative to the 1994 Norwegian system, the optimal rules imply a lower average tax rate, lower marginal rates on low and average incomes, and higher marginal rates at very high incomes. Table 7 reports the optimal schedules. Across welfare criteria, the top rate is always 1.00, the first-bracket rate is negative, and the more egalitarian the welfare function, the more progressive the schedule. The paper interprets the negative bottom rate as close in spirit to earnings subsidies such as the EITC or in-work tax credits.
+
+### Main limitations
+The central limitation is that identification is structural and heavily parametric. The model’s credibility depends on the random-utility specification, the extreme-value assumption, and the parametric representation of opportunity densities. There is no external experimental or quasi-experimental source of identification. A second limitation is that opportunities are treated as latent densities rather than observed feasible sets.
+
+### Relevance for my JMP
+This paper is highly useful for framing a bridge between structural labour-supply estimation and normative evaluation. It shows that one can estimate heterogeneous behavioural responses while separately imposing a common welfare metric for policy analysis. That architecture is close to the distinction the project wants between positive choice behavior and normative well-being evaluation. It is very useful for model design because the opportunity side is not collapsed into a single wage or deterministic hours grid.
+
+### Relation to opportunities vs preferences
+This is one of the more useful papers in the literature for separating opportunities from preferences on the positive side. Preferences are heterogeneous and enter the utility function; opportunities are heterogeneous and enter through the density of available jobs. That is stronger than the usual labour-supply setup in which everyone faces essentially the same menu apart from wages and budget constraints. But on the normative side, the paper does not build an explicit theory of opportunities versus preferences.
+
+### Quick takeaway
+Replaces closed-form optimal-tax formulas with a simulation-based optimum from a structural RURO labour-supply model for Norway, showing that optimal schedules feature progressive marginal rates with negative rates at the bottom and 100% at the top. Relevant because it demonstrates that latent job-opportunity densities and a separately imposed common welfare function can be combined for empirical optimal taxation--the same positive/normative split the JMP requires.
+
+
+---
+
+## Rolf Aaberge and Ugo Colombino (2018) — Structural Labour Supply Models and Microsimulation
+
+**Source extracts merged:** Aaberge_and_colombino_2018.md; Aaberge_colombino_2018.md; Aaberge_Colombino_2018.md; markdowns/Aaberge_Colombino_2018.md
+
+### Full citation
+Aaberge, Rolf, and Ugo Colombino. 2018. “Structural Labour Supply Models and Microsimulation.” International Journal of Microsimulation 11(1): 162–197.
+
+### One-sentence contribution
+The paper is a methodological survey that argues for structurally estimated labour-supply models in behavioural microsimulation, compares discrete-choice and random-utility–random-opportunities approaches, and explains how such models can be combined with welfare criteria to evaluate reforms and compute optimal tax-benefit systems.
+
+### Core research question
+How should labour supply be modeled within behavioural microsimulation for policy analysis, and what are the strengths, limitations, and welfare applications of the main structural approaches, especially the discrete-choice model and the random-utility–random-opportunities model?
+
+### Economic setting and context
+This is a methodological review rather than a single-country empirical application. The paper surveys the evolution of behavioural microsimulation, the rise of structural labour-supply modelling from the mid-1990s onward, and the use of such models for tax-benefit reform analysis, in-work benefits, basic income schemes, flat taxes, and optimal taxation. It repeatedly draws illustrative evidence from Norway, Italy, Sweden, Europe, the UK, and the US. The context is explicitly public economics and microsimulation.
+
+### Model / theoretical framework
+The paper is a review of model classes rather than the presentation of one new estimated model. Its main theoretical distinction is between two labour-supply modelling approaches: the discrete-choice model and the random-utility–random-opportunities model. It also briefly discusses stochastic dynamic programming, non-unitary household models, and the taxable-income approach as alternative or complementary strands. In the discrete-choice model, the agent chooses among a finite set of hours or jobs, typically with an individual-specific fixed wage and a random term added to utility. The paper notes that this model is often interpreted in two different ways: either as classic random utility with unobserved utility components, or as a model with measurement or optimization error.
+
+### Key objects
+The main positive objects are the utility function (U), the systematic utility component (v), the random utility component (\varepsilon), the tax-transfer rule (f), and the opportunity density (p(w,h)) or (p(w,h,j)). The paper emphasizes that in RURO, the density of opportunities is not a nuisance term but a central structural object because it represents the labour-demand side and the distribution of jobs available to households. The main normative objects are the common individual welfare function (V(y,h)), money-metric or preference-respecting welfare metrics, and social welfare functions of the primal or dual/rank-dependent type. The paper also formulates the computational optimal-tax problem as a maximization of social welfare subject to incentive-compatibility and budget constraints.
+
+### Data
+Because this is a survey paper, it does not rely on one dataset. Instead, it reviews a large literature and uses illustrative empirical evidence from previous applications. It specifically refers to Norwegian evidence for 1979, 1986, 1994, 2006, and 2011 when discussing the evolution of labour-supply elasticities, and it cites applications for Sweden, Italy, the UK, Europe more broadly, and the US. The paper therefore does not have one unified empirical sample, one country, or one data period.
+
+### Identification / empirical strategy
+The paper is not itself an identification paper, but it takes a clear methodological position. It argues that ex ante policy evaluation requires structural models because one must identify policy-invariant primitives or parameters, whether the model is parametric or nonparametric, utility-based or agent-based, and whether the data are observational or experimental. This is one of the paper’s strongest explicit claims. The identification logic defended in the paper is therefore structural rather than design-based. It does not deny the value of reduced-form or experimental evidence, but argues that such evidence by itself is insufficient for ex ante evaluation unless embedded in a structural framework that identifies policy-invariant parameters.
+
+### Treatment of preferences
+The paper treats preference heterogeneity as central to structural labour-supply modelling. It explicitly notes that structural models are needed when preferences and opportunities are heterogeneous, and it surveys frameworks in which heterogeneity enters via random parameters, flexible functional forms, or household-specific utility structures. It also discusses the interpretation of the random term in DC models and how that interpretation affects whether the deterministic part of utility should be viewed as the “true” utility. At the same time, the paper is very careful not to equate behavioural utility with welfare.
+
+### Treatment of opportunities / constraints
+It repeatedly emphasizes that structural labour-supply models are especially needed when policies create complicated and non-convex opportunity sets and when opportunities are heterogeneous across households. The RURO model is presented precisely as a model in which the opportunity set is unknown to the analyst and represented by a probability density over jobs. The paper clearly states that RURO differs from standard DC models because the agent does not merely choose hours at a fixed wage. Instead, the household chooses among jobs that differ in hours, wage rates, and possibly additional characteristics, while the opportunity density captures the number or relative frequency of different jobs in the choice set. This is an explicit modelling of opportunities, although in latent density form.
+
+### Welfare / normative object
+The paper is not purely positive. A full section is devoted to social evaluation of policy reforms and empirical optimal taxation. It reviews the common-utility-function approach of Deaton-Muellbauer and Hammond, explains why interpersonal comparisons based directly on estimated behavioural utility functions are problematic, and presents a common individual welfare function (V(y,h)) defined over equivalent income and leisure. It also reviews alternative preference-respecting welfare metrics.
+
+### Main findings
+Because this is a survey paper, its “findings” are mainly methodological syntheses. First, it argues that RUM/RURO models currently offer the best compromise between sophistication and tractability for behavioural microsimulation. They can accommodate complicated tax rules, heterogeneous preferences, heterogeneous opportunities, and joint household decisions without the analytic rigidity of older approaches. Second, it argues that ex ante policy evaluation requires structural models. This is one of the most explicit claims in the paper: experimental or reduced-form evidence may be valuable, but it is not sufficient by itself for evaluating policies not yet implemented.
+
+### Main limitations
+The first limitation is that the paper is a survey, not a single internally estimated and tested empirical model. It synthesizes many contributions and takes clear positions, but it does not itself resolve empirical disputes about which model class performs best in all settings. The second limitation, from your perspective, is normative. Although the paper reviews welfare evaluation and emphasizes the distinction between behavioural utility and welfare, it does not provide an axiomatic treatment of opportunities, responsibility, compensation, or reference opportunity sets.
+
+### Relevance for my JMP
+This is one of the best framing papers for your empirical side. It gives a compact but intellectually serious justification for why a jobs-and-wellbeing project should use structural modelling, why opportunities should not be collapsed into preferences, and why welfare evaluation requires a separate normative layer. It is highly useful for model design. The paper’s comparison of DC and RURO, especially its insistence that RURO explicitly models job opportunities and not only hours choice, is directly relevant to your interest in latent jobs and feasible job sets.
+
+### Relation to opportunities vs preferences
+This paper is one of the most useful methodological references for the opportunities-versus-preferences distinction on the positive side. RURO is explicitly presented as a model in which labour supply depends on both preferences and the density of available opportunities, whereas simpler DC models tend to be more restrictive in how they represent the opportunity side. On the normative side, however, the paper remains intermediate rather than definitive. It explains how welfare evaluation can be layered on top of behavioural models, but it does not fully theorize which inequalities should be attributed to preferences and which to opportunities, nor how that distinction should be encoded in an individual well-being measure.
+
+### Quick takeaway
+The most comprehensive methodological survey of structural labour-supply models for microsimulation, arguing that RURO models--which explicitly represent job opportunities as latent densities rather than collapsing labour supply into hours choice--are the best current framework for behavioural policy evaluation. Directly frames the JMP's empirical architecture and explains why welfare evaluation requires a separate normative layer on top of estimated behavioural utility.
+
+
+---
+
+## Richard Audoly, Rory McGee, Sergio Ocampo, and Gonzalo Paz-Pardo (2025) — A Practitioner’s Note on the Shapley-Owen-Shorrocks Decomposition
+
+**Source extracts merged:** Audoly et al_2025.md; markdowns/Audoly_et_al_2025.md
+
+### Full citation
+Audoly, R., McGee, R., Ocampo, S., & Paz-Pardo, G. (2025). A practitioner's note on the Shapley-Owen-Shorrocks decomposition. *Federal Reserve Bank of New York Staff Reports* No. 1163, August 2025.
+
+### One-sentence contribution
+Provides a compact, practitioner-oriented exposition of the Shapley-Owen-Shorrocks decomposition for nonlinear outcomes, showing through worked examples how it yields an additive, order-invariant decomposition of arbitrary functions into contributions of individual inputs or groups of inputs.
+
+### Core research question
+How can one decompose a nonlinear aggregate outcome into contributions of inputs (or groups of inputs) in a way that is additive, symmetric, and interpretable?
+
+### Economic setting and context
+This is a methodological note rather than a country application. Its context is empirical and structural work in which aggregate outcomes, counterfactuals, welfare measures, or fit statistics depend nonlinearly on multiple inputs.
+
+### Model / theoretical framework
+The framework treats the object of interest as a function of several factors and assigns each factor a contribution by averaging its marginal effect over all possible elimination orders. It also discusses grouped decompositions, which are useful when several primitives naturally move together.
+
+### Key objects
+The key objects are the nonlinear outcome function, the null or reference model, the set of factors to be removed and reintroduced, and the contribution assigned to each factor or factor group.
+
+### Data
+There is no original dataset. The paper uses simple examples and implementation guidance.
+
+### Identification / empirical strategy
+There is no econometric identification step. Once the analyst defines the outcome, the factor set, and the reference values, the decomposition is mechanical.
+
+### Treatment of preferences
+Preferences are not modeled directly. They matter only if the decomposed object already embeds preference parameters or preference-driven behavior.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities or constraints. Its value is downstream: if a separate model has already represented opportunities or constraints, their contribution can be decomposed cleanly.
+
+### Welfare / normative object
+The paper does not define a welfare criterion, but it is directly usable for decomposing welfare or inequality statistics produced elsewhere.
+
+### Main findings
+Its main message is methodological: the Shapley-Owen-Shorrocks approach provides an additive and order-invariant decomposition for nonlinear outcomes, and grouped decompositions can make the method practical in richer structural settings.
+
+### Main limitations
+The method is substantively agnostic. Its economic meaning depends entirely on how the analyst defines the underlying outcome, the factors, and the null model, and exact implementation can become computationally costly when the number of factors is large.
+
+### Relevance for my JMP
+High for any downstream decomposition exercise. If your project produces an aggregate well-being or inequality object from preferences, opportunities, pay schedules, and policy, this paper gives a disciplined way to attribute that object across components.
+
+### Relation to opportunities vs preferences
+This is a decomposition tool, not a theory of either concept. Its value is that once a model distinguishes opportunities from preferences, their relative contribution can be measured without arbitrary sequencing.
+
+### Quick takeaway
+A useful methods note for decomposing nonlinear welfare or structural outcomes once the substantive model is already in place.
+
+
+---
+
+## Olivier Bargain and Kristian Orsini (2006) — In-work policies in Europe: Killing two birds with one stone?
+
+**Source extracts merged:** Bargain_orsini_2006.md; markdowns/Bargain_Orsini_2006.md
+
+### Full citation
+Bargain, Olivier, and Kristian Orsini. 2006. “In-work policies in Europe: Killing two birds with one stone?” Labour Economics 13(6): 667–697.
+
+### One-sentence contribution
+The paper compares, for Finland, France, and Germany, a family-income-tested in-work tax credit and a purely individualized low-wage subsidy using EUROMOD plus structural female labor-supply models, and finds that the individualized policy generally dominates on employment while both reforms have only limited differences in poverty reduction.
+
+### Core research question
+Can in-work transfer policies simultaneously reduce poverty and increase social inclusion in continental European welfare states, and how do the answers differ when the policy is means-tested on household income versus individualized on workers’ own low wages?
+
+### Economic setting and context
+The paper studies Finland, France, and Germany, three countries described as facing inactivity traps because generous social assistance creates weak financial returns to work for low-wage households. The policy background is the broader European debate over “making work pay” reforms in contexts where social assistance may discourage labor-market participation. The comparative setting is central. The authors explicitly exploit cross-country heterogeneity in pre-reform tax-benefit systems, earnings distributions, and labor-supply elasticities in order to understand why the same stylized reforms may work differently across countries.
+
+### Model / theoretical framework
+The model class is a structural discrete-choice labor-supply model combined with tax-benefit microsimulation. Female adults choose among a small discrete set of weekly hours alternatives, while household disposable income for each alternative is computed by EUROMOD under the actual system and under each reform scenario. Utility depends on hours, disposable income, and observed household characteristics, plus an extreme-value random term. Equations (1) and (2) on pages 12–13 present the core framework. The framework is positive with policy-evaluation applications.
+
+### Key objects
+The key policy objects are two stylized reforms. The first is a working tax credit (WTC) means-tested on family income and modeled after the British WFTC, extended to childless singles and couples. The second is an individualized low-wage subsidy (LWS) that increases hourly wages up to a country-specific reference wage and then phases out with higher wage rates. Section 3 and the formulas on pages 6–8 define these reforms precisely.
+
+### Data
+The paper uses harmonized microdata integrated in EUROMOD. Finland relies on the 1998 Income Distribution Survey, Germany on the 1998 GSOEP, and France on the 1994 Household Budget Survey inflated to 1998 monetary values. EUROMOD computes taxes, social contributions, and transfers for each household under baseline and reform scenarios. For labor-supply estimation, the analysis is restricted to households with adults aged 25–64 available for the labor market.
+
+### Identification / empirical strategy
+Identification is structural and mainly parametric. The model uses variation in nonlinear tax-benefit rules, wages, household composition, and demographic taste shifters to identify labor-supply preferences. The authors are explicit that the model is not nonparametrically identified and that identification relies on functional-form restrictions, interaction terms, and the nonlinearity of the tax-benefit rules. The paper does not use quasi-experimental variation. Instead, it follows the standard structural discrete-choice tradition: predict wages for non-participants, compute disposable income for each hours alternative with EUROMOD, estimate preferences by maximum likelihood, and then simulate reform responses.
+
+### Treatment of preferences
+Preferences are represented by a quadratic utility function in disposable income and hours, with observed heterogeneity through age, children, and region, plus fixed costs of work and an extreme-value stochastic term. The authors explicitly estimate these preferences separately for women in couples and single women in each country. Equations (1) and (2), together with Tables 8 and 9 in the appendix, describe this structure. At the same time, the paper is cautious about interpretation.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as feasible job sets. Women choose among a discrete set of hours levels, not among jobs with different wages, hours, and non-pecuniary characteristics. There is no latent job density, no explicit opportunity set (A_i), and no direct account of differential job availability. However, the paper is not blind to constraints. It explicitly notes that continental European labor markets are characterized by institutional and demand-side rigidities, that actual hours distributions are concentrated around a few work-hour bundles, and that rationing in hours or in participation may significantly influence the results.
+
+### Welfare / normative object
+The paper is not explicitly normative in the welfare-theory sense. It does not construct an individual welfare measure, equivalent income, or social welfare function for reform ranking. Instead, it adopts pragmatic policy criteria: poverty reduction and social inclusion. This is important because the paper explicitly states that it avoids welfare analysis given the fragile interpretation of the estimated utility functions when demand-side constraints and other omitted factors are present.
+
+### Main findings
+The main employment finding is that the household-based WTC generally has negative net effects on female employment in all three countries. Positive participation effects for single women are offset, and more than offset, by negative participation effects for married women with working partners. The effect is especially strong in France. Table 5 on pages 20–21 is the key source. By contrast, the individualized low-wage subsidy yields positive net employment effects, especially in France and Germany.
+
+### Main limitations
+A first limitation is the treatment of opportunities. The paper openly states that it does not explicitly model the demand side, rationing, life-cycle considerations, or domestic production. A second limitation is that male labor supply is fixed, single men are effectively excluded from the behavioral analysis, and unemployed job seekers are largely treated outside the model. This simplifies the exercise but narrows the behavioral margins that reforms can affect.
+
+### Relevance for my JMP
+This paper is very useful for framing the policy-design problem in labor-supply microsimulation. It shows that “making work pay” reforms cannot be evaluated only on poverty grounds or only on employment grounds; the family unit of assessment is central. It is moderately useful for model design if your empirical framework stays within structural discrete labor supply and tax-benefit microsimulation. It is not useful for explicit job-opportunity-set modeling.
+
+### Relation to opportunities vs preferences
+This paper is materially more useful for preferences and tax-benefit incentives than for opportunities. It studies how estimated female labor-supply responses differ across countries and interact with reform design, but it does not model opportunities as explicit feasible job sets. At the same time, the paper is valuable because it openly acknowledges that what appears as preference heterogeneity may partly reflect omitted constraints.
+
+### Quick takeaway
+Compares family-income-tested tax credits with individualized low-wage subsidies across Finland, France, and Germany using EUROMOD plus structural female labour-supply models, finding that individualized policies dominate on employment while both reduce poverty only modestly. Relevant for the JMP because it shows that household-level policy design can create negative secondary-earner incentives, highlighting why the unit of analysis and the budget-set structure (the y component) matter for welfare evaluation.
+
+
+---
+
+## Olivier Bargain, Marco Caliendo, Peter Haan, and Kristian Orsini (2010) — “Making work pay” in a rationed labor market
+
+**Source extracts merged:** Bargain_et_al_2010.md; markdowns/Bargain_et_al_2010.md
+
+### Full citation
+Bargain, Olivier, Marco Caliendo, Peter Haan, and Kristian Orsini. 2010. “Making work pay” in a rationed labor market. Journal of Population Economics 23: 323–351.
+
+### One-sentence contribution
+The paper combines a structural discrete-choice labour-supply model with a double-hurdle rationing model for Germany and shows that low-wage subsidies dominate low-earnings subsidies once involuntary unemployment is taken seriously.
+
+### Core research question
+What are the labour-supply and employment effects of two individualized “making work pay” reforms in Germany, and how much does accounting for involuntary unemployment and labour-market rationing matter for those predictions?
+
+### Economic setting and context
+The setting is Germany in the early 2000s, with particular attention to low-paid employment and in-work transfer design. The paper studies the mini-job reform and a hypothetical reform inspired by the Belgian Employment Bonus. It places these policies in comparison with family-based tax credits in the US and UK, emphasizing that individualized transfers avoid the direct negative participation incentives for secondary earners that arise under family-income conditioning. The policy problem is explicitly one of labour-market activation under substantial demand-side constraints.
+
+### Model / theoretical framework
+The model class is a static structural discrete-choice labour-supply model combined with a double-hurdle rationing model. Households choose among discrete hours options, with net incomes generated by tax-benefit microsimulation. For singles and couples, utility depends on leisure, disposable income, and household characteristics, plus an extreme-value random term. The crucial extension is the second hurdle. After a household chooses desired labour supply, employment may still be blocked by involuntary unemployment.
+
+### Key objects
+The main positive objects are discrete desired hours choices, disposable income by choice, utility over leisure and income, and the latent involuntary-unemployment indicator. The rationing equation summarizes the probability that a worker who wishes to participate is constrained by demand-side conditions. The key policy objects are the German mini-job reform and the hypothetical Employment Bonus. The mini-job reform targets low earnings and expands earnings exempt from social security contributions.
+
+### Data
+The data come from the 2003 wave of the German Socio-Economic Panel, referring to fiscal year 2002. The sample excludes cases where relevant adults are self-employed, retired, disabled, on maternity leave, or in full-time education. Labour supply is modeled separately for single women, single men, couples with both spouses flexible, couples with only the man flexible, and couples with only the woman flexible. Page 8, Table 2 reports descriptive statistics and sample sizes for each group.
+
+### Identification / empirical strategy
+Identification is structural, not quasi-experimental. The labour-supply component is identified from variation in budget sets, wages, household composition, and observed hours choices. The rationing component is identified using regional labour-market conditions and past employment histories, together with survey information distinguishing involuntary from voluntary unemployment. A particularly important identifying device is the use of two survey questions on job search and readiness to work, following the ILO definition, to classify unemployed individuals as involuntarily unemployed. The model also exploits information on desired part-time versus full-time work among the unemployed.
+
+### Treatment of preferences
+Preferences are modeled through a standard structural utility function over leisure and disposable income with household taste shifters. In this sense, the paper remains within the conventional discrete labour-supply tradition. Part-time dummies are added to capture specific utility or disutility associated with part-time work. However, one of the main messages is that unconstrained models overstate the taste for leisure because they misclassify some involuntary unemployment as chosen inactivity.
+
+### Treatment of opportunities / constraints
+The paper does not model a full opportunity set of jobs, but it does model an explicit constraint on participation through involuntary unemployment. Opportunities therefore enter through the probability of obtaining employment rather than through a universal free-choice assumption. The paper is very clear that unconstrained labour-supply models impose “erroneous freedom of choice.” That is, they wrongly treat all non-employment as voluntary. The constrained model corrects this by separating desired participation from actual employment. In that sense, the paper helps distinguish preference heterogeneity from opportunity heterogeneity, although only along the employment-rationing margin.
+
+### Welfare / normative object
+The paper is primarily positive with policy-efficiency applications. It does not evaluate welfare using EV, equivalent income, or a planner’s welfare function. The main outcomes are participation, hours worked, full-time-equivalent employment, and budgetary cost-efficiency. Normatively, the paper does discuss the design principle that policy should distinguish low effort from low productivity.
+
+### Main findings
+The main substantive finding is that the Employment Bonus strongly dominates the mini-job reform in both employment efficiency and total-hours effects. The mini-job reform produces only a modest positive participation effect and a negative intensive-margin effect, yielding a small or negative total hours effect. By contrast, the Employment Bonus generates much larger participation gains and does not create the same part-time trap. Using the constrained model, the paper predicts about 43,000 new participants from the mini-job reform, but a negative net hours effect of around minus 11,000 FTE. The paper also stresses that ignoring rationing can materially overstate the employment effects of making-work-pay reforms.
+
+### Main limitations
+A first limitation is that opportunities are modeled only through employment rationing, not through a richer job-choice set. The model therefore captures one important margin of constrained opportunity but not the multidimensional structure of feasible jobs. A second limitation is the partial-equilibrium treatment of rationing. The individual rationing probability is assumed not to change after reform.
+
+### Relevance for my JMP
+This paper is highly useful for framing the idea that non-employment should not automatically be interpreted as chosen leisure. For any jobs-and-wellbeing framework, that is a foundational point. It is useful for model design if your empirical work needs to incorporate demand-side rationing. The double-hurdle structure gives a concrete way to separate desired labour supply from actual employment.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant on the positive side of the opportunities-versus-preferences distinction. Its main claim is precisely that unconstrained models attribute too much to preferences because they ignore involuntary unemployment. In that sense, it provides direct evidence that some observed inactivity reflects constrained opportunities rather than chosen leisure. But it does not settle the normative side of the distinction.
+
+### Quick takeaway
+Combines a structural discrete-choice labour-supply model with a double-hurdle rationing model for Germany, showing that unconstrained models wrongly attribute involuntary unemployment to leisure preferences and that low-wage subsidies dominate low-earnings subsidies once rationing is taken seriously. Directly motivates the JMP's emphasis on modelling A as a constrained feasible set rather than assuming free choice.
+
+
+---
+
+## Olivier Bargain and Karina Doorley (2013) — Putting Structure on the RD Design: Social Transfers and Youth Inactivity in France
+
+**Source extracts merged:** Bargain_Doorley_2013.md; markdowns/Bargain_Doorley_2013.md
+
+### Full citation
+Bargain, Olivier, and Karina Doorley. 2013. Putting Structure on the RD Design: Social Transfers and Youth Inactivity in France. IZA Discussion Paper No. 7508.
+
+### One-sentence contribution
+The paper combines a regression-discontinuity design with a structural participation model to identify the employment effect of age-conditioned social assistance in France and to simulate counterfactual youth-welfare reforms that the reduced-form RD design alone cannot address.
+
+### Core research question
+Can one combine a regression-discontinuity design and a structural labor-supply model to identify the causal employment effect of French social assistance eligibility at age 25 and then use that identified model to predict counterfactual youth-welfare reforms, including the extension of welfare to the under-25s and the introduction of in-work benefits?
+
+### Economic setting and context
+The institutional setting is the French minimum-income system before and after the 2009 reform. Before 2009, the main social assistance program was the Revenu Minimum d’Insertion (RMI), a last-resort transfer available to French residents aged at least 25, unless younger individuals had dependent children. For childless singles under 25, the age condition created a sharp discontinuity in eligibility. The policy relevance is immediate.
+
+### Model / theoretical framework
+The paper combines two frameworks. First, it uses a sharp regression-discontinuity design based on the fact that childless single individuals become eligible for RMI at age 25. Second, it embeds that discontinuity in a static structural labor-supply model in which individuals choose whether to participate based on financial incentives to work. The structural model is deliberately simple at the behavioral margin studied. The general setup is a discrete-choice labor-supply model over hours and consumption, but for the empirical core the authors focus on the participation margin only.
+
+### Key objects
+The central policy object is disposable income as a function of earnings and age, (C(E;A)). Under the pre-2009 system, this includes housing subsidies and, for those aged at least 25, the RMI transfer with a taper rate on earnings. The age threshold directly shifts out-of-work disposable income and therefore the gain from participation. The key reduced-form object is the RD treatment effect at age 25, interpreted as the discontinuous effect of eligibility for RMI on employment.
+
+### Data
+The main source for both the RD analysis and the structural estimation is the 1999 French Census, using a 1/4 public sample of the population. This very large dataset is necessary because RD estimation around age thresholds requires large cell sizes, especially once the sample is restricted to childless single individuals aged 20–30. Because the Census does not contain labor income or benefit receipt, wage imputation is performed using the French Labor Force Survey, mainly pooled over 1997–2001. The authors estimate wage equations on the LFS and predict wages into the Census; they also check robustness with a matching-based wage imputation procedure.
+
+### Identification / empirical strategy
+The identification logic is the paper’s strongest feature. The reduced-form treatment effect is identified by a sharp RD design exploiting the fact that childless singles below age 25 are not eligible for RMI while otherwise similar individuals just above age 25 are. Under local continuity of potential outcomes in age, any discontinuity in employment at the threshold can be attributed to eligibility. The structural model is then identified using the same discontinuity plus an additional exclusion restriction: the marginal utility of consumption is assumed not to vary with age. Age is allowed to affect participation through a smooth function, through wages, and through the tax-benefit schedule, but not through the coefficient on consumption itself.
+
+### Treatment of preferences
+Preferences enter through a static participation utility model in which individuals compare utility from work and non-work as a function of disposable income and age-related taste shifters. The model also includes unobserved heterogeneity in the coefficient on in-work income. However, the paper’s real emphasis is not on preference heterogeneity as an end in itself. Preferences are a behavioral ingredient needed to map the RD discontinuity into a structural participation model.
+
+### Treatment of opportunities / constraints
+The paper does not model explicit feasible job sets or latent job distributions. There is no RURO-type opportunity density and no direct representation of a set (A_i) of feasible jobs. Still, the paper is not a pure unconstrained labor-supply model either. Constraints enter through at least three channels: the age-based eligibility rule, the minimum wage floor in wage imputation, and reduced-form participation or search costs that partly absorb labor-market rationing and weak labor-market attachment. The authors explicitly acknowledge that non-employment can reflect low gains to work, high preference for leisure, productivity below the minimum wage, or “other” non-employment such as frictional or cyclical unemployment.
+
+### Welfare / normative object
+The paper is not a welfare-evaluation paper in the normative sense. It does not construct an individual welfare metric, an equivalent-income measure, or a social welfare function. It does not compare policies using welfare weights or inequality aversion. The closest thing to a normative issue is the policy-design question: whether extending social assistance to young people creates inactivity traps and whether adding an in-work component can offset them.
+
+### Main findings
+The headline result is that eligibility for the pre-2009 French RMI at age 25 reduces employment among childless singles, especially among high-school dropouts. The abstract reports a drop of between 5 and 9% in the employment rate of young high-school dropouts, and the main RD estimates imply a discontinuity of around 3.9 percentage points for that group. Table 2 is central here. The structural model reproduces the local RD effect reasonably well. Table 2 shows that for high-school dropouts the RD estimate and the structural model both imply roughly a 3.9 percentage point employment effect in the cubic-age specification.
+
+### Main limitations
+A first limitation is that the model is deliberately narrow. It focuses on participation rather than a richer labor-supply or job-choice problem. This is appropriate for the discontinuity studied, but it rules out analysis of within-employment margins, job quality, and richer opportunity sets. A second limitation is the strong exclusion restriction needed for extrapolation: the marginal utility of consumption is assumed not to vary with age.
+
+### Relevance for my JMP
+This paper is highly useful for framing the methodological problem of combining internal validity and external validity. It gives a clean example of how a credible local design can discipline a structural model rather than compete with it. It is useful for model design if your empirical work needs to identify a structural participation or labor-supply model from a discontinuity or other sharp institutional rule. The paper is especially relevant if you want stepwise identification rather than relying only on global functional form.
+
+### Relation to opportunities vs preferences
+This paper is more helpful for identifying incentive effects than for separating opportunities from preferences. It shows that some observed inactivity among vulnerable youth is responsive to age-conditioned welfare eligibility and to the presence or absence of in-work benefits. That is informative about the role of incentives. But it does not provide a clean opportunity-set framework.
+
+### Quick takeaway
+Combines a regression-discontinuity design with a structural participation model to identify the causal employment effect of age-conditioned French social assistance, then uses the identified model for counterfactual youth-welfare reform simulations. Useful for the JMP's empirical strategy because it demonstrates how credible local identification from a discontinuity can discipline a structural model used for out-of-sample policy prediction.
+
+
+---
+
+## Olivier Bargain, André Decoster, Mathias Dolls, Dirk Neumann, Andreas Peichl, and Sebastian Siegloch (2013) — Welfare, labor supply and heterogeneous preferences: evidence for Europe and the US
+
+**Source extracts merged:** Bargain_et_al_2013.md; markdowns/Bargain_et_al_2013.md
+
+### Full citation
+Bargain, Olivier, André Decoster, Mathias Dolls, Dirk Neumann, Andreas Peichl, and Sebastian Siegloch. 2013. “Welfare, labor supply and heterogeneous preferences: evidence for Europe and the US.” Social Choice and Welfare 41: 789–817.
+
+### One-sentence contribution
+The paper estimates harmonized labour-supply models for married women in 11 European countries and the US, then shows that cross-country welfare rankings change markedly across Fleurbaey-inspired welfare metrics because the main driver is preference heterogeneity rather than demographic composition.
+
+### Core research question
+How should one compare individual well-being across countries when welfare depends on both consumption and leisure and when individuals have heterogeneous preferences over that trade-off?
+
+### Economic setting and context
+The paper is an international comparative exercise covering Austria, Belgium, Denmark, Finland, France, Germany, Ireland, the Netherlands, Portugal, Sweden, the United Kingdom, and the United States. It is motivated by the “beyond GDP” agenda after the Stiglitz Commission and by recent social-choice work on welfare comparisons under heterogeneous preferences. The empirical focus is narrow but deliberate. The authors estimate labor supply only for married women, arguing that this group exhibits substantial variation in hours and participation and is therefore especially useful for identifying consumption-leisure preferences in a comparable way across countries.
+
+### Model / theoretical framework
+The model class is a structural discrete-choice labor supply model with random utility. Households choose among discrete hours alternatives for married women, while husbands’ labor supply is fixed. Utility depends on household net income and female leisure, with observed heterogeneity through taste shifters and unobserved heterogeneity through extreme-value random terms. The framework is positive in its estimation stage and normative in its welfare-comparison stage. Positively, it estimates country-specific and household-specific consumption-leisure preferences from labor supply behaviour under national tax-benefit rules.
+
+### Key objects
+The main positive objects are household net income, female labor hours, leisure, gross wages, non-labor income, and the estimated utility parameters of the Box–Cox consumption-leisure utility function. The key behavioural object is the marginal rate of substitution between consumption and labor time, which the authors use to summarize preference heterogeneity across households and countries. Table 2 is central here. The key normative objects are the three welfare metrics derived from fair-allocation theory: the “wage” metric, the “rent + reference wage” metric, and the “rent” metric.
+
+### Data
+The paper uses harmonized microdata for 11 European countries and the US. For EU countries, the underlying data correspond to either 1998 or 2001 depending on the country and are paired with EUROMOD simulations; for the US, the paper uses 2006 IPUMS-CPS data referring to year 2005 and computes taxes and transfers with TAXSIM. Table 1 reports average net income, non-labor income, female wages, female hours, and participation rates by country. The sample is restricted to married couples in which husbands work at least 30 hours per week.
+
+### Identification / empirical strategy
+Identification is structural. The labor supply model is identified by variation in net income across discrete hours alternatives generated by national tax-benefit systems, together with variation in wages, non-labor income, and demographic taste shifters. The paper explicitly relies on the standard structural identification logic of discrete labor supply models rather than on quasi-experimental variation. The crucial identification target is not a treatment effect but the shape of consumption-leisure preferences. Once those are estimated, the paper derives indifference curves and then computes the welfare metrics.
+
+### Treatment of preferences
+This is the central contribution of the paper. Preferences are not treated as nuisance heterogeneity to be eliminated. Instead, the paper estimates them explicitly and then asks how welfare comparisons change when this heterogeneity is retained rather than suppressed. The paper contrasts the standard reference-preference approach, where all households are evaluated using the preferences of a fixed reference household, with fair-allocation metrics that fully respect heterogeneous preferences.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the feasible-set sense. There is no set-valued opportunity object, no latent job distribution, and no direct account of labour-demand restrictions. The budget set is determined by tax-benefit rules and wages, but the paper is not about opportunities as a separate welfare-relevant object. As a result, the paper helps distinguish preferences from income-only welfare metrics, but it does not help much with distinguishing preferences from opportunities. In your terms, the paper is strong on (R), fairly standard on (z) and (y), and weak on (A).
+
+### Welfare / normative object
+The paper is explicitly normative. Its core normative object is individual well-being measured in the consumption-leisure space under alternative interpersonal welfare metrics. It does not aggregate these metrics into a social welfare function; it focuses on pure individual orderings instead. The main normative issue is how to treat heterogeneous preferences.
+
+### Main findings
+The first main finding is that once heterogeneous preferences are fully respected, the ranking of households across countries depends strongly on the chosen welfare metric. Tables 3 and 4 show substantial reranking, and the paper highlights average changes in percentile positions of at least 15 percentage points for 7 out of 12 countries when moving from one extreme metric to another. The second main finding is that these differences are driven primarily by country-specific preference parameters rather than by demographic composition alone. Countries with relatively high female work attachment, such as the US and Nordic countries, rank better under metrics that favor a higher willingness to work, while Austria, Ireland, Germany, and the Netherlands rank better under metrics more favorable to lower willingness to work.
+
+### Main limitations
+A first limitation is that the paper does not model opportunities separately from preferences. This is the most important limitation relative to your (W(z,R,A;y)) framework. Since the labor supply model is standard discrete choice, some country differences in actual opportunity conditions could be picked up as taste differences. A second limitation is the narrow population focus.
+
+### Relevance for my JMP
+This paper is central for framing the welfare-measurement side of the JMP. It provides a direct empirical example of how welfare comparisons become normatively sensitive once preference heterogeneity is not assumed away. It is moderately useful for model design. The labour-supply estimation framework is standard and useful if your empirical object remains the consumption-leisure trade-off, but it is not a model of explicit opportunity sets or latent jobs.
+
+### Relation to opportunities vs preferences
+This paper is much more useful for preferences than for opportunities. It is one of the clearest empirical demonstrations that the normative treatment of heterogeneous preferences materially changes welfare comparisons. But it says little about opportunities as feasible sets or job access. So it should not be read as a general solution to the opportunities-versus-preferences problem.
+
+### Quick takeaway
+Estimates harmonised labour-supply models across 12 countries and shows that cross-country welfare rankings flip depending on the normative metric used, because the main driver of divergence is preference heterogeneity rather than demographic composition. Demonstrates empirically that the choice between Fleurbaey-inspired welfare criteria is not innocuous -- directly motivating why $W(z,R,A;y)$ must specify how preferences enter the welfare object.
+
+
+---
+
+## Olivier Bargain, Mathias Dolls, Dirk Neumann, Andreas Peichl, and Sebastian Siegloch (2014) — Comparing inequality aversion across countries when labor supply responses differ
+
+**Source extracts merged:** Bargain_et_al_2014.md; markdowns/Bargain_et_al_2014.md
+
+### Full citation
+Bargain, Olivier, Mathias Dolls, Dirk Neumann, Andreas Peichl, and Sebastian Siegloch. 2014. “Comparing inequality aversion across countries when labor supply responses differ.” International Tax and Public Finance 21: 845–873.
+
+### One-sentence contribution
+The paper inverts Saez's discrete optimal-tax model using harmonized country-specific labour-supply elasticities to recover the inequality-aversion parameter implicit in actual tax-benefit systems, and shows that using common elasticities materially distorts the cross-country ranking.
+
+### Core research question
+To what extent do social inequality aversion parameters differ across countries once one controls for actual country differences in labor supply responses, rather than imposing common “plausible” elasticities from the literature?
+
+### Economic setting and context
+The paper is a cross-country comparative study of redistribution and optimal-tax primitives in 17 European countries and the US. It focuses on direct taxes and transfers for childless single individuals and interprets observed tax-benefit systems through the lens of a discrete Mirrleesian/Saez-style optimal tax model. The context is explicitly normative public economics. The authors are interested in the equity-efficiency trade-off embodied in actual systems, not just in descriptive redistribution.
+
+### Model / theoretical framework
+The model class combines two pieces. The first is a structural discrete-choice labor supply model for childless singles, estimated country by country. The second is the discrete optimal income tax model of Saez (2002), formulated over a small number of income groups with extensive- and intensive-margin elasticities. The empirical strategy is to estimate the former and invert the latter. Agents are childless single individuals who choose labor supply over discrete hours categories.
+
+### Key objects
+The main positive objects are gross income (Y_i), disposable income (C_i), effective tax levels (T_i), extensive-margin elasticities (\eta_i), and intensive-margin elasticities (\zeta_i). These are defined over discrete income groups rather than continuously at the individual level. Equations (1)–(3) on pages 5–6 are central. The main normative objects are the marginal social welfare weights (g_i) assigned to each income group and the scalar social inequality-aversion parameter (\gamma), recovered through the parameterization This is the paper’s key summary measure of redistributive tastes.
+
+### Data
+The paper uses harmonized household microdata for 17 EU countries and the US, linked to tax-benefit simulation tools. EU countries are analyzed with EUROMOD using policy years 1998 and/or 2001 for EU-15 countries and 2005 for Estonia, Hungary, and Poland. The US is analyzed with TAXSIM combined with IPUMS-CPS 2006 data referring to 2005 incomes. The sample is restricted to childless single individuals aged 18–64 who are potential salary workers.
+
+### Identification / empirical strategy
+Identification has two layers. The first layer is identification of labor supply behavior. The paper estimates country-specific structural labor supply models using variation in net incomes generated by detailed nonlinear tax-benefit simulation, plus variation in wages and demographic characteristics. The authors explicitly rely on the structural identification logic common in discrete labor supply models, with tax-benefit nonlinearities as a key parametric source of identification. The second layer is identification of social inequality aversion.
+
+### Treatment of preferences
+The paper clearly distinguishes individual consumption-leisure preferences from social redistributive preferences. Individual preferences are estimated through the structural labor supply model. Social preferences are then recovered from the tax-benefit system via the optimal-tax inversion. This separation is one of the paper’s strongest conceptual features.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as feasible sets, job offer distributions, or latent opportunity structures. Instead, the behavioral side is standard structural labor supply with fixed costs and tax-benefit constraints. The only sense in which constraints enter beyond the budget set is through fixed costs of work and the institutional structure of tax-benefit schedules. The authors note that fixed costs can partly account for labor-market restrictions, but this remains implicit and secondary. The paper is therefore not useful for actual opportunity sets, reference opportunity sets, or decomposition into opportunity versus preference disadvantage.
+
+### Welfare / normative object
+The paper is explicitly normative. Its central normative object is the degree of social inequality aversion (\gamma) implicit in actual tax-benefit systems when these systems are treated as optimal. The recovered (\gamma) summarizes how Rawlsian versus utilitarian the planner’s redistributive preferences must be, given labor supply responses and the existing system. The paper therefore does not evaluate welfare at the individual level using EV, equivalent income, or fair-allocation metrics.
+
+### Main findings
+The first main finding is that labor supply responses differ less across countries than is often presumed, but these differences are still large enough to affect the ranking of revealed inequality aversion across countries. Figure 2 on page 12 emphasizes that mean participation elasticities mostly lie in a relatively narrow range, yet Figure 3 on page 15 shows meaningful reranking once country-specific elasticities are used instead of uniform ones. The second main finding is substantive: the recovered parameters cluster countries into broadly utilitarian systems in Southern and Eastern Europe and the US, intermediate cases in Continental Europe, and more Rawlsian or strongly inequality-averse systems in the Nordics and Belgium. Extensive-margin responses are systematically larger than intensive-margin responses, especially near the bottom, which is exactly why country-specific behavior matters for the inversion.
+
+### Main limitations
+A first limitation is the strong optimality assumption. The inversion only works if the observed tax-benefit system is treated as an optimal response of the planner. Real systems may instead reflect political frictions, historical accidents, or partial reforms. The paper explicitly acknowledges that it remains agnostic about the political process and uses the social planner as a simplified proxy.
+
+### Relevance for my JMP
+This paper is very useful for framing the difference between individual behavioral preferences and social redistributive preferences. It gives a concrete comparative implementation of that distinction. It is moderately useful for model design if your empirical work remains within standard discrete labor supply and public-finance inversion. It is not useful for explicit opportunity-set modeling.
+
+### Relation to opportunities vs preferences
+This paper is much more useful for preferences and redistribution than for opportunities. It distinguishes individual consumption-leisure preferences from social redistributive tastes, but it does not distinguish preferences from opportunities in the sense of job access or feasible-set heterogeneity. It is not a paper about opportunity-sensitive welfare measurement.
+
+### Quick takeaway
+Inverts Saez's optimal-tax model using country-specific labour-supply elasticities to recover the inequality-aversion parameter implicit in 17 European and US tax-benefit systems, showing that using common elasticities materially distorts the cross-country ranking. Relevant for the JMP because it cleanly separates individual consumption-leisure preferences from social redistributive preferences--a distinction that maps onto the R versus normative-aggregation layers in W(z,R,A;y).
+
+
+---
+
+## Olivier Bargain and Andreas Peichl (2016) — Own-wage labor supply elasticities: variation across time and estimation methods
+
+**Source extracts merged:** Bargain_et_al_2016.md; Bargain_peichl_2016.md; Bargain_Peichl_2016.md; markdowns/Bargain_Peichl_2016.md
+
+### Full citation
+Bargain, Olivier, and Andreas Peichl. 2016. “Own-wage labor supply elasticities: variation across time and estimation methods.” IZA Journal of Labor Economics 5:10.
+
+### One-sentence contribution
+The paper surveys static labor-supply elasticity estimates for Western Europe and the US and shows, through a meta-analysis, that the major source of variation across studies is the observation period—especially the long decline in elasticities since the 1980s—rather than the estimation method itself.
+
+### Core research question
+Why do own-wage labor-supply elasticities vary so much across studies, and in particular how much of that variation is due to changes over time versus differences in estimation methods?
+
+### Economic setting and context
+The paper is a review and meta-analysis rather than a single-country application. Its empirical universe is the literature on static labor-supply models for Western Europe and the US, with particular attention to married women, single mothers, men, and childless singles. The context is tax-benefit policy analysis, where labor-supply elasticities are used to simulate reforms or calibrate optimal-tax models. The policy motivation is explicit from the first page: the size of labor-supply responses matters for ex ante evaluation of tax-benefit reforms and for optimal-tax calculations, yet there is “huge variation” in the literature and little agreement on which elasticity values are credible for policy use.
+
+### Model / theoretical framework
+The paper does not present one new structural behavioral model. Instead, it reviews three broad empirical approaches to static labor-supply estimation. The first is the traditional continuous-hours/Hausman approach, relying on labor-supply functions derived from consumption-leisure preferences and local linearization or related treatments of budget sets. The second is the discrete-choice structural approach associated with van Soest-type models, where individuals choose among discrete hours alternatives under full tax-benefit simulation. The third is the natural-experiment or quasi-experimental approach, which uses policy reforms or discontinuities to estimate labor-supply responses without fully specifying a structural model.
+
+### Key objects
+The central objects are uncompensated own-wage elasticities, income elasticities, and their variation across demographic groups, countries, periods, and methods. The paper defines the uncompensated wage elasticity as the income elasticity as and, using the Slutsky equation, the compensated wage elasticity as These formulas appear in Section 3 and are among the most useful formal statements in the paper. A second key object is the study-level dataset assembled for the survey and meta-analysis. The paper compares 282 elasticity estimates from 92 studies, including 156 wage elasticities for individuals in couples, 70 wage elasticities for single individuals and lone parents, and 56 income elasticities.
+
+### Data
+Because this is a review article, there is no single micro dataset. The paper instead constructs a database of elasticity estimates extracted from the literature. The evidence base covers both Western Europe and the US and spans a long period, roughly from the late 1960s to the mid-2000s depending on country and study. The survey tables are themselves a major empirical contribution.
+
+### Identification / empirical strategy
+The paper is not a new identification study in the usual microeconometric sense. Rather, it reviews the identification logic of the underlying literature. The continuous/Hausman approach relies on cross-sectional variation in after-tax wages and virtual income, with endogeneity and measurement-error issues around wages and non-labor income. The discrete-choice approach relies mainly on nonlinearities, discontinuities, and non-convexities in tax-benefit schedules, together with demographic taste shifters and sometimes policy variation over time or across jurisdictions. The natural-experiment literature relies on reforms or discontinuities for reduced-form identification.
+
+### Treatment of preferences
+Preferences are treated as the deep behavioral object in the underlying labor-supply literature, but the paper is careful not to overstate what observed cross-study variation tells us about them. It explicitly notes earlier evidence, especially Bargain et al. (2014), showing that only a small share of international variation in elasticities is driven by genuine cross-country differences in work preferences. This is an important analytical stance: the paper resists the temptation to interpret every elasticity difference as a preference difference. At the same time, the paper accepts that time changes may reflect changes in preferences, especially changing female attachment to the labor market.
+
+### Treatment of opportunities / constraints
+This section is where the paper is least aligned with your core framework. The review is centered on static consumption-leisure labor-supply models and their estimated elasticities. Opportunities are not represented as feasible job sets, latent job distributions, or explicit labor-demand opportunity structures. There is no direct analogue of (A) in the paper’s main conceptual apparatus. That said, the review does acknowledge various empirical constraints that appear in the literature: fixed costs of work, part-time dummies, unemployment risk, welfare participation, childcare costs, and in some cases rationing.
+
+### Welfare / normative object
+The paper is not an individual well-being paper and not an explicit social-welfare paper either. Its interest in normative public economics is indirect: labor-supply elasticities are needed inputs for optimal tax calculations and ex ante policy simulations. The clearest illustration is in the conclusion, where the paper notes that different elasticity assumptions can generate very different optimal top tax rates in Diamond–Saez-style calculations. Thus the normative object is not welfare itself, but a policy-analytic parameter.
+
+### Main findings
+The first major finding is a confirmation and refinement of the standard demographic ranking. Married women have the largest body of evidence and relatively large wage elasticities; single mothers also exhibit relatively large elasticities; men and childless singles generally show much smaller elasticities. Figures 1 and 2 on page 16 visually summarize this distribution across demographic groups and countries. The second major finding is the paper’s headline result: there is a strong downward trend in labor-supply elasticities over time, especially for married women and single mothers. Figure 3 on pages 19–20 shows a clear negative correlation between the observation period and the elasticity size.
+
+### Main limitations
+A first limitation is that the paper is a meta-review, not a harmonized re-estimation of all studies. Even though the survey is extensive, the underlying estimates differ in sample selection, elasticity definition, budget-constraint treatment, and institutional coverage. The authors themselves stress that one should not expect one “right” elasticity. A second limitation is that the meta-analysis is not causally identified.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it shows that elasticity choice is itself a substantive research decision. In any jobs-and-wellbeing or structural public-economics project, one cannot simply pick a “standard” wage elasticity without regard to demographic group and period. It is moderately useful for model design. The review clarifies the strengths and weaknesses of the Hausman and discrete-choice traditions and supports the use of discrete-choice models for policy simulation.
+
+### Relation to opportunities vs preferences
+This paper is much more useful for preferences than for opportunities. Its central concern is how measured labor-supply responses vary across demographic groups, periods, and methods, and how much of that variation can plausibly be attributed to changing work preferences or related behavioral factors. But it does not offer an opportunity-set framework. It says very little about whether low or declining responsiveness is due to worse or tighter opportunities rather than different preferences.
+
+### Quick takeaway
+Meta-analysis showing that variation in estimated labour-supply elasticities is driven primarily by the observation period -- not the estimation method -- with a secular decline since the 1980s. For any structural welfare project, this means that "the" wage elasticity is a substantive choice, not a settled parameter, and discrete-choice models are better suited for policy simulation than Hausman-type continuous models.
+
+
+---
+
+## Gary S. Becker, Tomas J. Philipson, and Rodrigo R. Soares (2005) — The Quantity and Quality of Life and the Evolution of World Inequality
+
+**Source extracts merged:** Becker_et_al_2005.md; markdowns/Becker_et_al_2005.md
+
+### Full citation
+Becker, G. S., Philipson, T. J., & Soares, R. R. (2005). The quantity and quality of life and the evolution of world inequality. *American Economic Review*, 95(1), 277--291.
+
+### One-sentence contribution
+Constructs a "full income" measure incorporating the monetary value of longevity gains alongside income growth, showing that cross-country welfare inequality fell substantially between 1960 and 2000 once health improvements are included, even though income inequality alone showed no such convergence.
+
+### Core research question
+How does the evolution of cross-country inequality change once welfare is measured by "full income" (income + monetised longevity gains) rather than by income alone?
+
+### Economic setting and context
+The paper studies welfare inequality across countries in the postwar period. The main empirical comparison uses 96 countries, covering more than 82 percent of the world population, and tracks income per capita and life expectancy from 1960 to 2000. A second exercise uses WHO mortality data for 49 countries to decompose life expectancy changes by age group and broad cause-of-death category between 1965 and 1995. Table 1 reports the contrasting evolution of income and life expectancy inequality; Tables 2 and 3 report the valuation of longevity gains and the implied changes in “full income” inequality.
+
+### Model / theoretical framework
+The model class is a calibrated lifetime welfare-accounting framework. The key theoretical object is an indirect utility function (V(Y,S)), where (Y) is lifetime income and (S) is the survival function. The individual chooses a consumption path to maximize discounted expected utility subject to a lifetime budget constraint The budget setup assumes full annuity insurance or, equivalently, complete contingent claims markets. The paper then defines the monetary value of an infra-marginal change in longevity as the income increment (W(S,S')) that makes the individual indifferent between the old survival schedule with compensation and the new survival schedule without compensation: At the annual level, this becomes (w(S,S')), and “full-income” growth is the income growth rate augmented by this health valuation. The framework is positive with welfare-accounting content.
+
+### Key objects
+The central objects are the indirect utility function (V(Y,S)), the instantaneous utility function (u(c)), the annuity value of survival (A(S)=\int_0^\infty e^{-rt}S(t)dt), the yearly value of longevity gains (w(S,S')), the lifetime value (W(S,S')), and the “full income” growth rate (g). The paper also defines the hypothetical life-cycle individual (HLCI), who receives the country’s per capita income in every year of life and faces the country’s cross-sectional survival function throughout life. For the decomposition exercise, the key additional objects are counterfactual survival functions that isolate changes in mortality by age group and cause of death, the implied counterfactual life expectancy levels, and the decomposition of the regression-to-the-mean coefficient in life expectancy into age-cause-specific contributions.
+
+### Data
+The main income data come from Penn World Tables 6.1, using GDP per capita adjusted for terms of trade. The main health data come from the World Bank’s World Development Indicators, using life expectancy at birth. The main sample contains 96 countries and covers 1960, 1990, and 2000 for the inequality comparisons. Table 1 reports dispersion statistics for income per capita and life expectancy; Table 2 reports the monetary value of longevity gains by region and for poorer versus richer countries; Table 3 reports inequality measures for “full income.” For the cause-of-death decomposition, the paper uses the World Health Organization Mortality Database.
+
+### Identification / empirical strategy
+This is not an identification paper in the econometric causal sense. The paper is a calibration-and-accounting exercise. The variation used comes from observed cross-country changes in income per capita, life expectancy, and mortality by cause and age, combined with a calibrated lifetime utility model that assigns monetary values to survival gains. The crucial assumptions are strong and explicit: full annuity insurance or complete contingent claims markets, the HLCI representation, a common instantaneous utility function, and parameter calibration using values from the “value of life” and intertemporal-substitution literatures. The paper calibrates (u(c)) using parameters such as (e=0.346), (\gamma=1.250), and (r=0.03), with the calibration anchored partly in U.S. data.
+
+### Treatment of preferences
+Preferences are treated in a highly aggregated and homogeneous way. The paper does not estimate heterogeneous preferences across individuals or countries. Instead, it posits a common lifetime utility structure and calibrates the instantaneous utility function (u(c)) using parameters drawn from the value-of-life and consumption literatures. The authors do emphasize that their method differs from measures such as the UNDP’s because the relative value assigned to nonmaterial aspects is meant to be disciplined by preferences revealed by market behavior rather than by arbitrary institutional weights.
+
+### Treatment of opportunities / constraints
+It does not model opportunities explicitly in the sense of feasible job sets, latent opportunity distributions, hours restrictions, or demand-side labour-market constraints. There is no analogue of a job opportunity set (A), no labour-supply choice problem, and no observed or latent set of available alternatives. The only “constraint” in the formal model is the lifetime budget constraint under complete annuity insurance, together with the survival schedule. That is not an opportunity-set treatment in your sense. It is a lifetime resource-and-survival environment, not a set of feasible jobs or bundles generated by market opportunities.
+
+### Welfare / normative object
+The welfare object is “full income”: income per year plus the annual monetary equivalent of longevity gains. Formally, the key normative-comparative object is the income compensation that equates utility across survival schedules. This object is then used to compare welfare growth and welfare inequality across countries. The paper is best described as positive with welfare-accounting applications.
+
+### Main findings
+The central empirical result is that, while cross-country income inequality shows little decline up to the 1990s, cross-country life expectancy inequality falls substantially over the period. Once longevity gains are monetized and included in “full income,” countries become significantly more equal between 1960 and 2000. Table 1 shows the divergent patterns in income and life expectancy inequality, and Table 3 shows that inequality in full income is lower than inequality in income alone. The paper estimates an average yearly growth in full income of 2.8 percent for the world as a whole, of which about one quarter comes from health. For the poorest 50 percent of countries in 1960, the average yearly growth in full income is 4.1 percent, with 1.7 percentage points due to health; for the richest 50 percent, it is 2.6 percent, with only 0.4 percentage points due to health.
+
+### Main limitations
+The main limitation is the representative-HLCI construction. The welfare comparison is based on a hypothetical life-cycle individual who receives the country’s average income in each year and faces the country’s average survival curve. This abstracts from within-country heterogeneity, within-country inequality, and the joint distribution of income and mortality. A second limitation is the strong calibration structure.
+
+### Relevance for my JMP
+This paper is useful for framing the general idea that welfare measurement should not collapse entirely to observed income. It gives a clean example of how an additional non-income dimension can be monetized and incorporated into a single welfare index. That is helpful when motivating why a well-being measure (W) may need to depend on more than realized money income alone. Its relevance for model design is limited but not zero.
+
+### Relation to opportunities vs preferences
+Preferences are effectively treated as common and calibrated, while opportunities are not modeled as feasible sets at all. The welfare differences arise from differences in country-level income paths and survival schedules, not from different job opportunities or different estimated tastes over work-leisure bundles. Its usefulness here is therefore mostly negative but clarifying: it is a good example of a welfare paper that is informative about measurement yet not informative about the opportunity/preference distinction you care about. That distinction would have to be added externally.
+
+### Quick takeaway
+Constructs a "full income" measure incorporating monetised longevity gains alongside income growth, showing that cross-country welfare inequality fell substantially between 1960--2000 once health is included. A clean demonstration that welfare measurement should not collapse to observed income alone -- useful for motivating why $W$ may need non-income dimensions, though it offers no structural model of labour supply or opportunities.
+
+
+---
+
+## Magali Beffy, Richard Blundell, Antoine Bozio, Guy Laroque, and Maxime Tô (2019) — Labour supply and taxation with restricted choices
+
+**Source extracts merged:** Beffy_et_al_2019.md; markdowns/Beffy_et_al_2019.md
+
+### Full citation
+Beffy, Magali, Richard Blundell, Antoine Bozio, Guy Laroque, and Maxime Tô. 2019. “Labour supply and taxation with restricted choices.” Journal of Econometrics 211(1): 16-46.
+
+### One-sentence contribution
+The paper develops and estimates a structural labour-supply model in which observed hours reflect both preferences and restricted hours offers, and shows that nonlinear tax-benefit budget constraints can help identify the distribution of feasible hours choices as distinct from preferences.
+
+### Core research question
+Under what conditions can one identify labour-supply preferences separately from restrictions on available hours choices, and how can a structural model with restricted hours offers be estimated in the presence of nonlinear tax and benefit schedules?
+
+### Economic setting and context
+The empirical setting is the labour supply of women with children in the UK, over 1997-2002, a period that includes important reforms to the tax-credit and welfare system. The paper uses UK Family Expenditure Survey data together with a detailed tax-benefit simulator, and focuses on how hours restrictions interact with nonlinear budget constraints generated by taxes, tax credits, income support, and related benefits. The sample contains 10,575 women with children, including single and cohabiting mothers. Table 1 provides the core sample composition, Table 2 relates observed hours to education and family characteristics, and Table 3 reports the distributions of consumption, wages, and hours.
+
+### Model / theoretical framework
+The model class is a structural labour-supply model with nonlinear budget constraints, fixed costs of work, and restricted choice sets. The starting point is an intertemporal labour-supply problem in which the woman chooses hours (h_t) and household consumption (c_t), subject to an intertemporal budget constraint, taxes and benefits (R(w,h)), and fixed work costs (b). In the unrestricted benchmark, hours belong to a full feasible set (H); in the paper’s restricted-choice version, choices are made from a small random subset of possible hours points. The agent chooses the hours alternative that maximizes utility. In the discrete-hours restricted-choice framework, utility from option (h) is written generically as (V(h,Z,\beta,\varepsilon)).
+
+### Key objects
+The central positive objects are the indirect or choice-specific utility function (V(h,Z,\beta,\varepsilon)), the nonlinear net-income schedule (R(w,h)), the fixed cost of work (b), the offer distribution (g(h\mid Z_o)), and the observed choice probabilities induced by the restricted choice set. The two-offer likelihood is central: which shows observed hours probabilities as a combination of offer probabilities and pairwise choice probabilities. Another key object is the “irrational” or dominated set of hours (H^{ir}), derived from the after-tax income schedule. If some lower-hours choice yields weakly higher net income than a higher-hours choice, the higher-hours point is strictly dominated under standard monotonicity assumptions.
+
+### Data
+The data are from the UK Family Expenditure Survey for 1997-2002. The paper combines detailed information on hours, wages, expenditure/consumption, demographics, and family composition with the IFS-Taxben simulator to compute nonlinear household-specific budget constraints under the UK tax, tax-credit, and welfare system. The analysis sample contains 10,575 women with children. The sample includes single and cohabiting mothers, with substantial heterogeneity in education, number of children, and age of youngest child.
+
+### Identification / empirical strategy
+Identification is the core theoretical contribution of the paper. The authors show three main identification results. First, if the offer distribution is known, then preferences can be identified in a random-utility framework. Second, if preferences are known, then the offer distribution can be recovered. Third, under suitable restrictions, both preferences and the offer distribution can be jointly identified.
+
+### Treatment of preferences
+Preferences are modeled explicitly and structurally. The paper specifies preferences over consumption and leisure using a utility function with curvature parameters (\gamma) and (\phi), and with a heterogeneity term (a) governing the substitution between consumption and leisure. Preference heterogeneity is allowed through observable covariates and unobserved components. This is not a simple multinomial logit over reduced-form utilities.
+
+### Treatment of opportunities / constraints
+The paper models opportunities explicitly, though in a restricted form. It does not use the language of “feasible set (A)” in the axiomatic sense, but it does replace universal hours choice with a random restricted choice set. The offer distribution (g(h\mid Z_o)) is the paper’s empirical representation of the opportunity side. The mechanism is straightforward. Individuals do not choose from all possible hours.
+
+### Welfare / normative object
+The paper is overwhelmingly positive rather than normative. Utility is used as a behavioural object for labour-supply decisions, identification, and simulation. There is no explicit social welfare function, no money-metric welfare analysis, and no fairness criterion of responsibility or compensation. There are policy-relevant simulations, such as comparing constrained and unconstrained employment rates and labour-supply responses to wage increases, but these are behavioural rather than normative welfare exercises.
+
+### Main findings
+First, the paper provides direct evidence that a nontrivial share of observed hours choices are inconsistent with unrestricted hours optimization under the nonlinear UK tax-benefit system. Table 8 reports that about 2.56 percent of working women are nonparametric rejections of the unrestricted model because they work at strictly dominated hours. Using the estimated preference specification, the broader parametric rejection share rises to 7.93 percent in the richest specification. Second, the estimated offer distribution is bimodal, with offers concentrated around part-time and full-time work. Table 5 and the surrounding discussion show that the two-offer model generates an hours distribution with twin peaks similar to those observed in the data, which the unrestricted model does not reproduce as well.
+
+### Main limitations
+The most obvious limitation is the very restrictive two-offer specification. Each woman is assumed to face at most two hours offers plus non-employment. The authors are explicit that this is restrictive and suggest extending the model to (n)-offer settings or wage-hours packages in future work. A second limitation is that opportunities are represented only along the hours dimension.
+
+### Relevance for my JMP
+This paper is extremely useful for framing the claim that labour-supply data cannot be interpreted solely through preferences. It gives a precise econometric statement of why observed hours may reflect restricted opportunities rather than unconstrained choice, and it ties that statement to real tax-benefit systems rather than purely abstract theory. This is the strongest relevance margin. The paper gives a concrete design for modeling a latent feasible set of hours offers, with explicit identification arguments and an estimable likelihood.
+
+### Relation to opportunities vs preferences
+The paper’s central claim is that observed hours conflate preferences and restrictions, and that the econometrician should model both. Preferences alone do not explain hours peaks and dominated observed choices; restricted opportunities are part of the explanation. At the same time, the paper does not collapse everything into opportunities either. It estimates preferences and restrictions jointly.
+
+### Quick takeaway
+Develops and estimates a structural labour-supply model in which observed hours reflect both preferences and restricted hours offers, using nonlinear UK tax-benefit budget constraints to jointly identify the offer distribution and utility parameters. Directly relevant because it gives the strongest econometric argument for why observed hours cannot be read as unconstrained preference revelation--the core identification problem the JMP must address when separating R from A.
+
+
+---
+
+## Debopam Bhattacharya (2015) — Nonparametric Welfare Analysis for Discrete Choice
+
+**Source extracts merged:** Bhattacharya_2015.md; markdowns/Bhattacharya_2015.md
+
+### Full citation
+Bhattacharya, Debopam. 2015. “Nonparametric Welfare Analysis for Discrete Choice.” Econometrica 83(2): 617–649.
+
+### One-sentence contribution
+The paper shows that, for binary and unordered multinomial discrete choice models, the marginal distributions and means of equivalent variation (EV) and compensating variation (CV) from a price change are nonparametrically point-identified from structural choice probabilities alone, even under unrestricted unobserved preference heterogeneity and without specifying utility functional forms.
+
+### Core research question
+Can the distribution of money-metric welfare effects from price changes in discrete choice settings be nonparametrically identified when individuals have unrestricted, possibly high-dimensional unobserved heterogeneity in preferences and utilities are otherwise left unspecified?
+
+### Economic setting and context
+The paper studies generic discrete-choice environments rather than a specific country, market, or dataset. The motivating examples include taxation of unemployment benefits, fare changes in transportation mode choice, and supermarket brand choices under discounts or taxes. The observed data environment is individual-level microdata containing realized discrete choices, prices faced, income, and possibly covariates. The object of interest is the welfare impact of a hypothetical price change for a discrete good or alternative, measured by EV and CV.
+
+### Model / theoretical framework
+The model class is nonparametric random-utility-based welfare analysis for discrete choice. In the binary case, the agent chooses between buying and not buying a discrete good, with utilities (U_1(Y-P,\eta)) and (U_0(Y,\eta)), where (\eta) is an individual-specific taste component of unrestricted and possibly unknown dimension. The budget constraint is (W + PQ = Y), and the structural choice probability is The feasible set is a finite set of discrete alternatives. In the unordered multinomial case, the paper reduces welfare analysis for a price change in one alternative to a binary comparison between that alternative and a composite outside option. In the ordered-choice case with a common unit price across quantities, the paper shows that this reduction fails in a fundamental way.
+
+### Key objects
+The main economic objects are the structural choice probabilities (\bar q(p,y)) in the binary case and (\bar q_1(t,p_{-1},y)) in the unordered multinomial case; the individual welfare changes (S^{EV}) and (S^{CV}); and the underlying utilities (U_j(\cdot,\eta)), which are assumed only to be continuous and strictly increasing in the numeraire. The core identified objects are the marginal distributions of EV and CV. For a binary price increase from (p_0) to (p_1), Theorem 1 shows that for (0 \le a < p_1-p_0), Corollary 1 then gives average EV and CV as integrals of choice probabilities. These formulas are the analytical center of the paper.
+
+### Data
+There is no empirical application with a specific dataset, country sample, or time period. The paper is written for a setting in which the researcher observes individual choices, prices, income, and possibly covariates in microdata. It discusses how the structural choice probabilities could be estimated nonparametrically from such data, or with control functions if price or income are endogenous.
+
+### Identification / empirical strategy
+The identification logic is very concrete. The paper shows that, under continuity and strict monotonicity of utilities in the numeraire, EV and CV distributions can be written as closed-form functionals of structural choice probabilities. Thus welfare identification does not require identification of the distribution of (\eta), its dimension, or the functional form of utilities. This is the main theorem for binary and unordered multinomial choice. The variation relied upon is variation in prices and income sufficient to recover structural choice probabilities.
+
+### Treatment of preferences
+Preferences are allowed to be highly heterogeneous and almost unrestricted. The heterogeneity term (\eta) may be vector-valued, of unknown dimension, and enter utility in arbitrary ways. Utilities need not be quasilinear, differentiable, or parametrically specified. The paper emphasizes that restricting heterogeneity to a scalar or low-dimensional form can impose strong and often hidden restrictions on the set of admissible preference profiles.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the sense of feasible job sets, latent offer sets, or individual-specific opportunity correspondences (A_i). The constraint structure is the budget set generated by income, prices, and the set of discrete alternatives. In that sense, opportunities are treated as the menu of alternatives under observed prices, not as labor-market opportunity sets or socially relevant feasible sets. Availability constraints are therefore implicit and generic rather than modeled as a separate object. In the binary and unordered multinomial settings, the paper assumes the relevant alternatives are available as the choice set under study.
+
+### Welfare / normative object
+The welfare object is exact money-metric welfare from price changes, specifically EV and CV. These are defined at fixed income (y) as the income changes that equalize maximized utility before and after a price change. The paper is not interested in a social-welfare functional over persons; it is interested in identifying the distribution of individual welfare effects induced by heterogeneity. The paper is therefore positive with welfare applications, rather than explicitly normative.
+
+### Main findings
+The main result is that in binary and unordered multinomial choice models, the marginal distributions of EV and CV are nonparametrically point-identified as simple functionals of structural choice probabilities. This holds under continuity and strict monotonicity in the numeraire, without knowing the dimension or distribution of unobserved heterogeneity and without specifying utility functional forms. A second major result is that, for a price increase, average EV equals the change in average Marshallian consumer surplus even without quasilinearity. By contrast, average CV generally differs from average EV; for a normal good, average CV exceeds average EV. The paper derives these conclusions from the identified welfare distributions.
+
+### Main limitations
+It studies budget sets and discrete alternatives, but not feasible job sets, latent opportunities, or unequal access to alternatives as an independent object of analysis. This limits its direct relevance for a (W(z,R,A;y)) framework where (A) is central. A second limitation is that the welfare object is narrow. EV and CV are exact and useful money-metric measures, but they are not general well-being measures in the axiomatic sense you are developing.
+
+### Relevance for my JMP
+This paper is useful for framing a methodological distinction between identifying preference heterogeneity and identifying welfare objects. It can help justify why one should not infer that a welfare measure is impossible merely because the heterogeneity distribution is not identified. It is moderately useful for model design if you want a welfare layer that sits on top of a discrete-choice model without forcing parametric assumptions on utility heterogeneity. It is not useful for designing the opportunity-set component (A), because it does not model opportunities explicitly beyond the observed choice menu and budget variation.
+
+### Relation to opportunities vs preferences
+The paper is strong on preferences and weak on opportunities. It is designed to allow very rich unobserved preference heterogeneity and to show that welfare effects can still be identified. But opportunities are not modeled as unequal feasible sets; they are only the alternative menus and budget configurations induced by the discrete-choice setting. The paper does not help with compensating for unequal opportunities or assigning responsibility across opportunity sets.
+
+### Quick takeaway
+Shows that marginal distributions and means of equivalent/compensating variation in discrete-choice models are nonparametrically point-identified from structural choice probabilities alone, even under unrestricted unobserved preference heterogeneity. Important for the welfare layer of any discrete-choice-based project: welfare objects can be identified without fully specifying the heterogeneity distribution.
+
+
+---
+
+## Debopam Bhattacharya (2018) — Empirical welfare analysis for discrete choice: Some general results
+
+**Source extracts merged:** Bhattacharya_2018.md; markdowns/Bhattacharya_2018.md
+
+### Full citation
+Bhattacharya, Debopam. 2018. “Empirical welfare analysis for discrete choice: Some general results.” Quantitative Economics 9: 571–615.
+
+### One-sentence contribution
+The paper extends nonparametric welfare analysis for discrete choice beyond single-price changes by deriving identification results for simultaneous price changes, introduction or elimination of alternatives, quality changes, and nonexclusive choices, showing where Hicksian welfare is point-identified and where only bounds are available.
+
+### Core research question
+Under unrestricted preference heterogeneity and unrestricted income effects, what welfare objects can be identified from structural choice probabilities in practical multinomial discrete-choice environments involving multiple price changes, elimination or introduction of options, changes in characteristics, and nonexclusive choice?
+
+### Economic setting and context
+The paper is methodological rather than tied to one substantive market. It is motivated by policy-evaluation contexts such as tuition subsidies, health-product subsidies, transportation choices, and similar interventions where discrete choices change because prices, availability, or attributes change. The author explicitly frames the contribution as a way to calculate compensated program effects, cash-equivalents, and deadweight loss, which are often missing in empirical work. The empirical illustration uses cross-sectional microdata on fishing-mode choice in Southern California, with 1,182 individuals choosing among beach, pier, private boat, and charter boat fishing modes.
+
+### Model / theoretical framework
+The model class is nonparametric multinomial discrete choice with unrestricted unobserved heterogeneity. Utilities take the form (U_j(Y-P_j,\eta)) in the core price-change setup, where (\eta) has unknown dimension and unknown distribution. Structural choice probabilities are defined as the population probabilities of each alternative being utility-maximizing at a given price vector and income level. The agent chooses among discrete alternatives. In the main setup these alternatives are exclusive.
+
+### Key objects
+The key behavioural objects are the structural choice probabilities or their appropriate extensions with characteristics and nonexclusive choice. These are the objects from which welfare distributions are recovered or bounded. The key welfare objects are Hicksian equivalent variation and compensating variation corresponding to economic changes. The paper is very explicit that Hicksian welfare remains well-defined in the settings studied even when Marshallian consumer surplus becomes path-dependent.
+
+### Data
+The theoretical results do not require a specific dataset beyond individual-level cross-sectional data on discrete choices, prices, income, and optionally characteristics. The paper discusses implementation through nonparametric or flexible semiparametric estimation of structural choice probabilities. The empirical illustration uses a publicly available fishing-choice dataset with 1,182 individuals. The alternatives are beach, pier, private boat, and charter boat fishing.
+
+### Identification / empirical strategy
+The paper’s identification logic is to derive welfare distributions directly as functionals of structural choice probabilities, rather than to identify preference distributions first and then compute welfare from a parametrically specified utility model. This is the core methodological point. For simultaneous changes in multiple prices among exclusive alternatives, Theorem 1 shows that the EV and CV distributions are point-identified from structural choice probabilities under only continuity and strict monotonicity of utility in the numeraire. The paper also proves that Marshallian consumer surplus becomes path-dependent in this setting, so Hicksian welfare is the correct object.
+
+### Treatment of preferences
+Preferences are completely heterogeneous in the main results. The dimension and distribution of heterogeneity are unrestricted, and the paper does not assume quasilinearity, additive separability, or a parametric random-coefficients structure. This is one of the paper’s principal advantages over log-sum and mixed-logit-style welfare calculations. The paper is explicit that its approach “does not require identification of preference distributions.” This means welfare identification is treated as conceptually distinct from fully recovering heterogeneity itself.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the sense of individual feasible job sets, latent opportunity densities, or socially relevant availability sets. The choice set is the menu of alternatives under study, and the relevant constraints operate through prices, income, and characteristics. It therefore does not treat opportunity heterogeneity in your sense. There is no analogue of an individual-specific feasible set (A_i), no demand-side rationing, no latent jobs, and no distinction between realized choice and unequal access to alternatives as a separate object. The closest notion of “availability” arises in the entry or elimination of an option, but this is still not an opportunity-set analysis in the RURO or jobs-and-wellbeing sense.
+
+### Welfare / normative object
+The welfare object is Hicksian money-metric welfare: EV and CV at the individual level, and the associated mean welfare change and deadweight loss at the aggregate level. The paper emphasizes Hicksian welfare because Marshallian consumer surplus becomes path-dependent under multiple simultaneous price changes. The paper is positive with welfare applications. It is not explicitly normative in the social-choice sense.
+
+### Main findings
+The first main finding is that simultaneous price changes of multiple exclusive alternatives admit point identification of EV and CV distributions from structural choice probabilities under very weak assumptions, even though Marshallian consumer surplus becomes path-dependent. This is the central substantive extension beyond Bhattacharya (2015). The second main finding is that the welfare effects of introducing or eliminating an alternative can also be characterized from structural choice probabilities. The paper formalizes when the common practice of integrating demand “to infinity” is valid and shows that it corresponds to mean EV, not generally mean CV, and only under specific price conditions for the other alternatives. The third main finding is that welfare from quality change is generally only set-identified, not point-identified, unless one imposes further restrictions such as weak separability.
+
+### Main limitations
+The paper studies prices, menus, and characteristics, but not unequal feasible sets in the labour-market or axiomatic sense. A second limitation is that the welfare notion remains narrow. EV and CV are exact and important money-metric objects, but they are tied to specific economic changes and do not constitute a general well-being measure. The paper does not address interpersonal welfare comparison or fairness-sensitive evaluation.
+
+### Relevance for my JMP
+This paper is useful for framing the welfare-analysis side of the project. It shows that one can speak rigorously about welfare effects in discrete-choice environments under rich heterogeneity without committing to fully parametric random-coefficients models. That is helpful if you want to motivate a welfare layer on top of structural discrete choice. It is moderately useful for model design insofar as it clarifies which policy changes allow point identification of welfare from structural choice probabilities and which do not.
+
+### Relation to opportunities vs preferences
+The paper is much closer to preferences than to opportunities. It is centrally about how welfare can be identified in discrete choice under unrestricted heterogeneity of preferences and income effects. It does not model unequal access to alternatives as an independent source of heterogeneity, except in the trivial menu sense that an option may enter or exit the choice set. It shows how far one can go in welfare measurement without having a theory of opportunities, and thus also shows what remains missing if one wants to analyze responsibility or compensation for unequal feasible sets.
+
+### Quick takeaway
+Extends nonparametric discrete-choice welfare analysis to simultaneous price changes, introduction/elimination of alternatives, quality changes, and nonexclusive choices. Shows where Hicksian welfare is point-identified and where only bounds are available -- clarifying, for a discrete-choice welfare project, exactly which policy counterfactuals allow sharp welfare conclusions without parametric utility assumptions.
+
+
+---
+
+## Hans G. Bloemen (2000) — A Model of Labour Supply with Job Offer Restrictions
+
+**Source extracts merged:** Bloemen_2000.md; markdowns/Bloemen_2000.md
+
+### Full citation
+Bloemen, H. G. (2000). A Model of Labour Supply with Job Offer Restrictions. Labour Economics, 7(3), 297--312. [CentER Discussion Paper No. 9239, Tilburg University, October 1992.]
+
+### One-sentence contribution
+Formulates a static labour supply model in which individuals receive a Poisson-distributed random number of job offers -- each consisting of a wage and a discrete hours level drawn from a joint distribution $f(w, h)$ -- and choose the utility-maximising package (or non-participation), finding that the model reproduces empirical hours peaks at 20, 32, and 40 hours but that when the Poisson parameter $\lambda$ is made individual-specific (age, education), the preference parameters become essentially unidentifiable because demand-side restrictions dominate observed behaviour.
+
+### Core research question
+Can a labour supply model with explicit job offer restrictions (random number of wage-hours packages from a joint offer distribution) reproduce the empirical distribution of working hours, and can preference parameters be separately identified from offer distribution parameters?
+
+### Economic setting and context
+Netherlands, 1985. Married women with high non-participation rates (61%). Data from the Organisation for Strategic Labourmarket Research (OSA). Hours distribution shows characteristic peaks at 20, 32, and 40 hours per week.
+
+### Model / theoretical framework
+Job offers: An individual receives $n$ job offers, where $n \sim \text{Poisson}(\lambda)$. Each offer is a pair $(w, h)$ drawn from a joint distribution $f(w, h)$. Hours distribution: Discrete, with $m = 15$ categories at $h_l = 4l$, $l = 1, \ldots, 15$ (i.e., 4, 8, 12, ..., 60 hours/week). Probabilities $P(h = h_l) = p_l$ are estimated as free parameters (with some equality restrictions for low-frequency categories). Wage distribution: Log-normal, conditional on hours category: where $x$ includes age (log(age/17) and its square) and education dummies.
+
+### Key objects
+$\lambda$: Poisson parameter governing the average number of job offers. Basic model: $\lambda = 36.7$ (Table 3.1). With individual characteristics: $\lambda_i = \exp(\theta' z_i)$ (Table 3.3). $p_l$: Discrete hours offer probabilities. Peaks at $h = 20$ ($p_5 = 0.137$), $h = 32$ ($p_8 = 0.117$), $h = 40$ ($p_{10} = 0.232$) in basic model (Table 3.1). $f(w, h)$: Joint wage-hours offer density. $\sigma_e$: Standard deviation of random preference parameter.
+
+### Data
+Source: Organisation for Strategic Labourmarket Research (OSA), Netherlands, 1985 cross-section. Sample: 849 married women. Key statistics: Non-participation rate: 61.0% Hours distribution for workers: peaks at 20h (5.2%), 32h (5.0%), 40h (10.1%) Hours grouped into 15 categories of 4 hours each (4, 8, ..., 60)
+
+### Identification / empirical strategy
+The model is identified from the joint variation in observed wage-hours packages and non-participation. The likelihood contribution for a working individual with observed $(w_, h_{l_})$ involves: The probability that among $n$ offers, this one yields highest utility The wage density evaluated at $w_$ The hours probability $p_{l_}$ The Poisson probability of drawing $n$ offers Integration over the unobserved preference parameter $e$ The non-working likelihood contribution involves the probability that either $n = 0$ or all $n$ offers are rejected ($\Pr(h = 0 | e, n) = [P(0|e)]^n$, summed over all $n$). Identification challenge (key finding): When $\lambda$ depends on individual characteristics (age, education), the same observables that shift preferences also shift offer arrival rates.
+
+### Treatment of preferences
+Hausman (1980) linear labour supply specification. Preferences are parameterised by $(\beta, \gamma, \delta, \sigma_e)$ with a single unobserved taste parameter $e \sim N(0, \sigma_e^2)$. The key finding is that preference identification is fragile: when demand-side parameters ($\lambda$) are enriched with individual characteristics, preference parameters blow up. The paper concludes: "the parameters of the underlying utility specification cannot be traced down anymore.
+
+### Treatment of opportunities / constraints
+The demand side is modelled through two channels: Number of offers ($\lambda$): Poisson-distributed, possibly individual-specific. Controls extensive margin (involuntary unemployment when $n = 0$). Hours offer distribution ($p_l$): Discrete probabilities determining which hours levels are available. Controls intensive margin (hours restrictions). Wage offer distribution: Log-normal, possibly hours-dependent.
+
+### Welfare / normative object
+No welfare analysis is performed. The paper is entirely positive: estimating the structural model and testing its fit.
+
+### Main findings
+Basic model ($\lambda$ constant): $\hat{\lambda} = 36.7$ (large but imprecise, s.e. = 32.3). Simulated hours match empirical peaks at 20, 32, 40 hours well (Table 3.2, Figure 3.1). Desired hours distribution is much flatter -- no peaks (Figure 3.2). This confirms that observed hours clustering is driven by offer restrictions, not preferences. Individual-specific $\lambda$: LR test strongly rejects constant $\lambda$.
+
+### Main limitations
+Discussion paper quality -- relatively brief, no robustness checks beyond three specifications Hausman (1980) utility is restrictive and known to be fragile Static model: no dynamics, no search over time No tax system modelling in basic specification; only reduced-form hours terms in extended specification Andrews test rejects all specifications -- model does not formally fit the data Poisson parameter $\lambda$ is difficult to interpret in a static model with no time dimension Single unobserved taste parameter $e$ -- limited preference heterogeneity No covariates in the hours offer distribution $p_l$
+
+### Relevance for my JMP
+This paper provides an early, clear demonstration of the fundamental identification problem in separating preferences from opportunities: once the number of job offers depends on individual characteristics (the same observables that shift preferences), the utility parameters become unidentifiable. This is exactly the identification challenge that the RURO framework must address, and it motivates the need for exclusion restrictions or structural assumptions that separate $R$ from $A$ in $W(z, R, A; y)$. The paper's model is a direct precursor to the RURO framework: job offers are wage-hours packages $(w, h)$ drawn from a joint distribution, and individuals choose the best available package.
+
+### Relation to opportunities vs preferences
+This paper is centrally about the opportunities-preferences distinction. The key insight is that once both are allowed to depend on the same observables, they become inseparable. The paper demonstrates this empirically: when $\lambda$ is constant, preferences are estimated with reasonable precision; when $\lambda$ varies with age and education, preferences become flat. This is the fundamental identification challenge for the $W(z, R, A; y)$ framework and motivates the need for exclusion restrictions, functional form assumptions, or additional data sources to separately identify $R$ and $A$.
+
+### Quick takeaway
+This paper is an important early contribution to modelling demand-side restrictions in labour supply, and its negative identification result is the single most important finding for my JMP's methodology: when both preferences and job offer rates depend on the same individual characteristics, preferences become unidentifiable.
+
+
+---
+
+## Hans G. Bloemen (2008) — Job Search, Hours Restrictions, and Desired Hours of Work
+
+**Source extracts merged:** Bloemen_2008.md; markdowns/Bloemen_2008.md
+
+### Full citation
+Bloemen, Hans G. 2008. “Job Search, Hours Restrictions, and Desired Hours of Work.” Journal of Labor Economics 26(1): 137–179.
+
+### One-sentence contribution
+The paper estimates a structural job-search model in which job offers arrive as wage-hours packages and uses subjective information on desired hours to separate preferred hours from offered hours, then applies the model to policy simulations on benefits and working-time reforms.
+
+### Core research question
+How can one estimate a structural job-search model in which jobs differ not only by wages but also by fixed working hours, and what can subjective information on desired hours contribute to identifying preferences separately from hours offers?
+
+### Economic setting and context
+The empirical setting is the Netherlands in the second half of the 1980s. The paper uses the Dutch Socio-Economic Panel and focuses on men younger than 65 who are observed in employment or unemployment between October 1985 and April 1989. The context is methodological and structural. The paper is motivated by limits of both the neoclassical labour-supply model and the standard empirical job-search model.
+
+### Model / theoretical framework
+The model class is a structural job-search model with hours restrictions. Unemployed individuals receive job offers according to a stochastic arrival process. Each offer contains both an hourly wage and a fixed weekly number of hours, drawn from a joint wage-hours offer distribution. The individual compares the value of search to the value of accepting a given wage-hours package. The agent does not choose hours freely from a budget set.
+
+### Key objects
+The key behavioral objects are the utility function over net income and hours, the job-offer arrival rate, the layoff rate, and the joint wage-hours offer distribution. The arrival rate includes unobserved heterogeneity, and the hours offer distribution is discrete. A central theoretical object is the reservation utility level. Equivalently, for each offered hours level there is a reservation wage, so the reservation wage is a function of hours.
+
+### Data
+The data come from the Dutch Socio-Economic Panel, using waves from October 1985 through April 1989. The sample contains 573 unemployment-spell observations, of which 297 end in a transition to employment. For 191 of the previously unemployed, accepted wages and hours are observed after the spell, and for 189 of these there is information on desired hours. The employment side contains 4,747 employment-duration observations, 252 transitions into unemployment, 3,771 observations with wage-hours data, and 3,216 observations with subjective desired-hours information.
+
+### Identification / empirical strategy
+Identification is structural, but stronger than in the earlier static hours-restrictions literature because unemployment-duration data are added and desired-hours data are used explicitly. The arrival rate and layoff rate are identified from unemployment and employment durations; the wage-offer distribution is identified from observed wages; and desired-hours information is used to help distinguish preferences over hours from the hours offer distribution. The paper is very explicit that without desired-hours information identification of preferences versus offered hours is weak. Equation (15) and the surrounding discussion show that observed hours alone can be fitted by many combinations of preference parameters and hours-offer probabilities. Desired hours help “pin down” preferences so that offered hours can then be recovered more credibly.
+
+### Treatment of preferences
+Preferences are modeled through a Hausman-type utility function over net income and hours. Household composition variables such as family size and marital status enter utility, which is already an expansion relative to standard empirical job-search models where utility is often effectively reduced to the wage. The core contribution, however, is not just to estimate preferences but to show how badly they can be misidentified if desired-hours information is ignored. The base model fits observed hours well but implies a very flat preference structure over hours and predicts underemployment on average.
+
+### Treatment of opportunities / constraints
+Opportunities are modeled explicitly as a distribution of job offers. Jobs differ in wages and fixed hours. The unemployed cannot choose any preferred hours directly; they can only accept or reject the wage-hours offers that arrive. Thus the paper does not assume a universal choice set and does not collapse labour supply to a wage-conditioned continuous hours choice. It is much closer to an explicit opportunity-set framework, though again in latent probabilistic form.
+
+### Welfare / normative object
+The paper is not an explicit welfare paper. It does not construct equivalent variation, equivalent income, or a social welfare function. It does not address fairness axioms, responsibility, or compensation in any formal sense. Its relevance for welfare analysis is indirect but important.
+
+### Main findings
+The first major finding is that information on desired hours materially changes the inferred preference structure. The base model fits observed hours very well, but it generates very flat optimal-hours distributions and fails to reproduce the survey evidence that most dissatisfied workers are overemployed. By contrast, the models using desired hours place optimal hours mainly in the 32–44 range. Tables 8–9 and the discussion in Section IV.D are central here. The second major finding is that the hours satisfaction model performs better than the simpler optimal desired hours model in reproducing the distribution of desired hours.
+
+### Main limitations
+A first limitation is stationarity. The structural search model is stationary, and the residual analysis shows neglected negative duration dependence. Figure 3 and the discussion in Section IV.C make clear that the models fit shorter durations better than longer ones. A second limitation is the goodness-of-fit result for observed hours.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it states clearly that realized hours are jointly determined by preferences and the structure of job offers. That is one of the core messages the JMP needs. It is very useful for model design. It provides a concrete way to combine job search, hours restrictions, desired-hours data, and a latent offer distribution in one structural framework.
+
+### Relation to opportunities vs preferences
+It shows directly that observed hours cannot be read as preference revelation when workers face a restricted distribution of wage-hours offers. It also shows that desired-hours information can materially improve the empirical disentangling of these two sources.
+
+### Quick takeaway
+Estimates a structural job-search model with wage-hours packages and uses subjective desired-hours data to separate preference heterogeneity from hours-offer restrictions, showing that ignoring desired hours yields a nearly flat preference structure that misclassifies widespread overemployment. Directly relevant because it provides a concrete identification strategy for disentangling R from A using supplementary information beyond realized choices.
+
+
+---
+
+## Sören Blomquist and Whitney Newey (2002) — Nonparametric Estimation with Nonlinear Budget Sets
+
+**Source extracts merged:** Blomquist_Newey_2002.md; markdowns/Blomquist_Newey_2002.md
+
+### Full citation
+Blomquist, S., & Newey, W. (2002). Nonparametric estimation with nonlinear budget sets. *Econometrica*, 70(6), 2455--2480.
+
+### One-sentence contribution
+Develops a nonparametric series estimator for labour supply with piecewise-linear budget constraints that avoids parametric distributional assumptions, exploiting the additive structure implied by utility maximisation with convex preferences to overcome the curse of dimensionality, and finds that the standard parametric (Hausman) model substantially overestimates wage elasticities and tax reform effects for Swedish men.
+
+### Core research question
+Can labour supply with nonlinear (piecewise-linear) budget sets be estimated nonparametrically, and how do the resulting elasticity estimates and tax reform predictions compare with standard parametric (MLE/Hausman) estimates?
+
+### Economic setting and context
+The empirical application is to Swedish male labour supply around major tax changes. The paper pools data from Swedish “Level of Living” surveys for 1973, 1980, and 1990, which gives variation both across individuals and across tax systems, including a large tax reform between 1980 and 1991. The sample used for estimation contains married or cohabiting men aged 20-60, with 777 observations in 1973, 864 in 1980, and 680 in 1990, for a total of 2,321 observations. Appendix A reports sample statistics.
+
+### Model / theoretical framework
+The model class is a static labour-supply model with nonlinear piecewise-linear budget constraints, embedded in a nonparametric conditional-mean framework. The basic object of interest is the expected hours function where (x_i) denotes the entire budget set faced by individual (i). The conceptual move is to treat hours as a function of the whole budget set and then estimate that relationship nonparametrically. The budget set is assumed piecewise linear. A generic piecewise-linear budget constraint is characterized by the intercept and slope of each segment and the kink locations.
+
+### Key objects
+The main objects are the piecewise-linear budget set (x), the conditional mean labour-supply function (\bar h(x)), the desired-hours function under a linear budget set (\tilde h=\psi(y,w,v)), the average labour-supply function (\bar\psi(y,w)), and the correction term (\phi(y,w,\ell)) associated with kink points. The basic additive representation is for convex piecewise-linear budget sets. This expression is the central theoretical contribution. Other key objects are the wage elasticity and the predicted tax-reform effect.
+
+### Data
+The data come from three waves of the Swedish “Level of Living” survey: 1973, 1980, and 1990. The surveys were conducted in 1974, 1981, and 1991, and include both survey and administrative information, including tax and social insurance records. The pooled estimation sample contains married or cohabiting men aged 20-60 after several exclusions. Appendix A reports means and variances for hours, marginal wage rates, and virtual income by year and for the pooled sample.
+
+### Identification / empirical strategy
+Identification comes from variation in entire budget sets, not just in a single net wage or virtual income measure. The paper argues that if one thinks of hours as a function of the full budget set, then nonparametric regression is in principle possible, but only after exploiting the restrictions implied by utility maximization with convex preferences and convex budget sets. These restrictions drastically reduce dimensionality. More specifically, the additive decomposition implied by convex utility maximization lets the authors replace a high-dimensional nonparametric regression in all budget-set characteristics with a lower-dimensional problem involving an additive component (\bar\psi(y,w)) and a three-dimensional correction term. Identification of (\bar\psi(y,w)) depends on support conditions.
+
+### Treatment of preferences
+Preferences are present, but only indirectly. The paper starts from a desired-hours function under a linear budget set, where (v) is scalar individual heterogeneity. This is a highly parsimonious treatment of heterogeneity. It does not aim to recover the full distribution of preferences nonparametrically; instead, it focuses on the conditional mean of labour supply as a robust object for estimation and policy prediction.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities or constraints as latent job-offer sets, hours restrictions from employers, or demand-side rationing. The feasible object is the budget set induced by the tax system. Thus, constraints are entirely budgetary/institutional in the main model. The paper therefore does not distinguish preference heterogeneity from opportunity heterogeneity in the sense that matters for RURO or job-opportunity-set models. The individual does not choose from a restricted set of jobs; the paper instead asks how hours respond to a nonlinear budget frontier.
+
+### Welfare / normative object
+The paper is almost entirely positive. Its main objects are labour-supply functions, wage elasticities, and predicted changes in expected hours under tax reform. There is some discussion of possible consumer-surplus calculations based on (\bar\psi(y,w)), but welfare analysis is not developed as the main object of the paper. There is no explicit social welfare function, no fairness principle, and no analysis of responsibility or compensation.
+
+### Main findings
+The main methodological finding is that nonparametric estimation of labour supply with nonlinear budget sets is feasible once one uses the restrictions implied by utility maximization with convex preferences and convex piecewise-linear budget sets. The resulting estimators are consistent, asymptotically normal, and can handle different numbers of budget segments across individuals without a deterioration in accuracy driven by the number of segments itself. Empirically, the paper finds large differences between parametric and nonparametric estimates in the Swedish application. The parametric MLE implies a wage elasticity of about 0.123 and a stylized tax-reform effect estimate ( \hat M ) of about 0.0546, whereas the nonparametric series estimates produce substantially smaller reform effects, around 0.026 to 0.034 depending on the specification, with the preferred nonparametric estimates around 60 percent of the parametric estimate.
+
+### Main limitations
+The first main limitation is that the paper estimates only the conditional mean of hours rather than the full structural distribution of preferences. The authors are explicit that one generally cannot identify both the structural labour-supply function (\psi(y,w,v)) and the distribution (g(v)) from the single conditional-mean restriction alone. This is a deliberate trade-off. A second limitation is that the method is tailored to nonlinear budget sets, not to explicit opportunity-set heterogeneity.
+
+### Relevance for my JMP
+This paper is useful for framing the importance of the pay/tax schedule as a nontrivial determinant of observed labour supply. It shows that getting the budget frontier right matters greatly, and that parametric assumptions can materially distort estimated policy responses. That is a useful point in any project that wants to distinguish the role of (y)-type objects from preferences. It is useful for model design if your empirical model keeps the feasible set broad and focuses on the nonlinear budget schedule.
+
+### Relation to opportunities vs preferences
+This paper is not mainly about opportunities versus preferences. Preferences enter through the latent heterogeneity term (v), and the tax schedule enters through the budget set, but the model does not separately identify job opportunities or demand-side constraints. Still, it is useful because it prevents one source of confounding: misspecification of the budget set and of the parametric response function to it. In your work, that means the paper is a reminder that even before tackling opportunity sets (A), one must handle nonlinear (y)-type objects carefully.
+
+### Quick takeaway
+Develops a nonparametric series estimator for labour supply with piecewise-linear budget constraints that avoids parametric distributional assumptions, and finds that standard Hausman parametric models substantially overestimate wage elasticities and reform effects for Swedish men. Relevant for the JMP because it shows that misspecifying the pay schedule y and the budget-set structure can materially distort estimated labour-supply responses before one even gets to the opportunity-set problem.
+
+
+---
+
+## Richard Blundell, Alan Duncan, Julian McCrae, and Costas Meghir (2000) — The Labour Market Impact of the Working Families’ Tax Credit
+
+**Source extracts merged:** Blundell_et_al_2000.md; markdowns/Blundell_et_al_2000.md
+
+### Full citation
+Blundell, Richard, Alan Duncan, Julian McCrae, and Costas Meghir. 2000. “The Labour Market Impact of the Working Families’ Tax Credit.” Fiscal Studies 21(1): 75–104.
+
+### One-sentence contribution
+The paper uses a structural discrete-hours labour-supply model combined with tax-benefit microsimulation to predict how the UK Working Families’ Tax Credit (WFTC) would affect labour-market participation and hours among lone parents and couples with children.
+
+### Core research question
+What are the likely effects of replacing Family Credit with the Working Families’ Tax Credit on labour-force participation and hours of work among lone parents and couples with children in the UK?
+
+### Economic setting and context
+The paper studies the UK reform that replaced Family Credit with WFTC in October 1999. WFTC increased the generosity of in-work support through a higher threshold, a lower taper rate, larger child credits for younger children, and a substantially more generous childcare subsidy. The policy target groups are lone parents and couples with children. The institutional setting is therefore a tax-benefit system with strong non-linearities, interactions with housing benefit and council tax benefit, and eligibility conditions tied to hours of work.
+
+### Model / theoretical framework
+The model class is a structural discrete labour-supply model with tax-benefit microsimulation. Household behaviour is modelled over a discrete set of hours choices rather than over a continuous hours range, and the model incorporates non-convex budget sets induced by taxes and benefits. The paper states that it uses an econometric model of the work behaviour of lone parents and couples developed in Blundell et al. (1999), and that this model includes controls for fixed costs, childcare costs, and unobserved heterogeneity. The exact functional form is not reproduced in full in this paper. The agent’s choice variable is hours of work.
+
+### Key objects
+The central empirical objects are household net income at alternative hours choices under Family Credit and under WFTC, the resulting budget constraints, estimated wages for workers and imputed wages for non-workers, childcare costs by demographic type and hours, and the probabilities of choosing each hours point under the discrete labour-supply model. The key policy objects are the elements of WFTC itself: higher child credits for children under 11, a higher income threshold, a lower taper rate, and the childcare credit worth 70 per cent of childcare costs up to stated weekly caps. These objects matter because they reshape the budget constraints differently across lone parents, first earners, and second earners.
+
+### Data
+The main data source is the UK Family Resources Survey for 1994–95 and 1995–96, combined to give information on over 50,000 households. For estimation, after exclusions, the paper uses 1,807 single parents and 4,694 two-adult households. Population counts for relevant target groups are also reported using the same data source. The tax-benefit system is simulated using TAXBEN, the IFS tax and benefit microsimulation model, which computes taxes and entitlements for each household.
+
+### Identification / empirical strategy
+Identification in the causal sense is not the main contribution of this paper. The results are generated by structural simulation. The crucial variation comes from the change in the tax-benefit schedule between Family Credit and WFTC, translated into alternative budget constraints via TAXBEN, and then mapped into behaviour through an estimated discrete labour-supply model. The key assumptions are therefore parametric and structural rather than quasi-experimental. They include the validity of the labour-supply model estimated in the companion paper, the wage imputation procedure for non-workers, the discrete-hours representation, the treatment of childcare costs and use, and the assumption that the childcare market structure does not itself change in the baseline simulations.
+
+### Treatment of preferences
+Preferences are represented through the estimated structural labour-supply model with unobserved heterogeneity. The paper does not develop a preference theory beyond labour-supply behaviour over hours and net income, plus fixed and childcare costs. It is therefore a standard structural behavioural treatment of preferences rather than a welfare-theoretic one. Heterogeneity in preferences is allowed statistically, but the paper does not attempt to identify a deep decomposition between preference heterogeneity and opportunity heterogeneity.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as feasible job sets, latent offer distributions, or individual-specific opportunity correspondences. There is no RURO-type structure, no job density, and no demand-side model of job availability. The framework is therefore not an opportunity-set model in your sense. What the paper does model very carefully are financial and work-related constraints. These include nonlinear budget constraints generated by taxes and benefits, the 16-hour eligibility threshold for Family Credit/WFTC, childcare costs, housing benefit interactions, and fixed costs of work.
+
+### Welfare / normative object
+The paper is primarily positive with policy applications. Its core outputs are participation changes, hours changes, and implied programme-cost effects under alternative assumptions. It does not construct EV, CV, equivalent income, or any explicit individual well-being measure. There is no explicit normative object corresponding to responsibility for opportunities, compensation for opportunities, or a social welfare function over heterogeneous households.
+
+### Main findings
+The headline finding is that WFTC is predicted to raise participation among single mothers by about 2.2 percentage points in the baseline full-take-up scenario. Table 7 reports the implied transition matrix, and the conclusion section translates this into about 34,000 individuals. For married women with employed partners, the paper predicts a fall in participation of about 0.57 percentage points, equivalent to around 20,000 individuals. The mechanism is an income effect operating through improved in-work benefit eligibility of the husband, which makes non-participation more attractive for some secondary earners. This is shown in Table 8 and discussed explicitly in the text.
+
+### Main limitations
+A first limitation is that opportunities are not modeled explicitly. The paper has no direct object corresponding to feasible job sets or job availability. A second limitation is that identification is heavily structural. The simulations depend on the validity of the discrete labour-supply model, wage predictions for non-workers, and the maintained relationship between hours of work and childcare use.
+
+### Relevance for my JMP
+This paper is useful for framing the empirical side of how tax-benefit reforms affect labour supply differently across household roles. It provides a clear example of why “making work pay” for households need not imply stronger work incentives for all individuals within those households. It is useful for model design if you want to build a structural labour-supply model with detailed tax-benefit rules, childcare costs, and discrete hours choices. It is especially helpful as a template for combining microsimulation with structural behaviour.
+
+### Relation to opportunities vs preferences
+The paper is much stronger on preferences versus budget constraints than on opportunities versus preferences. It allows heterogeneous behavioural responses and models complex institutional constraints carefully, but it does not introduce unequal feasible job sets as a separate explanatory factor. It shows how much can be learned when the environment is summarized by wages, hours choices, childcare costs, and tax-benefit rules. It does not tell you whether observed labour-supply inequality is due to different opportunity sets, because those are not modeled.
+
+### Quick takeaway
+Uses a structural discrete-hours labour-supply model with detailed UK tax-benefit microsimulation to predict that the WFTC would raise lone-mother participation by about 2 percentage points while reducing participation of married women with employed partners through income effects. Relevant as a template for combining microsimulation with structural behaviour to trace how the pay schedule y differentially reshapes incentives across household roles.
+
+
+---
+
+## Richard Blundell (2006) — Earned income tax credit policies: Impact and optimality
+
+**Source extracts merged:** Blundell_2006.md; markdowns/Blundell_2006.md
+
+### Full citation
+Blundell, R. (2006). Earned income tax credit policies: Impact and optimality -- The Adam Smith Lecture, 2005. *Labour Economics*, 13(4), 423--443.
+
+### One-sentence contribution
+Evaluates the impact and optimality of the UK Working Families Tax Credit (WFTC) reform using both a structural discrete-choice labour supply model and difference-in-differences, resolving the puzzle of why the UK WFTC had smaller labour supply effects than the US EITC despite being more generous, and showing that the WFTC design is close to optimal for lone parents with pre-school children under mild inequality aversion.
+
+### Core research question
+What is the impact of the UK WFTC on labour supply of lone parents, and is the WFTC design close to an optimal earned income tax credit given reasonable social welfare weights?
+
+### Economic setting and context
+The paper is set in the UK welfare-to-work reforms of the late 1990s and early 2000s, with particular emphasis on the Working Families’ Tax Credit (WFTC) introduced in 1999 as an expansion of Family Credit. The lecture places UK reforms in comparison with the US Earned Income Tax Credit and asks why the UK policy, which appeared more generous in gross terms, generated a smaller observed labour-supply response. The motivating social problem is low labour-market attachment and high poverty among parents with children, especially lone parents. The lecture also highlights the rise in workless couples with children in the UK and the policy importance of balancing child-poverty reduction against work incentives.
+
+### Model / theoretical framework
+The paper combines two frameworks. For impact evaluation, it uses both a structural labour-supply model and a quasi-experimental difference-in-differences approach. For normative analysis, it embeds the structurally estimated labour-supply responses inside an optimal-tax problem in which the government chooses tax schedule parameters to maximize a social welfare function subject to a budget constraint. The structural model is a stochastic discrete-choice labour-supply model with programme participation. Individuals choose among discrete hours ranges rather than a continuous hours distribution.
+
+### Key objects
+The main positive objects are the household or individual budget constraints under Family Credit, WFTC, and the broader package of contemporaneous reforms; extensive and intensive labour-supply elasticities; take-up or stigma costs; childcare costs; and transition probabilities across hours states under reform. The key normative objects are the social welfare transformation function, the induced welfare weights, and the optimal tax schedule over earnings ranges. The paper specifies the transformation as a function (G(U)) indexed by a parameter (\theta), where more negative values of (\theta) correspond to greater concern for equality in utilities. The government chooses a schedule consisting of out-of-work income and marginal tax rates over several earnings regions.
+
+### Data
+The difference-in-differences evaluation uses UK Family Resources Survey (FRS) data and Labour Force Survey (LFS) data spanning Spring 1996 to Spring 2003, with Summer 1999 to Spring 2000 excluded because that was the transition period around WFTC implementation. Individuals above age 45 are also dropped in the difference-in-differences exercise. The structural analysis relies on the FRS and on detailed tax-benefit microsimulation. The lecture states that the FRS is the key source because it measures income, hours, family composition, and other variables accurately enough to construct potential budget constraints.
+
+### Identification / empirical strategy
+The paper uses two distinct identification logics. The first is quasi-experimental: a matching difference-in-differences design compares potentially eligible single mothers with single women without children, following the spirit of Eissa and Liebman (1996). The identifying assumptions are separability, common trends across groups, and invariance of group heterogeneity over time, conditional on matching covariates such as age, education, region, and ethnicity. The second is structural. The labour-supply model is identified from variation in taxes, benefits, housing costs, local taxation, childcare costs, and the detailed rules of the tax-benefit system.
+
+### Treatment of preferences
+Preferences are represented through the structural labour-supply model. They include heterogeneity in the utility trade-off between consumption and hours, plus heterogeneity in take-up or stigma costs, childcare costs, and fixed work-related costs. The model thus goes materially beyond a simple static hours-choice equation. At the same time, preferences remain a behavioural object rather than an explicit welfare-theoretic object.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as feasible job or ability sets. There is no latent offer distribution, no RURO-type opportunity density, and no direct treatment of unequal job access across individuals. This should be stated clearly: opportunities in the sense central to your (W(z,R,A;y)) framework are not explicit objects here. What the paper does model very carefully are institutional and financial constraints. These include budget-set nonconvexities, interactions between WFTC and housing benefit, take-up costs, childcare costs that vary with hours and demographics, and fixed costs of work.
+
+### Welfare / normative object
+The paper is both positive and explicitly normative. The positive part evaluates labour-supply impacts of reforms. The normative part asks whether an earned income tax credit can be justified as an optimal transfer policy for lone parents under plausible social welfare weights. The welfare object is not EV or CV, and not an individual well-being measure of the (W(z,R,A;y)) type.
+
+### Main findings
+The difference-in-differences estimates suggest that the WFTC reform package increased employment among single mothers by roughly 3.5 to 4 percentage points. Table 3 reports 3.57 percentage points using the FRS and 3.81 using the LFS. The paper also reports that low-education groups exhibit slightly larger responses from a lower initial employment base. The structural simulations show that WFTC alone would have produced a larger labour-supply effect than the full set of contemporaneous reforms actually did. Table 4(a) reports an employment increase of 5.95 percentage points for WFTC alone, while Table 4(b) reports 3.86 percentage points when all reforms are included.
+
+### Main limitations
+The first limitation, from your perspective, is the absence of an explicit opportunity-set object. The paper is rich on budget constraints, take-up, and childcare costs, but silent on latent jobs, job-search frictions, and unequal access to employment opportunities. That weakens its usefulness for a project centered on (A) as a feasible set. A second limitation is that the normative analysis depends on a structurally estimated utility model and on a specific welfare transformation function.
+
+### Relevance for my JMP
+This paper is very useful for framing the junction between structural labour-supply modelling and normative policy design. It offers a disciplined example of how to move from behavioural responses to a question of optimal tax-transfer design without pretending that reduced-form average impacts are enough for that task. It is useful for model design because it shows what a rich structural labour-supply model for lone parents can look like when budget constraints, take-up, childcare costs, and fixed costs matter. It is especially helpful if the project needs to think carefully about the distinction between extensive and intensive margins.
+
+### Relation to opportunities vs preferences
+The paper is significantly more informative about preferences versus institutional constraints than about opportunities versus preferences. It shows how behavioural responses differ across extensive and intensive margins and across demographic groups, but it does not tell us whether unequal outcomes reflect unequal preferences or unequal opportunity sets, because the latter are not modeled. It demonstrates how much one can already do with a well-specified budget-set model and credible behavioural elasticities, but also how much remains outside the analysis when the opportunity set itself is absent. For a jobs-and-wellbeing project, that is both useful and limiting.
+
+### Quick takeaway
+Bridges structural discrete-choice labour supply and optimal tax design by evaluating the UK WFTC reform, showing it was close to optimal for lone parents with pre-school children under mild inequality aversion. Demonstrates the full pipeline from behavioural estimation through budget-set modelling to normative policy evaluation -- exactly the kind of structural-to-normative bridge $W(z,R,A;y)$ aims to generalise.
+
+
+---
+
+## François Bourguignon and Amedeo Spadaro (2006) — Microsimulation as a tool for evaluating redistribution policies
+
+**Source extracts merged:** Bourguignion_spadaro_2006.md; markdowns/Bourguignon_Spadaro_2006.md
+
+### Full citation
+Bourguignon, François, and Amedeo Spadaro. 2006. “Microsimulation as a tool for evaluating redistribution policies.” Journal of Economic Inequality 4: 77-106.
+
+### One-sentence contribution
+The paper provides a methodological synthesis of microsimulation for redistribution analysis, distinguishing arithmetical from behavioural models, clarifying their theoretical foundations, and discussing how they can be used for tax incidence, poverty, inequality, and social welfare evaluation.
+
+### Core research question
+How should microsimulation techniques be understood and used as tools for evaluating redistribution policies, especially with respect to tax incidence, poverty, inequality, behavioural responses, and social welfare analysis?
+
+### Economic setting and context
+The paper is methodological rather than country-specific. Its object is the class of microsimulation models used for redistribution analysis. The authors discuss a wide range of settings, including direct and indirect taxation, social assistance, labour supply, conditional cash transfers, pensions, and dynamic policy evaluation. They also discuss applications in both developed and developing countries, and at both national and cross-country levels.
+
+### Model / theoretical framework
+The paper does not present one single structural model. Rather, it presents a taxonomy of microsimulation models. The common structure of these models is said to comprise three elements: a micro-dataset describing individuals or households, the policy rules that define their budget constraints, and, where relevant, a behavioural model governing their response. Section 2 is explicit on this taxonomy. The authors distinguish arithmetical microsimulation models from behavioural microsimulation models.
+
+### Key objects
+The key positive objects are the micro-dataset, the tax-benefit or “net tax” schedule (NT(\cdot)), the budget constraint, and the behavioural decision rule. In the continuous labour-supply setup, the key equation is the household optimization problem subject to the tax-benefit schedule, leading to a labour-supply function of wages, non-labour income, household characteristics, and preference parameters. Equations (7)–(10) are the core objects for this part. The key normative objects are the indirect utility function (V_i(p,y_i)), the equivalent variation or welfare-income metric (\Delta y_i^), and the social welfare function (SWF(\theta)).
+
+### Data
+The paper does not rely on a single dataset. It is a methodological survey drawing on many applications, including Euromod-type European tax-benefit models, labour-supply applications in several countries, and studies of conditional cash-transfer programs in developing countries. The data object is therefore generic: household-level micro-data containing incomes, socio-demographic characteristics, and variables necessary to reconstruct tax liabilities, benefit entitlements, or behavioural equations. Microsimulation requires detailed household heterogeneity precisely because the goal is to identify the winners and losers of redistribution reforms and to evaluate their aggregate budgetary and welfare consequences.
+
+### Identification / empirical strategy
+This is not an identification paper in the narrow econometric sense. It does not derive identification theorems for parameters from exclusion restrictions or support conditions. Instead, its logic is conceptual and methodological: policy evaluation becomes possible because the analyst combines observed heterogeneity in the micro-data with explicit policy rules and, in behavioural models, an estimated or calibrated behavioural response model. For arithmetical microsimulation, the key theoretical justification is the envelope theorem. The authors show that, for marginal reforms and under perfect-market assumptions, the welfare effect of a price or tax change can be measured by applying the new prices to the initial consumption bundle.
+
+### Treatment of preferences
+Preferences are central in the behavioural part of the paper. In the continuous labour-supply framework, preferences are represented by a utility function over consumption, labour, and household characteristics, with common parameters and idiosyncratic terms. In the discrete-choice framework, the utility attached to each labour-supply alternative depends on wages, disposable income, observed characteristics, common parameters, and alternative-specific idiosyncratic terms. The paper treats preference heterogeneity pragmatically rather than axiomatically.
+
+### Treatment of opportunities / constraints
+The paper absolutely emphasizes budget constraints and tax-benefit rules. In both arithmetical and behavioural microsimulation, the central “constraint” is the budget set defined by taxes, benefits, wages, and non-labour income. In that sense, constraints are modeled explicitly. However, the paper does not generally model opportunities as feasible job sets in the RURO sense. It does not analyse latent job availability, hours offers, occupation sets, or employer-side restrictions as a core object.
+
+### Welfare / normative object
+This is one of the strongest parts of the paper. The authors explicitly justify arithmetical microsimulation using standard consumer theory and the equivalent variation or income-metric welfare change. They show that, for marginal reforms and under standard assumptions, the welfare effect of a price change can be measured by the cost of the initial consumption bundle under the new prices. Equations (1)–(6) provide this justification.
+
+### Main findings
+Because this is a survey paper, the “findings” are methodological rather than a single empirical result. The first main finding is that microsimulation is powerful because it fully exploits household heterogeneity. It identifies winners and losers of reforms with much greater precision than representative-agent or “typical-case” approaches and also permits accurate budget-cost calculations. This is emphasized in the introduction and in the discussion of arithmetical models. The second main finding is that arithmetical microsimulation has a serious theoretical justification in welfare terms.
+
+### Main limitations
+The first limitation is that the paper is broad and synthetic rather than analytically narrow. It does not derive detailed econometric identification results or propose one unified empirical framework. For a researcher wanting a ready-made estimation blueprint, it is more of a conceptual guide than a directly implementable model. Labour-market opportunities in the sense of latent job availability, employer rationing, or opportunity sets (A) are largely absent from the baseline models.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it shows how microsimulation fits into the broader public-economics toolkit. It can help motivate why one needs micro-level heterogeneity, why representative-agent reasoning is insufficient for redistribution analysis, and why positive and normative analysis are often combined in practice. It is useful for model design if part of your empirical strategy involves tax-benefit microsimulation, labour-supply responses, or social-welfare comparisons. In particular, the paper gives a clean taxonomy of arithmetical versus behavioural versus dynamic versus micro-macro integrated approaches.
+
+### Relation to opportunities vs preferences
+The paper mainly discusses preferences and budget constraints, not opportunities in the sense of feasible job sets. Behavioural models distinguish observed heterogeneity, common parameters, and idiosyncratic preference terms, but they generally take the choice set as the budget-feasible set generated by wages and taxes. This means the paper is informative for the preferences-versus-budget-constraint distinction, but not for the preferences-versus-opportunities distinction as you define it. It is thus very useful for understanding one source of welfare differences, namely policy-shaped budget sets, while leaving open the more fundamental question of unequal job opportunities.
+
+### Quick takeaway
+Provides the most authoritative methodological synthesis of microsimulation for redistribution analysis, distinguishing arithmetical from behavioural models and justifying arithmetical welfare evaluation through envelope-theorem arguments. Relevant for the JMP because it clarifies when and why a separate behavioural model is needed on top of tax-benefit simulation, and how equivalent-variation welfare metrics can be grounded in standard consumer theory.
+
+
+---
+
+## François Bourguignon, Francisco H. G. Ferreira, and Marta Menéndez (2007) — Inequality of Opportunity in Brazil
+
+**Source extracts merged:** Bourguignon_et_al_2007.md; markdowns/Bourguignon_et_al_2007.md
+
+### Full citation
+Bourguignon, F., Ferreira, F. H. G., & Menéndez, M. (2007). Inequality of opportunity in Brazil. *Review of Income and Wealth*, 53(4).
+
+### One-sentence contribution
+Proposes an empirical measure of the share of earnings inequality attributable to observed circumstances (family background, race, region of birth), finding that these account for 10--37% of the Theil index of male earnings inequality in urban Brazil, with roughly 60% of the effect operating directly on wages rather than indirectly through schooling and labour-market status.
+
+### Core research question
+How much of observed male earnings inequality in urban Brazil can be attributed to unequal opportunities (exogenous circumstances) versus "effort," and how much of the circumstance effect operates directly on earnings versus indirectly through observed effort proxies?
+
+### Economic setting and context
+The paper studies male earnings inequality in urban Brazil in 1996 using the PNAD household survey. Its normative background is Roemer’s equality-of-opportunity framework, in which differences due to circumstances rather than responsibility are the main object of concern.
+
+### Model / theoretical framework
+The paper is an empirical decomposition study, not a structural labor-supply or job-choice model. Earnings are modeled as a function of circumstance variables, effort variables that may themselves depend on circumstances, and an unobserved residual. Inequality of opportunity is then defined through counterfactual earnings distributions in which observed circumstances are equalized.
+
+### Key objects
+The main objects are observed hourly earnings, circumstance variables, effort variables, the observed earnings distribution, and the counterfactual distribution that would arise under equalized circumstances. The key summary statistic is the share of earnings inequality attributable to unequal opportunities for a chosen inequality index.
+
+### Data
+The data come from the 1996 PNAD survey. The analysis focuses on active urban males aged 26–60 with positive earnings; the final sample contains 28,474 occupied men after the paper’s restrictions.
+
+### Identification / empirical strategy
+Identification is not quasi-experimental. The paper is explicit that omitted circumstances and omitted effort variables may bias simple regressions, so it does not rely on point-identified causal estimates. Instead, it combines earnings regressions with counterfactual distribution simulations and a bounded-inference exercise over admissible omitted-variable correlations.
+
+### Treatment of preferences
+Preferences are not modeled. The paper distinguishes circumstances from effort proxies, but it does not introduce heterogeneous tastes, utility functions, or a behavioral choice model.
+
+### Treatment of opportunities / constraints
+The paper treats opportunities as exogenous background circumstances such as race, region of birth, parental education, and father’s occupation. It does not model opportunities as feasible job sets, latent offers, or labor-demand constraints, so its opportunity concept is circumstance-based rather than set-based.
+
+### Welfare / normative object
+The normative object is inequality of opportunity in earnings, not individual welfare directly. The paper asks what share of observed earnings inequality should be attributed to factors beyond personal control and therefore interpreted as compensation-relevant.
+
+### Main findings
+The paper finds that the observed circumstances account for between 10 and 37 percent of the Theil index of male earnings inequality across cohorts, with an average central estimate around 23 percent. It also finds that the direct effect of circumstances on earnings, holding observed effort variables fixed, accounts for roughly 60 percent of the total opportunity effect. Parental education is the most important single circumstance, followed by father’s occupation and race.
+
+### Main limitations
+The paper does not model preferences or feasible opportunity sets, so it cannot separate opportunities from tastes in a structural sense. Its results are also bounds under maintained assumptions rather than point-identified causal estimates.
+
+### Relevance for my JMP
+This paper is useful for the decomposition side of the JMP because it shows how a responsibility-versus-compensation distinction can be operationalized empirically. It is not a direct model-design paper for labor supply or latent jobs, but it is a useful reminder that any opportunity decomposition needs a transparent definition of the opportunity object.
+
+### Relation to opportunities vs preferences
+The paper is directly about opportunities versus responsibility, but not about opportunities versus preferences. Because preferences are absent, the residual inequality component is not cleanly interpretable as taste heterogeneity or effort in a structural sense.
+
+### Quick takeaway
+Decomposes earnings inequality in urban Brazil into circumstance-driven (10--37% of Theil) and residual components, with ~60% of the circumstance effect operating directly on wages rather than indirectly through schooling. Operationalises the responsibility-versus-compensation distinction empirically, though without structural labour-supply or feasible-set modelling.
+
+---
+
+## Paolo Brunori, Francisco H. G. Ferreira, and Vito Peragine (2013) — Inequality of Opportunity, Income Inequality and Economic Mobility: Some International Comparisons
+
+**Source extracts merged:** Brunori et al_2013.md; markdowns/Brunori_et_al_2013.md
+
+### Full citation
+Brunori, P., Ferreira, F. H. G., & Peragine, V. (2013). Inequality of opportunity, income inequality and economic mobility: Some international comparisons. IZA Discussion Paper No. 7155.
+
+### One-sentence contribution
+Synthesises cross-country evidence on two families of ex-ante opportunity-sensitive measures -- an inequality of economic opportunity index (IEO) across 41 countries and the Human Opportunity Index (HOI) across 39 countries -- finding substantial international variation, an inverted-U "Kuznets curve" for opportunity inequality vs development, and strong positive associations between inequality of opportunity and intergenerational persistence.
+
+### Core research question
+Can one make meaningful international comparisons of inequality of opportunity using ex-ante measures, and what empirical associations emerge between opportunity inequality, overall inequality, development, and intergenerational mobility?
+
+### Economic setting and context
+The paper assembles evidence across many countries rather than estimating one unified dataset. It is situated in the equality-of-opportunity literature, where unfair inequality is defined as inequality due to circumstances beyond individual control.
+
+### Model / theoretical framework
+The framework is normative and descriptive rather than structural. It focuses on ex-ante inequality-of-opportunity measures built from circumstance-defined types and on the Human Opportunity Index for access to basic services.
+
+### Key objects
+The main objects are smoothed-distribution measures of inequality of economic opportunity, their share in total inequality, and the Human Opportunity Index, which combines average coverage with a penalty for unequal access across types.
+
+### Data
+The paper synthesizes existing country studies rather than estimating a single harmonized micro dataset. The underlying outcome variables, survey years, and circumstance sets differ across studies.
+
+### Identification / empirical strategy
+There is no causal identification strategy. The core empirical move is to attribute between-type variation in smoothed outcomes to observed circumstances and to interpret it as a lower bound on unfair inequality.
+
+### Treatment of preferences
+Preferences are not modeled explicitly. The framework separates circumstances from effort conceptually, but it does not estimate heterogeneous tastes or choice behavior.
+
+### Treatment of opportunities / constraints
+“Opportunity” here means circumstance-related prospects or service access, not explicit feasible job sets. The paper therefore helps with the normative classification of unfair inequality, but not with structural modeling of individualized opportunity sets.
+
+### Welfare / normative object
+The operative objects are opportunity-sensitive inequality indices rather than a direct welfare function. The paper is strongly compensatory in spirit, but it does not construct a well-being measure over realized bundles and feasible sets.
+
+### Main findings
+The paper documents large cross-country variation in lower-bound inequality of opportunity, a positive association with total inequality, and a negative association with intergenerational mobility. It also shows that different ex-ante measures can yield quite different country rankings, especially when comparing the IEO measures with the Human Opportunity Index.
+
+### Main limitations
+Comparability is limited because studies use different data, outcomes, and circumstance sets. The measures are also only lower bounds, and the paper does not separately identify preferences, opportunities, and pay schedules in the richer sense relevant to structural labor models.
+
+### Relevance for my JMP
+Useful mainly for framing and comparative context. It helps position your project relative to the broad inequality-of-opportunity literature and clarifies what is gained and lost when “opportunity” is measured through observed circumstances rather than explicit feasible sets.
+
+### Relation to opportunities vs preferences
+The paper is much closer to circumstances-versus-effort than to opportunities-versus-preferences. It therefore provides contextual background for unfair inequality, but not a direct template for separating preferences from feasible opportunities.
+
+### Quick takeaway
+A strong comparative reference for the broad inequality-of-opportunity literature, but not a structural model of opportunities.
+
+
+---
+
+## Bart Capéau, André Decoster, and Gijs Dekkers (2016) — Estimating and Simulating with a Random Utility Random Opportunity Model of Job Choice: Presentation and Application to Belgium
+
+**Source extracts merged:** Capeau_et_al_2015.md; Capeau_et_al_2016.md; Capéau et al_2016.md; markdowns/Capeau_et_al_2016.md; markdowns/Capeau_et_al_2015.md
+
+### Full citation
+Capéau, B., Decoster, A., & Dekkers, G. (2016). Estimating and simulating with a random utility random opportunity model of job choice: Presentation and application to Belgium. *International Journal of Microsimulation*, 9(2), 144--191.
+
+### One-sentence contribution
+Presents, estimates, and simulates a RURO model of job choice in which observed labour-market behaviour is jointly driven by heterogeneous preferences (Box-Cox utility over consumption and leisure) and heterogeneous stochastic job opportunities (inhomogeneous Poisson arrival of wage-hours packages), using Belgian EU-SILC 2007 data.
+
+### Core research question
+How can one estimate and simulate a labour-supply/job-choice model in which heterogeneity in observed choices reflects both preference differences and differences in available job opportunities, and what does such a model imply about education, participation, wages, and hours in Belgium?
+
+### Economic setting and context
+The application is to Belgium using EU-SILC 2007. The empirical focus is labour-market participation and labour supply under job-choice frictions, with special attention to differences by education and gender. The paper highlights large unemployment gradients by education, especially among low-educated women and men, and uses the RURO framework to decompose these patterns into preference intensity, job-offer intensity, and wage-offer differences. The data are drawn from the Belgian private-household population.
+
+### Model / theoretical framework
+The model class is a Random Utility Random Opportunity model of job choice. The core conceptual move is that individuals choose among available activities, some of which are jobs and some of which are non-market alternatives. Jobs are treated as packages including wages, labour-time regimes, and other job attributes. Opportunities are not fixed and common across agents; they arise from an individual-specific stochastic process of job offers. The agent chooses the best available alternative.
+
+### Key objects
+The central economic objects are the systematic utility function (V(c,T-h;x^V)), the induced utility function over wage-hours packages (\Psi(w,h;x^V,x^f)), the random multiplicative taste term (\varepsilon(z)), the job-offer intensity (q), the wage-offer density (g_1(w)), and the labour-time-offer density (g_2(h)). These are the objects through which preferences and opportunities are separated. Another key object is the likelihood of observing a chosen job offer: with the analogous expression for choosing a non-market alternative. This formula is important because it shows directly how preferences and opportunities jointly determine observed choices.
+
+### Data
+The model is estimated on Belgian EU-SILC 2007. The full dataset contains 6,348 households and 15,493 individuals and is representative of the Belgian private-household population, excluding collective households and institutions. The final estimation samples are selected from labour-market-available couples, single women, and single men. The final estimation sample consists of 1,457 couples, 571 single females, and 449 single males.
+
+### Identification / empirical strategy
+Identification is partly nonparametric and partly parametric. The paper explicitly discusses nonparametric identification on pages 157-158. The main logic is sequential. First, comparing observationally equivalent individuals who work different hours at the same wage identifies the composite object (\Psi(w,h)g_2(h)). Second, comparing individuals working the same hours at different wages identifies the wage-offer density (g_1(w)), since (g_1) must integrate to one.
+
+### Treatment of preferences
+Preferences are modeled explicitly through the systematic utility function over disposable income and leisure, plus a random multiplicative term capturing unobserved job or leisure attributes. The systematic part is Box-Cox. For singles, and for couples the model allows spouse-specific leisure terms and a leisure-interaction term under a unitary framework. Pages 158-159 present these functional forms.
+
+### Treatment of opportunities / constraints
+Opportunities are modeled explicitly. The set of available job alternatives is not assumed universal, nor summarized only by an exogenous wage. Instead, the availability of suitable jobs is the outcome of a stochastic job-arrival process. Job offers are packages of wages, hours regimes, and other attributes, and individuals differ in both observed and unobserved opportunity sets. Pages 146-155 are central on this point.
+
+### Welfare / normative object
+The paper is essentially positive. It estimates a behavioural model of job choice and uses it for simulation of participation, hours, wages, and education counterfactuals. It does not define a social welfare function, money-metric utility criterion, equivalent variation, or fairness principle. There is therefore no explicit welfare object beyond utility as a behavioural construct.
+
+### Main findings
+The first main finding is conceptual and empirical at once: the RURO framework can be estimated on Belgian data and yields a meaningful separation between preference intensity, job-offer intensity, and wage-offer distributions as drivers of labour-market outcomes. This is explicit in the abstract, introduction, and Sections 5-7. Second, education shifts the wage-offer distribution to the right. Figure 3 on page 168 shows that higher education is associated with higher wage offers, while potential experience also shifts the offer distribution rightward up to a point. The paper is explicit that education and experience interact on the opportunity side.
+
+### Main limitations
+A first limitation is explicitly acknowledged by the authors: the model is static and not a full equilibrium framework. It is not a matching model and does not endogenize labour-market frictions through a complete equilibrium mechanism; frictions are taken as given. The conclusion on page 179 states this directly. A second limitation is identification.
+
+### Relevance for my JMP
+This paper is one of the strongest framing references for the proposition that observed labour-market outcomes should be understood as the joint result of preferences and opportunities. It provides a direct rebuttal to models that treat opportunity heterogeneity as negligible or as fully embedded in wages. Very high relevance. The paper offers a concrete empirical architecture for modelling jobs as wage-hours packages plus unobserved nonpecuniary attributes, with stochastic opportunity arrival and non-market alternatives.
+
+### Relation to opportunities vs preferences
+This paper is directly about the opportunities-versus-preferences distinction. That is its central value. It argues that classical labour-supply models confound the two by treating wages as exogenous individual traits and by leaving the availability of job alternatives outside the model, whereas RURO makes both parts explicit. The opportunity side is not merely “hours restrictions.” It includes the stochastic availability of job packages and the intensity with which suitable jobs arrive.
+
+### Quick takeaway
+Presents, estimates, and simulates a full RURO model on Belgian data, decomposing labour-market outcomes into preference intensity, job-offer intensity, and wage-offer distributions by education and gender. This is the closest existing empirical template for the JMP's positive model: it operationalizes jobs as wage-hours packages with stochastic arrival, separately identifies A from R, and shows that education shifts the opportunity side at least as much as the preference side.
+
+
+---
+
+## Bart Capéau and André Decoster (2016) — Getting tired of work, or re-tiring in absence of decent job opportunities? Some insights from an estimated Random Utility/Random Opportunity model on Belgian data
+
+**Source extracts merged:** Capeau_Decoster_2016.md; markdowns/Capeau_Decoster_2016.md
+
+### Full citation
+Cap?au, Bart, and Andr? Decoster. 2016. ?Getting tired of work, or re-tiring in absence of decent job opportunities? Some insights from an estimated Random Utility/Random Opportunity model on Belgian data.? EUROMOD Working Paper No. EM4/16, ISER, University of Essex.
+
+### One-sentence contribution
+The paper estimates a RURO model on Belgian data and separately identifies age effects on preferences and job opportunities, showing that declining offer intensity after roughly age 30 is at least as important as growing taste for leisure in explaining older workers? lower participation.
+
+### Core research question
+To what extent is the lower labour-market participation of older workers, especially ages 50?64 relative to ages 30?49, driven by changing preferences for leisure versus deteriorating job opportunities?
+
+### Economic setting and context
+The paper studies Belgium using EU-SILC 2007 and focuses on people still available for the labor market rather than on retirement as such. The empirical motivation is the sharp fall in participation and hours between prime-age and older workers.
+
+### Model / theoretical framework
+The model is a Random Utility/Random Opportunity job-choice model. Individuals choose among latent job offers and non-market alternatives, where jobs are packages of wages, hours, and non-pecuniary attributes, and opportunities arrive through a stochastic offer process.
+
+### Key objects
+The core objects are the systematic utility over disposable income and leisure, the wage-offer density, the hours-offer density, and the relative intensity of market versus non-market opportunities.
+
+### Data
+The estimation uses Belgian EU-SILC 2007, with net incomes computed through EUROMOD. The sample covers singles and couples of working age after excluding groups outside the model’s labor-market scope.
+
+### Identification / empirical strategy
+Identification is structural and partly parametric. The paper relies on functional-form restrictions to separate utility from the offer process and uses observed differences in wages, hours, participation, and unemployment conditions to identify the opportunity side.
+
+### Treatment of preferences
+Preferences are modeled explicitly through income-leisure utility with demographic shifters and random valuation of non-pecuniary job characteristics. The paper allows age to affect preferences, but does not assume that aging works only through tastes.
+
+### Treatment of opportunities / constraints
+This is the paper’s main strength. Opportunities are modeled directly through latent job-arrival intensity and offer distributions, so labor-market outcomes are not treated as free choice on a common budget set.
+
+### Welfare / normative object
+The paper is primarily positive. It does not define a welfare criterion, but it is clearly intended as a behavioral foundation for later welfare analysis that would want to treat preferences and opportunities differently.
+
+### Main findings
+The main result is that age-related opportunity deterioration is quantitatively central. In the counterfactual that equalizes job offer intensity to that of a 30-year-old, participation rises by about 6.9 percentage points, versus about 2.6 points when equalizing preferences to the least leisure-oriented age profile. Opportunity equalization works mainly through the extensive margin, while preference equalization also raises hours conditional on work. The paper also documents a sharp decline in offer intensity after age 30, with stronger deterioration for women and substantial regional differences.
+
+### Main limitations
+The opportunity object is still partly pinned down by functional form, and the model is static. It also represents labor demand in reduced form through offer intensities rather than through a richer search or equilibrium structure.
+
+### Relevance for my JMP
+Very high. This is one of the clearest empirical papers in your corpus for separating preferences from opportunities inside a structural model and is therefore directly relevant for any future attempt to build a welfare object that distinguishes them.
+
+### Relation to opportunities vs preferences
+The paper is directly about this distinction. Its main empirical contribution is to show that older workers’ lower labor supply cannot be read only as a taste shift; opportunity deterioration is quantitatively central.
+
+### Quick takeaway
+One of the most directly relevant papers for your preferences-versus-opportunities agenda.
+
+
+---
+
+## Bart Capéau, Liebrecht De Sadeleer, Sebastiaan Maes, and André Decoster (2021) — Nonparametric Welfare Analysis for Discrete Choice: Levels and Differences of Individual and Social Welfare
+
+**Source extracts merged:** Capeau_et_al_2021.md; Capéau et al_2021.md; markdowns/Capeau_et_al_2021.md
+
+### Full citation
+Capéau, Bart, Liebrecht De Sadeleer, Sebastiaan Maes, and André Decoster. 2021. “Nonparametric Welfare Analysis for Discrete Choice: Levels and Differences of Individual and Social Welfare.” CESifo Working Paper No. 9071.
+
+### One-sentence contribution
+The paper develops a nonparametric framework for measuring individual and social welfare in discrete-choice models with unrestricted unobserved preference heterogeneity, showing how welfare levels, welfare differences, and social welfare can be recovered from choice probabilities and, when needed, transition probabilities.
+
+### Core research question
+How can one conduct individual and social welfare analysis in discrete-choice random-utility models while allowing for unrestricted unobserved preference heterogeneity and avoiding strong parametric assumptions, and how can such welfare objects be identified from cross-sectional or panel data?
+
+### Economic setting and context
+The paper is fundamentally methodological. Its main contribution is not tied to one country or one dataset, but to a general discrete-choice random-utility setting with a finite common choice set and a numeraire. The empirical illustration uses German SOEP 2018 data and studies single females choosing among non-work, part-time work, and full-time work under the German tax-benefit system and a counterfactual basic-income flat tax reform. The substantive policy context of the illustration is a reform replacing the current nonlinear progressive German income tax schedule with a revenue-neutral flat tax combined with a basic-income-type treatment of social assistance relative to earned income.
+
+### Model / theoretical framework
+The model class is a discrete-choice random-utility model with unrestricted unobserved preference heterogeneity. Each preference type (\omega) has utility (U_c^\omega(y-p_c)) over a finite common choice set (C) and a numeraire, where (y) is exogenous income and (p_c) is the price of alternative (c). The paper assumes continuity and strict monotonicity in the numeraire, negligible probability of ties, exogeneity of budget sets, and a standard random-utility representation of observed choice. The core normative framework is built from Fleurbaey-style nested opportunity set (NOS) measures. The paper adapts these measures from a continuous setting to discrete choice.
+
+### Key objects
+The main preference object is the type-specific utility function (U_c^\omega(y-p_c)). The main behavioral objects are the Marshallian choice probabilities ] and the transition probabilities These are the empirical inputs from which welfare distributions are identified. The main welfare object is the discrete NOS measure where (\tilde p(\lambda)) is the virtual price vector associated with the common family of nested opportunity sets. The paper then treats money metric utility (MMU), compensating variation (CV), equivalent variation (EV), equivalent income, and wage metrics as particular cases or close relatives within this structure.
+
+### Data
+The theory is not tied to one dataset, but the empirical illustration uses the 2018 German SOEP. The estimation sample consists of single females available to the labour market, under age 60, after trimming outliers in wages and asset income and dropping missing-hours observations. The final subsample contains 1,922 single females. Appendix C.1 gives the sample description.
+
+### Identification / empirical strategy
+The identification strategy is the paper’s central methodological contribution. It does not identify primitive deterministic preferences and the distribution of unobserved heterogeneity separately. Instead, it identifies the distributions of welfare objects directly as functionals of choice and transition probabilities. This is an important conceptual choice: the paper identifies the welfare statistics of interest without fully recovering the underlying structural primitives. The fundamental insight is that the event “welfare exceeds a threshold” can be rewritten as an event about optimal choice under a counterfactual virtual price vector associated with the welfare metric.
+
+### Treatment of preferences
+Preferences are treated with unusual generality. The paper allows unrestricted, unobserved preference heterogeneity across individuals, encoded in the preference type (\omega). This is one of its main virtues. In contrast to much applied welfare work, it does not impose a specific additive-logit or other narrow parametric structure on tastes in order to derive welfare distributions.
+
+### Treatment of opportunities / constraints
+The paper does not model heterogeneous actual feasible job sets, latent job arrivals, or labour-demand-side constraints. The actual choice set is a finite common set (C), shared across individuals in the core theory. Prices and exogenous income define the budget environment, but the paper is not a RURO or latent-jobs paper. However, the paper does make opportunities central in a different sense: welfare is measured through nested opportunity sets used as common evaluative benchmarks. These are not empirical opportunity sets (A_i) faced by different persons; they are reference opportunity sets (B_\lambda) used to cardinalize preferences and compare well-being across heterogeneous individuals.
+
+### Welfare / normative object
+The paper is explicitly normative and econometric at once. Its main normative object is the class of discrete nested opportunity set welfare measures, with money metric utility as the leading special case. Welfare differences are then defined through changes in these measures, and social welfare is constructed by aggregating the resulting welfare distribution with a concave social aggregator. This is therefore not a paper that merely appends compensating variation to a structural demand model.
+
+### Main findings
+The main theoretical finding is that for the broad class of discrete nested-opportunity-set welfare measures, marginal, conditional, and joint welfare distributions can be expressed as functionals of observed choice probabilities and, for welfare differences, transition probabilities. This includes MMU, CV, EV, equivalent income, wage metrics, and social welfare. A second major finding is that these welfare objects can be identified nonparametrically from observational data. Welfare levels are point-identified from cross-sectional data with sufficient price variation. Joint distributions of welfare levels and welfare differences are point-identified from panel data, and when only cross-sections are available, the paper derives informative bounds using Boole-Fréchet inequalities and stochastic revealed preference restrictions.
+
+### Main limitations
+The first limitation is that the framework is built for discrete choice with a common finite choice set. This is powerful and clean, but it is not a model of heterogeneous actual opportunity sets, latent jobs, or labour-market rationing. A second limitation is the exogeneity requirement on prices and income. The paper acknowledges that endogeneity is a serious issue and suggests control-function approaches for some cases, but the core identification results rely on budget-set exogeneity.
+
+### Relevance for my JMP
+This paper is extremely useful for framing a welfare-measurement component of the JMP. It provides a rigorous language for saying that welfare under heterogeneous preferences should be represented by distributions, not just point estimates, and that one can study who gains from reforms relative to who was initially well-off. It is useful if your empirical design retains a discrete-choice structure and you want a welfare analysis that does not inherit the full rigidity of parametric logit-style assumptions. It is less useful for model design on the opportunity-set side, because it does not estimate heterogeneous feasible job sets.
+
+### Relation to opportunities vs preferences
+This paper is much stronger on the preferences side than on the opportunities side as you define that distinction. It allows unrestricted, unobserved preference heterogeneity and then shows how welfare can still be compared across individuals in a disciplined way. Its notion of opportunity is evaluative and common: nested opportunity sets used as welfare benchmarks. It does not study actual heterogeneous opportunities faced by different individuals in the labour market.
+
+### Quick takeaway
+Develops a nonparametric framework for welfare levels, differences, and social welfare in discrete-choice models with unrestricted unobserved preference heterogeneity, recovering distributional welfare objects from choice and transition probabilities. Directly useful for a welfare-measurement layer atop a discrete-choice structure: it shows that welfare should be represented by distributions, not point estimates, and that who gains from reform can be assessed relative to initial well-being.
+
+
+---
+
+## Jean-François Carpantier and Christelle Sapata (2016) — Empirical welfare analysis: when preferences matter
+
+**Source extracts merged:** Carpantier_Sapata_2016.md; markdowns/Carpantier_Sapata_2016.md
+
+### Full citation
+Carpantier, Jean-François, and Christelle Sapata. 2016. “Empirical welfare analysis: when preferences matter.” Social Choice and Welfare 46: 521–542.
+
+### One-sentence contribution
+The paper operationalizes conditional equality and egalitarian equivalence with partially individualized labor-supply preferences and shows that moving beyond group-level tastes reclassifies about 18 percent of the worst-off under one prominent criterion.
+
+### Core research question
+How do conditional equality and egalitarian equivalence rank individuals when labor-supply choices reflect heterogeneous preferences, and how much does the identification of the worst-off change when those preferences are modeled more finely?
+
+### Economic setting and context
+The application uses U.S. singles without children in a static labor-supply setting. The paper is situated at the intersection of structural labor-supply estimation and fairness-based interpersonal welfare comparison.
+
+### Model / theoretical framework
+The behavioral model is a discrete-hours consumption-leisure model with heterogeneous tastes for leisure. The estimated structure is then used to implement conditional equality and egalitarian equivalence, following Fleurbaey and Maniquet.
+
+### Key objects
+The main objects are the discrete labor-supply utility function, the nonlinear budget set, the leisure-preference parameter, and the two welfare criteria used to rank individuals under different fairness principles.
+
+### Data
+The paper uses U.S. micro data from the Cross National Equivalent File, focusing on a restricted sample of working singles without children in 2004.
+
+### Identification / empirical strategy
+Preferences are identified structurally from discrete labor-supply choices, wages, non-labor income, and the tax schedule. The paper then refines individual preferences by exploiting the discrepancy between group-predicted and revealed choices.
+
+### Treatment of preferences
+Preferences are central. The main methodological contribution is precisely to move from group-level taste heterogeneity toward partially individualized preferences derived from revealed-choice information.
+
+### Treatment of opportunities / constraints
+The paper does not model feasible job sets or latent opportunities. On the “circumstance” side it mainly uses wages and non-labor income as budget-set proxies, which is much narrower than an explicit opportunity-set framework.
+
+### Welfare / normative object
+The paper is explicitly normative. It operationalizes conditional equality and egalitarian equivalence and treats welfare comparison as a responsibility-sensitive ranking problem rather than a simple utility or income comparison.
+
+### Main findings
+The key result is that individualized preference recovery matters for welfare ranking. About 57 percent of individuals choose differently from the demographic-group prediction, and using that discrepancy to refine tastes leads to meaningful reranking: under EE0, about 18 percent of the worst-off are reclassified relative to a group-level approach. At the same time, the average socio-demographic profile of the worst-off changes much less than the individual identities, so coarse targeting may look stable even when individual-level justice assessments move.
+
+### Main limitations
+The sample is narrow, the model is static, and the circumstance side is weakly modeled because wages proxy for background conditions. As a result, the paper is much stronger on preferences than on opportunities.
+
+### Relevance for my JMP
+High for the welfare-measurement side of the project. It is a useful example of how a structural labor-supply model can feed directly into fairness-based welfare ranking once preference heterogeneity is taken seriously.
+
+### Relation to opportunities vs preferences
+This paper is mainly about preferences, not opportunities. It sharpens the preference side of welfare analysis but leaves the feasible-set side largely unresolved.
+
+### Quick takeaway
+A valuable bridge from structural labor-supply estimation to responsibility-sensitive welfare ranking, with strongest relevance on the preference side.
+
+
+---
+
+## Raj Chetty (2009) — Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods
+
+**Source extracts merged:** Chetty_2009.md; markdowns/Chetty_2009.md
+
+### Full citation
+Chetty, Raj. 2009. “Sufficient Statistics for Welfare Analysis: A Bridge Between Structural and Reduced-Form Methods.” Annual Review of Economics 1: 451–487.
+
+### One-sentence contribution
+The paper develops and systematizes a “sufficient statistics” approach to welfare analysis in which many policy questions can be answered using a small set of reduced-form elasticities or marginal treatment effects, without fully identifying deep structural primitives.
+
+### Core research question
+Can one combine the identification credibility of reduced-form program-evaluation methods with the welfare and counterfactual relevance of structural models by deriving policy-welfare formulas that depend only on a small set of sufficient statistics rather than deep primitives?
+
+### Economic setting and context
+The paper is a methodological review, not a single-country empirical study. Its applications are drawn primarily from public economics, especially income taxation, social insurance, and behavioral public finance. It also closes by discussing possible applications in macroeconomics, labor, development, and industrial organization. The central visual summary is Figure 1 on page 5, which schematizes the sufficient-statistics logic: policy affects welfare through high-level parameters (\beta), and these (\beta) can be identified without uniquely identifying the deeper primitive vector (\omega).
+
+### Model / theoretical framework
+The model class is not one model but a general welfare-analysis framework. Chetty presents a six-step rubric for deriving sufficient-statistic formulas: specify the model, express the welfare derivative in terms of multipliers, substitute multipliers using marginal utilities and first-order conditions, recover marginal utilities from observed choices where needed, implement the resulting formula empirically, and then evaluate the model assumptions underlying the formula. The general structure is that many policies can be represented as a tax (t) financing a transfer (T(t)). The agent chooses a vector (x) subject to constraints (G^m(x,t,T)=0), and the analyst seeks rather than the full primitive structure. The paper’s key conceptual move is to use envelope conditions from private optimization to eliminate many behavioural responses from the welfare derivative, thereby reducing the dimensionality of the identification problem.
+
+### Key objects
+The central object is the welfare derivative with respect to a policy instrument, typically The paper argues that this object can often be written as a function of a small set of “sufficient statistics,” such as taxable income elasticities, expenditure elasticities, social-welfare weights, liquidity effects, or moral-hazard effects. A second key object is the distinction between primitive parameters and sufficient statistics. The primitive vector (\omega) contains preferences, constraints, and other deep parameters. The sufficient-statistic vector (\beta) is a lower-dimensional object, typically a set of elasticities or treatment effects, such that multiple (\omega) can generate the same (\beta), yet all such (\omega) imply the same welfare conclusion for the policy question at hand.
+
+### Data
+The paper is not based on one dataset. It is a review article that synthesizes results from other papers. Its empirical content consists of examples from prior studies, such as Feldstein on taxable income, Saez on optimal income taxation, Gruber on unemployment insurance, and Chetty et al. on tax salience. Accordingly, there is no single sample, period, or unified data design to extract.
+
+### Identification / empirical strategy
+The paper’s identification logic is the heart of its contribution. It argues that for many policy questions one does not need to identify all primitives of a structural model. Instead, one derives a welfare formula in which only certain combinations of parameters matter, and then estimates those combinations directly using program-evaluation or reduced-form methods. The key technical mechanism is the envelope condition. Because individuals or firms are assumed to optimize subject to constraints, many behavioural responses do not have first-order effects on private surplus.
+
+### Treatment of preferences
+Preferences enter the paper abstractly as primitives in structural models, but the methodological point is that one often need not identify them fully for a given welfare question. This is particularly clear in the discussion of taxation, where taxable income elasticities can substitute for detailed modelling of hours, effort, training, and avoidance margins, and in the social-insurance applications, where consumption-smoothing and moral-hazard objects can substitute for full dynamic primitives. The paper therefore treats preferences as essential in theory but often unnecessary to identify in full in practice.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the sense of feasible job sets, latent opportunity distributions, or ability sets (A). Constraints enter abstractly through the (G^m(x,t,T)) representation and, in applications, through taxes, transfers, borrowing constraints, insurance imperfections, or budget sets. This means that the paper is strong on constraints in a broad economic sense, but weak on opportunities in your sense. It does not distinguish unequal opportunities from unequal preferences as separate explanatory and normative objects. It also does not develop reference opportunity sets, actual opportunity sets, or responsibility for opportunity deprivation.
+
+### Welfare / normative object
+The welfare object is always a policy-specific welfare derivative or welfare difference, not a universal well-being index. Examples include excess burden of taxation, optimal tax rates, welfare gains from social insurance, and welfare under behavioral optimization errors. The paper is explicitly normative in that it seeks to make “precise statements about welfare” using sufficient statistics. But it is not normative in the axiomatic social-choice sense that concerns your jobs-and-wellbeing project.
+
+### Main findings
+The paper’s main general finding is that many important welfare questions can be answered with a small set of empirically estimable sufficient statistics rather than full primitive identification. This applies in taxation, social insurance, and some behavioral models. In taxation, the paper emphasizes Feldstein’s result that the elasticity of taxable income can be sufficient for deadweight-loss analysis, and Saez’s result that elasticities and distributional statistics can be used to characterize optimal income-tax conditions, especially at the top. These are presented as paradigmatic sufficient-statistic applications. In social insurance, the paper synthesizes results showing that optimal insurance can often be characterized by a small set of objects such as the gap in marginal utilities across states, consumption responses, liquidity effects, and moral-hazard effects, even in dynamic models.
+
+### Main limitations
+The paper is highly general and therefore abstract. It does not itself solve concrete applied questions; it organizes and interprets a literature that does. For a research project like yours, this means it is methodologically foundational but not directly usable as an empirical template without substantial adaptation. A second limitation is that the sufficient-statistic approach is question-specific.
+
+### Relevance for my JMP
+This paper is highly useful for framing. It gives you a clean language for positioning the project relative to the structural versus reduced-form divide. It also offers a disciplined way to argue that one need not always estimate everything to say something meaningful about welfare, provided one is explicit about the welfare question and the maintained assumptions. It is useful for model design mainly as a discipline on modularity.
+
+### Relation to opportunities vs preferences
+The paper is much more about primitives versus sufficient statistics than about opportunities versus preferences. Preferences appear as deep structural parameters that may not need full identification. Opportunities, in your sense, do not appear as a separate object. Its relevance for the opportunities-versus-preferences distinction is therefore indirect.
+
+### Quick takeaway
+Systematises the "sufficient statistics" approach to welfare analysis, showing that many policy questions can be answered with a small set of reduced-form elasticities without fully identifying deep structural primitives. Provides a disciplined language for positioning structural versus reduced-form welfare work and for arguing that one need not estimate everything to say something rigorous about welfare.
+
+
+---
+
+## Philippe Choné and Guy Laroque (2010) — Negative Marginal Tax Rates and Heterogeneity
+
+**Source extracts merged:** Chone_Laroque_2010.md; markdowns/Chone_Laroque_2010.md
+
+### Full citation
+Choné, Philippe, and Guy Laroque. 2010. “Negative Marginal Tax Rates and Heterogeneity.” American Economic Review 100(5): 2532–2547.
+
+### One-sentence contribution
+The paper shows that negative marginal tax rates can arise even in a pure intensive-margin Mirrlees model when agents differ jointly in productivity and work costs, so some low-income individuals with high work costs receive greater social priority.
+
+### Core research question
+Can negative marginal tax rates be justified without relying on participation responses, simply because workers differ in both productivity and the social meaning of work opportunity costs?
+
+### Economic setting and context
+This is a theoretical optimal-tax paper with an illustrative UK calibration. It is written against the standard result that optimal marginal tax rates in intensive-margin models are nonnegative.
+
+### Model / theoretical framework
+The paper extends the Mirrlees framework by allowing heterogeneity in both productivity and the cost of working. Those heterogeneities are compressed into a one-dimensional behavioral index, while social valuation is allowed to depend on the work-cost component.
+
+### Key objects
+The central objects are the after-tax income schedule, the incentive-compatible earnings allocation, and the modified social weights induced by the joint distribution of productivity and work opportunity costs.
+
+### Data
+There is no original estimation. The paper includes an illustrative calibration based on UK earnings and tax-rate data for 2003.
+
+### Identification / empirical strategy
+The argument is analytical rather than econometric. The calibration illustrates how the sign of marginal tax rates depends on assumed conditional heterogeneity in work costs rather than on identified causal variation.
+
+### Treatment of preferences
+The paper is about heterogeneity in the utility cost of work, but that heterogeneity also has a normative interpretation because it affects social weights. It therefore sits on the boundary between preference heterogeneity and compensable burden.
+
+### Treatment of opportunities / constraints
+There is no explicit feasible-set concept. “Work opportunity cost” is a utility-side burden, not a model of available jobs, hours restrictions, or demand-side opportunities.
+
+### Welfare / normative object
+The framework is explicitly normative and utilitarian. Its key point is that social priority need not be monotone in income once low earners differ in ethically relevant work costs.
+
+### Main findings
+The paper first re-establishes the standard unidimensional result: with only productivity heterogeneity, optimal marginal tax rates remain nonnegative. Negative rates emerge only in the multidimensional case, when the distribution of work costs conditional on earnings is such that some low earners are high-cost types who deserve compensation. The calibration shows that relatively modest heterogeneity in work costs at the bottom can flip the sign of the optimal marginal rate, making this a distinct intensive-margin route to EITC-like subsidies alongside Saez?s extensive-margin mechanism.
+
+### Main limitations
+The striking quantitative results rely on assumed rather than estimated heterogeneity profiles and on a cardinal utility specification that is ethically contestable. The paper also offers no explicit model of job opportunities.
+
+### Relevance for my JMP
+Useful mainly for the normative layer. It shows that once heterogeneity matters for social evaluation, observed income alone may be an insufficient guide to welfare priority.
+
+### Relation to opportunities vs preferences
+The paper is not a clean opportunity-set paper. Its main relevance is that it forces careful interpretation of work-cost heterogeneity: is it a preference, a handicap, or something that should be compensated?
+
+### Quick takeaway
+A strong paper on how ethically interpreted heterogeneity can overturn standard optimal-tax conclusions, but not a model of feasible opportunities.
+
+
+---
+
+## John K. Dagsvik and Anders Karlström (2005) — Compensating Variation and Hicksian Choice Probabilities in Random Utility Models That Are Nonlinear in Income
+
+**Source extracts merged:** Dagsvik_Karlstrom_2005.md; Dagsvik_karlstrom_2005.md; Dagsvik_Karlström_2005.md; markdowns/Dagsvik_Karlstrom_2005.md
+
+### Full citation
+Dagsvik, John K., and Anders Karlström. 2005. “Compensating Variation and Hicksian Choice Probabilities in Random Utility Models That Are Nonlinear in Income.” The Review of Economic Studies 72(1): 57–76.
+
+### One-sentence contribution
+The paper derives exact analytical formulas for Hicksian choice probabilities, the distribution of the random expenditure function, and the distribution of compensating variation and equivalent variation in discrete-choice random-utility models with nonlinear income effects.
+
+### Core research question
+How can one define and compute Hicksian demand, Hicksian choice probabilities, and compensating variation in random-utility discrete-choice models when utilities are nonlinear in income, so that standard log-sum and quasilinear shortcuts are unavailable?
+
+### Economic setting and context
+The paper is methodological and not tied to a single country, market, or dataset. It studies a generic consumer choosing among discrete alternatives, each characterized by attributes including price, under a random-utility model. Welfare effects are evaluated under changes in prices or other attributes associated with the alternatives. The authors are explicit that the target is compensating variation and related Hicksian welfare objects in discrete choice, including the distribution of expenditure conditional on the initial utility level and the joint distribution of expenditure, initial choice, and post-policy choice.
+
+### Model / theoretical framework
+The model class is a random-utility discrete-choice model. A consumer faces a feasible set (B) of discrete alternatives and the utility of alternative (j) is where (y) is income, (w_j) is a vector of attributes including price, (v_j(\cdot)) is deterministic and increasing in income, and (\varepsilon_j) is a random term. The paper initially assumes that the joint distribution of the random terms does not depend on the structural utility terms. The agent chooses among discrete alternatives. The feasible set is therefore the menu of available alternatives (B), not a continuous budget set or latent job set.
+
+### Key objects
+The main economic objects are the indirect utility the random expenditure function (Y_B(w,u)), the Hicksian choice probabilities (P_B^h(j,w,u)), and the welfare measures compensating variation and equivalent variation. A particularly important object is the expenditure function conditional on the initial utility level, (Y_B(w,V_B(w^0,y^0))). This is central because compensating variation is defined as the difference between post-policy income and the expenditure needed to attain initial utility under the new regime. The paper derives both its distribution and its moments.
+
+### Data
+There is no empirical dataset in the paper. The analysis is theoretical and formula-based, with illustrative examples such as nested logit, introduction of a new alternative, and removal of an alternative. These are examples of model environments, not empirical applications to observed microdata.
+
+### Identification / empirical strategy
+The paper is not primarily an identification paper in the nonparametric sense. Its logic is conditional and analytical: given knowledge of the utility specification and the joint distribution of the random utility components, derive exact formulas for Hicksian welfare objects. This is different from later work, such as Bhattacharya’s, which asks whether welfare can be identified from choice probabilities alone without parametric knowledge of heterogeneity. The paper is explicit that Hicksian choice probabilities can be computed readily provided the cumulative distribution (F_B(\cdot)) is known. In the GEV and i.i.d. extreme-value cases, the formulas simplify substantially and become especially tractable.
+
+### Treatment of preferences
+Preferences are modeled through the deterministic utility components (v_j(w_j,y)), which may be nonlinear in income and may differ across alternatives. This is crucial because nonlinear income effects are precisely what make Hicksian welfare measurement nontrivial in discrete choice. The paper does not study preference heterogeneity in an unrestricted way. It works within a fully specified random-utility framework where the distribution of the random components is known or sufficiently structured.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the labor-market or feasible-job-set sense. The feasible set is simply the menu (B) of discrete alternatives under consideration. Constraints therefore enter only through the menu of alternatives and the income-price structure. The paper is about exact welfare measurement conditional on a given discrete-choice environment, not about how that environment is generated or whether it is equally available across agents. That said, the paper does explicitly allow the choice set to change across policy regimes, for example when an alternative is removed or a new one appears.
+
+### Welfare / normative object
+The welfare object is Hicksian money-metric welfare, especially compensating variation and equivalent variation. The paper is explicit that the goal is to derive the distribution of these objects in discrete-choice random-utility models with nonlinear income effects. The paper is positive with welfare applications rather than explicitly normative in the fairness sense. It does not specify a social welfare function, does not discuss interpersonal comparability, and does not address responsibility for opportunities or compensation for unequal feasible sets.
+
+### Main findings
+The first main result is that the random expenditure function in a discrete-choice random-utility model can be represented as the minimum of alternative-specific expenditure requirements, and its distribution can be written explicitly. Theorem 1 establishes existence, uniqueness, continuity, monotonicity, and the distribution formula for (Y_B(w,u)). The second main result is the definition and derivation of Hicksian choice probabilities. Theorem 2 provides an exact formula for the probability of choosing alternative (j) conditional on attaining a fixed utility level (u). The paper emphasizes that these probabilities can be computed with only a one-dimensional integral once the cumulative distribution (F_B) is known.
+
+### Main limitations
+The welfare objects are exact conditional on knowledge of (F_B) and of the utility structure, but the paper does not establish that these objects are recoverable from choice probabilities alone under weak assumptions. This makes it less robust than later nonparametric approaches. A second limitation is that the paper is silent on opportunities in the labor-market sense. The feasible set (B) is simply the choice menu, and no attempt is made to model unequal access to alternatives as a separate source of welfare inequality.
+
+### Relevance for my JMP
+This paper is useful for framing the welfare-measurement side of the project. It shows that once one has a discrete-choice behavioural model, exact Hicksian welfare measures can in principle be derived even with nonlinear income effects. That is helpful if you want to distinguish clearly between behavioural modelling and welfare computation. It is useful for model design insofar as it shows what kinds of welfare objects become available once a random-utility model is specified.
+
+### Relation to opportunities vs preferences
+The paper is strong on welfare measurement and weak on opportunities. It treats preferences through a structured random-utility model and derives exact welfare consequences of policy changes. But it does not separately model opportunity heterogeneity or unequal feasible sets. It shows how to compute welfare exactly once the discrete-choice environment is specified, but it does not help decide whether observed differences arise from preferences or opportunities, or how those differences should be treated normatively.
+
+### Quick takeaway
+Derives exact analytical formulas for Hicksian choice probabilities, the random expenditure function, and the distribution of CV/EV in discrete-choice random-utility models with nonlinear income effects. Shows that once a random-utility model is specified, exact Hicksian welfare measures become available -- useful for distinguishing the behavioural-modelling step from the welfare-computation step in a jobs-and-wellbeing framework.
+
+
+---
+
+## John K. Dagsvik and Steinar Strøm (2006) — Sectoral labour supply, choice restrictions and functional form
+
+**Source extracts merged:** Dagsvik_Storm_2006.md; Dagsvik_Strom_2006.md; markdowns/Dagsvik_Strom_2006.md
+
+### Full citation
+Dagsvik, John K., and Steinar Strøm. 2006. “Sectoral labour supply, choice restrictions and functional form.” Journal of Applied Econometrics 21(6): 803–826. The preprint notes that the earlier title was “Analyzing labor supply behavior with latent job opportunity sets and institutional choice constraints.”
+
+### One-sentence contribution
+The paper develops a structural labour-supply framework in which individuals choose among latent job opportunities characterized by sector, wage, hours, and non-pecuniary attributes, and uses it to estimate sectoral labour supply for married women in Norway.
+
+### Core research question
+How can labour-supply behaviour be modeled when workers choose among latent job opportunities with sector-specific wages, fixed hours, and non-pecuniary job attributes, under complicated budget constraints and institutional hours restrictions?
+
+### Economic setting and context
+The paper is motivated by features of real labour markets that standard models abstract from: jobs differ in non-pecuniary content, hours are often fixed by the job, and labour markets impose quantity constraints and institutional restrictions on hours. The authors emphasize that these aspects are especially relevant in unionized and regulated labour markets. The empirical application is to married women in Norway in 1994, choosing whether to work and, if so, whether to work in the public or private sector. The public/private distinction is substantively important because the sectors differ in wages, regulation, job security, and the nature of tasks.
+
+### Model / theoretical framework
+The model class is a structural random-utility labour-supply model with latent job opportunity sets. The key departure from the traditional labour-supply model is that the worker does not choose hours and consumption directly from a universal feasible set. Instead, labour supply is the outcome of choosing from a latent set of jobs, where each job is characterized by hours, wage, sector, and non-pecuniary job attributes. In the one-person setup, utility is written as (U(C,h,z)=v(C,h)\varepsilon(z)), where (z) indexes market and non-market opportunities, (C=f(hw,I)) is after-tax household income, and (\varepsilon(z)) captures unobserved taste shifters and latent job-type attributes. The economic budget set is therefore only one part of the environment; the other part is the latent opportunity set.
+
+### Key objects
+The main objects are the deterministic utility component (v(C,h)), the random taste/job shifter (\varepsilon(z)), the tax-benefit mapping (f(hw,I)), the opportunity density over jobs, and the sector-specific opportunity parameters (b_j=\mu_j\theta_j). In the multisectoral extension, (\mu_j) captures average sector-specific preference for sector (j), while (\theta_j) captures the relative availability of sector-(j) jobs. A central object is the opportunity density. In the one-sector version it is (\theta g(h,w)); in the sectoral version it becomes sector-specific through (g_j(h,w)) and (b_j).
+
+### Data
+The labour-supply estimation uses a merged Norwegian sample from the “Survey of Income and Wealth, 1994” and the “Level of Living Conditions, 1995.” The sample includes married couples and cohabiting couples with common children, with spouses aged 25–64, excluding the self-employed and those on disability or related benefits. The final sample used to estimate the labour-supply model contains 824 married women. The wage equations are estimated on a larger sample because wage information for single women is also used there. Table 1 reports descriptive statistics by not working, public sector, and private sector.
+
+### Identification / empirical strategy
+Identification is structural and partly parametric. The paper is explicit that, without additional assumptions, one can identify only the product of the preference component over hours and the opportunity density over hours. In particular, under multiplicative separability, (v_2(h)) and (g_2(h)) cannot generally be disentangled nonparametrically from observed labour-supply outcomes. The paper states that if preferences are multiplicatively separable in consumption and hours and fixed costs of working are observed, then (v_1(C)) and the wage-offer density can be nonparametrically identified, but (v_2(h)) and (g_2(h)) remain confounded unless additional assumptions are imposed. Their solution in the empirical application is to impose functional-form structure on utility and a parametric structure on the opportunity distribution of hours.
+
+### Treatment of preferences
+Preferences are modeled as preferences over consumption, hours, and sector/job-specific non-pecuniary attributes. This is a stronger treatment of preferences than in standard labour-supply models because the worker may value the type of work or sector itself, not only income and leisure. The deterministic part of utility is given a Box–Cox-type functional form motivated by invariance arguments drawn from psychophysics and measurement theory. The paper derives a class of admissible functional forms from assumptions about meaningfulness under rescaling of consumption and leisure.
+
+### Treatment of opportunities / constraints
+The framework explicitly models latent, individual-specific opportunity sets of jobs. Jobs differ by fixed hours, sector-specific wages, and non-pecuniary attributes, and the distribution of available jobs varies across individuals. The paper states explicitly that there are two sources of unobserved heterogeneity: tastes and opportunities. The model also treats institutional quantity constraints seriously. Offered hours are not assumed to be uniformly available; instead, the offered-hours distribution has peaks at part-time and full-time.
+
+### Welfare / normative object
+The paper is primarily positive. It does not construct an individual welfare measure, social welfare function, or responsibility-sensitive criterion. Its stated welfare-related contribution is that the framework provides a flexible way to estimate uncompensated and compensated labour-supply elasticities in the presence of random utilities and complex budget sets. There is therefore no explicit treatment of responsibility for opportunities, compensation for unequal opportunities, or reference opportunity sets.
+
+### Main findings
+The main theoretical finding is that labour supply can be modeled coherently as choice among latent job opportunities, and that this framework can accommodate both complicated non-convex budget sets and institutional restrictions on hours. The paper also argues that invariance principles can meaningfully narrow the admissible functional forms for utility. Empirically, the model fits Norwegian data on married women reasonably well. Table 4 shows that predicted probabilities of not working, public-sector work, and private-sector work are close to the observed fractions, and predicted sector-specific annual hours are also close to observed averages. The estimates imply that higher education raises public-sector job opportunities and reduces private-sector opportunities, conditional on the maintained specification.
+
+### Main limitations
+A first limitation is that the empirical application does not use the full richness of the theoretical framework. The only observed non-pecuniary job attribute is sector; other job characteristics remain latent. This limits how far the paper can go empirically in mapping actual opportunity sets. A second limitation is identification.
+
+### Relevance for my JMP
+This paper is one of the strongest framing references for arguing that labour supply should be analyzed as job choice under latent opportunity constraints rather than as unconstrained choice over leisure and income. It also supports the claim that observed hours concentrations need not be interpreted as pure preference phenomena. It is extremely useful for model design. It gives a concrete architecture with latent jobs, sector-specific opportunity densities, fixed hours by job, and non-pecuniary job attributes.
+
+### Relation to opportunities vs preferences
+It explicitly states that there are two sources of unobserved heterogeneity—tastes and opportunities—and it builds the labour-supply model around that distinction. At the same time, it also shows why the distinction is empirically difficult: some opportunity and preference components remain entangled without additional assumptions.
+
+### Quick takeaway
+Develops a structural labour-supply framework where individuals choose among latent job opportunities characterised by sector, wage, hours, and non-pecuniary attributes, estimated for married women in Norway. One of the strongest references for arguing that labour supply should be analysed as job choice under latent opportunity constraints, with sector-specific opportunity densities and fixed hours by job -- a direct precursor to the opportunity-set architecture in $W(z,R,A;y)$.
+
+
+---
+
+## John K. Dagsvik, Zhiyang Jia, Tom Kornstad, and Thor O. Thoresen (2014) — Theoretical and Practical Arguments for Modeling Labor Supply as a Choice Among Latent Jobs
+
+**Source extracts merged:** Dagsvik_et_al_2014.md; markdowns/Dagsvik_et_al_2014.md
+
+### Full citation
+Dagsvik, John K., Zhiyang Jia, Tom Kornstad, and Thor O. Thoresen. 2014. “Theoretical and Practical Arguments for Modeling Labor Supply as a Choice Among Latent Jobs.” Journal of Economic Surveys 28(1): 134–151.
+
+### One-sentence contribution
+The paper argues that labor supply should be modeled as a choice among latent jobs rather than as a pure hours choice, because this allows structural separation between preferences over jobs and restrictions on available job opportunities while preserving the practical advantages of discrete-choice policy models.
+
+### Core research question
+Why should labor supply be modeled as a choice among latent jobs rather than as a direct choice of hours under a budget constraint, and what are the theoretical and practical advantages of doing so for structural estimation and policy simulation?
+
+### Economic setting and context
+The paper is mainly methodological rather than country-specific. It contrasts the continuous textbook labor-supply model, the standard discrete-hours model, and a latent-job alternative, while using Norwegian illustrations based on a married-couple model estimated on 1997 data and compared out of sample for 2003 and 2006.
+
+### Model / theoretical framework
+The model is a structural random-utility labor-supply framework in which the primitive choice object is a job rather than an hours point. Jobs have fixed hours, wages, and nonpecuniary attributes, and the worker chooses among latent available jobs plus a nonmarket option. Observed hours are therefore outcomes attached to chosen jobs, not free points on a common menu.
+
+### Key objects
+The key preference object is the systematic utility term over disposable income and hours, together with a job-specific random nonpecuniary component. The key opportunity objects are the latent job sets, their cardinalities by hours category, the total number of opportunities, and the normalized distribution of job availability across hours.
+
+### Data
+The paper is not built around one estimation dataset, but its illustrations use Norwegian married-couple data for 1997 with out-of-sample comparisons for 2003 and 2006. Those illustrations are supportive rather than the main contribution.
+
+### Identification / empirical strategy
+Identification is structural and model-dependent. The paper is explicit that utility and opportunity terms cannot generally be separated nonparametrically because they enter observed choice probabilities jointly. Estimation therefore relies on functional-form restrictions, and the authors interpret common hours dummies as opportunity terms rather than ad hoc preference shifters.
+
+### Treatment of preferences
+Preferences are modeled through deterministic utility over income and hours plus a random term capturing nonpecuniary job attributes. The paper is explicit that observed bunching at part-time and full-time hours should not automatically be interpreted as preference peaks.
+
+### Treatment of opportunities / constraints
+This is the paper’s core contribution. Opportunities are represented as latent job availability, so hours restrictions are treated as restrictions on the set of jobs that exist for the worker rather than as arbitrary taste shifters. The paper therefore gives one of the clearest positive-model separations between preferences and opportunities in this literature.
+
+### Welfare / normative object
+The paper is positive, not normative. It discusses welfare only in the loose policy-simulation sense common to structural labor-supply work and does not define a money-metric or axiomatic well-being object.
+
+### Main findings
+The main finding is conceptual: conventional discrete labor-supply models should be reinterpreted as models of choice among latent jobs, not merely as approximations to continuous hours choice. A second important result is that hours-specific dummies for part-time and full-time work can be given a structural opportunity interpretation. The Norwegian illustrations also show reasonable out-of-sample performance for hours and disposable-income distributions.
+
+### Main limitations
+The separation between preferences and opportunities remains only partially identified without strong structural assumptions. The framework is also static and methodological, so it does not by itself provide a normative theory of how opportunities should enter well-being measurement.
+
+### Relevance for my JMP
+This is one of the strongest positive-model references for the JMP. It provides a clear argument for treating labor supply as job choice under latent opportunity restrictions and is especially useful for framing, model design, and the identification discussion around preferences versus opportunities.
+
+### Relation to opportunities vs preferences
+This paper is directly about the opportunities-versus-preferences distinction. Preferences are represented in utility, opportunities are represented by latent job availability, and observed hours arise from both jointly rather than from unconstrained tastes alone.
+
+### Quick takeaway
+Argues that labor supply should be modeled as choice among latent jobs rather than pure hours choice, enabling structural separation between preferences over jobs and restrictions on available opportunities while preserving the practical advantages of discrete-choice policy models. A key conceptual and methodological reference for treating opportunity sets $A_i$ as first-class objects in structural labour supply.
+
+---
+
+## John K. Dagsvik and Zhiyang Jia (2016) — Labor Supply as a Choice Among Latent Jobs: Unobserved Heterogeneity and Identification
+
+**Source extracts merged:** Dagsvik_jia_2016.md; Dagsvik_Jia_2016.md; markdowns/Dagsvik_Jia_2016.md
+
+### Full citation
+Dagsvik, John K., and Zhiyang Jia. 2016. “Labor Supply as a Choice Among Latent Jobs: Unobserved Heterogeneity and Identification.” Journal of Applied Econometrics 31(3): 487–506.
+
+### One-sentence contribution
+The paper develops and studies identification of a latent-job labor-supply model in which workers choose among worker-specific sets of job offers characterized by wages, hours, and non-pecuniary attributes, and then applies the framework to married/cohabiting couples in Norway.
+
+### Core research question
+Under what conditions can a labor-supply model based on latent job choice sets be identified from conventional cross-section microdata, especially when both preferences and opportunity constraints matter and when offered wage distributions may include unobserved heterogeneity?
+
+### Economic setting and context
+The paper is motivated by dissatisfaction with traditional labor-supply models that treat the problem as a choice over disposable income and leisure alone. The authors argue that real labor markets involve preferences over job characteristics and restrictions on feasible jobs and hours, so a more realistic framework should model labor supply as job choice. The empirical application is to Norwegian married/cohabiting couples using 1997 microdata. The authors also discuss institutional restrictions on hours of work, including the prevalence of part-time work among married women and the importance of institutional hours patterns in sectors such as public health care.
+
+### Model / theoretical framework
+The model class is a latent job-choice model. Labor supply is not treated as a direct choice over hours and consumption; instead, the worker chooses among latent job “packages” or market opportunities, each characterized by offered wage (W(z)), offered hours (H(z)), and non-pecuniary job attributes, alongside non-market opportunities indexed separately. Utility is written as (U(C,h,z)), where (z) indexes opportunities, and under Assumption 1 the utility has multiplicative structure (U(C,h,z)=v(C,h)\varepsilon(z)). The budget side is (C=f(hw,I)), where (I) is non-labor income and (f) is the net-of-tax function. This framework is positive rather than normative.
+
+### Key objects
+The main economic objects are the deterministic preference component (v(C,h)), the random taste shifters (\varepsilon(z)), the net-of-tax function (f(hw,I)), the job-availability parameter (\theta), the opportunity density components (g_1(h)) and (g_2(w\mid h)), and the observed choice density (\phi(h,w\mid I)). These objects together generate the observed labor-supply distribution. This is the paper’s closest analogue to a feasible opportunity-set representation. It is not a set-valued (A_i) observed for each individual, but it is an explicit structural representation of latent opportunities, including restrictions on hours and wages.
+
+### Data
+The empirical application uses microdata from the Norwegian Labor Survey 1997 for married/cohabiting couples. The summary statistics table reports separate descriptive moments for both-working couples, only-husband-working couples, and only-wife-working couples. The sample contains 2254 households where both work, 256 where only the husband works, and 5 where only the wife works. The data are not ideal for the authors’ purpose because hours are measured with nontrivial error: weekly hours are observed, but usual weeks worked per year and overtime are not.
+
+### Identification / empirical strategy
+Identification is the central contribution of the paper. The core problem is that observed labor-supply behavior is jointly determined by preferences and latent job constraints, so standard multinomial-logit or mixed-logit identification results do not apply. The paper shows that from the observable ratio (\phi(h,w\mid I)/\phi(0,0\mid I)), one can identify the product of preference and opportunity terms, but not generally separate (v(C,h)) from (\theta g_1(h)g_2(w\mid h)) nonparametrically. Theorem 2 shows partial nonparametric identification under an exclusion restriction using non-labor income: (v(C,h)) can be expressed as a partially identified object up to an unknown constant and unknown function of hours. Thus the model is not nonparametrically point-identified in general.
+
+### Treatment of preferences
+Preferences are represented explicitly over consumption, leisure or hours, and non-pecuniary job attributes. This is a major step beyond conventional labor-supply models, which usually abstract from job characteristics and treat labor supply as a choice over hours and income only. The paper is explicit that agents may care about job tasks, location, and the social and physical environment. At the same time, the paper’s core identification message is that preferences are hard to separate from opportunities.
+
+### Treatment of opportunities / constraints
+Opportunities are modeled explicitly. The worker does not face a universal deterministic choice set. Instead, each worker faces an unobserved set of latent market and non-market opportunities, represented through the opportunity measure (\theta g_1(h)g_2(w\mid h)). This object captures restrictions due to qualifications, competition, institutional regulation of hours, and stochastic availability of job types. The model therefore goes well beyond treating availability constraints implicitly.
+
+### Welfare / normative object
+The paper is almost entirely positive rather than explicitly normative. It does not define a welfare measure, does not compute equivalent income or social welfare, and does not discuss fairness, responsibility, or compensation principles. Its concern is behavioural modelling, identification, and simulation of policy-relevant changes in opportunities and taxes. That said, the paper is highly relevant for normative work indirectly because it provides an explicit model of opportunity constraints that could serve as a positive foundation for later welfare analysis.
+
+### Main findings
+The main theoretical finding is that the latent-job framework is not generally identified nonparametrically from cross-section data because observed labor supply reflects both preferences and opportunity constraints. Identification can be obtained only under additional restrictions such as independence of offered hours and wages, functional-form assumptions on preferences, or exogenous variables that shift only opportunity distributions. Empirically, both estimated model versions fit the Norwegian data reasonably well, but the model with solely inter-individual wage heterogeneity fits better than the model with wage variation only across jobs. The conclusion section states this explicitly, and the Andrews goodness-of-fit test strongly favours Model 2. The paper also finds moderate own-wage responsiveness for married women and very small wage responsiveness for married men.
+
+### Main limitations
+The first limitation is data quality. The authors explicitly state that the Norwegian Labor Survey is not ideal because of measurement error in hours. Since annual weeks and overtime are unobserved, the data generate division bias and complicate identification of the relationship between wages and hours. A second limitation is that the opportunity set remains latent and distributional.
+
+### Relevance for my JMP
+This paper is one of the best references for arguing that standard labor-supply models conflate preferences and opportunities. It offers a precise alternative framing in which labor supply is job choice under latent opportunity constraints, not merely a choice over leisure and disposable income. It is extremely useful for model design. It provides a concrete way to represent opportunities through an opportunity measure over wages and hours, while also allowing non-pecuniary job attributes to matter.
+
+### Relation to opportunities vs preferences
+It explicitly states that traditional labor-supply models neglect the fact that workers face restrictions on job opportunities and may have preferences over job types, and then builds a framework in which both are present. Its main contribution is precisely to show that one cannot in general separate the two from standard cross-section data without additional structure.
+
+### Quick takeaway
+Studies identification of a latent-job labour-supply model where workers choose among worker-specific sets of job offers characterised by wages, hours, and non-pecuniary attributes. Provides a precise framework for representing opportunities through an opportunity measure over wages and hours, and shows that standard cross-section data cannot separate preferences from opportunities without additional structure -- directly motivating the identification challenge at the heart of $W(z,R,A;y)$.
+
+
+---
+
+## Koen Decancq, Marc Fleurbaey, and Erik Schokkaert (2015) — Happiness, Equivalent Incomes and Respect for Individual Preferences
+
+**Source extracts merged:** Decanq_et_al_2015.md; markdowns/Decancq_et_al_2015.md
+
+### Full citation
+Decancq, K., Fleurbaey, M., & Schokkaert, E. (2015). Happiness, equivalent incomes and respect for individual preferences. *Economica*, 82(s1), 1082--1106.
+
+### One-sentence contribution
+Develops an axiomatic comparison of welfare measures -- hedonic, subjective well-being, equivalent income, and objective -- showing that only equivalent income simultaneously satisfies the personal-preference principle, same-preference principle, and weak dominance principle, and demonstrates empirically using Russian panel data that equivalent income rankings differ substantially from both expenditure rankings and life satisfaction rankings, with health being the key differentiating dimension.
+
+### Core research question
+Which welfare measures respect individual preferences, and how do equivalent income rankings compare empirically with expenditure, subjective well-being, and objective welfare rankings?
+
+### Economic setting and context
+The paper sits in welfare economics and social choice rather than labor supply or microsimulation per se. Its point of departure is the growing use of happiness and life-satisfaction data in economics, both for valuing non-market goods and for broader welfare comparisons. The authors explicitly question the move from “SWB as information” to “SWB as metric.” The empirical illustration uses Russian panel data from the RLMS-HSE over 1995–2003, a period of substantial economic turbulence. This matters because the data contain large within-person changes in living conditions, allowing the authors to estimate satisfaction equations with individual fixed effects and to study how alternative wellbeing metrics rank individuals.
+
+### Model / theoretical framework
+The model class is an axiomatic interpersonal-comparison framework combined with an empirical satisfaction-based preference-recovery exercise. Individual situations are described by a vector of life dimensions (\ell_i) or, more specifically, by ((y_i,q_i)), where (y_i) is income/expenditures and (q_i) is a vector of non-income quality-of-life dimensions. Individuals have preference orderings (R_i) over these life dimensions and satisfaction functions (S_i) representing those orderings. The framework is explicitly normative. The authors formulate principles for interpersonal wellbeing comparisons.
+
+### Key objects
+The central objects are the preference ordering (R_i), the satisfaction function (S_i(\ell_i)), the scaling factors (s_i) that affect how individuals translate life situations into reported SWB, and the equivalent income (y_i^). The critical conceptual move is to distinguish preferences from scaling factors. This is what allows the authors to say that satisfaction scores may respect ordinal preferences within a person while still failing as interpersonal welfare metrics. The core wellbeing object is equivalent income, defined as the income level that, when combined with the best attainable non-income situation (q^(y^,R)), makes the individual indifferent to the actual bundle ((y,q)).
+
+### Data
+The empirical illustration uses the RLMS-HSE, an unbalanced Russian panel covering 1995, 1996, 1998, 2000, 2001, 2002, and 2003. After cleaning inconsistent information, the sample contains 12,016 individuals. The satisfaction regressions use 40,120 observations. The life-satisfaction variable is the standard “satisfaction with life in general at the present time” question on a five-point scale.
+
+### Identification / empirical strategy
+Identification is not causal in the reduced-form treatment-effect sense. The theoretical identification comes from axioms: combining the personal-preference principle with the weak dominance principle yields equivalent income as the interpersonal-comparison metric. The empirical identification comes from the consistency assumption that SWB answers represent ordinal preferences, up to scaling and noise. Empirically, the key identifying variation comes from panel changes in expenditures and quality-of-life dimensions, together with interaction terms that allow preference heterogeneity across observable groups. Individual fixed effects and time dummies absorb persistent personality differences and common macro shocks.
+
+### Treatment of preferences
+Preferences are the centerpiece of the paper. The authors explicitly reject a narrow revealed-preference interpretation and instead work with “informed judgments” over life dimensions. They emphasize that wellbeing measurement should respect these preferences, not merely reported feelings. Pages 1–4 and 6–8 are particularly clear on this point.
+
+### Treatment of opportunities / constraints
+The model does not include explicit feasible sets, job opportunities, latent offers, or rationing. There is no analogue of an observed or latent (A_i) in the RURO sense. Non-income dimensions such as health, housing, unemployment, and wage arrears are treated as aspects of life that enter wellbeing, not as feasible-set primitives. The paper therefore helps think about multidimensional wellbeing and preference heterogeneity, but not about the distinction between preferences and feasible opportunities in a labor-market structure. Unemployment appears as a quality-of-life dimension in the empirical application, not as a model of constrained opportunities.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare object is individual wellbeing measured by equivalent income, not subjective satisfaction and not income alone. This metric is justified by axioms intended to respect individual preferences in both intra- and interpersonal comparisons. The paper is especially important because it provides a preference-respecting interpersonal metric without assuming away heterogeneity in tastes.
+
+### Main findings
+The first main finding is theoretical: subjective wellbeing scores can conflict with individuals’ own judgments in interpersonal comparisons because different scaling factors may lead equally satisfied people to rank life situations differently when they share the same preferences. The same-preference principle therefore rules out using raw SWB as the interpersonal wellbeing metric. Pages 5–8 are central here. The second main finding is constructive: the combination of the personal-preference principle and the weak dominance principle yields equivalent income as the relevant interpersonal-comparison metric. This is the paper’s core theoretical contribution.
+
+### Main limitations
+A first limitation is that the empirical implementation identifies only subgroup-average preferences, not fully individual preferences. The authors are explicit about this. That matters if fine-grained heterogeneity is central. A second limitation is the potential confounding of preferences and scaling.
+
+### Relevance for my JMP
+This is one of the best framing papers for the claim that wellbeing measurement should not rely mechanically on either income or subjective satisfaction. It gives a rigorous preference-respecting alternative. It is useful mainly for the welfare-measurement layer of your model design. It suggests how an individual wellbeing index can be built from preferences over multiple dimensions without assuming homogeneous tastes.
+
+### Relation to opportunities vs preferences
+This paper is much stronger on preferences than on opportunities. But it does not model opportunities as feasible sets, job offers, or labor-market constraints. So it should not be read as a full solution to the opportunities-versus-preferences problem.
+
+### Quick takeaway
+Axiomatically shows that only equivalent income simultaneously satisfies the personal-preference, same-preference, and weak-dominance principles; empirically demonstrates using Russian panel data that equivalent income rankings diverge markedly from both expenditure and life-satisfaction rankings, with health as the key differentiating dimension. A central reference for arguing that $W(z,R,A;y)$ should be built on a preference-respecting money-metric rather than raw income or subjective well-being.
+
+
+---
+
+## Koen Decancq and Erik Schokkaert (2016) — Beyond GDP: Using Equivalent Incomes to Measure Well-Being in Europe
+
+**Source extracts merged:** Decanq_Schokaert_2016.md; markdowns/Decancq_Schokkaert_2016.md
+
+### Full citation
+Decancq, Koen, and Erik Schokkaert. 2016. “Beyond GDP: Using Equivalent Incomes to Measure Well-Being in Europe.” Social Indicators Research 126: 21–55. Published online 14 February 2015.
+
+### One-sentence contribution
+The paper builds a five-principle framework for measuring well-being beyond GDP, operationalizes it with equivalent incomes for Europe, and shows that non-income dimensions and inequality materially change welfare rankings and growth assessments.
+
+### Core research question
+How can one measure social progress in Europe in a way that goes beyond GDP, respects heterogeneity in individual views about the good life, accounts for cumulative deprivation and inequality, and remains empirically implementable with available survey data?
+
+### Economic setting and context
+The paper is located in the “beyond GDP” literature and is explicitly framed against approaches that either focus only on income growth or rely on dashboards without coherent aggregation. It also situates itself relative to the capability approach, the social-indicator literature, subjective well-being research, the HDI, and OECD and EU initiatives following the Stiglitz–Sen–Fitoussi report. This positioning is set out in the introduction on pages 21–24. Empirically, the context is Europe during and immediately after the onset of the financial crisis.
+
+### Model / theoretical framework
+The framework is normative and measurement-oriented rather than behavioral in the labor-supply sense. The authors formulate five principles for a richer measure of well-being: focus on individual well-being rather than GDP, account for cumulative deprivation, respect individuals’ own ideas about the good life, avoid reducing well-being to subjective happiness alone, and incorporate inequality aversion in the social aggregation step. These principles are laid out in Section 2, especially pages 24–31. The central well-being concept is the equivalent income. Individual well-being is measured as the hypothetical income that, combined with the best possible values of all non-income dimensions, would leave the individual indifferent relative to her actual situation.
+
+### Key objects
+The first key object is the individual well-being index (W_i(x_{i1},x_{i2},\ldots,x_{ik})), constructed over multiple life dimensions and then aggregated into social welfare. Table 2 on page 26 is the clearest compact representation of this structure. The second key object is the equivalent income (y_i^), defined as the hypothetical income that, when combined with the best feasible values of all non-income dimensions, yields the same level of well-being as the person’s actual situation. The paper’s formal definition appears on pages 33–35, and the intuition is illustrated in Figures 2 and 3.
+
+### Data
+The empirical implementation uses the European Social Survey for waves 4 and 5, corresponding to 2008 and 2010. The final sample includes about 52,000 observations pooled across 18 countries. Pages 38–39 discuss the data choice and its limitations. The life dimensions included are material living conditions, health, unemployment, social interactions, and personal safety.
+
+### Identification / empirical strategy
+Identification is not causal in the quasi-experimental sense. The key empirical identification problem is how to recover the weights individuals attach to different dimensions of life. The authors do this through life-satisfaction regressions, interpreting the estimated trade-offs across dimensions as information about the respondents’ views on the good life. Pages 35–37 discuss this logic. The paper is explicit that subjective satisfaction is not itself the well-being metric.
+
+### Treatment of preferences
+Preferences are central. The whole approach is built on the normative claim that the weighting scheme used to construct individual well-being should respect individuals’ own ideas about what a good life is. This is Principle 3 on pages 27–29. The paper therefore rejects both a purely objective weighting scheme and the direct use of subjective satisfaction as a welfare metric.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly. There is no feasible-set object, no opportunity menu, no latent jobs, no rationing, and no distinction between desired and available outcomes. This should be stated clearly. The framework measures well-being from realized income and realized non-income dimensions, conditional on estimated preferences. Unemployment appears as a realized life dimension, not as evidence of opportunity shortage or demand-side constraint.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare object is individual well-being measured by equivalent income and social welfare measured by an inequality-sensitive aggregation of these equivalent incomes. This is not a reduced-form happiness index and not a dashboard only. The paper is directly relevant for preference-respecting welfare measurement and for inequality aversion.
+
+### Main findings
+The first main finding is that adding non-income dimensions to the measurement of well-being changes country rankings substantially relative to rankings based on monetary income alone. In 2008, for instance, Germany and the Netherlands perform worse in equivalent-income rankings than in income rankings, while Denmark performs better. Table 7 on pages 42–43 is the main source. The second main finding is that health has the largest marginal effect on equivalent incomes among the included non-income dimensions, followed by social interactions and safety, while unemployment has a smaller average impact because it affects only a subpopulation. Table 8 on pages 44–45 is central.
+
+### Main limitations
+A first limitation is the data. Income is measured rather crudely in the ESS, and the authors must apply an uprating procedure to make it comparable to macro income data. They are explicit that the ESS is not an ideal income dataset. Pages 38–39 and Appendix 1 make this clear.
+
+### Relevance for my JMP
+This paper is highly useful for framing the claim that a serious welfare metric must go beyond income yet remain aggregative and distribution-sensitive. It is an excellent bridge between “beyond GDP” discussions and a more rigorous welfare-theoretic approach. It is useful for the welfare-measurement layer of the project. It gives a concrete way to turn multiple realized dimensions into a scalar individual well-being measure while respecting heterogeneous preferences.
+
+### Relation to opportunities vs preferences
+This paper is much stronger on preferences than on opportunities. Its central contribution is to show how well-being measurement changes once one respects heterogeneous preferences over multiple life dimensions instead of imposing a common weighting scheme or relying on raw life satisfaction. But it does not model opportunities as feasible sets or constrained menus. So it should not be read as a solution to the opportunities-versus-preferences problem.
+
+### Quick takeaway
+Builds a five-principle framework for measuring well-being beyond GDP using equivalent incomes for Europe, showing that non-income dimensions and inequality materially change welfare rankings and growth assessments. An excellent bridge between "beyond GDP" policy discussions and rigorous preference-respecting welfare theory -- directly supporting the case for a multidimensional, distribution-sensitive $W$.
+
+
+---
+
+## Martine Durand (2015) — The OECD Better Life Initiative: How’s Life? and the Measurement of Well-Being
+
+**Source extracts merged:** Durand_2015.md; markdowns/Durand_2015.md
+
+### Full citation
+Durand, M. (2015). The OECD Better Life Initiative: How's Life? and the measurement of well-being. *Review of Income and Wealth*, 61(1), 4--17.
+
+### One-sentence contribution
+Presents the OECD's multidimensional framework for measuring well-being, organised around 11 dimensions of current well-being (material conditions + quality of life) and sustainability via four capital stocks, explaining the indicator-selection and dissemination strategy behind *How's Life?* and the Better Life Index.
+
+### Core research question
+How should well-being be defined, measured, and communicated in a way that goes beyond GDP, captures both current and future well-being, and supports cross-country comparison?
+
+### Economic setting and context
+The paper is not a single-country empirical study. It is a methodological and institutional presentation of the OECD Better Life Initiative, launched in 2011, and of the framework used in the OECD’s How’s Life? reporting. Its context is international statistical practice and policy-oriented social measurement. The intended scope is cross-country comparison, mainly within the OECD area, though the paper explicitly notes that the framework can be adapted for countries at different stages of development and is not meant to be fixed permanently.
+
+### Model / theoretical framework
+This is not a structural behavioural model. It is a conceptual measurement framework. Current well-being is divided into two broad domains: material living conditions and quality of life. These are further decomposed into 11 dimensions: income and wealth; jobs and earnings; housing; health; work–life balance; education and skills; social connections; civic engagement and governance; environmental quality; personal security; and subjective well-being. Future well-being is treated through the sustainability of well-being over time, measured via economic, natural, human, and social capital.
+
+### Key objects
+The main objects are the 11 current well-being dimensions, the four capital stocks for future well-being, the dashboard of headline indicators, the traffic-light presentation of country performance, and the Better Life Index as an interactive dissemination tool. The current well-being dimensions are the most important economic objects in the paper. They are not latent variables in an econometric model but normative-statistical categories used for monitoring outcomes. For future well-being, the relevant objects are the stocks of economic, natural, human, and social capital that sustain well-being over time.
+
+### Data
+The paper is not built around one micro-dataset or one estimation sample. The data base is the set of internationally comparable well-being indicators assembled by the OECD for How’s Life?, drawing on official and sometimes non-official sources. Indicator selection is discussed in detail on pages 9–11. The paper lists the original 2011 headline indicators for each dimension and notes additional headline indicators introduced in the 2013 edition, such as housing costs, education expectancy, satisfaction with water quality, short job tenure, and adult competencies.
+
+### Identification / empirical strategy
+This is not an identification paper in the econometric sense. There is no causal or structural identification argument linking observed behaviour to parameters. Instead, the relevant logic is conceptual-statistical: define dimensions of well-being, specify criteria for indicator selection, and then populate the framework with the best currently available internationally comparable measures. The most important “selection logic” is that indicators should measure individual or household outcomes, reflect outcomes rather than means, allow disaggregation across groups, have face validity, be widely accepted, be policy-relevant, be comparable across countries, and, as far as possible, come from official sources. This is the paper’s closest analogue to an identification strategy.
+
+### Treatment of preferences
+Preferences are not modeled structurally. The paper does not estimate utility functions, choice probabilities, or welfare weights from individual choices. In that sense, preference heterogeneity is largely outside the formal structure. There are two limited roles for preferences.
+
+### Treatment of opportunities / constraints
+It does not model opportunities or constraints as feasible choice sets. There is no analogue of an individual job opportunity set (A), no labour-market rationing, no latent offer distribution, and no formal distinction between realized outcomes and opportunity sets. The paper does discuss capabilities, freedom, and political voice, and it notes that some outcomes such as health, education, and civic freedom may expand people’s room for choice. But it explicitly acknowledges that the OECD framework mostly measures achieved outcomes rather than the underlying sets of options available to individuals. This is a broad affinity to opportunity-sensitive reasoning, not an explicit treatment of opportunities.
+
+### Welfare / normative object
+The normative object is multidimensional well-being, understood as a vector of outcomes across 11 dimensions plus the sustainability conditions that support future well-being. The paper rejects GDP as a sufficient proxy for welfare and rejects a purely income-based or purely utility-based assessment. This is therefore an explicitly normative measurement framework, though not an axiomatic one in your sense. The paper does not derive welfare measures from fairness axioms or formal social choice conditions.
+
+### Main findings
+The first main finding is institutional and conceptual: the OECD framework measures current well-being through 11 dimensions and future well-being through four forms of capital. Figure 1 on page 5 is the key summary of this architecture. The second main finding is methodological: the OECD prefers a dashboard of indicators to a fully aggregated composite index because composite measures involve controversial normalization and weighting choices and may conceal important information. The paper nonetheless uses traffic lights and the Better Life Index as communication tools. A third substantive finding is that countries with similar overall well-being performance often achieve it through different dimensional profiles.
+
+### Main limitations
+It does not model choices, constraints, opportunity sets, or welfare trade-offs structurally. Hence it cannot support the type of decomposition you want between realized bundle (z), preferences (R), feasible set (A), and pay schedule (y). A second limitation is that the framework is indicator-based and partly conventional. The choice of dimensions and indicators is reasoned and consultative, but not derived from a formal theorem or identified from behavior.
+
+### Relevance for my JMP
+This paper is useful for broad framing if you want to motivate why well-being should not be reduced to GDP or current income alone. It provides a policy-recognized language for multidimensional well-being, subjective well-being, and sustainability. Direct relevance is limited. The paper does not offer a structural model of labour supply, discrete choice, or opportunity sets.
+
+### Relation to opportunities vs preferences
+It neither estimates preferences nor models opportunities as feasible sets. Instead, it measures achieved outcomes and supplements them with subjective assessments and a sustainability perspective. The one partial overlap is that the paper invokes capabilities and freedom, which signals concern for opportunities in a broad ethical sense. But this remains conceptual and indicator-based, not formalized as actual opportunity-set measurement.
+
+### Quick takeaway
+Presents the OECD's 11-dimension framework for measuring well-being (material conditions + quality of life) plus sustainability via four capital stocks. Useful as a policy-recognised reference for motivating why well-being should not be reduced to GDP or income alone, though it offers no structural model, no preference estimation, and no opportunity-set formalization.
+
+
+---
+
+## Francisco H. G. Ferreira and Jérémie Gignoux (2011) — The Measurement of Inequality of Opportunity: Theory and an Application to Latin America
+
+**Source extracts merged:** Fereria_Gignoux_2011.md; markdowns/Ferreira_Gignoux_2011.md
+
+### Full citation
+Ferreira, F. H. G., & Gignoux, J. (2011). The measurement of inequality of opportunity: Theory and an application to Latin America. *Review of Income and Wealth*, 57(4), 622--657.
+
+### One-sentence contribution
+Formalises a scalar measure of inequality of opportunity as between-type inequality (types defined by predetermined circumstances), proves it is a lower bound on true opportunity inequality, ties it uniquely to the mean logarithmic deviation under path-independent decomposability, and applies it to six Latin American countries.
+
+### Core research question
+How should inequality of opportunity be measured in theory and in practice, and what do lower-bound estimates look like across six Latin American countries when opportunities are defined by predetermined circumstances?
+
+### Economic setting and context
+The paper sits at the intersection of normative economics, inequality measurement, and empirical development work. Its application covers Brazil, Colombia, Ecuador, Guatemala, Panama, and Peru, using income, consumption, and some labor-earnings measures to assess the role of background circumstances.
+
+### Model / theoretical framework
+This is a measurement framework for inequality of opportunity, not a behavioral or labor-supply model. Individuals are characterized by an advantage variable, a vector of predetermined circumstances, and an effort concept inherited from the normative literature. The population is partitioned into types defined by shared circumstances, and opportunity inequality is measured through between-type differences.
+
+### Key objects
+The central objects are the advantage variable, the circumstance vector, the partition of the population into types, the smoothed distribution that replaces each observation by its type mean, and the resulting inequality-of-opportunity indices. The paper’s key methodological claim is that these indices are lower bounds on true inequality of opportunity when some circumstances are unobserved.
+
+### Data
+The paper uses six nationally representative household surveys: Brazil PNAD 1996, Colombia ECV 2003, Ecuador ECV 2006, Guatemala ENCOVI 2000, Panama ENV 2003, and Peru ENAHO 2001. The main samples are household heads and spouses aged 30–49 with positive income or consumption and observed circumstances.
+
+### Identification / empirical strategy
+The paper is not about causal identification. Its main identification claim is instead a lower-bound result: given an observed set of circumstance variables, between-type inequality in the smoothed distribution provides a conservative estimate of true inequality of opportunity. Empirically, it implements both nonparametric and parametric estimators and treats the agreement between them as a robustness check.
+
+### Treatment of preferences
+Preferences are not modeled. Effort appears as a conceptual category, but the empirical implementation does not recover utility, tastes, or preference heterogeneity.
+
+### Treatment of opportunities / constraints
+The paper treats opportunities as predetermined background circumstances rather than as feasible job sets or latent menus. Circumstances such as family background, ethnicity, birthplace, and gender define types, and opportunity inequality is identified with inequality across those types.
+
+### Welfare / normative object
+The normative object is inequality of opportunity in income, consumption, or labor earnings, not individual welfare directly. The paper asks how much inequality in valued outcomes should be attributed to morally irrelevant circumstances.
+
+### Main findings
+The paper finds large lower-bound opportunity shares in all six countries. For household per capita income, the parametric inequality-of-opportunity ratio ranges from 0.23 in Colombia to 0.34 in Guatemala; for household consumption, it ranges from 0.25 in Colombia to 0.51 in Guatemala. It also finds that family background variables, especially parental education, are the most important observed circumstances.
+
+### Main limitations
+The measures are only lower bounds and remain sensitive to the observed set of circumstances. The paper also does not model preferences or feasible opportunity sets, so it cannot separate opportunities from tastes in the structural sense relevant to latent-job work.
+
+### Relevance for my JMP
+This paper is highly useful for the measurement and decomposition side of the JMP. It offers a disciplined way to translate a compensation-oriented fairness distinction into an empirical object, even though it is not a structural labor-supply model and does not define opportunities as feasible job sets.
+
+### Relation to opportunities vs preferences
+The paper is strongly about opportunities versus responsibility, but only weakly about opportunities versus preferences. Opportunities are formalized through background circumstances, while preferences are absent from the empirical framework.
+
+### Quick takeaway
+Formalises a scalar measure of inequality of opportunity as between-type inequality, proves it is a lower bound on true opportunity inequality, and ties it uniquely to MLD under path-independent decomposability. Applied to six Latin American countries using opportunity-deprivation profiles. A disciplined way to translate the compensation-oriented fairness distinction into an empirical object, though without structural labour-supply or feasible-set modelling.
+
+---
+
+## Marc Fleurbaey (1995) — Equal Opportunity or Equal Social Outcome?
+
+**Source extracts merged:** Fleurbeay_1995_a.md; markdowns/Fleurbaey_1995b.md
+
+### Full citation
+Fleurbaey, M. (1995). Equal opportunity or equal social outcome? *Economics and Philosophy*, 11, 25--55.
+
+### One-sentence contribution
+Argues that the standard equal-opportunity / factor-selective egalitarian approach (compensate talents, respect will) is theoretically unstable -- requiring strong separability, conflicting with Pareto efficiency, and depending on a problematic notion of free-will-based responsibility -- and proposes instead "outcome-selective egalitarianism": equalize selected social outcomes while preserving a private sphere.
+
+### Core research question
+Should egalitarian justice equalise opportunities (by compensating for talents/circumstances while leaving will/choice to individual responsibility), or is it better to equalise selected "social outcomes" while protecting a private sphere?
+
+### Economic setting and context
+The paper is entirely theoretical. It is situated in the “equality of what?” debate after Rawls, Dworkin, Sen, Arneson, Cohen, Roemer, and van Parijs. Its target is what Fleurbaey calls “factor-selective egalitarianism”: choose the relevant individual outcome (O), decompose its determinants into resources (r), talents (t), and will (w), then compensate for (t) but not for (w). The paper distinguishes two main schools within this general project.
+
+### Model / theoretical framework
+The model class is axiomatic and normative. A comprehensive individual outcome is written (O(r,t,w)), where (r) denotes socially controllable resources, (t) denotes talents or circumstances to be compensated, and (w) denotes will or the dimension for which the individual is held responsible. Equal opportunity is defined as equality of the choice sets of attainable outcomes as the individual varies (w) over the admissible set (W). More formally, equal opportunity requires the sets ({(O_i,w_i)\mid O_i=O(r_i,t_i,w_i),,w_i\in W}) to be the same across individuals. Fleurbaey emphasizes that this is not a trivial requirement.
+
+### Key objects
+The central object is the comprehensive outcome function (O(r,t,w)). A first key distinction is between factor-selective egalitarianism and outcome-selective egalitarianism. The former sorts causal factors; the latter sorts outcomes themselves into socially relevant and private domains. A second key object is the separability condition which is shown to be effectively required if equal opportunity is to be nonempty in general.
+
+### Data
+There are no empirical data. This is a purely theoretical paper. The examples are stylized and illustrative, such as school performance, race models, resource allocation under heterogeneous talents, and the “Bert” motorbike case used to test the moral plausibility of equal opportunity.
+
+### Identification / empirical strategy
+There is no econometric identification. The relevant analogue is logical characterization and critique. The paper identifies structural conditions under which equal opportunity can be meaningfully defined, and it proves or argues that these conditions are highly restrictive. The crucial logical claim is that equal opportunity is generally nonempty only if the outcome function is separable in the specific way above. This means that the opportunity-equalization project does not really solve the problem of aggregating external and internal resources; it presupposes that this aggregation has already been done.
+
+### Treatment of preferences
+Preferences are not modeled explicitly as (R_i) in the way later Fleurbaey-Maniquet work does, but the paper is deeply concerned with the status of tastes, ambitions, goals, and will. In the Rawls–Dworkin line, (w) often corresponds to personal goals and ambitions. In the Arneson–Cohen line, (w) corresponds instead to what the individual genuinely controls and can be held morally responsible for. Fleurbaey is highly critical of the latter move.
+
+### Treatment of opportunities / constraints
+This section is central. The paper is explicitly about equal opportunity, but its opportunity concept is not a job-set or menu-of-feasible-bundles concept in your sense. Opportunity is defined as the set of attainable outcome levels generated by variations in (w), holding the allocated resources and the individual’s talents/circumstances fixed. The paper therefore models opportunities abstractly as opportunity sets over outcomes, not as explicit feasible sets of jobs or occupations. It does not distinguish actual job availability, infeasible alternatives, wage schedules by job, or latent offers.
+
+### Welfare / normative object
+The paper is explicitly normative. Its object is distributive justice. It contrasts two broad approaches. The criticized approach is factor-selective egalitarianism, especially equal opportunity.
+
+### Main findings
+The first main finding is that equal opportunity is generally nonempty only under a separability condition of the form This means that the equal-opportunity approach presupposes that resources and talents can already be aggregated into a single extended-resource bundle. It therefore does not truly solve that aggregation problem. The second main finding is that factor-selective egalitarian requirements such as RT, OW, and even the weaker ERET can conflict with Pareto optimality. In multidimensional or nonstandard environments, insisting that resource allocation ignore certain aspects of responsible choice can generate inefficiency or implausible allocations. The third main finding is that mutual interactions and externalities create a further difficulty for equal opportunity.
+
+### Main limitations
+It does not provide a fully developed wellbeing measure, and it does not move to explicit feasible-job-set modeling. Its opportunity concept is more philosophical than economic in your sense. A second limitation is that the positive alternative remains partly programmatic. Outcome-selective egalitarianism is persuasive conceptually, but the paper does not fully specify a general aggregation rule for multiple social outcomes.
+
+### Relevance for my JMP
+This paper is extremely useful for framing. It provides a sharp way to explain why a simple “compensate opportunities, respect choices” formula is not enough, and why the normative architecture must be more careful. It is highly useful on the normative model-design side. It suggests that instead of sorting causal factors into responsibility and non-responsibility categories, one may want to sort outcome domains into social and private spheres.
+
+### Relation to opportunities vs preferences
+This paper is centrally about opportunities versus outcomes, and indirectly about opportunities versus preferences. It is not a paper on preference heterogeneity in the Bargain et al. sense. Instead, it asks whether justice should compensate circumstances by equalizing opportunities or should focus on the equalization of selected outcomes. Even if opportunities matter, the paper argues, the real normative task may be to decide which outcomes society should equalize and which should remain private.
+
+### Quick takeaway
+Argues that the standard "compensate talents, respect will" formula is theoretically unstable: it requires a strong separability condition $\mathcal{O}(r,t,w) = \mu(\nu(r,t),w)$, conflicts with Pareto efficiency, and depends on a problematic free-will-based notion of responsibility. Proposes outcome-selective egalitarianism with a social/private distinction as an alternative -- motivating $W(z,R,A;y)$ to be careful about which dimensions enter the justice metric and which remain in a protected private sphere.
+
+
+---
+
+## Marc Fleurbaey (1995) — Three Solutions for the Compensation Problem
+
+**Source extracts merged:** Fleurbaey_1995.md; Fleurbeay_1995_b.md; markdowns/Fleurbaey_1995.md
+
+### Full citation
+Fleurbaey, Marc. 1995. “Three Solutions for the Compensation Problem.” Journal of Economic Theory 65: 505–521.
+
+### One-sentence contribution
+The paper studies fair division when unequal claims arise from non-transferable talents or handicaps rather than direct monetary claims, proves that full and selective compensation are generally incompatible, and characterizes three allocation rules—conditional equality, egalitarian-equivalence, and average compensation—under axioms centered on consistency and compensation.
+
+### Core research question
+How should a one-dimensional transferable resource be divided among agents who differ in non-transferable talents or handicaps, when fairness requires some form of compensation for these differences but full equalization principles may be mutually incompatible?
+
+### Economic setting and context
+The setting is a pure exchange / fair-division problem with one transferable good and finitely many agents. Each agent has a non-transferable personal parameter (y_i), interpreted as a talent or handicap, and preferences over bundles ((x_i,y_i)), where (x_i) is the amount of external resource received. The motivating examples are not labour-supply problems but general fair-division situations, such as cost sharing for a common facility where agents differ in ways that affect the benefit they derive from the service. The elevator-repair example in the introduction is used precisely to motivate compensation for some personal differences but not necessarily for all preference-related differences.
+
+### Model / theoretical framework
+The model class is an axiomatic fair-division model with one transferable resource. Total resources (w>0) must be allocated among (n) agents. Each agent (i) is characterized by a personal parameter (y_i) and by preferences (R_i) over ((x_i,y_i)\in \mathbb{R}+\times Y). Preferences are strictly monotone in the transferable resource and representable by a utility function continuous in (x_i). An economy is (\mathcal{E}=(y;R;w)).
+
+### Key objects
+The key economic objects are the transferable resource (w), the individual allocation (x_i), the non-transferable parameter (y_i), and the preference relation (R_i) over ((x_i,y_i)). These define the compensation problem itself. The main fairness axioms are EREH (“equal resource for equal handicap”) and EWEP (“equal welfare for equal preference”), together with their weakened forms EREH and EWEP. These express, respectively, selective compensation for handicaps and full compensation across agents with identical preferences.
+
+### Data
+. The paper is entirely theoretical and contains no empirical dataset, no estimation sample, and no econometric exercise.
+
+### Identification / empirical strategy
+This is not an identification paper in the econometric sense. The relevant logic is axiomatic characterization. The paper asks which solution rules are selected by combinations of ethical and consistency requirements, rather than how to recover parameters from observed behaviour. The crucial non-empirical identifying device is consistency. Fleurbaey shows that, in a one-good model, consistency has remarkably strong implications: combined with anonymity and mild regularity, it yields expansion invariance, resource monotonicity, and population monotonicity, and it strengthens weakened compensation axioms into their full versions.
+
+### Treatment of preferences
+Preferences are central and heterogeneous. Each agent has her own ordering (R_i) over allocations combined with handicaps. The paper is careful not to collapse all heterogeneity into preferences alone: there is an explicit non-transferable parameter (y_i) separate from (R_i). This separation is one of the paper’s conceptual strengths.
+
+### Treatment of opportunities / constraints
+It does not model opportunities as feasible job sets, actual menus of alternatives, or stochastic opportunities. There is no analogue of an individual opportunity set (A_i) in the later jobs-and-wellbeing sense. The only formal constraint is aggregate feasibility of the one-dimensional resource. However, the non-transferable parameter (y_i) plays a role somewhat analogous to a circumstance, talent, or handicap that affects what a given resource bundle means for the person. In that sense, the paper is about compensation for non-transferable heterogeneity rather than for direct resource inequality alone.
+
+### Welfare / normative object
+The paper is explicitly normative. Its object is a fair allocation rule for the division of a common resource in the presence of non-transferable heterogeneity. Welfare is not summarized by a social welfare function in the standard income-tax sense, nor by a money-metric utility. Instead, welfare enters through ordinal preference comparisons over ((x_i,y_i)) and through axioms such as EWEP.
+
+### Main findings
+The first main result is an impossibility theorem: no solution can satisfy both EREH and EWEP. In other words, one cannot simultaneously require equal resources for equal handicaps and full equalization of welfare across agents with identical preferences in any sufficiently rich domain. Proposition 1 establishes this basic tension. The second main result is that consistency is extremely powerful in one-good models. Under consistency, weakened versions of compensation principles become much stronger.
+
+### Main limitations
+The main limitation is the one-good structure. The author is explicit that some peculiar features of the characterization results come from the fact that only a one-dimensional resource is distributed. This makes consistency unusually strong and makes some solutions independent of the population’s full preference profile in ways that may be less compelling in richer environments. A second limitation is the absence of explicit opportunity sets, labour-market institutions, or behavioural choice.
+
+### Relevance for my JMP
+This paper is very useful for framing the normative core of the project. It provides an early, rigorous statement of the compensation problem when individuals differ in non-transferable ways. That is closely related to your concern with how well-being should depend on circumstances beyond chosen effort or realized money outcomes. Direct use for empirical model design is limited.
+
+### Relation to opportunities vs preferences
+This paper is not about opportunities versus preferences in the empirical labour-economics sense. It does not model opportunity sets. But it is very much about a nearby normative distinction: how to compensate non-transferable heterogeneity without simply letting subjective preferences dictate all claims on resources. In that sense, the paper is an antecedent to your opportunities-versus-preferences concern.
+
+### Quick takeaway
+Proves that full and selective compensation are generally incompatible when unequal claims arise from non-transferable talents, and characterises three allocation rules: conditional equality, egalitarian-equivalence, and average compensation. An early, rigorous formalisation of the compensation problem under non-transferable heterogeneity -- a precursor to the impossibility results that shape the Fleurbaey-Maniquet framework underlying $W(z,R,A;y)$.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2006) — Fair Income Tax
+
+**Source extracts merged:** Fleurbaey_Maniquet_2006.md; markdowns/Fleurbaey_Maniquet_2006.md
+
+### Full citation
+Fleurbaey, Marc, and François Maniquet. 2006. “Fair Income Tax.” The Review of Economic Studies 73(1): 55–83.
+
+### One-sentence contribution
+The paper derives optimal income taxation from fairness axioms rather than utilitarian aggregation, showing that equivalent wage is the relevant individual welfare metric and that fair taxation should maximize the position of the hardworking poor.
+
+### Core research question
+In a model with unequal earning abilities and heterogeneous preferences over consumption and leisure, what social preferences and what optimal income-tax rule can be justified from efficiency and fairness principles under incentive-compatibility constraints?
+
+### Economic setting and context
+The setting is an abstract optimal-tax model. Agents differ in two dimensions: skill, which determines earning ability, and preferences over consumption and leisure, which determine labour-supply choices. Income inequality therefore reflects both unequal productivities and heterogeneous willingness to work. The paper is not an empirical country study.
+
+### Model / theoretical framework
+The model is a normative optimal income-tax framework with incentive compatibility. Each agent consumes a bundle (z_i=(\ell_i,c_i)), where (\ell_i) is labour and (c_i) is consumption. Agents have continuous, convex, monotonic preferences (R_i) over consumption and leisure, and productivity (w_i), so pre-tax earnings are (y_i=w_i \ell_i). The government observes only earnings, not skills. Redistribution is therefore implemented through an income tax function (\tau(y)), and agents freely choose labour time from the budget set induced by (c \le y-\tau(y)).
+
+### Key objects
+The main individual normative object is the equivalent wage that is, the hypothetical wage rate that would allow agent (i) to attain the same indifference curve if she could choose labour freely at that wage. Theorem 1 and Figure 4 make this object central. The main social object is the maximin ordering applied to equivalent wages: among allocations in the relevant domain, society gives absolute priority to the worst-off in terms of (W_i(z_i)). This is the normative core of the paper.
+
+### Data
+There is no estimation dataset and no empirical identification exercise. The paper is theoretical. The only empirical-looking element is the illustrative U.S. budget-set figure on page 19, used to show how the tax-comparison criterion can be applied.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. There is no attempt to identify preferences or skills from data. The main “identification” logic is axiomatic: fairness and efficiency principles are used to determine the appropriate social ordering and the corresponding individual welfare metric. The paper then studies taxation under incentive compatibility. Given the model primitives and the fairness axioms, the key theorems characterize when one tax schedule is socially preferred to another.
+
+### Treatment of preferences
+Preferences matter centrally. Agents differ in their ordinal preferences over consumption and leisure, and the paper takes that heterogeneity seriously rather than collapsing everyone into a common utility function. This is one reason the usual utilitarian approach becomes problematic in the paper’s setup. At the same time, the paper refuses to build the social objective by directly summing heterogeneous utilities.
+
+### Treatment of opportunities / constraints
+This is not a paper about explicit opportunity sets. It does not model jobs, offer distributions, latent opportunities, or feasible set heterogeneity in your (A)-type sense. Agents differ by skill and preferences, and choose labour continuously under a common tax schedule. The relevant constraints are budget constraints and incentive-compatibility constraints arising from unobservable skill. The budget set in labour-consumption space is (c \le y-\tau(y)), and in earnings-consumption space the same income schedule applies to everyone.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare object is not utility, EV/CV, or equivalent income in the standard consumption-only sense. It is the equivalent wage (W_i(z_i)), derived from fairness axioms. Social preferences then rank allocations by the minimum equivalent wage in the relevant domain, giving absolute priority to the worst-off.
+
+### Main findings
+The central result is Theorem 1: the stated fairness axioms select equivalent wage as the relevant measure of individual well-being and imply absolute priority to the worst-off when situations are evaluated that way. The main tax-comparison result is Theorem 2: one tax schedule is socially preferred to another if it has a lower greatest average tax rate over low incomes (y in [0, w_m]), where (w_m) is the minimum skill. This turns the abstract maximin-over-equivalent-wage criterion into an operational tax test and implies maximal support for the hardworking poor, especially the lowest-skilled full-time workers. Pages 17-18 and Figure 12 are central here.
+
+### Main limitations
+The model concerns skills, preferences, and incentive-compatible taxation, but not feasible job sets or labour-demand constraints. This limits direct portability to a (W(z,R,A;y)) framework where (A) is central. A second limitation is that the fairness axioms are strong and ethically selective. In particular, the laissez-faire principle assumes that when skills are equal, income differences from different preferences should be fully respected.
+
+### Relevance for my JMP
+This paper is highly useful for framing the normative side of the JMP. It gives a rigorous example of how fairness principles can determine the welfare criterion, rather than taking a utilitarian welfare function for granted. Direct use for positive model design is limited, because the paper has no structural job-choice or RURO component. Indirectly, it is useful because it shows how, once a positive environment is specified, one can build a fairness-based evaluative layer on top of it.
+
+### Relation to opportunities vs preferences
+The paper is strong on preferences and weak on opportunities. It takes heterogeneous preferences very seriously and asks when preference-based labour choices should be respected. That is precisely the role of the laissez-faire axiom in equal-skill economies. But it does not model unequal opportunities.
+
+### Quick takeaway
+Derives optimal income taxation from fairness axioms rather than utilitarian aggregation, showing that equivalent wage is the relevant individual welfare metric and that fair taxation should maximise the position of the hardworking poor. A rigorous example of how fairness principles can determine the welfare criterion -- directly relevant to any project coupling a positive labour-supply model with a normative evaluative layer.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2007) — Help the Low Skilled or Let the Hardworking Thrive? A Study of Fairness in Optimal Income Taxation
+
+**Source extracts merged:** Fleurbaey_Maniquet_2007.md; markdowns/Fleurbaey_Maniquet_2007.md
+
+### Full citation
+Fleurbaey, Marc, and François Maniquet. 2007. "Help the Low Skilled or Let the Hardworking Thrive? A Study of Fairness in Optimal Income Taxation." Journal of Public Economic Theory 9(3): 467-500.
+
+### One-sentence contribution
+The paper derives two fairness-based families of social objectives, egalitarian-equivalent and equivalent-budget, and shows that despite their first-best conflict both imply strong tax relief or subsidy at the bottom, including zero marginal tax rates below the minimum wage under a no-identification restriction.
+
+### Core research question
+When individuals differ both in earning ability and in consumption-leisure preferences, what kinds of fairness principles can justify particular social objectives, and what tax-schedule features follow from those objectives once incentive compatibility is imposed?
+
+### Economic setting and context
+The setting is a theoretical optimal-income-tax model with two goods, labour and consumption, and a population of agents differing in wage rates and ordinal preferences over labour and consumption. The paper explicitly positions itself against both indiscriminate equalization of income differences and purely welfarist aggregation of heterogeneous utilities. The paper is not a country study. It does, however, connect its normative dilemma to contemporary welfare-state debates and occasionally comments on policy ideas such as basic income, unemployment support, and low-income tax exemption.
+
+### Model / theoretical framework
+The model is a second-best optimal-tax model with heterogeneous skills and heterogeneous consumption-leisure preferences. A bundle is (z_i=(\ell_i,c_i)), where (\ell_i) is labour and (c_i) consumption. Agents have continuous, convex, monotonic preferences (R_i), and skill is summarized by a wage rate (w_i). Earnings are (y_i=w_i\ell_i). The paper assumes that different preferences can be ordered by willingness to work through a single-crossing-type property in the ((\ell,c)) space.
+
+### Key objects
+The first key object is the implicit budget (IB(z,w,R)): the budget line of slope (w) tangent to the agent’s indifference curve at bundle (z). The associated scalar measure is the implicit transfer (IT(z,w,R)), defined as the smallest lump-sum transfer needed at wage (w) to make the agent weakly able to attain a bundle at least as good as (z). The paper interprets (IT) as a money-metric representation based only on ordinal preferences. The second key object is the family of egalitarian-equivalent social preferences, denoted EE, which apply maximin to the vector ((IT(z_1,\tilde w,R_1),\dots,IT(z_n,\tilde w,R_n))) for a chosen reference skill (\tilde w).
+
+### Data
+There is no empirical dataset and no estimation exercise. The paper is theorem-driven and uses geometric illustrations, a stylized two-by-two type structure for intuition, and general-population results under a No Identification assumption.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The key logic is normative and analytical. Fairness principles are used to justify two kinds of social objectives, and these objectives are then embedded in a Mirrlees-type second-best tax problem. The question is not how to identify preferences from data, but how particular ethical commitments restrict the shape of optimal taxes. Within the second-best model, the critical informational restriction is that only earned income is observed.
+
+### Treatment of preferences
+Preferences are central and heterogeneous. The paper explicitly allows individuals to differ in their willingness to work, and it treats that heterogeneity as ethically relevant. In particular, one of the two fairness principles—Let Hardworking Thrive—states that differences in outcomes due purely to different preferences, holding skill fixed, need not be corrected and may deserve respect. At the same time, the paper does not aggregate raw utilities.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in your sense of feasible job sets, latent offers, or opportunity correspondences (A_i). The relevant environment is a tax-distorted budget set plus an incentive-compatibility structure generated by unobservable skill. Constraints are therefore budget and mechanism-design constraints, not opportunity-set constraints. The key objects are first-best and second-best budgets, implicit budgets, and self-selection constraints. The paper also assumes an upper bound on labour time, and this matters in the two-by-two case because it can prevent certain mimicking deviations even when after-tax income comparisons might otherwise suggest them.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare objects are not utilitarian welfare functions over heterogeneous utilities. Instead, it studies two maximin families: EE based on implicit transfers relative to a reference skill, and EB based on the value of implicit budgets according to a reference preference. This is highly relevant for responsibility versus compensation.
+
+### Main findings
+The first main finding is conceptual: ?Help Low Skilled? and ?Let Hardworking Thrive? generate two different families of social objectives, EE and EB, that can point in different directions in first-best settings. Figures 8 and 11 illustrate how the chosen reference skill or reference preference changes redistribution. The second main finding is sharper for tax design: despite that conflict, both families imply strong protection at the bottom in second best, including zero marginal tax rates below the minimum wage under the paper's No Identification assumption and maximal subsidy to the lowest earners in important cases. The two-by-two results also show that an allocation is optimal for (w_1)-EE if and only if it is optimal for (R_2)-EB.
+
+### Main limitations
+A first limitation is that the framework abstracts from actual opportunity heterogeneity. Skill and preferences are the only relevant individual characteristics, and the whole argument proceeds through tax-distorted budget sets. This is a serious limitation for any project in which unequal feasible job sets matter independently of skill. A second limitation is that the paper’s sharp general tax results depend on the No Identification assumption.
+
+### Relevance for my JMP
+This paper is highly useful for framing the ethical tension at the core of the project. It gives a clean formulation of the trade-off between compensating low skill and respecting preference-driven labour choices, and it shows that this tension survives in second-best taxation but can partly compress into common low-income tax prescriptions. Direct use for positive empirical model design is limited, because the paper has no latent-jobs or opportunity-set structure. Indirectly, it is useful because it shows how a positive labour-supply environment can be coupled with a fairness-based evaluative layer that does not rely on interpersonal utility comparability.
+
+### Relation to opportunities vs preferences
+The paper is much stronger on preferences versus skills than on opportunities versus preferences. Its whole normative architecture is built around whether unequal outcomes should be corrected when they come from earning ability rather than from different willingness to work. It gives a rigorous example of how one can derive welfare criteria that are neutral with respect to some forms of heterogeneity and compensatory with respect to others. What it does not provide is the next step you need, namely replacing “skill” by, or supplementing it with, an explicit opportunity-set object.
+
+### Quick takeaway
+Derives two fairness-based social objectives (egalitarian-equivalent and equivalent-budget) and shows that despite their first-best conflict, both imply strong tax relief or subsidy at the bottom, including zero marginal tax rates below the minimum wage. Demonstrates the ethical tension between compensating low skill and respecting preference-driven labour choices -- and that this tension partly compresses into common low-income tax prescriptions under second-best constraints.
+
+
+---
+
+## Marc Fleurbaey (2009) — Beyond GDP: The Quest for a Measure of Social Welfare
+
+**Source extracts merged:** Fleurbaey_2009.md; Fleurbaey_2009_Beyond_GDP.md; markdowns/Fleurbaey_2009_Beyond_GDP.md
+
+### Full citation
+Fleurbaey, Marc. 2009. “Beyond GDP: The Quest for a Measure of Social Welfare.” Journal of Economic Literature 47(4): 1029–1075.
+
+### One-sentence contribution
+The paper critically reviews the main candidates for replacing or correcting GDP as a measure of social welfare—corrected monetary aggregates, green accounting, subjective well-being, the capability approach, and synthetic indicators—and argues that the most promising directions are equivalent-income type measures, careful use of subjective well-being data, and capability-based approaches rather than a single consensual replacement for GDP.
+
+### Core research question
+What should replace or supplement GDP if one seeks a theoretically defensible measure of social welfare for policy evaluation, international comparison, and intertemporal assessment? More specifically, how do the main candidate approaches—corrected GDP, green accounting, money-metric/equivalent-income approaches, subjective well-being, capability-based evaluation, and synthetic indicators—compare once judged in light of modern welfare economics?
+
+### Economic setting and context
+The paper is methodological and synthetic rather than tied to one country or one dataset. Its context is the broad policy debate over GDP’s inadequacy as a welfare measure. The introduction stresses that GDP ignores wealth variation, international income flows, household production, environmental destruction, health, longevity, social relations, security, and other determinants of well-being, and that GDP may even rise because of defensive expenditures linked to crime, pollution, or catastrophe. The paper is situated at the intersection of welfare economics, social choice, fair allocation, happiness studies, and the capability approach.
+
+### Model / theoretical framework
+This is not one model but a comparative theoretical framework for evaluating welfare metrics. Fleurbaey organizes the discussion around four broad families of alternatives to GDP: corrected monetary aggregates; subjective well-being or “Gross National Happiness”; the capability approach; and synthetic indicators. The structure of the paper, stated in the introduction and visible in the article’s sectioning, mirrors this taxonomy. The framework is explicitly normative and evaluative. It is about the measurement of individual well-being and social welfare, not about positive behavioral estimation.
+
+### Key objects
+The central objects are GDP, NNP, “green” accounting measures, money-metric utility, equivalent income, equivalent variation, compensating variation, subjective well-being, the U-index, capability sets, functionings, and synthetic composite indicators such as the HDI. Another key object is the Bergson-Samuelson / social-choice problem of aggregating individual well-being into social welfare. The paper repeatedly returns to the need for an individual metric that permits interpersonal comparison without relying on an indefensible reading of GDP or on simplistic utility notions. A third central object is equivalent income.
+
+### Data
+The paper is not built on one dataset. It is a broad literature review with illustrative examples drawn from many empirical traditions: national accounts, green accounting, happiness surveys, cross-country welfare comparisons, capability applications, and synthetic indicators. There are references to empirical practices and applications, such as Becker, Philipson, and Soares on full income, Jorgenson and Slesnick on money-metric social welfare, and the HDI and OECD-style indicators. But these are used to illustrate methodological arguments, not to estimate one unified empirical model.
+
+### Identification / empirical strategy
+This is not an identification paper in the econometric sense. Its logic is conceptual and normative. It asks which measurements of individual well-being and social welfare can be justified by welfare economics, and what assumptions are hidden behind apparently simple indicators like GDP or national happiness. Where “identification” does appear, it concerns the informational basis of welfare judgments. For corrected GDP, the paper argues that standard economic theory mostly justifies the sign of some welfare changes, not a cardinal welfare level, and often only under restrictive assumptions about optimality or representative agents.
+
+### Treatment of preferences
+Preferences are central in several distinct ways. In the money-metric/equivalent-income sections, preferences are used as the basis for calibrating well-being. Fleurbaey argues that equivalent-income type measures can incorporate non-income dimensions while respecting individuals’ own valuations of those dimensions, thereby making interpersonal comparison possible without crude paternalism. In the happiness section, the paper is more skeptical.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities in the empirical RURO/job-offer sense. It contains no latent job sets, no demand-side rationing model, and no structural distinction between feasible labor-market menus and preferences. So it does not help directly with the empirical treatment of opportunity heterogeneity as feasible job sets. However, the paper does treat opportunities in two important normative senses. First, through the capability approach, where well-being is related to capability sets rather than just achieved functionings.
+
+### Welfare / normative object
+The normative object is the measurement of individual well-being and social welfare beyond GDP. This is the paper’s explicit focus from the title onward. The paper argues that simple corrected GDP measures are weakly grounded if interpreted as cardinal welfare levels, that subjective well-being cannot serve as the metric of social evaluation without strong precautions, that the capability approach is powerful but hampered by the indexing problem, and that equivalent-income / money-metric approaches linked to social choice and fair allocation are especially promising. It therefore treats welfare not as a single settled object but as something whose metric must be chosen and justified.
+
+### Main findings
+The first main finding is that standard economic theory provides much less support for GDP-like monetary aggregates as welfare measures than is often assumed. In particular, much of the theory justifies only the sign of some welfare changes under restrictive assumptions, not a cardinal social welfare level. Fleurbaey is especially critical of the widespread use of GDP per capita as a scaled welfare measure. The second main finding is that green accounting and NNP-type approaches, while theoretically elegant, do not straightforwardly solve the welfare-measurement problem. Their practical implementation is difficult because they require comprehensive stock accounting and accounting prices, and they do not automatically provide a compelling direct measure of intergenerational social welfare.
+
+### Main limitations
+The main limitation, from your perspective, is that the paper is largely conceptual rather than model-specific. It does not deliver a single operational welfare metric that one can directly plug into a structural labor-supply or jobs-and-wellbeing framework. It maps the terrain and argues for directions, but stops short of producing one definitive implementable method. A second limitation is the absence of explicit empirical opportunity sets.
+
+### Relevance for my JMP
+This paper is extremely useful for framing. It gives a rigorous justification for moving beyond GDP and beyond income-only welfare analysis, while also warning against naive replacements such as raw subjective well-being or synthetic dashboards. It can help justify why the project needs a theoretically structured well-being measure rather than descriptive outcomes alone. It is useful for model design mainly on the normative side.
+
+### Relation to opportunities vs preferences
+This paper is highly relevant conceptually to the opportunities-versus-preferences distinction, but not on the empirical identification side. It insists that social evaluation must not collapse to either raw objective outcomes or raw subjective utility; instead, it seeks welfare metrics that combine dimensions of life with individuals’ own valuations. The capability discussion brings opportunity-like objects into the picture, while the equivalence approach offers a way to index individual situations without ignoring preference heterogeneity. But actual heterogeneous feasible sets are not modeled.
+
+### Quick takeaway
+Critically reviews candidates for replacing GDP -- corrected aggregates, green accounting, subjective well-being, capabilities, and synthetic indicators -- and argues that equivalent-income measures, careful use of subjective data, and capability approaches are most promising. A rigorous justification for moving beyond GDP while warning against naive replacements, directly supporting why $W(z,R,A;y)$ needs theoretical structure rather than descriptive outcomes alone.
+
+
+---
+
+## Marc Fleurbaey and Guillaume Gaulier (2009) — International Comparisons of Living Standards by Equivalent Incomes
+
+**Source extracts merged:** Fleurbaey_Gaulier_2009.md; markdowns/Fleurbaey_Gaulier_2009.md
+
+### Full citation
+Fleurbaey, M., & Gaulier, G. (2009). International comparisons of living standards by equivalent incomes. *Scandinavian Journal of Economics*, 111(3), 597--624.
+
+### One-sentence contribution
+Proposes and applies a method for comparing living standards across 24 OECD countries using equivalent incomes -- GDP per capita corrected for non-income dimensions (leisure, unemployment risk, health, household size, inequality) via willingness-to-pay calculations -- showing that the resulting ranking differs substantially from both GDP and HDI rankings.
+
+### Core research question
+How do international comparisons of living standards change when GDP per capita is corrected for differences in leisure, unemployment risk, health, household composition, and income inequality, using the equivalent income methodology?
+
+### Economic setting and context
+The paper is an OECD-country comparison for 2004. Its motivation is dissatisfaction with GDP per capita as a welfare measure and skepticism toward alternative composite indicators such as the HDI when their aggregation weights lack a clear rational basis. The authors explicitly position equivalent income as an alternative that remains monetary and comparable while incorporating non-income dimensions. The exercise is macro-comparative rather than micro-econometric.
+
+### Model / theoretical framework
+The framework is normative and measurement-oriented. Individuals are described by income (y_i) and a vector of non-income living conditions (z_i), with indirect utility (v^i(y_i,z_i)). Fixing a benchmark (z^), the equivalent income (y_i^) solves (v^i(y_i,z_i)=v^i(y_i^,z^)). This converts all differences in non-income dimensions into income equivalents and thereby makes cross-country comparison possible in a single monetary dimension. Section II introduces this object formally, and Figure 1 on page 4 illustrates it graphically.
+
+### Key objects
+The central object is equivalent income. For an individual or representative agent, it is the income that, under a reference vector of non-income conditions, yields the same welfare as the actual income-plus-conditions bundle. This is the paper’s main money-metric welfare object. A second key object is the inequality-averse social welfare function where (\nu) is the coefficient of inequality aversion.
+
+### Data
+The empirical exercise uses 24 OECD countries for 2004. The underlying data are drawn from macro and administrative sources, especially World Bank, OECD, LIS, and related datasets. The Appendix lists GDP/GNI, hours of work, unemployment rates and durations, replacement rates, tax data, health-adjusted life expectancy, household size, and income-distribution information. The paper is transparent that it uses easily accessible aggregate data and a representative-agent approximation rather than individual-level survey data.
+
+### Identification / empirical strategy
+There is no quasi-experimental identification. The paper is not trying to estimate causal effects. Its identification logic is welfare-theoretic and calibration-based. It starts from a utility representation, defines equivalent income by indifference to a benchmark (z^), and then approximates willingness-to-pay corrections using observed country aggregates and parameter choices. Empirically, the main approximations are substantial.
+
+### Treatment of preferences
+Preferences enter centrally, but only in a representative-agent, calibrated form. The utility function is separable in consumption and labor, and non-income corrections are valued by willingness-to-pay. The paper’s claim is that this is superior to composite indicators with arbitrary weights because the weights now come from a welfare-theoretic structure rather than from arbitrary index design. However, preferences are not estimated from individual microdata in this paper.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as feasible job sets, latent offers, or menus of attainable bundles. There is no object analogous to your (A_i). Countries differ in realized average conditions such as leisure, unemployment risk, health, and household demography, and these are valued directly through equivalent-income corrections. Unemployment appears as a risk and not as an explicit opportunity-set structure. Leisure appears as realized average labor time, not as a constrained or chosen bundle from a labor-market opportunity set.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare object is equivalent income at the individual or representative-agent level and inequality-averse social welfare at the population level. The entire exercise is designed to compare living standards, not productivity or GDP performance. The benchmark (z^) plays a crucial normative role, because the equivalent-income measure depends on the reference values of non-income dimensions.
+
+### Main findings
+The main finding is that country rankings change materially once GDP is corrected for non-income dimensions and inequality. Table 1 on page 3 and Table 2 on page 20 show that the final indicator differs substantially from both GDP per capita and the HDI. For example, France and Japan perform much better under the equivalent-income approach than under GDP per capita, while Australia, Sweden, and especially the United States do worse relative to GDP-based impressions. A second major finding is that the size of the corrections is economically meaningful. The correction for GNI is small for many countries but large for Ireland and Luxembourg; leisure strongly benefits countries such as France, Norway, and the Netherlands; health favors Japan, France, Sweden, and Switzerland; and the household-size correction is quantitatively very large.
+
+### Main limitations
+A first limitation is the representative-agent approximation. The paper cannot compute individual equivalent incomes from microdata and therefore approximates mean welfare and inequality using aggregates plus an ordinary income-distribution correction. This is a serious limitation for any analysis concerned with cumulative deprivation at the micro level. A second limitation is that preference parameters are calibrated rather than estimated from comparable international micro evidence.
+
+### Relevance for my JMP
+This paper is very useful for framing a money-metric welfare approach that goes beyond GDP while retaining a scalar measure. It is especially useful if you want to justify why a single welfare index need not be ad hoc. It is moderately useful for model design on the welfare side. It provides a template for defining equivalent income with reference non-income conditions and then aggregating it with inequality aversion.
+
+### Relation to opportunities vs preferences
+This paper is much stronger on welfare measurement than on opportunities. It values realized conditions such as leisure, unemployment risk, health, and household demography through equivalent-income corrections, but it does not model the feasible opportunities generating those outcomes. It helps show how one can aggregate multiple dimensions into a scalar welfare index, but not how opportunity sets should enter that index.
+
+### Quick takeaway
+Compares living standards across 24 OECD countries using equivalent incomes -- GDP per capita corrected for leisure, unemployment risk, health, household size, and inequality via willingness-to-pay calculations -- showing rankings differ substantially from both GDP and HDI. A template for defining equivalent income with reference non-income conditions and aggregating with inequality aversion, directly useful for operationalising a scalar $W$.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2011) — A Theory of Fairness and Social Welfare, Chapter 11: Income Taxation
+
+**Source extracts merged:** Fleurbaey_maniquet_2011_11.md; markdowns/Fleurbaey_Maniquet_2011_ch11.md
+
+### Full citation
+Fleurbaey, M., & Maniquet, F. (2011). Income taxation. In *A Theory of Fairness and Social Welfare* (Chapter 11). Cambridge University Press. DOI: 10.1017/CBO9780511851971.016.
+
+### One-sentence contribution
+Shows how the social ordering functions characterised in Chapter 10 generate concrete second-best tax criteria under private information on skills and preferences, deriving that all highlighted orderings imply zero or nonpositive marginal taxation at low incomes.
+
+### Core research question
+Given the social ordering functions from Chapter 10 ($R^{slex}$, $R^{sminlex}$, $R^{\tilde{\ell}EW}$), what optimal income tax properties follow when skills and preferences are private information and the policymaker is restricted to incentive-compatible allocations?
+
+### Economic setting and context
+The chapter keeps the unequal-skills labor-supply model of Chapter 10. Agents differ by skill and preferences over labor-consumption bundles, and the policymaker knows the distribution of types but not who is who. The chapter is explicitly about income taxation, because once private information is imposed, incentive-compatible allocations can be represented as tax schemes. The setting is purely theoretical and second-best.
+
+### Model / theoretical framework
+The framework is the unequal-skills model from Chapter 10. An economy is (E=(s_N,R_N)), where each agent has a skill (s_i\in [s_{min},s_{max}]) and preferences (R_i) over bundles ((\ell_i,c_i)). The social objective is given by one of the previously characterized social ordering functions, especially (R^{slex}), (R^{sminlex}), and (R^{\tilde EW}). The chapter is normative and second-best rather than positive. It does not estimate preferences or behavioral elasticities from data.
+
+### Key objects
+The central positive-implementation objects are incentive-compatible allocations and their representation as tax schemes. When labor time is observable, allocations can be decentralized by a menu of skill-contingent tax functions ({\tau^w}) on labor time. When labor time is unobservable, allocations can be decentralized by a single earnings tax function (\tau(y)). Lemmas 11.1 and 11.2 are the key formal statements.
+
+### Data
+There are no empirical data. The chapter is purely theoretical. Its “applications” are analytical characterizations of tax schedules under different assumptions on information and type distributions.
+
+### Identification / empirical strategy
+There is no econometric identification in this chapter. The relevant analogue is implementation under asymmetric information. The policymaker knows the distribution of skills and preferences but not individual identities, so the feasible policy set is restricted by incentive compatibility. The crucial logical step is representability: any incentive-compatible allocation can be represented as a menu of tax functions when labor time is observable, and as a single earnings tax function when labor time is not observable. This is what allows the social-ordering approach to be translated into tax-design criteria.
+
+### Treatment of preferences
+Preferences remain ethically central, as in Chapter 10, because the underlying social orderings differ in how much responsibility they assign to preference-driven labor choices. But operationally, preferences are private information and cannot be directly conditioned upon by the tax authority. The chapter’s strong result is that even though preferences are private, the chosen social ordering still induces tractable second-best criteria because the relevant well-being indexes can be inferred from observed choices and tax schedules. This is one of the main reasons the framework remains implementable under informational constraints.
+
+### Treatment of opportunities / constraints
+Opportunities are again represented only through skill. This is narrower than your (A)-type feasible job set framework. The chapter is therefore about unequal earning ability under hidden information, not about explicit opportunity sets, latent jobs, or rationing. The main “constraint” object is informational rather than market-structural. The interesting problem is not that agents face different job menus, but that the policymaker cannot observe true skill and, in one case, cannot even observe labor time.
+
+### Welfare / normative object
+The chapter is explicitly normative. The policy objective is to maximize a chosen social ordering function under incentive compatibility. The main social orderings are exactly those characterized earlier as different compromises between compensation and responsibility. This chapter is directly relevant to compensation for opportunities and responsibility for preferences.
+
+### Main findings
+The first main finding is conceptual: the social ordering approach accommodates different informational structures very naturally. Because the relevant social orderings are of the leximin type and their well-being indexes are informationally simple, the policymaker can evaluate tax systems without needing full information on the distribution of types. The second main finding is comparative: social orderings satisfying equal-preferences transfer call for more redistribution than those satisfying equal-skill transfer. This is stated explicitly at the start of the chapter and then reflected in the properties of the resulting tax schemes. The third and most important finding is that all the highlighted social orderings imply nonpositive marginal taxation on low incomes.
+
+### Main limitations
+A first limitation is that skills remain the only opportunity heterogeneity. The chapter does not model occupation sets, job availability, search, rationing, or multidimensional feasible opportunities. A second limitation is analytical tractability. The chapter itself emphasizes that once agents differ both in skills and in preferences, it becomes almost impossible to derive exact optimal-tax formulas analytically in the style of the classical literature.
+
+### Relevance for my JMP
+This chapter is extremely useful for framing the transition from fairness axioms to actual policy design. It shows that once an ethical position is fixed, the next question is implementation under information constraints, and that this changes the policy implications substantially. It is moderately useful for model design on the normative side. It does not help with explicit job-set modeling, but it gives a template for how a richer individual well-being theory could later be translated into tax or policy constraints under asymmetric information.
+
+### Relation to opportunities vs preferences
+This chapter is highly relevant to the opportunities-versus-preferences distinction in a narrow but very important sense. Skills are the ethically compensable opportunity variable, and preferences are the object of responsibility. The whole chapter studies how that distinction survives the move from first-best fairness to second-best taxation. But the opportunity notion remains wage-skill-based rather than feasible-set-based.
+
+### Quick takeaway
+Shows how the social ordering functions from Chapter 10 generate concrete second-best tax criteria under private information, deriving that all highlighted orderings imply zero or nonpositive marginal taxation at low incomes (Theorems 11.1, 11.3). The policy-implementation companion to the axiomatic framework -- a template for translating fairness axioms into IC-constrained tax properties, which is exactly the bridge $W(z,R,A;y)$ would need to cross from normative theory to policy recommendations.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2011) — A Theory of Fairness and Social Welfare, Chapter 10: Unequal Skills
+
+**Source extracts merged:** Fleurbaey_maniquet_2011_10.md; markdowns/Fleurbaey_Maniquet_2011_ch10.md
+
+### Full citation
+Fleurbaey, M., & Maniquet, F. (2011). Unequal skills. In *A Theory of Fairness and Social Welfare* (Chapter 10). Cambridge University Press. DOI: 10.1017/CBO9780511851971.015.
+
+### One-sentence contribution
+Studies the canonical unequal-skills labour-income model, proves that full compensation for skills and full responsibility for preferences are deeply incompatible, then characterises three families of social ordering functions ($R^{slex}$, $R^{sminlex}$, $R^{\tilde{\ell}EW}$) that implement different compromises between them.
+
+### Core research question
+How should society rank feasible allocations when individuals differ both in preferences over consumption-leisure bundles and in productive skills, if one wants simultaneously to compensate for unequal skills and respect responsibility for preferences?
+
+### Economic setting and context
+The chapter studies an abstract economy in which labor time produces a private good linearly, with heterogeneous agent-specific skills. The natural interpretation is labor supply with wage heterogeneity, where skill is the wage rate and consumption is financed by labor income. The authors explicitly present this as the canonical model for labor income taxation. The chapter is not country-specific and has no empirical application.
+
+### Model / theoretical framework
+The model is a static fair-allocation model with individual bundles (z_i=(\ell_i,c_i)), where (\ell_i) is labor time and (c_i) is consumption, with labor bounded above by full time (\ell_i \le 1). Each agent has a productive skill (s_i\ge 0), so one unit of labor produces (s_i) units of consumption. Feasibility requires (\sum_i c_i \le \sum_i s_i \ell_i). Opportunities are not modeled as a set of jobs with heterogeneous attributes; instead, the whole opportunity side is summarized by a scalar skill or wage parameter (s_i). The chapter itself notes that low skills may reflect inherited features or unavailability of higher-wage jobs, but formally this is not modeled as an explicit set (A_i).
+
+### Key objects
+The key primitives are preferences (R_i), skills (s_i), and bundles (z_i=(\ell_i,c_i)). Two further geometric objects are central: the budget set (B(s_i,z_i)), defined as the linear budget with slope (s_i) passing through (z_i), and the implicit budget (B^(s_i,R_i,z_i)), defined so that (z_i) is indifferent to the agent’s preferred bundle on that budget. Figure 10.1 is the central diagram for this construction. The core normative objects are the axioms: equal-preferences transfer, equal-skill transfer, equal-preferences anonymity, equal-skill anonymity, equal-welfare selection, laissez-faire selection, MI-equal-skill transfer, and (\tilde \ell)-labor transfer.
+
+### Data
+There are no empirical data. This is a purely theoretical chapter. The “evidence” consists of axioms, propositions, theorem proofs, and graphical constructions.
+
+### Identification / empirical strategy
+There is no empirical identification in the econometric sense. The chapter’s analogue of identification is axiomatic characterization: one specifies ethical and consistency axioms, then derives which social ordering functions satisfy them or proves that none can. In particular, the impossibility theorems show that one cannot simultaneously impose full-strength compensation and full-strength responsibility in this model. None. The strategy is axiomatic and theorem-based.
+
+### Treatment of preferences
+Preferences are one of the two fundamental heterogeneities in the model. Responsibility is defined as neutrality with respect to preferences: agents with the same skill should ideally face the same lump-sum transfer and then freely choose their preferred labor supply on the same linear budget. This is the chapter’s formalization of responsibility or “liberal reward.” The chapter therefore treats preference heterogeneity as something that should, at least partly, be respected rather than corrected. But it also notes that preferences may themselves not be fully responsibility-grounded.
+
+### Treatment of opportunities / constraints
+Opportunities are treated in a very narrow but ethically central way. The opportunity side is summarized by productive skill (s_i), interpreted as the wage rate. Thus, differences in opportunities are differences in earning ability or in the slope of the budget set, not differences in job menus, hours packages, occupations, or offer probabilities. The chapter is therefore highly relevant to opportunity heterogeneity in the sense of unequal wages or unequal earning abilities, but not to your richer notion of feasible job sets. It does not model actual opportunity sets explicitly, does not distinguish feasible from infeasible jobs, and does not treat opportunity heterogeneity as a set-valued object.
+
+### Welfare / normative object
+This chapter is explicitly normative. Its welfare object is not an individual scalar welfare function estimated from behavior, but a social ordering over allocations derived from fairness axioms. The central ethical conflict is between compensation for unequal skills and responsibility for preferences. The chapter is directly useful for thinking about responsibility for opportunities and compensation for opportunities.
+
+### Main findings
+The first and most important finding is impossibility. Theorem 10.1 shows that no social ordering function can satisfy weak Pareto, equal-preferences transfer, and equal-skill transfer. Theorem 10.2 shows a similar impossibility even when these transfer axioms are weakened to anonymity axioms. This is the chapter’s basic statement of the deep conflict between compensation and responsibility. The second major finding is that weaker combinations are possible and lead to distinct leximin social orderings.
+
+### Main limitations
+This is analytically powerful but much thinner than a jobs-and-wellbeing model where feasible sets may contain multiple jobs with heterogeneous characteristics. A second limitation is that skills are fixed and exogenous. The chapter itself notes that skills may partly reflect inherited traits, unavailable jobs, or prior human-capital choices, but these distinctions are not modeled. This matters if one wants to separate responsibility for acquired ability from compensation for exogenous opportunity disadvantage.
+
+### Relevance for my JMP
+This chapter is extremely useful for framing the normative side of the JMP. It gives a rigorous statement of the compensation-versus-responsibility conflict in the labor/leisure setting and shows that the conflict is not superficial but theorem-level. It is only moderately useful for positive model design, because it has no explicit job-set structure. But it is very useful for normative model design, since it suggests how different fairness judgments may correspond to different welfare indexes and social orderings.
+
+### Relation to opportunities vs preferences
+This chapter is directly about the opportunities-versus-preferences distinction, but in a reduced form. Preferences are treated as the basis for responsibility or liberal reward. Opportunities are treated as skills or wage rates and are the basis for compensation. It is one of the strongest normative references you could use when arguing that inequalities due to productive opportunities and inequalities due to preferences should not automatically be treated in the same way.
+
+### Quick takeaway
+Proves that full compensation for skills and full responsibility for preferences are deeply incompatible (Theorems 10.1--10.2), then characterises three families of social ordering functions ($R^{slex}$, $R^{sminlex}$, $R^{\tilde{\ell}EW}$) implementing different compromises. The foundational normative reference for any framework distinguishing compensable from responsible heterogeneity -- the benchmarks against which $W(z,R,A;y)$-based social evaluation should be compared.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2017) — Fairness and well-being measurement
+
+**Source extracts merged:** Fleurbaey_Maniquet_2017.md; markdowns/Fleurbaey_Maniquet_2017.md
+
+### Full citation
+Fleurbaey, Marc, and François Maniquet. 2017. “Fairness and well-being measurement.” Mathematical Social Sciences 90: 119–126.
+
+### One-sentence contribution
+The paper axiomatizes well-being measurement under heterogeneous preferences and shows that strengthening Nested Contour in one direction yields ray-utility measures, while strengthening it in the opposite direction yields money-metric measures.
+
+### Core research question
+When agents have heterogeneous, continuous, convex, monotonic preferences over divisible goods, what fairness-based axioms can justify an interpersonal well-being measure defined from bundles of resources and preferences, and which families of measures survive those axioms?
+
+### Economic setting and context
+The paper is fully theoretical. The context is welfare economics and fair allocation, especially the long-standing problem of how to compare individual well-being when agents do not share identical or quasi-linear preferences. The authors explicitly motivate the paper by noting that once one allows income effects and heterogeneous reactions to policy, it is no longer obvious how well-being should be measured. The paper positions itself relative to two literatures.
+
+### Model / theoretical framework
+The model class is an axiomatic well-being measurement model on a standard divisible-goods consumption space. The consumption set is and agents have continuous, convex, monotonic preferences (R) over (X). A well-being measure is a function where (W(x,R)) is the well-being level of an agent consuming bundle (x) and having preferences (R). The framework is normative. It assumes that economic justice is about fair allocation of resources and then asks how individual well-being should be measured consistently with that idea.
+
+### Key objects
+The main objects are the consumption bundle (x), the preference relation (R), and the well-being measure (W(x,R)). The lower, upper, and indifference contour sets (L(x,R)), (U(x,R)), and (I(x,R)) are central because the fairness axioms are stated in terms of geometric relations among these sets. A second key object is the notion of worst preferences (R^w). These are preferences such that, at any common bundle, the corresponding well-being is never above that of any other preferences.
+
+### Data
+. The paper is entirely theoretical and contains no dataset, no econometric model, and no empirical estimation.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The relevant logic is axiomatic characterization. The question is not how to recover primitive parameters from observed choices, but how fairness requirements restrict the admissible forms of an interpersonal well-being measure (W(x,R)). The basic discipline comes from Nested Contour, which the paper treats as a weak but essential consistency condition if one wants well-being comparisons to be based on resource bundles while still respecting preferences. Stronger discipline comes from either Supremum Nested Contour or Infimum Nested Contour, each of which implies comparability across all preferences through a reference class of worst or best preferences.
+
+### Treatment of preferences
+Preferences are central and explicitly heterogeneous. This is the entire point of the paper. The well-being measure must respect each agent’s own preferences in the sense that if (xRx'), then (W(x,R)\ge W(x',R)), with strict inequality under strict preference. This is the analogue of an individual-level Pareto consistency requirement.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities or constraints as feasible job sets, random offers, hours restrictions, or demand-side rationing. There is no person-specific set (A_i). All agents are evaluated over the common consumption space (X=\mathbb{R}_+^K). Accordingly, the paper does not distinguish preference heterogeneity from opportunity heterogeneity. It distinguishes preferences only.
+
+### Welfare / normative object
+The paper is explicitly normative. Its welfare object is an individual well-being measure grounded in fair resource allocation under heterogeneous preferences. It is not a social welfare function, a policy-incidence measure, or a happiness index. The paper is careful to isolate the individual-measurement problem from the aggregation problem.
+
+### Main findings
+The paper?s first result is that Nested Contour is equivalent to Unchanged Indifference Independence, so only the indifference set at the realized bundle should matter for well-being comparisons. It then shows that adding worst-preference structure leads to the ray-utility family, while adding best-preference structure leads to the money-metric family. These two strengthenings are incompatible, which is why the literature contains two distinct, fairness-grounded families of well-being measures rather than a single canonical one.
+
+### Main limitations
+The main limitation is the absence of opportunities or person-specific feasible sets. The paper’s welfare measure depends only on a realized bundle and preferences over a common consumption space. This is too narrow for a framework in which actual job opportunities or feasible menus matter normatively. A second limitation is the very abstract goods space.
+
+### Relevance for my JMP
+This paper is very useful for framing the well-being measurement problem under heterogeneous preferences. It supports the claim that one cannot simply read off welfare from income or from a common utility function once preferences differ; one needs a fairness-based interpersonal metric. It is highly useful on the normative side of model design. In particular, it suggests that if you want an individual well-being measure in a richer jobs-and-wellbeing framework, you may need to choose between benchmark structures analogous to “worst” and “best” preference references, or something extending them.
+
+### Relation to opportunities vs preferences
+This paper is entirely on the preferences side of that distinction. It tackles the interpersonal-comparison problem generated by heterogeneous preferences and asks how one can compare well-being without pretending preferences are identical. It does not tackle opportunities in the sense of unequal feasible sets. So it should not be read as a paper on opportunities versus preferences.
+
+### Quick takeaway
+Axiomatises well-being measurement under heterogeneous preferences, showing that strengthening Nested Contour in one direction yields ray-utility measures while the opposite direction yields money-metric measures. Demonstrates that one cannot simply read off welfare from income or a common utility function once preferences differ -- one needs a fairness-based interpersonal metric. Directly relevant to the choice of welfare representation in $W(z,R,A;y)$.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2018) — Inequality-averse well-being measurement
+
+**Source extracts merged:** Fleurbaey_Maniquet_2018.md; markdowns/Fleurbaey_Maniquet_2018b.md
+
+### Full citation
+Fleurbaey, Marc, and François Maniquet. 2018. “Inequality-averse well-being measurement.” International Journal of Economic Theory 14(1): 35–50.
+
+### One-sentence contribution
+The paper extends the earlier fairness-based framework by adding inequality-aversion requirements and shows that they select strictly concave transformations of money-metric or ray-utility measures, while a stronger nested-priority axiom is incompatible with contour-based fairness.
+
+### Core research question
+Given a framework in which individual situations are described by commodity bundles and ordinal preferences, can one impose inequality-aversion principles strong enough to refine the two general fairness-compatible families of well-being measures and characterize specific measures such as ray utility and money-metric utility?
+
+### Economic setting and context
+The paper is fully theoretical. Its context is welfare economics and fair allocation under heterogeneous preferences. The opening section explicitly states that the paper builds on Fleurbaey and Maniquet (2011, 2017a), where fairness principles made it possible to compare individuals in terms of bundles and preferences rather than interpersonally comparable utilities. The present paper asks how far this approach can be refined once one adds transfer-style inequality aversion.
+
+### Model / theoretical framework
+The model class is an axiomatic well-being measurement model over divisible goods. There are (K) goods, the consumption set is and preferences are continuous, convex, and monotonic. A well-being measure is a function where (W(x,R)) is the well-being of an agent consuming bundle (x) with preferences (R). The paper also imposes continuity of (W) in (x) and respect for preferences, so that preference orderings are preserved by the well-being measure within each individual. The framework is normative.
+
+### Key objects
+The core objects are the bundle (x), the preference relation (R), and the well-being measure (W(x,R)). Lower, upper, and indifference contours (L(x,R)), (U(x,R)), and (I(x,R)) remain the geometric basis of all interpersonal comparisons. A second key object is the pair of general families inherited from the earlier paper. Under supremum nested contour, well-being takes the form for some “worst preferences” (R^w).
+
+### Data
+. The paper is entirely theoretical and contains no dataset, no empirical sample, and no estimation exercise.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The relevant logic is axiomatic selection of admissible well-being measures. The authors start from the two broad classes already justified in earlier work and then ask which additional transfer principles are compatible with them. The decisive insight is that some seemingly natural transfer requirements are too strong. Lemma 3 proves that no well-being measure can satisfy both nested priority and nested contour.
+
+### Treatment of preferences
+Preferences are heterogeneous and central. The informational basis of welfare judgement is explicitly limited to commodity bundles and ordinal, non-comparable preferences. The authors insist that fairness principles make interpersonal comparison possible without needing interpersonally comparable utilities. The well-being measure must respect preferences, meaning that within a given preference ordering, higher-ranked bundles must receive weakly higher well-being.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities or constraints as feasible job sets, restricted menus, wages, hours offers, or labor-demand-side rationing. There is no object analogous to your (A). The entire framework is built on realized bundles in a common commodity space. The only “constraint” concept in the paper is the geometry of indifference sets and translated bundle increments. So the paper is not about opportunity heterogeneity; it is about how to compare well-being across heterogeneous preferences while remaining resource-based and fairness-sensitive.
+
+### Welfare / normative object
+The welfare object is an individual well-being measure intended to serve as an argument in social welfare functions. The paper does not aggregate well-being, but it explicitly frames its results as providing better-grounded individual arguments for later social evaluation. Normatively, the paper is about combining two values: respect for individual preferences and inequality aversion in the evaluation of resource improvements. The central question is which individual well-being measures can support an egalitarian transfer logic while still respecting preferences and the contour-based fairness principles introduced previously.
+
+### Main findings
+The paper?s first result is negative: the most direct multidimensional transfer principle, Nested Priority, cannot coexist with Nested Contour. It then shows that infimum nested contour plus diminishing priority selects strictly concave transformations of money-metric utility, whereas supremum nested contour only remains compatible with a weaker one-direction transfer principle and yields strictly concave transformations of ray utility. The asymmetry matters: once inequality aversion is imposed, the money-metric family fits the axioms more naturally than the ray-utility family.
+
+### Main limitations
+The first limitation is the absence of explicit opportunity sets, needs, abilities, leisure bounds, or non-monotonic dimensions. The concluding section explicitly notes that the divisible-commodities model is not adapted to settings where one dimension is bounded, such as leisure or health, or where preferences are not monotonic in every good. A second limitation is that the paper still requires exogenously chosen references: a price vector (p) for money-metric utility or a reference bundle (\ell) for ray utility. The paper shows when those forms are justified, but not how the reference itself should always be selected.
+
+### Relevance for my JMP
+This paper is very useful for framing the claim that a well-being measure should not be chosen arbitrarily. It shows that once one combines fairness and inequality-aversion principles, one can sharply restrict the admissible measures. That is a strong argument against purely ad hoc use of money-metric or ray-type metrics. It is highly useful for the normative design of your (W)-measure.
+
+### Relation to opportunities vs preferences
+This paper is fundamentally on the preferences-and-bundles side, not on the opportunities side. It assumes the informational basis of welfare judgement consists of realized bundles and ordinal preferences. Opportunities as distinct feasible sets are absent. It shows how much can be done normatively once one takes heterogeneous preferences seriously, and also how sharply transfer principles can discipline the metric.
+
+### Quick takeaway
+Extends the axiomatic well-being measurement framework by adding inequality-aversion requirements, showing they select strictly concave transformations of money-metric or ray-utility measures, while a stronger nested-priority axiom is incompatible with contour-based fairness. Demonstrates that once fairness and inequality-aversion principles are combined, admissible welfare measures are sharply restricted -- a strong argument against ad hoc use of any particular money-metric in $W$.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2018) — Optimal Income Taxation Theory and Principles of Fairness
+
+**Source extracts merged:** Fleurbaey_Maniquet_2018_a.md; markdowns/Fleurbaey_Maniquet_2018.md
+
+### Full citation
+Fleurbaey, Marc, and François Maniquet. 2018. “Optimal Income Taxation Theory and Principles of Fairness.” Journal of Economic Literature 56(3): 1029–1079.
+
+### One-sentence contribution
+The paper is a broad JEL survey arguing that optimal tax theory can incorporate fairness by replacing raw utilities with money-metric welfare indexes that encode compensation, responsibility, and libertarian concerns.
+
+### Core research question
+How can optimal income taxation incorporate responsibility, compensation, and fairness principles when individuals differ in both earnings capacity and preferences?
+
+### Economic setting and context
+This is a synthetic and theoretical review of modern optimal-tax theory. Its context is the long-running tension between Mirrleesian tax design and broader fairness concerns such as equality of opportunity, resource egalitarianism, and libertarianism.
+
+### Model / theoretical framework
+The paper stays within the nonlinear income-tax tradition but emphasizes that the decisive normative step is the choice of the welfare representation. Money-metric utilities and related constructs are used to build fair interpersonal comparisons under heterogeneous preferences.
+
+### Key objects
+The core objects are utility, earnings, taxes, and the welfare indexes used for social evaluation, especially money-metric representations that encode different views about what should be compensated and what should be treated as responsibility.
+
+### Data
+There is no original dataset or empirical estimation. The paper is a theoretical review with analytical illustrations.
+
+### Identification / empirical strategy
+There is no econometric identification strategy. The paper’s logic is conceptual and theorem-based, comparing the implications of alternative fairness principles within tax models.
+
+### Treatment of preferences
+Preferences are central. The paper insists that heterogeneous preferences create an interpersonal-comparability problem and that welfare analysis must not simply equate observed utility with social value.
+
+### Treatment of opportunities / constraints
+Opportunities enter mainly in normative language about resources, capabilities, and circumstances, not as explicit feasible job sets. The formal environment remains much closer to standard Mirrlees budget sets than to latent-opportunity models.
+
+### Welfare / normative object
+This is the paper’s core contribution. It treats the social ordering as depending on normatively chosen welfare indexes rather than on raw preferences, and it shows how different fairness principles map into different welfare representations.
+
+### Main findings
+The paper's main conclusion is that the social-welfare-function framework is flexible enough to accommodate a wide range of fairness principles once individual welfare indexes are constructed appropriately. A second key takeaway from the review is that money-metric representations generate a tractable family of social objectives indexed by ethical choices about compensation and responsibility, and that some of these fair objectives yield sharp tax prescriptions, including low or zero marginal tax rates over specific ranges.
+
+### Main limitations
+The paper is weak on explicit opportunity-set modeling and on empirical measurement. It provides a normative architecture rather than a structural decomposition of preferences, opportunities, and pay.
+
+### Relevance for my JMP
+Very high for the normative side. It is one of the best references in your corpus for explaining why welfare analysis with heterogeneous preferences requires a carefully built welfare index rather than off-the-shelf utility aggregation.
+
+### Relation to opportunities vs preferences
+The paper is far more useful for the normative treatment of preferences than for explicit modeling of opportunities. It helps define what should be compensated, but not how feasible job sets should be represented empirically.
+
+### Quick takeaway
+A foundational normative guide for building fairness-sensitive welfare analysis under heterogeneous preferences.
+
+
+---
+
+## Marc Fleurbaey and François Maniquet (2019) — Well-being measurement with non-classical goods
+
+**Source extracts merged:** Fleurbaey_Maniquet_2019.md; markdowns/Fleurbaey_Maniquet_2019.md
+
+### Full citation
+Fleurbaey, M., & Maniquet, F. (2019). Well-being measurement with non-classical goods. *Economic Theory*, 68, 765--786.
+
+### One-sentence contribution
+Extends the axiomatic well-being measurement framework of Fleurbaey and Maniquet (2017, 2018) to settings where goods may be ordinal (non-cardinal quantities), subject to satiation (not always desirable), or both, showing that the two basic axioms (Supremum and Infimum Nested Contour) remain compatible and jointly characterise "monotone consumption path" well-being measures, while in the satiation model a new family based on the "preferred attribute" emerges.
+
+### Core research question
+Do the axiomatic results characterising ray utility and money-metric utility (from Fleurbaey and Maniquet 2017, 2018) generalise to settings where goods are ordinal (quantities not cardinally comparable) or subject to satiation (not always desirable)? If not, what alternative well-being measures are justified?
+
+### Economic setting and context
+The paper is fully theoretical and continues the program developed in Fleurbaey and Maniquet (2011, 2017, 2018). It starts from the earlier result that, under classical divisible desirable goods, two main families of well-being measures emerge, containing ray utility and money-metric utility. It then studies what survives once classical assumptions are relaxed. The paper is explicitly motivated by applications in poverty and inequality measurement where many observed dimensions are not classical goods.
+
+### Model / theoretical framework
+The framework is axiomatic and normative throughout. The core object is again an individual well-being measure (W) built from a consumed bundle and a preference relation, under the requirement that well-being comparisons be grounded in fairness principles bearing on consumed quantities and preferences. The paper studies three environments. First, the classical benchmark with consumption set (X=\mathbb{R}+^K) and continuous, convex, monotonic preferences (R^{cl}). Second, an ordinal-goods model, still with (X=\mathbb{R}+^K), but where convex combinations of quantities are no longer meaningful, so the relevant domain is the larger set of monotonic continuous preferences (R^{od}).
+
+### Key objects
+The central object is the well-being measure (W(x,R)), or (W((m,a),R)) in the non-classical model with one classical good (m) and attribute vector (a). The lower, upper, and indifference contours remain the basic geometric objects behind the axioms. In the classical benchmark, the key candidate measures remain ray utility (W^\ell) and money-metric utility (W^p), inherited from the earlier work and recalled in Section 2. Figure 2 on page 771 illustrates both on the same graph.
+
+### Data
+. The paper is entirely theoretical and contains no empirical dataset, no estimation sample, and no econometric implementation.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The relevant logic is axiomatic characterization. The paper starts from two fairness axioms inherited from earlier work—Supremum Nested Contour and Infimum Nested Contour or Infimum Nested Contour—and asks what they imply under different assumptions about the nature of goods. The key result is that the classical dual-family structure is not stable under generalization. With ordinal goods, the two basic axioms become compatible and together characterize monotone-consumption-path well-being measures.
+
+### Treatment of preferences
+Preferences are heterogeneous and always central. In all environments, the well-being measure must respect individual preferences, meaning that within each preference ordering the measure preserves the preference ranking of bundles. This remains a foundational requirement throughout. The paper’s main novelty is not on the preference side, but on the goods side.
+
+### Treatment of opportunities / constraints
+It does not model opportunities as feasible job sets, random offers, or demand-side constraints. There is no object analogous to an individual opportunity set (A_i). The focus stays on realized bundles and preferences. What the paper does add is a richer treatment of the nature of the realized goods. Instead of assuming all dimensions are classical divisible goods, it allows ordinal attributes, bounded goods, discrete quantities, and satiation.
+
+### Welfare / normative object
+The welfare object is the individual well-being measure itself. The paper continues the Fleurbaey-Maniquet project of grounding interpersonal comparisons in fairness principles applied to bundles and preferences, rather than in raw utility comparability or subjective well-being data. Normatively, the major contribution is domain sensitivity. The paper shows that the right family of well-being measures depends on the type of goods under consideration.
+
+### Main findings
+The first main finding is that the earlier classical results are recovered and summarized. In the classical divisible desirable-goods setting, Supremum Nested Contour leads to the family containing ray utility, while Infimum Nested Contour leads to the family containing money-metric utility. Section 2 recalls these results and notes that the relevant measures in the earlier 2018 paper are strictly concave transforms of (W^\ell) and (W^p). The second main finding is that, with ordinal desirable goods, the two basic axioms become compatible and jointly characterize a monotone consumption path family. Theorem 2 states that a well-being measure satisfies Supremum Nested Contour and Infimum Nested Contour if and only if there exists a monotone consumption path (P) and a strictly increasing function (w:P\to\mathbb{R}_+) such that well-being is determined by the unique point (p\in P) indifferent to the bundle.
+
+### Main limitations
+Even though it studies richer types of goods, it remains a theory of well-being from realized bundles and preferences, not from realized bundles plus feasible opportunities. A second limitation is that the theory remains at a very abstract level. The paper tells you which families are admissible in different domains, but not how to estimate them empirically from labor-market data or how to choose among them in a concrete application absent further ethical commitments. A third limitation is that the paper does not study aggregation.
+
+### Relevance for my JMP
+This paper is very useful for framing because it shows that the welfare-measurement problem changes when the goods of interest are not all classical. That is directly relevant for any project in which jobs, hours, health, or qualitative attributes are part of the evaluated situation. High relevance on the normative design side. The paper suggests that once you move beyond pure divisible goods, you should not automatically keep the same well-being measure.
+
+### Relation to opportunities vs preferences
+This paper remains primarily on the realized-bundle-and-preferences side. It enriches the treatment of goods, not the treatment of opportunities. Preferences continue to matter centrally, but now the paper recognizes that different dimensions of consumption may require different evaluative structures. Its relevance to opportunities versus preferences is therefore indirect.
+
+### Quick takeaway
+Extends the axiomatic well-being measurement framework to settings where goods may be ordinal, subject to satiation, or both, showing that Supremum and Infimum Nested Contour axioms remain compatible and characterise "monotone consumption path" measures, while satiation introduces a new "preferred attribute" family. Directly relevant for any $W$ that includes non-classical dimensions such as job quality, health, or hours restrictions.
+
+
+---
+
+## Herwig Immervoll, Henrik Jacobsen Kleven, Claus Thustrup Kreiner, and Emmanuel Saez (2007) — Welfare Reform in European Countries: A Microsimulation Analysis
+
+**Source extracts merged:** Immervoll_et_al_2007.md; markdowns/Immervoll_et_al_2007.md
+
+### Full citation
+Immervoll, Herwig, Henrik Jacobsen Kleven, Claus Thustrup Kreiner, and Emmanuel Saez. 2007. “Welfare Reform in European Countries: A Microsimulation Analysis.” The Economic Journal 117(516): 1–44.
+
+### One-sentence contribution
+The paper combines Saez-style optimal-transfer formulas with EUROMOD microsimulation for 15 European countries and shows that working-poor subsidies generally dominate demogrants because participation responses create favorable fiscal externalities.
+
+### Core research question
+How do demogrants and in-work benefits compare once one accounts for intensive and extensive labor-supply responses inside realistic European tax-benefit systems?
+
+### Economic setting and context
+The paper studies the 15 pre-enlargement EU countries under their late-1990s tax-benefit systems. Its policy backdrop is the shift from expanding out-of-work support toward making work pay.
+
+### Model / theoretical framework
+The model is a static labor-supply framework with both intensive and extensive margins, embedded in a microsimulation environment. Participation responses arise through fixed costs of work, while policy effects are evaluated through changes in effective tax and participation tax rates.
+
+### Key objects
+The key objects are marginal tax rates, participation tax rates, intensive and extensive elasticities, and the equity-efficiency trade-off generated by marginal revenue-neutral reforms.
+
+### Data
+The institutional backbone is EUROMOD with country-specific microdata and 1998 tax-benefit rules. Earnings distributions and non-work populations are combined with externally chosen elasticity inputs.
+
+### Identification / empirical strategy
+This is a calibrated microsimulation exercise, not a causal identification paper. Reform effects come from statutory policy variation encoded in EUROMOD plus assumed elasticities drawn from prior evidence.
+
+### Treatment of preferences
+Preferences enter only in a simplified labor-supply sense through elasticities and fixed costs of work. The paper does not build a rich welfare treatment of heterogeneous tastes.
+
+### Treatment of opportunities / constraints
+The paper models institutional budget constraints very well, but it does not model feasible job sets or demand-side opportunity differences. Non-work is represented through fixed costs and participation responses, not through latent job availability.
+
+### Welfare / normative object
+The welfare object is practical rather than axiomatic: the paper evaluates reforms through an equity-efficiency trade-off comparing losers’ welfare losses to gainers’ welfare gains. It is not a fairness theory or a well-being measure in your broader sense.
+
+### Main findings
+The central result is that in-work benefits dominate demogrants on equity-efficiency grounds in all countries and across the elasticity cases the paper studies. This dominance disappears when participation elasticities are shut down, which is exactly the paper?s point: extensive-margin responses, not intensive ones, generate the fiscal externalities that make making-work-pay reforms attractive. The required participation elasticities are also fairly low, so the conclusion does not depend on extreme behavioral assumptions.
+
+### Main limitations
+The extensive margin is modeled in reduced form, the framework is static, and the paper does not distinguish preferences from job scarcity or other opportunity-side causes of nonparticipation.
+
+### Relevance for my JMP
+Strong for the empirical-policy side. It is a useful template for integrating labor-supply behavior, tax-benefit institutions, and comparative reform analysis, even though it remains weak on explicit opportunity sets.
+
+### Relation to opportunities vs preferences
+The paper is stronger on institutional constraints than on opportunities, and stronger on behavior than on preferences. It shows how policy shapes work incentives, but not how to separate tastes from access to jobs.
+
+### Quick takeaway
+A major comparative microsimulation paper on welfare reform, with strongest relevance for policy design rather than explicit opportunity modeling.
+
+
+---
+
+## Laurence Jacquet, Zhiyang Jia, and Thor O. Thoresen (2026) — How Much Does Responsibility Matter in Fairness Measurement?
+
+**Source extracts merged:** Jacquet_Jia_Thoresen_2026.md; Jaquet_et_al_2026.md; markdowns/Jacquet_Jia_Thoresen_2026.md
+
+### Full citation
+Jacquet, Laurence, Zhiyang Jia, and Thor O. Thoresen. 2026. “How Much Does Responsibility Matter in Fairness Measurement?” CESifo Working Paper No. 12418.
+
+### One-sentence contribution
+The paper proposes a new empirical way to measure how much responsibility-related heterogeneity matters for welfare assessment of tax reforms by comparing standard compensating variation (CV) with a fairness-adjusted “circumstance-CV” (CVcirc), estimated through a structural job-choice labor-supply model that separates preferences from circumstances.
+
+### Core research question
+How can one empirically measure the importance of responsibility-related characteristics in welfare assessment of tax reforms, and how much does that matter in practice when evaluating a concrete income-tax reform? More specifically, do welfare effects computed under a standard money-metric criterion differ substantially from welfare effects computed under a fairness-sensitive criterion that neutralizes preference heterogeneity?
+
+### Economic setting and context
+The empirical application is a Norwegian income-tax reform: the gradual 2013–2019 introduction of the “bracket tax,” which expanded the number of brackets in labor-income taxation while generally reducing marginal tax rates. Figure 3 in the paper shows clearly that the 2019 schedule has more brackets than the 2013 schedule and that rates are generally lower, though the first bracket begins taxing at a lower income level. The paper is motivated by a liberal-egalitarian concern: redistribution is more socially accepted when inequality is perceived as resulting from choices or preferences rather than from circumstances. The authors’ contribution is to translate that normative intuition into an empirical welfare-measurement exercise in the context of tax reform.
+
+### Model / theoretical framework
+The model class is a structural discrete-choice labor-supply model of the “job choice” type, following Dagsvik and Jia. Households are unitary married couples who choose jointly over female and male hours. Utility depends on disposable income, the spouses’ hours, and job-specific nonpecuniary components. The econometric model allows for latent job opportunities, so the household does not simply choose hours off a common deterministic menu. The paper’s crucial theoretical move is that the job-choice model mirrors the preferences/circumstances distinction.
+
+### Key objects
+The main positive object is the utility function where (C) is household consumption, (h_F) and (h_M) are female and male hours, and (z) indexes jobs and non-market opportunities. The corresponding indirect utility includes opportunity terms (\log Q_F(h_F)+\log Q_M(h_M)). The main welfare object is standard compensating variation, CV: the money amount that restores the household’s original utility after the tax reform. The central fairness-adjusted innovation is CVcirc: a compensating variation computed under the assumption that households differ only in circumstances, because preference heterogeneity is neutralized through common reference preference parameters and a common error component.
+
+### Data
+The empirical implementation uses Norwegian microdata for 2015, based on a merge of the Labour Force Survey and the Income and Wealth Statistics of Households. The estimation focuses on married couples. Couples with substantial self-employment income are excluded, along with observations with implausibly high hours or wages outside a specified interval. The final estimation sample contains 1,594 couples.
+
+### Identification / empirical strategy
+Identification is structural rather than quasi-experimental. The paper estimates a discrete-choice labor-supply/job-choice model by maximum likelihood within a conditional logit framework. The identification of preference heterogeneity relies on taste-modifying variables, especially age and number of children, while job-opportunity heterogeneity enters through the opportunity terms in the indirect utility. A central identifying feature is that the job-choice model contains both a utility component and an opportunity component. This permits a conceptually clean split between the preference side and the circumstance side that the authors need for CV versus CVcirc.
+
+### Treatment of preferences
+Preferences are central and explicitly heterogeneous. The paper treats the labor-leisure trade-off as the main source of preference heterogeneity, with age and the presence of children shifting leisure tastes. Table C2 shows that for women, age and the number of children significantly affect the taste for leisure, while the corresponding male effects are much weaker. This is not just a standard heterogeneous-preferences exercise.
+
+### Treatment of opportunities / constraints
+It does not model opportunities merely as a metaphor or as reference sets. It uses the job-choice model, in which households face latent sets of jobs and non-market opportunities. The number of jobs with given hours, (Q(h)), enters utility through (\log Q(h)), so opportunity heterogeneity is part of the positive model. The paper is explicit that this feature allows the model to reflect the circumstances/preferences dyad. Preferences are represented by the labor-leisure utility trade-off.
+
+### Welfare / normative object
+The welfare object is money-metric utility under alternative fairness interpretations. Standard CV fully respects household-specific preferences. CVcirc asks what the welfare effect of the reform would be if households differed only in circumstances. (\Delta CE) provides a second fairness-sensitive welfare-change criterion based on conditional equality rather than on compensating variation. This is not a paper about social welfare aggregation in the strong sense.
+
+### Main findings
+The first main finding is that, on average, the Norwegian bracket-tax reform generates welfare gains under all three methods. Table 1 reports average welfare effects of about NOK 18,384 under CV and NOK 18,677 under CVcirc, with (\Delta CE) also positive on average. The spread of welfare effects is slightly smaller under CVcirc than under CV. The second main finding is that the distribution of welfare gains under CV and CVcirc is very similar across most of the household disposable-income distribution. Figure 4, Panel (A), shows almost identical profiles from the bottom through decile 9.
+
+### Main limitations
+The first main limitation is that the paper is a working-paper application to one country and one reform. The authors themselves note that the conclusion—that responsibility matters mainly at the top—may not generalize to other reforms or other countries. A second limitation is that the fairness adjustment is implemented by fixing reference preferences through median taste-modifying variables and a common error term. This is operationally convenient, but the choice of reference values is ultimately normative and partly ad hoc.
+
+### Relevance for my JMP
+This paper is extremely useful for framing because it shows that fairness measurement under tax reform can be made empirical rather than merely axiomatic. It gives you a concrete example of how to ask whether responsibility-sensitive corrections materially change welfare evaluation. It is highly useful for model design. The key lesson is that a structural job-choice model can serve as the empirical backbone of a fairness-sensitive welfare analysis, because it separates preferences from opportunities more naturally than a conventional discrete-choice labor-supply model.
+
+### Relation to opportunities vs preferences
+This paper is directly about the opportunities-versus-preferences distinction, but asymmetrically. On the modeling side, it treats both: preferences are in the labor-leisure utility component, and opportunities are in the latent job-opportunity structure. On the welfare-measurement side, however, the main empirical comparison neutralizes preferences rather than opportunities. So the paper is highly relevant to your core distinction.
+
+### Quick takeaway
+Proposes a new empirical way to measure how much responsibility-related heterogeneity matters for welfare assessment of tax reforms, comparing standard CV with a fairness-adjusted "circumstance-CV" estimated through a structural job-choice model that separates preferences from circumstances. Shows that a structural job-choice model can serve as the empirical backbone of fairness-sensitive welfare analysis -- the closest existing paper to the empirical pipeline $W(z,R,A;y)$ aims to build.
+
+
+---
+
+## Charles I. Jones and Peter J. Klenow (2016) — Beyond GDP? Welfare across Countries and Time
+
+**Source extracts merged:** Jones_Klenow_2016.md; markdowns/Jones_Klenow_2016.md
+
+### Full citation
+Jones, Charles I., and Peter J. Klenow. 2016. "Beyond GDP? Welfare across Countries and Time." American Economic Review 106(9): 2426-2457.
+
+### One-sentence contribution
+The paper constructs a consumption-equivalent welfare measure over consumption, leisure, mortality, and inequality, and shows that Western Europe is far closer to the US in welfare than GDP per capita suggests while many poorer countries are further behind.
+
+### Core research question
+Can one construct a simple, economically grounded summary statistic of a country’s welfare that improves on GDP per capita by incorporating consumption, leisure, mortality, and inequality, and how much does such a measure alter cross-country and time-series comparisons of living standards?
+
+### Economic setting and context
+The paper is set in a broad comparative macroeconomic context. It compares standards of living across countries and over time, beginning with a detailed micro-data exercise for 13 countries and then extending the analysis to a macro-data exercise for 152 countries. Its motivating examples include the comparison of France and the United States and the broader contrast between Western Europe, emerging Asia, and poorer developing regions. The authors position the paper explicitly as a response to the shortcomings of GDP as a welfare measure.
+
+### Model / theoretical framework
+The model is an expected-lifetime-utility framework used to compute a consumption-equivalent welfare index. A fictitious individual, called “Rawls” by the authors, draws from the cross-sectional distributions of consumption and leisure and from age-specific mortality schedules in a given country. Expected lifetime utility is where (C_a) is consumption, (\ell_a) is leisure plus home production, (S(a)) is survival to age (a), and the expectation integrates over uncertainty in consumption and leisure. Welfare is then defined as the consumption-equivalent factor (\lambda_i) satisfying (U_{us}(\lambda_i)=U_i(1)). The framework is positive with welfare applications.
+
+### Key objects
+The central welfare object is the consumption-equivalent welfare index (\lambda_i), defined as the proportional adjustment to US consumption that makes expected utility in the United States equal to expected utility in country (i). This is the paper’s summary statistic of welfare. A second key object is the decomposition of welfare relative to GDP. In the micro-data formulation, log welfare relative to income is additively decomposed into contributions from life expectancy, the consumption share of GDP, leisure, consumption inequality, and leisure inequality.
+
+### Data
+The paper uses two empirical layers. The first is a detailed micro-data exercise based on household surveys for 13 countries: the United States, Brazil, China, France, India, Indonesia, Italy, Malawi, Mexico, Russia, South Africa, Spain, and the United Kingdom. Table 1 lists the survey sources, years, and sample sizes. The micro datasets allow the authors to compute consumption inequality, hours worked, and age-specific household outcomes more consistently across countries.
+
+### Identification / empirical strategy
+The paper is not an identification paper in the structural or causal sense. It does not attempt to identify deep preference parameters from policy variation, nor does it isolate causal effects of institutions or reforms. Instead, it calibrates a welfare function and computes welfare differences directly from observed cross-country distributions of consumption, leisure, inequality, and mortality. The crucial assumptions are therefore model-based rather than design-based. These include: a common preference specification across countries, the treatment of individuals as drawing from cross-sectional country distributions over their lifetime, the chosen discounting and growth assumptions, the calibration of the utility weight on leisure and the intercept in flow utility, and the chosen value of life used to pin down the utility intercept.
+
+### Treatment of preferences
+Preferences are imposed rather than estimated. The paper explicitly assumes a common preference specification for all countries and uses a fictitious representative evaluator, “Rawls,” to rank country allocations. This means that the welfare comparisons do not reflect country-specific tastes or heterogeneous normative standards. This is a major modeling choice.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly in the sense of feasible job sets, latent job offers, or opportunity correspondences. Leisure enters directly as a realized time-use outcome, and the paper treats hours worked and leisure as part of the outcome distribution rather than as the result of explicit constraints or opportunity sets. Similarly, the paper does not distinguish whether low consumption or low leisure reflects preferences, institutions, taxes, labor-demand conditions, household constraints, or job opportunities. All of these are folded into the observed outcomes used in the welfare calculation. This makes the paper strong on welfare measurement from realized outcomes, but weak on decomposing outcomes into preferences versus opportunities.
+
+### Welfare / normative object
+The welfare object is a consumption-equivalent measure of expected lifetime utility. This is explicitly utility-based, not a composite index built from arbitrary weights. The paper is clear that it aims to improve on mashup indices such as the Human Development Index by grounding the aggregation in expected utility and consumption-equivalent analysis. The paper is therefore positive with welfare applications, not an axiomatic fairness paper.
+
+### Main findings
+The first headline result is that welfare is highly correlated with GDP per person, but deviations are often substantial. The abstract states the high correlation and the main text reports that for the 13-country micro-data sample the median deviation is around 35 percent. In the micro comparison, France is the leading example: consumption is only 60 percent of the US level, but once life expectancy, leisure, and lower inequality are added, French welfare reaches about 92 percent of the US level. The second major result is that Western Europe is much closer to the United States in welfare than in income, while many poorer countries fall even further behind once mortality, low leisure, and inequality are added to the comparison.
+
+### Main limitations
+The paper’s first major limitation is that it imposes one common preference structure across countries. This is transparent and useful for comparability, but it suppresses the possibility that societies legitimately differ in preferences over consumption, leisure, or longevity. The authors explicitly acknowledge this limitation. A second limitation is omission.
+
+### Relevance for my JMP
+This paper is very useful for framing because it demonstrates, in a disciplined and widely legible way, that GDP is not itself a welfare measure. It can help justify why the project should distinguish realized earnings or consumption from a broader evaluative object. Its direct use for model design is limited, because it is not a structural labour-supply or job-choice paper. Indirectly, it is useful as a model of how to build a welfare statistic once one has decided which arguments matter—consumption, leisure, mortality, inequality—and how to put them into a common metric.
+
+### Relation to opportunities vs preferences
+The paper is weak on opportunities and only indirectly about preferences. Preferences appear as a common imposed utility specification, not as heterogeneous objects to be respected or neutralized. Opportunities do not appear as separate objects at all. It shows how much welfare analysis can be done from realized outcomes alone, and thereby clarifies what remains missing if one wants a welfare concept that is sensitive to feasible opportunities or to ethically differentiated treatment of preference heterogeneity.
+
+### Quick takeaway
+Constructs a consumption-equivalent welfare measure over consumption, leisure, mortality, and inequality, showing that Western Europe is far closer to the US in welfare than GDP per capita suggests while many poorer countries are further behind. A disciplined demonstration of how to build a welfare statistic from multiple arguments in a common metric -- useful for motivating why $W$ should depend on more than realised earnings.
+
+
+---
+
+## Max Löffler, Andreas Peichl, and Sebastian Siegloch (2014) — Structural labor supply models and wage exogeneity
+
+**Source extracts merged:** Loffler_et_al_2014.md; markdowns/Loffler_et_al_2014.md
+
+### Full citation
+Löffler, Max, Andreas Peichl, and Sebastian Siegloch. 2014. Structural labor supply models and wage exogeneity. SOEPpapers on Multidisciplinary Panel Data Research No. 675.
+
+### One-sentence contribution
+The paper estimates 3,456 structural labour-supply models on the same German data and shows that elasticities are robust to most utility-side choices but highly sensitive to wage treatment, with the usual exogeneity assumption biasing them sharply downward.
+
+### Core research question
+Why do state-of-the-art structural micro labor supply models often deliver relatively low labor supply elasticities, and to what extent is this due to specific modeling assumptions—especially the common assumption that wages are exogenous to preferences and labor-supply choices?
+
+### Economic setting and context
+The paper is set in the literature on structural labor-supply estimation, especially the discrete-choice random-utility tradition associated with Aaberge, Dagsvik, van Soest, and related work. It is motivated by the broader puzzle that macro labor-supply elasticities are typically larger than micro ones, and by the importance of elasticities for welfare analysis and optimal taxation. Empirically, the main dataset is the German SOEP. The paper uses the 2008 wave, which reports labor-supply and income information for 2007, and restricts attention to the working-age population.
+
+### Model / theoretical framework
+The model class is a structural discrete-choice labor-supply model formulated as a random-utility model. Individuals or households choose among a finite set of hours alternatives or job types. Utility depends on consumption, leisure, household/job characteristics, preferences, and labor-market conditions. Consumption is disposable income generated by wages, hours, non-labor income, and the tax-benefit system. Equations (1)–(4) lay out the general structure.
+
+### Key objects
+The central behavioral object is the conditional or mixed logit choice probability over hours/job alternatives. The key decomposition is between the systematic utility part (v(C_{nj},L_j)) and the availability or frequency term (g(j)), which represents labor-market conditions or constraints attached to job types. Equation (4) is central here. A second key object is the wage process.
+
+### Data
+The main data source is the German Socio-Economic Panel. The analysis uses the 2008 wave, which contains information for calendar year 2007. The sample excludes those younger than 17 or older than 65 and omits households where all decision makers are self-employed, civil servants, or in military service. The sample is then split into five demographic/labor-supply groups: single men, single women, couples with only the man flexible, couples with only the woman flexible, and couples with both partners flexible.
+
+### Identification / empirical strategy
+Identification is structural and heavily model-based. Preferences are identified from variation in wages, hours, non-labor income, household characteristics, and nonlinear tax-benefit schedules. The paper emphasizes that this is the standard identification logic of discrete-choice labor-supply models rather than quasi-experimental identification. The paper’s main identification contribution is diagnostic. It argues that standard models usually impose exogeneity between wages and preferences/labor-market conditions mainly for convenience, not because the assumption is well justified.
+
+### Treatment of preferences
+Preferences are modeled explicitly through the direct-utility function over consumption and leisure. The paper considers multiple common utility specifications—translog, quadratic, Box-Cox, and related variants—and allows for both observed and unobserved heterogeneity. This is standard structural labor-supply practice. But the key point is that the paper questions whether estimated preference heterogeneity is really interpretable when wages are treated too restrictively.
+
+### Treatment of opportunities / constraints
+The paper does not model explicit opportunity sets or latent job menus in the strong RURO sense. There is no observed or estimated set (A_i) of feasible jobs. Instead, constraints are incorporated in reduced-form ways: fixed costs of work, part-time restrictions, welfare stigma, or job-type availability terms (g(j)). This means the paper treats opportunities only implicitly. It clearly recognizes that labor-market conditions matter, and it allows them to shift the probability of choosing certain job types, but it does not build a full opportunity-set model.
+
+### Welfare / normative object
+The paper is positive, with policy relevance. It does not construct a welfare measure, equivalent income, or social welfare function. Its normative relevance is indirect: labor-supply elasticities are key inputs for welfare analysis and optimal tax design, and the paper explicitly highlights this motivation. The closest normative object is the use of labor-supply elasticities in optimal-tax formulas.
+
+### Main findings
+The first main finding is that most commonly discussed modeling assumptions do not systematically alter estimated labor-supply elasticities very much. In particular, the paper finds that utility functional form, observed heterogeneity, and several other specification details matter less than often assumed. The second, much stronger, result is that wage treatment dominates: predicting wages for the full sample and maintaining wage exogeneity can move elasticities from roughly 0.25 toward 0.6, so restrictive wage treatment appears to bias responsiveness sharply downward.
+
+### Main limitations
+A first limitation is that the strongest flexible joint-estimation exercise is implemented only for single women, largely because of computational constraints. This weakens the generality of the joint-estimation results, even though the broader sensitivity exercise covers all groups. A second limitation is that the model remains within the standard discrete-hours labor-supply paradigm. Even with flexible wage treatment, it still does not model explicit job sets or richer opportunity structures.
+
+### Relevance for my JMP
+This paper is highly useful for framing because it gives a disciplined methodological reason not to take structurally estimated preferences or elasticities at face value when wage treatment is restrictive. It is highly useful for model design on the empirical side. If your model estimates preferences from labor supply, you should think carefully about whether wages are treated as fixed, endogenous to hours, or correlated with latent preferences. This is one of its strongest uses.
+
+### Relation to opportunities vs preferences
+This paper is more useful for wages and preferences than for opportunities. Its key message is that estimated labor-supply preferences and elasticities are highly sensitive to how wages are modeled, and that ignoring wage-preference interaction can make labor supply appear much less responsive than it is. But it is not yet a full opportunities paper. Hours restrictions and fixed costs are included, yet opportunities are not represented as explicit feasible job sets.
+
+### Quick takeaway
+Estimates 3,456 structural labour-supply models on the same German data and shows that elasticities are robust to most utility-side choices but highly sensitive to wage treatment, with the usual exogeneity assumption biasing them sharply downward. A disciplined methodological warning: if the project estimates preferences from labour supply, wage-preference interaction must be handled carefully or preference estimates will be distorted.
+
+
+---
+
+## Max Löffler, Andreas Peichl, and Sebastian Siegloch (2018) — The Sensitivity of Structural Labor Supply Estimations to Modeling Assumptions
+
+**Source extracts merged:** Löffler et al_2018.md; markdowns/Loffler_et_al_2018.md
+
+### Full citation
+L?ffler, Max, Andreas Peichl, and Sebastian Siegloch. 2018. ?The Sensitivity of Structural Labor Supply Estimations to Modeling Assumptions.? ifo Working Paper No. 259, ifo Institute, Munich.
+
+### One-sentence contribution
+The paper estimates 3,456 structural discrete-choice labor-supply models on common German data, with a U.S. replication, and shows that wage treatment dominates most other modelling choices in explaining elasticity differences.
+
+### Core research question
+Which modeling assumptions materially drive the elasticities produced by standard structural discrete-choice labor-supply models?
+
+### Economic setting and context
+The paper is methodological rather than policy-specific. It uses German and U.S. data as platforms for a systematic robustness analysis of structural labor-supply estimation.
+
+### Model / theoretical framework
+The model class is the standard discrete-choice labor-supply model with disposable income, leisure, and a finite set of hours or job alternatives. The paper varies utility specifications, heterogeneity assumptions, fixed costs, hours restrictions, and especially wage-imputation choices across thousands of model variants.
+
+### Key objects
+The central objects are simulated own-wage elasticities, model fit, wage-imputation procedures, and the treatment of wage prediction error.
+
+### Data
+The main application uses German SOEP data with tax-benefit calculations, with a parallel robustness exercise on U.S. CPS data.
+
+### Identification / empirical strategy
+The strategy is a controlled methodological meta-analysis rather than causal identification. The paper estimates thousands of plausible structural variants on the same underlying data and regresses the resulting elasticities on indicators for the assumptions used.
+
+### Treatment of preferences
+Preferences are explicit in the underlying models, but one of the main findings is that many reasonable preference-side choices do not move elasticities nearly as much as wage-treatment choices do.
+
+### Treatment of opportunities / constraints
+The paper only treats opportunities in the reduced-form sense of hours restrictions, fixed costs, and availability weights typical of standard discrete-choice models. It does not estimate individualized feasible job sets.
+
+### Welfare / normative object
+The paper is not normative. Its welfare relevance is indirect: it disciplines the empirical credibility of the elasticities that later feed into welfare and tax analysis.
+
+### Main findings
+The main result is that most utility-side specification choices move elasticities only modestly, whereas wage imputation and treatment of wage prediction error move them a lot. Depending on those wage choices, average own-wage elasticities range roughly from 0.2 to 0.65, far larger than the shifts produced by switching among common utility forms or heterogeneity structures. The paper also shows that fixed costs and hours restrictions can matter for fit and for the extensive margin, but they still matter less than the wage side.
+
+### Main limitations
+The paper stays within the standard structural labor-supply class, so it cannot tell whether a richer opportunity-set model would behave similarly. It also shows sensitivity more than it resolves which specification is truly best.
+
+### Relevance for my JMP
+High as a cautionary methods paper. It is especially useful if your project will estimate structural behavior and then build welfare or decomposition claims on top of that estimation.
+
+### Relation to opportunities vs preferences
+The paper does not separate opportunities from preferences directly, but it shows that what may look like preference-driven behavior can be heavily distorted by how the wage side of the model is handled.
+
+### Quick takeaway
+A high-value warning that structural labor-supply conclusions are often driven more by wage treatment than by the usual debates over utility specification.
+
+
+---
+
+## François Maniquet (2008) — Social orderings for the assignment of indivisible objects
+
+**Source extracts merged:** Maniquet_2008.md; markdowns/Maniquet_2008.md
+
+### Full citation
+Maniquet, François. 2008. “Social orderings for the assignment of indivisible objects.” Journal of Economic Theory 143: 199–215.
+
+### One-sentence contribution
+The paper characterizes the unique social ordering function for the assignment of indivisible objects with money that satisfies efficiency, independence of preferences over infeasible bundles, consistency, and equity axioms: the leximin ordering in money utility.
+
+### Core research question
+Which social ordering functions for assignment problems with indivisible objects and money can simultaneously satisfy efficiency, consistency, an independence requirement with respect to infeasible bundles, and basic equity principles?
+
+### Economic setting and context
+The setting is the assignment of desirable indivisible objects with monetary compensation. Each agent may consume at most one object, and some agents may receive no object but only money. The motivating examples on page 1 include apartments, concert seats, parking lots, and tasks on a board of directors. The introduction also gives a university housing example in which visitors may be assigned campus housing or compensated for not receiving one.
+
+### Model / theoretical framework
+The model is a normative social-choice framework for assignment with indivisible objects and money. An economy is (E=(N,A,R)), where (N) is a finite set of agents, (A) a finite set of indivisible objects, and (R=(R_i)_{i\in N}) a profile of preferences over object-money bundles on (A^ \times \mathbb{R}), where (A^=A\cup{\nu}) and (\nu) is the null object. Agents can consume at most one object. Preferences are continuous, strictly monotone in money, all objects are desirable, and each object has finite money value for each agent. Section 2 defines the model formally.
+
+### Key objects
+The most important object is the social ordering function (R), which assigns to each economy a complete, reflexive, and transitive ranking of feasible allocations. This is the paper’s target object. The second key object is the money equivalent or money utility of a bundle. For any preference (R_i) and bundle (z_i), the money utility (u(R_i,z_i)) is the amount of money (m) such that the agent is indifferent between (z_i) and ((\nu,m)).
+
+### Data
+There is no empirical dataset. The paper is purely theoretical and axiomatic. The examples are illustrative only.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The relevant “identification” logic is axiomatic. The paper asks which social ordering functions are singled out by a given set of normative and informational requirements. The crucial analytical step is the intermediary characterization in Lemma 1 and Lemma 2: Pareto Indifference, Independence of Preferences over Infeasible Bundles, and Consistency imply the Money Equivalent Property, and this is equivalent to a form of money-utility welfarism. In other words, once those axioms are imposed, the social ranking can depend only on each agent’s money equivalent of the assigned bundle.
+
+### Treatment of preferences
+Preferences are ordinal over object-money bundles and may vary freely across agents, subject to continuity, strict monotonicity in money, desirability of objects, and finite object values. The paper does not estimate preferences and does not impose quasi-linearity. In fact, the conclusion explicitly notes that if one restricted the domain to quasi-linear preferences, the maximin conclusion would fail and more general generalized utilitarian criteria would survive. This is an important point on pages 15–16.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunity sets in the labour-market sense, but it does treat feasibility in a highly explicit way. The feasible set consists of allocations using only available objects and balanced money transfers. The central independence axiom says that preferences over infeasible bundles must not affect social rankings. This is not just a side condition; it is a core organizing principle of the analysis. The paper is therefore unusually strong on the treatment of infeasibility.
+
+### Welfare / normative object
+The paper is explicitly normative. Its object is a social ordering over feasible allocations. The final result is that the only such ordering satisfying the stated axioms is the money-equivalent leximin function. The paper also makes a strong anti-utilitarian point: in this domain, the axioms force the use of money utility and, with the fairness axioms added, force infinite aversion to money-utility inequality via leximin.
+
+### Main findings
+The first main finding is the intermediary characterization: Pareto Indifference, Independence of Preferences over Infeasible Bundles, and Consistency imply the Money Equivalent Property. Equivalently, they imply money-utility welfarism. This means the social ranking can depend only on agents’ money equivalents of their assigned bundles. Lemma 1 and Lemma 2 on pages 6–9 are the key result. The second main finding is that fairness selects leximin, not just any money-utility aggregation rule.
+
+### Main limitations
+Feasibility enters as the set of available allocations in an assignment problem, not as heterogeneous (A_i)-type opportunity sets. This limits direct portability to your jobs-and-wellbeing framework. A second limitation is that the paper is purely axiomatic and static. It does not provide an empirical strategy for recovering money equivalents or for implementing the social ordering in observed data.
+
+### Relevance for my JMP
+This paper is very useful for framing because it shows that an explicit restriction on how infeasible bundles may matter can have powerful implications for the form of the welfare criterion. It supports the broader idea that feasibility should not be treated as an afterthought in welfare analysis. Direct use for positive model design is limited. There is no structural labour-supply or RURO component.
+
+### Relation to opportunities vs preferences
+This paper is not about opportunity heterogeneity in the empirical sense, but it is deeply about the normative role of feasibility. It says that only preferences over feasible bundles should matter, and that this informational discipline sharply restricts admissible social orderings. That makes it quite relevant to your opportunities-versus-preferences agenda at a formal level. It does not separate heterogeneous opportunities from heterogeneous preferences empirically, but it does show that once feasibility is treated seriously, preferences cannot be used indiscriminately in welfare judgments.
+
+### Quick takeaway
+Characterises the unique social ordering for assignment of indivisible objects with money satisfying efficiency, independence of preferences over infeasible bundles, consistency, and equity: leximin in money utility. Shows that restricting welfare judgments to preferences over feasible bundles sharply disciplines the social ordering -- supporting the broader idea that feasibility should be a first-class constraint in welfare analysis, not an afterthought.
+
+
+---
+
+## Alexandre Mas and Amanda Pallais (2017) — Valuing Alternative Work Arrangements
+
+**Source extracts merged:** Mas_Pallais_2017.md; markdowns/Mas_Pallais_2017.md
+
+### Full citation
+Mas, A., & Pallais, A. (2017). Valuing alternative work arrangements. *American Economic Review*, 107(12), 3722--3759.
+
+### One-sentence contribution
+Embeds a discrete choice experiment in a real job application process for a national call center to estimate the WTP distribution for alternative work arrangements, finding that most workers do not value scheduling flexibility or hours choice but are willing to give up ~8% of wages for working from home and ~20% to avoid employer-set irregular schedules, with substantial heterogeneity and ~25% applicant inattention.
+
+### Core research question
+What is the distribution of workers' willingness to pay for alternative work arrangements (flexible scheduling, flexible hours, work from home, employer discretion over schedules), and how do these valuations vary across worker subgroups?
+
+### Economic setting and context
+The main setting is a U.S. call-center hiring process in which applicants choose between experimentally varied job descriptions. The broader policy context is the debate over flexibility, telework, and unpredictable scheduling.
+
+### Model / theoretical framework
+The paper uses a randomized job-choice design interpreted through a compensating-differentials framework. Workers choose between jobs that differ only in wages and one amenity, allowing the distribution of willingness to pay for that amenity to be recovered.
+
+### Key objects
+The key objects are willingness to pay for each arrangement, the wage premium attached to the experimental offer, and the probability of choosing the amenity job.
+
+### Data
+The paper combines the field experiment with supplementary survey evidence from the Understanding America Study and descriptive CPS comparisons.
+
+### Identification / empirical strategy
+Identification comes from randomized variation in wages and job attributes in the choice experiment. The paper is also careful about inattention and corrects for it explicitly in estimation.
+
+### Treatment of preferences
+Preferences are central, but in a valuation sense rather than as a structural labor-supply utility function. The paper identifies heterogeneous tastes for nonwage job attributes directly from job choices.
+
+### Treatment of opportunities / constraints
+The paper does not model individualized opportunity sets or latent job-arrival processes. It is therefore much stronger on how workers value job attributes than on who actually has access to jobs with those attributes.
+
+### Welfare / normative object
+The paper is positive rather than normative. Its welfare relevance is indirect, through monetized valuations of job amenities that could later be embedded in compensating-variation or well-being analysis.
+
+### Main findings
+Workers place little average value on worker-controlled scheduling flexibility, value work from home substantially, and strongly dislike employer-controlled irregular schedules. The paper also finds large heterogeneity, with a meaningful right tail for flexibility even when average willingness to pay is modest.
+
+### Main limitations
+The experimental sample is tied to a particular job context, the paper studies valuation rather than access, and it does not model long-run equilibrium sorting or dynamic career consequences.
+
+### Relevance for my JMP
+High if your project treats jobs as multidimensional bundles rather than wage-hour pairs. The paper is especially useful for motivating why nonwage job characteristics should matter in any serious opportunity or well-being framework.
+
+### Relation to opportunities vs preferences
+This is mainly a preferences paper. Its relevance to opportunities is indirect: it shows that observed jobs may reflect constrained access rather than indifference to job quality, but it does not estimate the access side.
+
+### Quick takeaway
+A strong empirical paper on how workers value job attributes, with especially clear relevance for the multidimensional nature of jobs.
+
+
+---
+
+## Andreas Peichl and Sebastian Siegloch (2012) — Accounting for labor demand effects in structural labor supply models
+
+**Source extracts merged:** Peichl_Siegloch_2012.md; Peichl_siegloch_2012.md; markdowns/Peichl_Siegloch_2012.md
+
+### Full citation
+Peichl, Andreas, and Sebastian Siegloch. 2012. “Accounting for labor demand effects in structural labor supply models.” Labour Economics 19(2): 129–138.
+
+### One-sentence contribution
+The paper proposes a practical way to incorporate labor demand into structural discrete-choice labor supply simulations by iterating estimated labor supply responses with micro-estimated labor demand elasticities until a partial labor-market equilibrium is reached, and shows for a German workfare reform that demand effects offset about 25% of the positive labor-supply effect.
+
+### Core research question
+How can structural labor supply models used for policy evaluation be extended in a straightforward way to account for labor demand effects, and how much does ignoring those effects bias simulated labor-market outcomes of policy reforms such as workfare in Germany?
+
+### Economic setting and context
+The paper is set in Germany and studies the labor-market effects of a counterfactual workfare reform. The policy requires employable individuals in benefit-receiving households to fulfill a full-time work requirement, or the remaining hours needed to reach full-time if they already work part-time. All other tax-benefit rules are kept unchanged. The institutional context is a standard tax-benefit microsimulation setting, but the contribution is methodological.
+
+### Model / theoretical framework
+The model class is a linked structural labor supply–labor demand microsimulation model solved by iteration to a partial labor-market equilibrium. On the supply side, the authors estimate a standard discrete-choice random-utility model of labor supply in the tradition of van Soest (1995) and Blundell et al. (2000). On the demand side, they estimate labor demand elasticities from a structural translog cost function using linked employer–employee data. The two sides are then iterated through wage adjustments until hours and wages converge. What the agent chooses on the supply side is a discrete hours category.
+
+### Key objects
+The central supply-side object is the direct translog utility function over consumption and hours, shown in Equation (1). Household disposable income is computed using the IZAΨMOD tax-benefit calculator, which maps gross earnings into net income under the German tax-transfer system. The central demand-side object is the translog cost function in Equation (2), from which cost-share equations are derived using Shephard’s lemma. These yield own- and cross-wage labor demand elasticities by skill group through Equations (5) and (6).
+
+### Data
+The labor supply model is estimated on the 2010 wave of the German Socio-Economic Panel, containing information for 2009. The authors observe around 25,000 individuals in more than 12,000 households and use information on gross wages, job type, government transfers, working time, household composition, age, and education. The IZAΨMOD calculator is used to compute net income under January 2009 rules. The labor demand model uses the LIAB linked employer–employee dataset from the IAB, combining administrative employee records with the IAB Establishment Panel.
+
+### Identification / empirical strategy
+Identification is structural on both sides. On the supply side, the paper relies on a standard discrete-choice labor supply model with net incomes calculated under the full tax-benefit schedule. The authors emphasize that accounting for tax-benefit nonlinearities creates variation in net wages across households with similar gross wages, and that spatial and household-specific institutional variation also helps identify preference parameters. They further use predicted wages for all individuals to reduce endogeneity concerns. On the demand side, identification comes from estimating a translog cost function and the associated factor-share equations using rich linked employer–employee microdata.
+
+### Treatment of preferences
+Preferences are modeled explicitly on the labor supply side through a translog utility function over consumption and hours, with heterogeneity through taste shifters such as age, age squared, presence of children, and region. Fixed costs of work are represented through part-time dummies. The model is fully structural in the standard discrete-choice labor supply sense. However, the paper’s contribution is precisely that preferences are not treated as the sole determinant of employment changes.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as heterogeneous job sets, latent offers, or RURO-type feasible sets. It does not assign each individual a set (A_i) of available jobs. The supply model itself remains a standard discrete-hours choice model with a common hours grid. Nonetheless, the paper is centrally about constraints neglected by standard labor supply models. Its core claim is that even if labor supply responds positively to a reform, employment need not respond one-for-one because labor demand is finite.
+
+### Welfare / normative object
+The paper is overwhelmingly positive rather than normative. Utility is used as a behavioral object in the structural labor supply model, but there is no explicit social welfare function, money-metric welfare measure, equivalent variation, or fairness criterion. Its policy relevance comes from improving the accuracy of ex-ante employment and budget predictions, not from developing a welfare theory. The workfare application does include fiscal effects, but the evaluation is couched in terms of employment, government budget, and feasibility rather than normative well-being.
+
+### Main findings
+The first main empirical finding is that German labor demand elasticities are finite and economically meaningful. Table 1 on page 132 reports own-wage elasticities of about −0.56 for high-skilled workers, −0.37 for medium-skilled workers, and −1.05 for low-skilled workers. This immediately rejects the pure labor-supply assumption of perfectly elastic demand. The second main finding is that the counterfactual workfare reform induces a large positive labor supply effect in the supply-only simulation, around 1.5 million full-time equivalents. Table 2 on page 134 shows that all household types and skill groups have positive labor supply responses.
+
+### Main limitations
+A first limitation is that the model is partial equilibrium. The authors explicitly state that they abstract from changes in output prices, consumption, and other general equilibrium effects. They also do not model intertemporal adjustments. This is a deliberate simplification, but it limits the scope of the policy evaluation.
+
+### Relevance for my JMP
+This paper is highly useful for framing the point that structural labor supply models are incomplete if they ignore labor demand. It supports a strong claim that labor-market outcomes should not be interpreted solely through supply-side preferences. It is useful for model design if your empirical strategy remains partly structural and policy-simulation oriented. In particular, it provides a template for augmenting a labor supply model with a demand module without building a full CGE model.
+
+### Relation to opportunities vs preferences
+This paper is important for the opportunities-versus-preferences distinction in a specific and limited way. It does not model individual opportunity sets, but it clearly argues that labor-market outcomes are not just preference revelations from the supply side. They are also shaped by employer demand and equilibrium wage adjustments. So the paper should not be read as a full opportunity-set paper, but it is a strong warning against treating labor supply estimates as if they directly revealed realized opportunities or employment outcomes.
+
+### Quick takeaway
+Shows that incorporating labour demand into structural discrete-choice simulations (via iterative partial equilibrium) offsets about 25% of positive labour-supply effects for a German workfare reform. A practical template for augmenting supply-side models with a demand module, and a strong warning that labour-market outcomes should not be interpreted solely through supply-side preferences.
+
+
+---
+
+## John E. Roemer (2002) — Equality of opportunity: A progress report
+
+**Source extracts merged:** Roemer_2002.md; markdowns/Roemer_2002.md
+
+### Full citation
+Roemer, J. E. (2002). Equality of opportunity: A progress report. *Social Choice and Welfare*, 19(2), 455--471.
+
+### One-sentence contribution
+Formalises equality of opportunity as equalisation of outcomes across circumstance-defined types at fixed effort ranks, develops a non-welfarist policy objective based on that idea, and illustrates it with applications to US educational finance (optimal compensatory spending ratios of 5:1) and cross-country fiscal systems (Nordic countries "overtax" relative to the EOp optimum).
+
+### Core research question
+How should equality of opportunity be formalised when society wants to compensate for circumstances and hold individuals responsible for effort, and what policy recommendations follow?
+
+### Economic setting and context
+The paper is a progress report rather than a single applied study. It begins from a broad normative question—what equal opportunity means—and then presents two empirical illustrations. The first concerns educational finance in the United States and equal opportunities for wage-earning capacity among young men. The second concerns how well tax-and-transfer systems in a set of OECD countries equalize opportunities for income acquisition across family-background types.
+
+### Model / theoretical framework
+The model is a normative policy framework. Outcomes are represented by a function (u(C,e,\varphi)), where (C) denotes circumstances, (e) effort, and (\varphi) policy; (u) need not be welfare in the economist’s narrow sense and may instead be income, life expectancy, or wage-earning capacity. Individuals are partitioned into finitely many types according to circumstances, and for any policy there is a type-specific effort distribution (F^t). Pages 457–458 define this setup. The distinctive move is the treatment of effort.
+
+### Key objects
+The key objects are circumstances, effort, policy, type, and the opportunity equalisandum (u(C,e,\varphi)). Circumstances are the factors for which individuals are not to be held responsible; effort consists of the factors for which they are to be held responsible; policy is the planner’s instrument. This is the core conceptual triad of the paper. A second key object is the type-specific effort distribution (F^t) and the associated effort-quantile index (\pi).
+
+### Data
+The paper itself is partly theoretical and partly a survey of empirical work. In the US education-finance application, the data source is the National Longitudinal Study of Young Men. Roemer states that it contains parental education, school-district expenditure per capita at age 16, and wages at age 30; the sample concerns young men who were 16 in the late 1960s. This is on page 464.
+
+### Identification / empirical strategy
+This is not a causal-identification paper in the reduced-form sense. The core logic is normative and structural. Roemer begins from an ethical decomposition of determinants into circumstances and effort, then imposes the rank-based comparability of effort, and then defines policy to maximize a type-sensitive equal-opportunity objective. There is, however, a concrete operational simplification. Roemer shows that if three assumptions hold—effort is identified with rank in the type distribution, effort is the residual determinant of outcomes once type and policy are fixed, and more effort raises outcomes ceteris paribus—then one can compute the equal-opportunity policy from the distribution of outcomes by type without directly observing effort.
+
+### Treatment of preferences
+Preferences enter the paper mainly through the ethical distinction between responsibility and circumstance, and through the recognition that beliefs and preferences within a type are partly shaped by circumstances. This is exactly why absolute effort is rejected as the correct comparison across types and rank-based effort is adopted instead. Pages 458–459 are essential here. The paper therefore does not treat preferences as primitive objects to be respected unconditionally.
+
+### Treatment of opportunities / constraints
+This is a central strength of the paper, but one must be precise. The paper does not model feasible job sets, latent offers, or RURO-type opportunity distributions. It does not have an explicit (A_i)-object. Instead, opportunities are represented through circumstance-defined types and through the type-specific distributions of effort and outcomes under policy. Thus, the paper treats opportunity inequality indirectly rather than as literal feasible-set heterogeneity.
+
+### Welfare / normative object
+The paper is explicitly normative and non-welfarist. Roemer states that utilitarianism and Rawlsianism, as formulated in the paper, are welfarist because they depend only on the set of outcome levels, whereas equal opportunity is non-welfarist because it depends on the distribution of outcomes by type and effort rank. Pages 460–461 make this explicit. The welfare or evaluative object is not utility in the conventional sense.
+
+### Main findings
+The first main finding is conceptual. Roemer argues that equal opportunity should be understood as compensating for circumstances while holding people responsible for effort, and that morally relevant effort should be measured by rank within the type-specific effort distribution rather than by absolute effort. This is the central theoretical claim of Sections 1–3. The second main finding is methodological: under the paper’s three assumptions in Section 3, one can compute the equal-opportunity policy from outcome distributions by type, without direct observation of effort. Figure 2 on page 463 illustrates the objective geometrically as the area to the left of the lower envelope of type-specific distribution functions.
+
+### Main limitations
+The first major limitation is the definition of effort. Roemer explicitly acknowledges that effort is treated as the residual determinant of outcomes once type and policy are fixed, and that this necessarily misattributes some unmodeled circumstances to effort. This is not a minor technical issue; it is the paper’s own stated conservative bias. A second limitation is the narrow treatment of circumstances in the applications.
+
+### Relevance for my JMP
+This paper is extremely useful for framing. It gives one of the clearest formulations of the responsibility-sensitive intuition that outcome inequality should be decomposed into an ethically compensable part due to circumstances and a responsibility-sensitive part due to effort. That is directly relevant to the normative positioning of the JMP. It is useful for model design mainly on the normative layer.
+
+### Relation to opportunities vs preferences
+The paper is much stronger on circumstances versus effort than on opportunities versus preferences. It does not structurally model preferences and opportunities as separate objects. Instead, it normatively partitions determinants into arbitrary circumstances and responsible effort, with the latter measured by relative rank within type. Still, it is highly relevant to your opportunities-versus-preferences agenda because it shows how strongly welfare conclusions depend on that decomposition.
+
+### Quick takeaway
+Formalises equality of opportunity as equalisation of outcomes across circumstance-defined types at fixed effort ranks, with applications to US educational finance (optimal compensatory ratios of 5:1) and cross-country fiscal systems (Nordic countries "overtax" relative to the EOp optimum). One of the clearest formulations of the responsibility-sensitive intuition underlying $W(z,R,A;y)$'s normative layer -- though it treats effort as rank within type rather than modelling feasible opportunity sets.
+
+
+---
+
+## John E. Roemer and Alain Trannoy (2016) — Equality of Opportunity: Theory and Measurement
+
+**Source extracts merged:** Roemer_Trannoy_2016.md; markdowns/Roemer_Trannoy_2016.md
+
+### Full citation
+Roemer, John E., and Alain Trannoy. 2016. “Equality of Opportunity: Theory and Measurement.” Journal of Economic Literature 54(4): 1288–1332.
+
+### One-sentence contribution
+The paper is a major survey that synthesizes the philosophical foundations, economic models, empirical measurement strategies, and development applications of equality of opportunity, with particular emphasis on the distinction between circumstances and responsibility-sensitive factors.
+
+### Core research question
+How should equality of opportunity be theorized and measured once one rejects purely outcome-based welfarism and instead insists that only some kinds of inequality are ethically objectionable—namely, those due to circumstances rather than to responsibility-sensitive factors?
+
+### Economic setting and context
+The paper is a survey article rather than a single-country study or one-model contribution. Its context is the broad late-twentieth-century shift from equality of outcomes toward equality of opportunity in political philosophy and economics. Roemer and Trannoy present the paper explicitly as an interdisciplinary synthesis linking philosophy, economic modeling, and empirical measurement. Empirically, the article draws on a large comparative literature.
+
+### Model / theoretical framework
+The central model class in section 3 is Roemer’s equal-opportunity framework. A population is partitioned into circumstance types (T={1,\dots,T}). There is a desirable outcome (u^t(e,\varphi)), where (e) is effort and (\varphi) is policy, and there are type-specific effort distributions (G_\varphi^t). The key normative move is that because effort distributions themselves are shaped by circumstances, “accountable” effort is measured by rank within the type-specific effort distribution, not by raw effort level. The outcome quantile functions are then (v^t(\pi,\varphi)), and inequality of opportunity is reflected in their differences across types.
+
+### Key objects
+The core objects are circumstances, effort, type, outcome, and policy. In Roemer’s formulation, types collect individuals with the same circumstances; effort is responsibility-sensitive; and the policy problem is to choose (\varphi) so as to reduce type-based differences in outcome prospects. This is the paper’s main conceptual architecture. A second key object is Roemer’s accountable effort rank, often referred to in the later literature as the Roemer Identification Assumption.
+
+### Data
+The paper is not based on one dataset. It is a survey article drawing on many empirical studies and data sources. The illustrative figure comparing Denmark and Hungary uses EU-SILC 2005 male worker data with three parental-education types, shown on pages 1295–1296. Section 6 then reviews results from PSID, GSOEP, Scandinavian administrative and panel data, SHARELIFE, Latin American and African surveys, and Turkish datasets.
+
+### Identification / empirical strategy
+Identification is one of the paper’s central concerns, especially in the measurement section. The paper repeatedly argues that equality-of-opportunity analysis is more demanding than standard inequality measurement because it is inherently multidimensional and often requires a first-stage econometric model before any second-stage inequality assessment can be attempted. The authors explicitly present EOp analysis as a two-stage exercise: estimate the process that generates outcomes, then measure the part attributable to circumstances. In rich-data settings, the recommended logic is structural or semi-structural econometric estimation. One estimates an outcome equation and reaction equations for effort variables, allowing circumstances to affect effort and possibly allowing demographic shifters to mediate responses.
+
+### Treatment of preferences
+Preferences are treated in two different ways in the paper, depending on which strand of the literature is under discussion. In the philosophical and Fleurbaey–Maniquet sections, preferences can themselves be responsibility-relevant objects, especially under Dworkin’s or Fleurbaey’s preference-sensitive frameworks. In those approaches, one may be held responsible for preference-based choices, at least under demanding conditions. In Roemer’s framework, by contrast, preferences are not primitive normative objects.
+
+### Treatment of opportunities / constraints
+The paper is fundamentally about opportunities, but not in the same structural sense as a latent-jobs or feasible-job-set model. “Opportunity” is typically represented by outcome prospects conditional on circumstance types, not by an explicit individual feasible-set object (A_i). Thus, the paper is opportunity-sensitive in a normative and distributional sense, but not menu-explicit in a structural labour-market sense. In Roemer’s approach, opportunities are effectively the type-specific outcome distributions or quantile functions faced by agents once morally comparable effort is defined. In Van de gaer’s interpretation, the type mean may be viewed as summarizing an opportunity set. In Fleurbaey–Maniquet, the language shifts toward compensation and reward principles rather than type-specific prospect distributions.
+
+### Welfare / normative object
+The paper is explicitly non-welfarist. It opens by emphasizing that more than final welfare outcomes is needed for ethically salient judgment and that classical welfarism ignores the responsibility-relevant structure behind outcomes. This is a central thesis of the paper, already present in the introduction and reaffirmed in the Roemer model section. There is not one welfare object in the article.
+
+### Main findings
+The paper’s first main finding is synthetic rather than theorem-level: the equality-of-opportunity literature replaces outcome-only ethics with a framework in which some inequalities are objectionable and others are not, depending on whether they derive from circumstances or responsibility-sensitive factors. The introduction and philosophical review make this the governing claim of the survey. The second main finding is that Roemer’s policy criterion is best understood as a compensating-outcomes approach built on type-specific accountable-effort ranks, whereas Van de gaer’s criterion is closer to an equalizing-opportunity-sets approach. The paper makes this distinction explicitly and uses the simple two-type, two-effort example on pages 1297–1298 to show that Van de gaer’s objective can violate the compensation principle even when it yields a higher sum of outcomes. Table 1 and Table 2 on page 1298 are central.
+
+### Main limitations
+Opportunity is measured largely through outcome distributions across circumstance types, not through structural job opportunities. For a project centered on (A), that is a real boundary. A second limitation is the unresolved theory of reward to effort. The paper is quite explicit that equality-of-opportunity theory by itself does not fully determine the ethically correct reward structure.
+
+### Relevance for my JMP
+This paper is excellent for framing. It provides the cleanest broad statement of why pure outcome inequality is ethically insufficient and why the decomposition of inequality into compensable and responsibility-sensitive components matters. If the JMP needs a paragraph motivating why a jobs-and-wellbeing framework cannot be outcome-only, this paper is a core source. It is useful for model design mainly at the normative and measurement level.
+
+### Relation to opportunities vs preferences
+This paper is strongly about the opportunities-versus-preferences problem, but mainly at the normative and measurement level, not the structural job-choice level. It repeatedly contrasts views that emphasize control, access, or rank-based effort with views that emphasize identified preferences, and it is very clear that the empirical treatment of effort depends on which view one adopts. Roemerian measurement tends to operationalize responsibility through type-relative effort ranks; Fleurbaey–Maniquet and Dworkinian approaches move closer to preference-sensitive responsibility; empirical work often lacks the data to implement either side cleanly. That diagnosis is directly relevant to any attempt to separate (R) from (A) rigorously.
+
+### Quick takeaway
+This is probably the single best survey paper to keep at hand while designing an opportunity-sensitive research program.
+
+
+---
+
+## Emmanuel Saez (2002) — Optimal Income Transfer Programs: Intensive versus Extensive Labor Supply Responses
+
+**Source extracts merged:** Saez_2002.md; markdowns/Saez_2002.md
+
+### Full citation
+Saez, Emmanuel. 2002. “Optimal Income Transfer Programs: Intensive versus Extensive Labor Supply Responses.” Quarterly Journal of Economics 117(3): 1039–1073.
+
+### One-sentence contribution
+The paper derives optimal low-income transfer formulas in terms of participation elasticities, intensive elasticities, and social welfare weights, showing that the case for negative income tax versus EITC turns on whether behavior responds mainly on the intensive or extensive margin.
+
+### Core research question
+When should optimal low-income policy look like a traditional negative income tax, and when should it instead subsidize earnings at the bottom in an EITC-like way?
+
+### Economic setting and context
+The paper is a theoretical contribution to low-income transfer design, motivated by the contrast between European-style guaranteed income schemes and U.S.-style earned income subsidies.
+
+### Model / theoretical framework
+Saez studies discrete earnings points and compares three environments: a pure extensive-margin model, a pure intensive-margin model, and a mixed model with both channels. A welfarist planner chooses taxes and transfers based on social marginal welfare weights and behavioral elasticities.
+
+### Key objects
+The central objects are after-tax incomes by earnings level, participation elasticities, intensive elasticities, and the social welfare weights assigned to the unemployed and to low earners.
+
+### Data
+The paper does not estimate a model but calibrates optimal schedules using the U.S. earnings distribution and elasticity values drawn from prior empirical work.
+
+### Identification / empirical strategy
+There is no internal causal identification. The quantitative results come from analytical formulas combined with calibrated elasticities and an observed earnings distribution.
+
+### Treatment of preferences
+Preferences enter only through reduced-form labor-supply responses and through the planner’s welfare weights. The paper does not separately identify heterogeneous tastes.
+
+### Treatment of opportunities / constraints
+The model distinguishes behavioral margins rather than explicit opportunity sets. Unemployment and occupational choices are stylized states, not empirically modeled feasible job menus.
+
+### Welfare / normative object
+The framework is explicitly welfarist. Its main normative lever is the social weight placed on the unemployed relative to low-wage workers, which turns the NIT-versus-EITC debate into a question about both behavior and deservingness.
+
+### Main findings
+The paper shows cleanly why the extensive margin changes the sign logic of optimal tax rates. In the pure intensive model, bottom marginal tax rates are nonnegative, but in the pure extensive model negative bottom rates are optimal when low-wage workers receive greater social weight than the unemployed. In the mixed model, participation elasticities modify the effective welfare weights, so realistic extensive responses can justify modest guaranteed incomes combined with low or negative bottom marginal rates, whereas shutting down participation pushes the optimum back toward a traditional negative income tax.
+
+### Main limitations
+The paper uses calibrated rather than identified elasticities, abstracts from richer household structure and explicit opportunities, and leaves the key ethical issue of how to value nonworkers unresolved except through welfare weights.
+
+### Relevance for my JMP
+Very useful for the behavioral side of low-income policy design. It clarifies which elasticities matter for transfer design and is a natural bridge from labor-supply behavior to normative policy evaluation.
+
+### Relation to opportunities vs preferences
+The paper is more about behavioral margins than about opportunities versus preferences. It helps explain why participation matters normatively, but not whether nonparticipation reflects tastes, constraints, or job scarcity.
+
+### Quick takeaway
+A core paper on why the extensive versus intensive distinction is decisive for optimal low-income transfer design.
+
+
+---
+
+## Emmanuel Saez and Stefanie Stantcheva (2016) — Generalized Social Marginal Welfare Weights for Optimal Tax Theory
+
+**Source extracts merged:** Saez_Stantcheva_2016.md; markdowns/Saez_Stantcheva_2016.md
+
+### Full citation
+Saez, Emmanuel, and Stefanie Stantcheva. 2016. “Generalized Social Marginal Welfare Weights for Optimal Tax Theory.” American Economic Review 106(1): 24–45.
+
+### One-sentence contribution
+The paper generalizes social marginal welfare weights so they can depend on characteristics beyond utility and shows that equality of opportunity, libertarianism, tagging, poverty, and freeloader concerns can be embedded in standard Saez tax formulas without changing their form.
+
+### Core research question
+Can tax reforms be evaluated using socially chosen fairness weights rather than a primitive welfarist social objective, while preserving the tractability of standard optimal-tax formulas?
+
+### Economic setting and context
+This is a normative public-economics paper aimed at aligning optimal-tax theory more closely with the fairness language used in actual policy debate. It is primarily theoretical, with a few illustrative calibrations.
+
+### Model / theoretical framework
+Individuals still maximize standard utility, but social evaluation is conducted through generalized social marginal welfare weights attached to money-metric gains from small reforms. The paper shows that many familiar optimal-tax formulas survive with these generalized weights replacing standard welfare weights.
+
+### Key objects
+The central objects are generalized social marginal welfare weights, their averages by income level, the nonlinear tax schedule, and the local optimal-tax conditions they imply.
+
+### Data
+The paper is mainly theoretical. Its empirical content consists of illustrative calibrations, including an equality-of-opportunity exercise using U.S. mobility evidence.
+
+### Identification / empirical strategy
+There is no econometric identification strategy. The paper’s logic is analytical: choose a fairness-sensitive weight system, combine it with elasticities and the income distribution, and derive the implied local tax formulas.
+
+### Treatment of preferences
+Preferences remain standard positive objects and are not asked to carry the whole ethical burden. This separation between individual preferences and social evaluation is one of the paper’s main conceptual contributions.
+
+### Treatment of opportunities / constraints
+The paper does not model feasible job sets. Its relevance to opportunities is normative rather than structural, because the generalized weights can depend on background or deservingness variables even when those variables are not arguments of utility.
+
+### Welfare / normative object
+The normative object is local policy evaluation through generalized marginal welfare weights. This is designed to accommodate equality of opportunity, poverty alleviation, tagging, and related fairness concerns without forcing them into pure welfarism.
+
+### Main findings
+The core result is formal: the standard optimal-tax formulas survive unchanged once ordinary welfare weights are replaced by generalized ones. The paper then shows how this resolves several tensions between textbook utilitarian formulas and real policy reasoning, including fixed incomes, freeloaders, tagging, and poverty objectives. Its practical contribution is therefore not just ethical flexibility but a tractable bridge from fairness principles to implementable sufficient-statistics tax analysis.
+
+### Main limitations
+The framework is local rather than global, the weights themselves remain primitive, and the paper does not model actual opportunity sets. It therefore expands ethical flexibility, but only by moving the hard normative work into the choice of weights.
+
+### Relevance for my JMP
+Very high for the normative layer. It is especially useful if your project aims to estimate a positive model and then place a fairness-sensitive evaluative layer on top of it.
+
+### Relation to opportunities vs preferences
+The paper is highly useful for separating behavioral preferences from normative evaluation, but it does not separate preferences from opportunities in a structural sense. Its contribution is that what matters socially need not coincide with what matters behaviorally.
+
+### Quick takeaway
+A major normative paper on how to introduce richer fairness concerns into optimal tax analysis without relying on raw utility aggregation.
+
+
+---
+
+## Itai Sher (2024) — Generalized Social Marginal Welfare Weights Imply Inconsistent Comparisons of Tax Policies
+
+**Source extracts merged:** Sher_2024.md; markdowns/Sher_2024.md
+
+### Full citation
+Sher, I. (2024). Generalized social marginal welfare weights imply inconsistent comparisons of tax policies. arXiv working paper, version dated June 25, 2024.
+
+### One-sentence contribution
+Proves that Saez--Stantcheva (2016) generalized social marginal welfare weights yield consistent tax policy comparisons if and only if they are structurally utilitarian (determined by utility levels), and otherwise imply social preference cycles over equal-revenue tax policies.
+
+### Core research question
+Can generalized social marginal welfare weights provide a coherent way to evaluate tax policies while incorporating non-utilitarian ethical principles, without relying on a global social welfare objective?
+
+### Economic setting and context
+This is a theoretical critique of the generalized-weight approach in optimal tax theory. The setting is stylized and is aimed at the foundations of policy evaluation rather than empirical application.
+
+### Model / theoretical framework
+Sher studies tax policy comparison in a standard income-tax environment and asks when local reform judgments based on welfare weights can be integrated into a coherent global ordering over policies. The answer hinges on whether the weights have a structurally utilitarian form.
+
+### Key objects
+The main objects are tax policies, indirect utilities, generalized welfare weights, and the induced global relation over policies implied by local comparisons.
+
+### Data
+There is no dataset or empirical calibration. The paper is entirely theorem-based.
+
+### Identification / empirical strategy
+There is no econometric strategy. The method is formal proof: define the policy comparisons implied by local weights and show when those comparisons can or cannot be made globally consistent.
+
+### Treatment of preferences
+Preferences matter only through the utility structure needed to characterize coherent welfare weights. The paper is not about estimating taste heterogeneity.
+
+### Treatment of opportunities / constraints
+The paper does not model feasible opportunities, job sets, or labor-market constraints. Its relevance to your project is at the meta-level of welfare architecture rather than on the opportunity side itself.
+
+### Welfare / normative object
+This is the entire point of the paper. It argues that local generalized weights are not enough for coherent policy ranking unless they are generated by an underlying global welfare function of the right form.
+
+### Main findings
+The paper proves that non-structurally-utilitarian generalized weights imply inconsistent policy comparisons, including cycles. The constructive side of the result is that coherence is recovered only when the weights can be derived from a generalized utilitarian welfare representation.
+
+### Main limitations
+The paper is mainly negative and methodological. It says what fails, but does not by itself provide a full alternative welfare framework for richer labor-market environments.
+
+### Relevance for my JMP
+High for disciplining the welfare layer of your project. It is a strong warning against relying on ad hoc local fairness weights without an explicit global evaluative structure.
+
+### Relation to opportunities vs preferences
+The paper is not about empirically separating opportunities from preferences. Its lesson is methodological: any opportunity-sensitive or preference-sensitive welfare criterion still has to be globally coherent.
+
+### Quick takeaway
+An important caution that local fairness weights are not a substitute for a coherent underlying welfare measure.
+
+
+---
+
+## Anthony F. Shorrocks (2013) — Decomposition procedures for distributional analysis: a unified framework based on the Shapley value
+
+**Source extracts merged:** Shorrocks_2013.md; markdowns/Shorrocks_2013.md
+
+### Full citation
+Shorrocks, A. F. (2013). Decomposition procedures for distributional analysis: a unified framework based on the Shapley value. *Journal of Economic Inequality*, 11, 99--126.
+
+### One-sentence contribution
+Provides a unified decomposition rule for poverty and inequality analysis by assigning to each factor its average marginal contribution across all possible elimination orders, yielding an exact additive decomposition formally equivalent to the Shapley value.
+
+### Core research question
+How should one decompose an aggregate distributional indicator (poverty, inequality) into factor contributions in a way that is symmetric, exact, interpretable, and applicable to complex multivariate settings?
+
+### Economic setting and context
+The paper is a general methodological contribution rather than a country or policy study. Its motivating applications include poverty change, subgroup decompositions, inequality by income source, and hierarchical multivariate decompositions.
+
+### Model / theoretical framework
+The framework starts from an aggregate indicator determined by a set of contributory factors. A subset-value function describes the indicator when only some factors remain, and the decomposition problem is to assign exact contributions to each factor. The proposed solution is the Shapley decomposition, which averages each factor’s marginal contribution across all possible elimination orders.
+
+### Key objects
+The central objects are the aggregate indicator, the contributory factors, the subset-value function, and the resulting factor contributions. The key formula is the Shapley rule, which defines each contribution as the expected marginal effect of a factor across all subsets of the remaining factors.
+
+### Data
+The paper contains no original microdata or country-specific estimation exercise. Its examples are analytical illustrations built from standard poverty and inequality decomposition problems.
+
+### Identification / empirical strategy
+There is no empirical identification strategy in the econometric sense. Once the analyst specifies the aggregate indicator, the factors, and the counterfactual rule for “eliminating” factors, the Shapley rule allocates contributions exactly and symmetrically. The substantive interpretation therefore depends on how the factors and counterfactuals are defined.
+
+### Treatment of preferences
+Preferences are not modeled. If they enter at all, they enter only indirectly through whatever aggregate poverty or inequality statistic an outside analyst has chosen to decompose.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly and has no notion of feasible job sets, latent offers, or labor-demand restrictions. Its relevance to opportunities versus preferences is therefore methodological rather than substantive.
+
+### Welfare / normative object
+The paper does not propose an individual welfare measure or a theory of justice. Its immediate objects are aggregate poverty and inequality indicators and changes in those indicators, so its role is decomposition rather than welfare definition.
+
+### Main findings
+The central result is that the Shapley value yields an exact, symmetric, and general decomposition rule for distributional analysis. The paper also shows that this rule reproduces accepted practice in several benchmark cases and improves on conventional methods when those leave residual terms or cannot handle multivariate interactions cleanly.
+
+### Main limitations
+The paper does not tell the analyst how to define preferences, opportunities, pay schedules, or realized bundles in the first place. Its results are only as meaningful as the underlying choice of factors and the definition of what it means to remove one of them.
+
+### Relevance for my JMP
+This is a highly relevant decomposition paper for the JMP. It is not a structural labor-supply model, but it provides a rigorous downstream tool for attributing aggregate welfare or inequality differences across interacting factors once those factors have been defined in a substantive framework.
+
+### Relation to opportunities vs preferences
+The paper is not about opportunities versus preferences substantively. Its value is methodological: if a separate model already distinguishes those objects, the Shapley rule offers a disciplined way to decompose an aggregate statistic across them.
+
+### Quick takeaway
+Provides a unified Shapley-value-based decomposition rule for poverty and inequality analysis, assigning each factor its average marginal contribution across all elimination orders and yielding an exact additive decomposition. A rigorous downstream tool for attributing aggregate welfare or inequality differences across interacting factors once $W(z,R,A;y)$ has defined those factors substantively.
+
+---
+
+## Holly Sutherland and Francesco Figari (2013) — EUROMOD: The European Union tax-benefit microsimulation model
+
+**Source extracts merged:** Sutherland_Figari_2013.md; markdowns/Sutherland_Figari_2013.md
+
+### Full citation
+Sutherland, H., & Figari, F. (2013). EUROMOD: The European Union Tax-Benefit Microsimulation Model. EUROMOD Working Paper No. EM8/13, Institute for Social and Economic Research (ISER), University of Essex.
+
+### One-sentence contribution
+Provides a comprehensive overview of EUROMOD, the EU-wide static tax-benefit microsimulation model covering all 27 EU member states, describing its architecture, input data (EU-SILC), validation process, programming language, and recent applications in redistributive analysis, policy swapping, labour supply modelling, and crisis evaluation.
+
+### Core research question
+What is the current state of EUROMOD, how does it work, and what are its recent applications and future directions?
+
+### Economic setting and context
+The setting is the European Union as a comparative policy space. EUROMOD is designed to simulate taxes and cash benefits for all member states within one common framework, making country-by-country analyses comparable and allowing EU-wide analysis, policy swapping, and common-shock simulations. Pages 4–7 are especially important for this rationale. The model is also positioned as research infrastructure rather than a single project-specific model.
+
+### Model / theoretical framework
+The model class is a static tax-benefit microsimulation model. EUROMOD simulates individual and household tax liabilities and cash-benefit entitlements under the legal rules in force in each member state, using nationally representative micro-data. It is “static” in the explicit sense that arithmetic simulations abstract from behavioural responses and keep socio-demographic characteristics fixed. What agents “choose” is not modeled inside EUROMOD itself. EUROMOD takes individual and household circumstances in the input data and applies policy rules to them.
+
+### Key objects
+The key object is the tax-benefit simulation engine itself: a harmonized multi-country framework that applies policy rules to micro-data and stores the results at micro level for later statistical analysis. This is the core infrastructure object described throughout Sections 1–4. A second key object is household disposable income as simulated under alternative policy rules. EUROMOD aims to simulate as much as possible of taxes and cash benefits affecting disposable income, including income taxes, social contributions, family benefits, housing benefits, social assistance, and other income-related benefits.
+
+### Data
+Most EUROMOD input data are derived from EU-SILC, though some countries use national SILC versions directly or combine them with other national sources when they contain richer variables. The paper notes that the current public version described, F6.0, covers EU-27 policy systems up to 2010 and uses several alternative micro-datasets mainly starting from 2006 up to 2008. The input database contains individual-level information on household demography, labour-market characteristics, market income, pensions, public transfers, and other private incomes, along with survey weights. If gross values are missing or unsatisfactory, net-to-gross procedures are used.
+
+### Identification / empirical strategy
+There is no causal identification strategy in the econometric sense, because EUROMOD is not estimating behavioural parameters. Its logic is institutional and arithmetic: combine detailed legal rules with representative micro-data to infer taxes, transfers, disposable income, and related indicators. The closest analogue to identification is validation. Baseline systems are validated at both micro and macro level. Simulated benefit expenditures, recipient counts, tax revenues, payer counts, and the resulting income distribution are compared with external administrative statistics, national models, and input-data distributions.
+
+### Treatment of preferences
+Preferences are not estimated or modeled explicitly within EUROMOD. The model does not infer utility parameters, choice probabilities, or heterogeneous tastes. This should be stated very clearly. However, the paper explicitly notes that EUROMOD has been used as the basis for labour-supply models, and it cites work using EUROMOD-generated budget sets to estimate labour-supply responses.
+
+### Treatment of opportunities / constraints
+This paper is not about opportunities in the feasible-set sense. EUROMOD does not model job availability, occupational menus, hours offers, rationing, or latent opportunity distributions. It simulates tax-benefit consequences conditional on observed or hypothetical household characteristics. The closest it comes to opportunity structure is through budget constraints for hypothetical families and work-incentive indicators. In other words, it maps policy rules into net-income schedules across work situations.
+
+### Welfare / normative object
+EUROMOD is not itself a welfare model. It does not define individual well-being, equivalent income, fairness criteria, or social welfare functions. The paper is explicit that EUROMOD is a static model of taxes, transfers, incomes, and incentives. Its normative relevance is indirect.
+
+### Main findings
+The paper’s main “findings” are infrastructural rather than causal. First, EUROMOD is presented as a unique pan-European microsimulation model covering all EU countries in a common framework, with flexibility sufficient for consistent cross-country comparison, transferability of policy components, and multiple-user access. Pages 4–6 emphasize this as the core achievement. Second, the paper shows that EUROMOD has become a large and mature research infrastructure with extensive policy scope, detailed validation, standardized data architecture, and many country-policy-data combinations. At the time of writing, the public release described covers EU-27 systems up to 2010 and offers more than 250 validated policy-data-country combinations.
+
+### Main limitations
+A first limitation is staticity. EUROMOD abstracts from behavioural responses and keeps population characteristics fixed. This is central and explicit. As a result, it is not itself a labor-supply, search, or dynamic policy model.
+
+### Relevance for my JMP
+This paper is very useful for framing the empirical-support layer of the JMP. It makes clear that a serious jobs-and-wellbeing or labor-supply project often needs a separate tax-benefit engine underneath the behavioral or normative model. It is highly useful for model design whenever disposable income, budget constraints, or reform counterfactuals must be computed consistently. It is especially useful if your eventual empirical work remains European and policy-sensitive.
+
+### Relation to opportunities vs preferences
+This paper is much weaker on opportunities and preferences than on policy mechanics. It does not model opportunity sets, and it does not estimate preferences. It therefore does not resolve the opportunities-versus-preferences distinction. But it is still relevant because it isolates the policy component of the environment.
+
+### Quick takeaway
+Comprehensive overview of EUROMOD, the EU-wide static tax-benefit microsimulation model covering all 27 member states, describing its EU-SILC-based architecture, validation, and applications. Essential infrastructure for any European jobs-and-wellbeing project: computing disposable income, budget constraints, and reform counterfactuals consistently requires a dedicated tax-benefit engine underneath the behavioural or normative model.
+
+
+---
+
+## Giacomo Valletta (2009) — A fair solution to the compensation problem
+
+**Source extracts merged:** Valetta_2010.md; markdowns/Valletta_2009.md
+
+### Full citation
+Valletta, G. (2009). A fair solution to the compensation problem. *Social Choice and Welfare*, 32, 455--478.
+
+### One-sentence contribution
+Replaces allocation rules by social orderings in a one-dimensional compensation problem with non-transferable talents, proving that fairness, efficiency, and robustness axioms uniquely characterise an $E^{\wedge}$-maximin ordering based on the viewpoint of agents most averse to low talent, with strong implications for incentive-compatible compensation policy.
+
+### Core research question
+How should society rank allocations of a divisible resource among agents who differ in non-transferable talents and preferences, if one wants to compensate for talents (not responsible) while treating preference differences as individual responsibility, possibly under incentive constraints?
+
+### Economic setting and context
+The setting is a pure compensation problem. A finite population must share a given amount of a one-dimensional divisible resource, such as money, in order to compensate differences in a non-transferable personal endowment, interpreted as talent or handicap. Examples given in the introduction include disability-related compensation and public assistance to individuals whose health or bodily condition affects their situation. The paper is fully theoretical and normative.
+
+### Model / theoretical framework
+The model class is an axiomatic fair-division and social-ordering model. An economy is (e=(t_N,R_N,M)), where (N) is a finite set of agents, (t_i\in T) is agent (i)'s non-transferable talent, (R_i) is her preference ordering over money-talent pairs ((m,t)\in \mathbb{R}+\times T), and (M) is the total amount of divisible resource available for compensation. Allocations are vectors (m_N\in \mathbb{R}+^N). The crucial modeling choice is that talents are fixed and non-transferable, while money is transferable. Preferences are defined over extended bundles ((m,t)), meaning each agent can evaluate not only her own condition but also counterfactual combinations of money and talent.
+
+### Key objects
+The main objects are the talent profile (t_N), the preference profile (R_N), the social endowment (M), allocations (m_N), and a social ordering function (R(e)) over allocations. These are the basic ingredients of the compensation problem. A second key object is the comparison of preference orderings by “aversion to lack of talent.” The paper defines (R \succeq_A R') when (R) exhibits higher aversion to low talent than (R'), meaning that indifference curves cross at most once in the relevant way. This comparison is crucial later when the paper identifies which preferences determine the social evaluation.
+
+### Data
+. The paper is entirely theoretical and contains no dataset, no estimation, and no empirical application.
+
+### Identification / empirical strategy
+This is not an econometric identification paper. The relevant logic is axiomatic characterization. The paper asks which fairness, efficiency, and robustness properties single out a social ordering of allocations. The decisive identifying axioms are Strong Pareto, Separation, Nested Preferences Transfer, Equal Preferences Permutation, Equal Talent Transfer to the Unhappy, and Minimal Equal Talent Transfer. Taken together, they characterize an E-maximin social ordering.
+
+### Treatment of preferences
+Preferences are heterogeneous and normatively central. The paper explicitly assumes that agents differ both in talent and in preferences, and that preferences embody the way individuals subjectively evaluate the combination of money and talent. Valletta follows a responsibility-sensitive view in which preferences are part of what individuals are responsible for, while talents are not. This treatment is not neutral.
+
+### Treatment of opportunities / constraints
+It does not model opportunities as feasible job sets, menus, or stochastic opportunities. There is no analogue of an individual opportunity set (A_i) in your sense. The only constrained object is the one-dimensional aggregate resource to be distributed. However, the model does treat non-transferable talent as an ethically relevant circumstance that shapes individuals’ situations. In that sense, it is a compensation model for exogenous heterogeneity, not just a pure income-inequality model.
+
+### Welfare / normative object
+The normative object is a social ordering over allocations of compensation resources. The paper does not define an individual well-being measure in the later (W(x,R)) or (W(z,R,A;y)) sense. Instead, it constructs a social ranking over allocations by first deriving a welfare representation of each agent’s situation and then applying a maximin principle to those welfare levels. The paper is directly about compensation and responsibility.
+
+### Main findings
+The first main finding is impossibility. The paper proves that compensation and responsibility cannot both be fully satisfied in this setting. Equal Preferences Transfer and Equal Talent Transfer are incompatible, and Strong Pareto cannot coexist with both Equal Preferences Permutation and Equal Talent Permutation. These are Lemmas 1 and 2. The second main finding is that combining compensation-oriented axioms with robustness and efficiency has very strong consequences.
+
+### Main limitations
+The main limitation is the one-dimensional resource structure. The framework is elegant precisely because all compensation takes place through a single divisible good, which makes the geometry and the maximin result sharp. But this also means the model is far from multidimensional labor-market or well-being settings. A second limitation is the absence of explicit opportunity sets or actual choice problems.
+
+### Relevance for my JMP
+This paper is highly useful for framing the compensation problem in a way that is explicitly second-best. Its key insight is that one should not think only in terms of first-best allocation rules; one should think in terms of social rankings that can still guide policy under informational constraints. That is very relevant to a jobs-and-wellbeing project that cares about implementable principles. Direct empirical use is limited, but normatively it is useful for model design because it shows how a social ordering over allocations can be generated from a welfare representation grounded in fairness axioms.
+
+### Relation to opportunities vs preferences
+This paper is not about opportunities versus preferences in the labor-economics sense. It does not model opportunity sets. But it is highly relevant to a nearby normative distinction: how to compensate exogenous heterogeneity while remaining neutral among preference differences that are treated as the individual’s responsibility. So the paper should be read as a responsibility-sensitive compensation paper, not as an opportunity-set paper.
+
+### Quick takeaway
+Replaces allocation rules by social orderings in a one-dimensional compensation problem with non-transferable talents, proving that fairness, efficiency, and robustness axioms uniquely characterise an $E^{\wedge}$-maximin ordering based on the viewpoint of agents most averse to low talent. Shows that social orderings can guide policy even under informational constraints -- and that the welfare representation should be generated from fairness axioms, not assumed a priori.
+
+
+---
+
+## Arthur van Soest (1995) — Structural Models of Family Labor Supply: A Discrete Choice Approach
+
+**Source extracts merged:** Van_Soest_1995.md; Van_soest_1995.md; markdowns/Van_Soest_1995.md
+
+### Full citation
+van Soest, Arthur. 1995. “Structural Models of Family Labor Supply: A Discrete Choice Approach.” The Journal of Human Resources 30(1): 63–88.
+
+### One-sentence contribution
+The paper introduces the discrete-choice approach to structural family labor supply and shows that incorporating hours restrictions greatly improves fit and lowers estimated wage elasticities, whereas additional random-preference richness adds comparatively little.
+
+### Core research question
+How can one estimate a fully structural model of the labour supply of husbands and wives when tax-benefit rules are nonlinear, wages are unobserved for nonworkers, and the observed concentration of hours suggests that workers face restrictions on available hours choices?
+
+### Economic setting and context
+The paper is set in the Netherlands and is motivated by the Dutch policy debate on raising labour-force participation, especially among married women, during the late 1980s and early 1990s. Section II emphasizes low female participation relative to other EC countries, the policy concern with increasing female employment, and the relevance of the Dutch tax-benefit system for spousal work incentives. Table 1 on page 65 summarizes the participation comparison. The policy discussion is concrete.
+
+### Model / theoretical framework
+The model class is a static neoclassical structural family labour-supply model cast as a discrete-choice problem. Family utility depends on the husband’s leisure, the wife’s leisure, and family income. Instead of treating hours as continuous, the paper assumes that each family chooses from a finite set of income-leisure bundles, with hours for each spouse restricted to a discrete grid. In the empirical implementation, this yields 25 or 36 alternatives. Sections III and V define this setup.
+
+### Key objects
+The main behavioural objects are the family utility function (U(v)=v'Av+b'v), the discrete set of male and female hours combinations, the induced after-tax family income (y_j) for each hours pair, and the choice probabilities over alternatives. Equations (1), (5), and (6) are the core objects. A second key object is the wage process. Since wages are unobserved for nonworkers, the paper estimates male and female wage equations with selection correction and then integrates over the implied wage distribution when wages are missing.
+
+### Data
+The data come from the Dutch Socio-Economic Panel, October 1987 wave. The estimation sample includes two-adult households with both partners aged 16–65. After removing a small number of missing-value cases, 2,859 families remain. Of these, 13.0% have neither spouse employed, 3.1% have only the wife working, 49.7% have only the husband working, and 34.1% have both spouses working.
+
+### Identification / empirical strategy
+Identification is structural and heavily parametric. Preferences are identified from observed hours choices over the discrete budget set induced by wages, other income, and the Dutch tax-benefit rules. The paper relies on the translog utility specification, the extreme-value error structure, and the selected demographic shifters to recover behavioural parameters. A concrete identification challenge concerns nonworkers’ wages. The paper explicitly criticizes the usual practice of plugging in wage predictions for nonworkers as if they were observed without error, and instead integrates over the distribution implied by estimated wage equations.
+
+### Treatment of preferences
+Preferences are treated explicitly and structurally. Utility is defined over family income and both spouses’ leisure, with observed heterogeneity through the number of children, the presence of young children, and age variables. This allows the paper to recover how family composition shifts labour-supply behaviour. The estimated preference structure implies the standard result that wives’ labour supply is more responsive than husbands’ labour supply.
+
+### Treatment of opportunities / constraints
+The paper does not model opportunities explicitly as individualized feasible job sets, latent job offers, or wages-hours packages drawn from an opportunity distribution. All households face the same discretized grid of hours options in the core model. The paper does, however, take constraints more seriously than a pure unconstrained continuous-hours model. Its main empirical finding is that the standard discrete-choice model strongly overpredicts part-time work and underpredicts nonparticipation and standard full-time hours. Table 3 on page 78 shows this clearly.
+
+### Welfare / normative object
+The paper is purely positive with policy simulations. It does not construct an individual welfare metric, equivalent income, or social welfare function. It also does not discuss responsibility, compensation, or fairness. Its relevance for welfare analysis is indirect.
+
+### Main findings
+The first main finding is methodological: the basic discrete-choice model fits the observed hours distribution poorly, especially by strongly overpredicting part-time work for both sexes. Table 3 on page 78 documents this starkly. The second main finding is that allowing for hours restrictions through alternative-specific constants dramatically improves fit and reduces estimated labour-supply elasticities, whereas adding further random-preference richness contributes much less. This is the paper's lasting methodological message.
+
+### Main limitations
+A first limitation is the treatment of opportunities. Hours restrictions are modeled ad hoc through alternative-specific constants, not through observed or latent job offer sets. The paper itself recognizes this. A second limitation is staticity.
+
+### Relevance for my JMP
+This paper is very useful for framing the structural-estimation side of the JMP. It is a canonical reference for why discrete-choice labour-supply models became attractive in the presence of nonlinear taxes and benefits. It is highly useful for model design if your empirical structure remains in the consumption-leisure tradition. It is especially useful for thinking about discrete alternatives, nonconvex budget sets, and joint spousal labour supply.
+
+### Relation to opportunities vs preferences
+This paper is more useful for preferences and budget-set modeling than for opportunities. It shows clearly that what looks like preference-based hours choice in a standard model may in fact reflect reduced-form hours restrictions. That is an important caution. But it does not provide a genuine opportunity-set model.
+
+### Quick takeaway
+Introduces the discrete-choice approach to structural family labour supply, showing that incorporating hours restrictions greatly improves fit and lowers estimated wage elasticities, while additional random-preference richness adds comparatively little. A canonical reference for why discrete-choice models became attractive under nonlinear taxes and benefits -- and for the insight that observed hours concentrations may reflect constraints rather than preferences, foreshadowing the latent-jobs approach.
+
+---
+
+## Unresolved / unmatched notes
+
+- jobs_and_wellbeing.md: in-progress manuscript in the parent folder rather than a literature extract, so it was not synthesized as a paper note.
+- LIT_deep-research-report.md: broad literature inventory/report spanning many works rather than a single-paper extract, so it was excluded from paper synthesis.

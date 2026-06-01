@@ -1,0 +1,4 @@
+Compensable Opportunity Definition,Opportunity-Equalized Gini,Both-Equalized Gini,Shapley Opportunity Component,Opportunity Share of Explained Reduction,Opportunity Share of Baseline Gini
+Region × education (baseline),0.151,0.097,0.039,43.8%,21.0%
+Education only,0.158,0.105,0.031,38.9%,16.7%
+Region only,0.164,0.110,0.026,34.2%,14.0%

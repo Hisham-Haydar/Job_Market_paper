@@ -1,0 +1,2 @@
+`Literature` stores the core JMP literature base, `Deep_reports` holds deep research reports, `Design` contains framing and concept documents for the paper, and `Prototype` is for early experiments or outlines before they become production work.
+`Code` is for analysis or reproducible project code, while `Theory_other_project` holds theory materials that sit outside the main JMP literature stream because they belong to a different project.

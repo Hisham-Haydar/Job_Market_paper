@@ -1,0 +1,24 @@
+Panel,Parameter,Estimate,SE,Significance
+A - Log total job-offer intensity,Wallonia,-0.150,0.061,**
+A - Log total job-offer intensity,Brussels,-0.192,0.071,***
+A - Log total job-offer intensity,Low education,-0.108,0.051,**
+A - Log total job-offer intensity,High education,0.151,0.062,**
+A - Log total job-offer intensity,Wallonia × Low education,-0.109,0.060,*
+A - Log total job-offer intensity,Wallonia × High education,0.011,0.071,
+A - Log total job-offer intensity,Brussels × Low education,-0.126,0.071,*
+A - Log total job-offer intensity,Brussels × High education,0.031,0.079,
+B - Job package composition,16–24 hours,0.214,0.053,***
+B - Job package composition,25–34 hours,0.548,0.061,***
+B - Job package composition,35–44 hours,1.012,0.069,***
+B - Job package composition,45+ hours,0.392,0.079,***
+B - Job package composition,Middle wage tercile,0.094,0.041,**
+B - Job package composition,Top wage tercile,-0.181,0.051,***
+C - Implied offer intensity (relative),Flanders / Low education,0.90,,
+C - Implied offer intensity (relative),Flanders / Medium education,1.00,,
+C - Implied offer intensity (relative),Flanders / High education,1.16,,
+C - Implied offer intensity (relative),Wallonia / Low education,0.69,,
+C - Implied offer intensity (relative),Wallonia / Medium education,0.86,,
+C - Implied offer intensity (relative),Wallonia / High education,1.01,,
+C - Implied offer intensity (relative),Brussels / Low education,0.65,,
+C - Implied offer intensity (relative),Brussels / Medium education,0.83,,
+C - Implied offer intensity (relative),Brussels / High education,0.99,,

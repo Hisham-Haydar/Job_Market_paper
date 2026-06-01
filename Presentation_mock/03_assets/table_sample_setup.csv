@@ -1,0 +1,22 @@
+Panel,Item,Value
+A,Data source,Belgian EU-SILC matched to EUROMOD baseline tax-benefit rules
+A,Unit of analysis,Prime-age childless single women
+A,Age range,25–54
+A,Final estimation sample,3284 individuals
+A,Mean age,39.7
+A,Region shares,"Flanders 56.8%; Wallonia 30.9%; Brussels 12.3%"
+A,Education shares,"Low 25.9%; Medium 42.5%; High 31.6%"
+A,Observed employment rate,77.6%
+A,Mean weekly hours (employed),34.9
+A,Mean gross hourly wage (employed),€15.8
+A,Mean monthly disposable income,€1694
+B,Labour-supply alternatives,16 packages
+B,Package definition,Non-employment + 5 hours bins × 3 wage terciles
+B,Hours bins,"1–15, 16–24, 25–34, 35–44, 45+"
+B,Opportunity heterogeneity,Region × education
+B,Preference heterogeneity,2 latent taste types + age and age² shifters
+B,Welfare object,"Opportunity-sensitive money-metric welfare, expressed as equivalent monthly disposable income at the non-employment / full-leisure reference"
+B,Baseline inequality index,Gini of welfare
+B,Decomposition rule,Two-factor Shapley-Shorrocks decomposition
+B,Decomposition factors,"Opportunity heterogeneity; preference heterogeneity"
+B,Baseline comparison object,Belgian status quo tax-benefit system
