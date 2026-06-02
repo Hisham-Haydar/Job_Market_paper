@@ -52,7 +52,7 @@ The project has a locked JMP identity, a synthesized literature corpus, and a se
 
 All utility scripts assume Windows with PowerShell and use only the Python standard library plus `matplotlib`/`numpy` (figures) and `openpyxl` (shelves spreadsheet).
 
-**Literature pipeline** (run from `Literature/`):
+**Literature pipeline** (paths are relative to the repository root):
 
 - Re-extract Markdown from source PDFs (requires MiKTeX `pdftotext`): `python Literature/improve_md_extractions.py`
 - Concatenate per-paper extractions into `full_literaterature.md`: `python Literature/build_full_literaterature.py`
@@ -60,7 +60,7 @@ All utility scripts assume Windows with PowerShell and use only the Python stand
 - Regenerate the six-shelf library spreadsheet: `python Literature/make_shelves.py`
 - Batch-print the PDF corpus (Windows-only): `Literature/Printing.ps1`
 
-**Presentation figures** (run from `Presentation_mock/03_assets/`):
+**Presentation figures** (paths are relative to the repository root):
 
 - `python Presentation_mock/03_assets/_make_figures.py`
 - `python Presentation_mock/03_assets/_make_elasticity_figure.py`
