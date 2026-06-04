@@ -50,7 +50,7 @@ Fig. 1 The different welfare metrics graphically and leisure results from indivi
 
 Welfare, labor supply and heterogeneous preferences different metrics can be formulated by means of hypothetical budget constraints with specific choices of the virtual net wage rate or virtual non-labor income. First, the “wage” metric is defined as the slope of the tangent through the origin at a given indifference curve I C i, equaling the wage rate w̃ i of agent i when the value of the virtual non-labor income is set to a reference value of 0, i.e. μ i = μ r = 0. The corresponding function might be called a wage equivalent as firstly introduced by Pencavel (1977). The upper-right picture of Fig. 1 shows that, by use of the metric ν i W (u, μ r ), the two agents can be unambiguously ordered from better to worse off even though preferences differ:
 
-ν i W (u, μ r = 0) = min [w̃ i |v i (w̃ i, μ r = 0) ≥ u] w̃ i (1) Second, the “rent + reference wage” criterion compares individual situations depending on a certain reference value for the virtual net wage rate, w̃ i = w r .Then, the resulting welfare metric ν i RW (u, w r) is the value of the corresponding virtual nonlabor income given through the expenditure function (bottom-left panel of Fig. 1):
+ν i W (u, μ r = 0) = min [w̃ i |v i (w̃ i, μ r = 0) ≥ u] w̃ i (1) Second, the “rent + reference wage” criterion compares individual situations depending on a certain reference value for the virtual net wage rate, w̃ i = w r.Then, the resulting welfare metric ν i RW (u, w r) is the value of the corresponding virtual nonlabor income given through the expenditure function (bottom-left panel of Fig. 1):
 
 ν i RW (u, w r) = e i (u, w r) = min [c i − w r h i |u i (c i, h i) ≥ u] μ i (2) Third, the “rent” metric directly emerges by setting w̃ i = w r = 0. As far as we assume well-behaved utility functions, this is equivalent to hours worked being set to a reference value of h i = h r = 0. The resulting metric ν i R (u, h r) hence is the value of the intersection of the indifference curve with the ordinate, equaling the corresponding virtual non-labor income (bottom-right panel of Fig. 1):
 
@@ -72,7 +72,7 @@ as required by the nature of the labor supply model and explained below. We also
 
 V i j = u i (c i j, (T − h i j )) + i j, (4) with (T − h i) the wife’s “leisure time” (which may include time for domestic production), i.e., total time-endowment T minus formal hours of work. For the deterministic part of the utility function, we rely on a Box-Cox specification, that is:
 
-u i (c i j, (T − h i j )) = β c c i α j c − 1 α c + β li (T − h i j) α l − 1 .
+u i (c i j, (T − h i j )) = β c c i α j c − 1 α c + β li (T − h i j) α l − 1.
 
 α l (5) This specification is frequently used for welfare assessments (see e.g. Aaberge et al. 1995, 2000, 2004; Decoster and Haan 2010; Aaberge and Colombino 2011; Blundell
 
@@ -280,7 +280,7 @@ Welfare, labor supply and heterogeneous preferences Fig. 2 Rank correlations of 
 
 O. Bargain et al.
 
-1 .8 .6 .4 .2
+1.8.6.4.2
 
 ## IE
 
@@ -288,7 +288,7 @@ O. Bargain et al.
 
 ## US
 
-3000 1 .8 .6 .4 .2 0 4000 0 1 .8 .6 .4 .2 0 0 1000 2000 1000 2000 3000 4000
+3000 1.8.6.4.2 0 4000 0 1.8.6.4.2 0 0 1000 2000 1000 2000 3000 4000
 
 Rent metric
 
@@ -298,7 +298,7 @@ Cumulative Probability
 
 Income 3000
 
-RW p50 metric 4000 1 .8 .6 .4 .2 0 0 50 100
+RW p50 metric 4000 1.8.6.4.2 0 0 50 100
 
 Wage metric Note: Income, metrics and reference wage RW (p50−wage of the global distribution) in 2001 PPP−USD.
 

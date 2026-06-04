@@ -52,9 +52,9 @@ T i − T i−1 1 = h j 1 − g j − η j C i − C i−1 ζ i h i
 
 C j − C 0 for i = 1,..., I, (1) j =i with η i and ζ i the elasticities at extensive and intensive margins, respectively, and g i the set of marginal social welfare weights assigned by the government to groups i = 0,..., I. 6 The elasticities are defined as ζ i = ∂h i
 
-C i − C i−1 , h i ∂(C i − C i−1) (2) η i = ∂h i
+C i − C i−1, h i ∂(C i − C i−1) (2) η i = ∂h i
 
-C i − C 0 .
+C i − C 0.
 
 h i ∂(C i − C 0) (3) Responses are restricted to only occur from one group to the neighboring group, and vice versa. Social preferences are summarized by the set of welfare weights g i. These weights can be interpreted as the (per capita) marginal social welfare of transferring one euro to an individual in group i, expressed in terms of public funds. The only assumption made on individual preferences is that there is no income effect, a traditional restriction in this literature, supported by our empirical results as discussed below. 7 When income effects are ruled out, an additional constraint emerges from Saez’s model, normalizing welfare weights as follows:
 

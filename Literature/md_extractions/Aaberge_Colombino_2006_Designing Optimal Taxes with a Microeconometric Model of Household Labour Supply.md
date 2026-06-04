@@ -88,7 +88,7 @@ For expository simplicity we consider in this section only the behaviour of a si
 
 (2.3) Pr (ε ≤ u) = exp (− u − 1).
 
-We observe the chosen h ,w and j. Therefore we can specify the probability that the agent chooses a job with observed characteristics (h,w,j). Let B (w, h, j) ⊂ B denote the subset of feasible jobs with hours h, wage rate w and other observable job attributes j. The term ε is a random taste-shifter that accounts for the effect on utility of all the characteristics of the household-job match observed by the household but not by us. It can be shown that under the assumptions (2.1), (2.2) and (2.3) we can write the probability density function of a choice (h,w,j) as 4 (2.4) ϕ (h, w, j) ≡ Pr ⎡ U (f (wh, I ), h, j) = max U (f (xy, I ), y, z) ⎤ = (x, y, z) ∈ B ⎣ ⎢ ⎦ ⎥ v (f (wh, I ), h, j) p (h, w, j) ∫∫∫ v (f (xy, I ), y, z) p (x, y) dxdydz
+We observe the chosen h,w and j. Therefore we can specify the probability that the agent chooses a job with observed characteristics (h,w,j). Let B (w, h, j) ⊂ B denote the subset of feasible jobs with hours h, wage rate w and other observable job attributes j. The term ε is a random taste-shifter that accounts for the effect on utility of all the characteristics of the household-job match observed by the household but not by us. It can be shown that under the assumptions (2.1), (2.2) and (2.3) we can write the probability density function of a choice (h,w,j) as 4 (2.4) ϕ (h, w, j) ≡ Pr ⎡ U (f (wh, I ), h, j) = max U (f (xy, I ), y, z) ⎤ = (x, y, z) ∈ B ⎣ ⎢ ⎦ ⎥ v (f (wh, I ), h, j) p (h, w, j) ∫∫∫ v (f (xy, I ), y, z) p (x, y) dxdydz
 
 ## B
 
@@ -96,7 +96,7 @@ where p (h, w, j) is the density of choice opportunities which can be interprete
 
 4 For the derivation of the choice density (2.4), see Aaberge et al. (1999). Note that (2.4) can be considered as a special case of the more general multinomial type of framework introduced by Ben-Akiva and Watanatada (1981) and Dagsvik (1994)..
 
-6 , The intuition behind expression (2.4) is that the probability of a choice (h,w,j) can be expressed as the relative attractiveness – weighted by a measure of “availability” p(h,w,j) – of jobs of type (h,w,j).
+6, The intuition behind expression (2.4) is that the probability of a choice (h,w,j) can be expressed as the relative attractiveness – weighted by a measure of “availability” p(h,w,j) – of jobs of type (h,w,j).
 
 It is important to stress that household member choose among jobs (characterized by h, w and other factors j), not just among different values of h. Theoretical optimal taxation models typically consider effort as the agents’ choice variable. Effort does not coincide with hours of work; it might include searching for jobs of better quality etc. On the other hand, empirical models of labour supply used for tax reform evaluations have traditionally considered hours of work as the sole choice variable, implicitly equating hours of work and effort. Exceptions are provided by Bourguignon and Spadaro (2005) and by Bargain (2006), who under rather special assumptions are able to impute to each agent an effort value. In our model we do not strictly identify effort and hours of work, since the agent chooses a package that includes not only hours but also wage rates and other job characteristics.
 
@@ -510,13 +510,13 @@ Leisure The results in Table 4.1 demonstrate that the curvature parameters of th
 
 I k = 1 − (5.4)
 
-W k µ , k = 1, 2,...
+W k µ, k = 1, 2,...
 
 can be used as a summary measure of inequality and moreover is a member of the “illfare-ranked single-series Ginis” class introduced by Donaldson and Weymark (1980). As noted by Aaberge (2000), I 1 is actually equivalent to a measure of inequality that was proposed by Bonferroni (1930), 7 whilst I 2 is the Gini coefficient. In this paper we will measure individual welfare level with a common utility function (see Section 4).
 
 As a contribution to the interpretation of the inequality aversion profiles exhibited by W 1, W 2, W 3 and W ∞ Table 5.1 provides ratios of the corresponding weights – as defined by (5.2) – of the
 
-6 Several other authors have discussed rationales for this approach, see e.g. Sen (1974), Hey and Lambert (1980), Donaldson and Weymark (1980, 1983), Weymark (1981), Ben Porath and Gilboa (1992) and Aaberge (2001). 7 For further discussion of the family {I k: k=1, 2, ...} of inequality measures we refer to Mehran (1976), Donaldson and Weymark (1980, 1983), Bossert (1990) and Aaberge (2000, 2001).
+6 Several other authors have discussed rationales for this approach, see e.g. Sen (1974), Hey and Lambert (1980), Donaldson and Weymark (1980, 1983), Weymark (1981), Ben Porath and Gilboa (1992) and Aaberge (2001). 7 For further discussion of the family {I k: k=1, 2,...} of inequality measures we refer to Mehran (1976), Donaldson and Weymark (1980, 1983), Bossert (1990) and Aaberge (2000, 2001).
 
 15 median individual and the 5 per cent poorest, the 30 per cent poorest and the 5 per cent richest individual for different social welfare criteria.
 
@@ -1062,7 +1062,7 @@ The microeconometric model can be considered as an extension of the standard mul
 
 The model, which contains 78 parameters that capture the heterogeneity in preferences as well as in opportunities among households and individuals, is estimated on the basis of Norwegian micro data from 1995. The estimated model is for a given tax rule used to simulate the choices made by single individuals and couples. Those choices are therefore generated by preferences and opportunities that vary across the decision units. We identify optimal tax rules – within a class of 6parameter piece-wise linear rules -by iteratively running the model until the social welfare function is maximized under the constraint of keeping constant the total net tax revenue.
 
-We focus on the profile of the marginal tax rates and keep fixed the current (1994) system of transfers, income support and social assistance policies. We explore a variety of different social welfare criteria. More egalitarian social welfare function tends to imply more progressive tax rules. The two alternative social welfare criteria, EO and EOp do not seem to entail major differences in the corresponding optimal tax rules. A first striking result is that, irrespective of the social welfare criterion used, the top optimal marginal tax rate always turns out to be 100% for sufficiently high gross income levels (approximately above 700 000 Norwegian Kroner (1994) ≈ 87 000 Euros). Second, all the optimal tax rules imply an average tax rate lower than the current 1994 one. Third, all the optimal rules imply – with respect to the current rule – lower marginal rates on low and/or average income levels and higher marginal rates on sufficiently high income levels. The pattern of labour supply elasticities illustrated in Section 3 contributes to explaining the profile of the optimal tax rules. Our results are partially at odds with the tax reforms that took place in many countries during the last decades. While those reforms embodied the idea of lowering average tax rates, the way to implement it has typically consisted in reducing the top marginal rates. Our results instead suggest lower average 27 tax rates by reducing marginal rates on low and average income levels and increasing marginal rates on very high income levels.
+We focus on the profile of the marginal tax rates and keep fixed the current (1994) system of transfers, income support and social assistance policies. We explore a variety of different social welfare criteria. More egalitarian social welfare function tends to imply more progressive tax rules. The two alternative social welfare criteria, EO and EOp do not seem to entail major differences in the corresponding optimal tax rules. A first striking result is that, irrespective of the social welfare criterion used, the top optimal marginal tax rate always turns out to be 100% for sufficiently high gross income levels (approximately above Norwegian Kroner (1994) ≈ 87 000 Euros). Second, all the optimal tax rules imply an average tax rate lower than the current 1994 one. Third, all the optimal rules imply – with respect to the current rule – lower marginal rates on low and/or average income levels and higher marginal rates on sufficiently high income levels. The pattern of labour supply elasticities illustrated in Section 3 contributes to explaining the profile of the optimal tax rules. Our results are partially at odds with the tax reforms that took place in many countries during the last decades. While those reforms embodied the idea of lowering average tax rates, the way to implement it has typically consisted in reducing the top marginal rates. Our results instead suggest lower average 27 tax rates by reducing marginal rates on low and average income levels and increasing marginal rates on very high income levels.
 
 28
 
@@ -1130,7 +1130,7 @@ A.1. Single females and males The utility functions for single females and males
 
 where w = wage rate h = hours of work
 
-I = exogenous income s = 1 if the job belongs to the Public Sector (= 0 otherwise), f (wh, I) is disposable income (income after tax) measured in 100 000 NOK and ε follows a Type III extreme value distribution.
+I = exogenous income s = 1 if the job belongs to the Public Sector (= 0 otherwise), f (wh, I) is disposable income (income after tax) measured in NOK and ε follows a Type III extreme value distribution.
 
 The systematic part is specified as follows
 
@@ -1154,13 +1154,13 @@ Given the above assumption upon the stochastic component and upon the density of
 
 ## (A4)
 
-v (h, w, s) p (h, w, s) ∑ ∫ ∫ v (x, y, s) p (x, y, s) dxdy .
+v (h, w, s) p (h, w, s) ∑ ∫ ∫ v (x, y, s) p (x, y, s) dxdy.
 
 s = 0,1 In view of the empirical specification it is convenient to divide both numerator and denominator by 1 − p 0 and define g 0 =
 
 ## (A5)
 
-p 0 . We can then rewrite the choice density as follows:
+p 0. We can then rewrite the choice density as follows:
 
 1 − p 0 v (h, w, s) g 0 g 1 s (h) g 2 s (w) g 3 (s) ϕ (h, w, s) = v (0, 0, 0) + ∑ ∫ ∫ v (x, y, s) g g
 
@@ -1272,7 +1272,7 @@ if both work;
 
 ## (A15)
 
-ϕ (h M ,0, w M, 0, s M, 0) = v (h M, 0, w M ,0, s M ,0) g 0 M g 1 s M (h M) g 2 s M (w M) g 3 (s M)
+ϕ (h M,0, w M, 0, s M, 0) = v (h M, 0, w M,0, s M,0) g 0 M g 1 s M (h M) g 2 s M (w M) g 3 (s M)
 
 ## D
 
@@ -1302,15 +1302,15 @@ D = v (0, 0, 0, 0, 0, 0) + ∑ s
 
 ## M
 
-= 0 ,1 + ∑ s
+= 0,1 + ∑ s
 
 ## M
 
-= 0 ,1 + ∑ s
+= 0,1 + ∑ s
 
 ## M
 
-= 0 ,1 ∫∫ v (x
+= 0,1 ∫∫ v (x
 
 ## M
 
@@ -1322,7 +1322,7 @@ D = v (0, 0, 0, 0, 0, 0) + ∑ s
 
 ## F
 
-= 0 ,1
+= 0,1
 
 ## M
 
@@ -1498,7 +1498,7 @@ All 82 1841 1513 183677 39077 144601
 
 Recent publications in the series Discussion Papers 384
 
-A. Bruvoll and T. Fæhn (2004): Transboundary environmental policy effects: Markets and emission leakages 385 P.V. Hansen and L. Lindholt (2004): The market power of OPEC 1973-2001 386 N. Keilman and D. Q. Pham (2004): Empirical errors and predicted errors in fertility, mortality and migration forecasts in the European Economic Area 387 G. H. Bjertnæs and T. Fæhn (2004): Energy Taxation in a Small, Open Economy: Efficiency Gains under Political Restraints 388 J.K. Dagsvik and S. Strøm (2004): Sectoral Labor Supply, Choice Restrictions and Functional Form 389 407 P. Frenger (2005): The elasticity of substitution of superlative price indices 408 M. Mogstad, A. Langørgen and R. Aaberge (2005): Region-specific versus Country-specific Poverty Lines in Analysis of Poverty 409
+A. Bruvoll and T. Fæhn (2004): Transboundary environmental policy effects: Markets and emission leakages 385 P.V. Hansen and L. Lindholt (2004): The market power of OPEC 1973- N. Keilman and D. Q. Pham (2004): Empirical errors and predicted errors in fertility, mortality and migration forecasts in the European Economic Area 387 G. H. Bjertnæs and T. Fæhn (2004): Energy Taxation in a Small, Open Economy: Efficiency Gains under Political Restraints 388 J.K. Dagsvik and S. Strøm (2004): Sectoral Labor Supply, Choice Restrictions and Functional Form P. Frenger (2005): The elasticity of substitution of superlative price indices 408 M. Mogstad, A. Langørgen and R. Aaberge (2005): Region-specific versus Country-specific Poverty Lines in Analysis of Poverty 409
 
 J.K. Dagsvik (2005) Choice under Uncertainty and
 
@@ -1514,7 +1514,7 @@ Pindyck and the Arrow-Fisher-Henry-Hanemann Option
 
 Values Equivalent?
 
-413 E. Holmøy and K.M. Heide (2005): Is Norway immune to Dutch Disease? CGE Estimates of Sustainable Wage Growth and De-industrialisation 391 G. H. Bjønnes, D. Rime and H. O.Aa. Solheim (2004): Liquidity provision in the overnight foreign exchange market 414 K.R. Wangen (2005): An Expenditure Based Estimate of Britain's Black Economy Revisited 415 392 T. Åvitsland and J. Aasness (2004): Combining CGE and microsimulation models: Effects on equality of VAT reforms A. Mathiassen (2005): A Statistical Model for Simple, Fast and Reliable Measurement of Poverty 416 F.R. Aune, S. Glomsrød, L. Lindholt and K.E. Rosendahl: Are high oil prices profitable for OPEC in the long run?
+413 E. Holmøy and K.M. Heide (2005): Is Norway immune to Dutch Disease? CGE Estimates of Sustainable Wage Growth and De-industrialisation 391 G. H. Bjønnes, D. Rime and H. O.Aa. Solheim (2004): Liquidity provision in the overnight foreign exchange market 414 K.R. Wangen (2005): An Expenditure Based Estimate of Britain's Black Economy Revisited T. Åvitsland and J. Aasness (2004): Combining CGE and microsimulation models: Effects on equality of VAT reforms A. Mathiassen (2005): A Statistical Model for Simple, Fast and Reliable Measurement of Poverty 416 F.R. Aune, S. Glomsrød, L. Lindholt and K.E. Rosendahl: Are high oil prices profitable for OPEC in the long run?
 
 417 D. Fredriksen, K.M. Heide, E. Holmøy and I.F. Solli (2005): Macroeconomic effects of proposed pension reforms in Norway 418 D. Fredriksen and N.M. Stølen (2005): Effects of demographic development, labour supply and pension reforms on the future pension burden 393 M. Greaker and Eirik. Sagen (2004): Explaining experience curves for LNG liquefaction costs: Competition matter more than learning 394 K. Telle, I. Aslaksen and T. Synnestvedt (2004): "It pays to be green" -a premature conclusion?
 
@@ -1532,9 +1532,9 @@ Behavior 42 K. Gabrielsen, T. Bye and F.R. Aune (2005): Climate change-lower ele
 
 433.
 
-T. Bye and E. Hope (2005): Deregulation of electricity markets—The Norwegian experience 434 P.J. Lambert and T.O. Thoresen (2005): Base independence in the analysis of tax policy effects: with an application to Norway 1992-2004 435 M. Rege, K. Telle and M. Votruba (2005): The Effect of Plant Downsizing on Disability Pension Utilization 436 J. Hovi and B. Holtsmark (2005): Cap-and-Trade or Carbon Taxes? The Effects of Non-Compliance and the Feasibility of Enforcement nested multinomial logit model and multiproduct firm as nest 437 R. Aaberge, S. Bjerve and K. Doksum (2005): Decomposition of Rank-Dependent Measures of Inequality by Subgroups 438 B. Holtsmark (2005): Global per capita CO 2 emissions - stable in the long run?
+T. Bye and E. Hope (2005): Deregulation of electricity markets—The Norwegian experience 434 P.J. Lambert and T.O. Thoresen (2005): Base independence in the analysis of tax policy effects: with an application to Norway 1992- M. Rege, K. Telle and M. Votruba (2005): The Effect of Plant Downsizing on Disability Pension Utilization 436 J. Hovi and B. Holtsmark (2005): Cap-and-Trade or Carbon Taxes? The Effects of Non-Compliance and the Feasibility of Enforcement nested multinomial logit model and multiproduct firm as nest 437 R. Aaberge, S. Bjerve and K. Doksum (2005): Decomposition of Rank-Dependent Measures of Inequality by Subgroups 438 B. Holtsmark (2005): Global per capita CO 2 emissions - stable in the long run?
 
-439 E. Halvorsen and T.O. Thoresen (2005): The relationship between altruism and equal sharing. Evidence from inter vivos transfer behavior 440 L-C. Zhang and I. Thomsen (2005): A prediction approach to sampling design 441 Ø.A. Nilsen, A. Raknerud, M. Rybalka and T. Skjerpen (2005): Lumpy Investments, Factor Adjustments and Productivity 455 F. Schroyen and J. Aasness (2006): Marginal indirect tax reform analysis with merit good arguments and environmental concerns: Norway, 1999 456 L-C Zhang (2006): On some common practices of systematic sampling 457
+439 E. Halvorsen and T.O. Thoresen (2005): The relationship between altruism and equal sharing. Evidence from inter vivos transfer behavior 440 L-C. Zhang and I. Thomsen (2005): A prediction approach to sampling design 441 Ø.A. Nilsen, A. Raknerud, M. Rybalka and T. Skjerpen (2005): Lumpy Investments, Factor Adjustments and Productivity 455 F. Schroyen and J. Aasness (2006): Marginal indirect tax reform analysis with merit good arguments and environmental concerns: Norway, L-C Zhang (2006): On some common practices of systematic sampling 457
 
 Å. Cappelen (2006): Differences in Learning and
 
@@ -1542,12 +1542,12 @@ Inequality 458 T. Borgersen, D.E. Sommervoll and T. Wennemo (2006): Endogenous H
 
 Economy 461 T. Ericson (2006): Time-differentiated pricing and direct load control of residential electricity consumption 462 T. Bye, E. Holmøy and K. M. Heide (2006): Removing policy based comparative advantage for energy intensive production. Necessary adjustments of the real exchange rate and industry structure 463 R. Bjørnstad and R. Nymoen (2006): Will it float? The New Keynesian Phillips curve tested on OECD panel data 464 K.M.Heide, E. Holmøy, I. F. Solli and B. Strøm (2006): A welfare state funded by nature and OPEC. A guided tour on Norway's path from an exceptionally impressive to an exceptionally strained fiscal position 465 J.K. Dagsvik (2006): Axiomatization of Stochastic Models for Choice under Uncertainty 442 R. Golombek and A. Raknerud (2005): Exit Dynamics with Adjustment Costs 466 S. Hol (2006): The influence of the business cycle on bankruptcy probability 443 G. Liu, T. Skjerpen, A. Rygh Swensen and K. Telle (2006): Unit Roots, Polynomial Transformations and the Environmental Kuznets Curve 467 E. Røed Larsen and D.E. Sommervoll (2006): The Impact on Rent from Tenant and Landlord Characteristics and Interaction 444 G. Liu (2006): A Behavioral Model of Work-trip Mode
 
-Choice in Shanghai 468 Suzan Hol and Nico van der Wijst (2006): The financing structure of non-listed firms 445 E. Lund Sagen and M. Tsygankova (2006): Russian Natural Gas Exports to Europe. Effects of Russian gas market reforms and the rising market power of Gazprom 469 Suzan Hol (2006): Determinants of long-term interest rates in the Scandinavian countries 470 446 T. Ericson (2006): Households' self-selection of a dynamic electricity tariff R. Bjørnstad and K. Øren Kalstad (2006): Increased Price Markup from Union Coordination -OECD Panel Evidence.
+Choice in Shanghai 468 Suzan Hol and Nico van der Wijst (2006): The financing structure of non-listed firms 445 E. Lund Sagen and M. Tsygankova (2006): Russian Natural Gas Exports to Europe. Effects of Russian gas market reforms and the rising market power of Gazprom 469 Suzan Hol (2006): Determinants of long-term interest rates in the Scandinavian countries T. Ericson (2006): Households' self-selection of a dynamic electricity tariff R. Bjørnstad and K. Øren Kalstad (2006): Increased Price Markup from Union Coordination -OECD Panel Evidence.
 
-447 G. Liu (2006): A causality analysis on GDP and air emissions in Norway 471 448 M. Greaker and K.E. Rosendahl (2006): Strategic Climate Policy in Small, Open Economies E. Holmøy (2006): Real appreciation as an automatic channel for redistribution of increased government nontax revenue.
+447 G. Liu (2006): A causality analysis on GDP and air emissions in Norway M. Greaker and K.E. Rosendahl (2006): Strategic Climate Policy in Small, Open Economies E. Holmøy (2006): Real appreciation as an automatic channel for redistribution of increased government nontax revenue.
 
-472 449 R. Aaberge, U. Colombino and T. Wennemo (2006): Evaluating Alternative Representation of the Choice Sets in Models of Labour Supply T. Bye, A. Bruvoll and F.R. Aune (2006): The importance of volatility in inflow in a deregulated hydrodominated power market.
+R. Aaberge, U. Colombino and T. Wennemo (2006): Evaluating Alternative Representation of the Choice Sets in Models of Labour Supply T. Bye, A. Bruvoll and F.R. Aune (2006): The importance of volatility in inflow in a deregulated hydrodominated power market.
 
-473 450 T. Kornstad and T.O. Thoresen (2006): Effects of Family Policy Reforms in Norway. Results from a Joint Labor Supply and Child Care Choice Microsimulation Analysis T. Bye, A. Bruvoll and J. Larsson (2006): Capacity utilization in a generlized Malmquist index including environmental factors: A decomposition analysis 474 451 P. Frenger (2006): The substitution bias of the consumer price index A. Alstadsæter (2006): The Achilles Heel of the Dual Income Tax. The Norwegian Case 475 452 B. Halvorsen (2006): When can micro properties be used to predict aggregate demand?
+T. Kornstad and T.O. Thoresen (2006): Effects of Family Policy Reforms in Norway. Results from a Joint Labor Supply and Child Care Choice Microsimulation Analysis T. Bye, A. Bruvoll and J. Larsson (2006): Capacity utilization in a generlized Malmquist index including environmental factors: A decomposition analysis P. Frenger (2006): The substitution bias of the consumer price index A. Alstadsæter (2006): The Achilles Heel of the Dual Income Tax. The Norwegian Case B. Halvorsen (2006): When can micro properties be used to predict aggregate demand?
 
 R. Aaberge and U. Colombino (2006): Designing Optimal Taxes with a Microeconometric Model of Household Labour Supply 453 J.K. Dagsvik, T. Korntad and T. Skjerpen (2006): Analysis of the disgouraged worker phenomenon. Evidence from micro data 454 G. Liu (2006): On Nash equilibrium in prices in an oligopolistic market with demand characterized by a 43

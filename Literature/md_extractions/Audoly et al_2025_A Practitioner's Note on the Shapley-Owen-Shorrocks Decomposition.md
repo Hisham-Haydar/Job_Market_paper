@@ -14,11 +14,11 @@ In this short note, we aim to provide a simple overview of the Shapley-Owen-Shor
 
 1.
 
-The Decomposition Given an arbitrary function Y = f (X 1, X 2, ..., X n ), the Shapley-Owen-Shorrocks decomposition is a method to decompose the value of f (·) into each of its arguments X 1, X 2, ..., X n. Intuitively, this is the contribution of each argument if it were to be “removed” from the function. However, because the function can be nonlinear, the order in which the arguments are removed matters in general for the decomposition. The function f (·) can be the outcome of a regression, like the predicted values or sum of square residuals, or the output of a structural model, such as a counterfactual value for a variable given a list of model parameters or components, or a transformation of the sample, for example the Gini coefficient. The Shapley-Owen-Shorrocks decomposition is the unique decomposition satisfying four important properties. (i) Exact decomposition under addition. Letting C j denote the contribution of argument X j to the value of the function f (·), n
+The Decomposition Given an arbitrary function Y = f (X 1, X 2,..., X n ), the Shapley-Owen-Shorrocks decomposition is a method to decompose the value of f (·) into each of its arguments X 1, X 2,..., X n. Intuitively, this is the contribution of each argument if it were to be “removed” from the function. However, because the function can be nonlinear, the order in which the arguments are removed matters in general for the decomposition. The function f (·) can be the outcome of a regression, like the predicted values or sum of square residuals, or the output of a structural model, such as a counterfactual value for a variable given a list of model parameters or components, or a transformation of the sample, for example the Gini coefficient. The Shapley-Owen-Shorrocks decomposition is the unique decomposition satisfying four important properties. (i) Exact decomposition under addition. Letting C j denote the contribution of argument X j to the value of the function f (·), n
 
 ## X
 
-C j = f (X 1, X 2, ..., X n ), j =1 (1) so that C j / f (·) can be interpreted as the proportion of f (.) that can be attributed to X j. 1 (ii) Symmetry with respect to the order of the arguments. That is, the order in which the variable X j is removed from f (·) does not alter the value of C j. (iii) The decomposition assigns zero contribution to factors that have a null-effect (an irrelevance normalization). If a factor X j never changes the outcome of the function, in an abuse of notation ∂ j f (·) = 0 everywhere, then C j = 0. (iv) The attribution operator is linear in the function that is decomposed. This is a useful closure requirement that implies contributions rescale linearly with a rescaling of the outcome function and are linear for combinations of outcomes. The contribution of input X j is then
+C j = f (X 1, X 2,..., X n ), j =1 (1) so that C j / f (·) can be interpreted as the proportion of f (.) that can be attributed to X j. 1 (ii) Symmetry with respect to the order of the arguments. That is, the order in which the variable X j is removed from f (·) does not alter the value of C j. (iii) The decomposition assigns zero contribution to factors that have a null-effect (an irrelevance normalization). If a factor X j never changes the outcome of the function, in an abuse of notation ∂ j f (·) = 0 everywhere, then C j = 0. (iv) The attribution operator is linear in the function that is decomposed. This is a useful closure requirement that implies contributions rescale linearly with a rescaling of the outcome function and are linear for combinations of outcomes. The contribution of input X j is then
 
 C j = n–1
 
@@ -30,15 +30,15 @@ k=0  (n – k – 1)!k!   n!
 
 s⊆S k \{X j }:|s|=k  h i  f (s ∪ {X j }) – f (s) , (2) where n is the total number of arguments in the original function f, S k \ {X j} is the set of all “sub-models” that contain k arguments and exclude argument X j. 2 For example,
 
-S n–1 \ X n = f (X 1, X 2, ..., X n–1)
+S n–1 \ X n = f (X 1, X 2,..., X n–1)
 
-S 1 \ X n = f (X 1 ), f (X 2 ), ..., f (X n–1).
+S 1 \ X n = f (X 1 ), f (X 2 ),..., f (X n–1).
 
 The decomposition in (2) accounts for all possible permutations of the decomposition order. Thus, (n–k–1)!k!
 
 can be interpreted as the probability that one of n!
 
-the particular sub-model with k variables is randomly selected when all model sizes are all equally likely. For example, if n = 3, there are sub-models of size {0, 1, 2}. In particular, there are 2 2 permutation of models that exclude each variable: {(0, 0), (1, 0), (0, 1), (1, 1) }. | {z} | {z} |{z} k=0 k=1 k=2 We provide a simple implementation of the decomposition in Matlab at the end of the document and outline the algorithm below. 1 The interpretation holds as long as f is non-negative. If f can take negative values, then the interpretation of C j under the exact additive rule can be misleading as some arguments can have C j < 0. 2 We abuse notation here. A “sub-model” is an evaluation of function f with only some of its arguments. This language is motivated by the function corresponding in practice to the outcome of a regression or structural model. Formally, when we write f (X 1 ), we mean f (X 1, ∅ 2, ..., ∅ n ), where we assume the j-th argument of the function can always take on a null value denoted ∅ j. In our regression example below, this null value corresponds to a zero valued regressor or parameter. In the case of the structural model, this null value can correspond to setting some parameters to a predetermined value or excluding certain model components, like the adjustment of prices or a specific shock agents face.
+the particular sub-model with k variables is randomly selected when all model sizes are all equally likely. For example, if n = 3, there are sub-models of size {0, 1, 2}. In particular, there are 2 2 permutation of models that exclude each variable: {(0, 0), (1, 0), (0, 1), (1, 1) }. | {z} | {z} |{z} k=0 k=1 k=2 We provide a simple implementation of the decomposition in Matlab at the end of the document and outline the algorithm below. 1 The interpretation holds as long as f is non-negative. If f can take negative values, then the interpretation of C j under the exact additive rule can be misleading as some arguments can have C j < 0. 2 We abuse notation here. A “sub-model” is an evaluation of function f with only some of its arguments. This language is motivated by the function corresponding in practice to the outcome of a regression or structural model. Formally, when we write f (X 1 ), we mean f (X 1, ∅ 2,..., ∅ n ), where we assume the j-th argument of the function can always take on a null value denoted ∅ j. In our regression example below, this null value corresponds to a zero valued regressor or parameter. In the case of the structural model, this null value can correspond to setting some parameters to a predetermined value or excluding certain model components, like the adjustment of prices or a specific shock agents face.
 
 Shapley-Owen-Shorrocks Algorithm Inputs: Variable inputs and values across “sub-models.” (a) X: a binary 2 n × n matrix. Gives inputs in "sub-models." (b) F: a 2 n × 1 vector of model values.
 
@@ -90,7 +90,7 @@ k=0 f (s ∪ {X j }) – f (s) s⊆S k \{X 3 }:|s|=k 2
 
 ## P
 
-of variables: Y = f (X 1, X 2, ..., X j) = nj =1 β j X j. The only difference is that the number of sub-models grows exponentially: 2 n–1, but the partial effect of including X j for some j ∈ {0, 1, ..., n} is always β j X j. Thus, in the linear case, the decomposition is mathematically identical to the usual regression decomposition. We average over the same object in each permutation because the effect does not depend on the order in this special case.
+of variables: Y = f (X 1, X 2,..., X j) = nj =1 β j X j. The only difference is that the number of sub-models grows exponentially: 2 n–1, but the partial effect of including X j for some j ∈ {0, 1,..., n} is always β j X j. Thus, in the linear case, the decomposition is mathematically identical to the usual regression decomposition. We average over the same object in each permutation because the effect does not depend on the order in this special case.
 
 3.
 
@@ -122,7 +122,7 @@ h
 
 ## P
 
-of variables: Y = f (X 1, X 2, X 3, X 4, ..., X n) = β 0 + β 1 X 1 + β 2 X 2 + β 3 X 3 X 2 + nj =4 β j X j. The only difference is that the number of sub-models grows exponentially, 2 n–1, but the partial effect of including X j for some j ∈ {4, ..., n} is always C j = β j X j.
+of variables: Y = f (X 1, X 2, X 3, X 4,..., X n) = β 0 + β 1 X 1 + β 2 X 2 + β 3 X 3 X 2 + nj =4 β j X j. The only difference is that the number of sub-models grows exponentially, 2 n–1, but the partial effect of including X j for some j ∈ {4,..., n} is always C j = β j X j.
 
 Removing X 2. In this case, the partial effect can be decomposed into all the possible ways X 2 can be added into the model, f (s ∪ {X 2 }) – f (s), these are k = 0 (∅ 1, ∅ 3): β 0 + β 2 X 2 – β 0 = β 2 X 2 k = 1 (X 1, ∅ 3): β 0 + β 1 X 1 + β 2 X 2 – (β 0 + β 1 X 1) = β 2 X 2 k = 1 (∅ 1, X 3): β 0 + β 2 X 2 + β 3 X 2 X 3 – β 0 = β 2 X 2 + β 3 X 2 X 3 k = 2 (X 1, X3): β 0 + β 1 X 1 + β 2 X 2 + β 3 X 2 X 3 – (β 0 + β 1 X 1) = β 2 X 2 + β 3 X 2 X 3 Here, the partial effects of adding X 2 are not the same across sub-models because X 2 enters nonlinearly into the original model. The symmetric property of the decomposition takes care of this.
 
@@ -140,7 +140,7 @@ Reference value for the decomposition. The decomposition is additive with respec
 
 4.
 
-Nonlinear example II: R 2 Finally, we consider a decomposition of the coefficient of determination in the linear model. Our own use of the decomposition applies this for a nonlinear model, combining the insights from this and the preceding example (see Audoly et al. 2024). We note that this application of the decomposition was first proposed by Israeli (2007) and Huettner and Sunder (2012). Recent applications include Nikolova and Cnossen (2020); Engstrom, Hersh, and Newhouse (2021); Biasi and Ma (2022); and Biasi, Lafortune, and Schönholzer (2025); among others. Consider a linear regression model with n regressors and i = 1, ..., M observations, y i = x ′ i β + u i = β 0 + and define the average value of y as y ≡ ŷ i = x ′ i β̂
+Nonlinear example II: R 2 Finally, we consider a decomposition of the coefficient of determination in the linear model. Our own use of the decomposition applies this for a nonlinear model, combining the insights from this and the preceding example (see Audoly et al. 2024). We note that this application of the decomposition was first proposed by Israeli (2007) and Huettner and Sunder (2012). Recent applications include Nikolova and Cnossen (2020); Engstrom, Hersh, and Newhouse (2021); Biasi and Ma (2022); and Biasi, Lafortune, and Schönholzer (2025); among others. Consider a linear regression model with n regressors and i = 1,..., M observations, y i = x ′ i β + u i = β 0 + and define the average value of y as y ≡ ŷ i = x ′ i β̂
 
 ## P M
 
@@ -154,7 +154,7 @@ i=1 = β̂ 0 + n
 
 β̂ j x ij, j =1 where we assume that all regressors have zero mean so that β̂ 0 = y.
 
-(9) (10) The function of interest is f (X 1,..., X K) = R 2, defined as the explained sum of squares SSE over the total sum of squares SST R 2 (X 1, X 2, .., X n)
+(9) (10) The function of interest is f (X 1,..., X K) = R 2, defined as the explained sum of squares SSE over the total sum of squares SST R 2 (X 1, X 2,.., X n)
 
 ## P M
 
@@ -166,7 +166,7 @@ i=1
 
 ## = P M
 
-= .
+=.
 
 2
 
@@ -272,13 +272,13 @@ Israeli, Osnat. 2007. “A Shapley-based decomposition of the R-Square of a line
 
 Journal of Economic Inequality 5:199–212. URL https://doi.org/10.1007/s10888-006-9036-6.
 
-Kabir, Poorya and Eugene Tan. 2024. “Maintenance volatility, firm productivity, and the user cost of capital.” Tech. rep., University of Toronto, Rotman School of Management. URL https://drive.google.com/file/d/1jL6_Ew21UVKCO1Qc_5psqgZzRzBprMQJ/view. Kwon, Yongchan, Sokbae Lee, and Guillaume A. Pouliot. 2024. “Group shapley value and counterfactual simulations in a structural model.” URL https://arxiv.org/abs/2410.06875. Michaud, Amanda and David Wiczer. 2018. “The disability option: Labor market dynamics with macroeconomic and health risks.” Tech. Rep. 2018-7, Centre for Human Capital and Productivity (CHCP), University of Western Ontario. URL https://www.econstor.eu/handle/ 10419/197793. Millard, Robert G. 2025. “Early-onset disability, education investments, and social insurance.” Tech. rep., State University of New York, Stony Book. URL http://dx.doi.org/10.2139/ssrn. 5233570. Moschini, Emily G. and Monica Tran Xuan. 2025. “Family policies and child skill accumulation.” Review of Economic Dynamics 56:101270. URL https://doi.org/10.1016/j.red.2025.101270. Nakajima, Makoto and Irina A Telyukova. 2020. “Home equity in retirement.” International Economic Review 61 (2):573–616. URL https://doi.org/10.1111/iere.12435. Nikolova, Milena and Femke Cnossen. 2020. “What makes work meaningful and why economists should care about it.” Labour Economics 65:101847. URL https://www.sciencedirect.com/ science/article/pii/S0927537120300518. Owen, Guilliermo. 1977. “Values of Games with a Priori Unions.” In Mathematical Economics and Game Theory, edited by Rudolf Henn and Otto Moeschlin. Berlin, Heidelberg: Springer Berlin Heidelberg, 76–88. URL https://doi.org/10.1007/978-3-642-45494-3_7. Paz Pardo, Gonzalo. 2024. “Homeownership and portfolio choice over the generations.” American Economic Journal: Macroeconomics 16 (1):207–237. URL https://doi.org/10.1257/mac.20200473. Shapley, L. S. 1953. “A value for N-person games.” In Contributions to the Theory of Games, Volume II, edited by H. W. Kuhn and .A. W. Tucker. Princeton, New Jersey: Princeton University Press, 307–318. URL https://doi.org/10.1515/9781400881970-018. Shorrocks, Anthony F. 1999. “Decomposition procedures for distributional analysis: A unified framework based on the Shapley value.” Tech. rep., University of Essex. ———. 2013. “Decomposition procedures for distributional analysis: A unified framework based on the Shapley value.” Journal of Economic Inequality 11 (1):99. URL https://doi.org/10.1007/ s10888-011-9214-z.
+Kabir, Poorya and Eugene Tan. 2024. “Maintenance volatility, firm productivity, and the user cost of capital.” Tech. rep., University of Toronto, Rotman School of Management. URL https://drive.google.com/file/d/1jL6_Ew21UVKCO1Qc_5psqgZzRzBprMQJ/view. Kwon, Yongchan, Sokbae Lee, and Guillaume A. Pouliot. 2024. “Group shapley value and counterfactual simulations in a structural model.” URL https://arxiv.org/abs/2410.06875. Michaud, Amanda and David Wiczer. 2018. “The disability option: Labor market dynamics with macroeconomic and health risks.” Tech. Rep. 2018-7, Centre for Human Capital and Productivity (CHCP), University of Western Ontario. URL https://www.econstor.eu/handle/ 10419/197793. Millard, Robert G. 2025. “Early-onset disability, education investments, and social insurance.” Tech. rep., State University of New York, Stony Book. URL http://dx.doi.org/10.2139/ssrn. 5233570. Moschini, Emily G. and Monica Tran Xuan. 2025. “Family policies and child skill accumulation.” Review of Economic Dynamics 56:101270. URL https://doi.org/10.1016/j.red.2025.101270. Nakajima, Makoto and Irina A Telyukova. 2020. “Home equity in retirement.” International Economic Review 61 (2):573–616. URL https://doi.org/10.1111/iere.12435. Nikolova, Milena and Femke Cnossen. 2020. “What makes work meaningful and why economists should care about it.” Labour Economics 65:101847. URL https://www.sciencedirect.com/ science/article/pii/S0927537120300518. Owen, Guilliermo. 1977. “Values of Games with a Priori Unions.” In Mathematical Economics and Game Theory, edited by Rudolf Henn and Otto Moeschlin. Berlin, Heidelberg: Springer Berlin Heidelberg, 76–88. URL https://doi.org/10.1007/978-3-642-45494-3_7. Paz Pardo, Gonzalo. 2024. “Homeownership and portfolio choice over the generations.” American Economic Journal: Macroeconomics 16 (1):207–237. URL https://doi.org/10.1257/mac.20200473. Shapley, L. S. 1953. “A value for N-person games.” In Contributions to the Theory of Games, Volume II, edited by H. W. Kuhn and.A. W. Tucker. Princeton, New Jersey: Princeton University Press, 307–318. URL https://doi.org/10.1515/9781400881970-018. Shorrocks, Anthony F. 1999. “Decomposition procedures for distributional analysis: A unified framework based on the Shapley value.” Tech. rep., University of Essex. ———. 2013. “Decomposition procedures for distributional analysis: A unified framework based on the Shapley value.” Journal of Economic Inequality 11 (1):99. URL https://doi.org/10.1007/ s10888-011-9214-z.
 
 Shapley-Owen-Shorrocks Implementation in Matlab function C = shapley_owen_shorrocks (X_ind, f_vals) % X_ind: binary matrix of size ((2^ n) x n) % f_vals: 2^ n vector of function values n = size (X_ind, 2);% Number of variables
 
 ## C
 
-= zeros (n, 1) ;% Store contributions fact_vec = factorial (0: n);% Precompute factorial terms for j = 1: n% Loop over all inputs contrib = 0;% Initialize input j contribution for k = 0: n -1% Loop over sub -models without input j % Weight for size -k sub -models --adj. by 1 for indexing w = fact_vec (n -k -1+1) * fact_vec (k +1) / fact_vec (n +1); % Find rows of X_ind with k inputs excluding j mask_k = sum (X_ind, 2) == k ;% k inputs mask_j = X_ind (:, j) == 0 ;% Excluding j idx_base = find (mask_k & mask_j);% Both for idx = idx_base'% Loop over sub -models (k, no j) base = X_ind (idx, :);% Reference sub -model base_val = f_vals (idx);% Reference value % Add variable j to form S U {j} with_j = base; with_j (j) = 1; % Find index of " with_j " sub -model and its value idx_with_j = find (ismember (X_ind, with_j,' rows'));
+= zeros (n, 1);% Store contributions fact_vec = factorial (0: n);% Precompute factorial terms for j = 1: n% Loop over all inputs contrib = 0;% Initialize input j contribution for k = 0: n -1% Loop over sub -models without input j % Weight for size -k sub -models --adj. by 1 for indexing w = fact_vec (n -k -1+1) * fact_vec (k +1) / fact_vec (n +1); % Find rows of X_ind with k inputs excluding j mask_k = sum (X_ind, 2) == k;% k inputs mask_j = X_ind (:, j) == 0;% Excluding j idx_base = find (mask_k & mask_j);% Both for idx = idx_base'% Loop over sub -models (k, no j) base = X_ind (idx,:);% Reference sub -model base_val = f_vals (idx);% Reference value % Add variable j to form S U {j} with_j = base; with_j (j) = 1; % Find index of " with_j " sub -model and its value idx_with_j = find (ismember (X_ind, with_j,' rows'));
 
 if isempty (idx_with_j);
 

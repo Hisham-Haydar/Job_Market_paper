@@ -42,7 +42,7 @@ Ti(h, w) = vi(f(wh, 1), h) (4)
 
 Copyright? 1999 John Wiley & Sons, Ltd.
 
-J. Appl. Econ., 14, 403-422 where we have inserted for equation (1) in the structural term vi(, *), and let ?li(h, w)= max j (5) jEBi(h,w) j The household is assumed to maximize the utility in equation (2) under the budget constraints (1) and given the opportunity set available for the household. Then we can write max Ui(ftwh; I), h,j) = Ti(h, w)?i(h, w) (6) jEBi(h, w) To simplify the notation let z = (h, w) and suppress the dependency on I. Moreover, let Mi(z) be the number of opportunities in Bi(z). For expository simplicity we shall assume that the total set of possible hours and wages is finite. From equations (3) and (5) we then get the following expression for the probability distribution of ri(z):
+J. Appl. Econ., 14, 403-422 where we have inserted for equation (1) in the structural term vi(, *), and let?li(h, w)= max j (5) jEBi(h,w) j The household is assumed to maximize the utility in equation (2) under the budget constraints (1) and given the opportunity set available for the household. Then we can write max Ui(ftwh; I), h,j) = Ti(h, w)?i(h, w) (6) jEBi(h, w) To simplify the notation let z = (h, w) and suppress the dependency on I. Moreover, let Mi(z) be the number of opportunities in Bi(z). For expository simplicity we shall assume that the total set of possible hours and wages is finite. From equations (3) and (5) we then get the following expression for the probability distribution of ri(z):
 
 Pr(/i(z) < y) = Pr(max i< y) =n-Pr(E, Y) = exp(-)-exp(-M()) jEBi(z) jEBi(z) Accordingly, the distribution F of Ti(z)li(z) is given
 
@@ -60,7 +60,7 @@ J. Appl. Econ. 14: 403-422 (1999)
 
 Copyright? 1999 John Wiley & Sons, Ltd.
 
-By inserting equations (8) and (10) in (11) we obtain the following expression fo (,(z) = ,l(z)Mi(z-) exp -y E Ti(z)Mi(z) dy = i()i((12) z An alternative expression can be derived from introducing the following fractions:
+By inserting equations (8) and (10) in (11) we obtain the following expression fo (,(z) =,l(z)Mi(z-) exp -y E Ti(z)Mi(z) dy = i()i((12) z An alternative expression can be derived from introducing the following fractions:
 
 ( )gi( h,
 
@@ -74,13 +74,13 @@ From
 
 Thus, equations gi(-) and (12)-(14) goi we give a form get p(h, w) = (i0(h, (pi(h, w)= (15) W)g
 
-TOi(O , x> y >0y 0) + goi
+TOi(O, x> y >0y 0) + goi
 
 ## Y
 
 ## E
 
-Tyi( for {h, w} > 0, and ,i(0, ()i(0, 0) 0)= 'i(0, x>Oy>O 0) 0 + (16) goi
+Tyi( for {h, w} > 0, and,i(0, ()i(0, 0) 0)= 'i(0, x>Oy>O 0) 0 + (16) goi
 
 ## E
 
@@ -122,7 +122,7 @@ J. Appl. Econ. 14: 403-422 (1 straightforward elaboration on the ratio p(h, w)/p
 
 ## X2 > 0 )2 > 0
 
-+ g0M E E'(x1, O,Yl, ?)gF(Xl, Yl) + gOOP(0, 0,, 0) x1 >0y, >0 where gM() and gF() are marginals of g. The expression for (p(0, hM, 0, WM), (p(hF, 0, WF, 0) and p(0, 0, 0, 0) are straightforward analogues of equation (24). For the sake of simplicity and intuition we have presented a discrete version of the model. It should be noted that the model is conceived as a continuous one, i.e. h and w can vary continuously. The sums in equation (25) are replaced by integrals, and the functions g are replaced by densities. For further details we refer to Dagsvik (1994) and Aaberge et al. (1995). Copyright? 1999 John Wiley & Sons, Ltd.
++ g0M E E'(x1, O,Yl,?)gF(Xl, Yl) + gOOP(0, 0,, 0) x1 >0y, >0 where gM() and gF() are marginals of g. The expression for (p(0, hM, 0, WM), (p(hF, 0, WF, 0) and p(0, 0, 0, 0) are straightforward analogues of equation (24). For the sake of simplicity and intuition we have presented a discrete version of the model. It should be noted that the model is conceived as a continuous one, i.e. h and w can vary continuously. The sums in equation (25) are replaced by integrals, and the functions g are replaced by densities. For further details we refer to Dagsvik (1994) and Aaberge et al. (1995). Copyright? 1999 John Wiley & Sons, Ltd.
 
 J. Appl. Econ., 14, 403-422 (1999)
 
@@ -192,7 +192,7 @@ observed income from self-employment has been added to net household income an a
 
 In this study we impose the following functional form on the deterministic part function, where the subscripts F and M denote females and males:
 
-log (C, hF, hM) = [cX2(-KM)(-KF) + X3KF + c4KM]e`C + [, + ,7 logAM + 8(logAM)](a1 + [n10 + cal log AF + 1l2(logAF)2 + c13CU6 + 1C4C06] (where Aj is the age of gender j, CU6 and C06 are number of children below a old, C is household consumption and Lj is leisure for gender j, defined by
+log (C, hF, hM) = [cX2(-KM)(-KF) + X3KF + c4KM]e`C + [, +,7 logAM + 8(logAM)](a1 + [n10 + cal log AF + 1l2(logAF)2 + c13CU6 + 1C4C06] (where Aj is the age of gender j, CU6 and C06 are number of children below a old, C is household consumption and Lj is leisure for gender j, defined by
 
 Lj = 1-8760
 
@@ -304,7 +304,7 @@ Own-wage Cross-Own-wage CrossType of elasticity elasticities elasticities elasti
 
 Compensated 0-043 -0-065 0-640 -0-141 (0-002) (0-005) (0-029) (0-017) Elasticity of the conditional Uncompensated 0 007 -0-035 0 078 -0-136 expectation of total supply (0-001) (0.002) (0-003) (0-002) of hours Compensated 0-054 -0-033 0-096 -0-058 (0-004) (0-003) (0-008) (0-005) Elasticity of the unconditional Uncompensated 0-053 -0-116 0-737 -0489 expectation of total supply (0-002) (0-002) (0-006) (0-008) of hours Compensated 0.098 -0-098 0 742 -0-198 (0-004) (0-005) (0-034) (0-017) a Standard deviations in parentheses. Copyright? 1999 John Wiley & Sons, Ltd.
 
-J. Appl. Econ. 14: 403-422 (1999 n (0~ e'a ?
+J. Appl. Econ. 14: 403-422 (1999 n (0~ e'a?
 
 ## 'IC
 

@@ -1,4 +1,4 @@
-# ~~~R Discussion ,~~Rr~ paper
+# ~~~R Discussion,~~Rr~ paper
 
 ## I
 
@@ -88,37 +88,37 @@ Simulation experiments are performed to compare the empirical frequency distribu
 
 Moreover, it is tested formally whether the simulated hours distribution and the empirical hours distribution are equal. In section 2 we present the model and formulate the likelihood function. In section ulation experiments and formal testing procedures are períormed. Finally, in section 4, some concluding remarks are made.
 
-2 The model "I'h~~ inud~~l :axsunu~s 1,6at. Lho iudividual caonot snpply the optimal nnmbcr of working óuurs whicb results from maximizing utility subject to a budget cunstraint, like in the stanclard labour aupply model, in which typically no involuntary unemployment can occur, see e.g. Heckman (1974) and Hausman (1980). Instead, it ia assumed that the individual, at a given point in time, receives a random amount of job offers from the employers. A job offer is characterized by a wage rate and a weekly number of working hours. The job offers are compared to each other by their utility level. The individual selects the job with the highest utility level, which is compared with the utility level of not working, after which it is decided whether or not the job is accepted. Note that the model is fully static in the sense that all job offers arrive at a given point in time and the job acceptance decision is made immediately, without taking into account the possibility of future job offers. Therefore, the model can be estimated with cross section data. In Blcemen (1992) a sequential job search model is presented in which a job not only has a wage component, as is usual in the standard job search model, see e.g. Mortensen (1986), but has an hours component as well, as in the (static) Dickens and Lundberg (1985) model. In this sequential search model, apart from data on labour supply and the wage rate, use is made of duration data in the estimation of the model, so the availability of a panel survey is a cequirement. In making the job acceptance decision the expectations with respect to possible future job offers are taken into acount as well. The present model provides a link between the static Dickens and Lundberg (1985) model, in wlrich only the number of working hours varies from job offer to job offer, and the standard job search model in which the wage rate is the only job component. The number of job offers is assumed to be Poisson distributed with parameter a. An advantage of this specification, a.9 opposed to the binomial specification of Tummers and Woittiez (1991) and Van Soest et al. (1990), is that it can easily be made dependent on individual characteristics. In these previous studies, the effect of individual characteristics, like age and the level of education, on the number of job offers, have typically been ignored. Mureover, in the binomial distribution a fixed maximum number of job offers has to be chosen in advance. A job offer is modelled as a simultaneous draw of a wage rate w and a weekly number of working hours h from a joint wage hours offer distribution j(w, h). As in the Dickens and Lundberg (1985) approach we assume that there is a discrete hours olíer distribution defined over rn fixed numbers of positive houra h7,! -1,...,m. That is, hours are grouped into m categories, where the probability of drawing from category! is given by pi. The advantage of this approach is that no heavy restrictions, like single peakedness or symmetry, are placed on the shape of the distribution. The price which has to be paid for this aexibility of the shape of the houra distribution is that labour supply can only take a discrete number of values.
+2 The model "I'h~~ inud~~l:axsunu~s 1,6at. Lho iudividual caonot snpply the optimal nnmbcr of working óuurs whicb results from maximizing utility subject to a budget cunstraint, like in the stanclard labour aupply model, in which typically no involuntary unemployment can occur, see e.g. Heckman (1974) and Hausman (1980). Instead, it ia assumed that the individual, at a given point in time, receives a random amount of job offers from the employers. A job offer is characterized by a wage rate and a weekly number of working hours. The job offers are compared to each other by their utility level. The individual selects the job with the highest utility level, which is compared with the utility level of not working, after which it is decided whether or not the job is accepted. Note that the model is fully static in the sense that all job offers arrive at a given point in time and the job acceptance decision is made immediately, without taking into account the possibility of future job offers. Therefore, the model can be estimated with cross section data. In Blcemen (1992) a sequential job search model is presented in which a job not only has a wage component, as is usual in the standard job search model, see e.g. Mortensen (1986), but has an hours component as well, as in the (static) Dickens and Lundberg (1985) model. In this sequential search model, apart from data on labour supply and the wage rate, use is made of duration data in the estimation of the model, so the availability of a panel survey is a cequirement. In making the job acceptance decision the expectations with respect to possible future job offers are taken into acount as well. The present model provides a link between the static Dickens and Lundberg (1985) model, in wlrich only the number of working hours varies from job offer to job offer, and the standard job search model in which the wage rate is the only job component. The number of job offers is assumed to be Poisson distributed with parameter a. An advantage of this specification, a.9 opposed to the binomial specification of Tummers and Woittiez (1991) and Van Soest et al. (1990), is that it can easily be made dependent on individual characteristics. In these previous studies, the effect of individual characteristics, like age and the level of education, on the number of job offers, have typically been ignored. Mureover, in the binomial distribution a fixed maximum number of job offers has to be chosen in advance. A job offer is modelled as a simultaneous draw of a wage rate w and a weekly number of working hours h from a joint wage hours offer distribution j(w, h). As in the Dickens and Lundberg (1985) approach we assume that there is a discrete hours olíer distribution defined over rn fixed numbers of positive houra h7,! -1,...,m. That is, hours are grouped into m categories, where the probability of drawing from category! is given by pi. The advantage of this approach is that no heavy restrictions, like single peakedness or symmetry, are placed on the shape of the distribution. The price which has to be paid for this aexibility of the shape of the houra distribution is that labour supply can only take a discrete number of values.
 
-PÍh -hr) -Pr, l-1, ..., m (2.1) In the estimation the probabilities can be parametrized as
+PÍh -hr) -Pr, l-1,..., m (2.1) In the estimation the probabilities can be parametrized as
 
 Pr -
 
-Frr m , hl -1 ~k-1 Ílk (2.2) in which pr has been normalized to 1 and the remaining pr are nonnegative. The wage rate, conditional on h-hr, is assumed to be lognormally distributed. Tummers and Woittiez (1991) also estimated the wage diatribution jointly with the labour suppl,y probabilities, but they use a normal wage distribution, thereby not reatricting the range of possible wages to positive values. The wage specification becomes ]n w -x~q .} v v ~ N(O,ou) (2.3) (2.4) or equivalently w-exp(xjrj)u with u-exp(v) (2.5) in which the subindex (indicates possible dependence on hr. The job joint job offer density function becomes f(w, hr) - 1 1 1 exp (-1[ln w -rjxr]~ Pt, 0 G w G oo, !-1, ..., m 2a w l 2av (2.6) For ease of exposition it is assumed for the moment that the budget constraint is línear, ignoring the tax system.
+Frr m, hl -1 ~k-1 Ílk (2.2) in which pr has been normalized to 1 and the remaining pr are nonnegative. The wage rate, conditional on h-hr, is assumed to be lognormally distributed. Tummers and Woittiez (1991) also estimated the wage diatribution jointly with the labour suppl,y probabilities, but they use a normal wage distribution, thereby not reatricting the range of possible wages to positive values. The wage specification becomes ]n w -x~q.} v v ~ N(O,ou) (2.3) (2.4) or equivalently w-exp(xjrj)u with u-exp(v) (2.5) in which the subindex (indicates possible dependence on hr. The job joint job offer density function becomes f(w, hr) - 1 1 1 exp (-1[ln w -rjxr]~ Pt, 0 G w G oo,!-1,..., m 2a w l 2av (2.6) For ease of exposition it is assumed for the moment that the budget constraint is línear, ignoring the tax system.
 
 (2.7) y-whfp where ~e is non-labour income. `The utility function is defined over labour supply h and income y and is indicated by u(h, y). The specification of the utility function is the Hausman (1980) specification. Maximizing this ut.ility function subject to a linear budget constraint yields a labour supply function which is linear in both non-labour income and the wage rate.
 
--X6 -e -~Y) u(h, y) --ln(ry -~h) -~Íh ry-ph w here a~, y, b are parameters, Q G 0, ry 1 0 ~ y is disposable income ~ h is the number of working hours ~ c is an unobserved randorn taste variable, e~ N(0, o~) (2.8) ~ a is a vector o(individual charactcristics At a given point in time, an individual receives n job offers each of them conaisting of a wage w, 0 C i~ C oo and a number of working hours h E{h~, ..., hm}. Furthermore, an individual can always choose not to work. The alternative which yielde the highest level of utility will be chosen. An individual will be observed to be non-working if the utility level of not working exceeds the utility level of all of the n job offers. The number of job offers is assumed to be a Poisson distributed random variable.
+-X6 -e -~Y) u(h, y) --ln(ry -~h) -~Íh ry-ph w here a~, y, b are parameters, Q G 0, ry 1 0 ~ y is disposable income ~ h is the number of working hours ~ c is an unobserved randorn taste variable, e~ N(0, o~) (2.8) ~ a is a vector o(individual charactcristics At a given point in time, an individual receives n job offers each of them conaisting of a wage w, 0 C i~ C oo and a number of working hours h E{h~,..., hm}. Furthermore, an individual can always choose not to work. The alternative which yielde the highest level of utility will be chosen. An individual will be observed to be non-working if the utility level of not working exceeds the utility level of all of the n job offers. The number of job offers is assumed to be a Poisson distributed random variable.
 
-t , n-0,1, ..., oo p(n) -eXp(-~)An n.
+t, n-0,1,..., oo p(n) -eXp(-~)An n.
 
-(2.9) Noto LhaL it is possible that no jobs are offered at all so that individuals can be involunt.arily uncmpluycd. In order to write down the likelihood function the likelihood contribution of nonworking and working individuals will be determined separately. Suppose that for a working individual we observe the wage-houra pair (w„h~,), where l, E{1,...,m}. The fact that (ur„ ht,) is observed means that all other job offers, if there are any, are from the set of wage-houra packages which yield at most the same utility level as the observed pair. This set has to be determined. For every level of hours ht,! -1, ..., m, the set A~(e) of wages can be determined which includes all wage levels w for which u(ht, wh! ~ p) G u(hi,, w,hr, t p) for a given value of e.
+(2.9) Noto LhaL it is possible that no jobs are offered at all so that individuals can be involunt.arily uncmpluycd. In order to write down the likelihood function the likelihood contribution of nonworking and working individuals will be determined separately. Suppose that for a working individual we observe the wage-houra pair (w„h~,), where l, E{1,...,m}. The fact that (ur„ ht,) is observed means that all other job offers, if there are any, are from the set of wage-houra packages which yield at most the same utility level as the observed pair. This set has to be determined. For every level of hours ht,! -1,..., m, the set A~(e) of wages can be determined which includes all wage levels w for which u(ht, wh! ~ p) G u(hi,, w,hr, t p) for a given value of e.
 
-A~(e) :-{w~u(hi, whr ~ p) C u(h~,, w,ht, f p)~e} (2.10) Thc probability N(TU„h~,~c) of drawing an arbitrary job o(fcr which yiclds at rnosL the sarne utilit.y levcl as thc obsc:rved job (w„ h~,) equala the probability of drawing a job ofícr from any of the sets A~(e), i.e.
+A~(e):-{w~u(hi, whr ~ p) C u(h~,, w,ht, f p)~e} (2.10) Thc probability N(TU„h~,~c) of drawing an arbitrary job o(fcr which yiclds at rnosL the sarne utilit.y levcl as thc obsc:rved job (w„ h~,) equala the probability of drawing a job ofícr from any of the sets A~(e), i.e.
 
-m P(w.,ht.~e) :-P(u(h,wh f Ir) C u(hi.,w.ht. f P)~e) -~Prp(w E Ar(e)~e) t-r (2.11) Using the distributional assumptions in (2.3) and (2.4) yields
+m P(w.,ht.~e):-P(u(h,wh f Ir) C u(hi.,w.ht. f P)~e) -~Prp(w E Ar(e)~e) t-r (2.11) Using the distributional assumptions in (2.3) and (2.4) yields
 
 P(w E At(e)~e) -~~tne~(o-n'zj) if gr(e) 1 0 (`2.12) -0 if g~(e) C 0 (2.13) wil.h N(.) t.hc st.xndarcl uunual distributiun fruutiou and yi(c) - (7 -~hi) ]n l,~yi~ -(hi. -hi)(7 -QXó -Qe -f1~N)} 7-Qhi hi.
 
 -w.
 
-A~In ~hr(7 -Rhi.) 7-Qhi. hi (2.14) Note that if I-!' the firat two terms of (2.14) are equal to zero, whereas the last term becomes w'. Now assume that there are n job offers (w~~l, h~~l), j-1, ..., n. Only the job with the highest utility level, (w.,hi,) is observed if its utility level is higher than uo -u(0,p), the utility level of not working which we will call the reservation utility Ievel. So (rv., h t.) -(tllli)~ h(~)) (w.,h~.) -(w(z),h(2)) (w.,ht.) -(w(n),h(n)) if u(h(r), w(i)h(i) f Ir) ~ and u(h(r), w(r)hp) f {r) ~ if u(A(s),w(s)h(s) f l~) ~ and u(A(z),w(z)h(~) ~ p) ~ if u(h(n),w(n)h(n) f p) ~ u(h(i)~w(i)h(i) f l~) j-1,...,n-1 ancl u(h(„), w(n)h(n) f i~) ~ uo u(h(i)~ w(i)h(i) f í~)
+A~In ~hr(7 -Rhi.) 7-Qhi. hi (2.14) Note that if I-!' the firat two terms of (2.14) are equal to zero, whereas the last term becomes w'. Now assume that there are n job offers (w~~l, h~~l), j-1,..., n. Only the job with the highest utility level, (w.,hi,) is observed if its utility level is higher than uo -u(0,p), the utility level of not working which we will call the reservation utility Ievel. So (rv., h t.) -(tllli)~ h(~)) (w.,h~.) -(w(z),h(2)) (w.,ht.) -(w(n),h(n)) if u(h(r), w(i)h(i) f Ir) ~ and u(h(r), w(r)hp) f {r) ~ if u(A(s),w(s)h(s) f l~) ~ and u(A(z),w(z)h(~) ~ p) ~ if u(h(n),w(n)h(n) f p) ~ u(h(i)~w(i)h(i) f l~) j-1,...,n-1 ancl u(h(„), w(n)h(n) f i~) ~ uo u(h(i)~ w(i)h(i) f í~)
 
-J -2,...,n uo u(h(i)~ w(i)h(i) f !~)
+J -2,...,n uo u(h(i)~ w(i)h(i) f!~)
 
 J -1,...,n,J ~ 2 uo (2.15) The observed job is the result of any of theae n poseibilitiea and therefore, the likelihood contribution of the observed job equals n times the probability that there are n-1 job offere with a utility level that does not exceed the utility level of the obaerved job, times the wage offer density function evaluated in the observed wage rate w., times the probability pt, of drawing the observed number of working hours ht,. The likelihood contribution of an observed wage-houra pair, conditional on e and the number of drawings n, becomea: l(w., ht. [e, n) -n[P{w., h t. ~e)[n-rk(w., n~x, Q~)p~.
 
-l. E{1, .., m} u(h~.,w.h~. f F~) ~ uo (2.16) where k(.) is thc log-normal density function of wage offers. Note that ií n equala zero the likelihood contribution of the observed value is zero, as observing a job ia in contradiction with the occnrrence of zero job offers. I[n-1, there is no choice among different joba and thc liki~lihixid contribution o(obscrviug (ur., ht,) bccomcz~ jurd thc job oll'er denaity evaluated in the observed job. (2.16) is multiplied by the probability that n occurs, after which we sum ovea all n to obtain the likelihood contribution of the observed wage-hours package, conditional on the unobserved preference parameter e:
+l. E{1,.., m} u(h~.,w.h~. f F~) ~ uo (2.16) where k(.) is thc log-normal density function of wage offers. Note that ií n equala zero the likelihood contribution of the observed value is zero, as observing a job ia in contradiction with the occnrrence of zero job offers. I[n-1, there is no choice among different joba and thc liki~lihixid contribution o(obscrviug (ur., ht,) bccomcz~ jurd thc job oll'er denaity evaluated in the observed job. (2.16) is multiplied by the probability that n occurs, after which we sum ovea all n to obtain the likelihood contribution of the observed wage-hours package, conditional on the unobserved preference parameter e:
 
 f. E{1,...,m} u(ht.,w.ht. f Ir) ~ uo (2.17) For an individual who is not working none of the n job offers generates a utility leve.l which i~xceecls the utility Ievel o[uot working, where we Itave to take into account that n actually may be zero. Then the probability that none of the n job offera is acceptable f(w.,ht.~e) -aexp{-~[I -P(w.,hr.~e)[}k(w.,n~x,av)Pi.
 
@@ -130,13 +130,13 @@ P(O~e) -~ ptP(w E Ato(e)~e) t-r (2.19) where Aio(e) is defined as in (2.10), wit
 
 1(h -O~e) -exp{-a[1 --P(O~e)]} (2.20) To remove the conditioning on the random preference parameter in the likelihood c:untribution has to be integrated over all e, -oo G c G oo. For the working individuals the likelihood contribution is zero if u(h~„w,h~, ~ p) C uo and therefore the effective integration region becomes
 
-B :-{e~uo C u(hi„w,hr, -}, p)} (2.21) 'fhe final likelihood contribution for an individual w ith a job becomes !(w., hi,) -f l(w„ h~, ~e) 1~(e) de, l, E {l, ..., m}, 0 G w C oo e o~
+B:-{e~uo C u(hi„w,hr, -}, p)} (2.21) 'fhe final likelihood contribution for an individual w ith a job becomes!(w., hi,) -f l(w„ h~, ~e) 1~(e) de, l, E {l,..., m}, 0 G w C oo e o~
 
 ## Q~
 
 (2.22) whr,ro ~(.) is thc standard normal density funct.ion. Note that the rangc of ra is (O,oo) aftcr óaviug integrated out e as the region Fl is nonempty for every positive wage rate, i.e. thcrc always exists a range of random preferences such that working is preferred over nuu wurking fur ~w~,ry puvil.ivo wago ratr~. 1'or the non-working individuals the likelihood contribution becomes 1(h -0) -Iexp{-a[1 -P(O~e)]} 1~~ e~ de v~ `v~ (2.23) Ií the tax system is introduced the procedure remains basically the same. The probabilities in (2.12) have to be adapted and split up in accordance with the brackets in the tax system.
 
-3 Estimation results The model is estimated using a sample of 849 married women in theyear 1985, obtained frorn the Organization for Strategic Labounnarket Research (OSA). In order to estimatP the model the m hours categories of the hours offer distribution have to be chosen. To specify the discrete hours offer distribution, the hours are grouped into categories each of which contain four houra levels. As a consequence, the discrete hours distribution becomes P(h -h~) -p~ with h~ -4 x 1,1-1, ..., m (3.1) In order to be able to identify all the probabilities, some equality restrictions are placed ou prubabilities of hours categories which have a low sample frequency. These reatrictions arc
+3 Estimation results The model is estimated using a sample of 849 married women in theyear 1985, obtained frorn the Organization for Strategic Labounnarket Research (OSA). In order to estimatP the model the m hours categories of the hours offer distribution have to be chosen. To specify the discrete hours offer distribution, the hours are grouped into categories each of which contain four houra levels. As a consequence, the discrete hours distribution becomes P(h -h~) -p~ with h~ -4 x 1,1-1,..., m (3.1) In order to be able to identify all the probabilities, some equality restrictions are placed ou prubabilities of hours categories which have a low sample frequency. These reatrictions arc
 
 Pr -Ps -Pa -Pa ps -P~r (3.2)
 
@@ -250,7 +250,7 @@ Deroired frequenciea frequencies frequenciee
 
 0.100 0 (i.e. non-working)
 
-4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 ~ 60 --Snmpie dislribution ---------Desired hours -Satnple disfrrbutiOn . ----.Srmu!nl.~d hnur.
+4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 ~ 60 --Snmpie dislribution ---------Desired hours -Satnple disfrrbutiOn. ----.Srmu!nl.~d hnur.
 
 lr.qn.n,~r
 
@@ -262,9 +262,9 @@ Iropr..n.-r e rs eM e.a ~-.-;.
 
 n,imMr nr hr.ura F'rqure 3 I IhslnLnhnn n(wnrking honre i~..r week a.
 
-a .
+a.
 
---n.`r~ ~~e ., n s a~ fa a ~ a w a.
+--n.`r~ ~~e., n s a~ fa a ~ a w a.
 
 r mrmDer of Aoun Figure 32 Distributlon of working houra per week n
 
@@ -312,9 +312,9 @@ IrtlQUCnCJ ~ri i fr.q~r~nr~ r.rr 1
 
 ## IM
 
-~~ .u --~ .
+~~.u --~.
 
-In 11 i .
+In 11 i.
 
 ~ to ]1 rf ~!
 
@@ -322,21 +322,21 @@ In 11 i .
 
 ## N
 
-w nnmf.~r of Arnn Piquf ~'t :9 Iri~lnbulrnn rif workinR hnfu s ~.~r week
+w nnmf.~r of Arnn Piquf ~'t:9 Iri~lnbulrnn rif workinR hnfu s ~.~r week
 
 ## Y
 
-rM !
+rM!
 
 ~ -rn -~~
 
 ## I -,
 
-~n .
+~n.
 
 ## .M
 
-z , o ..~,.
+z, o..~,.
 
 a~ a tl
 
@@ -348,7 +348,7 @@ a~ a tl
 
 ## N
 
-!~ ~ nnmf`er of Aoun Figure 3 4 Dialnbulion ot working houra per week ,
+!~ ~ nnmf`er of Aoun Figure 3 4 Dialnbulion ot working houra per week,
 
 Parameters
 
@@ -386,7 +386,7 @@ InQuenc~ a.t ur
 
 Rrri lM
 
-## ,.. ~,..., .-I
+## ,.. ~,...,.-I
 
 ## 4A
 
@@ -402,7 +402,7 @@ u
 
 ## N
 
--~ !t FiqnrP 3,5 DI~tnLallon af working houra ~..,r werk tl lM t 1 11 1~ .~~~~ .~~ 11 tl
+-~!t FiqnrP 3,5 DI~tnLallon af working houra ~..,r werk tl lM t 1 11 1~.~~~~.~~ 11 tl
 
 ## N
 
@@ -446,7 +446,7 @@ M. Steel 9120
 
 S. Bhattacharya, ]. Glazer and D. Sappington Licensing and the Sharing of Knowledge in Joint Ventures 9121
 
-J.W. Friedman and L. Samuelson .An Extension of the "Folk Theorem" with Continuous Reaction Functions 9122
+J.W. Friedman and L. Samuelson.An Extension of the "Folk Theorem" with Continuous Reaction Functions 9122
 
 S. Chib, J. Osiewalski and M. Steel A Bayesian Note on Competing Correlation Structures in the Dynamic Linear Regression Model 9123
 

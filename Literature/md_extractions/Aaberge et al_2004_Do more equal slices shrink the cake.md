@@ -56,7 +56,7 @@ F k where is the left inverse of the cumulative distribution function of equival
 
 b1 1 t where b is the inequality aversion parameter 9. Note that the inequality aversion decreases when b increases. It follows by straightforward calculations that W b;k l k = mean of the distribution F k ðyÞ, and that W b;k is equal to l k if and only if F k is the egalitarian distribution. Thus, W b;k can be interpreted as the equally distributed equivalent level of equivalent income under tax regime k. Aaberge (2000) demonstrated that the following family of inequality measures,
 
-W b;k ; b ¼ 1; 2;...
+W b;k; b ¼ 1; 2;...
 
 ð2:9Þ
 
@@ -66,7 +66,7 @@ R. Aaberge et al.
 
 yields a complete characterisation of the distribution function F k provided that the mean is known 10. Moreover, Aaberge (2000) argued that the use of a few of these inequality measures may give a good summarisation of inequality in the distribution function. When the tax-beneﬁt rule is changed from R 0 to R 1 expression (2.9) can be exploited to measure the proportionate social gain 11 deﬁned by the expression l 1 1 C b;1
 
-W b;1 :
+W b;1:
 
 n b ¼ ¼ ð2:10Þ
 
@@ -90,7 +90,7 @@ if Y G
 
 ## R WF ¼ Y G
 
-ð3:3Þ :
+ð3:3Þ:
 
 t WF ðY GÞ if Y G where t WF is a constant marginal tax rate, H represent the total hours worked by the wife and the husband and H min is a minimum required number of hours worked (set equal to 1000 in the simulation). Although similar to the NIT, the WF system is interesting to analyse, both because it may have better chances to receive political support and because of the theoretical argument according to which under certain conditions it can be proved to be Paretosuperior to NIT. 16 Note that R FT; R NIT and R WF are functions of the wife and husband’s earnings and the other income of the couple. NIT and WF are interpreted as reforms that try to compound the criterion of lessening distortions from high marginal tax rates and the criterion of redesigning the basic income support system in a more eﬀective way. Since the actual basic income support policies are thought to be rather wasteful and occasionally even inequitable, there might be scope for reforms that are able to increase both eﬃciency and equality.
 
@@ -268,11 +268,11 @@ As to the second problem, the recent literature has witnessed many different app
 
 R. Aaberge et al.
 
-changes or when simulating outside the estimation sample. A diﬀerent, alternative or complementary, procedure consists in assuming that there are ﬁxed costs of working. This reﬁnement can contribute to explain why very few observations are usually found between, say, non-participation and 18–20 hours a week. Our approach is still diﬀerent. First, we adopt a utility function that although ﬂexible is amenable to a direct interpretation of the parameters in terms of economic theory. Second, we directly model the distribution of opportunities contained in the choice set, allowing for diﬀerent availability of job types for diﬀerent households. The choice set X i for household i contains a certain number (unknown to the analyst) of ‘‘household opportunities’’, each of them being described by work hours of work (h F; h M ), gross wage rates (w F; w M) and by other unobserved characteristics j. The subscripts F and M refer to the wife (Female) and to the husband (Male). The choice set is modelled through the deﬁnition of the p.d.f. p i ðh F; h M; w F; w M Þ, which can be interpreted as the relative frequency (in the choice set) of an opportunities requiring (h F; h M) hours, paying wage rates (w F; w M ). The choice set includes both market opportunities (jobs) and non-market opportunities (which have all zero hours and zero wage, but typically differ as to other unobserved characteristics). If (and only if) a certain opportunity contains h j ¼ 0 then it also contains w j ¼ 0. We deﬁne: p i ðh F ;h M ;w F ;w M Þ 8 h h w w 0 0 p iF ðh F Þp iM ðh M Þp iF ðw F Þp iM ðw M Þp iF p iM > > > > h > < p ðh M Þp w ðw M Þð1p 0 Þp 0 iM iM iF iM ¼ h w 0 0 > >
+changes or when simulating outside the estimation sample. A diﬀerent, alternative or complementary, procedure consists in assuming that there are ﬁxed costs of working. This reﬁnement can contribute to explain why very few observations are usually found between, say, non-participation and 18–20 hours a week. Our approach is still diﬀerent. First, we adopt a utility function that although ﬂexible is amenable to a direct interpretation of the parameters in terms of economic theory. Second, we directly model the distribution of opportunities contained in the choice set, allowing for diﬀerent availability of job types for diﬀerent households. The choice set X i for household i contains a certain number (unknown to the analyst) of ‘‘household opportunities’’, each of them being described by work hours of work (h F; h M ), gross wage rates (w F; w M) and by other unobserved characteristics j. The subscripts F and M refer to the wife (Female) and to the husband (Male). The choice set is modelled through the deﬁnition of the p.d.f. p i ðh F; h M; w F; w M Þ, which can be interpreted as the relative frequency (in the choice set) of an opportunities requiring (h F; h M) hours, paying wage rates (w F; w M ). The choice set includes both market opportunities (jobs) and non-market opportunities (which have all zero hours and zero wage, but typically differ as to other unobserved characteristics). If (and only if) a certain opportunity contains h j ¼ 0 then it also contains w j ¼ 0. We deﬁne: p i ðh F;h M;w F;w M Þ 8 h h w w 0 0 p iF ðh F Þp iM ðh M Þp iF ðw F Þp iM ðw M Þp iF p iM > > > > h > < p ðh M Þp w ðw M Þð1p 0 Þp 0 iM iM iF iM ¼ h w 0 0 > >
 
 ## Þ
 
-p iF ðh F Þp iF ðw F Þp iF ð1p iM > > > :
+p iF ðh F Þp iF ðw F Þp iF ð1p iM > > >:
 
 0 0
 
@@ -290,9 +290,9 @@ a 1
 
 ## C 1
 
-W i ðC;h F ;h M Þ ¼ ½a 2 þ a 3 N a 1 h i L a 4 1 2 þ a 5 þ a 6 ln A M þ a 7 ðln A M Þ M a 4 h i 2 þ a 9 þ a 10 ln A F þ a 11 ðln A F Þ þ a 12 CU 6 þ a 13 CO6 a 8 L F 1 a 8 ðA:2Þ where C is annual household net (disposable) income, N is the size of the household, A j is the age of gender j, CU6 and CO6 are the number of children below and above 6 years old and L j is the proportion of leisure for gender j, h j , and h j is annual hours of work.
+W i ðC;h F;h M Þ ¼ ½a 2 þ a 3 N a 1 h i L a 4 1 2 þ a 5 þ a 6 ln A M þ a 7 ðln A M Þ M a 4 h i 2 þ a 9 þ a 10 ln A F þ a 11 ðln A F Þ þ a 12 CU 6 þ a 13 CO6 a 8 L F 1 a 8 ðA:2Þ where C is annual household net (disposable) income, N is the size of the household, A j is the age of gender j, CU6 and CO6 are the number of children below and above 6 years old and L j is the proportion of leisure for gender j, h j, and h j is annual hours of work.
 
-deﬁned as L j ¼ 1 8760 The functional form chosen for representing utility is ﬂexible in the sense that it permits many diﬀerent shapes of labour supply curves and does not impose a priori any speciﬁc dependence of supply from income or wage. One could assure even more ﬂexibility by -for example -introducing interaction terms or by using polynomial approximations. Flexibility, however, has to be balanced against other relevant criteria. We favoured a functional form that – although ﬂexible – still permits a direct economic interpretation of the parameters. There is also a more fundamental motivation for relying on such a form, which is rooted in psychophysical measurement theory. Dagsvik and Strøm (2003) prove that a form such as (A.2) is consistent with certain invariance assumptions on preferences. A related, although not equivalent, result was also proved by Luce (1959). Given the assumptions above, the probability of observing household i choosing an opportunity containing h F; h M; w F and w M turns out to be 23: u i ðh F ;h M ;w F ;w M Þ¼ R R R R exp f W i ðC i ;h F ;h M Þ gp i ðh F ;h M ;w F ;w M Þ exp f W i ðZ i ;y F ;y M Þ gp i ðy F ;y M ;x F ;x M Þdy F dy M dx F dx M ðA:3Þ with C i ¼ w iF h iF þ w iM h iM þ m i Rðw iF h iF; w iM h iM; m i Þ and Z i ¼ x F y F þ x M y M þ m i Rðx F y F; x M y M; mÞ where R() is the tax paid and m i is exogenous income. The choice probabilities can then be used to jointly estimate the parameters of the utility function and of the opportunity density functions by Maximum Likelihood. The estimates are reported in Aaberge et al. (2000) 24. The model performs very well in terms of ﬁt to worked hours and income distribution, which suggest that the speciﬁcation of the utility function and of the opportunity density function are sufﬁciently ﬂexible to capture the large behavioural variability present in the sample.
+deﬁned as L j ¼ 1 8760 The functional form chosen for representing utility is ﬂexible in the sense that it permits many diﬀerent shapes of labour supply curves and does not impose a priori any speciﬁc dependence of supply from income or wage. One could assure even more ﬂexibility by -for example -introducing interaction terms or by using polynomial approximations. Flexibility, however, has to be balanced against other relevant criteria. We favoured a functional form that – although ﬂexible – still permits a direct economic interpretation of the parameters. There is also a more fundamental motivation for relying on such a form, which is rooted in psychophysical measurement theory. Dagsvik and Strøm (2003) prove that a form such as (A.2) is consistent with certain invariance assumptions on preferences. A related, although not equivalent, result was also proved by Luce (1959). Given the assumptions above, the probability of observing household i choosing an opportunity containing h F; h M; w F and w M turns out to be 23: u i ðh F;h M;w F;w M Þ¼ R R R R exp f W i ðC i;h F;h M Þ gp i ðh F;h M;w F;w M Þ exp f W i ðZ i;y F;y M Þ gp i ðy F;y M;x F;x M Þdy F dy M dx F dx M ðA:3Þ with C i ¼ w iF h iF þ w iM h iM þ m i Rðw iF h iF; w iM h iM; m i Þ and Z i ¼ x F y F þ x M y M þ m i Rðx F y F; x M y M; mÞ where R() is the tax paid and m i is exogenous income. The choice probabilities can then be used to jointly estimate the parameters of the utility function and of the opportunity density functions by Maximum Likelihood. The estimates are reported in Aaberge et al. (2000) 24. The model performs very well in terms of ﬁt to worked hours and income distribution, which suggest that the speciﬁcation of the utility function and of the opportunity density function are sufﬁciently ﬂexible to capture the large behavioural variability present in the sample.
 
 R. Aaberge et al.
 

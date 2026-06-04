@@ -1,17 +1,18 @@
-# Labour supply and taxation with restricted choices
+# Labour supply and taxation with restricted choices Magali Beffy, Richard Blundell, Antoine Bozio, Guy Laroque, Maxime Tô To cite this version: Magali Beffy, Richard Blundell, Antoine Bozio, Guy Laroque, Maxime Tô.
 
-Magali Beffy, Richard Blundell, Antoine Bozio, Guy Laroque, Maxime Tô
+Labour supply and taxation with restricted choices. Journal of Econometrics, 2019, 211 (1), pp.16-46. �10.1016/j.jeconom.2018.12.004�. �halshs-01883898�
 
-Journal of Econometrics, 2019, 211(1), pp. 16-46.
-DOI: 10.1016/j.jeconom.2018.12.004
 HAL Id: halshs-01883898
-Source archive: https://shs.hal.science/halshs-01883898v1
 
-Submitted on 28 Mar 2024.
+https://shs.hal.science/halshs-01883898v1
 
-L’archive ouverte pluridisciplinaire HAL est destinée au dépôt et à la diffusion de documents scientifiques de niveau recherche, publiés ou non, émanant des établissements d’enseignement et de recherche français ou étrangers, des laboratoires publics ou privés.
+Submitted on 28 Mar 2024 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific research documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or private research centers.
 
-Distributed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+L’archive ouverte pluridisciplinaire HAL, est destinée au dépôt et à la diffusion de documents scientifiques de niveau recherche, publiés ou non, émanant des établissements d’enseignement et de recherche français ou étrangers, des laboratoires publics ou privés.
+
+Distributed under a Creative Commons Attribution -NonCommercial -NoDerivatives 4.0
+
+International License
 
 Journal of Econometrics xxx (xxxx) xxxx
 
@@ -101,11 +102,11 @@ j < i i = 1
 
 Consider the mapping max(0, g i − Q i (g) + ℓ i)
 
-Γ i (g) = ∑ I j = 1 max(0, g j − Q j (g) + ℓ j) .
+Γ i (g) = ∑ I j = 1 max(0, g j − Q j (g) + ℓ j).
 
 First note that Γ is well defined: since g, Q and ℓ all belong to the simplex, the denominator is larger than 1. Therefore Γ maps continuously the simplex into itself and it has a fixed point, say g ∗. If g i ∗ = 0, by definition Q i (g ∗) = 0, so that g i ∗ − Q i (g ∗) + ℓ i = ℓ i.
 
-It follows that at the fixed point max(0, g i ∗ − Q i (g ∗) + ℓ i) = g i ∗ − Q i (g ∗) + ℓ i, the denominator is equal to 1, and ℓ = Q (g ∗) as desired. Uniqueness follows from the univalence of Q. This is a consequence of the fact that the Jacobian of Q is a dominant diagonal matrix, with weights (g i ): for all i g i ∑ ∂ Q i ∂ Q i > .
+It follows that at the fixed point max(0, g i ∗ − Q i (g ∗) + ℓ i) = g i ∗ − Q i (g ∗) + ℓ i, the denominator is equal to 1, and ℓ = Q (g ∗) as desired. Uniqueness follows from the univalence of Q. This is a consequence of the fact that the Jacobian of Q is a dominant diagonal matrix, with weights (g i ): for all i g i ∑ ∂ Q i ∂ Q i >.
 
 g j ∂ g i ∂ g j j ̸ = i
 
@@ -159,7 +160,7 @@ Both out of work For identification we require full column rank of the matrix
 
 ## Π =
 
-∂β ∂γ ] [ ] ∂ Q ∂ p ∂ Q ∂ g = , .
+∂β ∂γ ] [ ] ∂ Q ∂ p ∂ Q ∂ g =,.
 
 ∂ p ∂β ∂ g ∂γ [ (7) where the matrix of derivatives relating to the Q i has elements of the form ∂ Q i = 2g i g j ∂ p ij ∑ ∂ Q i = 2g i + 2 g j p ij (β) ∂ g i (8) (9) j ̸ = i ∂ Q i = 2g i p ij (β) ∂ g j (10)
 
@@ -263,7 +264,7 @@ Lik
 
 3.3.3. Nonparametric identification using dominated regions of the budget constraint Finally, we show that the distribution of offers is identified where the data contains cases of flat or decreasing budget constraints. For a particular z, shape restrictions would reveal preference probabilities regardless of the value of the Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx parameters:
 
-∀β, i < j: p ij (z, β) = 1 If we are able to isolate households with this property, Lemma 2 applied to this subpopulation identifies the distribution of offers. Then with this distribution of offers, Lemma 1 allows to identify the random utilities from women facing increasing budget constraints. 4. Data, model specification and sample likelihood 4.1. The data The sample of families we use comprises women with children, either single or married mothers. We use years 1997 to 2002 of the UK Family Expenditure Survey (FES) as this covers the period of key reforms to the welfare and tax-credit system in Britain, see Adam et al. (2010). The data provide detailed diary and face to face interview information on consumption expenditures, usual hours worked, gross wage earnings, education and household demographics. Tables 1 and 3 provide some basic descriptive statistics. The final sample we use contains some 10,575 women spread fairly evenly across the six years under study. As documented in Table 1, a large group of women in this sample have relatively low education, meaning that they left formal schooling at the minimum school leaving age of 16 (Level 1). The majority of the rest have completed secondary school (Level 2) with less than 20% having a college or university degree (Level 3). The modal number of children is two and a little more than 40% of the sample have a youngest child aged less than 5 (the formal school entry age in the UK). Almost 78% of the women in our sample are married or cohabiting (we label all these as ‘cohabiting’), leaving just over 22% of the mothers in the sample as single parents. Table 2 describes the relation between observed labour supply and different covariates. First, we can see that, compared to the distribution of the whole sample presented in Table 1, women who are not working are less educated (63.3% of nonworking women have the lowest level of education vs. 54.8% in the whole sample). Women with 3 children or more are also over-represented among non-working women, as well as women with a very young child, women living in London, and non-cohabiting women. The last three columns of Table 2 compare working women with different levels of hours. If hours were independent of the characteristics the column entries would be identical. Women with more children, and women with a child aged 0 to 4 tend to work fewer hours. In contrast, despite the negative association with the extensive margin, living in London has a positive impact on hours of work. This pattern accords with fixed costs of working in London, incorporated in the structural model estimates below. Cohabiting is also associated with different intensive and extensive patterns since 83.95% of women working less than 20 h are cohabiting, whereas only 81.73% of women working more than 35 h are cohabiting. The same type of pattern appears for women whose youngest child is aged between 5 and 10 years old: they tend to be more often working than the rest of women, but work less when working. Table 3 presents the distribution of log real consumption, real hourly wages and usual hours of work. For example, the median wage is £5.85 per hour and the average wage is £7.24 per hour (all in 1997 prices). The median usual hours of work is 26 h per week with a wide distribution. 4.2. Model specification Preferences over consumption and hours of work are given by the unitary utility function: u(c, h) = c 1 −γ 1 − γ + (L − h) 1 −φ 1 − φ a, (13) where L (= 100) is a physiological upper bound on the number of hours worked weekly, γ and φ are non-negative parameters, and the strictly positive factor a governs the substitution between consumption and leisure. The disutility of labour is v (h) = (L − h) 1 −φ 1 − φ .
+∀β, i < j: p ij (z, β) = 1 If we are able to isolate households with this property, Lemma 2 applied to this subpopulation identifies the distribution of offers. Then with this distribution of offers, Lemma 1 allows to identify the random utilities from women facing increasing budget constraints. 4. Data, model specification and sample likelihood 4.1. The data The sample of families we use comprises women with children, either single or married mothers. We use years 1997 to 2002 of the UK Family Expenditure Survey (FES) as this covers the period of key reforms to the welfare and tax-credit system in Britain, see Adam et al. (2010). The data provide detailed diary and face to face interview information on consumption expenditures, usual hours worked, gross wage earnings, education and household demographics. Tables 1 and 3 provide some basic descriptive statistics. The final sample we use contains some 10,575 women spread fairly evenly across the six years under study. As documented in Table 1, a large group of women in this sample have relatively low education, meaning that they left formal schooling at the minimum school leaving age of 16 (Level 1). The majority of the rest have completed secondary school (Level 2) with less than 20% having a college or university degree (Level 3). The modal number of children is two and a little more than 40% of the sample have a youngest child aged less than 5 (the formal school entry age in the UK). Almost 78% of the women in our sample are married or cohabiting (we label all these as ‘cohabiting’), leaving just over 22% of the mothers in the sample as single parents. Table 2 describes the relation between observed labour supply and different covariates. First, we can see that, compared to the distribution of the whole sample presented in Table 1, women who are not working are less educated (63.3% of nonworking women have the lowest level of education vs. 54.8% in the whole sample). Women with 3 children or more are also over-represented among non-working women, as well as women with a very young child, women living in London, and non-cohabiting women. The last three columns of Table 2 compare working women with different levels of hours. If hours were independent of the characteristics the column entries would be identical. Women with more children, and women with a child aged 0 to 4 tend to work fewer hours. In contrast, despite the negative association with the extensive margin, living in London has a positive impact on hours of work. This pattern accords with fixed costs of working in London, incorporated in the structural model estimates below. Cohabiting is also associated with different intensive and extensive patterns since 83.95% of women working less than 20 h are cohabiting, whereas only 81.73% of women working more than 35 h are cohabiting. The same type of pattern appears for women whose youngest child is aged between 5 and 10 years old: they tend to be more often working than the rest of women, but work less when working. Table 3 presents the distribution of log real consumption, real hourly wages and usual hours of work. For example, the median wage is £5.85 per hour and the average wage is £7.24 per hour (all in 1997 prices). The median usual hours of work is 26 h per week with a wide distribution. 4.2. Model specification Preferences over consumption and hours of work are given by the unitary utility function: u(c, h) = c 1 −γ 1 − γ + (L − h) 1 −φ 1 − φ a, (13) where L (= 100) is a physiological upper bound on the number of hours worked weekly, γ and φ are non-negative parameters, and the strictly positive factor a governs the substitution between consumption and leisure. The disutility of labour is v (h) = (L − h) 1 −φ 1 − φ.
 
 With this specification, the Lagrangian of Section 2.1 is L (c, h, w, λ) = u(c, h) + λ[R(w, h) − b1 {h > 0} − c] (14)
 
@@ -299,7 +300,7 @@ p(h | Z o) = Φ̃ (h, m 1, σ 1 )p 1 (Z o) + Φ̃ (h, m 2, σ 2 )(1 − p 1 (Z o
 
 From the expression for fixed costs of work b, the probability of this event knowing a is easily computed from the cumulative distribution of ε b:
 
-F (ε, c, h, w) = Φ b a [ R(w, h) − R(w, 0) + c γ [v (h) − v (0)] exp(Z a β a + σ a ε a) − Z b β b σ b ] .
+F (ε, c, h, w) = Φ b a [ R(w, h) − R(w, 0) + c γ [v (h) − v (0)] exp(Z a β a + σ a ε a) − Z b β b σ b ].
 
 When the individual would like to work she can choose from two offers h and h ′. Offer h is preferred to offer h ′ when • either h is larger than h ′ and a ≤ c −γ
 
@@ -311,7 +312,7 @@ R(w, h ′) − R(w, h) ≤ a, c −γ v (h) − v (h ′) which is also 1 σ a 
 
 R(w, h ′) − R(w, h) ] v (h) − v (h ′) − Z β a a } = α (c, h, h ′, w) ≤ ε a.
 
-The probability of being employed and choosing h, conditional on (c, w ), is therefore ℓ (h | c, w) = g(h | Z o) 2 ∫ +∞ F b (ε, c, h, w) φ (ε )d ε −∞ + g(h | Z o) ∑ 2g(h ′) ∫ + g(h | Z) ∑ F b (ε, c, h, w) φ (ε )d ε −∞ h ′ < h o α (c, h, h ′ ,w) ′ ∫ +∞ 2g(h) α (c, h, h ′ ,w) h ′ > h F b (ε, c, h, w) φ (ε )d ε To get the complete likelihood, we multiply the previous expression by the density of the wage conditional on consumption. Given the joint normality assumption we have:
+The probability of being employed and choosing h, conditional on (c, w ), is therefore ℓ (h | c, w) = g(h | Z o) 2 ∫ +∞ F b (ε, c, h, w) φ (ε )d ε −∞ + g(h | Z o) ∑ 2g(h ′) ∫ + g(h | Z) ∑ F b (ε, c, h, w) φ (ε )d ε −∞ h ′ < h o α (c, h, h ′,w) ′ ∫ +∞ 2g(h) α (c, h, h ′,w) h ′ > h F b (ε, c, h, w) φ (ε )d ε To get the complete likelihood, we multiply the previous expression by the density of the wage conditional on consumption. Given the joint normality assumption we have:
 
 ℓ (w| c) = √ 1 σ w 2 (1 − ρ w 2 c) ( ϕ log w − Z w β w − σ w ρ w c ε c /σ c √ ) σ w 2 (1 − ρ w 2 c)
 
@@ -373,7 +374,7 @@ Model 2
 
 Model 3 2.56 11.02 2.56 11.14 2.56 7.93 Model 3, allowing for observable heterogeneity in the distribution of offers, fits the distribution of hours better than the first two specifications. Table 7 also compares the mean and variance of the log-wage distribution of the data to the one simulated by the model. The lower panel of Table 7 gives a description of the joint distribution of hours and wages. The fit is less precise than the one of unconditional moments but it shows that our model is able to reproduce the positive correlation between hours and wages that is observed in the data.
 
-5.3. Observations rejecting the unrestricted model From the data we find that about 2. 6% (see Table 8) of working women are observed working at hours that belong to the set of irrational hours H ir. For this group we can reject the unrestricted choice model as there are alternative hours of work that strictly dominate the observed choices. This is a nonparametric rejection of the unrestricted choice model in the sense that the rejection does not depend on the specification, provided the utility function is increasing in consumption and leisure. The actual budget constraints for some of the individuals in this rejection group were used in Fig. 1. In addition to these 2. 6%, we observe 0. 4% of working women who would earn more by staying out of employment. Again these observations reject the model whenever the utility function has the usual monotonicity properties and the fixed cost of work is non-negative. From the specification of the model, we can also quantify the share of individuals rejecting the unconstrained model at the particular value of the parameter estimates. To do so, we need to determine women for whom the likelihood of observed hours is zero under the unconstrained model. We start from the revealed preference inequality in the unrestricted case: (L − h e) 1 −φ 1 − φ a + c −γ R(w, h e) − (L − h) 1 −φ 1 − φ a − c −γ R(w, h) ≥ 0, where h e is the observed choice and h is any other possible length of the workweek. Using the specification for a, we can separate the cases where h is smaller than h e from those where h is larger than h e. That is c γ a ≤ ⎧ ⎫ ⎨ R(w, h) − R(w, h e) ⎬ ⎩ (L − h e) 1 −φ − 1 −φ (L − h) 1 −φ 1 −φ , (19) ⎭ Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 3. Rejection of the unrestricted model according to φ.
+5.3. Observations rejecting the unrestricted model From the data we find that about 2. 6% (see Table 8) of working women are observed working at hours that belong to the set of irrational hours H ir. For this group we can reject the unrestricted choice model as there are alternative hours of work that strictly dominate the observed choices. This is a nonparametric rejection of the unrestricted choice model in the sense that the rejection does not depend on the specification, provided the utility function is increasing in consumption and leisure. The actual budget constraints for some of the individuals in this rejection group were used in Fig. 1. In addition to these 2. 6%, we observe 0. 4% of working women who would earn more by staying out of employment. Again these observations reject the model whenever the utility function has the usual monotonicity properties and the fixed cost of work is non-negative. From the specification of the model, we can also quantify the share of individuals rejecting the unconstrained model at the particular value of the parameter estimates. To do so, we need to determine women for whom the likelihood of observed hours is zero under the unconstrained model. We start from the revealed preference inequality in the unrestricted case: (L − h e) 1 −φ 1 − φ a + c −γ R(w, h e) − (L − h) 1 −φ 1 − φ a − c −γ R(w, h) ≥ 0, where h e is the observed choice and h is any other possible length of the workweek. Using the specification for a, we can separate the cases where h is smaller than h e from those where h is larger than h e. That is c γ a ≤ ⎧ ⎫ ⎨ R(w, h) − R(w, h e) ⎬ ⎩ (L − h e) 1 −φ − 1 −φ (L − h) 1 −φ 1 −φ, (19) ⎭ Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 3. Rejection of the unrestricted model according to φ.
 
 Table 9
 
@@ -385,7 +386,7 @@ on the estimates of Model 3.
 
 Observations...
 
-Type of rejection ... not rejecting the unrestricted model ... rejecting the unrestricted model
+Type of rejection... not rejecting the unrestricted model... rejecting the unrestricted model
 
 Parametric
 
@@ -425,7 +426,7 @@ min (1 − φ) h ≤ h e
 
 R(w, h) − R(w, h e) (L − h e) 1 −φ − (L − h) 1 −φ [ ≥ max 0, max e (1 − φ) h ≥ h
 
-R(w, h) − R(w, h e) (L − h e) 1 −φ − (L − h) 1 −φ ] .
+R(w, h) − R(w, h e) (L − h e) 1 −φ − (L − h) 1 −φ ].
 
 (21) The only parameter that appears in this inequality is φ. In fact there are two ways of violating the condition: the positivity of the left hand side of (21) only depends on the shape of the function R, and corresponds to the non-parametric rejection; the second inequality on the other hand does depend on φ. For each value of φ, Fig. 3 gives the proportion of the observations that would fall into the parametric rejection set. This proportion decreases with φ. For low values of φ, the share of individuals who work a number of hours incompatible with the model is above 30%. This number decreases to around 5% for very high values of φ. Given the value of φ obtained from the estimation of the third model, 7.9% of working women violate the revealed preference inequality. Table 9 contrasts the characteristics of these observations with the rest of the sample. Individuals in this set are more often lone mothers than married ones, their wage is lower than average and, as Fig. 4 shows, their distribution of hours worked is shifted to the left. Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 4. Hours distributions and rejection of the unrestricted model (Model 3).
 
@@ -437,7 +438,7 @@ mothers. Estimates were obtained by maximum-likelihood. Model 1 is the baseline 
 
 −γ L (c i, h, w i s) = a si v (h) + c i R(w i s, h) − b si 1 {h > 0} ( ) s, 1 We constrain women to choose between two different offers h i g. For each individual, the choice of hours worked is then:
 
-s, 2 h i that are drawn from the estimated offer distribution h ci = arg max L (c i, h, w i s) s, 1 0, h i , h s i, 2 Maximization over the whole possible set of hours yields the chosen unconstrained supply of hours h ui. Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Estimation Results for 1997–2002 years: Elasticity Assuming Linear Budget Constraint.
+s, 2 h i that are drawn from the estimated offer distribution h ci = arg max L (c i, h, w i s) s, 1 0, h i, h s i, 2 Maximization over the whole possible set of hours yields the chosen unconstrained supply of hours h ui. Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Estimation Results for 1997–2002 years: Elasticity Assuming Linear Budget Constraint.
 
 Source: Family expenditure survey 1997–2002. The sample comprises women with children,
 
@@ -469,19 +470,19 @@ mothers. Computation obtained from the estimates of Model 3.
 
 5.5.2. Labour supply responses to a wage increase We now focus on the impact of an increase of before-tax-income on labour supply decisions. We start from the baseline cases previously detailed. From the baseline simulated wage, we consider an increase of x = 10%. To do so, we compute the corresponding budget constraint functions R(w i s (1 + x), h). Using these new budget constraints, we derive new labour supply decisions. In the case of the unrestricted model, we have:
 
-(u, x) h i = arg max h = 0, h ∈{1 ,..., H} L (c i, h, w i s (1 + x)) In the case of the restricted model, we keep the offer fixed. The new chosen hours are obtained from:
+(u, x) h i = arg max h = 0, h ∈{1,..., H} L (c i, h, w i s (1 + x)) In the case of the restricted model, we keep the offer fixed. The new chosen hours are obtained from:
 
 (c, x) h i = arg max L (c i, h, w i s (1 + x)).
 
-s, 1 0, h i , h s i, 2 In both cases, the average intensive margin response is obtained as: ε Intensive = 1 ♯ (h ki > 0) ∑ (h (k, x) − h k) 1 i i ..
+s, 1 0, h i, h s i, 2 In both cases, the average intensive margin response is obtained as: ε Intensive = 1 ♯ (h ki > 0) ∑ (h (k, x) − h k) 1 i i..
 
 k i / h ki > 0 h i x and the average extensive margin response as:
 
-(k, x) ε Extensive = (k, x) (E i − E i k) 1 ..
+(k, x) ε Extensive = (k, x) (E i − E i k) 1..
 
 E i k x (k, x) where E i and E i k are equal to one if h i and h ki are respectively positive.
 
-These (average) labour supply responses are obtained by keeping c i constant. Table 11 presents the mean of these responses that were obtained for a 10% wage increase with and without hours constraints. Accounting for non-linearities in the budget constraint leads to higher responses (.35 vs. .30 in the case of the Frisch elasticity). These estimates are relatively modest in size but lie in the range of estimates of intensive labour supply elasticities found in the literature, for example see Blundell and MaCurdy (1999). Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx
+These (average) labour supply responses are obtained by keeping c i constant. Table 11 presents the mean of these responses that were obtained for a 10% wage increase with and without hours constraints. Accounting for non-linearities in the budget constraint leads to higher responses (.35 vs..30 in the case of the Frisch elasticity). These estimates are relatively modest in size but lie in the range of estimates of intensive labour supply elasticities found in the literature, for example see Blundell and MaCurdy (1999). Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx
 
 Source: Family expenditure survey 1997–2002. The sample comprises women with children,
 
@@ -505,9 +506,9 @@ Source: Family expenditure survey 1997–2002. The sample comprises women with c
 
 married mothers. Estimates were obtained by OLS.
 
-β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c σ c : Const : year 98 : year 99 : year 00 : year 01 : year 02 : Age : Age 2 : Age 3 : Edu : Edu 2 : Edu × Age : London : 2 kids : 3 kids : 4 kids or more : Cohab : Youngest Kid age 0–4 : Youngest Kid age 5–9
+β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c β c σ c: Const: year 98: year 99: year 00: year 01: year 02: Age: Age 2: Age 3: Edu: Edu 2: Edu × Age: London: 2 kids: 3 kids: 4 kids or more: Cohab: Youngest Kid age 0–4: Youngest Kid age 5–9
 
-Estimate 0.18 − 0.04 0.01 0.03 0.03 0.04 0.77 − 0.17 0.01 0.28 − 0.76 0.18 0.03 0.05 0.05 0.03 0.68 − 0.02 − 0.05 0.46 0.69 0.02 0.02 0.02 0.01 0.02 0.51 0.14 0.01 0.03 0.07 0.03 0.02 0.01 0.01 0.02 0.01 0.02 0.01 t-value 0.26 − 2.48 0.84 2.15 1.84 2.20 1.51 − 1.29 0.87 9.13 − 10.43 5.87 2.16 5.04 3.49 1.60 60.78 − 1.42 − 3.71 The new framework is used to study the labour supply choices of a large sample of women in the UK, accounting for nonlinear budget constraints and fixed costs of work. With nonlinear budget sets observed labour supply may not be reconciled with standard optimization theory. The results point to a small but important group of workers who fail the standard choice model with unrestricted choices. This motivates the estimation of a two-offer model, which provides a satisfactory fit of the data. We specify a mixture of normals for the offer distribution which is allowed to depend on education region and calendar time. The estimated offer distribution features the observed twin peaks centred around full-time and part-time hours. Accounting for restrictions on the choice set changes the estimated pattern of preference parameters. Individuals appear more responsive once restrictions are accounted for and the model simulations predict a higher level of employment were restrictions to be removed. The two-offer specification we adopt in the application in this paper is nevertheless restrictive. In future work we intend to develop the n-offer case, allowing a more flexible specification of the effective choice set. In particular, we could allow the number of alternative choices to vary by location, age, education and point in the business cycle. It would also be natural to extend the framework to allow for offers over wage–hours packages. Appendix A. First stage estimates: Consumption equation See Table 12. Appendix B. Independence of irrelevant alternatives Consider the case of independence of irrelevant alternatives (IIA), where for all i, j p i ({i, j }, Z, β) = p i (H, Z, β) p i (H, Z, β) + p j (H, Z, β) , or p i ({i, j}) = p i p i + p j , where to alleviate notation we drop the arguments Z and β, and denote by p i the probability of choosing i among the whole set of alternatives. In this circumstance the number of unknowns is equal to the number of equations, and we may hope for exact identification. Indeed Lemma 3. Let ℓ and g be two probability vectors in the simplex of R I, whose components are all positive. There exists at most a unique vector p in the interior of the simplex of R I that satisfies the system of equations ∑ g j ℓ i = g i 2 + 2g i p i for i = 1,..., I.
+Estimate 0.18 − 0.04 0.01 0.03 0.03 0.04 0.77 − 0.17 0.01 0.28 − 0.76 0.18 0.03 0.05 0.05 0.03 0.68 − 0.02 − 0.05 0.46 0.69 0.02 0.02 0.02 0.01 0.02 0.51 0.14 0.01 0.03 0.07 0.03 0.02 0.01 0.01 0.02 0.01 0.02 0.01 t-value 0.26 − 2.48 0.84 2.15 1.84 2.20 1.51 − 1.29 0.87 9.13 − 10.43 5.87 2.16 5.04 3.49 1.60 60.78 − 1.42 − 3.71 The new framework is used to study the labour supply choices of a large sample of women in the UK, accounting for nonlinear budget constraints and fixed costs of work. With nonlinear budget sets observed labour supply may not be reconciled with standard optimization theory. The results point to a small but important group of workers who fail the standard choice model with unrestricted choices. This motivates the estimation of a two-offer model, which provides a satisfactory fit of the data. We specify a mixture of normals for the offer distribution which is allowed to depend on education region and calendar time. The estimated offer distribution features the observed twin peaks centred around full-time and part-time hours. Accounting for restrictions on the choice set changes the estimated pattern of preference parameters. Individuals appear more responsive once restrictions are accounted for and the model simulations predict a higher level of employment were restrictions to be removed. The two-offer specification we adopt in the application in this paper is nevertheless restrictive. In future work we intend to develop the n-offer case, allowing a more flexible specification of the effective choice set. In particular, we could allow the number of alternative choices to vary by location, age, education and point in the business cycle. It would also be natural to extend the framework to allow for offers over wage–hours packages. Appendix A. First stage estimates: Consumption equation See Table 12. Appendix B. Independence of irrelevant alternatives Consider the case of independence of irrelevant alternatives (IIA), where for all i, j p i ({i, j }, Z, β) = p i (H, Z, β) p i (H, Z, β) + p j (H, Z, β), or p i ({i, j}) = p i p i + p j, where to alleviate notation we drop the arguments Z and β, and denote by p i the probability of choosing i among the whole set of alternatives. In this circumstance the number of unknowns is equal to the number of equations, and we may hope for exact identification. Indeed Lemma 3. Let ℓ and g be two probability vectors in the simplex of R I, whose components are all positive. There exists at most a unique vector p in the interior of the simplex of R I that satisfies the system of equations ∑ g j ℓ i = g i 2 + 2g i p i for i = 1,..., I.
 
 (22) p i + p j j ̸ = i Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 8. Four budget constraints from the data.
 
@@ -547,7 +548,7 @@ log(σ) log(φ) log((1 − p) / p) log(α) 0.1 − 1.609 31 0.693 1.792 β
 
 All log(σ) log(φ) 0.102 0.1 − 1.599 − 1.609 30.986 0.719 1.79 31 0.693 1.792 0.103 0.103 − 1.609 − 1.609 31.014 0.462 1.752 31.014 0.693 1.8 0.079 0.1 − 1.637 − 1.626 30.974 1.252 1.742 30.989 1.068 1.791 0.1 0.101 − 1.511 − 1.609 30.99 0.712 1.813 31 0.693 1.792 0.004 < 1e − 4 0.009 < 1e − 4 < 1e − 4 < 1e − 4 < 1e − 4 0.001 < 1e − 4 0.053 0.002 0.001 0.001 0.312 0.002 < 1e − 4 0.01 < 1e − 4 < 1e − 4 < 1e − 4
 
-Proof. For all i, denote P i (p) = g i 2 + 2g i p i ∑ j ̸ = i g j p i + p j for p in R I +. For any λ ̸ = 0, observe that P i (λ p) = P i (p). Suppose by contradiction that there are two solutions p 0 and p 1 to the system of equations both belonging to the interior of R I +. Choose p I such that p I ≥ p 0 I min i p 0 i and p I ≥ p 1 I min i p 1 i , Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 9. Labour supply decisions for the four budget constraints from the data.
+Proof. For all i, denote P i (p) = g i 2 + 2g i p i ∑ j ̸ = i g j p i + p j for p in R I +. For any λ ̸ = 0, observe that P i (λ p) = P i (p). Suppose by contradiction that there are two solutions p 0 and p 1 to the system of equations both belonging to the interior of R I +. Choose p I such that p I ≥ p 0 I min i p 0 i and p I ≥ p 1 I min i p 1 i, Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 9. Labour supply decisions for the four budget constraints from the data.
 
 and define λ 0 and λ 1 through λ 0 p 0 I = λ 1 p 1 I = p I.
 
@@ -557,7 +558,7 @@ with the unknowns (p 1,..., p I − 1) in [1, ∞) I − 1. The fact that it has
 
 ## I
 
-∑ ∂ P i g j p j = 2g i , ∂ p i (p i + p j) 2 j = 1, j ̸ = i and for j different from i ∂ P i g j = − 2g i p i .
+∑ ∂ P i g j p j = 2g i, ∂ p i (p i + p j) 2 j = 1, j ̸ = i and for j different from i ∂ P i g j = − 2g i p i.
 
 ∂ p j (p i + p j) 2 The property of diagonal dominance with equal weights to all terms is equivalent to ⏐ ⏐ ⏐
 
@@ -577,7 +578,7 @@ that is 2g i
 
 ∑ > 2g i p j j = 1, j ̸ = i g j (p i + p j) 2 or g I p I (p i + p I) 2 > 0.
 
-The inequality is satisfied, and the right hand side mapping is univalent on [1, ∞) I − 1, which completes the proof. □ As we noted in Section 4, there may be cases which would never be rationally chosen. In these situations we can put zero weights on some of the decisions, that is p j = 0 for some subset J of the alternatives. A simple manipulation of the system of equations, using the equality p i ({i, j}) + p j ({i, j}) = 1 even when the marginal probabilities are zero, yield ⎞ 2 ⎛ ℓ J = ∑ ℓ j = ⎝ j ∈ J ∑ g j ⎠ = g J 2, j ∈ J and for all i not in J ℓ i = g i (1 + 2g J) + 2g i p i ∑ k ̸ ∈ J, k ̸ = i g k p i + p k , where the notation p J denotes the sum of the components of the vector p with indices in J. A minor adaptation of the proof of Lemma 3 then shows that the vector p is uniquely determined. Using the first equation, a natural procedure is to compute the non-negative difference ℓ J − g J 2 for all subsets J of indices. The candidates J for the solution are the ones for which the difference is zero. We do not know whether there can be multiple candidates. 5
+The inequality is satisfied, and the right hand side mapping is univalent on [1, ∞) I − 1, which completes the proof. □ As we noted in Section 4, there may be cases which would never be rationally chosen. In these situations we can put zero weights on some of the decisions, that is p j = 0 for some subset J of the alternatives. A simple manipulation of the system of equations, using the equality p i ({i, j}) + p j ({i, j}) = 1 even when the marginal probabilities are zero, yield ⎞ 2 ⎛ ℓ J = ∑ ℓ j = ⎝ j ∈ J ∑ g j ⎠ = g J 2, j ∈ J and for all i not in J ℓ i = g i (1 + 2g J) + 2g i p i ∑ k ̸ ∈ J, k ̸ = i g k p i + p k, where the notation p J denotes the sum of the components of the vector p with indices in J. A minor adaptation of the proof of Lemma 3 then shows that the vector p is uniquely determined. Using the first equation, a natural procedure is to compute the non-negative difference ℓ J − g J 2 for all subsets J of indices. The candidates J for the solution are the ones for which the difference is zero. We do not know whether there can be multiple candidates. 5
 
 5 There cannot be two solutions with two disjoint sets J and J. Indeed one would need to have 1 2 ℓ J 1 = g J 2 1 ℓ J 2 = g J 2 2, which implies ℓ J 1 ∪ J 2 = g J 2 1 + g J 2 2 < g J 2 1 ∪ J 2, which is impossible. Please cite this article as: M. Beffy, R. Blundell, A. Bozio et al., Labour supply and taxation with restricted choices. Journal of Econometrics (2018), M. Beffy, R. Blundell, A. Bozio et al. / Journal of Econometrics xxx (xxxx) xxxx Fig. 12. Restricted and unrestricted labour supply decisions with linear budget constraints.
 
@@ -591,7 +592,7 @@ C.1. Likelihood of the model From the distributions of preferences and offers, w
 
 v 2 is decreasing, so if h ′ < h, v 2 (h, φ) − v 2 (h ′, φ) < 0, so we have:
 
-[ ( )] [ ] v 1 (R(h ′), α) − v 1 (R(h), α) P U(h, ε) > U(h ′, ε) = P β + σ ε < log v 2 (h, φ) − v 2 (h ′, φ) ( ) ⎤ ⎡ ′ v (R(h) ,α) −v (R(h) ,α) log 1 v (h ,φ) −v 1 (h ′ ,φ) − β 2 2 ⎦
+[ ( )] [ ] v 1 (R(h ′), α) − v 1 (R(h), α) P U(h, ε) > U(h ′, ε) = P β + σ ε < log v 2 (h, φ) − v 2 (h ′, φ) ( ) ⎤ ⎡ ′ v (R(h),α) −v (R(h),α) log 1 v (h,φ) −v 1 (h ′,φ) − β 2 2 ⎦
 
 ## = Φ ⎣
 
@@ -599,7 +600,7 @@ v 2 is decreasing, so if h ′ < h, v 2 (h, φ) − v 2 (h ′, φ) < 0, so we h
 
 ⎡ P U(h, ε) > U(h, ε) = 1 − Φ ⎣ ′ [ ]
 
-Note that in both cases, the ratio log ( v 1 (R(h ′) ,α) −v 1 (R(h) ,α) v 2 (h ,φ) −v 2 (h ′ ,φ) v 1 (R(h ′) ,α) −v 1 (R(h) ,α) v 2 (h ,φ) −v 2 (h ′ ,φ) σ ) − β ⎤ ⎦ may be negative. This corresponds to cases where h will be preferred to h ′ (if h < h ′) with probability 1, or where h will never be preferred to h ′ (if h > h ′ ). C.2. Parametric offer distribution We first start by illustrating the importance of shape restrictions of the budget constraint in the parametric case. In this case, we suppose that the offer distribution is binomial, with parameter p. Then the probability of drawing h i is:
+Note that in both cases, the ratio log ( v 1 (R(h ′),α) −v 1 (R(h),α) v 2 (h,φ) −v 2 (h ′,φ) v 1 (R(h ′),α) −v 1 (R(h),α) v 2 (h,φ) −v 2 (h ′,φ) σ ) − β ⎤ ⎦ may be negative. This corresponds to cases where h will be preferred to h ′ (if h < h ′) with probability 1, or where h will never be preferred to h ′ (if h > h ′ ). C.2. Parametric offer distribution We first start by illustrating the importance of shape restrictions of the budget constraint in the parametric case. In this case, we suppose that the offer distribution is binomial, with parameter p. Then the probability of drawing h i is:
 
 ( g(h i) = )
 

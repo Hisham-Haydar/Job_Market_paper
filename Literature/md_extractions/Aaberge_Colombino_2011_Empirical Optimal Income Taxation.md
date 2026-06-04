@@ -50,7 +50,7 @@ Agents can differ not only in their preferences and in their wage (as in the tra
 
 Although the random utility specification (2.2) is by now rather common in labour supply analyses, its implications (in view of interpreting households’ behaviour and simulation results) have not been fully clarified in the applied literature. Let us write U(1) = v(1)ε(1) and U(2) = v(2)ε(2) to denote the utility attained respectively at job 1 and at job 2. Then it is easily seen that it may happen that job 1 is preferred to job 2, although the observed characteristics may make job 2 look more desirable than job 1. Namely, it may happen that U(1) > U(2) even though v(1) < v(2), simply because ε(1)/ε(2) > v(2)/v(1). As a specific consequence of this, it may happen that the household optimizes on a “flat” segment of the budget line. This could never happen in a standard model where utility only depends on income and leisure (which is the reason why in that kind of model one is typically forced to introduce “optimization errors” to rationalize the data).
 
-We observe the chosen h, w and s. Therefore we can specify the probability that the agent chooses a job with observed characteristics (h,w,s). It can be shown that under the assumptions (2.1), (2.2) and extreme value distributed ε we can write the probability density function of a choice (h,w,s) as 7 (2.3) ϕ (h, w, s) ≡ Pr  U (f (wh, I ), h, s) = max U (f (xy, I ), y, z)  =     (x, y, z) ∈ B v (f (wh, I ), h, s) p (h, w, s) ∫∫∫ v (f (xy, I ), y) p (x, y, z) dxdydz .
+We observe the chosen h, w and s. Therefore we can specify the probability that the agent chooses a job with observed characteristics (h,w,s). It can be shown that under the assumptions (2.1), (2.2) and extreme value distributed ε we can write the probability density function of a choice (h,w,s) as 7 (2.3) ϕ (h, w, s) ≡ Pr  U (f (wh, I ), h, s) = max U (f (xy, I ), y, z)  =     (x, y, z) ∈ B v (f (wh, I ), h, s) p (h, w, s) ∫∫∫ v (f (xy, I ), y) p (x, y, z) dxdydz.
 
 ## B
 
@@ -74,7 +74,7 @@ By specifying the probability density function p (h, w, s) on B we can for examp
 
 8 (2.7) γ s k ((910 − 52) + (1066 − 52)) exp (π 1 k + π 2 k s) + (1898 − 1066) + (2106 − 1898) exp (π 3 k + π 4 k s k) + (3640 − 2106)) = 1.
 
-For the purpose of empirical specification it appears convenient to introduce the following transformation of p 1k q 1 k = (2.8) where p 1 k , k = M, F, p 0 k q 1k can be interpreted as the proportion of available market jobs relative to non-market jobs.
+For the purpose of empirical specification it appears convenient to introduce the following transformation of p 1k q 1 k = (2.8) where p 1 k, k = M, F, p 0 k q 1k can be interpreted as the proportion of available market jobs relative to non-market jobs.
 
 Next, we specify q 1 k g 3 (s k) = exp (µ 1 k s k + µ 2 k (1 − s k)).
 
@@ -110,13 +110,13 @@ p% 0 MF q% 1 MF = q% 1 M (2.12) q% 1 F = p% 1 F p% 0 MF The hour densities and t
 
 q% 1 MF g 3 (s M) g 3 (s F) = exp (µ 0 + µ 1 M (s M) + µ 2 M (1 − s M) + µ 1 F (s F) + µ 2 F (1 − s F)) (2.13) q% 1 M g 3 (s M) g 3 (s F) = exp (µ 1 M (s M) + µ 2 M (1 − s M)) q% 1 F g 3 (s M) g 3 (s F) = exp (µ 1 F (s F) + µ 2 F (1 − s F)), which means that the parameters µ 1k and µ 2k for k=M,F are common for singles and people living together (follows from expessions (2.9) and (2.13)), whereas µ 0 captures the joint market opportunities of spouses/cohabitants. If µ 0 where equal to zero the opportunity density (2.13) would simply be the result of multiplying the opportunity densities (2.9) for the two partners and the availability of market jobs to an individual would be the same as a single or as a partner in a couple. Therefore µ 0 accounts for possible differential effects upon the availability of market jobs due to being a partner in a couple rather than a single.
 
-2.2.2. Specification of the utility function for single females and males We ignore the gender-specific subscripts in this sub-section. Let f (wh, I) be disposable income (income after tax) measured in 100 000 NOK. The systematic part is specified as follows  f (hw, I) α 1 − 1  log (v (h, w, s)) = α 2   α 1   (2.14) 2 + (α 4 + α 5 log A + α 6 (log A) + α 7 s +  L α 3 − 1    α 3  α 8 C 1 + α 9 C 2 + α 10 C 3 + α 11 sC 1 + α 12 sC 2 + α 13 sC 3)  where 10 L is leisure, defined as L = 1 − (h 8736), A is age, C 1, C 2, and C 3 are number of children below 3, between 3 and 6 and between 7 and 14 years old, respectively. The α−parameters are gender-specific.
+2.2.2. Specification of the utility function for single females and males We ignore the gender-specific subscripts in this sub-section. Let f (wh, I) be disposable income (income after tax) measured in NOK. The systematic part is specified as follows  f (hw, I) α 1 − 1  log (v (h, w, s)) = α 2   α 1   (2.14) 2 + (α 4 + α 5 log A + α 6 (log A) + α 7 s +  L α 3 − 1    α 3  α 8 C 1 + α 9 C 2 + α 10 C 3 + α 11 sC 1 + α 12 sC 2 + α 13 sC 3)  where 10 L is leisure, defined as L = 1 − (h 8736), A is age, C 1, C 2, and C 3 are number of children below 3, between 3 and 6 and between 7 and 14 years old, respectively. The α−parameters are gender-specific.
 
 The children terms are dropped in the utility function for single males since we observe very few children living with single males.
 
 Note that the flexible functional form of the utility function allows for a labour supply that is backward bending. The latter means that the higher the wage rate is, the less the labour supply will be. If so, the income effects dominate over the substitution effects. In fact, the functional form specification allows for the responses on wage rate to vary a lot across individuals, depending on their economic situation (the magnitude of w and I). The functional form can also yield a linear labour supply curve. As mentioned above this is the only form that the Hausman approach applies. The problem with a linear labour supply curve in the wage rate is that by assumption the labour supply elasticity tends to increase with the wage rate. The linearity assumption thus imply that the higher skilled, with high wage rates, are more responsive than those with lower skills, and hence lower wage rates 9.
 
-Given the above assumption upon the stochastic component and upon the density of opportunities, it turns out that the probability (density) that an opportunity (h, w, s) is chosen is v (h, w, s) p (h, w, s) ϕ (h, w, s) = (2.15) .
+Given the above assumption upon the stochastic component and upon the density of opportunities, it turns out that the probability (density) that an opportunity (h, w, s) is chosen is v (h, w, s) p (h, w, s) ϕ (h, w, s) = (2.15).
 
 ∑ ∫ ∫ v (x, y, s) p (x, y, s) dxdy s = 0,1 Inserting for (2.5) and (2.8) in (2.15) can then rewrite the choice density as follows, (2.16) v (h, w, s) q 1 g 1 s (h) g 2 s (w) g 3 (s) ϕ (h, w, s) = v (0,0, ⋅) + ∑ ∫ ∫ v (x, y, s) q g
 
@@ -140,11 +140,11 @@ Given the above assumption upon the stochastic component and upon the density of
 
 if both spouses work;
 
-(2.20) ϕ (h M ,0, w M ,0, s M, ⋅) = (2.21) ϕ (0, h F ,0, w F, ⋅, s F) = (2.22) v (h M ,0, w M ,0, s M, ⋅) q% 1 M g 1 s M (h M) g 2 s M (w M) g 3 (s M)
+(2.20) ϕ (h M,0, w M,0, s M, ⋅) = (2.21) ϕ (0, h F,0, w F, ⋅, s F) = (2.22) v (h M,0, w M,0, s M, ⋅) q% 1 M g 1 s M (h M) g 2 s M (w M) g 3 (s M)
 
 ## D
 
-v (0, h F ,0, w F, ⋅, s F) q% 1 F g 1 s F (h F) g 2 s F (w F) g 3 (s F) ϕ (0,0,0, 0, ⋅, ⋅) =
+v (0, h F,0, w F, ⋅, s F) q% 1 F g 1 s F (h F) g 2 s F (w F) g 3 (s F) ϕ (0,0,0, 0, ⋅, ⋅) =
 
 ## D
 
@@ -160,15 +160,15 @@ if none of them work, where we have defined 12 (2.23) D = v (0, 0, 0, 0, ⋅, �
 
 ## M
 
-= 0 ,1 + ∑ s
+= 0,1 + ∑ s
 
 ## M
 
-= 0 ,1 + ∑ s
+= 0,1 + ∑ s
 
 ## M
 
-= 0 ,1 ∫∫ v (x
+= 0,1 ∫∫ v (x
 
 ## M
 
@@ -180,7 +180,7 @@ if none of them work, where we have defined 12 (2.23) D = v (0, 0, 0, 0, ⋅, �
 
 ## F
 
-= 0 ,1
+= 0,1
 
 ## M
 
@@ -670,7 +670,7 @@ Elasticity of the unconditional expectation of total supply of hours
 
 Female elasticities
 
-Non-labour income (cap. Capital income + cash income transfers) -0.59 0.59 0 0 -0.71 -0.13 -1.38 -0.34 -1.33 -1.00 0.43 -0.16 0 0 0.08 0.02 -0.21 -0.04 -0.51 0.16 -0.18 0.42 0 0 -0.63 -0.11 -1.56 -0.22 -1.81 -0.86 0 0 0 0 -0.16 -0-06 -0.23 -0.12 -0.81 -0.54 0 0 -0.05 -0.10 -0.05 0.01 -0.14 -0.06 -0.22 -0.22 0 0 -0.05 -010 -0.21 -0.05 -0.37 -0.18 -1.01 -0.75 .
+Non-labour income (cap. Capital income + cash income transfers) -0.59 0.59 0 0 -0.71 -0.13 -1.38 -0.34 -1.33 -1.00 0.43 -0.16 0 0 0.08 0.02 -0.21 -0.04 -0.51 0.16 -0.18 0.42 0 0 -0.63 -0.11 -1.56 -0.22 -1.81 -0.86 0 0 0 0 -0.16 -0-06 -0.23 -0.12 -0.81 -0.54 0 0 -0.05 -0.10 -0.05 0.01 -0.14 -0.06 -0.22 -0.22 0 0 -0.05 -010 -0.21 -0.05 -0.37 -0.18 -1.01 -0.75.
 
 22
 
@@ -746,7 +746,7 @@ Simulated
 
 Observed
 
-Simulated 1 52 51 49 51 46 47 2 69 66 64 63 59 57 3 77 75 76 73 69 68 4 84 84 85 81 79 76 5 90 91 94 92 86 86 6 96 98 101 100 95 96 7 104 106 111 110 104 109 8 112 116 122 122 115 121 9 125 129 134 139 138 141 10 199 184 163 169 208 200 Table 3.5. Observed and predicted relative distributions of disposable income in 2001. Mean decile income in percent of mean income
+Simulated 1 52 51 49 51 46 47 2 69 66 64 63 59 57 3 77 75 76 73 69 68 4 84 84 85 81 79 76 5 90 91 94 92 86 86 6 96 98 101 100 95 96 7 104 106 111 110 104 109 8 112 116 122 122 115 121 9 125 129 134 139 138 141 10 199 184 163 169 Table 3.5. Observed and predicted relative distributions of disposable income in 2001. Mean decile income in percent of mean income
 
 Deciles
 
@@ -766,7 +766,7 @@ Simulated
 
 Observed
 
-Simulated 1 50 49 45 47 41 42 2 68 64 56 61 54 55 3 77 74 68 71 65 67 4 83 83 79 79 76 76 5 89 90 90 88 87 86 6 95 98 101 98 97 97 7 102 107 111 108 107 108 8 111 117 123 121 119 121 9 125 131 139 138 137 141 10 199 187 189 188 218 207 9 129 128 142 136 150 135 10 159 151 177 166 178 161 Table 3.6. The 2001 t ax function for singles without children and couples without children and with two wage earners. NOK 2001
+Simulated 1 50 49 45 47 41 42 2 68 64 56 61 54 55 3 77 74 68 71 65 67 4 83 83 79 79 76 76 5 89 90 90 88 87 86 6 95 98 101 98 97 97 7 102 107 111 108 107 108 8 111 117 123 121 119 121 9 125 131 139 138 137 141 10 199 187 189 188 218 207 9 129 128 142 136 150 135 10 159 151 177 166 Table 3.6. The 2001 t ax function for singles without children and couples without children and with two wage earners. NOK 2001
 
 Earnings(Y)
 
@@ -838,7 +838,7 @@ In this paper we use the following specification of p (t), i = 1  − log 
 
 C i = 1 −
 
-W i µ , i = 1, 2,...
+W i µ, i = 1, 2,...
 
 can be used as a summary measure of inequality and moreover can be proved to be a member of the “illfareranked single-series Ginis” class introduced by Donaldson and Weymarkor (1980) 13. Thus, as was recognized by Ebert (1987) the justification of the social welfare function W i = µ (1 − C i) can also be made in terms of a value judgement of the trade-off between the mean and (in)equality in the distribution of welfare.
 
@@ -872,7 +872,7 @@ p(.01)/p(.5) 6.64 1.98 1,33 1 p(.05)/p(.5) 4,32 1,90 1,33 1 p(.30)/p(.5) 1,74 1,
 
 (Utilitarian) 4.4. The Optimal Taxation Problem The optimal taxation problem considered in this exercise can be formulated as follows:
 
-max W (V (c 1, h 1, s 1, j 1), V (c 2, h 2, s 2, j 2) ,..., V (c N, h N, s N, j N)) ϑ s.t. (c n, h n, s n, j n) = arg max U n (c, h, s, j) s.t. c = f (wh, I n; ϑ ), ∀ n (w, h, s, j) ∈ B (4.7)
+max W (V (c 1, h 1, s 1, j 1), V (c 2, h 2, s 2, j 2),..., V (c N, h N, s N, j N)) ϑ s.t. (c n, h n, s n, j n) = arg max U n (c, h, s, j) s.t. c = f (wh, I n; ϑ ), ∀ n (w, h, s, j) ∈ B (4.7)
 
 ## N
 
@@ -922,7 +922,7 @@ The identification of the optimal tax rules consists of four steps:
 
 Optimization is performed by iterating the steps 1-4 in order to find the tax rule from the class (4.8) that produces the highest value of W i for each value of i, under the constraint of constant total tax revenue. 16 Colombino et al. (2010), Colombino (2009) and Blundell and Shephard (2009) use a different method, where the
 
-16 The optimal tax-transfer parameters are determined by an iterative grid-search procedure developed by Tom Wennemo at the Research Department of Statistics Norway. Each optimization requires the evaluation of approximately 200 000 taxtransfer rules.
+16 The optimal tax-transfer parameters are determined by an iterative grid-search procedure developed by Tom Wennemo at the Research Department of Statistics Norway. Each optimization requires the evaluation of approximately taxtransfer rules.
 
 32 maximum utility attained under a given tax-transfer rule is not found by simulation but it is instead measured by the expected maximum utility (McFadden 1978).
 
@@ -1266,7 +1266,7 @@ All 80 62 79 63 78 63 74 60
 
 All 78 79 79 80 79 81 78 82 6. Conclusions We have performed an exercise in designing optimal income taxes that – differently from what is typically done in the literature – does not rely on a priori theoretical optimal taxation results, but instead employs a microeconometric model of labour supply in order to maximize a social welfare function with respect to a parametrically defined income tax rule. Modern microeconometric models of labour supply are based on very general and flexible assumptions. They can accommodate many realistic features such as general structures of heterogeneous preferences, simultaneous decisions of household members, non-unitary mechanisms of household decisions, complicated (non-convex, non continuous, non-differentiable etc.) constraints and opportunity sets, multidimensional heterogeneity of both households and jobs, quantitative constraints etc. It is simply not feasible (at least so far) to obtain analytical solutions for the optimal income taxation problem in such environments. Yet those features are very relevant and important especially in view of evaluating or designing reforms. Analytical solutions remain indispensable for understanding the grammar of the problem and for suggesting promising classes of tax-transfer systems that can then be more deeply investigated with the microeconometric model. The philosophy inspiring this approach is similar to the one adopted since long ago in engineering and recently and successfully also in other applications of mechanism design (auctions, negotiation 39 procedures, matching markets etc.) where analytical solutions are complemented by computational simulations or experiments that account for a host of realistic features that cannot be included in the theoretical model. 20 The microeconometric model we develop in this paper can be considered as an extension of the standard multinomial logit model, and is designed to allow for a detailed description of complex choice sets and budget constraints. This model differs from the traditional models of labour supply in several respects. First, it accounts for observed as well as unobserved heterogeneity in tastes and allows for constraints in the choice of hours of work. Second, it includes both single person households and married/cohabiting couples and allows for simultaneous treatment of both spouses choices. Third, the model allows for an exact representation of income taxes. The model, which contains 78 parameters that capture the heterogeneity in preferences as well as in opportunities among households and individuals, is estimated with Norwegian micro data from 1995. The estimated model is used to simulate the choices made by single individuals and couples for any given taxtransfer rule. Those choices are therefore generated by preferences and opportunities that vary across the decision units. We identify optimal tax rules – within a class of 9-parameter piece-wise linear rules -by iteratively running the model until the social welfare function is maximized under the constraint of keeping constant the total net tax revenue.
 
-We focus on the profile of the marginal tax rates and keep fixed the current (1994) system of transfers, income support and social assistance policies, but allow for a lump-sum that can be positive (i.e. a transfer) or negative (i.e. a tax). We explore a variety of different social welfare criteria. The marginal tax rates always turn out to be monotonically increasing with income. More egalitarian social welfare functions tend to imply more progressive tax rules. Irrespective of the social welfare criterion used, the top optimal marginal tax rate always turns out to be 75 per cent for sufficiently high gross income levels (approximately above 700 000 Norwegian Kroner (1994) ≈ 87 000 Euros), which concerns 1.8 per cent of the tax payers. All the optimal tax rules imply an average tax rate lower than the current 1994 one and imply – with respect to the current rule – lower marginal rates on low and/or average income levels and a higher marginal rate on sufficiently high income levels. The pattern of labour supply elasticities illustrated in Section 3 contributes to explaining the profile of the optimal tax rules. Our results are partially at odds with the tax reforms that took place in many countries during the last decades. While those reforms embodied the idea of lowering average tax rates, the way to implement it has typically consisted in reducing the top marginal rates. Our results instead suggest lowering average tax rates by reducing marginal rates on low and average income levels and increasing marginal rates on very high income levels.
+We focus on the profile of the marginal tax rates and keep fixed the current (1994) system of transfers, income support and social assistance policies, but allow for a lump-sum that can be positive (i.e. a transfer) or negative (i.e. a tax). We explore a variety of different social welfare criteria. The marginal tax rates always turn out to be monotonically increasing with income. More egalitarian social welfare functions tend to imply more progressive tax rules. Irrespective of the social welfare criterion used, the top optimal marginal tax rate always turns out to be 75 per cent for sufficiently high gross income levels (approximately above Norwegian Kroner (1994) ≈ 87 000 Euros), which concerns 1.8 per cent of the tax payers. All the optimal tax rules imply an average tax rate lower than the current 1994 one and imply – with respect to the current rule – lower marginal rates on low and/or average income levels and a higher marginal rate on sufficiently high income levels. The pattern of labour supply elasticities illustrated in Section 3 contributes to explaining the profile of the optimal tax rules. Our results are partially at odds with the tax reforms that took place in many countries during the last decades. While those reforms embodied the idea of lowering average tax rates, the way to implement it has typically consisted in reducing the top marginal rates. Our results instead suggest lowering average tax rates by reducing marginal rates on low and average income levels and increasing marginal rates on very high income levels.
 
 20 Roth (2002) provides a very inspired survey of this approach.
 

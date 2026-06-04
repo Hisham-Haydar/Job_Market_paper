@@ -32,7 +32,7 @@ Page 3 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 an un
 
 Page 4 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 studies. Closer to the natural experiment method, these consist in time or regional variation in tax-benefit rules. For instance, in the USA, variation in income tax rules or in the parameters of the Earned Income Tax Credit (EITC) across states is used in Eissa and Hoynes (2004) or Hoynes (1996). Time variation in tax-benefit rules also provides a better identification when policy reforms occur over the period under consideration, as discussed, e.g., in Bargain et al. (2014). A third approach consists in using policy reforms explicitly in order to identify labor supply responses, without attempting to estimate a structural model (e.g., Eissa and Liebman 1996). Natural experiments based on important tax-benefit reforms in the USA and the UK have been extensively used to identify behavioral parameters (see the survey of Hotz and Scholz 2003, for the USA). For example, Eissa and Liebman (1996) use a difference-in-difference approach to identify the impact of the EITC reforms on the labor supply of single mothers. They find compelling evidence that single mothers joined the labor market in response to increased financial incentives to work. Regarding identification, the definition of control groups might be an issue in difference-in-difference approaches. For instance, responses to EITC expansions affecting single mothers were evaluated using childless women as control group, which may not be ideal given different long-term trends in labor supply in the two groups (see Hotz and Scholz 2003). 7 Regression discontinuity (RD) is deemed better in this respect since the nature of individuals on both sides of the discontinuity is “as good as random” (cf. Lemieux and Milligan 2008). Overall, much of the evidence is concentrated in studies from the USA, Canada, and the UK. There is less evidence for other countries and notably for continental Europe maybe because large reforms, creating exogenous variation in tax-benefit rules, were less available. Partly for this reason, structural models described above have been very much in use. 8 The timing of response to policy reforms or policy discontinuity is unclear. Nonetheless, the implicit model that analysts have in mind when discussing the “nextmorning” effect of the policy impact is often a static one (cf. Lemieux and Milligan 2008 or Bargain and Doorley 2011). Reduced-form approaches, based on policy reforms or discontinuities, are increasingly used because natural experiments probably offer one of the most credible sources of identification, despite the limitations outlined above. In this way, it is important to compare estimates from these studies with those stemming from structural model estimations. Unfortunately, these studies do not systematically report wage elasticities. They rather report labor supply elasticities to benefit or tax rate changes. Thus, for comparability purposes, we could include only a few of them in the present survey. Also, the fact that actual reforms—notably welfare reforms in the USA and the UK—typically affect couples or single women with children makes that very little evidence is available for other demographic groups, in particular for childless single individuals. Finally, a few studies rely on long-term changes in wages as well as on observation grouping in order to address endogeneity and the problem of measurement error in hourly wages discussed above (Devereux 2003, 2004). Blundell et al. (1998) also use taxbenefit policy variation over a long period to identify labor supply responses in the UK using a grouping IV estimator. Long-term variation may pose the problem of assuming that preferences remain stable in the long run, an issue which is rarely discussed. We include most of these studies, at least those for which estimates can be compared with other studies, in our survey.
 
-Page 5 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 We present here existing evidence on labor supply elasticities for European couples (Table 1), European single individuals (Table 2), and all demographic groups in the USA (Table 3). The reason for this classification is that US studies are more numerous (and, hence, deserve a particular focus) and sometimes consider several demographic groups simultaneously (e.g., Pencavel 2002, Devereux 2003). As mentioned before, our focus is on steady-state elasticities, i.e., elasticities from static (structural) models. We separately report uncompensated wage elasticities (total hour and participation responses) and income elasticities. 9 The uncompensated (Marshallian) wage elasticity is defined as the percentage change in labor supply h for a 1% change in the (gross) wage w: 10 dh w .
+Page 5 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 We present here existing evidence on labor supply elasticities for European couples (Table 1), European single individuals (Table 2), and all demographic groups in the USA (Table 3). The reason for this classification is that US studies are more numerous (and, hence, deserve a particular focus) and sometimes consider several demographic groups simultaneously (e.g., Pencavel 2002, Devereux 2003). As mentioned before, our focus is on steady-state elasticities, i.e., elasticities from static (structural) models. We separately report uncompensated wage elasticities (total hour and participation responses) and income elasticities. 9 The uncompensated (Marshallian) wage elasticity is defined as the percentage change in labor supply h for a 1% change in the (gross) wage w: 10 dh w.
 
 dw h The income elasticity is defined as the percentage change in labor supply h for a 1% change in the non-labor labor income y:
 
@@ -40,17 +40,17 @@ u =
 
 ## Y =
 
-dh y .
+dh y.
 
-dy h Using the Slutsky equation, it is straightforward to derive the compensated (Hicksian) elasticity (capturing only the substitution effect) as c = u − wh Y .
+dy h Using the Slutsky equation, it is straightforward to derive the compensated (Hicksian) elasticity (capturing only the substitution effect) as c = u − wh Y.
 
 y The tables highlight methodological differences across studies and notably where elasticities stem from the estimation of continuous labor supply functions (the Hausman approach), from the estimation of discrete-choice models, and from grouped estimations or natural experiments. We can observe an over-representation of studies based on discrete-choice models with taxation, as this method is increasingly used around the world to analyze the effect of fiscal and social policy reforms. 11 We do not pretend to be fully exhaustive but nonetheless attempt to give a sense of the range of elasticities obtained in the vast literature for Europe and the USA. Some studies do not report elasticities and unfortunately could not be included in our tables. 12 This is the case with some studies using labor supply models (e.g., Hoynes 1996 reports income elasticities but not wage elasticities) and more generally the case with studies using policy reforms as natural experiments, as indicated above (for instance, Bingley and Walker 1997, for the UK, or Eissa and Liebman 1996, for the USA). In addition to Tables 1, 2, and 3, the analysis below is supported by graphics obtained using wage-elasticity estimates drawn from these tables (Figs. 1 and 2).
 
 ## 3.1 Overview
 
-Figure 1 plots the distribution of wage-elasticity estimates by demographic group. The vertical axis reports the frequency (number of estimates). The first observation is that married women are the group with the largest number of available estimates. The second lesson from these graphs is that, in line with conventional wisdom, elasticities are largest among married women and single mothers, with mean values of .43 and .59, respectively.
+Figure 1 plots the distribution of wage-elasticity estimates by demographic group. The vertical axis reports the frequency (number of estimates). The first observation is that married women are the group with the largest number of available estimates. The second lesson from these graphs is that, in line with conventional wisdom, elasticities are largest among married women and single mothers, with mean values of.43 and.59, respectively.
 
-These groups also show much dispersion across available studies. While a majority of estimates for married women are found between 0 and .50, estimates for single mothers are far less numerous and more dispersed over a broad range of values. Married and single
+These groups also show much dispersion across available studies. While a majority of estimates for married women are found between 0 and.50, estimates for single mothers are far less numerous and more dispersed over a broad range of values. Married and single
 
 Page 6 of 31
 
@@ -82,7 +82,7 @@ Income elast.
 
 Female
 
-Male [.07, .19] b
+Male [.07,.19] b
 
 Austria
 
@@ -110,7 +110,7 @@ QU and GU + PTD; J
 
 ## MODETE
 
-[.16, .31] [.10, .19] [.10, .18] [.08, .15]
+[.16,.31] [.10,.19] [.10,.18] [.08,.15]
 
 Dagsvik et al. (2011)
 
@@ -124,7 +124,7 @@ Polynomial
 
 ## MIMOSI
 
-.44 .21 .31 .18
+.44.21.31.18
 
 Smith (1995)
 
@@ -136,7 +136,7 @@ Administrative register data (1980–1986)
 
 ## PL
 
-.061 .093 0 −.025
+.061.093 0 −.025
 
 Frederiksen et al. (2008)
 
@@ -148,7 +148,7 @@ Survey by Statistics Denmark (1996), age 18–59
 
 ## PL
 
-.148 .05 −.007 −.006
+.148.05 −.007 −.006
 
 Kuismainen (1997)
 
@@ -160,7 +160,7 @@ LFS (1989), survey and tax register; 25–60
 
 ## PL
 
-[0, .06]
+[0,.06]
 
 Bargain and Orsini (2006)
 
@@ -172,7 +172,7 @@ IDS (1998), working age, men all employed
 
 ## EUROMOD
 
-[.10, .18]
+[.10,.18]
 
 Bourguignon and Magnac (1990)
 
@@ -210,7 +210,7 @@ wage
 
 Own calc.
 
-1.05 [.8, .9] b
+1.05 [.8,.9] b
 
 Bargain and Orsini (2006)
 
@@ -222,7 +222,7 @@ HBS (1994/5), working age women, men all employed
 
 ## EUROMOD
 
-[.52, .65] [.46,.58] a
+[.52,.65] [.46,.58] a
 
 Donni and Moreau (2007)
 
@@ -238,7 +238,7 @@ Denmark
 
 Finland
 
-France Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples [.11, .27] [.10, .17] a .10 −.03 (−.02 with
+France Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples [.11,.27] [.10,.17] a.10 −.03 (−.02 with
 
 FC)/−.11 a −.07 (.96) −.19 /−.18 a [−.35, −.06]
 
@@ -270,7 +270,7 @@ SOEP (2000), working age, W and E
 
 ## TL + PTD; J
 
-IZAmod .27 .20 .21 .19
+IZAmod.27.20.21.19
 
 Steiner and Wrohlich (2004)
 
@@ -282,7 +282,7 @@ SOEP (2002), working age, W and E
 
 ## STSM
 
-[.16, .55] b [.07, .21] b [.11, .38] b [.07, .23] b
+[.16,.55] b [.07,.21] b [.11,.38] b [.07,.23] b
 
 Haan and Steiner (2004)
 
@@ -294,7 +294,7 @@ SOEP (2002), working age, W and E, one-or two-earner couples
 
 ## STSM
 
-[.08, .56] [.04, .20] [.08, .46] [.07, .26]
+[.08,.56] [.04,.20] [.08,.46] [.07,.26]
 
 Bargain and Orsini (2006)
 
@@ -306,7 +306,7 @@ SOEP (1998), working age, men all employed, W and E
 
 ## EUROMOD
 
-[.31, .45] [.27, .38] a
+[.31,.45] [.27,.38] a
 
 Haan (2006)
 
@@ -318,7 +318,7 @@ SOEP (2001), W and E; married couples, 20–65 years
 
 ## STSM
 
-[.34, .39] [.13, .14] [.19, .22] [.12, .14]
+[.34,.39] [.13,.14] [.19,.22] [.12,.14]
 
 Clauss and Schnabel (2006)
 
@@ -332,7 +332,7 @@ aged 20–65 couples
 
 ## STSM
 
-.37 .14 .24 .16
+.37.14.24.16
 
 Wrohlich (2006)
 
@@ -344,7 +344,7 @@ SOEP (2002), working age, W and E
 
 ## STSM
 
-[.14, .53] b [.06, .16] b
+[.14,.53] b [.06,.16] b
 
 Dearing et al. (2007)
 
@@ -366,7 +366,7 @@ SOEP (2003), working age, potential one-or two-earner
 
 ## STSM
 
-[.19, .34] [.08, .20] [.05, .08] [.04, .13]
+[.19,.34] [.08,.20] [.05,.08] [.04,.13]
 
 Fuest et al. (2008)
 
@@ -376,7 +376,7 @@ SOEP (2004), working age, W and E, potential one-or two-earner
 
 ## TU+PTD;J
 
-FiFoSiM .38 .15 .20 .14 −.18 −.28 .15/.09 .01/ 0 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples (Continued) [.13, .24] b
+FiFoSiM.38.15.20.14 −.18 −.28.15/.09.01/ 0 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples (Continued) [.13,.24] b
 
 Callan and van Soest (1996)
 
@@ -388,7 +388,7 @@ IDS (1987), desired hours
 
 ## SWITCH
 
-[.50, .85] .31/.20 a [.10, .20]
+[.50,.85].31/.20 a [.10,.20]
 
 Callan et al. (2009)
 
@@ -400,7 +400,7 @@ Living in Ireland Survey (1995), desired hours
 
 ## SWITCH
 
-[.71, .90] .49 [.21, .31]
+[.71,.90].49 [.21,.31]
 
 Colombino and del Boca (1990)
 
@@ -412,7 +412,7 @@ Turin Survey of Couples (1979), working age
 
 ## PL
 
-1.18 .64
+1.18.64
 
 Aaberge et al. (1999)
 
@@ -424,7 +424,7 @@ Non-linear hours, exog. wage and unearned inc.
 
 Own calc.
 
-.74 .65 .20/.21 a .52 .053 .046 −.014 −.003
+.74.65.20/.21 a.52.053.046 −.014 −.003
 
 Page 8 of 31
 
@@ -450,25 +450,25 @@ aged
 
 ## 16–64, D
 
-.66 .51 .12 [.35, .59] .12 [.15, .19] −.23 −.01 .008 −.03
+.66.51.12 [.35,.59].12 [.15,.19] −.23 −.01.008 −.03
 
 ## TU + PTD, R; J
 
 Own calc.
 
-[.42, .54] [.05, .09]
+[.42,.54] [.05,.09]
 
 ## TU + FC, R; J
 
 Own calc.
 
-[.67, .74] [.07, .10] van Soest et al. Dutch SOEP (1995), aged 16–64, D (2002) desired hours
+[.67,.74] [.07,.10] van Soest et al. Dutch SOEP (1995), aged 16–64, D (2002) desired hours
 
 QU (+ more Own calc.
 
 flexible) + FC,
 
-R; simult. wage estimation, J [.83, 1.36] [.35, .58] a
+R; simult. wage estimation, J [.83, 1.36] [.35,.58] a
 
 Bloemen (2009)
 
@@ -476,7 +476,7 @@ SEP (1990–2001), couples w/o D children, age 22–60
 
 ## QL
 
-Own [.22, .61] [.24, .61]
+Own [.22,.61] [.24,.61]
 
 Bloemen (2010)
 
@@ -484,7 +484,7 @@ SEP (1990–2002), couples w/o D children, age 22–60
 
 ## QU, FC
 
-Own [.14, .31] [−.02, .03]
+Own [.14,.31] [−.02,.03]
 
 Mastrogiacomo et al. (2013)
 
@@ -492,11 +492,11 @@ Labour Market Panel (1999–2005)
 
 ## QU, FC
 
-CPB model [.22, .52] Dagsvik and Strøm Survey of Income and Wealth D (2006) (1994/1995); married couples
+CPB model [.22,.52] Dagsvik and Strøm Survey of Income and Wealth D (2006) (1994/1995); married couples
 
 Polynomial
 
-Statistic Norway model .65 .28
+Statistic Norway model.65.28
 
 Aaberge and Survey of Income and Wealth D
 
@@ -504,11 +504,11 @@ Colombino (2012) (1994/1995); married couples
 
 Polynomial
 
-Statistic Norway model .21 .31 García and Suárez ECHP (1994–1995), aged 16–65, C (2003) obs. and desired hours
+Statistic Norway model.21.31 García and Suárez ECHP (1994–1995), aged 16–65, C (2003) obs. and desired hours
 
 ## LL
 
-Taxes .37
+Taxes.37
 
 ## 1.51 a
 
@@ -520,7 +520,7 @@ ECHP (1994–1999), aged <65 C and in work
 
 Unitary/collective model
 
-No taxation .31
+No taxation.31
 
 Crespo (2006)
 
@@ -530,7 +530,7 @@ ECHP (1994–1999), aged <65 C and in work
 
 unitary/collective
 
-No taxation .14
+No taxation.14
 
 ## QU + FC; J
 
@@ -542,7 +542,7 @@ Labeaga (2008) et al. ECHP (1995), working age
 
 ## D
 
-[.17, .40] .02 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples (Continued) −.057 [.05, .19] [.05, .16] .23 .16 −.06 .01 .26 .01 .11
+[.17,.40].02 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples (Continued) −.057 [.05,.19] [.05,.16].23.16 −.06.01.26.01.11
 
 Page 9 of 31
 
@@ -568,7 +568,7 @@ C LL and SL, R
 
 ## PL, D
 
-[−.25, .21] [−.01, .04]
+[−.25,.21] [−.01,.04]
 
 Blomquist and
 
@@ -614,7 +614,7 @@ Income Distribution Survey, 1999
 
 ## FASIT
 
-.18 .15 .06 0
+.18.15.06 0
 
 Switzerland
 
@@ -628,7 +628,7 @@ Survey (1998)
 
 Quadratic utility, random preferences
 
-Tax model for Basel-Stadt .56 .36 .03 .01
+Tax model for Basel-Stadt.56.36.03.01
 
 ## UK
 
@@ -644,7 +644,7 @@ SL + FC, search costs, endogenous wage and unearned income
 
 ## PL
 
-[.29, .71] – [−.13, −.40]
+[.29,.71] – [−.13, −.40]
 
 Arrufat and Zabalza (1986)
 
@@ -670,7 +670,7 @@ Gorman polar form and translog hours, R
 
 ## PL
 
-Sweden [.38, .77] [−.24, −.03] [.08, .13] [.04, .12 0 .024 −.017 −.003 −.06/−.04 −.001/0 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples Continued −.287
+Sweden [.38,.77] [−.24, −.03] [.08,.13] [.04,.12 0.024 −.017 −.003 −.06/−.04 −.001/0 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 1 Labor supply elasticities in Europe: couples Continued −.287
 
 Page 10 of 31
 
@@ -684,7 +684,7 @@ Non-linear labor supply, unemployment risk
 
 Own calc.
 
-[.0, .408]
+[.0,.408]
 
 Blundell et al. (1998)
 
@@ -700,7 +700,7 @@ Generalized LES,
 
 ## PL
 
-[.13, .37] b
+[.13,.37] b
 
 Blundell et al. (2000)
 
@@ -748,7 +748,7 @@ Polynomial
 
 ## MIMOSI
 
-.2 .11
+.2.11
 
 ## IDS (1998), SW, SP
 
@@ -758,7 +758,7 @@ Polynomial
 
 ## EUROMOD
 
-[.18, .34] [.18, .33]
+[.18,.34] [.18,.33]
 
 Bargain and Orsini (2006)
 
@@ -772,7 +772,7 @@ HBS (1994/1995), aged 25–49,
 
 ## EUROMOD
 
-[.08, .14] [.04, .07]
+[.08,.14] [.04,.07]
 
 Laroque and Salanie (2002)
 
@@ -784,7 +784,7 @@ Participation (and full/part-time) model, simultaneous wage and labor supply est
 
 Own calc.
 
-.07 .36
+.07.36
 
 Bargain and Orsini (2006)
 
@@ -796,7 +796,7 @@ Bargain and Orsini (2006)
 
 ## EUROMOD
 
-[.09, .18] [.08, .15]
+[.09,.18] [.08,.15]
 
 Steiner and Wrohlich (2004)
 
@@ -808,7 +808,7 @@ Steiner and Wrohlich (2004)
 
 ## STSM
 
-[.20, .36] [.05, .09]
+[.20,.36] [.05,.09]
 
 Haan and Steiner (2004)
 
@@ -836,7 +836,7 @@ SOEP (2004/2005), aged 20–65,
 
 ## SM
 
-[.02, .24] [.01, .10] [.08, .31] [.04, .28] .38 .18 .23 .17
+[.02,.24] [.01,.10] [.08,.31] [.04,.28].38.18.23.17
 
 Haan and Uhlendorff (2007)
 
@@ -852,7 +852,7 @@ non-parametric random coefficient
 
 ## STSM
 
-[.016, .036] [.05, .12]
+[.016,.036] [.05,.12]
 
 Fuest et al. (2008)
 
@@ -862,7 +862,7 @@ SOEP (2004), working age, SW
 
 ## TU + PTD
 
-FiFoSiM .28 .13
+FiFoSiM.28.13
 
 ## SM
 
@@ -876,7 +876,7 @@ Survey on Household Income and Wealth (1993), SW
 
 ## SM
 
-.28 .17 [.04, .10]
+.28.17 [.04,.10]
 
 ## D/H
 
@@ -884,7 +884,7 @@ QU + PTD; involuntary unemployment
 
 ## STSM
 
-[.06, .16] [.10, .20] [.05, .12]
+[.06,.16] [.10,.20] [.05,.12]
 
 ## A
 
@@ -892,11 +892,11 @@ QU + PTD; involuntary unemployment
 
 Own calc.
 
-.10 .06 .11 .08
+.10.06.11.08
 
 ## SM
 
-Italy .13
+Italy.13
 
 Particip.
 
@@ -928,7 +928,7 @@ Dutch SOEP (1988), actual and desired hours, SW
 
 Own calc.
 
-[.03, .45]
+[.03,.45]
 
 Mastrogiacomo et al. (2013)
 
@@ -940,7 +940,7 @@ Labour Market Panel,
 
 ## QU, FC
 
-CPB Model [.04, .62] [.01, .43]
+CPB Model [.04,.62] [.01,.43]
 
 Norway
 
@@ -948,17 +948,17 @@ Aaberge and Colombino (2012)
 
 Survey of Income and
 
-Wealth (1994/1995); SW [.14, .45] [.09, .32]
+Wealth (1994/1995); SW [.14,.45] [.09,.32]
 
 ## D
 
 Polynomial
 
-Statistic Norway model −.09 .12
+Statistic Norway model −.09.12
 
 Sweden
 
-Andrén (2003) −.02 .04
+Andrén (2003) −.02.04
 
 ## HINK (1997–1998), SP
 
@@ -968,7 +968,7 @@ QU + FC; simulat. with W and CC
 
 Own calc.
 
-[.55, .87] .50
+[.55,.87].50
 
 Brink et al. (2007)
 
@@ -982,11 +982,11 @@ Longitudinal Individual Data,
 
 ## FASIT
 
-.51 .35
+.51.35
 
 ## SM
 
-[.03, .18]
+[.03,.18]
 
 ## SM
 
@@ -1002,7 +1002,7 @@ Walker (1990)
 
 Participation model
 
-Benefits only .70
+Benefits only.70
 
 Ermisch and Wright (1991)
 
@@ -1036,7 +1036,7 @@ Blundell et al. (1992)
 
 Marginal rate of substitution function, endogenous wage and income
 
-Taxation only .34
+Taxation only.34
 
 Brewer et al. (2006)
 
@@ -1102,7 +1102,7 @@ PSID 1983, married women, aged 25–55
 
 ## C
 
-LL; C and PL; taxes and benefits [.03, .28] [−.15, −.19]
+LL; C and PL; taxes and benefits [.03,.28] [−.15, −.19]
 
 MaCurdy et al. (1990)
 
@@ -1118,7 +1118,7 @@ SIPP 1990, single mothers, no assets
 
 ## D
 
-Joint program and labor force participation .35
+Joint program and labor force participation.35
 
 Pencavel (1998)
 
@@ -1126,7 +1126,7 @@ CPS 1975–1994, married women, aged 25–60
 
 ## C
 
-Log-L; no tax-benefit [.77, .1.80]
+Log-L; no tax-benefit [.77,.1.80]
 
 CPS 1975–1994, single women, aged 25–60
 
@@ -1156,19 +1156,19 @@ LL; no tax-benefit
 
 ## C
 
-Log-L, no tax-benefit −.46 −.12 −.039 −.007 .96 [.12, .25]
+Log-L, no tax-benefit −.46 −.12 −.039 −.007.96 [.12,.25]
 
 CPS 1999, single men
 
-Census and PSID, married men −.01 [−.24, .03] [.77, .1.80]
+Census and PSID, married men −.01 [−.24,.03] [.77,.1.80]
 
 Hoynes (1996)
 
 Devereux (2003)
 
-Male [.16, .66] Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 3 Labor supply elasticities for the USA [.12, .25]
+Male [.16,.66] Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 3 Labor supply elasticities for the USA [.12,.25]
 
-Single men [.17, .38] [−.022, .017] [−.061, .001] [−.022, .017] [−.061, .001]
+Single men [.17,.38] [−.022,.017] [−.061,.001] [−.022,.017] [−.061,.001]
 
 Devereux (2004)
 
@@ -1176,7 +1176,7 @@ PUMS 1980, 1990, married couples (participating men)
 
 ## C
 
-Log-L, no tax-benefit [.00, .07]
+Log-L, no tax-benefit [.00,.07]
 
 Eissa and Hoynes (2004)
 
@@ -1192,19 +1192,19 @@ CPS 1980, married men and women age 25–54
 
 ## C
 
-Log-L [.77, .88] [.01, .07] .004 .001
+Log-L [.77,.88] [.01,.07].004.001
 
 ## CPS 1990
 
 ## C
 
-Log-L [.58, .64] [.10, .14] .002 .002
+Log-L [.58,.64] [.10,.14].002.002
 
 ## CPS 2000
 
 ## C
 
-Log-L [.36, .41] [.04, .10] .001 .002 .27 .03
+Log-L [.36,.41] [.04,.10].001.002.27.03
 
 Page 14 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Table 3 Labor supply elasticities for the USA (Continued)
 
@@ -1212,13 +1212,13 @@ Heim (2007)
 
 CPS, 1979–2003, married women
 
-SL, participation, some account for tax .36 (1979) to .14 (2003) .66 (1979) to .03 (2003)
+SL, participation, some account for tax.36 (1979) to.14 (2003).66 (1979) to.03 (2003)
 
 Heim (2009)
 
 PSID 2001, couples
 
-Quadratic utility with continuous labor supply, J, FC, R [.24, .33] [.07, .18]
+Quadratic utility with continuous labor supply, J, FC, R [.24,.33] [.07,.18]
 
 Bishop et al. (2009)
 
@@ -1226,13 +1226,13 @@ Bishop et al. (2009)
 
 women
 
-SL, participation, some account for tax .14 (1979) to −.03 (2003) .28 (1979) to .22 (2003) sing.
+SL, participation, some account for tax.14 (1979) to −.03 (2003).28 (1979) to.22 (2003) sing.
 
-−.05 (1979) to −.015 (2003) [.04, .07] [.00, .003] [−.007, −.006] −.0007 −.014 (1979) to −.019 (2003) Data: Current Population Survey (CPS), National Longitudinal Surveys of Young Women and Mature Women (NLSW), Panel Study on Income Dynamics (PSID), Public Use Microdata Sample (PUMS), Survey of Income and Program Participation (SIPP). Model: C= continuous labor supply (Hausman 1981 type); D = discrete-choice model (often a simple participation probit). Specification: Hausman labor supply is either linear (LL), log-linear (Log-L), or semi-log (SL); random preferences are sometimes accounted for (R) as well as fixed costs (FC). Models sometimes account for piecewise linear budget set (PL) or more generally convex set (C) or non-convexities (NC) and differentiable budget constraint (D). Elasticities: brackets indicate ranges of values over different specifications or reported confidence intervals. Participation elasticities (“particip”): increase in employ. rate in% points
+−.05 (1979) to −.015 (2003) [.04,.07] [.00,.003] [−.007, −.006] −.0007 −.014 (1979) to −.019 (2003) Data: Current Population Survey (CPS), National Longitudinal Surveys of Young Women and Mature Women (NLSW), Panel Study on Income Dynamics (PSID), Public Use Microdata Sample (PUMS), Survey of Income and Program Participation (SIPP). Model: C= continuous labor supply (Hausman 1981 type); D = discrete-choice model (often a simple participation probit). Specification: Hausman labor supply is either linear (LL), log-linear (Log-L), or semi-log (SL); random preferences are sometimes accounted for (R) as well as fixed costs (FC). Models sometimes account for piecewise linear budget set (PL) or more generally convex set (C) or non-convexities (NC) and differentiable budget constraint (D). Elasticities: brackets indicate ranges of values over different specifications or reported confidence intervals. Participation elasticities (“particip”): increase in employ. rate in% points
 
 Page 15 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Fig. 1 Distribution of wage elasticities by demographic group Fig. 2 Distribution of wage elasticities by demographic group and country
 
-Page 16 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 men (mean value .12) and childless single women (mean value .23) show much less variation, and most estimates stand in a narrow range between 0 and .30. These conclusions do not change radically if we consider more specific types of elasticities, namely total hour elasticities or participation elasticities (detailed results available from the authors). We now discuss each demographic group specifically.
+Page 16 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 men (mean value.12) and childless single women (mean value.23) show much less variation, and most estimates stand in a narrow range between 0 and.30. These conclusions do not change radically if we consider more specific types of elasticities, namely total hour elasticities or participation elasticities (detailed results available from the authors). We now discuss each demographic group specifically.
 
 ## 3.2 Demographic groups
 
@@ -1242,7 +1242,7 @@ As far as genuine international differences are concerned, we suggest that large
 
 An exception is Blomquist and Hansson-Brusewitz (1990) for Sweden, but the authors examine data from the 1980s. Comparing Italy and Norway/Sweden, Aaberge et al. (1999) show that lower participation rates among married women in Italy leads to a larger potential for reforms that increase financial incentives to work. Larger elasticities coincide with more intermittent labor force participation patterns in Southern countries and Ireland, as opposed to more consistent participation and more constant hours in Scandinavian countries. Apart from these extreme cases, differences across EU countries, and notably countries of Continental Europe, may not be very large, as suggested by Evers et al. (2008).
 
-This is confirmed by Bargain et al. (2014): Using a harmonized framework for 17 EU countries and the USA, for the same time period, they find estimates for married women ranging in a narrow interval .2–.6. This is indeed where mean values lie in Fig. 2 (top-left quadrant), with few exceptions. They also confirm that most of the responses occur at the extensive (participation) margin. Contrary to this study, our meta-analysis addresses comparisons across studies based on different methodological options, notably the period of investigation and the estimation method. We investigate the role of these two factors in the next subsection.
+This is confirmed by Bargain et al. (2014): Using a harmonized framework for 17 EU countries and the USA, for the same time period, they find estimates for married women ranging in a narrow interval.2–.6. This is indeed where mean values lie in Fig. 2 (top-left quadrant), with few exceptions. They also confirm that most of the responses occur at the extensive (participation) margin. Contrary to this study, our meta-analysis addresses comparisons across studies based on different methodological options, notably the period of investigation and the estimation method. We investigate the role of these two factors in the next subsection.
 
 Single mothers This demographic group has received some attention in the literature because of its importance for welfare analysis, given its higher risk of poverty, and because single-parent families were primarily concerned with reforms like tax credit extensions in the USA (cf. Hotz and Scholz 2003) or the UK (Blundell et al. 2000). This group is found to be more responsive to financial incentives than the average, at least in the UK, the USA, and Sweden. This is confirmed in Tables 2 and 3, where relatively large elasticities are shown in several studies, but not all. There is indeed much variance across estimates for lone mothers, in particular for the UK, as can be seen in Fig. 2 (bottom-right quadrant). Moderate estimates are found in some studies for the UK (Blundell et al. 1992) and the
 
@@ -1268,7 +1268,7 @@ Time trends In Fig. 3 (left quadrant), we plot estimates by year of data collect
 
 Page 19 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 both married women and single mothers. Given the small number of US studies reporting estimates for the latter group, we focus on married women in the right quadrant of Fig. 3 where we distinguish between EU and US estimates. The trend is similar in both regions, with a strong negative correlation between the period of observation and the elasticity level. 14 These findings tend to corroborate the result of Heim (2007) and Blau and Kahn (2007), who show that the labor supply elasticity of married women has strongly declined over time in the USA. They suggest a change in work preferences of women as possible explanation, but other explanations are possible (change in childcare policies, in domestic technology, etc.). Our results reveal that a similar trend exist for EU countries. Yet, estimates in Heim (2007) and Blau and Kahn (2007) rely on a uniform approach for the different periods while our meta-analysis possibly mixes time effects and changes in modeling and estimation methods over time.
 
-Estimation methods To investigate this point further, let us go back to survey Tables 1, 2, and 3. A first observation is that early evidence using the Hausman technique points to relatively large own-wage elasticities for married women, sometimes close to 1, or even larger, for instance, in early studies for France, Germany, Italy, or the UK. In contrast, recent evidence based on discrete-choice models shows more modest elasticities for this demographic group, in a range between .1 and .5, with some exceptions. In Table 3, we observe a similar pattern for the USA, with very large estimates in early studies, including Hausman (1981), and more modest and comparable elasticities in the recent studies (total hour-wage elasticities ranging between .2 and .4, for instance, in Eissa and Hoynes 2004 or Heim 2007, 2009). Hence, we can conjecture that the estimation method explains time differences. What are the possible underlying mechanisms? With the Hausman approach, the combination of restrictive functional forms (linear labor supply) and estimation methods that impose theoretical consistency of the labor supply model everywhere in the sample (global satisfaction of Slutsky conditions) can lead to biased estimates and possibly an overstatement of work incentives, as discussed above. In addition, this approach is more sensitive to the model specification which may explain the large variance in estimates from the 1970s and 1980s. Mroz (1987) shows how the wage effects of married women’s labor supply varies dramatically depending on whether and how one controls for non-random selection into work as well as to alternative exclusion restrictions in the instrument set for wages. Bourguignon and Magnac (1990) discuss the sensitivity of their results to the model specification and show that the Hausman approach can lead to implausibly high elasticity values, as they find in some of their specifications. Drawn from our tables, we can see for instance that married women’s wage elasticity obtained with the Hausman approach vary from .28 (Triest 1990) to .97 (Hausman 1981) in the USA, even when similar periods are considered (1983 and 1975 in these two studies, respectively). For France, estimates for married women are also very high with the basic Hausman model but almost zero when introducing fixed costs (cf. Bourguignon and Magnac 1990). Estimates obtained with discrete-choice models are somewhat more comparable from one study to the next. Yet, there are still differences, which are more likely driven by selection criteria (for France, high elasticities are found for families with children in Choné et al. 2003) and alternative specifications of discrete-choice models (for instance, the degree of flexibility of the model, see Bargain 2009).
+Estimation methods To investigate this point further, let us go back to survey Tables 1, 2, and 3. A first observation is that early evidence using the Hausman technique points to relatively large own-wage elasticities for married women, sometimes close to 1, or even larger, for instance, in early studies for France, Germany, Italy, or the UK. In contrast, recent evidence based on discrete-choice models shows more modest elasticities for this demographic group, in a range between.1 and.5, with some exceptions. In Table 3, we observe a similar pattern for the USA, with very large estimates in early studies, including Hausman (1981), and more modest and comparable elasticities in the recent studies (total hour-wage elasticities ranging between.2 and.4, for instance, in Eissa and Hoynes 2004 or Heim 2007, 2009). Hence, we can conjecture that the estimation method explains time differences. What are the possible underlying mechanisms? With the Hausman approach, the combination of restrictive functional forms (linear labor supply) and estimation methods that impose theoretical consistency of the labor supply model everywhere in the sample (global satisfaction of Slutsky conditions) can lead to biased estimates and possibly an overstatement of work incentives, as discussed above. In addition, this approach is more sensitive to the model specification which may explain the large variance in estimates from the 1970s and 1980s. Mroz (1987) shows how the wage effects of married women’s labor supply varies dramatically depending on whether and how one controls for non-random selection into work as well as to alternative exclusion restrictions in the instrument set for wages. Bourguignon and Magnac (1990) discuss the sensitivity of their results to the model specification and show that the Hausman approach can lead to implausibly high elasticity values, as they find in some of their specifications. Drawn from our tables, we can see for instance that married women’s wage elasticity obtained with the Hausman approach vary from.28 (Triest 1990) to.97 (Hausman 1981) in the USA, even when similar periods are considered (1983 and 1975 in these two studies, respectively). For France, estimates for married women are also very high with the basic Hausman model but almost zero when introducing fixed costs (cf. Bourguignon and Magnac 1990). Estimates obtained with discrete-choice models are somewhat more comparable from one study to the next. Yet, there are still differences, which are more likely driven by selection criteria (for France, high elasticities are found for families with children in Choné et al. 2003) and alternative specifications of discrete-choice models (for instance, the degree of flexibility of the model, see Bargain 2009).
 
 Page 20 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 Time trends versus estimation methods To further investigate whether elasticities truly decline over time or whether this pattern is due to changes in estimation methods, we compare the trends in elasticities obtained with the two main methods. 15 That is, Fig. 4 plots against data years the estimates obtained with continuous models (which rely mainly on the Hausman approach) and those from discrete-choice models (as recently used in many policy papers). Graphs in the upper panels show that the former was mainly used before 1990 while the latter approach took over in the 1990s and 2000s. For continuous models, there are nonetheless some observations in the more recent years so that we can suggest tentative interpretations. For our group of interest, and whether single mothers are included (upper panel, right) or not (left), the time shrinking elasticity hypothesis is verified over all estimates relying on the Hausman approach. The linear correlation between time and elasticity size is around −.55 for married women with or without single mothers. When differentiating between regions and focusing on married women, in the lower panels of Fig. 4, this meta-analysis corroborates the findings in Heim (2007) and Blau and Kahn (2007) for the USA (both studies relying on a Hausmantype approach) and also finds a similar pattern for EU countries. Yet, it is noticeable that there are very few estimates based on the Hausman model for the period after 1990 in the EU, so the result is more fragile than for the USA. If we turn to estimates from discrete-choice models, the upper graphs show fewer points of observations available before the 1990s. There is nonetheless a negative linear Fig. 4 Time trend in wage elasticities by broad estimation methods
 
@@ -1278,11 +1278,11 @@ Page 21 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 corr
 
 To disentangle time changes and estimation methods, we finally proceed with simple meta-estimations. 16 Focusing first on married women, we regress elasticity values for a set of simple model characteristics. 17 Results are reported in Table 4. Reflecting our discussion above on the limits of our observations, the first columns focus on data years for which we can find some common support in the use of the two empirical methods.
 
-That is, we restrict our sample to a period starting with the data year of the first estimate obtained with a discrete-choice model (estimates on CPS 1985 in Eissa and Hoynes 2004 and on the Dutch Labor Mobility Survey 1985 in van Soest et al. 1990). The main conclusion is that estimation periods (“year”) turn out to play a significant role. An additional year decreases wage elasticities of married women by around .013, which amounts to a decrease of .31 over a period of 24 years (the duration considered in Heim 2007). This conclusion holds whether we include the estimation method (a “discrete model” dummy) or not. In contrast, the estimation method is itself broadly insignificant. That is, the “overestimation” due to the Hausman model is not particularly visible when time effects are taken into account.
+That is, we restrict our sample to a period starting with the data year of the first estimate obtained with a discrete-choice model (estimates on CPS 1985 in Eissa and Hoynes 2004 and on the Dutch Labor Mobility Survey 1985 in van Soest et al. 1990). The main conclusion is that estimation periods (“year”) turn out to play a significant role. An additional year decreases wage elasticities of married women by around.013, which amounts to a decrease of.31 over a period of 24 years (the duration considered in Heim 2007). This conclusion holds whether we include the estimation method (a “discrete model” dummy) or not. In contrast, the estimation method is itself broadly insignificant. That is, the “overestimation” due to the Hausman model is not particularly visible when time effects are taken into account.
 
 Results are basically unchanged whether we consider total hour elasticities or participation response alone (4th and 5th columns). The same is true if we focus on EU estimates only (6th column) or if we extend the period to all the years in our sample of estimates for married women (last three columns). 18 In this last set of results, the estimation method alone has a significant effect which likely captures time trends due to the correlation between period and method. Indeed, this effect disappears when we account for years while years themselves are unaffected by the inclusion of the estimation method dummy.
 
-Hence, despite the limited common support, these meta-regressions tend to confirm the shrinking elasticity hypothesis while estimation methods do seem to affect elasticity size much. Up to this point, we have considered only linear time effects. Using all data years, additional (unreported) regressions with quadratic trend in years show that a larger decline in elasticities occurred in the early period. This is confirmed by a regression with dummies for periods 1967–1984 and 1985–1995, which shows that elasticities were respectively .497 (p value of 0.001) and .145 (p value of 0.053) larger than those in the reference period of 1996–2004. When using only post-1985 data (common support), a similar approach confirms that elasticities of the period 1985–1995 were .143 larger (p value of 0.013) than those in the most recent period. This conveys that much of the changes in female labor force participation had already taken place in the early period.
+Hence, despite the limited common support, these meta-regressions tend to confirm the shrinking elasticity hypothesis while estimation methods do seem to affect elasticity size much. Up to this point, we have considered only linear time effects. Using all data years, additional (unreported) regressions with quadratic trend in years show that a larger decline in elasticities occurred in the early period. This is confirmed by a regression with dummies for periods 1967–1984 and 1985–1995, which shows that elasticities were respectively.497 (p value of 0.001) and.145 (p value of 0.053) larger than those in the reference period of 1996–2004. When using only post-1985 data (common support), a similar approach confirms that elasticities of the period 1985–1995 were.143 larger (p value of 0.013) than those in the most recent period. This conveys that much of the changes in female labor force participation had already taken place in the early period.
 
 Turning back to Table 4, we see that addition controls corresponding to modeling options do not play a significant role. An exception is the use of desired rather than
 
@@ -1384,7 +1384,7 @@ Endnotes 1 Bargain et al. (2014) conduct an estimate labor supply elasticities f
 
 Page 26 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 the existence of a social multiplier whereby the utility from not working is increasing in the number of people who do not work (see Alesina et al. 2005), and factors related to the timing and the nature of labor supply adjustments in the presence of frictions (Chetty et al. 2011). 5 Another approach is the reconvexification of the budget set. For instance, to estimate the labor supply of married women on 1985 French data, Bourguignon and Magnac (1990) use the Hausman technique and eliminate minor non-convexities by replacing the budget set by its convex envelope. This approach is not possible for later years as the implementation of a minimum income scheme in 1988 has introduced high nonconvexity in the budget constraint. Similar non-convexities arise in all countries with substantial means-tested transfers. 6 See Eklöf and Sacklén (2000) for a critical discussion of the MaCurdy critique. 7 This issue is shared with the literature on the elasticity of taxable income, whereby results are sensitive to the type of reforms exploited for identification (Saez et al. 2012). Indeed, control group definition follows from their income level, so that specific preferences are identified and results cannot be extrapolated. For instance, changes in tax rates (tax credits) identify the preferences of high (low)-income groups and may not be generalized to the whole population. 8 Things are changing in the recent period. For France, for instance, some studies have recently used tax-benefit changes to evaluate the responsiveness of the labor force, including the introduction of a small tax credit (Stancanelli 2008), time change in income tax schedule (Carbonnier 2008), changes in the possibility to cumulate welfare payment for lone mothers and earnings (González 2008), and age condition on children for a replacement income targeted at low-income mothers who opt for full-time childcare (Piketty 1998). RD estimations using age conditions on the level of social assistance program are also used in Bargain and Doorley (2011), in a similar way as Lemieux and Milligan (2008) for Canada. 9 Note that few papers report uncompensated elasticities. One reason for this is that income effects are often very small and, hence, compensated and uncompensated elasticities are almost identical. This is confirmed by the findings in Bargain et al. (2014)—one of the few studies reporting both types of elasticities. 10 Note that almost all papers report elasticities with respect to the gross wage. Bargain et al. (2014) show that net wage elasticities are—mechanically—slightly larger than gross wage elasticities. 11 Note that a variety of different elasticities is used in different studies. For example, there are compensated and uncompensated wage elasticities, different ways in which the tax system is (or is not) accounted for, elasticities with respect to gross wage rates or net wage rates, etc. Moreover, it also may matter how elasticities are aggregated over the group of interest. Some studies present the elasticity for a benchmark (average) observation, others an elasticity of total hours of work in the whole group for a uniform wage rate increase, some even present an average of the elasticities for all observations. However, most studies report uncompensated elasticities with respect to the gross wage for total hours of work. We have tried to harmonize the definitions as much as possible when choosing the elasticities. 12 Note that not all papers report elasticities in the same way. It was our task to make sure that we identified the same parameter—namely the uncompensated wage elasticity
 
-Page 27 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 or the income elasticity—from each paper. We have always chosen the author’s preferred estimate in case they reported several estimates (for example, as robustness checks). 13 For instance, Euwals and van Soest (1999) report wage elasticities for childless single individuals in the Netherlands of around .10–.11. For Germany, a series of studies report estimates between .10 and .36 for childless single men and women. 14 We also find similar patterns when looking separately at hour-wage elasticities (correlation of −.59 with observation years) and participation-wage elasticities (correlation of −.54) for married women. 15 Further potentially important factors are the treatment of wages in the estimation procedure (Löffler et al. 2014) and the choice of the reference tax system for the benchmark. 16 Note that—like all meta-regressions—our analysis is not identifying causal effects since one can think of several potentially omitted variables. 17 Note that we cannot include all possible aspects of model specification in our paper since there are too many dimensions and to few observations. For example, Löffler et al. (2014) investigate the role of the treatment of wages for the size of elasticities. In order to do this, the authors estimate 3500 elasticities using a discrete-choice framework with all possible permutations of model choices. Unfortunately, such a variation is missing in the estimates collected for our study. 18 We do not report similar estimations for the USA only given the small number of observations in this case. Acknowledgements We would like to thank Pierre Cahuc and two anonymous referees, as well as Herwig Immervoll, Max Löffler, Kristian Orsini, Sebastian Siegloch, and Carina Woodage for the useful comments on earlier drafts. The usual disclaimer applies. Responsible editor: Pierre Cahuc. Funding None. Competing interests The IZA Journal of Labor Economics is committed to the IZA Guiding Principles of Research Integrity. The authors declare that they have observed these principles. Author details 1 Aix-Marseille University (Aix-Marseille School of Economics), CNRS & EHESS, Marseille, France. 2 IZA, Bonn, Germany. 3 ZEW, University of Mannheim, IZA and CESifo, L7, 1, 68161 Mannheim, Germany. Received: 24 May 2016 Accepted: 7 September 2016
+Page 27 of 31 Bargain and Peichl IZA Journal of Labor Economics (2016) 5:10 or the income elasticity—from each paper. We have always chosen the author’s preferred estimate in case they reported several estimates (for example, as robustness checks). 13 For instance, Euwals and van Soest (1999) report wage elasticities for childless single individuals in the Netherlands of around.10–.11. For Germany, a series of studies report estimates between.10 and.36 for childless single men and women. 14 We also find similar patterns when looking separately at hour-wage elasticities (correlation of −.59 with observation years) and participation-wage elasticities (correlation of −.54) for married women. 15 Further potentially important factors are the treatment of wages in the estimation procedure (Löffler et al. 2014) and the choice of the reference tax system for the benchmark. 16 Note that—like all meta-regressions—our analysis is not identifying causal effects since one can think of several potentially omitted variables. 17 Note that we cannot include all possible aspects of model specification in our paper since there are too many dimensions and to few observations. For example, Löffler et al. (2014) investigate the role of the treatment of wages for the size of elasticities. In order to do this, the authors estimate 3500 elasticities using a discrete-choice framework with all possible permutations of model choices. Unfortunately, such a variation is missing in the estimates collected for our study. 18 We do not report similar estimations for the USA only given the small number of observations in this case. Acknowledgements We would like to thank Pierre Cahuc and two anonymous referees, as well as Herwig Immervoll, Max Löffler, Kristian Orsini, Sebastian Siegloch, and Carina Woodage for the useful comments on earlier drafts. The usual disclaimer applies. Responsible editor: Pierre Cahuc. Funding None. Competing interests The IZA Journal of Labor Economics is committed to the IZA Guiding Principles of Research Integrity. The authors declare that they have observed these principles. Author details 1 Aix-Marseille University (Aix-Marseille School of Economics), CNRS & EHESS, Marseille, France. 2 IZA, Bonn, Germany. 3 ZEW, University of Mannheim, IZA and CESifo, L7, 1, 68161 Mannheim, Germany. Received: 24 May 2016 Accepted: 7 September 2016
 
 ## References
 

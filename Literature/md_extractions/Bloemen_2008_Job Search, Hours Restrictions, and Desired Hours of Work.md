@@ -52,7 +52,7 @@ f(w, h) p f(w)p l, 0! w! ⬁, h p h l, l p 1, …, L.
 
 ū(q) p u(b ⫹ m, 0; e) 冘 冕 l(v) L ⫹ p r ⫹ d lp1 l ⬁ ¯ [u(wh l ⫹ m, h l; e) ⫺ u(q)] f(w)dw.
 
-(3) ¯ y(h l ,u(q);e) ¯
+(3) ¯ y(h l,u(q);e) ¯
 
 In (3), y(h l, u(q);
 
@@ -68,7 +68,7 @@ v(q) p l(v) lp1 ¯ l (q)), p l F(y (4) in which F̄(.) p 1 ⫺ F(.) is one minus
 
 e).
 
-B. Specification We specify the utility function according to Hausman (1980): u(y, h; e) p ⫺ ln (g ⫺ bh) ⫺ b(h ⫺ Xa ⫺ e ⫺ by) g ⫺ bh , b! 0, g 1 0, (5) where X is a vector of observed individual characteristics that may influence preferences. 14 Utility function (5) combined with a linear budget constraint implies a labor supply function that is linear in the wage rate and in nonlabor income: 15 h*(w, m) p mb ⫹ wg ⫹ Xa ⫹ e.
+B. Specification We specify the utility function according to Hausman (1980): u(y, h; e) p ⫺ ln (g ⫺ bh) ⫺ b(h ⫺ Xa ⫺ e ⫺ by) g ⫺ bh, b! 0, g 1 0, (5) where X is a vector of observed individual characteristics that may influence preferences. 14 Utility function (5) combined with a linear budget constraint implies a labor supply function that is linear in the wage rate and in nonlabor income: 15 h*(w, m) p mb ⫹ wg ⫹ Xa ⫹ e.
 
 (6) The choice of utility function (5) is made partly because it has been applied widely within the literature of labor supply but also for reasons of trac14 Note that the inclusion of observed characteristics in the utility framework is another extension on the common practice in the empirical structural job search model, in which the utility function is usually equal to the (log)wage. For instance, marital status is often included as a taste shifter in labor supply models, but in empirical job search models it is not a variable that is usually assumed to affect the wage offer distribution and the job offer arrival rate. A utility function like (5) motivates the inclusion of a variable like marital status. 15 It follows from the model that the labor supply function h*(w, m) is positive ¯ if the wage w is larger than the reservation wage y(h l, u(q)) for any hours level h l. This can be seen by noting that the reservation wage rate at optimal hours h* is always larger than the virtual wage rate w*(q), that is implicitly defined by h*(w*(q), m) p 0, while the reservation wage rates at other hours levels are higher than at the optimal hours level.
 
@@ -96,7 +96,7 @@ j q h ⫺ h* ⫺ c ¯ ) (
 
 ## ⫺ F
 
-j q ) .
+j q ).
 
 (9) ˜
 
@@ -308,13 +308,13 @@ Estimate
 
 Standard
 
-Error ⫺.044** .79** 31.6** 4.6** 3.5** .8 4.4** 4.3** 13.9** .002 .05 1.2 .7 .8 1.2 1.0 1.2 .3
+Error ⫺.044**.79** 31.6** 4.6** 3.5**.8 4.4** 4.3** 13.9**.002.05 1.2.7.8 1.2 1.0 1.2.3
 
 Optimal Desired Hours Model Estimate
 
 Standard
 
-Error ⫺.023** .63** 24.7** 2.7** 2.5** 4.5** 2.5** 1.4** 8.3** .20** .001 .03 .5 .3 .3 .4 .3 .4 .1 .00
+Error ⫺.023**.63** 24.7** 2.7** 2.5** 4.5** 2.5** 1.4** 8.3**.20**.001.03.5.3.3.4.3.4.1.00
 
 Hours Satisfaction
 
@@ -324,7 +324,7 @@ Estimate
 
 Standard
 
-Error ⫺.042** .52** 24.4** 2.4** 2.6** 7.0** 3.1** 2.2** 9.8** .14** 16.3** 12.9** .001 .02 .5 .3 .4 .6 .3 .5 .1 .001 .6 .6 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
+Error ⫺.042**.52** 24.4** 2.4** 2.6** 7.0** 3.1** 2.2** 9.8**.14** 16.3** 12.9**.001.02.5.3.4.6.3.5.1.001.6.6 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
 
 of the utility function like b and g is achieved because they measure the impact of income on the unemployment duration by their impact on the reservation wage and the acceptance probability. Note that for the identification of the parameters of the household characteristics in the utility function the exclusion restriction that household characteristics only enter utility plays an important role. Age dummies are included in both the utility function and the arrival rate. As a consequence, in the base model information on unemployment duration is used to identify both the effect of age on preferences and the influence of age on the arrival rate, and it is clear that here identification of the age effects leans on the imposed structure and functional form. Once information on desired hours is included, separate identification of the effects of age on utility and on the arrival rate is possible. 26 Note that the parameters b and g are largest in the base model. By (6), this implies larger effects of nonlabor income and the wage rate on optimal working hours compared to the estimates obtained with the remaining two model variants. If we compare the “optimal desired hours model” (desired hours specified according to [7]) with the “hours satisfaction model” (desired hours specified according to [8]), we see that the optimal working hours according to the hours satisfaction model show a higher 26 Also in the specification in which desired working hours are used, household characteristics are not included in the job offer arrival rate, although identification is not a problem there. I use only characteristics like age and education that often are assumed to be directly related to a worker’s productivity. A good reason to include household characteristics is that the search intensity of the individual may be affected by household composition, if they affect the cost of search.
 
@@ -352,7 +352,7 @@ Educ3 4.6**
 
 Region:
 
-West .17
+West.17
 
 East ⫺.20*
 
@@ -364,7 +364,7 @@ Technical 2.25**
 
 Economic/administrative 2.72**
 
-No specialization ⫺.66** j l .26**
+No specialization ⫺.66** j l.26**
 
 Optimal Desired
 
@@ -380,7 +380,7 @@ Standard
 
 Standard
 
-Error Estimate Error Estimate Error .27 .16 .13 .10 1.0 .4 .2 .83 .54** .17 .05 5.3** 3.2** 3.9** .72 .28 .21 .17 1.3 .6 .7 2.8** .41* .10 .05 6.2** 4.3** 7.0** .6 .24 .17 .14 1.6 .8 .7 .11 .11 .12 .30* ⫺.18 .02 .15 .17 .18 .25** ⫺.16 ⫺.01 .12 .13 .14 .36 .38 .22 .06 8.7** 4.0** ⫺.29 .065 1.8 1.3 .61 .084 4.5** 2.3** ⫺.78 .010 .8 .9 .55 .07 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
+Error Estimate Error Estimate Error.27.16.13.10 1.0.4.2.83.54**.17.05 5.3** 3.2** 3.9**.72.28.21.17 1.3.6.7 2.8**.41*.10.05 6.2** 4.3** 7.0**.6.24.17.14 1.6.8.7.11.11.12.30* ⫺.18.02.15.17.18.25** ⫺.16 ⫺.01.12.13.14.36.38.22.06 8.7** 4.0** ⫺.29.065 1.8 1.3.61.084 4.5** 2.3** ⫺.78.010.8.9.55.07 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
 
 shows the value of using subjective information on desired working hours for the identification of the way in which demographics enter the model. All of the three model variants show positive and significant education dummies, possibly due to more complicated and lengthy application and hiring procedures for the higher educated. For the sectoral dummies the models yield similar results. The models assign the highest arrival rates to individuals with a technical and an economic/administrative type of education, although the base model assigns the highest job offer arrival rate to the economic/administrative sector, whereas the models with desired hours assign the highest arrival rate to the technical sector. Finally, the variance of the unobserved heterogeneity in the arrival rate is higher in the base model than in the model variants with desired hours. Note that the estimates in both the model variants with desired hours are not significant. 27 Table 4 shows the parameter estimates of the layoff rate. The differences between the model variants are not very large. They all imply that the layoff rate decreases with age and that individuals with the two lowest levels of education have the highest layoff rate. Individuals in the service 27 We experimented with imposing correlation between the random preferences e and the unobserved heterogeneity v. In the base model, the correlation was insignificant. In the model with desired hours, it was hard to identify the parameter, which is understandable once we see the small and insignificant variance in table 3 that is obtained if we do not impose correlation.
 
@@ -398,11 +398,11 @@ Estimate
 
 Intercept ⫺8.0**
 
-Age ≤ 25 2.6** 1.4** 25! Age ≤ 35 35! Age ≤ 45 .57**
+Age ≤ 25 2.6** 1.4** 25! Age ≤ 35 35! Age ≤ 45.57**
 
-Educ1 .08
+Educ1.08
 
-Educ2 .27
+Educ2.27
 
 Educ3 ⫺.63**
 
@@ -410,9 +410,9 @@ Region:
 
 West ⫺.24
 
-East .22
+East.22
 
-South .12
+South.12
 
 Type of education:
 
@@ -436,7 +436,7 @@ Standard
 
 Standard
 
-Error Estimate Error Estimate Error .3 .2 .2 .23 .24 .20 .21 ⫺8.0** 2.5** 1.4** .64** .54** .57** ⫺.39* .3 .2 .2 .23 .25 .21 .21 ⫺8.3** 2.5** 1.5** .74** .59** .56** ⫺.42** .1 .1 .1 .22 .11 .10 .10 .19 .19 .19 ⫺.22 .12 .11 .19 .19 .19 .004 .35** .32* .12 .09 .17 .17 .23 .18 ⫺.58** ⫺.69** ⫺.61** .17 .24 .20 ⫺.55** ⫺.66** ⫺.65** .16 .23 .19 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
+Error Estimate Error Estimate Error.3.2.2.23.24.20.21 ⫺8.0** 2.5** 1.4**.64**.54**.57** ⫺.39*.3.2.2.23.25.21.21 ⫺8.3** 2.5** 1.5**.74**.59**.56** ⫺.42**.1.1.1.22.11.10.10.19.19.19 ⫺.22.12.11.19.19.19.004.35**.32*.12.09.17.17.23.18 ⫺.58** ⫺.69** ⫺.61**.17.24.20 ⫺.55** ⫺.66** ⫺.65**.16.23.19 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
 
 sector have the highest layoff rate. Region does not affect the layoff rate. The largest differences are found for education: the models estimated with information on desired hours show that workers with one of the lower two education levels have a significantly higher layoff rate, which is plausible. For the base model, the effect for these education levels is positive but not significant. The parameter estimates of the wage offer distribution in table 5 show that offered wages increase with the level of education and show an inverted U-shaped pattern in age (with peaks at the ages of 44 and 49). For all the model variants, the offered wages are lowest for individuals with a technical and economic type of education. Finally, table 6 shows the parameter estimates of the hours offer distribution. Note that some restrictions on the probabilities of certain hours categories have been placed due to low numbers of observations in certain cells. From the discussion on identification in Section II it followed that without the use of information on desired hours, it is impossible to identify offered hours from preferred hours. For instance, if we want to know whether the observation that fewer part-time jobs than full-time jobs are observed is due to the fact that employers do not offer these jobs or whether workers do not accept them, model estimates obtained with information on observed hours only may generate very unreliable results. All the model variants show a peak in the distribution of offered hours at 40 hours a week. Moreover, the base model assigns higher offer probabilities to weekly numbers of working hours below 40, whereas the
 
@@ -462,7 +462,7 @@ Technical ⫺.38**
 
 Economic/administrative ⫺.39**
 
-No specialization .11** t .52** j m .23**
+No specialization.11** t.52** j m.23**
 
 Optimal Desired
 
@@ -478,7 +478,7 @@ Standard
 
 Standard
 
-Error Estimate Error Estimate Error .1 .1 .1 .13 .06 .04 .83** 1.6** ⫺.8** ⫺.98** ⫺.62** ⫺.65** .18 .1 .1 .15 .07 .08 .17 1.48** ⫺.69** ⫺1.24** ⫺.88** ⫺1.17** .14 .10 .06 .22 .11 .10 .06 .06 .04 .01 .004 ⫺.96** ⫺.43** .04 .48** .31** .19 .16 .09 .03 .002 ⫺.62** ⫺.28** .12 .63** .30** .10 .12 .09 .02 .002 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
+Error Estimate Error Estimate Error.1.1.1.13.06.04.83** 1.6** ⫺.8** ⫺.98** ⫺.62** ⫺.65**.18.1.1.15.07.08.17 1.48** ⫺.69** ⫺1.24** ⫺.88** ⫺1.17**.14.10.06.22.11.10.06.06.04.01.004 ⫺.96** ⫺.43**.04.48**.31**.19.16.09.03.002 ⫺.62** ⫺.28**.12.63**.30**.10.12.09.02.002 * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
 
 models with desired hours assign higher offer probabilities to working hours above 40. As we will see later on, this is accompanied by a reversed pattern in optimal hours: the base model simulates higher frequencies of desired hours above 40 and shows that individuals will be underemployed on average. The latter is in contrast with the survey information on satisfaction with working hours.
 
@@ -520,7 +520,7 @@ P(h p h l)
 
 Standard
 
-Error .032** .067** .030** .019** .039** .034** .55** .047** .012** .031** .0083** .014** .0021** .0055** .0029** .006 .008 .004 .003 .004 .003 .02 .003 .001 .003 .0012 .002 .0004 .0010 .0005 .032** .043** .016** .010** .022** .024** .47** .052** .018** .063** .024** .053** .012** .048** .0028** .006 .005 .002 .002 .002 .002 .02 .004 .002 .005 .003 .006 .002 .009 .0002 .012** .025** .012** .0094** .025** .027** .57** .062** .020** .068** .024** .050** .0093** .033** .0030** .002 .003 .002 .0014 .002 .002 .01 .004 .002 .005 .003 .005 .0015 .005 .0001 Note.— p l p P(h p l # 4) or, more precisely, P(l ⫺ 2 ≤ h! l ⫹ 2). * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
+Error.032**.067**.030**.019**.039**.034**.55**.047**.012**.031**.0083**.014**.0021**.0055**.0029**.006.008.004.003.004.003.02.003.001.003.0012.002.0004.0010.0005.032**.043**.016**.010**.022**.024**.47**.052**.018**.063**.024**.053**.012**.048**.0028**.006.005.002.002.002.002.02.004.002.005.003.006.002.009.0002.012**.025**.012**.0094**.025**.027**.57**.062**.020**.068**.024**.050**.0093**.033**.0030**.002.003.002.0014.002.002.01.004.002.005.003.005.0015.005.0001 Note.— p l p P(h p l # 4) or, more precisely, P(l ⫺ 2 ≤ h! l ⫹ 2). * Indicates significance at the 10% level. ** Indicates significance at the 5% level.
 
 for example, twice as many hours requires the wage rate to be twice as low to keep labor income constant. Figure 2 plots reservation wage rates as a function of hours in the range of 16–84. The graph contains the reservation wage rates for the base model as well as for the two model variants estimated with desired hours. For reasons of comparison, we also plotted the wage rates that correspond with a constant reservation income. 28 It is clear that the reservation wage rates of the base model show a pattern that is closer to the constant reservation income case than the models estimated with desired hours. Note that the reservation wage as a function of hours is much flatter for the base model than for the optimal desired hours model: for the base model, there is not much variation in the reservation wage for a working week of 40 hours or higher, implying that preferences are not very sensitive with respect to these hours levels. In other words, we cannot really identify the individual preferences for different working hours from the estimation results for the base model. For the base model, the minimum reservation wage is reached for hours levels of 48–60, implying that this is the optimal number of working hours for an individual of the given type. This would suggest that there is underemployment. The optimal desired hours model reaches its minimum at 36–40 hours a week. Note 28 The value of the constant reservation income is equal to the reservation income of the base model at 40 hours a week. The plot of the constant reservation income wage rates at this particular value is shown only for reasons of exposition.
 
@@ -532,11 +532,11 @@ Optimal Desired Hours Model
 
 Hours Satisfaction Model Elasticity of Expected Unemployment Duration with Respect to Benefit Level
 
-Hours .35 (.02) .35 (.05) .50 (.04) Elasticity of Reservation Wage Rate with Respect to Benefit Level 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 .02 (.002) .03 (.003) .04 (.004) .05 (.004) .06 (.005) .06 (.005) .07 (.005) .07 (.006) .08 (.006) .08 (.006) .08 (.006) .08 (.006) .08 (.005) .08 (.005) .07 (.005) .07 (.005) .07 (.005) .07 (.005) .06 (.005) .06 (.004) .06 (.004) .02 (.002) .03 (.002) .04 (.003) .05 (.004) .05 (.004) .06 (.004) .06 (.005) .06 (.005) .06 (.004) .06 (.004) .06 (.004) .05 (.004) .05 (.004) .05 (.003) .04 (.003) .04 (.003) .04 (.003) .04 (.003) .03 (.002) .03 (.002) .03 (.002)
+Hours.35 (.02).35 (.05).50 (.04) Elasticity of Reservation Wage Rate with Respect to Benefit Level 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84.02 (.002).03 (.003).04 (.004).05 (.004).06 (.005).06 (.005).07 (.005).07 (.006).08 (.006).08 (.006).08 (.006).08 (.006).08 (.005).08 (.005).07 (.005).07 (.005).07 (.005).07 (.005).06 (.005).06 (.004).06 (.004).02 (.002).03 (.002).04 (.003).05 (.004).05 (.004).06 (.004).06 (.005).06 (.005).06 (.004).06 (.004).06 (.004).05 (.004).05 (.004).05 (.003).04 (.003).04 (.003).04 (.003).04 (.003).03 (.002).03 (.002).03 (.002)
 
 Note.—Standard errors of elasticities are in parentheses.
 
-.05 (.002) .07 (.003) .09 (.003) .11 (.004) .12 (.004) .13 (.004) .14 (.005) .14 (.005) .14 (.004) .14 (.004) .13 (.004) .13 (.004) .12 (.004) .11 (.003) .11 (.003) .10 (.003) .10 (.003) .09 (.003) .09 (.003) .09 (.003) .08 (.002)
+.05 (.002).07 (.003).09 (.003).11 (.004).12 (.004).13 (.004).14 (.005).14 (.005).14 (.004).14 (.004).13 (.004).13 (.004).12 (.004).11 (.003).11 (.003).10 (.003).10 (.003).09 (.003).09 (.003).09 (.003).08 (.002)
 
 Desired Hours of Work 163 Fig. 3.—Kaplan-Meier plot of the residuals for unemployment duration whereas the values are not in each others’ 95% confidence interval. The hours satisfaction model shows the largest elasticities.
 
@@ -572,7 +572,7 @@ Desired
 
 Hours
 
-Model .001 .002 .002 .004 .023 .017 .010 .112 .117 .548 .055 .017 .047 .012 .017 .004 .001 .005 .001 .003 .002 .008 .006 .011 .019 .030 .044 .058 .077 .090 .101 .106 .104 .092 .078 .060 .044 .031 .019 .011 .006 .007 .003 .005 .014 .034 .064 .103 .143 .165 .160 .129 .088 .051 .024 .010 .004 .001 .001 .000 .000 .000 .001
+Model.001.002.002.004.023.017.010.112.117.548.055.017.047.012.017.004.001.005.001.003.002.008.006.011.019.030.044.058.077.090.101.106.104.092.078.060.044.031.019.011.006.007.003.005.014.034.064.103.143.165.160.129.088.051.024.010.004.001.001.000.000.000.001
 
 Optimal,
 
@@ -594,7 +594,7 @@ Desired
 
 Hours
 
-Model .011 .013 .028 .051 .082 .117 .144 .154 .140 .111 .073 .042 .021 .009 .003 .001 .000 .000 .000 .000 .000 .003 .007 .020 .045 .078 .113 .134 .139 .124 .104 .077 .055 .037 .024 .015 .009 .006 .003 .002 .001 .002
+Model.011.013.028.051.082.117.144.154.140.111.073.042.021.009.003.001.000.000.000.000.000.003.007.020.045.078.113.134.139.124.104.077.055.037.024.015.009.006.003.002.001.002
 
 Simulated
 
@@ -606,7 +606,7 @@ Hours
 
 Satisfaction
 
-Model .011 .012 .025 .041 .062 .065 .064 .066 .057 .415 .060 .026 .043 .016 .020 .004 .003 .007 .001 .001 .000 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound hours model does better in the sense that the model places most of the probability mass of desired working hours in the area of 32–44 hours a week. The model does not succeed in predicting the peak and the asymmetry in desired working hours. However, the model with desired hours succeeds in predicting that there are more overemployed than underemployed individuals. For the hours satisfaction model table 8 shows that by the specification in (8) we manage to predict a sizable peak in the distribution of desired hours at 40 hours a week. In fact the model explains over 75% of the peak in the data on desired hours. Overall the pattern in the simulated desired hours is somewhat flatter than the pattern in the observed desired hours. Nevertheless, compared to the simulated desired hours of the optimal desired hours model, in which, by (7), the only difference between optimal hours and desired hours is a lognormally distributed measurement error, it is a big improvement. Also note that the hours satisfaction model predicts overemployment better than the optimal desired hours model. As a final check, we have computed a goodness of fit test statistic for the distribution of observed hours. Table 9 shows that, with the naked 166
+Model.011.012.025.041.062.065.064.066.057.415.060.026.043.016.020.004.003.007.001.001.000 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound hours model does better in the sense that the model places most of the probability mass of desired working hours in the area of 32–44 hours a week. The model does not succeed in predicting the peak and the asymmetry in desired working hours. However, the model with desired hours succeeds in predicting that there are more overemployed than underemployed individuals. For the hours satisfaction model table 8 shows that by the specification in (8) we manage to predict a sizable peak in the distribution of desired hours at 40 hours a week. In fact the model explains over 75% of the peak in the data on desired hours. Overall the pattern in the simulated desired hours is somewhat flatter than the pattern in the observed desired hours. Nevertheless, compared to the simulated desired hours of the optimal desired hours model, in which, by (7), the only difference between optimal hours and desired hours is a lognormally distributed measurement error, it is a big improvement. Also note that the hours satisfaction model predicts overemployment better than the optimal desired hours model. As a final check, we have computed a goodness of fit test statistic for the distribution of observed hours. Table 9 shows that, with the naked 166
 
 Bloemen Table 9 The Distribution of Observed and Simulated Observed Hours
 
@@ -616,7 +616,7 @@ Observed
 
 Hours
 
-Frequencies .001 .002 .004 .005 .020 .013 .011 .031 .034 .670 .067 .019 .054 .016 .027 .007 .001 .010 .001 .005 .002
+Frequencies.001.002.004.005.020.013.011.031.034.670.067.019.054.016.027.007.001.010.001.005.002
 
 Simulated with
 
@@ -628,7 +628,7 @@ Simulated with
 
 Hours Satisfaction
 
-Model .001 .002 .004 .006 .019 .012 .011 .030 .033 .665 .067 .019 .055 .016 .027 .004 .004 .010 .005 .005 .004 .001 .001 .005 .012 .034 .018 .014 .033 .036 .647 .065 .019 .054 .016 .027 .005 .003 .010 .0004 .0003 .0002 .001 .003 .006 .010 .026 .014 .012 .030 .032 .659 .067 .020 .057 .017 .028 .004 .003 .009 .001 .0004 .0003 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound eye, the distributions of observed working hours obtained with the three different models look very similar. However, a formal goodness of fit test may reveal differences in the fit of the different models. We use the x 2 goodness of fit test proposed by Heckman (1984). 31 We have grouped observed working hours into 15 classes. The classes coincide with the hours classes that have been imposed in the estimation of the hours offer distribution (see table 6). 32 The test statistic is distributed according to the x 2 distribution with 14 (p 15 ⫺ 1) degrees of freedom. The critical value at the 5% level is 23.7. The outcomes of the test statistic for the base model, the optimal desired hours model, and the hours satisfaction model are, respectively, 17.9 (p-value 0.21), 264, and 225. The base model 31 Andrews (1988) presents a generalization of the x 2 test, which includes the test by Heckman (1984) as a special case. We have followed Heckman (1984) in computing the estimate of the covariance matrix that enters the computation of the test statistic. See Heckman (1984) for details. 32 The null hypothesis is that the probability of observing working hours in a certain class follows from the parametric model. More specifically, we test whether the probability distribution of observed working hours according to the parametric model is equal to the nonparametric empirical distribution of observed working hours. Consequently, the alternative hypothesis is general and not restricted to any specific parametric form.
+Model.001.002.004.006.019.012.011.030.033.665.067.019.055.016.027.004.004.010.005.005.004.001.001.005.012.034.018.014.033.036.647.065.019.054.016.027.005.003.010.0004.0003.0002.001.003.006.010.026.014.012.030.032.659.067.020.057.017.028.004.003.009.001.0004.0003 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound eye, the distributions of observed working hours obtained with the three different models look very similar. However, a formal goodness of fit test may reveal differences in the fit of the different models. We use the x 2 goodness of fit test proposed by Heckman (1984). 31 We have grouped observed working hours into 15 classes. The classes coincide with the hours classes that have been imposed in the estimation of the hours offer distribution (see table 6). 32 The test statistic is distributed according to the x 2 distribution with 14 (p 15 ⫺ 1) degrees of freedom. The critical value at the 5% level is 23.7. The outcomes of the test statistic for the base model, the optimal desired hours model, and the hours satisfaction model are, respectively, 17.9 (p-value 0.21), 264, and 225. The base model 31 Andrews (1988) presents a generalization of the x 2 test, which includes the test by Heckman (1984) as a special case. We have followed Heckman (1984) in computing the estimate of the covariance matrix that enters the computation of the test statistic. See Heckman (1984) for details. 32 The null hypothesis is that the probability of observing working hours in a certain class follows from the parametric model. More specifically, we test whether the probability distribution of observed working hours according to the parametric model is equal to the nonparametric empirical distribution of observed working hours. Consequently, the alternative hypothesis is general and not restricted to any specific parametric form.
 
 Desired Hours of Work 167 passes the goodness of fit test for observed working hours. The test results for the optimal desired hours model and the hours satisfaction model show that the parametric model specification places restrictions on the probability distribution of observed working hours that make it different from the nonparametric empirical distribution of observed working hours. This means that the latter two models are not sufficiently able to predict the correct hours category at the individual level, even though the distribution of the sample as a whole seems to fit well. The results show that the base model fits the observed distribution of working hours well, both by inspection of the simulated distribution function and according to a goodness of fit test. In the estimation of the base model the information on desired hours is not incorporated. Therefore the model is overparameterized: supply side parameters (preferences) and demand side parameters (hours offer distribution) are both retrieved using observed hours only. 33 This explains why the base model fits observed working hours better than the alternatives. A comparison of the computed optimal working hours according to the base model with the data on desired working hours, however, shows that the base model is not able to reproduce some basic features of the data, like the location of the distribution of desired working hours and the working hours at which the reservation wage is lowest. This reveals the paradox between fitting the distribution of observed working hours, on the one hand, but not being able to explain the underlying behavior, on the other. The optimal desired hours model and the hours satisfaction model exploit the information on desired working hours in the estimation. These models succeed in replicating the location of desired working hours and the data feature that the majority of the observations are overemployed. The hours satisfaction model in turn is better able to explain the peak in the data on desired working hours. Overparameterization is not present in the latter two models, so with virtually the same set of parameters as in the base model we now have to fit both the distribution of observed working hours and the distribution of desired working hours. 34 Apart from the stationarity assumption in the search model, and within the structure of the present model, we distinguish two main possible causes behind the result of the goodness of fit test. First, the functional form of the utility function may be too restrictive. In Section II.B we have already discussed this issue. Second, there may have been included insufficient observed heterogeneity to be able to fit the model at the individual level. To improve the fit we may either introduce observed characteristics in c̄ in (8) or introduce observed characteristics in the hours 33 This has been spelled out in Sec. II.E, using the marginal distribution of observed working hours (15).
 
@@ -648,7 +648,7 @@ Hours Category h p 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84
 
 Hours Distribution (Percentages) at Average Benefits
 
-Hours Distribution (Percentages) at Decreased Benefits .0 .0 .2 .5 1.7 1.1 1.0 2.9 3.3 68.1 7.0 2.1 5.9 1.7 2.9 .4 .3 .9 .1 .0 .0 .0 .0 .2 .7 2.2 1.3 1.2 3.0 3.5 66.8 6.9 2.0 5.8 1.7 2.9 .5 .4 1.0 .0 .0 .0 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound ⬁.
+Hours Distribution (Percentages) at Decreased Benefits.0.0.2.5 1.7 1.1 1.0 2.9 3.3 68.1 7.0 2.1 5.9 1.7 2.9.4.3.9.1.0.0.0.0.2.7 2.2 1.3 1.2 3.0 3.5 66.8 6.9 2.0 5.8 1.7 2.9.5.4 1.0.0.0.0 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound ⬁.
 
 rates for different hours levels are different, the distribution of accepted hours can be affected. To quantify the impact of a fall in the benefit level, we first simulated the distribution of accepted working hours for an individual with the average characteristics of the unemployed in the sample (see table 1). We have drawn 13,000 replications from the distribution of heterogeneity in preferences and the arrival rate to obtain the distribution of accepted working hours. This procedure was repeated while benefit levels were decreased by 5%. The hours distributions (in percentage points) for the different benefit levels are shown in table 10. Two observations can be made. Overall the impact of the 5% decrease in benefits on the distribution of accepted working hours is limited. There is, however, a small shift toward part-time hours. For instance, the frequency of working full-time hours (40 hours a week) has decreased by 1.3 percentage points, whereas the frequency of working half time (20 hours a week) has increased by 0.5 percentage points. If benefits fall it becomes more attractive to accept jobs with less than full-time hours which generate a lower (weekly) income. Note that the 5% decrease in benefits is apparently not large enough to find a shift toward accepting jobs with more than 40 hours a week, even though (a priori) lower benefits may induce someone unemployed to accept a job with an unfavorably high number of working hours.
 
@@ -670,7 +670,7 @@ Hours Offer Distribution 36 Hours a Week Hours Offer Distribution Equal to Desir
 
 Distribution of Accepted Hours (in Percentages) 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 ⬁.
 
-.1 .3 .6 1.0 2.6 1.4 1.2 3.0 3.2 65.9 6.7 2.0 5.7 1.7 2.8 .4 .3 .9 .1 .0 .0 .1 .3 .5 .8 1.9 1.0 .9 2.6 65.2 3.2 7.3 2.2 6.6 2.0 3.3 .5 .4 1.0 .1 .1 .0 .1 .2 .3 .5 2.2 1.6 .9 10.2 11.7 57.0 5.7 1.7 4.8 1.0 1.5 .3 .0 .3 .0 .1 .0 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound 40 hours a week, whereas the hours offer probabilities for the remaining working hours remained the same. Due to the nature of the simulation, we see the largest effect at 36 and 40 hours: the change of the peak in the hours offer distribution from 40 to 36 hours also affects the peak of the distribution of observed hours. However, we observe additional changes in the distribution of observed working hours. In particular, we see a decrease in the hours frequencies of part-time hours in the range of 16 to 32, even though the hours offer probabilities for these levels of working hours remain the same. For instance, the probability of observing 20 hours a week is reduced by 0.7 percentage points. Apparently individuals who prefer to work part-time are more willing to accept a job with a standard length of 36 than with a standard length of 40 hours a week. Consequently, the decrease in the length of the working week induced a decrease in part-time work. We see an opposite movement at hours levels above 40 hours a week. For individuals who prefer to work more than 40 hours a week, a job with working hours of 36 is less acceptable, and therefore there is an increase in acceptances of jobs with 172
+.1.3.6 1.0 2.6 1.4 1.2 3.0 3.2 65.9 6.7 2.0 5.7 1.7 2.8.4.3.9.1.0.0.1.3.5.8 1.9 1.0.9 2.6 65.2 3.2 7.3 2.2 6.6 2.0 3.3.5.4 1.0.1.1.0.1.2.3.5 2.2 1.6.9 10.2 11.7 57.0 5.7 1.7 4.8 1.0 1.5.3.0.3.0.1.0 Note.—Hours category with hours p l: l ⫺ 2 ≤ h! l ⫹ 2; l p 4: lower bound 0, l p 84: upper bound 40 hours a week, whereas the hours offer probabilities for the remaining working hours remained the same. Due to the nature of the simulation, we see the largest effect at 36 and 40 hours: the change of the peak in the hours offer distribution from 40 to 36 hours also affects the peak of the distribution of observed hours. However, we observe additional changes in the distribution of observed working hours. In particular, we see a decrease in the hours frequencies of part-time hours in the range of 16 to 32, even though the hours offer probabilities for these levels of working hours remain the same. For instance, the probability of observing 20 hours a week is reduced by 0.7 percentage points. Apparently individuals who prefer to work part-time are more willing to accept a job with a standard length of 36 than with a standard length of 40 hours a week. Consequently, the decrease in the length of the working week induced a decrease in part-time work. We see an opposite movement at hours levels above 40 hours a week. For individuals who prefer to work more than 40 hours a week, a job with working hours of 36 is less acceptable, and therefore there is an increase in acceptances of jobs with 172
 
 Bloemen more than 40 hours. Since the distribution of optimal hours (see table 8) has a concentration below 40 hours a week the overall effect is that the hazard out of unemployment increases. The final column of table 11 shows the offer distribution if the offer distribution is equal to the distribution of desired working hours (see first column of table 8). We find the shape of the offer distribution back in the simulated distribution of accepted hours, but there are also differences. The peak at 40 hours a week is more than 2 percentage points higher. Apparently, for individuals who prefer to work just below 40 hours a standard work week is also acceptable. For the individuals who want to work outside the range of 32–40 hours a week the difference between the offer distribution and the distribution of accepted hours is small. Overall, we find a smaller increase in the hazard than if the standard working week is changed.
 
@@ -688,7 +688,7 @@ The Reservation Utility Equation Let V(q) denote the value of search for an indi
 
 Desired Hours of Work 175 count is r. The flow of utility, derived from benefit level b and nonlabor income m in a short interval of length Dt is u(b ⫹ m, 0; e)
 
-Dt .
+Dt.
 
 1 ⫹ rDt
 
@@ -764,7 +764,7 @@ in which m represents measurement error. Equation (B1) implies that the density 
 
 The density of an acceptable wage offer conditional on hours being equal to h l can be derived from the job offer density:
 
-f(w) , l p 1, …, L, w 1 y l (q).
+f(w), l p 1, …, L, w 1 y l (q).
 
 F̄ l (y l (q))
 

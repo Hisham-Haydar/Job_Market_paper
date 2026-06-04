@@ -202,7 +202,7 @@ Y i denoting the propensity to be employed for individual i:
 
 Y i = i + i:
 
-(A i) + i :I(A i (1)
+(A i) + i:I(A i (1)
 
 A) + " i:
 
@@ -210,21 +210,21 @@ The model is easily estimated by logit or probit techniques, with employment Y i
 
 ## =Y
 
-we can derive the employment elasticity of a change in social assistance dY (around dR=R :05 in Bargain and Doorley, 2011, and :04 in Lemieux and Milligan, 2008). Yet it is di¢ cult to say much more. For instance, we cannot extrapolate further away from the discontinuity to answer our initial question regarding the employment e¤ect of extending social assistance to those under 25. At a minimal cost, putting structure on the RD design shall allow us to do so.
+we can derive the employment elasticity of a change in social assistance dY (around dR=R:05 in Bargain and Doorley, 2011, and:04 in Lemieux and Milligan, 2008). Yet it is di¢ cult to say much more. For instance, we cannot extrapolate further away from the discontinuity to answer our initial question regarding the employment e¤ect of extending social assistance to those under 25. At a minimal cost, putting structure on the RD design shall allow us to do so.
 
 4.2
 
-Adding Structure General Model. The interpretation of a potential disincentive e¤ect of social assistance in the above RD design coincides with the rationality assumed in static labor supply models (for instance, van Soest, 1995). In their discrete version, these models are based on the assumption of agents choosing the weekly worked hours option j = 1; :::; J in a discrete set of J common work durations (for instance non-participation, part-time, full-time and overtime). In this setting, we can write utility at choice j as:
+Adding Structure General Model. The interpretation of a potential disincentive e¤ect of social assistance in the above RD design coincides with the rationality assumed in static labor supply models (for instance, van Soest, 1995). In their discrete version, these models are based on the assumption of agents choosing the weekly worked hours option j = 1;:::; J in a discrete set of J common work durations (for instance non-participation, part-time, full-time and overtime). In this setting, we can write utility at choice j as:
 
 U ij = U i (H j; C(w i H j; A i)
 
-F i :1(H j > 0)) + 9 ij (2) We refrain from using more detailed education categories for comparability with the next model, as explained further below.
+F i:1(H j > 0)) + 9 ij (2) We refrain from using more detailed education categories for comparability with the next model, as explained further below.
 
 with disposable income C(w i H; A i) (equivalent to consumption in this static framework) and hours worked H j. Disposable income is reduced by a level F i for positive hours choices. This term may capture …xed costs of working as well as the cost of job search on the labor market, so that it must vary with individual characteristics including age. The deterministic utility levels are completed by i.i.d. error terms ij, assumed to follow an extreme value type I (EV-I) distribution and to represent possible observational errors, optimization errors or transitory situations. Because it accounts for the full tax-bene…t rules in function C, this structural model is broadly used for policy analysis (see Blundell and MaCurdy, 1999). As previously discussed, identi…cation often relies on the nonlinearity of this function or time/spatial variation in the tax-bene…t rules. In our setting, we originally use the age condition in social assistance eligibility, creating exogenous variation in …nancial incentives, as the key source of identi…cation. Since this discontinuity changes only the …nancial conditions between working and not working, we shall focus on the participation margin. As discussed in the concluding section, the more general model presented in equation (2) could be identi…ed using our approach but would require more variation (for instance other discontinuities a¤ecting …nancial gains between full and part time work).
 
 Speci…cations and Exclusion Restriction. We complete the speci…cation in the general case. Translog or quadratic utility functions in hours H j and consumption C are typically used for function U i (see Blundell and MaCurdy, 1999). Bargain (2006) and van Soest et al. (2002) show, however, that it is not possible to identify preferences from other structural components like …xed (or variable) costs of work, unless strong parametric assumptions are made. Instead, we opt for a ‡exible speci…cation where preference parameters vary with the choice j:
 
-U ij = a ij + g ij: (A i) + b ij :C(w i H j; A i) + c ij :C(w i H j; A i) 2 + ij:
+U ij = a ij + g ij: (A i) + b ij:C(w i H j; A i) + c ij:C(w i H j; A i) 2 + ij:
 
 (3) In this way, the "disutility" of work or other components like work costs are speci…ed through choice-speci…c terms a ij and g ij and, hence, are not forced to vary linearly or quadratically with H j as in standard functional forms. The same is true for interaction between hours and consumption, with coe¢ cients b ij and c ij. Bargain (2006) shows that this speci…cation nests the standard quadratic utility function used in many applications and better …ts the data. In addition, coe¢ cients in (3) vary linearly with several tasteshifters (gender, education) and possibly random terms for unobserved heterogeneity. While it is obvious that i, in the reduced form equation (1), is identi…ed at the age discontinuity and cannot, itself, vary with age, we must impose such a simple restriction in the structural equation (3):
 
@@ -234,7 +234,7 @@ In a standard labor supply model, this means that one of the usual taste shifter
 
 Participation Model. With this setting, we now focus on the participation margin. 10 The choice of working full-time (j = 1) rather than staying out of the labor market (j = 0) depends only on the di¤erence Y i = U i1 U i0 so that only the coe¢ cients on consumption are identi…ed while the other ones are normalized to zero for the non-working option (a i0 = g i0 = 0). The quadratic term in consumption, in equation (3), is not necessary as we model participation only. The …nal model is very close to the speci…cation used in Laroque and Salanié (2002). Dropping subscript 1 from coe¢ cients a i1 and g i1, we can write the propensity to be employed as:
 
-Y i = a i + g i: (A i) + b 1i :C(w i H 1; A i) b 0i :C(0; A i) + i (4) with i = 1i 0i. The model is now very similar to the RD model in equation (1), with the same constant and smooth function of age (A i ); plus a term capturing the discontinuity e¤ect. The main di¤erence, however, is the structure put on the latter. The treatment e¤ect, i.e. the age condition of the RMI, a¤ects individual participation decisions through their …nancial incentives to work, now measured by the distance between disposable income when employed, C(w e i H 1; A i ), and disposable income when out of work, 11 C(0; A i ). By focusing on a speci…c group of the population, i.e. childless singles, we rule 10 While the main reason for this choice is a clean identi…cation (i.e. the age discontinuity only a¤ects this margin), other motivations are given in the literature. Laroque and Salanié (2002) estimate female participation on French data and justify this focus by the small variability in work hours in France. Also, participation is the main margin of adjustment in the short-run (in particular, labor market frictions ensure that people cannot adjust their work duration beyond the mere choice to participate or not, cf. Chetty et al., 2011). In our application, we set H 1 to 39 hours per week, the institutionally set full time option in France in 1999. 11 In practice, as can be seen in equation (4), we do not force the model to depend on the exact di¤erence between these two income levels. Instead, we let them freely a¤ect the probability of employment. Indeed, out most of the usual sources of identi…cation stemming, as explained above, from the nonlinearity of tax-bene…t systems combined with variation in demographic composition. The identi…cation of the model relies on the same behavioral assumption as in the RD design: (statically) optimizing agents decide upon their labor supply based on …nancial incentives, and those aged 25 have lower incentives to work than similar persons aged 24. As in the reduced-form model, coe¢ cients vary with gender and education. The latter is simply a dummy for HS dropouts: in addition to lower wage prospects, which should be re‡ected in wages w i, people with only compulsory education may have lower attachment to the labor market than individuals with a degree (see Be¤y et al., 2006; Gurgand and Margolis, 2008). In a supply-side model, this can be rationalized in the form of larger search costs, i.e. participation costs (see van Soest et al, 2002). Notice that we refrain from using more detailed education categories for identi…cation purposes. Indeed, detailed education is the main information identifying wages and, hence, cannot also be used in preferences. This exclusion restriction is common in the literature (van Soest et al., 2002). We also add unobserved heterogeneity in coe¢ cient b 1i, that is:
+Y i = a i + g i: (A i) + b 1i:C(w i H 1; A i) b 0i:C(0; A i) + i (4) with i = 1i 0i. The model is now very similar to the RD model in equation (1), with the same constant and smooth function of age (A i ); plus a term capturing the discontinuity e¤ect. The main di¤erence, however, is the structure put on the latter. The treatment e¤ect, i.e. the age condition of the RMI, a¤ects individual participation decisions through their …nancial incentives to work, now measured by the distance between disposable income when employed, C(w e i H 1; A i ), and disposable income when out of work, 11 C(0; A i ). By focusing on a speci…c group of the population, i.e. childless singles, we rule 10 While the main reason for this choice is a clean identi…cation (i.e. the age discontinuity only a¤ects this margin), other motivations are given in the literature. Laroque and Salanié (2002) estimate female participation on French data and justify this focus by the small variability in work hours in France. Also, participation is the main margin of adjustment in the short-run (in particular, labor market frictions ensure that people cannot adjust their work duration beyond the mere choice to participate or not, cf. Chetty et al., 2011). In our application, we set H 1 to 39 hours per week, the institutionally set full time option in France in 1999. 11 In practice, as can be seen in equation (4), we do not force the model to depend on the exact di¤erence between these two income levels. Instead, we let them freely a¤ect the probability of employment. Indeed, out most of the usual sources of identi…cation stemming, as explained above, from the nonlinearity of tax-bene…t systems combined with variation in demographic composition. The identi…cation of the model relies on the same behavioral assumption as in the RD design: (statically) optimizing agents decide upon their labor supply based on …nancial incentives, and those aged 25 have lower incentives to work than similar persons aged 24. As in the reduced-form model, coe¢ cients vary with gender and education. The latter is simply a dummy for HS dropouts: in addition to lower wage prospects, which should be re‡ected in wages w i, people with only compulsory education may have lower attachment to the labor market than individuals with a degree (see Be¤y et al., 2006; Gurgand and Margolis, 2008). In a supply-side model, this can be rationalized in the form of larger search costs, i.e. participation costs (see van Soest et al, 2002). Notice that we refrain from using more detailed education categories for identi…cation purposes. Indeed, detailed education is the main information identifying wages and, hence, cannot also be used in preferences. This exclusion restriction is common in the literature (van Soest et al., 2002). We also add unobserved heterogeneity in coe¢ cient b 1i, that is:
 
 b 1i = b 01i + b 11i Z i + b 21i u i where u i is a random, normally distributed term u i (with zero mean and variance 2 u ). This term corresponds to the unobserved preference for work, so that the total distribution of the model is a mixture of a normal and an EV-I distribution. In this case, the model can be estimated by simulated maximum likelihood, as explained below.
 
@@ -242,7 +242,7 @@ b 1i = b 01i + b 11i Z i + b 21i u i where u i is a random, normally distributed
 
 Wages, Estimation Method and Discussion Wage Imputation: Estimation and Matching. The central component of …nancial gains to work in equation (4) is the wage rate. When estimating structural models, it is standard to proceed in two stages, …rst with the estimation of a wage equation to predict wages for non-workers, then with the estimation of the labor supply model. We specify the wage equation as:
 
-log w i = (A i) + :EDU C i + :Z i + i + i (5) assuming a normally distributed residual i and including the following explanatory variables: a smooth function of age (A i ), the set of detailed education categories EDU C i and additional controls Z i (gender). The traditional labor supply literature has pointed to two issues relating to wage endogeneity. First, hourly wages may be partly determined individuals may value additional income when not working in a di¤erent way from in-work earnings, simply because of di¤erent marginal utilities of consumption at the two labor supply points (but also for other reasons like …xed costs of work or the stigma e¤ect when living on welfare).
+log w i = (A i) +:EDU C i +:Z i + i + i (5) assuming a normally distributed residual i and including the following explanatory variables: a smooth function of age (A i ), the set of detailed education categories EDU C i and additional controls Z i (gender). The traditional labor supply literature has pointed to two issues relating to wage endogeneity. First, hourly wages may be partly determined individuals may value additional income when not working in a di¤erent way from in-work earnings, simply because of di¤erent marginal utilities of consumption at the two labor supply points (but also for other reasons like …xed costs of work or the stigma e¤ect when living on welfare).
 
 by omitted unobservable variables (being hard working) which are associated with preferences, as discussed above. We follow the standard Heckman approach and introduce an inverse Mills ratio i, estimated on the basis of a reduced form employment probability. The latter includes the age function (A i ), controls Z i and disposable income at zero hours C(0; A i) as an instrument, relying again on the discontinuity at age 25 for identi…cation. Second, calculated as earnings divided by worked hours, hourly wages may be contaminated by the same measurement error as those contained in worked hours, the so-called division bias. To avoid this bias, we predict wages for all observations, workers and non-workers, as suggested by Eklof and Sacklén (2000). Predicting for all makes it less of a concern to use one dataset for estimation (LFS) and another for predictions (Census), as long as (i) the second data source provides accurate information on wages, (ii) both datasets contain the same variables, with identical de…nition. As argued above and in Chemin and Wasmer (2012), the LFS is a robust dataset that contains detailed information on earnings and that can be used for reliable wage estimation. Moreover, all variables, and in particular the education categories in vector EDU C i, are available in both datasets according the exact same de…nition. Thus we use estimates of equation (B.1) to predict wages for all individuals in the Census, drawing wage residuals i in a normal distribution with zero mean and using their estimated empirical variance. Since workers cannot receive wages below the minimum wage, in principle, we discard i draws leading to wages below this wage ‡oor for individuals in work in the Census. The normality assumption may be a poor approximation for the speci…c population studied (childless single aged 20-30). Hence, we also suggest an alternative imputation method based on a matching approach. That is, for each individual in the Census, we pick a wage value randomly in his/her age-gender-education group in the LFS. Over a large number of draws, this is equivalent to imputing the conditional mean wage of a given cell plus an error term drawn from the empirical distribution (rather than from a normal distribution). Once again, we discard draws that lead to imputed wages below the minimum wage for those who are observed working in the Census, while those who do not work can earn any wage in the random distribution.
 
@@ -256,21 +256,21 @@ RD Estimates. We …rst present a graphical analysis of the RMI e¤ect. In Figur
 
 selected sample from the 1999 Census. We distinguish between the full sample and the sub-group of HS dropouts. The graphical representation of the discontinuity suggests a very small drop in employment at age 25 when all groups are taken into account. For HS dropouts, however, there is a signi…cant drop, of around 4 percentage points (ppt). RD estimations of equation (1) con…rm a magnitude of i in a range between 3:6 and 5:8 ppt for HS dropouts over all speci…cations of the model (age in years or quarters, () as quadratic, cubic, quartic or quadratic spline). The e¤ect expressed in percentage points can be divided by the employment rate at age 24 for the HS dropout (67:7%) to give the proportion of people concerned by the disincentive e¤ect at the discontinuity, i.e., between 5:3 8:6% in this group. This order of magnitude is similar to estimates in Bargain and Doorley (2011) who focus on men only. An important aspect is whether results are sensitive to the distance of observations from the discontinuity. The parametric estimation provides global estimates of the regression function over all values of the forcing variable, while the RD design depends instead on local estimates of the regression function at the cuto¤ point. Thus we have also checked whether the treatment e¤ect varies in a linear spline model for an increasingly small window around age 25. We …nd very stable estimates, which are additionally con…rmed by non-parametric estimations with varying bandwidths. Finally, we compare these results to the changes in employment at age 25 for a number of placebo control groups not a¤ected by the discontinuity. The …rst group is uneducated workers with children, i.e. not a¤ected by the age condition. We …nd no signi…cant employment change at 25 for this group. A second set of comparison groups consists of uneducated workers in 1982 (before the introduction of the RMI) and in 1990 (only one year after its introduction, i.e., a time when the program was not yet well publicized and concerned a much smaller population). As shown in Figure 2, there is no sign of a discontinuity at 25 for these two placebo groups.
 
-Dynamics. The RD design in the case of an age-based discontinuity is a special case of the standard RD design (Lee and Lemieux, 2010) as assignment to treatment, i.e., eligibility for the RMI, is inevitable (all subjects will eventually age into the program). Two issues arise in this case. Firstly, the discontinuity should be interpreted as the combined e¤ect of all factors that switch on at the threshold. An extensive examination of any other potential in‡uences on employment at age 25 is undertaken by Bargain and Doorley (2011), con…rming that there is no other factor at work at this age threshold, except the RMI. Secondly, because treatment is inevitable with the passage of time, individuals may fully anticipate the change in regime and adjust their labor market behavior before the threshold. In this case, optimizing behavior, in anticipation of eventual eligibility for the RMI, would accentuate observed e¤ects. We believe that this is implausible for a number of reasons (see further discussion in Bargain and Doorley, 2011). First, it seems unlikely Figure 1: Employment Rate of Childless Singles and Discontinuity (Census 1999) .8 .75
+Dynamics. The RD design in the case of an age-based discontinuity is a special case of the standard RD design (Lee and Lemieux, 2010) as assignment to treatment, i.e., eligibility for the RMI, is inevitable (all subjects will eventually age into the program). Two issues arise in this case. Firstly, the discontinuity should be interpreted as the combined e¤ect of all factors that switch on at the threshold. An extensive examination of any other potential in‡uences on employment at age 25 is undertaken by Bargain and Doorley (2011), con…rming that there is no other factor at work at this age threshold, except the RMI. Secondly, because treatment is inevitable with the passage of time, individuals may fully anticipate the change in regime and adjust their labor market behavior before the threshold. In this case, optimizing behavior, in anticipation of eventual eligibility for the RMI, would accentuate observed e¤ects. We believe that this is implausible for a number of reasons (see further discussion in Bargain and Doorley, 2011). First, it seems unlikely Figure 1: Employment Rate of Childless Singles and Discontinuity (Census 1999).8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 24 age
 
 Quadratic trend 26 28 30 age 95% confidence interval
 
-Quadratic trend 95% confidence interval Figure 2: Employment Rates of Childless Singles between 1982 and 1999 (Census) .55
+Quadratic trend 95% confidence interval Figure 2: Employment Rates of Childless Singles between 1982 and 1999 (Census).55
 
-Employment rate .6 .65 .7 .75 .8
+Employment rate.6.65.7.75.8
 
 HS dropouts 20 22 24 26 28
 
@@ -374,13 +374,13 @@ HS Dropouts All Male Female 67.7% 70.5% 63.1% 64.3% 66.5% 60.8% -3.4 -4.0 -2.3 6
 
 Internal Validity: Employment Rates at Various Ages. A …rst check of the performance of the structural model is whether the model can predict employment rates well at all age levels. Figure 3 reports actual employment levels, predicted employment rates and con…dence intervals at all ages (using speci…cations with a cubic function of age). We distinguish results for the whole selection and for HS dropouts respectively. The model actually shows a good …t for the entire selection of years around the discontinuity, which con…rms the role of the discontinuity in the identi…cation of the model. For almost all age groups, actual employment rates are in the predicted con…dence intervals. Figure 4 shows the same type of result when matching is used for wage imputation. As commented above, employment rate predictions are even better in this case. The reason for this is that wage matching captures the actual wage distribution better, as shown in Appendix B.1. This approach does not impose normality on wage errors nor any speci…c functional form on the impact of education or age on wages. As a result, the predicted employment-age pattern in this case lines up very closely with the actual one, as can be seen in Figure 4. Yet, the wage estimation technique, although less ‡exible, is more suited to the RD approach in the sense that it imposes the same smooth function of age on wage predictions (the full model underlying Figure 3 thus depends on a cubic function of age in both preferences and wage determinants). Hence, it conforms more with the continuity assumption imposed through function and leads to a more continuous employment rate pro…le, as seen in Figure 3. As a result, while being less accurate in terms of employment level predictions, it is more accurate in its prediction of the employment drop at 25. The important conclusion is that, despite this trade-o¤, both wage imputation techniques (and the various speci…cations of ) lead to similar conclusions. This is also true for the series of simulations to come. This gives us con…dence in the extrapolation we perform next using the structural model.
 
-Figure 3: Employment Rate of Childless Singles: Fit of the Structural Model .8 .75
+Figure 3: Employment Rate of Childless Singles: Fit of the Structural Model.8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 age
 
@@ -398,13 +398,13 @@ Actual empl.
 
 Predicted empl. 95% CI Out-of-sample Prediction of the RMI E¤ect. We now rely on a cross-validation sample to provide a …rst check of the external validity of the structural model. We rely on two sub-samples for the same year of data (1999). We estimate our base model on a random half of the selected sample (estimation sample), and use estimates to predict employment rates and treatment e¤ect on the other half (holdout sample). 16 Results are reported in Table 4. The …rst observation is that the treatment e¤ect on the holdout sample, measured by RD, is very similar to what was found for the full sample (1:1 and 3:5 for the whole selection and for HS dropouts respectively). The participation model seems to perform relatively well, even if treatment e¤ects are larger than the "true" response as measured by the RD (2:0 and 4:1 for the whole selection and 16 The advantage of such a strategy (see also Keane and Wolpin, 2007), compared to using another year of data, is that we do not need to control for time changes that may a¤ect the sample and which could be di¤erent for the "treated" and the "control" groups (the main di¢ culty in di¤erence-in-di¤erence studies). However, a more advanced validation should rely on a “holdout sample” which would di¤er from the sample used in the estimation and whose policy regime is well outside the support of the data. For instance, we could simulate the withdrawal of the RMI and compare to the actual pre-RMI situation using 1982 Census data. This seems too old, however, to be used as a check for the simulation of a no-RMI situation in 1999. The next paragraph suggests another validation exercise of this type.
 
-Figure 4: Employment Rate of Childless Singles: Fit of the Structural Model (Matched Wages) .8 .75
+Figure 4: Employment Rate of Childless Singles: Fit of the Structural Model (Matched Wages).8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 age
 
@@ -464,13 +464,13 @@ HS Dropouts All Male Female 66.8% 70.9% 59.9% 64.1% 65.9% 61.2% -2.7 -4.9 1.3 65
 
 and in the structural model. As previously discussed, however, estimates are in a range of reasonably similar magnitude, pointing to a disincentive e¤ect of the RMI between 5:6 and 4:1 for men and 5:1 and 3:6 for women according to the behavioral model (comparing the two …rst columns, we also con…rm that RD and model predictions are very close in all speci…cations). The RSA employment e¤ect at age 25 (third column) is much smaller and not signi…cantly di¤erent from zero in most cases, con…rming the re-incentivizing e¤ect of the in-work component. The di¤erence between RMI and RSA e¤ects points to a correction of the inactivity trap by around 3 ppt thanks to the RSA reform, with slightly larger e¤ects for women (between 3:5 and 3:9) than for men (between 2:6 and 3). In the right panel of Table 5, we compare these results with RD estimates of the RMI e¤ect before the actual reform took place (we pooled Census data for years 2004-2008 to obtain a sample size similar to the Census 1999, as explained in the data section above) and after it took place (we pool years 2010 and 2011, excluding 2009 since the reforms took place in the middle of that year). Results are very similar to the model prediction. First, despite time changes in labor market conditions between 1999 and 2004-2008, we observe a similar disincentive e¤ect of the RMI before the reform. It is slightly smaller than in 1999, i.e. between 3:6 and 2:6 overall. Then, the two years under the RSA system show no disincentive e¤ect at the cuto¤. Finally, the di¤erential e¤ect between the two welfare regimes is positive and very close to our simulation, i.e. between 2:8 and 3:4 overall. RD estimates also con…rm a slightly larger re-incentivization of the RSA for women compared to men. The e¤ect is, unfortunately, not statistically signi…cant in most speci…cations because of the smaller sample used for the RSA regime, which results in a lack of power. 17 Notwithstanding, the proximity with our model prediction is reassuring –even if it is only suggestive evidence –about the external validity of the model and of the natural experiment underlying model identi…cation.
 
-Figure 5: Counterfactual Employment Simulations: 2009 In-Work Bene…t Reform (RSA) .8 .75
+Figure 5: Counterfactual Employment Simulations: 2009 In-Work Bene…t Reform (RSA).8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 24 age 95% CI base 5.3 26 28 30 age 95% CI RSA reform 95% CI base 95% CI RSA reform
 
@@ -532,33 +532,33 @@ Census 2004-2011 Selection: childless single individuals aged 20-30, HS dropouts
 
 aged 25-30 to around 65 67%. Even if more costly, the RSA scheme is certainly more politically acceptable and was the path taken by the French government in 2009.
 
-Figure 6: Counterfactual Employment Simulations: Abolishing the RMI .8 .75
+Figure 6: Counterfactual Employment Simulations: Abolishing the RMI.8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 24 age 95% CI base 26 28 30 age 95% CI abolish RMI 95% CI base 95% CI abolish RMI Policy Simulation: Extending the RMI to the Youth. Youth unemployment is a severe issue in France like in several EU countries. It has received renewed attention recently as it becomes even more accentuated in a recessionary context. As the young are more at risk of unemployment and less likely to have made enough contributions to claim unemployment bene…t, the RMI can be an important source of income for them. Currently, their limited access to welfare programs results in very large poverty rates, as discussed in the introduction. This raises the question of extending the RMI to those under 25 years of age. Of course, this strategy runs the risk of increasing welfare dependency by fostering it at a younger age and of further increasing unemployment among young workers if inactivity traps exist. Figure 7 simulates the 1999 RMI scenario, abolishing the age condition. While this hypothetical reform has little e¤ect on the whole sample, the HS dropouts show a negative employment response, similar to the one observed at the cuto¤. Introducing the RMI for those under 25 induces a drop in participation of 5 ppt in this group. Symmetrically to the e¤ect of abolishing the RMI, this shows that young workers with low wage prospects may be tempted to claim the RMI and live on welfare, which casts doubts on the desirability of extending unconditional welfare payments to this group.
 
 Figure 7: Counterfactual Employment Simulations: Extending RMI to the Young
 
-Employment rate .65 .7 .5 .5 .55 .55 .6 .6
+Employment rate.65.7.5.5.55.55.6.6
 
-Employment rate .65 .7 .75 .75 .8 .8 .85
+Employment rate.65.7.75.75.8.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 24 age 95% CI base 26 28 30 age 95% CI no age condition 95% CI base 95% CI no age condition Policy Simulation: Extending the RSA to the Youth. This calls for a last simulation: What would be the e¤ect of extending the RSA scheme to the under-25? This is a highly topical and relevant question in the current policy debate in France (see Bargain and Vicard, 2012). 18 We start with a baseline simulation of the RSA policy scenario and additionally simulate a removal of the age condition. Extending the RSA to the young combines two opposite forces. On the one hand, we have seen that extending out-of-work welfare programs to the young creates disincentive e¤ects for the under-25’s, especially for the HS dropouts. On the other hand, the young can also bene…t from in-work incentives with the RSA. The overall e¤ect is undetermined. The results, in Figure 8, show that extending the RSA to the young would not have a signi…cant employment e¤ect for the whole selected group. We observe a small decrease in employment rates for the more vulnerable HS dropouts, yet it is not signi…cant. Hence, our simulation gives support to the extension of welfare programs in France provided that in-work components are in place to "make work pay". 18 An extension to 18-25 year olds was actually implemented in September 2011, although with very strict eligibility rules. A very small number of young workers have actually taken up this "RSA junior" so this should not a¤ect our results on Census 2010-2011 in the previous sub-section.
 
-Figure 8: Counterfactual Employment Simulations: Extending RSA to the Young .8 .75
+Figure 8: Counterfactual Employment Simulations: Extending RSA to the Young.8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 age
 
@@ -650,7 +650,7 @@ Measuring the Treatment E¤ect We can use the structural model to predict employ
 
 ## = Y 25
 
-## Y 24 + :[(25)
+## Y 24 +:[(25)
 
 (6) (24)] with Y A the average participation level at age A. By analogy, we can de…ne the treatment e¤ect in the structural model as:
 
@@ -772,7 +772,7 @@ Log Likelihood prob > chi2
 
 Observations 202093 -91701 0 202093 RD estimates are obtained by OLS. The participation model is estimated by simulated ML with conditional probabilities averaged over ten wage x unobserved heterogeneity draws.
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -788,7 +788,7 @@ Minimum wage
 
 Minimum wage
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -804,7 +804,7 @@ Minimum wage
 
 Minimum wage
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -822,7 +822,7 @@ Minimum wage 6 Figure B.1: Comparing Predicted and Matched Log Wage Distribution
 
 Census Data (Men)
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -838,7 +838,7 @@ Minimum wage
 
 Minimum wage
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -854,7 +854,7 @@ Minimum wage
 
 Minimum wage
 
-Density 1 1.5 2 .5 0 0 .5
+Density 1 1.5 2.5 0 0.5
 
 Density 1 1.5 2 2.5
 
@@ -874,37 +874,37 @@ Census Data (Women)
 
 ## C
 
-.8 .75
+.8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
-All 20 22 24 26 28 30 20 22 24 age 26 28 30 age 95% CI base 95% CI RSA reform 95% CI base 95% CI RSA reform Figure C.1: Counterfactuals: Replacing RMI with RSA (Matched Wages) .8 .75
+All 20 22 24 26 28 30 20 22 24 age 26 28 30 age 95% CI base 95% CI RSA reform 95% CI base 95% CI RSA reform Figure C.1: Counterfactuals: Replacing RMI with RSA (Matched Wages).8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 24 age 95% CI base 26 28 age 95% CI abolish RMI 95% CI base 95% CI abolish RMI
 
-Figure C.2: Counterfactuals: Abolishing RMI (Matched Wages) 30 .8 .75
+Figure C.2: Counterfactuals: Abolishing RMI (Matched Wages) 30.8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85 .85
+Employment rate.65.7.75.8.85.85
 
-All 20 22 24 26 28 30 20 22 24 age 95% CI base 26 28 30 age 95% CI no age condition 95% CI base 95% CI no age condition Figure C.3: Counterfactuals: Extending RMI to the Young (Matched Wages) .8 .75
+All 20 22 24 26 28 30 20 22 24 age 95% CI base 26 28 30 age 95% CI no age condition 95% CI base 95% CI no age condition Figure C.3: Counterfactuals: Extending RMI to the Young (Matched Wages).8.75
 
-Employment rate .65 .7 .6 .55 .5 .5 .55 .6
+Employment rate.65.7.6.55.5.5.55.6
 
-Employment rate .65 .7 .75 .8 .85
+Employment rate.65.7.75.8.85
 
-HS Dropouts .85
+HS Dropouts.85
 
 All 20 22 24 26 28 30 20 22 age
 

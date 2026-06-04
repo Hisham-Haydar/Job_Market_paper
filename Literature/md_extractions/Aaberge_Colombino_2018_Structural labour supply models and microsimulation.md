@@ -52,7 +52,7 @@ P (h)  exp  v (f (wh, I ), h) 
 
 ## I NTERNATIONAL J OURNAL OF M ICROSIMULATION (2018) 11(1) 162-197
 
-systematic utility components. In order to account for these factors, the following “dummies refinement” can be adopted. Let us define subsets S 0 ,..., S L of the set (0, 1, …, T). Clearly, the definition of the subsets should reflect some hypothesis upon the differences between the values of h with respect to the factors (a) – (b) mentioned above. Now we specify the choice probability as follows (Equation 2):
+systematic utility components. In order to account for these factors, the following “dummies refinement” can be adopted. Let us define subsets S 0,..., S L of the set (0, 1, …, T). Clearly, the definition of the subsets should reflect some hypothesis upon the differences between the values of h with respect to the factors (a) – (b) mentioned above. Now we specify the choice probability as follows (Equation 2):
 
   exp  v (f (wh, I ), h)    1(h  S)   
 
@@ -154,11 +154,11 @@ A ABERGE, C OLOMBINO Structural labour supply models and microsimulation
 
 ## I NTERNATIONAL J OURNAL OF M ICROSIMULATION (2018) 11(1) 162-197
 
-exp  v (f (wh, I ), h)  p 1 g 1 (h) g 2 (w)  , h > 0   exp  v (f (0, I ), 0)  (1  p 1)   exp  v (f (xy, I ), y)  p 1 g 1 (y) g 2 (x) dxdy  (x, y)  0 (14)  (w, h)   exp v ( f (0,
+exp  v (f (wh, I ), h)  p 1 g 1 (h) g 2 (w) , h > 0   exp  v (f (0, I ), 0)  (1  p 1)   exp  v (f (xy, I ), y)  p 1 g 1 (y) g 2 (x) dxdy  (x, y)  0 (14)  (w, h)   exp v ( f (0,
 
 ## I
 
-), 0) (1  p )   1  , h = 0   exp  v (f (0, I ), 0)  (1  p 1)   exp  v (f (xy, I ), y)  p 1 g 1 (y) g 2 (x) dxdy (x, y)  0  Alternatively, one could use a two-step procedure for imputing unobserved wages. In the first step, the wage equation is estimated. In the second step, the predicted wage rate replaces the missing values (or, alternatively, both the missing and the observed values). The random term of the wage equation is added to the systematic part and integrated (or “averaged”) out with a simulation procedure (see for instance Van Soest, 1995). Both the simultaneous and the two-steps procedures illustrated above assume that the random term of the wage equation is uncorrelated with the random term of the utility function. However, one might want to allow for a correlation of the wage rate random component with one or more random parameters of v (f (wh, I ), h) due, for example, to a dependence of the wage rate on previous decisions (see for instance Blundell & Shephard, 2012; Gong & van Soest, 2002).
+), 0) (1  p )   1 , h = 0   exp  v (f (0, I ), 0)  (1  p 1)   exp  v (f (xy, I ), y)  p 1 g 1 (y) g 2 (x) dxdy (x, y)  0  Alternatively, one could use a two-step procedure for imputing unobserved wages. In the first step, the wage equation is estimated. In the second step, the predicted wage rate replaces the missing values (or, alternatively, both the missing and the observed values). The random term of the wage equation is added to the systematic part and integrated (or “averaged”) out with a simulation procedure (see for instance Van Soest, 1995). Both the simultaneous and the two-steps procedures illustrated above assume that the random term of the wage equation is uncorrelated with the random term of the utility function. However, one might want to allow for a correlation of the wage rate random component with one or more random parameters of v (f (wh, I ), h) due, for example, to a dependence of the wage rate on previous decisions (see for instance Blundell & Shephard, 2012; Gong & van Soest, 2002).
 
 2.5
 
@@ -288,7 +288,7 @@ To overcome the shortcomings of the simulation exercises based on theoretical op
 
 solutions for the optimal taxation problem in such environments. The computational approach combines microeconometric modelling, microsimulation and numerical optimization. The microeconometric model, which simulates the agents’ choices by utility maximization, is embedded into a global maximization algorithm that solves the social planner’s problem, that is, the maximization of a social welfare function subject to the public budget constraint.
 
-The method, as presented in Aaberge and Colombino (2013), can be formulated as in Equation 16 below. Household n can choose a “job” within an opportunity set B n. Each job is defined by a vector of wage rates w, a vector of hours of work h and other characteristics j (unobserved by the analyst). Given gross earnings w’h and gross unearned income I, net available income is determined by a tax-transfer function c  f (w' h, I; ) defined up to a vector of parameters . For any given taxtransfer rule (that is, any given value of ) the choices by the households are simulated by running a microeconometric model that allows for a very flexible representation of heterogeneous preferences and opportunity sets, it covers both singles and couples, accounts for quantity constraints and is able to treat any tax-transfer rule however complex. Note that it would be hopeless to look for analytical solutions of an optimal taxation problem in such an environment. The choices made by the N agents result in N positions  c 1, h 1, j 1 ,  c 2, h 2, j 2  ,...,  c N, h N, j N , which are then evaluated by the social planner according to a social welfare function W. The Social Planner’s problem therefore consists of searching for the value of the parameters  that maximizes W subject to the following constraints: (i) the various positions  c 1, h 1, j 1  ,...,  c N, h N, j N  result from utility-maximizing choices on the part of the households (incentive-compatibility constraints); (ii) the total net tax revenue must attain a given amount R (public budget constraint). The optimal taxation problem max W  U 1  c 1, h 1, j 1 , U 2  c 2, h 2, j 2  ,..., U N  c N, h N, j N    s.t.
+The method, as presented in Aaberge and Colombino (2013), can be formulated as in Equation 16 below. Household n can choose a “job” within an opportunity set B n. Each job is defined by a vector of wage rates w, a vector of hours of work h and other characteristics j (unobserved by the analyst). Given gross earnings w’h and gross unearned income I, net available income is determined by a tax-transfer function c  f (w' h, I; ) defined up to a vector of parameters . For any given taxtransfer rule (that is, any given value of ) the choices by the households are simulated by running a microeconometric model that allows for a very flexible representation of heterogeneous preferences and opportunity sets, it covers both singles and couples, accounts for quantity constraints and is able to treat any tax-transfer rule however complex. Note that it would be hopeless to look for analytical solutions of an optimal taxation problem in such an environment. The choices made by the N agents result in N positions  c 1, h 1, j 1 ,  c 2, h 2, j 2 ,...,  c N, h N, j N , which are then evaluated by the social planner according to a social welfare function W. The Social Planner’s problem therefore consists of searching for the value of the parameters  that maximizes W subject to the following constraints: (i) the various positions  c 1, h 1, j 1 ,...,  c N, h N, j N  result from utility-maximizing choices on the part of the households (incentive-compatibility constraints); (ii) the total net tax revenue must attain a given amount R (public budget constraint). The optimal taxation problem max W  U 1  c 1, h 1, j 1 , U 2  c 2, h 2, j 2 ,..., U N  c N, h N, j N    s.t.
 
  c n, h n, j n   arg max U n  c, h, j  s.t. c   w, h, j   B n
 
@@ -368,7 +368,7 @@ weight function p k (t). As suggested by Weymark (1981) and Aaberge (2007), the 
 
 C k  1 
 
-W k *  , i  1, 2,...
+W k * , i  1, 2,...
 
 (25) The inequality indices (Equations 22 and 24) are invariant with respect to multiplicative constants. Alternatively, one might define indices that are invariant with respect to additive constants. An example is provided by Kolm (1976), were the index of inequality is:
 
