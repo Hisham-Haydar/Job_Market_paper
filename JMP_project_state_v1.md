@@ -17,6 +17,8 @@ The paper studies how unequal *job opportunities*, as distinct from heterogeneou
 
 > How much of observed inequality in money-metric well-being is attributable to unequal job opportunities rather than to heterogeneous preferences, once labour supply is modelled as choice among latent jobs?
 
+Operationally, "job opportunities" resolve into two channels, so the decomposition is **three-way — access, ability, and preference** (wage technology = *ability*; market/job/hours/region/occupation availability = *access*; the earlier two-way "opportunity vs preference" phrasing is a shorthand for this finer cut, developed in §2.2, §3.3 and §6.1).
+
 The motivating intuition is that standard labour-supply models, by representing behaviour as a choice over a fixed and common hours grid subject only to a tax-benefit budget, fold all systematic between-household differences in behaviour into *preferences*. If, in reality, households face *different feasible sets of jobs* — different distributions of available wages, hours packages, occupations, and participation possibilities — then a model that does not represent those differences will attribute opportunity-driven variation to taste-driven variation. The paper's premise is that a structural model with an explicit, estimated *opportunity density* over latent jobs can separate these two sources, and that the separation matters normatively: under the responsibility-sensitive view that individuals are not fully accountable for the jobs available to them, opportunity-driven inequality is compensation-relevant in a way that preference-driven inequality may not be.
 
 ### 1.2 Supporting sub-questions

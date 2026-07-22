@@ -1,6 +1,11 @@
 # Project JMP: Core Question, Motivation, Progress, and Direction
 
-**Working title:** *Opportunity Constraints as a Driver of Welfare Inequality: A Latent-Jobs Structural Decomposition Approach*
+**Working title:** *Unequal Job Opportunities as a Driver of Welfare Inequality: A Latent-Jobs Structural Decomposition Approach*
+
+> **Status banner (updated 2026-07-22).** This narrative predates estimation and is retained as background framing. Three points supersede it, and the authoritative current state is **[JMP_project_state_v1.md](JMP_project_state_v1.md)**:
+> 1. **The structural model is estimated and certified.** The formal active baseline is the 47-parameter pooled specification `joint_pooled_v1_bll0_tlmpin` (France 2015–2017 pooled; JAX; singles 101 / couples 901 alternatives; negLL 238504.6360973987; synthetic-recovery certified; real-data Hessian positive definite; clustered inference on `idorighh`). Estimation code, theta, and provenance live in the sibling **`MNL`** and **`MNL/dclaborsupply-monorepo`** repositories, not in this writing repo. Passages below describing estimation as "still to be implemented" are historical.
+> 2. **The decomposition is three-way — access / ability / preference** (wage technology = ability; market/job/hours/region/occupation availability = access). The two-way "opportunity vs preference" wording used below is superseded.
+> 3. **Welfare design is fixed** (`JMP_welfare_spec_v5.md`), but **headline welfare and decomposition results are not yet certified**; the FR-2016 singles P2a work and any welfare numbers built on it are provisional pending a production rebuild. The separate axiomatic Haydar–Maniquet theory paper is **not** this JMP.
 
 ## Central question
 
@@ -20,7 +25,7 @@ This is why the project is centered on **decomposition** rather than on a simple
 
 ## Work already done in the project
 
-A substantial amount of conceptual and preparatory work has already been completed. The project has moved beyond a broad interest in jobs and welfare and has now locked a specific JMP identity. The core question, supporting subquestions, preferred direction, narrower fallback, and boundaries of the paper are already clearly defined. In particular, the project has established that the JMP should be a **single-country structural paper** on latent jobs, money-metric welfare, and the decomposition of welfare inequality into opportunity and preference components, rather than a generic cross-country welfare ranking, a standard tax-reform simulation, or a microsimulation-led paper.
+A substantial amount of conceptual and preparatory work has already been completed. The project has moved beyond a broad interest in jobs and welfare and has now locked a specific JMP identity. The core question, supporting subquestions, preferred direction, narrower fallback, and boundaries of the paper are already clearly defined. In particular, the project has established that the JMP should be a **single-country structural paper** on latent jobs, money-metric welfare, and the decomposition of welfare inequality into **access, ability, and preference** components, rather than a generic cross-country welfare ranking, a standard tax-reform simulation, or a microsimulation-led paper.
 
 A second major component already completed is the literature synthesis. The project has assembled and mapped a broad corpus spanning four central literatures: constrained structural labor supply, latent jobs and identification, welfare analysis for discrete choice, and inequality of opportunity and fairness. This work has already clarified where the strongest contribution lies. The project does not simply replicate existing welfare comparisons. Instead, it builds on them to make **inequality decomposition** the central object, with the opportunity mechanism treated as a first-class economic object rather than as a technical detail.
 

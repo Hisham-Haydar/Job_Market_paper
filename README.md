@@ -1,16 +1,16 @@
-# Job Market Paper — Opportunity vs. Preference in Welfare Inequality
+# Job Market Paper — Access, Ability, and Preference in Welfare Inequality
 
-> **Working title:** *Opportunity Constraints as a Driver of Welfare Inequality: A Latent-Jobs Structural Decomposition Approach*
+> **Working title:** *Unequal Job Opportunities as a Driver of Welfare Inequality: A Latent-Jobs Structural Decomposition Approach*
 
-This repository is the working environment for an economics **job market paper (JMP)**. It is not a software project: the content is research material — PDFs, Markdown notes, LaTeX, design documents, and a small set of Python/PowerShell utility scripts that maintain a literature corpus and presentation assets. There is no application to build and no test suite.
+This repository is the **research/writing** environment for an economics **job market paper (JMP)**. It is not a software project: the content is research material — PDFs, Markdown notes, LaTeX, design documents, and a small set of Python/PowerShell utility scripts that maintain a literature corpus and presentation assets. There is no application to build and no test suite here. **The estimation code, the certified structural estimate, and its provenance live in the separate `MNL` and `MNL/dclaborsupply-monorepo` repositories, not in this repository.**
 
-For the authoritative project framing, see **[JMP.md](JMP.md)**.
+For the authoritative project framing and current state, see **[JMP_project_state_v1.md](JMP_project_state_v1.md)**; the welfare design is fixed in **[JMP_welfare_spec_v5.md](JMP_welfare_spec_v5.md)** and the canonical literature framing in **[docs/JMP_literature_review_skeleton_v1.md](docs/JMP_literature_review_skeleton_v1.md)** (root copy: `JMP_literature_review_skeleton_v1.md`).
 
 ## The paper in one paragraph
 
-The JMP asks: *how much of observed inequality in money-metric well-being is due to unequal job opportunities rather than heterogeneous preferences?* It models labor supply as a choice among **latent job packages** (a RURO / latent-jobs discrete-choice model) rather than as free choice of hours on a common budget line. It computes a money-metric welfare measure relative to the **constrained feasible job set**, and decomposes welfare inequality into an **opportunity** component and a **preference** component using an order-independent (Shapley-style) rule. Tax-benefit microsimulation feeds the budget mapping but is an input, not the contribution. The single-country empirical setting is **France**.
+The JMP asks: *how much of observed inequality in money-metric well-being is due to unequal job **access** and differences in **ability**, rather than heterogeneous **preferences**?* It models labor supply as a choice among **latent job packages** (a RURO / latent-jobs discrete-choice model) rather than as free choice of hours on a common budget line. It computes a money-metric welfare measure relative to the **constrained feasible job set**, and decomposes welfare inequality into **access**, **ability**, and **preference** components using an order-independent (Shapley-style) rule. Tax-benefit microsimulation feeds the budget mapping but is an input, not the contribution. The single-country empirical setting is **France** (EUROMOD, pooled 2015–2017).
 
-The opportunity-vs-preference distinction is central throughout the materials and even drives the figure color scheme (opportunity/observed = dark blue, preference/predicted = orange).
+The three-way **access / ability / preference** cut is central throughout the materials (wage technology = **ability**; market/job/hours/region/occupation availability = **access**; the obsolete two-way "opportunity vs preference" split is retired). The figure color scheme reflects the observed-vs-predicted contrast (observed = dark blue, predicted = orange).
 
 ## Central question and sub-questions
 
@@ -33,20 +33,22 @@ Content is organized by *function*, not by topic:
 | `Prototype/` | Early empirical/scope memos (France setting, status, scope decisions) before they become production work. |
 | `Deep_reports/` | Long-form deep research reports (gap checks, roadmap, lit reviews). |
 | `Presentation_mock/` | Seminar deck: `beamer/` (LaTeX deck) and `03_assets/` (figure-generation scripts + generated PNG/CSV outputs). |
-| `Theory_other_project/` | A *separate* theory project — kept distinct from the JMP literature stream. |
-| `Code/` | Intended for reproducible analysis code; currently the empirical model is not yet implemented. |
+| `Theory_other_project/` | A *separate* theory project (the axiomatic Haydar–Maniquet theory paper) — kept distinct from this empirical JMP. |
+| `Code/` | Reserved for writing-side analysis/figure code. The **structural estimation code and the certified estimate do not live here** — they are in the `MNL` and `MNL/dclaborsupply-monorepo` repositories. |
 
 ## Method and empirical strategy
 
 - **Model:** a RURO / latent-jobs discrete-choice model in which households choose among job packages (defined parsimoniously by hours and wage/earnings categories, with limited additional attributes).
 - **Budget mapping:** disposable income for each job package is computed via **tax-benefit microsimulation** — an input, not the headline.
-- **Estimation target:** separately, as far as identification allows, (i) preferences over consumption and leisure and (ii) the **opportunity mechanism** governing which job packages are feasible, varying with observable circumstances (region, education, demographic type).
+- **Estimation target:** separately, as far as identification allows, (i) preferences over consumption and leisure and (ii) the opportunity mechanism governing which job packages are feasible — itself split into an **ability** channel (the wage/Mincer technology) and an **access** channel (market/participation, hours, region/urbanisation, and occupation availability), varying with observable circumstances.
 - **Welfare:** a money-metric measure defined relative to the **constrained feasible set**, not a universal choice set.
-- **Decomposition:** counterfactual equalizations of the opportunity mechanism and comparable treatments of preference heterogeneity, with inequality shares attributed via an **order-independent (Shapley-style)** rule.
+- **Decomposition:** counterfactual equalizations of the access and ability channels and comparable treatments of preference heterogeneity, with inequality shares attributed via an **order-independent (Shapley-style)** rule.
 
 ## Status
 
-The project has a locked JMP identity, a synthesized literature corpus, and a seminar-ready skeleton (concept note, decision memo, roadmap, prototype memo, mock slides/figures/tables). What remains is implementing the minimal empirical prototype, producing a first decomposition output, and robustness/identification work. **The empirical model is not yet estimated** — all figures, elasticities, and decomposition shares in `Presentation_mock/03_assets/` and the beamer deck are mock/illustrative placeholders.
+The structural model **is estimated and certified**: the formal active baseline is the **47-parameter pooled specification `joint_pooled_v1_bll0_tlmpin`** (France 2015–2017 pooled; JAX; singles 101 / couples 901 alternatives; negLL 238504.6360973987; synthetic-recovery certified; real-data Hessian positive definite; clustered inference on `idorighh`). That estimate, its theta, and its provenance live in the `MNL` and `MNL/dclaborsupply-monorepo` repositories.
+
+The **welfare design is fixed** (`JMP_welfare_spec_v5.md`, the W¹–W⁶ family), but **headline welfare and decomposition results are not yet certified** — the welfare computational core is validated on the W³ reference only, and the FR-2016 singles P2a work and any welfare numbers built on it are **provisional** pending a production rebuild with strict diagnostics. On the writing side, a synthesized literature corpus and a seminar-ready skeleton exist. Any figures, elasticities, or decomposition shares in `Presentation_mock/03_assets/` and the beamer deck remain **mock/illustrative placeholders** and are not the certified estimate.
 
 ## Working with this repository
 
@@ -78,7 +80,10 @@ All utility scripts assume Windows with PowerShell and use only the Python stand
 
 ## Key documents
 
-- [JMP.md](JMP.md) — authoritative project framing (central question, methods, what's done, what remains)
+- [JMP_project_state_v1.md](JMP_project_state_v1.md) — **authoritative** current project state (question, methods, certified baseline, welfare, next steps)
+- [JMP_welfare_spec_v5.md](JMP_welfare_spec_v5.md) — canonical welfare design (W¹–W⁶ family; design fixed, results not yet certified)
+- [docs/JMP_literature_review_skeleton_v1.md](docs/JMP_literature_review_skeleton_v1.md) — canonical literature-review framing (access/ability/preference)
+- [JMP.md](JMP.md) — earlier narrative framing (retained as background; superseded by `JMP_project_state_v1.md`)
 - [CLAUDE.md](CLAUDE.md) — guidance for working in this repository
 - [Design/README_JMP_workspace.md](Design/README_JMP_workspace.md) — directory roles
-- [notes.md](notes.md) — research questions and direction
+- [notes.md](notes.md) — early research questions and direction (historical)
