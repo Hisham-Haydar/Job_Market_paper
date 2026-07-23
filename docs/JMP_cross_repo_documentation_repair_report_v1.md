@@ -199,8 +199,11 @@ Other validations:
   `at_bound`, `band_convention`, `draws_design`, `repair_note` — unchanged; only two status/annotation
   fields added.
 - **dclaborsupply package docs/code** — not modified (README inspected, no contradiction).
-- **Out-of-scope active docs** — `RURO_METHODS_AND_PIPELINE_MANUAL_v1.md` and `docs/mirrored/root/README.md`
-  — flagged, not edited.
+- ~~Out-of-scope active docs — flagged, not edited~~ **(superseded by the 2026-07-23 follow-up):**
+  `RURO_METHODS_AND_PIPELINE_MANUAL_v1.md` and `docs/mirrored/root/README.md` were flagged-only in the
+  original pass but **were repaired in the follow-up** (see §§3–4 and §10). They no longer belong in
+  this not-changed list; the entry is retained struck-through for the audit trail. The verdict remains
+  PASSED WITH WARNINGS solely for the deliberately unresolved P2a theta pointer (§8).
 
 **Observation (transparency):** during the session the working-tree copies of
 `P2A_MASTER_RECORD.md` and `p2a_fit_provenance.json` were modified by an external process/user (I did
