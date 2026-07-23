@@ -1,10 +1,18 @@
 # JMP Cross-Repository Documentation Repair Report — v1
 
-Date: 2026-07-22. Role: documentation maintainer. Scope: repair only the active documentation
-surfaces that mislead humans or AI/RAG. No estimation, EUROMOD, welfare, post-estimation, notebooks,
-or data preparation was run. No scientific code, model specification, parameter/theta file, data, or
-estimation-output JSON was modified. The region-live P2a result was **not** promoted; the certified
-baseline was **not** changed. Not committed.
+Date: 2026-07-22 (follow-up 2026-07-23). Role: documentation maintainer. Scope: repair only the active
+documentation surfaces that mislead humans or AI/RAG. No estimation, EUROMOD, welfare, post-estimation,
+notebooks, or data preparation was run. No scientific code, model specification, parameter/theta file,
+data, or estimation-output JSON was modified. The region-live P2a result was **not** promoted; the
+certified baseline was **not** changed.
+
+> **Follow-up addendum (2026-07-23).** The two active-document "two active empirical branches" warnings
+> flagged in the original pass (§10) have now been **closed** — `docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md`
+> and `docs/mirrored/root/README.md` were repaired (see §3/§4 and §10). The four validation searches
+> were re-run and return **no active stale hits** outside the audit/repair docs that quote them as
+> findings. The verdict remains **PASSED WITH WARNINGS** for the single remaining, deliberate reason:
+> the P2a theta pointer is intentionally **UNRESOLVED** pending the production rebuild. **No
+> active-document stale-branch warning remains.**
 
 ---
 
@@ -13,10 +21,11 @@ baseline was **not** changed. Not committed.
 **PASSED WITH WARNINGS.**
 
 All enumerated authorized surfaces were repaired and the four target stale phrases are gone from the
-repaired files. Two warnings remain: (a) two active non-archive documents **outside** the authorized
-edit set still carry "two active empirical branches" and were flagged, not edited; (b) the P2a
-provenance theta pointer is deliberately left **unresolved** (see §8) because the evidence does not
-demonstrably single out `theta_p2a_singles_2016_v2.csv`.
+repaired files. After the 2026-07-23 follow-up, the only remaining warning is deliberate: the P2a
+provenance theta pointer is left **unresolved** (see §8) because the evidence does not demonstrably
+single out `theta_p2a_singles_2016_v2.csv` (v1 and v2 are the same region-live theta). The earlier
+second warning — two out-of-scope active documents carrying "two active empirical branches" — has been
+**resolved** (§10): both now state those are historical/legacy branches and name the certified baseline.
 
 ## 2. Repositories inspected
 
@@ -70,6 +79,15 @@ demonstrably single out `theta_p2a_singles_2016_v2.csv`.
   unchanged.** File re-parses as valid JSON.
 - **`files_structure_detailed.md`** — repaired the corrupted line 7 (`Dot-prefiJMP_ability_opportunity_cut_v1.mdxed`
   → `Dot-prefixed`).
+- **`docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md`** *(added in the 2026-07-23 follow-up)* —
+  §2 retitled "Historical / Legacy Branches"; the "two active empirical branches" line replaced with a
+  certified-baseline status note ( `joint_pooled_v1_bll0_tlmpin`, negLL 238504.6360973987 ) and a
+  statement that continuous-RURO and job-choice RURO are historical/legacy development branches and
+  methodological references; P2a region-live noted as separate and provisional.
+- **`docs/mirrored/root/README.md`** *(added in the 2026-07-23 follow-up)* — aligned with the repaired
+  root `README.md`: added an explicit **mirror** label (authoritative copy = root `README.md`), replaced
+  the stale "two active empirical branches" header with the certified-baseline banner and the
+  legacy-branch framing. Kept explicitly labelled as a mirror; body otherwise preserved.
 
 ## 5. dclaborsupply files repaired
 
@@ -127,11 +145,13 @@ encoding (BOM `FF FE` retained) rather than re-encoding the file.
 
 ## 10. Remaining stale or historical files
 
-**Warnings — active, misleading, but outside the authorized edit set (flagged, not edited):**
-- `MNL/docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md:58` — "There are two active empirical
-  branches." **Still requires repair** (not in the authorized file list this pass).
-- `MNL/docs/mirrored/root/README.md:3` — a mirror of the old root README, still says "two active
-  empirical branches." **Still requires repair** (re-sync the mirror from the repaired root `README.md`).
+**Previously-flagged warnings — now RESOLVED in the 2026-07-23 follow-up:**
+- `MNL/docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md` — §2 retitled and the "two active empirical
+  branches" line replaced with a certified-baseline note + historical/legacy-branch framing. **Resolved.**
+- `MNL/docs/mirrored/root/README.md` — aligned with the repaired root `README.md`, explicitly labelled
+  a mirror, stale-branch header replaced. **Resolved.**
+
+**No active-document stale-branch warning remains.**
 
 **Intentionally historical (correctly labelled, no further action):**
 - `MNL/Project_files_structure.md`, `RURO_MNL_project_files_structure.md`, `01_repo_inventory.md`,
@@ -148,18 +168,20 @@ encoding (BOM `FF FE` retained) rather than re-encoding the file.
 
 Search over active, non-archive `.md` (excluding `.git`, `docs/archive/**`, and this report):
 
+Re-run in the 2026-07-23 follow-up after closing the two warnings:
+
 | Phrase | Active hits (excluding audit/repair docs that quote them as findings) | Status |
 |---|---|---|
 | "model is not yet estimated" | none | repaired (only the staleness-audit doc quotes it) |
 | "model is not yet implemented" | none | repaired (only audit/handoff docs quote it) |
-| "two active empirical branches" | `RURO_METHODS_AND_PIPELINE_MANUAL_v1.md:58`; `docs/mirrored/root/README.md:3` | **still requiring repair** (out of authorized scope) |
+| "two active empirical branches" | **none** | **repaired** — methods manual + mirrored README now say historical/legacy |
 | "opportunity component and preference component" | none | not present in active docs |
 
 Classification of remaining occurrences:
 - **Intentionally historical:** archive-path hits; audit/handoff docs quoting old text as findings.
-- **Locally correct:** the repaired root `README.md`/`RURO_ACTIVE_RESULTS_REGISTRY.md` now say "two
-  historical empirical branches" / "LEGACY" (not the stale claim).
-- **Still requiring repair:** the methods manual and the mirrored root README (§10 warnings).
+- **Locally correct:** the repaired root `README.md`/`RURO_ACTIVE_RESULTS_REGISTRY.md`, the methods
+  manual, and the mirrored README now say "historical/legacy branches" / "LEGACY" (not the stale claim).
+- **Still requiring repair:** none — all four target phrases are clear in active documentation.
 
 Other validations:
 - `p2a_fit_provenance.json` re-parses as **valid JSON**; `theta_csv` and `negll_fit` unchanged.
@@ -222,10 +244,9 @@ file is the validation doc from the preceding audit pass.)
 
 ## 14. Immediate next action
 
-Two housekeeping repairs remain, both outside this pass's authorized edit set — repair
-`MNL/docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md` (line 58 "two active empirical branches") and
-re-sync `MNL/docs/mirrored/root/README.md` from the repaired root `README.md`. These are documentation
-warnings only; they do not affect the certified baseline or the provisional status of region-live. The
-substantive technical next gate is unchanged: **production rebuild of the FR-2016 singles P2a
-region-live fit with strict diagnostics** before any promotion (see
-`FR_P2a_region_live_promotion_readiness_v1.md`). Do not commit automatically.
+The two housekeeping documentation repairs flagged in the original pass are now **closed** (§10;
+methods manual + mirrored README). No active-document stale-branch warning remains. The substantive
+technical next gate is unchanged: **production rebuild of the FR-2016 singles P2a region-live fit with
+strict diagnostics** — now specified in the manager decisions (`MNL/docs/France_case/P2a/FR_P2a_region_live_manager_decisions_v1.md`,
+D-1…D-8) and the rebuild plan (`FR_P2a_region_live_production_rebuild_plan_v1.md`) — before any
+promotion. The P2a theta pointer remains **UNRESOLVED** by design pending that rebuild.
