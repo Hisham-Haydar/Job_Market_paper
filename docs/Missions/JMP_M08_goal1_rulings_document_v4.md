@@ -2370,3 +2370,254 @@ together as `2026082701`…`2026082708`). They are preserved unaltered
 rather than silently repaired; the operative readings are the two LR
 cutoffs 2.7055434541 and 3.8414588207 and the eight seeds 20260827-01
 through 20260827-08.*
+
+## Appended 2026-08-27 — R-158..R-161 + Deputy Ruling - T2-A Profile Accepted
+
+*Frame note: chat-side rulings R-158..R-161; the deputy ruling follows verbatim.*
+- R-158 LOC4 evidence-checkpoint disclosures dispositioned.
+- R-159 benchmark authorized; migration deferred.
+- R-160 T2-A halt returned to the deputy (phi_B sign change inside the 95% profile-LR region).
+- R-161 deputy ruling adopted — T2-A accepted with the phi_B sign qualification; recorded verbatim below.
+
+DEPUTY RULING — T2-A PROFILE ACCEPTED WITH PHI_B SIGN QUALIFICATION
+
+Choose option (a).
+
+Do not restrict the primary profile claims to the 90% region.
+Use the conventional 95% profile-LR support region as the primary
+claim region, with the existing active-set/boundary caveat.
+
+Use the 90% region only as a supplementary sensitivity.
+
+1. T2-A STATUS
+
+Accept T2-A under:
+
+T2A_PROFILE_ACCEPTED_WITH_COMPONENT_SIGN_QUALIFICATION
+LOC4_PREFERRED_STRUCTURAL_SPECIFICATION
+PHI_B_SIGN_UNRESOLVED_95_PROFILE
+RQMC_FINAL_PRECISION_PENDING
+
+No additional profile optimization is required.
+
+The profile establishes:
+
+- connected support;
+- single optima at all 30 points;
+- LOC4 fit advantage everywhere;
+- W1 Gini materiality everywhere;
+- opportunity-contribution materiality everywhere;
+- A > B > P everywhere;
+- W1-mean profile envelope approximately 0.11% of the MLE value.
+
+The Tier-2 W1-level concern is therefore resolved by nuisance-
+reoptimized profiling.
+
+Retain the original S-10 trigger as the reason T2-A was required.
+Do not delete or relabel it as a false result.
+
+
+2. COMPONENT CLAIMS
+
+PHI_A:
+
+Permit a positive-sign claim if its complete 95% profile envelope is
+above zero.
+
+PHI_B:
+
+Do not make an unconditional positive-sign claim.
+
+Use:
+
+“The estimated ability contribution is small. It remains positive
+throughout the conventional 90% profile-LR region, but its sign is not
+resolved over the wider conventional 95% region.”
+
+Short manuscript form:
+
+“The ability contribution is close to zero, and its sign is
+profile-sensitive.”
+
+Do not call phi_B statistically insignificant and do not claim that it
+has no effect.
+
+PHI_P:
+
+Retain its sign claim only if the complete 95% profile envelope
+excludes zero.
+
+ORDERING:
+
+The claim
+
+phi_A > phi_B > phi_P
+
+is profile-stable and may be retained.
+
+OPPORTUNITY:
+
+Retain the profile-stable materiality claim for phi_A + phi_B and for
+the LOC4-versus-baseline opportunity difference.
+
+Do not infer phi_B's sign from the sign of the opportunity sum.
+
+
+3. PRIMARY PROFILE REGION
+
+Primary:
+conventional LR <= 3.8414588207 region
+[-0.0912, +0.0519]
+
+Supplementary:
+conventional LR <= 2.7055434541 region
+[-0.0797, +0.0403]
+
+Report both with the active-set and boundary caveat.
+
+Do not choose the 90% region as primary in order to preserve the
+positive phi_B sign.
+
+
+4. PROCEED TO T2-B
+
+Proceed immediately with the already frozen randomized-QMC design.
+
+No new ordinary ladder.
+No new control-variate design.
+No extra profile points.
+No package-source change.
+
+Use the eight Owen-scrambled Sobol replicates and frozen seeds in the
+T2 charter.
+
+Complete the bounded GPT-5.6 Codex design/implementation review before
+pricing.
+
+The seven-hour projected EUROMOD guard remains binding.
+
+
+5. RQMC PROFILE EVALUATION
+
+After the RQMC nodes are priced, evaluate all 30 accepted profile
+parameter vectors on the same priced RQMC nodes.
+
+No additional EUROMOD is required for profile-point evaluation.
+
+At every profile point recompute:
+
+- W1 mean;
+- W1 Gini;
+- phi_A;
+- phi_B;
+- phi_P;
+- R_bg;
+- phi_A + phi_B;
+- s_opp;
+- signs and ordering;
+- LOC4-minus-baseline differences.
+
+The final profile claims and the unrestricted-MLE results must use the
+same RQMC estimator of record.
+
+
+6. FINAL PHI_B CLASSIFICATION
+
+Do not restore a positive phi_B claim merely because the RQMC MLE
+estimate is positive and precise.
+
+Use:
+
+PHI_B_POSITIVE_PROFILE_STABLE
+
+only if the full RQMC-evaluated 95% profile envelope is above zero.
+
+Otherwise retain:
+
+PHI_B_SIGN_UNRESOLVED_95_PROFILE
+
+
+7. UNCERTAINTY REPORTING
+
+For every headline functional report separately:
+
+- unrestricted-MLE RQMC estimate;
+- RQMC numerical-integration band;
+- 95% profile-conditioned envelope.
+
+Do not combine these into a full statistical confidence interval.
+
+The profile envelope addresses beta_w_pexp2 conditional uncertainty.
+The RQMC band addresses numerical integration uncertainty.
+Neither is full sampling uncertainty.
+
+
+8. FINAL REVIEW CLAIM BOUNDARIES
+
+The final independent T2 review must not use the collective claim:
+
+“all component signs are stable.”
+
+The permitted qualitative claim is:
+
+- access contribution sign stable, if its envelope excludes zero;
+- preference sign stable, if its envelope excludes zero;
+- ability contribution small and sign-unresolved at 95%;
+- ordering A > B > P stable;
+- opportunity contribution and LOC4 materiality stable.
+
+The reviewer may return LOC4_PREFERRED_FULL_NUMERICAL_FREEZE if the
+RQMC numerical gates pass, while retaining the phi_B profile-sign
+qualification. Full numerical freeze does not imply every component
+sign is profile-identified.
+
+
+9. EVIDENCE CHECKPOINT
+
+Commit the T2-A profile memo, sealed profile attempt, consolidated-
+rulings append and previously authorized path-only re-pin in the next
+gated evidence checkpoint.
+
+Verify hashes and all applicable pins first.
+
+The re-pin is path-only:
+- no numerical parity rerun;
+- no EUROMOD;
+- protected bytes unchanged.
+
+Record the sign disposition in the consolidated rulings and later
+acceptance memo. Do not alter the numerical profile record to conceal
+the crossing.
+
+
+10. NOTEBOOK
+
+Update the working notebook with:
+
+LOC4_PROFILE_ACCEPTED
+W1_MEAN_PROFILE_STABLE
+A_GREATER_THAN_B_GREATER_THAN_P_PROFILE_STABLE
+PHI_B_SIGN_UNRESOLVED_95_PROFILE
+RQMC_FINAL_PRECISION_PENDING
+
+Show both profile regions, the mean envelope, the phi_B zero crossing,
+the stable ordering and the separate profile/RQMC uncertainty roles.
+
+
+11. RETURN
+
+Proceed autonomously through T2-B and the final independent review.
+
+Return only if:
+
+- the RQMC qW design or Codex gate fails;
+- projected EUROMOD exceeds seven hours;
+- primary W1 numerical gates fail;
+- the RQMC 95% profile evaluation overturns ordering or materiality;
+- final review returns unresolved or reject;
+- a package change is required;
+- disclosure fails.\
+
+*Transcription note: the ruling above is recorded VERBATIM as issued,
+including the stray trailing backslash after the final line
+("disclosure fails.\"). It is preserved rather than silently repaired.*
