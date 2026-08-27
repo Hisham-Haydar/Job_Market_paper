@@ -1334,3 +1334,1039 @@ Return only if:
 - LOC4 cannot proceed under the banded framework;
 - a package change is required;
 - or disclosure fails.
+
+## Appended 2026-08-27 — R-141 … R-155
+
+*Frame note: chat-side rulings R-141..R-155; deputy rulings verbatim below.*
+
+- R-141 16x limited-precision review ACCEPT-WITH-DISCLOSURES; D1/D2
+  adopted, D3 k-hat discharged on record; prototype closed.
+- R-142 results commits (MNL ced71763, JMP 1f458de7); citation block
+  lifted; LOC4 opened; HK Phase 2 released.
+- R-143 HK Phase-2 partial (29 archived, 18 microdata HOLD, row-2919
+  incident remediated); LOC4 v1 provisionally accepted (OL-1/OL-4
+  gating).
+- R-144 Path-B reconciled (OL-1 closed); deputy HK-v5 + LOC4
+  Part-B difference-materiality ruling adopted (R-a).
+- R-145 v5 gate PASS; movable-rows review REJECT (3 referenced);
+  LOC4 v2 review REJECT-narrow (six corrections mandated).
+- R-146 deputy HK-v6 adopted; LOC4 v3 re-review REJECT-narrow (M-5
+  replicate family); v4 mandate = three corrections.
+- R-147 LOC4 DESIGN v4 FROZEN (micro re-review ACCEPT); review
+  chain saved; HK Stage-2 basename finding -> deputy.
+- R-148 deputy HK-v7 adopted; no-attachment deputy convention.
+- R-149 HK-01 CLOSED (192ef57a / 9e15e565; acceptance eb3717b7...);
+  LOC4 Stage-1 SINGLE-OPTIMUM; W-4 membership change -> deputy.
+- R-150 parity satisfied-at-ced7176 disposition; deputy S-10
+  conditional ruling adopted; notebook redlines.
+- R-151 LOC4 Stage-2 BRANCH B (three MATERIAL headlines; M-5
+  ordering flip; M-6 changed); practice 14 (exclusive checkout).
+- R-152 S-10 battery S10_TIER2_TRIGGER (s5/s6, beta_w_pexp2);
+  Branch-B stable across all six; interim deputy return.
+- R-153 deputy option-(c) adopted (statuses: baseline ACCEPTED_
+  REFERENCE_BASELINE_NOT_FINAL_PREFERRED; LOC4 LOC4_MATERIAL_
+  TIER2_TRIGGER_PREFERRED_SPEC_PENDING); deterministic packet +
+  review commissioned; parity path closure (alias, PASS at HEAD).
+- R-154 session-continuation practice; R-155 DET packet accepted
+  (LR 92.8696/df 3/p 5.30e-20; dAIC -86.87; dBIC -70.82 both
+  conventions); independent review verdict LOC4_PREFERRED_PENDING_
+  TIER2_BOUNDARY_ANALYSIS; packet assembled.
+
+### (1) Deputy Ruling — LOC4-Arm S-10 Membership
+
+DEPUTY RULING — LOC4-ARM S-10 MEMBERSHIP
+
+Adopt a conditional LOC4-arm S-10 rule.
+
+1. STAGE-1 STATUS
+
+The LOC4 estimate may proceed to the frozen Stage-2 welfare comparison.
+
+The additional W-4 flag on beta_w_pexp2 is a warning, not an
+estimation failure or an automatic Tier-2 trigger.
+
+The accepted baseline S-10 set remains:
+
+beta_l0_sm
+beta_l0_sf
+beta_l_nkids_sf
+
+Do not add beta_w_pexp2 retrospectively to the baseline battery.
+
+
+2. NO LOC4 S-10 BEFORE THE MATERIALITY RESULT
+
+Proceed with the frozen paired-CRN LOC4 comparison now.
+
+Do not run a LOC4-arm S-10 battery before the Stage-2 materiality
+classification.
+
+
+3. BRANCH A — CLEANLY IMMATERIAL
+
+No LOC4-arm S-10 is required if:
+
+- every headline difference is LOC4_IMMATERIAL;
+- no sign changes;
+- no ordering changes;
+- no qualitative-conclusion change;
+- all validity/support gates pass;
+- the corrected baseline remains preferred.
+
+Under this branch, disclose:
+
+- the LOC4 W-4 set;
+- beta_w_pexp2 estimate;
+- robust interval;
+- bounds;
+- its absence from the corrected-baseline W-4 set.
+
+Do not claim a LOC4-specific welfare sensitivity was run.
+
+
+4. BRANCH B — LOC4 S-10 REQUIRED
+
+Before any preferred-specification decision or quantitative freeze,
+run LOC4-arm S-10 if any of the following occurs:
+
+- any headline difference is LOC4_MATERIAL;
+- any headline difference is LOC4_MATERIALITY_INDETERMINATE_MC;
+- a headline sign changes;
+- component ordering changes;
+- the qualitative conclusion changes;
+- LOC4 is considered for preferred-specification status for another
+  reason.
+
+The sensitivity must inform the specification choice, not occur only
+after LOC4 has already been selected.
+
+
+5. LOC4 FLAGGED SET AND SCENARIOS
+
+If Branch B fires, use the LOC4-specific set:
+
+beta_l0_sm
+beta_l0_sf
+beta_l_nkids_sf
+beta_w_pexp2
+
+Run exactly six scenarios:
+
+1. LOC4 baseline;
+2. beta_l0_sm alone;
+3. beta_l0_sf alone;
+4. beta_l_nkids_sf alone;
+5. beta_w_pexp2 alone;
+6. all four jointly.
+
+No pairwise or triple scenarios.
+
+
+6. PERTURBATIONS
+
+Derive every perturbation from the LOC4 arm's own estimate, robust
+SE, bound and flagged direction.
+
+Lower-bound flag:
+
+Delta_j = min(
+    0.5 * SE_rob_j,
+    0.5 * (theta_hat_j - lb_j)
+)
+
+theta_sens_j = theta_hat_j - Delta_j
+
+Upper-bound flag:
+
+Delta_j = min(
+    0.5 * SE_rob_j,
+    0.5 * (ub_j - theta_hat_j)
+)
+
+theta_sens_j = theta_hat_j + Delta_j
+
+beta_w_pexp2 moves toward its lower bound -0.1.
+
+Record the numerical vectors before computing sensitivity results.
+
+
+7. EXECUTION
+
+Use:
+
+- no re-estimation;
+- no new EUROMOD;
+- the same priced bases;
+- the same CRN;
+- the same qW and opportunity normalisation;
+- the same references;
+- the same A/B/P operators;
+- the same block and MC instruments;
+- W1 as primary;
+- the accepted secondary full-compensation comparator.
+
+For every scenario report:
+
+- W1 mean and Gini;
+- phi_A, phi_B, phi_P, R_bg, phi_A+phi_B;
+- s_opp_W1;
+- signs and ordering;
+- the secondary-comparator equivalents;
+- scenario differences from the LOC4 baseline;
+- LOC4-minus-baseline differences under each scenario;
+- MC bands.
+
+
+8. TIER-2
+
+Apply the standing thresholds:
+
+- 1% mean/median;
+- 0.005 Gini;
+- 2 percentage points in the primary opportunity contribution;
+- sign/order change;
+- qualitative-conclusion change.
+
+Use direct CRN scenario-difference precision.
+
+If an MC interval crosses a materiality threshold, classify:
+
+S10_MATERIALITY_INDETERMINATE_MC
+
+and return.
+
+A LOC4 Tier-2 trigger blocks preferred-arm quantitative freeze but
+does not automatically require whole-model re-estimation.
+
+
+9. PREFERRED SPECIFICATION
+
+LOC4 may become preferred only after:
+
+- precise LOC4 materiality classification;
+- required LOC4 S-10 completion;
+- no unresolved Tier-2 issue;
+- independent LOC4 review acceptance.
+
+If LOC4 is immaterial, retain the corrected baseline and report LOC4
+as robustness.
+
+Keep baseline and LOC4 sensitivity vectors and results separate.
+
+
+10. NORMALISATION DISCLOSURE
+
+Record that delta_occ itself leaves the relevant closed-form
+normalising factor invariant under the factorisation, but the
+re-estimated coordinates change household-level log Z.
+
+Use LOC4-specific recomputed Z everywhere.
+No baseline Z reuse.
+
+
+11. HK-01
+
+Record JMP-HK-01 as closed:
+
+- v7 gate passed;
+- four moves executed hash-unchanged;
+- MNL commit 192ef57a;
+- Job_Market_paper final acceptance commit 9e15e565;
+- zero dangling references.
+
+Authorize no further housekeeping during LOC4.
+
+Record this ruling in the existing consolidated LOC4/M08 rulings
+document. Create no separate deputy memo.
+
+Proceed autonomously with Stage 2.
+
+Return only if:
+
+- Branch B fires and the LOC4 S-10 result triggers or is MC-
+  indeterminate;
+- LOC4 materiality changes sign/order or qualitative conclusion;
+- preferred specification cannot be selected;
+- independent LOC4 review rejects;
+- a package change is required;
+- disclosure fails;
+- or another existing scientific halt occurs.
+
+### (2) Deputy Interim Ruling — LOC4 Branch B Confirmed
+
+DEPUTY INTERIM RULING — LOC4 BRANCH B CONFIRMED
+
+Continue the already-authorized six-scenario LOC4-arm S-10 battery
+and the independent LOC4 economics/numerical review.
+
+No specification switch or quantitative freeze is authorized before
+that complete packet returns.
+
+The Stage-2 LOC4 materiality findings are accepted as provisional
+decision evidence because their direct CRN difference-precision gates
+pass:
+
+- W1 mean: -54.00 EUR, -3.87%;
+- W1 Gini: -0.0236;
+- normalized opportunity contribution:
+  0.1012 -> 0.0238, Delta = -0.0774;
+- stable ordering reversal:
+  baseline B > A > P;
+  LOC4 A > B > P.
+
+Interpret this narrowly:
+
+"Allowing occupation-specific wage-location shifts materially changes
+the structural attribution of welfare inequality. The estimated
+ability contribution falls much more sharply than the access
+contribution, reversing their ordering and substantially reducing the
+overall normalized opportunity contribution."
+
+Do not say that LOC4 causally transfers or absorbs a fixed quantity of
+opportunity content. Both phi_A and phi_B fall; this is a
+model-conditional reallocation and welfare-distribution change.
+
+Treat LOC4 as a candidate preferred specification.
+
+LOC4 becomes preferred only if:
+
+1. LOC4 S-10 produces no Tier-2 trigger and no
+   S10_MATERIALITY_INDETERMINATE_MC;
+2. the independent LOC4 review accepts;
+3. strict nesting/common-sample model comparison is verified;
+4. all validity/support/normalisation gates remain passed;
+5. the LOC4-specific W-4 warning is locally stable.
+
+The complete preferred-specification packet must contain:
+
+- all six frozen LOC4 S-10 vectors;
+- all scenario outputs and direct CRN MC bands;
+- Tier-2/indeterminacy verdicts;
+- LOC4-minus-baseline differences under every scenario;
+- independent LOC4 review;
+- LR statistic, df, p-value, AIC and BIC comparisons;
+- exact nesting map and common-objective verification;
+- beta_w_pexp2 W-4 disclosure;
+- final preferred-specification recommendation.
+
+The 22 differences without difference-precision PASS remain
+uncertified and receive no interpretation.
+
+PARITY/HK PATH CLOSURE
+
+Do not rerun parity because of HK-01 path renames.
+
+In the final packet provide:
+
+- old/new paths;
+- rename map;
+- old/new hashes;
+- byte-identity proof;
+- rename-aware pin/alias update;
+- full post-update pin verification.
+
+This is path-only. No EUROMOD and no numerical parity rerun.
+
+If any protected file's bytes changed, halt.
+
+NOTEBOOK
+
+The working notebook may display the accepted Stage-2 difference
+evidence under:
+
+LOC4_MATERIAL_PENDING_S10_AND_INDEPENDENT_REVIEW
+
+Do not label LOC4 preferred or accepted before the complete packet.
+
+Return next with the complete preferred-specification packet, or
+earlier only under an existing S-10, review, validity, package,
+disclosure, or parity-byte-change halt.
+
+### (3) Deputy Ruling — Complete LOC4 Preferred-Specification Packet First
+
+DEPUTY RULING — COMPLETE LOC4 PREFERRED-SPECIFICATION PACKET FIRST
+
+Choose option (c).
+
+Do not select the corrected baseline as final preferred now.
+Do not select LOC4 as preferred now.
+Do not authorize a pinned-vs-free or curvature re-specification now.
+
+CURRENT STATUS
+
+Corrected baseline:
+ACCEPTED_REFERENCE_BASELINE_NOT_FINAL_PREFERRED
+
+LOC4:
+LOC4_MATERIAL_TIER2_TRIGGER_PREFERRED_SPEC_PENDING
+
+The LOC4 S-10 result establishes two separate facts:
+
+1. LOC4-versus-baseline materiality is stable under all six scenarios:
+   W1 mean, W1 Gini and s_opp remain material, and the A/B ordering
+   reversal remains stable on every accepted replicate.
+
+2. The LOC4 W1 level is locally sensitive to beta_w_pexp2:
+   s5 changes W1 mean by about -2.04%;
+   s6 changes it by about -1.11%;
+   Gini, s_opp and ordering do not trigger.
+
+Therefore the Tier-2 issue is concentrated and does not overturn the
+Branch-B specification-sensitivity result. It blocks automatic
+preferred-arm quantitative freeze.
+
+COMPLETE THE DETERMINISTIC PACKET
+
+Produce and verify:
+
+- exact nesting map;
+- common sample and common objective;
+- LR statistic, df and p-value;
+- AIC and BIC, with the sample-size convention explicit;
+- beta_w_pexp2 W-4 disclosure;
+- W4/W6 normative-sensitivity disclosure;
+- parity/HK path-only closure;
+- proposed manuscript claim set.
+
+No new estimation, pinning or curvature re-specification.
+
+INDEPENDENT REVIEW
+
+Commission a new ChatGPT review:
+
+JMP-M08 LOC4 — Preferred-Specification Review
+
+Model:
+GPT-5.6 Thinking
+
+Reasoning:
+High
+
+Writes:
+None
+
+Attach or make available:
+
+1. frozen LOC4 design v4;
+2. final LOC4 estimation/inference memo;
+3. LOC4 parameter/inference table;
+4. G-L4-8 diagnostics;
+5. Stage-2 materiality report;
+6. direct CRN difference tables;
+7. six-scenario LOC4 S-10 report;
+8. frozen scenario vectors and hashes;
+9. baseline M08 acceptance;
+10. baseline limited-MC results;
+11. baseline S-10 report;
+12. baseline and LOC4 aggregate functional maps;
+13. baseline and LOC4 W-4 diagnostics;
+14. exact nesting/model-comparison table;
+15. parity/HK path closure;
+16. specification-limits disclosure draft.
+
+No raw household-level or microdata file.
+
+The review must adjudicate:
+
+- strict nesting and common objective;
+- LR/AIC/BIC;
+- convergence/rank/curvature;
+- economic validity of the LOC4 asymmetry repair;
+- stability of the LOC4 materiality result;
+- scope of the beta_w_pexp2 Tier-2 trigger;
+- W4 normative-reference sensitivity;
+- preferred specification;
+- manuscript claim boundaries.
+
+The reviewer must return exactly one:
+
+LOC4_PREFERRED_PENDING_TIER2_BOUNDARY_ANALYSIS
+
+BASELINE_PREFERRED_LOC4_MATERIAL_ROBUSTNESS
+
+PREFERRED_SPECIFICATION_UNRESOLVED
+
+REJECT_EVIDENCE_CHAIN
+
+The reviewer must not design a Tier-2 estimator or rewrite text.
+
+NEXT DEPUTY RETURN
+
+Return one complete packet containing:
+
+- Stage-1 result;
+- Stage-2 materiality;
+- all S-10 results;
+- Tier-2 verdict;
+- independent review;
+- LR/AIC/BIC;
+- nesting/common-objective verification;
+- W-4 and W4/W6 disclosures;
+- parity/HK path closure;
+- preferred-spec recommendation;
+- proposed manuscript claim set;
+- proposed next mission.
+
+Until that packet is accepted:
+
+- baseline remains the reference benchmark;
+- LOC4 remains a material candidate;
+- neither is final preferred;
+- no preferred quantitative magnitude is frozen.
+
+NOTEBOOK
+
+Use:
+
+LOC4_MATERIAL_TIER2_TRIGGER_PREFERRED_SPEC_PENDING
+
+The notebook may display the precise differences, ordering reversal,
+all six S-10 scenarios and the trigger.
+
+Do not label LOC4 preferred or restore the baseline ordering as robust.
+
+Return earlier only for:
+
+- independent-review evidence rejection;
+- failed nesting/common-objective verification;
+- path closure showing changed bytes;
+- disclosure failure;
+- package change;
+- or another existing scientific halt.
+
+### (4) Deputy Ruling — HK-01 v6 and Final Tracked Archive Execution
+
+DEPUTY RULING — HK-01 V6 AND FINAL TRACKED ARCHIVE EXECUTION
+
+Confirm the proposed disposition.
+
+1. CREATE V6
+
+Create:
+
+docs/Missions/HK01/
+JMP_HK_01_inventory_and_disposition_register_v6.csv
+
+Preserve v5 unchanged.
+
+Reclassify these three files from ARCHIVE_MOVABLE to
+HISTORICAL_IMMUTABLE_IN_PLACE:
+
+- FR_P2a_region_live_phase4_remediation_report_v4.md
+- FR_P2a_region_live_phase4_remediation_report_v5.md
+- RURO_welfare_stage2_vdir_crosscheck_v1.md
+
+Reason:
+
+"A current exact-path-equivalent same-directory basename citation
+establishes an active evidentiary-lineage dependency. The historical
+artifact must remain immutable at its existing path."
+
+For all three:
+
+- retain their current paths and hashes;
+- clear every archive destination and move/delete/action field;
+- do not edit the citing documents to make the files movable.
+
+2. RATIFIED V6 COUNTS
+
+CANONICAL_CURRENT: 937
+HISTORICAL_IMMUTABLE_IN_PLACE: 135
+ARCHIVE_MOVABLE: 5
+DELETE_TRACKED: 0
+ARCHIVE_EXTERNAL_THEN_DELETE_UNTRACKED: 29
+HOLD: 8281
+TOTAL: 9387
+
+HOLD remains 8281.
+
+3. V6 MECHANICAL GATE
+
+Verify:
+
+- v5 and v6 each have 9,387 rows and 24 columns;
+- stable IDs and row order are unchanged;
+- only the three newly protected rows change at row level;
+- only mechanical count/parent metadata changes elsewhere;
+- the three protected rows carry no executable action or destination;
+- the five surviving movable rows retain identical IDs, source paths,
+  hashes, destinations and accepted review outcomes;
+- counts equal 937 / 135 / 5 / 0 / 29 / 8281;
+- v5 SHA is recorded as parent;
+- the 29 completed untracked archival deletions still reconcile;
+- row 2919 remains restored, tracked, HOLD and byte-identical;
+- no protected/current/HOLD row carries an executable action.
+
+4. FINAL BASENAME-AWARE PRE-MOVE SCAN
+
+Immediately before movement, scan the five surviving candidates using:
+
+- complete relative paths;
+- basenames;
+- same-directory basename resolution;
+- Markdown links and code spans;
+- quoted filenames;
+- Supersedes / Superseded-by citations;
+- manifests, pins, acceptance pointers and current reviews.
+
+A basename reference is binding when it resolves unambiguously in the
+citing document's directory or repository context.
+
+If any of the five proves referenced, pinned, protected, sensitive or
+live-task-dependent, do not move that row. Reclassify or halt it under
+the standing taxonomy.
+
+No additional independent Codex review is required if all five remain
+clear: the existing narrow review already accepted those five on
+references, pins, protection, content and destination safety.
+
+5. EXECUTE FIVE MOVES
+
+After the v6 gate and final scan pass:
+
+- execute only the five ratified git mv operations;
+- use their existing v6 destinations under
+  archive/HK01/2026-08-25_ratified_v1/;
+- preserve full original relative paths;
+- use separate gated commits per repository where applicable;
+- make no tracked deletion;
+- perform no further untracked deletion.
+
+After movement rerun:
+
+- all 76 pin checks;
+- manifest references;
+- acceptance pointers;
+- complete-path references;
+- basename-aware references;
+- current-review and live-task scans.
+
+Require zero dangling references and zero protected-path movement.
+
+Do not create an empty commit in a repository with no approved move.
+
+6. FINAL ACCEPTANCE
+
+Create:
+
+docs/Missions/HK01/JMP_HK_01_final_acceptance_v1.md
+
+Record:
+
+- v3/v4/v5/v6 hashes;
+- the three newly protected files;
+- the five tracked moves;
+- the 29 completed external archive/delete actions;
+- the 18 microdata HOLD rows;
+- row 2919 restoration;
+- the U+009D scanner defect;
+- the same-directory basename-reference scanner defect;
+- final commit SHAs;
+- post-execution pin/reference results;
+- confirmation that no raw data, accepted attempt, pinned artifact,
+  ruling-protected path or live review target moved or disappeared.
+
+Do not create a separate scanner-defect memo.
+
+After a clean final acceptance, close JMP-HK-01 autonomously.
+
+Return to the deputy only if:
+
+- v6 mechanical reconciliation fails;
+- one of the remaining five proves protected or referenced;
+- a destination collision appears;
+- a pin, manifest, pointer or live review breaks after movement;
+- the register requires another substantive revision;
+- or a scientific M08/LOC4 halt independently fires.
+
+### (5) Deputy Ruling — HK-01 v7 and Final Four Moves
+
+DEPUTY RULING — HK-01 V7 AND FINAL FOUR MOVES
+
+Confirm the proposed disposition.
+
+1. CREATE V7
+
+Create:
+
+docs/Missions/HK01/
+JMP_HK_01_inventory_and_disposition_register_v7.csv
+
+Preserve v6 unchanged.
+
+Reclassify only row 1663:
+
+Results/P3a/pooled_P3a/
+JMP_pooled_P3a_estimation_report_v1.md
+
+from:
+
+ARCHIVE_MOVABLE
+
+to:
+
+HISTORICAL_IMMUTABLE_IN_PLACE
+
+Reason:
+
+"A live Supersedes: exact-path citation and a same-document basename
+changelog citation establish an active evidentiary-lineage dependency.
+The historical predecessor must remain immutable at its existing
+path."
+
+For row 1663:
+
+- preserve its path and hash;
+- clear every archive destination;
+- clear every move/delete/action field;
+- do not edit the current v2 report or changelog to make it movable.
+
+2. V7 COUNTS
+
+CANONICAL_CURRENT: 937
+HISTORICAL_IMMUTABLE_IN_PLACE: 136
+ARCHIVE_MOVABLE: 4
+DELETE_TRACKED: 0
+ARCHIVE_EXTERNAL_THEN_DELETE_UNTRACKED: 29
+HOLD: 8281
+TOTAL: 9387
+
+3. V7 MECHANICAL GATE
+
+Verify:
+
+- v6 and v7 each have 9,387 rows and 24 columns;
+- stable IDs and row order are unchanged;
+- row 1663 is the only substantive row-level change;
+- only mechanical count/parent metadata changes elsewhere;
+- row 1663 has no destination or executable action;
+- the remaining four candidates retain identical IDs, source paths,
+  hashes, destinations and prior review results;
+- counts equal 937 / 136 / 4 / 0 / 29 / 8281;
+- v6 SHA is recorded as parent;
+- the 29 completed external archivals still reconcile;
+- all 18 microdata rows remain HOLD and intact;
+- row 2919 remains restored, tracked, HOLD and byte-identical;
+- no protected/current/HOLD row carries an executable action.
+
+Compute and record the v7 SHA-256.
+
+4. REVIEW-ERROR DISPOSITION
+
+Record that the narrow Codex row-8 ACCEPT was factually wrong because
+it did not address:
+
+- the live exact-path Supersedes citation;
+- the same-document changelog basename citation;
+- the Phase-2 supersession-map status HALTED_AWAITING_DEPUTY with
+  "1 live exact-path reference remains."
+
+The supersession map had the correct fail-closed status. A review may
+not override an unresolved supersession-map reference without
+explicitly addressing and disproving it.
+
+Do not reopen the other four rows and do not commission another Codex
+review. They have been reverified clear under the complete scan.
+
+5. FINAL PRE-MOVE SCAN
+
+Immediately before movement, scan the four remaining rows using:
+
+- full relative paths;
+- basenames;
+- same-directory and repository-context basename resolution;
+- Markdown links and code spans;
+- quoted filenames;
+- Supersedes / Superseded-by fields;
+- changelog references;
+- manifests, pins, acceptance pointers;
+- current reviews and live-task targets;
+- supersession-map status.
+
+If all four remain clear, execute the four ratified git mv operations.
+
+6. EXECUTION
+
+All four are in MNL, so use one gated MNL commit.
+
+Do not create an empty Job_Market_paper commit.
+
+Use the existing v7 destinations under:
+
+archive/HK01/2026-08-25_ratified_v1/
+
+Preserve the original repository-relative path beneath the archive
+root.
+
+Make no tracked deletion and no further untracked deletion.
+
+Before and after commit require:
+
+- all 76 pins pass;
+- zero broken manifests or acceptance pointers;
+- zero dangling exact-path or basename references;
+- zero moved protected artifacts or live review targets;
+- content hashes unchanged for all four moved files;
+- no file outside the four approved rows changes.
+
+If any check fails, revert the uncommitted moves and halt. Do not edit
+a citing document or manifest to make cleanup pass.
+
+7. FINAL ACCEPTANCE
+
+Create:
+
+docs/Missions/HK01/JMP_HK_01_final_acceptance_v1.md
+
+Record:
+
+- v3/v4/v5/v6/v7 hashes;
+- row 1663 and both citations;
+- the three v6-protected files;
+- the four executed tracked moves;
+- the 29 completed external archive/deletes;
+- the 18 microdata HOLD rows;
+- row 2919 restoration;
+- the U+009D scanner defect;
+- all basename-reference scanner gaps;
+- the Codex row-8 factual error;
+- the supersession map's correct HALTED_AWAITING_DEPUTY status;
+- final MNL commit SHA;
+- post-move pin/reference results;
+- confirmation that no raw data, accepted attempt, pinned artifact,
+  ruling-protected path or live review target moved or disappeared.
+
+After a clean acceptance, close JMP-HK-01 autonomously.
+
+Create no additional review or scanner-defect memo.
+
+Return to the deputy only if:
+
+- v7 reconciliation fails;
+- one of the four proves referenced, pinned, protected or sensitive;
+- a destination collision appears;
+- a post-move gate fails;
+- the approved register requires another substantive revision;
+- or an independent M08/LOC4 scientific halt fires.
+
+## Appended 2026-08-27 — R-156 / R-157
+
+*Frame note: R-156/R-157 — Goal-1. R-157 is the JMP-M08T2 deputy ruling,
+recorded verbatim below under its own heading; per its own closing
+instruction, no separate deputy-ruling memo is created. R-156 is the LOC4
+evidence-checkpoint commit that ruling's card A authorises — the complete
+current LOC4 packet frozen as an immutable evidence checkpoint before
+successor execution (Job_Market_paper: governance, claim set, packet index,
+design chain; MNL: memos, code, notebooks and restricted numerical
+artifacts) — together with the formal retirement of the old Stage-2 parity
+record as
+PARITY_AXIS_DISPOSITION_RETIRED_SUPERSEDED_BY_RENAME_AWARE_ALIAS_CLOSURE,
+preserved as immutable history, the operative path record being
+FR_P2a_m08_parity_path_closure_v1.md.*
+
+### (6) Deputy Ruling — LOC4 Preferred Structural Specification and JMP-M08T2 (R-157)
+
+DEPUTY RULING — LOC4 PREFERRED STRUCTURAL SPECIFICATION AND JMP-M08T2
+Ratify the independent verdict:
+LOC4_PREFERRED_PENDING_TIER2_BOUNDARY_ANALYSIS
+and advance the programme status to:
+LOC4_PREFERRED_STRUCTURAL_SPECIFICATIONQUANTITATIVE_LEVELS_PENDING_TIER2_PROFILE_AND_FINAL_MC_PRECISION
+The corrected common-dispersion model becomes:
+BASELINE_ACCEPTED_NESTED_REFERENCE_SPECIFICATION
+Use this binding interpretation:
+“LOC4 is a better-supported structural specification empirically,not a mechanical correction of an invalid baseline estimator.”
+The LOC4 Tier-2 trigger does not disqualify the model. It conditionsthe preferred arm’s W1 level. LOC4-minus-baseline Gini, opportunity-contribution materiality and the A>B>P ordering remain stable acrossall six S-10 scenarios.
+Do not freeze exact preferred-arm levels yet.
+Ratify the operative LOC4 branch of:
+JMP_M08_LOC4_manuscript_claim_set_proposal_v1.md
+subject to:
+- LOC4 is preferred structurally;
+- the baseline is the nested reference restriction;
+- A>B>P is pending profile confirmation;
+- the baseline s_opp near 0.101 is not specification-robust;
+- LOC4 W1 levels are Tier-2/profile-banded;
+- no W1/W4/W6 quantitative-robustness claim;
+- no causal transfer/absorption language;
+- no exact LOC4 s_opp freeze before final precision.
+Commit the complete current LOC4 packet as an immutable evidencecheckpoint before successor execution. This is not a finalquantitative acceptance.
+Create one mission charter:
+JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md
+Mission title:
+JMP-M08T2 — LOC4 beta_w_pexp2 Boundary Analysis andPreferred-Arm Final Numerical Precision
+Profile beta_w_pexp2 over its full legal interval.
+Freeze the initial grid:
+{-0.10, -0.09, ..., 0.09, 0.10}plus the exact unrestricted LOC4 estimate.
+At every point:
+- fix beta_w_pexp2;
+- re-optimize every other free LOC4 coordinate;
+- retain all accepted pins, bounds, sample, proposal correction andobjective;
+- use two deterministic starts:unrestricted LOC4 MLE projected onto the fixed value, and thenearest converged profile solution;
+- add a third deterministic perturbation start at either bound orwherever the two starts differ by more than 1e-8 in negLL;
+- record convergence, KKT, active set, gradients and objective.
+No EUROMOD and no new alternatives.
+Define:
+LR_p(b) = 2 * [Q_profile(b) - Q_LOC4_MLE]
+Report conventional support regions:
+LR_p <= 2.7055434541LR_p <= 3.8414588207
+with an explicit boundary/active-set caveat.
+Adaptively bisect only intervals containing:
+- either LR cutoff;
+- a 1% W1-mean crossing;
+- a sign change;
+- an ordering change;
+- a LOC4 materiality-classification change.
+Stop at beta-width <= 0.0025.
+At every converged point evaluate on the same priced 16x basis:
+- W1 mean and Gini;
+- phi_A, phi_B, phi_P, R_bg, phi_A+phi_B;
+- s_opp;
+- signs and ordering;
+- LOC4-minus-baseline differences;
+- W4 mean as normative-reference disclosure.
+Use identical qW, normalisation, references, operators, CRN andprices.
+Report the profile-conditioned functional envelope over theconventional LR<=3.8414588207 region.
+Do not call this full welfare uncertainty.
+Return if:
+- the profile is disconnected;
+- relevant constrained optimisations fail;
+- the unrestricted optimum moves to a bound;
+- LOC4 fit/materiality ceases inside the profile region;
+- W1 Gini or opportunity materiality disappears;
+- A>B>P fails anywhere;
+- a sign changes;
+- an estimand, support, qW or normalisation inconsistency appears.
+A W1-mean envelope wider than 1% does not reject LOC4. It requiresboundary-conditioned reporting.
+The prior pre-LOC4 ceiling is lifted only for the preferred LOC4 arm.
+Authorize randomized QMC as the sole new final numerical instrument.
+Do not reopen or retune U6-CV1.Do not authorize another ordinary ladder.Do not authorize per-functional estimator selection.
+Use eight independent Owen-scrambled Sobol replicates, 256 stochasticproposal nodes per household per replicate, with seeds:
+20260827012026082702202608270320260827042026082705202608270620260827072026082708
+Freeze before pricing:
+- Sobol dimension;
+- uniform-coordinate mapping;
+- inverse-CDF rules;
+- mixture, hours, occupation and wage construction;
+- atom/chosen treatment;
+- support and duplicate rules;
+- exact qW density;
+- target-only pricing geometry;
+- package/SciPy versions.
+Implement in MNL only. No dclaborsupply source change.
+Commission one bounded GPT-5.6 Codex read-only review before pricing.
+Require:
+- deterministic reproduction by seed;
+- distinct scrambles;
+- exact marginal/moment/category checks;
+- finite exact qW for every row;
+- defensive-bound conformance;
+- normalisation identities;
+- unchanged chosen/non-employment conventions;
+- identical priced nodes across baseline, LOC4, S-10 and profileevaluations.
+Authorize EUROMOD only after Codex ACCEPT.
+Cost guard:7 hours projected maximum.
+If exceeded, return before pricing.
+For household i and scramble r calculate J_ir.
+Use:
+Jbar_i = mean_r(J_ir)
+before log and money-metric inversion.
+Calculate eight leave-one-scramble-out functional estimates.
+Use the delete-one-scramble jackknife and:
+t_0.975,7 = 2.364624251
+for the MC band.
+Do not average already-transformed welfare values as the primaryestimator.
+Primary final gates:
+- W1 mean relative MC error <= 0.0025;
+- W1 Gini MC error <= 0.00125;
+- every W1 component-level MC error <= 0.00125;
+- normalized-contribution precision under the accepted scale-consistent rule;
+- signs and A>B>P stable across all leave-one-scramble estimates;
+- precise LOC4-minus-baseline differences;
+- precise S-10 differences;
+- exact Shapley and R_bg accounting;
+- valid support and inequality-index domains.
+Median remains:
+MC_BAND_ONLY_NONSMOOTH
+W4/W6 remain secondary. If their decomposition precision fails, donot claim cross-measure quantitative robustness; this does not byitself overturn LOC4’s preferred structural status.
+If primary W1 QMC gates fail:
+- authorize no further instrument;
+- retain LOC4 as preferred if T2-A passed;
+- retain banded magnitudes;
+- return for final manuscript-claim narrowing.
+After T2-A and T2-B, commission:
+JMP-M08T2 — Independent Boundary and Precision Review
+Tool:ChatGPT Thinking
+Model:GPT-5.6 Thinking
+Reasoning:High
+Writes:None
+The reviewer audits:
+- profile construction and nuisance reoptimization;
+- LR support-region caveat;
+- functional profile envelope;
+- continued LOC4 fit/materiality/ordering;
+- QMC target identity;
+- scramble independence and MC estimator;
+- support and disclosure;
+- final claim boundaries.
+Permitted verdicts:
+LOC4_PREFERRED_FULL_NUMERICAL_FREEZELOC4_PREFERRED_PROFILE_BANDED_LEVELSLOC4_PREFERRED_MC_BANDED_LEVELSPREFERRED_SPECIFICATION_UNRESOLVEDREJECT_EVIDENCE_CHAIN
+Retain only:
+1. JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md
+2. FR_P2a_m08_loc4_beta_w_pexp2_profile_results_v1.md
+3. FR_P2a_m08_loc4_rqmc_final_precision_results_v1.md
+4. FR_P2a_m08_loc4_tier2_independent_review_v1.md
+5. JMP_M08_LOC4_preferred_spec_acceptance_v1.md
+6. JMP_M08_LOC4_manuscript_claim_set_v2.md
+Code, configs, tests, manifests and restricted numerical artifactsremain in MNL.
+Routine prompts and progress notes remain disposable chat.
+Formally mark the old Stage-2 record:
+PARITY_AXIS_DISPOSITION_RETIRED_SUPERSEDED_BY_RENAME_AWARE_ALIAS_CLOSURE
+Preserve it as immutable history.
+The operative path record is:
+FR_P2a_m08_parity_path_closure_v1.md
+with the rename-aware alias, byte-identity evidence and 76/76 pinverification at MNL HEAD 192ef57a.
+No parity rerun and no EUROMOD.Reopen only if protected bytes change.
+In parallel with T2-A, authorize one bounded manuscript-identity andclaim-set rider.
+Use the current accepted identity documents, the LOC4 packet,preferred-spec review, model-comparison memo, claim-set proposal andspecification-limits disclosure.
+Update:
+- LOC4 as preferred structural specification;
+- baseline as nested reference restriction;
+- W1 level as profile/MC pending;
+- A>B>P as PENDING_PROFILE_CONFIRMATION;
+- no invariant baseline 0.101 claim;
+- no cross-measure quantitative-robustness claim.
+No literature search and no final numerical substitution beforeT2 acceptance.
+Issue complete NEXT ACTION CARDS for:
+A. LOC4 evidence checkpoint commit;B. T2-A profile-design freeze;C. T2-A implementation and execution;D. independent profile review;E. QMC design freeze;F. QMC implementation and Codex review;G. QMC pricing/evaluation;H. final independent review;I. manuscript rider.
+Each card must state:
+- destination;
+- exact model;
+- thinking;
+- effort;
+- repository/workspace;
+- ATTACH / MAKE AVAILABLE list with exact files and paths;
+- exact prompt;
+- outputs;
+- prohibitions;
+- return destination;
+- pass/halt conditions;
+- next step after success.
+Return to the deputy if:
+- a T2-A halt fires;
+- QMC design cannot reproduce exact qW;
+- projected pricing exceeds 7 hours;
+- Codex rejects after the one permitted correction;
+- primary W1 QMC gates fail;
+- final review returns unresolved/reject;
+- a package change is required;
+- disclosure fails.
+Otherwise, close JMP-M08T2 autonomously and return the finalpreferred-specification acceptance packet.
+Record this ruling in the consolidated rulings document.Create no separate deputy-ruling memo.
+
+*Transcription note: the ruling above is recorded VERBATIM as issued. The
+source text carries line-wrap concatenations (e.g.
+`LOC4_PREFERRED_STRUCTURAL_SPECIFICATIONQUANTITATIVE_LEVELS_...`,
+`LR_p <= 2.7055434541LR_p <= 3.8414588207`, and the eight seeds run
+together as `2026082701`…`2026082708`). They are preserved unaltered
+rather than silently repaired; the operative readings are the two LR
+cutoffs 2.7055434541 and 3.8414588207 and the eight seeds 20260827-01
+through 20260827-08.*
