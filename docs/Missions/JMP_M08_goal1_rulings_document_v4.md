@@ -2621,3 +2621,349 @@ Return only if:
 *Transcription note: the ruling above is recorded VERBATIM as issued,
 including the stray trailing backslash after the final line
 ("disclosure fails.\"). It is preserved rather than silently repaired.*
+
+## Appended 2026-08-28 — R-162..R-168 + two rulings
+
+*Frame note: chat-side rulings R-162..R-168, followed VERBATIM under their
+own headings by the two rulings that close the T2-B pre-pricing checkpoint:
+(1) the DEPUTY E2 RULING on final R3 gate-completeness closure, and (2) the
+PI STANDING DIRECTION establishing practical research mode. Per the E2
+ruling's own closing instruction, no separate deputy-ruling memo is created.*
+
+- R-162 pin-recursion authorized. Every append to this document changes its
+  sha256 and therefore stales the live gates that pin it by hash. The re-pin
+  of each dependent site is authorized to land in the SAME commit as the
+  append that stales it, and this becomes standing practice: an append
+  carries its own re-pins. R-162.2 applies the practice to this append —
+  scripts/loc4/run_loc4_stage2_comparison.py (M6_RULINGS_SHA) and the two
+  bind_evidence pins in notebooks/france/fr_singles_results_discussion_v1.ipynb
+  are advanced path-only to the new sha, and their claim-string assertions
+  are re-asserted under their own read.
+- R-163 false-incident correction and concurrency hardening. A reported
+  incident was, on the evidence, determined not to have occurred; the record
+  is corrected to record it as a false incident rather than as a defect, and
+  the concurrency handling that produced the false signal is hardened so the
+  same signal cannot recur. No scientific artifact was affected.
+- R-164 preflight gate findings accepted. The round-1 GPT-5.6 Codex read-only
+  review of the T2-B part-1 preflight discharged G1/R1 (deterministic
+  reproduction by seed), G2/R2 (distinct scrambles) and G4..G9/R4..R9 (finite
+  exact qW, defensive-bound conformance, normalisation identities, unchanged
+  chosen/non-employment conventions, theta-free identical priced nodes, and
+  the seven-hour projection arithmetic). Those findings are accepted and
+  closed. R3 alone remained open.
+- R-165 correction cycle. One bounded correction cycle was run against the
+  round-1 R3 rejection: the reference map was reconstructed independently of
+  the generator (rqmc_gates_r3fix.py), and both statistical t-bands were
+  deleted from the R3 pass path rather than recalibrated, leaving them as
+  permanent diagnostics.
+- R-166 second-reject return. The round-2 Codex re-review accepted the
+  independent reference map and the t-band deletion but REJECTED R3 again on
+  completeness: the all-column coverage claim was false as written, and the
+  joint cells still counted unconditioned coordinate slabs rather than
+  employment-conditioned mapped outputs. The matter was returned to the deputy
+  rather than corrected a further time under ordinary authority.
+- R-167 deputy E2 ruling adopted. Option (a): one final exceptional bounded
+  correction of the R3 verification gate, scoped to R3F-1..R3F-4, with the
+  generator, node frames, qW, seeds and all downstream geometry frozen and
+  hash-verified byte-identical across the patch. Recorded VERBATIM below.
+- R-168 ACCEPT recorded. The commissioned fresh GPT-5.6 Codex read-only
+  review returned R3F-1 ACCEPT, R3F-2 ACCEPT, R3F-3 ACCEPT, R3F-4 ACCEPT and
+  OVERALL ACCEPT, and mechanically confirmed the generator unchanged, the
+  node frames byte-unchanged, the t-band absent and no extra gate change.
+  Programme status is advanced to
+  T2B_RQMC_IMPLEMENTATION_ACCEPTED_PREPRICING; the bounded evidence
+  checkpoint is committed; eight-scramble pricing is authorized under the
+  unchanged 5.02h projection and the 7h guard. The PI STANDING DIRECTION —
+  PRACTICAL RESEARCH MODE is adopted with it and recorded VERBATIM below;
+  under it, one current-state dashboard
+  (docs/Missions/JMP_current_state_dashboard_v1.md) replaces overlapping
+  status memos, and EXP_H35_PEAK_v1 is the next positive experiment.
+
+### (1) Deputy E2 Ruling — Final T2-B R3 Gate-Completeness Closure (R-167)
+
+DEPUTY E2 RULING — FINAL T2-B R3 GATE-COMPLETENESS CLOSURE
+
+Choose option (a).
+
+Authorize one final exceptional bounded correction of the R3
+verification gate. This is not a generator rewrite and not another
+ordinary correction cycle.
+
+The RQMC generator and frozen node frames are scientifically supported:
+independent full-map reconstructions repeatedly match them bitwise.
+The remaining rejection concerns four completeness properties of the
+pre-pricing gate.
+
+No pricing or EUROMOD until final ACCEPT.
+
+
+1. PATCH SCOPE
+
+Modify only:
+
+- R3 deterministic gate code;
+- gate-specific tests;
+- gate evidence/manifest fields;
+- mechanically necessary gate-report text.
+
+Do not modify:
+
+- Owen/Sobol generator;
+- u-to-node mapping;
+- frozen node frames;
+- qW;
+- seeds;
+- support, mixture, occupation, hours, wage, atom or chosen logic;
+- RQMC estimator;
+- deleted t-band;
+- pricing geometry;
+- EUROMOD;
+- dclaborsupply;
+- model or welfare objects.
+
+Hash every frozen node frame before and after. Require byte identity.
+
+
+2. R3F-1 — ALL 18 COLUMNS
+
+Read the authoritative ordered 18-column emitted schema from the frozen
+design/manifest.
+
+Require:
+
+- exactly 18 expected columns;
+- no missing or extra column;
+- identical order;
+- identical physical dtype/schema;
+- full comparison over all 3,184,640 rows.
+
+Compare all 18, not 14.
+
+Mutate each of the four formerly omitted columns independently and
+prove each mutation fails the gate.
+
+
+3. R3F-2 — BYTE SEMANTICS
+
+Use exact schema-plus-physical-buffer equality.
+
+For every column persist and compare:
+
+- dtype/schema;
+- shape;
+- null bitmap where applicable;
+- raw data/offset buffers;
+- per-column SHA-256.
+
+Persist and compare one deterministic full-frame digest covering
+ordered names, schema, row order and all buffers.
+
+No tolerance and no value-only equality.
+
+The gate must detect:
+
+- one floating-point bit flip;
+- one integer-byte mutation;
+- one null-mask mutation where applicable;
+- column reordering.
+
+
+4. R3F-3 — DEFENSIVE-OCCUPATION JOINT CELL
+
+Condition through the frozen working/employment predicate before
+checking the joint cell.
+
+Required working-output count:
+
+8
+
+not the unconditioned generated count 16.
+
+Persist pre-count, predicate, post-count, exact membership and verdict.
+
+A missing or duplicated working-output row must fail.
+
+
+5. R3F-4 — BACKGROUND-BAND JOINT CELL
+
+Apply the same working conditioning.
+
+Required working-output count:
+
+32
+
+not the unconditioned count 64.
+
+Persist pre-count, predicate, post-count, exact membership and verdict.
+
+The historical unconditioned 64-row case must fail.
+
+
+6. OTHER CHECKS
+
+Leave every other joint-cell check and expected count unchanged.
+
+Do not restore either statistical t-band to the pass path. Both remain
+diagnostic only.
+
+Run the corrected full comparison over all 3,184,640 rows.
+
+Persist:
+
+- ordered 18-column list;
+- schemas;
+- per-column and full-frame hashes;
+- zero mismatched bytes;
+- exact 8 and 32 conditioned counts;
+- all non-vacuity probes;
+- unchanged node-frame hashes;
+- zero-extra-scope diff.
+
+
+7. IMPLEMENTATION CARD
+
+Issue a complete NEXT ACTION CARD to a fresh Claude Code session:
+
+Name:
+JMP-M08T2-B R3 Final Gate Closure
+
+Model:
+Claude Code Opus
+
+Thinking:
+ON
+
+Effort:
+High
+
+Repository:
+MNL only, bounded write access to the actual R3 gate, its tests and
+gate evidence paths.
+
+dclaborsupply-monorepo:
+read-only only if required to verify an already frozen source.
+
+ATTACH / MAKE AVAILABLE:
+use the actual repository paths for:
+- T2 charter;
+- frozen RQMC design;
+- round-1 Codex review;
+- correction-cycle record;
+- round-2 Codex re-review;
+- current gate code/tests;
+- independent full-map reconstruction;
+- sensitivity-probe evidence;
+- authoritative 18-column schema;
+- frozen node-frame manifests and hashes.
+
+List every actual path in the card. Do not invent aliases.
+
+
+8. FINAL REVIEW
+
+After the patch, commission a fresh GPT-5.6 Codex read-only review,
+high reasoning.
+
+Review exactly:
+
+R3F-1:
+18/18 ordered schema completeness and four-column mutation coverage.
+
+R3F-2:
+physical byte equality, column/full-frame hashes, and byte-mutation
+sensitivity.
+
+R3F-3:
+defensive-occupation conditioned working count = 8.
+
+R3F-4:
+background-band conditioned working count = 32.
+
+Also confirm mechanically:
+- generator unchanged;
+- node frames byte-unchanged;
+- t-band remains absent;
+- no extra gate change.
+
+Treat R1/R2/R4-R9 and every previously accepted RQMC design finding
+as closed and out of scope.
+
+R3 stands or falls on R3F-1 through R3F-4 alone.
+
+
+9. SUCCESS / FAILURE
+
+On ACCEPT:
+
+- record T2B_RQMC_IMPLEMENTATION_ACCEPTED_PREPRICING;
+- commit the bounded evidence checkpoint;
+- proceed to eight-scramble pricing under the unchanged 5.02h
+  projection and 7h guard;
+- continue autonomously.
+
+On REJECT:
+
+- halt;
+- make no further correction;
+- run no pricing;
+- return the exact failed R3F item to the deputy.
+
+Record this ruling in the consolidated rulings document.
+Create no separate deputy-ruling memo.
+
+### (2) PI Standing Direction — Practical Research Mode (R-168)
+
+PI STANDING DIRECTION — PRACTICAL RESEARCH MODE
+From this point forward, distinguish exploratory research from
+manuscript certification.
+EXPLORATORY WORK
+An exploratory specification may proceed without a mission charter,
+deputy ruling, Codex review or acceptance chain when it:
+- preserves accepted artifacts;
+- writes to a separate experiment directory;
+- changes no package main/gitlink;
+- is labelled provisional;
+- is not inserted as an accepted manuscript result.
+Each exploratory run may permanently retain at most:
+1. one specification/config file;
+2. one machine-readable run manifest;
+3. one comparison table;
+4. one short result note.
+Routine prompts, progress reports, review cover notes and correction
+memos remain disposable chat.
+NEXT POSITIVE EXPERIMENT
+After the current T2-B pre-pricing gate closes, run:
+EXP_H35_PEAK_v1
+on the preferred LOC4 model.
+The experiment must first distinguish mechanically between:
+- the narrow F35 reporting interval [33.5,36.5);
+- the broad omitted/reference category formed by all working hours not
+  assigned to PT1/PT2/FT+/LH.
+Then add one explicit 35-hour opportunity-density peak, with another
+residual category providing normalization.
+Reuse:
+- the same 1,555 households;
+- the same alternatives;
+- the same prices;
+- the same corrected proposal convention;
+- LOC4 as the warm start.
+No EUROMOD, welfare integration, decomposition or independent review.
+Report only:
+- changed observations/alternatives;
+- objective difference;
+- convergence;
+- parameter changes;
+- observed/predicted narrow F35 share;
+- complete hours-grid fit;
+- whether the result is worth promotion.
+CURRENT PRIORITIES
+1. close T2-B and final RQMC;
+2. run EXP_H35_PEAK_v1;
+3. update the discussion notebook/report;
+4. complete the paper outline and main tables;
+5. only then decide which exploratory result enters the formal
+   accepted specification.
+Maintain one current-state dashboard rather than multiple overlapping
+status memos.
+Return to the deputy only for a scientific decision, not routine
+documentation or execution mechanics.
