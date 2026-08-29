@@ -2967,3 +2967,211 @@ Maintain one current-state dashboard rather than multiple overlapping
 status memos.
 Return to the deputy only for a scientific decision, not routine
 documentation or execution mechanics.
+
+## Appended 2026-08-29 — R-169..R-175 + T2-B final disposition + verdict
+
+*Frame note: chat-side rulings R-169..R-175, followed VERBATIM under its own
+heading by the DEPUTY T2-B FINAL RQMC DISPOSITION that disposes of the primary
+normalized-contribution gate failure and closes JMP-M08T2, and then by the
+independent Tier-2 review's returned verdict line together with the two
+reporting corrections its H1 records — both entered openly here rather than left
+in chat. Per R-162 this append carries its own re-pins: the three MNL sites that
+pin this document by sha256 are advanced path-only in the same commit.*
+
+- R-169 meeting-report update recorded. The results/discussion report and its
+  status surface are brought up to the post-meeting state; the current-state
+  dashboard (docs/Missions/JMP_current_state_dashboard_v1.md) remains the single
+  status surface established at R-168 and is updated in place rather than
+  forked.
+- R-170 correction refused, and the refusal recorded on the record. The proposed
+  "drgur" correction is REFUSED: item 8 of the PI direction was wrong, and the
+  record is not amended to match it. The refusal is entered here openly rather
+  than settled in chat, so that the rejected correction and the reason for
+  rejecting it are both recoverable.
+- R-171 G return. Task G returned to the deputy rather than being disposed of
+  under ordinary authority.
+- R-172 PS1 opened. The authorized positive-specification sprint JMP_PS1 is
+  opened under the exploratory licence of the PI standing direction (R-168):
+  separate experiment directory (MNL experiments/JMP_PS1/, instrument
+  scripts/ps1/), provisional labelling throughout, no package or gitlink change,
+  no EUROMOD, no welfare integration, no decomposition and no independent review
+  for legs S1..S7. Full welfare and acceptance are reserved for S0 and for the
+  selected S8.
+- R-173 disposition adopted; H commissioned. The deputy's T2-B final RQMC
+  disposition — recorded VERBATIM under heading (1) below — is ADOPTED: the
+  charter §6 fail-branch is disposed of at the banded-level classification
+  rather than at FULL_NUMERICAL_FREEZE, the two failed normalized ratios are
+  carried as MC_BANDED_NORMALIZED_DIAGNOSTIC, and the mechanical
+  PHI_B_POSITIVE_PROFILE_STABLE output of the T2-A ruling §6 test is superseded
+  by PHI_B_SIGN_UNRESOLVED_95_PROFILE. The charter §8 independent Tier-2 review
+  (permanent output 4) is commissioned on that disposition and on the five
+  attachments.
+- R-174 PS1-A / PS1-B0 accepted, with the F-BOX and F-ACTIVE findings. Battery
+  part 1 is accepted: all six specs return SINGLE-OPTIMUM under the unchanged
+  Stage-1 protocol with no tolerance changed anywhere. Two findings are entered
+  on the record. **F-BOX** — the admissible set carried through the PS1-A
+  reparameterization must be the IMAGE of S0's box, not S0's box re-used: the
+  age0/age1 bounds are translated by the box displacement evaluated at theta_L4
+  while the age2 bounds are invariant under the map and are not translated.
+  **F-ACTIVE** — "beta_l_age2 is at a bound" is a statement about the
+  lambda_l = 10 leisure unit, not about the model: the exact, prediction-
+  invariant re-expression of S0 at lambda_l = 40 alone lifts age2 off its
+  ceiling (+1.0 to +0.034845 male, +0.055555 female), so the S2 boundary reading
+  must be taken in a common unit before it is interpreted. All PS1 rows remain
+  PROVISIONAL; nothing is promoted, no welfare is computed and no accepted
+  artifact is altered.
+- R-175 verdict recorded; JMP-M08T2 CLOSED. The commissioned independent Tier-2
+  review returned the single token **LOC4_PREFERRED_MC_BANDED_LEVELS** (recorded
+  under heading (2) below, with its two H1 reporting corrections). On that
+  verdict JMP-M08T2 is CLOSED autonomously — no further deputy step is required
+  to close it — under the two statuses
+  **LOC4_PREFERRED_STRUCTURAL_SPECIFICATION** (the specification) and
+  **MC_BANDED_LEVELS** (its magnitudes). The charter's permanent outputs 4, 5
+  and 6 are written in the same close-out: the review
+  (MNL docs/France_case/P2a/FR_P2a_m08_loc4_tier2_independent_review_v1.md), the
+  acceptance (docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md) and the
+  successor claim set (docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md).
+  The accepted result is the final numerical record for the CURRENT LOC4
+  benchmark; it is not automatically the final JMP structural specification if
+  the R-172 sprint selects an S8 successor. Priorities advance: PS1 is now
+  priority 1.
+
+### (1) Deputy Ruling — T2-B Final RQMC Disposition (R-173), VERBATIM
+
+The evidence chain supports the deputy’s ruled disposition at the numerical level. I find no basis for `FULL_NUMERICAL_FREEZE`, and no defect that makes the preferred specification unresolved or invalidates the evidence chain. There are, however, several manuscript-boundary corrections that must be carried into the successor claim-set document, principally the `phi_B` qualification, the two failed normalized ratios, and removal of the collective “stable component signs” claim.
+
+**H1 — Profile construction and nuisance reoptimization: PASS, with two reporting corrections.** The construction follows the charter: the frozen grid is the 21 values from −0.10 to +0.10 in 0.01 increments, plus the exact unrestricted LOC4 estimate, with eight authorized adaptive bisection points, yielding 30 evaluated parameter vectors. At each constrained point `beta_w_pexp2` is fixed and the other 39 free LOC4 coordinates are reoptimized; two deterministic starts are used, with the third perturbation start at the bounds or where required. The record contains objective, active set, projected-gradient information and multi-start agreement. The unrestricted estimate, `−0.0196886533`, is interior. The active nuisance bounds remain `{beta_l_age2_sf, beta_l_age2_sm}` throughout, and no multiple-optimum candidate or failed constrained optimization is recorded. The resulting LR profile is connected, with 90% and 95% support regions `[−0.079704,+0.040347]` and `[−0.091215,+0.051871]`.
+
+Two narrative statements in the T2-A memo are inaccurate but do not contaminate the numerical record. First, the unrestricted MLE is one of the 30 evaluated vectors but is explicitly “theta_L4 of record (not refit),” so the statement that all 30 points “converge SINGLE-OPTIMUM” should technically be read as 29 constrained profile optimizations plus the accepted unrestricted optimum. Second, §6 says “30 points fall in the [95%] region”; that is false. The RQMC record correctly identifies **20 of 30** evaluated points as lying inside the 95% region. The envelope numerals themselves correspond to the in-region points, so this is a count/transcription defect rather than an envelope defect.
+
+**H2 — LR support-region caveat: PASS.** The LR regions are explicitly described as conventional profile-likelihood support regions obtained from the fixed `2.7055434541` and `3.8414588207` cutoffs, with interpolation between the final 0.0025 brackets. The record discloses that `beta_w_pexp2` itself is pinned along the profile, that the grid reaches its legal box boundaries, and that two nuisance coordinates remain bound-active throughout. It also correctly separates the profile-LR object from the later RQMC numerical uncertainty and expressly prohibits calling the profile envelope “full welfare uncertainty.”
+
+The caveat must travel with any manuscript use of the support region. In particular, these conventional LR regions should not be presented as the same object as the RQMC numerical band, nor should the two be combined into a single confidence interval. The RQMC memo preserves exactly that separation.
+
+**H3 — Functional profile envelope: PASS.** On the final RQMC evaluation, the primary 95% region contains 20 evaluated points. The W1-mean envelope is `[1338.3178,1339.9855]` around the MLE value `1339.0426`. Its width is
+
+$$
+\frac{1339.9855-1338.3178}{1339.0426}=0.0012454,
+$$
+
+or **0.1245%**, correctly reported as about 0.12% and far below the charter’s 1% reporting threshold. The `phi_A` envelope is `[0.0028051,0.0029298]`, strictly positive; the `phi_P` envelope is `[−0.3534812,−0.3519888]`, strictly negative. Their sign conclusions therefore survive the profile exercise comfortably.
+
+One precision qualification matters: these displayed envelopes are envelopes over the **evaluated in-region grid points**, while the LR endpoints themselves are interpolated to `−0.091215` and `+0.051871`. That distinction is immaterial for W1 mean, `phi_A`, and `phi_P`, but it is directly material for `phi_B`; that is exactly why the deputy’s final `phi_B` qualification is warranted rather than a mechanical positive-profile claim.
+
+**H4 — Continued LOC4 fit, materiality, and ordering: PASS.** All 30 profile vectors were re-evaluated on exactly the same RQMC nodes; among the 20 points in the conventional 95% region, `phi_A > phi_B > phi_P` holds at every point and in every scramble set. M-1 through M-4 materiality against the baseline also remains in force at every in-region point. No profile point causes the W1 Gini difference or opportunity materiality to disappear. Thus the profile exercise does not overturn LOC4’s preferred structural status or the `A > B > P` ordering.
+
+This finding is narrower than a collective sign-stability statement. The ordering is stable even though the sign of the small `phi_B` component remains unresolved at the wider 95% boundary once numerical precision and grid resolution are jointly respected.
+
+**H5 — RQMC target identity and common-node identity: PASS.** The estimator implements the charter’s target in the correct order: household/scramble quantities `J_ir` are first averaged to `Jbar_i`, and **only then** is the logarithm/money-metric inversion applied. The staged-basis column identity establishes algebraically that the chosen column repeated once per scramble plus the replicate-specific nodes yields exactly `mean_r J_ir`. The same identity was independently checked numerically: the two routes to `Jbar_i` disagree by at most `1.37×10⁻¹⁴` for males and `1.42×10⁻¹⁴` for females.
+
+The shared-node condition is also discharged. The node generator is theta-free, the pre-pricing review explicitly verifies that property, and the final rebind verifies all **37 vectors**: baseline + LOC4 + five additional S-10 vectors + 30 profile vectors. The 30 profile parameter vectors were replayed and matched their stored hashes 30/30 bitwise. Consequently the baseline, LOC4, S-10, and profile evaluations share the same priced stochastic nodes; only post-pricing utility/reweighting changes.
+
+**H6 — Scramble independence and jackknife estimator: PASS.** The final pre-pricing review closes the RQMC implementation after three rounds: the initial R3 rejection, the bounded correction re-review, and the final R3F-1–R3F-4 acceptance. The final review confirms all eight generated frames unchanged and byte-identical, with the original generator and node map unchanged. R1 and R2 remain accepted: each scramble is addressed by its distinct charter seed, the Owen randomization is reconstructed independently, and no repeated point-set digest or repeated point tuple is found across the eight scrambles for the 1,555 households.
+
+The final-precision estimator then uses the eight leave-one-scramble estimates with
+
+$$
+SE_{\rm jack}
+=
+\sqrt{\frac{7}{8}\sum_{r=1}^{8}
+\left(T_{(-r)}-\bar T\right)^2},
+\qquad
+E_T=2.364624251\,SE_{\rm jack}.
+$$
+
+That is exactly the chartered delete-one-scramble jackknife and exactly the frozen \(t_{0.975,7}=2.364624251\). No unregistered jackknife-bias term is inserted into the pass/fail band.
+
+**H7 — Gate record and the two normalized-ratio failures: PASS under the deputy’s ruled disposition.** All seven W1 **level** gates pass: W1 mean, W1 Gini, `phi_A`, `phi_B`, `phi_P`, `R_bg`, and `phi_A+phi_B`. The corresponding RQMC bands are respectively `2.1105`, `1.0869e−3`, `3.9130e−4`, `6.5901e−4`, `7.8335e−4`, `7.2355e−4`, and `6.7681e−4`, all within their frozen thresholds. LOC4-minus-baseline differences, S-10 differences, accounting, support and leave-one ordering also pass.
+
+The two normalized failures are genuine and correctly left as failures:
+
+* `r_phi_P = −2.3341048`, with `E_r/S_r = 8.6804e−3 > 0.005`;
+* `r_R_bg = 3.3101511`, with `E_r/S_r = 7.2901e−3 > 0.005`.
+
+The claim that these failures are **Gini-denominator dominated** is arithmetically supported. The W1 Gini relative numerical error is approximately
+
+$$
+0.0010869/0.15114755 \simeq 0.00719.
+$$
+
+For `r_phi_P`, that denominator uncertainty alone implies roughly \(2.3341\times0.00719\simeq0.01678\) of absolute ratio uncertainty, versus an observed ratio band of about \(2.3341\times0.0086804\simeq0.02026\): approximately **83%** of the band. For `r_R_bg`, the analogous denominator component is about `0.02380` versus an observed `0.02413`, approximately **99%**. The “denominator dominated” characterization is therefore warranted, especially for `r_R_bg`.
+
+I also find no post-hoc relaxation of this **normalized-contribution** gate. The threshold remains `0.005`, the two rows are recorded as failures, and the deputy expressly refuses to recalibrate them. The earlier pre-pricing R3 history is different: an initially data-dependent statistical R3 criterion was rejected, and the final correction removed that statistical t-band from the R3 pass path rather than changing the final welfare-ratio threshold. The final R3 gate was accepted before pricing; it does not constitute relaxation of the T2-B normalized-ratio rule.
+
+The deputy’s `MC_BANDED_NORMALIZED_DIAGNOSTIC` disposition for these two ratios is therefore evidence-consistent. They may be shown only as estimates with RQMC numerical bands, not as precision-certified point contributions. Passing normalized quantities, especially `s_opp`, retain their certified status.
+
+**H8 — `phi_B` sign qualification: arithmetic PASS; current claim proposal is NOT YET verbatim-compliant.** All three arithmetic grounds in the deputy ruling are verified.
+
+First, the minimum positive RQMC profile value is `2.2054e−05`, while the MLE RQMC band is `6.5901e−04`; the margin is only **3.35%** of the numerical band. Second, the 16x and RQMC instruments differ only by a small, smooth offset near the right profile boundary: at `b=+0.045` the 16x value is `−7.66e−06` while the RQMC value is `+6.18e−05`, and at `b=+0.050` they are `−4.97e−05` versus `+2.21e−05`. This “opposite sign” evidence concerns the profile-edge readings; at the unrestricted MLE both instruments are positive, which should not be misstated. Third, the RQMC zero crossing is approximately `b*=0.052867`, only `0.000996` above the interpolated 95% endpoint `0.051871`, less than the frozen `0.0025` profile resolution.
+
+Accordingly, the deputy’s supersession of the mechanical `PHI_B_POSITIVE_PROFILE_STABLE` rule is numerically justified. `PHI_B_SIGN_UNRESOLVED_95_PROFILE` is the correct final classification, while positivity over the conventional 90% region remains supported.
+
+The manuscript-claim proposal itself predates this ruling and does **not** contain the deputy’s final sentence. The RQMC memo contains an older R-161 formulation rather than the final ruled wording. Therefore the requested “verbatim match” is not presently established in the five attachments. The successor claim set must use the deputy’s exact sentence, without substituting the older formulation:
+
+> “The ability contribution is small. It is positive over the conventional 90% profile region, but its sign is not resolved over the wider conventional 95% region once numerical precision and profile resolution are taken into account.”
+
+It must also not characterize `phi_B` as statistically insignificant or as having no effect.
+
+**H9 — Support and disclosure: numerical PASS; manuscript-claim proposal requires one mandatory strike.** The support record is clean: common support holds across all eight coalitions, all scramble sets and all three measures; there are zero non-finite or non-positive welfare observations, and no flooring, clipping, shifting or absolute-value repair is used. The W1 median remains explicitly `MC_BAND_ONLY_NONSMOOTH`, with `1244.077 ± 5.609` reported as a banded non-smooth diagnostic and no pass/fail classification. W4 and W6 fail decomposition precision, and the RQMC memo expressly prohibits any quantitative cross-measure robustness claim.
+
+The collective-sign prohibition is **not yet honored by the manuscript-claim proposal**. Its live Disposition-B table contains the proposed claim “stable component signs,” and its historical claim discussion also repeats that phrase. That is incompatible with the deputy’s final s8 boundary. The evidence may report individual sign diagnostics as part of the numerical gate, but the manuscript-facing successor must not assert “stable component signs,” “all component signs stable,” or an equivalent collective formulation. `phi_A` positive and `phi_P` negative may be stated individually; `phi_B` requires the ruled 90%/95% qualification. The `A > B > P` **ordering** may still be stated as profile- and RQMC-stable.
+
+**H10 — Final manuscript claim boundaries: ACCEPTABLE AFTER THE FOLLOWING STRIKES/ADDITIONS.** The proposal is explicitly provisional and predates T2-A/T2-B completion, so several portions are now superseded rather than evidentially wrong.
+
+The required boundary changes are:
+
+1. **Strike the pending-status logic in Disposition B.** The statements that the deputy has not yet ruled, that LOC4 remains merely pending Tier-2, and that no LOC4 quantitative magnitude can yet be manuscript-facing are superseded. The deputy has now disposed of T2-B and accepted LOC4 as the current benchmark at `MC_BANDED_LEVELS`. This does not imply `FULL_NUMERICAL_FREEZE`.
+
+2. **Strike the old T16 LOC4 values as final quantitative values.** The final numerical record is the RQMC record: W1 mean `1339.0426 ± 2.1105`, W1 Gini `0.15114755 ± 0.0010869`, `phi_A = 0.00291492 ± 0.00039130`, `phi_B = 0.00070562 ± 0.00065901`, `phi_P = −0.35279421 ± 0.00078335`, `R_bg = 0.50032122 ± 0.00072355`, `phi_A+phi_B = 0.00362054 ± 0.00067681`, and `s_opp = 0.02395367 ± 0.0043248`. These are numerical-integration bands, not sampling confidence intervals.
+
+3. **Strike “stable component signs” as a manuscript claim.** Do not replace it with another collective-sign formulation. Individual `phi_A` and `phi_P` sign statements are supported; `phi_B` receives the deputy’s exact qualification.
+
+4. **Add the deputy’s exact `phi_B` sentence quoted under H8.** The old R-161 sentence in the RQMC memo is not the final ruled wording. The final claim set must carry `PHI_B_SIGN_UNRESOLVED_95_PROFILE` and must not call the component insignificant or null.
+
+5. **Add the two normalized-ratio restrictions.** `r_phi_P` and `r_R_bg` must be labelled `MC_BANDED_NORMALIZED_DIAGNOSTIC`, shown only with numerical bands, and never treated as precision-certified point contributions. The frozen gate is not to be relaxed. Conversely, the normalized quantities that passed, including the primary `s_opp`, remain certifiable.
+
+6. **Retain the `A > B > P` ordering, but only as the LOC4/profile/RQMC ordering.** It survives every leave-one-scramble estimate and every evaluated point in the 95% profile region. This is compatible with unresolved `phi_B` sign because `phi_P` remains much more negative.
+
+7. **Retain the W4/W6 prohibition.** No statement that the W1 decomposition is quantitatively robust across W4/W6 is licensed. W4 may remain a normative-reference disclosure where required, but not evidence of cross-measure quantitative robustness. The W1 median may remain banded as `MC_BAND_ONLY_NONSMOOTH`; it must not become a precision-certified headline.
+
+8. **Do not combine numerical and profile uncertainty.** The RQMC band and the 95% `beta_w_pexp2` profile envelope are separate objects; neither is sampling uncertainty, and their union/sum must not be presented as a statistical confidence interval.
+
+9. **The old unqualified “welfare level is sensitive to a single near-boundary wage coordinate” language should not survive as the final profile conclusion.** It describes the earlier one-coordinate S-10 perturbation holding other parameters fixed. The nuisance-reoptimized profile produces only a 0.1245% W1-mean envelope. The S-10 fact can remain a specific sensitivity diagnostic, but it cannot substitute for the final profile result.
+
+10. **Do not restore a broad `Q-4` or collective robustness statement merely because the RQMC difference gates pass.** What is certified is the reported S-10 differences and the specified ordering/materiality results. A generic statement that “S-10 does not alter the qualitative conclusion” is broader than the final ruling requires.
+
+11. **Preserve the status distinction created by the deputy’s post-meeting sprint ruling.** The accepted M08T2 result is the final numerical record for the **current LOC4 benchmark**. It is not automatically the final JMP structural specification if the authorized positive-specification sprint selects an S8 successor. That boundary is conceptually separate from the numerical acceptance reached here.
+
+These required claim-set corrections do not warrant `PREFERRED_SPECIFICATION_UNRESOLVED`: they are exactly the manuscript narrowing contemplated by the charter after a primary normalized-contribution failure. Nor do the two T2-A reporting-count defects or the historical R3 preflight corrections undermine the final evidence chain. The correct classification is therefore the banded-level disposition ruled by the deputy, not full numerical freeze.
+
+LOC4_PREFERRED_MC_BANDED_LEVELS
+
+### (2) Independent Tier-2 review — returned verdict, and the two H1 reporting corrections recorded openly
+
+The charter §8 independent Tier-2 review commissioned at R-173 is on disk at
+MNL docs/France_case/P2a/FR_P2a_m08_loc4_tier2_independent_review_v1.md
+(sha256 06d2c0fc9cfd62ff1eb220e62cc34f660a739e0d594f079e47ed7307bab4b396,
+17,622 bytes). It returned exactly one token, its final line, VERBATIM:
+
+LOC4_PREFERRED_MC_BANDED_LEVELS
+
+The review's H1 records two reporting corrections against the T2-A memo. Both
+are entered here openly. Neither contaminates the numerical record, and neither
+is a defect of the evidence chain — both are count/transcription defects in the
+memo's narrative:
+
+1. **The convergence reading is 29 + 1, not 30.** The T2-A memo states that all
+   30 evaluated points "converge SINGLE-OPTIMUM". The unrestricted MLE is one of
+   the 30 evaluated vectors but is explicitly "theta_L4 of record (not refit)".
+   The correct reading is therefore **29 constrained profile optimizations plus
+   the accepted unrestricted optimum**.
+2. **The in-region count is 20 of 30, not 30.** The T2-A memo §6 says "30 points
+   fall in the [95%] region"; that statement is false. The RQMC record correctly
+   identifies **20 of 30** evaluated points as lying inside the conventional 95%
+   profile-LR region. The envelope numerals themselves correspond to the
+   in-region points, so the envelopes are unaffected.
+
+Both corrections are binding on every successor document: the acceptance
+(permanent output 5) and the claim set v2 (permanent output 6) carry 29 + 1 and
+20 of 30, and the T2-A memo's two sentences are superseded on those two counts
+only. The T2-A acceptance itself (R-161) is not reopened.
