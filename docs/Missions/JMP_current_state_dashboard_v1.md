@@ -159,7 +159,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-175) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `68da3f84e986486dd446c1fb0e144d13620140c5a565068beda3ba40ac0765bc` |
+| Consolidated rulings document (R-59 … R-178) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `9b5d58665cc4896bfe42a96a989a00349f6898d7814bd839c7e859afbd888af6` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |

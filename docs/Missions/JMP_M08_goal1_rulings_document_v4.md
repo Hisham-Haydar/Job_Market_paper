@@ -3175,3 +3175,171 @@ Both corrections are binding on every successor document: the acceptance
 (permanent output 5) and the claim set v2 (permanent output 6) carry 29 + 1 and
 20 of 30, and the T2-A memo's two sentences are superseded on those two counts
 only. The T2-A acceptance itself (R-161) is not reopened.
+
+## CORRECTIVE APPEND 2026-08-29 - R-178: the genuine Deputy T2-B Final RQMC Disposition
+
+Defect record: the prior append's heading (1), "Deputy Ruling — T2-B Final RQMC
+Disposition (R-173), VERBATIM" at line 3039, duplicated the independent-review
+text (the H1-H10 review) in place of the deputy disposition (VER-1, R-178).
+The defective block is preserved unmodified per immutability; it is not edited
+or removed by this append. THIS heading carries the genuine ruling and
+supersedes heading (1) as the disposition's location of record.
+
+DEPUTY RULING — T2-B FINAL RQMC DISPOSITION
+
+The T2-B RQMC instrument is accepted as valid and successful for the
+core W1 quantities of the current LOC4 benchmark.
+
+1. NUMERICAL STATUS
+
+The following pass their pre-registered RQMC precision gates:
+
+- W1 mean;
+- W1 Gini;
+- phi_A;
+- phi_B;
+- phi_P;
+- R_bg;
+- phi_A + phi_B;
+- every reported LOC4-minus-baseline difference;
+- every reported S-10 difference;
+- Shapley and residual accounting;
+- support and domain checks;
+- signs and A > B > P ordering across all leave-one-scramble
+  estimates.
+
+The median remains:
+
+MC_BAND_ONLY_NONSMOOTH
+
+W4/W6 decomposition precision does not pass. Therefore make no
+quantitative cross-measure robustness claim.
+
+
+2. NORMALIZED CONTRIBUTIONS
+
+Do not grant FULL_NUMERICAL_FREEZE because:
+
+- r_phi_P;
+- r_R_bg;
+
+fail the frozen normalized-contribution precision rule.
+
+Report both as:
+
+estimate +/- RQMC numerical band
+
+and label them:
+
+MC_BANDED_NORMALIZED_DIAGNOSTIC
+
+Do not present either as a precision-certified point contribution.
+
+Retain precision-certified claims for the normalized quantities that
+pass, including the primary s_opp quantity.
+
+Do not relax or recalibrate the ratio gate after observing the result.
+
+
+3. PHI_B SIGN
+
+Supersede the purely mechanical positive-profile classification.
+
+Retain:
+
+PHI_B_SIGN_UNRESOLVED_95_PROFILE
+
+Reason:
+
+- the lower RQMC profile-envelope margin is only about 3.3% of the
+  RQMC integration band;
+- the 16x estimate has the opposite sign;
+- the two instruments differ by only a small smooth offset;
+- the estimated zero crossing lies within the frozen 0.0025 profile
+  resolution of the 95% support-region endpoint.
+
+The manuscript may state:
+
+"The ability contribution is small. It is positive over the
+conventional 90% profile region, but its sign is not resolved over
+the wider conventional 95% region once numerical precision and
+profile resolution are taken into account."
+
+Do not describe phi_B as statistically insignificant or as having no
+effect.
+
+The ordering:
+
+phi_A > phi_B > phi_P
+
+remains profile- and RQMC-stable.
+
+
+4. FINAL REVIEW
+
+Commission the already-authorized final independent T2 review.
+
+The appropriate acceptance verdict on this evidence is:
+
+LOC4_PREFERRED_MC_BANDED_LEVELS
+
+not:
+
+LOC4_PREFERRED_FULL_NUMERICAL_FREEZE
+
+The reviewer must verify:
+
+- RQMC estimator identity;
+- all passing W1 gates;
+- the two failed normalized-ratio gates;
+- the phi_B sign qualification;
+- profile stability;
+- absence of a W1/W4/W6 quantitative-robustness claim;
+- final manuscript claim boundaries.
+
+No new numerical execution is authorized.
+
+
+5. AUTONOMOUS CLOSE
+
+If the independent review returns:
+
+LOC4_PREFERRED_MC_BANDED_LEVELS
+
+the Goal 1 Manager may:
+
+- commit the T2-B evidence;
+- create the final M08T2 acceptance;
+- update the working notebook/report;
+- close M08T2 autonomously.
+
+Return to the deputy only if the independent review returns:
+
+PREFERRED_SPECIFICATION_UNRESOLVED
+
+or:
+
+REJECT_EVIDENCE_CHAIN
+
+
+6. RELATION TO THE POST-MEETING SPRINT
+
+The accepted M08T2 result is the final numerical record for the
+current LOC4 benchmark.
+
+It is not automatically the final JMP specification because the
+authorized JMP_PS1 positive-specification sprint may select an S8
+successor.
+
+Do not rerun welfare for every exploratory specification.
+
+Recompute welfare only for:
+
+- the current LOC4 benchmark S0; and
+- the selected combined candidate S8.
+
+No further CV, QMC enlargement, ordinary-draw ladder, or numerical
+instrument is authorized for the current LOC4 benchmark.
+
+Record this ruling in the existing consolidated rulings document.
+Create no separate deputy-ruling memo.
