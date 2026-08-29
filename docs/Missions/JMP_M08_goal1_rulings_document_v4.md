@@ -3343,3 +3343,394 @@ instrument is authorized for the current LOC4 benchmark.
 
 Record this ruling in the existing consolidated rulings document.
 Create no separate deputy-ruling memo.
+
+## Appended 2026-08-29 - R-179..R-183 + the S8 deputy ruling and its bounded review
+
+*Frame note: chat-side rulings R-179..R-183, followed VERBATIM under their own
+headings by (1) the DEPUTY RULING - S8 SELECTION, ORDERING, REGIONAL DESIGN, AND
+COUPLES SEQUENCING, which promotes S8, withdraws the S0 headline ordering from
+the S8 claim set, fixes the regional design and sequences couples; and (2) the
+commissioned bounded independent economics/econometrics review of S8, entered in
+full including its final verdict line. Both are entered openly here rather than
+left in chat. Per R-162.2 this append carries its own re-pins: every site in
+either repository that pins this document by sha256 is advanced path-only in the
+same commit, and each binding cell's claim strings are re-asserted under its own
+read.*
+
+- R-179 COR-1 accepted; PS1-C accepted; the full-battery rule restated. **COR-1**
+  is accepted as returned. It was settled chat-side; this register carries the
+  acceptance, and the corrected material itself stands in the PS1 decision note,
+  which is the ruling's own nominated record. **PS1-C** - the S0..S8
+  post-estimation fit suite (decision note s8; instrument
+  `scripts/ps1/run_ps1_item4_fit_suite.py`; run dir `runs/ps1c_fit_suite/`;
+  report `post_estimation_comparison.html`) is accepted. No re-estimation: all
+  nine theta vectors are read from their sealed battery runs, each verified
+  against the `theta_sha256` its own manifest recorded before use, and every
+  recomputed negLL reproduces its sealed record inside the `1e-8` band. Weighted
+  and unweighted throughout; sex and three-group education cuts are REPORTING
+  ONLY - no specification was re-fitted on a subgroup. The suite's
+  `rejected_beats_s8` table is retained rather than suppressed: metrics on which
+  a rejected specification beats S8 are on the record. **R-179.1 - the standing
+  pre-commit battery is run in FULL.** Every gated commit reproduces the complete
+  battery before and after: the gate self-pin, all **76 pins** (52 governing
+  registry + 24 U6 extension) re-hashed through `base_path`/`verified_path`, the
+  parity axis `5b0e3d29e28126e1b3ee0340a243c09755da0b3b`, and the
+  `dclaborsupply-monorepo` gitlink at `27756a06`. No scoped subset of the battery
+  is licensed by any status, exploratory or otherwise, and a scoped run is not a
+  battery run.
+- R-180 PS1-E accepted, with the ordering-dissolution finding. The S0/S8 welfare
+  evaluation (decision note s9; run dir `runs/ps1e_welfare_s8/`) is accepted. It
+  is a reuse, not a re-pricing: `euromod_executed` false, `new_pricing` false, the
+  priced node panel unchanged, and the reused code path reproduces the sealed S0
+  RQMC record on all 486 evaluated functionals. The finding entered on the record
+  is **ORDERING DISSOLUTION**: S8 dissolves S0's resolved `phi_A > phi_B` without
+  resolving `phi_B > phi_A`. The CRN-banded difference is
+  `phi_B - phi_A = +0.000332 +/- 0.000402`, interval `[-0.0000707, +0.000734]`,
+  which covers zero; the point estimate flips in all nine scramble sets; and the
+  S8-minus-S0 move in the gap itself, `+0.002541 +/- 0.000612`, DOES exclude zero.
+  The ordering is therefore **unresolved, not reversed**, and the specification
+  change materially alters the internal composition of the opportunity
+  contribution. Two further items are recorded: `s_opp` moves only
+  `0.023954 -> 0.023999` in W1, while `W4_s_opp` halves and `W6_s_opp` rises, so
+  cross-measure agreement is WORSE under S8 and no cross-measure quantitative
+  claim is licensed; and the `log I_H` hours-normalizer binding convention -
+  bound once at the baseline theta and reused for every arm - is disclosed as
+  consequential, the arm-consistent alternative moving `log I_H` by `+0.515` and
+  changing the S0 arm too.
+- R-181 PS1-F accepted, with the NUTS-2 flip. The targeted official-data audit
+  (decision note s10; run dir `runs/ps1f_audit/`) is accepted. Nothing was
+  estimated, no EUROMOD was run and no regional variable was added. The finding
+  entered on the record is the **NUTS-2 FLIP**: the agenda s6.5 rule downgrades a
+  regional extension to structural robustness only when the finest linkable
+  geography is NUTS-1, and **that antecedent does not hold**. The household
+  geography `drgn2` is NUTS-2 - the 22 metropolitan regions - which is exactly
+  the geographie France Travail published for the 2015/2016 BMO waves, and the
+  merge verifies 22/22 with no unmatched cell; the 13 post-reform administrative
+  regions are NUTS-1 and cross rather than nest with `drgn1`'s 8 ZEAT. The audit
+  also establishes that `g^E` is already regionally saturated (7 ZEAT dummies plus
+  `gsur`, `drgur`, `drgmd`), so a ZEAT-level addition there is exactly collinear,
+  while `g^Occ` holds only six occupation intercepts and carries no region at all.
+  Support is thin - 88 region x `loc4` cells, 67 of them under 20 households, 4
+  empty - and two lossy crosswalks (FAP -> ISCO, ISCO -> `loc4`) sit between the
+  source and the model. Sources 3 (BTS/DADS) and 4 (employment zones) are demoted:
+  the first fails exclusion, the second fails the merge outright.
+- R-182 the deputy S8 ruling ADOPTED. The deputy ruling recorded VERBATIM under
+  heading (1) below is adopted in full. Its operative dispositions:
+  **S8_PREFERRED_SINGLES_POSITIVE_SPECIFICATION_PENDING_BOUNDED_REVIEW** and
+  **S0_ACCEPTED_NESTED_REFERENCE_BENCHMARK**, with S8 defined as S0 plus the
+  explicit 35-hour opportunity peak and nothing else (S0 + S3 only);
+  **ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8**, withdrawing the S0 headline
+  `A > B > P` from the S8 claim set;
+  **NO_CROSS_MEASURE_QUANTITATIVE_ROBUSTNESS_CLAIM** carried;
+  **NUTS2_EXTERNAL_OPPORTUNITY_IDENTIFICATION_AID** and
+  **NOT_A_CAUSAL_INSTRUMENT** for the BMO design, with
+  **CORSE_RETAINED_AS_OWN_NUTS2_CELL** and the prohibition on assigning the IDF
+  BMO value to households whose raw region was missing and later recoded to
+  `drgn2 = 1`; the sprint dispositions S1 invariance-only, S2 excluded, S4
+  rejected, S5 split rejected, S6 parked, S7 rejected; the four-file permanent
+  documentation cap; and the sequencing that starts couples in parallel NOW and
+  runs `R1_BMO_NUTS2_OCCUPATION_TENSION` after S8 acceptance. M08T2 remains closed
+  as the final S0 numerical record and is not reopened.
+- R-183 S8A accepted, NO PROFILE TRIGGER, the bounded review commissioned and
+  returned. The lean S8 acceptance run required by the ruling's s2 (decision note
+  s11; instrument `scripts/ps1/run_ps1_s8_acceptance.py`; run dir
+  `runs/ps1s8a_acceptance/`) is accepted. It ran under the ruling's own limits -
+  no EUROMOD, no new RQMC nodes, no re-pricing, no ordinary draw growth, no new
+  CV design - and returned: `negLL = 18022.456443792806`, `dnegLL = -430.598050`
+  and `dAIC = -859.1961` against S0, four-leg verdict SINGLE-OPTIMUM over ten
+  polished points with a negLL spread of `7.640e-10` inside the `1e-8` band,
+  `theta_hat` sha256 `913dd559a769d410f26f505d32d258fb45c4e2f4a430ec95cfca333d7d8bdce1`
+  reproducing the sealed part-2 record BITWISE; exact nesting at
+  `beta_h_f35 = 0` returning S0's objective `18453.054494167016` to 0 ulp with a
+  materially nonzero delta-gradient `-307.3871586635774`, on a hash-confirmed
+  common sample and geometry; positive-definite full-rank Hessians in the clean
+  conditioning tier on both the 41-dimensional free block and the 39-dimensional
+  interior block; an **EMPTY W-4 flagged set** where S0 carried four members; and
+  all **13 of 13** primary welfare rows passing their frozen thresholds against a
+  bitwise-identical theta, so no re-evaluation of the priced nodes was required
+  and none was run. **NO PROFILE TRIGGER**: none of the ruling's three conditions
+  fired - no new active or near-bound coordinate (the active set is S0's own,
+  unchanged, and the W-4 set went from four to zero), no curvature weakness, no
+  multi-start disagreement - so no profile was run and none is authorized by this
+  step. On that evidence the ruling's s2 bounded independent
+  economics/econometrics review was commissioned; it is recorded VERBATIM under
+  heading (2) below and returned **S8_ACCEPTED**. Under the ruling's s2 and s9
+  autonomous-close branch, S8 is accepted autonomously as the **preferred singles
+  positive specification**; the review's four refinements are binding claim
+  language and are transcribed into the decision note (R-184.1): S6 is
+  "equivocal, not admitted"; the S8 welfare levels are conditional on the
+  inherited hours-normalizer convention and are not convention-free final
+  magnitudes, the MC-banded discipline continuing; the F35 coefficient is an
+  "institutionally motivated 35-hour opportunity peak" of reduced-form
+  availability and never "the effect of the 35-hour law"; and `s_opp` is "robust
+  to the S0->S8 change at the achieved RQMC precision", not statistical
+  invariance. The review adjudicates the CR1 finite-sample constant in favour of
+  `K_interior = 39` as the primary convention, to be stated explicitly rather than
+  implied as unique, with both constants recorded. PS1's estimation phase is
+  closed; couples and the BMO exploratory design are the active work.
+
+### (1) Deputy Ruling - S8 Selection, Ordering, Regional Design, and Couples Sequencing (R-182), VERBATIM
+
+DEPUTY RULING — S8 SELECTION, ORDERING, REGIONAL DESIGN,
+AND COUPLES SEQUENCING
+
+1. S8
+
+Promote S8 to:
+
+S8_PREFERRED_SINGLES_POSITIVE_SPECIFICATION_PENDING_BOUNDED_REVIEW
+
+S0 becomes:
+
+S0_ACCEPTED_NESTED_REFERENCE_BENCHMARK
+
+S8 is S0 plus the explicit 35-hour opportunity peak only.
+
+Its one-parameter fit gain, hours-grid improvement, Brier-score
+improvement, clean curvature, empty W-4 flagged set and material welfare
+change make it the preferred positive-model candidate.
+
+M08T2 remains closed as the final S0 numerical record. Do not reopen it.
+
+2. LEAN S8 ACCEPTANCE NOW
+
+Run one bounded S8 acceptance task now, before final couple estimation.
+
+Require:
+
+- final S8 estimate and robust inference;
+- exact nesting/common-objective verification;
+- final Hessian/rank/conditioning;
+- confirmation that the W-4 flagged set is empty;
+- reuse of the existing priced RQMC nodes;
+- confirmation that all 13 primary S8 welfare rows pass;
+- one independent economics/econometrics review.
+
+No new EUROMOD.
+
+No new RQMC nodes.
+
+No ordinary draw growth.
+
+No new CV design.
+
+Do not run a profile automatically.
+
+Profile a coordinate only if the final S8 inference reveals a new
+active/near-bound coordinate, curvature weakness or optimization
+disagreement.
+
+Absent such a finding, the bounded review closes S8.
+
+Record acceptance in:
+
+experiments/JMP_PS1/decision_note.md
+
+Do not create a new charter or acceptance memo.
+
+3. ORDERING
+
+Withdraw the S0 headline ordering A > B > P from the S8 claim set.
+
+Use:
+
+ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8
+
+The S8 estimate does not distinguish phi_A from phi_B.
+
+Do not claim A > B or B > A.
+
+Use the exhaustive preferences-versus-complete-environment split as
+the future headline.
+
+At the nested level report access and ability separately with their
+bands, but without ranking them.
+
+The current s_opp stability from 0.023954 to 0.023999 is a strong
+robustness result within the existing W1 decomposition, but it is not
+yet the final two-player preferences/environment percentage.
+
+4. CROSS-MEASURE CLAIM
+
+Carry:
+
+NO_CROSS_MEASURE_QUANTITATIVE_ROBUSTNESS_CLAIM
+
+W4/W6 remain normative sensitivities.
+
+Do not claim their quantitative agreement with W1.
+
+5. REGIONAL DESIGN
+
+(a) The NUTS-1-only classification rule does not apply. The merge is
+NUTS-2.
+
+Classify the BMO design as:
+
+NUTS2_EXTERNAL_OPPORTUNITY_IDENTIFICATION_AID
+
+NOT_A_CAUSAL_INSTRUMENT
+
+(b) Corse:
+
+CORSE_RETAINED_AS_OWN_NUTS2_CELL
+
+Retain the three households and construct Corse's own 2015 BMO
+NUTS-2 occupation tension using the same aggregation and weighting
+formula as every other region.
+
+Do not pool Corse with PACA, assign a national value or drop it.
+
+Add one leave-Corse-out diagnostic.
+
+If the exact Corse value cannot be constructed, halt the regional
+experiment before estimation rather than impute.
+
+(c) Missing region / IDF:
+
+Do not assign the IDF BMO value to households whose raw region was
+missing and later recoded to drgn2=1.
+
+Recover the raw missing-location flag.
+
+Estimate the regional comparison on genuine observed-NUTS2
+households only:
+
+- restricted-sample S8;
+- restricted-sample S8 plus BMO.
+
+Report the excluded count/share and genuine IDF count.
+
+(d) Confirm:
+
+- BTS/DADS: external validation or later auxiliary moments only;
+- employment-zone data: do not use because the merge is unavailable.
+
+6. BMO EXPERIMENT
+
+After S8 acceptance, run one exploratory specification:
+
+R1_BMO_NUTS2_OCCUPATION_TENSION
+
+Add one coefficient to gOcc only.
+
+Use the lagged 2015 BMO measure mapped:
+
+FAP -> ISCO -> loc4
+
+and standardize it within loc4 before estimation.
+
+Freeze its exact formula in decision_note.md before results.
+
+Report fit, inference, curvature, occupation prediction and
+household-level scoring.
+
+Do not run welfare unless the model is later promoted.
+
+The BMO experiment does not block couples.
+
+7. COUPLES
+
+Begin couple data, joint-proposal and joint-alternative implementation
+in parallel now.
+
+Use approximately 100 joint household alternatives covering:
+
+- neither works;
+- man only;
+- woman only;
+- both work.
+
+Full couple estimation should inherit the accepted S8 architecture:
+
+- explicit 35-hour peak;
+- LOC4 occupation-conditioned wage location;
+- selected preference specification.
+
+Do not wait for manuscript rewriting.
+
+8. OTHER SPRINT DISPOSITIONS
+
+S1:
+
+invariance result only.
+
+S2:
+
+do not include.
+
+S4:
+
+reject.
+
+S5:
+
+reject the proposed split.
+
+S6:
+
+park as a later exact-log utility robustness.
+
+S7:
+
+reject as a preferred-model addition.
+
+S8:
+
+S0 + S3 only.
+
+9. DOCUMENTATION
+
+Keep the four-file permanent cap.
+
+Update only:
+
+- specification_matrix.yaml;
+- model_comparison.csv;
+- post_estimation_comparison.html;
+- decision_note.md.
+
+No new charter, profile memo, regional memo, ordering memo or
+governance chain.
+
+After one bounded S8 review, return only if the review rejects S8,
+a new W-4/boundary issue appears, or RQMC reuse fails.
+
+Otherwise accept S8 autonomously, update the report, and proceed with
+couples and the BMO exploratory design.
+
+### (2) Bounded Independent Review of S8 (R-183), VERBATIM, including its final verdict line
+
+1. **A1 — S8 selection logic: ACCEPT.** The selection rule is economically coherent and parsimonious. S1 is correctly excluded because it is an exact reparameterization once the admissible set is transformed; it supplies an invariance diagnostic, not an alternative economic model. S2 produces a genuine likelihood improvement, but it merely relocates the binding constraints from the quadratic-age terms to the linear-age terms; it therefore does not solve the specification problem it was designed to probe. S4 is unsupported by its new coefficient and worsens both AIC and BIC. S5 is correctly judged on its genuinely new one-dimensional restriction: the primary/lower-secondary split is not supported, while the apparently stronger `g3` coefficient is an inherited contrast under a different reference coding. S6 should be described as **equivocal and therefore not admitted**, rather than substantively “rejected”: AIC, BIC, Wald and LR evidence do not give a uniform answer. S7 remains diagnostic-only and does not identify the proposed preference channel. Against that battery, S3 is uniquely different: one new coordinate generates a very large improvement, repairs the major hours misspecification and improves rather than weakens identification. Hence S8 = S0 + S3 is the appropriate outcome of the declared admission rule.
+
+2. **A2 — Final estimate and inference: ACCEPT, including the CR1 choice.** The final S8 evidence is unusually clean for a structural labor-supply specification: ten polished points collapse inside the prescribed objective band, all carry the same active set, the one optimizer non-success is numerically in the same convergence class and satisfies the first-order criterion, and the final verdict `SINGLE-OPTIMUM` is justified. Both the 41-dimensional free Hessian and 39-dimensional interior Hessian are positive definite, full rank and in the clean conditioning tier. The extended opportunity/wage/peak block is likewise clean both raw and after conditioning on the rest of the model. The W-4 set is empty.
+
+   The nesting evidence is especially important: setting `beta_h_f35 = 0` reproduces the S0 objective bitwise, on an otherwise bitwise-identical sample and likelihood geometry, while the gradient in the new direction is materially nonzero. Thus S8 is a genuine one-restriction extension of S0, not a recoding that happens to improve the optimizer.
+
+   On CR1, I adjudicate **in favour of `K_interior = 39` as the primary convention**. The reported covariance is explicitly the tangent/interior-block covariance, with `Bread = H_II^{-1}`; the two active-bound coordinates are not assigned regular sandwich variances and carry literal NA. Using the dimension of that estimated regular covariance block in the finite-sample factor is internally coherent. `K_free = 41` is defensible as a literal interpretation of the ruling wording, but it mixes two constrained coordinates into a degrees-of-freedom adjustment for an inference matrix from which those coordinates have deliberately been removed. The fact that the alternative changes SEs by only about 0.066% and changes no inferential classification removes any materiality concern. The manuscript should simply identify the convention explicitly rather than implying that the choice between 39 and 41 is theoretically unique.
+
+3. **A3 — Welfare evidence: ACCEPT for S8 selection, with a strict interpretation boundary.** Reuse of the existing RQMC nodes is legitimate. The nodes and their priced characteristics are theta-free; S8 adds a `g^H` opportunity-density factor that changes target weights but not hours, wages, location or EUROMOD prices attached to the nodes. Repricing would therefore add computational work without changing the economic states being priced. Moreover, the final acceptance estimate is bitwise identical to the S8 vector used in the welfare exercise, while the reused code path reproduces the sealed S0 RQMC record on all 486 evaluated functionals. Those are strong internal-validation checks.
+
+   The 13/13 result is also properly read: all **smooth primary numerical-integration targets** meet their frozen precision requirements; `W1_median` remains outside that pass/fail count under its pre-existing nonsmooth-functional disposition. The fact that the two normalized ratios which missed the S0 threshold now clear it has a coherent numerical explanation. The proposal already places substantial mass around 35 hours; S0 assigns little target mass there, producing skewed importance weights, whereas S8 aligns the target distribution much better with the proposal. The approximately doubled ESS and sharply lower maximum normalized weights are therefore exactly what importance-sampling theory would predict. This strengthens numerical precision; it is not separate evidence that the economic model is true.
+
+   One caveat must remain attached to welfare **levels**. The evaluation inherits the historical convention of fixing the four legacy hours-normalizer coefficients and adding only the new F35 limb. The decision note itself shows that an arm-consistent rebinding of all five hours coefficients would materially alter `log I_H`. Consequently, the S8 likelihood and positive-model selection are unaffected, and RQMC reuse remains valid, but the reported S8 welfare levels are conditional on this inherited welfare-evaluation convention. They are not yet convention-free final manuscript magnitudes.
+
+4. **A4 — Ordering disposition: `ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` is correct.** The correct object is the CRN-banded difference `phi_B - phi_A`, not overlap or non-overlap of the separately banded component levels. Under S0 the difference was negative and its numerical band excluded zero. Under S8 the point estimate becomes positive, but its own band crosses zero. Therefore the evidence establishes neither `A > B` nor `B > A`. Calling the ordering “reversed” would be incorrect. The fact that the S8-minus-S0 change in the gap itself excludes zero establishes something different and important: **the specification change materially alters the internal composition of the opportunity contribution.** That actually strengthens the case for withdrawing the previous ordering claim.
+
+   The previous `PHI_B_SIGN_UNRESOLVED_95_PROFILE` qualification also remains binding. S8 has an RQMC numerical-integration band, not a parameter-uncertainty/profile envelope. Its positive numerical `phi_B` level therefore cannot be promoted into a sampling- or profile-based sign statement. `phi_P` remains well below the two opportunity components in the numerical evaluation, but the collective `A > B > P` claim must disappear because its A/B leg is unresolved.
+
+5. **A5 — `s_opp` invariance: ACCEPT as a strong specification-robustness result, but only in W1.** Moving from `0.023954` to `0.023999`, with the S8-minus-S0 numerical band containing zero by a very wide margin relative to the point change, supports the statement that introducing the major 35-hour opportunity correction leaves the W1 opportunity share essentially unchanged. This is substantively useful because S8 is not a cosmetic perturbation: it substantially changes fit, preference estimates, welfare levels and the A/B composition. Stability of the aggregate opportunity share through that change is therefore informative.
+
+   I would not call it “statistical invariance.” The band being used is numerical-integration uncertainty, not sampling uncertainty. The defensible language is that the W1 opportunity share is **robust to the S0→S8 positive-specification change at the achieved RQMC precision**. Nor can this be generalized across welfare measures: W4 and W6 move materially and in opposite directions. The cross-measure prohibition is therefore essential, not cosmetic.
+
+6. **A6 — Economic validity of the 35-hour peak: ACCEPT.** In a latent-jobs/RURO model, placing institutionally concentrated hours mass in the **opportunity density** is economically natural. This is precisely the interpretation given to part-time/full-time peaks in the relevant structural literature: hours-specific peaks can represent non-uniform availability of jobs rather than arbitrary peaks in tastes, and models with explicit opportunity peaks have been found to outperform equal-availability representations in policy prediction.  The latent-jobs literature likewise emphasizes that observed bunching at particular hours should not automatically be attributed to preferences and gives hours-specific dummies a structural opportunity interpretation.
+
+   On the evidence here, the data-mining objection is weak. The 35-hour feature was motivated by an economically obvious French institution and a conspicuous empirical spike and was deputy-chartered **before its coefficient was estimated**. It is only one additional coefficient; its support interval is mechanically disjoint from the pre-existing bands; S0 is exactly nested; the coefficient is sharply interior; and the fit gain is approximately 430.6 negLL rather than the marginal gain typically associated with opportunistic feature additions. The correction also improves Brier performance across all reported outcome spaces and eliminates, rather than creates, near-bound inference problems.
+
+   There is nevertheless an important interpretation limit. `beta_h_f35` identifies a **reduced-form excess availability of job packages around 35 weekly hours conditional on the model**, not the causal effect of the French statutory 35-hour law. The `[33.5,36.5)` band can absorb collective-agreement conventions, reporting/heaping, occupational composition and other institutional sources of hours clustering. A successor paper may call it an institutionally motivated 35-hour opportunity peak; it should not call it an identified “effect of the 35-hour law.”
+
+7. **A7 — Successor-manuscript claim boundaries.** The evidence licenses a fairly strong positive-model statement: S8 can be called the **preferred singles positive specification**, consisting of the LOC4/S0 structure plus one institutionally motivated 35-hour opportunity-density peak. It is a strict nested extension, materially improves the fit of the hours distribution, has clean global/local numerical behavior on the tested starts, has an empty W-4 set, and preserves clean separation of the occupation-access and wage-location blocks.
+
+   For welfare, the manuscript may say that under the primary W1 construction and the inherited evaluation convention, S8 materially changes welfare levels and W1 inequality while leaving the aggregate opportunity share near 2.4% essentially unchanged relative to S0 at the achieved RQMC precision. The latter is a useful robustness finding. But the following boundaries should remain hard: no cross-measure robustness claim; no `A > B` or `B > A` claim; no new `phi_B` sign claim from numerical integration alone; no interpretation of RQMC jackknife bands as sampling confidence intervals; no implication that 13/13 numerical-precision passes validate structural identification; and no causal interpretation of the F35 coefficient. The inherited MC-banded-levels discipline should continue for welfare levels, particularly because the hours-normalizer convention remains consequential. Finally, this review closes the **singles positive specification**; it does not by itself establish an analogous specification for couples or a population-wide final model.
+
+S8_ACCEPTED
