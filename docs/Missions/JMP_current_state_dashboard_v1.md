@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-08-29, at Goal-1 R-183 / R-184.1.
+**Last updated:** 2026-08-31, at Goal-1 R-198.
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -26,6 +26,7 @@ document differ, the ratified document governs.
 | **`S0_ACCEPTED_NESTED_REFERENCE_BENCHMARK`** | S0, the nested reference benchmark | **R-182** |
 | **`ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8`** | the A/B ordering under S8 — **unresolved, not reversed** | **R-182** |
 | **`NO_CROSS_MEASURE_QUANTITATIVE_ROBUSTNESS_CLAIM`** | W4/W6 against W1 — normative sensitivities only | **R-182** |
+| **`R1_BMO_OMITTED_PENDING_ACCESS`** | the `R1_BMO_NUTS2_OCCUPATION_TENSION` exploratory leg — **omitted from the paper**, not rejected; blocked at s5c on data access, resumable only on EU-SILC `DB040_F` | **R-198** |
 | **`NUTS2_EXTERNAL_OPPORTUNITY_IDENTIFICATION_AID`** + **`NOT_A_CAUSAL_INSTRUMENT`** | the BMO regional design | **R-182 §5** |
 | **`CORSE_RETAINED_AS_OWN_NUTS2_CELL`** | Corse's 3 households and their own 2015 BMO NUTS-2 tension value | **R-182 §5(b)** |
 | `LOC4_PREFERRED_STRUCTURAL_SPECIFICATION` | the preferred structural specification | R-157 |
@@ -96,8 +97,8 @@ boundaries of record are `JMP_M08_LOC4_manuscript_claim_set_v2.md`.
 | JMP-HK-01 — housekeeping / archive | CLOSED | `HK01/` register set; MNL `192ef57`, JMP `9e15e56` |
 | JMP-M08T2 — LOC4 boundary analysis and final numerical precision | **CLOSED at R-175**, verdict `LOC4_PREFERRED_MC_BANDED_LEVELS` | acceptance `JMP_M08_LOC4_preferred_spec_acceptance_v1.md`; claim set `JMP_M08_LOC4_manuscript_claim_set_v2.md`; charter `JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` |
 | **JMP_PS1 — positive-specification sprint (S1..S8)** | **ESTIMATION PHASE CLOSED at R-183** — S8 accepted, verdict `S8_ACCEPTED`; the sprint continues only as the BMO exploratory leg | `Design/JMP_post_meeting_research_agenda_v1.md` §3–4, §12; MNL `experiments/JMP_PS1/decision_note.md` §11 |
-| **JMP couples — joint household specification** | **ACTIVE** (opened R-182 §7, runs in parallel; inherits the accepted S8 architecture) | ruling R-182 §7; no charter (§9 four-file cap) |
-| **`R1_BMO_NUTS2_OCCUPATION_TENSION`** — regional exploratory | **ACTIVE** (authorized R-182 §6, after S8 acceptance; does not block couples) | ruling R-182 §5–6; MNL `experiments/JMP_PS1/decision_note.md` §10, §11.5 |
+| **JMP couples — joint household specification** | **COMPUTATIONS COMPLETE through phase 4** (p1–p6; C-P3 estimated, C-P4 built, synthetic gate run to R=10) — **NOT PROMOTED**, verdict `GATE_FAIL` on `beta_l0_m`, `beta_occ_2`, `beta_w_educL` | ruling R-182 §7; R-187 / R-188 / R-189.2 / R-190.2; MNL `experiments/JMP_PS1/decision_note.md` §12–14 |
+| **`R1_BMO_NUTS2_OCCUPATION_TENSION`** — regional exploratory | **STOPPED at step 0 s5c**, `R1_BMO_OMITTED_PENDING_ACCESS` — formula frozen before results (§15.1), crosswalk chain rebuilt and audited, Corse constructible (88/88), but the raw missing-location flag is unrecoverable on all ten routes | ruling R-182 §5–6, R-193; MNL `experiments/JMP_PS1/decision_note.md` §15 |
 
 ### JMP-M08T2 — closed
 
@@ -162,6 +163,63 @@ OVERALL ACCEPT (R-168), confirming mechanically that the generator is
 unchanged, the node frames are byte-unchanged, the t-band remains absent and
 there is no extra gate change.
 
+### Couples lane — phases 1–4 complete, nothing promoted
+
+Phases 1–2 built the couples frame (2,275 households) and priced it; phase 3
+(R-187) estimated the first parsimonious joint specification C-P3 over the four
+participation quadrants; phase 4 (R-188) ran three probes and the combined
+candidate C-P4 against a 901-standard synthetic recovery gate, completed to
+R=10 replicates at R-189.2 / R-190.2.
+
+| Leg | State |
+|---|---|
+| C-P3 first parsimonious estimation | ESTIMATED; couples-male leisure PRESENT at `beta_l0_m = 2.84` |
+| Probe A — free `beta_ll` | REFUTED — no within-household discrimination gain, destabilizes `beta_l0_m` |
+| Probe B — `beta_w_pexp2` box | run, not admitted |
+| Probe C — region / urbanisation in `beta_E` | NON-CONVERGENT (distinct optima, 9-coordinate block) — not admitted |
+| C-P4 combined candidate, synthetic gate R=10 | **`GATE_FAIL`** — `beta_l0_m`, `beta_occ_2`, `beta_w_educL` |
+
+Reading of record: `beta_l0_m` is **identified but not precisely estimated** —
+treat the point estimate as directionally right and the CR1 SE as understated in
+the region it lands. `beta_occ_2` is a genuine coverage failure (7/10) with the
+same root cause as the largest C-P3 fit misfit: pooling occupation opportunity
+across sexes is mis-specified for couples. `beta_l_age_f`, `beta_l_age2_f`,
+`beta_occ_4` and `beta_w0` settle as noise; `beta_w_educL` is flagged by the
+letter of the rule only. **No couples specification is promoted.** The named
+successor missions (occupation sex-split with a mandatory synthetic re-gate; the
+quadrant covariance gap; `beta_l0_m` SE calibration; take-up thinness; probe-C
+non-convergence) are recorded in the decision note §14.8 — none is opened.
+
+### R1 BMO — `R1_BMO_OMITTED_PENDING_ACCESS`
+
+The formula was frozen **before** any estimation (decision note §15.1,
+`2026-08-30T07:18:03Z`). The crosswalk chain proved to be **four** tables, not
+two — no PCS-2003 → ISCO-08 table exists. Deputy s5b returned **Corse
+CONSTRUCTIBLE, no halt** (88/88). The directionality audit (s2) found v1 clean on
+inversion but **in breach on weighting** on two counts plus a parse gap; all
+three are corrected and v1's `W` is withdrawn. With no defensible weighting basis,
+66 BMO codes carrying **37.99 %** of recruitment mass are withdrawn under s2's own
+fallback: mapped coverage falls to **0.5837** and the HIGH_CONFIDENCE_090
+sensitivity runs on **0.3810** of recruitment mass. The correction reverses
+nothing on the retained support (90 codes move, none changes its dominant `loc4`),
+and the s6 interpretation gate is live, not decorative (`loc4` 2 and 3 correlate
+only `0.62` / `0.66` across the two mappings).
+
+Step 0 s5c then **stopped the leg**. The DRD ends with
+`replace drgn2 = 1 if drgn2 == .`, so every household with missing `db040` is
+delivered as Île-de-France; s5c forbids giving those households the IDF BMO value
+and requires the raw flag to be recovered. **All ten enumerated routes fail** —
+`db040` is absent from all 18 EUROMOD FR vintages, no `_f` quality flag attaches to
+`drgn1`/`drgn2`/`db040`, and the raw EU-SILC household register is not on this
+machine. 245 households (**15.76 %**) are unpartitionable. Pre-registered STEP 1 /
+STEP 2 are written down and **not run**.
+
+**Unblock condition, and the only one:** EU-SILC `DB040_F` joined on
+`DB030 == idorighh`. Until that access exists the leg is **omitted from the
+paper** — omitted, **not rejected**; no R1 result may be reported, and the frozen
+formula and audited crosswalks stand ready for a resumption that does not need
+re-litigating.
+
 ---
 
 ## 3. Current priorities — verbatim from the PI standing direction
@@ -174,25 +232,28 @@ there is no extra gate change.
 > 5. only then decide which exploratory result enters the formal
 >    accepted specification.
 
-**Position on that list at R-183.** Item 1 is **DONE** (M08T2 closed at R-175).
-Item 2 — `EXP_H35_PEAK_v1` — is **DONE**: it was the PS1 S3 leg, it was the
-battery's only PROMOTE, and it is now the accepted S8's one added coordinate.
-Item 3 is DONE for the R-175 pass; the notebook now owes an S8 pass. Item 5 —
-"which exploratory result enters the formal accepted specification" — is
-**ANSWERED for singles**: S8, at R-183. So the live order is:
+**Position on that list at R-198 — the computational sprint is COMPLETE.**
+Item 1 **DONE** (M08T2 closed at R-175). Item 2 — `EXP_H35_PEAK_v1` — **DONE**:
+it was the PS1 S3 leg, the battery's only PROMOTE, and it is now the accepted
+S8's one added coordinate. Item 3 — the discussion notebook/report — **DONE**:
+refreshed to the S8 state and extended with the sprint second-half sections.
+Item 5 is **ANSWERED for singles**: S8, at R-183.
 
-> 1. **Couples** — data, joint proposal, ~100 joint household alternatives over
->    {neither works, man only, woman only, both work}, inheriting the accepted
->    S8 architecture (explicit 35-hour peak, LOC4 occupation-conditioned wage
->    location, selected preference specification). Begun in parallel now; does
->    not wait on manuscript rewriting;
-> 2. **`R1_BMO_NUTS2_OCCUPATION_TENSION`** — the one exploratory regional
->    specification, one coefficient on `g^Occ` only, lagged 2015 BMO mapped
->    FAP → ISCO → `loc4` and standardized within `loc4`, formula frozen in the
->    decision note **before** results, no welfare unless later promoted. Does not
->    block couples;
-> 3. update the discussion notebook/report to the S8 state;
-> 4. complete the paper outline and main tables.
+Both sprint second-half legs have run to their stopping points and **neither
+produces a promoted specification**: couples reached `GATE_FAIL` at R=10 and R1
+BMO stopped at s5c as `R1_BMO_OMITTED_PENDING_ACCESS`. That is a finished
+computational programme, not an interrupted one. **No further estimation is
+queued.** The live order is now writing:
+
+> 1. **Complete the paper outline** — `Design/JMP_paper_outline_v1.md`, section
+>    by section, against the claim set of record;
+> 2. **Main tables** — build the manuscript-facing tables from the accepted
+>    records (S8 singles, the LOC4 banded eight, the specification path), each
+>    carrying its own status label and band discipline;
+> 3. **Manuscript** — write against the completed outline and tables.
+
+Nothing on this list needs a new run. Anything that turns out to need one is a
+scientific decision and returns to the deputy before it is started.
 
 The full standing direction — including the exploratory-work licence, the
 four-artifact retention limit per exploratory run, and the `EXP_H35_PEAK_v1`
@@ -216,10 +277,16 @@ documentation or execution mechanics.**
 | RQMC final-precision results memo | `MNL/docs/France_case/P2a/FR_P2a_m08_loc4_rqmc_final_precision_results_v1.md` | `a456113473cebad748915ad1448134d891023951d05fb1be96ab1f6c914d90f7` |
 | LOC4 preferred-spec packet index | `docs/Missions/JMP_M08_LOC4_preferred_spec_packet_index_v1.md` | `8fa35535bf4662d4f417580964de109225f5fff661a430d5316e681ee2d58017` |
 | LOC4 manuscript claim set v1 — SUPERSEDED, history only | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_proposal_v1.md` | `c9051c9df6ff3a0f901aaaeec44de76f93effddd3e68a9c7eecb31d132aea5e4` |
+| **Paper outline v1 — the working surface for the writing phase** | `Design/JMP_paper_outline_v1.md` | *not pinned — live working document* |
 
 Paths are relative to the `Job_Market_paper` repository root except where marked
 `MNL/`. The rulings-doc hash above is the post-R-175 value; it is the value the
 live sha gates pin.
+
+**Rulings-doc currency at R-198.** The consolidated document still ends at R-183
+and its sha256 is **unchanged** — R-186 … R-198 carry no deputy-verbatim text and
+their summaries ride the **next** append. No re-pin is owed by this update, and
+none of the five dependent sites in §4.1 is stale.
 
 ### 4.1 The rulings-doc pin recursion
 
@@ -261,6 +328,9 @@ the re-pin must not be completed.
 | **JMP_PS1 four permanent files (the §9 cap)** | `experiments/JMP_PS1/{specification_matrix.yaml, model_comparison.csv, post_estimation_comparison.html, decision_note.md}` |
 | **S8 acceptance run (S8A) — the R-183 evidence** | `experiments/JMP_PS1/runs/ps1s8a_acceptance/` |
 | **PS1-C / PS1-E / PS1-F run dirs** | `experiments/JMP_PS1/runs/{ps1c_fit_suite, ps1e_welfare_s8, ps1f_audit}/` |
+| **Couples lane p1–p6 — the R-187…R-190.2 evidence** | `experiments/JMP_PS1/runs/ps1h_couples_p1/` (the four `.parquet` frames stay on disk, uncommitted) |
+| **R1 BMO — crosswalks, audit, probes, sealed enclave bundle** | `experiments/JMP_PS1/runs/ps1r1_bmo/` incl. `r1bmo_secure_env_bundle_v1.zip` (`65ff967bb1b077bebaec78db9c82abe1180e706891fd112cc085af57b72894d5`); `source/` third-party downloads and the unpacked bundle tree stay on disk, uncommitted |
+| **EU-SILC DOCSILC065 (2015) index — the s5c access record** | `Data/documentation/DOCSILC065_2015_index.md` |
 | LOC4 Stage-2 comparison runner (carries `M6_RULINGS_SHA`) | `scripts/loc4/run_loc4_stage2_comparison.py` |
 | Parity-path closure record of operative record | `docs/France_case/P2a/FR_P2a_m08_parity_path_closure_v1.md` |
 | Results/discussion working notebook | `notebooks/france/fr_singles_results_discussion_v1.ipynb` |
@@ -295,19 +365,18 @@ file that might predate the axis.
 
 ## 6. Next action
 
-**Couples, priority 1 — and `R1_BMO` in parallel.** Begin couple data, the joint
-proposal and the joint-alternative implementation now (R-182 §7), inheriting the
-accepted S8 architecture. Run `R1_BMO_NUTS2_OCCUPATION_TENSION` as the single
-exploratory regional specification (R-182 §6), with its three R-182 §5
-constraints binding **before** estimation: Corse retained as its own NUTS-2 cell
-with its own constructed 2015 BMO value plus one leave-Corse-out diagnostic —
-**halt before estimation rather than impute** if that value cannot be built; the
-raw missing-location flag recovered so the IDF BMO value is **not** assigned to
-households recoded to `drgn2 = 1`, with the regional comparison estimated on
-genuine observed-NUTS2 households only (restricted-sample S8, and restricted-
-sample S8 + BMO) and the excluded count/share plus the genuine IDF count
-reported; BTS/DADS kept to external validation or later auxiliary moments, and
-employment-zone data not used at all because the merge is unavailable.
+**Write the paper.** The computational sprint is complete and nothing is queued
+to run. Take the outline `Design/JMP_paper_outline_v1.md` section by section,
+then the main tables, then the manuscript.
+
+**What may be reported, and how.** Singles S8 is the preferred positive
+specification and carries the R-184.1 claim language verbatim. The LOC4 banded
+eight are numerical-integration bands, never confidence intervals. **Couples enter
+the paper as first estimates only, labelled provisional** — no couples
+specification is promoted and `GATE_FAIL` must travel with any couples number.
+**R1 BMO does not enter the paper at all** under
+`R1_BMO_OMITTED_PENDING_ACCESS`; the audited crosswalks and frozen formula are
+archived evidence for a resumption, not a result.
 
 **Documentation discipline (R-182 §9).** The four-file permanent cap stands:
 update only `specification_matrix.yaml`, `model_comparison.csv`,
