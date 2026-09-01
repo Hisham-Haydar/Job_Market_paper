@@ -314,7 +314,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-209) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `eb4d947b1687bffe69298a5822d8855d6e7dd59b183b3d0f75703eb8cfbf6895` |
+| Consolidated rulings document (R-59 … R-209, + the R-212 corrective append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `5fdef80a6b1d15fbff2c30f5b923f1a1920d25c74fcb6234f8f1cfb219b2cee0` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -336,11 +336,27 @@ R-207. Its sha256 advanced
 `9ff2a1f0…92d4` → `eb4d947b1687bffe69298a5822d8855d6e7dd59b183b3d0f75703eb8cfbf6895`,
 and **all five dependent sites in §4.1 were advanced path-only in the commits
 that staled them**, with every binding cell's claim strings re-asserted against
-the new bytes (7/7 PASS). **Two scope facts are on the record openly:** R-202 was
-supplied as clause s2 only — s1 and s3..s7 were never pasted, which is why MNL
-decision note §18 still stands `AWAITING SOURCE TEXT` for ruling s7's CV mapping
-note — and R-208 / R-209 carry no deputy-verbatim text on disk and appear as
-chat-side lines only.
+the new bytes (7/7 PASS). **One scope fact remains on the record openly:**
+R-208 / R-209 carry no deputy-verbatim text on disk and appear as chat-side
+lines only.
+
+**Currency advanced at R-212.4 — the R-202 scope defect is CURED.** The dated
+corrective append *CORRECTIVE APPEND 2026-09-01 - R-212: the complete R-202
+ruling (ten sections)* enters R-202 **in full and verbatim**. It cures two
+defects: the R-184..R-209 append had recorded clause s2 only, and its own scope
+note read "s1 and s3..s7", undercounting the ruling — R-202 has **ten**
+sections, not seven. Nothing above the append was edited. sha256 advanced
+`eb4d947b…6895` → `5fdef80a6b1d15fbff2c30f5b923f1a1920d25c74fcb6234f8f1cfb219b2cee0`
+(196,859 → 204,744 bytes, prefix byte-identical), with all five dependent sites
+advanced path-only in the same commit and all seven claim strings re-asserted
+against the new bytes (7/7 PASS). MNL decision note §18 is consequently
+**filled** from ruling s7 and no longer stands `AWAITING SOURCE TEXT`. Two
+findings are entered openly rather than adjudicated: the complete text's
+section 2 is **shorter than and differs in wording from** the s2 block already
+at heading (2) — heading (2) remains the location of record for the operational
+four-cell text Lane A executed — and section 7 contains **no** Jacquet–Jia–
+Thoresen positioning sentence, so that sub-item stays open rather than
+reconstructed.
 
 ### 4.1 The rulings-doc pin recursion
 

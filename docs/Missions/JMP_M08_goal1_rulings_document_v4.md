@@ -4665,3 +4665,270 @@ Return only if:
 - reference-preference conclusions conflict;
 - a new pricing run becomes necessary;
 - or another scientific inconsistency appears.
+
+## CORRECTIVE APPEND 2026-09-01 - R-212: the complete R-202 ruling (ten sections)
+
+Defect record, three lines. (1) The R-202 entry under heading (2) of the
+2026-09-01 R-184..R-209 append recorded clause s2 only; sections 1 and 3..10 of
+the ruling were never entered, which is why decision note s18 stood AWAITING
+SOURCE TEXT. (2) That same append's frame note and its heading-(2) scope note
+both read "s1 and s3..s7", undercounting the ruling's extent: the ruling has TEN
+sections, not seven. (3) Cure: this dated corrective append enters the complete
+ten-section ruling verbatim below; per immutability nothing above it is edited,
+and heading (2) is preserved unmodified.
+
+Divergence note, recorded not adjudicated: the section 2 clause inside the
+complete text below is shorter than, and differs in wording from, the section 2
+block already entered under heading (2). Neither is edited. Heading (2) remains
+the location of record for the operational four-cell text (the W00/W10/W01/W11
+cells, the C_P and C_E formulas, and the exhaustiveness gates) that Lane A
+actually executed and that decision_note s17 and manuscript s2.4 cite. The
+divergence is entered here openly for deputy disposition.
+
+Scope note on section 7: the complete section 7 below carries the CV / CVcirc /
+CVpref architecture that decision note s18 owes. It contains NO sentence
+positioning the work against Jacquet, Jia and Thoresen (2026). That positioning
+sentence is therefore not part of the ruling as supplied, and is not
+reconstructed anywhere; s18 and manuscript s2.4 record its absence rather than
+filling it.
+
+DEPUTY/PI RULING — WAGE TREATMENT, PERSISTENT HETEROGENEITY,
+PROVISIONAL WELFARE PIPELINE, AND R1 AGGREGATE PLAN
+
+1. CURRENT S8 STATUS
+
+Retain S8 as:
+
+S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS
+
+Do not treat S8 as the final JMP positive model.
+
+The discovery that yivwg is a Heckman-type predicted hourly wage for
+the full eligible population makes wage treatment a mandatory final
+positive-model axis.
+
+No current S8 or LOC4 result is invalidated, but final preference,
+ability and welfare claims remain conditional on W0.
+
+
+2. PARALLEL LANE A — PROVISIONAL WELFARE PIPELINE
+
+Proceed now, with zero new EUROMOD, to implement on S8 and the LOC4
+benchmark:
+
+- the common-reference money-metric welfare construction;
+- the exhaustive two-player Shapley:
+  preferences versus complete non-preference environment;
+- shares summing to 100 percent;
+- nested access / wage-ability / endowment-needs decomposition;
+- existing RQMC jackknife bands.
+
+Label every headline percentage:
+
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+This lane may establish that the architecture works.
+It may not freeze the JMP headline percentages.
+
+Do not create a new welfare mission-document family.
+
+Retain at most one additional machine-readable table:
+
+experiments/JMP_PS1/welfare_decomposition_comparison.csv
+
+Update the existing:
+
+- model_comparison.csv;
+- post_estimation_comparison.html;
+- decision_note.md.
+
+
+3. PARALLEL LANE B — WAGE TREATMENT
+
+When the secure data/code become available, execute:
+
+W0:
+current full-sample yivwg convention.
+
+W1:
+observed wage for workers;
+predicted wage location for non-workers;
+current latent counterfactual wage draws.
+
+W2:
+observed wage for workers;
+full predictive wage integration for non-workers.
+
+Before estimation, audit 13b_Wage and record inside decision_note.md:
+
+- wage dependent variable;
+- selection equation;
+- exclusion restrictions;
+- sex-specificity;
+- estimator type;
+- residual variance;
+- selection correlation;
+- retransformation/smearing;
+- trimming/winsorization;
+- worker and non-worker prediction formulas.
+
+For workers report:
+
+- observed versus yivwg correlation;
+- SD ratio;
+- quantile differences;
+- comparisons by sex, education, occupation and hours;
+- tail diagnostics.
+
+Re-estimation from scratch is authorized.
+
+Use existing EUROMOD prices when the wage-job nodes are unchanged.
+Reprice only if a specification changes actual wage alternatives.
+
+
+4. WAGE-PREFERENCE DEPENDENCE
+
+After W1/W2:
+
+assess W3, a Löffler-style joint wage-residual/preference model.
+
+The feasibility gate requires:
+
+- a defensible observed worker wage;
+- observed worker wage residuals;
+- a valid wage equation;
+- a pre-specified joint distribution;
+- stable identification.
+
+W3 is diagnostic until independently shown stable.
+
+Do not treat the Löffler German elasticity magnitudes as transferable
+to the France RURO application.
+
+
+5. PERSISTENT UNOBSERVED HETEROGENEITY
+
+Estimate sequentially:
+
+HP:
+one persistent preference extension:
+either one random leisure coefficient or a two-class preference model.
+
+HO:
+one persistent opportunity extension:
+either opportunity-intensity frailty or a two-class opportunity model.
+
+HPO:
+joint preference/opportunity heterogeneity only if an identification
+gate passes.
+
+The HPO gate requires at least one of:
+
+- desired-hours external moments;
+- BMO occupation-demand information;
+- external wage moments;
+- valid exclusion restrictions;
+- repeated-choice information;
+- strong pre-registered loading restrictions.
+
+Do not estimate an unrestricted joint preference/opportunity mixture
+from the same cross-sectional choices alone.
+
+Do not confuse:
+
+- job-specific extreme-value utility shocks;
+- stochastic realized opportunity sets;
+- persistent household preference types;
+- persistent household opportunity types.
+
+
+6. MODEL SELECTION
+
+After W0-W2 and HP/HO:
+
+select one successor model, provisionally S9.
+
+Selection uses:
+
+- likelihood/AIC/BIC;
+- convergence and rank;
+- individual predictive fit;
+- wage fit;
+- hours/occupation fit;
+- parameter interpretability;
+- stability of access/ability/preference attribution.
+
+Do not select the richest model automatically.
+
+Run final welfare only for:
+
+- S8 benchmark;
+- selected S9 successor.
+
+No welfare battery for every exploratory heterogeneity model.
+
+
+7. CV / TAX-REFORM ARCHITECTURE
+
+Record in decision_note.md:
+
+- standard CV compares pre/post policy environments under actual
+  preferences and circumstances;
+- CVcirc neutralizes preferences while retaining circumstances;
+- CVpref neutralizes wages/opportunities while retaining preferences;
+- the JMP two-player Shapley uses all four preference/environment
+  combinations and is not merely the opposite of CVcirc.
+
+Do not execute a tax reform inside the current sprint.
+
+Preserve standard CV, CVcirc and CVpref as a later policy module after
+the cross-sectional JMP decomposition is complete.
+
+
+8. R1 AGGREGATE PLAN
+
+Authorize the restricted-session aggregate test.
+
+Require:
+
+- same France 2016 UDB vintage/source universe as the EUROMOD input;
+- unweighted count of DB040_F == -1;
+- weighted share;
+- total household count.
+
+If the unweighted count is ZERO:
+notify the deputy, then the frozen R1_BMO arms may run locally.
+
+If the count is POSITIVE:
+R1_BMO remains omitted;
+report the count/share;
+perform no household-level imputation.
+
+The anonymized UDB cannot be row-linked to the EUROMOD frame.
+
+
+9. COUPLES
+
+Keep the couples lane closed for the present sprint.
+
+The C-P4 failure does not make couples infeasible.
+It identifies future calibration and occupation-coverage work.
+
+Couples remain a core JMP stage after the singles positive model is
+selected.
+
+
+10. RETURN
+
+Return only:
+
+- W0/W1/W2 model comparison;
+- HP/HO identification comparison;
+- HPO gate verdict;
+- selected S9 recommendation;
+- provisional S8/S9 welfare comparison;
+- unresolved scientific conflicts.
+
+No independent review is required for exploratory W/HP/HO variants.
+One bounded review follows only after S9 is proposed for manuscript
+use.
