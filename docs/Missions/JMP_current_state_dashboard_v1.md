@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-08-31, at Goal-1 R-198.
+**Last updated:** 2026-09-01, at Goal-1 R-209.2.
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -44,6 +44,12 @@ document differ, the ratified document governs.
 | `M08_BASELINE_PROTOTYPE_LIMITED_MC_PRECISION` | the closed M08 prototype | R-138 §9 |
 | `PROVISIONAL_NOT_PROMOTED_MC_PRECISION` | the 16x welfare functionals (baseline arm) | R-138 |
 | `PARITY_AXIS_DISPOSITION_RETIRED_SUPERSEDED_BY_RENAME_AWARE_ALIAS_CLOSURE` | the old Stage-2 parity record | R-157 §9 |
+| **`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`** | **every** welfare number produced by Lane A, Channel D and the ex-ante diagnostic, without exception | **R-202 s2**, re-imposed R-204 §8 and R-207 |
+| **`HEADLINE_PERCENTAGES_HALTED`** | the `s_P` / `s_E` headline shares — halted, not renormalised, the exhaustiveness target unchanged | **R-203**, re-affirmed **R-205**, **R-208** |
+| **`CHANNEL_D_IMPLEMENTATION_VALIDATED`** | the channel-D execution — a valid diagnostic result | **R-207 §8** |
+| **`BUDGET_HETEROGENEITY_NOT_THE_I1111_SOURCE`** | channel D as a candidate residual — refuted | **R-205**, ratified **R-207 §8** |
+| **`FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY`** | the reference-preference block; sign of `C_P`, the broad P/E reading and the A/B/D ordering are all preserved on both S8 and LOC4 | **R-204 §7**, retained **R-207 §7** |
+| `EX_ANTE_SUPPORT_DIAGNOSTIC_IN_PROGRESS` | the ex-ante continuum diagnostic — **DISCHARGED**: it ran to R-207's §5 failure branch, and the object was returned at **R-208** and ruled on at **R-209** | set R-207 §8, discharged R-208 |
 
 **Superseded at R-175:** `RQMC_FINAL_PRECISION_PENDING` (set R-157 / R-161) —
 the pass has run and is disposed of. The evaluation runner's mechanical
@@ -75,6 +81,15 @@ W1 mean `1339.0426 ± 2.1105`, W1 Gini `0.15114755 ± 0.0010869`,
 `phi_A+phi_B 0.00362054 ± 0.00067681`, `s_opp 0.02395367 ± 0.0043248`. These are
 numerical-integration bands, **never** confidence intervals.
 
+**Nothing from the welfare-decomposition lanes is claimable.** No `s_P` / `s_E`
+share, no `C_P` / `C_E` / `C_A` / `C_B` / `C_D` magnitude and no ex-ante cell may
+be reported. The headline is HALTED at R-203, stays halted through R-205 and
+R-208, and every number carries
+`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`. The sign facts that ARE on
+the record are diagnostic only: `C_P < 0` in every arm, `I1111` about three times
+`I0000` in every arm, and the reference-preference operator acting as an
+amplifier rather than a source.
+
 **Still not claimable.** Cross-measure W4/W6 quantitative robustness; a
 precision-certified `r_phi_P` or `r_R_bg`; any collective component-sign
 statement; any combination of the RQMC band with the profile envelope; any
@@ -98,7 +113,11 @@ boundaries of record are `JMP_M08_LOC4_manuscript_claim_set_v2.md`.
 | JMP-M08T2 — LOC4 boundary analysis and final numerical precision | **CLOSED at R-175**, verdict `LOC4_PREFERRED_MC_BANDED_LEVELS` | acceptance `JMP_M08_LOC4_preferred_spec_acceptance_v1.md`; claim set `JMP_M08_LOC4_manuscript_claim_set_v2.md`; charter `JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` |
 | **JMP_PS1 — positive-specification sprint (S1..S8)** | **ESTIMATION PHASE CLOSED at R-183** — S8 accepted, verdict `S8_ACCEPTED`; the sprint continues only as the BMO exploratory leg | `Design/JMP_post_meeting_research_agenda_v1.md` §3–4, §12; MNL `experiments/JMP_PS1/decision_note.md` §11 |
 | **JMP couples — joint household specification** | **COMPUTATIONS COMPLETE through phase 4** (p1–p6; C-P3 estimated, C-P4 built, synthetic gate run to R=10) — **NOT PROMOTED**, verdict `GATE_FAIL` on `beta_l0_m`, `beta_occ_2`, `beta_w_educL` | ruling R-182 §7; R-187 / R-188 / R-189.2 / R-190.2; MNL `experiments/JMP_PS1/decision_note.md` §12–14 |
-| **`R1_BMO_NUTS2_OCCUPATION_TENSION`** — regional exploratory | **STOPPED at step 0 s5c**, `R1_BMO_OMITTED_PENDING_ACCESS` — formula frozen before results (§15.1), crosswalk chain rebuilt and audited, Corse constructible (88/88), but the raw missing-location flag is unrecoverable on all ten routes | ruling R-182 §5–6, R-193; MNL `experiments/JMP_PS1/decision_note.md` §15 |
+| **`R1_BMO_NUTS2_OCCUPATION_TENSION`** — regional exploratory | **STOPPED at step 0 s5c**, `R1_BMO_OMITTED_PENDING_ACCESS` — formula frozen before results (§15.1), crosswalk chain rebuilt and audited, Corse constructible (88/88), but the raw missing-location flag is unrecoverable on all ten routes. **The data were found at R-199**, so the resumption is concrete: the sealed enclave bundle (R-195) and the restricted-data script pack (R-200) are built and carried in by hand | ruling R-182 §5–6, R-193, R-194, R-199, R-200; MNL `experiments/JMP_PS1/decision_note.md` §15 |
+| **Agenda item 8 — conditional wage draws (`q^W` part A, `g^W` part B)** | **ANSWERED, NOTHING PROMOTED** — part A retains `q^W \| occupation` unchanged on efficiency (pooled ESS 46.373 vs 45.0 / 41.0); part B's additive hours wage-location block is LR/AIC-favourable, BIC-adverse, degrades the fit battery and does not repair the wage-quintile misfit | R-201, R-202; MNL `experiments/JMP_PS1/decision_note.md` §16 |
+| **Lane A — provisional four-cell welfare pipeline** | **HALTED at exhaustiveness** — `I11 = R_bg` is about 3× `I00`, so `s_P` / `s_E` are void; the architecture (cell map, operator accounting, bitwise `W00` gate, jackknife bands, pre-stated threshold) stands and is reusable | ruling R-202 s2; R-203; decision note §17, §18 |
+| **Channel D — complete-environment decomposition** | **EXECUTED AND VALIDATED, HEADLINE STILL HALTED** — D removes budget dispersion entirely (`c_home` 0.371 → 0.000000) yet `I1111` barely moves, so **D is not the residual**; the priced NODE SUPPORT survives | ruling R-204; R-205; decision note §19 |
+| **Ex-ante continuum diagnostic** | **RUN TO THE FAILURE BRANCH** — 8 of the 9 ruled sources measured ABSENT as drivers; the surviving object is the money-metric inversion's household-specific FROZEN REFERENCE CORE, returned at R-208 and ruled on at R-209 | interim R-206, superseded by R-207; R-208 / R-209; decision note §19.7 |
 
 ### JMP-M08T2 — closed
 
@@ -232,7 +251,30 @@ re-litigating.
 > 5. only then decide which exploratory result enters the formal
 >    accepted specification.
 
-**Position on that list at R-198 — the computational sprint is COMPLETE.**
+**The live order at R-209.2 — three items, in this order:**
+
+> 1. **The inversion correction.** The ex-ante diagnostic ran to R-207's §5
+>    failure branch and R-208 named the surviving object: the money-metric
+>    inversion's HOUSEHOLD-SPECIFIC FROZEN REFERENCE CORE — the baseline-coalition
+>    choice set (`c_norm`, `l_norm`, `working`, `u_baseline`, `opp_baseline`, with
+>    the group's `theta_c` / `theta_l`) that `FrozenReferenceCore` holds fixed by
+>    contract s5.1 and that no operator in `{P,A,B,D}` equalises, by design. This
+>    is **not** a numerical design problem — the anchor, the proposal correction
+>    and finite-RQMC variation are each measured ABSENT as drivers, so a common
+>    quadrature device would not reach it. R-209 adopts the ruling on that object,
+>    and correcting it comes first.
+> 2. **Lane B** — the `W0`/`W1`/`W2` and HP/HO work R-204 §8 sequenced in
+>    parallel with the D operator and the preference mirror.
+> 3. **S9** — after which the common-budget prices are reused if job nodes and
+>    pricing inputs are unchanged, or one final aligned S9 reference-budget
+>    reprice is performed, with final welfare computed for S8 and S9 only
+>    (R-204 §8).
+
+Writing continues alongside — the outline, the main tables and the manuscript —
+but no welfare magnitude from Lane A, Channel D or the ex-ante diagnostic enters
+any of them until the inversion correction lands.
+
+**Position on the older list at R-198 — the ESTIMATION sprint is COMPLETE.**
 Item 1 **DONE** (M08T2 closed at R-175). Item 2 — `EXP_H35_PEAK_v1` — **DONE**:
 it was the PS1 S3 leg, the battery's only PROMOTE, and it is now the accepted
 S8's one added coordinate. Item 3 — the discussion notebook/report — **DONE**:
@@ -243,7 +285,8 @@ Both sprint second-half legs have run to their stopping points and **neither
 produces a promoted specification**: couples reached `GATE_FAIL` at R=10 and R1
 BMO stopped at s5c as `R1_BMO_OMITTED_PENDING_ACCESS`. That is a finished
 computational programme, not an interrupted one. **No further estimation is
-queued.** The live order is now writing:
+queued.** The writing order set there still stands, alongside the R-209.2 list
+above:
 
 > 1. **Complete the paper outline** — `Design/JMP_paper_outline_v1.md`, section
 >    by section, against the claim set of record;
@@ -252,8 +295,10 @@ queued.** The live order is now writing:
 >    carrying its own status label and band discipline;
 > 3. **Manuscript** — write against the completed outline and tables.
 
-Nothing on this list needs a new run. Anything that turns out to need one is a
-scientific decision and returns to the deputy before it is started.
+Nothing on **that** list needs a new run. What R-199..R-209 added is not
+estimation but the welfare-decomposition lane, which is where the live work now
+is. Anything else that turns out to need a run is a scientific decision and
+returns to the deputy before it is started.
 
 The full standing direction — including the exploratory-work licence, the
 four-artifact retention limit per exploratory run, and the `EXP_H35_PEAK_v1`
@@ -269,7 +314,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-183) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `9ff2a1f0e7c4e3647c7205aab71866a6f10c1f42bbd7891f56ec884444bb92d4` |
+| Consolidated rulings document (R-59 … R-209) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `eb4d947b1687bffe69298a5822d8855d6e7dd59b183b3d0f75703eb8cfbf6895` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -280,13 +325,22 @@ documentation or execution mechanics.**
 | **Paper outline v1 — the working surface for the writing phase** | `Design/JMP_paper_outline_v1.md` | *not pinned — live working document* |
 
 Paths are relative to the `Job_Market_paper` repository root except where marked
-`MNL/`. The rulings-doc hash above is the post-R-175 value; it is the value the
+`MNL/`. The rulings-doc hash above is the post-R-209.2 value; it is the value the
 live sha gates pin.
 
-**Rulings-doc currency at R-198.** The consolidated document still ends at R-183
-and its sha256 is **unchanged** — R-186 … R-198 carry no deputy-verbatim text and
-their summaries ride the **next** append. No re-pin is owed by this update, and
-none of the five dependent sites in §4.1 is stale.
+**Rulings-doc currency at R-209.2.** The consolidated document now ends at
+**R-209**. The R-184..R-209 append carries chat-side lines for the whole span and
+five deputy rulings verbatim under their own headings — (1) R-193, (2) R-202
+clause s2, (3) R-204, (4a) the R-206 interim marked SUPERSEDED BY (4b), and (4b)
+R-207. Its sha256 advanced
+`9ff2a1f0…92d4` → `eb4d947b1687bffe69298a5822d8855d6e7dd59b183b3d0f75703eb8cfbf6895`,
+and **all five dependent sites in §4.1 were advanced path-only in the commits
+that staled them**, with every binding cell's claim strings re-asserted against
+the new bytes (7/7 PASS). **Two scope facts are on the record openly:** R-202 was
+supplied as clause s2 only — s1 and s3..s7 were never pasted, which is why MNL
+decision note §18 still stands `AWAITING SOURCE TEXT` for ruling s7's CV mapping
+note — and R-208 / R-209 carry no deputy-verbatim text on disk and appear as
+chat-side lines only.
 
 ### 4.1 The rulings-doc pin recursion
 
@@ -330,7 +384,12 @@ the re-pin must not be completed.
 | **PS1-C / PS1-E / PS1-F run dirs** | `experiments/JMP_PS1/runs/{ps1c_fit_suite, ps1e_welfare_s8, ps1f_audit}/` |
 | **Couples lane p1–p6 — the R-187…R-190.2 evidence** | `experiments/JMP_PS1/runs/ps1h_couples_p1/` (the four `.parquet` frames stay on disk, uncommitted) |
 | **R1 BMO — crosswalks, audit, probes, sealed enclave bundle** | `experiments/JMP_PS1/runs/ps1r1_bmo/` incl. `r1bmo_secure_env_bundle_v1.zip` (`65ff967bb1b077bebaec78db9c82abe1180e706891fd112cc085af57b72894d5`); `source/` third-party downloads and the unpacked bundle tree stay on disk, uncommitted |
+| **R1 BMO — restricted-data script pack (R-200)** | `experiments/JMP_PS1/runs/ps1r1_bmo/restricted_pack_v1/` — `RUNBOOK.md` plus `inventory.py`, `silc_db040_test.py`, `lfs_hours_table.py`; self-contained, no internet, group floor 10, linkability INSPECTED not assumed (R-202.3) |
 | **EU-SILC DOCSILC065 (2015) index — the s5c access record** | `Data/documentation/DOCSILC065_2015_index.md` |
+| **Agenda item 8 — `q^W` proposal arms and the `g^W` structural test** | `experiments/JMP_PS1/runs/{ps1s16a_qw_proposal, ps1s16b_gw_structural}/` (geometry parquets and console logs stay on disk, uncommitted) |
+| **Lane A — the four-cell pipeline and its halt** | `experiments/JMP_PS1/runs/ps1_laneA_fourcell/` |
+| **Channel D + the ex-ante diagnostic** | `experiments/JMP_PS1/runs/ps1_channelD/` — capped per leg (D, ex-ante, driver diagnostic). **`channelD_household_profiles_v1.csv` and `channelD_reference_profile_v1.parquet` are household-level and stay on disk, uncommitted**, per R-204 §2's report-as-aggregates requirement; the D̄ price panel and probe scratch likewise |
+| **Welfare-decomposition comparison table (R-204 §9)** | `experiments/JMP_PS1/welfare_decomposition_comparison.csv` — cells × models × reference arms, bands, statuses, and the `estimand` column separating sampled-set-conditioned history from the ex-ante convention |
 | LOC4 Stage-2 comparison runner (carries `M6_RULINGS_SHA`) | `scripts/loc4/run_loc4_stage2_comparison.py` |
 | Parity-path closure record of operative record | `docs/France_case/P2a/FR_P2a_m08_parity_path_closure_v1.md` |
 | Results/discussion working notebook | `notebooks/france/fr_singles_results_discussion_v1.ipynb` |
@@ -365,9 +424,12 @@ file that might predate the axis.
 
 ## 6. Next action
 
-**Write the paper.** The computational sprint is complete and nothing is queued
-to run. Take the outline `Design/JMP_paper_outline_v1.md` section by section,
-then the main tables, then the manuscript.
+**The inversion correction, then Lane B, then S9** — §3's R-209.2 order. The
+estimation sprint is complete and no estimation is queued; the live work is the
+welfare-decomposition lane, which is halted on one named object. Writing runs
+alongside: take the outline `Design/JMP_paper_outline_v1.md` section by section,
+then the main tables, then the manuscript — **without any welfare magnitude from
+Lane A, Channel D or the ex-ante diagnostic.**
 
 **What may be reported, and how.** Singles S8 is the preferred positive
 specification and carries the R-184.1 claim language verbatim. The LOC4 banded
@@ -388,3 +450,9 @@ most their four-artifact sets.
 instrument is authorized on the LOC4 benchmark. **Nothing is owed to the deputy on
 S8** — R-183 closed it autonomously. Return only if a later step rejects S8, a new
 W-4/boundary issue appears, or RQMC reuse fails.
+
+**No new pricing is licensed.** R-207 §6 refuses a second common-node-set
+EUROMOD run unless the zero-EUROMOD ex-ante diagnostic demonstrates one is
+required, and R-208 established that a common realized node set would not reach
+the surviving object. R-207 §9's return conditions remain live for anything that
+changes that.

@@ -3734,3 +3734,934 @@ couples and the BMO exploratory design.
    For welfare, the manuscript may say that under the primary W1 construction and the inherited evaluation convention, S8 materially changes welfare levels and W1 inequality while leaving the aggregate opportunity share near 2.4% essentially unchanged relative to S0 at the achieved RQMC precision. The latter is a useful robustness finding. But the following boundaries should remain hard: no cross-measure robustness claim; no `A > B` or `B > A` claim; no new `phi_B` sign claim from numerical integration alone; no interpretation of RQMC jackknife bands as sampling confidence intervals; no implication that 13/13 numerical-precision passes validate structural identification; and no causal interpretation of the F35 coefficient. The inherited MC-banded-levels discipline should continue for welfare levels, particularly because the hours-normalizer convention remains consequential. Finally, this review closes the **singles positive specification**; it does not by itself establish an analogous specification for couples or a population-wide final model.
 
 S8_ACCEPTED
+
+## Appended 2026-09-01 — R-184..R-209 + five deputy rulings
+
+*Frame note: chat-side rulings R-184..R-209, one line each, transcribed from the
+dashboard and the JMP_PS1 decision note rather than composed here; then, under
+their own headings, the five deputy rulings of that span that carry verbatim
+text — (1) the R-193 crosswalk disposition, (2) the R-202 Lane-A clause s2,
+(3) the R-204 complete-environment/Channel-D ruling, (4a) the R-206 interim
+ex-ante ruling, marked SUPERSEDED BY (4b), and (4b) the R-207 Channel-D-return
+and ex-ante-welfare-support ruling that supersedes it. Signature gate: each
+heading's body opens on its own first section title — (1) "CROSSWALK
+DISPOSITION: OPTION (b), CONDITIONAL ACCEPTANCE"; (2) "2. PARALLEL LANE A —
+PROVISIONAL CROSS-SECTIONAL WELFARE PIPELINE"; (3) "1. ADD CHANNEL D"; (4a)
+"4. EX-ANTE DIAGNOSTIC"; (4b) "1. CONCEPTUAL RULING". Two scope statements are
+entered openly rather than left in chat. R-202 was supplied to its lane as
+clause s2 only; s1 and s3..s7 were never pasted and are not on disk, which is
+why decision note s18 (the CV mapping note owed by ruling s7) stands AWAITING
+SOURCE TEXT rather than filled with a reconstruction. R-206 was supplied as
+clauses ss4-6 only. R-208 and R-209 carry no deputy-verbatim text on disk and
+appear here as chat-side lines only. Per R-162, and under R-162.2 across both
+repositories, this append carries its own re-pins: every site that pins this
+document by sha256 is advanced path-only in the same commit that stales it.*
+
+- R-184 S8R accepted; four refinements made binding claim language. The bounded
+  independent review of S8 (S8R) commissioned at R-183 is ACCEPTED as returned:
+  A1..A7 all ACCEPT, verdict `S8_ACCEPTED`, and S8 stands as
+  `S8_PREFERRED_SINGLES_POSITIVE_SPECIFICATION`. The review's four refinements
+  become BINDING CLAIM LANGUAGE as R-184.1 and are transcribed in full at MNL
+  `experiments/JMP_PS1/decision_note.md` s11.6: S6 is "equivocal, not admitted"
+  and never "rejected"; the S8 welfare LEVELS are conditional on the inherited
+  hours-normalizer convention and are not convention-free final magnitudes, the
+  MC-banded discipline continuing; `beta_h_f35` is an "institutionally motivated
+  35-hour opportunity peak" of reduced-form availability and never "the effect
+  of the 35-hour law"; and `s_opp` is "robust to the S0->S8 change at the
+  achieved RQMC precision", which is not statistical invariance. The CR1
+  finite-sample constant is adjudicated in favour of `K_interior = 39` as the
+  PRIMARY convention (`c = 1.0257255936675462`), with `K_free = 41`
+  (`c = 1.0270805812417436`) recorded as the alternative that inflates every
+  robust SE by 0.066% and changes zero significance verdicts; both constants sit
+  in the acceptance manifest and the convention is stated explicitly rather than
+  implied as unique.
+- R-185 S8C accepted. The S8 close-out checkpoint (S8C) is accepted: full 76-pin
+  battery before and after, the acceptance-run evidence under
+  `experiments/JMP_PS1/runs/ps1s8a_acceptance/`, the fit suite, the S0/S8
+  welfare record and the experiments tree committed at MNL `67d5367` under the
+  four-file permanent cap, with exploratory run directories trimmed to their
+  four-artifact sets and nothing deleted from disk.
+- R-186 couples phase-2 decisions. Couples phase 2 is authorised as exploratory
+  and PROVISIONAL in three gated stages — proposal recalibration on the q-side
+  only with no structural object changed, then pricing, then engine-ready
+  assembly. No welfare, no decomposition, no promotion, and no independent
+  review at this tier.
+- R-187 couples phase-3 decisions. Phase 3 estimates the first parsimonious
+  joint specification C-P3 over the four participation quadrants; no EUROMOD, no
+  welfare, no commit, and no sex-split of any pooled block. R-187.1 fixes the
+  specification, holding region and urbanisation out of `beta_E`; R-187.2 raises
+  the `beta_w_pexp2` C-5-analogue boundary flag for a later box-widening probe.
+  C-P3 converges with couples-male leisure PRESENT at `beta_l0_m = 2.84`, and
+  inference is the CR1/HC1 sandwich on household-clustered scores over
+  `G = 2275` clusters, both constants recorded and `K_interior` primary per
+  R-184.1.
+- R-188 couples phase-4 probes. Phase 4 authorises three probes on the C-P3
+  base, a combined candidate, and a 901-standard synthetic recovery gate. Probe
+  A (free `beta_ll`) is REFUTED — no within-household discrimination gain and it
+  destabilizes `beta_l0_m`. Probe B (`beta_w_pexp2` on the widened box
+  `[-0.3, +0.3]`) is run and not admitted, which closes the R-187.2 flag as a
+  box finding. Probe C (region and urbanisation into `beta_E`) is NON-CONVERGENT
+  across distinct optima on a 9-coordinate block and is not admitted.
+- R-189 C-P4 candidate gated. The combined candidate C-P4 is built from the
+  admitted probe content and put to a multi-replicate synthetic recovery gate at
+  R-189.2 — R = 10 replicates at the 901 standard against `theta_hat_C-P4`
+  sealed in the phase-4 manifest. The gate early-stops at replicate 7 on the
+  gsplit regime with 6 of 28 coordinates flagging, returning VERDICT
+  **`GATE_FAIL`** on the R = 7 evidence.
+- R-190 GATE_FAIL confirmed at R = 10. Gate completion over replicates 8..10 and
+  the `beta_l0_m` diagnosis at R-190.2 confirm **`GATE_FAIL`** on `beta_l0_m`,
+  `beta_occ_2` and `beta_w_educL`. The reading of record separates two real
+  defects: `beta_l0_m` is identified but not precisely estimated, so the point
+  estimate is directionally right and the CR1 SE is understated in the region it
+  lands; `beta_occ_2` is a genuine coverage failure (7/10) with the same root
+  cause as the largest C-P3 fit misfit, namely that pooling occupation
+  opportunity across sexes is mis-specified for couples. `beta_l_age_f`,
+  `beta_l_age2_f`, `beta_occ_4` and `beta_w0` settle as noise, and
+  `beta_w_educL` is flagged by the letter of the rule only.
+- R-191 couples lane closed. The couples lane is CLOSED with its computations
+  complete through phase 4 and **nothing promoted**. `GATE_FAIL` must travel
+  with any couples number, and couples may enter the paper as first estimates
+  only, labelled provisional. The named successor missions — occupation
+  sex-split with a mandatory synthetic re-gate, the quadrant covariance gap,
+  `beta_l0_m` SE calibration, take-up thinness, and the probe-C non-convergence
+  — are recorded at decision note s14.8 and none is opened.
+- R-192 R1 halt accepted; the data request issued. The R1_BMO step-0 s5c halt is
+  accepted: the DRD ends with `replace drgn2 = 1 if drgn2 == .`, so every
+  household with a missing `db040` is delivered as Ile-de-France, and s5c
+  forbids giving those households the IDF BMO value. All ten enumerated recovery
+  routes fail — `db040` is absent from all 18 EUROMOD FR vintages, no `_f`
+  quality flag attaches to `drgn1`/`drgn2`/`db040`, and the raw EU-SILC
+  household register is not on this machine — leaving 245 households (15.76%)
+  unpartitionable. The one unblock condition is issued as a data request:
+  EU-SILC `DB040_F` joined on `DB030 == idorighh`.
+- R-193 crosswalk disposition adopted. The deputy ruling ss2-6 — recorded
+  VERBATIM under heading (1) below — is ADOPTED: option (b), conditional
+  acceptance, with the mandatory directionality audit of the FAP->PCS bridge,
+  the fractional composition as the primary mapping, probability-mass
+  discipline, the single `HIGH_CONFIDENCE_090` sensitivity, and the
+  interpretation gate. The audit found v1 clean on inversion but in breach on
+  weighting on two counts plus a parse gap; all three are corrected and v1's `W`
+  is withdrawn. With no defensible weighting basis, 66 BMO codes carrying
+  37.99% of recruitment mass are withdrawn under s2's own fallback: mapped
+  coverage falls to 0.5837 and `HIGH_CONFIDENCE_090` runs on 0.3810 of
+  recruitment mass. The correction reverses nothing on the retained support — 90
+  codes move, none changes its dominant `loc4` — and the s6 interpretation gate
+  is live rather than decorative, `loc4` 2 and 3 correlating only 0.62 / 0.66
+  across the two mappings. Estimation remains NOT run: the s5c halt stands and
+  nothing in this step lifts it.
+- R-194 enclave design authorised. Because the missing-location flag cannot
+  leave the enclave, the estimation goes in: a self-contained secure-environment
+  bundle is designed for R1_BMO, to be carried by the PI into the secured
+  session with no internet, no assistant, and unknown Python.
+- R-195 R1B accepted. The secure-environment bundle (R1B) is accepted and
+  sealed as `experiments/JMP_PS1/runs/ps1r1_bmo/r1bmo_secure_env_bundle_v1.zip`
+  (sha256 `65ff967bb1b077bebaec78db9c82abe1180e706891fd112cc085af57b72894d5`),
+  with its manifest, protocol and verifier under `secure_env_bundle_v1/`; the
+  unpacked tree and third-party `source/` downloads stay on disk, uncommitted.
+- R-196 SEC-1 disposed of; the report refresh commissioned. SEC-1 is disposed of
+  on the record, and PI priority 3 is commissioned: bring
+  `notebooks/france/fr_singles_results_discussion_v1.ipynb` up to the
+  post-sprint state with every numeral BOUND from `experiments/JMP_PS1`
+  artifacts by sha and never typed — the status line and labels, the new
+  positive-specification-sprint section, and the couples first-estimates
+  section, all writing only to the notebook and `notebook_dev_v3/`.
+- R-197 report accepted; outline commissioned. The refreshed report is accepted,
+  and the paper outline `Design/JMP_paper_outline_v1.md` is commissioned as the
+  working surface for the writing phase, to be taken section by section against
+  the claim set of record.
+- R-198 `R1_BMO_OMITTED_PENDING_ACCESS`. The status is set: the R1_BMO leg is
+  **omitted from the paper, not rejected**, blocked at s5c on data access and
+  resumable only on EU-SILC `DB040_F`. No R1 result may be reported; the frozen
+  formula and the audited crosswalks stand ready for a resumption that does not
+  need re-litigating. The sprint second half is committed at MNL `edb47b7`, and
+  the dashboard records that R-186..R-198 carry no deputy-verbatim text and that
+  their summaries ride the next append — this one.
+- R-199 the data are found. The EU-SILC access position changes: the DOCSILC065
+  documentation and the household-register route are located, so the
+  `DB040_F` unblock ceases to be hypothetical. `R1_BMO_OMITTED_PENDING_ACCESS`
+  is not lifted by the discovery alone — the flag still cannot leave the
+  enclave — but the resumption path is now concrete.
+- R-200 the restricted-data pack pattern adopted. A folder of SELF-CONTAINED
+  Python scripts is built for the PI to carry into a secured session with no
+  internet, no assistant and unknown Python:
+  `experiments/JMP_PS1/runs/ps1r1_bmo/restricted_pack_v1/` with `inventory.py`,
+  `silc_db040_test.py`, `lfs_hours_table.py` and a non-programmer `RUNBOOK.md`.
+  Nothing copies, prints or saves a single person's or household's data — totals
+  and percentages only, and only for groups of at least 10, that floor being an
+  option whose default is the value to use. R-202.3 later amends the pack so
+  that linkability is INSPECTED, never assumed.
+- R-201 Q8 authorised; the mission proposal recorded. Agenda item 8 —
+  conditional wage draws — is authorised as two separate objects that must not
+  be conflated: part A, the `q^W` PROPOSAL assessment on numerical efficiency
+  only, and part B, the structural `g^W` test. The accompanying mission proposal
+  for the region-live production rebuild is recorded.
+- R-202 the wage verdict and the four-cell pipeline adopted. Part A returns
+  `q^W | occupation` as the most efficient of the three arms — highest pooled
+  ESS 46.373, highest p10, lowest max normalized density ratio 0.3506, no
+  household's weight above 0.50 — so the convention of record is RETAINED
+  unchanged and no economic reading of part A is offered or permitted.
+  `ARM_OCCxHRS` is second and not worth 16 extra calibrated coefficients;
+  `ARM_HRS` is rejected on efficiency. Part B's additive hours wage-location
+  block is LR/AIC-favourable but BIC-adverse, degrades the fit battery and does
+  not repair the wage-quintile misfit, so nothing is promoted and all six
+  `model_comparison.csv` rows are flagged. On the same ruling, clause s2 —
+  recorded VERBATIM under heading (2) below — adopts the parallel Lane-A
+  provisional four-cell cross-sectional welfare pipeline: one common-reference
+  money-metric well-being level, the four states W00/W10/W01/W11, exact operator
+  accounting before any number, grand-coalition exhaustiveness required, and
+  every output labelled `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`.
+- R-203 Lane A halted at exhaustiveness. Lane A returns **NOT EXHAUSTIVE,
+  HEADLINE HALTED**: the four cells are the existing {A,B,P} coalitions at zero
+  further compute, `I11 = R_bg` is about three times `I00`, and `s_P` / `s_E`
+  are therefore void. The surviving object is the un-equalisable priced budget —
+  `c_home` dispersion 0.371 — and the halt is diagnosed rather than
+  renormalised. What Lane A establishes stands: the cell map, the operator
+  accounting, one identical welfare definition across all four cells, the
+  bitwise `W00` gate, the jackknife band machinery, the pre-stated negligibility
+  threshold, and a quantified halt. Three blockers are named, including the
+  never-run singles-male mirror.
+- R-204 Channel D adopted. The deputy ruling — recorded VERBATIM under heading
+  (3) below — is ADOPTED: the Lane-A halt is accepted, `E = A u B` is declared
+  not exhaustive, and channel D (non-labour income, needs-related demographics
+  and every other household-specific input affecting the tax-benefit budget
+  mapping) is added so that `E = A u B u D`, under primitive players `{P,A,B,D}`
+  and the grouped/Owen structure `{{P},{A,B,D}}`. `R_bg` is NOT relabelled as
+  `C_D`. One bounded reference-budget pricing run is authorised on the existing
+  eight RQMC scrambles under a 7-hour guard, against a survey-weighted medoid
+  ACTUAL household frozen and hashed before pricing, and the singles-male mirror
+  is made mandatory.
+- R-205 D refuted as the residual. Channel D executes completely and is
+  validated — only budget-side inputs moved, wages/hours/occupations are
+  unchanged by node, `c_home` dispersion goes to exactly 0.000000, and all four
+  accounting identities reconcile at machine precision — yet `I1111` remains
+  about three times `I0000` in all four arms and the headline stays HALTED. D is
+  therefore NOT the residual: it removes budget dispersion entirely and `I1111`
+  barely moves. `C_P < 0` everywhere; the mirror returns
+  `FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY` on both S8 and LOC4; and the surviving
+  object is the priced NODE SUPPORT — each household's own drawn
+  (hours, wage, loc4) nodes and `log_prior`, reachable only by a redraw that no
+  ruling authorises. The R-205.2 driver diagnostic is commissioned on the two
+  existing panels at zero EUROMOD.
+- R-206 the interim ex-ante ruling adopted. The deputy interim ruling ss4-6 —
+  recorded VERBATIM under heading (4a) below, and SUPERSEDED BY (4b) — is
+  ADOPTED: evaluate an ex-ante continuum definition on the existing eight priced
+  Owen scrambles at zero EUROMOD, removing the deterministic privileged node-0
+  anchor from the welfare integral in every state and both models, retaining the
+  exact proposal correction, averaging across scrambles before log and inversion,
+  and using one estimator definition everywhere; the observed job may not retain
+  special probability mass merely because it is the observed choice; and the
+  disposition is conditional, adopting
+  `EX_ANTE_CONTINUUM_WELFARE_PROVISIONALLY_ACCEPTED` only if `I1111` passes the
+  already-defined negligibility criterion.
+- R-207 supersession. The deputy ruling "CHANNEL-D RETURN AND EX-ANTE WELFARE
+  SUPPORT" — recorded VERBATIM under heading (4b) below — SUPERSEDES the interim
+  ruling and is ADOPTED. It accepts the Channel-D execution as a valid
+  diagnostic result and settles the conceptual point: the sampled latent-job
+  nodes are NUMERICAL INTEGRATION SUPPORT for the estimated opportunity
+  distribution, not household-specific economically realized finite opportunity
+  sets, so proposal-density variation is not an economic decomposition channel
+  and finite-sample support variation must not survive as inequality in a state
+  where all economic primitives are common. It separates the observed-job anchor
+  from the structural non-employment atom, which is retained; it forbids mixing
+  the old sampled-set-conditioned `W00` with ex-ante `W10/W01/W11`; it fixes the
+  nine-source failure list; it refuses a second common-node-set pricing run
+  unless the zero-EUROMOD diagnostic fails; and it retains
+  `FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY`.
+- R-208 the inversion object returned. The ex-ante diagnostic runs to its
+  failure branch and the return names the exact remaining household-specific
+  object. Two facts dispose of the premise the ex-ante correction was built on:
+  the observed job's median mass share is 0.0000, so removing it shifts `I1111`
+  by about 1e-5, and 98.9-99.7% of the 1111 variance is persistent between
+  households rather than within-household across scrambles, so the dispersion is
+  not finite-support integration noise. Of the nine sources, eight are measured
+  ABSENT as drivers — including the structural non-employment treatment, the
+  opportunity parameters, wage and occupation normalisation, the proposal
+  correction, and finite-RQMC variation — and the reference-preference
+  implementation is PRESENT as an amplifier, not a source. The object returned
+  is the money-metric inversion's HOUSEHOLD-SPECIFIC FROZEN REFERENCE CORE: the
+  baseline-coalition choice set that `FrozenReferenceCore` holds fixed by
+  contract s5.1 and that no operator in `{P,A,B,D}` equalises, by design. The
+  evidence is the inversion itself — at 1111 the welfare level is nearly common
+  (`V_i^IS` sd 0.0685) while the money metric explodes (W1 CV 0.7606, Gini
+  0.430622), and at 0111 the relation inverts (`V_i^IS` sd 1.0722, W1 CV 0.0887,
+  Gini 0.049193). No new pricing is indicated: a common realized node set would
+  not reach this object.
+- R-209 the inversion ruling adopted. The deputy ruling on the returned
+  inversion object is ADOPTED. No deputy-verbatim text for it is on disk, so it
+  is recorded here as a chat-side line only, in the same way R-186..R-192 and
+  R-194..R-201 are. Its operative consequence is the live priority order:
+  **the inversion correction first, then Lane B, then S9.** Every welfare number
+  from Lane A, Channel D and the ex-ante diagnostic remains
+  `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`, the headline stays
+  HALTED, nothing is renormalised and the exhaustiveness target is unchanged.
+
+### (1) Deputy Ruling - Crosswalk Disposition, Fractional Rebuild and Interpretation Gate (R-193), VERBATIM
+
+CROSSWALK DISPOSITION: OPTION (b), CONDITIONAL ACCEPTANCE
+
+The BMO/FAP route is scientifically admissible as a probabilistic measurement
+layer, with one mandatory mapping sensitivity.
+
+Do not abandon the route.
+
+However, before estimation perform one mechanical directionality audit of the
+first bridge.
+
+The official DARES FAP-2009 table establishes a mapping from PCS-2003 codes to
+FAP-2009. Therefore do not treat the reverse FAP->PCS operation as a
+deterministic function merely because PCS->FAP is deterministic.
+
+For each BMO/FAP code:
+
+a. enumerate all official PCS-2003 descendants;
+b. propagate every descendant through PCS-2020 -> ISCO-08 -> loc4;
+c. collapse the resulting path weights to final loc4 probabilities.
+
+If all PCS descendants of a FAP ultimately map to one loc4 category, record that
+FAP as effectively deterministic at the loc4 level.
+
+If a FAP's PCS descendants span multiple loc4 categories, a defensible weighting
+basis is required.
+
+Equal weighting of PCS descendants, arbitrary tie-breaking, or inversion of the
+DARES correspondence as though it were one-to-one is NOT authorised.
+
+If the currently built map does any of those, correct it before estimation.
+
+PRIMARY MAPPING
+
+Subject to item 2 passing, use the full fractional/probabilistic composition as
+the primary R1_BMO mapping.
+
+Let T[f,o] denote the final mapped probability from BMO/FAP family f to loc4 o.
+
+Construct the already-frozen met-weighted difficulty measure using fractional
+mass:
+
+D[r,o] =
+sum_f N[r,f] * difficulty[r,f] * T[f,o]
+------------------------------------------------
+sum_f N[r,f] * T[f,o]
+
+and then apply the pre-registered within-loc4 standardisation.
+
+Do not hard-assign each FAP to its modal loc4 category in the primary
+construction.
+
+The four unmapped BMO codes / approximately 0.40% of recruitment mass may remain
+unmapped and must be disclosed. No imputation is required.
+
+PROBABILITY-MASS DISCIPLINE
+
+For the official probabilistic matrices, preserve genuine unmapped/non-significant
+probability mass as a coverage diagnostic.
+
+Do not silently force every intermediate row to sum to one when the official
+matrix has less than full probability mass because rare correspondences are
+reported as non-significant.
+
+Report at least:
+
+mapped recruitment-mass coverage;
+distribution of final max loc4 probability;
+mapping entropy or equivalent concentration diagnostic;
+number/share of FAP codes crossing loc4 categories.
+MANDATORY MAPPING SENSITIVITY
+
+Run exactly one crosswalk sensitivity:
+
+HIGH_CONFIDENCE_090
+
+Retain only FAP codes for which:
+
+max_o T[f,o] >= 0.90
+
+and reconstruct the R1 covariate on that retained support.
+
+Report the retained share of BMO recruitment mass.
+
+Do not impute excluded codes.
+
+A degenerate-cells-only sensitivity is not additionally required unless it is
+essentially costless; do not create another experiment merely for it.
+
+INTERPRETATION GATE
+
+Compare the full probabilistic construction with HIGH_CONFIDENCE_090.
+
+If the estimated BMO effect and the substantive access interpretation preserve
+their sign and qualitative conclusion, R1_BMO may be retained as external
+occupation-demand evidence supporting the opportunity specification.
+
+If the substantive conclusion reverses across the two mappings, do not use BMO
+as main identification support. Retain it as a mapping-sensitive robustness
+result only.
+
+Do not describe BMO as an instrument or as providing causal identification
+without a separate exclusion/exogeneity argument.
+
+Lagging the measure to 2015 is useful timing discipline but is not itself an
+exclusion restriction.
+
+### (2) Deputy Ruling - Parallel Lane A, Provisional Cross-Sectional Welfare Pipeline (R-202, clause s2 as supplied), VERBATIM
+
+*Scope note: R-202 was supplied to its lane as clause s2 only. Clauses s1 and s3..s7 were never pasted and are not on disk; decision note s18, which owes ruling s7's CV mapping note verbatim, therefore stands AWAITING SOURCE TEXT rather than reconstructed.*
+
+2. PARALLEL LANE A — PROVISIONAL CROSS-SECTIONAL WELFARE PIPELINE
+
+Proceed now, with zero new EUROMOD, to implement on S8 and the LOC4
+benchmark one common-reference money-metric WELL-BEING LEVEL.
+
+This is not compensating variation and requires no tax reform.
+
+Evaluate exactly four preference/environment states:
+
+W00:
+household-specific preferences;
+household-specific environment.
+
+W10:
+common reference preferences;
+household-specific environment.
+
+W01:
+household-specific preferences;
+common reference environment.
+
+W11:
+common reference preferences;
+common reference environment.
+
+The complete environment must include every non-preference object required
+for exhaustiveness, including:
+
+- employment/hours/occupation access;
+- wage ability and wage technology;
+- non-labour endowments;
+- household needs and budget-mapping heterogeneity assigned outside
+  preferences.
+
+Compute the inequality index I00, I10, I01 and I11.
+
+Before reporting percentages, require:
+
+- one identical welfare definition and reference convention in all four cells;
+- exact counterfactual operator accounting;
+- numerical precision;
+- grand-coalition exhaustiveness.
+
+Do not force I11 to zero and do not renormalize mechanically.
+
+If I11 is non-negligible, halt the headline percentage calculation and identify
+the remaining heterogeneous object or reference-induced residual.
+
+If the construction is exhaustive, calculate:
+
+C_P =
+0.5 * [(I00 - I10) + (I01 - I11)]
+
+C_E =
+0.5 * [(I00 - I01) + (I10 - I11)]
+
+and report signed shares:
+
+s_P = C_P / (I00 - I11)
+s_E = C_E / (I00 - I11)
+
+with:
+
+s_P + s_E = 1
+
+Then decompose C_E into:
+
+- access;
+- wage ability/technology;
+- endowments/needs.
+
+Retain the existing A/B/P/background decomposition only as a diagnostic bridge.
+
+Label every result:
+
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+This lane establishes the architecture only. It does not freeze final JMP
+magnitudes.
+
+### (3) Deputy Ruling - Complete Environment with a Budget/Needs Channel (R-204), VERBATIM
+
+DEPUTY RULING — COMPLETE ENVIRONMENT WITH A BUDGET/NEEDS CHANNEL
+
+The Lane-A halt is accepted.
+
+The current four-cell architecture is valid, but E=A∪B is not
+exhaustive because household-specific budget/endowment/needs
+heterogeneity remains in c_ij.
+
+Do not calculate or report the current s_P / s_E ratios.
+
+
+1. ADD CHANNEL D
+
+Define:
+
+D = budget-side endowments and needs.
+
+The complete non-preference environment is:
+
+E = A ∪ B ∪ D
+
+where:
+
+A = access;
+B = wage ability/technology;
+D = non-labour income, needs-related demographics and every other
+    household-specific input affecting the tax-benefit budget mapping;
+P = preferences.
+
+Do not relabel old R_bg as the D contribution.
+
+R_bg=I11 diagnoses the omitted background but does not equal the
+Shapley contribution of D because interactions must be evaluated.
+
+
+2. COMMON BUDGET REFERENCE
+
+Before computing any new welfare result, select one common reference
+budget profile mechanically.
+
+Use the survey-weighted medoid ACTUAL household over the complete
+vector of exogenous EUROMOD budget-side inputs.
+
+Procedure:
+
+- enumerate all exogenous household inputs consumed by the pricing path;
+- exclude job-specific earnings and hours;
+- continuous variables: weighted-IQR-scaled distance;
+- categorical variables: exact mismatch distance;
+- select the weighted medoid;
+- deterministic de-identified row-hash tie-break;
+- freeze the selected profile and hash before pricing.
+
+Use the same reference profile for S8 and LOC4.
+
+For every existing RQMC job node compute:
+
+c_i,j^(Dbar) =
+France2016_tax_benefit_mapping(
+    node wage and hours;
+    common reference background profile
+)
+
+Under actual D, retain household-specific budget inputs.
+
+For variables used in both preferences and budgets, replace only the
+budget-side use under D. Their preference-side use remains governed by
+P.
+
+
+3. EUROMOD AUTHORIZATION
+
+Authorize one bounded reference-budget pricing run:
+
+- existing eight RQMC scrambles;
+- no new draws;
+- no estimation;
+- no package-source change;
+- same job nodes;
+- target-only certified pricing geometry;
+- France 2016 system unchanged.
+
+Projected EUROMOD guard:
+
+7 hours maximum.
+
+If the projection exceeds seven hours, return before pricing.
+
+
+4. DECOMPOSITION
+
+Use primitive players:
+
+{P,A,B,D}
+
+and the grouped/Owen coalition structure:
+
+{{P},{A,B,D}}.
+
+Require exact reconciliation:
+
+C_P + C_E = I0000 - I1111
+
+and:
+
+C_E = C_A + C_B + C_D.
+
+This produces:
+
+- headline preferences contribution;
+- headline complete-environment contribution;
+- nested access, ability and endowment/needs contributions.
+
+Evaluate all coalition states required by the four-player game.
+
+No further EUROMOD is required after the aligned actual-D and common-D
+prices exist.
+
+
+5. EXHAUSTIVENESS
+
+Require the fully common state:
+
+I1111
+
+to pass the existing numerical-negligibility rule.
+
+If I1111 is not negligible:
+
+- halt the headline;
+- enumerate every surviving heterogeneous object;
+- do not renormalize;
+- do not force shares to sum to 100.
+
+
+6. SIGNED SHARES
+
+Even with exhaustiveness, contributions may be signed.
+
+Do not require both preference and environment shares to lie in
+[0,1].
+
+If C_P < 0, report that preference heterogeneity compresses inequality
+under the selected money-metric criterion and that circumstances have
+a gross contribution above 100 percent before the preference offset.
+
+Do not alter the reference to manufacture positive shares.
+
+
+7. PREFERENCE REFERENCE
+
+Run the mandatory singles-male mirror.
+
+Primary:
+singles-female reference block.
+
+Sensitivity:
+singles-male reference block.
+
+No coefficient averaging and no new third preference reference.
+
+Do not reinterpret the large I10 increase as proof that the reference
+is defective.
+
+If the female and male references preserve:
+
+- sign of C_P;
+- broad P/E interpretation;
+- ranking or substantive ordering of A/B/D;
+
+retain female-primary plus male sensitivity.
+
+If any of those change materially, return under:
+
+REFERENCE_PREFERENCE_SENSITIVE
+
+and do not freeze one headline percentage.
+
+
+8. SEQUENCING
+
+Run the D operator and preference mirror in parallel with Lane-B
+W0/W1/W2 and HP/HO work.
+
+All current outputs remain:
+
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+After S9 selection:
+
+- reuse the common-budget prices if job nodes and pricing inputs are
+  unchanged;
+- otherwise perform one final aligned S9 reference-budget reprice;
+- compute final welfare only for S8 and S9.
+
+
+9. OUTPUT DISCIPLINE
+
+Record the design and results in the existing:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/welfare_decomposition_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+Create no new mission-document family.
+
+One bounded economics review occurs only after:
+
+- D exhaustiveness passes;
+- the male mirror is complete;
+- S9 is selected.
+
+
+10. RETURN
+
+Return only if:
+
+- projected EUROMOD exceeds seven hours;
+- the common budget profile cannot be constructed coherently;
+- I1111 remains non-negligible;
+- female/male reference conclusions conflict;
+- D pricing changes model inputs outside the budget channel;
+- or a disclosure problem occurs.
+
+Otherwise continue in parallel and retain all percentages as
+provisional until S9.
+
+### (4a) Deputy Interim Ruling - Ex-Ante Diagnostic (R-206, clauses ss4-6 as supplied), VERBATIM - SUPERSEDED BY (4b)
+
+*Scope note: supplied as clauses ss4-6 only; ss1-3 of the interim ruling are not on disk. This interim ruling is SUPERSEDED BY (4b), the R-207 ruling below, which is the operative text. It is recorded here because it was adopted and executed against at R-206.*
+
+4. EX-ANTE DIAGNOSTIC
+Evaluate an ex-ante continuum definition using the existing eight priced Owen
+scrambles.
+For all four preference/environment states, and for both S8 and LOC4:
+- remove the deterministic privileged node-0 anchor from the welfare integral;
+- use only the properly sampled stochastic nodes;
+- retain the exact proposal-density correction;
+- average the household integral estimates across scrambles before taking logs
+  or performing money-metric inversion;
+- use the same estimator definition in W00, W10, W01 and W11;
+- do not remove node 0 only from the common-environment cells while retaining it
+  in W00.
+Run the same comparison under:
+- female-primary reference preferences;
+- male-reference sensitivity.
+Report only:
+- I00, I10, I01 and I11;
+- I1111 / I0000;
+- P/E and A/B/D reconciliation;
+- RQMC numerical bands;
+- the contribution of node 0 to each household integral;
+- the contribution of finite support variation across Owen scrambles;
+- whether the large P-amplification remains;
+- whether the result is stable across S8/LOC4 and female/male references.
+5. OBSERVED-JOB STATUS
+For the headline ex-ante welfare construction, the observed job may not retain
+special probability mass merely because it is the observed chosen alternative.
+It remains privileged in estimation.
+It may remain separately available for:
+- descriptive attained utility;
+- observed-outcome fit;
+- a distinct ex-post welfare diagnostic.
+Do not mix that attained-outcome object with the ex-ante opportunity-distribution
+welfare measure used for the headline decomposition.
+If an exact multiple-importance-sampling treatment exists that allows the
+chosen job to enter as an ordinary draw with its correct proposal weight, it
+may be shown as a diagnostic. Do not invent such a weight or retain
+log_prior = 0 as though it were an ordinary proposal probability.
+6. CONDITIONAL DISPOSITION
+If the ex-ante construction produces:
+- I1111 passing the already defined negligibility criterion;
+- exact coalition reconciliation;
+- acceptable RQMC precision;
+- stable qualitative results across S8/LOC4 and the two preference references;
+then adopt:
+EX_ANTE_CONTINUUM_WELFARE_PROVISIONALLY_ACCEPTED
+and compute the signed two-player P/E contributions and the nested A/B/D
+contributions.
+No further EUROMOD is required in that case.
+All percentages remain:
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+If I1111 remains non-negligible:
+- halt;
+- do not redefine the exhaustiveness target;
+- do not renormalize;
+- identify the exact remaining household-specific object;
+- return the diagnostic decomposition to the deputy.
+Do not proceed automatically to a common realized node set.
+
+### (4b) Deputy Ruling - Channel-D Return and Ex-Ante Welfare Support (R-207), VERBATIM
+
+DEPUTY RULING — CHANNEL-D RETURN AND EX-ANTE WELFARE SUPPORT
+
+The Channel-D execution is accepted as a valid diagnostic result.
+
+It establishes that:
+
+- the common budget/endowment profile was implemented correctly;
+- only D-side budget inputs changed;
+- wages, hours and occupations remained unchanged by node;
+- c_home heterogeneity was eliminated;
+- the four-player accounting identities reconcile exactly;
+- budget/endowment heterogeneity is not the source of the large I1111.
+
+Do not compute or report headline P/E percentages from the current cells.
+
+
+1. CONCEPTUAL RULING
+
+For the headline JMP welfare decomposition, the sampled latent-job nodes are
+NUMERICAL INTEGRATION SUPPORT for the estimated opportunity distribution.
+
+They are not themselves household-specific economically realized finite
+opportunity sets.
+
+Accordingly:
+
+- household-specific Monte Carlo/RQMC node realizations are not a substantive
+  source of inequality;
+- proposal-density variation q is not an economic decomposition channel;
+- finite-sample support variation must not survive as inequality in a state
+  where all economic primitives are common.
+
+The observed chosen job may remain deterministically included for estimation
+of the sampled-choice likelihood.
+
+It may not retain privileged positive-mass status in the ex-ante continuum
+welfare integral merely because it is the observed choice.
+
+
+2. STRUCTURAL NON-EMPLOYMENT OPTION
+
+Do not confuse the observed-job anchor with the structural non-employment
+alternative.
+
+Retain the genuine non-employment atom according to the accepted model.
+
+Remove only the special treatment of the observed chosen job as an IS/welfare
+anchor.
+
+For an employed household, the observed employed job is not a structural atom
+in the continuum wage-hours-occupation distribution.
+
+For a non-employed household, the structural non-employment option remains
+present independently of its status as the observed choice.
+
+
+3. COMPLETE THE ZERO-EUROMOD DIAGNOSTIC
+
+Finish the diagnostic already running.
+
+Evaluate an EX-ANTE welfare estimator in which:
+
+- node 0 is not treated as a privileged observed-job mass point;
+- stochastic employment nodes enter only as proposal draws with the exact q
+  correction;
+- the structural non-employment atom remains;
+- the same welfare definition is used in all four P/E cells;
+- all four cells use the same ex-ante estimand convention;
+- no household-specific proposal realization is interpreted economically.
+
+No new EUROMOD.
+No new draws.
+No new structural estimation.
+No package-source change.
+
+
+4. SUCCESS CONDITION
+
+If the ex-ante construction makes the fully common state I1111 numerically
+negligible under the existing MC criterion, while:
+
+- coalition accounting remains exact;
+- S8 and LOC4 support/domain checks pass;
+- the female-primary and male-reference sensitivity remain interpretable;
+- no substantive model object is silently removed;
+
+then adopt option (b):
+
+EX_ANTE_CONTINUUM_WELFARE_DECOMPOSITION
+
+Recompute all four cells under that convention.
+
+Do not mix:
+
+- the old sampled-set-conditioned W00;
+- with ex-ante W10/W01/W11.
+
+All four cells must use the same ex-ante welfare estimand.
+
+The previous sampled-set-conditioned results remain diagnostic history only.
+
+
+5. FAILURE CONDITION
+
+If I1111 remains non-negligible after removing the observed-job privilege,
+return before any new pricing.
+
+The return must identify the remaining source by checking only:
+
+- structural non-employment treatment;
+- household-specific utility inputs;
+- household-specific opportunity parameters;
+- wage and occupation normalisation;
+- proposal correction;
+- consumption and leisure scaling;
+- reference-preference implementation;
+- support/domain differences;
+- finite-RQMC numerical variation.
+
+Do not redefine the exhaustiveness target.
+Do not force I1111 to zero.
+Do not renormalize the P/E shares.
+
+
+6. COMMON NODE SET
+
+Do not execute option (a), and do not spend another approximately 6.3 hours of
+EUROMOD, unless the zero-EUROMOD ex-ante diagnostic fails and demonstrates that
+a common numerical integration support is required.
+
+If a common support is later required, it must be described as a common
+quadrature/proposal device, not as a common economically realized finite job
+set.
+
+That later step requires a separate return before pricing.
+
+
+7. REFERENCE PREFERENCE
+
+Retain:
+
+FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY
+
+for this diagnostic.
+
+The large increase under preference equalization is not by itself a reason to
+choose another reference.
+
+After the ex-ante correction:
+
+- if both preference references preserve the sign and broad P/E interpretation,
+  retain female-primary plus male sensitivity;
+- if they conflict materially, return under
+  REFERENCE_PREFERENCE_SENSITIVE.
+
+
+8. STATUS
+
+Use:
+
+CHANNEL_D_IMPLEMENTATION_VALIDATED
+BUDGET_HETEROGENEITY_NOT_THE_I1111_SOURCE
+EX_ANTE_SUPPORT_DIAGNOSTIC_IN_PROGRESS
+HEADLINE_PERCENTAGES_HALTED
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+Record the result in the existing decision_note and comparison CSV.
+
+Create no new mission document or separate deputy-ruling memo.
+
+
+9. RETURN
+
+If the ex-ante diagnostic passes, continue autonomously with the provisional
+four-cell and nested decomposition.
+
+Return only if:
+
+- I1111 remains non-negligible;
+- removing node 0 changes the structural non-employment option;
+- accounting ceases to reconcile;
+- reference-preference conclusions conflict;
+- a new pricing run becomes necessary;
+- or another scientific inconsistency appears.
