@@ -6017,3 +6017,88 @@ therefore NOT recorded here. They are not invented, paraphrased or inferred. A
 follow-up dated correction must enter them verbatim; until it does, this entry
 is complete with respect to s3 and s10 only, and that limitation is stated here
 rather than left implicit.
+
+## FOLLOW-UP DATED CORRECTION 2026-09-02 - R-220 s1 / s2 / s5: the status text
+
+This entry COMPLETES the *CORRECTIVE APPEND 2026-09-02 - R-220 s10* immediately
+above, which recorded openly that the R-220 s1, s2 and s5 status text had not
+been supplied to the executing agent and was therefore deliberately left out.
+That text has now been supplied and is entered here VERBATIM. This entry
+APPENDS. Nothing above it is edited, including the R-220 s10 append's own
+statement of the omission, which stands as the record of why this follow-up
+exists.
+
+Source ruling: "CLOSE W0/W1/W2; RUN W3 FEASIBILITY AND THE TEN-HOUSEHOLD
+CONSISTENCY AUDIT".
+
+### s1 - W0_USES_OBSERVED_HOURLY_WAGES_FOR_WORKERS
+
+Status label:
+
+    W0_USES_OBSERVED_HOURLY_WAGES_FOR_WORKERS
+
+Verbatim:
+
+> "For every FR_2016_a3 person with observed wage inputs, yivwg reproduces
+> yem * (12 / yemmy) / (lhw * 52 / 12) up to negligible numerical error. The
+> production chosen-job node uses yivwg. Therefore the current structural wage
+> density and education/experience loadings are fitted against observed worker
+> wages, not fitted conditional means replacing workers' observed wages."
+
+### s2 - closure of the W0/W1/W2 axis
+
+Verbatim:
+
+> "Close the W0/W1/W2 wage-treatment axis. W0: retain the production
+> convention. W1: do not estimate as a separate specification. The correctly
+> annualized observed-wage reconstruction is numerically equivalent to yivwg for
+> workers and therefore supplies no model comparison. W2: do not estimate.
+> Non-worker yivwg does not enter: the current likelihood; the structural gW
+> contribution; the qW wage sampler; the chosen non-employment alternative.
+> Potential wages for non-workers are already integrated through sampled latent
+> wage offers and the structural wage density. Classify:
+> W1_NOT_DISTINCT_FROM_W0; W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD;
+> W0_W1_W2_AXIS_CLOSED"
+
+Status labels set by s2:
+
+    W1_NOT_DISTINCT_FROM_W0
+    W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD
+    W0_W1_W2_AXIS_CLOSED
+
+### s5 - the S8 status replacement
+
+Verbatim:
+
+> "Replace S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS with
+> S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL. The earlier attenuation
+> concern does not apply to the production estimator. S8 is nevertheless not
+> final because persistent heterogeneity and final model selection remain open."
+
+Status label replacement:
+
+    S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS
+      -> S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL
+
+The superseded label remains on the page wherever it was historically written,
+including in the R-202 text above; it is superseded by this dated entry and is
+not edited out of any earlier text.
+
+### Scope, and two things this entry does NOT do
+
+This entry carries s1, s2 and s5 ONLY. R-220 s3 and s10 were discharged by the
+append above and by section 23 of the PS1 decision note, and are not restated.
+
+1. `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS` - the label carried by
+   every Lane A / Channel D / ex-ante welfare number under R-202 s2, re-imposed
+   at R-204 section 8 and R-207 - is NOT named by s5 and is therefore NOT
+   changed here. s5 replaces one label, the S8 one. Whether closing the
+   W0/W1/W2 axis also discharges the welfare-side label is a separate deputy
+   decision and is not taken by the executing agent.
+
+2. The audit halt recorded at section 23.3 of the PS1 decision note,
+   `FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`, is
+   untouched by s5 and remains live. s5 says S8 "is nevertheless not final
+   because persistent heterogeneity and final model selection remain open"; the
+   R-220 s3 halt is one of the reasons final model selection is open, and the
+   two statements are consistent.

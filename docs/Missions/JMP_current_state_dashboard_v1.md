@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-02, at Goal-1 R-220 (Lane B STEP 0 + the ten-case `lhw` audit).
+**Last updated:** 2026-09-02, at Goal-1 R-220.2 (wage axis closed; the ten-case `lhw` halt live).
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -52,6 +52,13 @@ document differ, the ratified document governs.
 | `M08_BASELINE_PROTOTYPE_LIMITED_MC_PRECISION` | the closed M08 prototype | R-138 §9 |
 | `PROVISIONAL_NOT_PROMOTED_MC_PRECISION` | the 16x welfare functionals (baseline arm) | R-138 |
 | `PARITY_AXIS_DISPOSITION_RETIRED_SUPERSEDED_BY_RENAME_AWARE_ALIAS_CLOSURE` | the old Stage-2 parity record | R-157 §9 |
+| **`W0_USES_OBSERVED_HOURLY_WAGES_FOR_WORKERS`** | the production wage convention — `yivwg` reproduces `yem*(12/yemmy)/(lhw*52/12)` for every FR_2016_a3 person with observed wage inputs, so the structural wage density and the education/experience loadings are fitted against **observed** worker wages, not fitted conditional means | **R-220 s1** |
+| **`W1_NOT_DISTINCT_FROM_W0`** | the W1 arm — not estimated; the correctly annualized observed-wage reconstruction is numerically equivalent to `yivwg` for workers and supplies no model comparison | **R-220 s2** |
+| **`W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`** | the W2 arm — not estimated; non-worker `yivwg` enters neither the likelihood, nor `g^W`, nor the `q^W` sampler, nor the chosen non-employment alternative | **R-220 s2** |
+| **`W0_W1_W2_AXIS_CLOSED`** | the wage-treatment axis as a whole — **closed** | **R-220 s2** |
+| **`S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`** | S8 — **replaces** `S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS`; the attenuation concern does not apply to the production estimator, but S8 is not final while persistent heterogeneity and final model selection remain open | **R-220 s5** |
+| **`FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`** | final positive-model selection — halted; 7 of the 10 `lhw`-clip households are an unintended inconsistency and need the floor correction plus one re-estimation | **R-220 s3** |
+| **`HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION_RECORDED`** | the 70-hour cap — the correct behaviour, now a recorded convention rather than an implicit one | **R-220 s3** |
 | **`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`** | **every** welfare number produced by Lane A, Channel D and the ex-ante diagnostic, without exception | **R-202 s2**, re-imposed R-204 §8 and R-207 |
 | **`HEADLINE_PERCENTAGES_HALTED`** | the `s_P` / `s_E` headline shares — halted, not renormalised, the exhaustiveness target unchanged | **R-203**, re-affirmed **R-205**, **R-208** |
 | **`CHANNEL_D_IMPLEMENTATION_VALIDATED`** | the channel-D execution — a valid diagnostic result | **R-207 §8** |
@@ -126,7 +133,7 @@ boundaries of record are `JMP_M08_LOC4_manuscript_claim_set_v2.md`.
 | **Lane A — provisional four-cell welfare pipeline** | **HALTED at exhaustiveness** — `I11 = R_bg` is about 3× `I00`, so `s_P` / `s_E` are void; the architecture (cell map, operator accounting, bitwise `W00` gate, jackknife bands, pre-stated threshold) stands and is reusable | ruling R-202 s2; R-203; decision note §17, §18 |
 | **Channel D — complete-environment decomposition** | **EXECUTED AND VALIDATED, HEADLINE STILL HALTED** — D removes budget dispersion entirely (`c_home` 0.371 → 0.000000) yet `I1111` barely moves, so **D is not the residual**; the priced NODE SUPPORT survives | ruling R-204; R-205; decision note §19 |
 | **Ex-ante continuum diagnostic** | **RUN TO THE FAILURE BRANCH** — 8 of the 9 ruled sources measured ABSENT as drivers; the surviving object is the money-metric inversion's household-specific FROZEN REFERENCE CORE, returned at R-208 and ruled on at R-209 | interim R-206, superseded by R-207; R-208 / R-209; decision note §19.7 |
-| **Lane B — wage treatment (`W0`/`W1`/`W2`)** | **STEP 0 COMPLETE, STEP 1 HALTED at the W2 gate** — the audit overturns the ruling's premise: in FR_2016_a3 `yivwg` **is** the observed hourly wage (`yem×(12/yemmy)/(lhw×52/12)`) for **100%** of persons who have one, so W1 is a near no-op (10 households, all hours-clip artefacts) and W2's stated object — the non-worker wage location — is **provably inert** (bitwise-unchanged negLL over all 15,814 non-working rows). No estimation run | deputy ruling ss1,3,4 / R-218; MNL `experiments/JMP_PS1/decision_note.md` §22 |
+| **Lane B — wage treatment (`W0`/`W1`/`W2`)** | **CLOSED at R-220 s2** — `W0_W1_W2_AXIS_CLOSED`; the STEP-1 W2-gate halt is discharged, W1 and W2 are not estimated. The audit that produced this: — the audit overturns the ruling's premise: in FR_2016_a3 `yivwg` **is** the observed hourly wage (`yem×(12/yemmy)/(lhw×52/12)`) for **100%** of persons who have one, so W1 is a near no-op (10 households, all hours-clip artefacts) and W2's stated object — the non-worker wage location — is **provably inert** (bitwise-unchanged negLL over all 15,814 non-working rows). No estimation run | deputy ruling ss1,3,4 / R-218; MNL `experiments/JMP_PS1/decision_note.md` §22 |
 | **Lane B — the ten-household `lhw` audit (R-220 s3)** | **ANSWERED `NO`; FINAL POSITIVE-MODEL SELECTION HALTED** — the chosen node is priced at `hours_model × yivwg × 52/12` (verified 88/88), so the ten clipped households carry earnings wrong by −27% to +67% and disposable income by −24.5% to +13.1%. **3 are intentional support projections** (the 70 h cap); **7 are an unintended inconsistency** (the 10 h floor — the model's hours support reaches 5 h and the frame carries 2,225 sub-10 h alternatives). Smallest correction + one re-estimation proposed, not run | R-220 s3; MNL `experiments/JMP_PS1/decision_note.md` §23 |
 
 ### JMP-M08T2 — closed
@@ -412,7 +419,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-218, + the R-212 and R-220 corrective appends) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `92f6013582c520ff9924ad53c7bdec71a0d57d7a6b1804a395c7df6550d64dd2` |
+| Consolidated rulings document (R-59 … R-218, + the R-212 and R-220 corrective appends and the R-220 s1/s2/s5 follow-up) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `b8a2664e11bd462456697e1e511564aeeca915fd189bb7c477c61797ca1d7f89` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -486,6 +493,16 @@ was completed. It appends only: no earlier ruling text, including R-202, was
 edited. The R-220 s1 / s2 / s5 status labels were not supplied to the executing
 agent and are deliberately **not** entered; a follow-up dated correction must
 carry them verbatim.
+
+**Chain continued at R-220.2.** The *FOLLOW-UP DATED CORRECTION 2026-09-02 -
+R-220 s1 / s2 / s5: the status text* advanced the same document
+`92f60135…50d64dd2` → `b8a2664e11bd462456697e1e511564aeeca915fd189bb7c477c61797ca1d7f89`
+(245,753 → 249,603 bytes, prefix byte-identical, pure CRLF), with the **seven**
+dependent sites advanced path-only in the same commit and the five rulings-text
+claim strings re-asserted against the new bytes (5/5 PASS) **before** the re-pin.
+It completes the R-220 s10 append by entering the s1 / s2 / s5 text verbatim; the
+s10 append's own statement that the text was missing is **not** edited out, and
+stands as the record of why the follow-up exists.
 
 ### 4.1 The rulings-doc pin recursion
 
@@ -585,7 +602,9 @@ file that might predate the axis.
 
 ## 6. Next action
 
-**Two halts are live: Lane B at the W2 gate, and FINAL POSITIVE-MODEL SELECTION pending the `lhw`-floor correction** — §3's R-218 order otherwise unchanged (HP/HO, then S9, then the headline freeze).
+**Lane B is CLOSED; one halt remains — FINAL POSITIVE-MODEL SELECTION pending the `lhw`-floor correction** — then HP/HO, then S9, then the headline freeze.
+
+**`W0_W1_W2_AXIS_CLOSED`** (R-220 s2). The wage-treatment axis is closed without estimating W1 or W2: `W1_NOT_DISTINCT_FROM_W0` and `W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`. The §22.7 W2-gate halt is **discharged** — it was raised because the W2 object could not be fixed from the ruling text, and s2 resolves it by ruling that there is no W2 to estimate. S8 now carries **`S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`** (R-220 s5).
 
 **`FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`** (R-220 s3). The ten-case audit answered the decisive question `NO`: the chosen alternative does not reproduce the intended observed earnings/budget after hours clipping. The proposed cure is minimal — set `hours_floor_low` from 10 to 5 in the France data-prep config, reprice **7 chosen rows** (drawn prices reused bitwise, verified by hash), and run **one** S8 re-estimation plus the S0/LOC4 benchmark on the corrected frame under the full certified protocol. The `hours_cap_high = 70` behaviour is correct and is now recorded as **`HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION_RECORDED`**. Neither halt withdraws S8, any coefficient or any welfare number.
 
