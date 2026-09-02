@@ -4932,3 +4932,996 @@ Return only:
 No independent review is required for exploratory W/HP/HO variants.
 One bounded review follows only after S9 is proposed for manuscript
 use.
+
+## Appended 2026-09-02 — R-210..R-218 + three deputy rulings
+
+*Frame note: chat-side rulings R-210..R-218, one line each, transcribed from the
+JMP_PS1 decision note and the current-state dashboard rather than composed here;
+then, under their own headings, the three deputy rulings of that span that carry
+verbatim text — (1) the R-210 DB040_F disposition and R1_BMO authorization,
+(2) the R-213 common-quadrature-support authorization, and (3) the R-217
+male-reference structural-zero completion. Signature gate: each heading's body
+opens on its own first section title — (1) "1. DB040_F DISPOSITION";
+(2) "1. CONCEPTUAL STATUS"; (3) "1. MISSING MALE CHILD COEFFICIENT". Three scope
+statements are entered openly rather than left in chat. R-211, R-214 and R-215
+carry no deputy-verbatim text on disk and no on-disk record beyond the line
+transcribed here, so they appear as chat-side lines only, in the same way
+R-186..R-192, R-194..R-201, R-208 and R-209 do; in particular the COR-2, R1E and
+Torch items named at R-214 are recorded BY NAME and are not reconstructed. R-212
+carries two distinct things under one number: the chat-side D4 adoption recorded
+below, and clause R-212.4, the dated corrective append entering the complete
+ten-section R-202 ruling, which is already on the record immediately above this
+heading and is NOT repeated here. Per R-162, and under R-162.2 across both
+repositories, this append carries its own re-pins: every site that pins this
+document by sha256 is advanced path-only in the same commit that stales it.*
+
+- R-210 `DB040_F` resolved; the s5c halt lifted and R1_BMO unblocked. The
+  restricted-environment result is accepted. The France 2016 household register
+  carries `N = 11,459` households, an exact match to the EUROMOD FR_2016_a3
+  household universe with difference `0`; `DB040` is observed at NUTS-2 across
+  **22 distinct codes**; the `DB040_F == -1` count is **`0`**; the weighted
+  missing-region share is `0.0000%`; and there are **1,449** genuine
+  Île-de-France households (weighted 5,141,585). In its sharpest form the
+  `DB040_F` domain observed over all 11,459 rows is exactly `{1}` at weighted
+  share `1.0`. The missing-region recode `replace drgn2 = 1 if drgn2 == .`
+  (`DRD_FR_2016_a3_export.txt:178`) therefore **never fired**: every household
+  coded `drgn2 = 1` is genuine IDF, the 245 frame households at `drgn2 == 1`
+  (15.76%) are all genuine, and the s5c cell that ten routes were opened to
+  partition is degenerate in its second component — there was never anything to
+  partition. The s5c contamination concern is closed under
+  `DB040_F_RECODE_NOT_USED` and `FULL_SAMPLE_GENUINE_REGION_OBSERVED`, and no
+  household linkage, proxy reconstruction, restricted-sample deletion or
+  regional imputation is required. The result is a derivation from a universe
+  aggregate and not a row join — the certified 1,555-household frame is a subset
+  of the register on the same `DB030 == idorighh` key space, a subset of a set
+  with no flagged members has no flagged members, the keep mask is identically
+  `True`, and the record is written with method
+  `DERIVED_FROM_UNIVERSE_AGGREGATE_NOT_A_ROW_JOIN`. The already frozen R1_BMO
+  design is authorized to proceed locally with zero EUROMOD on exactly three
+  arms — FULL_FRACTIONAL, HIGH_CONFIDENCE_090 and LEAVE_CORSE_OUT — with no
+  further mapping variants, no causal or instrumental-variable language, and the
+  2015 lag treated as timing discipline rather than an exclusion restriction.
+  The LFS 2016 F35 shares are retained as
+  `EXTERNAL_HOURS_DISTRIBUTION_VALIDATION` only. The deputy text is recorded
+  VERBATIM under heading (1) below.
+- R-211 the `13b_Wage` do-file is not on the share. The restricted search
+  ordered at R-210 s6 returned nothing: the wage do-file is not present on the
+  share, so the extraction that ruling owes — dependent variable, estimation
+  sample, sex-specificity, selection equation, exclusion restrictions,
+  estimator, worker/non-worker prediction formulas, residual variance, selection
+  correlation, retransformation, and trimming or winsorization — stands
+  UNFILLED. It is not reconstructed anywhere. The W0/W1/W2 wage-treatment lane
+  proceeds on the current W0 understanding, and the extraction is owed if and
+  when the file is located; per R-210 s6 no new deputy contact is needed merely
+  because the file is found. No deputy-verbatim text for this ruling is on disk
+  and there is no on-disk record beyond this line.
+- R-212 D4 adopted: the coalition-consistent inversion, and COR-2 ordered. The
+  defect is that `R_replace` froze BOTH `leisure_term` and `opp` at the baseline
+  coalition, so the numerator moved with the coalition while the reference side
+  did not — the asymmetry the Lane-A ruling forbids. The correction takes `u`
+  and `opp` from the COALITION, placing `R_i^S` and `A_i^S` on both sides, with
+  the same bracketing solve, the same tolerances, the same `logS` and the same
+  ex-ante support. Every inversion input was classified and none was
+  undeterminable. The correction removes about **95 percent** of the previous
+  `I1111` residual: S8 female `0.430622 -> 0.021313` (95.1%), LOC4 female
+  `0.492239 -> 0.029740` (94.0%), S8 male `0.461210 -> 0.023436` (94.9%), LOC4
+  male `0.514995 -> 0.030840` (94.0%). Checks A, B, C and E pass in all four
+  arms — A bitwise, B to within 1e-6 EUR, E at machine precision — but check D,
+  negligibility, **FAILS** in all four. The remainder is localized to the
+  household-specific finite quadrature supports: only 38.7% of the remaining
+  1111 variance is persistent between households, against 99.68% under the
+  baseline-core inversion, the rest being between-scramble. Lane A is halted
+  under s8 — `I1111` is not forced to zero, no share is renormalised, the
+  all-cell common-preference metric is not adopted and no pricing is authorized
+  — and **COR-2 is ordered** on that basis. Clause R-212.4, the corrective
+  append entering the complete ten-section R-202 ruling, is recorded separately
+  and immediately above this heading.
+- R-213 the common quadrature support authorized. Option (a) is adopted subject
+  to conditions: the coalition-consistent inversion is accepted as the correct
+  W1 implementation, and a common quadrature support is authorized as a
+  **numerical integration correction** and explicitly NOT as a common realized
+  economic opportunity set. Three objects are kept apart — the economic
+  opportunity distribution `g_i`, the numerical proposal `q`, and the finite
+  RQMC quadrature support — and only the third changes. A zero-cost broadcast
+  precheck precedes pricing, one common RQMC panel is built per accepted
+  scramble on the existing Owen design and seeds with no privileged observed-job
+  node and the structural non-employment atom retained, proposal validity is
+  verified for both S8 and LOC4 before pricing, and one bounded EUROMOD pricing
+  run is authorized under a seven-hour guard against a 6.3-hour projection. All
+  sixteen coalitions of `{P, A, B, D}` are evaluated on both models and both
+  reference preferences. The deputy text is recorded VERBATIM under heading (2)
+  below.
+- R-214 COR-2, the R1E negative result and the Torch note adopted. The three
+  items are adopted as named. No deputy-verbatim text for this ruling is on
+  disk, and no on-disk record exists beyond this line, so the items are entered
+  BY NAME only and none of them is reconstructed here.
+- R-215 the estimated-only reporting rule. The reporting rule is adopted as
+  named. No deputy-verbatim text for this ruling is on disk and there is no
+  on-disk record beyond this line, so no operative detail is reconstructed.
+- R-216 D5 accepted; the s13 return. The common-support deliverable is accepted.
+  Exhaustiveness passes in all four arms under the frozen rule, and the signed
+  grouped contributions are computed with `C_P + C_E = I0000 - I1111` and
+  `C_E = C_A + C_B + C_D` holding at machine precision in every arm. Three
+  things are more stable than on the household-specific support — the sign of
+  `C_P` is preserved across both reference preferences in both models, where
+  under R-209 the S8 arms disagreed in sign (−0.001738 female against +0.004742
+  male); the A/B/D ordering is identical across references in every arm; and the
+  environment dominates everywhere, `C_E` running 0.119–0.135 against a `C_P` of
+  0.005–0.014. One thing is not: the MAGNITUDE of `C_P` differs between the two
+  references by a factor of 1.68 for S8 and 1.45 for LOC4, far outside the RQMC
+  bands. That is not near-zero sign variation, so the arms are recorded
+  **REFERENCE_PREFERENCE_SENSITIVE** and this **returns under s13**. The return
+  carries the caveat that the male-reference P operator is the incomplete one
+  diagnosed at exhaustiveness: it leaves the children-in-leisure term
+  sex-dependent and so equalises less than the female-reference arm, meaning
+  part of the female–male `C_P` gap may be an operator-completeness artefact
+  rather than a genuine reference sensitivity, and the two cannot be separated
+  without a male children-in-leisure coefficient the specification does not
+  contain. No signed preference percentage is frozen and the phrase
+  *statistically indistinguishable from zero* is used nowhere: only the RQMC
+  integration band has been computed, not full sampling uncertainty.
+- R-217 the structural-zero male reference adopted. Option (a)(i) is NOT
+  adopted: the female child coefficient is not imported into the official male
+  reference. The estimated male singles utility contains no `beta_l_nkids_sm`
+  coordinate, so for the accepted male specification the child coefficient is a
+  **structural zero restriction**. Both reference preferences are represented on
+  the **union of all singles preference terms**, with
+  `FEMALE_PRIMARY: beta_nkids_ref = beta_l_nkids_sf` and
+  `MALE_REFERENCE: beta_nkids_ref = 0.0`, applied to every household in all
+  P-equalized coalition states with no unmatched coefficient left at a
+  household's own sex-specific value. The union-basis completeness check passes
+  rather than halting: all six terms carry an explicit reference value under
+  both conventions and exactly one, `beta_l_nkids`, is asymmetric, its male
+  value being a structural zero because spec `utility_leisure_shifters` declares
+  it `gender_specific` and no `beta_l_nkids_sm` appears in `all_param_names`.
+  The re-evaluation is zero-cost — no EUROMOD, no new draws, no pricing, no
+  estimation, no package-source change — and the route is proved a **bitwise
+  no-op on the female arms**. The deputy text is recorded VERBATIM under heading
+  (3) below.
+- R-218 D6: exhaustiveness passes in all arms; the D-largest claim authorized;
+  Lane B next. The structural zero discharges the residual completely: on the
+  corrected male reference `I1111` is `0.000e+00` (S8) and `-2.254e-31` (LOC4),
+  against `1.113e-03` and `9.777e-04` before the correction, and `u` at the
+  fully common state is now common across ALL households in every arm at max
+  range 0. Owen/Shapley reconciliation, reference recovery and monotone
+  inversion pass in all six arms on the existing RQMC bands. The shared-child
+  arm is retained only as `SHARED_CHILD_COEFFICIENT_DIAGNOSTIC` and quantifies
+  the attribution: the child term carries just **3.7%** (S8) and **7.3%** (LOC4)
+  of the female/male `C_P` gap, so the reference sensitivity is **substantially
+  real, not mostly an artefact** — this corrects the reading offered at R-216,
+  and the correction moved the male `C_P` slightly further from the female one
+  rather than closer. Both models fall in the ruling's **branch A** — `C_P` has
+  the same sign and the environment remains dominant under both references — and
+  are classified `REFERENCE_SENSITIVE_MAGNITUDE`, with S8 `C_P` in
+  `[+0.008434, +0.014569]` (`s_P` `[+6.28%, +10.85%]`, difference 0.006135
+  against bands 0.001617) and LOC4 `C_P` in `[+0.004619, +0.007083]` (`s_P`
+  `[+3.31%, +5.08%]`, difference 0.002464 against bands 0.001173). The two
+  references are NOT averaged. D is larger than both A and B in all four
+  corrected arms, so the provisional statement is **authorized** and recorded
+  verbatim: *"Within the currently modelled non-preference environment,
+  budget-side endowments and needs are the largest nested contribution under
+  both positive models and both reference-preference conventions."* It carries
+  its four qualifiers without exception — structural and model-conditional, not
+  causal, provisional pending wage robustness and S9, and not a statement that
+  job opportunities are unimportant. Common support is adopted as the
+  decomposition estimator and not interpreted as a common finite economic
+  opportunity set; the common-support W00 values differ from the prior
+  own-support estimates by −5.53% (S8) and −7.74% (LOC4), that support-design
+  movement is disclosed, absolute welfare levels are **not** frozen as final and
+  no claim of numerical proposal invariance is made. R1_BMO is closed as a
+  negative result under `R1_BMO_NO_ADDITIONAL_OCCUPATION_ACCESS_SIGNAL`. One
+  technical prerequisite is recorded and deliberately not repaired:
+  `m08_normalisation.py` constructs `log_S_occ` as a scalar
+  (`m08_normalisation.py:211`, broadcast at `:221`), and the occupation
+  normaliser must be made household-specific and validated before any future
+  specification introduces genuinely region-varying or household-varying
+  occupation access. LOC4 is not preferred merely because its reference
+  sensitivity is numerically cleaner — welfare-reference convenience is not a
+  model-selection criterion. All shares remain
+  `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS` and the JMP headline is
+  not frozen. The live priority order is **Lane B next**, then HP/HO, then S9.
+
+### (1) Deputy Confirmation - DB040_F Resolved; R1_BMO May Proceed (R-210), VERBATIM
+
+DEPUTY CONFIRMATION — DB040_F RESOLVED; R1_BMO MAY PROCEED
+
+1. DB040_F DISPOSITION
+
+Accept the restricted-environment result.
+
+The France 2016 household register contains:
+
+- N = 11,459 households;
+- exact match to the EUROMOD FR_2016_a3 household universe;
+- DB040 observed at NUTS-2;
+- DB040_F = -1 count: 0;
+- weighted missing-region share: 0.0000%;
+- genuine Île-de-France households, FR10: 1,449.
+
+Therefore the missing-region recode never fired.
+
+Every household coded drgn2 = 1 is genuine IDF.
+
+The former s5c contamination concern is closed:
+
+DB040_F_RECODE_NOT_USED
+FULL_SAMPLE_GENUINE_REGION_OBSERVED
+
+No household linkage, proxy reconstruction, restricted-sample deletion, or
+regional imputation is required.
+
+
+2. R1_BMO AUTHORIZATION
+
+Proceed locally with the already frozen R1_BMO design:
+
+- lagged BMO 2015 wave;
+- frozen met-weighted difficulty-share formula;
+- within-loc4 standardization;
+- S8 frame;
+- existing priced alternatives;
+- zero EUROMOD.
+
+Run exactly:
+
+A. FULL_FRACTIONAL
+   Full probabilistic FAP -> PCS -> ISCO -> loc4 composition.
+
+B. HIGH_CONFIDENCE_090
+   Retain FAP codes satisfying max_o T[f,o] >= 0.90.
+
+C. LEAVE_CORSE_OUT
+   Apply the identical frozen construction while excluding Corse.
+
+Do not add further mapping variants.
+
+
+3. REQUIRED REPORTING
+
+Report in the existing JMP_PS1 outputs:
+
+- mapped BMO recruitment-mass coverage;
+- retained mass under HIGH_CONFIDENCE_090;
+- mapping concentration/entropy;
+- number and mass of unmapped codes;
+- R1_BMO coefficient, standard error and interval;
+- fit change;
+- effect on occupation-access parameters;
+- effect on household-level occupation fit;
+- effect on the access/ability/preference attribution, as diagnostic only;
+- comparison of FULL_FRACTIONAL, HIGH_CONFIDENCE_090 and
+  LEAVE_CORSE_OUT.
+
+Use no causal or instrumental-variable language.
+
+Lagging BMO to 2015 is timing discipline, not an exclusion restriction.
+
+
+4. INTERPRETATION GATE
+
+If the BMO coefficient and the substantive occupation-access interpretation
+preserve their sign and qualitative conclusion under:
+
+- FULL_FRACTIONAL;
+- HIGH_CONFIDENCE_090;
+- LEAVE_CORSE_OUT;
+
+then classify:
+
+R1_BMO_MAPPING_ROBUST_EXTERNAL_OCCUPATION_DEMAND_EVIDENCE
+
+If the sign or qualitative conclusion changes:
+
+R1_BMO_MAPPING_SENSITIVE_ROBUSTNESS_ONLY
+
+Do not use a mapping-sensitive result as main identification support.
+
+If the coefficient is weak or adds no occupation-fit improvement, report the
+negative result and retain S8 unchanged.
+
+
+5. LFS HOURS TABLE
+
+Retain the LFS 2016 male and female F35 shares as:
+
+EXTERNAL_HOURS_DISTRIBUTION_VALIDATION
+
+Use them to show that the France singles 35-hour concentration is visible in an
+independent labour-force source.
+
+Do not treat the same-year aggregate shares as an instrument or as independent
+identification of preferences versus hours opportunities.
+
+The desired-hours and underemployment variables remain the more relevant LFS
+objects for future identification.
+
+
+6. WAGE DO-FILE
+
+Continue the restricted search for 13b_Wage.
+
+When located, extract only the wage-model information already requested:
+
+- dependent variable;
+- estimation sample;
+- sex-specificity;
+- selection equation;
+- exclusion restrictions;
+- estimator;
+- worker/non-worker prediction formulas;
+- residual variance;
+- selection correlation;
+- retransformation;
+- trimming or winsorization.
+
+This feeds the W0/W1/W2 wage-treatment lane.
+
+No new deputy contact is needed merely because the file is found.
+
+
+7. DOCUMENTATION
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/model_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+Create no separate DB040_F memo, BMO mission family, or restricted-access
+governance record.
+
+The aggregate restricted-session output may be retained as a minimal
+machine-readable provenance record, containing no household rows.
+
+
+8. RETURN
+
+Return only if:
+
+- the three R1_BMO variants conflict substantively;
+- the BMO construction changes a channel outside occupation access;
+- the 13b_Wage code reveals a wage convention materially different from the
+  current W0 understanding;
+- or another scientific identification problem appears.
+
+Otherwise complete R1_BMO autonomously and incorporate the result into the
+existing sprint comparison.
+
+### (2) Deputy Ruling - Authorize One Common Quadrature-Support Run (R-213), VERBATIM
+
+DEPUTY RULING — AUTHORIZE ONE COMMON QUADRATURE-SUPPORT RUN
+
+Choose option (a), subject to the conditions below.
+
+The coalition-consistent inversion is accepted as the correct W1
+implementation.
+
+It removed approximately 94–95 percent of the previous I1111 residual.
+
+The remaining residual is now sufficiently localized:
+
+- the majority is between-scramble variation generated by
+  household-specific finite quadrature supports;
+- the remainder lies in a reference map still evaluated on those
+  household-specific supports;
+- budget heterogeneity, node-0 privilege, structural non-employment,
+  proposal mismatch, low ESS, and un-equalized economic parameters have
+  been ruled out as primary explanations.
+
+A common quadrature support is therefore authorized as a numerical
+integration correction.
+
+It is NOT a common realized economic opportunity set.
+
+
+1. CONCEPTUAL STATUS
+
+Use the following distinction throughout:
+
+ECONOMIC OPPORTUNITY DISTRIBUTION:
+the structural target density g_i.
+
+NUMERICAL PROPOSAL:
+the proposal density q used for integration.
+
+QUADRATURE SUPPORT:
+the finite RQMC nodes used to approximate the integral.
+
+The authorized change concerns only the third object.
+
+Do not state that all households literally face the same finite list
+of jobs.
+
+State instead:
+
+“All households are evaluated using a common set of quadrature nodes
+so that finite integration-support variation cannot appear as welfare
+inequality.”
+
+
+2. ZERO-COST PRECHECK
+
+Before EUROMOD pricing, run one algebraic/broadcast proof using an
+existing common-D priced support.
+
+At the fully common P+A+B+D state:
+
+- take one already priced support evaluated under the common D profile;
+- broadcast that identical support, proposal weights, economic
+  parameters, and coalition-consistent inversion map to every household;
+- verify that W1111 is identical across households up to machine
+  precision.
+
+This is a verification of the implementation identity, not a reported
+economic result.
+
+If the broadcast proof does not collapse I1111 to numerical zero,
+HALT before pricing and identify the remaining non-common field.
+
+If it passes, continue without returning to the deputy.
+
+
+3. COMMON RQMC SUPPORT
+
+Construct one common RQMC quadrature panel per accepted scramble.
+
+Use:
+
+- the existing accepted Owen-scramble design;
+- the existing accepted seeds;
+- the same number of stochastic nodes per scramble;
+- one frozen proposal construction;
+- exact proposal-density evaluation;
+- no privileged observed-job node;
+- the genuine structural non-employment atom retained;
+- common node ordering and identifiers across households;
+- identical support for S8 and LOC4.
+
+The common support must contain job coordinates such as:
+
+- employment/non-employment status;
+- hours;
+- occupation;
+- wage.
+
+It is a numerical support only.
+
+The observed chosen job remains privileged in estimation and
+post-estimation fit diagnostics, but not in this ex-ante quadrature
+panel.
+
+
+4. PROPOSAL VALIDITY
+
+Before pricing, verify:
+
+- q is normalized;
+- every S8 and LOC4 target density is absolutely continuous with
+  respect to q;
+- all proposal densities are finite and positive where the targets
+  have support;
+- exact -log q correction is retained;
+- structural non-employment probability is preserved;
+- projected importance-weight/ESS diagnostics are acceptable for both
+  S8 and LOC4;
+- no household-specific proposal realization remains in the fully
+  common state.
+
+If a common proposal cannot cover both S8 and LOC4 adequately, HALT
+before pricing. Do not create a second model-specific support
+autonomously.
+
+
+5. PRICING AUTHORIZATION
+
+Authorize one bounded EUROMOD pricing run on the common support.
+
+Use:
+
+- existing France 2016 system;
+- certified target-only pricing geometry;
+- actual household budget inputs for actual-D coalition states;
+- the frozen common medoid budget profile for common-D states;
+- identical job nodes across households and coalition arms.
+
+No:
+
+- structural estimation;
+- package-source modification;
+- new economic variables;
+- new welfare definition;
+- additional draw ladder;
+- separate common-node economic interpretation.
+
+Projected EUROMOD guard:
+
+7 hours maximum.
+
+The current projection of approximately 6.3 hours is admissible.
+
+If the updated pre-run projection exceeds seven hours, return before
+pricing.
+
+
+6. COALITION EVALUATION
+
+Evaluate all 16 coalitions of:
+
+{P, A, B, D}
+
+on the common quadrature support for:
+
+- S8;
+- LOC4;
+- female-primary reference preferences;
+- male-reference sensitivity.
+
+Use:
+
+- coalition-consistent inversion;
+- Jbar before log/inversion;
+- exact q correction;
+- the same welfare definition and numerical support in every state.
+
+Require:
+
+- W00 comparison with the earlier estimator, with any difference
+  attributed explicitly to the quadrature-support change;
+- exact coalition accounting;
+- valid support and domains;
+- RQMC numerical bands;
+- no household-level proposal realization interpreted as an economic
+  circumstance.
+
+
+7. EXHAUSTIVENESS GATE
+
+At the fully common state require:
+
+I1111 <= the existing numerical-negligibility criterion.
+
+Because the economic primitives, inversion convention and quadrature
+support are now all common, I1111 should be numerical zero up to the
+declared tolerance.
+
+If I1111 remains non-negligible:
+
+- HALT;
+- run no further pricing or estimator;
+- list every object that still differs across households;
+- do not redefine the target;
+- do not renormalize shares.
+
+
+8. PREFERENCE-REFERENCE DISPOSITION
+
+For the current S8 result, record:
+
+PREFERENCE_CONTRIBUTION_ECONOMICALLY_SMALL
+REFERENCE_SIGN_SENSITIVE
+
+Do not use:
+
+“statistically indistinguishable from zero”
+
+because full sampling uncertainty has not been computed.
+
+Do not freeze a signed S8 preference percentage.
+
+After the common-support correction:
+
+- if female and male references preserve an economically negligible
+  preference contribution but differ only in sign, report a
+  reference-sensitivity range and state that the preference
+  contribution is not robustly signed;
+- if the magnitude or broad environment/preference interpretation
+  changes materially, return under REFERENCE_PREFERENCE_SENSITIVE.
+
+The A/B/D ranking on S8 is also reference-sensitive.
+
+Do not freeze an A-versus-B ranking if it differs across the two
+reference preferences.
+
+The currently robust statement is that D is the largest of those
+three contributions in both S8 arms.
+
+
+9. LOC4 VERSUS S8
+
+Do not treat LOC4’s cleaner reference behavior as evidence that LOC4
+should replace S8.
+
+Welfare-reference convenience is not a positive-model selection
+criterion.
+
+S8/LOC4 selection remains governed by:
+
+- wage treatment;
+- likelihood and information criteria;
+- identification;
+- predictive performance;
+- convergence and curvature;
+- structural interpretability;
+- external-data validation.
+
+LOC4 remains a benchmark unless the positive-model selection process
+independently chooses it.
+
+
+10. HEADLINE STATUS
+
+If common-support exhaustiveness passes, calculate the signed grouped
+Owen/Shapley contributions:
+
+C_P
+C_E
+C_A
+C_B
+C_D
+
+with:
+
+C_P + C_E = I0000 - I1111
+
+and:
+
+C_E = C_A + C_B + C_D.
+
+All shares remain:
+
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+Do not freeze the JMP headline until the W0/W1/W2 wage comparison and
+S9 selection are complete.
+
+
+11. PRIOR RESULTS
+
+Retain as diagnostic history:
+
+- sampled-set-conditioned results;
+- Channel-D results;
+- node-anchor diagnostic;
+- household-specific-support coalition-consistent results.
+
+Do not delete them.
+
+Do not use their P/E shares as manuscript headline estimates.
+
+
+12. OUTPUT DISCIPLINE
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/welfare_decomposition_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+Machine-readable common-support pricing manifests may remain in the
+existing run directory.
+
+Create no new mission-document family and no separate deputy-ruling
+memo.
+
+
+13. RETURN
+
+Return only if:
+
+- the broadcast identity fails;
+- common q does not cover S8 and LOC4;
+- projected EUROMOD exceeds seven hours;
+- I1111 remains non-negligible;
+- coalition accounting fails;
+- female/male reference differences are economically material rather
+  than near-zero sign variation;
+- or another substantive welfare-definition issue appears.
+
+Otherwise record the provisional exhaustive decomposition and
+continue with the wage-robustness lane.
+
+### (3) Deputy Ruling - Complete the Male Reference with the Structural Zero (R-217), VERBATIM
+
+DEPUTY RULING — COMPLETE THE MALE REFERENCE WITH THE STRUCTURAL ZERO
+
+The common-support run is accepted as establishing:
+
+- valid common numerical quadrature support;
+- exact four-player reconciliation;
+- exhaustive fully common states within the frozen numerical rule;
+- removal of finite-support variation as substantive inequality;
+- positive C_P on the currently executed arms;
+- D as the largest nested environment component on those arms.
+
+No new EUROMOD or pricing is authorized.
+
+
+1. MISSING MALE CHILD COEFFICIENT
+
+Do NOT adopt option (a)(i) as stated.
+
+Do not import beta_l_nkids_sf into the official male reference and describe the
+result as the male preference block.
+
+The estimated male singles utility contains no beta_l_nkids_sm coordinate.
+For the accepted male specification, the child coefficient is therefore a
+structural zero restriction.
+
+Represent both reference preferences on the union of all singles preference
+terms.
+
+At minimum the union basis must contain:
+
+- leisure intercept;
+- age;
+- age squared;
+- number of children;
+- leisure curvature;
+- consumption curvature;
+- every other preference term active in either singles group.
+
+Define:
+
+FEMALE_PRIMARY:
+    beta_nkids_ref = beta_l_nkids_sf
+
+MALE_REFERENCE:
+    beta_nkids_ref = 0.0
+
+Apply the selected complete reference vector to every household in all
+P-equalized coalition states.
+
+No unmatched coefficient may be silently left at the household's own
+sex-specific value.
+
+
+2. UNION-BASIS COMPLETENESS CHECK
+
+Before re-evaluation, mechanically compare the female and male singles
+preference bases.
+
+For every term present in one group but absent in the other, require an explicit
+reference value:
+
+- estimated value when present in the chosen reference block;
+- structural fixed value, normally zero, when absent by specification.
+
+If any missing term has no defensible fixed interpretation, halt and return.
+
+Do not invent an estimated coefficient.
+
+
+3. ZERO-COST RE-EVALUATION
+
+Using the existing common-support priced run, recompute the male-reference arms
+with:
+
+beta_nkids_ref = 0.0
+
+No:
+
+- EUROMOD;
+- new draws;
+- pricing;
+- estimation;
+- package-source change.
+
+Require:
+
+- I1111 to collapse within the frozen negligibility rule;
+- exact Owen/Shapley reconciliation;
+- valid reference recovery;
+- monotonic inversion;
+- existing RQMC bands.
+
+
+4. FEMALE-MAPPED CHILD TERM
+
+The already available counterfactual in which the female child coefficient is
+inserted into the otherwise male block may be retained only as:
+
+SHARED_CHILD_COEFFICIENT_DIAGNOSTIC
+
+Its purpose is to isolate how much of the female/male reference difference is
+associated with the child coefficient.
+
+It is not:
+
+- the official male reference;
+- an estimated male preference coefficient;
+- a preferred specification;
+- a manuscript headline arm.
+
+
+5. REFERENCE-SENSITIVITY REPORTING
+
+The pre-specified reporting convention remains:
+
+PRIMARY:
+female reference.
+
+SENSITIVITY:
+male structural-zero reference.
+
+Do not average the two references.
+
+After the corrected male re-evaluation:
+
+A. If C_P has the same sign and the environment remains dominant under both
+   references:
+
+- report the female-primary estimate;
+- report the male-reference estimate;
+- report their range;
+- classify the magnitude as reference-sensitive when their difference exceeds
+  the RQMC numerical bands.
+
+B. If C_P changes sign:
+
+report:
+
+PREFERENCE_CONTRIBUTION_SIGN_NOT_ROBUST_TO_REFERENCE
+
+Do not make a directional preference-contribution claim.
+
+C. If the preference/environment interpretation reverses materially:
+
+return under:
+
+REFERENCE_PREFERENCE_CHANGES_HEADLINE_INTERPRETATION
+
+Otherwise reference sensitivity is a reportable normative sensitivity, not a
+reason to stop the paper.
+
+
+6. D-LARGEST CLAIM
+
+After the corrected male-zero arm, if D remains larger than A and B for:
+
+- S8 female reference;
+- S8 male reference;
+- LOC4 female reference;
+- LOC4 male reference;
+
+authorize the provisional statement:
+
+“Within the currently modelled non-preference environment, budget-side
+endowments and needs are the largest nested contribution under both positive
+models and both reference-preference conventions.”
+
+This is:
+
+- structural and model-conditional;
+- not causal;
+- provisional pending wage robustness and S9;
+- not a statement that job opportunities are unimportant.
+
+If D ceases to be largest in any corrected arm, report the ranking as
+reference- or specification-sensitive.
+
+
+7. COMMON-SUPPORT STATUS
+
+Adopt common numerical support as the decomposition estimator because it removes
+finite quadrature-support variation from the fully common state.
+
+Do not interpret it as a common finite economic opportunity set.
+
+Retain prior own-support and node-anchor results as diagnostic history.
+
+
+8. ABSOLUTE WELFARE LEVELS
+
+The common-support W00 values differ from the prior own-support estimates by
+approximately:
+
+- 5.5 percent for S8;
+- 7.7 percent for LOC4.
+
+Therefore:
+
+- use common support for the provisional exhaustive decomposition;
+- disclose the support-design movement;
+- do not freeze absolute welfare levels as final;
+- do not claim numerical proposal invariance from the current comparison.
+
+Final absolute welfare magnitudes remain pending:
+
+- W0/W1/W2 wage treatment;
+- S9 selection;
+- final numerical evaluation of S9.
+
+
+9. R1_BMO DISPOSITION
+
+Close R1_BMO as a negative result.
+
+Across FULL_FRACTIONAL, HIGH_CONFIDENCE_090 and LEAVE_CORSE_OUT:
+
+- the BMO tension coefficient is close to zero;
+- the occupation-access block is materially unchanged;
+- S8 remains preferred;
+- sign changes around zero are not interpreted as mapping sensitivity.
+
+Classify:
+
+R1_BMO_NO_ADDITIONAL_OCCUPATION_ACCESS_SIGNAL
+
+State only that this lagged BMO construction adds no detectable structural
+occupation-access signal in the current sample/specification.
+
+Do not state that regional occupation demand is generally irrelevant.
+
+Do not use BMO as identification evidence in the headline model.
+
+
+10. FUTURE REGION-VARYING gOcc
+
+Record one technical prerequisite:
+
+m08_normalisation.py currently constructs log_S_occ as a scalar.
+
+Before any future specification introduces genuinely region-varying or
+household-varying occupation access, the occupation normalizer must be made
+household-specific and validated.
+
+Do not repair it now because R1_BMO is not admitted and no active specification
+requires the change.
+
+
+11. S8 VERSUS LOC4
+
+Do not prefer LOC4 merely because its reference sensitivity is numerically
+cleaner.
+
+Positive-model selection remains governed by:
+
+- W0/W1/W2 wage treatment;
+- likelihood and information criteria;
+- predictive fit;
+- identification;
+- curvature;
+- external validation;
+- structural interpretability.
+
+Welfare-reference convenience is not a model-selection criterion.
+
+
+12. STATUS
+
+Use:
+
+COMMON_SUPPORT_EXHAUSTIVENESS_VALIDATED
+MALE_REFERENCE_OPERATOR_CORRECTION_PENDING
+FEMALE_PRIMARY_PLUS_MALE_ZERO_SENSITIVITY
+R1_BMO_NEGATIVE_RESULT_CLOSED
+ABSOLUTE_WELFARE_LEVELS_NOT_FINAL
+PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS
+
+
+13. OUTPUTS
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/welfare_decomposition_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+Create no new mission document, review cycle or deputy-ruling memo.
+
+
+14. CONTINUATION
+
+After the corrected male-reference re-evaluation:
+
+- continue autonomously if exhaustiveness and accounting pass;
+- report primary and sensitivity values as specified above;
+- proceed with W0/W1/W2 and S9 work.
+
+Return only if:
+
+- the union-basis completion is ambiguous;
+- I1111 fails after the structural-zero correction;
+- the P/E headline reverses across references;
+- D is no longer robustly largest and a headline ranking is proposed;
+- or another scientific inconsistency is found.

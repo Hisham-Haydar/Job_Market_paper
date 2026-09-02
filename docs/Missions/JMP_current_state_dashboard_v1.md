@@ -26,7 +26,15 @@ document differ, the ratified document governs.
 | **`S0_ACCEPTED_NESTED_REFERENCE_BENCHMARK`** | S0, the nested reference benchmark | **R-182** |
 | **`ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8`** | the A/B ordering under S8 — **unresolved, not reversed** | **R-182** |
 | **`NO_CROSS_MEASURE_QUANTITATIVE_ROBUSTNESS_CLAIM`** | W4/W6 against W1 — normative sensitivities only | **R-182** |
-| **`R1_BMO_OMITTED_PENDING_ACCESS`** | the `R1_BMO_NUTS2_OCCUPATION_TENSION` exploratory leg — **omitted from the paper**, not rejected; blocked at s5c on data access, resumable only on EU-SILC `DB040_F` | **R-198** |
+| **`R1_BMO_NEGATIVE_RESULT_CLOSED`** | the `R1_BMO_NUTS2_OCCUPATION_TENSION` leg — **closed as a negative result**; supersedes `R1_BMO_OMITTED_PENDING_ACCESS` (R-198), which was discharged when R-210 lifted the s5c halt | **R-218 §9** |
+| **`R1_BMO_NO_ADDITIONAL_OCCUPATION_ACCESS_SIGNAL`** | the BMO tension coefficient across all three arms — no detectable structural occupation-access signal **in the current sample and specification**; not a claim that regional occupation demand is generally irrelevant, and not identification evidence in the headline model | **R-218 §9** |
+| **`DB040_F_RECODE_NOT_USED`** + **`FULL_SAMPLE_GENUINE_REGION_OBSERVED`** | the EU-SILC missing-region recode — it **never fired**; `DB040_F == -1` count `0` over all 11,459 register households, so the s5c contamination concern is closed and the s5c restricted sample IS the full sample | **R-210** |
+| **`COMMON_SUPPORT_EXHAUSTIVENESS_VALIDATED`** | the common quadrature support as the decomposition estimator — a **numerical integration** correction, explicitly NOT a common realized economic opportunity set | **R-217 §12**, gate passed **R-218** |
+| **`FEMALE_PRIMARY_PLUS_MALE_ZERO_SENSITIVITY`** | the reference-preference block on the union basis — female primary, male structural-zero sensitivity, **never averaged**; supersedes `FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY` for the common-support arms | **R-217 §12** |
+| **`REFERENCE_SENSITIVE_MAGNITUDE`** | the `C_P` magnitude on S8 and LOC4 — same sign and environment dominant under both references (branch A), but the female/male difference exceeds the RQMC bands | **R-218** |
+| **`SHARED_CHILD_COEFFICIENT_DIAGNOSTIC`** | the arm inserting the female child coefficient into the otherwise male block — **diagnostic only**; not the official male reference, not an estimated male coefficient, not a preferred specification, not a headline arm | **R-217 §4** |
+| **`ABSOLUTE_WELFARE_LEVELS_NOT_FINAL`** | the common-support W00 magnitudes — they move −5.53% (S8) and −7.74% (LOC4) against the prior own-support estimates; the support-design movement is disclosed and no proposal-invariance claim is made | **R-217 §8** |
+| ~~`MALE_REFERENCE_OPERATOR_CORRECTION_PENDING`~~ | set at **R-217 §12** and **DISCHARGED at R-218**: the structural-zero correction was applied and `I1111` collapsed to exact numerical zero in the corrected male arms | set R-217 §12, discharged **R-218** |
 | **`NUTS2_EXTERNAL_OPPORTUNITY_IDENTIFICATION_AID`** + **`NOT_A_CAUSAL_INSTRUMENT`** | the BMO regional design | **R-182 §5** |
 | **`CORSE_RETAINED_AS_OWN_NUTS2_CELL`** | Corse's 3 households and their own 2015 BMO NUTS-2 tension value | **R-182 §5(b)** |
 | `LOC4_PREFERRED_STRUCTURAL_SPECIFICATION` | the preferred structural specification | R-157 |
@@ -209,7 +217,56 @@ successor missions (occupation sex-split with a mandatory synthetic re-gate; the
 quadrant covariance gap; `beta_l0_m` SE calibration; take-up thinness; probe-C
 non-convergence) are recorded in the decision note §14.8 — none is opened.
 
-### R1 BMO — `R1_BMO_OMITTED_PENDING_ACCESS`
+### R1 BMO — CLOSED at R-218 · `R1_BMO_NEGATIVE_RESULT_CLOSED`
+
+**The leg is closed as a negative result.** R-210 lifted the s5c halt: the
+restricted-environment result showed `DB040_F == -1` count **`0`** over all
+11,459 register households, so the missing-region recode **never fired**, every
+household coded `drgn2 = 1` is genuine Île-de-France, and the s5c cell that ten
+routes were opened to partition is degenerate in its second component. The
+partition s5c demanded was not merely available — there was never anything to
+partition. `R1_BMO_OMITTED_PENDING_ACCESS` is therefore **discharged, not
+satisfied**: the unblock condition below was met by proving the blocker did not
+exist. The estimation then ran on the three authorized arms and returned a clean
+negative:
+
+| variant | n | estimate | robust SE | 95% CI | excludes zero | ΔBIC |
+|---|---:|---:|---:|---|---|---:|
+| (A) FULL_FRACTIONAL | 1555 | +0.037359 | 0.052651 | [−0.06584, +0.14055] | False | +6.794 |
+| (B) HIGH_CONFIDENCE_090 | 1555 | −0.021430 | 0.044449 | [−0.10855, +0.06569] | False | +7.117 |
+| (C) LEAVE_CORSE_OUT × FULL_FRACTIONAL | 1552 | +0.035042 | 0.052626 | [−0.06810, +0.13819] | False | +6.859 |
+| (C) LEAVE_CORSE_OUT × HIGH_CONFIDENCE_090 | 1552 | −0.019980 | 0.044562 | [−0.10732, +0.06736] | False | +7.146 |
+
+Six arms, all SINGLE-OPTIMUM, no W-4 flag, PD curvature including the extended
+occupation block. `beta_occ_tension` is indistinguishable from zero everywhere,
+costs a degree of freedom under every information criterion, and leaves the
+occupation-access block unmoved to within `0.107` SE. The result is **well-powered
+on the covariate side**, not a null from thin support: all 22 régions and all 88
+grid cells load, 89.9% of alternative rows carry a task group, and the covariate
+has sd ≈ 0.82–0.92 within each `loc4` slice. The instrument varied and the model
+did not respond. Sign changes around zero are **not** interpreted as mapping
+sensitivity.
+
+**The only permitted statement:** *this lagged BMO construction adds no
+detectable structural occupation-access signal in the current sample and
+specification.* It is **not** claimed that regional occupation demand is
+generally irrelevant, and BMO is **not** used as identification evidence in the
+headline model. S8 remains preferred, unchanged.
+
+**One prerequisite recorded, deliberately not repaired (R-218 §10).**
+`m08_normalisation.py` builds `log_S_occ` as a scalar (`:211`, broadcast at
+`:221`). Before any future specification introduces genuinely region-varying or
+household-varying occupation access, the occupation normaliser must be made
+household-specific and validated. The A/B/P attribution was BLOCKED on exactly
+this object — the `log S_occ` dispersion runs 42–88× the component-level
+tolerance — and the item closes only because the coefficient it scales is zero.
+
+The pre-R-210 history is retained below as the record of how the leg reached
+this point.
+
+---
+
+#### History — the leg as it stood at `R1_BMO_OMITTED_PENDING_ACCESS` (R-198)
 
 The formula was frozen **before** any estimation (decision note §15.1,
 `2026-08-30T07:18:03Z`). The crosswalk chain proved to be **four** tables, not
@@ -239,6 +296,13 @@ paper** — omitted, **not rejected**; no R1 result may be reported, and the fro
 formula and audited crosswalks stand ready for a resumption that does not need
 re-litigating.
 
+*(End of history. The unblock condition above was met at R-210 — and met by
+proving the blocker did not exist: the recode never fired, so no join was
+needed. The derivation is from a universe aggregate, not a row join
+(`DERIVED_FROM_UNIVERSE_AGGREGATE_NOT_A_ROW_JOIN`); the D-file never left the
+restricted session and no per-household information was used. See the closure
+at the head of this section.)*
+
 ---
 
 ## 3. Current priorities — verbatim from the PI standing direction
@@ -251,9 +315,35 @@ re-litigating.
 > 5. only then decide which exploratory result enters the formal
 >    accepted specification.
 
-**The live order at R-209.2 — three items, in this order:**
+**The live order at R-218 — four items, in this order. This SUPERSEDES the
+R-209.2 order below, whose item 1 is DISCHARGED.**
 
-> 1. **The inversion correction.** The ex-ante diagnostic ran to R-207's §5
+> 1. **Lane B** — the `W0`/`W1`/`W2` wage treatment, with HP/HO following. The
+>    wage-robustness lane is now the front of the queue.
+> 2. **HP/HO** — the identification comparison, then the HPO gate verdict.
+> 3. **S9** — selection and its final numerical evaluation; the common-budget
+>    prices are reused if job nodes and pricing inputs are unchanged, or one
+>    final aligned S9 reference-budget reprice is performed, with final welfare
+>    computed for S8 and S9 only (R-204 §8).
+> 4. **Headline freeze** — only after Lane B and S9 are complete. Every share
+>    remains `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS` and absolute
+>    welfare levels remain `ABSOLUTE_WELFARE_LEVELS_NOT_FINAL` until that point.
+
+**One obligation parked at the S9 freeze.** The laptop-parity export obligation
+is recorded here BY NAME and deferred to the headline-freeze step; it carries no
+on-disk record beyond this line and nothing about it is reconstructed. It is not
+owed before S9.
+
+**Discharged: item 1 of the R-209.2 order.** The inversion correction landed at
+R-212 (coalition-consistent inversion, ~95% of `I1111` removed) and the residual
+it exposed was closed at R-213 (common quadrature support) and R-217/R-218 (the
+male-reference structural zero, `I1111` at exact numerical zero in all corrected
+arms). The R-209.2 text is retained below unedited as the record of that
+sequence.
+
+**The superseded live order at R-209.2 — three items, in this order:**
+
+> 1. **The inversion correction.** *(DISCHARGED at R-218.)* The ex-ante diagnostic ran to R-207's §5
 >    failure branch and R-208 named the surviving object: the money-metric
 >    inversion's HOUSEHOLD-SPECIFIC FROZEN REFERENCE CORE — the baseline-coalition
 >    choice set (`c_norm`, `l_norm`, `working`, `u_baseline`, `opp_baseline`, with
@@ -270,9 +360,15 @@ re-litigating.
 >    reprice is performed, with final welfare computed for S8 and S9 only
 >    (R-204 §8).
 
-Writing continues alongside — the outline, the main tables and the manuscript —
-but no welfare magnitude from Lane A, Channel D or the ex-ante diagnostic enters
-any of them until the inversion correction lands.
+Writing continues alongside — the outline, the main tables and the manuscript.
+The inversion correction has landed, so the provisional exhaustive decomposition
+may now be written up **under its labels**: every share carries
+`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`, absolute welfare levels
+carry `ABSOLUTE_WELFARE_LEVELS_NOT_FINAL`, the female/male references are
+reported as primary and sensitivity and **never averaged**, and no signed
+preference percentage and no A-versus-B ranking is frozen. The one authorized
+provisional statement is the D-largest sentence at R-218, with its four
+qualifiers.
 
 **Position on the older list at R-198 — the ESTIMATION sprint is COMPLETE.**
 Item 1 **DONE** (M08T2 closed at R-175). Item 2 — `EXP_H35_PEAK_v1` — **DONE**:
@@ -314,7 +410,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-209, + the R-212 corrective append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `5fdef80a6b1d15fbff2c30f5b923f1a1920d25c74fcb6234f8f1cfb219b2cee0` |
+| Consolidated rulings document (R-59 … R-218, + the R-212 corrective append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `2a2b7ac34c64a415b5286c0e8dfea21f06c18ae07489c68e49812cbca80e7c35` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -358,6 +454,26 @@ four-cell text Lane A executed — and section 7 contains **no** Jacquet–Jia�
 Thoresen positioning sentence, so that sub-item stays open rather than
 reconstructed.
 
+**Currency advanced at R-218.2 — the R-210..R-218 span is on the record.** The
+append *Appended 2026-09-02 — R-210..R-218 + three deputy rulings* enters the
+nine chat-side lines R-210..R-218 and, under their own headings, the three
+deputy rulings of that span that carry verbatim text: (1) the R-210 `DB040_F`
+disposition and R1_BMO authorization, (2) the R-213 common-quadrature-support
+authorization, and (3) the R-217 male-reference structural-zero completion. Each
+was gated on its own first section title before the append was written —
+"1. DB040_F DISPOSITION", "1. CONCEPTUAL STATUS",
+"1. MISSING MALE CHILD COEFFICIENT". Nothing above the append was edited. sha256
+advanced `5fdef80a…2cee0` → `2a2b7ac34c64a415b5286c0e8dfea21f06c18ae07489c68e49812cbca80e7c35`
+(204,744 → 240,347 bytes, prefix byte-identical, pure CRLF), with **seven**
+dependent sites advanced path-only in the same commit and all seven claim
+strings re-asserted against the new bytes (7/7 PASS) **before** the re-pin was
+completed. Three scope statements are entered openly: R-211, R-214 and R-215
+carry no deputy-verbatim text on disk and appear as chat-side lines only; the
+COR-2, R1E and Torch items named at R-214 are recorded BY NAME and are not
+reconstructed; and R-212 carries two distinct things under one number — the
+chat-side D4 adoption, and clause R-212.4, the corrective append described
+immediately above, which is not repeated.
+
 ### 4.1 The rulings-doc pin recursion
 
 Every append to the rulings document changes its sha256 and therefore stales
@@ -374,6 +490,13 @@ repositories, not the MNL executable gates alone. The dependent sites are:
 - `notebooks/france/fr_singles_results_discussion_v1.ipynb` — the `bind_evidence`
   pin in the §8 welfare cell (`measure_disposition`)
 
+**MNL — documentary citation pins in the PS1 decision note (2):**
+
+- `experiments/JMP_PS1/decision_note.md` — the §11.5 citation pin (the S8R
+  review's location of record)
+- `experiments/JMP_PS1/decision_note.md` — the §18 citation pin (the complete
+  ten-section R-202 ruling's location of record; live since R-212.4)
+
 **JMP — documentary pin tables (2):**
 
 - `docs/Missions/JMP_current_state_dashboard_v1.md` — this file's §4 pointer table
@@ -381,6 +504,15 @@ repositories, not the MNL executable gates alone. The dependent sites are:
   row of its source table (M08T2 charter output 5). Advancing that row is a
   **pin advance only**; the acceptance's findings and verdict are immutable and
   are not edited.
+
+**Seven live sites in total as of R-218.2.** The count grows as citation pins are
+added; check by `grep`-ing the OLD sha across both repositories rather than
+working from this list alone.
+
+**Two sites that are NEVER advanced.** The §11 chain arrows in
+`MNL/experiments/JMP_PS1/decision_note.md` and this file's own chain line are
+**historical** — they record which append moved which hash. Extend the chain with
+a new sentence; never rewrite an arrow.
 
 Re-pinning is **path-only**: the hash is advanced, and each binding cell's
 claim strings are re-asserted under its own read of the new file. If a claim
@@ -440,21 +572,38 @@ file that might predate the axis.
 
 ## 6. Next action
 
-**The inversion correction, then Lane B, then S9** — §3's R-209.2 order. The
-estimation sprint is complete and no estimation is queued; the live work is the
-welfare-decomposition lane, which is halted on one named object. Writing runs
-alongside: take the outline `Design/JMP_paper_outline_v1.md` section by section,
-then the main tables, then the manuscript — **without any welfare magnitude from
-Lane A, Channel D or the ex-ante diagnostic.**
+**Lane B, then HP/HO, then S9, then the headline freeze** — §3's R-218 order.
+The estimation sprint is complete and no estimation is queued. The inversion
+correction is **discharged**: R-212 made the inversion coalition-consistent,
+R-213 put every household on a common quadrature support, and R-217/R-218 closed
+the male-reference operator with the structural zero, so exhaustiveness now
+passes in all arms and the provisional exhaustive decomposition exists. The live
+work is the **wage-robustness lane**. Writing runs alongside: take the outline
+`Design/JMP_paper_outline_v1.md` section by section, then the main tables, then
+the manuscript — welfare magnitudes may now appear **only under their labels**
+(`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`,
+`ABSOLUTE_WELFARE_LEVELS_NOT_FINAL`), with the female reference primary and the
+male structural-zero reference as sensitivity, never averaged, and with no signed
+preference percentage and no A-versus-B ranking frozen.
 
 **What may be reported, and how.** Singles S8 is the preferred positive
 specification and carries the R-184.1 claim language verbatim. The LOC4 banded
 eight are numerical-integration bands, never confidence intervals. **Couples enter
 the paper as first estimates only, labelled provisional** — no couples
 specification is promoted and `GATE_FAIL` must travel with any couples number.
-**R1 BMO does not enter the paper at all** under
-`R1_BMO_OMITTED_PENDING_ACCESS`; the audited crosswalks and frozen formula are
-archived evidence for a resumption, not a result.
+**R1 BMO is closed as a negative result** under
+`R1_BMO_NEGATIVE_RESULT_CLOSED` / `R1_BMO_NO_ADDITIONAL_OCCUPATION_ACCESS_SIGNAL`
+(this supersedes `R1_BMO_OMITTED_PENDING_ACCESS`). The only permitted statement
+is that this lagged BMO construction adds no detectable structural
+occupation-access signal in the current sample and specification; it is **not**
+a claim that regional occupation demand is generally irrelevant, and BMO is
+**not** identification evidence in the headline model.
+
+**The D-largest sentence is the one authorized provisional claim** from the
+decomposition (R-218 §6), and it travels with its four qualifiers without
+exception — structural and model-conditional, not causal, provisional pending
+wage robustness and S9, and not a statement that job opportunities are
+unimportant.
 
 **Documentation discipline (R-182 §9).** The four-file permanent cap stands:
 update only `specification_matrix.yaml`, `model_comparison.csv`,
