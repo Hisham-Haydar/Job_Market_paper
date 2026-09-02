@@ -57,6 +57,22 @@ The closest substantive competitor overall is **Jacquet, Jia and Thoresen (2026)
 
 Finally, the closest decomposition anchor is **Shorrocks (2013)**. It is not a labor-supply paper, but it is the exact decomposition rule that turns your structural distinctions into a quantitative headline.
 
+**Added at Goal-1 R-227 s11 — Decoster and Haan (2015).** The ruling directs that this paper enter the welfare-literature positioning, that the published article — Decoster, André, and Peter Haan. 2015. “Empirical Welfare Analysis with Preference Heterogeneity.” *International Tax and Public Finance* 22(2): 224–251 — be the bibliography entry with the 2013 conference version as the accessible working-paper source, and that it **not** be confused with Carpantier and Sapata. The positioning paragraph below is the deputy's own text, entered **verbatim** as the ruling requires:
+
+> “Decoster and Haan (2015) provide a direct empirical precedent for carrying
+> structurally estimated consumption–leisure preference heterogeneity into
+> preference-respecting money-metric welfare comparisons. In their framework,
+> differences in individual constraints are represented primarily by gross
+> wages, non-labour income, and the tax-benefit budget, while labour supply is
+> evaluated without a household-specific latent distribution of available jobs.
+> The present paper adds that missing opportunity object. It distinguishes the
+> distribution of accessible employment, hours, and occupation packages from the
+> wage distribution conditional on those packages, and carries both objects,
+> together with heterogeneous preferences and budget-side endowments, into the
+> measurement and decomposition of money-metric well-being inequality.”
+
+The four positioning bullets the ruling attaches to that paragraph are: Decoster–Haan estimate heterogeneous consumption–leisure preferences and preserve them in money-metric welfare comparisons; their non-preference environment is represented primarily by gross wage, non-labour income and the tax-benefit budget; they do not estimate household-specific latent job-opportunity distributions; and the JMP separates job access/feasibility from earning capacity conditional on the job and carries both into welfare-inequality decomposition. They are recorded in full in the corpus entry at `Literature/Literature_collection.md`, together with the explicit distinction from Carpantier and Sapata (2016), whose machinery — conditional equality and egalitarian equivalence on U.S. singles, with partially individualized preferences recovered from revealed-choice discrepancies — is a different question on different data.
+
 ## 4. What they do not yet do
 
 The structural RURO papers do **not** make welfare inequality decomposition the main object. They estimate behavior and sometimes evaluate reforms, but the opportunity mechanism usually remains part of the econometric architecture rather than becoming a measured driver of welfare inequality. In your notes on Aaberge, Colombino and Strøm (1999), this is stated very clearly: the paper has constrained opportunities, but no welfare object and no formal Shapley-style opportunity decomposition.

@@ -7168,3 +7168,524 @@ Do not interrupt current scientific work to create this export now.
 Produce it only at selected-model freeze.
 
 No CUDA report or package document needs to enter Job_Market_paper.
+
+## Appended 2026-09-02 — R-225..R-227 + the FC1-closeout deputy ruling
+
+*Frame note: chat-side rulings R-225..R-227, one line each, transcribed from the
+JMP_PS1 decision note, the sample-expansion audit note and the HP run artifacts
+rather than composed here; then, under its own heading, the one deputy text of
+this span that exists verbatim — (1) the R-227 ruling closing FC1 and settling the
+expanded sample, the semi-flexible couple types, the parity carve-out, the couples
+welfare unit and the Decoster–Haan positioning. Signature gate: the heading's body
+opens on its own first section title, "1. FC1". R-225 and R-226 carry no
+deputy-verbatim text on disk — R-225 is the executing-agent return of the R-223
+PHASE-1 sample audit and R-226 the executing-agent return of the HP identification
+gate, both accepted in chat — so they appear as chat-side lines only, in the same
+way R-186..R-192, R-194..R-201, R-208, R-209, R-211, R-214, R-215, R-219, R-221 and
+R-224 do. The accessible source of the Decoster–Haan paper the ruling's clause 11
+attaches is the 2013 VfS conference version at
+`https://www.econstor.eu/bitstream/10419/79815/1/VfS_2013_pid_462.pdf`
+(EconStor handle 10419/79815), saved to the literature folder as
+`Literature/Decoster_Haan_2015_Empirical welfare analysis with preference heterogeneity [2013 VfS working paper].pdf`,
+sha256 `1c1e765313d83393a45b09142389501d42447cb32274778b19d7b84b402e53f2`; the
+bibliography entry is the published 2015 article, as the ruling directs. Per R-162,
+and under R-162.2 across both repositories, this append carries its own re-pins:
+every site that pins this document by sha256 is advanced path-only in the same
+commit that stales it.*
+
+- R-225 the R-223 PHASE-1 sample-expansion audit is returned and accepted. The
+  audit is read-only and reproduces the certified funnel exactly through an
+  instrumented copy of `_run_funnel`, asserting the certified stage counts before
+  any expansion figure is computed; it reconciles to 11,459 households /
+  28,268,842 weighted / 3,830 currently included in **every** arm. Six labour-supply
+  types are counted weighted and unweighted — SM, SF, CMF, CM, CF, NF — across
+  three age arms A0/A1/A2, with the incidental-self-employment threshold reported
+  at 0.10, 0.20 and 0.30 and one recommended. The recommendation is
+  **`SEXP_PRIMARY_A1`**: the 18–64 arm with the decision-unit dependency rule,
+  status-based flexibility from `les`, incidental-SE threshold **τ = 0.20**, and the
+  wage-bound screen applied to flexible deciders only — **5,573 households, weighted
+  13,880,855**, of which 3,807 of the certified 3,830; `SEXP_ROBUST_A2` (17–65) is
+  offered as the directed boundary sensitivity with the finding recorded that it
+  buys 10 households (+0.18 %) and loses two benchmark households; `BENCH_CURRENT_3830`
+  is retained unchanged as the benchmark every expanded result is reported against.
+  The gain by type is SM +98, SF +174, CMF +257, **CM +585**, **CF +629** —
+  **+1,743 households, +45.5 %** — at **1.46×** the current pricing volume
+  (562,873 household×alternative nodes / 1,482,680 person×alternative rows), so no
+  sample-pricing cost arises that would justify a tax-benefit emulator. The grammar
+  check returns **YES** for CMF (already exercised at 2,275 households), and YES for
+  CM and CF on the engine side with exactly one missing capability, data-side:
+  **`SEMI_FLEXIBLE_MARGINAL_PROPOSAL`** — the existing builder constructs a *joint*
+  quadrant-first proposal, and a semi-flexible couple needs the flexible spouse's
+  **marginal** law with the fixed spouse's coordinate degenerate. Five decision-unit /
+  welfare-unit conflicts are **returned rather than resolved**: benchmark non-nesting
+  (23 single-adult households leave on the τ = 0.20 rule); decision unit ≠ welfare
+  unit, which breaks at CM/CF and not at 3+ adults, and is a welfare blocker rather
+  than an estimation blocker; the fixed spouse's counterfactual status as an
+  assumption rather than a datum, weakest where it binds hardest (246 CF households
+  have a self-employed fixed male); male-leisure identification, since every
+  male-only term is constant across the 101 alternatives of a CF household and drops
+  out of its conditional likelihood, so the 629 CF households contribute **no**
+  identifying variation to the male leisure block; and the five-hour floor, since
+  the audit ran against the certified funnel and its counts inherit the old floor —
+  **46** primary-sample households have a flexible employee with raw `lhw` in (5, 10]
+  and are clipped, with no household entering or leaving on that account. Multi-adult
+  households are held out of headline welfare as `EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS`
+  and same-sex couples are inventoried, not estimated. Outputs stayed inside the
+  R-223 cap: `experiments/JMP_PS1/sample_expansion_audit.csv` (1,020 rows),
+  `experiments/JMP_PS1/sample_expansion_design.yaml`, and the audit note. No
+  deputy-verbatim text for this ruling is on disk and there is no on-disk record
+  beyond this line.
+- R-226 the HP return is accepted and HP is CLOSED as **not identified**. The R-224
+  extension — `beta_l0_i = beta_l0^g + sigma_l · nu_i`, `nu` i.i.d. across households,
+  one sex-common `sigma_l`, Gauss–Hermite `K = 24` **inside** the log — was implemented
+  on the R-222 corrected frame and authenticated before anything was read: with no
+  `sigma_l` coordinate the instrument reproduces the corrected-frame S8 record
+  **bitwise**, negLL `18022.764617170084` and theta digest `e4b2f16e0d638f95…`. STEP 1
+  passes in full: bitwise nesting at `sigma_l = 0` at K = 24 **and** K = 48, in the sum
+  and per household; analytic gradient against central differences at max relative gap
+  `3.247e-07`; analytic Hessian at `2.929e-09`; quadrature error monotone in K with
+  `|negLL(24) − negLL(48)| ≤ 3.073e-07`; an independent numpy re-implementation of the
+  inside-the-log object agreeing to `2.842e-14`; exact per-household separability; and
+  the Jensen direction against the pooled object correct. STEP 2 **fails the gate**.
+  Across `sigma_l ∈ {0, 0.5, 1.0}`, `R = 10` replications on the real covariates and
+  real sampled sets, four to seven replications in ten put `σ̂_l` exactly on the zero
+  bound, so most replications have no Wald interval at all; RMSE is 2.67 against a
+  truth of 0.5 and 2.20 against a truth of 1; and the largest LR anywhere in the thirty
+  is 2.795 against the 2.706 the boundary test needs under `½χ²₀ + ½χ²₁`. The **reason**
+  is measured exactly, with sampling noise removed, from `E[negLL(sigma)]` under the
+  truth's own marginal choice probabilities: the argmin sits **exactly at the truth in
+  every case**, so the implementation and the DGP agree and nothing is a bug, while the
+  **expected** LR against `sigma_l = 0` is **0.0081** at truth 0.5 and **0.1351** at
+  truth 1.0 — one to two orders of magnitude short of 2.706, and short *in expectation*,
+  so no draw and no start could change it. The implied `SE(sigma_l)` is about 2.7 at
+  `sigma_l = 1`; the design only becomes informative between `sigma_l = 2` and 3. The
+  mechanism is that `nu` loads on `BC(leisure; theta_l)` and only its **within**-choice-set
+  variation can move a choice, and at the estimated `theta_l` (−1.746 m / −1.079 f) that
+  loading has a mean within-household SD of only 0.0732 (men) and 0.1270 (women) against
+  a Gumbel of scale 1. A sex-split does not help: the female leg carries 78 % of the
+  signal, and none of the four sex-and-truth combinations at the non-zero truths clears
+  2.706. Status **`HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`**; per the ruling's own rule
+  this is a stop, so **STEP 3 real data was not run**, no real-data HP estimate exists,
+  and no `HP_SUPPORTED_CANDIDATE` / `HP_NOT_SUPPORTED` verdict is issued — that verdict
+  is defined on STEP-3 evidence the gate withholds. `HP_REALDATA_NOT_RUN_BY_RULE` and
+  `HP_CONTRIBUTES_NO_S9_CANDIDATE` are set; under the deputy's §9 rule, if no
+  heterogeneity extension earns admission, **S8 is formally retained** as the final
+  positive model rather than an S9 extension being invented. HO is a separate lane and
+  is untouched; `HPO_GATED` is retained; W3 requires a defined persistent preference
+  component and so does not follow from this lane as it stands. The finding is **not**
+  that preference heterogeneity is absent — it is that this parameterisation of it,
+  read off a single cross-sectional choice per household, carries almost no identifying
+  information at this sample size and this Box-Cox curvature. Decision note §26. No
+  deputy-verbatim text for this ruling is on disk and there is no on-disk record beyond
+  this line.
+- R-227 FC1 is CLOSED, the candidate expanded sample and the three couple types are
+  authorized, the parity halt is discharged by a dated carve-out, the couples welfare
+  unit is ratified, and Decoster–Haan is added to the welfare-literature positioning.
+  The five-hour-floor correction and the corrected S8/LOC4 anchors are **accepted**;
+  `floor5_v1` is used prospectively and pre-correction results remain historical.
+  **`SEXP_PRIMARY_A1`** is accepted as the candidate primary expanded sample — ages
+  18–64, an unpartnered co-resident child below 20 a dependant rather than a
+  decision-maker, status-based flexibility, τ = 0.20, wage-support screening on
+  flexible decision-makers only — as a candidate **for estimation, not yet the final
+  JMP population**; the 3,830-household sample is retained as the clean benchmark and
+  the 17–65 arm is **not** estimated, only kept as a descriptive boundary sensitivity.
+  On non-nesting the deputy rules **against** grandfathering the 23 singles that fail
+  the τ rule: the rule applies uniformly, the expanded sample is allowed to be
+  non-nested against the historical benchmark, and no further estimation arm is created
+  merely to restore nesting. Three couple types are authorized — **CMF** (both spouses
+  flexible), **CM** (male flexible, female fixed at her observed state) and **CF**
+  (mirrored) — with the fixed spouse's observed job, hours, earnings and status repeated
+  in every household alternative, only the flexible spouse varying, the observed joint
+  pair included, the full household priced through EUROMOD, and the joint proposal
+  defined as the flexible spouse's marginal proposal times a degenerate mass of one on
+  the fixed spouse, contributing **no** artificial proposal density from the fixed
+  coordinate; `exact_marginal` declarations are required. For CM/CF the decision unit is
+  the flexible spouse conditional on the fixed spouse while the **welfare unit is the
+  full couple household**, utility is joint consumption plus **both** spouses' leisure,
+  and the fixed spouse's state is an exogenous component of the environment — fixed-spouse-only
+  utility terms may cancel from the conditional likelihood but remain part of household
+  welfare. Couple preference parameters are **shared** across CMF/CM/CF, and a fixed
+  spouse's preference parameters are not to be estimated from a subgroup in which that
+  spouse never varies. Fixed-self-employed-spouse households are **included** in the
+  candidate static conditional estimation with exactly **one** sensitivity excluding
+  them; the fixed-spouse assumption is explicitly not a claim of literal behavioural
+  inflexibility. On male-leisure information the deputy declines the audit's framing and
+  requires mechanical verification instead: CF male-only score contribution **zero**, CF
+  male-only Hessian contribution **zero**, male block rank and curvature from **CMF + CM**,
+  and the incremental information CM contributes — CF is not to be described as *diluting*
+  male identification unless the objective or covariance construction demonstrates it. The
+  missing capability is named **`SEMI_FLEXIBLE_MARGINAL_PROPOSAL`** and gated before any
+  real-data expanded-couple estimation on eight requirements including a **generic**
+  implementation, the exact joint-to-marginal proposal identity, chosen-pair inclusion,
+  synthetic recovery for CM and CF, and JAX/Torch CPU/CUDA parity where the grammar
+  supports it; a France-specific duplicate must not be built to bypass it and the MNL
+  package pin does not move without a separate integration gate. The **couples welfare
+  unit** is ratified: type-specific natural reference bundles; within-type reporting in
+  raw and modified-OECD-equivalized money metrics; **cross-type reporting in equivalized
+  units only**; modified OECD as the primary disclosed normative scale with the
+  model-implied scale a later sensitivity; household-level preference neutralization; and
+  participation-opportunity structure assigned to the environment — with the clarification
+  that the *availability* of joint participation regimes belongs to the environment while
+  the *realized* household participation choice is not mechanically assigned to it.
+  Cross-type comparability requires the same real-euro year, the same consumption
+  numeraire, a common zero/origin convention, and the **calibration identity** that a
+  household at its type-specific reference with disposable income `e_i · m` must have
+  equivalized welfare `m`; **if that identity fails, cross-type aggregation halts**.
+  Multi-adult households remain `EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS` and do not enter
+  headline welfare. A **dated, one-time parity carve-out** is authorized for exactly the
+  two About_data documentation paths and `scripts/welfare/m08_p2a_parity.py` limited to
+  the optional `cell_hook` parameter with default `None`, conditioned on recorded exact
+  paths and before/after hashes, prose-only documentation changes, the default-`None`
+  path reproducing the frozen geometry at `max_abs_diff = 0.0` over 157,055 rows, no
+  reconstruction/pricing/comparator/tolerance/default-semantics change, and **no further
+  path entering the carve-out**; this closes the additions-only halt for these three
+  paths and requires no new general parity review. Decoster and Haan (2015), *Empirical
+  Welfare Analysis with Preference Heterogeneity*, ITPF 22(2): 224–251, is added to the
+  existing literature corpus and welfare-literature positioning — the published 2015
+  article as the bibliography entry and the attached 2013 version as the accessible
+  working-paper source — and is **not** to be confused with Carpantier and Sapata; the
+  positioning paragraph is supplied verbatim in the ruling below. On terminology,
+  unqualified "ability" is to be avoided in paper-facing prose in favour of job access /
+  feasibility, earning capacity / wage-offer technology, preferences, and endowments /
+  needs; "ability set `A_i`" is reserved for the set of jobs a person is capable or
+  eligible to perform; opportunity-set dominance is **not** productivity, dominance being
+  a later comparison relation between opportunity sets or distributions rather than the
+  definition of earning ability; and it must be stated explicitly that the present access
+  density may combine personal capability and market availability and **does not yet
+  separately identify `A_i` from `O_i`**. Output discipline caps the update at the
+  decision note, the two sample-expansion artifacts, `Literature_collection.md`,
+  `JMP_literature_review_skeleton_v1.md` and the current literature-positioning memo,
+  with no new mission-document family and no independent review of the sample audit. Nine
+  return conditions are set. The complete text is recorded VERBATIM under heading (1)
+  below.
+
+### (1) Deputy Ruling — FC1 CLOSEOUT, EXPANDED SAMPLE, SEMI-FLEXIBLE COUPLES, PARITY CARVE-OUT, WELFARE UNIT, AND DECOSTER–HAAN POSITIONING (R-227), VERBATIM
+
+DEPUTY RULING — FC1 CLOSEOUT, EXPANDED SAMPLE, SEMI-FLEXIBLE
+COUPLES, PARITY CARVE-OUT, WELFARE UNIT, AND DECOSTER–HAAN
+POSITIONING
+
+1. FC1
+
+Accept the five-hour-floor correction and corrected S8/LOC4 anchors.
+
+Use the corrected floor5_v1 frame prospectively.
+
+Pre-correction results remain historical.
+
+HP may continue on the corrected frame; HO follows under the existing
+sequence.
+
+
+2. CANDIDATE EXPANDED SAMPLE
+
+Accept as the candidate primary expanded sample:
+
+SEXP_PRIMARY_A1
+
+defined by:
+
+- ages 18–64;
+- an unpartnered co-resident child below age 20 remains a dependant
+  rather than a decision-maker;
+- status-based flexibility;
+- incidental self-employment threshold tau = 0.20;
+- wage-support screening on flexible decision-makers only.
+
+This is a candidate for estimation, not yet the final JMP population.
+
+Retain the existing 3,830-household sample as the clean benchmark.
+
+Do not estimate the 17–65 arm now. Retain it as a descriptive boundary
+sensitivity only.
+
+
+3. NON-NESTING
+
+Do not grandfather the 23 currently included singles that fail the
+tau = 0.20 rule.
+
+Apply the candidate expanded-sample rule uniformly.
+
+The expanded sample is allowed to be non-nested relative to the historical
+benchmark.
+
+Do not create another estimation arm solely to restore nesting.
+
+
+4. THREE COUPLE TYPES
+
+Authorize:
+
+CMF:
+both spouses flexible.
+
+CM:
+male flexible, female fixed at her observed state.
+
+CF:
+female flexible, male fixed at his observed state.
+
+For CM/CF:
+
+- repeat the fixed spouse's observed job, hours, earnings and status in
+  every household alternative;
+- vary only the flexible spouse;
+- include the observed joint pair;
+- price the full household through EUROMOD;
+- define the joint proposal as the flexible spouse's marginal proposal
+  times a degenerate mass of one on the fixed spouse;
+- include no artificial proposal-density contribution from the fixed
+  coordinate.
+
+Require exact_marginal proposal declarations.
+
+
+5. ESTIMATION AND WELFARE UNITS
+
+For CM/CF:
+
+- decision unit = flexible spouse conditional on fixed spouse;
+- welfare unit = full couple household;
+- utility = joint consumption plus both spouses' leisure;
+- fixed spouse state = an exogenous component of the environment.
+
+Fixed-spouse-only utility terms may cancel from the conditional likelihood,
+but they remain part of household welfare.
+
+Use shared couple preference parameters across CMF/CM/CF.
+
+Do not estimate a fixed spouse's preference parameters from a subgroup in
+which that spouse never varies.
+
+Expanded-sample estimation may proceed before final couples welfare.
+
+Couples welfare waits for the type-consistent reference and equivalization
+gate below.
+
+
+6. FIXED SELF-EMPLOYED SPOUSES
+
+Include fixed-self-employed-spouse households in the candidate static
+conditional estimation.
+
+Run exactly one sensitivity excluding CM/CF households whose fixed spouse's
+main status is self-employment.
+
+If the positive-model parameters, fit and principal conclusions remain
+stable, retain these households.
+
+If they change materially, classify them as robustness-only.
+
+Do not interpret the fixed-spouse assumption as a claim of literal
+behavioural inflexibility.
+
+
+7. MALE-LEISURE INFORMATION
+
+CF households are expected to contribute zero direct information about
+male-only preference parameters.
+
+Verify mechanically:
+
+- CF male-only score contribution = zero;
+- CF male-only Hessian contribution = zero;
+- male preference block rank and curvature using CMF + CM;
+- incremental information contributed by CM.
+
+Do not describe CF as diluting male identification unless the actual objective
+or covariance construction demonstrates such an effect.
+
+If CMF + CM do not identify a male parameter, simplify or pin it under an
+explicit rule before promotion.
+
+
+8. SEMI-FLEXIBLE PROPOSAL GATE
+
+The missing capability is:
+
+SEMI_FLEXIBLE_MARGINAL_PROPOSAL
+
+Before real-data expanded-couple estimation, require:
+
+- a generic implementation;
+- normalization of the flexible-spouse marginal proposal;
+- degenerate fixed-spouse coordinate;
+- exact joint-to-marginal proposal identity;
+- chosen-pair inclusion;
+- synthetic recovery for CM and CF;
+- objective/gradient/Hessian checks;
+- JAX/Torch CPU/CUDA parity where the selected grammar is supported.
+
+Do not implement a France-specific duplicate merely to bypass the generic
+capability.
+
+Do not move the MNL package pin without a separate integration gate.
+
+
+9. COUPLES WELFARE UNIT
+
+Ratify:
+
+- type-specific natural reference bundles;
+- within-type reporting in raw and modified-OECD-equivalized money metrics;
+- cross-type reporting in equivalized units only;
+- modified OECD scale as the primary disclosed normative scale;
+- model-implied equivalence scale as a later sensitivity;
+- household-level preference neutralization;
+- participation-opportunity structure assigned to the environment.
+
+Clarification:
+
+The availability of joint participation regimes belongs to the environment.
+The realized household participation choice is not mechanically assigned to
+the environment.
+
+For cross-type comparability require:
+
+- same real-euro year;
+- same consumption numeraire;
+- common zero/origin convention;
+- calibration identity: a household at its type-specific reference with
+  disposable income e_i*m must have equivalized welfare m.
+
+If that identity fails, halt cross-type aggregation.
+
+Multi-adult households remain:
+
+EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS
+
+and do not enter headline welfare yet.
+
+
+10. PARITY CARVE-OUT
+
+Authorize a dated, one-time carve-out for exactly:
+
+- the two identified About_data documentation paths;
+- scripts/welfare/m08_p2a_parity.py, limited to the optional
+  cell_hook parameter with default None.
+
+Conditions:
+
+- record exact paths and before/after hashes;
+- the two documentation changes are prose only;
+- the default None path reproduces the frozen geometry with
+  max_abs_diff = 0.0 over 157,055 rows;
+- no reconstruction, pricing, comparator, tolerance or default semantics
+  change;
+- no further path enters the carve-out.
+
+This closes the additions-only halt for these three paths.
+
+No new general parity review is required.
+
+
+11. DECOSTER–HAAN LITERATURE POSITIONING
+
+The attached paper is:
+
+Decoster, André, and Peter Haan. 2015.
+“Empirical Welfare Analysis with Preference Heterogeneity.”
+International Tax and Public Finance 22(2): 224–251.
+
+Use the published 2015 article as the bibliography entry; the attached 2013
+version is the accessible working-paper source.
+
+Add it to the existing literature corpus and welfare-literature positioning.
+
+Do not confuse it with Carpantier and Sapata.
+
+The precise positioning is:
+
+- Decoster–Haan estimate heterogeneous consumption–leisure preferences and
+  preserve them in money-metric welfare comparisons;
+- their non-preference environment is represented primarily by gross wage,
+  non-labour income and the tax-benefit budget;
+- they do not estimate household-specific latent job-opportunity distributions;
+- the JMP separates job access/feasibility from earning capacity conditional on
+  the job and carries both into welfare-inequality decomposition.
+
+Use this paragraph:
+
+“Decoster and Haan (2015) provide a direct empirical precedent for carrying
+structurally estimated consumption–leisure preference heterogeneity into
+preference-respecting money-metric welfare comparisons. In their framework,
+differences in individual constraints are represented primarily by gross
+wages, non-labour income, and the tax-benefit budget, while labour supply is
+evaluated without a household-specific latent distribution of available jobs.
+The present paper adds that missing opportunity object. It distinguishes the
+distribution of accessible employment, hours, and occupation packages from the
+wage distribution conditional on those packages, and carries both objects,
+together with heterogeneous preferences and budget-side endowments, into the
+measurement and decomposition of money-metric well-being inequality.”
+
+Update only existing literature files.
+
+No broad literature search and no separate literature memo.
+
+
+12. TERMINOLOGY
+
+Avoid unqualified “ability” in paper-facing prose.
+
+Use:
+
+- job access / feasibility;
+- earning capacity / wage-offer technology;
+- preferences;
+- endowments / needs.
+
+Reserve “ability set A_i” for the set of jobs a person is capable or eligible
+to perform.
+
+Do not call opportunity-set dominance productivity.
+
+Dominance is a later comparison relation between opportunity sets or
+distributions, not the definition of earning ability.
+
+State explicitly that the present access density may combine personal
+capability and market availability; it does not yet separately identify A_i
+from O_i.
+
+
+13. OUTPUT DISCIPLINE
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/sample_expansion_audit.csv
+experiments/JMP_PS1/sample_expansion_design.yaml
+Literature_collection.md
+JMP_literature_review_skeleton_v1.md
+the current literature-positioning memo
+
+Create no new mission-document family.
+
+The sample audit remains exploratory and requires no independent review.
+
+
+14. CONTINUATION
+
+After the generic semi-flexible proposal capability passes:
+
+- build CMF, CM and CF engine-ready samples;
+- run synthetic recovery;
+- run the fixed-self-employed sensitivity;
+- evaluate type-specific information and curvature;
+- return a recommended expanded positive-model sample.
+
+Continue HP/HO on corrected singles in parallel.
+
+
+15. RETURN
+
+Return only if:
+
+- the semi-flexible marginal proposal cannot be implemented generically;
+- CMF + CM do not identify the male preference block;
+- CMF + CF do not identify the female preference block;
+- fixed-self-employed-spouse inclusion materially changes the model;
+- the cross-type welfare calibration identity fails;
+- the parity carve-out changes default behavior;
+- or the expanded sample creates a new decision-unit/welfare-unit contradiction.

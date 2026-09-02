@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-02, at Goal-1 R-224.1 (five-hour floor correction ACCEPTED; corrected S8/LOC4 anchors adopted; HP is next).
+**Last updated:** 2026-09-02, at Goal-1 R-227.1 (FC1 CLOSED; HP returned NOT IDENTIFIED and is closed; the candidate expanded sample and the three couple types are authorized; the parity halt is discharged by a dated carve-out; the couples welfare unit is ratified).
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -26,6 +26,14 @@ document differ, the ratified document governs.
 | **`S0_ACCEPTED_NESTED_REFERENCE_BENCHMARK`** | S0, the nested reference benchmark | **R-182** |
 | **`ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8`** | the A/B ordering under S8 — **unresolved, not reversed** | **R-182** |
 | **`NO_CROSS_MEASURE_QUANTITATIVE_ROBUSTNESS_CLAIM`** | W4/W6 against W1 — normative sensitivities only | **R-182** |
+| **`FC1_CLOSED_AT_R227`** | the five-hour-floor correction and the corrected S8/LOC4 anchors — **accepted and closed**; `floor5_v1` is used prospectively and pre-correction results remain historical | **R-227 s1** |
+| **`HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`** | the random leisure intercept `beta_l0_i = beta_l0^g + sigma_l·nu_i` — expected LR 0.0081 / 0.1351 against the 2.706 the boundary test needs, short *in expectation*; STEP 3 real data **not run by rule**, so no `HP_SUPPORTED_CANDIDATE` / `HP_NOT_SUPPORTED` verdict is issued | **R-226** |
+| **`HP_CONTRIBUTES_NO_S9_CANDIDATE`** | S9 selection — under the deputy's §9 rule, if no heterogeneity extension earns admission **S8 is formally retained** as the final positive model | **R-226** |
+| **`SEXP_PRIMARY_A1_CANDIDATE_NOT_FINAL_POPULATION`** | the 18–64 / τ=0.20 expanded sample (5,573 households, weighted 13,880,855) — a candidate **for estimation**, not yet the final JMP population; `BENCH_CURRENT_3830` stays the clean benchmark and the 17–65 arm is descriptive only | **R-227 ss2–3** |
+| **`SEMI_FLEXIBLE_MARGINAL_PROPOSAL`** | the one missing capability for CM/CF — **GATED** on eight requirements, generic implementation required, before any real-data expanded-couple estimation | **R-227 s8** |
+| **`COUPLES_WELFARE_UNIT_RATIFIED`** | type-specific references, cross-type reporting in equivalized units only, modified OECD primary — with the **calibration identity** as a hard cross-type halt, **not yet evaluated** | **R-227 s9** |
+| **`PARITY_AXIS_ADDITIONS_ONLY_HALT_DISCHARGED_R227_CARVEOUT`** | the additions-only parity axis — discharged for **exactly three paths** on recorded before/after hashes; §5 carries the record | **R-227 s10** |
+| **`TERMINOLOGY_REDLINE_PENDING_02_FRAMEWORK_03_DATA`** | `manuscript/sections/02_framework.md` and `03_data.md` — flagged for a redline pass under the §7 standing note; deliberately not edited at R-227 | **R-227 s12** |
 | **`R1_BMO_NEGATIVE_RESULT_CLOSED`** | the `R1_BMO_NUTS2_OCCUPATION_TENSION` leg — **closed as a negative result**; supersedes `R1_BMO_OMITTED_PENDING_ACCESS` (R-198), which was discharged when R-210 lifted the s5c halt | **R-218 §9** |
 | **`R1_BMO_NO_ADDITIONAL_OCCUPATION_ACCESS_SIGNAL`** | the BMO tension coefficient across all three arms — no detectable structural occupation-access signal **in the current sample and specification**; not a claim that regional occupation demand is generally irrelevant, and not identification evidence in the headline model | **R-218 §9** |
 | **`DB040_F_RECODE_NOT_USED`** + **`FULL_SAMPLE_GENUINE_REGION_OBSERVED`** | the EU-SILC missing-region recode — it **never fired**; `DB040_F == -1` count `0` over all 11,459 register households, so the s5c contamination concern is closed and the s5c restricted sample IS the full sample | **R-210** |
@@ -525,7 +533,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-224, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up and the R-219..R-224 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `60744343f6987985e471c3b93644c8ca2af6bd02b84b990c1258535badab2f0f` |
+| Consolidated rulings document (R-59 … R-227, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append and the R-225..R-227 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `0f0fd14891b453bd8b9f6b177a94d468d10df6fac0ff859af8a856fd6476571e` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -619,6 +627,16 @@ claim strings re-asserted against the new bytes (7/7 PASS) **before** the re-pin
 It carries the complete R-220 ruling, the R-222 floor-correction ruling, the R-223
 sample-audit direction and the Torch routing note; the two earlier R-220 entries
 are not edited.
+
+**Chain continued at R-227.1.** The append *Appended 2026-09-02 - R-225..R-227 +
+the FC1-closeout deputy ruling* advanced the same document
+`60744343...dab2f0f` -> `0f0fd14891b453bd8b9f6b177a94d468d10df6fac0ff859af8a856fd6476571e`
+(289,121 -> 315,320 bytes, +26,199 bytes / +521 lines, prefix byte-identical,
+pure CRLF), with the **seven** dependent sites advanced path-only in the same
+commit and the seven rulings-text claim strings re-asserted against the new bytes
+(7/7 PASS) **before** the re-pin. It carries ONE deputy text verbatim — the R-227
+FC1-closeout ruling, on the signature gate `1. FC1` — plus chat-side lines for
+R-225 (the sample-expansion audit return) and R-226 (the HP return).
 
 ### 4.1 The rulings-doc pin recursion
 
@@ -717,46 +735,82 @@ frozen axis still reads as `A` in the `frozen..HEAD` tree diff, so it is safe.
 Check with `git cat-file -e 5b0e3d29…:<path>` before any commit that touches a
 file that might predate the axis.
 
-**LIVE at R-224.1 — battery step 3 HALTS, and it is a real halt, not a nuisance.**
+**DISCHARGED at R-227 s10 — the dated, one-time parity carve-out. The battery now passes 4/4.**
 `parity_axis_evidence` is additions-only: between the frozen axis and HEAD every
-changed path must read as `A`. **Three** paths now read as `M`, each under its own
-authority:
+changed path must read as `A`. Three read as `M`, and from `fc63661` that halted
+step 3. The deputy has now authorized a **dated, one-time carve-out for exactly
+those three paths and no others**. This is the record it requires.
 
-1. `docs/France_case/About_data/feedback_bpool_chosen_row_is_reconstructed.md`
-2. `docs/France_case/About_data/reference_drd_fr_input_variables.md` — both
-   modified by MNL `fdf6a92`, the **R-220 s10-ordered** wage-premise sweep of live
-   surfaces. Documentation only; no code path.
-3. `scripts/welfare/m08_p2a_parity.py` — the **R-222 s2** requirement to rebuild
-   the successor frame through the actual construction path rather than patch
-   parquet cells. The change adds one optional `cell_hook` argument to
-   `reconstruct_pipeline`, defaulting to `None`, so the production call is
-   behaviourally unchanged; the R-222 STEP-1 **control leg proves it at production
-   scale** — the frozen geometry was re-derived through the modified function with
-   no hook and matched at `max_abs_diff = 0.0` on all eight compared columns over
-   157,055 rows.
+| # | path | sha256 **before** (frozen axis) | sha256 **after** (HEAD) | change |
+|---|---|---|---|---|
+| 1 | `docs/France_case/About_data/feedback_bpool_chosen_row_is_reconstructed.md` | `c58b3cf1…cb425` | `309d4d79…b474bc` | +14 / −2 lines, **prose only** |
+| 2 | `docs/France_case/About_data/reference_drd_fr_input_variables.md` | `94845ca3…86a4c9` | `9a1c7def…7a83c2` | +6 / −1 lines, **prose only** |
+| 3 | `scripts/welfare/m08_p2a_parity.py` | `441b416d…81046` | `7bb2821e…f65b4ae7` | +13 / −2 lines, **one optional parameter** |
 
-All three files existed at the axis (`git cat-file -e` succeeds), so the commit
-trap above does **not** excuse them. Steps 1, 2 and 4 pass: gate self-pin, 76/76 pins
-re-hashed, gitlink still `27756a06`; ancestry holds and the gitlink is unchanged,
-so only the additions-only criterion fails.
+Full 64-hex values are recorded in `R227_PARITY_CARVEOUT` in
+`MNL/scripts/welfare/m08_u6_rebind.py` and in MNL `decision_note.md` §28.1.
 
-The halt was introduced by an authorized documentary correction, and it blocks the
-**next U6 / welfare run**, not governance appends or documentation commits — no U6
-or welfare evaluation has been run since. The disposition is the deputy's: the
-HK-01 precedent (`HK01_R100_RENAME_ALIASES`, R-148.1) discharged a ratified
-documentation change on **byte-identity** evidence rather than waiving it, but that
-carve-out covers *renames* and these are *content edits*, so it does not reach
-them. The evidence a successor carve-out would rest on is already on disk — the two
-documentation edits touch no code path, and the parity-script edit has the
-production-scale `max_abs_diff = 0.0` control leg above — but assembling that
-carve-out is a governance decision, not an execution one. **Do not detach, and do not widen the criterion to admit modifications
-generally.** This must be resolved before item 5 (final welfare) of the §3 order.
+**Paths 1 and 2 are prose only.** Both are documentation files with no executable
+content and no code path, changed by MNL `fdf6a92` under the R-220 s10-ordered
+wage-premise sweep of the live surfaces. The diffs are the corrected `yivwg`
+provenance text and the ten-household `lhw`-clip caveat, each carrying its own
+dated correction marker. No number, threshold, tolerance, comparator or default
+anywhere in the pipeline is touched by either.
+
+**Path 3 is limited to `cell_hook`, default `None`.** The complete diff against
+the frozen axis is: `Callable` added to a `typing` import; one optional keyword
+argument `cell_hook: Optional[Callable[[int, Dict[str, Any]], None]] = None` on
+`reconstruct_pipeline`; seven docstring lines; and, inside the existing cell loop,
+`if cell_hook is not None: cell_hook(idx, ns)`. Nothing else — **no reconstruction,
+pricing, comparator, tolerance or default-semantics change**. With `cell_hook`
+unset the function executes exactly the statements it executed at the frozen axis,
+in the same order.
+
+**The control-leg evidence, at production scale.** The R-222 STEP-1 control leg
+re-derived the frozen geometry *through the modified function* with no hook:
+`max_abs_diff_overall = 0.0`, and `0.0` on each of the eight compared columns
+individually (`hours`, `wage`, `working`, `loc4`, `log_prior`, `is_chosen`,
+`idhh_true`, `idperson_true`), over **157,055 rows / 1,555 households**,
+`matches_frozen_geometry: true`. Recorded at
+`MNL/experiments/JMP_PS1/runs/ps1r222_floor5/ps1r222_s1_manifest_v1.json`
+→ `control_authentication`.
+
+**The gate config carries the carve-out list and its authority, and nothing else.**
+`MNL/scripts/welfare/m08_u6_rebind.py` gains `R227_PARITY_CARVEOUT` (the three
+paths with both endpoint hashes, kind, introducing commit and evidence),
+`R227_PARITY_CARVEOUT_AUTHORITY`, `R227_PARITY_CARVEOUT_DATE = "2026-09-02"` and
+the resolver `_resolve_r227_carveout`. Three properties matter:
+
+1. **The additions-only criterion is UNCHANGED.** As with `HK01_R100_RENAME_ALIASES`
+   (R-148.1), this does not widen the criterion to admit modifications generally.
+   It discharges three *named* modifications *on evidence*; every other `M`, `D`
+   or `R` row still halts.
+2. **Both endpoints are re-hashed on every call** — `sha256_before` against the
+   bytes at the frozen axis, `sha256_after` against the bytes at HEAD.
+3. **The `after` pin is what makes it one-time.** A *further* edit to any of these
+   three paths changes the HEAD bytes, fails the check and halts the axis again.
+   That is "no further path enters the carve-out" read forward in time as well as
+   sideways: no fourth path may join, and these three may not move again without a
+   new deputy authority.
+
+**Result.** Battery step 3 now returns `materially_intact = True` — 536 changed
+paths, of which **529 additions**, **4** HK-01 renames resolved by the R-148.1
+alias table and **3** resolved by this carve-out with `both_endpoints_match = True`
+on each. Steps 1, 2 and 4 pass as before: gate self-pin, 76/76 pins re-hashed,
+gitlink still `27756a06`. The halt on the **next U6 / welfare run** is lifted. No
+new general parity review is required and none was run. **Do not widen the
+criterion to admit modifications generally, and do not detach the axis** — those
+remain the wrong answers; this carve-out is the right one, and it is closed.
 
 ---
 
 ## 6. Next action
 
-**Lane B is CLOSED and the `lhw`-floor halt is DISCHARGED. The next action is HP — one random leisure intercept, on the corrected frame, against corrected S8.** Then HO, W3 feasibility, S9, final welfare, the RUM rerun and the parity export, in the §3 order.
+**FC1 is CLOSED, HP is CLOSED as NOT IDENTIFIED, and the parity halt is DISCHARGED. The next action is HO — the persistent OPPORTUNITY extension, on the corrected frame, against corrected S8.** Then W3 feasibility, S9, final welfare, the RUM rerun and the parity export, in the §3 order. Two lanes run alongside and neither blocks HO: the **generic `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` capability** (R-227 s8, gated on eight requirements before any real-data expanded-couple estimation), and the **02_framework / 03_data terminology redline** (§7).
+
+**HP is closed as a negative result (R-226), and it closes a specific way.** `HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`: the random leisure intercept's expected LR against `sigma_l = 0` is **0.0081** at truth 0.5 and **0.1351** at truth 1.0, against the **2.706** the boundary test needs — short *in expectation*, so no draw and no start could change it, while the argmin of `E[negLL(sigma)]` sits exactly at the truth in every case, so the estimator is right and the design is uninformative. Per the ruling's own rule this is a stop: **STEP 3 real data was not run**, no real-data HP estimate exists, and **no `HP_SUPPORTED_CANDIDATE` / `HP_NOT_SUPPORTED` verdict is issued** — that verdict is defined on STEP-3 evidence the gate withholds. It is **not** a finding that preference heterogeneity is absent, only that this parameterisation of it, read off one cross-sectional choice per household at the estimated Box-Cox curvature, carries almost no identifying information. HO is a **separate lane**, untouched by this; `HPO_GATED` is retained; W3 needs a defined persistent preference component and so does not follow from this lane. Under the deputy's §9 rule, if no heterogeneity extension earns admission, **S8 is formally retained** as the final positive model rather than an S9 extension being invented. MNL `decision_note.md` §26.
+
+**The expanded sample is authorized as a CANDIDATE and is not being estimated (R-227 ss2–8).** `SEXP_PRIMARY_A1` — 18–64, τ = 0.20, status-based flexibility, wage screen on flexible deciders only — is accepted **for estimation, not as the final JMP population**; `BENCH_CURRENT_3830` stays the clean benchmark that every expanded result reports against; the 17–65 arm is descriptive only; the 23 singles failing τ are **not** grandfathered and non-nesting is accepted. CMF/CM/CF are authorized with shared couple preference parameters, but **nothing may be estimated on real expanded-couple data until the generic `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` capability passes its eight-item gate**, and the MNL package pin does not move without a separate integration gate. Couples welfare additionally waits on the §9 calibration identity, which is a **hard halt** on cross-type aggregation and has **not yet been evaluated** — there are no type-specific reference bundles on disk to evaluate it against.
 
 **`W0_W1_W2_AXIS_CLOSED`** (R-220 s2). The wage-treatment axis is closed without estimating W1 or W2: `W1_NOT_DISTINCT_FROM_W0` and `W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`. The §22.7 W2-gate halt is **discharged** — it was raised because the W2 object could not be fixed from the ruling text, and s2 resolves it by ruling that there is no W2 to estimate. S8 now carries **`S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`** (R-220 s5).
 
@@ -828,3 +882,42 @@ R-207 §6 still refuses a second common-node-set EUROMOD run unless the
 zero-EUROMOD ex-ante diagnostic demonstrates one is required, and R-208
 established that a common realized node set would not reach the surviving object.
 R-207 §9's return conditions remain live for anything that changes that.
+
+---
+
+## 7. Standing note — terminology in paper-facing prose (R-227 s12)
+
+**This is a standing drafting rule, not a one-off correction.** It applies to
+every paper-facing surface from R-227 forward: the manuscript, the outline, the
+abstracts, the positioning memo and any figure or table caption that reaches a
+reader. It does not require rewriting historical governance records.
+
+**Avoid unqualified "ability" in paper-facing prose.** Use one of the four
+permitted terms instead, chosen for what is actually meant:
+
+| use | for |
+|---|---|
+| **job access / feasibility** | which jobs are available to the person at all |
+| **earning capacity / wage-offer technology** | what the person is paid conditional on the job |
+| **preferences** | the consumption–leisure trade-off |
+| **endowments / needs** | non-labour income, household composition, the budget side |
+
+**"Ability set `A_i`" is RESERVED.** It denotes the set of jobs a person is
+capable or eligible to perform, and nothing else. Do not use it loosely for the
+opportunity set, the access density, or the wage distribution.
+
+**Opportunity-set dominance is NOT productivity.** Dominance is a *later
+comparison relation* between opportunity sets or distributions. It is not the
+definition of earning ability and must not be presented as one.
+
+**The required non-identification sentence, to be carried explicitly wherever the
+access density is introduced:**
+
+> The present access density may combine personal capability and market
+> availability; it does not yet separately identify `A_i` from `O_i`.
+
+**Flagged for a redline pass, deliberately NOT edited at R-227:**
+`manuscript/sections/02_framework.md` and `manuscript/sections/03_data.md`. Both
+predate this rule and both are paper-facing. The redline is a separate,
+scheduled pass — see the drafting checklist in `Design/JMP_paper_outline_v1.md`,
+which carries the same rule at the point of use.

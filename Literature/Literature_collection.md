@@ -48,37 +48,38 @@ Short prefatory note:
 39. [Dagsvik & Jia (2016) — Latent Jobs: Identification](#john-k-dagsvik-and-zhiyang-jia-2016--labor-supply-as-a-choice-among-latent-jobs-unobserved-heterogeneity-and-identification)
 40. [Decancq, Fleurbaey & Schokkaert (2015) — Happiness and Equivalent Incomes](#koen-decancq-marc-fleurbaey-and-erik-schokkaert-2015--happiness-equivalent-incomes-and-respect-for-individual-preferences)
 41. [Decancq & Schokkaert (2016) — Beyond GDP (Equivalent Incomes)](#koen-decancq-and-erik-schokkaert-2016--beyond-gdp-using-equivalent-incomes-to-measure-well-being-in-europe)
-42. [Durand (2015) — OECD Better Life Initiative](#martine-durand-2015--the-oecd-better-life-initiative-hows-life-and-the-measurement-of-well-being)
-43. [Ferreira & Gignoux (2011) — Measurement of IOp (Latin America)](#francisco-h-g-ferreira-and-jérémie-gignoux-2011--the-measurement-of-inequality-of-opportunity-theory-and-an-application-to-latin-america)
-44. [Fleurbaey (1995a) — Equal Opportunity or Equal Social Outcome?](#marc-fleurbaey-1995--equal-opportunity-or-equal-social-outcome)
-45. [Fleurbaey (1995b) — Three Solutions for the Compensation Problem](#marc-fleurbaey-1995--three-solutions-for-the-compensation-problem)
-46. [Fleurbaey & Maniquet (2006) — Fair Income Tax](#marc-fleurbaey-and-françois-maniquet-2006--fair-income-tax)
-47. [Fleurbaey & Maniquet (2007) — Help the Low Skilled or the Hardworking](#marc-fleurbaey-and-françois-maniquet-2007--help-the-low-skilled-or-let-the-hardworking-thrive-a-study-of-fairness-in-optimal-income-taxation)
-48. [Fleurbaey (2009) — Beyond GDP](#marc-fleurbaey-2009--beyond-gdp-the-quest-for-a-measure-of-social-welfare)
-49. [Fleurbaey & Gaulier (2009) — International Comparisons by Equivalent Incomes](#marc-fleurbaey-and-guillaume-gaulier-2009--international-comparisons-of-living-standards-by-equivalent-incomes)
-50. [Fleurbaey & Maniquet (2011) — Ch. 11: Income Taxation](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-11-income-taxation)
-51. [Fleurbaey & Maniquet (2011) — Ch. 10: Unequal Skills](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-10-unequal-skills)
-52. [Fleurbaey & Maniquet (2017) — Fairness and Well-being Measurement](#marc-fleurbaey-and-françois-maniquet-2017--fairness-and-well-being-measurement)
-53. [Fleurbaey & Maniquet (2018a) — Inequality-averse Well-being](#marc-fleurbaey-and-françois-maniquet-2018--inequality-averse-well-being-measurement)
-54. [Fleurbaey & Maniquet (2018b) — Optimal Taxation and Fairness](#marc-fleurbaey-and-françois-maniquet-2018--optimal-income-taxation-theory-and-principles-of-fairness)
-55. [Fleurbaey & Maniquet (2019) — Non-classical Goods](#marc-fleurbaey-and-françois-maniquet-2019--well-being-measurement-with-non-classical-goods)
-56. [Immervoll et al. (2007) — Welfare Reform in Europe](#herwig-immervoll-henrik-jacobsen-kleven-claus-thustrup-kreiner-and-emmanuel-saez-2007--welfare-reform-in-european-countries-a-microsimulation-analysis)
-57. [Jacquet, Jia & Thoresen (2026) — Responsibility in Fairness Measurement](#laurence-jacquet-zhiyang-jia-and-thor-o-thoresen-2026--how-much-does-responsibility-matter-in-fairness-measurement)
-58. [Jones & Klenow (2016) — Beyond GDP? Welfare across Countries](#charles-i-jones-and-peter-j-klenow-2016--beyond-gdp-welfare-across-countries-and-time)
-59. [Löffler, Peichl & Siegloch (2014) — Wage Exogeneity](#max-löffler-andreas-peichl-and-sebastian-siegloch-2014--structural-labor-supply-models-and-wage-exogeneity)
-60. [Löffler, Peichl & Siegloch (2018) — Sensitivity of Labour Supply Estimates](#max-löffler-andreas-peichl-and-sebastian-siegloch-2018--the-sensitivity-of-structural-labor-supply-estimations-to-modeling-assumptions)
-61. [Maniquet (2008) — Social Orderings for Indivisible Objects](#françois-maniquet-2008--social-orderings-for-the-assignment-of-indivisible-objects)
-62. [Mas & Pallais (2017) — Valuing Alternative Work Arrangements](#alexandre-mas-and-amanda-pallais-2017--valuing-alternative-work-arrangements)
-63. [Peichl & Siegloch (2012) — Labor Demand Effects](#andreas-peichl-and-sebastian-siegloch-2012--accounting-for-labor-demand-effects-in-structural-labor-supply-models)
-64. [Roemer (2002) — Equality of Opportunity: A Progress Report](#john-e-roemer-2002--equality-of-opportunity-a-progress-report)
-65. [Roemer & Trannoy (2016) — Equality of Opportunity: Theory and Measurement](#john-e-roemer-and-alain-trannoy-2016--equality-of-opportunity-theory-and-measurement)
-66. [Saez (2002) — Optimal Income Transfer Programs](#emmanuel-saez-2002--optimal-income-transfer-programs-intensive-versus-extensive-labor-supply-responses)
-67. [Saez & Stantcheva (2016) — Generalized Social Marginal Welfare Weights](#emmanuel-saez-and-stefanie-stantcheva-2016--generalized-social-marginal-welfare-weights-for-optimal-tax-theory)
-68. [Sher (2024) — Inconsistency of GSMWW](#itai-sher-2024--generalized-social-marginal-welfare-weights-imply-inconsistent-comparisons-of-tax-policies)
-69. [Shorrocks (2013) — Shapley Value Decomposition](#anthony-f-shorrocks-2013--decomposition-procedures-for-distributional-analysis-a-unified-framework-based-on-the-shapley-value)
-70. [Sutherland & Figari (2013) — EUROMOD](#holly-sutherland-and-francesco-figari-2013--euromod-the-european-union-tax-benefit-microsimulation-model)
-71. [Valletta (2009) — Fair Solution to the Compensation Problem](#giacomo-valletta-2009--a-fair-solution-to-the-compensation-problem)
-72. [Van Soest (1995) — Structural Models of Family Labor Supply](#arthur-van-soest-1995--structural-models-of-family-labor-supply-a-discrete-choice-approach)
+42. [Decoster & Haan (2015) — Empirical Welfare with Preference Heterogeneity](#andré-decoster-and-peter-haan-2015--empirical-welfare-analysis-with-preference-heterogeneity)
+43. [Durand (2015) — OECD Better Life Initiative](#martine-durand-2015--the-oecd-better-life-initiative-hows-life-and-the-measurement-of-well-being)
+44. [Ferreira & Gignoux (2011) — Measurement of IOp (Latin America)](#francisco-h-g-ferreira-and-jérémie-gignoux-2011--the-measurement-of-inequality-of-opportunity-theory-and-an-application-to-latin-america)
+45. [Fleurbaey (1995a) — Equal Opportunity or Equal Social Outcome?](#marc-fleurbaey-1995--equal-opportunity-or-equal-social-outcome)
+46. [Fleurbaey (1995b) — Three Solutions for the Compensation Problem](#marc-fleurbaey-1995--three-solutions-for-the-compensation-problem)
+47. [Fleurbaey & Maniquet (2006) — Fair Income Tax](#marc-fleurbaey-and-françois-maniquet-2006--fair-income-tax)
+48. [Fleurbaey & Maniquet (2007) — Help the Low Skilled or the Hardworking](#marc-fleurbaey-and-françois-maniquet-2007--help-the-low-skilled-or-let-the-hardworking-thrive-a-study-of-fairness-in-optimal-income-taxation)
+49. [Fleurbaey (2009) — Beyond GDP](#marc-fleurbaey-2009--beyond-gdp-the-quest-for-a-measure-of-social-welfare)
+50. [Fleurbaey & Gaulier (2009) — International Comparisons by Equivalent Incomes](#marc-fleurbaey-and-guillaume-gaulier-2009--international-comparisons-of-living-standards-by-equivalent-incomes)
+51. [Fleurbaey & Maniquet (2011) — Ch. 11: Income Taxation](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-11-income-taxation)
+52. [Fleurbaey & Maniquet (2011) — Ch. 10: Unequal Skills](#marc-fleurbaey-and-françois-maniquet-2011--a-theory-of-fairness-and-social-welfare-chapter-10-unequal-skills)
+53. [Fleurbaey & Maniquet (2017) — Fairness and Well-being Measurement](#marc-fleurbaey-and-françois-maniquet-2017--fairness-and-well-being-measurement)
+54. [Fleurbaey & Maniquet (2018a) — Inequality-averse Well-being](#marc-fleurbaey-and-françois-maniquet-2018--inequality-averse-well-being-measurement)
+55. [Fleurbaey & Maniquet (2018b) — Optimal Taxation and Fairness](#marc-fleurbaey-and-françois-maniquet-2018--optimal-income-taxation-theory-and-principles-of-fairness)
+56. [Fleurbaey & Maniquet (2019) — Non-classical Goods](#marc-fleurbaey-and-françois-maniquet-2019--well-being-measurement-with-non-classical-goods)
+57. [Immervoll et al. (2007) — Welfare Reform in Europe](#herwig-immervoll-henrik-jacobsen-kleven-claus-thustrup-kreiner-and-emmanuel-saez-2007--welfare-reform-in-european-countries-a-microsimulation-analysis)
+58. [Jacquet, Jia & Thoresen (2026) — Responsibility in Fairness Measurement](#laurence-jacquet-zhiyang-jia-and-thor-o-thoresen-2026--how-much-does-responsibility-matter-in-fairness-measurement)
+59. [Jones & Klenow (2016) — Beyond GDP? Welfare across Countries](#charles-i-jones-and-peter-j-klenow-2016--beyond-gdp-welfare-across-countries-and-time)
+60. [Löffler, Peichl & Siegloch (2014) — Wage Exogeneity](#max-löffler-andreas-peichl-and-sebastian-siegloch-2014--structural-labor-supply-models-and-wage-exogeneity)
+61. [Löffler, Peichl & Siegloch (2018) — Sensitivity of Labour Supply Estimates](#max-löffler-andreas-peichl-and-sebastian-siegloch-2018--the-sensitivity-of-structural-labor-supply-estimations-to-modeling-assumptions)
+62. [Maniquet (2008) — Social Orderings for Indivisible Objects](#françois-maniquet-2008--social-orderings-for-the-assignment-of-indivisible-objects)
+63. [Mas & Pallais (2017) — Valuing Alternative Work Arrangements](#alexandre-mas-and-amanda-pallais-2017--valuing-alternative-work-arrangements)
+64. [Peichl & Siegloch (2012) — Labor Demand Effects](#andreas-peichl-and-sebastian-siegloch-2012--accounting-for-labor-demand-effects-in-structural-labor-supply-models)
+65. [Roemer (2002) — Equality of Opportunity: A Progress Report](#john-e-roemer-2002--equality-of-opportunity-a-progress-report)
+66. [Roemer & Trannoy (2016) — Equality of Opportunity: Theory and Measurement](#john-e-roemer-and-alain-trannoy-2016--equality-of-opportunity-theory-and-measurement)
+67. [Saez (2002) — Optimal Income Transfer Programs](#emmanuel-saez-2002--optimal-income-transfer-programs-intensive-versus-extensive-labor-supply-responses)
+68. [Saez & Stantcheva (2016) — Generalized Social Marginal Welfare Weights](#emmanuel-saez-and-stefanie-stantcheva-2016--generalized-social-marginal-welfare-weights-for-optimal-tax-theory)
+69. [Sher (2024) — Inconsistency of GSMWW](#itai-sher-2024--generalized-social-marginal-welfare-weights-imply-inconsistent-comparisons-of-tax-policies)
+70. [Shorrocks (2013) — Shapley Value Decomposition](#anthony-f-shorrocks-2013--decomposition-procedures-for-distributional-analysis-a-unified-framework-based-on-the-shapley-value)
+71. [Sutherland & Figari (2013) — EUROMOD](#holly-sutherland-and-francesco-figari-2013--euromod-the-european-union-tax-benefit-microsimulation-model)
+72. [Valletta (2009) — Fair Solution to the Compensation Problem](#giacomo-valletta-2009--a-fair-solution-to-the-compensation-problem)
+73. [Van Soest (1995) — Structural Models of Family Labor Supply](#arthur-van-soest-1995--structural-models-of-family-labor-supply-a-discrete-choice-approach)
 
 ---
 
@@ -2331,6 +2332,69 @@ This paper is much stronger on preferences than on opportunities. Its central co
 
 ### Quick takeaway
 Builds a five-principle framework for measuring well-being beyond GDP using equivalent incomes for Europe, showing that non-income dimensions and inequality materially change welfare rankings and growth assessments. An excellent bridge between "beyond GDP" policy discussions and rigorous preference-respecting welfare theory -- directly supporting the case for a multidimensional, distribution-sensitive $W$.
+
+
+---
+
+## André Decoster and Peter Haan (2015) — Empirical Welfare Analysis with Preference Heterogeneity
+
+**Source extracts merged:** none — entered directly from the paper under Goal-1 R-227 s11. Accessible source on file: `Literature/Decoster_Haan_2015_Empirical welfare analysis with preference heterogeneity [2013 VfS working paper].pdf` (the 2013 Verein für Socialpolitik conference version, EconStor handle 10419/79815, sha256 `1c1e765313d83393a45b09142389501d42447cb32274778b19d7b84b402e53f2`). The published 2015 article is the bibliography entry.
+
+### Full citation
+Decoster, André, and Peter Haan. 2015. “Empirical Welfare Analysis with Preference Heterogeneity.” *International Tax and Public Finance* 22(2): 224–251.
+
+### One-sentence contribution
+The paper applies individual welfare measures that **preserve** estimated preference heterogeneity in the normative step — rather than neutralizing it behind reference preferences and a reference wage — to a structural discrete-choice labour-supply model, and shows how sensitive both the welfare ordering of households and the assessment of a tax reform are to that normative choice.
+
+### Core research question
+Once heterogeneous consumption–leisure preferences have been structurally estimated, which interpersonal welfare comparison should be made, and how much does the ranking of households — and the evaluation of a reform — move across the available preference-respecting metrics?
+
+### Economic setting and context
+Germany, married women, static labour supply, estimated on the Socio-Economic Panel (SOEP). The paper sits at the junction of structural labour-supply estimation and fairness-based interpersonal comparison, and is explicitly a response to the standard practice of imposing comparability through reference preferences and wages.
+
+### Model / theoretical framework
+A structural discrete-choice labour-supply model supplies the preference heterogeneity; several individual welfare metrics are then built on top of it, each embodying a different ethical position on how heterogeneous consumption–leisure tastes should be treated in an interpersonal comparison. The paper's methodological point is that the choice among these metrics is an ethical prior, and that the metrics make that prior explicit rather than burying it.
+
+### Key objects
+The estimated consumption–leisure utility function with heterogeneous parameters; the nonlinear tax-benefit budget set; the money-metric welfare measures derived from the estimated preferences; and the resulting welfare orderings of households under each metric.
+
+### Data
+German SOEP micro data on married women.
+
+### Identification / empirical strategy
+Preferences are identified structurally from discrete labour-supply choices against gross wages, non-labour income and the tax-benefit schedule. The welfare step is not an estimation step: it applies alternative normative aggregators to the same estimated preference structure.
+
+### Treatment of preferences
+Central, and the paper's whole point. Preference heterogeneity is estimated and then **carried into** the normative step rather than replaced by reference preferences — which is precisely the operation the JMP's welfare layer performs.
+
+### Treatment of opportunities / constraints
+This is the boundary of the paper. Differences in individual constraints are represented by **gross wage, non-labour income and the tax-benefit budget**. Labour supply is evaluated without a household-specific latent distribution of available jobs: there is no estimated opportunity density, no access object, and no separation of which jobs are reachable from what they pay.
+
+### Welfare / normative object
+Explicitly normative and explicitly plural: several money-metric welfare orderings, each corresponding to a different ethical treatment of preference heterogeneity, reported side by side, together with the sensitivity of a tax-reform assessment to the choice among them.
+
+### Main findings
+The welfare ordering of households is materially sensitive to which preference-respecting metric is adopted, and so is the assessment of a tax reform. Preserving preference heterogeneity in the normative step is therefore not a technical refinement of the reference-preference approach — it changes conclusions.
+
+### Main limitations
+The opportunity side is unmodelled. Wages, non-labour income and the budget set stand in for the whole of the non-preference environment, so the paper cannot ask whether apparent preference heterogeneity is partly opportunity heterogeneity. The application is one demographic group in one country-year, and the model is static.
+
+### Relevance for my JMP
+**High, and structural rather than incidental.** It is the direct empirical precedent for the JMP's welfare layer: structurally estimated preference heterogeneity carried into preference-respecting money-metric comparison, with the plurality of metrics treated as the finding rather than a nuisance — the same stance as the JMP's W¹–W⁶ family. It is also the cleanest statement of the boundary the JMP is trying to cross, because its non-preference environment stops exactly where the JMP's opportunity object begins.
+
+### Relation to opportunities vs preferences
+The precise positioning, as ruled at Goal-1 R-227 s11:
+
+- Decoster–Haan **estimate heterogeneous consumption–leisure preferences and preserve them in money-metric welfare comparisons**;
+- their **non-preference environment is represented primarily by gross wage, non-labour income and the tax-benefit budget**;
+- they **do not estimate household-specific latent job-opportunity distributions**;
+- the JMP **separates job access/feasibility from earning capacity conditional on the job, and carries both into welfare-inequality decomposition**.
+
+### Distinct from Carpantier & Sapata (2016)
+These two are easy to conflate and must not be. Carpantier and Sapata operationalize **conditional equality and egalitarian equivalence** in the Fleurbaey–Maniquet fairness tradition on U.S. singles, and their methodological move is toward **partially individualized** preferences recovered from the discrepancy between group-predicted and revealed choices — a responsibility-sensitive *ranking* problem. Decoster and Haan hold the estimated heterogeneous preferences fixed and vary the **money-metric aggregator**, on German married women, asking how much the welfare ordering and a reform assessment move across metrics. Different data, different normative machinery, different question. Neither is a substitute for the other, and neither is the JMP's comparator on the opportunity side.
+
+### Quick takeaway
+The direct empirical precedent for preference-respecting money-metric welfare on a structural labour-supply model — and, by the shape of its non-preference environment, the clearest statement of the opportunity object the JMP adds.
 
 
 ---

@@ -61,4 +61,45 @@ A. Estimation details and the four-leg convergence standard · B. The welfare-me
 - Supporting: the specification-path table; the φ_B profile figure with both regions; the ordering-by-basis figure; the couples quadrant confusion; the BMO grid-correlation figure.
 
 ---
+
+## Drafting checklist — terminology (STANDING, Goal-1 R-227 s12)
+
+**Check every paper-facing paragraph against this before it leaves a draft.** It
+binds the sections above, the abstracts, the intro skeleton, the positioning memo
+and every figure and table caption that reaches a reader. It does not require
+rewriting historical governance records. The same rule is carried on the status
+surface at `docs/Missions/JMP_current_state_dashboard_v1.md` §7.
+
+- [ ] **No unqualified "ability" in paper-facing prose.** Replace it with whichever
+      of the four permitted terms is actually meant:
+      - **job access / feasibility** — which jobs are available to the person at all;
+      - **earning capacity / wage-offer technology** — what the person is paid
+        conditional on the job;
+      - **preferences** — the consumption–leisure trade-off;
+      - **endowments / needs** — non-labour income, household composition, the
+        budget side.
+- [ ] **"Ability set `A_i`" is RESERVED** for the set of jobs a person is capable or
+      eligible to perform. Never use it loosely for the opportunity set, the access
+      density, or the wage distribution.
+- [ ] **Opportunity-set dominance is NOT productivity.** Dominance is a *later
+      comparison relation* between opportunity sets or distributions; it is not the
+      definition of earning ability and must not be presented as one.
+- [ ] **The non-identification sentence is carried explicitly** wherever the access
+      density is introduced, in this form:
+
+      > The present access density may combine personal capability and market
+      > availability; it does not yet separately identify `A_i` from `O_i`.
+
+- [ ] **Section 2 (Framework) and Section 3 (Data) need a redline pass.**
+      `manuscript/sections/02_framework.md` and `manuscript/sections/03_data.md`
+      both predate this rule and are paper-facing. They are **flagged, not edited**
+      — status `TERMINOLOGY_REDLINE_PENDING_02_FRAMEWORK_03_DATA` (R-227 s12).
+      Do that pass as one scheduled edit, not opportunistically.
+
+**Why this is a rule and not a preference.** "Ability" reads to a referee as
+productivity, and the paper's whole claim is that what looks like a productivity
+difference may be an access difference. Using the word unqualified concedes the
+question the paper is asking.
+
+---
 redline the outline; next turn I cut the commit card and the item-8 card.
