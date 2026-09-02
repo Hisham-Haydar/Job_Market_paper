@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-02, at Goal-1 R-220.2 (wage axis closed; the ten-case `lhw` halt live).
+**Last updated:** 2026-09-02, at Goal-1 R-224.1 (five-hour floor correction ACCEPTED; corrected S8/LOC4 anchors adopted; HP is next).
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -57,14 +57,54 @@ document differ, the ratified document governs.
 | **`W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`** | the W2 arm — not estimated; non-worker `yivwg` enters neither the likelihood, nor `g^W`, nor the `q^W` sampler, nor the chosen non-employment alternative | **R-220 s2** |
 | **`W0_W1_W2_AXIS_CLOSED`** | the wage-treatment axis as a whole — **closed** | **R-220 s2** |
 | **`S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`** | S8 — **replaces** `S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS`; the attenuation concern does not apply to the production estimator, but S8 is not final while persistent heterogeneity and final model selection remain open | **R-220 s5** |
-| **`FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`** | final positive-model selection — halted; 7 of the 10 `lhw`-clip households are an unintended inconsistency and need the floor correction plus one re-estimation | **R-220 s3** |
+| ~~`FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`~~ | final positive-model selection — set at **R-220 s3** on the 7 unintended `lhw`-clip households, and **DISCHARGED at R-224**: the correction was authorized at R-222, executed, and accepted with every gate PASS and no return condition fired | set **R-220 s3**, discharged **R-224** |
 | **`HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION_RECORDED`** | the 70-hour cap — the correct behaviour, now a recorded convention rather than an implicit one | **R-220 s3** |
+| **`LHW_FLOOR_10_UNINTENDED_DATA_CONSTRUCTION_INCONSISTENCY`** | the `hours_floor_low = 10` clip — classified an unintended data-construction inconsistency, not a support projection: `hours_inactive_threshold = 5` already puts 6–9-hour observations inside the latent working support | **R-222** |
+| **`LHW_FLOOR_5_CORRECTION_ACCEPTED`** | the successor frame `fr_p2a_singles2016_regionlive_margqh_floor5_v1` — the **sole forward-looking France singles frame**; supersedes `LHW_FLOOR_5_CORRECTION_AUTHORIZED` (R-222) | **R-224** |
+| **`S8_CORRECTED_FRAME_ACCEPTED_POSITIVE_ANCHOR`** | corrected S8 — the positive-model anchor **prospectively**; the pre-correction estimate is retained as history and is not edited out of anywhere it was written | **R-224** |
+| **`LOC4_CORRECTED_FRAME_ACCEPTED_POSITIVE_ANCHOR`** | corrected LOC4/S0 — same disposition | **R-224** |
+| **`RUM_BENCHMARK_STALE_FOR_FINAL_REPORTING_PENDING_CORRECTED_FRAME_UPDATE`** | the existing RUM benchmark — **STALE for final reporting**; no rerun now, re-estimated **once** at final S9 reporting on the same corrected frame the final RURO model uses | **R-222 s8** |
+| **`PRE_CORRECTION_PROVISIONAL_WELFARE_HISTORY`** + **`NOT_VALID_FOR_FINAL_MAGNITUDES`** | **every** existing S8/LOC4 welfare and decomposition value — pre-correction history; the common-support welfare infrastructure itself is **not** rejected | **R-222 s9** |
+| **`WELFARE_REFRESH_DEFERRED_TO_FINAL_S9`** | the welfare panels — no automatic reprice is triggered by the estimation-frame change; the common-support cache-independence test is deferred to final S9 | **R-222 s9** |
+| **`EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS`** | the multi-adult (3+ adults) sample lane — held out of the headline welfare sample until pooling, tax unit, allocation, additional-adult needs and welfare unit are explicit | **R-223 s6** |
 | **`PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`** | **every** welfare number produced by Lane A, Channel D and the ex-ante diagnostic, without exception | **R-202 s2**, re-imposed R-204 §8 and R-207 |
 | **`HEADLINE_PERCENTAGES_HALTED`** | the `s_P` / `s_E` headline shares — halted, not renormalised, the exhaustiveness target unchanged | **R-203**, re-affirmed **R-205**, **R-208** |
 | **`CHANNEL_D_IMPLEMENTATION_VALIDATED`** | the channel-D execution — a valid diagnostic result | **R-207 §8** |
 | **`BUDGET_HETEROGENEITY_NOT_THE_I1111_SOURCE`** | channel D as a candidate residual — refuted | **R-205**, ratified **R-207 §8** |
 | **`FEMALE_PRIMARY_PLUS_MALE_SENSITIVITY`** | the reference-preference block; sign of `C_P`, the broad P/E reading and the A/B/D ordering are all preserved on both S8 and LOC4 | **R-204 §7**, retained **R-207 §7** |
 | `EX_ANTE_SUPPORT_DIAGNOSTIC_IN_PROGRESS` | the ex-ante continuum diagnostic — **DISCHARGED**: it ran to R-207's §5 failure branch, and the object was returned at **R-208** and ruled on at **R-209** | set R-207 §8, discharged R-208 |
+
+### 1.1 The corrected anchors of record (R-222 / R-224)
+
+The pre-correction frame is superseded **prospectively**. Nothing estimated on it
+is withdrawn; it is retained as history and stays on the record wherever it was
+written.
+
+| object | value |
+|---|---|
+| successor frame id | `fr_p2a_singles2016_regionlive_margqh_floor5_v1` |
+| successor **geometry** sha256 | `a91b1f81752c8406a0b12f38a2e4e9bab0aa04640cb31bf730cacf7795be23e1` |
+| successor **stem** sha256 | `6f558f5ecfeabd4aa60a8199f43576c27f15cb203a6b9dc0e2df04b20145173b` |
+| pre-correction stem sha256 (untouched) | `4cc6a223c184ed78e6b78bf330f6559e295c520c207078bd9e312d3eec71dced` |
+| rows / households | 157,055 / 1,555 — **unchanged** |
+| what moved | `hours_floor_low` 10 → 5; 7 chosen alternatives, 0 drawn alternatives at node level |
+
+**negLLs of record.** These replace the pre-correction values in every forward
+comparison; a heterogeneity model on the corrected frame may **never** be compared
+against a benchmark estimated on the old one (R-222 s10).
+
+| model | corrected negLL (of record) | pre-correction negLL (history) |
+|---|---|---|
+| **S8** | **`18022.764617170084`** | `18022.456443792806` |
+| **LOC4 / S0** | **`18453.4750133318`** | `18453.054494167016` |
+
+**The S8-versus-LOC4 structural conclusion is unchanged.** `beta_h_f35` keeps its
+sign and INTERIOR status at `2.5795` (robust se `0.0983`, z `26.24`); the 1-df LR
+statistic is `861.42` and still rejects S0 at 0.001; ΔAIC `−859.42` and
+ΔBIC(households) `−854.07` still order S8 first. Both corrected models are
+SINGLE-OPTIMUM, full-rank and `clean`-tier, with the active-bound set
+`{beta_l_age2_sf, beta_l_age2_sm}` and the W-4 flagged set unchanged in both.
+Evidence: `experiments/JMP_PS1/runs/ps1r222_floor5/` (MNL) and decision note §25.
 
 **Superseded at R-175:** `RQMC_FINAL_PRECISION_PENDING` (set R-157 / R-161) —
 the pass has run and is disposed of. The evaluation runner's mechanical
@@ -171,7 +211,7 @@ its commissioned bounded independent review returned **`S8_ACCEPTED`** at
 |---|---|
 | S1..S7 | disposed of by R-182 §8 — S1 invariance-only, S2 not included, S4 rejected, S5 split rejected, S6 **equivocal, not admitted** (parked), S7 rejected |
 | S8 = S0 + S3 | **ACCEPTED** — the preferred singles positive specification |
-| S8 acceptance run (S8A) | negLL `18022.456443792806`; ΔAIC `−859.1961`; SINGLE-OPTIMUM over 10 polished points (spread `7.64e-10`); exact nesting to 0 ulp with Δ-gradient `−307.387`; PD full-rank clean Hessians (41-free and 39-interior); **W-4 set EMPTY**; **13/13** primary welfare rows pass on a bitwise-identical θ with no re-pricing |
+| S8 acceptance run (S8A) | negLL `18022.456443792806` (**pre-correction**; the negLL of record is now `18022.764617170084` on the corrected frame — see §1.1); ΔAIC `−859.1961`; SINGLE-OPTIMUM over 10 polished points (spread `7.64e-10`); exact nesting to 0 ulp with Δ-gradient `−307.387`; PD full-rank clean Hessians (41-free and 39-interior); **W-4 set EMPTY**; **13/13** primary welfare rows pass on a bitwise-identical θ with no re-pricing |
 | Bounded independent review | RETURNED — A1–A7 all ACCEPT; verdict **`S8_ACCEPTED`**; four refinements binding as claim language (R-184.1) |
 
 **R-184.1 — binding claim language.** Recorded in full at MNL
@@ -225,6 +265,21 @@ letter of the rule only. **No couples specification is promoted.** The named
 successor missions (occupation sex-split with a mandatory synthetic re-gate; the
 quadrant covariance gap; `beta_l0_m` SE calibration; take-up thinness; probe-C
 non-convergence) are recorded in the decision note §14.8 — none is opened.
+
+**Re-ordered at R-223 — the three-type design, queued behind SX1.** The couples
+lane is no longer the four-participation-quadrant CMF-only frame. Once the R-223
+PHASE-1 sample-expansion audit returns, it is implemented as three decision types
+in order — **CMF** (both spouses flexible), **CM** (male flexible, female fixed)
+and **CF** (female flexible, male fixed) — at approximately 100 sampled joint
+household alternatives, with the fixed spouse's observed hours, earnings and
+labour-market status repeated in every joint alternative and each joint household
+state priced through EUROMOD on the complete roster. One self-employed spouse no
+longer excludes a household: it is held fixed and the household is semi-flexible.
+Households with three or more adults are **not** in this step — they are
+`EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS` and stay out of the headline welfare
+sample until the pooling, tax-unit, allocation, needs and welfare-unit assumptions
+are explicit. `GATE_FAIL` still travels with every existing couples number; none
+of the phase 1-4 results is promoted by the re-ordering.
 
 ### R1 BMO — CLOSED at R-218 · `R1_BMO_NEGATIVE_RESULT_CLOSED`
 
@@ -324,8 +379,59 @@ at the head of this section.)*
 > 5. only then decide which exploratory result enters the formal
 >    accepted specification.
 
-**The live order at R-218 — four items, in this order. This SUPERSEDES the
-R-209.2 order below, whose item 1 is DISCHARGED.**
+**The live order at R-224 — seven items, in this order. This SUPERSEDES the
+R-218 order below, whose item 1 (Lane B) is CLOSED and whose front-of-queue
+position is now taken by HP.**
+
+> 1. **HP** — the first persistent-preference model: a **random leisure
+>    intercept** (R-224). It is estimated on the corrected frame and compared
+>    against **corrected** S8 (R-222 s10).
+> 2. **HO** — one persistent-opportunity model, run **separately** from HP
+>    (R-220 s8), also against corrected S8. HPO stays conditional on an
+>    independent identification source and is not estimated from the same choice
+>    outcomes alone.
+> 3. **W3 feasibility** — authorized at R-220 s6 and runnable in parallel: one
+>    parsimonious `beta_l_i = X_i beta_l + sigma_l nu_i` with
+>    `corr(nu_i, e_w_i) = rho_wl`, behind gates A–G (R-220 s7). Real-data W3
+>    follows HP recovery and uses the corrected frame. If synthetic recovery
+>    fails: `W3_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`, and defer.
+> 4. **S9 selection** — S8 versus supported HP, supported HO, W3 if its gates
+>    pass, HPO only if separately authorized. The richest model is **not**
+>    selected automatically; if no extension earns admission, S8 is formally
+>    retained as the final positive model rather than an S9 being invented
+>    (R-220 s9).
+> 5. **Final welfare** — computed for the **corrected S8** benchmark and the
+>    final S9 model only. First test whether the existing common-support priced
+>    node cache is independent of the seven corrected chosen rows; reuse the
+>    prices if its nodes and budget inputs are hash-identical, and reprice only
+>    if S9 changes job-node wages, hours, household budget inputs or
+>    common-support geometry (R-222 s9). No automatic reprice.
+> 6. **RUM final rerun** — the headline common-opportunity RUM benchmark is
+>    re-estimated **once**, at final reporting, on the same corrected frame the
+>    final RURO model uses (R-222 s8). The companion RUM variant is re-estimated
+>    only if its nesting/LR comparison stays in the manuscript.
+> 7. **Torch parity export** — prepared only at selected-model freeze, from the
+>    corrected engine-ready bundle, the final selected specification, the
+>    `exact_marginal` declarations and the final parameter vector and inference
+>    objects. `TORCH_BACKEND_JMP_READY` stays pending until S9 is accepted or S8
+>    is formally retained (R-220 s11, R-222 s11, Torch routing note).
+
+**Queued behind SX1 — the couples three-type design (R-223).** The R-223 PHASE-1
+sample-expansion audit (SX1) is read-only and may run now; it owns
+`experiments/JMP_PS1/sample_expansion_audit.csv` and
+`experiments/JMP_PS1/sample_expansion_design.yaml`. **No expanded-sample
+estimation begins until SX1 returns**, and the couples lane is then re-ordered to
+the three-type design — both-flexible (CMF), male-flexible/female-fixed (CM),
+female-flexible/male-fixed (CF) — at approximately 100 sampled joint household
+alternatives, with the fixed spouse's observed state repeated in every joint
+alternative and each joint state priced through EUROMOD on the complete household
+roster. Multi-adult welfare estimation is **not** in that step; it is
+`EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS`. This queue position is behind items 1–4
+above: it is a sample-design extension, not a substitute for the heterogeneity
+sequence.
+
+**The superseded live order at R-218 — four items, in this order. This SUPERSEDED
+the R-209.2 order below, whose item 1 is DISCHARGED.**
 
 > 1. **Lane B** — the `W0`/`W1`/`W2` wage treatment, with HP/HO following. The
 >    wage-robustness lane is now the front of the queue.
@@ -419,7 +525,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-218, + the R-212 and R-220 corrective appends and the R-220 s1/s2/s5 follow-up) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `b8a2664e11bd462456697e1e511564aeeca915fd189bb7c477c61797ca1d7f89` |
+| Consolidated rulings document (R-59 … R-224, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up and the R-219..R-224 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `60744343f6987985e471c3b93644c8ca2af6bd02b84b990c1258535badab2f0f` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -504,6 +610,16 @@ It completes the R-220 s10 append by entering the s1 / s2 / s5 text verbatim; th
 s10 append's own statement that the text was missing is **not** edited out, and
 stands as the record of why the follow-up exists.
 
+**Chain continued at R-224.1.** The append *Appended 2026-09-02 - R-219..R-224 +
+three deputy texts + the Torch routing note* advanced the same document
+`b8a2664e...ca1d7f89` -> `60744343f6987985e471c3b93644c8ca2af6bd02b84b990c1258535badab2f0f`
+(249,603 -> 289,121 bytes, prefix byte-identical, pure CRLF), with the **seven**
+dependent sites advanced path-only in the same commit and the seven rulings-text
+claim strings re-asserted against the new bytes (7/7 PASS) **before** the re-pin.
+It carries the complete R-220 ruling, the R-222 floor-correction ruling, the R-223
+sample-audit direction and the Torch routing note; the two earlier R-220 entries
+are not edited.
+
 ### 4.1 The rulings-doc pin recursion
 
 Every append to the rulings document changes its sha256 and therefore stales
@@ -535,14 +651,17 @@ repositories, not the MNL executable gates alone. The dependent sites are:
   **pin advance only**; the acceptance's findings and verdict are immutable and
   are not edited.
 
-**Seven live sites in total as of R-218.2.** The count grows as citation pins are
-added; check by `grep`-ing the OLD sha across both repositories rather than
-working from this list alone.
+**Seven live sites in total, re-verified at R-224.1.** The count grows as citation
+pins are added; check by `grep`-ing the OLD sha across both repositories rather
+than working from this list alone.
 
-**Two sites that are NEVER advanced.** The §11 chain arrows in
-`MNL/experiments/JMP_PS1/decision_note.md` and this file's own chain line are
-**historical** — they record which append moved which hash. Extend the chain with
-a new sentence; never rewrite an arrow.
+**Sites that are NEVER advanced.** The §11 chain arrows and the §24 chain sentence
+in `MNL/experiments/JMP_PS1/decision_note.md`, and this file's own chain line, are
+**historical** — they record which append moved which hash, and a rewritten arrow
+would destroy exactly the record it exists to keep. Extend the chain with a new
+sentence; never rewrite an arrow. At R-224.1 three such occurrences of
+`b8a2664e…ca1d7f89` were left standing deliberately and each was classified
+individually before being left.
 
 Re-pinning is **path-only**: the hash is advanced, and each binding cell's
 claim strings are re-asserted under its own read of the new file. If a claim
@@ -598,24 +717,60 @@ frozen axis still reads as `A` in the `frozen..HEAD` tree diff, so it is safe.
 Check with `git cat-file -e 5b0e3d29…:<path>` before any commit that touches a
 file that might predate the axis.
 
+**LIVE at R-224.1 — battery step 3 HALTS, and it is a real halt, not a nuisance.**
+`parity_axis_evidence` is additions-only: between the frozen axis and HEAD every
+changed path must read as `A`. **Three** paths now read as `M`, each under its own
+authority:
+
+1. `docs/France_case/About_data/feedback_bpool_chosen_row_is_reconstructed.md`
+2. `docs/France_case/About_data/reference_drd_fr_input_variables.md` — both
+   modified by MNL `fdf6a92`, the **R-220 s10-ordered** wage-premise sweep of live
+   surfaces. Documentation only; no code path.
+3. `scripts/welfare/m08_p2a_parity.py` — the **R-222 s2** requirement to rebuild
+   the successor frame through the actual construction path rather than patch
+   parquet cells. The change adds one optional `cell_hook` argument to
+   `reconstruct_pipeline`, defaulting to `None`, so the production call is
+   behaviourally unchanged; the R-222 STEP-1 **control leg proves it at production
+   scale** — the frozen geometry was re-derived through the modified function with
+   no hook and matched at `max_abs_diff = 0.0` on all eight compared columns over
+   157,055 rows.
+
+All three files existed at the axis (`git cat-file -e` succeeds), so the commit
+trap above does **not** excuse them. Steps 1, 2 and 4 pass: gate self-pin, 76/76 pins
+re-hashed, gitlink still `27756a06`; ancestry holds and the gitlink is unchanged,
+so only the additions-only criterion fails.
+
+The halt was introduced by an authorized documentary correction, and it blocks the
+**next U6 / welfare run**, not governance appends or documentation commits — no U6
+or welfare evaluation has been run since. The disposition is the deputy's: the
+HK-01 precedent (`HK01_R100_RENAME_ALIASES`, R-148.1) discharged a ratified
+documentation change on **byte-identity** evidence rather than waiving it, but that
+carve-out covers *renames* and these are *content edits*, so it does not reach
+them. The evidence a successor carve-out would rest on is already on disk — the two
+documentation edits touch no code path, and the parity-script edit has the
+production-scale `max_abs_diff = 0.0` control leg above — but assembling that
+carve-out is a governance decision, not an execution one. **Do not detach, and do not widen the criterion to admit modifications
+generally.** This must be resolved before item 5 (final welfare) of the §3 order.
+
 ---
 
 ## 6. Next action
 
-**Lane B is CLOSED; one halt remains — FINAL POSITIVE-MODEL SELECTION pending the `lhw`-floor correction** — then HP/HO, then S9, then the headline freeze.
+**Lane B is CLOSED and the `lhw`-floor halt is DISCHARGED. The next action is HP — one random leisure intercept, on the corrected frame, against corrected S8.** Then HO, W3 feasibility, S9, final welfare, the RUM rerun and the parity export, in the §3 order.
 
 **`W0_W1_W2_AXIS_CLOSED`** (R-220 s2). The wage-treatment axis is closed without estimating W1 or W2: `W1_NOT_DISTINCT_FROM_W0` and `W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`. The §22.7 W2-gate halt is **discharged** — it was raised because the W2 object could not be fixed from the ruling text, and s2 resolves it by ruling that there is no W2 to estimate. S8 now carries **`S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`** (R-220 s5).
 
-**`FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`** (R-220 s3). The ten-case audit answered the decisive question `NO`: the chosen alternative does not reproduce the intended observed earnings/budget after hours clipping. The proposed cure is minimal — set `hours_floor_low` from 10 to 5 in the France data-prep config, reprice **7 chosen rows** (drawn prices reused bitwise, verified by hash), and run **one** S8 re-estimation plus the S0/LOC4 benchmark on the corrected frame under the full certified protocol. The `hours_cap_high = 70` behaviour is correct and is now recorded as **`HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION_RECORDED`**. Neither halt withdraws S8, any coefficient or any welfare number.
+**The five-hour floor correction is DONE and ACCEPTED (R-222 → R-224).** The R-220 s3 halt is discharged. `hours_floor_low` moved 10 → 5 through the actual construction path — the production notebook's cells re-run under one declared knob change, with a control leg reproducing the frozen geometry at `max_abs_diff = 0.0` — never by patching parquet cells. Every gate PASSED: exactly **7** chosen alternatives changed and all **155,500** drawn alternatives are bitwise unchanged at node level (the 700 remaining drawn-row diffs are the single household-passthrough column `lhw`, fully explained); the **5** raw observations above the 70-hour cap are untouched under `HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION`; the chosen-earnings identity passes **7/7** at max relative difference `6.1e-08`; the bounded reprice touched 3 of 8 chunks with **0** EUROMOD hard errors, bound 7 rows one-to-one with `yivwg` bitwise preserved, and reproduced every unaffected priced row bitwise against the pinned cache. Disposable income falls in all seven cases, by **21.66–137.09 EUR/month**. Four estimations were run, not two. **No s7 return condition fired; VERDICT: ACCEPT.** The corrected anchors are in §1.1; `HP_HO_W3_REALDATA_HELD` is released onto the corrected frame, and **no** HP, HO or W3 real-data estimation may use the pre-correction frame.
 
-Lane B STEP 0 is complete and is a **negative result for the wage axis as ruled**. The audit (decision note §22) establishes that `yivwg` is the observed hourly wage for every FR_2016 individual who has one — the `Heckman-type` / `18-65, not in education, not self-employed, not pensioners` wording the ruling quotes comes from the **FR_2018+** DRD and from the **synthetic HHoT training** codebook, not from the estimation data. W1 therefore perturbs 10 households (all `lhw`-clip artefacts, ΔnegLL −6.082) and W2's integration object does not exist in the certified architecture. **Unblock = a deputy decision on what W2 is to be**; the only non-vacuous version is the ruling-s4 `W3` person-specific wage-residual object, which needs its own pre-specification and identification argument.
+Lane B STEP 0 is complete and is a **negative result for the wage axis as ruled**. The audit (decision note §22) establishes that `yivwg` is the observed hourly wage for every FR_2016 individual who has one — the `Heckman-type` / `18-65, not in education, not self-employed, not pensioners` wording the ruling quotes comes from the **FR_2018+** DRD and from the **synthetic HHoT training** codebook, not from the estimation data. W1 therefore perturbs 10 households (all `lhw`-clip artefacts, ΔnegLL −6.082) and W2's integration object does not exist in the certified architecture. R-220 s2 answered that by ruling there is no W2 to estimate, so the lane needed no unblock. The only non-vacuous version of the object is the ruling-s6 `W3` person-specific wage-residual extension, which is now authorized on its own gates (A–G, R-220 s7) as item 3 of the §3 order — not as a wage-treatment arm.
 
 The estimation sprint is complete and no estimation is queued. The inversion
 correction is **discharged**: R-212 made the inversion coalition-consistent,
 R-213 put every household on a common quadrature support, and R-217/R-218 closed
 the male-reference operator with the structural zero, so exhaustiveness now
 passes in all arms and the provisional exhaustive decomposition exists. The live
-work is the **wage-robustness lane**, now blocked on the W2 decision above.
+work is the **persistent-heterogeneity lane** — HP, then HO, then W3 feasibility —
+on the corrected frame.
 Writing runs alongside: take the outline
 `Design/JMP_paper_outline_v1.md` section by section, then the main tables, then
 the manuscript — welfare magnitudes may now appear **only under their labels**
@@ -654,8 +809,22 @@ instrument is authorized on the LOC4 benchmark. **Nothing is owed to the deputy 
 S8** — R-183 closed it autonomously. Return only if a later step rejects S8, a new
 W-4/boundary issue appears, or RQMC reuse fails.
 
-**No new pricing is licensed.** R-207 §6 refuses a second common-node-set
-EUROMOD run unless the zero-EUROMOD ex-ante diagnostic demonstrates one is
-required, and R-208 established that a common realized node set would not reach
-the surviving object. R-207 §9's return conditions remain live for anything that
-changes that.
+**Welfare and the RUM benchmark, after the correction.** Do **not** refresh the
+S8 or LOC4 welfare panels now. Every existing S8/LOC4 welfare and decomposition
+value carries `PRE_CORRECTION_PROVISIONAL_WELFARE_HISTORY` and
+`NOT_VALID_FOR_FINAL_MAGNITUDES` on top of the labels it already carried; the
+common-support welfare infrastructure itself is **not** rejected, and the refresh
+is `WELFARE_REFRESH_DEFERRED_TO_FINAL_S9`. At final S9, first test whether the
+existing common-support priced-node cache is independent of the seven corrected
+chosen rows and reuse the prices if it is hash-identical and unaffected. The RUM
+benchmark is `RUM_BENCHMARK_STALE_FOR_FINAL_REPORTING_PENDING_CORRECTED_FRAME_UPDATE`
+— it is **not** rerun now, and is re-estimated once at final reporting on the
+corrected frame.
+
+**No new pricing is licensed beyond the one bounded reprice that has run.**
+R-222 s4 authorized exactly one bounded EUROMOD reprice for the seven corrected
+chosen alternatives; it ran, and no whole-grid reprice was or is authorized.
+R-207 §6 still refuses a second common-node-set EUROMOD run unless the
+zero-EUROMOD ex-ante diagnostic demonstrates one is required, and R-208
+established that a common realized node set would not reach the surviving object.
+R-207 §9's return conditions remain live for anything that changes that.

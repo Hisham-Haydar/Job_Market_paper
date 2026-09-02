@@ -6102,3 +6102,1069 @@ append above and by section 23 of the PS1 decision note, and are not restated.
    because persistent heterogeneity and final model selection remain open"; the
    R-220 s3 halt is one of the reasons final model selection is open, and the
    two statements are consistent.
+
+## Appended 2026-09-02 — R-219..R-224 + three deputy texts + the Torch routing note
+
+*Frame note: chat-side rulings R-219..R-224, one line each, transcribed from the
+JMP_PS1 decision note and the R-222 run manifests rather than composed here; then,
+under their own headings, the three deputy texts of that span that exist verbatim
+— (1) the R-220 ruling closing the W0/W1/W2 wage-treatment axis and ordering the
+ten-household consistency audit, (2) the R-222 ruling authorizing the five-hour
+floor correction and the corrected-frame re-estimation, (3) the R-223 PI/deputy
+direction on the richer sample audit and the semi-flexible household design —
+followed by (4) the PI/deputy Torch routing note recorded with R-223. Signature
+gate: each heading's body opens on its own first section title — (1) "1. WORKER
+WAGE FINDING"; (2) "1. CORRECTION"; (3) "1. PURPOSE"; and (4), which carries no
+numbered sections, on its provenance rule "proposal.convention: exact_marginal".
+R-220 already carries two dated entries above this heading — the CORRECTIVE
+APPEND of its s10 and the FOLLOW-UP DATED CORRECTION of its s1/s2/s5 — which
+entered those clauses in excerpt. This heading enters the COMPLETE thirteen-section
+text for the first time; neither earlier entry is edited, and where they quote a
+clause the quotation is the same clause reproduced below. R-219, R-221 and R-224
+carry no deputy-verbatim text on disk — R-219 and R-221 are executing-agent returns
+the deputy accepted in chat, R-224 is the chat-side acceptance of the
+floor-correction return — so they appear as chat-side lines only, in the same way
+R-186..R-192, R-194..R-201, R-208, R-209, R-211, R-214 and R-215 do. Per R-162, and
+under R-162.2 across both repositories, this append carries its own re-pins: every
+site that pins this document by sha256 is advanced path-only in the same commit
+that stales it.*
+
+- R-219 the Lane-B STEP-0 return (WB1) is accepted and the wage axis is returned
+  to the deputy. The audit established two things the axis had assumed away.
+  First, for every FR_2016_a3 person with observed wage inputs the survey field
+  `yivwg` reproduces `yem * (12 / yemmy) / (lhw * 52 / 12)` to within the
+  production tolerance — `yivwg` **is** the observed hourly wage for workers, not
+  a fitted conditional mean, so the "Heckman-type wage regression" premise the
+  axis was built on does not describe the production data. Second, the channel
+  probe found that non-worker `yivwg` is consumed by nothing: not the likelihood,
+  not the structural `g^W` contribution, not the `q^W` sampler and not the chosen
+  non-employment alternative, so W2 has no object to estimate. The return also
+  carried the residual finding that ten households have raw observed `lhw`
+  outside the model support and are clipped, and asked whether that clipping is
+  an intended support projection. The W2 gate halt
+  `LANE_B_STEP0_COMPLETE_STEP1_HALTED_AT_THE_W2_GATE` was raised on the second
+  finding. Decision note §22. No deputy-verbatim text for this ruling is on disk
+  and there is no on-disk record beyond this line.
+- R-220 the wage-treatment axis is CLOSED, and two follow-on items are ordered.
+  The deputy accepts the Lane-B halt as a scientific finding and records that the
+  production evidence **refutes** the factual premise that France 2016 substitutes
+  a smoothed predicted wage for the observed wage of workers. W0 retains the
+  production convention; W1 is not estimated because the correctly annualized
+  observed-wage reconstruction is numerically equivalent to `yivwg` for workers
+  and therefore supplies no model comparison; W2 is not estimated because its
+  object does not enter the production likelihood. Four status labels are set —
+  `W0_USES_OBSERVED_HOURLY_WAGES_FOR_WORKERS`, `W1_NOT_DISTINCT_FROM_W0`,
+  `W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD`, `W0_W1_W2_AXIS_CLOSED` — and the S8
+  label `S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS` is replaced by
+  `S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL`, the attenuation rationale
+  having lapsed with the premise. `13b_Wage` ceases to be a critical-path
+  dependency. Two items are ordered rather than closed: **s3**, one bounded
+  ten-household chosen-budget consistency audit, with no W1 model arm created for
+  it and no household identifiers exposed; and **s10**, a dated provenance
+  correction appended to the ruling record and swept through live surfaces only,
+  with the historical R-202 text left immutable. W3 feasibility is authorized in
+  parallel with HP/HO under seven gates (A–G), and S9 selection proceeds without a
+  wage-treatment discriminant. Decision note §§23–24. The complete text is recorded
+  VERBATIM under heading (1) below; its s10 and its s1/s2/s5 were already entered
+  in excerpt by the two dated appends above this heading.
+- R-221 the ten-household audit answers the decisive question **NO** for seven of
+  the ten. The audit reported no identifiers, only the aggregate table. Three
+  cases are the 70-hour cap and are an intended support projection. The other
+  seven carry raw observed weekly hours between 6 and 9, are clipped up to the
+  active `hours_floor_low = 10`, and therefore have their chosen earnings and
+  disposable-income budgets changed by an amount that is not a projection onto
+  the model support at all: the same construction sets
+  `hours_inactive_threshold = 5`, so the latent working support already extends
+  down to five hours and 6–9-hour observations belong inside it. The
+  pre-correction chosen-earnings error reached **417.50 EUR/month** at a maximum
+  relative error of **0.667**. The executing agent proposed the smallest data
+  correction — `hours_floor_low` 10 → 5, retaining the inactive threshold at 5 and
+  the cap at 70 — plus one re-estimation, and raised
+  `FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION`. Decision
+  note §§23.2–23.4. No deputy-verbatim text for this ruling is on disk and there
+  is no on-disk record beyond this line.
+- R-222 the five-hour floor correction and the corrected-frame re-estimation are
+  AUTHORIZED, and the correction has since PASSED. The deputy classifies the
+  finding `LHW_FLOOR_10_UNINTENDED_DATA_CONSTRUCTION_INCONSISTENCY` and the cure
+  `LHW_FLOOR_5_CORRECTION_AUTHORIZED`, requires a versioned SUCCESSOR frame that
+  leaves the historical S8/LOC4 engine-ready frame and every accepted attempt
+  untouched, forbids patching final parquet cells and requires a rebuild through
+  the actual construction path, and imposes a six-item differential audit, a
+  chosen-earnings identity gate, a bounded seven-row EUROMOD reprice, and a
+  re-estimation of S8 and LOC4/S0 that adds and removes no model term. Executed:
+  the successor frame `fr_p2a_singles2016_regionlive_margqh_floor5_v1` was built
+  by re-running the production notebook's construction cells under a single
+  declared knob change injected at the CONFIG cell, with a control leg that
+  reproduced the frozen geometry at `max_abs_diff = 0.0` on all eight compared
+  columns. The differential audit is **PASS**: exactly **7** chosen alternatives
+  change, all **155,500** drawn alternatives are bitwise unchanged at node level,
+  the remaining 700 drawn-row differences are the single household-passthrough
+  column `lhw` and are fully explained, the **5** raw observations above the
+  70-hour cap are unchanged, membership is unchanged, and the proposal columns are
+  bitwise unchanged with `exact_marginal` retained. The earnings identity passes
+  **7/7** at a maximum relative difference of `6.1e-08`, inside raw storage
+  rounding. The bounded reprice touched **3** of 8 chunks, returned **0** EUROMOD
+  hard errors, bound 7 rows one-to-one with `yivwg` preserved bitwise, and
+  reproduced every one of the 85,132 unaffected priced rows in those chunks
+  **bitwise** against the pinned frozen cache; disposable income falls in all seven
+  cases, by **21.66 to 137.09 EUR/month**. The stem gate is bitwise on all twelve
+  derived fields on the control leg; `c_scale` is HELD at `1911.108057855561` by
+  the ruling's own s2 gate and `l_scale` is structurally immovable at 10.0. Four
+  estimations were run, not two, so that each model is reported at its own
+  pre-correction and corrected optimum on the same instrument. Both corrected
+  models are SINGLE-OPTIMUM, `clean`-tier, full-rank, with the active-bound set
+  `{beta_l_age2_sf, beta_l_age2_sm}` and the W-4 flagged set unchanged in both.
+  **The S8-versus-LOC4 structural conclusion is unchanged**: `beta_h_f35` keeps
+  its sign and INTERIOR status at `2.5795 (se 0.0983, z 26.24)`, the 1-df LR
+  statistic is `861.42` and still rejects S0 at 0.001, and AIC and household-BIC
+  still order S8 first. No s7 return condition fired; **VERDICT: ACCEPT**. The
+  corrected estimates become the positive-model anchors PROSPECTIVELY and the
+  pre-correction results are retained as history. Decision note §25. The complete
+  text is recorded VERBATIM under heading (2) below.
+- R-223 the richer sample audit and the semi-flexible household design are
+  adopted, the couples lane is re-ordered, and the multi-adult lane is classified.
+  PHASE 1 is a read-only sample audit that may run now and must not interrupt the
+  floor correction; no expanded-sample estimation begins until the corrected
+  S8/LOC4 anchors close. Six labour-supply types are to be counted weighted and
+  unweighted — SM, SF, CMF, CM, CF, NF — with CM and CF choosing conditional on
+  the fixed spouse's observed hours, earnings and status; one self-employed spouse
+  no longer excludes a household. Three age arms A0/A1/A2 are reported as a
+  complete funnel and no arm is selected on sample size alone. Self-employment
+  incidental-income counts are reported at 10, 20 and 30 percent but only one
+  threshold is recommended, and only one is implemented. Multi-adult households
+  are held out of the headline welfare sample until the pooling, tax-unit,
+  allocation, needs and welfare-unit assumptions are explicit, and the lane is
+  classified `EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS`. Same-sex couples are
+  inventoried against the requirements of a future partner-indexed specification
+  and are not estimated in the audit. Outputs are capped at
+  `experiments/JMP_PS1/sample_expansion_audit.csv` and
+  `experiments/JMP_PS1/sample_expansion_design.yaml` plus the decision note. After
+  the corrected anchors close, the couples implementation runs the three types in
+  order at approximately 100 sampled joint household alternatives, with the fixed
+  spouse's observed state repeated in every joint alternative. The public-package
+  main `258d6eda7e0d9bca76cfbd3fa21bf9e770b1153c` may be used in a SEPARATE clone;
+  the MNL package pin is not changed; and CUDA use on an expanded France sample is
+  conditioned on one application parity check at the same data and theta covering
+  objective, gradient, Hessian, parameter order, pins and bounds, and the
+  `exact_marginal` declaration — CUDA is an estimator accelerator and never a
+  reason to select a specification. The IZAΨMOD 97–99 percent R-squared is
+  recorded as the fit of a polynomial approximation to disposable-income OUTPUTS,
+  not labour-supply-model fit, and not comparable to RURO choice probabilities.
+  The complete text is recorded VERBATIM under heading (3) below, and the Torch
+  routing note recorded with it under heading (4).
+- R-224 the floor-correction return (FC1) is ACCEPTED, the corrected anchors are
+  adopted, and HP is fixed as a random leisure intercept. The corrected frame
+  `fr_p2a_singles2016_regionlive_margqh_floor5_v1` is the sole forward-looking
+  France singles frame; its geometry is `a91b1f81752c8406…` and its stem
+  `6f558f5ecfeabd4a…`, and the negLLs of record become **S8 `18022.764617170084`**
+  and **LOC4/S0 `18453.4750133318`** in place of the pre-correction
+  `18022.456443792806` and `18453.054494167016`. The first persistent-heterogeneity
+  model HP is a **random leisure intercept**. `HP_HO_W3_REALDATA_HELD` is released
+  onto the corrected frame; the RUM benchmark carries
+  `RUM_BENCHMARK_STALE_FOR_FINAL_REPORTING_PENDING_CORRECTED_FRAME_UPDATE` and is
+  re-estimated once at final S9 reporting; every existing S8/LOC4 welfare and
+  decomposition value carries `PRE_CORRECTION_PROVISIONAL_WELFARE_HISTORY` and
+  `NOT_VALID_FOR_FINAL_MAGNITUDES` with `WELFARE_REFRESH_DEFERRED_TO_FINAL_S9`; and
+  the Goal-2 Torch parity export remains not prepared. No deputy-verbatim text for
+  this ruling is on disk and there is no on-disk record beyond this line.
+
+### (1) Deputy Ruling — CLOSE W0/W1/W2; RUN W3 FEASIBILITY AND THE TEN-HOUSEHOLD CONSISTENCY AUDIT (R-220), VERBATIM
+
+DEPUTY RULING — CLOSE W0/W1/W2; RUN W3 FEASIBILITY AND THE
+TEN-HOUSEHOLD CONSISTENCY AUDIT
+
+The Lane-B halt is accepted as a scientific finding.
+
+The production evidence refutes the factual premise that France 2016 uses a
+smoothed predicted wage in place of the observed wage for workers.
+
+1. WORKER WAGE FINDING
+
+Record:
+
+W0_USES_OBSERVED_HOURLY_WAGES_FOR_WORKERS
+
+For every FR_2016_a3 person with observed wage inputs, yivwg reproduces:
+
+yem * (12 / yemmy) / (lhw * 52 / 12)
+
+up to negligible numerical error.
+
+The production chosen-job node uses yivwg.
+
+Therefore the current structural wage density and education/experience
+loadings are fitted against observed worker wages, not fitted conditional
+means replacing workers' observed wages.
+
+2. W0/W1/W2 DISPOSITION
+
+Close the W0/W1/W2 wage-treatment axis.
+
+W0:
+retain the production convention.
+
+W1:
+do not estimate as a separate specification.
+
+The correctly annualized observed-wage reconstruction is numerically
+equivalent to yivwg for workers and therefore supplies no model comparison.
+
+W2:
+do not estimate.
+
+Non-worker yivwg does not enter:
+
+- the current likelihood;
+- the structural gW contribution;
+- the qW wage sampler;
+- the chosen non-employment alternative.
+
+Potential wages for non-workers are already integrated through sampled latent
+wage offers and the structural wage density.
+
+Classify:
+
+W1_NOT_DISTINCT_FROM_W0
+W2_VACUOUS_UNDER_PRODUCTION_LIKELIHOOD
+W0_W1_W2_AXIS_CLOSED
+
+3. TEN-HOUSEHOLD LHW AUDIT
+
+Do not create a W1 model arm for the ten lhw-clipping cases.
+
+Run one bounded chosen-budget consistency audit.
+
+For the ten affected households, verify:
+
+- raw observed lhw;
+- clipped/model lhw;
+- yivwg;
+- observed monthly earnings;
+- yivwg × the hours attached to the chosen model node;
+- earnings supplied to EUROMOD for the chosen node;
+- resulting disposable income;
+- whether the discrepancy is an intentional projection onto model support or
+  an unintended inconsistency.
+
+The decisive question is:
+
+Does the chosen alternative reproduce the intended observed earnings/budget
+after hours clipping?
+
+If YES:
+record the support-projection convention and close the item.
+
+If NO:
+halt final positive-model selection and propose the smallest data correction
+plus one re-estimation.
+
+Do not expose household identifiers in committed outputs.
+
+Retain only an aggregate ten-case audit summary.
+
+4. 13b_WAGE
+
+The 13b_Wage do-file is no longer a critical-path dependency for the estimation
+sample.
+
+The outstanding JRC request may continue passively.
+
+If the file becomes available, use it only to complete provenance for persons
+without directly observed wages.
+
+Do not delay HP/HO, W3 feasibility, S9 selection or the provisional welfare
+architecture while waiting for it.
+
+5. S8 STATUS
+
+Replace:
+
+S8_ACCEPTED_POSITIVE_BENCHMARK_PENDING_WAGE_ROBUSTNESS
+
+with:
+
+S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL
+
+The earlier attenuation concern does not apply to the production estimator.
+
+S8 is nevertheless not final because persistent heterogeneity and final model
+selection remain open.
+
+6. W3 FEASIBILITY
+
+Authorize W3 FEASIBILITY now, in parallel with HP/HO.
+
+Do not immediately estimate a large joint model.
+
+W3 is a wage-residual/preference-dependence extension, not a replacement for
+W0/W1/W2.
+
+Begin with one parsimonious preference heterogeneity object:
+
+beta_l_i = X_i beta_l + sigma_l nu_i
+
+and one dependence parameter:
+
+corr(nu_i, e_w_i) = rho_wl
+
+where e_w_i is the standardized observed worker wage residual.
+
+For workers:
+e_w_i is observed from the structural wage equation.
+
+For non-workers:
+e_w_i is integrated over its specified distribution.
+
+7. W3 FEASIBILITY GATES
+
+Before real-data W3 estimation, require:
+
+A. exact definition of the worker wage residual;
+B. non-degenerate residual variation by sex and relevant subgroup;
+C. one pre-specified joint distribution;
+D. synthetic recovery of sigma_l and rho_wl;
+E. objective/gradient/Hessian implementation checks;
+F. no collapse or relabelling of the access and wage-technology channels;
+G. no simultaneous random opportunity effect in this first W3 model.
+
+If synthetic recovery fails, classify:
+
+W3_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN
+
+and defer it.
+
+If recovery passes, estimate one W3 diagnostic after the baseline HP model is
+available.
+
+8. HP / HO / HPO SEQUENCING
+
+Continue:
+
+HP:
+one persistent preference model.
+
+HO:
+one persistent opportunity model.
+
+Run HP and HO separately.
+
+Full W3 estimation follows HP recovery because W3 requires a defined persistent
+preference component.
+
+HPO remains conditional on an independent identification source such as:
+
+- desired-hours moments;
+- external wage moments;
+- valid exclusion restrictions;
+- another pre-registered auxiliary source.
+
+Do not estimate unrestricted joint preference and opportunity classes from the
+same choice outcomes alone.
+
+9. S9 SELECTION
+
+Proceed to S9 selection without a W0/W1/W2 wage-treatment discriminant.
+
+Compare:
+
+- S8;
+- supported HP candidate;
+- supported HO candidate;
+- W3 only if its feasibility and recovery gates pass;
+- HPO only if separately authorized after its identification gate.
+
+Selection criteria remain:
+
+- likelihood and information criteria;
+- synthetic recovery;
+- convergence and curvature;
+- household-level predictive fit;
+- hours/occupation/wage fit;
+- parameter interpretability;
+- stability of access/ability/preference attribution;
+- parsimony.
+
+Do not select the richest model automatically.
+
+If no heterogeneity extension earns admission, formally retain S8 as the final
+positive model rather than inventing an S9 extension.
+
+10. PROVENANCE CORRECTION
+
+Append a dated correction to the existing decision note and consolidated ruling
+record.
+
+Do not edit the historical R-202 text.
+
+The correction must state:
+
+- the detailed "Heckman-type wage regressions ... not in education,
+  not self-employed, not pensioners" wording was not the production FR_2016_a3
+  DRD description;
+- that wording arose from a later/synthetic documentation route;
+- the production FR_2016_a3 data show yivwg equals observed hourly wage for
+  workers with observed earnings/hours;
+- the construction for people without observed wage inputs remains incompletely
+  documented while 13b_Wage is unavailable;
+- non-worker yivwg is not consumed by the production likelihood or qW sampler;
+- the earlier full-sample predicted-wage attenuation rationale therefore does
+  not apply.
+
+Search only current/live paper and notebook outputs for the superseded premise
+and correct those occurrences.
+
+Historical artifacts remain immutable and carry a cross-reference to the dated
+correction.
+
+Create no standalone provenance memo.
+
+11. WELFARE AND PARITY CONSEQUENCES
+
+Do not invalidate existing S8 or LOC4 welfare diagnostics because of the
+superseded wage premise.
+
+Continue the provisional common-support welfare work.
+
+Final welfare percentages remain pending S9 selection for other reasons,
+including persistent heterogeneity and positive-model selection.
+
+Do not prepare the final Torch parity export yet.
+
+TORCH_BACKEND_JMP_READY remains pending:
+
+- S9 acceptance; or
+- formal final retention of S8 after HP/HO and W3 disposition.
+
+12. OUTPUTS
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/model_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+A compact aggregate ten-household consistency table may be added to the existing
+experiment output directory.
+
+Create no new wage-treatment mission-document family.
+
+13. RETURN
+
+Return only if:
+
+- the ten-household audit identifies a genuine chosen-budget inconsistency;
+- W3 synthetic recovery passes and the real-data model materially changes the
+  positive-model choice;
+- HP and HO both appear separately supported but cannot be jointly interpreted;
+- HPO requires a new identification ruling;
+- no candidate can be selected as S9;
+- or a disclosure problem arises.
+
+Otherwise proceed autonomously through the feasibility work and S9 selection.
+
+### (2) Deputy Ruling — AUTHORIZE THE FIVE-HOUR FLOOR CORRECTION AND CORRECTED-FRAME RE-ESTIMATION (R-222), VERBATIM
+
+DEPUTY RULING — AUTHORIZE THE FIVE-HOUR FLOOR CORRECTION AND
+CORRECTED-FRAME RE-ESTIMATION
+
+Approve decisions (a), (b), and (c), subject to the implementation
+conditions below.
+
+The ten-household audit establishes a genuine chosen-budget inconsistency
+for seven households.
+
+The active construction uses:
+
+- hours_floor_low = 10;
+- hours_inactive_threshold = 5;
+- hours_cap_high = 70;
+
+while the latent working support extends down to approximately five hours.
+
+Therefore raw observed working hours between 5 and 10 belong to the model
+support. Clipping the seven 6–9-hour observations to 10 is not a support
+projection and incorrectly changes their chosen earnings and disposable-income
+budgets.
+
+Classify:
+
+LHW_FLOOR_10_UNINTENDED_DATA_CONSTRUCTION_INCONSISTENCY
+LHW_FLOOR_5_CORRECTION_AUTHORIZED
+
+1. CORRECTION
+
+Create a versioned successor estimation frame.
+
+Do not mutate, overwrite, or relabel the existing historical S8/LOC4
+engine-ready frame or accepted attempts.
+
+Change only the active successor construction from:
+
+hours_floor_low = 10
+
+to:
+
+hours_floor_low = 5
+
+Retain:
+
+hours_inactive_threshold = 5
+hours_cap_high = 70
+
+The three observations above 70 hours remain projected to 70 under:
+
+HOURS_CAP_70_SUPPORT_PROJECTION_CONVENTION
+
+Do not alter their treatment in this correction.
+
+2. REBUILD FROM UPSTREAM INPUTS
+
+Do not patch only the final parquet cells manually.
+
+Rebuild the successor frame through the actual data-construction path so every
+derived field affected by chosen hours is recomputed consistently.
+
+For the seven affected chosen alternatives, inspect and record the before/after
+status of at least:
+
+- raw lhw;
+- model hours;
+- leisure;
+- working indicator;
+- all hours-band indicators;
+- wage;
+- log wage;
+- gross monthly earnings supplied to EUROMOD;
+- disposable income / consumption;
+- c_norm and l_norm where applicable;
+- c_scale and l_scale where applicable;
+- proposal/prior fields if their chosen-row construction reads hours;
+- every other engine-consumed field whose value changes.
+
+Do not assume in advance that only hours and consumption change.
+
+The final differential audit must prove:
+
+- exactly seven chosen alternatives change because of the lower-floor correction;
+- the three 70-hour cap observations are unchanged;
+- all drawn alternatives are bitwise unchanged;
+- all unaffected chosen alternatives are bitwise unchanged;
+- household/sample membership is unchanged;
+- proposal convention remains exact_marginal;
+- parameter ordering, pins, and model grammar are unchanged.
+
+3. CHOSEN-EARNINGS IDENTITY
+
+For each of the seven corrected households, require the corrected chosen-node
+gross earnings to reproduce the intended observed earnings under the production
+annualization convention.
+
+Check:
+
+gross_earnings_chosen
+=
+yivwg × raw_observed_hours × 52 / 12
+
+against the relevant observed monthly earnings construction.
+
+Record only aggregate diagnostics:
+
+- number passing;
+- maximum absolute difference;
+- maximum relative difference;
+- minimum/maximum raw hours;
+- minimum/maximum disposable-income change.
+
+Do not persist household identifiers in committed outputs.
+
+If the corrected chosen earnings do not reproduce the intended observed
+earnings within the production numerical tolerance, halt before estimation.
+
+4. SEVEN-HOUSEHOLD EUROMOD REPRICE
+
+Authorize one bounded EUROMOD reprice for the seven corrected chosen
+alternatives only.
+
+The pricing call must:
+
+- use the full household context required by the certified runner;
+- use target-only certified geometry;
+- preserve the observed hourly wage yivwg;
+- use the corrected raw hours;
+- change no drawn alternative;
+- report zero hard errors and finite outputs;
+- bind every returned row one-to-one to its intended chosen alternative.
+
+Reuse every unaffected priced row only after key, geometry, and hash checks.
+
+No whole-grid reprice is authorized.
+
+5. CORRECTED S8 AND LOC4 RE-ESTIMATION
+
+After the successor frame passes the construction and pricing gates, re-estimate:
+
+A. S8 on the corrected frame;
+B. LOC4 / S0 benchmark on the corrected frame.
+
+Use:
+
+- the same exact_marginal proposal convention;
+- the same latent draws;
+- the same structural specifications;
+- the same parameter order;
+- the same pins and bounds;
+- the previous accepted estimates as warm starts;
+- the established convergence protocol.
+
+This is a data correction, not permission to add or remove a model term.
+
+6. REQUIRED ESTIMATION OUTPUTS
+
+For both corrected models report:
+
+- objective at the old estimate on the corrected frame;
+- corrected optimum;
+- convergence status;
+- active-bound set;
+- gradient/KKT diagnostics under the existing convention;
+- Hessian rank and conditioning;
+- robust covariance and standard errors;
+- W-4 flagged set;
+- parameter changes in raw units and relative to the previous robust standard
+  errors;
+- household-level predictive fit;
+- hours, occupation, and wage fit;
+- model-comparison statistics;
+- whether the S8-versus-LOC4 structural conclusion changes.
+
+Use existing run manifests and result formats.
+
+Do not create a separate documentation or review chain merely because the
+objective changes numerically.
+
+7. ACCEPTANCE / RETURN RULE
+
+If both models:
+
+- converge under the established standard;
+- retain adequate rank and curvature;
+- produce no new data inconsistency;
+- preserve the substantive S8/LOC4 model comparison;
+- and generate no new material interpretation conflict;
+
+accept the corrected estimates as the new positive-model anchors and supersede
+the old estimates prospectively.
+
+Retain the old results as historical pre-correction records.
+
+Return to the deputy only if:
+
+- either model fails convergence or rank;
+- the active-bound structure changes in a consequential way;
+- the S8-versus-LOC4 model conclusion changes;
+- a major parameter or fit conclusion changes;
+- the seven-row correction affects more rows/fields than the rebuild audit can
+  explain;
+- or the corrected chosen budgets still fail the earnings identity.
+
+8. RUM BENCHMARK
+
+Do not delay the correction or HP/HO work for a RUM rerun.
+
+Mark the existing RUM benchmark as:
+
+STALE_FOR_FINAL_REPORTING_PENDING_CORRECTED_FRAME_UPDATE
+
+Re-estimate the headline common-opportunity RUM benchmark once, at final S9
+reporting, on the same corrected frame used by the final RURO model.
+
+Re-estimate the companion RUM variant only if its nesting/LR comparison remains
+in the manuscript.
+
+This keeps the RUM/RURO comparison on identical corrected data without adding
+another immediate estimation branch.
+
+9. WELFARE DISPOSITION
+
+Do not refresh the S8 or LOC4 welfare panels now.
+
+Classify all existing S8/LOC4 welfare and decomposition values as:
+
+PRE_CORRECTION_PROVISIONAL_WELFARE_HISTORY
+NOT_VALID_FOR_FINAL_MAGNITUDES
+
+The common-support welfare infrastructure itself is not rejected.
+
+At final S9 evaluation:
+
+- first test whether the existing common-support priced-node cache is
+  independent of the seven corrected chosen rows;
+- if its nodes and budget inputs are hash-identical and unaffected, reuse the
+  prices and re-evaluate welfare using the final parameters;
+- reprice only if S9 changes job-node wages, hours, household budget inputs, or
+  common-support geometry.
+
+Do not perform an automatic welfare reprice merely because the estimation
+frame changed.
+
+10. HP / HO / W3 SEQUENCING
+
+No real-data HP, HO, or W3 estimation may use the pre-correction frame.
+
+After corrected S8 and LOC4 are available:
+
+- HP compares against corrected S8;
+- HO compares against corrected S8;
+- W3 real-data estimation follows its synthetic/feasibility gate and uses the
+  corrected frame;
+- HPO remains subject to its separate identification condition.
+
+Code-only and synthetic-recovery work for HP/HO/W3 may continue in parallel if
+it does not consume the old real-data anchor.
+
+Do not compare a heterogeneity model on the corrected frame against a benchmark
+estimated on the old frame.
+
+11. FINAL MODEL AND PARITY
+
+Proceed to S9 selection only after:
+
+- the five-hour correction passes;
+- corrected S8 and LOC4 are available;
+- HP/HO and W3 receive their dispositions.
+
+Do not prepare the Goal-2 Torch parity export yet.
+
+The eventual parity export must use:
+
+- the corrected engine-ready bundle;
+- the final selected specification;
+- exact_marginal declarations;
+- the final selected parameter vector and inference objects.
+
+12. DOCUMENTATION CAP
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+experiments/JMP_PS1/model_comparison.csv
+experiments/JMP_PS1/post_estimation_comparison.html
+
+Machine-readable successor-frame and estimation manifests remain in their run
+directories.
+
+The already-produced aggregate ten-household audit remains the correction
+evidence.
+
+Create no new mission charter, deputy-ruling memo, or independent review unless
+a return condition above fires.
+
+13. STATUS
+
+Until corrected estimation closes, use:
+
+FINAL_POSITIVE_MODEL_SELECTION_HALTED_PENDING_LHW_FLOOR_CORRECTION
+S8_CORRECTED_FRAME_REESTIMATION_PENDING
+LOC4_CORRECTED_FRAME_REESTIMATION_PENDING
+HP_HO_W3_REALDATA_HELD
+WELFARE_REFRESH_DEFERRED_TO_FINAL_S9
+
+14. CONTINUATION AFTER SUCCESS
+
+On clean corrected S8/LOC4 completion:
+
+- accept the corrected frame as the sole forward-looking France singles frame;
+- resume HP/HO and W3 on that frame;
+- continue autonomously to S9 selection;
+- refresh welfare only for the final S9 model and the corrected S8 benchmark;
+- update the final RUM benchmark at the final reporting stage.
+
+### (3) PI/Deputy Direction — RICHER SAMPLE AUDIT AND SEMI-FLEXIBLE HOUSEHOLD DESIGN (R-223), VERBATIM
+
+PI/DEPUTY DIRECTION — RICHER SAMPLE AUDIT AND SEMI-FLEXIBLE
+HOUSEHOLD DESIGN
+
+This is a bounded sample-design extension, not a new documentation mission.
+
+Do not interrupt the active five-hour-floor correction and corrected S8/LOC4
+re-estimation.
+
+PHASE 1 may run now as a read-only sample audit.
+No expanded-sample estimation begins until the corrected S8/LOC4 anchors close.
+
+1. PURPOSE
+
+Determine how much of the currently excluded France 2016 population can be
+retained through coherent decision-unit definitions rather than blanket
+household exclusion.
+
+Do not maximize sample size at the expense of a coherent behavioural or welfare
+unit.
+
+2. REQUIRED LABOUR-SUPPLY TYPES
+
+Construct weighted and unweighted counts for:
+
+SM:
+single male flexible decision-maker.
+
+SF:
+single female flexible decision-maker.
+
+CMF:
+couple, both spouses flexible.
+
+CM:
+male flexible, female fixed.
+
+CF:
+female flexible, male fixed.
+
+NF:
+no flexible wage-labour decision-maker.
+
+For CM and CF, the flexible spouse chooses conditional on the fixed spouse's
+observed hours, earnings and labour-market status.
+
+3. FLEXIBILITY CLASSIFICATION
+
+Audit, but do not invent, classifications for:
+
+- wage/salary employment;
+- non-employment while available to the labour market;
+- self-employment;
+- retirement;
+- full-time education;
+- disability/permanent inability to work;
+- civil-service or other hours-fixed status, if identifiable;
+- age outside the active decision range.
+
+One self-employed spouse does not automatically exclude the household.
+
+If the other spouse is a flexible wage-labour decision-maker, classify the
+household as semi-flexible and hold the self-employed spouse fixed.
+
+If both main adults are self-employed or otherwise outside the wage-labour model,
+classify NF.
+
+4. AGE ARMS
+
+Report the complete sample funnel under:
+
+A0:
+the current age rule.
+
+A1:
+18–64 candidate.
+
+A2:
+17–65 sensitivity.
+
+Do not select an age arm from sample size alone.
+
+Report how many additional observations in A1/A2 are:
+
+- in education;
+- retired;
+- self-employed;
+- non-employed but labour-market available;
+- wage-employed;
+- members of semi-flexible couples.
+
+The likely primary expanded arm is 18–64 with status-based flexibility
+restrictions; retain the current arm as the clean benchmark and 17–65 as a
+boundary sensitivity unless the audit supplies a stronger reason.
+
+5. SELF-EMPLOYMENT
+
+For each household report:
+
+- main activity of each adult;
+- self-employment income share of gross household income;
+- whether another adult is a flexible wage-labour decision-maker.
+
+Candidate treatment:
+
+- self-employed spouse fixed in semi-flexible couple;
+- incidental self-employment income retained as exogenous budget income;
+- both main adults self-employed excluded from behavioural estimation.
+
+Report sample counts under 10%, 20% and 30% incidental-income thresholds, but
+recommend only one threshold for implementation.
+
+Do not estimate three threshold models automatically.
+
+6. MULTI-ADULT HOUSEHOLDS
+
+For every household with three or more adults, determine whether a principal
+decision nucleus can be identified:
+
+- one single decision-maker; or
+- one linked couple.
+
+Other adults remain fixed in all alternatives and remain on the complete
+EUROMOD household roster.
+
+Do not admit multi-adult households to the headline welfare sample until the
+following are explicit:
+
+- resource-pooling assumption;
+- tax/benefit unit;
+- consumption allocation;
+- treatment of additional adults' needs;
+- welfare unit.
+
+Classify this lane initially as:
+
+EXTENDED_HOUSEHOLD_BUDGET_ROBUSTNESS
+
+7. OTHER COMPOSITION GROUPS
+
+Inventory separately:
+
+- same-sex linked couples;
+- two adults not linked as partners;
+- households with no eligible flexible adult.
+
+Do not force unrelated adults into a couple model.
+
+For same-sex couples, identify the requirements of a future partner-indexed
+rather than male/female-indexed specification; do not estimate it in this audit.
+
+8. OUTPUTS
+
+Create only:
+
+experiments/JMP_PS1/sample_expansion_audit.csv
+experiments/JMP_PS1/sample_expansion_design.yaml
+
+Update:
+
+experiments/JMP_PS1/decision_note.md
+
+The CSV must show weighted and unweighted counts, current exclusion reason,
+proposed decision type, age arm, flexibility status and recommended disposition.
+
+The YAML must define one recommended primary expanded sample and one robustness
+sample.
+
+Create no mission charter, review memo or new governance family.
+
+9. ESTIMATION AFTER THE AUDIT
+
+After corrected S8/LOC4 close, implement first:
+
+- both-flexible couples;
+- male-flexible/female-fixed couples;
+- female-flexible/male-fixed couples.
+
+Use approximately 100 sampled joint household alternatives.
+
+For a semi-flexible couple, repeat the fixed spouse's observed state in every
+joint alternative and vary only the flexible spouse.
+
+Price each joint household state through EUROMOD with the complete household
+roster.
+
+Do not begin multi-adult welfare estimation in the same step.
+
+10. TORCH/CUDA
+
+The public package main at:
+
+258d6eda7e0d9bca76cfbd3fa21bf9e770b1153c
+
+may be used in a separate clone for exploratory estimation.
+
+Do not change the MNL package pin.
+
+Before using Torch CUDA on a France expanded sample, require one application
+parity check at the same data and theta:
+
+- JAX objective versus Torch CPU/CUDA;
+- gradient;
+- Hessian;
+- parameter order;
+- pins and bounds;
+- exact_marginal declaration.
+
+If a selected France model term is not supported by the portable Torch grammar,
+stay on JAX and record the missing capability. Do not silently simplify the
+economic model merely to use CUDA.
+
+CUDA is an estimator accelerator, not a reason to select a specification.
+
+11. IZAΨMOD R-SQUARED CLARIFICATION
+
+Record in decision_note.md:
+
+The 97–99 percent R-squared reported by Löffler et al. measures the fit of a
+polynomial approximation to IZAΨMOD disposable-income outputs.
+
+It is not labour-supply-model fit and is not comparable to RURO choice
+probabilities, pseudo-R-squared or predictive accuracy.
+
+The France application pre-prices job alternatives directly through EUROMOD and
+therefore does not require this approximation R-squared.
+
+Do not add a tax-benefit emulator unless a future sample-pricing cost justifies
+one.
+
+If an emulator is later used, validate euro errors and threshold/kink errors,
+not R-squared alone.
+
+12. RETURN
+
+Return only:
+
+- the sample-expansion CSV;
+- the recommended primary and robustness samples;
+- the estimated number of households gained in each labour-supply type;
+- unresolved decision-unit or welfare-unit conflicts;
+- whether the current package grammar can represent the three couples types.
+
+No independent review is required for the audit.
+
+After a coherent sample is selected, proceed autonomously to the expanded
+couples implementation following the corrected-frame anchor.
+
+### (4) PI/Deputy Routing Note — TORCH PORTABLE ACCEPTED; FUTURE JMP EXPORT (recorded with R-223), VERBATIM
+
+PI/DEPUTY ROUTING NOTE — TORCH PORTABLE ACCEPTED; FUTURE JMP EXPORT
+
+The native-Windows portable Torch backend is accepted locally.
+
+It has no effect on current Goal-1 estimates, package main, or the MNL package
+pin.
+
+One provenance rule now applies to all new corrected-JMP artifacts:
+
+YAML:
+proposal.convention: exact_marginal
+
+Engine-ready metadata:
+proposal_convention: exact_marginal
+
+Do not modify historical accepted artifacts merely to add this field.
+
+The historical region-dead P2a checkpoint is a labelled_joint estimator and is
+retained only as a legacy regression oracle.
+
+When the wage-treatment and heterogeneity work selects the positive model
+(S8 or a successor S9), prepare one compact laptop-parity export consisting of:
+
+- engine-ready bundle path and hashes;
+- selected YAML;
+- engine-ready metadata;
+- accepted theta and parameter order;
+- pins and bounds;
+- accepted objective;
+- active-bound result;
+- household cluster convention;
+- Hessian and clustered covariance evidence.
+
+Do not interrupt current scientific work to create this export now.
+
+Produce it only at selected-model freeze.
+
+No CUDA report or package document needs to enter Job_Market_paper.
