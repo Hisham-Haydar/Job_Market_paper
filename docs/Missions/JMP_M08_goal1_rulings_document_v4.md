@@ -5925,3 +5925,95 @@ Return only if:
 - the P/E headline reverses across references;
 - D is no longer robustly largest and a headline ranking is proposed;
 - or another scientific inconsistency is found.
+
+## CORRECTIVE APPEND 2026-09-02 - R-220 s10: the wage-premise provenance correction
+
+This is a DATED CORRECTION appended under Goal-1 R-220, section 10. It APPENDS.
+It edits nothing. The historical R-202 text, and every earlier ruling text in
+this document, remain immutable and are not amended by this entry; they are read
+subject to this correction, which is cross-referenced from them by date and
+number rather than by edit.
+
+Origin: the R-218 Lane B STEP 0 audit (MNL `experiments/JMP_PS1/decision_note.md`
+section 22; instruments `scripts/ps1/run_ps1_laneB_step0_docaudit.py`,
+`run_ps1_laneB_step0_wage_audit.py`, `run_ps1_laneB_step1_channel_probe.py`;
+artifacts under `experiments/JMP_PS1/runs/ps1laneB_wage/`).
+
+### The six corrected items (R-220 s10)
+
+1. The detailed wording "Imputed in do file 13b_Wage by estimating Heckman-type
+   wage regressions" / "Hourly predicted wage (all individuals aged 18-65; not
+   in education; not self-employed; not pensioners)" WAS NOT the production
+   FR_2016_a3 DRD description. The FR_2016_a3 DRD carries only "Imputed in do
+   file 13b_Wage" and "Hourly predicted wage (all individuals aged 18-65)."
+   (MNL `Data/documentation/DRD_FR_2016_a3_export.txt`, line 430). The word
+   "Heckman" appears in no FR_2016 source held by the project. The FR_2015_a2
+   and FR_2017_a2 DRDs carry the same short wording.
+
+2. That wording arose from a LATER / SYNTHETIC documentation route. The
+   "Heckman-type wage regressions" phrasing and the four-part population
+   restriction FIRST APPEAR in the FR_2018_a2 DRD
+   (`EUROMOD-STORAGE/Data/FR/drd/DRD_FR_2018_a2_export.txt`, line 456) and
+   persist for 2019-2021. The same long string also appears at MNL
+   `Data/documentation/euromod_fr_2015_2017_input_variables.csv`, line 247, but
+   that CSV is generated from `DRD_FR_training_data.xls`, the SYNTHETIC HHoT
+   training database (2,397 households / 7,482 persons), not from the
+   production FR_2016_a3 file. Neither route documents the estimation data, and
+   neither may be cited as if it did.
+
+3. The production FR_2016_a3 data show that `yivwg` EQUALS THE OBSERVED HOURLY
+   WAGE for workers with observed earnings and hours. The identity
+
+       yivwg == yem x (12 / yemmy) / (lhw x 52/12)
+
+   holds to machine precision (median relative error 2.0e-08) for 11,870 of
+   11,870 such persons in FR_2016_a3 and 11,968 of 11,968 in FR_2015_a2 -
+   100.0 percent, in every `les` category and every `lse` category. It is an
+   observed wage for those persons, not a prediction. (From FR_2017 onward the
+   identity survives only for employees, `les` = 3, at 92.0 percent / 91.3
+   percent; the estimation frame is 2016-only.)
+
+4. The construction for people WITHOUT observed wage inputs REMAINS
+   INCOMPLETELY DOCUMENTED while `13b_Wage` is unavailable. The do-file is not
+   held by the project; a search for `*.do` and `*13b*` across the canonical
+   store and both repositories returns zero do-files. Eight audit fields -
+   selection equation, exclusion restrictions, sex-specificity, residual
+   variance, selection correlation, retransformation/smearing, the non-worker
+   prediction formula, and the estimator type for the 2016 file - stand as
+   UNAVAILABLE_DO_FILE_NOT_ACCESSIBLE. On the S8 estimation frame this affects
+   21 workers recorded with zero annual earnings and 207 non-workers.
+
+5. NON-WORKER `yivwg` IS NOT CONSUMED by the production likelihood or by the
+   `q^W` sampler. The structural wage density is masked by `working`
+   (`dclaborsupply/likelihood/engine_numpy.py`, line 658), and the wage proposal
+   draws from a population Mincer conditional on education, experience,
+   occupation and year (`scripts/pilot/pilot_wage_draw.py::draw_pilot_wages`),
+   taking no household-specific wage anchor - the carried column
+   `wage_for_draws` is never read by the sampler. Overwriting the wage on all
+   15,814 non-working rows of the certified frame leaves the S8 objective
+   BITWISE unchanged at negLL 18022.456443792806.
+
+6. The earlier FULL-SAMPLE PREDICTED-WAGE ATTENUATION RATIONALE THEREFORE DOES
+   NOT APPLY. `sigma` and the wage-block education loadings `beta_w_educL` and
+   `beta_w_educH` are fitted to observed wages, not to fitted values, so the
+   attenuation and shrunk-residual-variance concern that a predicted-wage
+   regressand would create does not arise on this frame. This records what the
+   audit supports; it is not a claim that the wage block is correct on other
+   grounds.
+
+### Scope of this correction
+
+Live paper and notebook surfaces carrying the superseded premise were searched
+and corrected in the same commit pair; historical artifacts remain immutable and
+carry a cross-reference to this dated correction. No standalone provenance memo
+was created, per R-220 s10.
+
+### One item NOT transcribed here, and why
+
+R-220 s3 and s10 were supplied to the executing agent in full and are discharged
+above and in section 23 of the PS1 decision note. The R-220 s1 / s2 / s5 STATUS
+LABELS were NOT supplied in the text handed to the executing agent and are
+therefore NOT recorded here. They are not invented, paraphrased or inferred. A
+follow-up dated correction must enter them verbatim; until it does, this entry
+is complete with respect to s3 and s10 only, and that limitation is stated here
+rather than left implicit.
