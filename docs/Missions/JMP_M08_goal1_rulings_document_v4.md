@@ -7689,3 +7689,207 @@ Return only if:
 - the cross-type welfare calibration identity fails;
 - the parity carve-out changes default behavior;
 - or the expanded sample creates a new decision-unit/welfare-unit contradiction.
+
+## Appended 2026-09-03 — R-228..R-232 + the S9 selection record
+
+*Frame note: chat-side rulings R-228..R-232, one line each, transcribed from the
+JMP_PS1 decision note, the PKG-03 adapter run artifacts and the W3 feasibility run
+artifacts rather than composed here. **This append carries no new deputy-verbatim
+text, and that is a recorded fact rather than an omission.** The executing card
+directed that an HP/HO-disposition ruling be entered verbatim on the signature gate
+"1. HP AND HO"; no such text was supplied to the executing agent and no such text is
+on disk in either repository — `grep -n "HP AND HO"` over this document and over
+`Job_Market_paper/docs/` returns nothing. What the card's own DEPUTY TEXTS block
+supplied instead are three sections that are **already on the record here**, and they
+are therefore cited by location rather than re-entered, since re-entering them would
+duplicate text this document already carries verbatim:*
+
+- *§1 "1. ADD CHANNEL D" and §8 "8. SEQUENCING" of* **(3) Deputy Ruling - Complete
+  Environment with a Budget/Needs Channel (R-204), VERBATIM** *, in the
+  2026-09-01 R-184..R-209 append;*
+- *§9 "9. S9 SELECTION" of* **(1) Deputy Ruling — CLOSE W0/W1/W2; RUN W3 FEASIBILITY
+  AND THE TEN-HOUSEHOLD CONSISTENCY AUDIT (R-220), VERBATIM** *, in the 2026-09-02
+  R-219..R-224 append. **That §9 is the operative authority for R-232**, and its
+  closing sentence — "If no heterogeneity extension earns admission, formally retain
+  S8 as the final positive model rather than inventing an S9 extension" — is the rule
+  the S9 verdict is taken under.*
+
+*R-228, R-229 and R-232 appear as chat-side lines only, in the same way R-186..R-192,
+R-194..R-201, R-208, R-209, R-211, R-214, R-215, R-219, R-221, R-224, R-225 and R-226
+do. R-230 and R-231 are entered **by number only**: no chat-side text for either was
+supplied to the executing agent and neither has an on-disk record, so they are held
+open rather than skipped, and the numbering is not silently re-used. Per R-162, and
+under R-162.2 across both repositories, this append carries its own re-pins: every
+site that pins this document by sha256 is advanced path-only in the same commit that
+stales it. **The live-site count is now EIGHT, not seven** — the R-227 append added a
+citation pin at MNL `decision_note.md` §28 (the FC1-closeout ruling's location of
+record, on the signature gate "1. FC1") and it is advanced here with the rest; the
+standing instruction to re-grep the old sha across both repositories rather than work
+from a list is what caught it.*
+
+- R-228 the PKG-03 semi-flexible couples adapter test is returned and accepted. The
+  one missing capability the R-227 s8 gate names — a generic semi-flexible marginal
+  proposal, in which one spouse varies over the joint household alternatives while the
+  other's observed job, hours, earnings and status are repeated in every alternative —
+  is implemented in the package and exercised against **real** France data on three
+  live smoke tests: `REAL_CM_SMOKE` 10/10, `REAL_CF_SMOKE` 10/10 and
+  `REAL_MIXED_SMOKE` 11/11, with the proposal identity passing on all three. MNL
+  branch `feat/ps1-semi-flexible-couples-adapter`, commit `8419dd4`, off `main` at
+  `69c8653`; run dir `experiments/JMP_PS1/runs/ps1sfx_adapter/`. **The MNL package
+  gitlink did not move and remains `27756a06`** — the wheel was exercised, not pinned,
+  and no package main/gitlink change is licensed by this line. On the corrected R-222
+  floor-5 frame the A1 composition counts are **CMF 2,532 / CM 587 / CF 629 / NF
+  4,362**; the five-hour floor correction changes **no** count, because at floor 5 the
+  clip branch is empty. Two of the published figures are corrected by this run and the
+  correction is stated rather than absorbed: **CM is 587, not 585** — 585 is the
+  all-decider wage screen, while `sample_expansion_design.yaml` states a
+  flexible-decider-only rule — and the design file's own τ counters are over the full
+  adult universe rather than the modelled compositions. **The gate is NOT thereby
+  discharged.** `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` remains GATED on its eight
+  requirements, and this line names three unresolved conflicts that any expanded-sample
+  estimation must settle first: (C1) PKG-03 s5 forbids `prior = 1` on the semi-flexible
+  observed row while every certified MNL builder sets `log_prior = 0` there, so one
+  mixed group would carry two observed-row conventions; (C2) `SEXP_PRIMARY_A1` bounds
+  *flexibility* at 18-64 but puts no upper age bound on a fixed decision-unit adult, so
+  1,453 of 5,977 couple households (24.3 %) fail certified gate G-18 on age alone; and
+  (C4) `dcls validate` returns 20 inherited `MISSING_CHANNEL` errors on the certified
+  couples spec, the pinned MNL specs predating the wheel's per-term `channel:`
+  requirement. One operational trap is recorded because it silently costs hours:
+  **EUROMOD requires household-SORTED input**, a mixed-mode bundle is not sorted after
+  `combine_couples_choice_sets`, and un-sorted it does not fail fast — 349 GB of RAM
+  and no return after 26 minutes for 18 households, against 4.6 seconds once
+  lexsorted. No deputy-verbatim text for this line is on disk and there is no on-disk
+  record beyond this line and MNL `8419dd4`.
+- R-229 the W3 feasibility return is accepted and W3 is CLOSED as **not identified**.
+  The object is `beta_l0_i = beta_l0^g + sigma_l·nu_i` with
+  `corr(nu_i, e_w_i) = rho_wl`, `e_w` the standardised worker wage residual of the
+  corrected-S8 structural wage equation at the observed node, frozen at the S8 point of
+  record (digest `57f4fcaa8a7444da…`); Gauss-Hermite K = 24, 2K = 48 verified; base the
+  R-222 corrected frame. Gates A, B, E and G all pass — the residual is stated and
+  frozen, no cell has a collapsed variance across sex, education, occupation and hours
+  band, `sigma_l = 0` nests corrected S8 **bitwise** at every `rho` including both box
+  endpoints, and the object is verified against an independent `(gamma, tau)`
+  re-implementation. **Gate D fails on all three parameters, including the product:**
+  `gamma = rho·sigma_l` is recovered at 0 of 4 truths, `sigma_l` at 1 of 4 and
+  `rho_wl` at 0 of 3. "Only the product is recoverable" was **not** the outcome. The
+  mechanism is a third one, distinct from HP's and HO's: `sigma_l` never reaches zero,
+  while `rho_wl` runs to its ±0.99 box endpoint in 6-8 of 10 replications at **every**
+  truth including the one where `rho = 0` is correct, because the likelihood is flat
+  along the direction trading `tau` against `rho` at constant `gamma`. `gamma` is
+  therefore nearly unbiased (+0.088 / +0.073 at |gamma| = 0.5) and still has **no
+  obtainable interval**, the delta method needing the 2×2 block a box endpoint
+  destroys. `e_w` carries genuinely new information — R² 0.0145 on the S8 leisure block
+  and 0.0154 on the leisure and wage blocks together, so over 98 % of its variation is
+  orthogonal to everything the model already has — and the design is still short by
+  roughly a factor of two **in information**: at the most informative truth the expected
+  LR against HP is 1.93 against the 3.841 a 1-df test needs. **The binding constraint is
+  named and is common to HP and W3**: `BC(leisure)` varies by only 0.073 (men) / 0.127
+  (women) *within* a household's own choice set at the estimated Box-Cox curvature, so
+  any successor design is to be judged on the within-choice-set spread of whatever it
+  loads on before it is built. **The LR against S8 has no valid null reference** —
+  `rho_wl` is not identified at `sigma_l = 0`, where the objective is bitwise free of
+  it, and `sigma_l` is on its boundary, so neither χ²₂ nor the 0.5χ²₁+0.5χ²₂ mixture
+  applies; the card asked for the mixture and the answer is that it does not exist.
+  No real-data W3 estimate was run, none is authorised, and the real-data instrument
+  was deliberately never built. Gate F is recorded honestly as displacement rather
+  than collapse: some `g^E` / `g^W` coefficients move by up to 0.925 SE, every
+  coefficient keeps its sign and order of magnitude, and the `rho = 0` null control
+  shows 1 of 26 past half an SE. **Three coherence findings are RETURNED, not
+  resolved** — on real data `e_w` is the residual at the *chosen* node and therefore an
+  outcome rather than a household attribute; the structural wage density there is used
+  both as conditioning variable and as likelihood factor; and the internally coherent
+  alternative is the full Löffler-style joint in which the whole wage-**offer**
+  distribution shifts with `nu` — and per the deputy's s4 the Löffler German elasticity
+  magnitudes are **not** transferable to this France RURO application, with no
+  elasticity of any kind computed. Decision note §30; run dir
+  `experiments/JMP_PS1/runs/ps1w3_wage_pref/`; MNL `f569f06`. No deputy-verbatim text
+  for this line is on disk and there is no on-disk record beyond this line.
+- R-230 **held open — entered by number only.** No chat-side text was supplied to the
+  executing agent and there is no on-disk record. The number is reserved so the
+  sequence is not silently re-used; a later append may fill it.
+- R-231 **held open — entered by number only.** As R-230.
+- R-232 S9 selection is COMPLETE and **corrected S8 is FORMALLY RETAINED as the final
+  positive model**. This is a selection stage, not an obligation to admit a richer
+  model, and it is taken under §9 "S9 SELECTION" of the R-220 ruling already on the
+  record here. **The slate:** corrected S8 is the only admitted candidate; corrected
+  LOC4/S0 is the nested reference benchmark and not a candidate; HP
+  (`HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`, R-226), HO
+  (`HO_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`, R-227.2) and W3
+  (`W3_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`, R-229) each contribute no candidate and
+  in each case STEP 3 real data was **not run by rule**; HPO was never authorized and
+  its gate — an independent identification source — is unmet; `W0_W1_W2_AXIS_CLOSED`
+  (R-220 s2) removes the wage-treatment discriminant the ruling already anticipated
+  doing without; and R1_BMO is closed as a negative result (R-218 §9). **The eight
+  criteria are filled and transcribed with citations, not recomputed**, in decision
+  note §31.2: corrected negLL `18022.764617170084` (k = 41 free) against
+  `18453.4750133318` (k = 40 free), ΔnegLL −430.710, LR 861.421 on 1 df, ΔAIC −859.421,
+  ΔBIC(households) −854.072, with the rows convention **not** recomputed on the
+  corrected frame and its pre-correction value −849.232 recorded as history; both
+  models SINGLE-OPTIMUM, PD, full-rank and `clean`-tier, S8 better conditioned and the
+  only spec in the sprint with an **empty** W-4 set; CR1 `K_interior = 39` primary; S8
+  ahead on Brier in 14 of 14 spaces × weightings and by 0.264 of log-score; the F35
+  peak at `beta_h_f35` 2.579482, robust z 26.239, interior; and S8 costing **exactly
+  one** free coordinate over the benchmark. **Two things are recorded against the
+  verdict rather than around it.** First, **no 901-standard synthetic recovery gate has
+  ever been run on singles S8 itself** — what exists is the σ = 0 leg of the HP and HO
+  gates and the W3 null control, favourable but weak at R = 10, and it is entered as a
+  limitation, not as a pass. Second, the access-versus-earning-capacity ordering is
+  **not** stable across the pair — `phi_A > phi_B` under S0 and `phi_B > phi_A` under
+  S8 — which is `ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` (R-182) and is carried
+  forward unresolved and unclaimed. **The verdict:**
+  `FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL`; no S9 extension is invented
+  and no S9 model exists, "S9" naming the selection from here forward; LOC4 remains the
+  benchmark for the specification-sensitivity finding. The anchors of record are the
+  corrected-frame ones — frame `fr_p2a_singles2016_regionlive_margqh_floor5_v1`,
+  geometry `a91b1f81752c8406…`, stem `6f558f5ecfeabd4a…`, S8 negLL
+  `18022.764617170084`, S8 theta sha256
+  `e4b2f16e0d638f9586156f00e03b0498bb01a29fef32f6146135e26beb7ec5e7`, LOC4 negLL
+  `18453.4750133318`, LOC4 theta sha256 `10d4aaeda3b7e5f0d6e480dc9a0b8de9c889d5b8c28eb135a47a7d3091bf8ef5`
+  — and the pre-correction anchors stay on the record as history. **Statuses
+  discharged:** the `FINAL_POSITIVE_MODEL_SELECTION_HALTED_*` family is **gone**;
+  `S8_CORRECTED_FRAME_REESTIMATION_PENDING` is **gone**; `HP_HO_W3_REALDATA_HELD` is
+  **closed**; `S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL` (R-220 s5) is
+  **replaced** by the retention label. `TORCH_BACKEND_JMP_READY` becomes
+  **`PENDING_PARITY_EXPORT`** — the R-220 s11 condition is met, but the export itself
+  is a **later card, at freeze, carrying both proposal conventions**, and nothing is
+  exported here. **Statuses set:** `S9_SELECTION_COMPLETE`, `NO_S9_EXTENSION_ADMITTED`,
+  `LOC4_REMAINS_SPECIFICATION_SENSITIVITY_BENCHMARK` and
+  `PERSISTENT_HETEROGENEITY_CLOSED_UNDER_CURRENT_DESIGN` — the last of which is a
+  statement about **this design and this data**, explicitly **not** a finding that
+  preference, opportunity or wage-residual/preference heterogeneity is absent, and no
+  such claim may be made in paper-facing prose on the strength of these three lanes.
+  Zero estimation, zero EUROMOD, zero pricing, and no provisional label is lifted:
+  `PROVISIONAL_PIPELINE_RESULT_PENDING_WAGE_ROBUSTNESS`, `HEADLINE_PERCENTAGES_HALTED`
+  and `ABSOLUTE_WELFARE_LEVELS_NOT_FINAL` all stand. Decision note §31. No
+  deputy-verbatim text for this line is on disk beyond the R-220 §9 already on the
+  record here.
+
+### Numbering mapping note — R-225..R-227, and the executing-card suffixes
+
+Two numbering conventions are in use across the live surfaces, and reading either as
+the other produces a wrong citation. They are mapped here once so the mapping does not
+have to be re-derived.
+
+**The convention.** A JMP_PS1 decision-note section header carries the number of the
+**executing card** that produced it — the authorization lineage, often with a decimal
+suffix under the ruling that authorized it. The dashboard's status column and this
+document's chat-side lines carry the number of the **chat-side acceptance** of that
+card's return. The two coincide when a card is accepted under its own number and
+diverge when it is not.
+
+| object | decision-note header | chat-side acceptance / dashboard status | what the divergence is |
+|---|---|---|---|
+| the R-223 PHASE-1 sample-expansion audit | §27 cites **R-223 §§10-11** (the authorizing ruling) | **R-225** | the audit was authorized at R-223 and its return accepted at R-225 |
+| **HP** — random leisure intercept | §26 cites **Goal-1 R-224.3** (the executing card, third under R-224) | **R-226** (`HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN`) | HP was authorized under R-224 and its return accepted at R-226. **A citation of "R-224.3" and one of "R-226" name the same lane**; neither is an error |
+| the FC1 closeout | §28 cites **Goal-1 R-227** | **R-227** | coincide |
+| **HO** — opportunity-intensity frailty | §29 cites **Goal-1 R-227.2** | **R-227.2** | coincide — the suffix is the executing card under R-227 and was carried into the status column unchanged |
+| **W3** — wage-residual/preference dependence | §30 cites **Goal-1 R-229** | **R-229** | coincide |
+| **S9 selection** | §31 cites **Goal-1 R-232**, under deputy R-220 §9 | **R-232** | coincide |
+
+**Two consequences worth stating.** First, `R-224.3` is **not** a separate ruling from
+`R-226` and must not be cited as one; where a surface names only `R-224.3`, the
+accepted disposition of record is `R-226`. Second, the suffixed numbers `R-224.1`,
+`R-224.3`, `R-227.1` and `R-227.2` are **executing cards under their parent rulings**,
+not amendments to them: `R-224.1` and `R-227.1` are the rulings-document appends
+themselves, `R-224.3` is the HP gate and `R-227.2` is the HO gate. The parent rulings
+R-224 and R-227 are unedited by any of them.

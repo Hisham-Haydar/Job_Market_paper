@@ -28,7 +28,7 @@ paraphrased or inferred here.
 | `[profile]` | `MNL/docs/France_case/P2a/FR_P2a_m08_loc4_beta_w_pexp2_profile_results_v1.md` | `99b5df2e163c9a0b11ab9f8c77dcbb769797a130174a96f3e51a8b4047aa7fce` |
 | `[preflight]` | `MNL/docs/France_case/P2a/FR_P2a_m08_rqmc_preflight_codex_review_v1.md` | `5244968fdf7ac6d5fa2c985b67e273d21259454730d1f99661905153a1849916` |
 | `[review]` | `MNL/docs/France_case/P2a/FR_P2a_m08_loc4_tier2_independent_review_v1.md` | `06d2c0fc9cfd62ff1eb220e62cc34f660a739e0d594f079e47ed7307bab4b396` |
-| `[rulings]` | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` (R-59 … R-227, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append and the R-225..R-227 append) | `0f0fd14891b453bd8b9f6b177a94d468d10df6fac0ff859af8a856fd6476571e` |
+| `[rulings]` | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` (R-59 … R-232, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append, the R-225..R-227 append and the R-228..R-232 append) | `5135afb038968da93c13a881571a9fb359374c3ebac2ceb558727178de241b5a` |
 
 ---
 
