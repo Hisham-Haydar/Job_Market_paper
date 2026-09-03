@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-03, at Goal-1 R-232 (**S9 SELECTION IS COMPLETE and corrected S8 is FORMALLY RETAINED as the final positive model** — W3 joined HP and HO as NOT IDENTIFIED, so no heterogeneity extension earned admission and, under the deputy's §9 rule, no S9 extension is invented; "S9" names the selection, not a specification. LOC4 remains the benchmark for the specification-sensitivity finding. `TORCH_BACKEND_JMP_READY` becomes `PENDING_PARITY_EXPORT`; the export itself is a later card, at freeze. No welfare number is promoted and no provisional label is lifted.)
+**Last updated:** 2026-09-03, at Goal-1 **R-233** (**the programme is in RESEARCH-FIRST / PRESENTATION-FIRST SEMINAR SPRINT mode** — *"MORE RESEARCH, LESS GOVERNANCE"*: a narrow documentation cap, the GPU hands-on research environment as priority zero, a closed singles candidate set, one welfare measure, clean both-flexible couples only, and external identification paused but not abandoned. R-230 and R-231 are **FILLED** — the CPL-A adapter is accepted with C1 escalated, and the HP/HO disposition plus the PKG-03 C1–C4 conventions are ruled: **C1 is the O-5 convention**, C2/C3 are flexible-only, the C4 channel inventory is deferred. One item is **RETURNED**: the seminar parameter count of 35 is not reproduced by any count on disk (51 coordinates / 41 free / 10 pinned / 39 interior), so no parameter count is published until the deputy resolves it. Carried forward unchanged from R-232: **S9 SELECTION IS COMPLETE and corrected S8 is FORMALLY RETAINED as the final positive model** — W3 joined HP and HO as NOT IDENTIFIED, so no heterogeneity extension earned admission and, under the deputy's §9 rule, no S9 extension is invented; "S9" names the selection, not a specification. LOC4 remains the benchmark for the specification-sensitivity finding. `TORCH_BACKEND_JMP_READY` becomes `PENDING_PARITY_EXPORT`; the export itself is a later card, at freeze. No welfare number is promoted and no provisional label is lifted.)
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -22,6 +22,16 @@ document differ, the ratified document governs.
 
 | Label | Object it qualifies | Set at |
 |---|---|---|
+| **`SEMINAR_RESEARCH_SPRINT_MODE`** + **`SPRINT_DOCUMENTATION_CAP_IN_FORCE`** | the programme for roughly fifteen days — RESEARCH-FIRST / PRESENTATION-FIRST, *"MORE RESEARCH, LESS GOVERNANCE"*, on the premise that *"Accepted specifications are reproducible benchmarks, not restrictions on scientific experimentation."* The cap is narrow and operative: exploratory work retains ONLY `experiments/JMP_SEMINAR_SPRINT/{run_registry.csv, model_comparison.csv, decision_log.md, configs/, runs/, figures/, JMP_GPU_lab.ipynb}`; each run needs a config, a result JSON, a parameter CSV, runtime/convergence, key fit diagnostics and ONE registry row — **no prompt archive, no per-run memo, no per-run software review**, and no new mission-document family | **R-233** |
+| **`GPU_RESEARCH_ENVIRONMENT_PRIORITY_ZERO`** | a researcher-facing native-Windows Torch/CUDA workflow in an ISOLATED environment — **the MNL package pin does not move** (`27756a06`). Exactly ONE local application parity check against the CPU/JAX route on the same data, theta and specification (objective, gradient, parameter ordering, Hessian where practical): *"one technical sanity check, not a new certification programme."* If the Torch grammar cannot represent the economic model exactly, **the model is not simplified to use CUDA** — JAX is used and the missing generic capability is named. The research bundle is built and verified at `MNL/experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/`; it is a RESEARCH bundle and **not** the final parity export | **R-233** |
+| **`SINGLES_CANDIDATE_SET_CLOSED`** | the singles specification sprint — corrected S8, the simple occupation-conditioned structural wage model (which *is* corrected LOC4/S0), and W3 only if its gate passed. It did not, so it is closed. **NOT opened:** hours-conditioned structural wages, occupation × hours interactions, occupation-specific slopes, occupation-specific dispersion, further HP or HO variants, large specification searches | **R-233** |
+| **`SEMINAR_PARAMETER_COUNT_35_VS_41_RETURNED`** | the seminar parameter count — **RETURNED to the deputy, not adopted**. R-233 §4 states 35 actually estimated parameters; the corrected-frame record is **51 coordinates, 41 free, 10 pinned, 39 interior**, `k = 41` is the constant in every AIC/BIC on the record and `K_interior = 39` the primary CR1 constant (R-184.1). No convention on disk yields 35; the nearest are 39 and 34. **No parameter count is published in seminar prose or tables until this is resolved.** What §4 says unambiguously IS adopted: the historical 47-coordinate pooled vector is not carried into seminar tables or prose, and the ten pinned non-estimated couples coordinates are not displayed in the singles parameter table | **R-233** |
+| **`C1_O5_CHOSEN_ROW_CONVENTION_RULED`** | the chosen-row convention — **the O-5 convention governs.** The observed chosen alternative is inserted **deterministically**, inclusion probability **one**, log proposal correction **zero**; stochastic alternatives use the **exact marginal** proposal density. `log_prior = 0` on the chosen row and `log_prior = log q_exact_marginal` on sampled rows are RETAINED; for semi-flexible couples `q_joint = q_flexible · 1_fixed`. **Singles and accepted couples are NOT re-anchored to PKG-03's draft rule — the PKG-03 handoff is amended instead.** Required metadata: `proposal.convention: exact_marginal` and `proposal.chosen_inclusion: deterministic_unit`, with `exact_marginal` referring to **stochastic** draws only. A stochastic row that duplicates the chosen pair economically keeps both row roles with their own corrections and is **not** silently deduplicated | **R-231** |
+| **`C2_C3_FLEXIBLE_ONLY_VALIDATION_RULED`** | the age gate and the wage-support screen — **flexible decision-makers only**. A fixed spouse may be older than 64 and remains a roster member with fixed observed state, earnings and budget input; G-18 is amended to validate only the flexible spouse and **the 1,453 households are not excluded on the fixed spouse's age**. The fixed spouse's observed wage is not sampled, not varied and carries no proposal density — finite, coherent and EUROMOD-valid is enough. The corrected flexible-only counts stand, **including CM = 587** | **R-231** |
+| **`C4_CHANNEL_INVENTORY_DEFERRED`** | the 20 inherited `MISSING_CHANNEL` cases — the mandatory-channel rule applies to **model terms**, not every raw engine-ready column. Each item gets either exactly one explicit channel (if consumed as a structural term) or a declared **data role** (identifier, join key, proposal bookkeeping, fixed-spouse coordinate, EUROMOD budget input, report or validation-only). **No silent defaults; no mislabelling fixed budget inputs as preferences or opportunities to pass validation.** A validator that demands structural channels for raw non-model columns returns to Goal 2 as a **schema correction**. **DEFERRED** — not seminar-critical, gated behind the Goal-2 return, and parked with the lane by R-233 §13 | **R-231** |
+| **`PKG03A_PARKED_AVAILABLE_INFRASTRUCTURE`** | the Goal-2 semi-flexible handoff — recorded as available infrastructure and **parked** until after the presentations, unless clean both-flexible couples finish substantially early. Feature commit `5b82e162…`, bundle SHA `4FC99B87…`, wheel SHA `74EB24AD…`. Goal-1 evidence parked with it: the r6 adapter RE-TEST at **19/19 on all three real tests** (MNL `b9fb98c`). **No package-main movement. No MNL-pin movement.** `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` stays GATED | **R-230**, parked **R-233** |
+| **`EXTERNAL_IDENTIFICATION_PAUSED_NOT_ABANDONED`** | BMO, LFS auxiliary identification, DADS external wages, the expanded sample, semi-flexible couples and multi-adult households — **execution paused**, retained as future identification / validation extensions. The presentation may show what each *would* discipline; it may **NOT** imply any of them has already identified the current model | **R-233** |
+| **`HP_RANDOM_LEISURE_INTERCEPT_NOT_RECOVERABLE`** + **`HO_COMMON_WORKING_FRAILTY_NOT_RECOVERABLE`** | the two heterogeneity lanes — the deputy's own classification of the negative synthetic-recovery findings, adopted verbatim. These **reject the tested specifications, not the existence of unobserved heterogeneity in general**, and no additional HP or HO variant may be opened in the present sprint. They sit alongside, and do not replace, `HP_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN` (R-226) and `HO_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN` (R-227.2) | **R-231** |
 | **`FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL`** | corrected S8 on the R-222 `floor5_v1` frame — **the final positive model**. Set by the S9 selection: no heterogeneity extension earned admission, so under the deputy’s §9 rule S8 is retained rather than an S9 extension invented. **Replaces** `S8_ACCEPTED_POSITIVE_BENCHMARK_NOT_FINAL_JMP_MODEL` (R-220 s5), whose "not final while persistent heterogeneity and final model selection remain open" condition is now discharged | **R-232** |
 | **`S9_SELECTION_COMPLETE`** + **`NO_S9_EXTENSION_ADMITTED`** | the S9 stage — **complete**. There is no S9 specification; from here "S9" names the **selection**, not a model | **R-232** |
 | **`LOC4_REMAINS_SPECIFICATION_SENSITIVITY_BENCHMARK`** | LOC4/S0 — retained as the nested reference and as the benchmark the specification-sensitivity finding is stated on; not demoted, not a rival, **not a candidate** | **R-232** |
@@ -574,7 +584,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-232, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append, the R-225..R-227 append and the R-228..R-232 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `5135afb038968da93c13a881571a9fb359374c3ebac2ceb558727178de241b5a` |
+| Consolidated rulings document (R-59 … R-233, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append, the R-225..R-227 append, the R-228..R-232 append and the R-233 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `2b4c5c45d36b923d3676c1bb84bea922d290db88c51fa57abb401c7ea226c22a` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |
@@ -697,6 +707,26 @@ authority for the S9 verdict.** R-228, R-229 and R-232 are chat-side lines; **R-
 and R-231 are entered by number only and held open** — no text was supplied for either
 and neither has an on-disk record, so the numbering is not silently re-used.
 
+**Chain continued at R-233, and the currency line that now governs.** The append
+*Appended 2026-09-03 — R-233 + two deputy texts, and R-230 / R-231 FILLED*
+advanced the same document
+`5135afb0...de241b5a` -> `2b4c5c45d36b923d3676c1bb84bea922d290db88c51fa57abb401c7ea226c22a`
+(331,606 -> 365,724 bytes, +34,118 bytes / +940 lines, prefix byte-identical, pure
+CRLF, 0 stray LF). **The consolidated document now ends at R-233.** The **EIGHT**
+dependent sites were advanced path-only in the same commit and **fourteen**
+rulings-text claim strings were re-asserted against the new bytes (14/14 PASS)
+**before** the re-pin. It carries **TWO** deputy texts verbatim — the
+HP/HO-disposition and PKG-03 C1–C4 conventions ruling on the signature gate
+`1. HP AND HO`, and the seminar research-sprint direction on the signature gate
+`1. DOCUMENTATION CAP`. **The gap the R-232 append recorded is CURED:** that
+append stated as a fact that no `1. HP AND HO` text was supplied and none was on
+disk in either repository; the text is now on disk under heading (1) of the R-233
+append, on exactly that gate. The earlier statement was true when written and is
+**left standing unedited** — this is the dated continuation, not a correction.
+**R-230 and R-231 are FILLED and no longer held open**; R-232 is **not** re-entered
+and is cross-referenced by location, since duplicating a ruling already carried in
+full is what the R-212 corrective append exists to prevent.
+
 ### 4.1 The rulings-doc pin recursion
 
 Every append to the rulings document changes its sha256 and therefore stales
@@ -723,6 +753,12 @@ repositories, not the MNL executable gates alone. The dependent sites are:
   FC1-closeout ruling's location of record, on the signature gate `1. FC1`; live
   since R-227.1, **first advanced at R-232** — it was missed by the "seven" count
   and caught by the standing re-grep instruction)
+- `experiments/JMP_PS1/decision_note.md` — the **§33** citation pin (the
+  R-231 HP/HO-disposition and C1–C4 conventions ruling's location of record, on the
+  signature gate `1. HP AND HO`). **Created by the R-233 commit and live from the
+  NEXT append** — it was not staled by R-233 itself, so R-233's sweep was correctly
+  eight. §§32 and 34 of that note were deliberately left **path-only** so this
+  increment is one site and not three
 
 **JMP — documentary pin tables (2):**
 
@@ -732,12 +768,15 @@ repositories, not the MNL executable gates alone. The dependent sites are:
   **pin advance only**; the acceptance's findings and verdict are immutable and
   are not edited.
 
-**EIGHT live sites in total, re-counted at R-232.** The count was **seven** through
+**EIGHT live sites at R-233 — NINE from the next append.** Eight is the count that was re-counted at R-232 and RE-CONFIRMED at R-233 by re-grepping; nine is what the next sweep must find, because the R-233 commit adds the MNL `decision_note.md` §33 pin listed above. **The count is declared forward here precisely so it is not carried one append too long a second time.** The count was **seven** through
 R-227.1 and is eight from R-232: the R-227 append added the §28 decision-note pin and
 the "seven" figure was carried forward one append too long. That is exactly the failure
 this paragraph warns about, so the instruction stands and is now load-bearing: the count
 grows as citation pins are added; **check by `grep`-ing the OLD sha across both
-repositories rather than working from this list alone.**
+repositories rather than working from this list alone.** At R-233 that grep was run
+again over both repositories and returned exactly these eight sites and no
+ninth, so the count is confirmed rather than assumed for a second append
+running.
 
 **Sites that are NEVER advanced.** The §11 chain arrows and the §24 chain sentence
 in `MNL/experiments/JMP_PS1/decision_note.md`, and this file's own chain line, are

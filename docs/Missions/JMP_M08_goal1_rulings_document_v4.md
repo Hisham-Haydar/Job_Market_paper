@@ -7893,3 +7893,943 @@ accepted disposition of record is `R-226`. Second, the suffixed numbers `R-224.1
 not amendments to them: `R-224.1` and `R-227.1` are the rulings-document appends
 themselves, `R-224.3` is the HP gate and `R-227.2` is the HO gate. The parent rulings
 R-224 and R-227 are unedited by any of them.
+
+## Appended 2026-09-03 — R-233 + two deputy texts, and R-230 / R-231 FILLED
+
+*Frame note: this append does three things. First, it carries **TWO** deputy texts
+VERBATIM — the HP/HO-disposition and PKG-03 C1–C4 conventions ruling on the
+signature gate `1. HP AND HO`, and the seminar research-sprint direction on the
+signature gate `1. DOCUMENTATION CAP`. Second, it **FILLS R-230 and R-231**, which
+the immediately preceding append entered **by number only** and held open because no
+chat-side text had been supplied for either; both are now supplied and both are
+entered here, so the hold is discharged rather than carried. Third, it enters R-233.*
+
+***The recorded gap of the previous append is CURED, and the cure is stated rather
+than absorbed.*** *That append recorded, as a fact and not as an omission, that the
+executing card had directed an HP/HO-disposition ruling on the signature gate `1. HP
+AND HO`, that no such text was supplied, and that `grep -n "HP AND HO"` over this
+document and over* `Job_Market_paper/docs/` *returned nothing. The text is now on
+disk, at* **(1)** *below, on exactly that gate. The earlier statement was true when
+it was written and is left standing unedited; this paragraph is the dated
+continuation, not a correction of it.*
+
+*R-232 is **not** re-entered. It is already on the record in full under the
+preceding heading* Appended 2026-09-03 — R-228..R-232 + the S9 selection record*,
+and the card's summary of it — "W3 closed, S9 = S8" — is that line's own verdict.
+Duplicating it would put two texts of the same ruling in one document, which is
+exactly what the R-212 corrective append exists to avoid; it is therefore
+cross-referenced by location below and nothing about it changes.*
+
+*Per R-162, and under R-162.2 across both repositories, this append carries its own
+re-pins: every site that pins this document by sha256 is advanced path-only in the
+same commit that stales it. **The live-site count is EIGHT**, as re-counted at R-232
+and confirmed here by re-grepping the old sha across both repositories rather than
+working from the list. **Fourteen** rulings-text claim strings were re-asserted
+against the new bytes (14/14 PASS) **before** the re-pin was completed.*
+
+- R-230 the **CPL-A semi-flexible couples adapter is ACCEPTED, and C1 is ESCALATED**.
+  This is the chat-side acceptance of the adapter return that R-228 records: the
+  generic semi-flexible marginal proposal — one spouse varying over the joint
+  household alternatives while the other's observed job, hours, earnings and status
+  repeat in every alternative — is implemented and exercised against **real** France
+  data, and it works. What is escalated with the acceptance is **C1**, the
+  chosen-row convention: PKG-03 §5 forbids `prior = 1` on the semi-flexible observed
+  row, while every certified MNL builder sets `log_prior = 0` there, so a single
+  mixed group would carry **two** observed-row conventions and neither the package
+  nor the mission code could say which one the likelihood was written against. That
+  is a conflict about the estimand, not about an implementation, and it is therefore
+  put to the deputy rather than settled by the executing agent. **The acceptance
+  does not discharge the gate.** `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` (R-227 s8) stays
+  GATED on its eight requirements, no expanded-sample estimation is licensed, the
+  MNL package gitlink does not move and remains `27756a06`, and the two further
+  conflicts R-228 names — C2, the 18–64 age gate excluding 1,453 of 5,977 couple
+  households on the *fixed* spouse's age alone, and C4, the 20 inherited
+  `MISSING_CHANNEL` validator errors — travel with the escalation. Decision note
+  §32; run dir `experiments/JMP_PS1/runs/ps1sfx_adapter/`; MNL `8419dd4`. The
+  CPL-A adapter is **superseded** as an artifact by the r6 re-test recorded at
+  R-228's successor evidence (19/19 gates on all three real tests, MNL `b9fb98c`,
+  run dir `experiments/JMP_PS1/runs/ps1sfx_adapter_r6/`), which closed the C1 clash
+  in code; the escalation of the *convention* is what R-231 answers.
+- R-231 the **HP/HO disposition is ADOPTED and the PKG-03 C1–C4 conventions are
+  RULED**. The deputy text is at **(1)** below, VERBATIM, on the signature gate
+  `1. HP AND HO`. **On heterogeneity:** the negative synthetic-recovery findings are
+  accepted and classified `HP_RANDOM_LEISURE_INTERCEPT_NOT_RECOVERABLE` and
+  `HO_COMMON_WORKING_FRAILTY_NOT_RECOVERABLE`; these **reject the tested
+  specifications, not the existence of unobserved heterogeneity in general**, and no
+  additional HP or HO variant may be opened in the present sprint. W3 was allowed to
+  continue at the time the ruling was written because the observed worker wage
+  residual supplies an identifying object HP and HO lack — and the ruling's own
+  failure branch is what then governed: W3 failed, no real-data W3 estimation was
+  performed, persistent heterogeneity is closed for the current JMP, and corrected
+  S8 is retained. That branch is what R-232 executed. **On C1 — the chosen-row
+  convention:** **the O-5 convention governs.** The observed chosen alternative is
+  inserted **deterministically**, its inclusion probability is **one**, its log
+  proposal correction is **zero**, and stochastic alternatives use the **exact
+  marginal** proposal density; so `log_prior = 0` on the chosen row and
+  `log_prior = log q_exact_marginal` on sampled rows are **retained**, and for
+  semi-flexible couples `q_joint = q_flexible · 1_fixed = q_flexible` on stochastic
+  rows with `q_inclusion(chosen) = 1`. **Singles and accepted couples are NOT
+  re-anchored to follow PKG-03's current draft rule — PKG-03's handoff is amended
+  instead.** Explicit metadata is required: `proposal.convention: exact_marginal`
+  and `proposal.chosen_inclusion: deterministic_unit`, with the express statement
+  that the `exact_marginal` declaration refers to **stochastic** draws and does
+  **not** require treating the deterministically included chosen row as though it
+  had been drawn from `q`; and where a stochastic row duplicates the chosen pair
+  economically, the two row roles are retained separately with their respective
+  corrections and are **not** silently deduplicated. **On C2 — the age gate:** the
+  18–64 rule applies to **flexible decision-makers only**; a fixed spouse may be
+  older than 64 and remain a roster member with fixed observed labour-market state,
+  fixed earnings and budget input, and a place in household utility and welfare.
+  G-18 is amended for semi-flexible couples to validate only the flexible spouse,
+  and **the 1,453 households are not excluded on the fixed spouse's age**. **On C3 —
+  the wage-support screen:** flexible-only is binding; the fixed spouse's observed
+  wage is not sampled, not varied and carries no proposal density, needing only to
+  be finite, coherent with observed earnings and hours, and EUROMOD-valid — so the
+  corrected flexible-only counts stand, **including CM = 587**. **On C4 — channel
+  validation:** the mandatory-channel rule applies to **model terms**, not to every
+  raw engine-ready column; the 20 inherited `MISSING_CHANNEL` cases are to be
+  inventoried item by item, each either assigned exactly one explicit channel *if it
+  is consumed as a structural term* or given a declared **data role** if it is an
+  identifier, join key, proposal bookkeeping field, fixed-spouse coordinate, EUROMOD
+  budget input, report field or validation-only field — **no silent defaults, and no
+  mislabelling of fixed budget inputs as preferences or opportunities to make
+  validation pass**. If the package validator requires structural channels for raw
+  non-model columns, that exact validator issue returns to Goal 2 as a package
+  **schema correction**. **The C4 inventory is DEFERRED**: it is not seminar-critical
+  work, it is gated behind the Goal-2 feature return, and R-233 §13 parks the whole
+  PKG-03A lane. **On C5:** the household-sort correction is accepted — every
+  mixed-couple EUROMOD input must be household-sorted before pricing and the
+  fail-closed memory/ordering test is retained. **Expanded-sample execution remains
+  barred** until Goal 2 returns the accepted generic semi-flexible proposal feature,
+  C1 is amended in it, C2/C3 are represented in the adapter, C4 is resolved, a local
+  application parity gate passes, and the MNL package pin receives a **separate**
+  integration decision. **On S9:** S9 is a selection stage, not an obligation to
+  admit a richer model, and *"Do not create another heterogeneity specification
+  merely to obtain an S9 label."* **On Torch parity:** the final parity export is
+  **not** prepared yet; at final positive-model freeze both
+  `proposal.convention = exact_marginal` and
+  `proposal.chosen_inclusion = deterministic_unit` must appear in the YAML **and** in
+  the engine-ready metadata, and the final Torch/JAX/NumPy parity gate must verify
+  **both**. **Output discipline:** only `experiments/JMP_PS1/decision_note.md`,
+  `experiments/JMP_PS1/sample_expansion_design.yaml` and the existing adapter test
+  record are updated; **no new mission-document family**. Statuses set:
+  `HP_RANDOM_LEISURE_INTERCEPT_NOT_RECOVERABLE`,
+  `HO_COMMON_WORKING_FRAILTY_NOT_RECOVERABLE`, `C1_O5_CHOSEN_ROW_CONVENTION_RULED`,
+  `C2_C3_FLEXIBLE_ONLY_VALIDATION_RULED`, `C4_CHANNEL_INVENTORY_DEFERRED`,
+  `PKG03_HANDOFF_TO_BE_AMENDED_NOT_FOLLOWED`. Decision note §33.
+- R-232 — **already on the record in full**, under the preceding heading *Appended
+  2026-09-03 — R-228..R-232 + the S9 selection record*. The card's one-line summary
+  of it is that ruling's own verdict: **W3 closed** as
+  `W3_NOT_IDENTIFIED_UNDER_CURRENT_DESIGN` (R-229), and **"S9" = corrected S8** under
+  `FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL`, no S9 extension invented
+  and no S9 model existing. Entered here as a **cross-reference only**; nothing about
+  it changes and no text of it is duplicated.
+- R-233 the programme enters **RESEARCH-FIRST / PRESENTATION-FIRST sprint mode** for
+  roughly fifteen days. The deputy text is at **(2)** below, VERBATIM, on the
+  signature gate `1. DOCUMENTATION CAP`. The operating principle is stated in the
+  ruling's own words — ***"MORE RESEARCH, LESS GOVERNANCE"*** — and its premise is
+  that *"Accepted specifications are reproducible benchmarks, not restrictions on
+  scientific experimentation."* The objective is that the seminar present a **working
+  JMP rather than a progress report**. **The documentation cap is the operative
+  constraint and it is narrow:** exploratory work retains exactly
+  `experiments/JMP_SEMINAR_SPRINT/{run_registry.csv, model_comparison.csv,
+  decision_log.md, configs/, runs/, figures/, JMP_GPU_lab.ipynb}` and each
+  exploratory run needs only a config, a result JSON, a parameter CSV,
+  runtime/convergence, key fit diagnostics and **one run-registry row** — **no prompt
+  archive, no individual run memo, no independent software review per run**, and no
+  new mission-document family. Only *scientifically consequential* decisions are
+  logged. **Priority zero is the GPU / hands-on research environment**: a
+  researcher-facing native-Windows Torch/CUDA workflow in an isolated environment,
+  with **no movement of the MNL package pin**, and **one** local application parity
+  check against the existing CPU/JAX route on the same data, theta and specification
+  — objective, gradient, parameter ordering, Hessian where practical — which is *"one
+  technical sanity check, not a new certification programme"*; and if the Torch
+  grammar cannot represent the economic model exactly, **the model is not simplified
+  to use CUDA** — JAX is used and the missing generic capability is named. **The
+  singles specification sprint is narrow and closed**: corrected S8, the simple
+  occupation-conditioned structural wage model (which *is* corrected LOC4/S0), and W3
+  only if its gate passed — it did not, so it is closed — with hours-conditioned
+  structural wages, occupation × hours interactions, occupation-specific slopes,
+  occupation-specific dispersion, further HP/HO variants and large specification
+  searches all explicitly **not opened**. **Welfare scope narrows to ONE defensible
+  preference-respecting money-metric equivalent-income measure**, because *"The
+  central empirical object is the decomposition, not the six-measure taxonomy."*
+  **Couples work is the clean BOTH-FLEXIBLE baseline only**; semi-flexible CM/CF, the
+  expanded sample `SEXP_PRIMARY_A1` and multi-adult households are **not** activated.
+  **External identification is PAUSED, not abandoned** — BMO, LFS, DADS, the expanded
+  sample, semi-flexible couples and multi-adult households are retained as future
+  identification/validation extensions that the presentation may motivate but may
+  **not** imply have already identified the current model. **PKG-03A is parked** with
+  its three hashes recorded as available infrastructure. One numbered item is
+  **RETURNED rather than adopted**: §4 states that the seminar singles model contains
+  **35** actually estimated parameters, and no count on disk reproduces 35 — the
+  corrected-frame record is **51 coordinates, 41 free, 10 pinned, 39 interior**, `k =
+  41` is the constant in every AIC/BIC on the record and `K_interior = 39` the primary
+  CR1 constant (R-184.1), with 39 and 34 the nearest constructions and neither equal
+  to 35. **No parameter count is published in seminar prose or tables until the deputy
+  resolves it**; what §4 says unambiguously *is* adopted at once — the historical
+  47-coordinate pooled vector is not carried into any seminar table or prose, and the
+  ten pinned non-estimated couples coordinates are not displayed in the singles
+  parameter table. **Return to the deputy is narrowed** to four conditions: the final
+  singles specification selected with a headline decomposition; a scientific blocker
+  preventing a credible singles model; a major couples identification problem
+  requiring substantive simplification; or the seminar paper/deck content ready for
+  final economics review. Statuses set: `SEMINAR_RESEARCH_SPRINT_MODE`,
+  `SPRINT_DOCUMENTATION_CAP_IN_FORCE`, `GPU_RESEARCH_ENVIRONMENT_PRIORITY_ZERO`,
+  `SINGLES_CANDIDATE_SET_CLOSED`, `EXTERNAL_IDENTIFICATION_PAUSED_NOT_ABANDONED`,
+  `PKG03A_PARKED_AVAILABLE_INFRASTRUCTURE`,
+  `SEMINAR_PARAMETER_COUNT_35_VS_41_RETURNED`. Sprint scaffold
+  `experiments/JMP_SEMINAR_SPRINT/`; decision log entry 1; GPU research bundle
+  `experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/` (11 files, 31.5 MB,
+  manifest verified 11/11, both anchors reproduced BITWISE). **The bundle is a
+  RESEARCH bundle and is NOT the final parity export**; `PENDING_PARITY_EXPORT` is
+  untouched.
+
+### (1) Deputy Ruling — HP/HO Disposition and PKG-03 C1-C4 Conventions (R-231), VERBATIM
+
+DEPUTY RULING — HP/HO DISPOSITION AND PKG-03 C1-C4 CONVENTIONS
+
+1. HP AND HO
+
+Accept the negative synthetic-recovery findings.
+
+Classify:
+
+HP_RANDOM_LEISURE_INTERCEPT_NOT_RECOVERABLE
+
+HO_COMMON_WORKING_FRAILTY_NOT_RECOVERABLE
+
+These findings reject the tested specifications, not the existence of
+
+unobserved heterogeneity in general.
+
+Do not open additional HP or HO variants in the present sprint.
+
+Allow W3 feasibility to continue because the observed worker wage residual
+
+provides an additional identifying object absent from HP and HO.
+
+If W3 fails synthetic recovery:
+
+- perform no real-data W3 estimation;
+
+- close persistent heterogeneity for the current JMP;
+
+- retain corrected S8 unless another already-authorized positive specification
+
+  earns admission.
+
+2. C1 — CHOSEN-ROW CONVENTION
+
+The O-5 convention governs the current JMP.
+
+For the adopted sampled-choice protocol:
+
+- the observed chosen alternative is inserted deterministically;
+
+- its inclusion probability is one;
+
+- its log proposal correction is zero;
+
+- stochastic alternatives use the exact marginal proposal density.
+
+Therefore retain:
+
+chosen row:
+
+    log_prior = 0
+
+sampled rows:
+
+    log_prior = log q_exact_marginal
+
+For semi-flexible couples, on stochastic rows:
+
+q_joint = q_flexible * 1_fixed = q_flexible.
+
+For the deterministically inserted observed joint pair:
+
+q_inclusion(chosen) = 1
+
+log q_inclusion(chosen) = 0.
+
+Do not re-anchor singles or accepted couples merely to follow PKG-03's current
+
+draft rule.
+
+Amend the PKG-03 handoff instead.
+
+Require explicit metadata:
+
+proposal:
+
+  convention: exact_marginal
+
+  chosen_inclusion: deterministic_unit
+
+The exact_marginal declaration refers to stochastic proposal draws.
+
+It does not require treating the deterministically included chosen row as
+
+though it had been drawn from q.
+
+If a stochastic row duplicates the chosen pair economically, retain the two
+
+row roles separately with their respective corrections. Do not deduplicate
+
+them silently.
+
+3. C2 — AGE GATE
+
+The 18–64 rule applies to FLEXIBLE DECISION-MAKERS only.
+
+A fixed spouse may be older than 64 and remain in the household as:
+
+- a roster member;
+
+- fixed observed labour-market state;
+
+- fixed earnings and budget input;
+
+- component of household utility and welfare.
+
+Amend G-18 for semi-flexible couples to validate only the flexible spouse.
+
+The fixed spouse must remain an adult linked partner with valid observed
+
+status and budget data.
+
+Do not exclude 1,453 households merely because the fixed spouse lies outside
+
+the flexible-decision age range.
+
+4. C3 — WAGE-SUPPORT SCREEN
+
+The flexible-only rule is binding.
+
+Apply the latent wage-support screen only to flexible decision-makers.
+
+The fixed spouse's observed wage is not sampled, varied, or assigned a proposal
+
+density. It need only be finite, coherent with observed earnings/hours, and
+
+EUROMOD-valid.
+
+Use the corrected flexible-only sample counts, including CM = 587.
+
+Do not screen the fixed spouse against the flexible latent wage support.
+
+5. C4 — CHANNEL VALIDATION
+
+The mandatory-channel rule applies to MODEL TERMS, not every raw engine-ready
+
+column.
+
+Inventory the 20 inherited MISSING_CHANNEL cases.
+
+For each item:
+
+A. If it is consumed as a structural term:
+
+   assign exactly one explicit channel for that use.
+
+B. If it is an identifier, join key, proposal bookkeeping field, fixed-spouse
+
+coordinate, EUROMOD budget input, report field, or validation-only field:
+
+   declare its data role and do not force it into a structural channel.
+
+No silent defaults.
+
+If the package validator currently requires structural channels for raw
+
+non-model columns, return that exact validator issue to Goal 2 as a package
+
+schema correction.
+
+Do not mislabel fixed budget inputs as preferences or opportunities merely to
+
+make validation pass.
+
+6. C5
+
+Accept the household-sort correction.
+
+Every mixed-couple EUROMOD input must be household-sorted before pricing.
+
+Retain the fail-closed memory/ordering test.
+
+7. EXPANDED-SAMPLE EXECUTION
+
+Do not begin full expanded-sample estimation until:
+
+- Goal 2 returns the accepted generic semi-flexible proposal feature;
+
+- C1 is amended in that feature;
+
+- C2/C3 are represented in the adapter;
+
+- C4 is resolved;
+
+- a local application parity gate passes;
+
+- the MNL package pin receives a separate integration decision.
+
+The existing real CM/CF/mixed smoke tests remain valid evidence about the
+
+France adapter.
+
+8. S9
+
+Proceed to S9 selection after W3 disposition.
+
+S9 is a selection stage, not an obligation to admit a richer model.
+
+If W3 fails and no other candidate earns admission:
+
+FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL
+
+Do not create another heterogeneity specification merely to obtain an S9 label.
+
+9. TORCH PARITY
+
+Do not prepare the final parity export yet.
+
+At final positive-model freeze, include both:
+
+proposal.convention = exact_marginal
+
+proposal.chosen_inclusion = deterministic_unit
+
+in the YAML and engine-ready metadata.
+
+The final Torch/JAX/NumPy parity gate must verify both conventions.
+
+10. OUTPUT DISCIPLINE
+
+Update only:
+
+experiments/JMP_PS1/decision_note.md
+
+experiments/JMP_PS1/sample_expansion_design.yaml
+
+the existing adapter test record
+
+Create no new mission-document family.
+
+11. RETURN
+
+Return only if:
+
+- W3 passes recovery and materially changes model selection;
+
+- the package cannot represent deterministic chosen-row inclusion alongside
+
+exact-marginal sampled rows;
+
+- flexible-only age/wage validation cannot be represented;
+
+- the remaining MISSING_CHANNEL cases contain ambiguous model terms;
+
+- or full expanded-sample identification fails.
+
+Otherwise continue autonomously.
+
+### (2) PI / Deputy Direction — JMP Seminar Research Sprint (R-233), VERBATIM
+
+PI/DEPUTY DIRECTION — JMP SEMINAR RESEARCH SPRINT
+
+For the next ~15 days operate in RESEARCH-FIRST / PRESENTATION-FIRST mode.
+
+The objective is to finish enough real economics that the seminar presents a
+working JMP rather than a progress report.
+
+The operating principle is:
+
+MORE RESEARCH, LESS GOVERNANCE.
+
+Accepted specifications are reproducible benchmarks, not restrictions on
+scientific experimentation.
+
+1. DOCUMENTATION CAP
+
+Do not create another mission-document family.
+
+For exploratory work retain only:
+
+experiments/JMP_SEMINAR_SPRINT/run_registry.csv
+experiments/JMP_SEMINAR_SPRINT/model_comparison.csv
+experiments/JMP_SEMINAR_SPRINT/decision_log.md
+experiments/JMP_SEMINAR_SPRINT/configs/
+experiments/JMP_SEMINAR_SPRINT/runs/
+experiments/JMP_SEMINAR_SPRINT/figures/
+experiments/JMP_SEMINAR_SPRINT/JMP_GPU_lab.ipynb
+
+Each exploratory run needs only:
+
+- config;
+- result JSON;
+- parameter CSV;
+- runtime/convergence;
+- key fit diagnostics;
+- one run-registry row.
+
+No prompt archive.
+No individual run memo.
+No independent software review per run.
+
+Record only scientifically consequential decisions in decision_log.md.
+
+2. GPU / HANDS-ON RESEARCH ENVIRONMENT — PRIORITY ZERO
+
+Before the remaining specification sprint, establish a researcher-facing
+native-Windows Torch/CUDA workflow on Hisham's GPU computer.
+
+Hisham must personally be able to:
+
+- load the engine-ready data;
+- inspect households and alternatives;
+- change YAML/configuration;
+- change draw count;
+- change seed;
+- change starting values;
+- change bounds;
+- add/remove supported model terms;
+- fit a model;
+- inspect parameters and convergence;
+- run inference;
+- generate figures.
+
+Use the accepted portable Torch backend in an isolated research environment.
+
+Do NOT move the MNL package pin.
+
+For exploratory CUDA use, perform one local application parity check against
+the existing CPU/JAX route for the same data, theta and specification:
+
+- objective;
+- gradient;
+- parameter ordering;
+- Hessian where practical.
+
+This is one technical sanity check, not a new certification programme.
+
+If the Torch grammar cannot represent the economic model exactly, do not
+simplify the model merely to use CUDA. Use JAX for that model and identify the
+missing generic capability.
+
+3. JMP_GPU_lab.ipynb
+
+Create a pedagogical/research notebook for Hisham.
+
+It must allow inspection of at least one household through:
+
+raw household
+-> sampled latent jobs
+-> consumption/leisure/hours/occupation/wage
+-> utility
+-> employment/hours/occupation/wage opportunity components
+-> proposal correction
+-> alternative value
+-> choice probabilities
+-> household likelihood contribution.
+
+Include simple controls/examples showing how a parameter change alters:
+
+- opportunity probabilities;
+- utilities;
+- final choice probabilities.
+
+The notebook is for understanding and experimentation, not certification.
+
+4. SINGLES PARAMETER COUNT
+
+The current seminar singles model contains 35 actually estimated parameters.
+
+Do not carry the historical 47-coordinate pooled vector into current seminar
+tables or prose.
+
+Do not display non-estimated couples coordinates in the singles parameter table.
+
+Full 35-row tables belong in the appendix/backup.
+
+Main paper/presentation reporting should organize estimates into economic blocks
+and show only the economically informative parameters/functions.
+
+5. CURRENT SINGLES MODEL SPRINT
+
+Use the corrected floor-5 frame.
+
+The focused candidate set is:
+
+A. corrected S8 benchmark;
+
+B. simple occupation-conditioned structural wage opportunity model:
+
+gW(w | occupation, X)
+
+with:
+
+- common education/experience slopes;
+- occupation-specific wage-location shifts;
+- common wage dispersion initially.
+
+This is the simple LOC4 economic specification.
+
+C. W3 only if its currently running synthetic/feasibility gate passes.
+
+Do NOT open:
+
+- hours-conditioned structural wages;
+- occupation x hours interactions;
+- occupation-specific slopes;
+- occupation-specific dispersion;
+- additional HP variants;
+- additional HO variants;
+- large specification searches.
+
+HP and HO negative findings remain closed.
+
+If W3 fails, close it.
+
+Select the final singles model from this narrow set using:
+
+- recoverability/identification;
+- convergence and curvature;
+- likelihood/AIC/BIC;
+- household predictive performance;
+- hours fit;
+- occupation fit;
+- wage fit;
+- economic interpretability;
+- decomposition stability.
+
+6. DRAW-COUNT STABILITY
+
+For the selected/leading singles specification use nested/common draws:
+
+R = 50, 100, 200, 400
+
+and R = 800 only if computationally cheap.
+
+Prefer nested support:
+
+50 subset 100 subset 200 subset 400.
+
+At each draw count record:
+
+- optimized negLL;
+- important parameter estimates;
+- gradient norm;
+- runtime;
+- employment fit;
+- hours fit;
+- occupation fit;
+- wage fit;
+- chosen log probability;
+- chosen rank / top-1 / top-5 / top-10;
+- calibration/Brier where already available.
+
+After welfare is finalized, add:
+
+- welfare Gini;
+- preference contribution;
+- environment contribution.
+
+Produce publication-quality draw-stability figures.
+
+The purpose is numerical convergence and transparency, not a new specification
+search.
+
+7. REQUIRED GRAPHICS
+
+Build reusable paper-quality figures for at least:
+
+- observed hours distribution including the 35-hour peak;
+- observed vs predicted hours;
+- employment observed vs predicted;
+- occupation observed vs predicted;
+- fitted wage distributions by occupation;
+- household-level chosen-rank/top-k or calibration;
+- draw-count stability;
+- key coefficient plot;
+- actual vs equalized welfare distributions;
+- headline welfare decomposition;
+- nested environment decomposition.
+
+If couples finish, add:
+
+- couples observed vs predicted participation/hours;
+- singles vs couples welfare inequality/decomposition.
+
+Do not wait for Beamer to start making these figures.
+
+8. WELFARE SCOPE
+
+For the seminar, prioritize ONE defensible preference-respecting money-metric
+equivalent-income measure.
+
+Use the already debugged:
+
+- coalition-consistent inversion;
+- common numerical quadrature support;
+- proper proposal correction.
+
+Do not make the entire W1-W6 family a prerequisite.
+
+If additional measures are already working cleanly and require negligible
+effort, retain them as normative sensitivity/appendix material.
+
+Otherwise defer them.
+
+The central empirical object is the decomposition, not the six-measure taxonomy.
+
+9. FINAL SINGLES DECOMPOSITION
+
+For the final selected singles model compute the four principal states:
+
+I00 = actual preferences / actual environment
+I10 = common preferences / actual environment
+I01 = actual preferences / common environment
+I11 = common preferences / common environment
+
+Require I11 to satisfy the validated exhaustiveness/numerical-negligibility
+rule.
+
+Compute the order-independent preference/environment attribution.
+
+Then decompose the environment into paper-facing components:
+
+- JOB ACCESS;
+- EARNING OPPORTUNITIES;
+- ENDOWMENTS / NEEDS.
+
+Use female reference as the primary singles reference and the corrected
+male-structural-zero reference as sensitivity.
+
+Do not force contributions to be positive percentages.
+
+If signed contributions arise, report them as signed contributions.
+
+10. COUPLES — CLEAN BASELINE ONLY
+
+Before the presentations prioritize the clean BOTH-FLEXIBLE couples model from
+the benchmark/original France sample.
+
+Do not activate:
+
+- semi-flexible CM;
+- semi-flexible CF;
+- expanded-sample SEXP_PRIMARY_A1;
+- multi-adult households.
+
+Use the same floor-5 data logic as the corrected singles construction.
+
+Build approximately 100 sampled JOINT household alternatives.
+
+Use the final singles economic architecture as closely as identification allows.
+
+Do not start a large independent couples specification search.
+
+Primary couples targets:
+
+- convergence;
+- curvature/rank;
+- parameter interpretation;
+- household predictive fit;
+- observed/predicted participation and hours;
+- occupation/wage fit.
+
+If clean, proceed to couples welfare.
+
+If couples welfare is not ready in time, retain singles as the welfare headline
+and present couples positive results as the main extension.
+
+11. EQUIVALIZATION IF COUPLES CLOSE
+
+If couples welfare becomes available, implement the previously agreed
+modified-OECD equivalence scale.
+
+Report:
+
+A. Singles:
+- raw household welfare inequality;
+- equivalized welfare inequality;
+- decomposition.
+
+B. Couples:
+- raw household welfare inequality;
+- equivalized welfare inequality;
+- decomposition if available.
+
+C. Pooled singles + couples:
+- equivalized welfare only.
+
+Before pooled comparison verify:
+
+- same real-euro year;
+- same consumption numeraire;
+- compatible reference calibration;
+- equivalent-income calibration identity.
+
+Do not call this intra-couple welfare.
+
+Intra-household allocation remains outside the unitary model.
+
+12. EXTERNAL IDENTIFICATION / EXPANDED SAMPLE
+
+Pause execution of:
+
+- BMO;
+- LFS auxiliary identification;
+- DADS external wages;
+- expanded sample;
+- semi-flexible couples;
+- multi-adult households.
+
+Retain these as FUTURE IDENTIFICATION / VALIDATION EXTENSIONS for the paper and
+presentation.
+
+The presentation may explicitly show:
+
+- desired-hours/underemployment data -> discipline hours opportunities;
+- vacancy/BMO data -> discipline occupation/job access;
+- administrative wage distributions -> discipline earning opportunities;
+- richer skill/credential information -> future capability-set identification.
+
+Do not imply these have already identified the current model.
+
+13. PKG-03A SEMI-FLEXIBLE FEATURE
+
+Record the Goal-2 handoff as available infrastructure:
+
+feature commit:
+5b82e162e0630ff5511269e6f5e69f6f1692ea77
+
+bundle SHA:
+4FC99B870AD517A0BA50920CAD02ED7616721FAF2E374BDB202B9F98D3A6DF61
+
+wheel SHA:
+74EB24AD42A3D598996EBA350F5772BBCD36274FFA3A6522F71409609919E6DC
+
+Do NOT spend seminar-critical time on the Goal-1 semi-flexible adapter smoke
+tests now.
+
+Park the handoff for after the presentations unless the clean both-flexible
+couples work finishes substantially early.
+
+No package-main movement.
+
+No MNL-pin movement.
+
+14. PAPER WRITING IN PARALLEL
+
+While numerical work executes, draft/update:
+
+- Introduction;
+- positioning/literature;
+- model;
+- data;
+- identification;
+- estimation method.
+
+Do not wait for final results to write these sections.
+
+After final singles results, insert:
+
+- predictive results;
+- structural results;
+- welfare decomposition.
+
+After couples results, insert them if ready.
+
+Target working file:
+
+JMP_working_paper_for_seminar_v1.md
+
+This is a real seminar working paper, not a final-publication claim.
+
+15. PRESENTATION STORY
+
+Do not build Beamer immediately.
+
+First produce:
+
+JMP_seminar_deck_content_v1.md
+
+after the scientific core is substantially frozen.
+
+The talk should devote most of its time to:
+
+- WHY preferences and opportunities must be separated;
+- WHY RURO rather than a common-choice-set RUM;
+- WHAT the economic opportunity components are;
+- HOW the data and sampled-job estimator work;
+- HOW EUROMOD maps jobs to disposable income;
+- HOW identification works and where it remains conditional;
+- WHAT the model fits;
+- WHAT the welfare decomposition finds.
+
+The presentation should not be dominated by parameter tables or technical
+certification.
+
+16. REVIEW DISCIPLINE
+
+No independent review for each exploratory run.
+
+No repeated software review.
+
+Use only:
+
+- automated numerical checks during exploration;
+- one bounded econometric check if the final selected model introduces a genuinely
+  new estimand/likelihood term;
+- one final economics/claim-to-evidence review of the seminar paper/deck.
+
+Everything else is ordinary research work.
+
+17. TARGET SEQUENCE
+
+Days 1-2:
+- GPU hands-on environment;
+- W3 disposition;
+- start graphs.
+
+Days 2-4:
+- S8 vs simple LOC4/W3 candidate estimation;
+- draw-count experiments.
+
+Days 4-5:
+- freeze singles positive model;
+- inference and predictive diagnostics.
+
+Days 5-6:
+- final singles welfare/decomposition.
+
+Days 3-7 in parallel:
+- clean both-flexible couples.
+
+By approximately Day 7:
+- scientific seminar core substantially frozen.
+
+Then:
+- working paper;
+- deck;
+- rehearsal and revisions.
+
+18. RETURN TO DEPUTY
+
+Do not return routine runs.
+
+Return only when:
+
+A. final singles specification is selected and headline decomposition exists;
+
+B. a scientific blocker prevents selecting a credible singles model;
+
+C. clean couples produce a major identification problem requiring a substantive
+   simplification;
+
+or
+
+D. the seminar working paper/deck content is ready for final economics review
