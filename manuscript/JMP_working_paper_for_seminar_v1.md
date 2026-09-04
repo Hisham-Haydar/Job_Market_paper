@@ -31,7 +31,7 @@ specific items that review is asked to look at are:
 
 | item | where | what the review is asked |
 |---|---|---|
-| the equivalence scale as a class-$D$ object | §3.5, §7.4 | is the *economics* of a coalition-moving scale right, or is the residual a genuine needs term? |
+| the equivalence scale as an endowments-and-needs object | §3.5, §7.4 | is the *economics* of a coalition-moving scale right, or is the residual a genuine needs term? |
 | the reference-preference range (branch A) | §7.5 | is reporting a range, never an average, the right discipline? |
 | the couples male-leisure sensitivity | §8.4 | is a sensitivity-bounded companion the right presentation? |
 | the pooled non-exhaustiveness | §8.5 | is a type-specific reference the right object, given that it breaks pooling? |
@@ -39,24 +39,26 @@ specific items that review is asked to look at are:
 | the $W^{1}_{\text{ref}}$ ordering flip | Appendix D | a fact about the measure, not about the world — but it should be seen |
 
 **Second, what is a placeholder.** Two lanes were commissioned to close gaps in
-this draft and both returned while it was being written. One returned complete;
-one returned in part. What came back is in the text; what did not is marked
-`[PLACEHOLDER]`, with nothing written in its place.
+this draft. Both have now returned; one is complete, and one is complete except
+for a source that does not exist in the accessible data. What came back is in the
+text; what did not is marked `[PLACEHOLDER]`, with nothing written in its place.
 
-- **SPR-7 — the age-bound diagnostic. Returned complete**, and reported in §5.5.
-  Its verdict is `RETAIN_S8_CLOSE`: the widened box is clean, but the bound value
-  lies inside both released coefficients' intervals, so the bound was binding on a
-  curvature the data do not identify. Its one substantive finding is folded into
-  §5.5 and echoed in §7.5 and §8.4.
-- **SPR-8 — external validation. Returned in part**, and reported in §9. The
-  35-hour concentration result is complete: the model's hours-opportunity
-  structure is visible in a source it never saw. **Not
-  returned:** the underemployment axis, because the national coding of the LFS
-  wish-to-work-more variable is unconfirmed in the delivered file and the two
-  readings imply opposite gradients; the one moment that would resolve it was not
-  in the delivered aggregate. **Not available at all:** any matched
-  employer–employee source that would validate the wage-offer block, for which no
-  file exists in the accessible restricted-data folder.
+- **The age-bound diagnostic. Returned complete**, and reported in §5.5. Its
+  verdict is to retain the model of record, on a close margin: the widened box is
+  clean, but the bound value lies inside both released coefficients' intervals, so
+  the bound was binding on a curvature the data do not identify. Its one
+  substantive finding is folded into §5.5 and echoed in §7.5 and §8.4.
+- **External validation. Returned**, and reported in §9. The 35-hour concentration
+  result is complete: the model's hours-opportunity structure is visible in a
+  source it never saw. The underemployment axis is **now also complete** — the
+  national coding of the labour-force wish-to-work-more variable was resolved
+  against the EU-LFS codebook (version of 8 July 2021, $1 =$ No, $2 =$ Yes) at the
+  integration pass, and §9.3 reports it as external evidence on hours constraints.
+  **Not available at all:** any matched employer–employee source that would
+  validate the wage-offer block independently, for which no file exists in the
+  accessible restricted-data folder. §9.1 reports the within-sample wage fit and
+  fixes the framing that comparison will be read under; it is the paper's one
+  remaining placeholder.
 
 **Third, two authorizations are not on disk.** The consolidated Goal-1 rulings
 register ends at R-233. The freeze direction this draft is written under
@@ -67,6 +69,16 @@ quotes the interpretation discipline it quotes the sprint record's own wording.
 This is disclosed rather than smoothed over, on the same convention §3, §4 and
 §10 already use for authorizations that post-date the register.
 
+**Fourth, how the paper names things.** The main text, every figure and every
+table use economic language only: *final singles model* (or *preferred RURO
+model*), *the occupation-conditioned wage specification benchmark*, *observed
+sample*, *model-implied*, *job access*, *earning opportunities*, *household
+endowments and needs*, *preferences*. Internal specification and run labels appear
+nowhere in §1–§11 or on any figure; they are retained in the technical appendices,
+where reproducibility needs them, behind the legend at the head of Appendix A.
+This note is the one exception, because its subject is the status of the draft
+itself, and it is to be stripped at final.
+
 **Standing conventions carried throughout.** Terminology follows the ratified
 rule: *job access / feasibility*, *earning capacity / wage-offer technology*,
 *preferences*, *endowments / needs*. The term **ability set $A_i$** is reserved
@@ -74,9 +86,9 @@ and denotes only the set of jobs a person is capable or eligible to perform.
 Monte-Carlo bands are **numerical-integration precision and never sampling
 confidence intervals**. No cell of the decomposition is a compensating variation.
 The 35-hour coefficient is an *institutionally motivated opportunity peak in the
-estimated offer density*, never an estimate of a statutory effect. The status
-`ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` stands, so no ordering between the
-job-access and earning-opportunity channels is claimed in either direction.
+estimated offer density*, never an estimate of a statutory effect. The order
+between the job-access and earning-opportunity channels remains unresolved under
+the final model, so no ordering between them is claimed in either direction.
 
 ---
 
@@ -109,8 +121,8 @@ The headline result is stated with its guards.
 
 > **Within the currently modelled non-preference environment, budget-side
 > endowments and needs are the largest nested contribution under both positive
-> models and both reference-preference conventions.** On the corrected S8 model
-> with the female reference, equalising the whole non-preference environment
+> models and both reference-preference conventions.** On the final singles
+> model with the female reference, equalising the whole non-preference environment
 > removes 93.7 per cent of baseline money-metric inequality (±0.6) and equalising
 > preferences a further 6.3 per cent (±0.6); inside the environment, endowments
 > and needs carry 58.2 per cent (±1.5), earning opportunities 20.6 (±1.6) and job
@@ -118,8 +130,9 @@ The headline result is stated with its guards.
 > two channels that are about the market rather than the budget — carry 35.5 per
 > cent (±0.9). Across all eight rows of the table the environment share runs 89.0
 > to 96.7 per cent, the preference share 3.3 to 11.0 per cent with a constant
-> sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the order is
-> $D > B > A$ in every one.
+> sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the nested
+> order is endowments and needs above earning opportunities above job access in
+> every one.
 
 Four qualifiers travel with that sentence and are not optional: it is structural
 and model-conditional; it is not causal; it is provisional pending the bounded
@@ -274,7 +287,8 @@ On the preferred singles specification, the picture is this.
   equivalized basis the combined market figure is **25.9 per cent** (±0.9).
 - **Endowments and needs are the largest single nested contribution.**
   **58.2 per cent** (±1.5) on the preferred model, female reference, raw basis;
-  53.2 to 68.9 per cent across the eight rows; and the order $D > B > A$ holds in
+  53.2 to 68.9 per cent across the eight rows; and the order endowments and
+  needs above earning opportunities above job access holds in
   every one of them.
 
 These are not statements that job opportunities are unimportant. Removing all
@@ -729,6 +743,12 @@ terms the coalition structure is $\{\{P\},\{A,B,D\}\}$ over the primitive player
 * $D$ — **endowments and needs**: non-labour income, needs-related demographics,
   and every other household-specific input to the tax–benefit budget mapping.
 
+The letters $A$, $B$, $D$ and $P$ are the players of the decomposition and are
+used only inside the formal statements of it. They are unrelated to the
+measure-side symbols of §3.3, where $A$ is a household's own opportunity set and
+$B$ a counterfactual budget; everywhere outside a formal expression this paper
+names the four channels in words.
+
 Two properties of the structure matter for how it is read. First, the two-player
 partition sums to 100 per cent by construction, so preferences and environment
 exhaust the game *conditional on exhaustiveness holding*. Second, **signed
@@ -736,14 +756,15 @@ contributions are legitimate**: a channel may enter with either sign, because
 equalising a channel can raise measured inequality as easily as lower it, and no
 component is a share of a positive total. Nothing here is a pie chart.
 
-$D$-equalisation is a **panel swap, not a reweighting**: node utilities are
-re-evaluated against the budget the tax–benefit system returns for the node's own
-wage and hours against a common reference background. The residual of the earlier
-three-player presentation is not relabelled as $C_D$; $C_D$ is formed from its own
-Owen marginals, because the interactions have to be evaluated rather than assumed
-away. A variable used on both sides moves only on the side it is used on — the
-leisure-weight child term stays with $P$, while the tax-benefit-side child term
-moves with $D$.
+Equalising endowments and needs is a **panel swap, not a reweighting**: node
+utilities are re-evaluated against the budget the tax–benefit system returns for
+the node's own wage and hours against a common reference background. The residual
+of the earlier three-player presentation is not relabelled as the
+endowments-and-needs contribution; that contribution is formed from its own Owen
+marginals, because the interactions have to be evaluated rather than assumed away.
+A variable used on both sides moves only on the side it is used on — the
+leisure-weight child term stays with preferences, while the tax-benefit-side child
+term moves with endowments and needs.
 
 **The four cells.** The design evaluates four preference/environment states under
 one identical welfare definition and reference convention:
@@ -793,7 +814,7 @@ and the headline was correctly halted. Appendix B is the one-page account of wha
 was found and removed between those two states, because the sequence is itself a
 methodological result.
 
-### 3.5 Equivalization is a class-$D$ object
+### 3.5 Equivalization is an endowments-and-needs object
 
 Equivalized welfare divides each household's $W^1$ by a modified-OECD equivalence
 scale $m_i = 1 + 0.5\times(\text{members aged }14+\text{ beyond the first}) +
@@ -812,10 +833,11 @@ under that convention.
 
 The fix is the one the coalition-consistent inversion already legislates: *the
 reference side must move with the coalition*. Household composition **is** a
-class-$D$ object. The $D$ operator does not adjust income and leave the family
-intact; it replaces the household's whole exogenous budget-side profile with the
-reference profile and reprices the opportunity set at it. The frozen $D$-reference
-profile is a single-person household aged 34, so $m_{\text{medoid}} = 1$, derived
+an endowments-and-needs object — class $D$ in the formal decomposition above. The
+endowments-and-needs operator does not adjust income and leave the family intact;
+it replaces the household's whole exogenous budget-side profile with the reference
+profile and reprices the opportunity set at it. The frozen reference profile is a
+single-person household aged 34, so $m_{\text{medoid}} = 1$, derived
 from the reference parquet by the same formula rather than transcribed. Under the
 coalition-consistent scale, exhaustiveness is restored exactly:
 $I^{11} = 0.000\mathrm{e}{+}00$ and $-2.035\mathrm{e}{-}31$, as in the raw basis.
@@ -984,9 +1006,9 @@ identification of a statutory effect anywhere.
 **Occupation.** Occupation enters as four task groups, collapsed from ISCO-08
 one-digit codes.
 
-**Table 4.4 — The occupation key (ISCO-08 → `loc4`).**
+**Table 4.4 — The occupation key: ISCO-08 major groups to the four task groups.**
 
-| `loc4` | task group | ISCO-08 major groups | share of employed (weighted) |
+| group | task group | ISCO-08 major groups | share of employed (weighted) |
 |---:|---|---|---:|
 | 1 | routine manual | 6, 7, 8, 9 — skilled agricultural; craft and trades; plant and machine operators; elementary | 27.5% |
 | 2 | nonroutine manual | 5 — service and sales workers | 15.4% |
@@ -996,8 +1018,8 @@ one-digit codes.
 The four categories are a task grouping, **not a skill ranking**. Elementary
 occupations (ISCO 9) are collapsed with the skilled manual groups rather than
 given their own category, and armed forces (ISCO 0) map to an unknown-occupation
-sentinel that no household in this sample carries; non-employed rows carry
-`loc4 = −1`. Occupation composition differs sharply by sex — group 1 employs 38
+sentinel that no household in this sample carries; non-employed rows carry a
+separate no-occupation code. Occupation composition differs sharply by sex — group 1 employs 38
 per cent of men against 18 per cent of women, groups 2 and 3 are each roughly
 twice as common among women, and group 4 is the largest for both. Because the
 offer density is allowed to depend on occupation separately by sex, this
@@ -1179,7 +1201,7 @@ stems, with the certified multi-start, four-leg convergence and CR1 protocol at
 every rung, and reading each rung's coefficients against the $R=100$ robust
 standard errors.
 
-**Figure 7** (`figS6_04`) plots the optimised objective, the objective per
+**Figure 7** plots the optimised objective, the objective per
 household and the free-block curvature against $R$. It carries a note on its face
 that must be read with it: **the negative log-likelihood is not comparable across
 $R$**. The sampled likelihood is a different objective at each draw count and
@@ -1187,7 +1209,7 @@ rises with $R$ by construction; the figure shows the shape, not a model
 comparison.
 
 What *is* comparable across $R$ is every coefficient and its robust standard
-error, and every share statistic. **Figure 8** (`figS6_05`) plots the key
+error, and every share statistic. **Figure 8** plots the key
 coordinates — the 35-hour peak, the employment level, occupation access by sex,
 the occupation wage-location shifts, the wage dispersion, and a leisure curvature
 term — against $R$, normalised by the $R=100$ robust standard error. The result:
@@ -1195,13 +1217,13 @@ between $R=100$ and $R=400$ **no free interior coordinate moves by more than
 0.21 of its own robust standard error**, the largest mover being a
 male occupation-access coefficient. Between $R=50$ and $R=100$ the largest move is
 0.56 of a standard error, which is why $R=50$ is not used. **Figure 9**
-(`figS6_06`) plots predicted participation against $R$: the model matches the
+ plots predicted participation against $R$: the model matches the
 weighted observed participation rate of 0.8708 with predictions of 0.8660, 0.8668,
 0.8669 and 0.8665 at the four rungs.
 
 The corresponding question on the welfare side is separate, because the welfare
 objects are non-linear functionals of $\hat\theta$ through a money-metric
-inversion, and is answered in §7.6 and **Figure 10** (`figW05`).
+inversion, and is answered in §7.6 and **Figure 10**.
 
 One disclosure about Figure 8's construction. The deputy's specification of that
 figure names "$\beta_E$ by sex"; the preferred specification carries **one**
@@ -1356,7 +1378,8 @@ reference and $+5.2$ per cent under the male structural zero. Six of 126
 quantities move across all bases; nothing else in the headline does, and no sign
 and no ordering changes anywhere.
 
-**The verdict: `RETAIN_S8_CLOSE`, failing on limb B.** The pre-declared rule
+**The verdict: retain the model of record, and the margin is close.** The
+widened box fails on the objective limb. The pre-declared rule
 required all four limbs for the widened box to become a candidate replacement; it
 fails the one asking for a materially better objective. The specification of
 record is retained with its two bound-active coordinates.
@@ -1380,8 +1403,8 @@ environment's internal structure is the robust one.**
 
 ### 6.1 The estimates
 
-The preferred specification (S8) carries **41 estimated structural parameters**.
-**Figure 2** (`fig08`) plots all 41 by economic block with CR1 95 per cent
+The final singles model carries **41 estimated structural parameters**.
+**Figure 2** plots all 41 by economic block with CR1 95 per cent
 intervals, and the full table with standard errors, $z$ statistics and inference
 status is **Appendix A**. Blocks, and what they say:
 
@@ -1391,7 +1414,7 @@ status is **Appendix A**. Blocks, and what they say:
 | singles-female leisure | 5 | as above plus the children-in-leisure shifter |
 | consumption curvature | 1 | shared by the two groups by construction |
 | hours opportunity | 5 | four band shifters plus the employment level $\beta_E$ |
-| the 35-hour peak | 1 | the one coordinate S8 adds to the benchmark |
+| the 35-hour peak | 1 | the one coordinate the final model adds to the benchmark |
 | market access | 10 | the group-specific unemployment rate, seven region dummies, two urbanisation dummies |
 | occupation opportunity | 6 | three availability weights each for men and women |
 | wage-offer technology | 6 | intercept, two education loadings, experience and its square, dispersion |
@@ -1448,11 +1471,11 @@ reported.
 
 | object | observed | predicted | figure |
 |---|---:|---:|---|
-| employment rate (weighted) | 0.8708 | 0.8668 | Figure 4 (`fig03`) |
-| the statutory band $[33.5,36.5)$ | 0.2485 | 0.2520 | Figure 1, Figure 3 (`fig02`) |
+| employment rate (weighted) | 0.8708 | 0.8668 | Figure 4 |
+| the statutory band $[33.5,36.5)$ | 0.2485 | 0.2520 | Figure 1, Figure 3 |
 | hours-grid share, mean absolute error over 12 bins | — | 0.0083 | Figure 3 |
-| occupation share, largest absolute deviation over 5 categories | — | 0.0070 | Figure 5 (`fig04`) |
-| offered-wage quintile share, largest absolute deviation | — | 0.0532 | Figure 6 (`fig05`) |
+| occupation share, largest absolute deviation over 5 categories | — | 0.0070 | Figure 5 |
+| offered-wage quintile share, largest absolute deviation | — | 0.0532 | Figure 6 |
 
 Employment is matched to four-tenths of a percentage point and the statutory band
 to a third of one. The hours grid is matched to under a percentage point on
@@ -1579,8 +1602,8 @@ remains an open item of the specification.
 
 ### 6.6 Specification sensitivity: the preferred model against its benchmark
 
-The benchmark specification (LOC4 / S0) is the preferred model minus the 35-hour
-peak: 40 free coordinates against 41, nested exactly, on the identical frame. On
+The benchmark is the occupation-conditioned wage specification without the
+statutory-week peak — the final model minus that one coordinate: 40 free coordinates against 41, nested exactly, on the identical frame. On
 every positive criterion the preferred model wins decisively — a likelihood-ratio
 statistic of 861.42 on one degree of freedom, $\Delta\mathrm{AIC}=-859.4$,
 $\Delta\mathrm{BIC}=-854.1$, an hours-grid share error four times smaller
@@ -1598,7 +1621,8 @@ preferred model as under the benchmark: 6.30 per cent of baseline inequality
 against 3.32 on the raw basis with the female reference, and 10.89 against 5.09
 under the male reference (§7.2). The direction of every qualitative conclusion is
 identical across the two — the sign of the preference contribution, the dominance
-of the environment, and the $D > B > A$ order all hold in all eight rows of the
+of the environment, and the order of the three environment channels all hold in
+all eight rows of the
 headline table — but the *magnitude* of the split between preferences and
 environment is specification-sensitive at a factor of about two.
 
@@ -1639,7 +1663,7 @@ Baseline money-metric inequality among French single adults is a Gini of about
 numerical zero. **Exhaustiveness passes**, against a rule requiring
 $|I^{11}| \le 0.00125$ and $\le 1$ per cent of $I^{00}$, and it passes at
 numerical zero rather than inside the tolerance. Both accounting identities close
-at machine precision in every arm. **Figure 11** (`figW01`) shows the four
+at machine precision in every arm. **Figure 11** shows the four
 distributions and their Lorenz curves, raw and equivalized.
 
 One feature is worth pausing on because it is counter-intuitive and it is real.
@@ -1689,9 +1713,10 @@ bands on their parts, for a reason given below.
 
 Both accounting identities — $C_P + C_E = I^{00} - I^{11}$ and
 $C_A + C_B + C_D = C_E$ — hold at machine precision on all eight rows, and the
-nested order is $D > B > A$ in every one. **Figure 12** (`figW02`) plots $C_P$ and
+nested order is endowments and needs above earning opportunities above job access
+in every one. **Figure 12** plots $C_P$ and
 $C_E$ as signed bars with their bands under both reference conventions and both
-models; **Figure 13** (`figW03`) does the same for the nested split.
+models; **Figure 13** does the same for the nested split.
 
 **One number in the table should be read twice.** On the preferred model, female
 reference, raw basis, the band on the market-side total $C_A + C_B$ is
@@ -1708,14 +1733,14 @@ compute and is what makes the ratio bands honest.
 ### 7.3 Interpretation discipline
 
 The following sentence is generated mechanically from Table 7.1 by the script that
-writes the table, with a guard: if the nested order were not $D > B > A$ in all
-eight rows the script prints a refusal instead of the sentence. It printed the
-sentence.
+writes the table, with a guard: if the nested order were not endowments and needs
+above earning opportunities above job access in all eight rows, the script prints
+a refusal instead of the sentence. It printed the sentence.
 
 > **Within the currently modelled non-preference environment, budget-side
 > endowments and needs are the largest nested contribution under both positive
-> models and both reference-preference conventions.** On the corrected S8 model
-> with the female reference, equalising the whole non-preference environment
+> models and both reference-preference conventions.** On the final singles
+> model with the female reference, equalising the whole non-preference environment
 > removes 93.7 per cent of baseline money-metric inequality (±0.6) and equalising
 > preferences a further 6.3 per cent (±0.6); inside the environment, endowments
 > and needs carry 58.2 per cent (±1.5), earning opportunities 20.6 (±1.6) and job
@@ -1723,8 +1748,9 @@ sentence.
 > two channels that are about the market rather than the budget — carry 35.5 per
 > cent (±0.9). Across all eight rows of the table the environment share runs 89.0
 > to 96.7 per cent, the preference share 3.3 to 11.0 per cent with a constant
-> sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the order is
-> $D > B > A$ in every one.
+> sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the nested
+> order is endowments and needs above earning opportunities above job access in
+> every one.
 
 The interpretation discipline that travels with it is quoted from the record, and
 its four qualifiers are not optional:
@@ -1734,8 +1760,8 @@ its four qualifiers are not optional:
 > review; and **not** a statement that job opportunities are unimportant. The
 > standing access sentence travels with the access channel — the present access
 > density may combine personal capability and market availability, and does not
-> yet separately identify `A_i` from `O_i`.
-> `ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` stands.
+> yet separately identify the ability set from the opportunity set. No ordering
+> between job access and earning opportunities is claimed in either direction.
 
 Four consequences for how this paper may be read, stated once here and observed
 throughout.
@@ -1750,7 +1776,8 @@ throughout.
    functionals is not estimated in this paper. The phrase *statistically
    indistinguishable from zero* is not used anywhere, because nothing here
    licenses it.
-3. **No ordering is claimed between $A$ and $B$.** The point estimates order them
+3. **No ordering is claimed between job access and earning opportunities.**
+   The point estimates order them
    in every row, and the numbers are printed. But the access channel is exactly the
    one that does not yet separate the ability set from the opportunity set, so an
    ordering claim would be a claim about an object the design does not identify.
@@ -1765,22 +1792,23 @@ throughout.
 | $C_P$ | $+0.008464$ | $+0.013179$ | |
 | $C_E$ | $+0.125812$ | $+0.151926$ | |
 | $C_P/I^{00}$ | 6.30 % | 7.98 % | |
-| $C_A$ / $C_B$ / $C_D$ | 0.0200 / 0.0277 / 0.0781 | 0.0160 / 0.0268 / 0.1091 | $D > B > A$ on both |
+| job access / earning opportunities / endowments and needs | 0.0200 / 0.0277 / 0.0781 | 0.0160 / 0.0268 / 0.1091 | same order on both |
 | mean $W^1$ | €1,384.1 / month | €1,265.7 / month | |
 
 Equivalizing raises measured inequality by roughly a fifth and raises both
 contributions, but **changes no qualitative conclusion**: the reference-sensitivity
-classification, the sign of $C_P$, the dominance of the environment and the
-$D > B > A$ order are identical on both bases in all four arms. $I^{01}$ and
+classification, the sign of the preference contribution, the dominance of the
+environment and the nested order are identical on both bases in all four arms. $I^{01}$ and
 $I^{11}$ are numerically identical across the two bases by construction, because
-those states already contain $D$ — which is the coalition-consistent equivalization
+those states already equalise endowments and needs — which is the
+coalition-consistent equivalization
 of §3.5 doing exactly what it is supposed to do.
 
 What *does* move materially between the bases is the market-side total: 35.5 per
 cent raw against 25.9 per cent equivalized on the preferred model with the female
 reference. Equivalization loads more of the measured dispersion onto the
 endowments-and-needs channel, which is unsurprising, since the scale is itself a
-composition object and composition is a class-$D$ argument. Both figures are on
+composition object and composition is an endowments-and-needs argument. Both figures are on
 Table 7.1 and both are reported; neither is "the" answer.
 
 **The calibration identity holds.** The ratified constraint — that a household at
@@ -1845,7 +1873,7 @@ jackknife are the same objects at every rung, so the ladder isolates the
 propagation of estimation-draw noise into the decomposition. The ladder is
 anchored: the $R=100$ rung and the optimum of record agree to
 $1.4\times10^{-9}$ in coordinates and reproduce the headline to every printed
-digit. **Figure 10** (`figW05`) is the picture.
+digit. **Figure 10** is the picture.
 
 | quantity (preferred model, female reference) | $R=50$ | $R=100$ | $R=200$ | $R=400$ | range / largest band |
 |---|---:|---:|---:|---:|---:|
@@ -1856,7 +1884,7 @@ digit. **Figure 10** (`figW05`) is the picture.
 | $C_B$ | 0.027023 | 0.027682 | 0.027615 | 0.027567 | 0.25 |
 | $C_D$ | 0.078497 | 0.078126 | 0.078090 | 0.078064 | 0.30 |
 
-Every sign is constant over $R$ and the nested order is $D > B > A$ at every rung
+Every sign is constant over $R$ and the nested order is unchanged at every rung
 in every arm, raw and equivalized. **One exception is stated rather than
 smoothed.** In the male structural-zero arm, $C_P$ moves from 0.014096 to 0.015030
 over $R = 50 \to 400$ — a range of $1.019\times10^{-3}$ against its own jackknife
@@ -1914,13 +1942,13 @@ itself; the recovery evidence in this paper is on the couples module (§8.2).
 
 A decomposition of an inequality index is a population statement, and it is worth
 seeing what the mechanism looks like on two actual households. Figures 14 and 15
-(`figE1`, `figE1R`) are constructed by an explicit rule, applied before any
+ are constructed by an explicit rule, applied before any
 household was looked at.
 
 **The rule.** A household's *preference profile* is
 $p_i(h) = \omega_i \cdot \mathcal{B}\big((\bar L - h)/\lambda_\ell;\theta_\ell(g_i)\big)$,
 with $\omega_i$ the leisure weight at the household's own age, age-squared and
-(women only) child shifters — exactly the block channel $P$ equalises. The
+(women only) child shifters — exactly the block the preference channel equalises. The
 consumption side carries no cross-household variation at all, since the
 consumption coefficient is the numeraire and the curvature is common, so it is not
 part of the profile. A household's *opportunity profile* is the normalised offer
@@ -2117,14 +2145,15 @@ vector at the couples-medoid arguments and there is nothing to average.
 €1,713.16 a month — and both accounting identities close at exactly $0.0$. The
 exhaustiveness audit is derived from the specification's own shifter lists rather
 than transcribed: 23 household-varying arguments, every one assigned to exactly
-one channel (11 to $A$, 6 to $B$, 5 to $P$, 1 to $D$), none unassigned.
+one channel (11 to job access, 6 to earning opportunities, 5 to preferences,
+1 to endowments and needs), none unassigned.
 
 **The decomposition:**
 
 | basis | $C_P$ | $C_E$ | $C_P/I^{0000}$ | $C_A$ | $C_B$ | $C_D$ | order |
 |---|---:|---:|---:|---:|---:|---:|---|
-| raw | $+0.007296$ [0.006863, 0.007730] | $+0.137442$ [0.136339, 0.138546] | 5.04 % | 0.019562 | 0.045898 | **0.071982** | $D > B > A$ |
-| equivalized | $+0.005220$ [0.004897, 0.005544] | $+0.136327$ [0.135100, 0.137554] | 3.69 % | 0.017816 | 0.040767 | **0.077743** | $D > B > A$ |
+| raw | $+0.007296$ [0.006863, 0.007730] | $+0.137442$ [0.136339, 0.138546] | 5.04 % | 0.019562 | 0.045898 | **0.071982** | needs > earning opp. > access |
+| equivalized | $+0.005220$ [0.004897, 0.005544] | $+0.136327$ [0.135100, 0.137554] | 3.69 % | 0.017816 | 0.040767 | **0.077743** | needs > earning opp. > access |
 
 Levels: raw mean €1,836.8 and median €1,761.8 a month; equivalized mean €972.7 and
 median €921.5. **The same nested order the singles lane found, on both bases**, and
@@ -2165,8 +2194,8 @@ from 0.0014 to 0.0075 on the equivalized basis around a baseline of 0.0052 — a
 five-fold spread — and that is precisely the channel that leans on the male
 leisure block the recovery gate named as its weakness. The environment side moves
 by under 3.5 per cent and the headline inequality by under 1 per cent, and they
-leave their bands only because the bands are very tight. Sign, the $D > B > A$
-order and the levels are unchanged in every arm. **Figure C5** plots the
+leave their bands only because the bands are very tight. Sign, the nested order
+and the levels are unchanged in every arm. **Figure C5** plots the
 sensitivity.
 
 By the rule fixed in advance, this makes **singles the quantitative welfare
@@ -2203,8 +2232,9 @@ bundles land at €1,251.25 (single) and €951.75 (couple) equivalized, a ratio
 not common, and no operator in $\{P,A,B,D\}$ can close the gap. **Pooled inequality
 is well defined and is reported; the pooled decomposition is reported as a
 diagnostic and is not a headline.** For the record, its Owen values are
-$C_P = 0.015988$, $C_E = 0.088966$, with $A = 0.016434$, $B = 0.016679$ and
-$D = 0.055853$. **Figure C4** carries it.
+$C_P = 0.015988$ for preferences and $C_E = 0.088966$ for the environment, with
+job access at 0.016434, earning opportunities at 0.016679 and endowments and
+needs at 0.055853. **Figure C4** carries it.
 
 **One implication the economics review should look at directly.** On the
 modified-OECD equivalized money metric, couples are worse off than singles at
@@ -2237,111 +2267,200 @@ reconciled.
 
 ## 9. External validation
 
-The hours-opportunity block is disciplined only by the EU-SILC choice data. An
-independent check against the French EU-LFS was run under a validation-only
-status: **it is not an instrument, it enters no likelihood, no moment from it
-enters the objective, and no merge or covariate is created.** The comparison uses
-43,767 EU-LFS 2016 person-records aged 20–60 with reported usual hours, aggregated
+Nothing in this section identifies anything. Every comparison here is run under a
+**validation-only** status: no external source is an instrument, none enters the
+likelihood, no moment from one enters the objective, and no merge or covariate is
+created from one. The question asked is narrower and worth asking on its own
+terms — are the features the estimated model asserts visible in sources the model
+never saw?
+
+Two further disciplines govern how the comparisons are read. First, the estimation
+sample is 1,555 French **single-adult** households, while every external source
+covers a different population on a different field with different coverage rules.
+A gap between the observed sample and an external aggregate is therefore a
+statement about population, coverage and field definitions at least as much as
+about the model, and **no such gap is described as a prediction error**. Second,
+where an external classification cannot be uniquely mapped onto the model's own,
+the comparison is not made at all rather than made through an ad hoc bridge.
+
+### 9.1 Earnings: the within-sample benchmark, and the external one that is not available
+
+The internal benchmark comes first, because it is the object any external
+comparison would be read against. Among employed single adults the observed and
+model-implied distributions of the selected hourly wage line up closely at the
+centre, and by sex in opposite directions:
+
+| group | observed median | model-implied median | fit | observed mean | model-implied mean | fit |
+|---|---:|---:|---:|---:|---:|---:|
+| all | €14.07 | €13.79 | $-0.29$ | €15.52 | €15.19 | $-0.33$ |
+| men | €14.70 | €13.84 | $-0.86$ | €16.03 | €15.22 | $-0.81$ |
+| women | €13.40 | €13.74 | $+0.34$ | €15.05 | €15.17 | $+0.12$ |
+
+*Euros per hour, 2016 real; the fit column is model-implied minus observed. The
+model-implied side is a self-normalised importance-sampling estimate over the
+sampled alternatives, weighted by the household weight — the same construction as
+every other share statistic in this paper.*
+
+The median fit is **$-0.86$ an hour for men and $+0.34$ for women**, against
+observed medians near €14: the model slightly compresses the sex gap in selected
+wages, under-shooting men and over-shooting women, while matching the pooled median
+to under thirty cents. That compression is the wage-side counterpart of the
+offered-wage quintile misfit reported in §6.2, and it is the same open item rather
+than a new one.
+
+**The external earnings benchmark is DADS / Base Tous Salariés**, the matched
+employer–employee source that would discipline the wage-offer block independently
+of the choice data. It is **not available to this paper**: the accessible
+restricted-data folder holds fourteen files, four EU-SILC and ten EU-LFS, and no
+DADS or SES file at all, so there is no aggregate to read and none can be produced
+without a new secured session and a new data request. The comparison is recorded as
+future work and is not attempted, and nothing is put in its place.
+
+`[PLACEHOLDER — the DADS wage comparison.]` When it is run, three things travel
+with it, and they are stated now so that the framing is fixed before any number is
+seen. DADS covers **employees**, so the self-employed in this sample have no
+counterpart in it; it is an **establishment-reported earnings** field rather than a
+survey-reported one; and its population is all French employees rather than adults
+living alone. A difference between the model-implied wage distribution here and a
+DADS aggregate therefore carries population, coverage and field differences before
+it carries anything about the model, and **it will not be reported as a prediction
+error**.
+
+### 9.2 Hours: official benchmarks against the observed sample and the model
+
+The hours-opportunity block is disciplined only by the EU-SILC choice data, and it
+is the block with the sharpest external counterpart. The comparison uses 43,767
+French EU-LFS 2016 person-records aged 20–60 with reported usual hours, aggregated
 to the model's own five hours bands. The band partitions coincide exactly on
 integer usual hours, so the comparison is like-for-like and no re-banding is
-applied to either side — and that was checked off the estimation frame rather
-than assumed from documentation, because three non-archive call sites in the
-codebase still carry legacy band edges that are *not* the reporting bins; the
-frame's realised dummy supports were read directly and the statutory band's
-overlap with the other four is exactly zero. The by-sex model shares did not
-exist on the record and were computed for this comparison; the pooled bins
-recomputed in the process reproduce the paper's own hours-fit figure in 20 of 24
-numbers bitwise, at a worst deviation of $5.6\times10^{-17}$ — float summation
-order across the two sex blocks, not a different computation.
+applied to either side — and that was checked off the estimation frame rather than
+assumed from documentation, because three non-archive call sites in the codebase
+still carry legacy band edges that are *not* the reporting bins; the frame's
+realised dummy supports were read directly and the statutory band's overlap with
+the other four is exactly zero. The by-sex model shares did not exist on the record
+and were computed for this comparison; the pooled bins recomputed in the process
+reproduce the paper's own hours-fit figure in 20 of 24 numbers bitwise, at a worst
+deviation of $5.6\times10^{-17}$ — float summation order across the two sex blocks,
+not a different computation.
+
+**Figure 16** carries the comparison; its panel (b) puts the external benchmark,
+the observed sample and the model-implied shares side by side on the statutory
+band.
 
 The paragraph of record, generated from the table:
 
 > The hours-opportunity block of the estimated model is disciplined only by the
 > EU-SILC choice data, but the structure it recovers is visible in an independent
-> labour-force source. Corrected S8 places the offer density overwhelmingly on the
-> statutory 35-hour band and on full time: relative to the 35-hour band, the
-> estimated per-alternative offer weight is 0.86 at 36.5–40.5 hours but only 0.09
-> at 17.5–21.5 hours, 0.13 at 28.5–30.5 hours and 0.12 at 44.5–70 hours. In the
-> 2016 French EU-LFS, restricted to ages 20–60, the 35-hour band accounts for
-> 37.2 % of workers in the five bands the model prices, against 34.3 % in the
-> estimation sample and 34.6 % in the model's own prediction; the concentration is
-> larger for women than for men in all three (40.6 % against 34.6 % in the LFS,
-> 36.7 % against 32.4 % in the model). The LFS desired-hours moments point the same
-> way at the short-hours end: mean desired hours exceed the upper bound of the band
-> itself — so they exceed actual hours for every worker in it — by 6.5 hours in the
-> 17.5–21.5 band and 3.1 hours in the 28.5–30.5 band, and the gap closes to 0.1
-> hours at 35 hours. Whether the LFS underemployment indicator confirms the same
-> gradient cannot be settled from the aggregate in hand, because the national
-> coding of the wish-to-work-more variable is not confirmed in the delivered file
-> and the two readings imply opposite gradients; that question is held open. None
-> of this identifies the hours-opportunity parameters, and none of it enters the
+> labour-force source. The final singles model places the offer density
+> overwhelmingly on the statutory 35-hour band and on full time: relative to the
+> 35-hour band, the estimated per-alternative offer weight is 0.86 at 36.5–40.5
+> hours but only 0.09 at 17.5–21.5 hours, 0.13 at 28.5–30.5 hours and 0.12 at
+> 44.5–70 hours. In the 2016 French EU-LFS, restricted to ages 20–60, the 35-hour
+> band accounts for 37.2 % of workers in the five bands the model prices, against
+> 34.3 % in the observed sample and 34.6 % in the model-implied distribution; the
+> concentration is larger for women than for men in all three (40.6 % against
+> 34.6 % in the external source, 36.7 % against 32.4 % in the model). The
+> desired-hours moments point the same way at the short-hours end: mean desired
+> hours exceed the upper bound of the band itself — so they exceed actual hours for
+> every worker in it — by 6.5 hours in the 17.5–21.5 band and 3.1 hours in the
+> 28.5–30.5 band, and the gap closes to 0.1 hours at 35 hours. None of this
+> identifies the hours-opportunity parameters, and none of it enters the
 > likelihood. It is an external consistency check: the two features the estimated
 > block asserts — a sharp 35-hour concentration, stronger among women, and thin
 > opportunities at short hours — are both present in a source the model never saw.
 
-Three disclosures travel with it, and none is optional. First, the relative
-offer weight is a weight on an **alternative**, not a predicted share: the
-predicted band share also carries how many sampled latent jobs land in the band
+Three disclosures travel with it, and none is optional. First, the relative offer
+weight is a weight on an **alternative**, not a model-implied share: the
+model-implied band share also carries how many sampled latent jobs land in the band
 and the whole preference side, which is why full time carries 86 per cent of the
-statutory band's offer weight and a *larger* predicted share than it. Second,
+statutory band's offer weight and a *larger* model-implied share than it. Second,
 **the weight column carries no interval**, and the reason is on the record: an
 interval on a difference of two band coefficients needs their covariance, and the
 estimation record stores standard errors only. Manufacturing one from the two
 marginal errors would be wrong in an unsigned direction, so the column is a point
 object and the omission is stated on the figure's face. Third, **the estimated
-hours-band weights are not sex-specific**: the preferred specification carries one set of hours-band
-coordinates common to men and women, so the relative-opportunity-weight column is
-identical down the male, female and pooled blocks by construction, and any sex
-contrast in the comparison lives in the *predicted shares*, which do differ by sex
-through the leisure block, the occupation-availability coordinates and the
-wage-offer location — which is why the sex ordering in the comparison is a
-statement about predicted shares and a real one: the model reproduces
+hours-band weights are not sex-specific**: the final singles model carries one set
+of hours-band coordinates common to men and women, so the relative-offer-weight
+column is identical down the male, female and pooled blocks by construction, and
+any sex contrast in the comparison lives in the *model-implied shares*, which do
+differ by sex through the leisure block, the occupation-availability coordinates
+and the wage-offer location — which is why the sex ordering in the comparison is a
+statement about model-implied shares and a real one: the model reproduces
 female-above-male in the statutory band **without any sex-specific hours
-coordinate**. Finally, the LFS panel used here requires a finite reported
-usual-hours figure, so it is a *reported-hours* panel and its shares can only be
-conditioned on employment; the residual working bucket outside the five priced
-bands shows special-code contamination in the desired-hours mean and is flagged
-and excluded from every comparison rather than used.
+coordinate**. Finally, the external panel used here requires a finite reported
+usual-hours figure, so it is a *reported-hours* panel and its shares can be
+conditioned on employment only; the residual working bucket outside the five priced
+bands shows special-code contamination in the desired-hours mean and is flagged and
+excluded from every comparison rather than used.
 
-`[PLACEHOLDER — SPR-8, the underemployment axis.]` The underemployment gradient —
-whether the bands the model prices as thin in opportunity are the bands where LFS
-workers report wanting more hours — is **coding-contingent and is not reported as a
-number**. The wish-to-work-more variable is fully observed on all fifteen focal
-sex × band cells, so this is a label question and not a coverage question, but the
-two readings of the code imply opposite gradients (a rank correlation of $-0.80$
-against $+0.80$ over the four short-and-medium bands — the same five numbers
-supporting the hypothesis under one reading and contradicting it under the other), and the desired-hours means
-settle the sign only where the mean exceeds the band's own upper bound. The one
-moment that resolves it — mean actual usual hours by sex and band — was not in the
-delivered aggregate and is the first item on a bounded follow-up request. The
-long-hours band is held out of that statistic under either reading, and should
-be: a band can be thin in *offers* while the people already working 45 to 70
-hours are the least likely to want more, so offer thinness and underemployment
-decouple at that end by construction and the part-time-constraint claim belongs
-at the short-hours end, where it lives. The 35-hour concentration result above
-does not touch that variable and is unaffected.
+### 9.3 Underemployment: external evidence on constrained hours
 
-`[PLACEHOLDER — external wage validation.]` The employer-side earnings sources
-that would validate the wage-offer block independently are not available: the
-accessible restricted-data folder holds fourteen files, four EU-SILC and ten
-EU-LFS, and no matched employer–employee file at all. No table can be produced
-without a new secured session and a new data request, and none is attempted.
+The external source also carries a direct report of whether a worker wishes to work
+more hours. Its national coding is settled against the EU-LFS codebook (version of
+8 July 2021), which gives $1 =$ No and $2 =$ Yes; the delivered export's own note
+carried the opposite map and is superseded. The variable is fully observed on all
+fifteen focal sex × band cells, so nothing here rests on imputation.
 
-**The regional occupation-demand construction (BMO): a negative result, in one
+Under that coding, **20.3 per cent of employed people in the five bands the model
+prices report wishing to work more hours, and the share falls monotonically in
+hours worked — 46.6 per cent at 17.5–21.5 hours, 37.5 at 28.5–30.5, 23.7 at the
+statutory week, 19.8 at 36.5–40.5 and 7.6 at 44.5–70 — so the bands the estimated
+model prices as thin in opportunity are the bands where workers most often report
+constrained hours**, at a Spearman rank association of $-0.80$ between the
+estimated relative offer weight and the wish-more share over the four
+short-and-medium bands.
+
+That is external evidence on hours constraints and nothing more. It **identifies**
+no parameter, it enters no likelihood, and a rank association over four points is
+descriptive rather than a test. **The current model has no direct desired-hours
+counterpart** — it prices the availability of hours packages, not a desired-hours
+margin — so the two objects are consistent rather than commensurable, and the
+agreement is a consistency check on the availability reading of the hours block.
+
+The long-hours band is held out of that association, and should be: a band can be
+thin in *offers* while the people already working 45 to 70 hours are the least
+likely to want more, so offer thinness and underemployment decouple at that end by
+construction, and the part-time-constraint claim belongs at the short-hours end
+where it lives. Panel (a) of **Figure 16** plots the relation. The result will be
+refined when the bounded follow-up moments land; the paper does not wait for them,
+and nothing in §9.2 touches this variable.
+
+### 9.4 Occupation: why the fit panel is internal
+
+The public French occupation classifications **cannot be uniquely harmonised** to
+the task-based ISCO grouping this model uses. There is no defensible one-to-one
+image, and constructing one would put an arbitrary mapping inside a validation
+result. Three consequences are taken, and they are taken together:
+
+1. **External occupation composition is not a model-validation result** in this
+   paper, and no such comparison is reported.
+2. **No ad hoc crosswalk is imposed** to manufacture one.
+3. **The occupation panel of the paper is the internal observed-against-model
+   fit** of §6.2 — the largest deviation across the five categories, including
+   non-employment, is seven-tenths of a percentage point (**Figure 5**). That is
+   the occupation-fit evidence this paper offers, and it is a within-sample
+   statement about the estimated model rather than an external one.
+
+The four-table crosswalk audit that exists is cited as **reproducibility evidence
+only** — it documents what a mapping would have to assume — and is not used as
+identification evidence anywhere.
+
+**The regional occupation-demand construction: a negative result, in one
 sentence.** A lagged 2015 employer-side recruitment-tension covariate at NUTS-2,
-aggregated to the four task groups through a four-table crosswalk and entered in
+aggregated to the four task groups through that four-table crosswalk and entered in
 the occupation margin as one coefficient, was estimated on three pre-registered
 arms and closed as a negative result, and the only statement made about it is the
-permitted one: *this lagged BMO construction adds no detectable structural
+permitted one: *this lagged construction adds no detectable structural
 occupation-access signal in the current sample and specification*. It is not
-claimed that regional occupation demand is generally irrelevant, and it is not
-used as identification evidence anywhere. The mapping is disclosed rather than
-assumed away: mapped recruitment-mass coverage is 0.5837, with 0.3799 of
-recruitment mass withdrawn because no defensible weighting basis exists for it,
-0.0324 genuine non-significant mass in the official matrices, and four codes
-carrying 0.40 per cent of mass with no crosswalk image and no imputation; the two
-candidate mappings disagree on two of the four task groups, at column correlations
-of 0.62 and 0.66.
+claimed that regional occupation demand is generally irrelevant, and it is not used
+as identification evidence anywhere. The mapping is disclosed rather than assumed
+away, and the disclosure is exactly why the crosswalk cannot carry a validation
+claim: mapped recruitment-mass coverage is 0.5837, with 0.3799 of recruitment mass
+withdrawn because no defensible weighting basis exists for it, 0.0324 genuine
+non-significant mass in the official matrices, and four codes carrying 0.40 per cent
+of mass with no crosswalk image and no imputation; the two candidate mappings
+disagree on two of the four task groups, at column correlations of 0.62 and 0.66.
+
 ---
 
 ## 10. Limitations and scope
@@ -2584,6 +2703,14 @@ it should not be settled by whoever happens to write the code.
 ---
 
 # Appendices
+
+> **Legend for the technical appendices.** The appendices retain the internal
+> specification labels, because reproduction needs them: **S8** is the *final
+> singles model* of the main text; **LOC4 / S0** is the *occupation-conditioned
+> wage specification benchmark*; **A, B, D, P** are the decomposition's four
+> channels — job access, earning opportunities, household endowments and needs,
+> and preferences. No label in this legend appears anywhere in §1–§11 or on any
+> figure.
 
 ## Appendix A — The parameter tables
 
@@ -2965,11 +3092,11 @@ flagged for the economics review and no substantive conclusion is drawn from it.
 
 | figure | content |
 |---|---|
-| C1 (`figC01`) | couples welfare distributions across the four principal states, raw and equivalized |
-| C2 (`figC02`) | the couples decomposition, signed, with bands |
-| C3 (`figC03`) | singles against couples, side by side |
-| C4 (`figC04`) | the pooled diagnostic, with the non-exhaustive fully common state shown as such |
-| C5 (`figC05`) | the male-leisure sensitivity, all seven arms |
+| C1 | couples welfare distributions across the four principal states, raw and equivalized |
+| C2 | the couples decomposition, signed, with bands |
+| C3 | singles against couples, side by side |
+| C4 | the pooled diagnostic, with the non-exhaustive fully common state shown as such |
+| C5 | the male-leisure sensitivity, all seven arms |
 
 These five figures carry the status `COUPLES_PAPER` in the figure audit: they
 are *not* in the singles paper set and are never promoted into it, but they are
@@ -2980,51 +3107,92 @@ only, which the audit discloses rather than hides.
 
 ---
 
-## Figure list
+## Figures and tables
 
-| paper | artefact | where |
+*Every caption below is self-contained: it states the population, whether the
+object plotted is observed, model-implied, an external benchmark or illustrative,
+whether it covers singles or couples, whether welfare is raw or equivalized, and
+the reference convention where one applies. Captions carry no implementation
+history. Throughout, **observed sample** means the 1,555 French single-adult
+households of the estimation frame (2,275 opposite-sex couple households where a
+caption says couples), and **model-implied** means a self-normalised
+importance-sampling estimate over the sampled alternatives at the estimated
+parameter vector, weighted by the household weight.*
+
+**A note on what the opportunity figures show.** The model does not estimate a
+count of jobs available to a person. The economic object is a household-specific
+**estimated opportunity distribution** — a density over latent job packages in
+employment, hours, occupation and wage. The number of sampled alternatives used
+for numerical integration is a computational quantity and is not an economic
+number of market opportunities. Accordingly, the opportunity figures in this paper
+plot **densities and probability masses, not job draws**: employment opportunity
+mass, the hours distribution, the occupation distribution and the wage-opportunity
+distribution. Where a future version displays simulated job draws instead, an
+equal fixed number is to be drawn from each estimated opportunity distribution and
+the caption must read: *"Illustrative draws from the estimated opportunity
+distribution. The number of displayed jobs is fixed for visualization and does not
+represent the number of jobs available to the individual."*
+
+### The paper set
+
+| # | artefact | caption |
 |---|---|---|
-| Figure T1 | `figT1_conceptual` | §1.1 — the conceptual figure (schematic; no estimated quantity) |
-| Figure 1 | `fig01_observed_hours_35h_peak` | §4.2 — observed weekly hours with the statutory band |
-| Figure 2 | `fig08_coefficients_by_block` | §6.1 — all 41 estimates by block with CR1 intervals |
-| Figure 3 | `fig02_hours_bands_obs_vs_pred` | §6.2 — hours-band shares, observed and predicted |
-| Figure 4 | `fig03_employment_obs_vs_pred` | §6.2 — employment rates, all and by sex |
-| Figure 5 | `fig04_occupation_obs_vs_pred` | §6.2 — occupation shares |
-| Figure 6 | `fig05_wage_offer_by_occupation` | §6.2, §6.4 — fitted wage-offer densities by occupation |
-| Figure 7 | `figS6_04_negll_vs_draws` | §5.3 — objective against the draw count (not comparable across $R$) |
-| Figure 8 | `figS6_05_key_coefficients_vs_R` | §5.3 — key coordinates against $R$ in SE units |
-| Figure 9 | `figS6_06_participation_vs_draws` | §5.3 — predicted participation against $R$ |
-| Figure 10 | `figW05_welfare_vs_R` | §7.6 — the headline contributions against $R$ |
-| Figure 11 | `figW01_welfare_distributions` | §7.1 — the four principal states |
-| Figure 12 | `figW02_headline_decomposition` | §7.2 — preferences against environment, signed |
-| Figure 13 | `figW03_nested_environment` | §7.2 — the nested $A/B/D$ split |
-| Figure 14 | `figE1_matched_pair` | §7.8 — the forward matched pair |
-| Figure 15 | `figE1R_reverse_pair` | §7.8 — the reverse matched pair |
-| C1–C5 | `figC01`…`figC05` | Appendix D |
-| AB1–AB3 | `figAB01_leisure_weight_by_age`, `figAB02_mrs_by_age_sex`, `figAB03_hours_band_fit` | §5.5 — the age-bound diagnostic (diagnostic and supporting, not paper figures) |
-| X1 | `figX1_external_hours_lfs_validation` | §9 — the EU-LFS comparison (supporting; see below) |
+| **T1** | `figT1_conceptual` | **The identification problem, schematically.** Two panels, each showing preferences (indifference curves), job access (a density over hours), earning opportunities (wage-offer densities by occupation), the chosen job and the attained money-metric welfare level, for two households. Panel (a): the same preferences under different estimated opportunity environments. Panel (b): the same opportunity environment under different preferences. **Illustrative and schematic**: drawn from stylised parameters chosen for legibility, carrying no estimated quantity on any axis, and not a result. The opportunity objects are densities; no jobs are plotted and no count of available jobs is implied. |
+| **1** | `fig01_observed_hours_35h_peak` | **Observed weekly hours, with the statutory band.** Distribution of usual weekly hours in the job actually held, employed members of the observed sample, France 2016, weighted. **Observed only** — no model quantity appears. The shaded band is the statutory $[33.5, 36.5)$ week. |
+| **2** | `fig08_coefficients_by_block` | **The estimated coefficients of the final singles model, by economic block.** All 41 estimated coordinates with robust cluster-robust (CR1) 95 per cent intervals, $G = 1{,}555$ households. **Estimated quantities**; the ten pinned coordinates are not shown. Open markers are coordinates resting on an active box bound, which carry no standard error. Intervals are sampling intervals for the parameters, not the integration bands used for welfare. |
+| **3** | `fig02_hours_bands_obs_vs_pred` | **Hours-band shares: observed against model-implied.** Observed sample and model-implied shares over the model's twelve hours bins, weighted. Singles. |
+| **4** | `fig03_employment_obs_vs_pred` | **Employment rates: observed against model-implied.** Weighted employment rate, all households and separately by sex. Observed sample and model-implied. Singles. |
+| **5** | `fig04_occupation_obs_vs_pred` | **Occupation shares: observed against model-implied.** Weighted shares over the four task-based occupation groups plus non-employment. Observed sample and model-implied. Singles. This is the paper's occupation-fit panel; it is **internal**, because the public French occupation classifications cannot be uniquely harmonised to the task-based grouping used here (§9.4). |
+| **6** | `fig05_wage_offer_by_occupation` | **The estimated wage-offer density, by occupation.** Fitted log-normal densities of the hourly wage a job *would* pay, one per task-based occupation group, at the sample mean of education and experience, with a common dispersion and occupation-specific locations. **Model-implied opportunity object**, not a distribution of observed wages and not a distribution of realised pay: it is what the estimated offer technology says is available, conditional on a job in that occupation being available. Singles. |
+| **7** | `figS6_04_negll_vs_draws` | **The objective against the number of sampled alternatives.** Optimised objective, objective per household, and free-block curvature at $R \in \{50, 100, 200, 400\}$ sampled latent jobs per household, on nested draw sets. **Numerical diagnostic.** Objective levels are *not* comparable across $R$; the panel is read for stability of shape, not level. Singles. |
+| **8** | `figS6_05_key_coefficients_vs_R` | **Key estimated coordinates against the number of sampled alternatives.** Movement of the statutory-week peak, the employment level, occupation access by sex, the occupation wage-location shifts and the wage dispersion across $R \in \{50,100,200,400\}$, expressed in units of the $R = 100$ robust standard error. **Numerical diagnostic**, singles. |
+| **9** | `figS6_06_participation_vs_draws` | **Participation against the number of sampled alternatives.** Observed and model-implied participation, and the fit error of the participation margin, across $R$. Observed sample against model-implied; singles. |
+| **10** | `figW05_welfare_vs_R` | **The welfare decomposition against the number of sampled alternatives.** Baseline inequality and the four channel contributions at $R \in \{50,100,200,400\}$, with only the estimated parameter vector varying — welfare basis, integration support, operators and inversion are the same objects at every rung. **Model-implied**, singles, raw basis, final singles model at the female reference. |
+| **11** | `figW01_welfare_distributions` | **The four principal welfare states.** Distributions and Lorenz curves of money-metric welfare — equivalent income at a common reference pay — under own preferences and own environment, reference preferences and own environment, own preferences and reference environment, and both at reference. **Model-implied**, singles, shown on both the raw and the coalition-consistent equivalized basis. The reference convention is the female preference block (primary). These are well-being levels under stated reference conventions; none is a compensating variation. |
+| **12** | `figW02_headline_decomposition` | **Preferences against the complete environment.** Signed Owen contributions to the inequality of money-metric welfare, with numerical-integration bands, under both positive models and both reference-preference conventions. **Model-implied**, singles. A contribution is the value of an equalisation operator in a cooperative game: the licensed reading is *equalising this channel across households removes this share of baseline inequality*. Contributions may take either sign and are not shares of a positive total. Bands are eight-scramble jackknife integration precision, **not** sampling confidence intervals. |
+| **13** | `figW03_nested_environment` | **The environment, split three ways.** The nested split of the environment contribution into job access, earning opportunities, and household endowments and needs, with numerical-integration bands, under both positive models and both reference conventions. **Model-implied**, singles, raw and equivalized. No ordering is claimed between job access and earning opportunities; the point estimates are printed and the ordering claim is declined (§7.3). Bands are integration precision. |
+| **14** | `figE1_matched_pair` | **Same estimated preferences, same observed job, most different estimated opportunities.** Two real single-adult households selected by a rule fixed before any household was inspected: among 19,116 admissible pairs sharing the observed employment state, occupation, hours band and wage quintile, the pair at or below the tenth percentile of preference distance that maximises opportunity distance. Panels: (a) the estimated preference profile; (b) the hours margin of the estimated opportunity density, scaled by the employment opportunity mass; (c) the estimated probability of an offer in each task-based occupation group; (d) the estimated wage-offer density given employment. **Panels (b)–(d) are estimated opportunity distributions, not choice distributions and not job draws**; no count of available jobs is shown or implied. Dashed lines mark the observed job. Households are described by aggregates only; no identifier is plotted. |
+| **15** | `figE1R_reverse_pair` | **Same estimated opportunities, same observed job, most different estimated preferences.** The mirror of Figure 14 under the same rule with the axes exchanged. Same panels, same reading: panels (b)–(d) are **estimated opportunity distributions, not job draws**. Households are described by aggregates only. |
+| **16** | `figX1_external_hours_lfs_validation` | **External labour-market evidence on hours.** French EU-LFS 2016, all persons aged 20–60 with a reported usual-hours figure (43,767 records), against the final singles model. Panel (a): the share of employed people in each hours band reporting a wish to work more hours — an **external benchmark** — against the model's estimated relative offer weight on that band; the rank association is descriptive, computed over the four short-and-medium bands, and the long-hours band is held out because offer thinness and a wish for more hours decouple there by construction. Panel (b): shares of the statutory 35-hour band from three sources — **external benchmark, observed sample, and model-implied** — by sex and pooled. Validation only: no moment from this source enters the likelihood, and it identifies nothing. The external population is all persons aged 20–60, while the observed sample is single-adult households, so composition differs by construction and no gap here is a prediction error. |
 
-Every figure in the paper set above is complete at PNG, PDF and CSV, with one
-exception that is not an incompleteness: Figure T1 is a schematic drawn from
-stylised parameters and carries no data sheet, so it has no CSV by design and
-the audit records the exemption by name rather than passing it silently.
+### The couples set
 
-The figure audit that classifies **every** figure on disk was deliberately *not*
-refreshed while this draft was being written — the figures directory was being
-written concurrently by several addendum lanes, the conceptual figure and the
-three age-bound diagnostics all appeared during the external-validation lane's
-own run, and an audit taken inside that window records an unclassified count
-that is already wrong by the time it is stored. It has now been refreshed once,
-at the R-245 close-out, by the lane that closed last: **16 paper, 8 couples
-paper, 9 supporting, 1 withdrawn, 0 missing and 0 unclassified.** Every figure
-on disk is classified.
+| # | artefact | caption |
+|---|---|---|
+| **C1** | `figC01_couples_distributions` | **Couples welfare distributions.** Money-metric welfare — equivalent income at a common reference pay — for 2,275 opposite-sex couple households, **model-implied**, on both the raw and the coalition-consistent equivalized basis. Couples carry a single shared preference vector with per-sex coordinates and therefore have no reference-group arm; the reference block is that vector at the couples-medoid arguments. |
+| **C2** | `figC02_couples_decomposition` | **The couples decomposition.** Signed Owen contributions of preferences against the complete environment, and the nested split of the environment, for couple households, raw and equivalized. **Model-implied.** Every preference-contribution figure on this panel travels with the male-leisure sensitivity range of §8.4; the environment side is the robust part. |
+| **C3** | `figC03_singles_vs_couples` | **Singles and couples side by side, equivalized.** Baseline inequality, the channel contributions and welfare levels for the two household types on the coalition-consistent equivalized basis. **Model-implied.** Singles are the final singles model at the female reference; the male structural-zero arm is a sensitivity and the two are never averaged. Cross-type comparison is licensed here because the four ratified conditions — same real-euro year, same consumption numeraire, common zero convention, and the calibration identity — were evaluated and hold. |
+| **C4** | `figC04_pooled` | **Pooled singles and couples, equivalized.** Pooled inequality of money-metric welfare over both household types, with the pooled Owen values shown as a **diagnostic, not a headline**: the pooled fully common state is 39.4 per cent of the pooled baseline because the two type-specific reference bundles differ, so the pooled decomposition is **not exhaustive**. Pooled inequality itself is well defined and is reported. This is an open welfare-reference question, not a numerical failure. |
+| **C5** | `figC05_male_leisure_sensitivity` | **The couples male-leisure sensitivity.** Seven pinned refits moving each marginally-recovered male-leisure coordinate to both ends of a deliberately conservative band, and the resulting movement in each welfare quantity. **Model-implied**, couples, raw and equivalized. The sensitivity is concentrated in the preference contribution; sign, the nested order and the welfare levels are unchanged in every arm. This is why couples are a companion and singles the quantitative headline. |
 
-Two classifications matter for reading the paper. The chosen-rank and top-$k$ sheet
-is **withdrawn** from the paper set for the reason in §6.2; its files remain on
-disk. The external-hours validation figure is **supporting** rather than paper for
-one reason only — panel (a), the underemployment axis, is coding-contingent (§9);
-its panel (b), the 35-hour concentration, is complete as it stands and is flagged
-for promotion to a standalone paper figure if wanted.
+### Supporting and diagnostic figures
+
+| # | artefact | caption |
+|---|---|---|
+| **AB1–AB3** | `figAB01_leisure_weight_by_age`, `figAB02_mrs_by_age_sex`, `figAB03_hours_band_fit` | **The age-bound diagnostic.** The implied leisure-weight function by sex and age, the marginal rate of substitution by age and sex at a reference bundle, and hours-band fit, comparing the final singles model against an arm with the age block widened fivefold. **Model-implied**, singles. Diagnostic and supporting, not paper figures; §5.5 gives the verdict, which is to retain the model of record. |
+| **S6.1–S6.3** | `figS6_01_coefficient_paths`, `figS6_02_coefficient_stability`, `figS6_03_fit_vs_draws` | **Draw-count stability, full detail.** Every estimated coefficient against the number of sampled alternatives, the same normalised by the $R = 100$ robust standard error, and the fit metrics. **Model-implied**, singles. Supporting detail behind Figures 7–9. |
+
+**Completeness.** Every figure in the paper and couples sets is complete at PNG,
+PDF and CSV, with one exception that is not an incompleteness: Figure T1 is a
+schematic drawn from stylised parameters and carries no data sheet, so it has no
+CSV by design and the audit records the exemption by name rather than passing it
+silently.
+
+**Two figures the paper does not have, by rule.** No rank, top-$k$ or Brier
+statistic is a paper figure: those statistics are structurally degenerate on this
+estimator's choice-set construction, for the reason given in §6.2, and the sheet
+that carried them is **withdrawn** from the paper set. Its files remain on disk
+and its label layer was not refreshed at the integration pass, precisely because
+it is not a paper figure. And no ranking or quintile exercise in the
+Decoster–Haan style is attempted; that literature is cited in §2 rather than
+extended here.
+
+**Tables.** The three tables generated outside the manuscript, each self-contained
+on its own sheet, are the headline decomposition table (the only source of
+percentages in this paper, §7.2), the external hours validation table (§9.2–§9.3),
+and the within-sample wage fit (§9.1). A source map lists every external source,
+what it validates, its population and its availability verdict.
+
 ---
 
 ## Self-check table
@@ -3196,17 +3364,22 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 
 | numeral | source |
 |---|---|
-| 43,767 EU-LFS 2016 records aged 20–60; the band partitions coincide on integer hours; the model side reproduces the hours-fit figure to $5.6\times10^{-17}$ | `SPRINT/runs/external_hours_lfs/xh1_table_record_v1.json`, `lfs_source`, `band_alignment_finding`, `gate_fig02_reproduction` |
+| within-sample wage fit: observed / model-implied medians 14.07 / 13.79 (all), 14.70 / 13.84 (men), 13.40 / 13.74 (women); median fit $-0.86$ men and $+0.34$ women; means 15.52 / 15.19, 16.03 / 15.22, 15.05 / 15.17 | `SPRINT/tables/wage_fit_within_sample_v1.csv`, emitted by `SPRINT/runs/external_hours_lfs/build_wage_fit_v1.py` |
+| no matched employer–employee file: 14 files, 4 EU-SILC and 10 EU-LFS, 0 DADS or SES | `SPRINT/runs/external_hours_lfs/xh1_table_record_v1.json`, `priority_2_ses_dads_wages`; `SPRINT/tables/external_source_map_v1.csv` |
+| 43,767 EU-LFS 2016 records aged 20–60; the band partitions coincide on integer hours; the model side reproduces the hours-fit figure to $5.6\times10^{-17}$ | `xh1_table_record_v1.json`, `lfs_source`, `band_alignment_finding`, `gate_fig02_reproduction` |
 | relative offer weights 0.86 / 0.09 / 0.13 / 0.12 against the statutory band | same, `opportunity_weights` |
-| the statutory band at 37.2 % (LFS), 34.3 % (sample), 34.6 % (model); women 40.6 % vs men 34.6 % (LFS), 36.7 % vs 32.4 % (model) | `SPRINT/figures/figX1_external_hours_lfs_validation.csv`, panel b |
+| the statutory band at 37.2 % (external), 34.3 % (observed sample), 34.6 % (model-implied); women 40.6 % vs men 34.6 % external, 36.7 % vs 32.4 % model-implied | `SPRINT/figures/figX1_external_hours_lfs_validation.csv`, panel b |
 | desired-hours excess of 6.5 and 3.1 hours over the band upper bound, closing to 0.1 at 35 hours | `xh1_table_record_v1.json`, `desired_hours_excess` |
-| the paragraph, verbatim | `SPRINT/runs/external_hours_lfs/xh_paper_paragraph_v1.md` |
+| the paragraph, verbatim apart from the audience-facing relabelling and the resolved underemployment clause | `SPRINT/runs/external_hours_lfs/xh_paper_paragraph_v1.md`; `SPRINT/decision_log.md`, the integration-pass entry |
 | the alternative-weight-not-share and no-interval disclosures; the legacy band-edge trap; the 20-of-24 bitwise gate | `SPRINT/decision_log.md` Entry 10 §§1–3; `xh1_table_record_v1.json`, `band_alignment_finding`, `gate_fig02_reproduction` |
-| the long-hours decoupling and why LH is held out of the rank statistic | `SPRINT/decision_log.md` Entry 10 §6 |
+| the long-hours decoupling and why the long-hours band is held out of the rank statistic | `SPRINT/decision_log.md` Entry 10 §6 |
 | the hours-band coordinates are not sex-specific | `xh1_table_record_v1.json`, `opportunity_weights_are_not_sex_specific` |
 | the reported-hours panel and the contaminated residual bucket | same, `contamination` |
-| the coding-contingent underemployment axis; full coverage on all 15 focal cells; rank correlations $-0.80$ / $+0.80$; the blocking moment | same, `wishmore_verdict`, `wishmore_coverage_finding`, `rank_association`, `bounded_inside_run_request` |
-| no matched employer–employee file: 14 files, 4 EU-SILC and 10 EU-LFS, 0 such files | same, `priority_2_ses_dads_wages` |
+| underemployment coding $1 =$ No, $2 =$ Yes (EU-LFS codebook, 8 July 2021); full coverage on all 15 focal cells | `xh1_table_record_v1.json`, `wishmore_coverage_finding`; the coding direction is ruled, not inferred from the delivered export, whose own note is superseded |
+| 20.3 % of the employed wish more hours over the five priced bands | same, `wishmore_verdict.what_the_reversed_map_implies.implied_share_wishing_more_over_the_five_focal_bands` $= 0.20285744$ |
+| the by-band gradient 46.6 / 37.5 / 23.7 / 19.8 / 7.6 per cent | same, `table.rows`, `lfs_wish_more_share_code2_reversed`, pooled |
+| the rank association $-0.80$ over the four short-and-medium bands | same, `rank_association.reversed.spearman_rho_excluding_LH` |
+| occupation fit: largest deviation seven-tenths of a percentage point over five categories | `SPRINT/figures/fig04_occupation_obs_vs_pred.csv` |
 | the BMO permitted sentence and the mapping disclosure (0.5837 / 0.3799 / 0.0324 / 4 codes at 0.40 %; correlations 0.62 and 0.66) | `decision_note.md` §15.9, §15.10, §15.15, §21.9; `08_limitations.md` §8.2 |
 
 ### (j) §10–§11 and the appendices
@@ -3235,7 +3408,7 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | the exact table is the only source of percentages | every percentage in §1, §7 and §11 is read from `headline_decomposition_v1.csv`; no percentage is computed in prose |
 | no "job opportunities explain $X$ %" | the licensed form — *equalising channel $X$ removes $Y$ % of baseline money-metric inequality* — is used throughout and is stated as a rule in §7.3 |
 | no causal 35-hour language | the coefficient is named an institutionally motivated opportunity peak in §3.2, §4.2, §6.3 and §9; no counterfactual removing the statute exists anywhere |
-| no $A$-versus-$B$ ordering claim | §1.3 and §7.3 print the point estimates and explicitly decline the ordering; `ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` is named |
+| no job-access-versus-earning-opportunities ordering claim | §1.3 and §7.3 print the point estimates and explicitly decline the ordering; the standing non-identification of the access density is stated with it |
 | couples numbers only with their sensitivity qualifier | §8.4 states the rule; the $C_P$ range 0.0014–0.0075 travels with every couples preference figure; §1.3, §8 and §11 say singles are the headline |
 | "not statistically indistinguishable from zero" never used | the phrase is never used as a claim about any quantity; §7.3 point 2 records the prohibition and its reason, and §6.1 describes wide coefficients by whether their interval covers zero rather than by a null claim |
 | MC bands are integration precision | stated in the drafting note, §3.6, §7.3 and §10.2; no band is described as a confidence interval anywhere |
@@ -3245,13 +3418,25 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | no cross-measure quantitative robustness claim | $W^4$/$W^6$ appear only as normative-reference disclosures (§3.3) and in Appendix D.3 as a measure fact |
 | no intra-couple welfare statement | §8.5 states it explicitly |
 | no Corse-specific statement | §4.3 records the disclosure; none is made |
+| no internal specification or run label in the main text or on a figure | §1–§11 and every figure label layer are grep-clean of the internal labels; they survive only in the technical appendices, behind the legend at the head of Appendix A, and in the drafting note, which is stripped at final |
+| no external-vs-sample gap called a prediction error | §9 opens with the rule and §9.1 restates it for the earnings comparison that is not yet available |
+| external occupation composition is not a validation result | §9.4 states the three consequences; the occupation panel is the internal fit of §6.2, and the crosswalk audit is cited as reproducibility evidence only |
+| the external sources identify nothing | §9 preamble, §9.2 and §9.3 each say so; no moment from any external source enters the objective |
+| no count of available jobs is claimed or plotted | the note at the head of the figure section fixes the rule; the opportunity figures plot densities and probability masses, and Figures 14–16 say so on their face |
+| no rank, top-$k$ or Brier statistic, and no Decoster–Haan-style ranking exercise | §6.2 gives the structural reason and the sheet is withdrawn from the paper set; the ranking literature is cited in §2 and not extended |
 
 ### (l) Open placeholders
 
 | placeholder | what is missing | where it goes |
 |---|---|---|
-| SPR-8, the underemployment axis | the direction of the LFS wish-to-work-more code, resolvable by one aggregate moment (mean actual usual hours by sex and band) | §9, `[PLACEHOLDER — SPR-8]` |
-| external wage validation | a matched employer–employee source; none is available without a new secured session and data request | §9, second placeholder |
+| the external earnings comparison | a matched employer–employee source (DADS / Base Tous Salariés); none is available without a new secured session and a new data request. §9.1 reports the within-sample wage fit and fixes in advance the framing the comparison will be read under | §9.1, `[PLACEHOLDER — the DADS wage comparison]` |
+
+**One placeholder closed at this pass.** The underemployment axis is no longer
+open: the coding direction of the labour-force wish-to-work-more variable was
+settled against the EU-LFS codebook (version of 8 July 2021, $1 =$ No, $2 =$ Yes),
+and §9.3 now reports it as external evidence on hours constraints. It will be
+refined if the bounded follow-up moment (mean actual usual hours by sex and band)
+lands; the paper does not wait for it, and no claim in §9.3 depends on it.
 
 ---
 
