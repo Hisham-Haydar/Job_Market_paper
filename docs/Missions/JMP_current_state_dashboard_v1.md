@@ -3,7 +3,7 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-03, at Goal-1 **R-233** (**the programme is in RESEARCH-FIRST / PRESENTATION-FIRST SEMINAR SPRINT mode** — *"MORE RESEARCH, LESS GOVERNANCE"*: a narrow documentation cap, the GPU hands-on research environment as priority zero, a closed singles candidate set, one welfare measure, clean both-flexible couples only, and external identification paused but not abandoned. R-230 and R-231 are **FILLED** — the CPL-A adapter is accepted with C1 escalated, and the HP/HO disposition plus the PKG-03 C1–C4 conventions are ruled: **C1 is the O-5 convention**, C2/C3 are flexible-only, the C4 channel inventory is deferred. One item is **RETURNED**: the seminar parameter count of 35 is not reproduced by any count on disk (51 coordinates / 41 free / 10 pinned / 39 interior), so no parameter count is published until the deputy resolves it. Carried forward unchanged from R-232: **S9 SELECTION IS COMPLETE and corrected S8 is FORMALLY RETAINED as the final positive model** — W3 joined HP and HO as NOT IDENTIFIED, so no heterogeneity extension earned admission and, under the deputy's §9 rule, no S9 extension is invented; "S9" names the selection, not a specification. LOC4 remains the benchmark for the specification-sensitivity finding. `TORCH_BACKEND_JMP_READY` becomes `PENDING_PARITY_EXPORT`; the export itself is a later card, at freeze. No welfare number is promoted and no provisional label is lifted.)
+**Last updated:** 2026-09-04, at Goal-1 **R-245** — the seminar-sprint close-out. **The sprint's scientific core is COMPLETE and the next action is the bounded economics review.** Corrected S8 is the frozen positive model and nothing in the sprint moved it: the age-bound diagnostic (SPR-7) returned `RETAIN_S8_CLOSE`, and both external validation halves that could have disturbed it either confirmed the model (the 35-hour concentration) or were HELD rather than reported (the underemployment axis, `WISHMORE_CODING_UNRESOLVED`). `SPRINT/tables/headline_decomposition_v1.csv` is the SOURCE OF RECORD for every welfare magnitude in the paper — the paper sentence is generated from it so it cannot drift. Singles are the quantitative welfare headline; couples are a sensitivity-bounded companion, by the pre-fixed rule, because the male-leisure sensitivity is MATERIAL in `C_P`. The figure queue is refreshed once and is now exhaustive: 16 paper, 8 couples paper, 9 supporting, 1 withdrawn, **0 missing, 0 unclassified**. The seminar working paper is on disk at `JMP/manuscript/JMP_working_paper_for_seminar_v1.md`. Every welfare number still carries `FINAL_SINGLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW` / `FINAL_COUPLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW`; **no provisional label is lifted here.** The prior header, carried forward for the programme-mode context it still governs — 2026-09-03, at Goal-1 **R-233** (**the programme is in RESEARCH-FIRST / PRESENTATION-FIRST SEMINAR SPRINT mode** — *"MORE RESEARCH, LESS GOVERNANCE"*: a narrow documentation cap, the GPU hands-on research environment as priority zero, a closed singles candidate set, one welfare measure, clean both-flexible couples only, and external identification paused but not abandoned. R-230 and R-231 are **FILLED** — the CPL-A adapter is accepted with C1 escalated, and the HP/HO disposition plus the PKG-03 C1–C4 conventions are ruled: **C1 is the O-5 convention**, C2/C3 are flexible-only, the C4 channel inventory is deferred. One item is **RETURNED**: the seminar parameter count of 35 is not reproduced by any count on disk (51 coordinates / 41 free / 10 pinned / 39 interior), so no parameter count is published until the deputy resolves it. Carried forward unchanged from R-232: **S9 SELECTION IS COMPLETE and corrected S8 is FORMALLY RETAINED as the final positive model** — W3 joined HP and HO as NOT IDENTIFIED, so no heterogeneity extension earned admission and, under the deputy's §9 rule, no S9 extension is invented; "S9" names the selection, not a specification. LOC4 remains the benchmark for the specification-sensitivity finding. `TORCH_BACKEND_JMP_READY` becomes `PENDING_PARITY_EXPORT`; the export itself is a later card, at freeze. No welfare number is promoted and no provisional label is lifted.)
 **Standing:** Established by the PI STANDING DIRECTION — PRACTICAL RESEARCH
 MODE (recorded verbatim at Goal-1 R-168): *"Maintain one current-state
 dashboard rather than multiple overlapping status memos."*
@@ -22,6 +22,15 @@ document differ, the ratified document governs.
 
 | Label | Object it qualifies | Set at |
 |---|---|---|
+| **`FINAL_SINGLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW`** + **`FINAL_COUPLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW`** | every welfare and decomposition magnitude on the sprint record, singles and couples. They are computed, internally verified, gate-passed and reproducible; they are **provisional pending ONE bounded economics review**, which is the seminar itself. **No label is lifted by this close-out.** The six items that review is asked to look at are listed in the working paper's drafting note | **R-241.3** / **R-242.3**, carried at **R-245** |
+| **`HEADLINE_TABLE_IS_THE_SOURCE_OF_RECORD`** | `SPRINT/tables/headline_decomposition_v1.csv` and its `.md`. Every welfare magnitude quoted in seminar prose is read from this table, and the paper's headline sentence is **generated** from it by `SPRINT/runs/headline_table/build_headline_table_v1.py` rather than typed, so prose and table cannot drift apart. Eight rows: two reference conventions x two bases x the preferred model and its benchmark. A number that is not in this table is not a headline number | **R-243** |
+| **`SINGLES_ARE_THE_QUANTITATIVE_WELFARE_HEADLINE`** | the singles / couples division of labour — settled by a rule fixed BEFORE the couples sensitivity was computed, not after. The couples male-leisure sensitivity is **MATERIAL** (29 of 140 comparisons outside band, worst relative move 73.1 % and concentrated in `C_P`), so couples welfare is a **sensitivity-bounded companion**, not a headline. No sign change and no ordering change was found, and the band is conservative — all seven pinned arms fall outside the couples likelihood's own 95 % region | **R-242.3** |
+| **`POOLED_DECOMPOSITION_NON_EXHAUSTIVE`** | the pooled singles + couples decomposition. All four R-227 cross-type conditions PASS, **including the calibration identity** (max abs error 1.11e-14), so R-227's cross-type halt does **not** fire and pooled INEQUALITY is reported. But `I1111 = 0.068282` is **39.4 %** of `I0000`, because R-227 ratifies TYPE-SPECIFIC reference bundles and the two land 300 EUR/month apart. Predicted in the design before computing. The pooled Owen value is a **DIAGNOSTIC, not a headline** | **R-242.3** |
+| **`AGE_BOUND_DIAGNOSTIC_ADDENDUM_S2_EXPLORATORY`** → **`RETAIN_S8_CLOSE`** | SPR-7, the coherent 5x widening of the four singles quadratic-age half-widths. **The S2 failure mode does not repeat**: the active set goes from two coordinates to EMPTY, all 41 free coordinates interior, Hessian full rank and PD. But the gain is **0.5522** in negLL at IDENTICAL `k`, and `+1.0` — the S8 bound — lies **inside both** freed 95 % intervals, so limb B fails and S8 is retained. It is retained on the **negligible-gain** limb, explicitly NOT on the constraint-relocation limb. One thing travels forward: the **RAW-basis `C_P` carries an age-bound-convention sensitivity of about +13 %**; on the primary equivalized basis every headline quantity stays inside its band | **R-245** (run under R-243) |
+| **`EXTERNAL_HOURS_DISTRIBUTION_VALIDATION`** | SPR-8. The EU-LFS 2016 desired-hours aggregate is **NOT an instrument**: it enters no likelihood, no gate, and identifies nothing. The 35-hour half is COMPLETE and is the model's structure appearing in a source it never saw — F35 share 0.3725 LFS / 0.3433 sample / 0.3461 model, female above male in all three | **R-245** (run under R-243) |
+| **`WISHMORE_CODING_UNRESOLVED`** | the underemployment axis of SPR-8 — **HELD, not reported.** `WISHMORE` is fully observed on all fifteen focal cells, but which of its two codes means *wants more* is unconfirmed in the delivered file, and the two readings put the five bands on **opposite** slopes (Spearman −0.80 reversed against +0.80 as delivered). **No underemployment number enters the paper**, and `figX1` is SUPPORTING rather than PAPER for this reason alone; its panel (b) is coding-free. Resolvable by ONE bounded inside run: moments **M1** (mean HWUSUAL by sex x band) and **M2** (WISHMORE value frequencies) are the blocking pair. The pack is amended and tested for exactly that — MNL `cd297b5` | **R-245** |
+| **`SES_DADS_NOT_AVAILABLE_NO_RUN_POSSIBLE`** | SPR-8 priority 2, external wage validation. Ruled on the **inventory**, not on memory: the accessible restricted folder holds fourteen files, four EU-SILC and ten EU-LFS, and **no SES and no DADS file at all**. Recorded as FUTURE and not attempted; it needs both a new secured session and a new data request | **R-245** |
+| **`COUPLES_PAPER`** (figure-audit status) | the eight couples figures — the five `figC*` Appendix D welfare figures and the three `r240_couples_*` positive-model figures. They are **not** in the singles paper set and are **not** promoted into it; the status exists because `OUT_OF_SCOPE` understated figures that ARE the paper's Appendix D. The three `r240_*` are PNG-only and are **disclosed**, not hidden; `MISSING` stays reserved for the singles set. The audit is now exhaustive: **16 PAPER, 8 COUPLES_PAPER, 9 SUPPORTING, 1 WITHDRAWN, 0 OUT_OF_SCOPE, 0 MISSING, 0 UNCLASSIFIED** | **R-245** |
 | **`SEMINAR_RESEARCH_SPRINT_MODE`** + **`SPRINT_DOCUMENTATION_CAP_IN_FORCE`** | the programme for roughly fifteen days — RESEARCH-FIRST / PRESENTATION-FIRST, *"MORE RESEARCH, LESS GOVERNANCE"*, on the premise that *"Accepted specifications are reproducible benchmarks, not restrictions on scientific experimentation."* The cap is narrow and operative: exploratory work retains ONLY `experiments/JMP_SEMINAR_SPRINT/{run_registry.csv, model_comparison.csv, decision_log.md, configs/, runs/, figures/, JMP_GPU_lab.ipynb}`; each run needs a config, a result JSON, a parameter CSV, runtime/convergence, key fit diagnostics and ONE registry row — **no prompt archive, no per-run memo, no per-run software review**, and no new mission-document family | **R-233** |
 | **`GPU_RESEARCH_ENVIRONMENT_PRIORITY_ZERO`** | a researcher-facing native-Windows Torch/CUDA workflow in an ISOLATED environment — **the MNL package pin does not move** (`27756a06`). Exactly ONE local application parity check against the CPU/JAX route on the same data, theta and specification (objective, gradient, parameter ordering, Hessian where practical): *"one technical sanity check, not a new certification programme."* If the Torch grammar cannot represent the economic model exactly, **the model is not simplified to use CUDA** — JAX is used and the missing generic capability is named. The research bundle is built and verified at `MNL/experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/`; it is a RESEARCH bundle and **not** the final parity export | **R-233** |
 | **`SINGLES_CANDIDATE_SET_CLOSED`** | the singles specification sprint — corrected S8, the simple occupation-conditioned structural wage model (which *is* corrected LOC4/S0), and W3 only if its gate passed. It did not, so it is closed. **NOT opened:** hours-conditioned structural wages, occupation × hours interactions, occupation-specific slopes, occupation-specific dispersion, further HP or HO variants, large specification searches | **R-233** |
@@ -406,8 +415,42 @@ at the head of this section.)*
 > 5. only then decide which exploratory result enters the formal
 >    accepted specification.
 
-**The live order at R-232 — four items, in this order. This SUPERSEDES the R-224
-order below, whose items 1-4 (HP, HO, W3 feasibility, S9 selection) are ALL CLOSED.**
+**The live order at R-245 — ONE item. This SUPERSEDES the R-232 order below,
+whose items 1 (final welfare) and 3 (the results surfaces) are DONE and whose
+items 2 (the RUM rerun) and 4 (the Torch parity export) are deferred to freeze,
+after the review.**
+
+> 1. **The bounded economics review of the seminar paper and deck.** This is
+>    the single review R-233 §16 licenses, and the seminar is it. Nothing else
+>    is queued: the singles positive model is frozen, its final welfare and
+>    decomposition are computed, the couples companion is computed and bounded,
+>    the headline table is the source of record, the figure queue is exhaustive
+>    and the working paper is on disk. **No new estimation, no new pricing and
+>    no new specification is authorized ahead of it.**
+
+**What is deferred BEHIND the review, not abandoned.** The **RUM final rerun**
+on the corrected frame (R-222 s8) — the benchmark stays
+`RUM_BENCHMARK_STALE_FOR_FINAL_REPORTING_PENDING_CORRECTED_FRAME_UPDATE` and is
+re-estimated **once**, at final reporting. The **Torch parity export**
+(`PENDING_PARITY_EXPORT`), which is a freeze-time card. The **bounded inside run
+for `WISHMORE`** — the pack is amended and synthetically tested (MNL `cd297b5`)
+and M1/M2 are the blocking pair, but no secured session is scheduled and no
+underemployment number may be written until it returns. The **02_framework /
+03_data terminology redline** (§7). The **generic
+`SEMI_FLEXIBLE_MARGINAL_PROPOSAL` capability** (R-227 s8), still gated.
+
+**One item remains RETURNED to the deputy and is NOT closed by this refresh.**
+`SEMINAR_PARAMETER_COUNT_35_VS_41_RETURNED` — the record is 51 coordinates / 41
+free / 10 pinned / 39 interior, `k = 41` is the constant in every AIC/BIC and
+`K_interior = 39` the CR1 constant, and no convention on disk yields 35. The
+sprint decision log Entry 2 records the block-by-block decomposition and states
+the constraint as still binding: **publish no parameter count in seminar prose
+or tables until the deputy answers.** The seminar working paper's abstract as
+drafted states "41 estimated structural parameters", so **either the deputy
+answers or that sentence is cut before the paper is circulated.** Flagged here
+rather than resolved, because the count is the deputy's to rule on.
+
+**The R-232 order, superseded and kept for the record.**
 
 > 1. **Final welfare** — computed for the retained **corrected S8** only; there is
 >    no S9 model to compute it for. First test whether the existing common-support
@@ -898,6 +941,19 @@ the resolver `_resolve_r227_carveout`. Three properties matter:
    sideways: no fourth path may join, and these three may not move again without a
    new deputy authority.
 
+**Battery of record at R-245 — MNL `cd297b5`, ALL PASS 4/4.** Run in FULL before
+and after the two close-out commits, all four steps and all 76 pins. PRE at MNL
+`cb2490f`: gate self-pin OK, `open_gate` 52 + 24 = 76 OK, 76/76 re-hashed,
+`parity_axis_evidence` `materially_intact = True` over **924** changed paths
+(**917** additions, 4 HK-01 renames on the R-148.1 alias table, 3 on the R-227
+s10 carve-out, **0** blocking), gitlink `27756a06`. POST at MNL `cd297b5`:
+identical outcome over **977** changed paths (**970** additions, the same 4 + 3
+resolved, **0** blocking), gitlink unmoved. Every path either commit touches
+post-dates the frozen axis — checked with `git cat-file -e <axis>:<path>` on all
+six modified files before staging, per the commit trap above — so each reads `A`
+and none approaches the carve-out; the three carve-out paths were not touched and
+their `after` pins are unmoved.
+
 **Battery of record at R-232 — MNL `ddd4981`, ALL PASS 4/4.** Run before and after the
 S9-selection commit, in full, all four steps and all 76 pins. Step 1 gate self-pin OK;
 step 2 `open_gate` 52 + 24 = 76 OK; step 3 76/76 pins re-hashed (`base_path` for the 52
@@ -922,7 +978,36 @@ remain the wrong answers; this carve-out is the right one, and it is closed.
 
 ## 6. Next action
 
-**S9 SELECTION IS COMPLETE (R-232) and corrected S8 is FORMALLY RETAINED as the final positive model. The next action is the final welfare on corrected S8.** All three authorized heterogeneity lanes returned NOT IDENTIFIED — HP (R-226), HO (R-227.2) and W3 (R-229) — HPO was never authorized and its gate is unmet, `W0_W1_W2_AXIS_CLOSED` removed the wage-treatment discriminant, and R1_BMO is a closed negative result. Under the deputy's §9 rule that makes the disposition `FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL`: **no S9 extension is invented and no S9 model exists**; "S9" names the selection. LOC4 remains the benchmark for the specification-sensitivity finding. Then the RUM rerun, the notebook/report update and the parity export, in the §3 order. Two lanes run alongside and neither blocks the four: the **generic `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` capability** (R-227 s8; PKG-03 delivered the adapter at R-228 but the eight-item gate is **not** discharged), and the **02_framework / 03_data terminology redline** (§7). MNL `decision_note.md` §31.
+**THE NEXT ACTION IS THE BOUNDED ECONOMICS REVIEW.** The sprint's scientific core
+is complete and nothing else is queued ahead of it. Corrected S8 is the frozen
+positive model; its final welfare and decomposition are computed on the corrected
+frame; the couples companion is computed, its one sensitivity is bounded and
+named; `SPRINT/tables/headline_decomposition_v1.csv` is the source of record and
+the paper's headline sentence is generated from it; the figure queue is
+exhaustive at 0 missing and 0 unclassified; and the seminar working paper is on
+disk at `JMP/manuscript/JMP_working_paper_for_seminar_v1.md`. Every welfare
+magnitude still carries its provisional label and **this close-out lifts none of
+them** — that is exactly what the review is for. R-233 §16 licenses one final
+economics / claim-to-evidence review of the seminar paper and deck, and this is
+it. **No new estimation, no new pricing and no new specification ahead of it.**
+
+**Three things go INTO the review as open, and none of them is closed here.**
+First, the **parameter count** is still RETURNED (§3): the draft abstract prints
+41 while the standing constraint says publish none, so either the deputy answers
+or the sentence is cut. Second, **`WISHMORE_CODING_UNRESOLVED`** — the
+underemployment axis is held, not reported, and closing it needs one bounded
+secured session for moments M1 and M2; the pack is amended and synthetically
+tested for exactly that (MNL `cd297b5`) but nothing is scheduled. Third, the
+**age-bound `C_P` sensitivity** of about +13 % on the raw basis (SPR-7), which
+does not disturb the primary equivalized basis but travels with the raw-basis
+preference share wherever it is quoted.
+
+**The record this supersedes.** S9 SELECTION IS COMPLETE (R-232) and corrected S8
+is FORMALLY RETAINED as the final positive model; the next action was then the
+final welfare on corrected S8, and it has since been computed (R-241.3) along
+with the couples companion (R-242.3), the headline table and figure queue
+(R-243), and the two addendum lanes (R-245). The rest of this section is the
+R-232 record, unedited. All three authorized heterogeneity lanes returned NOT IDENTIFIED — HP (R-226), HO (R-227.2) and W3 (R-229) — HPO was never authorized and its gate is unmet, `W0_W1_W2_AXIS_CLOSED` removed the wage-treatment discriminant, and R1_BMO is a closed negative result. Under the deputy's §9 rule that makes the disposition `FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL`: **no S9 extension is invented and no S9 model exists**; "S9" names the selection. LOC4 remains the benchmark for the specification-sensitivity finding. Then the RUM rerun, the notebook/report update and the parity export, in the §3 order. Two lanes run alongside and neither blocks the four: the **generic `SEMI_FLEXIBLE_MARGINAL_PROPOSAL` capability** (R-227 s8; PKG-03 delivered the adapter at R-228 but the eight-item gate is **not** discharged), and the **02_framework / 03_data terminology redline** (§7). MNL `decision_note.md` §31.
 
 **Two things the S9 record states against its own verdict, and they travel with it.** First, **no 901-standard synthetic recovery gate has ever been run on singles S8 itself** — the gate belongs to promotion and S8 was accepted on the real-data protocol of record. What exists is the `sigma = 0` leg of the HP and HO gates and the W3 null control, whose DGP at truth 0 *is* corrected-frame S8 exactly: 38 coordinates interior in all replications, worst |bias| 0.686 SE, **0 departures resolved beyond twice the Monte-Carlo error**, mean coverage 0.958. At R = 10 the MC error of a bias is itself about 0.30 SE, so that evidence is favourable and **weak**, and it is recorded as a limitation rather than as a pass. Second, the access-versus-earning-capacity ordering is **not** stable across the pair — `phi_A > phi_B` under S0, `phi_B > phi_A` under S8 — which is `ACCESS_ABILITY_ORDER_UNRESOLVED_UNDER_S8` (R-182), carried forward **unresolved and unclaimed**. Neither point changes the verdict; both are on the record with it.
 
