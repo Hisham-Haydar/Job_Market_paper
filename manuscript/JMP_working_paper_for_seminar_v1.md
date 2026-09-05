@@ -2168,6 +2168,23 @@ opportunity distance of 0.540 — two households with literally identical estima
 preference profiles — but there is no observed job there, so it is not the paper's
 figure.
 
+**A second disclosure, found while building the regional illustration of §7.9 and
+recorded rather than quietly fixed.** The stored profile artefact these two figures
+are drawn from computes its market-access index from region columns that are
+identically zero on this frame, rather than from the region indicators the
+estimator and the welfare engine both evaluate. The gap is exactly each household's
+own region coefficient, at machine precision. **The consequence is confined to
+these two figures**: the participation numbers plotted here, and the
+opportunity-distance measure that ranks the candidate pairs, are region-free. The
+estimation, the welfare decomposition, the exact table and the geographic split of
+§7.9 all go through the loader that rebuilds the indicators and are unaffected —
+§7.9's own illustration uses the live indicators throughout. A repair has been
+specified and has not yet passed its own proof, so **the pair shown here is the one
+the region-free ranking selected and has not been re-selected**. Re-selection could
+move the pair; it would not change any number in §7.
+Since the ranking omits a term that varies across households, the pair below is
+best read as *a* clean instance of the mechanism rather than as the extremal one.
+
 **One structural disclosure travels with these figures.** Under the preferred
 specification the hours-band index carries **no household-specific coordinate**.
 Household variation in the offer density therefore lives in exactly three places —
@@ -2177,6 +2194,104 @@ households, but only through the participation margin. The figures say this on
 their face rather than letting a reader infer a household-specific hours
 technology the model does not have. No identifier is written or plotted;
 households are described by aggregates only.
+
+### 7.9 Inside job access: the geographic split
+
+The job-access channel can be split once more, into the part carried by **where a
+household lives** and the part carried by everything else the access operator
+owns. The split is a nesting of the accepted decomposition rather than a new one:
+levels one and two are bitwise unchanged — all 44 numbers of §7.2 reproduce
+exactly — and the two sub-players partition the access operator's own argument
+slots, so equalising both reproduces the access operator bitwise. That is asserted
+as an identity and measured, not assumed, and it holds to $0.0$ on every row.
+
+**The two sub-players.** *Geographic / local-market access* owns the eight NUTS-1
+region indicators, the urbanisation indicators, and the local unemployment rate at
+the household's own region, education and sex. *Other access* owns everything
+else: the occupation-availability conditional — which this specification conditions
+on **sex alone** — and two survey-year indicators that are identically zero on a
+single-year sample and are therefore numerically inert. Every substituted indicator
+is replaced by its population share and the unemployment rate by its sample mean;
+nothing is re-estimated and no coefficient is re-fitted.
+
+**Table 7.2 — the split, at the female reference.**
+
+| basis | job access | geographic access | other access | geographic, as a share of job access | geographic, as a share of $I^{00}$ |
+|---|---:|---:|---:|---:|---:|
+| raw | 0.020004 ± 0.001290 | **0.017528 ± 0.000887** | 0.002476 ± 0.000891 | **87.62 % ± 3.89** | **13.05 % ± 0.74** |
+| equivalized | 0.015982 ± 0.001003 | **0.016289 ± 0.000831** | $-0.000307$ ± 0.000489 | **101.92 % ± 3.11** | **9.87 % ± 0.55** |
+
+*Bands are the eight-scramble jackknife; ratios are jackknifed as whole quantities.
+The male-reference sensitivity gives 90.13 % ± 4.16 and 105.71 % ± 3.33 for the
+share of job access, and 12.24 % ± 0.65 and 9.13 % ± 0.47 for the share of $I^{00}$;
+the two references are reported as a range and never averaged.*
+
+The reading, generated from the table:
+
+> **Within job access, the geographic terms carry essentially the whole channel.**
+> On the final singles model with the female reference, equalising the geographic
+> access environment removes 13.05 per cent (±0.74) of baseline money-metric
+> inequality on the raw basis and 9.87 per cent (±0.55) on the equivalized basis,
+> against a whole job-access channel of 14.90 per cent (±1.10) and 9.68 per cent
+> (±0.68). Geography is therefore 87.6 per cent (±3.9) of the job-access channel
+> raw and 101.9 per cent (±3.1) equivalized. Across all four rows the geographic
+> share of job access runs 87.6 to 105.7 per cent, and the geographic share of
+> total measured inequality 9.13 to 13.05 per cent.
+
+**The residual is near zero and changes sign with the basis.** Other access runs
+$-0.49$ to $+1.84$ per cent of baseline inequality across the four rows. Shares
+here are **signed and never renormalised**, which is why the geographic share
+exceeds 100 per cent on the equivalized rows: the residual there is *negative, not
+missing*. A share above one says that equalising the other sub-player, in the
+presence of the remaining equalisations, does not on average reduce measured
+inequality.
+
+**Why this is the shape the specification implies, and what it does not license.**
+The two sub-players do not have comparable support, and the asymmetry is
+structural rather than a finding about the world. The geographic block varies
+household by household over eight regions, three urbanisation categories and a
+region × education × sex unemployment rate. The remaining access block is the
+occupation-availability conditional, whose access-assigned argument is **sex alone
+— a two-cell table** — plus year indicators that are identically zero here. Almost
+all of the between-household dispersion the access operator *can* remove is
+therefore geographic **by construction of the estimated access block**. The correct
+reading is about the composition of that block, not about the importance of place
+in general.
+
+In particular this is **not** a finding that region drives welfare inequality. Job
+access as a whole carries 14.9 per cent of measured inequality on the raw basis and
+9.7 per cent equivalized, against 58.2 and 66.1 per cent for endowments and needs.
+The qualifiers of §7.3 travel unchanged: structural and model-conditional, not
+causal, provisional pending the bounded economics review, and a statement about the
+**currently modelled** geographic access block — region, urbanisation and the local
+unemployment rate — not about geography in general. Region-dependent *budget* rules
+are deliberately outside it: the only regional dependence in the tax–benefit system
+here is the housing-allowance zone, which belongs to endowments and needs.
+
+**The same-profile, different-region illustration.** **Figure 19** takes the two
+real households of §7.8 and evaluates each under all 24 documented region ×
+urbanisation access environments, with the local unemployment rate at that region's
+value for the person's own education and sex. Preferences, sex, age, education,
+experience, household composition, earning-capacity characteristics and the priced
+budget are all held at their observed values, and the region-dependent budget rule
+is held fixed too, so this is an **access counterfactual and no price is
+recomputed**. The older man's employment-opportunity mass runs 0.768 to 0.858 across
+environments and his money-metric welfare €1,736 to €1,837, a ratio of 1.058; the
+younger man's runs 0.655 to 0.809 and €1,301 to €1,333, a ratio of 1.025.
+
+One structural fact makes the picture cleaner than it might have been: because
+every geographic variable in this specification enters only when the household
+works, a purely
+geographic counterfactual moves the **employment margin and nothing else**. Over
+all 48 profile-by-environment cells the wage-offer location, the four occupation
+shares and the hours normalising constant each take exactly one value per profile —
+measured, not assumed. The whole regional difference is on the participation margin.
+
+**This is not a causal region effect.** It is a model-implied comparison of the same
+person under different estimated access environments, and it is labelled as such on
+the figure itself. Nothing here identifies what would happen to a person who moved.
+
+---
 
 ---
 
@@ -3348,6 +3463,8 @@ represent the number of jobs available to the individual."*
 | **15** | `figE1R_reverse_pair` | **Same estimated opportunities, same observed job, most different estimated preferences.** The mirror of Figure 14 under the same rule with the axes exchanged. Same panels, same reading: panels (b)–(d) are **estimated opportunity distributions, not job draws**. Households are described by aggregates only. |
 | **16** | `figX1_external_hours_lfs_validation` | **External labour-market evidence on hours.** French EU-LFS 2016, all persons aged 20–60 with a reported usual-hours figure (43,767 records), against the final singles model. Panel (a), **external descriptive evidence only**: the share of employed people in each hours band reporting a wish to work more hours, by band. Panels (a) and (c) carry no model quantity on any axis and are not compared with, ranked against, or overlaid on a model prediction — the structural model has no desired-hours or underemployment outcome, so they document context rather than validate anything. The long-hours band is drawn but marked, because wanting more hours at 50-plus is not underemployment. Panel (b): shares of the statutory 35-hour band from three sources — **external benchmark, observed sample, and model-implied** — by sex and pooled. Panel (c), **external descriptive evidence only**: mean desired hours minus mean **actual** hours, by band and sex, positive on every band up to 39 hours and negative only at long hours. Panel (b) is the one validation panel. Validation only: no moment from this source enters the likelihood, and it identifies nothing. The external population is all persons aged 20–60, while the observed sample is single-adult households, so composition differs by construction and no gap here is a prediction error. |
 | **17** | `figR01_benchmark_decomposition` | **What a common-choice-set model would have found.** The welfare-inequality decomposition under the final singles model against the same decomposition under a common-choice-set benchmark fitted to the same 1,555 single-adult households, the same priced job packages and the same welfare machinery. **Both sides are model-implied**, singles, and the same four channels are shown on each. Under the benchmark every household faces the same offer environment, so job access and earning opportunities contribute **exactly zero by construction** — those zeros are the benchmark's definition made arithmetic, not estimates that happened to vanish. Raw and coalition-consistent equivalized bases, at the female reference (primary); the male-reference arm is the sensitivity and the two are never averaged. The benchmark is **not a candidate specification and not nested** in the preferred model: it is what a conventional analyst without an opportunity object would have fitted, shown to make the consequence of that omission measurable. Bands are numerical-integration precision, not sampling confidence intervals. |
+| **18** | `figG01_nested_geographic_access` | **Inside job access: the geographic split.** The three environment channels, and then the job-access channel split into geographic/local-market access and remaining access, for the 1,555 single-adult households. **Model-implied**, singles, raw and coalition-consistent equivalized bases, at the female reference (primary); the male-reference arm is the sensitivity and the two are never averaged. Shares are **signed and never renormalised**, so a geographic share above 100 per cent means the remaining-access contribution is negative, not missing. The split is a nesting of the decomposition of Figures 12–13, not a re-decomposition: levels one and two are bitwise unchanged. Bands are numerical-integration precision, not sampling confidence intervals. |
+| **19** | `figG02_regional_access_environments` | **The same household under different regional job-access environments.** The two real single-adult households of Figure 14, each evaluated under all 24 documented region × urbanisation access environments, with the local unemployment rate at that region's value for the person's own education and sex. Left panels: employment-opportunity mass. Right panels: money-metric welfare, euros per month. **Model-implied and illustrative.** Preferences, sex, age, education, experience, household composition, earning-capacity characteristics and the priced budget are held at their observed values, and the region-dependent budget rule is held fixed, so this is an access counterfactual and no price is recomputed. **This is not a causal region effect**: it is the same person under different estimated access environments, and nothing here identifies what would happen to a person who moved. Because every geographic variable in this specification enters only when the household works, the hours, occupation and wage-offer summaries do not move at all — the whole regional difference is on the participation margin. |
 
 ### The couples set
 
@@ -3544,6 +3661,20 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | Figure E1: 19,116 admissible employed pairs; $d_{\rm pref}$ 0.038 vs median 0.783; $d_{\rm opp}$ 0.442 vs 0.213, separation 2.08×; the two household profiles; reverse $d_{\rm pref}$ 3.466, separation 4.42×, $d_{\rm opp}$ 0.034; same-sex-restricted 2.935; non-employed forward $d_{\rm pref}$ exactly 0.000 with $d_{\rm opp}$ 0.540 | same, Entry 8 §5; `SPRINT/runs/figE1_matched_households/e1_matched_households_v1.json` |
 | the hours-index structural disclosure (no household-specific coordinate) | same, Entry 8 §5 |
 
+### (g2) §7.9 — the geographic split of job access
+
+| numeral | source |
+|---|---|
+| geographic access 0.017528 ± 0.000887 raw and 0.016289 ± 0.000831 equivalized; other access 0.002476 ± 0.000891 and $-0.000307$ ± 0.000489 | `SPRINT/tables/nested_geographic_access_v1.csv`, female-primary rows |
+| geographic share of job access 87.62 % ± 3.89 raw and 101.92 % ± 3.11 equivalized; male-reference 90.13 % ± 4.16 and 105.71 % ± 3.33 | same, `C_geo_share_of_C_acc` |
+| geographic share of baseline inequality 13.05 % ± 0.74 raw and 9.87 % ± 0.55 equivalized; male-reference 12.24 % ± 0.65 and 9.13 % ± 0.47 | same, `C_geo_over_I00` |
+| other access runs $-0.49$ to $+1.84$ per cent of baseline across the four rows | same, `C_oth_over_I00` |
+| the reading, verbatim apart from the audience-facing model name | generated by `SPRINT/runs/geo_nested_access/build_gn_table_v1.py` from the table |
+| $C_{\mathrm{geo}} + C_{\mathrm{oth}} = C_{\mathrm{acc}}$ to $0.0$, and levels one and two bitwise unchanged on all 44 numbers | `SPRINT/runs/geo_nested_access/gn_step2_nested_v1.json`, `identity_2_...`, `identity_level_1` |
+| the two sub-players' argument slots, and the sex-only occupation conditional | same, `step1.GEO_columns`, `step1.OTH_columns` |
+| employment-opportunity mass 0.768–0.858 and 0.655–0.809; welfare €1,736–1,837 and €1,301–1,333; ratios 1.058 and 1.025 | `SPRINT/figures/figG02_regional_access_environments.csv`; `gn_step3_illustration_v1.json` |
+| 24 access environments, 48 profile-by-environment cells; hours, occupation and wage-offer summaries each take one value per profile | same, `structural_constancy_under_a_geographic_counterfactual` |
+
 ### (h) §8 — couples
 
 | numeral | source |
@@ -3645,10 +3776,14 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | placeholder | what is missing | where it goes |
 |---|---|---|
 | the external earnings comparison | a matched employer–employee source (DADS / Base Tous Salariés); none is available without a new secured session and a new data request. §9.1 reports the within-sample wage fit and fixes in advance the framing the comparison will be read under | §9.1, `[PLACEHOLDER — the DADS wage comparison]` |
-| the geographic split of job access | the nested split of the job-access contribution into a geographic/local-market part and the rest. The inputs are built and the arms are declared, but the split itself has not returned a number, so **nothing is reported and no share is quoted** | would extend §7.2; no text is written in its place |
-| parameter-uncertainty propagation and subgroup decompositions | propagation of estimation uncertainty in $\hat	heta$ through to the welfare functionals, and decompositions within sex and other subgroups. Not run. §3.6 and §10.2 already state that the reported bands are integration precision and that sampling uncertainty is **not** estimated in this paper; that statement stands unchanged | §10.2 states the limitation; no interval is reported in its place |
+| the matched-pair re-selection | the opportunity-distance ranking behind Figures 14–15 omits the region term (§7.8). A repaired builder is specified and has **not** passed its own proof, so the pair is not re-selected. No number in §7 depends on it | §7.8 carries the disclosure; the figures stand as selected |
+| parameter-uncertainty propagation and subgroup decompositions | propagation of estimation uncertainty in $\hat{\theta}$ through to the welfare functionals, and decompositions within sex and other subgroups. Not run. §3.6 and §10.2 already state that the reported bands are integration precision and that sampling uncertainty is **not** estimated in this paper; that statement stands unchanged | §10.2 states the limitation; no interval is reported in its place |
 
-**One placeholder closed at this pass.** The underemployment axis is no longer
+**Closed at this pass.** The geographic split of job access has returned and is
+reported in §7.9 with its own table, its generated reading and two figures; the
+placeholder is discharged and no share is quoted that is not in that table.
+
+**One placeholder closed earlier.** The underemployment axis is no longer
 open: the coding direction of the labour-force wish-to-work-more variable was
 settled against the EU-LFS codebook (version of 8 July 2021, $1 =$ No, $2 =$ Yes),
 and §9.3 now reports it as external evidence on hours constraints. The bounded

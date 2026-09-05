@@ -5,8 +5,8 @@
 carries, what is said over it, and how long it takes. Typesetting is a separate
 job and nothing here presumes a template.
 
-**Assumed length: a 45-minute seminar slot.** The plan below budgets **40.0 minutes
-of delivered content across 21 slides**, leaving **5.0 minutes of slack** for
+**Assumed length: a 45-minute seminar slot.** The plan below budgets **41.0 minutes
+of delivered content across 22 slides**, leaving **4.0 minutes of slack** for
 interruption, which in this audience is where the value is. Do not plan to fill
 the slack.
 
@@ -27,7 +27,7 @@ the exact table and nowhere else.
 
 ---
 
-# Part I — The question (slides 1–5, 8.5 min)
+# Part I — The question (slides 1–5, 8.0 min)
 
 ## Slide 1 — Title
 
@@ -62,7 +62,7 @@ she has. That is not a measurement error at the margin; it is the central
 identification problem in applied welfare analysis of labour supply. Land the
 sentence: **whatever the choice set cannot express, the taste parameter absorbs.**
 
-**Timing.** 2.0 min. **25-MIN: KEEP (compressed, 1.0) — one vignette, not two.**
+**Timing.** 1.5 min. **25-MIN: KEEP (compressed, 1.0) — one vignette, not two.**
 
 ## Slide 3 — What the model has to separate
 
@@ -139,7 +139,7 @@ hours caveat, nothing else.**
 
 ---
 
-# Part II — How it is estimated (slides 6–9, 8.5 min)
+# Part II — How it is estimated (slides 6–9, 8.0 min)
 
 ## Slide 6 — Data and the sampled-job estimator
 
@@ -234,13 +234,13 @@ depth of up to 13.56; re-optimising the rest gives 0.6996, against the 2.706 a
 boundary test needs. Close by saying what this does *not* say: it rejects three
 parameterisations on this design, not the existence of heterogeneity.
 
-**Timing.** 2.5 min. **25-MIN: CUT → backup.** Fold one sentence into slide 8:
+**Timing.** 2.0 min. **25-MIN: CUT → backup.** Fold one sentence into slide 8:
 *"three heterogeneity extensions were tested and all three failed recoverability,
 for three different reasons; the backup slide has the design rule."*
 
 ---
 
-# Part III — What the model fits (slides 10–13, 7.5 min)
+# Part III — What the model fits (slides 10–13, 7.0 min)
 
 ## Slide 10 — Hours, and the statutory week
 
@@ -285,7 +285,7 @@ an hours-conditioned wage location — and that it **failed**: it did not fix th
 misfit and was not promoted. Occupation fit is shown *internally* here for a
 reason that slide 13 explains.
 
-**Timing.** 2.0 min. **25-MIN: MERGE into slide 10; keep employment, occupation
+**Timing.** 1.5 min. **25-MIN: MERGE into slide 10; keep employment, occupation
 and the wage misfit; drop the by-sex wage detail.**
 
 ## Slide 12 — Does the answer depend on the number of drawn jobs?
@@ -347,7 +347,7 @@ population caveat; drop panel (a).**
 
 ---
 
-# Part IV — What it finds (slides 14–19, 13.0 min)
+# Part IV — What it finds (slides 14–20, 15.5 min)
 
 ## Slide 14 — The welfare measure, and two real households
 
@@ -373,6 +373,13 @@ occupation in the bottom wage quintile, whom the model gives essentially the sam
 preference profile and very different opportunity — employment probability 0.874
 against 0.702, median wage offer €13.93 against €8.80. This is slide 3's panel (a)
 on real estimates. Repeat once that these panels are **densities, not job draws**.
+
+One disclosure to make yourself rather than be asked: the distance measure that
+ranked the candidate pairs omits the region term, so the participation numbers here
+are region-free and the pair is *a* clean instance of the mechanism rather than the
+extremal one. A repair is specified and has not yet passed its own proof. **No
+number in the welfare decomposition depends on it** — the estimation, the exact
+table and the geographic split all rebuild the region indicators correctly.
 
 **Timing.** 2.0 min. **25-MIN: KEEP (1.5) — the measure and the pair, no panel
 walk-through.**
@@ -432,7 +439,56 @@ re-estimation.
 **Timing.** 2.0 min. **25-MIN: KEEP (1.5) — the three numbers, the combined
 market-side figure, and the no-ordering rule.**
 
-## Slide 17 — What a conventional model would have found
+## Slide 17 — Inside job access: it is almost all geography
+
+**Message.** Splitting the job-access channel once more, the geographic terms carry
+essentially the whole of it — and that is a fact about how the access block is
+specified, not a finding that place drives welfare inequality.
+
+**Carries.** **Figure 18** — the job-access channel split into geographic and
+remaining access, raw and equivalized. Second click: **Figure 19**, the same two
+households under 24 regional access environments.
+
+**Speaker notes.** Two numbers and one caveat, and the caveat is the point.
+Equalising the geographic access environment removes **13.05 per cent (±0.74)** of
+baseline inequality on the raw basis and **9.87 (±0.55)** equivalized, against a
+whole job-access channel of 14.90 and 9.68. So geography is **87.6 per cent (±3.9)**
+of the channel raw and **101.9 (±3.1)** equivalized. Say why a share exceeds one
+before anyone asks: shares here are **signed and never renormalised**, so the
+residual is negative on the equivalized rows, not missing.
+
+Then the caveat, delivered as a limitation of the specification rather than as a
+result. The two sub-players do not have comparable support. The geographic block
+varies household by household over eight regions, three urbanisation categories and
+a region-education-sex unemployment rate. The remaining access block is the
+occupation-availability conditional, and this specification conditions it on **sex
+alone** — a two-cell table — plus year indicators that are identically zero on a
+one-year sample. Almost all the between-household dispersion the access operator
+*can* remove is geographic **by construction**. The honest reading is about the
+composition of the access block, not about the importance of place.
+
+And the sentence that stops the obvious misreading: **this is not a finding that
+region drives welfare inequality.** Job access as a whole is 14.9 per cent of
+measured inequality raw and 9.7 equivalized, against 58.2 and 66.1 for endowments
+and needs. If asked about regional policy: the only regional dependence in the
+tax-benefit system here is the housing-allowance zone, and that belongs to
+endowments and needs, deliberately outside this split.
+
+**Second click, if there is time.** Figure 19 takes the two matched households of
+Slide 14 and moves them across all 24 region × urbanisation environments, holding
+preferences, demographics, earning-capacity characteristics, the priced budget and
+the region-dependent budget rule fixed — an access counterfactual with no price
+recomputed. The older man's employment-opportunity mass runs 0.768 to 0.858 and his
+welfare €1,736 to €1,837; the younger man's, 0.655 to 0.809 and €1,301 to €1,333.
+Because every geographic variable here enters only when the household works, the whole regional
+difference is **on the employment margin**: across all 48 cells the wage-offer
+location, occupation shares and hours constant each take one value per profile.
+Say the label out loud — **this is not a causal region effect**; nothing here
+identifies what would happen to someone who moved.
+
+**Timing.** 2.5 min. **25-MIN: CUT → backup.**
+
+## Slide 18 — What a conventional model would have found
 
 **Message.** Fitting the common-choice-set model this paper argues against — same
 data, same priced jobs, same welfare machinery — shows the omission understates
@@ -485,7 +541,7 @@ misdescribed.
 **Timing.** 2.5 min. **25-MIN: KEEP (compressed, 1.5) — the reversed sex gap and
 the preference-share result; drop the fit comparison.**
 
-## Slide 18 — What is fragile, and what is not
+## Slide 19 — What is fragile, and what is not
 
 **Message.** Three independent perturbations all move the preference share and
 leave the environment's internal structure alone — so the preference/environment
@@ -514,7 +570,7 @@ preference/environment split rather than in the environment's internal structure
 
 **Timing.** 2.0 min. **25-MIN: KEEP (1.5) — the three rows and the range rule.**
 
-## Slide 19 — Couples
+## Slide 20 — Couples
 
 **Message.** The couples module reproduces the same nested order and the same
 environment dominance, but its preference share is materially sensitive, so
@@ -548,9 +604,9 @@ replication, the same order, and the sensitivity caveat.**
 
 ---
 
-# Part V — Close (slides 20–21, 2.5 min)
+# Part V — Close (slides 21–22, 2.5 min)
 
-## Slide 20 — Limits, and what would identify more
+## Slide 21 — Limits, and what would identify more
 
 **Message.** The design's limits are known and each names the evidence that would
 lift it.
@@ -571,7 +627,7 @@ one bounded economics review**.
 
 **Timing.** 1.5 min. **25-MIN: CUT → fold two sentences into slide 20.**
 
-## Slide 21 — Conclusion
+## Slide 22 — Conclusion
 
 **Message.** Separating preferences from opportunities is feasible on survey data
 with a tax–benefit engine, and doing it changes what welfare inequality is
@@ -671,16 +727,16 @@ coherent; this paper adopts the first object.
 
 | action | slides |
 |---|---|
-| **CUT → backup** | 9 (the three heterogeneity extensions), 12 (draw stability), 20 (limits — two sentences fold into 21) |
+| **CUT → backup** | 9 (the three heterogeneity extensions), 12 (draw stability), 17 (the geographic split), 21 (limits — two sentences fold into 22) |
 | **MERGE** | 6 + 7 → one data/estimator/pricing slide (2.5); 10 + 11 → one fit slide (2.0) |
-| **COMPRESS** | 2 → 1.0 (one vignette); 3 → 1.5 (panel (a) only); 4 → 1.0; 5 → 1.0; 13 → 1.0 (panel (b) only); 14 → 1.5; 16 → 1.5; 17 → 1.5; 18 → 1.5; 19 → 1.0 |
-| **KEEP UNCHANGED** | 1 (0.5), 8 (2.0), 15 (2.5), 21 (1.0) |
+| **COMPRESS** | 2 → 1.0 (one vignette); 3 → 1.5 (panel (a) only); 4 → 1.0; 5 → 1.0; 13 → 1.0 (panel (b) only); 14 → 1.5; 16 → 1.5; 18 → 1.5; 19 → 1.5; 20 → 1.0 |
+| **KEEP UNCHANGED** | 1 (0.5), 8 (2.0), 15 (2.5), 22 (1.0) |
 
 **What must survive any cut.** The distinction the schematic draws; the
 channel-relocation result on slide 4; the licensed reading of a contribution on
 slide 15; the combined market-side figure and the no-ordering rule on slide 16;
-the preference-share result on the benchmark slide 17; the fragility claim on 18;
-the couples sensitivity caveat on 19.
+the preference-share result on the benchmark slide 18; the fragility claim on 19;
+the couples sensitivity caveat on 20.
 
 **What must never be cut, at any length.** That the bands are integration
 precision and not confidence intervals; that no channel "explains" a percentage;
@@ -713,15 +769,18 @@ the exact table and from nowhere else.*
 | 15 | baseline 0.134277; environment-only 0.030968; fully common numerical zero | same, `I00`, `I01`, `I11` |
 | 16 | endowments and needs 58.18 ± 1.47; earning opportunities 20.62 ± 1.63; job access 14.90 ± 1.10 | same, `C_needs_over_I00`, `C_earn_over_I00`, `C_acc_over_I00` |
 | 16 | market-side total 35.51 ± 0.95 | same, `C_acc_plus_C_earn_over_I00` |
-| 17 | benchmark objective 18,151.85 against 18,022.76; gap 129.1 nats; likelihood-ratio 258.2 on 25 d.f. (upper bound) | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting` |
-| 17 | fit mean absolute deviation: hours 0.0080/0.0083, occupation 0.0029/0.0034, wage 0.0203/0.0261 | `SPRINT/runs/rum_benchmark_final/rb_step2_fit_comparison_v1.csv` |
-| 17 | hours-band constants mean absolute difference 0.037; leisure gap $+0.428$ to $-1.991$ | `SPRINT/runs/rum_benchmark_final/rb_step4_misclassification_v1.json`, `positive_side_misclassification` |
-| 17 | preference share 6.4 % against 6.3 %; measured inequality $-24.2$ % raw, $-15.3$ % equivalized | `SPRINT/tables/rum_benchmark_decomposition_v1.csv`; `rb_step4_misclassification_v1.json`, `per_arm` |
+| 17 | geographic access 13.05 % ± 0.74 raw and 9.87 % ± 0.55 equivalized of baseline; 87.62 % ± 3.89 and 101.92 % ± 3.11 of job access | `SPRINT/tables/nested_geographic_access_v1.csv` |
+| 17 | employment-opportunity mass 0.768–0.858 and 0.655–0.809; welfare €1,736–1,837 and €1,301–1,333 over 24 environments | `SPRINT/figures/figG02_regional_access_environments.csv` |
+| 18 | benchmark objective 18,151.85 against 18,022.76; gap 129.1 nats; likelihood-ratio 258.2 on 25 d.f. (upper bound) | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting` |
+| 18 | fit mean absolute deviation: hours 0.0080/0.0083, occupation 0.0029/0.0034, wage 0.0203/0.0261 | `SPRINT/runs/rum_benchmark_final/rb_step2_fit_comparison_v1.csv` |
+| 18 | hours-band constants mean absolute difference 0.037; leisure gap $+0.428$ to $-1.991$ | `SPRINT/runs/rum_benchmark_final/rb_step4_misclassification_v1.json`, `positive_side_misclassification` |
+| 18 | preference share 6.4 % against 6.3 %; measured inequality $-24.2$ % raw, $-15.3$ % equivalized | `SPRINT/tables/rum_benchmark_decomposition_v1.csv`; `rb_step4_misclassification_v1.json`, `per_arm` |
 | 18 | preference share 6.30 → 10.89; range 3.3–11.0 across eight rows | same, `C_pref_over_I00` |
 | 18 | market-side total 35.5 vs 35.9 across references | same, `C_acc_plus_C_earn_over_I00` |
 | 18 | age-bound ≈13 %; couples male-leisure 73.1 %; environment side under 3.5 % | paper §5.5, §8.4 |
 | 19 | 2,275 couples; female peak 2.5474 against singles 2.5795; preference share range 0.0014–0.0075 | paper §8.1, §8.3, §8.4 |
 | 19 | pooled fully common state 39.4 % of pooled baseline | paper §8.5 |
+
 
 | B1 | 41 estimated structural parameters | `SPRINT/figures/fig08_coefficients_by_block.csv`; paper Appendix A |
 | B2 | pre-correction ratio 3.03; ≈95 % residual removed by the inversion | paper Appendix B |
