@@ -627,7 +627,7 @@ documentation or execution mechanics.**
 
 | Document | Path | sha256 |
 |---|---|---|
-| Consolidated rulings document (R-59 … R-233, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append, the R-225..R-227 append, the R-228..R-232 append and the R-233 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `2b4c5c45d36b923d3676c1bb84bea922d290db88c51fa57abb401c7ea226c22a` |
+| Consolidated rulings document (R-59 … R-233, + the R-212 and R-220 corrective appends, the R-220 s1/s2/s5 follow-up, the R-219..R-224 append, the R-225..R-227 append, the R-228..R-232 append and the R-233 append) | `docs/Missions/JMP_M08_goal1_rulings_document_v4.md` | `aa938e7b3f56236f42a553dc34b48e8fca52b36b1720ef37c451c73604d854f9` |
 | JMP-M08T2 mission charter | `docs/Missions/JMP_M08T2_LOC4_boundary_and_final_precision_charter_v1.md` | `d4de2055ca5db8c6e3d3ea4c945b027ee0a80c0764ba4dc2c99d7d8154968d80` |
 | **M08T2 acceptance (charter output 5)** | `docs/Missions/JMP_M08_LOC4_preferred_spec_acceptance_v1.md` | `7a042b75bc535c2e72cd85daebc0521c7a23e44b26013b9c90d09770f87ff8f6` |
 | **LOC4 manuscript claim set v2 — OPERATIVE (charter output 6)** | `docs/Missions/JMP_M08_LOC4_manuscript_claim_set_v2.md` | `5a60ffdf3d0beefc006ba284af30009e0a3c99cf41a6f07a4506d7a1917e9ba6` |

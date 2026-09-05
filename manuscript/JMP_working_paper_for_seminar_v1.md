@@ -107,9 +107,9 @@ occupation-conditional log-normal wage-offer technology — and the rest describ
 tastes. Welfare is money-metric: each household's equivalent income at a common
 reference pay, which compensates for pay and holds the household responsible for
 its own opportunity set. The inequality of that measure is then decomposed, by an
-Owen value over the coalition structure $\{\{\mathrm{pref}\},\{\mathrm{acc},\mathrm{earn},\mathrm{needs}\}\}$, into preferences
-$P$ and a complete environment split into job access $A$, earning opportunities
-$B$, and endowments and needs $D$. Two methodological ingredients make the
+Owen value over a coalition structure that puts preferences against the complete
+environment, into preferences and a complete environment split into job access,
+earning opportunities, and endowments and needs. Two methodological ingredients make the
 decomposition exhaustive rather than approximately so: a **coalition-consistent
 inversion**, in which the money-metric yardstick moves with the coalition, and a
 **coalition-consistent equivalization**, in which the equivalence scale moves
@@ -836,7 +836,8 @@ under that convention.
 
 The fix is the one the coalition-consistent inversion already legislates: *the
 reference side must move with the coalition*. Household composition **is** a
-an endowments-and-needs object — class $D$ in the formal decomposition above. The
+an endowments-and-needs object — one of the four channels of the formal
+decomposition above. The
 endowments-and-needs operator does not adjust income and leave the family intact;
 it replaces the household's whole exogenous budget-side profile with the reference
 profile and reprices the opportunity set at it. The frozen reference profile is a
@@ -1695,6 +1696,14 @@ appears anywhere in the text that is not read off it. Estimates are followed by
 $\pm E_T$, the delete-one-scramble jackknife half-width at $t_{0.975,7}$. The
 ratios and the sum are jackknifed **as whole quantities**, not composed from the
 bands on their parts, for a reason given below.
+
+*Symbols, once for both panels: $C_{\mathrm{pref}}$ is the preference
+contribution, $C_{\mathrm{env}}$ the contribution of the complete non-preference
+environment, and $C_{\mathrm{acc}}$, $C_{\mathrm{earn}}$, $C_{\mathrm{needs}}$
+the nested contributions of job access, earning opportunities, and household
+endowments and needs. $I^{00}$ is baseline inequality. Each is an Owen value:
+the licensed reading is that equalising that channel across households removes
+that share of baseline money-metric inequality.*
 
 **Table 7.1a — Raw basis** (Gini points of $W^1$; ratios in per cent).
 
@@ -2887,13 +2896,13 @@ what identified the next one.
 
 | # | residual object found | how it was found | measured effect of removing it |
 |---|---|---|---|
-| 1 | **the budget channel was missing** | the two-channel game (access and earning opportunities) failed exhaustiveness: household-specific budget, endowment and needs heterogeneity survived inside the priced budget | a fourth channel $D$ was added, formed from its own Owen marginals and not as a relabelled residual; the game became $\{\mathrm{pref},\mathrm{acc},\mathrm{earn},\mathrm{needs}\}$ |
-| 2 | **the complete-environment game still failed, and failed badly** | with $D$ in, $I^{1111}/I^{0000} = 3.0288$ on the preferred model and $3.2566$ on the benchmark — equalising everything left an index three times the one we started from; the headline was **halted** | none: this is the diagnosis, not a fix. What it identified is that the residual was *not* budget heterogeneity, because $D$ demonstrably removed the dispersion it was built to remove and the fully common state barely moved |
+| 1 | **the budget channel was missing** | the two-channel game (access and earning opportunities) failed exhaustiveness: household-specific budget, endowment and needs heterogeneity survived inside the priced budget | a fourth channel, endowments and needs, was added, formed from its own Owen marginals and not as a relabelled residual; the game became $\{\mathrm{pref},\mathrm{acc},\mathrm{earn},\mathrm{needs}\}$ |
+| 2 | **the complete-environment game still failed, and failed badly** | with endowments and needs in, $I^{1111}/I^{0000} = 3.0288$ on the preferred model and $3.2566$ on the benchmark — equalising everything left an index three times the one we started from; the headline was **halted** | none: this is the diagnosis, not a fix. What it identified is that the residual was *not* budget heterogeneity, because that channel demonstrably removed the dispersion it was built to remove and the fully common state barely moved |
 | 3 | **the inversion core was frozen at the baseline** | the money-metric solve took the preference and opportunity blocks from the coalition on the attained side and from the *baseline* on the reference side — the same object at two different coalitions on two sides of one indifference | $I^{1111}$ fell from 0.430622 to 0.021313 on the preferred model with the female reference: a **95.1 %** reduction, and 94.0–94.9 % in the other three arms |
 | 4 | **the quadrature support was household-specific** | each household integrated over its own drawn nodes, so finite-support variation could appear as welfare inequality; a zero-cost broadcast precheck confirmed that a common support returns a bitwise identical welfare level for all 1,555 households | $I^{1111}$ fell to $-2.233\mathrm{e}{-}31$ and $-2.363\mathrm{e}{-}31$ in the two female-primary arms — numerical zero. The fully-observed level moved $-5.53$ % and $-7.74$ %, a quadrature-support difference and nothing else |
-| 5 | **the male reference block's $P$ operator was incomplete** | the male arms did *not* reach zero — they sat at $1.113\mathrm{e}{-}3$ and $9.777\mathrm{e}{-}4$, inside the tolerance but visibly non-zero. With the support, budget profile, primitives and inversion all common, that cannot be an integration residual. It was not: at the fully common state the utility took exactly two values per node, one per sex, differing by up to 0.194, and the carrier was the children-in-leisure term, which the specification carries for women and **not at all for men** | representing both reference blocks on the **union** of preference terms, with the male child term at a **structural zero** because the specification implies no other value, drives the residual to $-2.035\mathrm{e}{-}31$. (Supplying the female coefficient to the male block also collapses it, to $-5.6\mathrm{e}{-}30$; that counterfactual is a **diagnostic only**, is not adopted, and carries no reported contribution) |
+| 5 | **the male reference block's preference operator was incomplete** | the male arms did *not* reach zero — they sat at $1.113\mathrm{e}{-}3$ and $9.777\mathrm{e}{-}4$, inside the tolerance but visibly non-zero. With the support, budget profile, primitives and inversion all common, that cannot be an integration residual. It was not: at the fully common state the utility took exactly two values per node, one per sex, differing by up to 0.194, and the carrier was the children-in-leisure term, which the specification carries for women and **not at all for men** | representing both reference blocks on the **union** of preference terms, with the male child term at a **structural zero** because the specification implies no other value, drives the residual to $-2.035\mathrm{e}{-}31$. (Supplying the female coefficient to the male block also collapses it, to $-5.6\mathrm{e}{-}30$; that counterfactual is a **diagnostic only**, is not adopted, and carries no reported contribution) |
 | 6 | **the draw-0 anchor row** | the assembled welfare stem carries a per-household anchor row that is excluded from every welfare object by construction, but reaches the numbers through the panel consumption scale | the scale shifts by $-1.402\mathrm{e}{-}4$ euros on 1774.5182, a relative $7.9\mathrm{e}{-}8$ — four orders of magnitude below the integration bands. Disclosed; the refresh is not taken |
-| 7 | **the equivalence scale, frozen at the household's own value** | on the equivalized basis, $I^{1111}$ rose from zero to **0.071799** in all four arms, 43 % of baseline. The weighted Gini of $1/m$ is **0.071799** — the same number to six decimals | letting the scale move with the channel that equalises composition, so that the reference household's $m = 1$ applies in every state containing $D$, restores $I^{1111} = 0.000\mathrm{e}{+}00$ and $-2.035\mathrm{e}{-}31$ exactly, as in the raw basis |
+| 7 | **the equivalence scale, frozen at the household's own value** | on the equivalized basis, $I^{1111}$ rose from zero to **0.071799** in all four arms, 43 % of baseline. The weighted Gini of $1/m$ is **0.071799** — the same number to six decimals | letting the scale move with the channel that equalises composition, so that the reference household's $m = 1$ applies in every state that equalises endowments and needs, restores $I^{1111} = 0.000\mathrm{e}{+}00$ and $-2.035\mathrm{e}{-}31$ exactly, as in the raw basis |
 
 **The state now.** Exhaustiveness passes on both bases in all four singles arms and
 on both bases for couples, at numerical zero rather than inside the tolerance, with
@@ -2993,10 +3002,10 @@ recorded as such; the property it protects — that a household's price does not
 depend on its batch — is tested where it now lives, by pricing the same households
 alone and then mixed with different companions in a different order, which returns
 **bitwise identical output on every column**. A separate probe establishes that the
-$D$-equalised price is bitwise independent of which household carries the reference
+The endowments-and-needs-equalised price is bitwise independent of which household carries the reference
 profile, which is what licenses collapsing the reference arm to one profile.
 Consumption floors at the certified positive minimum on 87,160 of 4,659,200
-actual-$D$ rows (1.87 per cent) and on zero reference-$D$ rows.
+actual endowment rows (1.87 per cent) and on zero reference rows.
 
 **Engine-ready assembly.** The certified assembler recomputes the consumption and
 leisure normalisers from whatever frame it is handed, which on a chosen-row-free
@@ -3119,7 +3128,8 @@ The mission's stated measure — both spouses placed at the reference leisure bu
 of 35 hours — is reported in full and **not** as a headline level. $I^{0000}$ is
 0.370193 raw and 0.361790 equivalized; the fully common state is numerically zero
 on both; the preference contribution is $+0.010276$ raw and $+0.008753$
-equivalized; and the nested order is **$A > D > B$**, not $D > B > A$, with the
+equivalized; and the nested order is **job access above endowments and needs
+above earning opportunities**, not the headline order, with the
 job-access contribution at 0.2686 equivalized. Its levels are enormous — a raw mean
 of about €272,000 a month — and that is the same full-compensation class as the
 singles measures that replace the household's own opportunity set with a single
@@ -3392,7 +3402,7 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | all coefficients in Appendix D.1 | `SPRINT/runs/couples_clean_baseline/r240_step3_parameter_table_v1.csv` |
 | the couples common support and its gates | `SPRINT/decision_log.md` Entry 9 §3 |
 | the four principal states and the constant fully common vector at €1,713.16 | same, Entry 9 §7 |
-| the exhaustiveness audit: 23 arguments, $A$ 11 / $B$ 6 / $P$ 5 / $D$ 1, 0 unassigned | same |
+| the exhaustiveness audit: 23 arguments, job access 11 / earning opportunities 6 / preferences 5 / endowments and needs 1, 0 unassigned | same |
 | the couples decomposition, both bases, with intervals | same |
 | levels: raw mean €1,836.8 / median €1,761.8; equivalized €972.7 / €921.5 | same |
 | the directional difference from singles | same |

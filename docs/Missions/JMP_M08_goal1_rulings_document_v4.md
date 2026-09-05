@@ -8833,3 +8833,892 @@ C. clean couples produce a major identification problem requiring a substantive
 or
 
 D. the seminar working paper/deck content is ready for final economics review
+
+## Appended 2026-09-05 — R-246 / R-247.2 + three deputy texts, under the R-243/R-246 frame
+
+*Frame note: this append carries **THREE** deputy texts VERBATIM, in the order the
+executing direction gives them, on the signature gates it names: the singles model
+freeze and welfare/couples completion ruling on `1. SINGLES POSITIVE MODEL` …
+`14. NEXT RETURN`; the seminar-sprint addendum on
+`1. THEORY / EMPIRICAL ILLUSTRATION FIGURES` … `3. TARGETED EXTERNAL VALIDATION
+LANE`; and the final seminar-paper integration rule on `1. AUDIENCE-FACING
+TERMINOLOGY` … `10. NEXT STEP`. All three governed work that is already executed
+and recorded in the sprint decision log; they are entered here so that the register
+carries the authority as well as the result, which is the R-162 convention.*
+
+*The first two texts are entered **late relative to the work they governed**, and
+that is stated rather than smoothed over. The singles-freeze ruling is the
+authority behind the sprint's decision-log entries 1–9 and the addendum behind
+entries 10–11; both were executed from the chat-side text at the time and are only
+now on the register. Nothing in either is amended in the entering, and no result is
+re-opened by it.*
+
+*Per R-162, and under R-162.2 across both repositories, this append carries its own
+re-pins: every site that pins this document by sha256 is advanced path-only in the
+same commit that stales it. **The live-site count is NINE**, re-counted here by
+re-grepping the old sha across both repositories rather than working from a list.
+The grep returns **eleven** occurrences; **two of them are historical chain
+records** — `MNL/experiments/JMP_PS1/decision_note.md:1273` and
+`JMP/docs/Missions/JMP_current_state_dashboard_v1.md:756`, both of which record the
+transition `5135afb0…de241b5a` → `2b4c5c45…` — and those are **deliberately left
+untouched**, because advancing them would rewrite the chain rather than follow it.
+**Fourteen** rulings-text claim strings were re-asserted against the new bytes
+(14/14 PASS) **before** any re-pin was written.*
+
+- R-246 the **final seminar-paper integration rule is APPLIED**. The rule is at
+  **(3)** below, VERBATIM. What was executed against it is in the sprint decision
+  log, entry 12: the main text and every figure label layer are audience-facing and
+  grep-proof of the internal specification labels, with the internal vocabulary kept
+  only in the technical appendices behind a legend; every figure and table caption
+  is self-contained on population, observed against model-implied against external
+  benchmark against illustrative, singles against couples, raw against equivalized,
+  and the reference convention; §9 is rewritten into earnings, hours,
+  underemployment and occupation. Two limbs of the rule resolved **against** the
+  direction's expectation and are recorded as such rather than as compliance. The
+  opportunity-illustration rule permits plotting an equal fixed number of simulated
+  job draws with a verbatim caption sentence; the figures **plot no job draws at
+  all** — they plot densities and probability masses, which is the set of summaries
+  the same section prefers — so the permission does not bind and the verbatim
+  sentence is placed as the standing rule for any future version that does display
+  draws. And **Figure 1 of §4 could not be integrated: it does not exist**, which is
+  consistent with the register rather than surprising, since the addendum's own
+  Priority 2 is closed `NOT_AVAILABLE_NO_RUN_POSSIBLE` — the accessible restricted
+  folder holds fourteen files, four EU-SILC and ten EU-LFS, and no DADS or SES file
+  at all. It is the paper's one open placeholder and its framing is fixed in
+  advance. MNL `f056ed1`; JMP `073eda5`.
+- R-246.1 the **underemployment coding is RESOLVED and §5 of the rule is
+  DISCHARGED**. The rule forbids printing a numerical underemployment comparison
+  until the `WISHMORE` coding direction is settled. It is now settled against the
+  EU-LFS codebook, version of 8 July 2021: **1 = No, 2 = Yes**. The delivered
+  export's own note carried the opposite map and is **superseded**;
+  `WISHMORE_CODING_UNRESOLVED`, recorded at R-243, is **DISCHARGED**. Both numbers
+  reconcile against the run record exactly rather than by transcription — the share
+  of the employed wishing more hours over the five priced bands is `0.20285744088630564`
+  and the Spearman association excluding the long-hours band is `-0.7999999999999999`
+  — and the axis is reported as external evidence on hours constraints, never as
+  identification, with the sentence *the current model has no direct desired-hours
+  counterpart* retained. The external-hours figure is promoted `SUPPORTING` →
+  `PAPER` on the strength of it.
+- R-247.2 this **append and its nine re-pins**. Also entered: the sprint decision
+  log's entry-2 parameter-count constraint is **DISCHARGED** by §2 of the text at
+  **(1)** below, which fixes the paper-facing wording as *41 estimated structural
+  parameters*; the discharge line is on the decision log at MNL `f056ed1` and is not
+  restated here.
+
+### (1) Deputy Ruling — Singles Model Freeze and Welfare/Couples Completion (R-243 frame), VERBATIM
+
+DEPUTY RULING — SINGLES MODEL FREEZE AND WELFARE/COUPLES COMPLETION
+
+The seminar sprint now exits positive-model search.
+
+1. SINGLES POSITIVE MODEL
+
+Accept:
+
+FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL
+
+HP, HO and W3 are closed as non-recoverable under the tested designs.
+
+Do not open another heterogeneity or positive-model branch before the seminar.
+
+The corrected floor-5 S8 frame/model is the final singles positive model.
+
+2. PARAMETER REPORTING
+
+Correct the seminar/paper parameter count.
+
+Current S8:
+
+- 51 implementation coordinates;
+
+- 10 pinned/fixed;
+
+- 41 free structural parameters;
+
+- 39 interior;
+
+- 2 active-bound free parameters.
+
+Paper-facing language:
+
+“41 estimated structural parameters.”
+
+Do not display the 10 pinned coordinates in the main parameter table.
+
+Use an economic-block coefficient figure in the main paper/deck and put the full
+
+41-free-parameter table in appendix/backup.
+
+3. HEADLINE WELFARE ACCOUNTING
+
+Preserve the reported:
+
+I00 = 0.134277
+
+I01 = 0.030968
+
+I11 = numerical zero
+
+and reference-specific I10 values.
+
+Correct the environment-contribution ordering.
+
+From the reported states:
+
+female reference:
+
+CP ≈ 0.00846
+
+CE ≈ 0.12581
+
+male-zero reference:
+
+CP ≈ 0.01462
+
+CE ≈ 0.11965
+
+Thus preference share is approximately 6.3% to 10.9%, and environment share
+
+approximately 93.7% to 89.1%.
+
+Before manuscript/deck use, produce ONE exact arm-specific table containing for
+
+each reference/model arm:
+
+- I00, I10, I01, I11;
+
+- CP;
+
+- CE;
+
+- CP/I00;
+
+- CE/I00;
+
+- access contribution;
+
+- earning-opportunity contribution;
+
+- endowment/needs contribution;
+
+- each component divided by I00;
+
+- access + earning opportunities;
+
+- (access + earning opportunities)/I00.
+
+Do not report only min/max ranges.
+
+This table is the source for all headline percentages.
+
+4. INTERPRETATION DISCIPLINE
+
+Do NOT say:
+
+“job opportunities explain 89–94% of welfare inequality.”
+
+The 89–94% quantity is the complete non-preference environment.
+
+Use:
+
+“The non-preference environment accounts for roughly 89–94% of measured
+
+money-metric welfare inequality under the two preference-reference conventions.”
+
+Then report separately:
+
+- job access;
+
+- earning opportunities;
+
+- their combined job-opportunity contribution;
+
+- endowments/needs.
+
+If endowments/needs remain largest, report that result plainly.
+
+Do not change the decomposition merely because it is less convenient for the
+
+paper title.
+
+5. SINGLES WELFARE STATUS
+
+Remove:
+
+FINAL_SINGLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW
+
+only after one bounded economics review of:
+
+- the welfare estimand;
+
+- reference sensitivity;
+
+- coalition-consistent equivalization;
+
+- interpretation of A/B/D;
+
+- headline percentages.
+
+No software review.
+
+No numerical recertification.
+
+6. DRAW STABILITY
+
+Retain R = 50/100/200/400 nested-draw results.
+
+Produce figures for:
+
+- negLL versus R;
+
+- selected key coefficients versus R, in SE units;
+
+- predicted participation versus R;
+
+- headline CP and CE versus R.
+
+Do not add more draw counts unless they materially improve the figure.
+
+7. COUPLES
+
+Proceed immediately with the CLEAN BOTH-FLEXIBLE couples baseline.
+
+All pre-correction couples results remain void.
+
+Do not reopen the semi-flexible sample before the seminar.
+
+Use the corrected pricing convention and floor-5 construction.
+
+Proceed to couples welfare because pricing cost is now trivial relative to the
+
+earlier estimate.
+
+8. COUPLES IDENTIFICATION SENSITIVITY
+
+Do not start another couples specification search.
+
+The only required pre-seminar sensitivity is the male-leisure block because it
+
+is the reported marginally identified component.
+
+Evaluate whether reasonable admissible movement/pinning of the marginal male
+
+leisure block materially affects:
+
+- mean/median welfare;
+
+- welfare inequality;
+
+- preference/environment split;
+
+- headline nested decomposition.
+
+If not material:
+
+retain couples welfare.
+
+If material:
+
+present couples positive estimation/fit, but keep singles as the quantitative
+
+welfare headline.
+
+No broader sensitivity battery.
+
+9. EQUIVALIZATION
+
+Compute:
+
+A. singles:
+
+raw household welfare inequality;
+
+modified-OECD-equivalized welfare inequality.
+
+B. couples:
+
+raw;
+
+modified-OECD-equivalized.
+
+C. pooled singles + couples:
+
+equivalized only.
+
+Require:
+
+- common real-euro year;
+
+- common consumption numeraire;
+
+- common money-metric calibration;
+
+- reference calibration identity.
+
+Use coalition-consistent equivalence scales when the coalition explicitly
+
+equalizes the household needs/composition object.
+
+Before paper-facing use, include this point in the single economics review:
+
+verify that changing the equivalence scale across D-coalitions is normatively
+
+consistent with the definition of the D factor.
+
+Do not treat the mathematical I11=0 result alone as sufficient normative
+
+justification.
+
+10. GPU / RESEARCH ENGINE
+
+Do not force Torch CUDA before the seminar.
+
+The current exact JAX CPU server route is accepted as the seminar research
+
+engine because:
+
+- it represents the full S8 grammar;
+
+- it is currently faster at R=100;
+
+- Torch lacks selected wage/hours terms.
+
+The researcher-facing requirement remains:
+
+Hisham must be able to personally rerun model estimation, change draw counts,
+
+change configs/starts/bounds, rerun inference and generate figures.
+
+Optimize for hands-on reproducibility, not GPU branding.
+
+Torch/CUDA full migration can resume after the seminar.
+
+11. FIGURES
+
+Prioritize publication-ready figures:
+
+- conceptual preferences/access/earning-opportunities diagram;
+
+- hours distribution + F35;
+
+- observed/predicted hours;
+
+- occupation fit;
+
+- wage fit by occupation;
+
+- coefficient plot;
+
+- draw-count stability;
+
+- welfare distribution;
+
+- preference/environment decomposition;
+
+- access/earnings/endowments decomposition;
+
+- singles/couples comparison if available.
+
+Do not produce rank/top-k/Brier figures now; they are withdrawn from
+
+paper-facing interpretation under deterministic chosen inclusion.
+
+12. PAPER
+
+Begin integration immediately into:
+
+JMP_working_paper_for_seminar_v1.md
+
+Do not wait for couples welfare to write:
+
+- introduction;
+
+- literature;
+
+- model;
+
+- data;
+
+- estimation;
+
+- identification;
+
+- singles results.
+
+Insert couples/welfare results as they become available.
+
+13. DOCUMENTATION
+
+Keep the seminar-sprint documentation cap.
+
+Update only:
+
+run_registry.csv
+
+model_comparison.csv
+
+decision_log.md
+
+plus actual paper tables/figures/results.
+
+No new mission-document family.
+
+14. NEXT RETURN
+
+Return to deputy only when:
+
+A. exact arm-specific headline decomposition table is ready;
+
+B. couples welfare/equivalization disposition is ready;
+
+and
+
+C. the seminar working-paper results section can be reviewed economically.
+
+That return will trigger ONE final economics/claim-to-evidence review.
+
+### (2) Seminar Sprint Addendum — Three Scientific Additions (R-243 frame), VERBATIM
+
+SEMINAR SPRINT ADDENDUM — THREE SCIENTIFIC ADDITIONS
+
+1. THEORY / EMPIRICAL ILLUSTRATION FIGURES
+
+Add two explicit figures to the paper-figure queue.
+
+FIGURE T1 — PREFERENCES VS OPPORTUNITIES
+
+Original schematic, informed by Haydar–Maniquet / Jacquet et al., with two panels:
+
+A. same preferences, different opportunity environments;
+
+B. same opportunity environment, different preferences.
+
+The figure must visually distinguish:
+
+- preferences;
+
+- job access;
+
+- occupation-conditioned earning opportunities;
+
+- chosen job;
+
+- attained welfare.
+
+Do not reproduce another paper's figure mechanically.
+
+FIGURE E1 — MATCHED REAL HOUSEHOLDS
+
+Using the final singles estimates, algorithmically identify a small real-data
+
+example:
+
+- two households with similar estimated preference profiles and, if feasible,
+
+  similar observed jobs;
+
+- maximally different estimated opportunity profiles subject to that similarity.
+
+Plot their estimated opportunity distributions over hours / occupation / wage
+
+and highlight the observed choice.
+
+If clean, also identify the reverse comparison:
+
+similar opportunity distributions but different preference profiles.
+
+Selection must be rule-based, not hand-picked.
+
+Do not create a large stylized-household/ranking exercise.
+
+Decoster–Haan should be cited in the literature/welfare motivation.
+
+Do not reproduce their Tables 5–6 or full Section-4 ranking exercise before the
+
+seminar.
+
+2. FINAL AGE-BOUND DIAGNOSTIC
+
+The historical S8 retains two active age-squared bounds.
+
+Run ONE final research diagnostic on S8 in which the whole sex-specific
+
+quadratic age-preference block receives a substantially wider coherent
+
+admissible region.
+
+Do not relax only beta_l_age2 while leaving the linear age coefficient on the
+
+same restrictive box: S2 already showed that this merely relocates the active
+
+constraint.
+
+Use the existing S2 evidence as the starting point.
+
+Required outputs only:
+
+- optimum / negLL;
+
+- active set;
+
+- Hessian/rank;
+
+- implied leisure-weight function by age and sex;
+
+- MRS compensation for +1 work hour by age;
+
+- hours fit;
+
+- change in headline welfare decomposition.
+
+If the relaxed model remains well behaved, materially improves the objective
+
+and produces economically sensible age profiles, return it as a candidate
+
+replacement for final S8.
+
+If constraints simply relocate again, parameters diverge, or the welfare/fit
+
+gain is negligible, retain S8 and close the issue.
+
+No new review cycle and no standalone memo.
+
+3. TARGETED EXTERNAL VALIDATION LANE
+
+Because the sprint is ahead of schedule, reopen ONE external-data lane in
+
+parallel.
+
+Priority 1:
+
+French Enquête Emploi / LFS 2016 desired-hours / underemployment evidence.
+
+Use official INSEE 2016 data first.
+
+Objective:
+
+externally validate the interpretation of the hours-opportunity block,
+
+especially part-time constraints and the 35-hour structure.
+
+Treat this initially as EXTERNAL VALIDATION, not as an instrument and not as a
+
+new preference parameter.
+
+Produce at most:
+
+- one compact validation table;
+
+- one publication-quality figure;
+
+- one paragraph for the paper.
+
+If usable microdata are already accessible without delay, evaluate whether a
+
+small set of desired-hours/underemployment moments can be compared with
+
+model-implied moments.
+
+Do not modify the likelihood merely to force agreement before a separate
+
+scientific decision.
+
+Priority 2 only if essentially costless:
+
+2016 DADS/Base Tous Salariés external wage moments by occupation for validation
+
+of gW(w | occupation, X).
+
+Do not redo BMO. Its negative result already stands.
+
+Do not reopen broad regional/external-covariate work.
+
+These three additions run in parallel with couples welfare and paper drafting.
+
+They must not delay the Day-7 scientific-core target unless they reveal a
+
+material specification problem.
+
+### (3) Final Seminar-Paper Integration Rule (R-246), VERBATIM
+
+FINAL SEMINAR-PAPER INTEGRATION RULE
+
+Apply the following before the ONE final economics review.
+
+1. AUDIENCE-FACING TERMINOLOGY
+
+Do not use internal project/specification labels in figures, tables or main prose:
+
+- S8 / S9 / LOC4;
+
+- JMP;
+
+- A / B / D / P except when they appear inside the formal decomposition equation.
+
+Use economic/descriptive language instead:
+
+- final singles model / preferred RURO model;
+
+- observed sample;
+
+- model-implied;
+
+- occupation-conditioned wage specification;
+
+- job access;
+
+- earning opportunities;
+
+- household endowments and needs;
+
+- preferences.
+
+The full technical appendix may preserve internal reproducibility labels where useful.
+
+2. FIGURE/TABLE CAPTIONS
+
+Every paper/deck figure and table must be understandable by a reader who knows
+
+nothing about the internal project workflow.
+
+Captions/notes should state, where relevant:
+
+- population/sample;
+
+- observed vs model-implied vs external benchmark vs illustrative;
+
+- singles/couples;
+
+- raw vs equivalized welfare;
+
+- preference-reference convention where relevant;
+
+- whether plotted jobs are actual observations, model alternatives, or simulated
+
+  illustrative draws;
+
+- important non-literal comparability limitations.
+
+Do not put implementation history into captions.
+
+3. OPPORTUNITY ILLUSTRATIONS
+
+The model does NOT estimate a literal count of available jobs per person.
+
+The economic object is the individual/household-specific estimated opportunity
+
+distribution/density over latent job packages.
+
+The number of sampled alternatives used for numerical integration is NOT an
+
+economic number of market opportunities.
+
+For theoretical and matched-household figures:
+
+- same preferences / different estimated opportunities;
+
+- similar opportunities / different preferences;
+
+it is permitted to plot an equal fixed number of simulated job draws from each
+
+estimated opportunity distribution for illustration.
+
+The caption must state:
+
+“Illustrative draws from the estimated opportunity distribution. The number of
+
+displayed jobs is fixed for visualization and does not represent the number of
+
+jobs available to the individual.”
+
+Prefer also showing economically interpretable summaries:
+
+- employment opportunity mass;
+
+- hours distribution;
+
+- occupation distribution;
+
+- wage-opportunity distribution.
+
+Use the rule-based matched examples already identified; do not hand-pick cases.
+
+4. EXTERNAL VALIDATION FIGURES
+
+Integrate the latest revised external-validation figures.
+
+Figure 1:
+
+DADS 2016 vs observed workers vs model-implied selected wages.
+
+Figure 2:
+
+official benchmarks vs observed sample vs model-implied outcomes.
+
+The public occupation classifications cannot be uniquely harmonized to the
+
+model's task-based ISCO grouping.
+
+Therefore:
+
+- external occupation composition is not a model validation result;
+
+- internal observed-vs-model occupation fit is the main occupation-fit panel;
+
+- no ad hoc crosswalk is imposed.
+
+Use the existing crosswalk audit only as reproducibility evidence.
+
+External-vs-sample differences must not be described as prediction errors when
+
+population/coverage definitions differ.
+
+5. UNDEREMPLOYMENT
+
+Do not print a numerical underemployment/model comparison until the WISHMORE
+
+coding direction is resolved.
+
+If the bounded check resolves cleanly before review, integrate it as external
+
+evidence relevant to hours constraints.
+
+If not, retain only the official external underemployment evidence and state
+
+that the current model has no direct desired-hours counterpart.
+
+Do not delay the seminar paper for this.
+
+6. HEADLINE RESULTS
+
+Singles remain the quantitative welfare headline.
+
+Use exact arm-specific values from headline_decomposition_v1.csv.
+
+The headline distinction is:
+
+- preferences;
+
+- complete non-preference environment;
+
+with the environment decomposed into:
+
+- job access;
+
+- earning opportunities;
+
+- household endowments and needs.
+
+Do NOT say that job opportunities explain the full environment share.
+
+Report the combined market-side contribution:
+
+job access + earning opportunities
+
+separately from endowments/needs.
+
+Reference sensitivity belongs primarily to the preference contribution.
+
+7. COUPLES
+
+Couples are a substantive main extension.
+
+Report:
+
+- clean positive-model fit;
+
+- couples welfare/equivalized inequality;
+
+- robust environment decomposition.
+
+Because the male-leisure sensitivity materially affects the preference share,
+
+do not present one precise couples preference percentage as structurally robust.
+
+Singles remain the main quantitative welfare decomposition.
+
+8. POOLED SINGLES + COUPLES
+
+Pooled equivalized inequality may be reported.
+
+Do NOT present the pooled decomposition as exhaustive while the type-specific
+
+reference-origin issue leaves the decomposition non-exhaustive.
+
+Treat this as an open welfare-reference issue, not a numerical failure.
+
+9. PAPER FIGURES
+
+The main paper/deck should prioritize:
+
+- theoretical preferences/opportunities/welfare schematic;
+
+- same-preferences/different-opportunities illustration;
+
+- matched real-household opportunity example;
+
+- hours/F35 fit;
+
+- observed/model occupation fit;
+
+- wage fit + external DADS benchmark;
+
+- external employment/hours benchmarks;
+
+- draw-count stability;
+
+- headline welfare decomposition;
+
+- nested environment decomposition;
+
+- couples extension.
+
+Do not add Decoster–Haan-style ranking/quintile exercises now.
+
+Cite that literature rather than expanding the empirical scope.
+
+10. NEXT STEP
+
+After applying these integration rules, proceed directly to the ONE final
+
+economics / claim-to-evidence review of:
+
+JMP_working_paper_for_seminar_v1.md
+
+and the seminar deck content.
+
+Review:
+
+- contribution and literature positioning;
+
+- welfare estimand;
+
+- reference sensitivity;
+
+- coalition-consistent equivalization;
+
+- interpretation of job access / earning opportunities / endowments;
+
+- headline decomposition percentages;
+
+- identification limits;
+
+- couples sensitivity;
+
+- pooled non-exhaustiveness;
+
+- external-validation claims;
+
+- figure/caption clarity;
+
+- absence of internal jargon and overclaiming.
+
+No software review.
+
+No additional model-search review.
+
+No new governance files.
+
+Return the economics-review verdict and only the corrections that materially
+
+affect the paper/presentation.
