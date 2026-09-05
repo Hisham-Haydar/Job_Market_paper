@@ -214,6 +214,20 @@ term in the offer density says part-time jobs are scarce. Both produce the same
 observed hours distribution, and a specification that only has the first will
 attribute scarcity to distaste by construction.
 
+**That claim is checked rather than asserted, and the check qualifies it in a way
+worth stating here.** §6.7 fits the common-choice-set benchmark this argument
+names, on the same data and the same priced packages. The misattribution to tastes
+is real and large **on the behavioural side**: the benchmark recovers the hours
+constants in its utility index at essentially the availability values, to a mean
+absolute difference of 0.037, and it reverses the sign of the male-minus-female
+leisure gap, from $+0.428$ to $-1.991$. But on the **money-metric decomposition**
+it does not turn opportunity into taste: the preference share is 6.4 per cent
+under the benchmark against 6.3 under the preferred model. What the omission does
+there is understate measured inequality — by 24.2 per cent on the raw basis — and
+relabel within the environment, moving market-side dispersion to the budget side.
+Both halves of that finding are reported, because only one of them is the half the
+premise predicts.
+
 The random-utility random-opportunity architecture separates them by putting the
 availability object in the likelihood as its own factor. A household's choice
 probability over job packages is
@@ -304,8 +318,8 @@ country-year, and it is stated as such.
 The ordering *between* job access and earning opportunities is deliberately not
 claimed. The two channels have distinct point estimates in every row of the
 table, but the access channel is precisely the one that does not yet separate
-$A_i$ from $O_i$, and the status of record on that ordering is unresolved. The
-numbers are printed; the ranking is not asserted.
+$A_i$ from $O_i$. The design does not identify that ordering, so no ranking is
+claimed; the numbers are printed and the ranking is not asserted.
 
 ### 1.4 Contributions
 
@@ -415,8 +429,7 @@ a structural labour-supply and welfare framework.
 ### 2.2 The closest welfare precedent, verbatim
 
 The paper's position relative to the closest empirical welfare precedent is on
-the record in the following terms, which are reproduced here as the ruling
-requires:
+the record in the following terms, which are reproduced here verbatim:
 
 > "Decoster and Haan (2015) provide a direct empirical precedent for carrying
 > structurally estimated consumption–leisure preference heterogeneity into
@@ -588,7 +601,7 @@ $\tilde{c}_{ij}=c_{ij}/\lambda_c$, $a_i$ age centred and scaled by ten, $k_i$ th
 number of children, and $\beta_c\equiv 1$ as the scale numeraire. The consumption
 curvature $\theta_c$ is shared by the two sexes by construction of the certified
 specification; the leisure curvature $\theta_{\ell}^{g}$ is not. The leisure
-normaliser of record is $\lambda_{\ell}=10$ hours.
+normaliser is $\lambda_{\ell}=10$ hours.
 
 **The opportunity density.** Availability factorises into four margins, each
 equal to one at its own reference, the last three switched off on the
@@ -779,8 +792,9 @@ one identical welfare definition and reference convention:
 | $W^{11}$ | reference | reference | $\{\mathrm{acc},\mathrm{earn},\mathrm{needs},\mathrm{pref}\}$ |
 
 with $I^{00},I^{10},I^{01},I^{11}$ the corresponding inequality indices. These are
-**well-being levels under stated reference conventions**. The governing ruling is
-explicit: *"This is not compensating variation and requires no tax reform."* No
+**well-being levels under stated reference conventions**; none is a compensating
+variation or a tax-reform welfare change, and no tax reform is required to define
+them. No
 cell is a compensating variation, none is $CV$, $CV^{\circ}$ or
 $CV^{\mathrm{pref}}$, and none may be described in those terms. The four cells are
 the *level analogues* of those objects by what each neutralizes — $W^{10}$ answers
@@ -801,7 +815,7 @@ that game, satisfying $C_{\mathrm{pref}} + C_{\mathrm{env}} = I^{00} - I^{11}$ a
 licensed to report shares only if the fully common state $I^{11}$ is negligible,
 and the test was pre-stated before any cell was read: $I^{11}$ counts as negligible
 only if *both* $|I^{11}|\le 0.00125$ — the certified Gini-scale component-level
-precision constant — and $|I^{11}|/I^{00}\le 0.01$. The ruling is equally explicit
+precision constant — and $|I^{11}|/I^{00}\le 0.01$. The test is equally explicit
 that $I^{11}$ is not to be forced to zero and not renormalised mechanically, and
 that a non-negligible $I^{11}$ **halts** the headline.
 
@@ -848,16 +862,23 @@ $I^{11} = 0.000\mathrm{e}{+}00$ and $-2.035\mathrm{e}{-}31$, as in the raw basis
 The own-scale leg is retained as the diagnostic that shows the size of the defect,
 never as a headline.
 
-**The normative point is flagged and not settled.** The scale is not a fixed
-attribute of a household in this decomposition; it is a function of composition,
-and composition is one of the objects the endowments-and-needs channel equalises.
-The question put to the economics review is not whether the arithmetic is right
-but whether the *economics* is: does "equalising needs" mean giving every
-household the reference household's needs — in which case the scale must move —
-or equalising resources while leaving needs alone, in which case the residual is a
-genuine needs term rather than a defect? This paper takes the first reading
-because it is the one under which the four channels close. The second is coherent
-and requires a different accounting.
+**Why the scale moves: factor consistency, not closure.** Household composition is
+part of the endowments-and-needs factor by definition, and the equalisation
+operator replaces that exogenous needs profile with the reference profile. Because
+the equivalence scale is a deterministic function of household composition, it is
+evaluated at the coalition-specific composition whenever the endowments-and-needs
+factor is replaced. The scale therefore moves with that coalition **as a
+consequence of the definition of the factor, not in order to force the
+decomposition to close**. Exact exhaustiveness is a consequence of this
+convention. Under the alternative normative object — *equalise resources while
+holding each household's own needs fixed* — the equivalence scale would remain
+household-specific and the resulting dispersion would be a genuine needs component
+requiring a different decomposition. This paper adopts the first object.
+
+That the first object is also the one under which the four channels close exactly
+is a *check* on the convention rather than the argument for it: a convention that
+were internally inconsistent with the factor definition would be very unlikely to
+produce an exactly zero fully common state, and it does not.
 
 ### 3.6 The numerical layer, in one paragraph
 
@@ -869,7 +890,7 @@ carries a proposal density that can vanish relative to the target. The welfare
 functionals are integrals over the estimated opportunity density and are evaluated
 on an **Owen-scrambled Sobol basis with eight independent scrambles**, with the
 per-household mean over scrambles taken *before* the log and before the
-money-metric inversion — the order matters and is the order of record. Precision
+money-metric inversion — the order matters and is the order used throughout. Precision
 is reported by a **delete-one-scramble jackknife**,
 $SE_{\text{jack}}=\sqrt{\tfrac{7}{8}\sum_r (T_{(-r)}-\bar T)^2}$ and
 $E_T = t_{0.975,7}\cdot SE_{\text{jack}}$ with $t_{0.975,7}=2.364624251$; no bias
@@ -877,7 +898,7 @@ term is folded in. **These bands are numerical-integration precision, never
 sampling confidence intervals.** Sampling uncertainty of the estimated parameter
 vector, propagated to the welfare functionals, is **not estimated in this paper**,
 and that third row is stated rather than elided. Appendix C carries the
-instrument-level detail and the gate battery.
+instrument-level detail and the full set of numerical checks.
 
 ---
 
@@ -1029,7 +1050,7 @@ twice as common among women, and group 4 is the largest for both. Because the
 offer density is allowed to depend on occupation separately by sex, this
 composition is information rather than nuisance.
 
-**The wage-offer summary of record.** Over the 1,327 employed households with
+**The wage-offer summary.** Over the 1,327 employed households with
 positive recorded earnings (weighted population 3,892,446), the delivered hourly
 wage has a weighted **mean of €15.47** and a weighted **median of €14.05**. Its
 range on the estimation frame is €2.06 to €94.76, with weighted p01 €3.14 and p99
@@ -1051,7 +1072,7 @@ Degree of urbanisation is a three-level coding: `drgur` 832 households, `drgmd`
 328, `drgru` 395, with **rural as the reference category** — it is loaded but
 carries no coefficient — and two urbanisation dummies against it. `gsur` is the
 *continuous* group-specific unemployment rate from a (zone, education, sex)
-lookup at opportunity year 2015, scaled by ten and gated on working: 47 unique
+lookup at opportunity year 2015, scaled by ten and conditional on working: 47 unique
 household-level values, range $[0.053183, 0.225]$, mean $0.09451$, constant within
 household. It is not a region dummy, has no omitted category, and is reported
 separately from the region dummies throughout.
@@ -1087,7 +1108,7 @@ $\texttt{ils\_dispy\_takeup} = \texttt{ils\_dispy} - \texttt{bsa00\_s}\cdot(1-\t
 **The pricing convention on the minimum-income benefit, stated because it governs
 every consumption figure in the paper.** The French system's minimum-income
 benefit (RSA) is simulated in EUROMOD with a rank-based non-take-up rule that
-rations to a *batch-relative* target. **The convention of record grants full
+rations to a *batch-relative* target. **The convention adopted here grants full
 entitlement inside the pricing engine and applies take-up afterwards as a
 household trait, once, at assembly.** Take-up is a property of the household, not
 of the batch it happened to be priced in; granting full entitlement in the engine
@@ -1180,7 +1201,7 @@ exact reparameterisation checks rather than robustness exercises.
 
 **Age centring is exact.** Re-centring the age variable and carrying the
 admissible set through the exact map returns the same optimum: the objective
-agrees with the specification of record to $1.38\times10^{-10}$ against a
+agrees with the preferred specification to $1.38\times10^{-10}$ against a
 $10^{-8}$ band, and the active set and the near-boundary flagged set are
 identical.
 
@@ -1229,9 +1250,10 @@ The corresponding question on the welfare side is separate, because the welfare
 objects are non-linear functionals of $\hat\theta$ through a money-metric
 inversion, and is answered in §7.6 and **Figure 10**.
 
-One disclosure about Figure 8's construction. The deputy's specification of that
-figure names "$\beta_E$ by sex"; the preferred specification carries **one**
-$\beta_E$, common to both singles groups, so there is no sex-split pair to plot.
+One disclosure about Figure 8's construction. The preferred singles specification
+has one common employment-level coefficient, so the figure shows that coefficient
+once; the sex contrast is instead shown through the sex-specific occupation-access
+coefficients.
 The figure shows the pooled $\beta_E$ in one panel, says so on its face, and gives
 the panel that carries the sex contrast to the occupation-access coordinates,
 which are the sex-specific job-access coordinates the model actually has.
@@ -1239,14 +1261,14 @@ which are the sex-specific job-access coordinates the model actually has.
 ### 5.4 Three heterogeneity extensions, and what their failure identifies
 
 The choice model carries a job-package Gumbel shock and no household-level
-persistent term. Three pre-registered extensions were tested for **recoverability**
-before any real-data estimation, by synthetic recovery from the accepted
+persistent term. Three heterogeneity extensions were specified in advance and
+assessed by **synthetic-recovery diagnostics before real-data estimation**, from the accepted
 specification's own point, with the expected likelihood-ratio depth computed
 exactly under the truth's marginal choice probabilities so that the finding does
 not depend on a draw. All three are negative, they fail for **three different
 measured reasons**, and under the standing rule that no extension is admitted
-without passing its recoverability gate the preferred specification is formally
-retained rather than an extension invented.
+none satisfied the stated recovery criterion, so none is included in the preferred
+specification, which is retained rather than an extension invented.
 
 These results are reported here as **identification evidence**, not as an
 appendix of failures, because between them they establish what a cross-section of
@@ -1321,7 +1343,7 @@ is widened by a factor of five on half-widths — the linear terms from $\pm 5$ 
 $\pm 25$, the quadratic terms from $\pm 1$ to $\pm 5$ — and *nothing else changes*:
 no coordinate is added or removed, no pin is moved, no tolerance, seed, start,
 contract or draw changes, and the couples block is untouched. Widening the whole
-block by one factor keeps the 5:1 linear-to-quadratic half-width ratio of record,
+block by one factor keeps the 5:1 linear-to-quadratic half-width ratio,
 which is what a quadratic-only widening would break. The box is deliberately not
 taken as the pull-back of a unit box at a different leisure normaliser, because
 that map is built from the estimated leisure curvatures and a declared admissible
@@ -1382,7 +1404,7 @@ reference and $+5.2$ per cent under the male structural zero. Six of 126
 quantities move across all bases; nothing else in the headline does, and no sign
 and no ordering changes anywhere.
 
-**The verdict: retain the model of record, and the margin is close.** The
+**The verdict: retain the preferred specification, and the margin is close.** The
 widened box fails on the objective limb. The pre-declared rule
 required all four limbs for the widened box to become a candidate replacement; it
 fails the one asking for a materially better objective. The specification of
@@ -1493,7 +1515,7 @@ non-employment, is seven-tenths of a percentage point.
 reported rather than smoothed.** The model over-predicts the bottom wage quintile
 by $+0.053$ and under-predicts the second, third and fourth by $-0.026$, $-0.022$
 and $-0.019$. This is a known and durable feature of the specification: §6.5
-reports a pre-registered attempt to repair it with an hours-conditioned wage
+reports an attempt, specified in advance, to repair it with an hours-conditioned wage
 location, and the attempt failed.
 
 **Rank, top-$k$ and Brier statistics are absent from this paper by rule, and the
@@ -1566,7 +1588,7 @@ Nothing in the design identifies the latter, and the paper does not claim it.
 
 ### 6.5 The channel-separation null
 
-Two pre-registered variants test whether the occupation wage-location block is
+Two variants specified in advance test whether the occupation wage-location block is
 doing separable work or is a redundant relabelling of things already in the model.
 They give opposite answers, and together they are the cleanest structural evidence
 in the paper that job access and earning opportunities are distinguishable
@@ -1638,6 +1660,128 @@ of the hours distribution as environment and a smaller part as preference. This 
 an instance of exactly the confound the paper is about, showing up inside the
 paper's own specification comparison, and it is the strongest argument in the
 paper for reporting the decomposition under both models rather than one.
+
+### 6.7 What a common-choice-set model would have found
+
+*A different benchmark from §6.6, and the two should not be confused. §6.6's is the
+**nested** benchmark — the same architecture minus the statutory-week coordinate —
+and it exists to measure one coefficient. This one is the **common-choice-set**
+benchmark: a conventional model with no opportunity object at all, which is not
+nested in the preferred model and is not a candidate specification. It exists to
+answer a question about method.*
+
+The paper's premise is that putting every household on a common choice set forces
+availability into the taste index. That is an argument, and it can be checked
+rather than asserted. This subsection fits the benchmark the premise names — a
+conventional common-choice-set model on the same data, the same priced packages
+and the same welfare machinery — and reports what changes. It is the paper's own
+counterfactual about method, and the result is **not** the one the premise most
+naturally suggests.
+
+**The benchmark.** Every household-indexed argument of the availability object is
+replaced by a common reference value and the result is renormalised, so that all
+households face the same offer environment; the preference block is then
+re-estimated against that offset. What remains is a conventional discrete-choice
+labour-supply model with hours constants, a fixed cost of work and a
+sex-specific leisure block — the model a careful analyst without an opportunity
+object would have fitted to these data. Job access and earning opportunities then
+contribute **exactly zero** to the decomposition by construction; those zeros are
+the benchmark's definition made arithmetic, not estimates that happened to vanish.
+
+**Likelihood and information criteria, as descriptive provenance.** The benchmark
+is 16 free parameters against 41 and is **129.1 nats worse** in objective, at
+18,151.85 against 18,022.76 — a per-household log-score gap of 0.083. Both
+information criteria prefer the richer model: $\mathrm{AIC}$ 36,127.5 against
+36,335.7 and $\mathrm{BIC}$ 36,346.8 against 36,421.3. The likelihood-ratio
+statistic against the restriction is 258.2 on 25 degrees of freedom, and it is
+reported as an **upper bound**: the surviving opportunity coefficients are held at
+their preferred-model values rather than re-optimised under the restriction, so
+the freely-estimated restricted model would do at least as well. This whole block
+is **descriptive provenance and not a test that settles the choice of
+architecture**. The point that in-sample fit is close to uninformative across
+choice-set specifications is well established, and the next paragraph is the
+concrete demonstration of it.
+
+**The benchmark fits the marginals as well or better.** Mean absolute deviation
+between observed and model-implied shares, benchmark against preferred model:
+hours **0.0080** against 0.0083, occupation **0.0029** against 0.0034, offered-wage
+quintiles **0.0203** against 0.0261; employment 0.0042 against 0.0041. On three of
+the four spaces the benchmark is *closer*, and on the fourth the two are
+indistinguishable. A referee who judged these two models on marginal fit alone
+would prefer the one with no opportunity object in it. **That is the argument for
+not judging them on marginal fit alone**, and it is why the case for the
+architecture in §6.5 rests on where variation *relocates* rather than on how well
+either model fits.
+
+**Where the availability information goes: into the taste parameters.** The
+mechanism the paper claims is directly visible in the coefficients. The five
+hours-band constants are recovered in the benchmark's *utility* index at
+essentially the values they take as *availability* weights in the preferred model
+— mean absolute difference **0.037**, maximum 0.075. The same constants, read
+twice: under the preferred model they say a job of those hours is scarce or
+plentiful; under the benchmark they say the household likes or dislikes those
+hours. The fixed cost of work is the one that does not transfer cleanly, at
+$+0.517$ against $-3.334$, because the employment margin in the preferred model
+also carries the household's own region and unemployment rate, which the benchmark
+makes common. And the consequence for how the two sexes are described is stark:
+the male-minus-female leisure intercept gap is **$+0.428$ under the preferred model
+and $-1.991$ under the benchmark** — a reversal of sign, not a change of
+magnitude. Measured leisure preference shifts toward the group facing the less
+favourable offer environment, which is exactly what the confound predicts.
+
+**Welfare inequality falls.** Baseline money-metric inequality is **24.2 per cent
+lower** under the benchmark on the raw basis, 0.101841 against 0.134277, and
+**15.3 per cent lower** on the equivalized basis, 0.139869 against 0.165105.
+Giving every household the same offer environment removes real dispersion in
+well-being, because a large part of the dispersion *is* the offer environment.
+
+**The preference-attribution gap is the surprise, and it is close to zero.** The
+natural expectation — the one the paper's own premise invites — is that a model
+with no opportunity object books the missing opportunity share as preference
+heterogeneity. It does not. The preference *share* of the decomposition is
+**6.4 per cent under the benchmark against 6.3 per cent under the preferred
+model**, a difference of $+0.1$ percentage points against a numerical band of
+$\pm 0.4$. The omitted market-side share has to go somewhere, and the three
+destinations can be measured exactly, because the two models are evaluated on the
+same integration scrambles and the arithmetic closes as an identity. Of the
+**35.5 per cent** that job access and earning opportunities carry in the preferred
+model:
+
+| destination | female reference | male-reference sensitivity |
+|---|---:|---:|
+| to the preference share | $-4.0$ % | $-9.6$ to $-12.8$ % |
+| to household endowments and needs | $+36.0$ to $+48.5$ % | $+42.3$ to $+54.2$ % |
+| out of the measured total altogether | $+59.0$ to $+68.0$ % | $+58.6$ to $+67.3$ % |
+
+*Ranges are across the raw and equivalized bases. The female-reference arm is
+primary and the male-reference arm is the sensitivity; the two are never averaged.
+A negative entry in the first row means the benchmark attributes* less *to
+preferences than the preferred model does, not more.*
+
+**The sentence this licenses, and its limit.** On the money-metric decomposition,
+**omitting the opportunity object understates measured inequality and relabels
+within the environment — moving market-side dispersion to the budget side and
+dropping most of it from the total — rather than turning opportunity into taste.**
+The misattribution to tastes is real, but it is on the **behavioural** side, in the
+preference parameters themselves: the hours constants and the reversed sex gap
+above. A conventional model of these data would not have reported a much larger
+preference share of welfare inequality. It would have reported a *smaller total*,
+a budget channel doing work the market channels should have done, and a sex
+contrast in tastes pointing the wrong way.
+
+That distinction matters for how this paper's contribution should be read. The
+case for an opportunity object is not that it rescues a welfare decomposition from
+attributing everything to taste — on this measure it does not. It is that without
+one, the estimated preferences are wrong in an economically consequential
+direction, the level of measured inequality is understated by a fifth to a
+quarter, and the environment's internal composition is misdescribed.
+
+**Figure 17** shows the two decompositions side by side. The benchmark's own
+decomposition is internally exhaustive on the same test the preferred model passes,
+so the comparison is between two complete accountings rather than between a
+complete one and a residual.
+
+---
 ---
 
 ## 7. The welfare decomposition
@@ -1794,7 +1938,7 @@ throughout.
    in every row, and the numbers are printed. But the access channel is exactly the
    one that does not yet separate the ability set from the opportunity set, so an
    ordering claim would be a claim about an object the design does not identify.
-   The status of record stands.
+   The design does not identify that ordering, so no ranking is claimed.
 4. **The two reference conventions are reported as a range and never averaged.**
 
 ### 7.4 Raw against equivalized
@@ -1843,7 +1987,7 @@ only completion the specification implies. Appendix B records how this was found
 by measurement, when the common support drove the female arms' residual to
 numerical zero and left the male arms' at $1.1\times10^{-3}$.
 
-The classification of record is `REFERENCE_SENSITIVE_MAGNITUDE`, branch A: the
+The classification is **reference-sensitive in magnitude**: the
 sign of the preference contribution, the dominance of the environment and the
 nested order are identical under both references, and the *magnitude* of the
 preference contribution differs by more than the integration bands.
@@ -1884,7 +2028,7 @@ $R \in \{50,100,200,400\}$ on the §5.3 parameter vectors, with **only
 $\hat\theta$ varying** — the welfare basis, support, operators, inversion and
 jackknife are the same objects at every rung, so the ladder isolates the
 propagation of estimation-draw noise into the decomposition. The ladder is
-anchored: the $R=100$ rung and the optimum of record agree to
+anchored: the $R=100$ rung and the reported optimum agree to
 $1.4\times10^{-9}$ in coordinates and reproduce the headline to every printed
 digit. **Figure 10** is the picture.
 
@@ -1920,7 +2064,7 @@ bitwise equality for all 1,555 — **fails**, and it is reported failing: seven 
 answer, because `lhw` is not a pricing input: the production earnings policy
 *writes* `lhw` onto every decider of every priced alternative before the record
 reaches the tax–benefit engine. It is a slot the node fills, not a number the
-frame supplies. With the policy-written columns removed the gate is bitwise equal
+frame supplies. With the policy-written columns removed the check is bitwise equal
 for all 1,555 households, and the argument was then *measured* rather than
 asserted: the engine input frame actually assembled from both frames' templates,
 at full slot coverage on all seven affected households (11,480 input rows), is
@@ -1928,7 +2072,7 @@ at full slot coverage on all seven affected households (11,480 input rows), is
 140 of those rows. **Verdict: pass. The cache is reused and the final welfare
 costs no new pricing call.**
 
-One disclosure the cache gate does not cover, recorded so that it is a disclosed
+One disclosure the cache check does not cover, recorded so that it is a disclosed
 choice rather than an oversight: the assembled welfare stem carries a per-household
 anchor row and a panel-level consumption scale over all rows. The anchor is
 excluded from every welfare object by construction, so it reaches the numbers only
@@ -1948,7 +2092,7 @@ precision.
 child-count variable agrees with the under-14 count in 1,357 of 1,555 households
 (87 per cent) — it is a preference argument and a needs argument under different
 age cuts, and the two move under different channels. And no synthetic recovery
-gate at production scale has ever been run on the preferred singles specification
+synthetic-recovery diagnostic at production scale has ever been run on the preferred singles specification
 itself; the recovery evidence in this paper is on the couples module (§8.2).
 
 ### 7.8 What the decomposition looks like at the household level
@@ -2069,17 +2213,20 @@ figure: a different frame and a different choice set.
 
 ### 8.2 Recovery, and the named weakness
 
-Two synthetic recovery gates were run at ten replications each, both with zero
-NOT-RECOVERED coordinates, so no pin was taken.
+Two synthetic-recovery diagnostics were run at ten replications each, both with
+zero unrecovered coordinates, so no coordinate was fixed.
 
-| gate | DGP share with both spouses working | RECOVERED | MARGINAL | NOT RECOVERED |
+| diagnostic | simulated share with both spouses working | recovered | marginal | not recovered |
 |---|---|---:|---:|---:|
 | at the design point | 23.0 % (data: 85.3 %) | 42 | 4 | 0 |
 | **at the fitted point — governs** | **82.9 %** | 38 | 8 | 0 |
 
-The design-point gate licenses the design only where the design point sits; the
-fitted-point gate reproduces the data, so it governs. **The male leisure block is
-the named weakness**: three of its four coordinates are MARGINAL at the fitted
+The design-point diagnostic speaks only to where the design point sits; the
+fitted-point diagnostic reproduces the data, so it is the one that governs.
+**Synthetic-recovery diagnostics identify the male leisure block as weakly
+recovered at the fitted point**, and the welfare sensitivity associated with that
+block is therefore reported explicitly in §8.4: three of its four coordinates are
+marginally recovered at the fitted
 point — the intercept at 0.78 replication standard errors, the curvature at 0.85,
 the age-squared term at 0.65 — though all four are RECOVERED at the design point.
 This weakness is carried *with* the results, not around them, and §8.4 is where it
@@ -2126,7 +2273,7 @@ external consistency in the paper's positive layer, and it was not targeted.
 
 **Rank, top-$k$ and Brier statistics are structurally degenerate here too, and
 this is not a couples defect.** The chosen-rank median is 101 of 101, the top-$k$
-rates are zero, and the singles model of record shows the identical pattern. The
+rates are zero, and the preferred singles model shows the identical pattern. The
 mechanism is the one in §6.2, and it is a property of the estimator's choice-set
 construction rather than of either module.
 
@@ -2137,7 +2284,7 @@ nodes built so that the population marginal is taken over the **joint** per-spou
 base component rather than spouse by spouse, because the product of two separate
 per-spouse marginals is not the marginal of the product and would lose the
 domination property that bounds the importance weights. Appendix C gives the
-construction and its gates.
+construction and its checks.
 
 Couples have **no reference-group arm**, and this is structural rather than a
 simplification. The singles decomposition needs a female/male pair because the two
@@ -2169,7 +2316,7 @@ one channel (11 to job access, 6 to earning opportunities, 5 to preferences,
 | equivalized | $+0.005220$ [0.004897, 0.005544] | $+0.136327$ [0.135100, 0.137554] | 3.69 % | 0.017816 | 0.040767 | **0.077743** | needs > earning opp. > access |
 
 Levels: raw mean €1,836.8 and median €1,761.8 a month; equivalized mean €972.7 and
-median €921.5. **The same nested order the singles lane found, on both bases**, and
+median €921.5. **The same nested order the singles module found, on both bases**, and
 the same environment dominance. **Figures C1–C3** (Appendix D) carry the
 distributions, the decomposition and the singles/couples comparison.
 
@@ -2183,7 +2330,7 @@ transfer to couples and is not repeated here.
 **The disposition: the male-leisure sensitivity is material.** Seven pinned refits
 of the remaining 45 coordinates, all converged, move each MARGINAL male-leisure
 coordinate to both ends of its recovery band. The band is deliberately
-**conservative**: it is the design point plus or minus the recovery gate's mean
+**conservative**: it is the design point plus or minus the diagnostic's mean
 replication standard error, and all seven arms fall *outside* the couples
 likelihood's own 95 per cent region for the pinned coordinate — the smallest
 likelihood-ratio statistic among them is 4.17 against a chi-square(1) critical
@@ -2205,7 +2352,7 @@ and not one is an ordering change.
 **The sensitivity is concentrated in the preference contribution**, which ranges
 from 0.0014 to 0.0075 on the equivalized basis around a baseline of 0.0052 — a
 five-fold spread — and that is precisely the channel that leans on the male
-leisure block the recovery gate named as its weakness. The environment side moves
+leisure block the recovery diagnostics identified as weakly recovered. The environment side moves
 by under 3.5 per cent and the headline inequality by under 1 per cent, and they
 leave their bands only because the bands are very tight. Sign, the nested order
 and the levels are unchanged in every arm. **Figure C5** plots the
@@ -2265,8 +2412,8 @@ is distributed between spouses, and no such claim is made anywhere.
 
 ### 8.6 What travels with every couples number
 
-The recovery gate's named weakness (three of four male leisure coordinates
-marginal at the governing fitted-point gate); no synthetic recovery gate at
+The weakly recovered male leisure block (three of four coordinates marginal at
+the governing fitted-point diagnostic); no synthetic-recovery diagnostic at
 production scale has been run on the couples specification, exactly as none has
 been run on the singles one; the access channel's joint-participation-regime limb
 is structurally inert, because the joint regime law carries no household
@@ -2361,7 +2508,7 @@ not a different computation.
 the observed sample and the model-implied shares side by side on the statutory
 band, and its panels (a) and (c) carry the underemployment evidence of §9.3.
 
-The paragraph of record, generated from the table:
+The summary paragraph, generated from the table:
 
 > The hours-opportunity block of the estimated model is disciplined only by the
 > EU-SILC choice data, but the structure it recovers is visible in an independent
@@ -2416,7 +2563,7 @@ above 70 hours. That bucket is flagged and excluded from every comparison rather
 than used, and §9.3 records what the follow-up cross-tabulation showed it actually
 contains.
 
-### 9.3 Underemployment: external evidence on constrained hours
+### 9.3 Underemployment: external descriptive context, not a model comparison
 
 The external source also carries a direct report of whether a worker wishes to work
 more hours. Its national coding is settled against the EU-LFS codebook (version of
@@ -2425,46 +2572,37 @@ name carried the opposite map and is superseded — a dated note records the
 inversion, and no number in the export is affected by it, only two labels. The
 variable is fully observed on all fifteen focal sex × band cells, so nothing here
 rests on imputation. The follow-up moments the earlier draft was waiting on have
-since landed, and they close the question on evidence as well as on documentation.
+since landed, and they close the documentation question on evidence as well.
 
-**The gradient.** Under that coding, **20.3 per cent of employed people in the five
-bands the model prices report wishing to work more hours, and the share falls
-monotonically in hours worked — 46.6 per cent at 17.5–21.5 hours, 37.5 at
-28.5–30.5, 23.7 at the statutory week, 19.8 at 36.5–40.5 and 7.6 at 44.5–70 — so
-the bands the estimated model prices as thin in opportunity are the bands where
-workers most often report constrained hours**, at a Spearman rank association of
-$-0.80$ between the estimated relative offer weight and the wish-more share over
-the four short-and-medium bands. Across *all* employed people aged 20–60, on a
-denominator the earlier draft did not have, the share is 22.9 per cent.
+**What the external source says.** Among employed people in the five focal hours
+bands, **20.3 per cent report wishing to work more hours, and this share declines
+with current hours worked** — 46.6 per cent at 17.5–21.5 hours, 37.5 at 28.5–30.5,
+23.7 at the statutory week, 19.8 at 36.5–40.5 and 7.6 at 44.5–70. Across all
+employed people aged 20–60 the share is 22.9 per cent. The
+desired-minus-actual-hours profile shows the same descriptive gradient: mean
+desired hours minus mean **actual** hours within the band is $+8.2$ hours at
+17.5–21.5, $+3.7$ at 28.5–30.5, $+1.6$ at the statutory week and $+0.9$ at
+36.5–40.5, turning negative only at long hours, $-1.5$. It is positive on every
+band up to 39 hours, it falls alongside the wish-more share, and it is larger for
+men than for women in all four of those bands. Two moments that could have
+disagreed do not.
 
-**The gap profile.** A second and independent moment describes the same margin.
-Mean desired hours minus **mean actual hours** within the band — not, as before,
-against the band's own upper edge — is $+8.2$ hours at 17.5–21.5, $+3.7$ at
-28.5–30.5, $+1.6$ at the statutory week and $+0.9$ at 36.5–40.5, turning negative
-only at long hours, $-1.5$. It is positive on **every** band up to 39 hours, it
-falls monotonically alongside the wish-more share, and it is larger for men than
-for women in all four of those bands (Figure 16, panel c). The earlier band-bound
-proxy was slack by construction and got the sign wrong at 36.5–40.5 hours; the gap
-itself replaces it. Two moments that could have disagreed do not, and the profile
-they share is the one the adopted coding implies and the opposite of the one the
-delivered field name implies.
+**These are external facts about reported hours wishes, and that is all they are.**
+The structural model has no desired-hours or underemployment outcome. These moments
+are therefore **not compared with a model prediction, not used to validate an
+estimated offer-weight parameter, and identify nothing in the model.** They are
+reported only to document the labour-market context in which the estimated hours
+distribution is interpreted. No rank association between the reported hours wishes
+and any estimated quantity is computed anywhere in this paper, and none should be:
+the two objects are not commensurable, so a correlation between them would not
+mean what it appears to mean.
 
-That is external evidence on hours constraints and nothing more. It **identifies**
-no parameter, it enters no likelihood, and a rank association over four points is
-descriptive rather than a test. **The current model has no direct desired-hours
-counterpart; the external underemployment gradient is consistent with the estimated
-thinness of short-hours opportunities.** The model prices the availability of hours
-packages, not a desired-hours margin, so the two objects are consistent rather than
-commensurable, and the agreement is a consistency check on the availability reading
-of the hours block.
-
-The long-hours band is held out of that association, and should be: a band can be
-thin in *offers* while the people already working 45 to 70 hours are the least
-likely to want more, so offer thinness and underemployment decouple at that end by
-construction, and **wanting more hours at 50-plus is not underemployment**. It is
-drawn on the figure and marked there, rather than dropped. The part-time-constraint
-claim belongs at the short-hours end where it lives, and nothing in §9.2 touches
-this variable.
+Panels (a) and (c) of **Figure 16** carry these two profiles and are labelled
+external descriptive evidence on their face; neither plots a model quantity on any
+axis. The long-hours band is drawn and marked rather than dropped, because wanting
+more hours at fifty-plus is not underemployment and the band would otherwise be
+read as though it were. Panel (b) is the validation panel and does not use this
+variable at all.
 
 Two provenance facts travel with this subsection. The follow-up moments reached
 this side as a **transcription** of the secured-session export rather than as the
@@ -2501,8 +2639,8 @@ identification evidence anywhere.
 **The regional occupation-demand construction: a negative result, in one
 sentence.** A lagged 2015 employer-side recruitment-tension covariate at NUTS-2,
 aggregated to the four task groups through that four-table crosswalk and entered in
-the occupation margin as one coefficient, was estimated on three pre-registered
-arms and closed as a negative result, and the only statement made about it is the
+the occupation margin as one coefficient, was estimated on three arms specified
+in advance and closed as a negative result, and the only statement made about it is the
 permitted one: *this lagged construction adds no detectable structural
 occupation-access signal in the current sample and specification*. It is not
 claimed that regional occupation demand is generally irrelevant, and it is not used
@@ -2534,12 +2672,13 @@ channel in §7 is an attribution to that combined object, and **no result in thi
 paper ranks households by productivity**.
 
 **Persistent unobserved heterogeneity.** The choice model carries a job-package
-Gumbel shock and no household-level persistent term. Three pre-registered
-extensions were tested and all three failed their recoverability gates, for the
+Gumbel shock and no household-level persistent term. Three heterogeneity
+extensions were specified in advance and none satisfied the stated recovery
+criterion, for the
 three different measured reasons set out in §5.4. These results reject *those
 parameterisations* on *this design*. They do not establish that preference or
 opportunity heterogeneity is absent, and the paper does not claim that. Under the
-standing rule that no extension is admitted without passing its gate, the
+standing rule that no extension is admitted without satisfying that criterion, the
 preferred specification is formally retained rather than an extension invented.
 
 **The age bound.** Two coordinates rest on an active box bound in the unit of
@@ -2567,7 +2706,7 @@ identification device.
 sign of the preference contribution, the environment's dominance and the nested
 order are identical under both ratified reference blocks; the magnitude of the
 preference contribution differs by more than the integration bands, and the
-classification of record is branch-A reference sensitivity. Results are reported
+classification is reference-sensitive in magnitude. Results are reported
 as the female-primary value, the male-sensitivity value and their range, and are
 never averaged. Only 3.7 and 7.3 per cent of the female–male gap is attributable
 to the children-in-leisure term, so the sensitivity is not a child-term artefact.
@@ -2643,7 +2782,7 @@ of the identification limit in §10.1.
 
 **Wage-quintile fit.** The model over-predicts the bottom offered-wage quintile by
 about five percentage points and under-predicts the second through fourth (§6.2). A
-pre-registered repair through an hours-conditioned wage location was tested and
+repair through an hours-conditioned wage location, specified in advance, was tested and
 failed on both information criteria and on five of seven fit metrics (§6.5). The
 misfit is an open item of the specification.
 
@@ -2740,7 +2879,7 @@ nothing in this paper should be read as if one had.
 | regional occupation-demand covariates | the occupation-availability margin from the employer side | tested; a negative result on the current construction, not identification evidence |
 | labour-force-survey auxiliary moments | the hours-opportunity density against a stated target rather than realised hours | the 35-hour concentration is validated externally (§9), as is the underemployment gradient, on a settled coding and a corroborating hours-gap moment; **not yet identified** |
 | matched employer–employee earnings | the wage-offer technology from outside the choice likelihood | data not available; no run possible; **not yet identified** |
-| the expanded sample and repeated choices | the second contrast the persistent-heterogeneity lanes lack | **not yet identified** |
+| the expanded sample and repeated choices | the second contrast the persistent-heterogeneity extensions lack | **not yet identified** |
 | semi-flexible couples (one spouse fixed) | the couples decision structure, and the male leisure block | designed, adapter tested, no estimate; **not yet identified** |
 | multi-adult households | the five unstated assumptions of §10.4 | excluded by scope; **not yet identified** |
 
@@ -3207,7 +3346,8 @@ represent the number of jobs available to the individual."*
 | **13** | `figW03_nested_environment` | **The environment, split three ways.** The nested split of the environment contribution into job access, earning opportunities, and household endowments and needs, with numerical-integration bands, under both positive models and both reference conventions. **Model-implied**, singles, raw and equivalized. No ordering is claimed between job access and earning opportunities; the point estimates are printed and the ordering claim is declined (§7.3). Bands are integration precision. |
 | **14** | `figE1_matched_pair` | **Same estimated preferences, same observed job, most different estimated opportunities.** Two real single-adult households selected by a rule fixed before any household was inspected: among 19,116 admissible pairs sharing the observed employment state, occupation, hours band and wage quintile, the pair at or below the tenth percentile of preference distance that maximises opportunity distance. Panels: (a) the estimated preference profile; (b) the hours margin of the estimated opportunity density, scaled by the employment opportunity mass; (c) the estimated probability of an offer in each task-based occupation group; (d) the estimated wage-offer density given employment. **Panels (b)–(d) are estimated opportunity distributions, not choice distributions and not job draws**; no count of available jobs is shown or implied. Dashed lines mark the observed job. Households are described by aggregates only; no identifier is plotted. |
 | **15** | `figE1R_reverse_pair` | **Same estimated opportunities, same observed job, most different estimated preferences.** The mirror of Figure 14 under the same rule with the axes exchanged. Same panels, same reading: panels (b)–(d) are **estimated opportunity distributions, not job draws**. Households are described by aggregates only. |
-| **16** | `figX1_external_hours_lfs_validation` | **External labour-market evidence on hours.** French EU-LFS 2016, all persons aged 20–60 with a reported usual-hours figure (43,767 records), against the final singles model. Panel (a): the share of employed people in each hours band reporting a wish to work more hours — an **external benchmark** — against the model's estimated relative offer weight on that band; the rank association is descriptive, computed over the four short-and-medium bands, and the long-hours band is drawn but marked and held out, because offer thinness and a wish for more hours decouple there by construction and wanting more hours at 50-plus is not underemployment. Panel (b): shares of the statutory 35-hour band from three sources — **external benchmark, observed sample, and model-implied** — by sex and pooled. Panel (c): mean desired hours minus mean **actual** hours, by band and sex, positive on every band up to 39 hours and negative only at long hours. Validation only: no moment from this source enters the likelihood, and it identifies nothing. The external population is all persons aged 20–60, while the observed sample is single-adult households, so composition differs by construction and no gap here is a prediction error. |
+| **16** | `figX1_external_hours_lfs_validation` | **External labour-market evidence on hours.** French EU-LFS 2016, all persons aged 20–60 with a reported usual-hours figure (43,767 records), against the final singles model. Panel (a), **external descriptive evidence only**: the share of employed people in each hours band reporting a wish to work more hours, by band. Panels (a) and (c) carry no model quantity on any axis and are not compared with, ranked against, or overlaid on a model prediction — the structural model has no desired-hours or underemployment outcome, so they document context rather than validate anything. The long-hours band is drawn but marked, because wanting more hours at 50-plus is not underemployment. Panel (b): shares of the statutory 35-hour band from three sources — **external benchmark, observed sample, and model-implied** — by sex and pooled. Panel (c), **external descriptive evidence only**: mean desired hours minus mean **actual** hours, by band and sex, positive on every band up to 39 hours and negative only at long hours. Panel (b) is the one validation panel. Validation only: no moment from this source enters the likelihood, and it identifies nothing. The external population is all persons aged 20–60, while the observed sample is single-adult households, so composition differs by construction and no gap here is a prediction error. |
+| **17** | `figR01_benchmark_decomposition` | **What a common-choice-set model would have found.** The welfare-inequality decomposition under the final singles model against the same decomposition under a common-choice-set benchmark fitted to the same 1,555 single-adult households, the same priced job packages and the same welfare machinery. **Both sides are model-implied**, singles, and the same four channels are shown on each. Under the benchmark every household faces the same offer environment, so job access and earning opportunities contribute **exactly zero by construction** — those zeros are the benchmark's definition made arithmetic, not estimates that happened to vanish. Raw and coalition-consistent equivalized bases, at the female reference (primary); the male-reference arm is the sensitivity and the two are never averaged. The benchmark is **not a candidate specification and not nested** in the preferred model: it is what a conventional analyst without an opportunity object would have fitted, shown to make the consequence of that omission measurable. Bands are numerical-integration precision, not sampling confidence intervals. |
 
 ### The couples set
 
@@ -3365,6 +3505,21 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | benchmark statutory-band prediction 0.0546 | `SPRINT/model_comparison.csv`, row `S0`, `f35_pred` |
 | the preference-contribution factor of about two between the two specifications | `SPRINT/tables/headline_decomposition_v1.csv`, `C_pref_over_I00` |
 
+### (f2) §6.7 — the common-choice-set benchmark
+
+| numeral | source |
+|---|---|
+| benchmark objective 18,151.85 against 18,022.76; gap 129.1 nats; 16 free parameters against 41 | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting.variants.RUM_B` |
+| likelihood-ratio 258.2 on 25 degrees of freedom, reported as an **upper bound** | same, `LR_statistic_2x_negll_gap`, `df`, `statistic_is_an_upper_bound` |
+| AIC 36,127.5 against 36,335.7; BIC 36,346.8 against 36,421.3; per-household log-score gap 0.083 | same |
+| fit mean absolute deviation: hours 0.0080/0.0083, occupation 0.0029/0.0034, wage quintiles 0.0203/0.0261, employment 0.0042/0.0041 | `SPRINT/runs/rum_benchmark_final/rb_step2_fit_comparison_v1.csv`, `__summary__` rows |
+| hours-band constants recovered as tastes: mean absolute difference 0.037, maximum 0.075; fixed cost of work $+0.517$ against $-3.334$ | `rb_step4_misclassification_v1.json`, `positive_side_misclassification` |
+| male-minus-female leisure intercept gap $+0.428$ against $-1.991$ | same, `sex_specific_leisure_block.leisure_intercept_gap_male_minus_female` |
+| baseline inequality 0.101841 against 0.134277 raw ($-24.2$ %) and 0.139869 against 0.165105 equivalized ($-15.3$ %) | `SPRINT/tables/rum_benchmark_decomposition_v1.csv`; `rb_step4_misclassification_v1.json`, `relative_change_in_measured_inequality` |
+| preference share 6.4 % against 6.3 %; difference $+0.1$ points against a band of $\pm 0.4$ | same, `s_pref`, `M_share` |
+| the three destinations of the omitted market-side share | same, `fraction_of_O_to_preferences`, `fraction_of_O_to_endowments_needs`, `fraction_of_O_leaving_the_total`, over the four arms |
+| job access and earning opportunities exactly zero under the benchmark | `rum_benchmark_decomposition_v1.csv`, `C_acc`, `C_earn` on every `RUM_B` row |
+
 ### (g) §7 — welfare
 
 | numeral | source |
@@ -3439,7 +3594,6 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | 20.3 % of the employed wish more hours over the five priced bands | same, `wishmore_verdict.what_the_reversed_map_implies.implied_share_wishing_more_over_the_five_focal_bands` $= 0.20285744$ |
 | the by-band gradient 46.6 / 37.5 / 23.7 / 19.8 / 7.6 per cent | `xh2_moments_record_v1.json`, `m2_pooled_only.code_2_share_all_bands` (moment M2, delivered pooled only — there is no sex split to publish or to suppress) |
 | 22.9 % across all employed persons aged 20–60 | same, `m2_pooled_only.code_2_share_over_all_employed_persons` — moment M2 over the employed denominator moment M4 supplies |
-| the rank association $-0.80$ over the four short-and-medium bands | same, `rank_association.reversed.spearman_rho_excluding_LH` |
 | occupation fit: largest deviation seven-tenths of a percentage point over five categories | `SPRINT/figures/fig04_occupation_obs_vs_pred.csv` |
 | the BMO permitted sentence and the mapping disclosure (0.5837 / 0.3799 / 0.0324 / 4 codes at 0.40 %; correlations 0.62 and 0.66) | `decision_note.md` §15.9, §15.10, §15.15, §21.9; `08_limitations.md` §8.2 |
 
@@ -3491,6 +3645,8 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | placeholder | what is missing | where it goes |
 |---|---|---|
 | the external earnings comparison | a matched employer–employee source (DADS / Base Tous Salariés); none is available without a new secured session and a new data request. §9.1 reports the within-sample wage fit and fixes in advance the framing the comparison will be read under | §9.1, `[PLACEHOLDER — the DADS wage comparison]` |
+| the geographic split of job access | the nested split of the job-access contribution into a geographic/local-market part and the rest. The inputs are built and the arms are declared, but the split itself has not returned a number, so **nothing is reported and no share is quoted** | would extend §7.2; no text is written in its place |
+| parameter-uncertainty propagation and subgroup decompositions | propagation of estimation uncertainty in $\hat	heta$ through to the welfare functionals, and decompositions within sex and other subgroups. Not run. §3.6 and §10.2 already state that the reported bands are integration precision and that sampling uncertainty is **not** estimated in this paper; that statement stands unchanged | §10.2 states the limitation; no interval is reported in its place |
 
 **One placeholder closed at this pass.** The underemployment axis is no longer
 open: the coding direction of the labour-force wish-to-work-more variable was
