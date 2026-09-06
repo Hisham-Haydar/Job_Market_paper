@@ -4,6 +4,8 @@
 
 **Seminar working paper, version 1.** France 2016 (EU-SILC / SRCV, priced through EUROMOD).
 
+> **Seminar scientific content frozen 2026-09-06 (Goal-1 R-256); post-freeze edits are editorial or the LFS source swap only.**
+
 ---
 
 ## Drafting note
@@ -214,19 +216,20 @@ term in the offer density says part-time jobs are scarce. Both produce the same
 observed hours distribution, and a specification that only has the first will
 attribute scarcity to distaste by construction.
 
-**That claim is checked rather than asserted, and the check qualifies it in a way
-worth stating here.** §6.7 fits the common-choice-set benchmark this argument
-names, on the same data and the same priced packages. The misattribution to tastes
-is real and large **on the behavioural side**: the benchmark recovers the hours
-constants in its utility index at essentially the availability values, to a mean
-absolute difference of 0.037, and it reverses the sign of the male-minus-female
-leisure gap, from $+0.428$ to $-1.991$. But on the **money-metric decomposition**
-it does not turn opportunity into taste: the preference share is 6.4 per cent
-under the benchmark against 6.3 under the preferred model. What the omission does
-there is understate measured inequality — by 24.2 per cent on the raw basis — and
-relabel within the environment, moving market-side dispersion to the budget side.
-Both halves of that finding are reported, because only one of them is the half the
-premise predicts.
+**That claim is checked rather than asserted, and the check revises it.** §6.7
+fits the common-opportunity benchmark this argument names, on the same data and the
+same priced packages, and the comparison is **a substantive result, not a
+robustness check**. It revises the original *opportunities are absorbed into
+preferences* claim. What the evidence supports is that **behavioural coefficients
+can absorb omitted availability structure**; that **omitting heterogeneous
+opportunities materially lowers measured money-metric inequality**; that **the
+welfare-decomposition preference share changes little**; and that **the missing
+opportunity contribution is reallocated primarily within the non-preference
+environment rather than into preferences**. The paper-facing research question is
+therefore: *what changes in the measurement and attribution of well-being
+inequality when heterogeneous job opportunities are omitted?* It is **not** claimed
+that the benchmark demonstrates a large welfare-level preference-misattribution
+effect.
 
 The random-utility random-opportunity architecture separates them by putting the
 availability object in the likelihood as its own factor. A household's choice
@@ -316,9 +319,12 @@ That is a fact about a modelled decomposition of a modelled measure on one
 country-year, and it is stated as such.
 
 **One cross-cutting claim is promoted to the headline, because five independent
-perturbations now support it.** The split between preferences and the environment is
-the **fragile** margin of this decomposition; the environment's internal structure
-is the **robust** one. Changing the reference-preference convention moves the
+perturbations now support it.**
+
+> **The preference contribution is the reference/specification-sensitive margin.
+> The internal structure of the non-preference environment is substantially more
+> stable across the principal perturbations considered.**
+ Changing the reference-preference convention moves the
 preference share from 6.30 to 10.89 per cent and leaves the market-side total at
 35.5 against 35.9 (§7.5). Widening a bound on a preference curvature moves the same
 quantity by about 13 per cent and nothing else outside its band (§5.5). Pinning the
@@ -1775,31 +1781,30 @@ primary and the male-reference arm is the sensitivity; the two are never average
 A negative entry in the first row means the benchmark attributes* less *to
 preferences than the preferred model does, not more.*
 
-**The result, stated as a substantive finding rather than as a robustness check.**
-Four things are established, and they are not the same thing:
+**The common-opportunity RUM comparison is a substantive result, not a robustness
+check.** It revises the original *opportunities are absorbed into preferences*
+claim. The evidence supports:
 
-1. **In-sample fit does not identify the architecture.** The benchmark matches the
-   hours, occupation and offered-wage marginals as well as the preferred model or
-   better, while being 129.1 nats worse in objective. Anyone choosing between these
-   two models on marginal fit would choose the one with no opportunity object.
-2. **Omitting the opportunity object misestimates preferences, in a direction that
-   matters.** The availability constants reappear in the benchmark's utility index
-   at essentially their availability values, and the measured male-minus-female
-   leisure gap **reverses sign**, from $+0.428$ to $-1.991$ — measured leisure
-   preference shifts toward the group facing the less favourable offer environment.
-3. **It understates measured welfare inequality**, by 24.2 per cent on the raw basis
-   and 15.3 per cent equivalized.
-4. **It does not transfer the missing share to preferences.** The preference share of
-   the decomposition is 6.4 per cent under the benchmark against 6.3 under the
-   preferred model. What the omission does instead is relabel within the
-   environment and drop most of the share from the total.
+- behavioural coefficients can absorb omitted availability structure;
+- omitting heterogeneous opportunities materially lowers measured money-metric
+  inequality;
+- the welfare-decomposition preference share changes little;
+- the missing opportunity contribution is reallocated primarily within the
+  non-preference environment rather than into preferences.
 
-The research question this answers, stated for the paper: *what does a conventional
-common-choice-set analysis of these data get wrong, and where?* The answer is that
-it gets the **preferences** wrong and the **level** of inequality wrong, while
-getting the preference/environment **split** approximately right — which is not the
-error the literature's framing would lead one to expect, and is reported as it came
-out.
+Each is measured above: the availability constants reappear in the benchmark's
+utility index at a mean absolute difference of 0.037 and the leisure sex gap
+reverses from $+0.428$ to $-1.991$; measured inequality falls 24.2 per cent on the
+raw basis and 15.3 equivalized; the preference share moves from 6.3 to 6.4 per
+cent; and of the 35.5 per cent the market channels carry, $-4.0$ per cent reaches
+preferences while 36 to 48 goes to endowments and needs.
+
+The paper-facing research question is therefore: **"What changes in the measurement
+and attribution of well-being inequality when heterogeneous job opportunities are
+omitted?"**
+
+**It is not claimed that the RUM demonstrates a large welfare-level
+preference-misattribution effect**, and no sentence in this paper says so.
 
 **The sentence this licenses, and its limit.** On the money-metric decomposition,
 **omitting the opportunity object understates measured inequality and relabels
@@ -1971,9 +1976,11 @@ throughout.
    inequality*. A contribution is the value of an equalisation operator in a
    cooperative game, not a variance share and not a causal effect.
 2. **The bands are integration precision.** They say how well the integral is
-   resolved on the basis it was computed on. They are not sampling confidence
-   intervals, and sampling uncertainty of $\hat\theta$ propagated to these
-   functionals is not estimated in this paper. The phrase *statistically
+   resolved on the basis it was computed on. They are **not** sampling confidence
+   intervals. Sampling uncertainty of the welfare functionals **is** propagated,
+   from the CR1 asymptotic distribution, and is reported separately in Appendix F;
+   the two are never merged, and where a quantity's parameter interval matters for
+   how it should be read this text says so. The phrase *statistically
    indistinguishable from zero* is not used anywhere, because nothing here
    licenses it.
 3. **No ordering is claimed between job access and earning opportunities.**
@@ -2054,8 +2061,10 @@ reference choice — 35.5 against 35.9 raw — so the sensitivity is concentrate
 the preference/environment split rather than in the environment's internal
 structure.
 
-That pattern is not confined to the reference convention. §5.5 perturbs a box on a
-preference curvature and moves the same quantity by about 13 per cent while
+**The preference contribution is the reference/specification-sensitive margin. The
+internal structure of the non-preference environment is substantially more stable
+across the principal perturbations considered.** That pattern is not confined to
+the reference convention. §5.5 perturbs a box on a preference curvature and moves the same quantity by about 13 per cent while
 leaving every other headline quantity inside its band; §8.4 pins the couples male
 leisure block and moves the same quantity by up to 73 per cent while the
 environment side moves by under 3.5 per cent. **The preference/environment split
@@ -2292,11 +2301,24 @@ The reading, generated from the table:
 > share of job access runs 87.6 to 105.7 per cent, and the geographic share of
 > total measured inequality 9.13 to 13.05 per cent.
 
-**Nearly all of the estimated household-varying access contribution is
-geographic**: region, urbanisation and the local unemployment rate together carry
-87.6 per cent (±3.9) of the job-access channel on the raw basis and 101.9 per cent
-(±3.1) equivalized, leaving a residual that is statistically and economically
-negligible.
+**Nearly all of the estimated household-varying access contribution is associated
+with the geographic employment-access block; the remaining non-geographic access
+component is close to zero and slightly offsetting.** In numbers: the geographic
+block carries 87.6 per cent of the job-access channel on the raw basis and 101.9 per
+cent equivalized — with an integration band of ±3.9 and ±3.1, and a **CR1 parameter
+interval of [74, 98] and [86, 111] per cent**, which is the interval this ratio is
+always quoted with.
+
+Four things must be stated immediately with it.
+
+- **The full job-access component is only around 10–15 per cent of total
+  inequality** — 14.9 per cent raw and 9.7 equivalized — so "nearly all of access"
+  is a statement about a minority of the total.
+- The result is **structural and model-conditional**.
+- It is **not a causal region effect**.
+- **Hours, occupation and wage opportunity distributions are invariant in the
+  same-profile regional counterfactual**, because geography enters only the
+  employment margin in the current specification.
 
 **The residual is near zero and changes sign with the basis.** Other access runs
 $-0.49$ to $+1.84$ per cent of baseline inequality across the four rows. Shares
@@ -2318,15 +2340,14 @@ therefore geographic **by construction of the estimated access block**. The corr
 reading is about the composition of that block, not about the importance of place
 in general.
 
-Four qualifiers travel with that sentence immediately and are not optional. It is
-**structural and model-conditional**, a property of the estimated access block
-rather than of the world. It is **not causal**: nothing here identifies what would
-happen to a household that moved. It is a statement about the **currently modelled**
-geographic block — region, urbanisation and the local unemployment rate — and not
-about geography in general. And it is **a statement about the composition of job
-access, not about its size**: job access is 14.9 per cent of measured inequality raw
-and 9.7 equivalized, so "nearly all of access is geographic" is compatible with
-access being a minority of the total, which it is.
+**That share is not quoted anywhere without its parameter interval.** The
+geographic share of job access is 87.62 per cent at the estimated parameter
+vector with a CR1 parameter interval of **[74, 98] per cent** on the raw basis,
+and 101.92 with [86, 111] equivalized. It is a ratio of two contributions one of
+which is itself small, so its sampling distribution is much less well behaved
+than its integration band suggests; Appendix F gives the construction. Wherever
+this ratio appears — here, in the deck, or in a summary — the interval travels
+with it.
 
 In particular this is **not** a finding that region drives welfare inequality. Job
 access as a whole carries 14.9 per cent of measured inequality on the raw basis and
@@ -2866,6 +2887,43 @@ and any estimated quantity is computed anywhere in this paper, and none should b
 the two objects are not commensurable, so a correlation between them would not
 mean what it appears to mean.
 
+**A model-implied counterpart was looked for, and there is not one.** Before
+treating these moments as anything but context, the obvious candidate was tested:
+*desired hours* as the household's preference-only optimum — its own utility
+maximised over the hours grid with the opportunity weights removed — and
+*underemployed* as desired hours exceeding observed hours by at least one band. It
+fails on three independent grounds, and the failure is structural rather than
+incidental. **Definitionally**, the survey question asks about more hours *at the
+current job and wage*, and the frame contains no such menu: exactly one node per
+household carries the observed wage — the chosen anchor — and no non-chosen node
+does, so the candidate's optimum tracks pay rather than hours, paying more than the
+observed job for 98.1 per cent of workers at a median 2.58 times the observed wage.
+**On identification**, the candidate is numerically independent of the block it
+would have to discipline: perturbing any of the six hours-opportunity coefficients
+moves the moment by exactly zero and moves not one household's optimum, because
+removing the opportunity weights removes that block by construction. **Numerically**,
+the level can be made to agree and the profile cannot — the pooled share is 24.3 per
+cent against 20.3 in the external source, but the external share falls monotonically
+in hours and the model's does not, and the model puts exactly none at long hours
+against 7.6 per cent.
+
+The steelman was tried too: restricting the optimum to the household's own ±5 per
+cent wage neighbourhood removes the pay-driven artefact — the median wage ratio
+falls to 1.02 — and brings the aggregate to 19.4 per cent, closer to the external
+figure than the model has any right to be. It does not help. The hours-opportunity
+block is **exactly as inert** under the restriction, because restricting which
+alternatives are eligible changes the eligible set, not the parameters in the
+objective. And the structural fork behind all of this is a property of the
+architecture, not of the candidate: a definition that *removes* the opportunity
+weights cannot identify the hours block, and one that *retains* them is the model's
+own choice distribution and is not an unconstrained-desire object.
+
+So the external moments stay where §9.3 puts them. **They enter no likelihood, no
+estimation step and no calibration**, and no auxiliary-moment experiment is proposed — the one
+that might have been is numerically independent of the block it was meant to
+discipline. The full test, its three grounds, the steelman and a parameter-interval
+addendum are in the counterpart-test table on the record.
+
 Panels (a) and (c) of **Figure 16** carry these two profiles and are labelled
 external descriptive evidence on their face; neither plots a model quantity on any
 axis. The long-hours band is drawn and marked rather than dropped, because wanting
@@ -2993,10 +3051,13 @@ convention-free magnitudes.
 banded quantity travels with the three-way report of §3.6. The integration band
 addresses numerical-integration error only; a profile envelope, where one exists,
 addresses conditional uncertainty in one profiled coordinate only and is never
-combined with the band; and the third row — sampling uncertainty of the estimated
-parameter vector propagated to the welfare functionals — is stated rather than
-elided: **it is not estimated in this paper**, and no reader should infer it from
-the first two.
+combined with the band; and the third row — **sampling uncertainty of the welfare
+functionals — is propagated from the CR1 asymptotic distribution and reported
+separately from integration precision** in Appendix F. The two are never merged. On
+the reported shares the parameter interval is three to six times the width of the
+integration band, so the bands quoted in the main text are the narrower of the two,
+and every parameter interval is conditional on the active set observed at the
+estimated parameter vector.
 
 **The equivalence scale is a disclosed normative parameter, and the coalition-
 consistent convention is a normative choice as well as an arithmetic one.** §3.5
@@ -3613,6 +3674,86 @@ exploratory.
 computation was already available; neither enters the main results, the headline,
 or the deck.
 
+## Appendix F — CR1 parameter-uncertainty propagation
+
+Every band in the main text measures **integration precision**. This appendix adds
+the second uncertainty — sampling variability of the estimated parameter vector —
+and reports it **separately**, because the two are different quantities and merging
+them would misdescribe both.
+
+**This is not a bootstrap.** It is CR1 parameter-uncertainty propagation by
+*asymptotic parameter-draw simulation*: draws come from the asymptotic sampling
+distribution of $\hat\theta$ implied by the accepted cluster-robust household
+sandwich. Nothing is resampled and nothing is re-estimated.
+
+### The three lines reported for every functional
+
+| line | what it measures | estimator |
+|---|---|---|
+| **RQMC band** | integration precision — how well 2,048 nodes integrate the model at a **fixed** $\hat\theta$ | eight-scramble delete-one jackknife, $E_T = t_{0.975,7}\cdot se$ |
+| **CR1 parameter interval** | sampling variability of $\hat\theta$, at **fixed** nodes | 2.5th–97.5th percentile over the parameter draws |
+| **combined range** | the **union** of the two | **not** a confidence interval; the two are never added in quadrature or otherwise pooled |
+
+### What the interval is conditional on
+
+$K = 100$ draws, acceptance rate 1.000. **39 interior coordinates are drawn; the
+ten pinned coordinates and the two free-but-at-a-bound coordinates are held at
+$\hat\theta$**, because the cluster-robust covariance is defined on the interior
+block only and a coordinate resting on a bound has no sampling variance under that
+object. Draws are truncated to the declared box by **rejection, not clipping**: a
+draw outside the box is discarded in full and redrawn, which keeps the retained
+draws exactly the conditional normal on the box, whereas clipping would pile mass
+on the boundary and bias every functional of it.
+
+**Every interval here is conditional on the active set observed at $\hat\theta$.**
+It prices the sampling variability of the interior coordinates *given that set*. It
+does not price the possibility that another sample would have put a different
+coordinate on a bound, and it prices no specification uncertainty at all. All rows
+are at the female-primary reference.
+
+### The headline quantities, raw basis
+
+| quantity | point | RQMC band | CR1 parameter interval | parameter ÷ RQMC width |
+|---|---:|---|---|---:|
+| $I^{00}$ | 0.134277 | [0.132340, 0.136214] | [0.126505, 0.147600] | 5.4× |
+| preference contribution | 0.008464 | [0.007550, 0.009378] | [0.005805, 0.014495] | 4.8× |
+| environment contribution | 0.125812 | [0.124489, 0.127135] | [0.117612, 0.138015] | 7.7× |
+| job access | 0.020004 | [0.018715, 0.021294] | [0.015738, 0.028460] | 4.9× |
+| earning opportunities | 0.027682 | [0.025160, 0.030204] | [0.020969, 0.037888] | 3.4× |
+| endowments and needs | 0.078126 | [0.076668, 0.079583] | [0.071957, 0.082170] | 3.5× |
+| **preference share** | 6.30 % | [5.69, 6.91] | **[4.22, 10.89]** | 5.5× |
+| **environment share** | 93.70 % | [93.09, 94.31] | **[89.11, 95.78]** | 5.5× |
+| **job access / $I^{00}$** | 14.90 % | [13.80, 16.00] | [11.88, 19.97] | 3.7× |
+| **geographic access / $I^{00}$** | 13.05 % | [12.31, 13.79] | [9.56, 18.24] | 5.9× |
+| **geographic share of job access** | 87.62 % | [83.73, 91.52] | **[74.02, 98.04]** | 3.1× |
+
+On the equivalized basis the preference share is 7.98 per cent with a parameter
+interval of [5.23, 12.21], the environment share 92.02 with [87.79, 94.77], and the
+geographic share of job access 101.92 with [85.98, 111.07]. **Figure 21** plots the
+two intervals on offset rows so they cannot be read as one.
+
+### Three readings
+
+**Parameter uncertainty dominates integration precision.** On the raw basis the
+parameter interval is 3× to 6× the width of the integration band across the
+reported shares. The two are different kinds of thing and are printed on separate
+lines, but the ordering is the substantive point: the bands quoted throughout the
+main text are the *narrower* of the two, by a wide margin, and they are not
+sampling error.
+
+**The headline split survives.** The preference share is 6.30 per cent with a
+parameter interval of [4.22, 10.89], and the environment share 93.70 with
+[89.11, 95.78]. The environment remains dominant across the interval, and the sign
+of the preference contribution does not change within it.
+
+**The geographic share of job access is the widest of the reported quantities**, at
+87.62 per cent with an interval of [74.02, 98.04]. It is a ratio of two
+contributions one of which is itself small, so its sampling distribution is far
+less well behaved than its integration band suggests. **That quantity is not quoted
+anywhere in this paper without its parameter interval.**
+
+---
+
 ---
 
 ---
@@ -3668,6 +3809,7 @@ represent the number of jobs available to the individual."*
 | **18** | `figG01_nested_geographic_access` | **Inside job access: the geographic split.** The three environment channels, and then the job-access channel split into geographic/local-market access and remaining access, for the 1,555 single-adult households. **Model-implied**, singles, raw and coalition-consistent equivalized bases, at the female reference (primary); the male-reference arm is the sensitivity and the two are never averaged. Shares are **signed and never renormalised**, so a geographic share above 100 per cent means the remaining-access contribution is negative, not missing. The split is a nesting of the decomposition of Figures 12–13, not a re-decomposition: levels one and two are bitwise unchanged. Bands are numerical-integration precision, not sampling confidence intervals. |
 | **19** | `figG02_regional_access_environments` | **The same household under different regional job-access environments.** The two real single-adult households of Figure 14, each evaluated under all 24 documented region × urbanisation access environments, with the local unemployment rate at that region's value for the person's own education and sex. Left panels: employment-opportunity mass. Right panels: money-metric welfare, euros per month. **Model-implied and illustrative.** Preferences, sex, age, education, experience, household composition, earning-capacity characteristics and the priced budget are held at their observed values, and the region-dependent budget rule is held fixed, so this is an access counterfactual and no price is recomputed. **This is not a causal region effect**: it is the same person under different estimated access environments, and nothing here identifies what would happen to a person who moved. Because every geographic variable in this specification enters only when the household works, the hours, occupation and wage-offer summaries do not move at all — the whole regional difference is on the participation margin. |
 | **20** | `figU02_subgroup_decomposition` | **The decomposition re-aggregated within subgroups.** Four panels — preference share, job access, geographic access, and measured inequality — for the whole singles population and for each subgroup: women and men, the three urbanisation classes, and households with and without children. **Model-implied**, singles, final singles model at the female reference (primary) on the raw basis. **The operators are population-level**: every reference object is computed once over the whole population and is common to every group, so a bar answers how much of *that group's own* inequality is removed by moving its households to the common population reference — a **within-subgroup** decomposition, not a contribution of the characteristic, and not a between-group decomposition. Exhaustiveness and the accounting identities are re-checked in every group and pass in all 32 cells. The sex split is a main result (§7.10); urbanisation and children are exploratory and are reported in Appendix E. **The men's preference share changes sign between the two reference conventions, so no sign statement is made about it.** Bands are numerical-integration precision and carry no parameter uncertainty. |
+| **21** | `figU01_headline_two_intervals` | **The headline decomposition under two kinds of uncertainty, kept apart.** Three panels: the contributions in Gini points, their shares of measured inequality, and the two large ratios on their own scale. **Model-implied**, singles, final singles model at the female reference on the raw basis. Each quantity carries **two intervals on offset rows, which must not be read as one**: the **integration band** (eight-scramble jackknife at a fixed parameter vector — how well the nodes integrate the model, not sampling error) and the **CR1 parameter interval** (2.5th–97.5th percentile over 100 draws from the asymptotic sampling distribution of the estimated parameters at fixed nodes — **not a bootstrap**; nothing is resampled and nothing is re-estimated). The shaded band is their **union**, and is **not a confidence interval**. Every parameter interval is **conditional on the active set** observed at the estimated parameter vector: 39 interior coordinates are drawn, ten pinned and two at-a-bound coordinates are held fixed, and draws outside the declared box are rejected rather than clipped. Structural and model-conditional; not causal. |
 
 ### The couples set
 
@@ -3869,7 +4011,7 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | numeral | source |
 |---|---|
 | geographic access 0.017528 ± 0.000887 raw and 0.016289 ± 0.000831 equivalized; other access 0.002476 ± 0.000891 and $-0.000307$ ± 0.000489 | `SPRINT/tables/nested_geographic_access_v1.csv`, female-primary rows |
-| geographic share of job access 87.62 % ± 3.89 raw and 101.92 % ± 3.11 equivalized; male-reference 90.13 % ± 4.16 and 105.71 % ± 3.33 | same, `C_geo_share_of_C_acc` |
+| geographic share of job access 87.62 % ± 3.89 raw and 101.92 % ± 3.11 equivalized (integration band; the CR1 parameter interval is [74.02, 98.04] and [85.98, 111.07], Appendix F); male-reference 90.13 % ± 4.16 and 105.71 % ± 3.33 | same, `C_geo_share_of_C_acc` |
 | geographic share of baseline inequality 13.05 % ± 0.74 raw and 9.87 % ± 0.55 equivalized; male-reference 12.24 % ± 0.65 and 9.13 % ± 0.47 | same, `C_geo_over_I00` |
 | other access runs $-0.49$ to $+1.84$ per cent of baseline across the four rows | same, `C_oth_over_I00` |
 | the reading, verbatim apart from the audience-facing model name | generated by `SPRINT/runs/geo_nested_access/build_gn_table_v1.py` from the table |
@@ -3877,6 +4019,28 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | the two sub-players' argument slots, and the sex-only occupation conditional | same, `step1.GEO_columns`, `step1.OTH_columns` |
 | employment-opportunity mass 0.768–0.858 and 0.655–0.809; welfare €1,736–1,837 and €1,301–1,333; ratios 1.058 and 1.025 | `SPRINT/figures/figG02_regional_access_environments.csv`; `gn_step3_illustration_v1.json` |
 | 24 access environments, 48 profile-by-environment cells; hours, occupation and wage-offer summaries each take one value per profile | same, `structural_constancy_under_a_geographic_counterfactual` |
+
+### (g3) Appendix F — CR1 parameter-uncertainty propagation
+
+| numeral | source |
+|---|---|
+| $K = 100$ draws, acceptance rate 1.000; 39 interior coordinates drawn, 10 pinned and 2 at-a-bound held; rejection not clipping | `SPRINT/runs/param_uncertainty/pu_step1_draws_v1.json`; `SPRINT/tables/parameter_uncertainty_v1.md` |
+| preference share 6.30 % with CR1 interval [4.22, 10.89]; environment share 93.70 % with [89.11, 95.78] | `SPRINT/tables/parameter_uncertainty_v1.csv`, raw basis |
+| equivalized preference share 7.98 % with [5.23, 12.21]; environment 92.02 % with [87.79, 94.77] | same, equivalized basis |
+| geographic share of job access 87.62 % with **[74.02, 98.04]**; equivalized 101.92 % with [85.98, 111.07] | same, `C_geo_share_of_C_acc` |
+| the parameter interval is 3× to 6× the width of the integration band across the reported shares | same, `parameter ÷ RQMC width` column |
+| the two are never merged; the combined range is the union and is not a confidence interval | same, the convention table |
+
+### (g4) §9.3 — the desired-hours counterpart test
+
+| claim | source |
+|---|---|
+| no non-chosen alternative carries the observed wage; one node per household at the observed wage, the chosen anchor | `SPRINT/tables/wishmore_counterpart_test_v1.md`, ground (a) |
+| the candidate's optimum pays more for 98.1 % of workers, at a median 2.58× the observed wage | same |
+| the hours-opportunity block moves the moment by exactly 0.000000 and moves 0 households | same, ground (b) perturbation table |
+| the steelman: ±5 % wage neighbourhood gives a median wage ratio 1.02 and an aggregate of 19.4 %, and the block is still exactly inert | same, the steelman table |
+| model 24.3 % against 20.3 % external, but declining in hours external = yes, model = no; zero at long hours against 7.6 % | same, ground (c) |
+| verdict: no clean counterpart; the external moment stays descriptive and enters no likelihood, gate or calibration | same, the verdict block |
 
 ### (h) §8 — couples
 
@@ -3979,9 +4143,17 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | placeholder | what is missing | where it goes |
 |---|---|---|
 | the external earnings comparison — **future external validation**, not an open gap in the present paper | a matched employer–employee source (DADS / Base Tous Salariés); none is available without a new secured session and a new data request. §9.1 reports the within-sample wage fit and fixes in advance the framing the comparison will be read under, so the work needed to use it later is done | §9.1, `[PLACEHOLDER — the DADS wage comparison]` |
-| parameter-uncertainty propagation | propagation of estimation uncertainty in $\hat{\theta}$ through to the welfare functionals. The cluster-robust covariance and the parameter draws are built and the propagation is **in progress but has not returned**, so no parameter interval is reported anywhere. §3.6 and §10.2 state that the reported bands are integration precision and that sampling uncertainty is **not** estimated in this paper; that statement stands unchanged until it does | §10.2 states the limitation; no interval is reported in its place |
 
-**Closed at this pass.** Two rows are discharged. The **matched-pair re-selection**
+
+**Closed at this pass.** The **parameter-uncertainty propagation** has returned
+and is reported in Appendix F, with the integration band and the CR1 parameter
+interval on separate lines and never merged; the standing statement that sampling
+uncertainty is not estimated is replaced throughout by the propagation statement.
+**Only the external earnings comparison remains, and it is future work rather than
+a gap in the present paper.**
+
+**Closed at the previous pass.** Two rows were discharged there. The
+**matched-pair re-selection**
 is done: the region defect in the selection code is repaired, the ranking has been
 re-run over the same 19,116 admissible pairs, and Figures 14, 15 and 19 are
 regenerated on the repaired pair — which is cleaner than the one it replaces, and

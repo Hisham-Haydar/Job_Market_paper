@@ -1,6 +1,8 @@
 # Unequal Job Opportunities and the Measurement of Welfare Inequality
 ## Seminar deck — slide-by-slide content
 
+> **Seminar scientific content frozen 2026-09-06 (Goal-1 R-256); post-freeze edits are editorial or the LFS source swap only.**
+
 **This is a content document, not slides.** It fixes what each slide says, what it
 carries, what is said over it, and how long it takes. Typesetting is a separate
 job and nothing here presumes a template.
@@ -395,7 +397,9 @@ cent of money-metric welfare inequality; equalising preferences removes a furthe
 6.3 per cent.
 
 **Carries.** **Figure 12** (preferences against environment, signed, with bands)
-and the exact-table row.
+and the exact-table row. **Figure 21** as a second click if the room wants the
+uncertainty: the same quantities with the integration band and the parameter
+interval on offset rows.
 
 **Speaker notes.** Read the sentence as it is written, because it is generated
 from the table with a guard and its qualifiers are not decoration: *within the
@@ -409,9 +413,18 @@ reporting shares at all. Then the licensed reading, which must be said out loud:
 **no channel "explains" a percentage.** A contribution is the value of an
 equalisation operator in a cooperative game — the form is *equalising this channel
 removes this share of baseline inequality* — not a variance share and not a causal
-effect. And the bands are **numerical-integration precision, not sampling
-confidence intervals**; sampling uncertainty in the parameters is not propagated
-here, and that row is stated rather than elided. One counter-intuitive fact worth
+effect. And be exact about the bars, because there are now **two kinds** and they must not
+be read as one. The **integration band** says how well the nodes integrate the model
+at a fixed parameter vector. The **parameter interval** says how much the estimate
+would move across samples — propagated from the cluster-robust asymptotic
+distribution, **not a bootstrap**, nothing resampled and nothing re-estimated. They
+are drawn on offset rows and are **never merged**; the shaded union is not a
+confidence interval. The parameter interval is the wider by three to six times, so
+the preference share is 6.30 per cent with an interval of **[4.22, 10.89]** and the
+environment share 93.70 with **[89.11, 95.78]** — the environment stays dominant
+across it, and the sign of the preference contribution does not change within it.
+Every parameter interval is **conditional on the active set** at the estimated
+parameter vector. One counter-intuitive fact worth
 30 seconds if the room is engaged: equalising preferences *raises* measured
 inequality, because the households with the worst opportunity sets are the ones
 whose own tastes currently do most to reconcile them to those sets.
@@ -457,9 +470,12 @@ households under 24 regional access environments.
 Equalising the geographic access environment removes **13.05 per cent (±0.74)** of
 baseline inequality on the raw basis and **9.87 (±0.55)** equivalized, against a
 whole job-access channel of 14.90 and 9.68. So geography is **87.6 per cent (±3.9)**
-of the channel raw and **101.9 (±3.1)** equivalized. Say why a share exceeds one
-before anyone asks: shares here are **signed and never renormalised**, so the
-residual is negative on the equivalized rows, not missing.
+of the channel raw and **101.9 (±3.1)** equivalized. **Never say that ratio without
+its parameter interval — [74, 98] per cent on the raw basis.** It is a ratio of two
+contributions one of which is small, so its sampling distribution is much wider than
+its integration band suggests. And say why a share can exceed one before anyone
+asks: shares here are **signed and never renormalised**, so the residual is negative
+on the equivalized rows, not missing.
 
 Then the caveat, delivered as a limitation of the specification rather than as a
 result. The two sub-players do not have comparable support. The geographic block
@@ -576,9 +592,14 @@ decomposition barely moves**: 6.4 per cent under the benchmark against 6.3 under
 the preferred model. The omitted market-side share does not become taste. It
 mostly leaves the total — measured inequality falls 24.2 per cent on the raw basis
 — and what stays is relabelled onto endowments and needs. Say the licensed
-sentence: *on the money-metric decomposition the omission understates inequality
-and relabels within the environment rather than turning opportunity into taste;
-the misattribution to tastes is on the behavioural side.*
+sentence: *behavioural coefficients can absorb omitted availability structure;
+omitting heterogeneous opportunities materially lowers measured money-metric
+inequality; the welfare-decomposition preference share changes little; and the
+missing opportunity contribution is reallocated primarily within the non-preference
+environment rather than into preferences.* The question it answers: **what changes
+in the measurement and attribution of well-being inequality when heterogeneous job
+opportunities are omitted?** Do **not** claim it demonstrates a large welfare-level
+preference-misattribution effect.
 
 If asked why that matters for the paper's contribution, the answer is on the
 slide: the case for an opportunity object is not that it rescues the decomposition
@@ -592,9 +613,9 @@ the preference-share result; drop the fit comparison.**
 
 ## Slide 20 — What is fragile, and what is not
 
-**Message.** Three independent perturbations all move the preference share and
-leave the environment's internal structure alone — so the preference/environment
-split is the fragile margin and the nested order is the robust one.
+**Message.** The preference contribution is the reference/specification-sensitive
+margin. The internal structure of the non-preference environment is substantially
+more stable across the principal perturbations considered.
 
 **Carries.** A three-row table: *reference-preference convention* · *a bound on a
 preference curvature* · *pinning the couples male leisure block* — against the
@@ -741,6 +762,35 @@ children-in-leisure term for women and none for men. With all three fixed the
 fully common state is numerically zero. **Exhaustiveness here is a tested
 property, and the test was pre-stated before any cell was read.**
 
+## B4 — Why the hours-wish evidence is context and not a moment
+
+**Held for.** *"You have external data on who wants more hours — why not use it to
+discipline the hours block?"*
+
+**Carries.** The counterpart-test table: three grounds, the steelman, the profile
+comparison.
+
+**Notes.** The honest answer is that it was tried and there is no counterpart to
+compare against. Three independent grounds. **Definitional:** the survey asks about
+more hours *at the current wage*, and the frame has no such menu — exactly one node
+per household carries the observed wage, the chosen one, so the candidate's optimum
+tracks pay, paying more for 98.1 per cent of workers at a median 2.58× the observed
+wage. **Identification, and this is the decisive one:** perturbing any of the six
+hours-opportunity coefficients moves the moment by **exactly zero** and moves not
+one household's optimum — removing the opportunity weights removes the very block
+the moment was meant to discipline. **Numerical:** the level can be made to agree
+and the profile cannot; 24.3 per cent against 20.3, but the external share falls
+monotonically in hours and the model's does not, and the model puts none at long
+hours against 7.6 per cent.
+
+The steelman was tried: restricting to the household's own ±5 per cent wage
+neighbourhood fixes the pay artefact and brings the aggregate to 19.4 per cent —
+closer than the model deserves — and the hours block is *exactly as inert*. The
+fork is architectural: a definition that removes the opportunity weights cannot
+identify the hours block, and one that retains them is the model's own choice
+distribution, not an unconstrained-desire object. So the external moment stays
+descriptive, and no calibration is proposed.
+
 ## B3 — Equivalization, and why the scale has to move
 
 **Held for.** *"You divide by an equivalence scale — doesn't that break the
@@ -816,10 +866,12 @@ the exact table and from nowhere else.*
 | 14 | 19,116 admissible pairs; 0.851 vs 0.349; €11.38 vs €11.05 | `SPRINT/runs/figE1_matched_households/e1_matched_households_v1.json`; paper §7.8 |
 | 15 | environment 93.70 ± 0.61; preferences 6.30 ± 0.61 | `SPRINT/tables/headline_decomposition_v1.csv`, `C_env_over_I00`, `C_pref_over_I00` |
 | 15 | baseline 0.134277; environment-only 0.030968; fully common numerical zero | same, `I00`, `I01`, `I11` |
+| 15 | preference share interval [4.22, 10.89]; environment [89.11, 95.78]; parameter interval 3-6x the integration band | `SPRINT/tables/parameter_uncertainty_v1.csv` |
 | 16 | endowments and needs 58.18 ± 1.47; earning opportunities 20.62 ± 1.63; job access 14.90 ± 1.10 | same, `C_needs_over_I00`, `C_earn_over_I00`, `C_acc_over_I00` |
 | 16 | market-side total 35.51 ± 0.95 | same, `C_acc_plus_C_earn_over_I00` |
 | 17 | geographic access 13.05 % ± 0.74 raw and 9.87 % ± 0.55 equivalized of baseline; 87.62 % ± 3.89 and 101.92 % ± 3.11 of job access | `SPRINT/tables/nested_geographic_access_v1.csv` |
 | 17 | employment-opportunity mass 0.768–0.858 and 0.345–0.621; welfare €1,302–1,432 and €419–864 over 24 environments | `SPRINT/figures/figG02_regional_access_environments.csv` |
+| 17 | geographic share of job access parameter interval [74.02, 98.04] | same, `C_geo_share_of_C_acc` |
 | 18 | job access 19.58 % ± 1.08 for men against 9.79 % ± 0.65 for women; 18.44 vs 9.02 under the male reference | `SPRINT/tables/subgroup_decomposition_v1.csv` |
 | 18 | men's preference share $-2.69$ % female reference against $+2.78$ % male reference | same |
 | 19 | benchmark objective 18,151.85 against 18,022.76; gap 129.1 nats; likelihood-ratio 258.2 on 25 d.f. (upper bound) | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting` |
@@ -831,6 +883,7 @@ the exact table and from nowhere else.*
 | 19 | age-bound ≈13 %; couples male-leisure 73.1 %; environment side under 3.5 % | paper §5.5, §8.4 |
 | 20 | 2,275 couples; female peak 2.5474 against singles 2.5795; preference share range 0.0014–0.0075 | paper §8.1, §8.3, §8.4 |
 | 20 | pooled fully common state 39.4 % of pooled baseline | paper §8.5 |
+| B4 | 98.1 % pay more at a median 2.58x; hours block moves the moment by exactly 0; 24.3 % against 20.3 %; steelman 19.4 % | `SPRINT/tables/wishmore_counterpart_test_v1.csv` |
 
 
 
