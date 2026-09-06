@@ -27,7 +27,7 @@ France 2016, EU-SILC priced through EUROMOD.
 
 
 
-                                                                                    2/22
+                                                                                    2/25
 Three literatures, one gap.                                                                                          Three literatures meet here. Money-metric welfare analysis with heterogeneous preferences — Decoster
                                                                                                                      and Haan is the closest empirical precedent — represents individual constraints by wages, non-labour
                                                                                                                      income and the tax-benefit budget, without a household-specific distribution of available jobs. The
@@ -49,13 +49,14 @@ France 2016, EU-SILC priced through EUROMOD.
 
 
 
-                                                                                                              3/22
-A job is a package; welfare is compared on the set of reachable jobs.                                                   The companion theory paper, with François Maniquet, characterizes a family of welfare measures for
-                                                                                                                        economies where jobs are discrete packages and each person can reach only a subset of them. The
-                                                                                                                        measure I take to the data, W1 , asks: at what uniform pay across the jobs you can reach would you be
-                              c                                                                                         exactly as well off as you are now? It holds people responsible for their preferences and compensates
-                                  W (zi , Ri , A; y)        ≷            W (zh , Rh , A′ ; y′ )                         them for their pay and their set. That is the normative object.
-                                                   zi             zh
+                                                                                                              3/25
+A job is a package; welfare is compared on the set of reachable jobs.                                                 The companion theory paper, with Francois Maniquet, characterizes a family of welfare measures for
+                                                                                                                      economies where jobs are discrete packages and each person can reach only a subset of them. The
+                                                                                                                      measure I take to the data, W1, asks: at what uniform pay across the jobs you can reach would you be
+                              c                                                                                       exactly as well off as you are now? It neutralizes differences in pay across the jobs in your set, so that
+                                  W (zi , Ri , A; y)        ≷            W (zh , Rh , A′ ; y′ )                       pay luck does not enter; differences in the set itself remain in the measure - and they are exactly what
+                                                   zi                                                                 the decomposition then attributes.
+                                                                  zh
 
                                                                                        Ryi (ℓ)
                                       y (j)                  y ′ (k)                   Ryh′ (ℓ)
@@ -69,10 +70,10 @@ France 2016, EU-SILC priced through EUROMOD.
                                                                        A′ = {k, ℓ}
 
 
-   W1 : the equal pay on the reachable set that leaves the person as well off — Haydar and Maniquet (companion
-   paper).
+   W1 : the uniform pay across the jobs you can reach that would leave you as well off - Haydar and Maniquet
+   (companion paper).
 
-                                                                                                                 4/22
+                                                                                                               4/25
 Empirically the set is an estimated distribution and the pay is an offer density.                  In the data no one observes the set of jobs a household could have had. What can be estimated is a
                                                                                                    density over latent job packages — hours, occupation and wage — that says how available each
                                                                                                    package is to a given household. The picture changes in exactly two places: the set becomes a
@@ -95,7 +96,86 @@ France 2016, EU-SILC priced through EUROMOD.
 
    estimated jointly with preferences; nodes are integration support, not a list of jobs.
 
-                                                                                            5/22
+                                                                                            5/25
+For one household: its estimated employment mass, hours weights, occupation shares and               Here the schematic becomes an estimate. For this household the model gives an 85 per cent chance
+wage-offer density                                                                                   that an offer is taken up, hours weights concentrated on the 35-hour and full-time bands, sex-specific
+                                                                                                     occupation shares, and a log-normal wage-offer density centred at eleven euros. The welfare measure is
+                                 100%                                                                a functional of exactly these four objects.
+                                                                                    85.1%
+               Employment mass   80%
+
+                                 60%
+
+                                 40%
+
+                                 20%       14.9%
+
+                                  0%    Non-employment                           Employment
+   estimated opportunity distribution; nodes are integration support, not a list of jobs
+
+                                                                                              6/25
+For one household: its estimated employment mass, hours weights, occupation shares and                        Here the schematic becomes an estimate. For this household the model gives an 85 per cent chance
+wage-offer density                                                                                            that an offer is taken up, hours weights concentrated on the 35-hour and full-time bands, sex-specific
+                                                                                                              occupation shares, and a log-normal wage-offer density centred at eleven euros. The welfare measure is
+                                                                                                              a functional of exactly these four objects.
+
+
+
+                   Hours density given employment
+                                                    0.08
+                                                    0.07
+                                                    0.06
+                                                    0.05
+                                                    0.04
+                                                    0.03
+                                                    0.02
+                                                    0.01
+                                                    0.00   10   20     30       40      50   60   70
+                                                                     Weekly hours offered
+   estimated opportunity distribution; nodes are integration support, not a list of jobs
+
+                                                                                                       6/25
+For one household: its estimated employment mass, hours weights, occupation shares and                Here the schematic becomes an estimate. For this household the model gives an 85 per cent chance
+wage-offer density                                                                                    that an offer is taken up, hours weights concentrated on the 35-hour and full-time bands, sex-specific
+                                                                                                      occupation shares, and a log-normal wage-offer density centred at eleven euros. The welfare measure is
+                                                                                                      a functional of exactly these four objects.
+
+
+
+
+                    Occupation share given employment
+                                                        40.0%
+                                                        35.0%
+                                                        30.0%
+                                                        25.0%
+                                                        20.0%
+                                                        15.0%
+                                                        10.0%
+                                                         5.0%
+                                                         0.0%   1    2           3         4
+                                                                    Occupation group
+   estimated opportunity distribution; nodes are integration support, not a list of jobs
+
+                                                                                               6/25
+For one household: its estimated employment mass, hours weights, occupation shares and                       Here the schematic becomes an estimate. For this household the model gives an 85 per cent chance
+wage-offer density                                                                                           that an offer is taken up, hours weights concentrated on the 35-hour and full-time bands, sex-specific
+                                                                                                             occupation shares, and a log-normal wage-offer density centred at eleven euros. The welfare measure is
+                                                                                                             a functional of exactly these four objects.
+                                              0.08
+
+                   Density given employment
+                                              0.07
+                                              0.06
+                                              0.05
+                                              0.04
+                                              0.03
+                                              0.02
+                                              0.01
+                                              0.00 5   10   15   20    25     30       35   40   45
+                                                             Hourly wage offer (EUR)
+   estimated opportunity distribution; nodes are integration support, not a list of jobs
+
+                                                                                                      6/25
 Preferences and an opportunity density, in one likelihood.                                        Box–Cox preferences over consumption and leisure, with age and children shifting the leisure weight.
                                                                                                   The opportunity density factorizes into an access margin, a piecewise-constant hours factor with a
                                                                                                   peak at the statutory 35-hour week, sex-specific occupation availability, and an occupation-conditioned
@@ -118,7 +198,7 @@ France 2016, EU-SILC priced through EUROMOD.
 
 
 
-                                                                                           6/22
+                                                                                           7/25
 Each household: its observed job plus 100 drawn alternatives, all priced through the          The choice set is not enumerable, so it is sampled: 100 latent jobs per household from a known
 tax-benefit system.                                                                           proposal, plus the observed job inserted deterministically. The sampling correction makes the
                                                                                               sampled-set likelihood consistent for the full model; the proposal is computation, the opportunity
@@ -138,7 +218,7 @@ tax-benefit system.                                                             
 
 
 
-                                                                                       7/22
+                                                                                       8/25
 France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours.                  The estimation sample is single-adult households aged 20 to 60. The institution that dominates the
                                                                                                        hours distribution is visible: a quarter of households are employed in the 35-hour band. A model
                                                                                                        without an explicit peak there misses the hours distribution badly; with it, the fit is close.
@@ -169,12 +249,12 @@ tax-benefit system.                                                             
 
    EU-SILC 2016; weights; 1,348 employed.
 
-                                                                                                8/22
-The model reproduces the hours distribution, employment and occupation shares.                                      Observed against model-implied shares by hours band: the statutory band is matched to within half a
-                                                                                                                    point, employment and the four occupation groups to within a point. The one visible misfit is the
-                                                                                                                    bottom of the offered-wage distribution, which the model over-predicts by about five points; I tested
+                                                                                                9/25
+The model reproduces the hours distribution, employment and occupation shares.                                       Observed against model-implied shares by hours band: the statutory band is matched to within half a
+                                                                                                                     point, employment and the four occupation groups to within a point. The one visible misfit is the
+                                                                                                                     bottom of the offered-wage distribution, which the model over-predicts by about five points; I tested
                                                  30
-                                                          observed                                                  an hours-conditioned repair and it did not improve the fit.
+                                                          observed                                                   an hours-conditioned repair and it did not improve the fit.
                                                           model-implied
                                                  25
 
@@ -259,7 +339,53 @@ tax-benefit system.                                                             
    35-hour band 24.9% observed, 25.2% model-implied; employment 87.1% / 86.7%; mean absolute band error
    0.008.
 
-                                                                                                             9/22
+                                                                                                             10/25
+Estimated indifference curves and the price of an hour, by age and sex                                                  These are the estimated preferences themselves. The curves are steep at long hours and flat at short
+                                                                                                                        hours, and the leisure weight is U-shaped in age with its minimum around forty. The price of one more
+                                                                                                                        weekly hour - the consumption that keeps a household indifferent - is what the welfare measure trades
+
+
+
+
+                 Disposable consumption (EUR/month)
+                                                                                                                        against opportunities.
+                                                              Woman          Priced packages
+                                                      5000    Man            Observed job
+                                                      4000
+
+                                                      3000
+
+                                                      2000
+
+                                                      1000
+
+                                                         00   10      20       30       40       50   60   70
+                                                                           Weekly hours worked
+   Box-Cox preferences at the estimated parameters; own budget; one household per sex
+
+                                                                                                                11/25
+Estimated indifference curves and the price of an hour, by age and sex                                These are the estimated preferences themselves. The curves are steep at long hours and flat at short
+                                                                                                      hours, and the leisure weight is U-shaped in age with its minimum around forty. The price of one more
+                                                                                                      weekly hour - the consumption that keeps a household indifferent - is what the welfare measure trades
+                                          80
+                                                                Women         Men                     against opportunities.
+
+
+               Compensation (EUR/month)
+                                          70
+
+                 per extra weekly hour
+                                          60
+                                          50
+                                          40
+                                          30
+                                          20
+                                          10
+                                           020   25   30   35     40     45    50   55   60
+                                                                   Age
+   Box-Cox preferences at the estimated parameters; own budget; one household per sex
+
+                                                                                              11/25
 What the data pin down, and what remains conditional.                                                      Two things stay conditional and I say so. The access density combines personal capability and market
                                                                                                            availability; the data do not separate them. And persistent household heterogeneity — a random
                                                                                                            leisure intercept, a persistent access frailty, and dependence between the wage residual and preferences
@@ -281,7 +407,7 @@ tax-benefit system.                                                             
 
 
 
-                                                                                                   10/22
+                                                                                                   12/25
 An independent source puts the 35-hour concentration at 37%; the sample at 34%; the                         The Labour Force Survey never enters the estimation. Its share of employment in the 35-hour band,
 model at 35%.                                                                                               among the bands the model prices, is 37 per cent; the estimation sample gives 34 and the model 35,
                                                                                                             and the survey’s ordering of women above men is reproduced by a model with no sex-specific hours
@@ -307,50 +433,64 @@ model at 35%.                                                                   
 
    Labour Force Survey 2016; validation only; no external moment enters the likelihood.
 
-                                                                                                    11/22
-Equivalent income at a common reference pay, under four preference–environment states.                                    Welfare is the money-metric level: the income at a common reference leisure that would leave the
-                                                                                                                          household as well off as its opportunity situation does. Inequality is then evaluated under four states —
-                                                                                                                          each household’s own preferences and environment, and each replaced by a common reference — using
-                                                                                                                          the same measure, the same reference and the same numerical support in all four. The fully common
-                                                                                                                          state is the exhaustiveness test: it must be zero.
-                                                         ¯ = Ωi
-                                               ui (Wi1 , l)
-   Ωi the expected maximum over the household’s own opportunity distribution
+                                                                                                    13/25
+Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the income at a common reference leisure that would leave the
+                                                                                                                       household as well off as its opportunity situation does. Inequality is then evaluated under four states —
+                                                                                                                       each household’s own preferences and environment, and each replaced by a common reference — using
+                                                                                                                       the same measure, the same reference and the same numerical support in all four. The fully common
+                                                                                                                       state is the exhaustiveness test: it must be zero.
+                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)
+    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained
+   expected welfare.
 
 
+                                               own environment      reference environment
 
-                                                own environment      reference environment
+                           own preferences             I00                     I01
 
-                            own preferences             I00                     I01
-
-                      reference preferences             I10                     I11
-
-
-   reference environment = common job access, earning opportunities and budget; coalition-consistent inversion;
-   common quadrature support.
+                      reference preferences            I10                     I11
 
 
-                                                                                                                  12/22
+   reference environment = common job access, earning opportunities and budget; the same coalition’s set and
+   preferences on both sides of the inversion; common quadrature support.
+
+
+                                                                                                               14/25
 A two-player Shapley game: preferences against the complete non-preference                                        Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment
 environment.                                                                                                      alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the
                                                                                                                   two orders, which is what makes the attribution order-independent and exhaustive. Inside the
-                                                                                                                  environment, a grouped Owen value splits the contribution three ways.
-
-                                       I00 = 0.134              I01 = 0.031
+                                                                                                                  environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions:
+                                                                                                                  equalizing the environment by itself removes 77 per cent of inequality; the Shapley value, which
+                                       I00 = 0.134              I01 = 0.031                                       averages over the order in which preferences and environment are equalized, attributes 94 per cent to it.
                                        I10 = 0.148              I11 = 0.000
-
 
 
                              Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
 
                              Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
-
+    equalizing the environment alone reduces inequality by 77%; the Shapley attribution to the
+   environment is 94%.
 
    the environment is then split by an Owen value into job access, earning opportunities, and household
    endowments and needs.
 
+                                                                                                          15/25
+The distribution of equivalent income under the four states                                               Before the decomposition, the four states as distributions: own preferences and environment;
+                                                                                                          preferences equalized, which widens the distribution; environment equalized, which nearly collapses it;
+                                                                                                          and both, a point mass - the exhaustiveness test made visible.
+                                 0.006
+                                                                             I00          I01
+                                 0.005                                       I10          I11
+              Weighted density
+                                 0.004
+                                 0.003
+                                 0.002
+                                 0.001
+                                 0.000   1000     1500    2000   2500    3000      3500    4000
+                                                Equivalent income (EUR per month)
+   the fully common state collapses to a point
 
-                                                                                                          13/22
+                                                                                                  16/25
 The non-preference environment accounts for 94% of measured welfare inequality;                                              Under the primary reference, the non-preference environment accounts for 93.7 per cent of measured
 preferences for 6%.                                                                                                          money-metric inequality and preferences for 6.3; under the alternative reference, 89 and 11. The bands
                                                                                                                              are integration precision; the parameter-uncertainty interval, propagated from the cluster-robust
@@ -370,7 +510,7 @@ preferences for 6%.                                                             
    93.7 ± 0.6 / 6.3 ± 0.6 (female reference); 89.1 / 10.9 (male reference); parameter-uncertainty interval for the
    environment share [89.1, 95.8].
 
-                                                                                                                     14/22
+                                                                                                                     17/25
 Household endowments and needs 58%, earning opportunities 21%, job access 15%; job                           Within the environment the budget side — non-labour income, household composition and their
 opportunities together 36%.                                                                                  tax-benefit treatment — is the largest component at 58 per cent. Job access and earning opportunities
                                                                                                              together, the market-side contribution, account for 36 per cent of measured inequality. This ordering
@@ -387,7 +527,7 @@ opportunities together 36%.                                                     
 
    ordering identical under both reference conventions and under equivalization.
 
-                                                                                                     15/22
+                                                                                                     18/25
 Unequal job opportunities account for about a third of measured welfare inequality;                      To the first question: about a third of measured money-metric inequality is attributable to unequal job
 omitting them re-attributes almost nothing to preferences.                                               opportunities in the strict sense — access and earning opportunities — within an environment share of
                                                                                                          94 per cent. To the second: a common-choice-set model does not turn opportunity into taste at the
@@ -404,7 +544,7 @@ omitting them re-attributes almost nothing to preferences.                      
 
 
 
-                                                                                                 16/22
+                                                                                                 19/25
 The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability                                 Estimated on the same data, the common-opportunity model matches the aggregate hours,
 as taste.                                                                                                                    employment and occupation shares as well as the RURO model does — in places better — while its
                                                                                                                              likelihood is 129 nats worse. The availability constants come back as preference parameters, and the
@@ -428,26 +568,28 @@ as taste.                                                                       
 
    35-hour coefficient: 2.58 as availability, 2.55 as preference; leisure-intercept sex gap +0.43 → −1.99.
 
-                                                                                                                     17/22
-The preference share is the sensitive margin; the environment’s internal structure is stable.           Three independent perturbations — the reference convention, the bounds on the age curvature of
-                                                                                                        preferences, and the identification of the male leisure block in couples — all move the preference
-                                                                                                        contribution and none moves the sign or the ordering of the environment components. The number of
-                                                                                                        drawn jobs, from 50 to 400 nested draws, moves nothing at all.
-
-   perturbation →                   preference share                    environment ordering
-
-   reference convention             6.3 → 10.9                          unchanged
-
-   age-curvature bounds             ≈ +13%                              unchanged
-
-   couples male-leisure pin         up to 73%                           unchanged
-
-   50–400 drawn jobs                largest coefficient move 0.2 s.e.   unchanged
+                                                                                                                     20/25
+The preference share is the sensitive margin; the environment’s internal structure is stable.               From 50 to 400 nested draws the largest coefficient move is half a standard error, and from 100
+                                                                                                            upward a fifth; no sign or ordering moves.
 
 
 
 
-                                                                                                18/22
+   perturbation →             preference share                               environment ordering
+
+   reference convention       6.3 → 10.9                                     unchanged
+
+   age-curvature bounds       ≈ +13%                                         unchanged
+
+   couples male-leisure pin   up to 73%                                      unchanged
+
+   50-400 drawn jobs          largest coefficient move 0.56 s.e. (0.2 s.e.   ordering unchanged
+                              from 100 to 400)
+
+
+
+
+                                                                                                    21/25
 Within job access, nearly all of the household-varying contribution is geographic; job                                   Geography enters only through the employment margin, so a nested split attributes nearly all of the
 access matters twice as much for men.                                                                                    household-varying access contribution to the geographic block — but job access as a whole is 15 per
                                                                                                                          cent of inequality. Holding an individual’s characteristics fixed and moving only the regional access
@@ -473,7 +615,7 @@ access matters twice as much for men.                                           
 
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
-                                                                                                                 19/22
+                                                                                                                 22/25
 Within job access, nearly all of the household-varying contribution is geographic; job                        Geography enters only through the employment margin, so a nested split attributes nearly all of the
 access matters twice as much for men.                                                                         household-varying access contribution to the geographic block — but job access as a whole is 15 per
                                                                                                               cent of inequality. Holding an individual’s characteristics fixed and moving only the regional access
@@ -491,7 +633,7 @@ access matters twice as much for men.                                           
 
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
-                                                                                                      19/22
+                                                                                                      22/25
 Couples reproduce the same environment ordering; their preference share is not robustly                            A clean both-flexible couples model converges and fits participation and hours by spouse closely. The
 identified.                                                                                                        environment decomposition has the same ordering as for singles. The couples preference share,
                                                                                                                    however, moves by up to 73 per cent under admissible movement of the male leisure block, so singles
@@ -510,7 +652,7 @@ identified.                                                                     
 
    2,275 couples; employment matched to four decimals; 35-hour peak 2.55 (women) and 3.29 (men).
 
-                                                                                                           20/22
+                                                                                                           23/25
 Each limit names the evidence that would lift it.                                               The paper’s limits are stated as scope. Each names the data that would identify what the current
                                                                                                 cross-section cannot: capability sets, persistent types, and a desired-hours counterpart. The lagged
                                                                                                 regional vacancy construction I tested added no detectable access signal at this resolution.
@@ -530,7 +672,7 @@ identified.                                                                     
 
 
 
-                                                                                        21/22
+                                                                                        24/25
 Conclusion
 
 
@@ -548,7 +690,7 @@ identified.                                                                     
 
 
 
-                                                                                               22/22
+                                                                                               25/25
                                                                       Held for: “What are the actual parameter estimates?”
 B1 — The estimated coefficients: preferences
                                                                       The final singles model carries 41 estimated structural parameters; this is the preference block. The full table with standard errors is in the paper’s Appendix A.

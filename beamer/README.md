@@ -1,4 +1,4 @@
-# The JMP seminar deck ? v4
+# The JMP seminar deck — v4.1
 
 The [authoritative content](../manuscript/JMP_seminar_deck_content_v2.md) supplies the headlines, on-slide prose and running speaker notes. This implementation preserves that text. The final verbatim brief supersedes the earlier 12-word body limit and 23-message plan.
 
@@ -6,11 +6,11 @@ Open the [full deck](build/JMP_seminar_deck_v1.pdf), [25-minute deck](build/JMP_
 
 | Build | Running frames | Backup frames | Extra overlay pages | PDF pages |
 |---|---:|---:|---:|---:|
-| Full | 22 | 8 | 1 | 31 |
+| Full | 25 | 8 | 5 | 38 |
 | 25-minute | 15 | 8 | 0 | 23 |
-| Rehearsal | 22 | 8 | 1 | 31 |
+| Rehearsal | 25 | 8 | 5 | 38 |
 
-The short order is **1, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 22**. It uses the existing driver and frame tags. Slide 19 has the only two-step running build. The rehearsal PDF places the unchanged projection on the left and the supplied speech on the right. Slide 22 has no supplied speech, so its note is empty.
+The short order is **1, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 22**. It uses the existing driver and frame tags. The full order inserts 5b after 5 (four builds), 9b after 9 (two builds), and 13b after 13. Slide 19 retains its two builds. The rehearsal PDF places the unchanged projection on the left and the supplied speech on the right. Slide 22 has no supplied speech, so its note is empty.
 
 ## Build
 
@@ -31,13 +31,13 @@ Dependencies: Python, the packages in `requirements-beamer.txt`, latexmk, pdflat
 python -m pip install --target build/python_deps -r requirements-beamer.txt
 ```
 
-The build reads the sibling `MNL/experiments/JMP_SEMINAR_SPRINT/` tree. It does not modify it. It regenerates number macros, renders only missing slide panels, compiles the three existing TeX drivers with latexmk, exports each text layer with `pdftotext -layout`, runs verification and writes the review report.
+The build reads the sibling `MNL/experiments/JMP_SEMINAR_SPRINT/` tree. It does not modify it. It regenerates number macros, reuses the twelve active v4 panels and regenerates the seven v4.1 panels, compiles the three existing TeX drivers with latexmk, exports each text layer with `pdftotext -layout`, runs verification and writes the review report.
 
 ## Files
 
 | File | Role |
 |---|---|
-| `JMP_seminar_deck_v1.tex` | v4 deck; one source for all variants |
+| `JMP_seminar_deck_v1.tex` | v4.1 deck; one source for all variants |
 | `JMP_seminar_deck_v1_25min.tex` | existing short-deck driver |
 | `JMP_seminar_deck_v1_rehearsal.tex` | existing second-screen driver |
 | `jmp_beamer_preamble.tex` | shared style, unchanged from v3 |
@@ -45,7 +45,8 @@ The build reads the sibling `MNL/experiments/JMP_SEMINAR_SPRINT/` tree. It does 
 | `make_deck_macros_v1.py` | source-backed numbers at the author's display precision |
 | `deck_numbers_v1.tex` | generated commands; do not edit manually |
 | `make_slide_figures_v1.py` | original figure kit plus the three missing panels |
-| `figures/slides/` | 12 active single-panel PDFs |
+| `make_slide_figures_v41.py` | seven new panels, read-only source inputs and numerical checks |
+| `figures/slides/` | 19 active single-panel PDFs |
 | `figures/unused_v3/` | five preserved, unused v3 panels |
 | `deck_content_v4.py` | reads authoritative headlines and speech |
 | `verify_deck_v1.py`, `verify_content_v4.py` | verifier entry point and v4 gates |
@@ -62,7 +63,7 @@ python verify_deck_v1.py
 python slide_table_v1.py --csv slide_table_v1.csv
 ```
 
-[Machine-readable verification](build/verification_v4.json) and the [per-slide table](build/slide_table_v4.json) are committed with the PDFs. Word counts include rendered headline, body, chart and table text; navigation and notes are excluded. See the review report for the source discrepancy on slide 18: its authored 0.2 s.e. claim corresponds to the 100?400 comparison, while its displayed range begins at 50.
+[Machine-readable verification](build/verification_v4.json) and the [per-slide table](build/slide_table_v4.json) are committed with the PDFs. Word counts include rendered headline, body, chart and table text; navigation and notes are excluded. Slide 18 now reports both ranges explicitly: 0.56 s.e. for 50–400 draws and 0.2 for 100–400. Slide 13 distinguishes the 77% direct counterfactual from the 94% Shapley attribution. Source fingerprints and numerical figure checks are retained beside the slide figures.
 
 ## Reused theory style
 

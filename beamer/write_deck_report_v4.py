@@ -9,10 +9,11 @@ def main():
     r=json.loads((HERE/'build/verification_v4.json').read_text(encoding='utf-8'))
     rows=json.loads((HERE/'build/slide_table_v4.json').read_text(encoding='utf-8'))
     passed=sum(c['pass_'] for c in r['checks'])
-    text=['# Beamer v4 — build and content review','',
-          'Authority: [the supplied content v2](../manuscript/JMP_seminar_deck_content_v2.md). '
-          '22 running-order frames; B1 in three blocks, then B2–B6. '
-          'The only running-order overlay is the requested geography/sex build on slide 19.','',
+    text=['# Beamer v4.1 — build and content review','',
+          'Authority: [the supplied content v2.1](../manuscript/JMP_seminar_deck_content_v2.md), updated 2026-09-06. '
+          '25 running-order frames; B1 in three blocks, then B2–B6. '
+          '5b has four builds, 9b has two, and geography/sex on 19 has two. '
+          'The 25-minute order is unchanged.','',
           f'Verifier: **{"PASS" if r["passed"] else "FAIL"} — {passed}/{len(r["checks"])} checks.** '
           'All three logs have zero errors, zero overfull boxes and zero underfull boxes. '
           'PDF headlines match the content document; supplied captions and prose are present; '
@@ -25,19 +26,31 @@ def main():
              'Counts are measured from the PDF text layer: headline, prose, table/equation text, '
              'chart labels and numeric tokens; navigation fractions and speaker notes are excluded. '
              'A whitespace-delimited token counts when it contains a letter or digit. '
-             'Slide 19 reports the larger count of its two builds. '
+             'Slides with builds report the largest count across their builds. '
              'These are **all on-slide words**, not the former body-prose-only count.','',
-             '| Slide | Headline | Element | On-slide words |','|---|---|---|---:|']
+             '| Slide | Headline | Element | Builds | On-slide words |','|---|---|---|---:|---:|']
     for row in rows:
-        text.append('| {number} | {headline} | {element} | {on_slide_words} |'.format(**row))
+        text.append('| {number} | {headline} | {element} | {builds} | {on_slide_words} |'.format(**row))
+    from deck_content_v4 import read_content
+    authored,_=read_content()
+    note12=next(s['note'] for s in authored if s['number']==12)
+    if 'common reference leisure' in note12:
+        text += ['', '## Remaining authored-text inconsistency', '',
+                 'Slide 12’s equation and caption now use the supplied flat-pay correction. '
+                 'Its existing speech still says “the income at a common reference leisure”. '
+                 'The request supplied no replacement speech for that slide, so it is preserved '
+                 'under the verbatim-script requirement. A replacement opening sentence was requested. '
+                 'The verifier certifies fidelity to the supplied text, not resolution of this inconsistency.']
     text += ['', '## Source and implementation notes','',
-      '- **Slide 18 source discrepancy, preserved rather than rewritten:** the authored row says '
-      '“50–400 drawn jobs: largest coefficient move 0.2 s.e.”. The source '
+      '- **Slide 18 corrected:** the full 50–400 range and the 100–400 range now have separate macros. The source '
       '`MNL/experiments/JMP_SEMINAR_SPRINT/figures/figS6_02_coefficient_stability.csv` '
       'gives a maximum absolute deviation of 0.213142 for R ≥ 100, which rounds to 0.2; '
-      'including R = 50 gives 0.562005, which rounds to 0.6. The macro records the narrower '
-      'source scope explicitly. The supplied headline, table wording and spoken script are retained. '
-      'The typesetting PASS does not certify this wider empirical claim.',
+      'including R = 50 gives 0.562005, displayed as 0.56. Both are maximum absolute deviations relative to the R=100 estimate, scaled by its robust standard error.',
+      '- **Slide 13:** the direct environment equalization reduces baseline Gini by 76.937%, displayed as 77%; the distinct Shapley attribution rounds to 94%. Both displayed values are generated from frozen data.',
+      '- **Slide 5b:** employment mass comes from E1 household A. Hours and occupation factors divide the CSV’s unconditional densities/probabilities by that mass; the wage curve retains the original occupation mixture. The supplied speech is verbatim; its “log-normal” shorthand describes the conditional components, while the displayed marginal is their mixture.',
+      '- **Slide 9b:** one actual employed adult without children per sex is selected deterministically by proximity to age 40, 35 hours and sex-specific median consumption. The household’s own 101 priced packages are plotted without identifiers; varying wage offers mean they are not joined into a fictitious fixed-wage budget line. Box-Cox inversion follows reader’s-guide notebook cells 61/63, using the final sprint estimates. The observed job lies on the central indifference curve; inversion residuals are checked numerically.',
+      '- **Slide 9b, age build:** the two final-model analytic curves are read directly from figAB02. This panel uses its declared common reference bundle (35 weekly hours, EUR 1,870.5768 monthly consumption, no children); the individual budgets belong to the preceding build. No widened-bound arm is shown.',
+      '- **Slide 13b:** figW01’s CSV contains summary statistics rather than density ordinates. The original frozen household-state parquet supplies its weighted KDE; all four raw-state counts, means, standard deviations and Ginis are checked against the CSV. The fully common state is shown as a vertical rule, not a smoothed density. Grid and bandwidth match the original renderer.',
       '- The decisive verbatim-content brief supersedes the older 12-word ceiling and 23-message '
       'running order. The verifier retains their purposes through exact authored-prose and exact-order gates. '
       'The content document gives no `Say:` text for slide 22; its note is deliberately empty.',
@@ -62,17 +75,22 @@ def main():
       '- Font checks verify the recorded figure-kit sizes and the embedded figure PDF fonts '
       '(minimum 18 pt). The figures are vector PDFs and are scaled when placed on the Beamer page.',
       '', '## Figure reuse','',
-      'Nine existing slide PDFs are reused unchanged. Three missing panels were rendered from their '
-      'existing CSVs using the figure kit:', '',
+      'All twelve active v4 panels are reused. Seven v4.1 panels were added from frozen inputs. '
+      'The three panels first introduced in v4 were:', '',
       '| New panel | Source CSV |','|---|---|',
       '| `observed_hours_slide.pdf` | `fig01_observed_hours_35h_peak.csv` |',
       '| `headline_references_slide.pdf` | `figW02_headline_decomposition.csv` |',
       '| `regional_profiles_slide.pdf` | `figG02_regional_access_environments.csv` |', '',
+      'v4.1 provenance and calculation checks: '
+      '[input fingerprints](figures/slides/v41_source_manifest.json), '
+      '[indifference checks](figures/slides/indifference_checks.json), '
+      '[density checks](figures/slides/welfare_distribution_checks.json), '
+      '[figure index](figures/slides/slide_figure_index.csv).','',
       'Five unused v3 panels are preserved in `figures/unused_v3/`. '
       'No paper figure or MNL source artefact was modified.', '',
       '## Reproduce', '', '```powershell', 'cd Job_Market_paper/beamer',
       'python build_deck_v4.py all', '```', '',
-      'The build regenerates number macros, creates only missing panels, runs latexmk on '
+      'The build regenerates number macros and the seven v4.1 panels, reuses existing v4 panels, runs latexmk on '
       'the three existing drivers, exports text with `pdftotext -layout`, verifies, and rewrites this report.', '',
       'Machine-readable evidence: [verification](build/verification_v4.json), '
       '[slide table](build/slide_table_v4.json).', '',

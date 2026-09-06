@@ -377,6 +377,7 @@ def build(sprint, out):
 
     # v4: the author's precise display rounding. No estimates are changed.
     src = 'SPRINT/tables/headline_decomposition_v1.csv'
+    m.num('VEnvAlone',(float(prim['I00'])-float(prim['I01']))/float(prim['I00']),src+'; (I00-I01)/I00',dp=0,pct=True)
     for name, col, dp in [('VStateBase','I00',3), ('VStatePref','I10',3),
                           ('VStateEnv','I01',3), ('VStateCommon','I11',3),
                           ('VLevelEnv','C_env',3)]:
@@ -431,8 +432,8 @@ def build(sprint, out):
     src = 'SPRINT/figures/figS6_02_coefficient_stability.csv'
     m.num('VDrawMin',design.R.min(),src,dp=0)
     m.num('VDrawMax',design.R.max(),src,dp=0)
-    # Author's 0.2 is the R>=100 comparison. The R=50 discrepancy is
-    # explicitly disclosed in the build report; do not relabel its source.
+    m.num('VDrawMoveAll',design.deviation_in_R100_SE.abs().max(),src+'; full 50--400 range',dp=2)
+    # Both scopes are explicit in the corrected v4.1 row.
     m.num('VDrawMove',design[design.R>=n_drawn].deviation_in_R100_SE.abs().max(),src+'; R >= reference R (100), NOT the full 50--400 range',dp=1)
     src = 'SPRINT/runs/couples_clean_baseline/r240_step3_estimation_v1.json'
     couple = json.loads((runs/'couples_clean_baseline/r240_step3_estimation_v1.json').read_text(encoding='utf-8'))

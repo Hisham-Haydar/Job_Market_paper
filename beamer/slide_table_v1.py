@@ -16,9 +16,9 @@ def main():
     if not path.exists():
         raise SystemExit('Run python build_deck_v4.py all first.')
     rows = json.loads(path.read_text(encoding='utf-8'))
-    print('slide | headline | element | on-slide words')
+    print('slide | headline | element | builds | on-slide words')
     for r in rows:
-        print('{number} | {headline} | {element} | {on_slide_words}'.format(**r))
+        print('{number} | {headline} | {element} | {builds} | {on_slide_words}'.format(**r))
     if args.csv:
         with args.csv.open('w',encoding='utf-8',newline='') as f:
             w=csv.DictWriter(f,fieldnames=list(rows[0]))

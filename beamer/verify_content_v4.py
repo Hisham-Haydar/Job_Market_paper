@@ -1,7 +1,7 @@
 """v4 implementation of the existing seven verification categories.
 
 The decisive brief supersedes v3's 23-message / 12-word requirements with
-22 exact authored slides. All other gates are retained; PDF headline,
+25 exact authored slides (22 in v4 plus 5b, 9b, 13b). All other gates are retained; PDF headline,
 caption, note, short-order and physical page checks are added.
 """
 from __future__ import annotations
@@ -67,9 +67,13 @@ def nwords(text):
 def authored_phrases(slide):
     """Literal prose fragments, read from the author's document."""
     n=slide['number'];d=slide['description'];pieces=[]
-    if n in [4,5,6,8,9,10,11,12,13,14,15,17,19,20]:
+    if n in [4,5,'5b',6,8,9,'9b',10,11,12,13,'13b',14,15,17,19,20]:
         key='Caption line: ' if 'Caption line: ' in d else 'Caption: '
         pieces.append(d.split(key,1)[1])
+    if n==12:
+        pieces.append(d.split('i.e. ',1)[1].split(' Caption: ',1)[0])
+    if n==13:
+        pieces.append(d.split(' On slide: ',1)[1].split(' Caption: ',1)[0])
     if n==2:
         p=d.split('On slide, two lines: ',1)[1].split(' (2) ')
         pieces += [p[0], '(2) '+p[1]]
@@ -119,6 +123,8 @@ def main(build='build',jobs=None):
         checks.append(dict(check=label,pass_=bool(condition),detail=detail))
         print('  [%s] %s%s'%('PASS' if condition else 'FAIL',label,': '+str(detail) if detail else ''))
     tex,frames,tags,backups=source_frames();slides,short=read_content()
+    ids=[int(n) if n.isdigit() else n for n in re.findall(r'(?m)^% SLIDE (\d+b?)$',tex.split('\n\\appendix\n',1)[0])]
+    byid=dict(zip(ids,frames));content_byid={s['number']:s for s in slides}
     slidedir=HERE/'figures/slides'
     print('=== 1. figure paths ===')
     used=set(re.findall(r'\\slidefig\{([^}]+)\}',tex))
@@ -127,8 +133,8 @@ def main(build='build',jobs=None):
     check('no unused active slide figure',not (onfile-used),str(sorted(onfile-used)))
     check('no paper-style figure left on a slide',not re.search(r'\\deckfig\{',tex))
     check('theory figure appears exactly on slides 4 and 5',
-          [i+1 for i,f in enumerate(frames) if r'\ModelFigure{' in f]==[4,5])
-    check('empirical figure replaces both primitives',all(x in frames[4] for x in
+          [n for n,f in zip(ids,frames) if r'\ModelFigure{' in f]==[4,5])
+    check('empirical figure replaces both primitives',all(x in byid[5] for x in
           [r'\HidePayDots',r'\HideAbilitySets',r'\OppDistribution',r'\WageDensity']))
     print('=== 2. number macros ===')
     nums=(HERE/'deck_numbers_v1.tex').read_text(encoding='utf-8')
@@ -163,14 +169,39 @@ def main(build='build',jobs=None):
     check('number macros equal regenerated source values',probe.read_bytes()==(HERE/'deck_numbers_v1.tex').read_bytes())
     probe.unlink()
     print('=== 3. frames, orders and pages ===')
-    check('exactly 22 running-order slides',len(frames)==len(slides)==22)
-    check('exact 25-minute order',[i+1 for i,t in enumerate(tags) if t=='shortdeck']==short,str(short))
-    check('the final plan has five cuts',tags.count('longdeck')==5)
+    check('exactly 25 running-order slides',len(frames)==len(slides)==25)
+    check('exact 45-minute order including insertions',ids==[s['number'] for s in slides],str(ids))
+    check('exact unchanged 25-minute order',[n for n,t in zip(ids,tags) if t=='shortdeck']==short==[1,2,3,5,6,7,9,12,13,14,15,16,17,18,22],str(short))
+    check('the final plan has eight full-only slides',tags.count('longdeck')==8)
     check('the final plan has two merges',tags.count('mergedaway')==2)
     check('B1 in three blocks, then B2--B6',len(backups)==8 and
           [re.search(r'B\d',argument(f,'headlineframe')).group() for f in backups]==['B1']*3+['B2','B3','B4','B5','B6'])
-    check('only geography has a running overlay',
-          [i+1 for i,f in enumerate(frames) if overlay_count(f)>1]==[19])
+    check('exact build counts for household, preferences and geography',
+          {n:overlay_count(f) for n,f in zip(ids,frames) if overlay_count(f)>1}=={'5b':4,'9b':2,19:2})
+    check('welfare equation uses flat pay on own set',
+          r'\Omega_i(\text{flat pay }w\text{ on own set})=\Omega_i(\text{actual})' in byid[12]
+          and r'u_i(W^1_i,\bar l)' not in byid[12])
+    # Numerical checks independently separate the two counterfactual scopes.
+    import pandas as pd
+    from make_deck_macros_v1 import DEFAULT_SPRINT
+    from deck_content_v4 import macro_values
+    values=macro_values()
+    states=pd.read_csv(DEFAULT_SPRINT/'figures/figW01_welfare_distributions.csv')
+    states=states[states.basis=='W1_raw'].set_index('cell')
+    drop=100*(states.loc['{}','gini']-states.loc['{A,B,D}','gini'])/states.loc['{}','gini']
+    check('77 percent is the direct environment counterfactual',float(values['VEnvAlone'])==round(drop))
+    drawdata=pd.read_csv(DEFAULT_SPRINT/'figures/figS6_02_coefficient_stability.csv')
+    check('draw-count macros cover both declared ranges',
+          float(values['VDrawMoveAll'])==round(drawdata.deviation_in_R100_SE.abs().max(),2)
+          and float(values['VDrawMove'])==round(drawdata[drawdata.R>=100].deviation_in_R100_SE.abs().max(),1))
+    manifest=json.loads((slidedir/'v41_source_manifest.json').read_text(encoding='utf8'))
+    changed=[r['path'] for r in manifest if hashlib.sha256((DEFAULT_SPRINT.parents[1]/r['path']).read_bytes()).hexdigest()!=r['sha256']]
+    check('v4.1 read-only figure inputs match source fingerprints',not changed,str(changed))
+    density=json.loads((slidedir/'welfare_distribution_checks.json').read_text(encoding='utf8'))
+    check('four density summaries match figW01 CSV',len(density)==4 and all(r['summary_matches'] for r in density))
+    curves=json.loads((slidedir/'indifference_checks.json').read_text(encoding='utf8'))
+    check('indifference curves use two own budgets and pass through observed jobs',
+          len(curves)==2 and all(r['priced_nodes']==101 and r['utility_residual_max']<1e-10 and r['observed_curve_consumption_error']<1e-8 for r in curves))
     print('=== 4. logs; 5. PDF text; 6. exact authored words ===')
     tables=[];counts={}
     for job in jobs:
@@ -181,8 +212,8 @@ def main(build='build',jobs=None):
         text=log.read_text(encoding='utf-8',errors='replace')
         errors=len(re.findall(r'^!',text,re.M));over=text.count('Overfull');under=text.count('Underfull')
         check('clean log: '+job,errors==over==under==0,f'{errors} errors / {over} overfull / {under} underfull')
-        order=short if job.endswith('_25min') else list(range(1,23))
-        schedule=[(n,frames[n-1]) for n in order]+[(f'B{n}',f) for n,f in zip(['1a','1b','1c','2','3','4','5','6'],backups)]
+        order=short if job.endswith('_25min') else ids
+        schedule=[(n,byid[n]) for n in order]+[(f'B{n}',f) for n,f in zip(['1a','1b','1c','2','3','4','5','6'],backups)]
         pageframes=[(n,f) for n,f in schedule for _ in range(overlay_count(f))]
         pdf=pymupdf.open(path);counts[job]=len(pdf)
         check('PDF pages = frames + overlays: '+job,len(pdf)==len(pageframes),f'{len(pdf)} pages / {len(schedule)} frames')
@@ -201,19 +232,19 @@ def main(build='build',jobs=None):
             head=' '.join(w[0] for w in projection if w[2]<bottom)
             body=' '.join(w[0] for w in projection if w[2]>=bottom and w[4]<page.rect.height-14)
             full=' '.join(w[0] for w in projection)
-            if isinstance(number,int):
-                expected=slides[number-1]['headline']
+            if number in content_byid:
+                expected=content_byid[number]['headline']
                 if number==1:
                     if normalized(expected) not in normalized(full):headbad.append(str(number))
                     head=expected
                 elif normalized(head)!=normalized(expected):headbad.append(f'{number}: {head!r} != {expected!r}')
-                for phrase in authored_phrases(slides[number-1]):
+                for phrase in authored_phrases(content_byid[number]):
                     if normalized(phrase) not in normalized(full):phrasebad.append(f'{number}: {phrase}')
                 if noteview:
                     note=' '.join(w[0] for w in wds if w[1]>=width)
                     # TeX may hyphenate prose at a line ending. Source notes
                     # are also compared byte-for-byte after TeX encoding below.
-                    if normalized(note).replace('-','')!=normalized(slides[number-1]['note']).replace('-',''):
+                    if normalized(note).replace('-','')!=normalized(content_byid[number]['note']).replace('-',''):
                         notebad.append(str(number))
             else:
                 expected=prose(argument(frame,'headlineframe'))
@@ -223,7 +254,7 @@ def main(build='build',jobs=None):
             element=' / '.join(re.findall(r'\\slidefig\{([^}]+)\}',frame))
             display=bool(re.search(r'(?<!\\)\\\[',frame))
             if not element:element='theory diagram' if r'\ModelFigure{' in frame else 'equations + table' if display and r'\begin{tabular}' in frame else 'equations' if display else 'table' if r'\begin{tabular}' in frame else 'three literature columns' if number==3 else 'text'
-            row=dict(number=number,headline=expected,element=element,on_slide_words=nwords(full) if number==1 else nwords(head+' '+body),body_words=nwords(body),pdf_page=pi+1)
+            row=dict(number=number,headline=expected,element=element,builds=overlay_count(frame),on_slide_words=nwords(full) if number==1 else nwords(head+' '+body),body_words=nwords(body),pdf_page=pi+1)
             allrows.append(row)
         check('PDF headlines equal authoritative content: '+job,not headbad,'; '.join(headbad) or 'all headlines match')
         check('authored captions and prose present verbatim: '+job,not phrasebad,'; '.join(phrasebad) or 'all authored fragments match')
@@ -241,14 +272,14 @@ def main(build='build',jobs=None):
             if (a.width,a.height,a.samples)!=(b.width,b.height,b.samples):differing.append(i+1)
         check('rehearsal projection pixels equal full deck',len(full)==len(rehearsal) and not differing,str(differing) if differing else 'all pages identical')
         full.close();rehearsal.close()
-    notesbad=[str(i+1) for i,f in enumerate(frames) if argument(f,'note')!=tex_escape(slides[i]['note'])]
+    notesbad=[str(n) for n,f in zip(ids,frames) if argument(f,'note')!=tex_escape(content_byid[n]['note'])]
     check('source notes are verbatim (TeX encoding only)',not notesbad,','.join(notesbad))
     original=subprocess.run(['git','show','a42c15b:beamer/jmp_beamer_preamble.tex'],cwd=HERE,capture_output=True,check=True).stdout
     check('shared preamble unchanged from v3',original.replace(b'\r\n',b'\n')==(HERE/'jmp_beamer_preamble.tex').read_bytes().replace(b'\r\n',b'\n'))
     # v3's <=12-word cap is superseded by the exact longer author text.
     # The authored-prose gates above retain and strengthen its purpose:
     # prohibit unauthorised copy instead of silently accepting extra words.
-    check('22-slide content replaces the legacy 12-word ceiling',len(slides)==22,'word counts reported; verbatim content gates enforced above')
+    check('25-slide content replaces the legacy 12-word ceiling',len(slides)==25,'word counts reported; verbatim content gates enforced above')
     print('=== 7. slide figure fonts and text ===')
     style=json.loads((slidedir/'slide_style_v1.json').read_text())
     pts={k:v for k,v in style.items() if k.endswith('size') and isinstance(v,(int,float))}

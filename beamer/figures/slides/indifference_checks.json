@@ -1,0 +1,14 @@
+[
+  {
+    "sex": "Woman",
+    "priced_nodes": 101,
+    "utility_residual_max": 1.3322676295501878e-15,
+    "observed_curve_consumption_error": 9.094947017729282e-13
+  },
+  {
+    "sex": "Man",
+    "priced_nodes": 101,
+    "utility_residual_max": 8.881784197001252e-16,
+    "observed_curve_consumption_error": 4.547473508864641e-13
+  }
+]

@@ -202,24 +202,23 @@ tax-benefit system.
 
 
 
-                                                         ¯ = Ωi
-                                               ui (Wi1 , l)
-   Ωi the expected maximum over the household’s own opportunity distribution
+                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)
+    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained
+   expected welfare.
 
 
+                                               own environment      reference environment
 
-                                                own environment      reference environment
+                           own preferences             I00                     I01
 
-                            own preferences             I00                     I01
-
-                      reference preferences             I10                     I11
-
-
-   reference environment = common job access, earning opportunities and budget; coalition-consistent inversion;
-   common quadrature support.
+                      reference preferences            I10                     I11
 
 
-                                                                                                                  8/15
+   reference environment = common job access, earning opportunities and budget; the same coalition’s set and
+   preferences on both sides of the inversion; common quadrature support.
+
+
+                                                                                                               8/15
 A two-player Shapley game: preferences against the complete non-preference
 environment.
 
@@ -229,15 +228,14 @@ environment.
                                        I10 = 0.148              I11 = 0.000
 
 
-
                              Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
 
                              Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
-
+    equalizing the environment alone reduces inequality by 77%; the Shapley attribution to the
+   environment is 94%.
 
    the environment is then split by an Owen value into job access, earning opportunities, and household
    endowments and needs.
-
 
                                                                                                           9/15
 The non-preference environment accounts for 94% of measured welfare inequality;
@@ -322,20 +320,21 @@ as taste.
 
 
 
-   perturbation →                   preference share                    environment ordering
+   perturbation →             preference share                               environment ordering
 
-   reference convention             6.3 → 10.9                          unchanged
+   reference convention       6.3 → 10.9                                     unchanged
 
-   age-curvature bounds             ≈ +13%                              unchanged
+   age-curvature bounds       ≈ +13%                                         unchanged
 
-   couples male-leisure pin         up to 73%                           unchanged
+   couples male-leisure pin   up to 73%                                      unchanged
 
-   50–400 drawn jobs                largest coefficient move 0.2 s.e.   unchanged
+   50-400 drawn jobs          largest coefficient move 0.56 s.e. (0.2 s.e.   ordering unchanged
+                              from 100 to 400)
 
 
 
 
-                                                                                                14/15
+                                                                                                    14/15
 Conclusion
 
 

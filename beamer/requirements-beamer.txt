@@ -2,3 +2,4 @@ pandas
 matplotlib
 PyMuPDF
 Pillow
+pyarrow

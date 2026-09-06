@@ -9,20 +9,23 @@ CONTENT = HERE.parent / 'manuscript/JMP_seminar_deck_content_v2.md'
 
 def read_content():
     source = CONTENT.read_text(encoding='utf-8')
-    chunks = re.split(r'(?m)^(\d+) — ', source)[1:]
+    chunks = re.split(r'(?m)^(\d+b?) — ', source)[1:]
     slides = []
     for number, chunk in zip(chunks[::2], chunks[1::2]):
-        chunk = chunk.split('\n\nBackups', 1)[0].strip()
+        chunk = re.split(r'\n\n(?:Backups|25-minute running order:)',chunk,1)[0].strip()
         description, _, note = chunk.partition('\nSay: ')
-        if int(number) == 1:
+        if number == '1':
             headline = description.split('Title. ', 1)[1].split(' · ', 1)[0]
-        elif int(number) == 22:
+        elif number == '22':
             headline = 'Conclusion'
+        elif number.endswith('b'):
+            headline = description.split('Headline: ',1)[1].split('\n',1)[0]
         else:
             headline = description.split('Headline: ', 1)[1].split('. ', 1)[0] + '.'
-        slides.append(dict(number=int(number), headline=headline,
+        slides.append(dict(number=number if number.endswith('b') else int(number), headline=headline,
                            description=description, note=note.strip()))
     short = re.search(r'25-minute running order: ([\d, ]+)', source).group(1)
+    slides.sort(key=lambda s:(int(str(s['number']).rstrip('b')),str(s['number']).endswith('b')))
     return slides, [int(n) for n in short.split(',')]
 
 

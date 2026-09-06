@@ -1,4 +1,4 @@
-% v4: content_v2 implemented verbatim. Editorial authority: manuscript content.
+% v4.1: content_v2.1 implemented verbatim. Editorial authority: manuscript content.
 % Numeric results are generated from the frozen artefacts; no re-estimation.
 \documentclass[10pt,aspectratio=169]{beamer}
 \input{jmp_beamer_preamble}
@@ -100,8 +100,8 @@ LISER and University of Luxembourg\par
 \ResetFig\BaseAllOn
 {\renewcommand{\ModelScale}{0.61}\ModelFigure{}}
 \vfill
-\caveat{W\textsuperscript{1}: the equal pay on the reachable set that leaves the person as well off — Haydar and Maniquet (companion paper).}\par
-\note{The companion theory paper, with François Maniquet, characterizes a family of welfare measures for economies where jobs are discrete packages and each person can reach only a subset of them. The measure I take to the data, W\textsuperscript{1}, asks: at what uniform pay across the jobs you can reach would you be exactly as well off as you are now? It holds people responsible for their preferences and compensates them for their pay and their set. That is the normative object.}
+\caveat{W\textsuperscript{\DocOne{}}: the uniform pay across the jobs you can reach that would leave you as well off - Haydar and Maniquet (companion paper).}\par
+\note{The companion theory paper, with Francois Maniquet, characterizes a family of welfare measures for economies where jobs are discrete packages and each person can reach only a subset of them. The measure I take to the data, W1, asks: at what uniform pay across the jobs you can reach would you be exactly as well off as you are now? It neutralizes differences in pay across the jobs in your set, so that pay luck does not enter; differences in the set itself remain in the measure - and they are exactly what the decomposition then attributes.}
 \end{frame}}
 
 % SLIDE 5
@@ -115,6 +115,21 @@ LISER and University of Luxembourg\par
 \caveat{estimated jointly with preferences; nodes are integration support, not a list of jobs.}\par
 \note{In the data no one observes the set of jobs a household could have had. What can be estimated is a density over latent job packages — hours, occupation and wage — that says how available each package is to a given household. The picture changes in exactly two places: the set becomes a distribution, the pay becomes a density. Everything downstream is a functional of that estimated distribution.}
 \end{frame}}
+
+% SLIDE 5b
+\longdeck{%
+\begin{frame}[t]
+\renewcommand{\figureheight}{0.70}
+\headlineframe{For one household: its estimated employment mass, hours weights, occupation shares and wage-offer density}
+\only<1>{\slidefig{household_a_employment}}
+\only<2>{\slidefig{household_a_hours}}
+\only<3>{\slidefig{household_a_occupation}}
+\only<4>{\slidefig{household_a_wages}}
+\vfill
+\caveat{estimated opportunity distribution; nodes are integration support, not a list of jobs}\par
+\note{Here the schematic becomes an estimate. For this household the model gives an 85 per cent chance that an offer is taken up, hours weights concentrated on the 35-hour and full-time bands, sex-specific occupation shares, and a log-normal wage-offer density centred at eleven euros. The welfare measure is a functional of exactly these four objects.}
+\end{frame}}
+
 
 % SLIDE 6
 \shortdeck{%
@@ -175,6 +190,19 @@ EUROMOD FR \DocTwoZeroOneSix{} \ensuremath{\to} disposable income for every one 
 \note{Observed against model-implied shares by hours band: the statutory band is matched to within half a point, employment and the four occupation groups to within a point. The one visible misfit is the bottom of the offered-wage distribution, which the model over-predicts by about five points; I tested an hours-conditioned repair and it did not improve the fit.}
 \end{frame}}
 
+% SLIDE 9b
+\longdeck{%
+\begin{frame}[t]
+\renewcommand{\figureheight}{0.74}
+\headlineframe{Estimated indifference curves and the price of an hour, by age and sex}
+\only<1>{\slidefig{indifference_curves}}
+\only<2>{\slidefig{compensation_by_age}}
+\vfill
+\caveat{Box-Cox preferences at the estimated parameters; own budget; one household per sex}\par
+\note{These are the estimated preferences themselves. The curves are steep at long hours and flat at short hours, and the leisure weight is U-shaped in age with its minimum around forty. The price of one more weekly hour - the consumption that keeps a household indifferent - is what the welfare measure trades against opportunities.}
+\end{frame}}
+
+
 % SLIDE 10
 \longdeck{%
 \begin{frame}[t]
@@ -217,8 +245,10 @@ persistent unobserved heterogeneity (three pre-specified extensions not recovera
 \begin{frame}[t]
 \headlineframe{Equivalent income at a common reference pay, under four preference–environment states.}
 \vfill
-{\large\[ u_i(W^1_i,\bar l)=\Omega_i \]}
-{\small $\Omega_i$ the expected maximum over the household's own opportunity distribution\par}
+{\normalsize\[
+ W^1_i=w:\quad \Omega_i(\text{flat pay }w\text{ on own set})=\Omega_i(\text{actual})
+ \]}
+{\small\raggedright i.e. the uniform pay $w$ over the household's own opportunity distribution that reproduces its attained expected welfare.\par}
 \vfill
 \begin{center}\small\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{r|cc}
@@ -227,7 +257,7 @@ own preferences & $I_{00}$ & $I_{01}$\\
 reference preferences & $I_{10}$ & $I_{11}$\\
 \end{tabular}\end{center}
 \vfill
-\caveat{reference environment = common job access, earning opportunities and budget; coalition-consistent inversion; common quadrature support.}\par
+\caveat{reference environment = common job access, earning opportunities and budget; the same coalition's set and preferences on both sides of the inversion; common quadrature support.}\par
 \note{Welfare is the money-metric level: the income at a common reference leisure that would leave the household as well off as its opportunity situation does. Inequality is then evaluated under four states — each household's own preferences and environment, and each replaced by a common reference — using the same measure, the same reference and the same numerical support in all four. The fully common state is the exhaustiveness test: it must be zero.}
 \end{frame}}
 
@@ -248,11 +278,23 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
  C_{\mathrm{env}}&=\tfrac12[(I_{00}-I_{01})+(I_{10}-I_{11})]=\VLevelEnv
 \end{aligned}
 \]}
-\vfill
+{\small\raggedright equalizing the environment alone reduces inequality by \VEnvAlone{}\%; the Shapley attribution to the environment is \VRoundEnv{}\%.\par}
 \vfill
 \caveat{the environment is then split by an Owen value into job access, earning opportunities, and household endowments and needs.}\par
-\note{Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways.}
+\note{Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions: equalizing the environment by itself removes 77 per cent of inequality; the Shapley value, which averages over the order in which preferences and environment are equalized, attributes 94 per cent to it.}
 \end{frame}}
+
+% SLIDE 13b
+\longdeck{%
+\begin{frame}[t]
+\renewcommand{\figureheight}{0.74}
+\headlineframe{The distribution of equivalent income under the four states}
+\slidefig{welfare_distributions}
+\vfill
+\caveat{the fully common state collapses to a point}\par
+\note{Before the decomposition, the four states as distributions: own preferences and environment; preferences equalized, which widens the distribution; environment equalized, which nearly collapses it; and both, a point mass - the exhaustiveness test made visible.}
+\end{frame}}
+
 
 % SLIDE 14
 \shortdeck{%
@@ -303,15 +345,15 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \headlineframe{The preference share is the sensitive margin; the environment's internal structure is stable.}
 \vfill
 {\small\renewcommand{\arraystretch}{1.55}
-\begin{tabular}{@{}p{0.34\textwidth}p{0.31\textwidth}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}p{0.27\textwidth}p{0.43\textwidth}p{0.22\textwidth}@{}}
 perturbation \ensuremath{\to} & preference share & environment ordering\\[0.3em]
 reference convention & \VSharePref{} \ensuremath{\to} \VMalePref{} & unchanged\\[0.3em]
 age-curvature bounds & \ensuremath{\approx} \VAgeMove{}\% & unchanged\\[0.3em]
 couples male-leisure pin & up to \VCouplesMove{}\% & unchanged\\[0.3em]
-\VDrawMin{}–\VDrawMax{} drawn jobs & largest coefficient move \VDrawMove{} s.e. & unchanged\\
+\VDrawMin{}-\VDrawMax{} drawn jobs & {\raggedright largest coefficient move \VDrawMoveAll{} s.e. (\VDrawMove{} s.e. from \NDrawnJobs{} to \VDrawMax{})\par} & ordering unchanged\\
 \end{tabular}}
 \vfill
-\note{Three independent perturbations — the reference convention, the bounds on the age curvature of preferences, and the identification of the male leisure block in couples — all move the preference contribution and none moves the sign or the ordering of the environment components. The number of drawn jobs, from 50 to 400 nested draws, moves nothing at all.}
+\note{From 50 to 400 nested draws the largest coefficient move is half a standard error, and from 100 upward a fifth; no sign or ordering moves.}
 \end{frame}}
 
 % SLIDE 19

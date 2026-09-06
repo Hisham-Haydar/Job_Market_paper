@@ -3,6 +3,7 @@
     "number": 1,
     "headline": "Unequal Job Opportunities and the Measurement of Welfare Inequality",
     "element": "text",
+    "builds": 1,
     "on_slide_words": 22,
     "body_words": 22,
     "pdf_page": 1
@@ -11,6 +12,7 @@
     "number": 2,
     "headline": "Two questions.",
     "element": "text",
+    "builds": 1,
     "on_slide_words": 34,
     "body_words": 32,
     "pdf_page": 2
@@ -19,6 +21,7 @@
     "number": 3,
     "headline": "Three literatures, one gap.",
     "element": "three literature columns",
+    "builds": 1,
     "on_slide_words": 83,
     "body_words": 79,
     "pdf_page": 3
@@ -27,216 +30,270 @@
     "number": 4,
     "headline": "A job is a package; welfare is compared on the set of reachable jobs.",
     "element": "theory diagram",
-    "on_slide_words": 80,
-    "body_words": 66,
+    "builds": 1,
+    "on_slide_words": 82,
+    "body_words": 68,
     "pdf_page": 4
   },
   {
     "number": 5,
     "headline": "Empirically the set is an estimated distribution and the pay is an offer density.",
     "element": "theory diagram",
+    "builds": 1,
     "on_slide_words": 44,
     "body_words": 30,
     "pdf_page": 5
   },
   {
+    "number": "5b",
+    "headline": "For one household: its estimated employment mass, hours weights, occupation shares and wage-offer density",
+    "element": "household_a_employment / household_a_hours / household_a_occupation / household_a_wages",
+    "builds": 4,
+    "on_slide_words": 53,
+    "body_words": 24,
+    "pdf_page": 6
+  },
+  {
     "number": 6,
     "headline": "Preferences and an opportunity density, in one likelihood.",
     "element": "equations",
+    "builds": 1,
     "on_slide_words": 53,
     "body_words": 45,
-    "pdf_page": 6
+    "pdf_page": 10
   },
   {
     "number": 7,
     "headline": "Each household: its observed job plus 100 drawn alternatives, all priced through the tax-benefit system.",
     "element": "equations",
+    "builds": 1,
     "on_slide_words": 43,
     "body_words": 28,
-    "pdf_page": 7
+    "pdf_page": 11
   },
   {
     "number": 8,
     "headline": "France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours.",
     "element": "observed_hours",
+    "builds": 1,
     "on_slide_words": 36,
     "body_words": 23,
-    "pdf_page": 8
+    "pdf_page": 12
   },
   {
     "number": 9,
     "headline": "The model reproduces the hours distribution, employment and occupation shares.",
     "element": "hours",
+    "builds": 1,
     "on_slide_words": 67,
     "body_words": 57,
-    "pdf_page": 9
+    "pdf_page": 13
+  },
+  {
+    "number": "9b",
+    "headline": "Estimated indifference curves and the price of an hour, by age and sex",
+    "element": "indifference_curves / compensation_by_age",
+    "builds": 2,
+    "on_slide_words": 52,
+    "body_words": 38,
+    "pdf_page": 14
   },
   {
     "number": 10,
     "headline": "What the data pin down, and what remains conditional.",
     "element": "text",
+    "builds": 1,
     "on_slide_words": 43,
     "body_words": 34,
-    "pdf_page": 10
+    "pdf_page": 16
   },
   {
     "number": 11,
     "headline": "An independent source puts the 35-hour concentration at 37%; the sample at 34%; the model at 35%.",
     "element": "external",
+    "builds": 1,
     "on_slide_words": 49,
     "body_words": 32,
-    "pdf_page": 11
+    "pdf_page": 17
   },
   {
     "number": 12,
     "headline": "Equivalent income at a common reference pay, under four preference–environment states.",
     "element": "equations + table",
-    "on_slide_words": 60,
-    "body_words": 49,
-    "pdf_page": 12
+    "builds": 1,
+    "on_slide_words": 83,
+    "body_words": 72,
+    "pdf_page": 18
   },
   {
     "number": 13,
     "headline": "A two-player Shapley game: preferences against the complete non-preference environment.",
     "element": "equations + table",
-    "on_slide_words": 66,
-    "body_words": 56,
-    "pdf_page": 13
+    "builds": 1,
+    "on_slide_words": 82,
+    "body_words": 72,
+    "pdf_page": 19
+  },
+  {
+    "number": "13b",
+    "headline": "The distribution of equivalent income under the four states",
+    "element": "welfare_distributions",
+    "builds": 1,
+    "on_slide_words": 42,
+    "body_words": 33,
+    "pdf_page": 20
   },
   {
     "number": 14,
     "headline": "The non-preference environment accounts for 94% of measured welfare inequality; preferences for 6%.",
     "element": "headline_references",
-    "on_slide_words": 49,
-    "body_words": 36,
-    "pdf_page": 14
-  },
-  {
-    "number": 15,
-    "headline": "Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%.",
-    "element": "environment",
-    "on_slide_words": 49,
-    "body_words": 34,
-    "pdf_page": 15
-  },
-  {
-    "number": 16,
-    "headline": "Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences.",
-    "element": "text",
-    "on_slide_words": 54,
-    "body_words": 35,
-    "pdf_page": 16
-  },
-  {
-    "number": 17,
-    "headline": "The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste.",
-    "element": "benchmark",
-    "on_slide_words": 54,
-    "body_words": 38,
-    "pdf_page": 17
-  },
-  {
-    "number": 18,
-    "headline": "The preference share is the sensitive margin; the environment's internal structure is stable.",
-    "element": "table",
-    "on_slide_words": 43,
-    "body_words": 30,
-    "pdf_page": 18
-  },
-  {
-    "number": 19,
-    "headline": "Within job access, nearly all of the household-varying contribution is geographic; job access matters twice as much for men.",
-    "element": "regional_profiles / subgroup",
-    "on_slide_words": 56,
-    "body_words": 37,
-    "pdf_page": 19
-  },
-  {
-    "number": 20,
-    "headline": "Couples reproduce the same environment ordering; their preference share is not robustly identified.",
-    "element": "couples",
+    "builds": 1,
     "on_slide_words": 49,
     "body_words": 36,
     "pdf_page": 21
   },
   {
+    "number": 15,
+    "headline": "Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%.",
+    "element": "environment",
+    "builds": 1,
+    "on_slide_words": 49,
+    "body_words": 34,
+    "pdf_page": 22
+  },
+  {
+    "number": 16,
+    "headline": "Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences.",
+    "element": "text",
+    "builds": 1,
+    "on_slide_words": 54,
+    "body_words": 35,
+    "pdf_page": 23
+  },
+  {
+    "number": 17,
+    "headline": "The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste.",
+    "element": "benchmark",
+    "builds": 1,
+    "on_slide_words": 54,
+    "body_words": 38,
+    "pdf_page": 24
+  },
+  {
+    "number": 18,
+    "headline": "The preference share is the sensitive margin; the environment's internal structure is stable.",
+    "element": "table",
+    "builds": 1,
+    "on_slide_words": 50,
+    "body_words": 37,
+    "pdf_page": 25
+  },
+  {
+    "number": 19,
+    "headline": "Within job access, nearly all of the household-varying contribution is geographic; job access matters twice as much for men.",
+    "element": "regional_profiles / subgroup",
+    "builds": 2,
+    "on_slide_words": 56,
+    "body_words": 37,
+    "pdf_page": 26
+  },
+  {
+    "number": 20,
+    "headline": "Couples reproduce the same environment ordering; their preference share is not robustly identified.",
+    "element": "couples",
+    "builds": 1,
+    "on_slide_words": 49,
+    "body_words": 36,
+    "pdf_page": 28
+  },
+  {
     "number": 21,
     "headline": "Each limit names the evidence that would lift it.",
     "element": "table",
+    "builds": 1,
     "on_slide_words": 40,
     "body_words": 31,
-    "pdf_page": 22
+    "pdf_page": 29
   },
   {
     "number": 22,
     "headline": "Conclusion",
     "element": "text",
+    "builds": 1,
     "on_slide_words": 54,
     "body_words": 53,
-    "pdf_page": 23
+    "pdf_page": 30
   },
   {
     "number": "B1a",
     "headline": "B1 — The estimated coefficients: preferences",
     "element": "coefficients_1",
+    "builds": 1,
     "on_slide_words": 22,
     "body_words": 17,
-    "pdf_page": 24
+    "pdf_page": 31
   },
   {
     "number": "B1b",
     "headline": "B1 — The estimated coefficients: job access",
     "element": "coefficients_2",
+    "builds": 1,
     "on_slide_words": 37,
     "body_words": 31,
-    "pdf_page": 25
+    "pdf_page": 32
   },
   {
     "number": "B1c",
     "headline": "B1 — The estimated coefficients: earning opportunities",
     "element": "coefficients_3",
+    "builds": 1,
     "on_slide_words": 21,
     "body_words": 15,
-    "pdf_page": 26
+    "pdf_page": 33
   },
   {
     "number": "B2",
     "headline": "B2 — Exhaustiveness is a tested property",
     "element": "table",
+    "builds": 1,
     "on_slide_words": 23,
     "body_words": 17,
-    "pdf_page": 27
+    "pdf_page": 34
   },
   {
     "number": "B3",
     "headline": "B3 — The scale moves with the channel that equalises needs",
     "element": "table",
+    "builds": 1,
     "on_slide_words": 49,
     "body_words": 39,
-    "pdf_page": 28
+    "pdf_page": 35
   },
   {
     "number": "B4",
     "headline": "B4 — the desired-hours counterpart test",
     "element": "table",
+    "builds": 1,
     "on_slide_words": 41,
     "body_words": 36,
-    "pdf_page": 29
+    "pdf_page": 36
   },
   {
     "number": "B5",
     "headline": "B5 — Where the welfare family comes from",
     "element": "equations",
+    "builds": 1,
     "on_slide_words": 53,
     "body_words": 46,
-    "pdf_page": 30
+    "pdf_page": 37
   },
   {
     "number": "B6",
     "headline": "B6 — The RUM benchmark details",
     "element": "table",
+    "builds": 1,
     "on_slide_words": 35,
     "body_words": 30,
-    "pdf_page": 31
+    "pdf_page": 38
   }
 ]

@@ -52,17 +52,22 @@
       "detail": ""
     },
     {
-      "check": "exactly 22 running-order slides",
+      "check": "exactly 25 running-order slides",
       "pass_": true,
       "detail": ""
     },
     {
-      "check": "exact 25-minute order",
+      "check": "exact 45-minute order including insertions",
+      "pass_": true,
+      "detail": "[1, 2, 3, 4, 5, '5b', 6, 7, 8, 9, '9b', 10, 11, 12, 13, '13b', 14, 15, 16, 17, 18, 19, 20, 21, 22]"
+    },
+    {
+      "check": "exact unchanged 25-minute order",
       "pass_": true,
       "detail": "[1, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 22]"
     },
     {
-      "check": "the final plan has five cuts",
+      "check": "the final plan has eight full-only slides",
       "pass_": true,
       "detail": ""
     },
@@ -77,7 +82,37 @@
       "detail": ""
     },
     {
-      "check": "only geography has a running overlay",
+      "check": "exact build counts for household, preferences and geography",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "welfare equation uses flat pay on own set",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "77 percent is the direct environment counterfactual",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "draw-count macros cover both declared ranges",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "v4.1 read-only figure inputs match source fingerprints",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "four density summaries match figW01 CSV",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "indifference curves use two own budgets and pass through observed jobs",
       "pass_": true,
       "detail": ""
     },
@@ -99,7 +134,7 @@
     {
       "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1",
       "pass_": true,
-      "detail": "31 pages / 30 frames"
+      "detail": "38 pages / 33 frames"
     },
     {
       "check": "page aspect / notes second screen: JMP_seminar_deck_v1",
@@ -179,7 +214,7 @@
     {
       "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1_rehearsal",
       "pass_": true,
-      "detail": "31 pages / 30 frames"
+      "detail": "38 pages / 33 frames"
     },
     {
       "check": "page aspect / notes second screen: JMP_seminar_deck_v1_rehearsal",
@@ -222,7 +257,7 @@
       "detail": ""
     },
     {
-      "check": "22-slide content replaces the legacy 12-word ceiling",
+      "check": "25-slide content replaces the legacy 12-word ceiling",
       "pass_": true,
       "detail": "word counts reported; verbatim content gates enforced above"
     },
@@ -248,9 +283,9 @@
     }
   ],
   "page_counts": {
-    "JMP_seminar_deck_v1": 31,
+    "JMP_seminar_deck_v1": 38,
     "JMP_seminar_deck_v1_25min": 23,
-    "JMP_seminar_deck_v1_rehearsal": 31
+    "JMP_seminar_deck_v1_rehearsal": 38
   },
-  "content_sha256": "c95712192f51ec027f1024e453c28faf3a1e96da42962d062b7e9ba4d130f266"
+  "content_sha256": "dfb90f01ab631dc759de9d49e6b9f7301a91225202470ceaa905314221638925"
 }

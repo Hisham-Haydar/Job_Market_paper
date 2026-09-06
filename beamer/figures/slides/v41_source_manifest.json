@@ -1,0 +1,38 @@
+[
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\figures\\figE1_matched_pair.csv",
+    "sha256": "5c85f1e608360794e16300673e7d1e014aa8f145800593f9a855409c24d8a050"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\figures\\figAB02_mrs_by_age_sex.csv",
+    "sha256": "f200df1c3523d929c96d7717327de5c3d82ec7521348d9b68b6e57142a9923fa"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\figures\\figW01_welfare_distributions.csv",
+    "sha256": "6baca0c3903f3e0b3aeb0962b660126e97e4502ad269d8f5502074cc1447b060"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\runs\\figE1_matched_households\\e1_matched_households_v1.json",
+    "sha256": "4dbb3e6abf918689a8027ed093ece2aeaf884d64fd2f25c9282cf3396a5c3454"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\runs\\agebound_addendum_s2\\ab_parameter_table_S8_v1.csv",
+    "sha256": "65444b4ae36a886852c72b1ad497b7e39dde2831236bdaf3b1861da0d91027ed"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\runs\\agebound_addendum_s2\\ab_step2_profiles_v1.json",
+    "sha256": "4e97bf5ea8105eecbc74bfbf80670daff56511ad208619899a5978b49178475f"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\runs\\final_singles_welfare\\ss8_principal_state_distributions_v1.parquet",
+    "sha256": "c2afd529ca6e7a92490a1f52254b3df9c2af300c86266ce67d5409634816acf9"
+  },
+  {
+    "path": "experiments\\JMP_SEMINAR_SPRINT\\export\\gpu_research_bundle_v1\\data\\fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet",
+    "sha256": "6f558f5ecfeabd4aa60a8199f43576c27f15cb203a6b9dc0e2df04b20145173b"
+  },
+  {
+    "path": "notebooks\\france\\fr_singles_results_discussion_v1.ipynb",
+    "sha256": "08568e774fd56fbac0a93787a99b11920236c620283586875c5395cd2a8ae5cd"
+  }
+]

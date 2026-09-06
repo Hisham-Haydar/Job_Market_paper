@@ -28,6 +28,7 @@ def main():
     BUILD.mkdir(exist_ok=True)
     run([sys.executable,'make_deck_macros_v1.py'])
     run([sys.executable,'make_slide_figures_v1.py','--missing-only'])
+    run([sys.executable,'make_slide_figures_v41.py'])
     jobs=list(JOBS.values()) if a.variant=='all' else [JOBS[a.variant]]
     for job in jobs:
         print('Building '+job,flush=True)
