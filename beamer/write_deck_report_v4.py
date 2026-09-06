@@ -10,7 +10,7 @@ def main():
     rows=json.loads((HERE/'build/slide_table_v4.json').read_text(encoding='utf-8'))
     passed=sum(c['pass_'] for c in r['checks'])
     text=['# Beamer v4.1 — build and content review','',
-          'Authority: [the supplied content v2.1](../manuscript/JMP_seminar_deck_content_v2.md), updated 2026-09-06. '
+          'Authority: [the supplied content v2.1](../manuscript/JMP_seminar_deck_content_v2.md), updated 2026-09-07 with the corrected slide 12 speech. '
           '25 running-order frames; B1 in three blocks, then B2–B6. '
           '5b has four builds, 9b has two, and geography/sex on 19 has two. '
           'The 25-minute order is unchanged.','',

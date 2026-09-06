@@ -434,13 +434,13 @@ model at 35%.                                                                   
    Labour Force Survey 2016; validation only; no external moment enters the likelihood.
 
                                                                                                     13/25
-Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the uniform pay that, offered at every job in the household’s own
-                                                                                                                       opportunity distribution, reproduces the expected welfare it actually attains. It neutralizes pay
-                                                                                                                       differences within the reachable set; differences in the set itself remain, and are exactly what the
-                                                                                                                       decomposition attributes. The inversion uses the same coalition’s set and preferences on both sides.
-                                                                                                                       Inequality is then evaluated under four states — each household’s own preferences and environment,
-                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)                                     and each replaced by a common reference — using the same measure, the same reference and the
-    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained              same numerical support in all four. The fully common state is the exhaustiveness test: it must be zero.
+Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the uniform pay across the jobs a household can reach that would
+                                                                                                                       leave it exactly as well off as its actual opportunity situation. Inequality is then evaluated under four
+                                                                                                                       states - each household’s own preferences and environment, and each replaced by a common reference
+                                                                                                                       - using the same measure, the same reference construction and the same numerical support in all four.
+                                                                                                                       The fully common state is the exhaustiveness test: it must be zero.
+                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)
+    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained
    expected welfare.
 
 

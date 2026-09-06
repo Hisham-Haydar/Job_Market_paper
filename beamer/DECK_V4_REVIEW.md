@@ -1,6 +1,6 @@
 # Beamer v4.1 — build and content review
 
-Authority: [the supplied content v2.1](../manuscript/JMP_seminar_deck_content_v2.md), updated 2026-09-06. 25 running-order frames; B1 in three blocks, then B2–B6. 5b has four builds, 9b has two, and geography/sex on 19 has two. The 25-minute order is unchanged.
+Authority: [the supplied content v2.1](../manuscript/JMP_seminar_deck_content_v2.md), updated 2026-09-07 with the corrected slide 12 speech. 25 running-order frames; B1 in three blocks, then B2–B6. 5b has four builds, 9b has two, and geography/sex on 19 has two. The 25-minute order is unchanged.
 
 Verifier: **PASS — 56/56 checks.** All three logs have zero errors, zero overfull boxes and zero underfull boxes. PDF headlines match the content document; supplied captions and prose are present; running speaker notes match both the source and the rehearsal PDF. The text-layer gate finds zero forbidden labels in every built PDF and every active slide figure.
 
@@ -91,4 +91,4 @@ The build regenerates number macros and the seven v4.1 panels, reuses existing v
 
 Machine-readable evidence: [verification](build/verification_v4.json), [slide table](build/slide_table_v4.json).
 
-Content SHA-256: `3612b08127915fe43d02de63860915997d36816bab5a5a85edad090a3dfffd27`.
+Content SHA-256: `dcdb2f3395026d97c64c5e3ddc72b49656241f613e495de71233914b59ff93a8`.
