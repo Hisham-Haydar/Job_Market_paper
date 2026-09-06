@@ -50,10 +50,6 @@ Counts are measured from the PDF text layer: headline, prose, table/equation tex
 | B5 | B5 — Where the welfare family comes from | equations | 1 | 53 |
 | B6 | B6 — The RUM benchmark details | table | 1 | 35 |
 
-## Remaining authored-text inconsistency
-
-Slide 12’s equation and caption now use the supplied flat-pay correction. Its existing speech still says “the income at a common reference leisure”. The request supplied no replacement speech for that slide, so it is preserved under the verbatim-script requirement. A replacement opening sentence was requested. The verifier certifies fidelity to the supplied text, not resolution of this inconsistency.
-
 ## Source and implementation notes
 
 - **Slide 18 corrected:** the full 50–400 range and the 100–400 range now have separate macros. The source `MNL/experiments/JMP_SEMINAR_SPRINT/figures/figS6_02_coefficient_stability.csv` gives a maximum absolute deviation of 0.213142 for R ≥ 100, which rounds to 0.2; including R = 50 gives 0.562005, displayed as 0.56. Both are maximum absolute deviations relative to the R=100 estimate, scaled by its robust standard error.
@@ -95,4 +91,4 @@ The build regenerates number macros and the seven v4.1 panels, reuses existing v
 
 Machine-readable evidence: [verification](build/verification_v4.json), [slide table](build/slide_table_v4.json).
 
-Content SHA-256: `dfb90f01ab631dc759de9d49e6b9f7301a91225202470ceaa905314221638925`.
+Content SHA-256: `3612b08127915fe43d02de63860915997d36816bab5a5a85edad090a3dfffd27`.

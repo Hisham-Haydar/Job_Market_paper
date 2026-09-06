@@ -434,13 +434,13 @@ model at 35%.                                                                   
    Labour Force Survey 2016; validation only; no external moment enters the likelihood.
 
                                                                                                     13/25
-Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the income at a common reference leisure that would leave the
-                                                                                                                       household as well off as its opportunity situation does. Inequality is then evaluated under four states —
-                                                                                                                       each household’s own preferences and environment, and each replaced by a common reference — using
-                                                                                                                       the same measure, the same reference and the same numerical support in all four. The fully common
-                                                                                                                       state is the exhaustiveness test: it must be zero.
-                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)
-    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained
+Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the uniform pay that, offered at every job in the household’s own
+                                                                                                                       opportunity distribution, reproduces the expected welfare it actually attains. It neutralizes pay
+                                                                                                                       differences within the reachable set; differences in the set itself remain, and are exactly what the
+                                                                                                                       decomposition attributes. The inversion uses the same coalition’s set and preferences on both sides.
+                                                                                                                       Inequality is then evaluated under four states — each household’s own preferences and environment,
+                           Wi1 = w :      Ωi (flat pay w on own set) = Ωi (actual)                                     and each replaced by a common reference — using the same measure, the same reference and the
+    i.e. the uniform pay w over the household’s own opportunity distribution that reproduces its attained              same numerical support in all four. The fully common state is the exhaustiveness test: it must be zero.
    expected welfare.
 
 
@@ -461,8 +461,10 @@ environment.                                                                    
                                                                                                                   two orders, which is what makes the attribution order-independent and exhaustive. Inside the
                                                                                                                   environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions:
                                                                                                                   equalizing the environment by itself removes 77 per cent of inequality; the Shapley value, which
-                                       I00 = 0.134              I01 = 0.031                                       averages over the order in which preferences and environment are equalized, attributes 94 per cent to it.
+                                       I00 = 0.134              I01 = 0.031                                       averages over the order in which preferences and environment are equalized, attributes 94 per cent to
+                                                                                                                  it. Every share on this slide is on the raw welfare basis; the equivalized basis is the companion, and the
                                        I10 = 0.148              I11 = 0.000
+                                                                                                                  two are always named.
 
 
                              Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085

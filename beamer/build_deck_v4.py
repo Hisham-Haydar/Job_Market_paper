@@ -22,7 +22,14 @@ def main():
     env['MPLCONFIGDIR']=str(BUILD/'matplotlib')
     env['PYTHONIOENCODING']='utf-8'
     if os.name=='nt':
-        env['PATH']=r'C:\Program Files\Git\usr\bin'+os.pathsep+env['PATH']
+        # Git's usr\bin carries the perl latexmk needs. But Git's mingw64\bin
+        # ships a Glyph & Cog pdftotext with no -bbox (it exits 99 on the word
+        # -bbox the verifier reads), so MiKTeX's Poppler build goes in FRONT.
+        poppler=Path(os.path.expanduser(
+            r'~\AppData\Local\Programs\MiKTeX\miktex\bin\x64'))
+        head=[str(poppler)] if (poppler/'pdftotext.exe').is_file() else []
+        env['PATH']=os.pathsep.join(
+            head+[r'C:\Program Files\Git\usr\bin',env['PATH']])
     def run(args,**kw):
         return subprocess.run(args,cwd=HERE,env=env,check=True,**kw)
     BUILD.mkdir(exist_ok=True)

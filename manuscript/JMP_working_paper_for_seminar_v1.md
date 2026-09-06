@@ -107,8 +107,10 @@ The preferred specification carries **41 estimated structural parameters**, of
 which four factors describe availability — job access, hours, occupation, and an
 occupation-conditional log-normal wage-offer technology — and the rest describe
 tastes. Welfare is money-metric: each household's equivalent income at a common
-reference pay, which compensates for pay and holds the household responsible for
-its own opportunity set. The inequality of that measure is then decomposed, by an
+reference pay — the uniform pay that, offered at every job in the household's own
+opportunity distribution, reproduces its attained expected welfare, so that pay
+differences within the reachable set are neutralised while differences in the set
+itself remain and are what the decomposition attributes. The inequality of that measure is then decomposed, by an
 Owen value over a coalition structure that puts preferences against the complete
 environment, into preferences and a complete environment split into job access,
 earning opportunities, and endowments and needs. Two methodological ingredients make the
@@ -119,14 +121,26 @@ with the channel that equalises household composition. With both in place the
 fully common state is numerically zero and the four channels are exhaustive by
 measurement rather than by assumption.
 
+**The paper-facing question is what changes in the measurement and attribution of
+well-being inequality when heterogeneous job opportunities are omitted.** Fitting
+the same data with no opportunity object — a conventional common-choice-set model
+— measured money-metric inequality is **24.2 per cent lower** on the raw basis
+(15.3 lower equivalized), the preference *share* of the decomposition is
+essentially unchanged at 6.4 against 6.3 per cent, and the missing market-side
+contribution is reallocated within the non-preference environment rather than
+into preferences. The misattribution to taste is on the behavioural side: the
+availability constants reappear in the benchmark's utility index at a mean
+absolute difference of 0.037, and the male-minus-female leisure intercept gap
+reverses sign, $+0.428$ to $-1.991$.
+
 The headline result is stated with its guards.
 
 > **Within the currently modelled non-preference environment, budget-side
 > endowments and needs are the largest nested contribution under both positive
 > models and both reference-preference conventions.** On the final singles
-> model with the female reference, equalising the whole non-preference environment
-> removes 93.7 per cent of baseline money-metric inequality (±0.6) and equalising
-> preferences a further 6.3 per cent (±0.6); inside the environment, endowments
+> model with the female reference, on the raw basis, 93.7 per cent of baseline
+> money-metric inequality (±0.6) is attributed to the whole non-preference environment and
+> 6.3 per cent (±0.6) to preferences; inside the environment, endowments
 > and needs carry 58.2 per cent (±1.5), earning opportunities 20.6 (±1.6) and job
 > access 14.9 (±1.1), so that job access and earning opportunities together — the
 > two channels that are about the market rather than the budget — carry 35.5 per
@@ -135,6 +149,13 @@ The headline result is stated with its guards.
 > sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the nested
 > order is endowments and needs above earning opportunities above job access in
 > every one.
+
+Both headline shares carry two distinct kinds of uncertainty, never merged: the
+$\pm$ figures above are eight-scramble integration precision, while the CR1
+parameter intervals — about five and a half times wider — are
+**[4.22, 10.89]** for the preference share and **[89.11, 95.78]** for the
+environment share on the raw basis. The environment remains dominant, and the
+preference contribution's sign constant, across the whole parameter interval.
 
 Four qualifiers travel with that sentence and are not optional: it is structural
 and model-conditional; it is not causal; it is provisional pending the bounded
@@ -194,9 +215,9 @@ explicitly, and separates them in one likelihood, can.
 > indifference curves in consumption–leisure space; job access, as the density of
 > feasible packages over weekly hours, with the statutory week marked; earning
 > opportunities, as occupation-conditional wage-offer densities; the chosen job, as
-> a marked point; and attained welfare, as the money-metric level $W^1$ — the flat
-> consumption that, offered at every job in the household's own set, leaves it
-> exactly as well off as it is, drawn as a horizontal line the household's own
+> a marked point; and attained welfare, as the money-metric level $W^1$ — the
+> uniform pay that, offered at every job in the household's own opportunity
+> distribution, reproduces its attained expected welfare, drawn as a horizontal line the household's own
 > indifference curve through its chosen job reaches at its largest feasible
 > leisure. In **(A)** the two households share one indifference map (drawn faintly
 > in grey behind them) and face different opportunity environments; in **(B)** they
@@ -271,47 +292,79 @@ how every coefficient below is read.
 
 ### 1.3 The headline, stated plainly
 
+**The paper-facing question is: *what changes in the measurement and attribution
+of well-being inequality when heterogeneous job opportunities are omitted?* The
+benchmark result answers it directly.** Fitting the same data with no opportunity
+object at all — a conventional common-choice-set model, the one a careful analyst
+would otherwise have estimated — measured money-metric inequality is **24.2 per
+cent lower** on the raw basis and 15.3 per cent lower equivalized. What the
+omission does to *attribution* is not what the premise of this literature
+suggests: the preference share barely moves, from 6.3 to 6.4 per cent, while the
+missing market-side contribution is reallocated overwhelmingly *within* the
+non-preference environment — 36 to 49 per cent of it to endowments and needs and
+most of the remainder out of the measured total altogether, with $-4$ per cent
+reaching preferences. The misattribution to taste is real but it is on the
+**behavioural** side: the availability constants reappear in the benchmark's
+utility index at a mean absolute difference of 0.037, and the male-minus-female
+leisure intercept gap reverses sign, from $+0.428$ to $-1.991$. So omitting
+heterogeneous opportunities understates the level of measured inequality by
+roughly a quarter, misdescribes the environment's internal composition, and
+reverses a headline preference contrast between the sexes — while leaving the
+preference *share* of the decomposition almost unchanged. §6.7 develops this,
+including why a flat share and a falling level are consistent.
+
+The rest of this subsection states what the model, once it carries the
+opportunity object, finds.
+
 Welfare here is money-metric and, specifically, it is *equivalent income at a
-common reference pay*: the flat consumption level that, offered at every job in
-the household's own opportunity set, would leave the household exactly as well off
-as it actually is. This measure compensates for pay and holds the household
-responsible for its own set — it prices what you can get, never what it pays.
-The inequality of that measure across households is what gets decomposed.
+common reference pay*: the uniform pay that, offered at every job in the
+household's own opportunity distribution, reproduces the expected welfare the
+household actually attains. It neutralises pay differences within the reachable
+set; differences in the set itself remain, and are what the decomposition
+attributes. It prices what you can get, never what it pays. The inversion uses
+the same coalition's set and preferences on both sides (§3.3). The inequality of
+that measure across households is what gets decomposed.
 
 The decomposition is an Owen value over the coalition structure
 $\{\{\mathrm{pref}\},\{\mathrm{acc},\mathrm{earn},\mathrm{needs}\}\}$: an exhaustive two-player game between preferences and the
 complete environment, with the environment's three internal channels entering as
-a nested grouped layer. The contribution of a channel is the fall in measured
-inequality when that channel is equalised across households, valued by the Owen
-rule so that the answer does not depend on the order in which channels are
-equalised.
+a nested grouped layer. The contribution of a channel is the share of measured
+inequality *attributed to* it by the Owen rule — an average of the falls in
+inequality it produces across the orders in which channels may be equalised, so
+that the answer does not depend on any one order. It is therefore not the fall
+from equalising that channel alone, and §7.3 prints both numbers side by side to
+keep the two apart. Every share below is on the raw basis unless the
+coalition-consistent equivalized basis is named.
 
 On the preferred singles specification, the picture is this.
 
-- **The environment dominates.** Equalising the whole non-preference environment
-  removes between **89.0 and 93.7 per cent** of baseline money-metric inequality
+- **The environment dominates.** Between **89.0 and 93.7 per cent** of baseline
+  money-metric inequality is attributed to the whole non-preference environment
   under the two ratified reference-preference conventions and on both the raw and
   the equivalized basis. Across all eight rows of the headline table — which adds
-  the benchmark specification — the range is 89.0 to 96.7 per cent. Equalising
-  preferences removes the complement, 3.3 to 11.0 per cent, with a sign that does
-  not change anywhere.
+  the benchmark specification — the range is 89.0 to 96.7 per cent. The
+  complement, 3.3 to 11.0 per cent, is attributed to preferences, with a sign
+  that does not change anywhere. These are Shapley/Owen attributions averaged
+  over the orders of equalisation, not the effect of equalising one channel
+  alone; §7.3 prints the single-order numbers beside them.
 - **Inside the environment, the two market channels are substantial and the
   budget channel is larger.** On the preferred model with the female reference
-  and the raw basis, equalising job access removes **14.9 per cent** (±1.1) of
-  baseline inequality and equalising earning opportunities **20.6 per cent**
-  (±1.6). Taken together — as one coalition, jackknifed as one quantity — the two
-  market channels remove **35.5 per cent** (±0.9). On the coalition-consistent
-  equivalized basis the combined market figure is **25.9 per cent** (±0.9).
+  and the raw basis, **14.9 per cent** (±1.1) of baseline inequality is
+  attributed to job access and **20.6 per cent** (±1.6) to earning
+  opportunities. Taken together — as one coalition, jackknifed as one quantity —
+  the two market channels account for **35.5 per cent** (±0.9). On the
+  coalition-consistent equivalized basis the combined market figure is
+  **25.9 per cent** (±0.9).
 - **Endowments and needs are the largest single nested contribution.**
   **58.2 per cent** (±1.5) on the preferred model, female reference, raw basis;
   53.2 to 68.9 per cent across the eight rows; and the order endowments and
   needs above earning opportunities above job access holds in
   every one of them.
 
-These are not statements that job opportunities are unimportant. Removing all
-between-household variation in job access alone removes about a seventh of
-measured money-metric inequality, and removing the two market channels together
-removes about a third of it on the raw basis. What the numbers say is that in
+These are not statements that job opportunities are unimportant. About a seventh
+of measured money-metric inequality is attributed to job access, and about a
+third to the two market channels together on the raw basis. What the numbers say
+is that in
 *this* population — French single adults with a well-defined labour-supply
 decision, under the French 2016 tax–benefit system — the budget side of the
 environment carries more of the measured dispersion than the market side does.
@@ -707,10 +760,31 @@ rather than a technical convenience.
 **The carrier measure: $W^1$, equivalent income at a common reference pay.**
 $W^1$ builds $B$ from the household's **own** opportunity set $A$ with **pay
 ignored**: $z'=(c',j')\in B \iff j'\in A$ and $c'=w$, a flat consumption level $w$
-at every job in $A$. The money-metric anchor is that flat level $w$ itself. $W^1$
-is therefore the equivalent income at a common reference pay: it compensates for
-pay and holds the household responsible for its set — it prices *what you can
-get*, never *what it pays*. It is the measure the decomposition is carried on.
+at every job in $A$. The money-metric anchor is that flat level $w$ itself.
+
+Stated in one sentence, and in these terms wherever $W^1$ is described in this
+paper: **$W^1_i$ is the uniform pay that, offered at every job in household $i$'s
+own opportunity distribution, reproduces the expected welfare the household
+actually attains.** Three consequences follow, and they are the whole normative
+content of the measure.
+
+1. **It neutralises pay differences within the reachable set.** Because the same
+   flat $w$ is offered at every job in $A_i$, no variation in what jobs *pay* —
+   within the household's own set — survives into the measure. That is the
+   compensation half of the responsibility cut.
+2. **Differences in the set itself remain, and are what the decomposition
+   attributes.** $W^1$ does not equalise which jobs are reachable. Two households
+   with the same tastes and different opportunity distributions have different
+   $W^1$, and it is exactly that residual dispersion the four channels are
+   attributed over. The measure prices *what you can get*, never *what it pays*.
+3. **The inversion uses the same coalition's set and preferences on both
+   sides.** The indifference that defines $W^1$ is solved with $u$ and the
+   opportunity index taken from the coalition being evaluated on the attained
+   side *and* on the reference side; this is the coalition-consistent inversion
+   below, and it is what makes the four-channel accounting exhaustive rather
+   than approximately so.
+
+$W^1$ is the measure the decomposition is carried on.
 
 **The normative-reference sensitivities: $W^4$ and $W^6$.** $W^4$ takes the
 non-employment option as its reference and is a Full Compensation reading; $W^6$
@@ -1159,6 +1233,37 @@ neighbour and position invariance are exact.
 ---
 
 ## 5. Estimation and identification
+
+**The restrictions this paper maintains, stated before any estimate.** A single
+observed job cannot, by itself, tell tastes from availability: the two enter the
+index additively, as $u_{ij}$ and $\log g_{ij}$, and any observed choice is
+consistent with many splits between them. Separation here comes from maintained
+restrictions, not from the data alone, and they are these. **(i) Exclusion.**
+The availability object is a function of variables — local labour-market
+conditions, the household's region and its unemployment rate, the statutory-week
+structure of hours, and the occupation-conditional wage-offer technology — that
+are excluded from the taste index; the taste index is a function of consumption
+and leisure, demographics and household composition, which do not enter
+availability. **(ii) Parametric form.** The wage-offer technology is
+log-normal conditional on occupation, and preferences are Box–Cox in consumption
+and leisure; neither is nonparametrically identified on these data. **(iii)
+Scale and location normalisations**, including the normalisation of the
+opportunity density over the analytic support, without which the two blocks are
+identified only up to an offsetting shift. **(iv) A common integration support**,
+so that finite quadrature variation cannot enter as economic variation.
+
+None of these is testable against the alternative that motivates the paper. In
+particular, a common-choice-set model of the same data fits the marginals as well
+or better (§6.7), so the fit does not adjudicate between the two architectures —
+the restrictions do, and they are normative and structural choices made
+explicit here rather than established by the data. What the design *can* do, and
+does, is show where variation relocates when the restrictions are changed (§6.5,
+§6.7) and what fails when they are relaxed (§5.4). One restriction is known not
+to hold cleanly and is disclosed wherever the affected channel is used: the
+access density may combine personal capability with market availability, so the
+ability set and the opportunity set are not separately identified, and no
+ordering between job access and earning opportunities is claimed anywhere in this
+paper.
 
 ### 5.1 The sampled-alternatives estimator
 
@@ -1764,7 +1869,26 @@ with no opportunity object books the missing opportunity share as preference
 heterogeneity. It does not. The preference *share* of the decomposition is
 **6.4 per cent under the benchmark against 6.3 per cent under the preferred
 model**, a difference of $+0.1$ percentage points against a numerical band of
-$\pm 0.4$. The omitted market-side share has to go somewhere, and the three
+$\pm 0.4$.
+
+**The mechanism, and why a share and a level say different things here.** A
+share is a ratio, and in this comparison its denominator moves. Measured
+inequality falls by 24 per cent when the opportunity object is dropped, so a
+constant share is *not* a constant amount of attributed inequality. In absolute
+Gini points the preference contribution falls from **0.008464 under the preferred
+model to 0.006568 under the benchmark** — a decline of 22.4 per cent — while
+its share rises from 6.30 to 6.45 per cent. Both statements are true of the same
+two numbers: the preference contribution shrinks in absolute terms almost exactly
+in step with the total, which is what leaves the ratio flat. The correct reading
+is therefore that the benchmark does not *inflate* what it attributes to
+preferences in either sense — it attributes slightly less in levels and an
+indistinguishable amount in share — and that the apparent stability of the share
+is a fact about the numerator and denominator falling together, not about the
+preference contribution standing still. Wherever this comparison is used, the
+basis of every share is stated with it, because a share that is flat while its
+denominator moves a quarter is easy to misread as a quantity that did not change.
+
+The omitted market-side share has to go somewhere, and the three
 destinations can be measured exactly, because the two models are evaluated on the
 same integration scrambles and the arithmetic closes as an identity. Of the
 **35.5 per cent** that job access and earning opportunities carry in the preferred
@@ -1814,15 +1938,17 @@ The misattribution to tastes is real, but it is on the **behavioural** side, in 
 preference parameters themselves: the hours constants and the reversed sex gap
 above. A conventional model of these data would not have reported a much larger
 preference share of welfare inequality. It would have reported a *smaller total*,
-a budget channel doing work the market channels should have done, and a sex
-contrast in tastes pointing the wrong way.
+a budget channel carrying dispersion the market channels account for here, and a
+sex contrast in tastes pointing in the opposite direction.
 
 That distinction matters for how this paper's contribution should be read. The
 case for an opportunity object is not that it rescues a welfare decomposition from
 attributing everything to taste — on this measure it does not. It is that without
-one, the estimated preferences are wrong in an economically consequential
-direction, the level of measured inequality is understated by a fifth to a
-quarter, and the environment's internal composition is misdescribed.
+one, the estimated preferences differ in an economically consequential direction,
+the level of measured inequality is a fifth to a quarter lower, and the
+environment's internal composition is described differently. Which of the two
+descriptions is preferred is a question about the maintained restrictions, not
+one the fit settles; §5 states the restrictions this paper maintains.
 
 **Figure 17** shows the two decompositions side by side. The benchmark's own
 decomposition is internally exhaustive on the same test the preferred model passes,
@@ -1854,8 +1980,10 @@ on the raw basis:
 | benchmark, male structural zero | 0.139434 ± 0.002905 | 0.140756 ± 0.003056 | 0.015506 ± 0.000802 | $0.000\mathrm{e}{+}00$ |
 
 Baseline money-metric inequality among French single adults is a Gini of about
-**0.134** under the preferred model. Equalising the environment alone takes it to
-0.031 — under a quarter of where it started. Equalising both takes it to
+**0.134** under the preferred model. Equalising the environment alone — a
+single-order counterfactual, not the attributed share — takes it to
+0.031, under a quarter of where it started, a fall of 77 per cent. Equalising
+both takes it to
 numerical zero. **Exhaustiveness passes**, against a rule requiring
 $|I^{11}| \le 0.00125$ and $\le 1$ per cent of $I^{00}$, and it passes at
 numerical zero rather than inside the tolerance. Both accounting identities close
@@ -1893,9 +2021,10 @@ bands on their parts, for a reason given below.
 contribution, $C_{\mathrm{env}}$ the contribution of the complete non-preference
 environment, and $C_{\mathrm{acc}}$, $C_{\mathrm{earn}}$, $C_{\mathrm{needs}}$
 the nested contributions of job access, earning opportunities, and household
-endowments and needs. $I^{00}$ is baseline inequality. Each is an Owen value:
-the licensed reading is that equalising that channel across households removes
-that share of baseline money-metric inequality.*
+endowments and needs. $I^{00}$ is baseline inequality. Each is an Owen value —
+an average over the orders in which channels are equalised: the licensed reading
+is that this share of baseline money-metric inequality is *attributed to* that
+channel, not that equalising it alone would remove that share.*
 
 **Table 7.1a — Raw basis** (Gini points of $W^1$; ratios in per cent).
 
@@ -1945,9 +2074,9 @@ a refusal instead of the sentence. It printed the sentence.
 > **Within the currently modelled non-preference environment, budget-side
 > endowments and needs are the largest nested contribution under both positive
 > models and both reference-preference conventions.** On the final singles
-> model with the female reference, equalising the whole non-preference environment
-> removes 93.7 per cent of baseline money-metric inequality (±0.6) and equalising
-> preferences a further 6.3 per cent (±0.6); inside the environment, endowments
+> model with the female reference, on the raw basis, 93.7 per cent of baseline
+> money-metric inequality (±0.6) is attributed to the whole non-preference environment and
+> 6.3 per cent (±0.6) to preferences; inside the environment, endowments
 > and needs carry 58.2 per cent (±1.5), earning opportunities 20.6 (±1.6) and job
 > access 14.9 (±1.1), so that job access and earning opportunities together — the
 > two channels that are about the market rather than the budget — carry 35.5 per
@@ -1956,6 +2085,29 @@ a refusal instead of the sentence. It printed the sentence.
 > sign, the endowments-and-needs share 53.2 to 68.9 per cent, and the nested
 > order is endowments and needs above earning opportunities above job access in
 > every one.
+
+**These are attributions, not single-order counterfactuals, and the distinction
+is quantitatively large.** Equalising the environment alone reduces inequality by
+**77 per cent** ($I^{00} \to I^{01}$, 0.134277 to 0.030968); equalising
+preferences alone *raises* it by **10 per cent** ($I^{00} \to I^{10}$, 0.134277
+to 0.148316). The Shapley attribution averages the two orders — the environment
+entering first, and the environment entering after preferences — and returns
+**93.7 per cent to the environment and 6.3 per cent to preferences**. Neither
+attributed share is the result of any one equalisation, and the environment's
+93.7 per cent is not a claim that equalising the environment would remove 93.7
+per cent of measured inequality; on its own it removes 77. This sentence is
+generated with the table and travels with every share the paper prints.
+
+**The two headline shares, with both kinds of uncertainty, on the raw basis.**
+The preference share is **6.30 per cent**, with an integration band of
+[5.69, 6.91] and a **CR1 parameter interval of [4.22, 10.89]**; the environment
+share is **93.70 per cent**, band [93.09, 94.31], **CR1 interval
+[89.11, 95.78]**. The parameter interval is about five and a half times the
+width of the integration band, and the two are never merged: the $\pm$ figures
+printed in Table 7.1 and throughout are integration precision alone. The
+environment remains dominant, and the sign of the preference contribution
+constant, across the whole parameter interval. Appendix F states what that
+interval is conditional on.
 
 The interpretation discipline that travels with it is quoted from the record, and
 its four qualifiers are not optional:
@@ -1971,10 +2123,16 @@ its four qualifiers are not optional:
 Four consequences for how this paper may be read, stated once here and observed
 throughout.
 
-1. **No channel "explains" a percentage.** The licensed form is: *equalising
-   channel $X$ across households removes $Y$ per cent of baseline money-metric
-   inequality*. A contribution is the value of an equalisation operator in a
-   cooperative game, not a variance share and not a causal effect.
+1. **No channel "explains" a percentage, and no contribution is a single
+   equalisation.** The licensed form is: *$Y$ per cent of baseline
+   money-metric inequality is attributed to channel $X$*, or equivalently
+   *channel $X$ accounts for $Y$ per cent*. A contribution is the value of an
+   equalisation operator in a cooperative game — a Shapley/Owen average over
+   the orders in which channels are equalised — not a variance share, not a
+   causal effect, and **not** the fall in inequality from equalising that
+   channel alone. The two are numerically different here and the difference is
+   large: the single-order numbers are printed immediately below so that the
+   attribution cannot be misread as either of them.
 2. **The bands are integration precision.** They say how well the integral is
    resolved on the basis it was computed on. They are **not** sampling confidence
    intervals. Sampling uncertainty of the welfare functionals **is** propagated,
@@ -2292,12 +2450,13 @@ the two references are reported as a range and never averaged.*
 The reading, generated from the table:
 
 > **Within job access, the geographic terms carry essentially the whole channel.**
-> On the final singles model with the female reference, equalising the geographic
-> access environment removes 13.05 per cent (±0.74) of baseline money-metric
-> inequality on the raw basis and 9.87 per cent (±0.55) on the equivalized basis,
+> On the final singles model with the female reference, 13.05 per cent (±0.74) of
+> baseline money-metric inequality is attributed to the geographic access
+> environment on the raw basis and 9.87 per cent (±0.55) on the equivalized basis,
 > against a whole job-access channel of 14.90 per cent (±1.10) and 9.68 per cent
 > (±0.68). Geography is therefore 87.6 per cent (±3.9) of the job-access channel
-> raw and 101.9 per cent (±3.1) equivalized. Across all four rows the geographic
+> raw — CR1 parameter interval [74.02, 98.04] — and 101.9 per cent (±3.1)
+> equivalized. Across all four rows the geographic
 > share of job access runs 87.6 to 105.7 per cent, and the geographic share of
 > total measured inequality 9.13 to 13.05 per cent.
 
@@ -3157,19 +3316,24 @@ occupation, every package is priced through the actual tax–benefit system, and
 household-specific opportunity density is estimated jointly with Box–Cox
 preferences in a single likelihood carrying 41 estimated structural parameters. It
 then carries that estimated density into a money-metric welfare measure —
-equivalent income at a common reference pay, which compensates for pay and holds
-the household responsible for its own opportunity set — and decomposes the
+equivalent income at a common reference pay, the uniform pay that, offered at
+every job in the household's own opportunity distribution, reproduces its
+attained expected welfare, neutralising pay differences within the reachable set
+while differences in the set itself remain — and decomposes the
 inequality of that measure, by an Owen value on an exhaustive four-channel game,
 into preferences, job access, earning opportunities, and endowments and needs.
 
 Three things came out of it.
 
-**Substantively**, the environment dominates: equalising the whole non-preference
-environment removes 89 to 94 per cent of baseline money-metric inequality under
-the preferred model's two reference conventions, and equalising preferences the
-complement, with a constant sign. Inside the environment, the two market channels
-are substantial — job access and earning opportunities together remove 35.5 per
-cent of baseline inequality on the raw basis and 25.9 per cent on the
+**Substantively**, the environment dominates: 89 to 94 per cent of baseline
+money-metric inequality is attributed to the whole non-preference environment
+under the preferred model's two reference conventions, and the complement to
+preferences, with a constant sign. These are attributions averaged over orders of
+equalisation, not the effect of equalising one channel alone — on its own the
+environment accounts for a 77 per cent fall and preferences alone for a 10 per
+cent rise (§7.3). Inside the environment, the two market channels are substantial
+— job access and earning opportunities together account for 35.5 per cent of
+baseline inequality on the raw basis and 25.9 per cent on the
 coalition-consistent equivalized basis — and the budget side is larger still, with
 endowments and needs the largest nested contribution in every one of the eight rows
 of the exact table. None of that says job opportunities are unimportant. It says
@@ -3800,7 +3964,7 @@ represent the number of jobs available to the individual."*
 | **9** | `figS6_06_participation_vs_draws` | **Participation against the number of sampled alternatives.** Observed and model-implied participation, and the fit error of the participation margin, across $R$. Observed sample against model-implied; singles. |
 | **10** | `figW05_welfare_vs_R` | **The welfare decomposition against the number of sampled alternatives.** Baseline inequality and the four channel contributions at $R \in \{50,100,200,400\}$, with only the estimated parameter vector varying — welfare basis, integration support, operators and inversion are the same objects at every rung. **Model-implied**, singles, raw basis, final singles model at the female reference. |
 | **11** | `figW01_welfare_distributions` | **The four principal welfare states.** Distributions and Lorenz curves of money-metric welfare — equivalent income at a common reference pay — under own preferences and own environment, reference preferences and own environment, own preferences and reference environment, and both at reference. **Model-implied**, singles, shown on both the raw and the coalition-consistent equivalized basis. The reference convention is the female preference block (primary). These are well-being levels under stated reference conventions; none is a compensating variation. |
-| **12** | `figW02_headline_decomposition` | **Preferences against the complete environment.** Signed Owen contributions to the inequality of money-metric welfare, with numerical-integration bands, under both positive models and both reference-preference conventions. **Model-implied**, singles. A contribution is the value of an equalisation operator in a cooperative game: the licensed reading is *equalising this channel across households removes this share of baseline inequality*. Contributions may take either sign and are not shares of a positive total. Bands are eight-scramble jackknife integration precision, **not** sampling confidence intervals. |
+| **12** | `figW02_headline_decomposition` | **Preferences against the complete environment.** Signed Owen contributions to the inequality of money-metric welfare, with numerical-integration bands, under both positive models and both reference-preference conventions. **Model-implied**, singles. A contribution is the value of an equalisation operator in a cooperative game, averaged over orders: the licensed reading is *this share of baseline inequality is attributed to this channel*, not that equalising it alone removes that share. Contributions may take either sign and are not shares of a positive total. Bands are eight-scramble jackknife integration precision, **not** sampling confidence intervals. |
 | **13** | `figW03_nested_environment` | **The environment, split three ways.** The nested split of the environment contribution into job access, earning opportunities, and household endowments and needs, with numerical-integration bands, under both positive models and both reference conventions. **Model-implied**, singles, raw and equivalized. No ordering is claimed between job access and earning opportunities; the point estimates are printed and the ordering claim is declined (§7.3). Bands are integration precision. |
 | **14** | `figE1_matched_pair` | **Same estimated preferences, same observed job, most different estimated opportunities.** Two real single-adult households selected by a rule fixed before any household was inspected: among 19,116 admissible pairs sharing the observed employment state, occupation, hours band and wage quintile, the pair at or below the tenth percentile of preference distance that maximises opportunity distance. Panels: (a) the estimated preference profile; (b) the hours margin of the estimated opportunity density, scaled by the employment opportunity mass; (c) the estimated probability of an offer in each task-based occupation group; (d) the estimated wage-offer density given employment. **Panels (b)–(d) are estimated opportunity distributions, not choice distributions and not job draws**; no count of available jobs is shown or implied. Dashed lines mark the observed job. Households are described by aggregates only; no identifier is plotted. |
 | **15** | `figE1R_reverse_pair` | **Same estimated opportunities, same observed job, most different estimated preferences.** The mirror of Figure 14 under the same rule with the axes exchanged. Same panels, same reading: panels (b)–(d) are **estimated opportunity distributions, not job draws**. Households are described by aggregates only. |
@@ -4119,7 +4283,7 @@ repository. `SPRINT` abbreviates `MNL/experiments/JMP_SEMINAR_SPRINT`.*
 | prohibition | how it is observed |
 |---|---|
 | the exact table is the only source of percentages | every percentage in §1, §7 and §11 is read from `headline_decomposition_v1.csv`; no percentage is computed in prose |
-| no "job opportunities explain $X$ %" | the licensed form — *equalising channel $X$ removes $Y$ % of baseline money-metric inequality* — is used throughout and is stated as a rule in §7.3 |
+| no "job opportunities explain $X$ %" | the licensed form — *$Y$ % of baseline money-metric inequality is attributed to channel $X$* — is used throughout and is stated as a rule in §7.3, together with the single-order numbers (77 % environment-alone, $-10$ % preferences-alone) that the attribution must not be confused with |
 | no causal 35-hour language | the coefficient is named an institutionally motivated opportunity peak in §3.2, §4.2, §6.3 and §9; no counterfactual removing the statute exists anywhere |
 | no job-access-versus-earning-opportunities ordering claim | §1.3 and §7.3 print the point estimates and explicitly decline the ordering; the standing non-identification of the access density is stated with it |
 | couples numbers only with their sensitivity qualifier | §8.4 states the rule; the $C_{\mathrm{pref}}$ range 0.0014–0.0075 travels with every couples preference figure; §1.3, §8 and §11 say singles are the headline |
