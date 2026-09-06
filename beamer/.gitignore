@@ -6,6 +6,8 @@ build/*
 !build/JMP_seminar_deck_v1_rehearsal.pdf
 # the plain-text renderings, for reading and reviewing the deck
 !build/*_text.txt
+!build/verification_v4.json
+!build/slide_table_v4.json
 
 # stray intermediates if anyone compiles in place
 *.aux

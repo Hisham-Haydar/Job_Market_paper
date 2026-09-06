@@ -11,145 +11,32 @@
 
 % ---- sample: fig03_employment_obs_vs_pred.csv + the sampled-set design
 \newcommand{\NHouseholds}{1{,}555}
-\newcommand{\NAlternatives}{101}
 \newcommand{\NDrawnJobs}{100}
 \newcommand{\NPricedRows}{157{,}055}
 
-% ---- SPRINT/figures/fig02_hours_bands_obs_vs_pred.csv
-\newcommand{\HoursStatObs}{0.2485}
-\newcommand{\HoursStatPred}{0.2520}
-\newcommand{\HoursStatObsPct}{24.85}
-\newcommand{\HoursStatPredPct}{25.20}
-\newcommand{\HoursMAE}{0.0083}
-\newcommand{\HoursNBins}{12}
-\newcommand{\HoursBandShortfall}{-0.034}
-
-% ---- SPRINT/figures/fig03_employment_obs_vs_pred.csv
-\newcommand{\EmpObs}{0.8708}
-\newcommand{\EmpPred}{0.8668}
-
-% ---- SPRINT/figures/fig04_occupation_obs_vs_pred.csv
-\newcommand{\OccMaxDev}{0.0070}
-\newcommand{\OccNCategories}{5}
-
-% ---- SPRINT/tables/wage_fit_within_sample_v1.csv
-\newcommand{\WageMedFitMen}{-0.86}
-\newcommand{\WageMedFitWomen}{0.34}
-\newcommand{\WageMedFitAll}{-0.29}
-
 % ---- SPRINT/figures/figX1_external_hours_lfs_validation.csv
-\newcommand{\ExtStatBandLFS}{37.2}
-\newcommand{\ExtStatBandObs}{34.3}
-\newcommand{\ExtStatBandPred}{34.6}
-\newcommand{\ExtStatBandLFSWomen}{40.6}
-\newcommand{\ExtStatBandLFSMen}{34.6}
-\newcommand{\ExtWishStatBand}{23.7}
 \newcommand{\ExtWishLongHours}{7.6}
 
-% ---- SPRINT/runs/figE1_matched_households/e1_matched_households_v1.json
-\newcommand{\EOneNPairs}{19{,}116}
-\newcommand{\EOneSeparation}{2.40}
-\newcommand{\EOneOmegaA}{4.61}
-\newcommand{\EOneOmegaB}{4.56}
-\newcommand{\EOnePiA}{0.851}
-\newcommand{\EOnePiB}{0.349}
-\newcommand{\EOneHours}{40}
-
 % ---- SPRINT/tables/headline_decomposition_v1.csv
-\newcommand{\IBaseline}{0.134277}
-\newcommand{\IBaselineShort}{0.134}
-\newcommand{\IPrefOnly}{0.148316}
-\newcommand{\IEnvOnly}{0.030968}
-\newcommand{\IEnvOnlyShort}{0.031}
 \newcommand{\IBothCommon}{0.000000}
-\newcommand{\StateBase}{0.1343}
-\newcommand{\StatePrefEq}{0.1483}
-\newcommand{\StateEnvEq}{0.0310}
-\newcommand{\StateBothEq}{0.0000}
 \newcommand{\LevelPref}{0.0085}
-\newcommand{\LevelEnv}{0.1258}
-\newcommand{\LevelAcc}{0.020}
-\newcommand{\LevelEarn}{0.028}
-\newcommand{\LevelNeeds}{0.078}
 \newcommand{\SharePref}{6.30}
-\newcommand{\BandPref}{0.61}
 \newcommand{\SharePrefEqv}{7.98}
 \newcommand{\ShareEnv}{93.70}
-\newcommand{\BandEnv}{0.61}
 \newcommand{\ShareEnvEqv}{92.02}
 \newcommand{\ShareAcc}{14.90}
-\newcommand{\BandAcc}{1.10}
 \newcommand{\ShareAccEqv}{9.68}
 \newcommand{\ShareEarn}{20.62}
-\newcommand{\BandEarn}{1.63}
 \newcommand{\ShareEarnEqv}{16.24}
 \newcommand{\ShareNeeds}{58.18}
-\newcommand{\BandNeeds}{1.47}
 \newcommand{\ShareNeedsEqv}{66.10}
 \newcommand{\ShareMarket}{35.51}
-\newcommand{\BandMarket}{0.95}
 \newcommand{\ShareMarketEqv}{25.92}
-\newcommand{\SharePrefMaleRef}{10.89}
-\newcommand{\ShareMarketMaleRef}{35.88}
-\newcommand{\SharePrefEqvMaleRef}{10.97}
-\newcommand{\SharePrefEnvLo}{3.3}
-\newcommand{\SharePrefEnvHi}{11.0}
-\newcommand{\RndPref}{6}
-\newcommand{\RndEnv}{94}
-\newcommand{\RndNeeds}{58}
-\newcommand{\RndMarket}{36}
 \newcommand{\RndPrefMaleRef}{11}
 
-% ---- SPRINT/tables/parameter_uncertainty_v1.csv
-\newcommand{\ParPrefLo}{4.22}
-\newcommand{\ParPrefHi}{10.89}
-\newcommand{\ParEnvLo}{89.11}
-\newcommand{\ParEnvHi}{95.78}
-\newcommand{\ParWidenLo}{3}
-\newcommand{\ParWidenHi}{8}
-\newcommand{\ParKInterior}{100}
-\newcommand{\ParGeoShareLo}{74}
-\newcommand{\ParGeoShareHi}{98}
-
-% ---- SPRINT/tables/nested_geographic_access_v1.csv
-\newcommand{\ShareGeoRaw}{13.05}
-\newcommand{\BandGeoRaw}{0.74}
-\newcommand{\ShareAccNestedRaw}{14.90}
-\newcommand{\GeoShareOfAccRaw}{87.62}
-\newcommand{\BandGeoShareOfAccRaw}{3.89}
-\newcommand{\LevelGeo}{0.018}
-\newcommand{\LevelOth}{0.002}
-\newcommand{\RndGeoShareOfAccRaw}{88}
-\newcommand{\ShareGeoEqv}{9.87}
-\newcommand{\BandGeoEqv}{0.55}
-\newcommand{\ShareAccNestedEqv}{9.68}
-\newcommand{\GeoShareOfAccEqv}{101.92}
-\newcommand{\BandGeoShareOfAccEqv}{3.11}
-
-% ---- SPRINT/figures/figG02_regional_access_environments.csv
-\newcommand{\NRegionalEnvs}{24}
-\newcommand{\RegMassALo}{0.768}
-\newcommand{\RegMassAHi}{0.858}
-\newcommand{\RegWelfALo}{1{,}302}
-\newcommand{\RegWelfAHi}{1{,}432}
-\newcommand{\RegMassBLo}{0.345}
-\newcommand{\RegMassBHi}{0.621}
-\newcommand{\RegWelfBLo}{419}
-\newcommand{\RegWelfBHi}{864}
-
 % ---- SPRINT/tables/subgroup_decomposition_v1.csv
-\newcommand{\SubAccMen}{19.58}
-\newcommand{\SubAccMenMaleRef}{18.44}
-\newcommand{\SubAccMenEqv}{16.74}
-\newcommand{\SubGeoMen}{16.22}
 \newcommand{\RndSubAccMen}{20}
-\newcommand{\SubAccWomen}{9.79}
-\newcommand{\SubAccWomenMaleRef}{9.02}
-\newcommand{\SubAccWomenEqv}{7.17}
-\newcommand{\SubGeoWomen}{13.08}
 \newcommand{\RndSubAccWomen}{10}
-\newcommand{\SubPrefMenFemRef}{-2.69}
-\newcommand{\SubPrefMenMaleRef}{+2.78}
 
 % ---- SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json
 \newcommand{\PrefNegLL}{18022.76}
@@ -170,11 +57,6 @@
 \newcommand{\BenchInequalityDropRaw}{-24.2}
 \newcommand{\BenchInequalityDropEqv}{-15.3}
 
-% ---- SPRINT/figures/figR01_benchmark_decomposition.csv
-\newcommand{\RelabelPref}{-4}
-\newcommand{\RelabelNeeds}{36}
-\newcommand{\RelabelOut}{68}
-
 % ---- SPRINT/figures/fig08_coefficients_by_block.csv
 \newcommand{\NEstimatedParams}{41}
 
@@ -184,5 +66,96 @@
 % ---- SPRINT/runs/external_hours_lfs/xh1_table_record_v1.json
 \newcommand{\WishLFS}{20.3}
 
-% 137 macros emitted.
+% ---- SPRINT/tables/headline_decomposition_v1.csv
+\newcommand{\VStateBase}{0.134}
+\newcommand{\VStatePref}{0.148}
+\newcommand{\VStateEnv}{0.031}
+\newcommand{\VStateCommon}{0.000}
+\newcommand{\VLevelEnv}{0.126}
+\newcommand{\VSharePref}{6.3}
+\newcommand{\VRoundPref}{6}
+\newcommand{\VShareEnv}{93.7}
+\newcommand{\VRoundEnv}{94}
+\newcommand{\VBandEnv}{0.6}
+\newcommand{\VRoundAcc}{15}
+\newcommand{\VRoundEarn}{21}
+\newcommand{\VRoundNeeds}{58}
+\newcommand{\VShareMarket}{35.5}
+\newcommand{\VRoundMarket}{36}
+
+% ---- SPRINT/tables/headline_decomposition_v1.csv; outward to 0.1 percentage points
+\newcommand{\VBandMarket}{1.0}
+
+% ---- SPRINT/tables/headline_decomposition_v1.csv
+\newcommand{\VMalePref}{10.9}
+\newcommand{\VMaleEnv}{89.1}
+
+% ---- SPRINT/tables/parameter_uncertainty_v1.csv
+\newcommand{\VParEnvHi}{95.8}
+
+% ---- SPRINT/figures/fig02_hours_bands_obs_vs_pred.csv
+\newcommand{\VHoursObs}{24.9}
+\newcommand{\VHoursPred}{25.2}
+\newcommand{\VHoursMAE}{0.008}
+
+% ---- SPRINT/figures/fig03_employment_obs_vs_pred.csv
+\newcommand{\VEmpObs}{87.1}
+\newcommand{\VEmpPred}{86.7}
+
+% ---- SPRINT/tables/wage_fit_within_sample_v1.csv
+\newcommand{\NEmployed}{1{,}348}
+
+% ---- SPRINT/tables/external_hours_validation_v1.csv
+\newcommand{\StatHours}{35}
+\newcommand{\VExtLFS}{37}
+\newcommand{\VExtObs}{34}
+\newcommand{\VExtPred}{35}
+
+% ---- SPRINT/runs/rum_benchmark_final/rb_step4_misclassification_v1.json
+\newcommand{\VPeakAvailability}{2.58}
+\newcommand{\VPeakTaste}{2.55}
+\newcommand{\VGapFinal}{+0.43}
+\newcommand{\VGapBench}{-1.99}
+
+% ---- SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json
+\newcommand{\VBenchGap}{129}
+
+% ---- SPRINT/runs/agebound_addendum_s2/ab_welfare_comparison_v1.csv
+\newcommand{\VAgeMove}{+13}
+
+% ---- SPRINT/runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv
+\newcommand{\VCouplesMove}{73}
+
+% ---- SPRINT/figures/figS6_02_coefficient_stability.csv
+\newcommand{\VDrawMin}{50}
+\newcommand{\VDrawMax}{400}
+
+% ---- SPRINT/figures/figS6_02_coefficient_stability.csv; R >= reference R (100), NOT the full 50--400 range
+\newcommand{\VDrawMove}{0.2}
+
+% ---- SPRINT/runs/couples_clean_baseline/r240_step3_estimation_v1.json
+\newcommand{\NCouples}{2{,}275}
+\newcommand{\VCouplePeakFemale}{2.55}
+\newcommand{\VCouplePeakMale}{3.29}
+
+% ---- SPRINT/tables/nested_geographic_access_v1.csv
+\newcommand{\VGeo}{13}
+
+% ---- manuscript/JMP_seminar_deck_content_v2.md (citation/year/enumerator metadata)
+\newcommand{\DocOne}{1}
+\newcommand{\DocOneNineNineFour}{1994}
+\newcommand{\DocOneNineNineEight}{1998}
+\newcommand{\DocOneNineNineNine}{1999}
+\newcommand{\DocTwo}{2}
+\newcommand{\DocTwoZeroZeroFive}{2005}
+\newcommand{\DocTwoZeroZeroSeven}{2007}
+\newcommand{\DocTwoZeroOneOne}{2011}
+\newcommand{\DocTwoZeroOneThree}{2013}
+\newcommand{\DocTwoZeroOneFive}{2015}
+\newcommand{\DocTwoZeroOneSix}{2016}
+
+% ---- SPRINT/tables/wishmore_counterpart_test_v1.md
+\newcommand{\VWishZero}{0}
+
+% 92 macros emitted.
 \endinput

@@ -1,817 +1,497 @@
-Unequal Job Opportunities and the Measurement of
-               Welfare Inequality
+Unequal Job Opportunities and the Measurement
+of Welfare Inequality
 
 
-                        Hisham Haydar
-                  LISER and University of Luxembourg
+Hisham Haydar
+LISER and University of Luxembourg
 
 
-            France 2016 · EU-SILC priced through EUROMOD
-The same job, for two opposite reasons
+France 2016, EU-SILC priced through EUROMOD.
+Two questions.
 
 
 
 
-                one person                                            the other
-                                          the same
-                  chose it                                          had almost
-                                         observed job
-              from a wide set                                       nothing else
+   (1) How much money-metric well-being inequality is attributable to unequal job
+   opportunities rather than to preferences?
 
+   (2) When a model omits heterogeneous opportunities, how much of that
+   inequality is re-attributed to preferences?
 
 
 
-                  Whatever the choice set cannot say, the taste parameter says.
 
+                                                                                    2/15
+Three literatures, one gap.
 
 
 
-                                                                                   1/19
-The theory puts jobs on the axis and splits the wage in two
+   Money-metric welfare with           Random-utility                      Inequality of opportunity
+   heterogeneous preferences           random-opportunity labour
+                                                                           Roemer (1998); Bourguignon,
+                                       supply
+   Fleurbaey and Maniquet (2005,                                           Ferreira and Menéndez (2007);
+   2011); Decoster and Haan            Dagsvik (1994); Aaberge,            Ferreira and Gignoux (2011).
+   (2015); Bargain, Decoster,          Colombino and Strøm (1999);
+   Dolls, Neumann, Peichl and          Aaberge and Colombino
+   Siegloch (2013); Jacquet, Jia       (2013); Dagsvik and Jia
+   and Thoresen.                       (2016); Capéau et al.
 
-                    c
-                        W (zi , Ri , A; y)        ≷         W (zh , Rh , A′ ; y′ )
-                                         zi           zh
 
-                                                                         Ryi (ℓ)
-                            y (j)                 y ′ (k)                Ryh′ (ℓ)
+   This paper: household-specific latent job-opportunity distributions carried into a preference-respecting
+   money-metric inequality decomposition, in both counterfactual directions.
 
-                           y ′ (j)                y (k)
 
 
-                                                                                     J
-                                     j                k                  ℓ
-                                         A = {j, k}
-                                                           A′ = {k, ℓ}
+                                                                                                              3/15
+Empirically the set is an estimated distribution and the pay is an offer density.
 
 
+                                 c
 
-                         Haydar and Maniquet, the companion paper.
+                                                zi       zh
 
-                                                                                         2/19
-I estimate the set as a distribution, the pay as a density
+                                                                        Ri
+                                                                        Rh
 
-                        c
 
-                                  zi        zh
 
-                                                       Ri
-                                                       Rh
 
+                                                                                      J
+                                            j            k             ℓ
+                                     gi
 
+                                     gh
 
 
-                                                                    J
-                                 j A = {j, k}k         ℓ
-                                             A′ = {k, ℓ}
+   estimated jointly with preferences; nodes are integration support, not a list of jobs.
 
+                                                                                            4/15
+Preferences and an opportunity density, in one likelihood.
 
 
 
-                            Two things change. Nothing else does.
 
+                                  uij = βℓ (xi ) BC(lij ; θℓ ) + BC(cij ; θc )
 
-                                                                        3/19
-I estimate the set as a distribution, the pay as a density
 
-                        c
 
-                                  zi          zh
+                     gij =       gE       ·     gH       ·      g Occ        ·   gW
+                                |{z}           |{z}             |{z}             |{z}
+                             whether work at which hours in which occupation at what pay
+                              is available
 
-                                                           Ri
-                                                           Rh
 
 
 
+   41 estimated structural parameters.
 
-                                                                J
-                                 j A = {j, k}k            ℓ
-                            gi                  A′ = {k, ℓ}
-                            gh
 
 
+                                                                                           5/15
+Each household: its observed job plus 100 drawn alternatives, all priced through the
+tax-benefit system.
 
-                                       Estimated, not a list.
 
 
-                                                                    3/19
-I estimate the set as a distribution, the pay as a density
 
-                        c
+                        Vij =      uij + log gij −                log qij
+                                  |{z}   | {z }                   | {z }
+                                preferences   availability   sampling correction
 
-                                    zi        zh
 
-                                                         Ri
-                                                         Rh
 
 
+   EUROMOD FR 2016 → disposable income for every one of 157,055 alternatives.
 
 
-                                                                     J
-                                   j A = {j, k}k         ℓ
-                            gi                 A′ = {k, ℓ}
-                            gh
 
 
+                                                                                       6/15
+The model reproduces the hours distribution, employment and occupation shares.
 
-                            Every job carries a density, not a number.
+                                                 30
+                                                          observed
+                                                          model-implied
+                                                 25
 
 
-                                                                         3/19
-I estimate the set as a distribution, the pay as a density
 
-                        c
-                            W (zi , Ri , A; y) ≷     W (zh , Rh , A′ ; y′ )
-                                     zi       zh
 
-                                                          Ri
-                                                          Rh
+                       share of households (%)
+                                                 20
 
+                                                 15
 
+                                                 10
 
+                                                  5
 
-                                                                         J
-                                   j A = {j, k}k          ℓ
-                            gi                 A′ = {k, ℓ}
-                            gh
-
-
-
-                            Every job carries a density, not a number.
-
-
-                                                                              3/19
-Two real households sit here: same job, opportunity 0.851 against 0.349
-
-                       c
-
-
-
-                                                           one household
-                                                           the other
-
-
-
-
-                                                                      J
-                                 j A = {j, k}k         ℓ
-                           gi                A′ = {k, ℓ}
-                           gh
-
-
-
-                            Same segments. Different distributions.
-
-
-                                                                           4/19
-Equal pay on the set you can reach, then read off the level
-
-                      c
-
-                                    zi           zh
-
-                                                                    Ri
-                                                                    Rh
-
-
-
-
-                                                                         J
-                                j                k                  ℓ
-                                    A = {j, k}
-                                                      A′ = {k, ℓ}
-
-
-
-                          The measure the paper takes to the data.
-
-                                                                             5/19
-Equal pay on the set you can reach, then read off the level
-
-                         c
-
-                                 zi              zh
-
-                                                                    Ri
-                                                                    Rh
-
-
-                   Wi1
-                                      yw on A
-                                                ∼ zi
-
-                                                                         J
-                             j                   k                  ℓ
-                                 A = {j, k}
-                                                      A′ = {k, ℓ}
-
-
-
-                             Equal pay on the feasible set.
-
-                                                                             5/19
-Equal pay on the set you can reach, then read off the level
-
-                         c
-
-                                 zi           zh
-
-                                                                 Ri
-                                                    yw on A′
-                   Wh1                                           Rh
-                                                               ∼ zh
-
-
-
-                                                                      J
-                             j                k                  ℓ
-                                 A = {j, k}
-                                                   A′ = {k, ℓ}
-
-
-
-                             Equal pay on the feasible set.
-
-                                                                          5/19
-Equal pay on the set you can reach, then read off the level
-
-                         c
-
-                                     zi                   zh
-
-                                                                             Ri
-                                                                yw on A′
-                   Wh1                                                       Rh
-                                                                           ∼ zh
-                   Wi1                        w
-                                          y       on A
-                                                         ∼ zi
-
-                                                                                  J
-                                 j                        k                  ℓ
-                                     A = {j, k}
-                                                               A′ = {k, ℓ}
-
-
-
-                             Empirically: a common reference pay.
-
-                                                                                      5/19
-Drop the opportunity object and the effect moves, it does not go
-
-
-
-                                   occupation term
-                                    removed here
-
-                                              six standard errors
-
-
-                                    reappears here
-
-
-
-
-                  The variation goes wherever the model leaves a door open.
-
-
-
-                                                                              6/19
-Availability is four factors, estimated with preferences at once
-
-
-
-
-                            g H |{z}
-                       g E |{z}
-                  g = |{z}             gW
-                                g Occ |{z}
-
-                       whether work      at what      in which      at what
-                        is available      hours      occupation       pay
-
-                    The hours factor is the same for every household. I say so.
-
-
-
-                                                                                  7/19
-Each of 1,555 households gets its observed job plus 100 drawn ones
-
-
-
-
-               Vij = uij + log gij − log qij
-                     preferences   opportunity    sampling correction
-
-
-                       q is computation. g is economics.
-
-                                   Every job is priced.
-
-
-                                                                        8/19
-Two things I cannot separate, and I say so
-
-
-
-                                  access versus capability
-
-
-
-
-                            persistent household heterogeneity
-
-
-
-
-                     This is a decomposition. It is not a causal estimate.
-
-
-
-                                                                             9/19
-The model reproduces the statutory week: 25.20% against 24.85%
-observed
-                                        30
-                                                 observed
-                                                 model-implied
-                                        25
-
-
-
-              share of households (%)
-                                        20
-
-                                        15
-
-                                        10
-
-                                         5
-
-                                         0
-
-
-
-
-                                                                                     FT
-                                             0
                                                   0
-                                                                 .5
 
-                                                        21 1
-                                                                 .5
 
-                                                        30 T2
-                                                                 .5
 
 
+                                                                                         40 FT
+                                                      0
+                                                           0
+                                                                .5
 
+                                                                     21 T1
+                                                                              .5
 
-                                                                                      .5
-                                                                                            LH
+                                                                     30 T2
+                                                                              .5
 
-                                                                                                 +
-                                                                 ef
-                                                 0-1
 
 
 
-                                                               PT
+                                                                                                  .5
+                                                                                                        LH
+                                                                              ef
 
 
 
 
-                                                                                                 70
-                                                             5r
-                                                       -17
+                                                                                                         +
+                                                          0-1
 
 
 
-                                                              28
 
+                                                                                                       70
+                                                                          5r
+                                                              -17
 
-                                                              33
 
 
+                                                                           28
 
 
-                                                                                   44
-                                                               P
-                                                          .5-
+                                                                           33
 
 
-                                                          .5-
 
 
+                                                                                               44
+                                                                            P
 
 
-                                                                                     .5-
-                                                          F3
-                                                   10
+                                                                            P
+                                                                       .5-
 
 
+                                                                       .5-
 
 
-                                                                                   40
-                                                                    weekly hours
 
-                                             A peak in what is on offer. Not the statute’s effect.
 
-                                                                                                      10/19
-A source the model never saw puts the band at 37.2%
+                                                                                           .5-
+                                                                       F3
+                                                            10
 
 
+                                                                          weekly hours
 
-          share in the statutory 35-hour band (%)
-                                                    50                                                   external benchmark
-                                                                                                         observed sample
-                                                                                                         model-implied
-                                                    40
+   35-hour band 24.9% observed, 25.2% model-implied; employment 87.1% / 86.7%; mean absolute band error
+   0.008.
 
-                                                    30
+                                                                                                             7/15
+Equivalent income at a common reference pay, under four preference–environment states.
 
-                                                    20
 
-                                                    10
 
-                                                     0
-                                                               all                   women                    men
-                                                         Validation only. No outside number enters the likelihood.
 
-                                                                                                                              11/19
-Two orders, averaged: that is the whole decomposition
+                                                         ¯ = Ωi
+                                               ui (Wi1 , l)
+   Ωi the expected maximum over the household’s own opportunity distribution
 
 
-                                         own preferences       reference preferences
-                 own opportunities       I00 = 0.1343              I10 = 0.1483
-             reference opportunities     I01 = 0.0310              I11 = 0.0000
 
+                                                own environment      reference environment
 
+                            own preferences             I00                     I01
 
+                      reference preferences             I10                     I11
 
-                          Equalising preferences alone raises inequality.
 
+   reference environment = common job access, earning opportunities and budget; coalition-consistent inversion;
+   common quadrature support.
 
-                                                                                       12/19
-Two orders, averaged: that is the whole decomposition
 
+                                                                                                                  8/15
+A two-player Shapley game: preferences against the complete non-preference
+environment.
 
-                                        own preferences      reference preferences
-                 own opportunities       I00 = 0.1343           I10 = 0.1483
-             reference opportunities     I01 = 0.0310           I11 = 0.0000
 
 
-                       Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
-                        Cenv = 21 [(I00 − I01 ) + (I10 − I11 )] = 0.1258
+                                       I00 = 0.134              I01 = 0.031
+                                       I10 = 0.148              I11 = 0.000
 
 
 
-                            The Shapley value averages both orders.
+                             Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
 
+                             Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
 
-                                                                                     12/19
-Two orders, averaged: that is the whole decomposition
 
+   the environment is then split by an Owen value into job access, earning opportunities, and household
+   endowments and needs.
 
 
-                   job access                                     0.020
-                   earning opportunities                          0.028
-                   household endowments and needs                 0.078
+                                                                                                          9/15
+The non-preference environment accounts for 94% of measured welfare inequality;
+preferences for 6%.
 
 
 
+                   non-preference
+                     environment
 
-                     Inside opportunities and budgets, the Owen value.
 
 
 
-                                                                          12/19
-Two orders, averaged: that is the whole decomposition
+                      preferences
+                                                                                      female reference
+                                                                                      male reference
+                                    0.00   0.02   0.04        0.06    0.08     0.10    0.12      0.14
+                                                         contribution (Gini points)
+   93.7 ± 0.6 / 6.3 ± 0.6 (female reference); 89.1 / 10.9 (male reference); parameter-uncertainty interval for the
+   environment share [89.1, 95.8].
 
+                                                                                                                     10/15
+Household endowments and needs 58%, earning opportunities 21%, job access 15%; job
+opportunities together 36%.
 
 
-                   job access                                      0.020
-                   earning opportunities                           0.028
-                   household endowments and needs                  0.078
 
-                   of which geographic                             0.018
+               household endowments
+                           and needs                                                    58%
 
+                 earning opportunities                    21%
 
-                         Almost all of job access is geographic.
+                           job access              15%
+                                         0   10      20         30     40      50      60       70
+                                             share of measured welfare inequality removed (%)
 
+   ordering identical under both reference conventions and under equivalization.
 
+                                                                                                     11/15
+Unequal job opportunities account for about a third of measured welfare inequality;
+omitting them re-attributes almost nothing to preferences.
 
-                                                                           12/19
-The non-preference environment carries 94% of welfare inequality
 
 
 
+   (1) job access + earning opportunities: 35.5% ± 1.0 of measured inequality (the complete
+   environment 93.7%).
 
-             Cpref       +                 Cenv
-                                           |{z}                     = I00 − I11
-             |{z}
-           preferences        opportunities and budgets
+   (2) Omitting heterogeneous opportunities: preference share 6.3% → 6.4%; measured inequality
+   falls 24%; the market-side contribution is relabelled into endowments and needs.
 
 
-   Cenv =       Cacc +
-                |{z}                       Cearn
-                                           |{z}                 +              C
-                                                                               | needs
-                                                                                 {z }
-              job access          earning opportunities              endowments and needs
 
-                 The fully common state is numerically zero — a tested property.
 
+                                                                                                 12/15
+The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability
+as taste.
 
-                                                                                            13/19
-The non-preference environment carries 94% of welfare inequality
 
+                                                     100   final model        benchmark
 
-           opportunities
-            and budgets                                                                    94%
 
 
+                   measured inequality removed (%)
+                      share of that model's own
+                                                      80
 
-            preferences            6%
+                                                      60
 
-                           0             20          40          60          80            100
-                                      share of measured welfare inequality removed (%)
-                               Bars are integration precision, not confidence intervals.
+                                                      40
 
-                                                                                                 13/19
-The non-preference environment carries 94% of welfare inequality
-                                            integration band     parameter interval
+                                                      20
 
+                                                       0     job           earning        endowments   preferences
+                                                           access        opportunities     and needs
 
-            opportunities
-             and budgets
+   35-hour coefficient: 2.58 as availability, 2.55 as preference; leisure-intercept sex gap +0.43 → −1.99.
 
+                                                                                                                     13/15
+The preference share is the sensitive margin; the environment’s internal structure is stable.
 
 
 
-             preferences
 
+   perturbation →                   preference share                    environment ordering
 
-                            0          20             40         60             80    100
-                                   share of measured welfare inequality removed (%)
-                            Two kinds of interval, on offset rows. Never merged.
+   reference convention             6.3 → 10.9                          unchanged
 
-                                                                                            13/19
-How much of welfare inequality is unequal job opportunities?
+   age-curvature bounds             ≈ +13%                              unchanged
 
+   couples male-leisure pin         up to 73%                           unchanged
 
+   50–400 drawn jobs                largest coefficient move 0.2 s.e.   unchanged
 
 
-             job access and earning opportunities               35.51 ± 0.95%
 
-             the whole non-preference environment               93.70 ± 0.61%
 
-             preferences                                                  6.30%
+                                                                                                14/15
+Conclusion
 
 
 
-                      Opportunities and budgets carry almost all of it.
 
+   Method: a household-specific opportunity distribution estimated with preferences, priced
+   through the real tax-benefit system.
 
+   Finding: the non-preference environment carries 94% of measured money-metric inequality;
+   job opportunities about a third; the budget side more than the market side.
 
+   Margin: the preference share is the sensitive quantity, 6 to 11 per cent across normative
+   conventions.
 
-                                                                                  14/19
-How much of welfare inequality is unequal job opportunities?
 
 
-         preferences share                                                 6.3% → 6.4%
 
-         measured inequality                                                       −24%
-
-         relabelled to household endowments and needs                               36%
-
-         out of the total                                                           68%
-
-         the sex gap in tastes                                           +0.43 → −1.99
-
-
-                    Omitted opportunities are relabelled, not turned into taste.
-
-
-                                                                                          14/19
-Budgets carry 58%, job opportunities 36%
-
-        household endowments
-                    and needs                                                       58%
-
-          earning opportunities                      21%
-
-                    job access                15%
-                                  0    10       20         30      40       50      60    70
-                                       share of measured welfare inequality removed (%)
-                             I claim no ordering between job access and earnings.
-
-                                                                                               15/19
-The same result, drawn: the zeros are the benchmark’s definition
-
-                                             100          final model        benchmark
-
-
-           measured inequality removed (%)
-              share of that model's own       80
-
-                                              60
-
-                                              40
-
-                                              20
-
-                                               0            job           earning         endowments        preferences
-                                                          access        opportunities      and needs
-
-                                                   Job access and earnings are exactly zero here. By construction.
-
-                                                                                                                          16/19
-The preference share is the fragile quantity: 6% to 11%
-
-
-
-         preferences                                             moves with the reference
-
-
-
-        opportunities
-                                                                 barely moves
-         and budgets
-
-
-
-
-                        No sign changes. No ordering changes. Anywhere.
-
-
-
-
-                                                                                            17/19
-Couples give the same order and a preference share I do not trust
-                                                 singles       couples
-                                          60
-
-           share of measured inequality   50
-                   removed (%)
-                                          40
-                                          30
-                                          20
-                                          10
-                                           0      job            earning        endowments        preferences
-                                                access         opportunities     and needs
-
-                                               Singles stay the headline. Couples are the companion.
-
-                                                                                                                18/19
-Separate what people want from what they can get
-
-
-
-
-              Method    every job priced, opportunities estimated
-
-              Finding   opportunities and budgets carry 94%
-
-              Margin    preferences 6% to 11%
-
-
-
-
-                                                                    19/19
-B0 — The preference block
-
-
-
-
-         uij = βℓ(xi ) BC(ℓij ; θℓ) + BC(cij ; θc )
-                              leisure   ·   consumption
-
-
-
-
-                     Box–Cox in both. Consumption fixes the scale.
+                                                                                               15/15
 B1 — The estimated coefficients: preferences
 
 
-                beta_l0_sm
-             beta_l_age_sm
-           beta_l_age2_sm
-                 theta_l_sm
-                  beta_l0_sf
-              beta_l_age_sf
-             beta_l_age2_sf
-            beta_l_nkids_sf
-                  theta_l_sf
-            theta_c_singles
-                               2   0   2          4   6   8
-                                           estimate
+             beta_l0_sm
+          beta_l_age_sm
+        beta_l_age2_sm
+              theta_l_sm
+               beta_l0_sf
+           beta_l_age_sf
+          beta_l_age2_sf
+         beta_l_nkids_sf
+               theta_l_sf
+         theta_c_singles
+                            2     0            2          4   6   8
+                                                   estimate
 B1 — The estimated coefficients: job access
 
 
-                   beta_E
-               beta_h_pt1
-               beta_h_pt2
-                 beta_h_ft
-                beta_h_lh
-              beta_E_gsur
-            beta_E_drgn2
-            beta_E_drgn3
-            beta_E_drgn4
-            beta_E_drgn5
-            beta_E_drgn6
-            beta_E_drgn7
-            beta_E_drgn8
-            beta_E_drgur
-           beta_E_drgmd
-           beta_occ_2_m
-           beta_occ_3_m
-           beta_occ_4_m
-             beta_occ_2_f
-             beta_occ_3_f
-             beta_occ_4_f
-               beta_h_f35
-                             4   3   2    1         0   1   2   3
-                                         estimate
+                 beta_E
+             beta_h_pt1
+             beta_h_pt2
+               beta_h_ft
+              beta_h_lh
+            beta_E_gsur
+          beta_E_drgn2
+          beta_E_drgn3
+          beta_E_drgn4
+          beta_E_drgn5
+          beta_E_drgn6
+          beta_E_drgn7
+          beta_E_drgn8
+          beta_E_drgur
+         beta_E_drgmd
+         beta_occ_2_m
+         beta_occ_3_m
+         beta_occ_4_m
+           beta_occ_2_f
+           beta_occ_3_f
+           beta_occ_4_f
+             beta_h_f35
+                           4   3        2      1         0   1   2   3
+                                              estimate
 B1 — The estimated coefficients: earning opportunities
 
 
-                beta_w0
-           beta_w_educL
-           beta_w_educH
-            beta_w_pexp
-           beta_w_pexp2
-                  sigma
-             delta_occ_2
-             delta_occ_3
-             delta_occ_4
-                           0.0   0.5    1.0       1.5    2.0
-                                       estimate
+              beta_w0
+         beta_w_educL
+         beta_w_educH
+          beta_w_pexp
+         beta_w_pexp2
+                sigma
+           delta_occ_2
+           delta_occ_3
+           delta_occ_4
+                         0.0         0.5         1.0      1.5   2.0
+                                               estimate
 B2 — Exhaustiveness is a tested property
 
 
 
 
-           defect                               what fixed it
+                          preferences              job access
 
-           a missing budget channel             a fourth player from its own marginals
 
-           asymmetric money-metric inversion    the reference side moves with the coalition
-
-           an incomplete male reference block   a structural zero on the child term
+                          earning opportunities    household endowments and needs
 
 
 
 
-                       The fully common state is 0.000000 — numerically zero.
+   The fully common state is 0.000000 — numerically zero.
 B3 — The scale moves with the channel that equalises needs
 
 
 
-                                                            raw       equivalized
-                  preferences                              6.30%         7.98%
-                  opportunities and budgets               93.70%        92.02%
-                  job access                              14.90%         9.68%
-                  earning opportunities                   20.62%        16.24%
-                  household endowments and needs          58.18%        66.10%
-                  market side                             35.51%        25.92%
+
+                                                                     raw     equivalized
+                            preferences                              6.30%     7.98%
+                            opportunities and budgets               93.70%    92.02%
+                            job access                              14.90%     9.68%
+                            earning opportunities                   20.62%    16.24%
+                            household endowments and needs          58.18%    66.10%
+                            market side                             35.51%    25.92%
 
 
 
-                   Freezing the own scale leaves exactly the Gini of its inverse.
-B4 — I tried the hours-wish moment; there is no counterpart
-
-
-
-
-                ground            what it shows
-
-                definitional      the candidate’s optimum tracks pay
-
-                identification    the hours block moves the moment by exactly 0
-
-                numerical         the level can agree; the profile cannot
+   Freezing the own scale leaves exactly the Gini of its inverse.
+B4 — the desired-hours counterpart test
 
 
 
 
-                            Tried, and it fails on three independent grounds.
+                        ground            what it shows
+
+                        definitional      the candidate’s optimum tracks pay
+
+                        identification    the hours block moves the moment by exactly 0
+
+                        numerical         the level can agree; the profile cannot
+
+
+
+
+   Tried, and it fails on three independent grounds.
 B5 — Where the welfare family comes from
 
-                Compensation                                             Responsibility
-     unequal productivity should not become                  preference-based choices should not be
-               unequal well-being                                         compensated
+
+                  Compensation                                                Responsibility
+      unequal productivity should not become                       preference-based choices should not be
+                  unequal well-being                                           compensated
 
 
-                        ∄W :        Full Compensation ∧ Full Responsibility
+                            ∄W :       Full Compensation ∧ Full Responsibility
 
-                                                                    [Fleurbaey & Maniquet, SCW 2005]
-
-
-
-                      W 1 is one compromise — the one this paper takes to the data.
+                                                                         [Fleurbaey & Maniquet, SCW 2005]
 
 
 
+   W 1 is one compromise — the one this paper takes to the data.
 
-                               Haydar and Maniquet, Jobs and Well-Being Measurement (companion paper).
+
+
+   Haydar and Maniquet, Jobs and Well-Being Measurement (companion paper).
+B6 — The RUM benchmark details
+
+
+
+
+                                                            final model       benchmark
+
+                            35-hour coefficient                      2.58           2.55
+
+                                                         as availability    as preference
+
+                            leisure-intercept sex gap            +0.43             -1.99
+
+                            preference share                         6.3%          6.4%
+
+
+
+   Job access and earnings are exactly zero here. By construction.
 

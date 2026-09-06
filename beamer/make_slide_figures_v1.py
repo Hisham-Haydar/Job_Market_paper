@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import pathlib
 import sys
+import json
 
 import numpy as np
 import pandas as pd
@@ -38,9 +39,7 @@ from matplotlib.lines import Line2D                          # noqa: E402
 from matplotlib.patches import Patch                         # noqa: E402
 import matplotlib.ticker as mticker                          # noqa: E402
 
-DEFAULT_SPRINT = pathlib.Path(
-    r"C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT"
-)
+DEFAULT_SPRINT = pathlib.Path(__file__).resolve().parents[2] / 'MNL/experiments/JMP_SEMINAR_SPRINT'
 
 # ---------------------------------------------------------------- slide style
 # The house palette of the paper figure kit, unchanged, so the slide figures
@@ -438,6 +437,57 @@ def f_external(sprint, out):
     save(fig, "external", out, src, "panel b -- the one validation panel")
 
 
+def f_observed_hours(sprint, out):
+    """The requested observed-only panel, from the existing histogram CSV."""
+    src = 'fig01_observed_hours_35h_peak.csv'
+    d = pd.read_csv(sprint/'figures'/src)
+    fig, ax = new_ax('weekly hours', 'share of households  (%)')
+    ax.bar(d.hours_lower, pct(d.weighted_share_of_all_households),
+           width=d.hours_upper-d.hours_lower, align='edge',
+           color=INK, linewidth=0, zorder=3)
+    ax.axvspan(33.5,36.5,color=C_EARN,alpha=0.25,zorder=1)
+    ax.set_xlim(0,70)
+    ax.grid(axis='x',visible=False)
+    save(fig,'observed_hours',out,src,'observed hours; statutory band shaded')
+
+
+def f_headline_references(sprint, out):
+    """Signed contributions with integration bands, both reference arms."""
+    src='figW02_headline_decomposition.csv'
+    d=pd.read_csv(sprint/'figures'/src)
+    d=d[(d.basis=='raw') & (d.model=='S8')]
+    fig,ax=new_ax('contribution  (Gini points)')
+    for k,arm in enumerate(['singles_female','singles_male_structural_zero']):
+        sub=d[d.reference_arm==arm].set_index('quantity')
+        for y,q,col in [(1,'C_E',C_ENV),(0,'C_P',C_PREF)]:
+            r=sub.loc[q];yy=y+(0.15 if k==0 else -0.15)
+            ax.barh(yy,r.estimate,height=0.23,color=col,alpha=1 if k==0 else 0.4,
+                    hatch=None if k==0 else '//',zorder=3)
+            ax.errorbar(r.estimate,yy,xerr=[[r.estimate-r.band_lo],[r.band_hi-r.estimate]],
+                        fmt='none',ecolor=INK,capsize=6,lw=2,zorder=4)
+    ax.set_yticks([1,0],['non-preference\nenvironment','preferences'])
+    ax.axvline(0,color=INK,lw=1)
+    ax.set_xlim(-0.003,0.15)
+    ax.grid(axis='y',visible=False)
+    ax.legend(handles=[Patch(facecolor=GREY,label='female reference'),
+                       Patch(facecolor=GREY,alpha=0.4,hatch='//',label='male reference')],
+              loc='lower right')
+    save(fig,'headline_references',out,src,'raw; signed contributions; both reference conventions')
+
+
+def f_regional_profiles(sprint, out):
+    """Same profile across regional environments; one panel, same source CSV."""
+    src='figG02_regional_access_environments.csv'
+    d=pd.read_csv(sprint/'figures'/src)
+    fig,ax=new_ax('employment opportunity mass','equivalent income  (euros / month)')
+    for k,(profile,s) in enumerate(d.groupby('profile',sort=False)):
+        ax.scatter(s.employment_opportunity_mass,s.W1_eur_per_month,
+                   color=['#c81e28','#1450c8'][k],s=100,zorder=3,
+                   label=profile.replace('household_','household '))
+    ax.legend(loc='upper left')
+    save(fig,'regional_profiles',out,src,'fixed profiles across regional access environments')
+
+
 def f_matched_pair(sprint, out):
     """The matched pair, on ONE panel: the two things the slide contrasts.
 
@@ -631,17 +681,28 @@ def f_conceptual(sprint, out):
 # deck's figure set, and the verifier fails on an unused slide figure.
 RETIRED = [f_conceptual, f_matched_pair]
 
-FIGURES = [f_hours, f_fit, f_external,
-           f_headline, f_headline_intervals, f_environment, f_geographic,
-           f_subgroup, f_benchmark, f_couples, f_draws, f_coefficients]
+FIGURES = [f_hours, f_external, f_environment,
+           f_subgroup, f_benchmark, f_couples, f_coefficients]
 
 
-def build(sprint: pathlib.Path, out: pathlib.Path) -> int:
+def build(sprint: pathlib.Path, out: pathlib.Path, missing_only=False) -> int:
     print("rendering slide figures ->", out)
-    for fn in FIGURES:
+    if missing_only:
+        # v4 explicitly reuses existing panels; only these three were absent.
+        targets=[(f_observed_hours,'observed_hours'),
+                 (f_headline_references,'headline_references'),
+                 (f_regional_profiles,'regional_profiles')]
+        chosen=[f for f,name in targets if not (out/(name+'_slide.pdf')).exists()]
+    else:
+        chosen=FIGURES+[f_observed_hours,f_headline_references,f_regional_profiles]
+    for fn in chosen:
         with matplotlib.rc_context(SLIDE_RC):
             fn(sprint, out)
     idx = pd.DataFrame(INDEX)
+    if missing_only and (out/'slide_figure_index.csv').exists():
+        idx=pd.concat([pd.read_csv(out/'slide_figure_index.csv'),idx],ignore_index=True)
+        idx=idx.drop_duplicates('slide_figure',keep='last')
+        idx=idx[idx.slide_figure.map(lambda name:(out/name).exists())]
     idx.to_csv(out / "slide_figure_index.csv", index=False)
     # record the style actually used, for the deck verifier's font check
     rec = {k: SLIDE_RC[k] for k in
@@ -658,5 +719,6 @@ if __name__ == "__main__":
     ap.add_argument("--sprint", type=pathlib.Path, default=DEFAULT_SPRINT)
     ap.add_argument("--out", type=pathlib.Path,
                     default=pathlib.Path(__file__).parent / "figures" / "slides")
+    ap.add_argument('--missing-only',action='store_true')
     a = ap.parse_args()
-    sys.exit(build(a.sprint, a.out))
+    sys.exit(build(a.sprint, a.out, a.missing_only))

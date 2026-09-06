@@ -1,0 +1,256 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "every slide figure resolves",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no unused active slide figure",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no paper-style figure left on a slide",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "theory figure appears exactly on slides 4 and 5",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical figure replaces both primitives",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "no orphaned generated macro",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "every number macro is generated",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no near-miss of a generated macro",
+      "pass_": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no hand-typed quantitative numerals on slides",
+      "pass_": true,
+      "detail": "all numerical prose uses generated commands"
+    },
+    {
+      "check": "number macros equal regenerated source values",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "exactly 22 running-order slides",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "exact 25-minute order",
+      "pass_": true,
+      "detail": "[1, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 22]"
+    },
+    {
+      "check": "the final plan has five cuts",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "the final plan has two merges",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "B1 in three blocks, then B2--B6",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "only geography has a running overlay",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "PDF present: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "log present: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "clean log: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": "0 errors / 0 overfull / 0 underfull"
+    },
+    {
+      "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": "31 pages / 30 frames"
+    },
+    {
+      "check": "page aspect / notes second screen: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "PDF headlines equal authoritative content: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": "all headlines match"
+    },
+    {
+      "check": "authored captions and prose present verbatim: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": "all authored fragments match"
+    },
+    {
+      "check": "no internal label in PDF text layer: JMP_seminar_deck_v1",
+      "pass_": true,
+      "detail": "zero hits"
+    },
+    {
+      "check": "PDF present: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "log present: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "clean log: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": "0 errors / 0 overfull / 0 underfull"
+    },
+    {
+      "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": "23 pages / 23 frames"
+    },
+    {
+      "check": "page aspect / notes second screen: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "PDF headlines equal authoritative content: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": "all headlines match"
+    },
+    {
+      "check": "authored captions and prose present verbatim: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": "all authored fragments match"
+    },
+    {
+      "check": "no internal label in PDF text layer: JMP_seminar_deck_v1_25min",
+      "pass_": true,
+      "detail": "zero hits"
+    },
+    {
+      "check": "PDF present: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "log present: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "clean log: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "0 errors / 0 overfull / 0 underfull"
+    },
+    {
+      "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "31 pages / 30 frames"
+    },
+    {
+      "check": "page aspect / notes second screen: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "PDF headlines equal authoritative content: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "all headlines match"
+    },
+    {
+      "check": "authored captions and prose present verbatim: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "all authored fragments match"
+    },
+    {
+      "check": "no internal label in PDF text layer: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "zero hits"
+    },
+    {
+      "check": "rehearsal notes match authored speech: JMP_seminar_deck_v1_rehearsal",
+      "pass_": true,
+      "detail": "all running notes match"
+    },
+    {
+      "check": "rehearsal projection pixels equal full deck",
+      "pass_": true,
+      "detail": "all pages identical"
+    },
+    {
+      "check": "source notes are verbatim (TeX encoding only)",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "shared preamble unchanged from v3",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "22-slide content replaces the legacy 12-word ceiling",
+      "pass_": true,
+      "detail": "word counts reported; verbatim content gates enforced above"
+    },
+    {
+      "check": "every recorded font >= 18 pt",
+      "pass_": true,
+      "detail": "{'font.size': 22, 'axes.labelsize': 22, 'axes.titlesize': 22, 'xtick.labelsize': 19, 'ytick.labelsize': 19, 'legend.fontsize': 19}"
+    },
+    {
+      "check": "16:9 figure-kit canvas",
+      "pass_": true,
+      "detail": ""
+    },
+    {
+      "check": "no internal label in a slide figure",
+      "pass_": true,
+      "detail": "zero hits"
+    },
+    {
+      "check": "actual figure PDF fonts >= 18 pt",
+      "pass_": true,
+      "detail": "all active figure PDFs pass"
+    }
+  ],
+  "page_counts": {
+    "JMP_seminar_deck_v1": 31,
+    "JMP_seminar_deck_v1_25min": 23,
+    "JMP_seminar_deck_v1_rehearsal": 31
+  },
+  "content_sha256": "c95712192f51ec027f1024e453c28faf3a1e96da42962d062b7e9ba4d130f266"
+}

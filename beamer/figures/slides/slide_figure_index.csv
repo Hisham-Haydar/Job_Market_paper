@@ -1,15 +1,13 @@
 slide_figure,source_csv,panel
 hours_slide.pdf,fig02_hours_bands_obs_vs_pred.csv,twelve hours bins
-fit_slide.pdf,fig03_employment + fig04_occupation,employment and the five occupation categories
 external_slide.pdf,figX1_external_hours_lfs_validation.csv,panel b -- the one validation panel
-headline_slide.pdf,figW02_headline_decomposition.csv,S8 / female reference / raw
-headline_intervals_slide.pdf,figU01_headline_two_intervals.csv,panels B and C / raw
 environment_slide.pdf,figW03_nested_environment.csv,S8 / female reference / raw
-geographic_slide.pdf,figG01_nested_geographic_access.csv,panel B / female reference / raw
 subgroup_slide.pdf,figU02_subgroup_decomposition.csv,sex / job access share / raw
 benchmark_slide.pdf,figR01_benchmark_decomposition.csv,panel a / final model vs benchmark
 couples_slide.pdf,figC03_singles_vs_couples.csv,"equivalized, both household types"
-draws_slide.pdf,figW05_welfare_vs_R.csv,S8 / female reference / raw
 coefficients_1_slide.pdf,fig08_coefficients_by_block.csv,blocks: preferences
 coefficients_2_slide.pdf,fig08_coefficients_by_block.csv,blocks: job access / feasibility
 coefficients_3_slide.pdf,fig08_coefficients_by_block.csv,blocks: earning capacity / wage-offer technology
+observed_hours_slide.pdf,fig01_observed_hours_35h_peak.csv,observed hours; statutory band shaded
+headline_references_slide.pdf,figW02_headline_decomposition.csv,raw; signed contributions; both reference conventions
+regional_profiles_slide.pdf,figG02_regional_access_environments.csv,fixed profiles across regional access environments

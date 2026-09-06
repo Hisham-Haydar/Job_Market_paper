@@ -74,7 +74,11 @@
 \newif\ifShowSegs\ShowSegstrue          % the two indifference segments
 \newcommand{\HideBundle}{\ShowBundlefalse}
 \newcommand{\HideSegs}{\ShowSegsfalse}
-\newcommand{\ShowAllBase}{\ShowBundletrue\ShowSegstrue}
+\newif\ifShowPayDots\ShowPayDotstrue
+\newif\ifShowAbilitySets\ShowAbilitySetstrue
+\newcommand{\HidePayDots}{\ShowPayDotsfalse}
+\newcommand{\HideAbilitySets}{\ShowAbilitySetsfalse}
+\newcommand{\ShowAllBase}{\ShowBundletrue\ShowSegstrue\ShowPayDotstrue\ShowAbilitySetstrue}
 
 % ====================================================================
 % SINGLE SHARED MODEL FIGURE.  [THEORY TALK, VERBATIM]
@@ -105,6 +109,7 @@
       \draw[thick] (\xx,0.09) -- (\xx,-0.09);
       \node[below,font=\small] at (\xx,-0.14) {$\lab$};}}
   % (3) pay profiles: DOTS persist; LABELS appear only on the reveal step then clear
+  \ifShowPayDots
   \onslide<\rC->{%
     \fill[agenti,opacity=\iop] (2.2,2.6) circle (2.2pt);
     \fill[agenti,opacity=\iop] (5.0,1.7) circle (2.2pt);
@@ -112,6 +117,7 @@
     \fill[agenth,opacity=\hopacity] (2.2,1.5) circle (2.2pt);
     \fill[agenth,opacity=\hopacity] (5.0,2.3) circle (2.2pt);
     \fill[agenth,opacity=\hopacity] (7.8,2.6) circle (2.2pt);}
+  \fi
   \only<\PayLabOv>{%
     \node[agenti,left,font=\scriptsize,opacity=\iop]  at (2.2,2.6) {$y(j)$};
     \node[agenti,below,font=\scriptsize,opacity=\iop] at (5.0,1.7) {$y(k)$};
@@ -129,6 +135,7 @@
   \only<\rD>{\draw[dashed,thick,agenti] (2.2,2.6) -- (2.2,4.52);}
   \fi
   % (5) ability sets: A={j,k} (red), A'={k,l} (blue) braces under the axis
+  \ifShowAbilitySets
   \onslide<\rE->{%
     \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenti,thick,opacity=\iop]
       (2.2,-0.5) -- (5.0,-0.5)
@@ -136,6 +143,7 @@
     \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenth,thick,opacity=\hopacity]
       (5.1,-0.95) -- (7.8,-0.95)
       node[midway,below,agenth,font=\scriptsize,opacity=\hopacity] {$A'=\{k,\ell\}$};}
+  \fi
   \ifShowSegs
   % (6) agent i indifference segment through z_i: high at j, LOW at k, mid at l
   %     (rank k P l P j) -- crosses agent h between j and k
