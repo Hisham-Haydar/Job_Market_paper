@@ -85,8 +85,9 @@ SLIDE_RC = {
 # not in here raises, so a new internal label cannot slip onto a slide.
 CHANNEL_WORDS = {
     "C_P": "preferences", "C_pref": "preferences", "s_pref": "preferences",
-    "C_E": "the environment", "C_env": "the environment",
-    "s_env": "the environment",
+    "C_E": "opportunities\nand budgets",
+    "C_env": "opportunities\nand budgets",
+    "s_env": "opportunities\nand budgets",
     "C_A": "job access", "C_acc": "job access",
     "C_B": "earning opportunities", "C_earn": "earning opportunities",
     "C_D": "household endowments\nand needs",
@@ -104,7 +105,7 @@ CHANNEL_WORDS = {
 # the qualifier is dropped, never the channel's identity.
 CHANNEL_SHORT = {
     "preferences": "preferences",
-    "the environment": "environment",
+    "opportunities\nand budgets": "opportunities\nand budgets",
     "job access": "job\naccess",
     "earning opportunities": "earning\nopportunities",
     "household endowments\nand needs": "endowments\nand needs",
@@ -113,7 +114,7 @@ CHANNEL_SHORT = {
 }
 CHANNEL_COLOUR = {
     "preferences": C_PREF,
-    "the environment": C_ENV,
+    "opportunities\nand budgets": C_ENV,
     "job access": C_ACC,
     "earning opportunities": C_EARN,
     "household endowments\nand needs": C_NEEDS,
@@ -216,7 +217,8 @@ def f_headline_intervals(sprint, out):
     d = d[(d["panel"] == "C") & (d["quantity"] == "s_env")]
     e = pd.read_csv(sprint / "figures" / src)
     p = e[(e["panel"] == "B") & (e["quantity"] == "s_pref")]
-    rows = [("the environment", d.iloc[0]), ("preferences", p.iloc[0])]
+    rows = [("opportunities\nand budgets", d.iloc[0]),
+            ("preferences", p.iloc[0])]
     fig, ax = new_ax()
     for k, (lab, r) in enumerate(rows):
         y = len(rows) - 1 - k
@@ -514,7 +516,8 @@ def f_draws(sprint, out):
           & (d["reference_arm"] == "singles_female")
           & (d["quantity"].isin(["C_P", "C_E"]))]
     fig, ax = new_ax()
-    for q, lab in (("C_E", "the environment"), ("C_P", "preferences")):
+    for q, lab in (("C_E", "opportunities and budgets"),
+                   ("C_P", "preferences")):
         s = d[d["quantity"] == q].sort_values("R")
         col = CHANNEL_COLOUR[words(CHANNEL_WORDS, q)]
         ax.plot(s["R"], s["estimate"], "o-", color=col, lw=3.2, ms=13,
@@ -620,7 +623,15 @@ def f_conceptual(sprint, out):
             "conceptual_b", "same opportunities, different preferences")
 
 
-FIGURES = [f_conceptual, f_hours, f_fit, f_external, f_matched_pair,
+# R-261 RETIRED three of these from the deck.  The smooth (c, l) schematic
+# (f_conceptual) and the matched-pair bar chart (f_matched_pair) are now drawn
+# in the companion theory talk's own TikZ grammar, on the deck's conceptual
+# slides, so the rendered variants are no longer used.  Their generators are
+# KEPT -- the paper still carries the smooth figure -- but they are out of the
+# deck's figure set, and the verifier fails on an unused slide figure.
+RETIRED = [f_conceptual, f_matched_pair]
+
+FIGURES = [f_hours, f_fit, f_external,
            f_headline, f_headline_intervals, f_environment, f_geographic,
            f_subgroup, f_benchmark, f_couples, f_draws, f_coefficients]
 

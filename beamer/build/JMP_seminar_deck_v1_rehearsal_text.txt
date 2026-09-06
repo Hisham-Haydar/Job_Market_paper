@@ -1,0 +1,1461 @@
+                                                           [0.5 min] Say the one-sentence version of the paper and move.
+
+                                                           “I estimate a labour-supply model in which each household faces its own distribution of available jobs, and then I ask how much of welfare inequality is about preferences and how
+                                                           much is about the environment people face.”
+
+                                                           Do not preview the answer yet; the next slide earns it. Twenty seconds.
+
+
+
+
+Unequal Job Opportunities and the Measurement of
+               Welfare Inequality
+
+
+                        Hisham Haydar
+                  LISER and University of Luxembourg
+
+
+            France 2016 · EU-SILC priced through EUROMOD
+                                                                                          [1.5 min] This is the motivating slide and it should be told, not read.
+
+                                                                                          Two people make the same choice. One had a wide range of jobs open and picked this one; the other had almost nothing else available. Both are single adults working 40 hours in
+The same job, for two opposite reasons                                                    the same occupation in the bottom wage quintile.
+
+                                                                                          A model that puts both on a common budget set must book the entire difference as taste — and will then report that they are equally well off, or that the second one simply
+                                                                                          prefers what she has.
+
+                                                                                          That is not a measurement error at the margin; it is the central identification problem in applied welfare analysis of labour supply.
+
+                                                                                          Land the sentence: whatever the choice set cannot express, the taste parameter absorbs.
+
+
+                one person                                            the other           25-MIN: compress to 1.0 — one vignette, not two.
+                                          the same
+                  chose it                                          had almost
+                                         observed job
+              from a wide set                                       nothing else
+
+
+
+
+                  Whatever the choice set cannot say, the taste parameter says.
+
+
+
+
+                                                                                   1/26
+                                                                                                [1.5 min] This is the companion paper’s picture and I draw it exactly as it is drawn there.
+
+                                                                                                Consumption is on the vertical axis. Jobs are on the horizontal axis — and these are discrete points, so the distance between them means nothing. Three jobs: j, k and ℓ.
+The theory puts jobs on the axis and splits the wage in two
+                                                                                                Each job pays an income. The dots are those pay profiles, one for each of two people. A bundle is a pair: a job, and a consumption level at that job.
+
+                                                                                                The braces are the ability sets. A person cannot occupy every job, and a bundle is available only if its job is in that person’s set.
+                    c
+                        W (zi , Ri , A; y)        ≷         W (zh , Rh , A′ ; y′ )              Say the modelling stance out loud, because everything follows from it: the classical wage has split into two objects. Which jobs you can hold, and what those jobs pay. A and y.
+
+
+                                         zi           zh                                        The segments are preferences over job–consumption bundles. They cross, so the two people rank the same jobs oppositely.
+
+                                                                                                Now I take this picture to data, and I change exactly two things in it.
+
+                                                                         Ryi (ℓ)                25-MIN: KEEP (1.0).
+
+                            y (j)                 y ′ (k)                Ryh′ (ℓ)
+
+                           y ′ (j)                y (k)
+
+
+                                                                                     J
+                                     j                k                  ℓ
+                                         A = {j, k}
+                                                           A′ = {k, ℓ}
+
+
+
+                         Haydar and Maniquet, the companion paper.
+
+                                                                                         2/26
+                                                                               [2.5 min] Two changes, one at a time, and nothing else in the picture moves.
+
+                                                                               CLICK 1 — the brace becomes a distribution. In the theory a job is in your set or it is not. What I estimate is a weight on every job: how available a job of that kind is to that
+I estimate the set as a distribution, the pay as a density                     household.
+
+                                                                               Say the sentence the slide carries, because it is the one people get wrong: estimated, not a list. This is a density over latent job packages. It is not a menu anyone was handed,
+                                                                               and it is not a count. If someone asks how many jobs a person has, the answer is that the model does not estimate that; the number of sampled alternatives is a
+                        c                                                      numerical-integration quantity and carries no economic content.
+
+                                                                               CLICK 2 — the pay dot becomes a density. In the theory each job pays a number. Here each job pays from a wage-offer distribution, and the dot the theory drew is its location.
+                                                                               The dots have not moved.
+                                  zi        zh
+                                                                               That is the whole extension. Same axis, same bundles, same preferences, same question. Two objects that were primitives are now estimated.
+
+                                                       Ri                      25-MIN: KEEP (1.5) — both clicks, no elaboration.
+                                                       Rh
+
+
+
+
+                                                                    J
+                                 j A = {j, k}k         ℓ
+                                             A′ = {k, ℓ}
+
+
+
+
+                            Two things change. Nothing else does.
+
+
+                                                                        3/26
+                                                                           [2.5 min] Two changes, one at a time, and nothing else in the picture moves.
+
+                                                                           CLICK 1 — the brace becomes a distribution. In the theory a job is in your set or it is not. What I estimate is a weight on every job: how available a job of that kind is to that
+I estimate the set as a distribution, the pay as a density                 household.
+
+                                                                           Say the sentence the slide carries, because it is the one people get wrong: estimated, not a list. This is a density over latent job packages. It is not a menu anyone was handed,
+                                                                           and it is not a count. If someone asks how many jobs a person has, the answer is that the model does not estimate that; the number of sampled alternatives is a
+                        c                                                  numerical-integration quantity and carries no economic content.
+
+                                                                           CLICK 2 — the pay dot becomes a density. In the theory each job pays a number. Here each job pays from a wage-offer distribution, and the dot the theory drew is its location.
+                                                                           The dots have not moved.
+                                  zi          zh
+                                                                           That is the whole extension. Same axis, same bundles, same preferences, same question. Two objects that were primitives are now estimated.
+
+                                                           Ri              25-MIN: KEEP (1.5) — both clicks, no elaboration.
+                                                           Rh
+
+
+
+
+                                                                J
+                                 j A = {j, k}k            ℓ
+                            gi                  A′ = {k, ℓ}
+                            gh
+
+
+
+                                       Estimated, not a list.
+
+
+                                                                    3/26
+                                                                                [2.5 min] Two changes, one at a time, and nothing else in the picture moves.
+
+                                                                                CLICK 1 — the brace becomes a distribution. In the theory a job is in your set or it is not. What I estimate is a weight on every job: how available a job of that kind is to that
+I estimate the set as a distribution, the pay as a density                      household.
+
+                                                                                Say the sentence the slide carries, because it is the one people get wrong: estimated, not a list. This is a density over latent job packages. It is not a menu anyone was handed,
+                                                                                and it is not a count. If someone asks how many jobs a person has, the answer is that the model does not estimate that; the number of sampled alternatives is a
+                        c                                                       numerical-integration quantity and carries no economic content.
+
+                                                                                CLICK 2 — the pay dot becomes a density. In the theory each job pays a number. Here each job pays from a wage-offer distribution, and the dot the theory drew is its location.
+                                                                                The dots have not moved.
+                                    zi        zh
+                                                                                That is the whole extension. Same axis, same bundles, same preferences, same question. Two objects that were primitives are now estimated.
+
+                                                         Ri                     25-MIN: KEEP (1.5) — both clicks, no elaboration.
+                                                         Rh
+
+
+
+
+                                                                     J
+                                   j A = {j, k}k         ℓ
+                            gi                 A′ = {k, ℓ}
+                            gh
+
+
+
+                            Every job carries a density, not a number.
+
+
+                                                                         3/26
+                                                                                     [2.5 min] Two changes, one at a time, and nothing else in the picture moves.
+
+                                                                                     CLICK 1 — the brace becomes a distribution. In the theory a job is in your set or it is not. What I estimate is a weight on every job: how available a job of that kind is to that
+I estimate the set as a distribution, the pay as a density                           household.
+
+                                                                                     Say the sentence the slide carries, because it is the one people get wrong: estimated, not a list. This is a density over latent job packages. It is not a menu anyone was handed,
+                                                                                     and it is not a count. If someone asks how many jobs a person has, the answer is that the model does not estimate that; the number of sampled alternatives is a
+                        c                                                            numerical-integration quantity and carries no economic content.
+
+                            W (zi , Ri , A; y) ≷     W (zh , Rh , A′ ; y′ )          CLICK 2 — the pay dot becomes a density. In the theory each job pays a number. Here each job pays from a wage-offer distribution, and the dot the theory drew is its location.
+                                                                                     The dots have not moved.
+                                     zi       zh
+                                                                                     That is the whole extension. Same axis, same bundles, same preferences, same question. Two objects that were primitives are now estimated.
+
+                                                          Ri                         25-MIN: KEEP (1.5) — both clicks, no elaboration.
+                                                          Rh
+
+
+
+
+                                                                         J
+                                   j A = {j, k}k          ℓ
+                            gi                 A′ = {k, ℓ}
+                            gh
+
+
+
+                            Every job carries a density, not a number.
+
+
+                                                                              3/26
+                                                                                  [1.5 min] Now the two people in the picture are two real households, chosen by a rule fixed before any household was looked at.
+
+                                                                                  From 19,116 admissible pairs, matched on the observed employment state, the occupation, the hours band and the wage quintile. Two single men. Both work 40 hours, in the
+Two real households sit here: same job, opportunity 0.851 against 0.349           same occupation, in the same wage quintile.
+
+                                                                                  The model gives them essentially the same preference segment — leisure weights 4.61 and 4.56. That is the crossing pair from the theory picture collapsing onto one line.
+
+
+                       c                                                          Their distributions are not the same at all. The probability of any job offer is 0.851 for one and 0.349 for the other.
+
+                                                                                  Point at where the difference is not. Their median wage offers are 11.38 and 11.05 euros, within thirty cents. The whole gap is on the participation margin, which is where region,
+                                                                                  urbanisation and the local unemployment rate enter.
+
+                                                                                  If asked why this pair differs from an earlier version: a defect left the region term out of the ranking distance. It is repaired and the ranking was re-run under the same rule. This
+                                                                                  pair is separated by 2.40× the admissible median. No number in the decomposition moved.
+                                                           one household
+                                                           the other
+                                                                                  25-MIN: KEEP (1.5).
+
+
+
+
+                                                                      J
+                                 j A = {j, k}k         ℓ
+                           gi                A′ = {k, ℓ}
+                           gh
+
+
+
+                            Same segments. Different distributions.
+
+
+                                                                           4/26
+                                                                                    [2.0 min] This is the companion paper’s W 1 , built the way that talk builds it.
+
+                                                                                    CLICK 1 — the red household. Ignore what the jobs actually pay. Put the same consumption level on every job in the set. Among those, the preference relation picks one — here
+Equal pay on the set you can reach, then read off the level                         k. Move the common level until being at that job is exactly indifferent to where the household actually is. Read the level off the vertical axis. That is W 1 .
+
+                                                                                    CLICK 2 — the same construction for the blue household. Its overall favourite job is not available, so we restrict to what is. The level comes out different.
+
+                      c                                                             Normatively this is a compromise: it satisfies Independence of y, because it ignores the actual pay profile, and Responsibility for Equal Pay, because once every feasible job pays the
+                                                                                    same, what is left is preference.
+
+                                                                                    CLICK 3 — the empirical version, and say what changes. The set becomes the estimated distribution, so equal pay on the set becomes a common reference pay across the
+                                    zi           zh                                 household’s own estimated opportunity distribution. The integral is taken ex ante, over the density, not over realised draws.
+
+                                                                                    So pay is compensated and the opportunity distribution is the household’s own responsibility. That normative choice is the one the numbers rest on.
+
+                                                                    Ri
+                                                                                    25-MIN: KEEP (2.0) — this is the bridge slide; do not cut it.
+                                                                    Rh
+
+
+
+
+                                                                         J
+                                j                k                  ℓ
+                                    A = {j, k}
+                                                      A′ = {k, ℓ}
+
+
+
+                          The measure the paper takes to the data.
+
+                                                                             5/26
+                                                                                    [2.0 min] This is the companion paper’s W 1 , built the way that talk builds it.
+
+                                                                                    CLICK 1 — the red household. Ignore what the jobs actually pay. Put the same consumption level on every job in the set. Among those, the preference relation picks one — here
+Equal pay on the set you can reach, then read off the level                         k. Move the common level until being at that job is exactly indifferent to where the household actually is. Read the level off the vertical axis. That is W 1 .
+
+                                                                                    CLICK 2 — the same construction for the blue household. Its overall favourite job is not available, so we restrict to what is. The level comes out different.
+
+                         c                                                          Normatively this is a compromise: it satisfies Independence of y, because it ignores the actual pay profile, and Responsibility for Equal Pay, because once every feasible job pays the
+                                                                                    same, what is left is preference.
+
+                                                                                    CLICK 3 — the empirical version, and say what changes. The set becomes the estimated distribution, so equal pay on the set becomes a common reference pay across the
+                                 zi              zh                                 household’s own estimated opportunity distribution. The integral is taken ex ante, over the density, not over realised draws.
+
+                                                                                    So pay is compensated and the opportunity distribution is the household’s own responsibility. That normative choice is the one the numbers rest on.
+
+                                                                    Ri
+                                                                                    25-MIN: KEEP (2.0) — this is the bridge slide; do not cut it.
+                                                                    Rh
+
+
+                   Wi1
+                                      yw on A
+                                                ∼ zi
+
+                                                                         J
+                             j                   k                  ℓ
+                                 A = {j, k}
+                                                      A′ = {k, ℓ}
+
+
+
+                             Equal pay on the feasible set.
+
+                                                                             5/26
+                                                                                         [2.0 min] This is the companion paper’s W 1 , built the way that talk builds it.
+
+                                                                                         CLICK 1 — the red household. Ignore what the jobs actually pay. Put the same consumption level on every job in the set. Among those, the preference relation picks one — here
+Equal pay on the set you can reach, then read off the level                              k. Move the common level until being at that job is exactly indifferent to where the household actually is. Read the level off the vertical axis. That is W 1 .
+
+                                                                                         CLICK 2 — the same construction for the blue household. Its overall favourite job is not available, so we restrict to what is. The level comes out different.
+
+                         c                                                               Normatively this is a compromise: it satisfies Independence of y, because it ignores the actual pay profile, and Responsibility for Equal Pay, because once every feasible job pays the
+                                                                                         same, what is left is preference.
+
+                                                                                         CLICK 3 — the empirical version, and say what changes. The set becomes the estimated distribution, so equal pay on the set becomes a common reference pay across the
+                                 zi           zh                                         household’s own estimated opportunity distribution. The integral is taken ex ante, over the density, not over realised draws.
+
+                                                                                         So pay is compensated and the opportunity distribution is the household’s own responsibility. That normative choice is the one the numbers rest on.
+
+                                                        w          ′     Ri
+                                                    y       on A                         25-MIN: KEEP (2.0) — this is the bridge slide; do not cut it.
+                   Wh1                                                   Rh
+                                                                       ∼ zh
+
+
+
+                                                                              J
+                             j                k                         ℓ
+                                 A = {j, k}
+                                                   A′ = {k, ℓ}
+
+
+
+                             Equal pay on the feasible set.
+
+                                                                                  5/26
+                                                                                                     [2.0 min] This is the companion paper’s W 1 , built the way that talk builds it.
+
+                                                                                                     CLICK 1 — the red household. Ignore what the jobs actually pay. Put the same consumption level on every job in the set. Among those, the preference relation picks one — here
+Equal pay on the set you can reach, then read off the level                                          k. Move the common level until being at that job is exactly indifferent to where the household actually is. Read the level off the vertical axis. That is W 1 .
+
+                                                                                                     CLICK 2 — the same construction for the blue household. Its overall favourite job is not available, so we restrict to what is. The level comes out different.
+
+                         c                                                                           Normatively this is a compromise: it satisfies Independence of y, because it ignores the actual pay profile, and Responsibility for Equal Pay, because once every feasible job pays the
+                                                                                                     same, what is left is preference.
+
+                                                                                                     CLICK 3 — the empirical version, and say what changes. The set becomes the estimated distribution, so equal pay on the set becomes a common reference pay across the
+                                     zi                   zh                                         household’s own estimated opportunity distribution. The integral is taken ex ante, over the density, not over realised draws.
+
+                                                                                                     So pay is compensated and the opportunity distribution is the household’s own responsibility. That normative choice is the one the numbers rest on.
+
+                                                                    w          ′     Ri
+                                                                y       on A                         25-MIN: KEEP (2.0) — this is the bridge slide; do not cut it.
+                   Wh1                                                               Rh
+                                                                                   ∼ zh
+                   Wi1                        w
+                                          y       on A
+                                                         ∼ zi
+
+                                                                                          J
+                                 j                        k                         ℓ
+                                     A = {j, k}
+                                                               A′ = {k, ℓ}
+
+
+
+                             Empirically: a common reference pay.
+
+                                                                                              5/26
+                                                                                     [1.5 min] Be fair to the alternative: a common-choice-set model is not wrong, it answers a different question, and it is cheaper.
+
+                                                                                     The point is structural. If every household faces the same set, then differences in observed choices must load on preferences, and a welfare measure built on it inherits that.
+Drop the opportunity object and the effect moves, it does not go
+                                                                                     Then give the paper’s own internal evidence rather than an assertion — this is the strongest positive-side argument in the paper, so do not rush it. When the occupation term is
+                                                                                     removed from the earning-opportunity block, the effect does not vanish: it relocates, with the tertiary-education loading moving by six standard errors and the female
+                                                                                     nonroutine-cognitive access coefficient moving with it.
+
+                                                                                     The same variation gets booked to whichever channel the model leaves open. That is a channel-separation result, and it is exactly what a decomposition has to get right.
+
+                                   occupation term                                   Slide 19 carries the empirical version of this argument; this slide states the structural point and forwards to it.
+
+                                    removed here                                     25-MIN: compress to 1.0.
+
+
+
+                                              six standard errors
+
+
+                                    reappears here
+
+
+
+
+                  The variation goes wherever the model leaves a door open.
+
+
+
+                                                                              6/26
+                                                                                         [2.0 min] Name each factor and what varies with the household.
+
+                                                                                         Access varies with the group-specific unemployment rate, region and urbanisation; occupation availability is sex-specific; the wage-offer location varies with education and
+Availability is four factors, estimated with preferences at once                         experience and shifts by occupation.
+
+                                                                                         Say the honest structural caveat here rather than burying it: the hours factor carries no household-specific coordinate, so household variation in the offer density lives in the
+                                                                                         participation margin, the occupation weights, and the wage location — and nowhere else. Saying that yourself, early, is worth more than being asked.
+
+                                                                                         The decomposition later groups these as job access, earning opportunities, and household endowments and needs.
+
+                                                                                         25-MIN: compress to 1.0 — the four factors and the hours caveat, nothing else.
+
+
+
+
+                            g H |{z}
+                       g E |{z}
+                  g = |{z}             gW
+                                g Occ |{z}
+
+                       whether work      at what      in which      at what
+                        is available      hours      occupation       pay
+
+                    The hours factor is the same for every household. I say so.
+
+
+
+                                                                                  7/26
+                                                                              [2.0 min] One slide, and deliberately no implementation detail — no check counts, no convergence protocol, no hash.
+
+                                                                              1,555 single-adult households from EU-SILC / SRCV 2016, each with 101 alternatives — the observed job plus 100 drawn latent jobs — for 157,055 priced rows in all.
+Each of 1,555 households gets its observed job plus 100 drawn ones
+                                                                              The job space is continuous in wage and hours, so the choice set is sampled rather than enumerated, and the sampling-of-alternatives correction log q is what makes the
+                                                                              sampled-set likelihood consistent for the full-set parameters. Say the line on the slide out loud: q is computation, g is economics. The proposal density is a numerical device with
+                                                                              no economic content; the offer density is the object of interest.
+
+                                                                              Say the one consequence the audience will otherwise trip on: because the observed row is inserted deterministically and the drawn rows carry a proposal correction, within-set rank
+                                                                              and top-k statistics are structurally degenerate here — they are not reported, and their absence is a property of the estimator, not a weakness being hidden.
+
+                                                                              If asked about the technical layer, point to the appendix and move on.
+
+                                                                              25-MIN: MERGED with slide 7 (2.5 combined) — the pricing line appears on this slide in the short deck.
+
+
+
+
+               Vij = uij + log gij − log qij
+                     preferences   opportunity   sampling correction
+
+
+
+                       q is computation. g is economics.
+
+
+                                                                       8/26
+                                                                                                 [2.0 min] This is the slide that makes the counterfactual legitimate, and it is worth two clean minutes.
+
+                                                                                                 EUROMOD is arithmetic: the same household, hours and wage always return the same euro figure. Nothing in the estimation simulates a tax–benefit outcome. All the
+Consumption is computed, not surveyed                                                            randomness in the pipeline is in which points get evaluated, never in what a point is worth. That is what lets the model price a job the person did not take.
+
+                                                                                                 Mention take-up once — the minimum-income benefit is granted in full inside the engine and take-up is applied afterwards as a household trait — and say why: take-up is a
+                                                                                                 property of the household, not of the batch it was priced in.
+
+                                                                                                 25-MIN: MERGED into slide 6.
+
+
+
+
+          a household,                    the tax–benefit                    disposable
+          a job (h, w )                       system                           income
+
+
+
+
+                          Same household, same job, same euro. Every time.
+
+
+
+
+                                                                                          9/26
+                                                                                     [2.0 min] What the data pin: the four availability factors, the preference block, the statutory-week peak. Then the two conditional items, said plainly.
+
+                                                                                     First, the access margin does not separate what a person is capable of from what the market offers them — the estimated access density may combine both, and this paper
+Two things I cannot separate, and I say so                                           claims no ordering between the job-access and earning-opportunity channels in either direction, even though the point estimates order them and are printed.
+
+                                                                                     Second, the model carries no persistent household-level term, and slide 9 is why.
+
+                                                                                     Say the general disclaimer once, here: the decomposition is structural and model-conditional, and it is not causal.
+
+                                                                                     25-MIN: KEEP (2.0) — add one sentence of slide 9’s lesson: “three heterogeneity extensions were tested and all three failed recoverability, for three different reasons; the backup
+                                                                                     slide has the design rule.”
+                                  access versus capability
+
+
+
+
+                            persistent household heterogeneity
+
+
+
+
+                     This is a decomposition. It is not a causal estimate.
+
+
+
+                                                                             10/26
+                                                                                              [2.0 min] This is the slide that turns an appendix of failures into a result, and in a methods-literate audience it is often the most interesting five minutes of the talk.
+
+                                                                                              All three — a random leisure intercept, a working-alternative frailty, a wage-residual/preference dependence — were specified in advance and assessed by synthetic-recovery
+Depth on an axis is not evidence; only depth on a profile is                                  diagnostics before any real-data estimation.
+
+                                                                                              Two conditions must hold together for a persistent household-level term to be identified here. Leverage: the variable it loads on must have enough within-household spread across
+                                                                                              the choice set, measured against a scale-one Gumbel, to reorder a household’s own alternatives. The Box–Cox leisure transform has a within-set spread of 0.073 for men and 0.127
+                                                                                              for women — that is the wall the random intercept and the wage-residual extension both hit.
+
+
+                     2.71 needed                                                              A second contrast: even with leverage, the term must move something the existing coordinates cannot absorb. The frailty term has four times the leverage and still fails, because
+                                                                                              a term that shifts every working alternative equally is a shift the employment intercept can simply re-fit, and with one choice per household there is no second margin to pin them
+                                                                                              apart.
+
+                                                                                              Then the punchline, which is the headline: holding the rest of the model fixed gives that extension a likelihood-ratio depth of up to 13.56; re-optimising the rest gives 0.6996,
+                    holding the rest fixed                                    13.56           against the 2.706 a boundary test needs.
+
+                                                                                              Close by saying what this does not say: it rejects three parameterisations on this design, not the existence of heterogeneity.
+
+                                                                                              25-MIN: CUT to backup; fold one sentence into slide 8.
+                     re-optimising the rest                                   0.70
+
+
+
+
+                        I tried three. All three failed, for three reasons.
+
+
+
+                                                                                      11/26
+                                                                                                              [2.0 min] Observed 24.85 per cent in the statutory band against 25.20 model-implied; mean absolute error 0.0083 across 12 bins.
+
+The model reproduces the statutory week: 25.20% against 24.85%                                                The statutory-week coordinate is the single largest one-coordinate improvement in the specification — a likelihood-ratio statistic of 861 on one degree of freedom.
+
+
+observed                                                                                                      Then the wording discipline, and use exactly this wording: it is an institutionally motivated opportunity peak in the estimated offer density. It is not an estimate of the causal
+                                        30                                                                    effect of the 35-hour statute, and no counterfactual removing the statute is computed anywhere.
+                                                 observed
+                                                 model-implied                                                Concede the identified weak spot without being asked: the model under-predicts the 40.5–44.5 band by -0.034 — 3.4 points.
+                                        25
+
+
+
+              share of households (%)
+                                                                                                              25-MIN: MERGED with slide 11 (2.0 combined).
+
+                                        20
+
+                                        15
+
+                                        10
+
+                                         5
+
+                                         0
+
+
+
+
+                                                                                     FT
+                                             0
+                                                  0
+                                                                 .5
+
+                                                        21 1
+                                                                 .5
+
+                                                        30 T2
+                                                                 .5
+
+
+
+
+                                                                                      .5
+                                                                                            LH
+
+                                                                                                 +
+                                                                 ef
+                                                 0-1
+
+
+
+                                                               PT
+
+
+
+
+                                                                                                 70
+                                                             5r
+                                                       -17
+
+
+
+                                                              28
+
+
+                                                              33
+
+
+
+
+                                                                                   44
+                                                               P
+                                                          .5-
+
+
+                                                          .5-
+
+
+
+
+                                                                                     .5-
+                                                          F3
+                                                   10
+
+
+
+
+                                                                                   40
+                                                                    weekly hours
+
+                                             A peak in what is on offer. Not the statute’s effect.
+
+                                                                                                      12/26
+                                                                                                           [1.5 min] Employment 0.8708 observed against 0.8668 model-implied. Occupation: largest deviation across the 5 categories, including non-employment, is 0.0070 — seven-tenths
+                                                                                                           of a percentage point.
+
+Employment and occupation fit; the wage side does not                                                      Then be straightforward about the wage side, because a referee will find it anyway: the model over-predicts the bottom offered-wage quintile by 5.3 points and under-predicts
+                                                                                                           the second, third and fourth.
+
+           employment                                                                                      On selected wages the median fit is -0.86 euros an hour for men and +0.34 for women — the model slightly compresses the sex gap while matching the pooled median to under
+                                                                                                           thirty cents (-0.29).
+
+
+          non-employed                                                                                     Say that a repair specified in advance was tried — an hours-conditioned wage location — and that it failed: it did not fix the misfit and was not promoted.
+
+                                                                                                           Occupation fit is shown internally here for a reason slide 13 explains.
+
+           occupation 1                                                                                    25-MIN: MERGED into slide 10.
+
+
+
+           occupation 2
+
+           occupation 3
+                                                                                 observed
+           occupation 4                                                          model-implied
+                             10      20      30      40       50      60      70     80       90
+                                                       share (%)
+                          I over-predict the bottom wage quintile. A repair failed.
+
+                                                                                                   13/26
+                                                                                                                             [1.0 min] Thirty seconds of content and a minute of credibility.
+
+                                                                                                                             Every sign is constant and the nested order holds at every rung.
+The answer does not move with the number of drawn jobs
+                                                                                                                             State the one exception rather than claiming uniformity: in the male-reference arm the preference contribution moves by 1.44 times its own band across the ladder — and it is also
+
+                                                                                         opportunities and budgets
+                                                                                                                             the object with the tightest band in the study, so the exceedance is as much about the band as the movement.
+
+     contribution (Gini points)   0.12                                                                                       The consequence is a reporting rule: the male-reference preference contribution is not quoted to more than two significant figures.
+
+
+                                  0.10                                                                                       25-MIN: CUT to backup.
+
+
+
+
+                                  0.08
+
+                                  0.06
+
+                                  0.04
+
+                                  0.02
+                                                                                         preferences
+                                         50        100              200               400
+                                                   drawn jobs per household
+                                              Fifty drawn jobs to four hundred. Every sign holds.
+
+                                                                                                                     14/26
+                                                                                                                                      [2.5 min] Frame it before showing it: validation only — no moment from any external source enters the likelihood, and none of this identifies anything.
+
+                                                                                                                                      This is the one validation panel: the statutory band takes 37.2 per cent of workers in the external source, 34.3 in the observed sample and 34.6 model-implied, and the
+A source the model never saw puts the band at 37.2%                                                                                   concentration is larger for women than men in all three (40.6 against 34.6 externally) — which the model reproduces without any sex-specific hours coordinate.
+
+
+
+
+          share in the statutory 35-hour band (%)
+                                                    50
+                                                                                                                                      Then draw the line the evidence supports and no further: the validation claim is limited to the hours-distribution feature for which the model and the external source have
+                                                                                                         external benchmark           commensurable objects — in particular the statutory-band concentration.
+
+                                                                                                         observed sample              The EU-LFS wish-more-hours and desired-minus-actual-hours profiles are separate descriptive context and are deliberately not on this slide. Because the model has no
+                                                                                                         model-implied                desired-hours or underemployment counterpart, they are not interpreted as model predictions or as validation of the estimated opportunity weights, and no association between
+                                                    40                                                                                them and any estimated quantity is computed or shown. Report them descriptively if asked — 20.3 per cent of employed people in the priced bands report wanting more hours,
+                                                                                                                                      declining with hours worked (23.7 per cent at the statutory band, 7.6 at long hours) — and stop there; backup B4 has the counterpart test.
+
+                                                                                                                                      Two things not to skip. The external population is all adults aged 20–60 while the sample is single-adult households, so a gap here is a population difference, not a prediction
+                                                    30                                                                                error. And the matched employer–employee earnings source is simply not available in the accessible data, so no external wage comparison is attempted and none is faked.
+
+                                                                                                                                      25-MIN: compress to 1.0 — the validation panel and the population caveat.
+
+
+                                                    20
+
+                                                    10
+
+                                                     0
+                                                               all                   women                    men
+                                                         Validation only. No outside number enters the likelihood.
+
+                                                                                                                              15/26
+                                                                                               [2.5 min] BUILD 1 — the four states, in Gini points.
+
+                                                                                               Own preferences and own opportunities is where people actually are: 0.1343. Give everyone the reference opportunities and it falls to 0.0310. Give everyone the reference
+Two orders, averaged: that is the whole decomposition                                          preferences instead and it rises, to 0.1483 — 0.148316 to six figures. Give them both and it is 0.0000 — zero, to machine precision, and that is tested, not assumed.
+
+                                                                                               Say the counter-intuitive one out loud, because it is real: equalising preferences alone raises measured inequality. The households with the worst opportunities are the ones whose
+                                                                                               own tastes currently do most to reconcile them to what they have.
+
+                                                                                               BUILD 2 — so which order do you take? Both. The Shapley value averages them. Read the first line: remove preferences first, or remove them second, and average. That gives
+                                         own preferences       reference preferences           0.0085 Gini points for preferences. The same average the other way round gives 0.1258 for opportunities and budgets.
+
+                                                                                               The two add to I00 − I11 exactly, which is what exhaustiveness means here.
+                 own opportunities       I00 = 0.1343              I10 = 0.1483
+                                                                                               BUILD 3 — inside opportunities and budgets the same averaging runs over three players, and that is the Owen value: household endowments and needs 0.078, earning
+             reference opportunities     I01 = 0.0310              I11 = 0.0000                opportunities 0.028, job access 0.020.
+
+                                                                                               BUILD 4 — split job access once more and the geographic part is 0.018 of its 0.020; what is left is 0.002. Say the caveat with the number: that is a fact about how the access
+                                                                                               block is specified, because the remaining part is conditioned on sex alone. It is not a finding that place drives welfare inequality.
+
+                                                                                               25-MIN: KEEP (2.0) — builds 1 and 2 only.
+
+
+
+
+                          Equalising preferences alone raises inequality.
+
+
+                                                                                       16/26
+                                                                                             [2.5 min] BUILD 1 — the four states, in Gini points.
+
+                                                                                             Own preferences and own opportunities is where people actually are: 0.1343. Give everyone the reference opportunities and it falls to 0.0310. Give everyone the reference
+Two orders, averaged: that is the whole decomposition                                        preferences instead and it rises, to 0.1483 — 0.148316 to six figures. Give them both and it is 0.0000 — zero, to machine precision, and that is tested, not assumed.
+
+                                                                                             Say the counter-intuitive one out loud, because it is real: equalising preferences alone raises measured inequality. The households with the worst opportunities are the ones whose
+                                                                                             own tastes currently do most to reconcile them to what they have.
+
+                                                                                             BUILD 2 — so which order do you take? Both. The Shapley value averages them. Read the first line: remove preferences first, or remove them second, and average. That gives
+                                        own preferences      reference preferences           0.0085 Gini points for preferences. The same average the other way round gives 0.1258 for opportunities and budgets.
+
+                                                                                             The two add to I00 − I11 exactly, which is what exhaustiveness means here.
+                 own opportunities       I00 = 0.1343           I10 = 0.1483
+                                                                                             BUILD 3 — inside opportunities and budgets the same averaging runs over three players, and that is the Owen value: household endowments and needs 0.078, earning
+             reference opportunities     I01 = 0.0310           I11 = 0.0000                 opportunities 0.028, job access 0.020.
+
+                                                                                             BUILD 4 — split job access once more and the geographic part is 0.018 of its 0.020; what is left is 0.002. Say the caveat with the number: that is a fact about how the access
+                                                                                             block is specified, because the remaining part is conditioned on sex alone. It is not a finding that place drives welfare inequality.
+
+                                                                                             25-MIN: KEEP (2.0) — builds 1 and 2 only.
+                       Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
+                        Cenv = 21 [(I00 − I01 ) + (I10 − I11 )] = 0.1258
+
+
+
+                            The Shapley value averages both orders.
+
+
+                                                                                     16/26
+                                                                                  [2.5 min] BUILD 1 — the four states, in Gini points.
+
+                                                                                  Own preferences and own opportunities is where people actually are: 0.1343. Give everyone the reference opportunities and it falls to 0.0310. Give everyone the reference
+Two orders, averaged: that is the whole decomposition                             preferences instead and it rises, to 0.1483 — 0.148316 to six figures. Give them both and it is 0.0000 — zero, to machine precision, and that is tested, not assumed.
+
+                                                                                  Say the counter-intuitive one out loud, because it is real: equalising preferences alone raises measured inequality. The households with the worst opportunities are the ones whose
+                                                                                  own tastes currently do most to reconcile them to what they have.
+
+                                                                                  BUILD 2 — so which order do you take? Both. The Shapley value averages them. Read the first line: remove preferences first, or remove them second, and average. That gives
+                                                                                  0.0085 Gini points for preferences. The same average the other way round gives 0.1258 for opportunities and budgets.
+
+
+                   job access                                     0.020           The two add to I00 − I11 exactly, which is what exhaustiveness means here.
+
+                                                                                  BUILD 3 — inside opportunities and budgets the same averaging runs over three players, and that is the Owen value: household endowments and needs 0.078, earning
+                   earning opportunities                          0.028           opportunities 0.028, job access 0.020.
+
+                                                                                  BUILD 4 — split job access once more and the geographic part is 0.018 of its 0.020; what is left is 0.002. Say the caveat with the number: that is a fact about how the access
+                   household endowments and needs                 0.078           block is specified, because the remaining part is conditioned on sex alone. It is not a finding that place drives welfare inequality.
+
+                                                                                  25-MIN: KEEP (2.0) — builds 1 and 2 only.
+
+
+
+
+                     Inside opportunities and budgets, the Owen value.
+
+
+
+                                                                          16/26
+                                                                                   [2.5 min] BUILD 1 — the four states, in Gini points.
+
+                                                                                   Own preferences and own opportunities is where people actually are: 0.1343. Give everyone the reference opportunities and it falls to 0.0310. Give everyone the reference
+Two orders, averaged: that is the whole decomposition                              preferences instead and it rises, to 0.1483 — 0.148316 to six figures. Give them both and it is 0.0000 — zero, to machine precision, and that is tested, not assumed.
+
+                                                                                   Say the counter-intuitive one out loud, because it is real: equalising preferences alone raises measured inequality. The households with the worst opportunities are the ones whose
+                                                                                   own tastes currently do most to reconcile them to what they have.
+
+                                                                                   BUILD 2 — so which order do you take? Both. The Shapley value averages them. Read the first line: remove preferences first, or remove them second, and average. That gives
+                                                                                   0.0085 Gini points for preferences. The same average the other way round gives 0.1258 for opportunities and budgets.
+
+
+                   job access                                      0.020           The two add to I00 − I11 exactly, which is what exhaustiveness means here.
+
+                                                                                   BUILD 3 — inside opportunities and budgets the same averaging runs over three players, and that is the Owen value: household endowments and needs 0.078, earning
+                   earning opportunities                           0.028           opportunities 0.028, job access 0.020.
+
+                                                                                   BUILD 4 — split job access once more and the geographic part is 0.018 of its 0.020; what is left is 0.002. Say the caveat with the number: that is a fact about how the access
+                   household endowments and needs                  0.078           block is specified, because the remaining part is conditioned on sex alone. It is not a finding that place drives welfare inequality.
+
+                                                                                   25-MIN: KEEP (2.0) — builds 1 and 2 only.
+
+
+                   of which geographic                             0.018
+
+
+                         Almost all of job access is geographic.
+
+
+
+                                                                           16/26
+                                                                                                    [3.5 min] BUILD 1 — the identity, so the shares are readable.
+
+                                                                                                    A contribution is the value of an equalisation operator in a cooperative game. The licensed reading is equalising this channel across households removes this share of baseline
+The non-preference environment carries 94% of welfare inequality                                    inequality — not a variance share and not a causal effect. No channel “explains” a percentage.
+
+                                                                                                    The first identity is exhaustiveness on the top limb; the second is the nested split of the environment. Both are checked, not assumed: the fully common state I11 is 0.000000 —
+                                                                                                    zero to machine precision — and that is what licenses reporting shares at all. Backup B2 has the story of how it was made to close, which did not happen at the first attempt.
+
+                                                                                                    Contributions may take either sign and are not shares of a positive total.
+
+                                                                                                    BUILDS 2–3 — the shares. Read the sentence as it is written, because it is generated from the table with a guard and its qualifiers are not decoration: within the currently
+                                                                                                    modelled non-preference environment, budget-side endowments and needs are the largest nested contribution under both positive models and both reference-preference conventions.
+
+
+
+             Cpref       +                 Cenv
+                                           |{z}                     = I00 − I11                     The exact figures: environment 93.70 per cent with an integration band of 0.61, preferences 6.30 with 0.61. Baseline inequality is a Gini of 0.134; equalising the environment alone
+                                                                                                    takes it to 0.031; equalising both takes it to numerical zero.
+
+             |{z}                                                                                   Say the licensed reading out loud: no channel “explains” a percentage.
+
+           preferences        opportunities and budgets
+                                                                                                    CLICK 2. Be exact about the bars, because there are two kinds and they must not be read as one. The integration band says how well the nodes integrate the model at a fixed
+                                                                                                    parameter vector. The parameter interval says how much the estimate would move across samples — propagated from the cluster-robust asymptotic distribution over 100 draws,
+                                                                                                    not a bootstrap, nothing resampled and nothing re-estimated. They are drawn on offset rows and are never merged; the shaded union is not a confidence interval.
+
+
+   Cenv =       Cacc +                     Cearn                +              C
+                                                                               | needs
+                                                                                                    The parameter interval is the wider by 3 to 8 times, so the preference share is 6.30 per cent with an interval of [4.22, 10.89] and the environment share 93.70 with [89.11, 95.78]
+                                                                                                    — the environment stays dominant across it, and the sign of the preference contribution does not change within it. Every parameter interval is conditional on the active set at the
+                |{z}                       |{z}                                  {z }               estimated parameter vector.
+
+              job access          earning opportunities              endowments and needs           One counter-intuitive fact worth 30 seconds if the room is engaged: equalising preferences raises measured inequality, because the households with the worst opportunity sets are
+                                                                                                    the ones whose own tastes currently do most to reconcile them to those sets.
+
+                                                                                                    25-MIN: KEEP (2.5) — this is the slide the talk exists for.
+                 The fully common state is numerically zero — a tested property.
+
+
+                                                                                            17/26
+                                                                                                         [3.5 min] BUILD 1 — the identity, so the shares are readable.
+
+                                                                                                         A contribution is the value of an equalisation operator in a cooperative game. The licensed reading is equalising this channel across households removes this share of baseline
+The non-preference environment carries 94% of welfare inequality                                         inequality — not a variance share and not a causal effect. No channel “explains” a percentage.
+
+                                                                                                         The first identity is exhaustiveness on the top limb; the second is the nested split of the environment. Both are checked, not assumed: the fully common state I11 is 0.000000 —
+                                                                                                         zero to machine precision — and that is what licenses reporting shares at all. Backup B2 has the story of how it was made to close, which did not happen at the first attempt.
+
+
+
+           opportunities                                                                   94%
+                                                                                                         Contributions may take either sign and are not shares of a positive total.
+
+            and budgets                                                                                  BUILDS 2–3 — the shares. Read the sentence as it is written, because it is generated from the table with a guard and its qualifiers are not decoration: within the currently
+                                                                                                         modelled non-preference environment, budget-side endowments and needs are the largest nested contribution under both positive models and both reference-preference conventions.
+
+                                                                                                         The exact figures: environment 93.70 per cent with an integration band of 0.61, preferences 6.30 with 0.61. Baseline inequality is a Gini of 0.134; equalising the environment alone
+                                                                                                         takes it to 0.031; equalising both takes it to numerical zero.
+
+                                                                                                         Say the licensed reading out loud: no channel “explains” a percentage.
+
+                                                                                                         CLICK 2. Be exact about the bars, because there are two kinds and they must not be read as one. The integration band says how well the nodes integrate the model at a fixed
+
+
+                                   6%
+                                                                                                         parameter vector. The parameter interval says how much the estimate would move across samples — propagated from the cluster-robust asymptotic distribution over 100 draws,
+            preferences                                                                                  not a bootstrap, nothing resampled and nothing re-estimated. They are drawn on offset rows and are never merged; the shaded union is not a confidence interval.
+
+                                                                                                         The parameter interval is the wider by 3 to 8 times, so the preference share is 6.30 per cent with an interval of [4.22, 10.89] and the environment share 93.70 with [89.11, 95.78]
+                                                                                                         — the environment stays dominant across it, and the sign of the preference contribution does not change within it. Every parameter interval is conditional on the active set at the
+                                                                                                         estimated parameter vector.
+
+                           0             20          40          60          80            100
+                                      share of measured welfare inequality removed (%)
+                                                                                                         One counter-intuitive fact worth 30 seconds if the room is engaged: equalising preferences raises measured inequality, because the households with the worst opportunity sets are
+                                                                                                         the ones whose own tastes currently do most to reconcile them to those sets.
+
+                                                                                                         25-MIN: KEEP (2.5) — this is the slide the talk exists for.
+                               Bars are integration precision, not confidence intervals.
+
+                                                                                                 17/26
+                                                                                                    [3.5 min] BUILD 1 — the identity, so the shares are readable.
+
+                                                                                                    A contribution is the value of an equalisation operator in a cooperative game. The licensed reading is equalising this channel across households removes this share of baseline
+The non-preference environment carries 94% of welfare inequality                                    inequality — not a variance share and not a causal effect. No channel “explains” a percentage.
+
+
+                                            integration band     parameter interval                 The first identity is exhaustiveness on the top limb; the second is the nested split of the environment. Both are checked, not assumed: the fully common state I11 is 0.000000 —
+                                                                                                    zero to machine precision — and that is what licenses reporting shares at all. Backup B2 has the story of how it was made to close, which did not happen at the first attempt.
+
+                                                                                                    Contributions may take either sign and are not shares of a positive total.
+
+                                                                                                    BUILDS 2–3 — the shares. Read the sentence as it is written, because it is generated from the table with a guard and its qualifiers are not decoration: within the currently
+            opportunities                                                                           modelled non-preference environment, budget-side endowments and needs are the largest nested contribution under both positive models and both reference-preference conventions.
+             and budgets
+                                                                                                    The exact figures: environment 93.70 per cent with an integration band of 0.61, preferences 6.30 with 0.61. Baseline inequality is a Gini of 0.134; equalising the environment alone
+                                                                                                    takes it to 0.031; equalising both takes it to numerical zero.
+
+                                                                                                    Say the licensed reading out loud: no channel “explains” a percentage.
+
+                                                                                                    CLICK 2. Be exact about the bars, because there are two kinds and they must not be read as one. The integration band says how well the nodes integrate the model at a fixed
+
+             preferences                                                                            parameter vector. The parameter interval says how much the estimate would move across samples — propagated from the cluster-robust asymptotic distribution over 100 draws,
+                                                                                                    not a bootstrap, nothing resampled and nothing re-estimated. They are drawn on offset rows and are never merged; the shaded union is not a confidence interval.
+
+                                                                                                    The parameter interval is the wider by 3 to 8 times, so the preference share is 6.30 per cent with an interval of [4.22, 10.89] and the environment share 93.70 with [89.11, 95.78]
+                                                                                                    — the environment stays dominant across it, and the sign of the preference contribution does not change within it. Every parameter interval is conditional on the active set at the
+                                                                                                    estimated parameter vector.
+
+                            0          20             40         60             80    100
+                                   share of measured welfare inequality removed (%)
+                                                                                                    One counter-intuitive fact worth 30 seconds if the room is engaged: equalising preferences raises measured inequality, because the households with the worst opportunity sets are
+                                                                                                    the ones whose own tastes currently do most to reconcile them to those sets.
+
+                                                                                                    25-MIN: KEEP (2.5) — this is the slide the talk exists for.
+                            Two kinds of interval, on offset rows. Never merged.
+
+                                                                                            17/26
+                                                                                          [2.5 min] This slide answers the two questions the paper asks, in order.
+
+                                                                                          BUILD 1 — how much of measured welfare inequality is unequal job opportunities? Job access and earning opportunities together remove 35.51 per cent, plus or minus 0.95. The
+How much of welfare inequality is unequal job opportunities?                              whole non-preference environment — those two plus household endowments and needs — removes 93.70, plus or minus 0.61. Preferences remove 6.30.
+
+                                                                                          Say the discipline once: the market-side third is reported separately from the budget side on purpose, and no ordering is claimed between job access and earning opportunities.
+
+                                                                                          BUILD 2 — what changes if the opportunity object is left out? This is the paper’s own counterfactual about method, and the result is not the one the premise predicts.
+
+                                                                                          The preference share barely moves: 6.3 per cent becomes 6.4. Almost nothing is absorbed into taste on the welfare side.
+
+                                                                                          What happens instead is that measured inequality falls -24.2 per cent, and the market-side contribution the benchmark cannot represent is relabelled: 36 per cent of it reappears as
+
+             job access and earning opportunities               35.51 ± 0.95%             endowments and needs, 68 per cent simply leaves the total, and -4 per cent goes to preferences — a negative number.
+
+                                                                                          The absorption into tastes is real, but it is on the behavioural side, not in the decomposition. The availability constants reappear in the benchmark’s utility index at essentially their
+                                                                                          availability values, mean absolute difference 0.037, and the male-minus-female leisure gap reverses sign, from +0.428 to −1.991.
+             the whole non-preference environment               93.70 ± 0.61%
+                                                                                          Say the licensed sentence and stop: omitting heterogeneous opportunities lowers measured inequality and misdescribes the environment’s composition; it does not turn opportunity
+                                                                                          into taste in the welfare decomposition.
+
+             preferences                                                  6.30%           25-MIN: KEEP (2.0).
+
+
+
+
+                      Opportunities and budgets carry almost all of it.
+
+
+
+
+                                                                                  18/26
+                                                                                                  [2.5 min] This slide answers the two questions the paper asks, in order.
+
+                                                                                                  BUILD 1 — how much of measured welfare inequality is unequal job opportunities? Job access and earning opportunities together remove 35.51 per cent, plus or minus 0.95. The
+How much of welfare inequality is unequal job opportunities?                                      whole non-preference environment — those two plus household endowments and needs — removes 93.70, plus or minus 0.61. Preferences remove 6.30.
+
+                                                                                                  Say the discipline once: the market-side third is reported separately from the budget side on purpose, and no ordering is claimed between job access and earning opportunities.
+
+                                                                                                  BUILD 2 — what changes if the opportunity object is left out? This is the paper’s own counterfactual about method, and the result is not the one the premise predicts.
+
+
+         preferences share                                                 6.3% → 6.4%            The preference share barely moves: 6.3 per cent becomes 6.4. Almost nothing is absorbed into taste on the welfare side.
+
+                                                                                                  What happens instead is that measured inequality falls -24.2 per cent, and the market-side contribution the benchmark cannot represent is relabelled: 36 per cent of it reappears as
+
+         measured inequality                                                       −24%           endowments and needs, 68 per cent simply leaves the total, and -4 per cent goes to preferences — a negative number.
+
+                                                                                                  The absorption into tastes is real, but it is on the behavioural side, not in the decomposition. The availability constants reappear in the benchmark’s utility index at essentially their
+                                                                                                  availability values, mean absolute difference 0.037, and the male-minus-female leisure gap reverses sign, from +0.428 to −1.991.
+         relabelled to household endowments and needs                               36%
+                                                                                                  Say the licensed sentence and stop: omitting heterogeneous opportunities lowers measured inequality and misdescribes the environment’s composition; it does not turn opportunity
+                                                                                                  into taste in the welfare decomposition.
+
+         out of the total                                                           68%           25-MIN: KEEP (2.0).
+
+
+
+         the sex gap in tastes                                           +0.43 → −1.99
+
+
+                    Omitted opportunities are relabelled, not turned into taste.
+
+
+                                                                                          18/26
+                                                                                                       [1.5 min] Endowments and needs 58.18 per cent (plus or minus 1.47), earning opportunities 20.62 (1.63), job access 14.90 (1.10) — so the two market-side channels together are
+                                                                                                       35.51 per cent (0.95), and that combined figure is reported separately from endowments and needs on purpose.
+
+Budgets carry 58%, job opportunities 36%                                                               Two disciplines. First, do not say job opportunities explain the environment share: the environment is the complete non-preference environment, and the market-side part of it is
+                                                                                                       a third, not all of it.
+
+                                                                                                       Second, no ordering is claimed between job access and earning opportunities — the point estimates order them and are printed, but the access margin is exactly the one that
+
+        household endowments                                                        58%
+                                                                                                       does not separate capability from availability, so an ordering claim would be a claim about something the design does not identify.
+
+                    and needs                                                                          If asked why the budget channel is so large, give the honest reading: this is France 2016, a system with substantial means-tested transfers, and the result is partly a statement
+                                                                                                       about that system. It is not portable without re-estimation.
+
+                                                                                                       25-MIN: KEEP (1.5).
+
+
+
+          earning opportunities                      21%
+
+                    job access                15%
+                                  0    10       20         30      40       50      60    70
+                                       share of measured welfare inequality removed (%)
+                             I claim no ordering between job access and earnings.
+
+                                                                                               19/26
+                                                                                                     [2.0 min] Two numbers and one caveat, and the caveat is the point.
+
+                                                                                                     Equalising the geographic access environment removes 13.05 per cent (0.74) of baseline inequality on the raw basis and 9.87 (0.55) equivalized, against a whole job-access channel
+Geography is 88% of job access, by construction                                                      of 14.90 and 9.68. So geography is 87.62 per cent (3.89) of the channel raw and 101.92 (3.11) equivalized.
+
+                                                                                                     Never say that ratio without its parameter interval — [74, 98] per cent on the raw basis. It is a ratio of two contributions one of which is small, so its sampling distribution is
+                                                                                                     much wider than its integration band suggests.
+
+
+
+                                                                               13.1%
+                                                                                                     Say why a share can exceed one before anyone asks: shares here are signed and never renormalised, so the residual is negative on the equivalized rows, not missing.
+          geographic access
+                                                                                                     Then the caveat, delivered as a limitation of the specification rather than as a result. The two sub-players do not have comparable support. The geographic block varies household
+                                                                                                     by household over eight regions, three urbanisation categories and a region-education-sex unemployment rate. The remaining access block is the occupation-availability conditional,
+                                                                                                     and this specification conditions it on sex alone — a two-cell table — plus year indicators that are identically zero on a one-year sample. Almost all the between-household
+                                                                                                     dispersion the access operator can remove is geographic by construction.
+
+                                                                                                     And the sentence that stops the obvious misreading: this is not a finding that region drives welfare inequality. Job access as a whole is 14.90 per cent of measured inequality raw
+                                                                                                     and 9.68 equivalized, against 58.18 and 66.10 for endowments and needs. If asked about regional policy: the only regional dependence in the tax-benefit system here is the
+                                                                                                     housing-allowance zone, and that belongs to endowments and needs, deliberately outside this split.
+
+
+
+
+                                      1.8%
+                                                                                                     If the room wants the household-level version: the two matched households of slide 15, moved across all 24 region × urbanisation environments, run 0.768–0.858 and 0.345–0.621
+
+           remaining access                                                                          in employment-opportunity mass and e1,302–e1,432 and e419–e864 in welfare. Handle the second range carefully: a household already at a low participation probability sits on
+                                                                                                     the steep part of the map. This is not a causal region effect; nothing here identifies what would happen to someone who moved.
+
+                                                                                                     25-MIN: CUT to backup.
+
+
+                              0   2       4       6       8      10      12        14   16
+                                   share of measured welfare inequality removed (%)
+                          This is about how I specified access. Not about place.
+
+                                                                                             20/26
+                                                                                                [1.5 min] Say what the estimand is before the number, because it is easy to hear as something else. Every reference object is computed once over the whole population and is
+                                                                                                common to every group, so a bar answers how much of this group’s own inequality is removed by moving its households to the common population reference. It is a
+                                                                                                within-subgroup decomposition, not a contribution of the characteristic: nothing here splits inequality into between-sex and within-sex parts, and nothing here is causal.
+Job access does twice as much of the work among men, 20% against 10%
+                                                                                                The finding: job access carries 19.58 per cent of men’s measured inequality against 9.79 of women’s — and it holds under both reference conventions and on both bases, 18.44
+                                                                                                against 9.02 under the male reference, 16.74 against 7.17 equivalized. The geographic part is larger for men too, 16.22 against 13.08.
+
+                                                                                                Say carefully what it does not mean: it is not that men face worse access, because the decomposition is not a level comparison. It is that the dispersion of access within men does
+
+              men                                                          19.6%                more of the work among men than the dispersion of access within women does among women.
+
+                                                                                                Then the disclosure, and do not skip it. The men’s preference share is -2.69 per cent under the female reference and +2.78 under the male one. That is a sign change, not a
+                                                                                                magnitude sensitivity, and no statement about the sign of the male preference contribution is licensed — so make none. The population preference share is positive under both
+                                                                                                conventions, so the headline’s sign stability does not extend to every subgroup of it. This is the sharpest demonstration in the talk of how much rides on a normative choice.
+
+                                                                                                If asked about other splits: urbanisation and children were computed on the same construction, neither carries a finding that survives the same scrutiny, and both are in the
+                                                                                                appendix.
+
+                                                                                                25-MIN: CUT to backup.
+
+
+
+             women                            9.8%
+                     0         5              10              15           20      25
+                           share of that group's own measured inequality removed
+                                         by equalising job access (%)
+
+                         Within each group. Not a comparison of levels.
+
+                                                                                        21/26
+                                                                                                                                  [2.5 min] This is the paper’s own counterfactual about method and it is worth doing properly, because the result is not the one the premise predicts and saying so is what makes
+                                                                                                                                  the rest credible.
+
+The same result, drawn: the zeros are the benchmark’s definition                                                                  Set it up in one line: every household-indexed argument of the availability object is replaced by a common value, so the benchmark is a conventional model with hours constants, a
+                                                                                                                                  fixed cost of work and a sex-specific leisure block — what a careful analyst without an opportunity object would have fitted. On the benchmark side job access and earning
+                                                                                                                                  opportunities are exactly zero by construction; those zeros are the benchmark’s definition made arithmetic.
+
+                                             100          final model        benchmark                                            Then three findings, in this order. First, fit does not separate them. The benchmark is 129.1 nats worse on the objective (18151.85 against 18022.76 over 41 free parameters; a
+
+
+
+
+           measured inequality removed (%)
+                                                                                                                                  likelihood-ratio statistic of 258.2 on 25 degrees of freedom, quoted as an upper bound because the benchmark is not nested), but its marginal fit is as good or better — hours
+                                                                                                                                  0.0080 against 0.0083, occupation 0.0029 against 0.0034, wage quintiles 0.0203 against 0.0261. A referee judging on marginal fit alone would prefer the model with no opportunity
+
+
+              share of that model's own       80                                                                                  object in it. That is the argument for not judging on marginal fit alone.
+
+                                                                                                                                  Second, the availability information goes into the taste parameters. The 5 hours-band constants reappear in the benchmark’s utility index at essentially their availability values
+                                                                                                                                  — mean absolute difference 0.037. The same constants, read twice. And the male-minus-female leisure gap reverses sign, from +0.428 to −1.991.
+
+                                              60                                                                                  Third — the honest surprise — the preference share barely moves: 6.4 per cent under the benchmark against 6.3 under the preferred model. The omitted market-side share does
+                                                                                                                                  not become taste. It mostly leaves the total — measured inequality falls -24.2 per cent raw and -15.3 equivalized — and what stays is relabelled onto endowments and needs.
+
+
+                                              40                                                                                  Say the licensed sentence: behavioural coefficients can absorb omitted availability structure; omitting heterogeneous opportunities materially lowers measured money-metric
+                                                                                                                                  inequality; the welfare-decomposition preference share changes little; and the missing opportunity contribution is reallocated primarily within the non-preference environment rather
+                                                                                                                                  than into preferences. Do not claim it demonstrates a large welfare-level preference-misattribution effect.
+
+                                              20                                                                                  25-MIN: compress to 1.5 — the reversed sex gap and the preference-share result.
+
+
+
+
+                                               0            job           earning         endowments        preferences
+                                                          access        opportunities      and needs
+
+                                                   Job access and earnings are exactly zero here. By construction.
+
+                                                                                                                          22/26
+                                                                                                    [2.0 min] This is the most useful slide for a critical audience and it is a strength, not a concession.
+
+                                                                                                    Be precise about which perturbation produces which range — they are different objects and it is easy to conflate them.
+The preference share is the fragile quantity: 6% to 11%
+                                                                                                    Changing only the reference-preference convention moves the preference contribution from 6.30 to 10.89 per cent on the raw basis and from 7.98 to 10.97 per cent on the
+                                                                                                    coalition-consistent equivalized basis. These paired values are reported as ranges and never averaged.
+
+                                                                                                    The broader 3.3–11.0 per cent envelope is across all eight rows of the exact table and therefore also reflects the positive-model and equivalization choices; it is not a
+                                                                                                    reference-only range.
+
+                                                                                                    The other two perturbations: the age-bound diagnostic moves the preference share by about 13 per cent, and pinning the couples male leisure block moves it by up to 73 per cent.
+         preferences                                             moves with the reference           The environment side moves by under 3.5 per cent in all of them, and no sign and no ordering changes anywhere.
+
+                                                                                                    The market-side total is nearly unchanged across reference conventions — 35.51 against 35.88 per cent on the raw basis — so reference sensitivity is concentrated in the
+                                                                                                    preference/environment split rather than in the environment’s internal structure.
+
+                                                                                                    Fold in the limits here if slide 23’s predecessor was cut: access versus capability needs external offer-rate moments; persistent heterogeneity needs repeated choices; the hours block
+        opportunities                                                                               has no desired-hours target; and this is one country, one year, one system, with multi-adult households excluded and the magnitudes provisional pending one bounded economics
+                                                                 barely moves                       review.
+         and budgets
+                                                                                                    25-MIN: KEEP (1.5) — the two rows and the range rule; absorb the limits.
+
+
+
+
+                        No sign changes. No ordering changes. Anywhere.
+
+
+
+
+                                                                                            23/26
+                                                                                                                        [2.0 min] 2,275 opposite-sex couples, one specification and no search.
+
+                                                                                                                        Lead with the finding that was not targeted and is the most striking piece of internal consistency in the paper: the female statutory-week peak in couples reproduces the singles
+Couples give the same order and a preference share I do not trust                                                       value to within three hundredths — 2.5474 against 2.5795, a third of a standard error — on a different frame, a different choice set and a joint likelihood.
+
+                                                                                                                        Then the substance: same nested order on both bases, same environment dominance.
+                                                 singles       couples
+                                          60                                                                            Then the discipline, and do not soften it. Synthetic-recovery diagnostics identified the male leisure block as the weakly recovered part of the couples specification before the welfare
+                                                                                                                        sensitivity exercise was run, and that exercise confirms it bites: the preference contribution moves by up to 73 per cent, so no single couples preference percentage is presented as
+
+
+
+           share of measured inequality
+                                                                                                                        structurally robust, and every couples preference figure travels with its range.
+
+                                          50                                                                            One directional difference from singles, stated because it is real: for couples, equalising preferences reduces measured inequality, the opposite of the singles result, so the singles
+                   removed (%)                                                                                          interpretation does not transfer.
+
+                                          40                                                                            If asked about pooling: pooled equivalized inequality is well defined and reported, but the pooled decomposition is not exhaustive — the two household types have different
+                                                                                                                        reference bundles, so the fully common pooled state is 39.4 per cent of the pooled baseline. That is an open welfare-reference question, not a numerical failure.
+
+                                          30                                                                            25-MIN: compress to 1.0 — the statutory-week replication, the same order, and the sensitivity caveat.
+
+
+                                          20
+                                          10
+                                           0      job            earning        endowments        preferences
+                                                access         opportunities     and needs
+
+                                               Singles stay the headline. Couples are the companion.
+
+                                                                                                                24/26
+                                                                                            [1.5 min] Four limits, thirty seconds each at most.
+
+                                                                                            Access versus capability — separating them needs external moments on job-offer or access rates.
+Every limit here names the evidence that would lift it
+                                                                                            Persistent heterogeneity — needs repeated choices per household, which would supply the second contrast the heterogeneity slide showed is missing.
+
+                                                                                            The hours block has no desired-hours target — external desired-hours moments would discipline it against a stated target rather than inferring both from realised hours.
+
+                                                                                            One country, one year, one system — nothing here is portable without re-estimation, and no portability is claimed.
+
+
+                limit                       what would change it                            Say the honest scope line: multi-adult households are excluded, and their admission needs five assumptions this design leaves unstated. Also state, once, that the welfare
+                                                                                            magnitudes are provisional pending one bounded economics review.
+
+                access versus capability    external job-offer moments                      25-MIN: CUT — fold two sentences into the fragility slide and the conclusion.
+
+
+                persistent heterogeneity    repeated choices per household
+                no desired-hours target     external desired-hours moments
+                one country, one year       re-estimation; no portability claimed
+
+
+
+                   These magnitudes are provisional. One review is outstanding.
+
+
+
+
+                                                                                    25/26
+                                                                            [1.0 min] Close on the contribution rather than the number.
+
+                                                                            The method: a household-specific opportunity distribution estimated jointly with preferences, with every job priced through the real tax–benefit system, and a decomposition that
+Separate what people want from what they can get                            is exhaustive by measurement rather than by assumption — the fully common state is numerically zero.
+
+                                                                            The finding: the non-preference environment carries roughly nine-tenths of measured money-metric welfare inequality (93.70 per cent), and inside it the budget side carries more
+                                                                            than the market side (58.18 against 35.51).
+
+                                                                            The margin: the preference share is the fragile quantity, it is reported as a range across the two normative conventions (6.30 to 10.89 per cent), and it is where the next round of
+                                                                            evidence should go.
+
+                                                                            Then stop talking.
+
+                                                                            25-MIN: KEEP (1.0) — absorb the two limits sentences.
+              Method    every job priced, opportunities estimated
+
+              Finding   opportunities and budgets carry 94%
+
+              Margin    preferences 6% to 11%
+
+
+
+
+                                                                    26/26
+                                                                     Held for: “What exactly is the utility function?”
+B0 — The preference block
+                                                                     Box–Cox over leisure and over consumption. The leisure weight βℓ (xi ) carries the household’s own traits — sex, age, and for women a children term — which is where observed
+                                                                     heterogeneity in tastes lives. The consumption coefficient is normalised to one, which fixes the scale; θℓ and θc are the two curvatures.
+
+                                                                     The leisure curvatures differ sharply by sex and are precisely estimated. The within-set spread of the Box–Cox leisure transform — 0.073 for men, 0.127 for women — is the
+                                                                     quantity that defeats two of the three heterogeneity extensions on slide 9.
+
+                                                                     This is the block the benchmark of slide 21 keeps while throwing the opportunity object away, which is why the availability constants have nowhere to go but here.
+
+
+
+
+         uij = βℓ(xi ) BC(ℓij ; θℓ) + BC(cij ; θc )
+                              leisure   ·   consumption
+
+
+
+
+                     Box–Cox in both. Consumption fixes the scale.
+                                                              Held for: “What are the actual parameter estimates?”
+B1 — The estimated coefficients: preferences
+                                                              The final singles model carries 41 estimated structural parameters; this is the preference block. The full table with standard errors is in the paper’s Appendix A.
+
+                                                              The leisure curvatures differ sharply by sex and are precisely estimated. Open markers rest on an active bound and carry no standard error; the ten pinned coordinates are not
+                                                              displayed.
+
+                beta_l0_sm
+             beta_l_age_sm
+           beta_l_age2_sm
+                 theta_l_sm
+                  beta_l0_sf
+              beta_l_age_sf
+             beta_l_age2_sf
+            beta_l_nkids_sf
+                  theta_l_sf
+            theta_c_singles
+                               2   0   2          4   6   8
+                                           estimate
+                                                                    The job-access block: the group-specific unemployment rate, the region dummies and the urbanisation categories, plus the employment level.
+B1 — The estimated coefficients: job access
+                                                                    This is the block whose dispersion the geographic split of slide 19 divides, and the reason almost all of the access channel’s removable dispersion is geographic by construction: the
+                                                                    remaining access block is conditioned on sex alone.
+
+
+
+
+                   beta_E
+               beta_h_pt1
+               beta_h_pt2
+                 beta_h_ft
+                beta_h_lh
+              beta_E_gsur
+            beta_E_drgn2
+            beta_E_drgn3
+            beta_E_drgn4
+            beta_E_drgn5
+            beta_E_drgn6
+            beta_E_drgn7
+            beta_E_drgn8
+            beta_E_drgur
+           beta_E_drgmd
+           beta_occ_2_m
+           beta_occ_3_m
+           beta_occ_4_m
+             beta_occ_2_f
+             beta_occ_3_f
+             beta_occ_4_f
+               beta_h_f35
+                             4   3   2    1         0   1   2   3
+                                         estimate
+                                                               The earning-opportunity block: the occupation-availability weights and the wage-offer technology.
+B1 — The estimated coefficients: earning opportunities
+                                                               Read off the thing worth reading: the occupation-availability weights differ strongly by sex — men concentrated in and around routine manual, women’s availability tilted toward
+                                                               nonroutine cognitive. That sex-specific structure is what keeps occupational sorting out of the taste block.
+
+                                                               This is also the block the channel-relocation result of slide 4 perturbs: remove the occupation term here and the tertiary-education loading moves by six standard errors.
+
+                beta_w0
+           beta_w_educL
+           beta_w_educH
+            beta_w_pexp
+           beta_w_pexp2
+                  sigma
+             delta_occ_2
+             delta_occ_3
+             delta_occ_4
+                           0.0   0.5    1.0       1.5    2.0
+                                       estimate
+                                                                                              Held for: “Why should I believe the four channels are exhaustive?” — and it is the best question in the room.
+B2 — Exhaustiveness is a tested property
+                                                                                              This is a methodological result and it should be told as one, because the honest answer is that it did not close at first. An earlier implementation failed the exhaustiveness test on
+                                                                                              both limbs in every arm — equalising everything left an index three times the one it started from — and the headline was correctly halted.
+
+                                                                                              Three things were found and removed. A missing budget channel, added as a fourth player formed from its own marginals rather than as a relabelled residual. An asymmetry in the
+                                                                                              money-metric inversion, where the reference side was frozen at the baseline while the attained side moved with the coalition; correcting it removed about 95 per cent of the
+                                                                                              residual. And a male reference block that was incomplete, because the specification carries a children-in-leisure term for women and none for men.
+
+                                                                                              With all three fixed the fully common state is numerically zero. The test was pre-stated before any cell was read.
+
+           defect                               what fixed it
+
+           a missing budget channel             a fourth player from its own marginals
+
+           asymmetric money-metric inversion    the reference side moves with the coalition
+
+           an incomplete male reference block   a structural zero on the child term
+
+
+
+
+                       The fully common state is 0.000000 — numerically zero.
+                                                                                    Held for: “You divide by an equivalence scale — doesn’t that break the decomposition?”
+B3 — The scale moves with the channel that equalises needs
+                                                                                    It does, under the natural convention, and exactly: freezing each household’s own scale in all states leaves a residual of 0.071799, which is precisely the weighted Gini of one over
+                                                                                    the scale — the same number to six decimals. Dividing a common numerator by a household-specific divisor reintroduces exactly the dispersion of the divisor.
+
+                                                                                    The fix is the one the inversion already legislates: household composition is an endowments-and-needs object, so the scale moves with the channel that equalises composition, and
+                                                                                    exhaustiveness is restored exactly.
+
+                                                                                    Equivalizing raises measured inequality by about a fifth and changes no qualitative conclusion, but it does move the market-side total from 35.51 to 25.92 per cent — both are
+                                                            raw       equivalized   reported and neither is “the” answer.
+
+                  preferences                              6.30%         7.98%      State the justification as factor consistency, not closure: the scale moves because household composition is itself part of the endowments-and-needs factor being equalised. Exact
+                                                                                    closure is a consequence of this definition, not its justification.
+                  opportunities and budgets               93.70%        92.02%
+                                                                                    If instead the normative object were to equalise resources while leaving needs fixed, the household’s own scale would remain and the residual would be a genuine needs component
+                  job access                              14.90%         9.68%      requiring different accounting. That alternative is coherent; this paper adopts the first object.
+
+                  earning opportunities                   20.62%        16.24%
+                  household endowments and needs          58.18%        66.10%
+                  market side                             35.51%        25.92%
+
+
+
+                   Freezing the own scale leaves exactly the Gini of its inverse.
+                                                                                  Held for: “You have external data on who wants more hours — why not use it to discipline the hours block?”
+B4 — I tried the hours-wish moment; there is no counterpart
+                                                                                  The honest answer is that it was tried and there is no counterpart to compare against. Three independent grounds.
+
+                                                                                  Definitional: the survey asks about more hours at the current wage, and the frame has no such menu — exactly one node per household carries the observed wage, the chosen
+                                                                                  one, so the candidate’s optimum tracks pay, paying more for 98.1 per cent of workers at a median 2.58× the observed wage.
+
+                                                                                  Identification, and this is the decisive one: perturbing any of the six hours-opportunity coefficients moves the moment by exactly zero and moves not one household’s optimum
+                                                                                  — removing the opportunity weights removes the very block the moment was meant to discipline.
+
+                                                                                  Numerical: 24.3 per cent against 20.3, but the external share falls monotonically in hours and the model’s does not, and the model puts none at long hours against 7.6 per cent.
+                ground            what it shows
+                                                                                  The steelman was tried: restricting to the household’s own ±5 per cent wage neighbourhood fixes the pay artefact and brings the aggregate to 19.4 per cent — closer than the
+                definitional      the candidate’s optimum tracks pay              model deserves — and the hours block is exactly as inert.
+
+                                                                                  The fork is architectural: a definition that removes the opportunity weights cannot identify the hours block, and one that retains them is the model’s own choice distribution, not
+                identification    the hours block moves the moment by exactly 0   an unconstrained-desire object. So the external moment stays descriptive, and no calibration is proposed.
+
+
+                numerical         the level can agree; the profile cannot
+
+
+
+
+                            Tried, and it fails on three independent grounds.
+                                                                                                         Held for: “Where does this welfare measure come from, and why this one?”
+B5 — Where the welfare family comes from
+                                                                                                         Reused from the companion theory talk; cited, not merged with the welfare slide.
+
+                                                                                                         Two principles we would like to respect. Compensation: people should not be penalized for unequal productive circumstances. Responsibility: people should be held responsible
+                                                                                                         for their preferences, especially their tastes for work and leisure.
+                Compensation                                             Responsibility
+                                                                                                         They are attractive separately but cannot both be imposed in full: no well-being measure satisfies Full Compensation and Full Responsibility together. So the literature is
+                                                                                                         structured around compromises.
+     unequal productivity should not become                  preference-based choices should not be
+               unequal well-being                                         compensated                    W 1 is one of them, and it is the one this paper takes to the data. Ignore the actual pay profile; put the same consumption level on all jobs in the individual’s ability set; among
+                                                                                                         these feasible jobs the preference relation selects one; move the common level until being at that selected job is exactly indifferent to the actual bundle.
+
+                                                                                                         It satisfies Independence of y — it ignores the actual pay profile — and Responsibility for Equal Pay — once all feasible jobs pay the same, the choice among them reflects
+                        ∄W :        Full Compensation ∧ Full Responsibility                              preferences over jobs.
+
+                                                                                                         The empirical translation replaces the ability set A with the estimated opportunity density g , which is where this paper’s work is.
+
+                                                                    [Fleurbaey & Maniquet, SCW 2005]
+
+
+
+                      W 1 is one compromise — the one this paper takes to the data.
+
+
+
+
+                               Haydar and Maniquet, Jobs and Well-Being Measurement (companion paper).
+

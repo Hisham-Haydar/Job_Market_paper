@@ -177,6 +177,19 @@ def build(sprint, out):
     m.num("IEnvOnlyShort", prim["I01"], src, dp=3)
     m.num("IBothCommon", abs(float(prim["I11"])), src, dp=6)
 
+    # The Shapley slide shows the four states and the two averaged orders, so
+    # it needs the states and the contributions in GINI POINTS, not shares.
+    # Four decimals is what the slide can carry and what the arithmetic on it
+    # has to close in.
+    for name, col in (("StateBase", "I00"), ("StatePrefEq", "I10"),
+                      ("StateEnvEq", "I01"), ("StateBothEq", "I11")):
+        m.num(name, abs(float(prim[col])), src, dp=4)
+    m.num("LevelPref", prim["C_pref"], src, dp=4)
+    m.num("LevelEnv", prim["C_env"], src, dp=4)
+    m.num("LevelAcc", prim["C_acc"], src, dp=3)
+    m.num("LevelEarn", prim["C_earn"], src, dp=3)
+    m.num("LevelNeeds", prim["C_needs"], src, dp=3)
+
     channels = [("Pref", "C_pref_over_I00"), ("Env", "C_env_over_I00"),
                 ("Acc", "C_acc_over_I00"), ("Earn", "C_earn_over_I00"),
                 ("Needs", "C_needs_over_I00"),
@@ -235,6 +248,10 @@ def build(sprint, out):
         m.num("GeoShareOfAcc" + tag, row["C_geo_share_of_C_acc"], src, dp=2, pct=True)
         m.num("BandGeoShareOfAcc" + tag, row["C_geo_share_of_C_acc__E_T"],
               src, dp=2, pct=True)
+        if tag == "Raw":
+            # the Shapley slide's second build shows the split in Gini points
+            m.num("LevelGeo", row["C_geo"], src, dp=3)
+            m.num("LevelOth", row["C_oth"], src, dp=3)
         if tag == "Raw":          # only the raw share reaches a headline
             m.num("RndGeoShareOfAcc" + tag, row["C_geo_share_of_C_acc"],
                   src, dp=0, pct=True)
@@ -321,6 +338,17 @@ def build(sprint, out):
         m.num("BenchInequalityDrop" + tag,
               (float(rumbd["I00"]) - float(ruro["I00"])) / float(ruro["I00"]),
               src, dp=1, pct=True, signed=True)
+
+    # ------- the two-answers slide: where the omitted contribution goes
+    # Panel (b) of the benchmark figure decomposes the market-side share that
+    # the benchmark cannot represent into the three places it actually goes.
+    src = "SPRINT/figures/figR01_benchmark_decomposition.csv"
+    rb = pd.read_csv(figures / "figR01_benchmark_decomposition.csv")
+    pb = rb[rb["panel"] == "b"].set_index("quantity")
+    for name, key in (("RelabelPref", "reappears as preferences"),
+                      ("RelabelNeeds", "reappears as endowments and needs"),
+                      ("RelabelOut", "leaves the measured total")):
+        m.num(name, pb.loc[key, "value"], src, dp=0, pct=True)
 
     # ------------------------------------------ B1: estimated coefficients
     src = "SPRINT/figures/fig08_coefficients_by_block.csv"

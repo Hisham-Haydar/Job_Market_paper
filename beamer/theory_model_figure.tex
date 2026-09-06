@@ -1,0 +1,272 @@
+% ====================================================================
+% theory_model_figure.tex
+%
+% The companion theory talk's SINGLE SHARED MODEL FIGURE, imported
+% VERBATIM from
+%   reference/Theory_talk/slides/Presentation.tex
+%   ("Jobs and Well-Being Measurement", Haydar and Maniquet)
+% together with its staging macros, so the two decks draw the same
+% picture from the same source and it cannot drift between them.
+%
+% Everything above the EXTENSIONS rule is the theory talk's own code,
+% character for character.  Everything below it is this deck's addition:
+% the layers that turn the theory object into the estimated one.
+%
+%   theory                      this paper
+%   ------------------------    ---------------------------------------
+%   ability set A (a brace)     an estimated opportunity DISTRIBUTION
+%   pay dots y(j)               a wage-offer DENSITY at each job
+%   two agents i and h          two matched real households
+%   W^1: equal pay on A         W^1 at a common reference pay
+%
+% The extension layers are drawn as \ModelFigure arguments, so the base
+% is never redrawn -- exactly the discipline the theory talk uses.
+% ====================================================================
+
+% -------------------------------------------------- [THEORY TALK, VERBATIM]
+% --- sketch palette: red = agent i / A ; blue = agent h / A' ---
+% (agenti / agenth are already defined in jmp_beamer_preamble.tex, from
+%  the same source; they are not redefined here.)
+% grouped fade for the whole agent-h unit (1 = solid, 0.12 = dimmed)
+% per-agent opacities as PLAIN numbers (default solid).
+\newcommand{\iop}{1}   % agent i (red) unit opacity
+\newcommand{\hop}{1}   % agent h (blue) unit opacity
+\newcommand{\hopacity}{\hop}% backward-compatible alias used by the base for blue
+\newcommand{\DimH}{\renewcommand{\hop}{0.12}}
+\newcommand{\ShowH}{\renewcommand{\hop}{1}}
+\newcommand{\DimI}{\renewcommand{\iop}{0.12}}
+\newcommand{\ShowI}{\renewcommand{\iop}{1}}
+% \cmpsign expands to the sign shown between the two W's (default gtrless).
+\newcommand{\cmpsign}{\ \,$\gtrless$\ \,}
+% overlay spec controlling when the base W-comparison label appears
+\newcommand{\LabelOv}{\rH-}
+% overlay spec controlling when pay labels y(.), y'(.) appear
+\newcommand{\PayLabOv}{\rC}
+% convenience switches
+\newcommand{\PayOff}{\renewcommand{\PayLabOv}{0}}% show no pay labels
+\newcommand{\PayOn}{\renewcommand{\PayLabOv}{\rC}}% restore default
+% restore all figure switches to default
+\newcommand{\ResetFig}{%
+  \renewcommand{\iop}{1}%
+  \renewcommand{\hop}{1}%
+  \renewcommand{\cmpsign}{\ \,$\gtrless$\ \,}%
+  \renewcommand{\LabelOv}{\rH-}%
+  \PayOn%
+  \ShowAllBase% [ADDED] also restore the per-element suppressions
+}
+
+% --- reveal-step switches for the ONE shared figure ---
+\newcommand{\rA}{1}\newcommand{\rB}{1}\newcommand{\rC}{1}\newcommand{\rD}{1}
+\newcommand{\rE}{1}\newcommand{\rF}{1}\newcommand{\rG}{1}\newcommand{\rH}{1}
+\newcommand{\BaseStaged}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{2}\renewcommand{\rC}{3}\renewcommand{\rD}{4}%
+  \renewcommand{\rE}{5}\renewcommand{\rF}{6}\renewcommand{\rG}{7}\renewcommand{\rH}{8}}
+\newcommand{\BaseAllOn}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{1}\renewcommand{\rC}{1}\renewcommand{\rD}{1}%
+  \renewcommand{\rE}{1}\renewcommand{\rF}{1}\renewcommand{\rG}{1}\renewcommand{\rH}{1}}
+
+% --- [ADDED for this deck] per-element suppression -------------------
+% A frame that REPLACES one element of the base needs to turn that element
+% off.  The stage numbers cannot do it: \onslide<0-> means "always", and a
+% large number makes beamer generate that many slides for the frame.  So
+% each replaceable element carries its own boolean, default true.
+\newif\ifShowBundle\ShowBundletrue      % the z_i bundle marker
+\newif\ifShowSegs\ShowSegstrue          % the two indifference segments
+\newcommand{\HideBundle}{\ShowBundlefalse}
+\newcommand{\HideSegs}{\ShowSegsfalse}
+\newcommand{\ShowAllBase}{\ShowBundletrue\ShowSegstrue}
+
+% ====================================================================
+% SINGLE SHARED MODEL FIGURE.  [THEORY TALK, VERBATIM]
+% One source of truth: the base figure cannot drift between slides.
+% Per-frame ADDITIONS are passed as the (mandatory) argument #1 and are
+% overlaid on top of the same base.
+% ====================================================================
+\newcommand{\ModelScale}{0.92}
+\newcommand{\ModelFigure}[1]{%
+\begin{center}
+\begin{tikzpicture}[scale=\ModelScale,>=Stealth]
+  % ===== ONE shared general figure =====
+  % Discrete jobs j,k,l; indifference levels are LINEAR SEGMENTS joining adjacent
+  % jobs. One segment per agent, through that agent's bundle. Segments CROSS
+  % between j and k (agents rank the jobs oppositely).
+  %   jobs:  j=2.2  k=5.0  l=7.8
+  %   agent i (red):  A={j,k}, at job j, bundle z_i ABOVE y'(j); rank k P l P j
+  %   agent h (blue): A'={k,l}, at job k, bundle z_h;             rank j P l P k
+  % Pay LABELS flash once (\only) then vanish; pay DOTS persist (\onslide).
+  % z_i dashed connector flashes once (\only) then vanishes; z_i dot persists.
+  % (1) axes
+  \onslide<\rA->{%
+    \draw[->,thick] (0,0) -- (0,6.2) node[above] {$c$};
+    \draw[->,thick] (0,0) -- (10.4,0) node[right] {$\mathcal{J}$};}
+  % (2) three discrete jobs on the horizontal axis
+  \onslide<\rB->{%
+    \foreach \xx/\lab in {2.2/j,5.0/k,7.8/\ell}{%
+      \draw[thick] (\xx,0.09) -- (\xx,-0.09);
+      \node[below,font=\small] at (\xx,-0.14) {$\lab$};}}
+  % (3) pay profiles: DOTS persist; LABELS appear only on the reveal step then clear
+  \onslide<\rC->{%
+    \fill[agenti,opacity=\iop] (2.2,2.6) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (5.0,1.7) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (7.8,3.4) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (2.2,1.5) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (5.0,2.3) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (7.8,2.6) circle (2.2pt);}
+  \only<\PayLabOv>{%
+    \node[agenti,left,font=\scriptsize,opacity=\iop]  at (2.2,2.6) {$y(j)$};
+    \node[agenti,below,font=\scriptsize,opacity=\iop] at (5.0,1.7) {$y(k)$};
+    \node[agenti,right,font=\scriptsize,opacity=\iop] at (7.8,3.4) {$y(\ell)$};
+    \node[agenth,left,font=\scriptsize,opacity=\hopacity]  at (2.2,1.5) {$y'(j)$};
+    \node[agenth,above,font=\scriptsize,opacity=\hopacity] at (5.0,2.3) {$y'(k)$};
+    \node[agenth,right,font=\scriptsize,opacity=\hopacity] at (7.8,2.6) {$y'(\ell)$};}
+  % (4) bundle z_i at job j, ABOVE y'(j): dashed connector flashes once, dot persists
+  \ifShowBundle
+  \onslide<\rD->{%
+    \fill[agenti,opacity=\iop] (2.2,4.5) circle (2.6pt);
+    \node[agenti,above right,font=\small,opacity=\iop] at (2.25,4.52) {$z_i$};
+  }
+  % dashed connector should flash ONLY on stage \rD
+  \only<\rD>{\draw[dashed,thick,agenti] (2.2,2.6) -- (2.2,4.52);}
+  \fi
+  % (5) ability sets: A={j,k} (red), A'={k,l} (blue) braces under the axis
+  \onslide<\rE->{%
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenti,thick,opacity=\iop]
+      (2.2,-0.5) -- (5.0,-0.5)
+      node[midway,below,agenti,font=\scriptsize,opacity=\iop] {$A=\{j,k\}$};
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenth,thick,opacity=\hopacity]
+      (5.1,-0.95) -- (7.8,-0.95)
+      node[midway,below,agenth,font=\scriptsize,opacity=\hopacity] {$A'=\{k,\ell\}$};}
+  \ifShowSegs
+  % (6) agent i indifference segment through z_i: high at j, LOW at k, mid at l
+  %     (rank k P l P j) -- crosses agent h between j and k
+  \onslide<\rF->{%
+    \draw[agenti,thick,opacity=\iop] (2.2,4.5) -- (5.0,1.4) -- (7.8,3.3);
+    \node[agenti,font=\scriptsize,opacity=\iop] at (8.05,3.3) {$R_i$};}
+  % (7) agent h indifference segment: LOW at j, high at k, mid at l
+  %     (rank j P l P k)
+  \onslide<\rG->{%
+    \fill[agenth,opacity=\hopacity] (5.0,4.2) circle (2.6pt);
+    \node[agenth,above,font=\small,opacity=\hopacity] at (5.05,4.4) {$z_h$};
+    \draw[agenth,thick,opacity=\hopacity] (2.2,1.0) -- (5.0,4.2) -- (7.8,2.6);
+    \node[agenth,font=\scriptsize,opacity=\hopacity] at (8.05,2.6) {$R_h$};}
+  \fi
+  % (8) the well-being comparison label as three nodes: red W (fades with
+  %     \iop), the sign (\cmpsign), and blue W (fades with \hop).
+  \onslide<\LabelOv>{%
+    \node[agenti,opacity=\iop,anchor=west,font=\small] (Wi) at (0.25,5.8)
+      {$W( z_i,R_i,A;\mathbf y)$};
+    \node[anchor=west,font=\small] (Wsgn) at (Wi.east) {\cmpsign};
+    \node[agenth,opacity=\hop,anchor=west,font=\small] at (Wsgn.east)
+      {$W(z_h,R_h,A';\mathbf y')$};}
+
+  % ===== per-frame additions, overlaid on the identical base =====
+  #1
+\end{tikzpicture}
+\end{center}
+}
+
+% ====================================================================
+% EXTENSIONS -- this deck's own layers.  Everything above this rule is
+% the theory talk's code; everything below is the empirical model drawn
+% on top of it, never instead of it.
+% ====================================================================
+
+% ---- EXTENSION 1: the brace becomes an estimated distribution --------
+% The theory's ability set is a SET: a job is in it or it is not, and the
+% brace says which.  What this paper estimates is a DENSITY over the same
+% job axis: every job carries a weight.  The bars are drawn at the three
+% named jobs and at intermediate points, because the estimated object is
+% over the whole space, not over the three drawn labels.
+%   #1 = the overlay spec on which the layer appears
+% The bars grow UPWARD from a baseline under the axis, so each is drawn
+% from its own foot to its own head and no arithmetic is needed inside a
+% coordinate -- \foreach cannot evaluate `-0.62-\hh` without \pgfmathparse.
+\newcommand{\OppDistribution}[1]{%
+  \onslide<#1>{%
+    % Baselines sit BELOW both ability-set braces (which end at -0.95 and
+    % carry a label under that), so the two objects never collide.
+    % agent i: mass concentrated on j and k, a little beyond
+    \foreach \xx/\ttop in {1.4/-1.53, 2.2/-1.06, 3.0/-1.38, 3.8/-1.46,
+                           5.0/-1.22, 5.8/-1.56, 6.6/-1.63, 7.8/-1.64}{
+      \draw[agenti,line width=3.6pt,opacity=0.60] (\xx,-1.70) -- (\xx,\ttop);}
+    \draw[agenti,thin,opacity=0.45] (1.2,-1.70) -- (8.0,-1.70);
+    % agent h: mass concentrated on k and l, very little on j
+    \foreach \xx/\ttop in {1.4/-2.53, 2.2/-2.50, 3.0/-2.48, 3.8/-2.38,
+                           5.0/-2.16, 5.8/-2.22, 6.6/-2.26, 7.8/-2.12}{
+      \draw[agenth,line width=3.6pt,opacity=0.60] (\xx,-2.56) -- (\xx,\ttop);}
+    \draw[agenth,thin,opacity=0.45] (1.2,-2.56) -- (8.0,-2.56);
+    \node[agenti,anchor=east,font=\scriptsize] at (1.05,-1.40) {$g_i$};
+    \node[agenth,anchor=east,font=\scriptsize] at (1.05,-2.30) {$g_h$};}}
+
+% ---- EXTENSION 2: the pay dot becomes a wage-offer density -----------
+% The theory's y(j) is a NUMBER at each job.  What this paper estimates
+% at each job is a DENSITY of the wage a job of that kind would pay.  The
+% dots stay exactly where the theory put them; the density is drawn
+% around each one, so the dot reads as the location of the density.
+%   #1 = the overlay spec on which the layer appears
+% Each density is a sideways bell whose spine sits ON the job's tick and
+% whose bulge points right, so the pay dot reads as the location.  The
+% curve is drawn in a shifted frame, which keeps the arithmetic out of
+% the coordinate and lets one definition serve all six dots.
+\newcommand{\WageDensity}[1]{%
+  \onslide<#1>{%
+    \foreach \xx/\yy in {2.2/2.6, 5.0/1.7, 7.8/3.4}{
+      \begin{scope}[shift={(\xx,\yy)}]
+        \draw[agenti,opacity=0.45,line width=1.1pt]
+          plot[domain=-0.62:0.62,samples=25,smooth,variable=\t]
+          ({0.46*exp(-5.0*\t*\t)},{\t});
+      \end{scope}}
+    \foreach \xx/\yy in {2.2/1.5, 5.0/2.3, 7.8/2.6}{
+      \begin{scope}[shift={(\xx,\yy)}]
+        \draw[agenth,opacity=0.45,line width=1.1pt]
+          plot[domain=-0.62:0.62,samples=25,smooth,variable=\t]
+          ({0.46*exp(-5.0*\t*\t)},{\t});
+      \end{scope}}}}
+
+% ---- EXTENSION 3: the two agents are two real households -------------
+% The theory's two agents rank the jobs OPPOSITELY, so their segments
+% cross.  The matched pair does the opposite: the model gives the two
+% households essentially the SAME preference segment, and it is their
+% distributions that differ.  So this layer over-draws one near-coincident
+% pair of segments in place of the crossing pair -- the picture makes the
+% point only if the segments visibly coincide.
+%   #1 = the overlay spec on which the layer appears
+\newcommand{\RealHouseholds}[1]{%
+  \onslide<#1>{%
+    % the two near-identical segments, drawn just apart enough to read as two.
+    % The frame that uses this layer suppresses the theory's own crossing
+    % segments (\rF / \rG set to 0), so nothing has to be painted over.
+    \draw[agenti,thick] (2.2,4.50) -- (5.0,1.40) -- (7.8,3.30);
+    \draw[agenth,thick] (2.2,4.32) -- (5.0,1.24) -- (7.8,3.14);
+    \fill[agenti] (2.2,4.50) circle (2.6pt);
+    \fill[agenth] (2.2,4.32) circle (2.6pt);
+    \node[agenti,anchor=west,font=\scriptsize] at (7.95,3.36) {one household};
+    \node[agenth,anchor=west,font=\scriptsize] at (7.95,3.02) {the other};}}
+
+% ---- The W^1 read-off, exactly as the theory talk's measures frame ----
+% Equal pay on the feasible set, the preferred feasible job, the read-off
+% on the vertical axis.  Reproduced from that frame's overlay code with
+% the staging simplified to a single spec.
+%   #1 = the overlay spec on which the whole construction appears
+\newcommand{\WoneRedI}[1]{%
+  \onslide<#1>{%
+    \draw[dashed,thick,agenti] (2.2,1.4) -- (5.0,1.4)
+      node[midway,below,font=\scriptsize] {$\mathbf y^{w}$ on $A$};
+    \fill[agenti] (2.2,1.4) circle (1.7pt); \fill[agenti] (5.0,1.4) circle (1.7pt);
+    \draw[agenti,thick] (5.0,1.4) circle (4.5pt);
+    \node[agenti,font=\scriptsize,anchor=north] at (5.0,1.05) {$\sim z_i$};
+    \draw[dotted,thick,agenti] (5.0,1.4) -- (0,1.4);
+    \fill[agenti] (0,1.4) circle (1.7pt);
+    \node[agenti,anchor=east,font=\small] at (-0.08,1.4) {$W^{1}_i$};}}
+\newcommand{\WoneBlueH}[1]{%
+  \onslide<#1>{%
+    \draw[dashed,thick,agenth] (5.0,2.6) -- (7.8,2.6)
+      node[midway,above,font=\scriptsize] {$\mathbf y^{w}$ on $A'$};
+    \fill[agenth] (5.0,2.6) circle (1.7pt); \fill[agenth] (7.8,2.6) circle (1.7pt);
+    \draw[agenth,thick] (7.8,2.6) circle (4.5pt);
+    \node[agenth,font=\scriptsize,anchor=north] at (7.8,2.25) {$\sim z_h$};
+    \draw[dotted,thick,agenth] (7.8,2.6) -- (0,2.6);
+    \fill[agenth] (0,2.6) circle (1.7pt);
+    \node[agenth,anchor=east,font=\small] at (-0.08,2.6) {$W^{1}_h$};}}
+
+\endinput

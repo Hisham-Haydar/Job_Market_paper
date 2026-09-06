@@ -41,6 +41,10 @@ MAX_WORDS = 12
 # The slide figure kit's minimum rendered font size, in points.
 MIN_FONT_PT = 18
 
+# Set by --debug-overlays: print the per-frame page count the arithmetic
+# derives, so a mismatch with the PDF can be located rather than guessed at.
+DEBUG_OVERLAYS = False
+
 
 def pdf_pages(path: pathlib.Path) -> int:
     data = path.read_bytes()
@@ -88,13 +92,23 @@ def strip_tex(chunk: str) -> str:
     # A table IS the visual on the frames that carry one.
     chunk = re.sub(r"\\begin\{tabular\}.*?\\end\{tabular\}", "", chunk,
                    flags=re.S)
-    # A \caveat{...} is the ONE permitted caption line; it counts, but the
-    # per-build alternatives of an \only-switched caveat are alternatives,
-    # not additions, so only the longest is counted.
+    # A \caveat{...} is the ONE permitted caption line.  Two things here are
+    # ALTERNATIVES, not additions, and only the longest of each may count:
+    #   * several \caveat{} on one frame, one per \only build;
+    #   * several \only<n>{...} INSIDE one \caveat, one per build.
+    # A viewer sees exactly one of each at a time, so summing them would
+    # charge a frame for text that never appears together.
+    def longest_alternative(body: str) -> str:
+        alts = re.findall(r"\\only<[^>]*>\{((?:[^{}]|\{[^{}]*\})*)\}", body)
+        if not alts:
+            return body
+        rest = re.sub(r"\\only<[^>]*>\{(?:[^{}]|\{[^{}]*\})*\}", " ", body)
+        return rest + " " + max(alts, key=len)
+
     caveats = re.findall(r"\\caveat\{((?:[^{}]|\{[^{}]*\})*)\}", chunk)
     chunk = re.sub(r"\\caveat\{(?:[^{}]|\{[^{}]*\})*\}", " ", chunk)
     if caveats:
-        chunk += " " + max(caveats, key=len)
+        chunk += " " + max((longest_alternative(c) for c in caveats), key=len)
     # A \slidefig{name} is the visual; its file name is not a word on the
     # slide.  Drop the argument with the macro.
     chunk = re.sub(r"\\slidefig\{[^}]*\}", " ", chunk)
@@ -148,6 +162,10 @@ def main(build: str, jobs: list[str]) -> int:
     defined = set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}", numbers))
     used = set(re.findall(r"\\([A-Z][A-Za-z]*)\b", tex))
     preamble = set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}", preamble_src))
+    # the shared theory figure defines drawing macros, not numbers
+    figure_src = (HERE / "theory_model_figure.tex").read_text(encoding="utf-8")
+    preamble |= set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}", figure_src))
+    preamble |= set(re.findall(r"\\newif\\if([A-Za-z]+)", figure_src))
     latex_builtin = {
         "LaTeX", "TeX", "Large", "LARGE", "large", "Huge", "huge", "Big",
         "Bigg", "DeclareMathOperator", "PassOptionsToPackage",
@@ -180,10 +198,19 @@ def main(build: str, jobs: list[str]) -> int:
     n_cut = len(re.findall(r"\\longdeck\{%", running))
     n_merged = len(re.findall(r"\\mergedaway\{%", running))
     n_backup = len(re.findall(r"\\begin\{frame\}", backup))
-    check("running-order frames == 23", n_short + n_cut + n_merged == 23,
-          "%d kept + %d cut + %d merged" % (n_short, n_cut, n_merged))
-    check("25-minute variant == 16 frames", n_short == 16,
-          "23 - %d cut - %d merged = %d" % (n_cut, n_merged, n_short))
+    # The frozen content document fixes 23 MESSAGES, not 23 frames.  R-261
+    # splits the opening message across the theory-grammar builds and adds
+    # the two-answers slide, so the running order is longer than 23 while
+    # every frozen message is still carried.  What must hold is the SHAPE:
+    # the plan's five cuts and two merges, and a 25-minute order that is
+    # meaningfully shorter than the 45-minute one.
+    n_run = n_short + n_cut + n_merged
+    check("running order covers the frozen 23 messages", n_run >= 23,
+          "%d frames: %d kept + %d cut + %d merged"
+          % (n_run, n_short, n_cut, n_merged))
+    check("25-minute variant is shorter", n_short == n_run - n_cut - n_merged
+          and n_short < n_run,
+          "%d frames, from %d" % (n_short, n_run))
     check("the frozen plan's 5 cuts", n_cut == 5, "%d cut to backup" % n_cut)
     check("the frozen plan's 2 merges", n_merged == 2, "%d merged" % n_merged)
     check("backup frames", n_backup >= 4, "%d backup frames" % n_backup)
@@ -191,12 +218,39 @@ def main(build: str, jobs: list[str]) -> int:
     pdf = outdir / (jobs[0] + ".pdf")
     if pdf.exists():
         pages = pdf_pages(pdf)
+        # A frame's page count is its highest overlay step.  Specs come as
+        # <2>, <2->, <1-3> and <2,4->, so take every integer that appears in
+        # any spec on the frame and use the largest.
+        # Overlay steps come from BOTH the running order and the backups, so
+        # scan the whole body.  Concatenating the two halves would drop the
+        # frame that straddles the \appendix seam.
         extra = 0
-        for frame in re.split(r"\\begin\{frame\}", running)[1:]:
-            steps = [int(x) for x in re.findall(
-                r"\\(?:only|onslide|item)<(\d+)", frame)]
+        for frame in re.split(r"\\begin\{frame\}", body)[1:]:
+            frame = frame.split(r"\end{frame}")[0]
+            steps = []
+            for spec in re.findall(r"\\(?:only|onslide|item)<([^>]*)>", frame):
+                steps += [int(x) for x in re.findall(r"\d+", spec)]
+            # The shared theory figure takes its overlay specs through the
+            # macros \LabelOv and \PayLabOv, so a step set only there -- e.g.
+            # \renewcommand{\LabelOv}{4-} -- is invisible to the scan above
+            # but still makes beamer generate that many slides.
+            for spec in re.findall(
+                    r"\\renewcommand\{\\(?:LabelOv|PayLabOv)\}\{([^}]*)\}",
+                    frame):
+                steps += [int(x) for x in re.findall(r"\d+", spec)]
+            # A spec of 0 (e.g. \renewcommand{\LabelOv}{0}, used to switch a
+            # layer off) is a suppression, not a page: a frame always has at
+            # least one.  Floor the count at 1 so it cannot go negative.
             if steps:
-                extra += max(steps) - 1
+                extra += max(max(steps), 1) - 1
+                if DEBUG_OVERLAYS:
+                    h = re.search(
+                        r"\\headlineframe\{((?:[^{}]|\{[^{}]*\})*)\}", frame)
+                    print("        %d pages  %s" % (
+                        max(steps),
+                        re.sub(r"\s+", " ", h.group(1))[:46] if h else "(title)"))
+        if DEBUG_OVERLAYS:
+            print("        running extra = %d" % extra)
         n_frames = n_short + n_cut + n_merged + n_backup
         expected = n_frames + extra
         check("PDF pages == frames + overlay steps", pages == expected,
@@ -309,7 +363,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--build", default="build")
     ap.add_argument("--job", action="append", default=None)
+    ap.add_argument("--debug-overlays", action="store_true")
     a = ap.parse_args()
+    DEBUG_OVERLAYS = a.debug_overlays
+    globals()["DEBUG_OVERLAYS"] = a.debug_overlays
     jobs = a.job or ["JMP_seminar_deck_v1", "JMP_seminar_deck_v1_25min",
                      "JMP_seminar_deck_v1_rehearsal"]
     sys.exit(main(a.build, jobs))

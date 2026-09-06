@@ -46,6 +46,7 @@
 
 \input{jmp_beamer_preamble}
 \input{deck_numbers_v1}
+\input{theory_model_figure}
 
 % ---- 25-MINUTE VARIANT ----------------------------------------------
 % The 25-minute plan is 23.0 minutes across 16 slides, reached by FIVE
@@ -86,7 +87,7 @@ Do not preview the answer yet; the next slide earns it. Twenty seconds.}
 % =================================================================== 2
 \shortdeck{%
 \begin{frame}
-\headlineframe{The same job can mean opposite things}
+\headlineframe{The same job, for two opposite reasons}
 \vfill
 \begin{center}
 \begin{tikzpicture}[>=Stealth,
@@ -103,7 +104,7 @@ Do not preview the answer yet; the next slide earns it. Twenty seconds.}
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{The taste parameter absorbs whatever the choice set cannot express.}\end{center}
+\begin{center}\caveat{Whatever the choice set cannot say, the taste parameter says.}\end{center}
 \vfill
 \note{[1.5 min] This is the motivating slide and it should be told, not read. \par\medskip
 Two people make the same choice. One had a wide range of jobs open and picked this
@@ -120,38 +121,147 @@ absorbs. \par\medskip
 \end{frame}}
 
 % =================================================================== 3
+% THE THEORY FRAME.  Stage (a): the companion paper's picture, drawn
+% from its own shared figure, unchanged.
 \shortdeck{%
 \begin{frame}
-\headlineframe{Preferences and opportunities are separate objects}
-\only<1>{\slidefig{conceptual_a}}
-\only<2>{\slidefig{conceptual_b}}
+\headlineframe{The theory puts jobs on the axis and splits the wage in two}
+\ResetFig\BaseAllOn
+{\renewcommand{\ModelScale}{0.60}\ModelFigure{}}
+\begin{center}\caveat{Haydar and Maniquet, the companion paper.}\end{center}
+\note{[1.5 min] This is the companion paper's picture and I draw it exactly as it
+is drawn there. \par\medskip
+Consumption is on the vertical axis. Jobs are on the horizontal axis --- and these
+are discrete points, so the distance between them means nothing. Three jobs:
+$j$, $k$ and $\ell$. \par\medskip
+Each job pays an income. The dots are those pay profiles, one for each of two
+people. A bundle is a pair: a job, and a consumption level at that job. \par\medskip
+The braces are the ability sets. A person cannot occupy every job, and a bundle is
+available only if its job is in that person's set. \par\medskip
+Say the modelling stance out loud, because everything follows from it: the classical
+wage has split into two objects. Which jobs you can hold, and what those jobs pay.
+$A$ and $\mathbf y$. \par\medskip
+The segments are preferences over job--consumption bundles. They cross, so the two
+people rank the same jobs oppositely. \par\medskip
+Now I take this picture to data, and I change exactly two things in it. \par\medskip
+25-MIN: KEEP (1.0).}
+\end{frame}}
+
+% =================================================================== 3b
+% EXTENSIONS 1 and 2.  The brace becomes an estimated distribution; the
+% pay dot becomes a wage-offer density.  Same base figure, never redrawn.
+\shortdeck{%
+\begin{frame}
+\headlineframe{I estimate the set as a distribution, the pay as a density}
+\ResetFig\BaseAllOn\PayOff
+\renewcommand{\LabelOv}{4-}
+{\renewcommand{\ModelScale}{0.50}\ModelFigure{%
+  \OppDistribution{2-}%
+  \WageDensity{3-}%
+}}
 \begin{center}\caveat{%
-\only<1>{Same preferences, different opportunities.}%
-\only<2>{Same opportunities, different preferences.}}\end{center}
-\note{[2.5 min] Walk the two builds slowly; this is the only slide where the whole
-argument is visible at once. \par\medskip
-Say explicitly what the figure is: \textbf{a schematic, drawn from stylised
-parameters, with no estimated quantity on any axis.} \par\medskip
-CLICK 1 --- the same preference map under two different estimated opportunity
-environments: the two households sit at different money-metric levels because
-what was available to them differed, not because they wanted different things. \par\medskip
-CLICK 2 --- the same environment under two different preference maps: now the
-difference really is taste. The paper's job is to tell these two pictures apart
-on real data. \par\medskip
-Say what the opportunity object is and what it is not --- it is a \emph{density
-over latent job packages}, not a list and not a count. \par\medskip
-Pre-empt the question that always comes: \emph{no, the model does not estimate how
-many jobs a person has; the number of sampled alternatives is a
-numerical-integration quantity and carries no economic content.} \par\medskip
-Flag that slide 14 shows this same contrast on two real households. \par\medskip
-25-MIN: compress to 1.5 --- the first build only.}
+\only<1>{Two things change. Nothing else does.}%
+\only<2>{Estimated, not a list.}%
+\only<3->{Every job carries a density, not a number.}}\end{center}
+\note{[2.5 min] Two changes, one at a time, and nothing else in the picture
+moves. \par\medskip
+CLICK 1 --- the brace becomes a distribution. In the theory a job is in your set or
+it is not. What I estimate is a weight on every job: how available a job of that
+kind is to that household. \par\medskip
+Say the sentence the slide carries, because it is the one people get wrong:
+\textbf{estimated, not a list}. This is a density over latent job packages. It is
+not a menu anyone was handed, and it is not a count. If someone asks how many jobs
+a person has, the answer is that the model does not estimate that; the number of
+sampled alternatives is a numerical-integration quantity and carries no economic
+content. \par\medskip
+CLICK 2 --- the pay dot becomes a density. In the theory each job pays a number.
+Here each job pays from a wage-offer distribution, and the dot the theory drew is
+its location. The dots have not moved. \par\medskip
+That is the whole extension. Same axis, same bundles, same preferences, same
+question. Two objects that were primitives are now estimated. \par\medskip
+25-MIN: KEEP (1.5) --- both clicks, no elaboration.}
+\end{frame}}
+
+% =================================================================== 3c
+% EXTENSION 3.  The two agents become the two matched real households.
+\shortdeck{%
+\begin{frame}
+\headlineframe{Two real households sit here: same job, opportunity
+\EOnePiA{} against \EOnePiB}
+\ResetFig\BaseAllOn\PayOff
+\renewcommand{\LabelOv}{0}
+% The theory's crossing segments and its z_i marker are replaced here by
+% the matched pair's own near-coincident ones, so switch them off.  A
+% stage number cannot do this: <0-> means "always" and <99-> would make
+% beamer generate 99 slides for the frame.
+\HideBundle\HideSegs
+{\renewcommand{\ModelScale}{0.50}\ModelFigure{%
+  \OppDistribution{1-}%
+  \RealHouseholds{1-}%
+}}
+\begin{center}\caveat{Same segments. Different distributions.}\end{center}
+\note{[1.5 min] Now the two people in the picture are two real households, chosen
+by a rule fixed before any household was looked at. \par\medskip
+From \EOneNPairs{} admissible pairs, matched on the observed employment state, the
+occupation, the hours band and the wage quintile. Two single men. Both work
+\EOneHours{} hours, in the same occupation, in the same wage quintile. \par\medskip
+The model gives them essentially the same preference segment --- leisure weights
+\EOneOmegaA{} and \EOneOmegaB. That is the crossing pair from the theory picture
+collapsing onto one line. \par\medskip
+Their distributions are not the same at all. The probability of any job offer is
+\EOnePiA{} for one and \EOnePiB{} for the other. \par\medskip
+Point at where the difference is not. Their median wage offers are 11.38 and 11.05
+euros, within thirty cents. The whole gap is on the participation margin, which is
+where region, urbanisation and the local unemployment rate enter. \par\medskip
+If asked why this pair differs from an earlier version: a defect left the region
+term out of the ranking distance. It is repaired and the ranking was re-run under
+the same rule. This pair is separated by \EOneSeparation$\times$ the admissible
+median. No number in the decomposition moved. \par\medskip
+25-MIN: KEEP (1.5).}
+\end{frame}}
+
+% =================================================================== 3d
+% EXTENSION 4.  W^1, exactly the theory talk's measures frame, then the
+% one sentence that carries it into the empirical measure.
+\shortdeck{%
+\begin{frame}
+\headlineframe{Equal pay on the set you can reach, then read off the level}
+\ResetFig\BaseAllOn\PayOff
+\renewcommand{\LabelOv}{0}
+\only<2>{\DimH}\only<3>{\DimI}
+{\renewcommand{\ModelScale}{0.60}\ModelFigure{%
+  \WoneRedI{2,4-}%
+  \WoneBlueH{3-}%
+}}
+\begin{center}\caveat{%
+\only<1>{The measure the paper takes to the data.}%
+\only<2-3>{Equal pay on the feasible set.}%
+\only<4->{Empirically: a common reference pay.}}\end{center}
+\note{[2.0 min] This is the companion paper's $W^{1}$, built the way that talk
+builds it. \par\medskip
+CLICK 1 --- the red household. Ignore what the jobs actually pay. Put the same
+consumption level on every job in the set. Among those, the preference relation
+picks one --- here $k$. Move the common level until being at that job is exactly
+indifferent to where the household actually is. Read the level off the vertical
+axis. That is $W^{1}$. \par\medskip
+CLICK 2 --- the same construction for the blue household. Its overall favourite job
+is not available, so we restrict to what is. The level comes out different. \par\medskip
+Normatively this is a compromise: it satisfies Independence of $\mathbf y$, because
+it ignores the actual pay profile, and Responsibility for Equal Pay, because once
+every feasible job pays the same, what is left is preference. \par\medskip
+CLICK 3 --- the empirical version, and say what changes. The set becomes the
+estimated distribution, so equal pay on the set becomes \textbf{a common reference
+pay across the household's own estimated opportunity distribution}. The integral is
+taken ex ante, over the density, not over realised draws. \par\medskip
+So pay is compensated and the opportunity distribution is the household's own
+responsibility. That normative choice is the one the numbers rest on. \par\medskip
+25-MIN: KEEP (2.0) --- this is the bridge slide; do not cut it.}
 \end{frame}}
 
 % =================================================================== 4
 \shortdeck{%
 \begin{frame}
-\headlineframe{Drop the opportunity object and the effect relocates,
-it does not vanish}
+\headlineframe{Drop the opportunity object and the effect moves, it does not go}
 \vfill
 \begin{center}
 \begin{tikzpicture}[>=Stealth,scale=0.95,
@@ -164,7 +274,7 @@ it does not vanish}
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{The variation loads on whichever channel is left open.}\end{center}
+\begin{center}\caveat{The variation goes wherever the model leaves a door open.}\end{center}
 \vfill
 \note{[1.5 min] Be fair to the alternative: a common-choice-set model is not
 wrong, it answers a different question, and it is cheaper. \par\medskip
@@ -189,7 +299,7 @@ structural point and forwards to it. \par\medskip
 % EQUATION SLIDE (ii): the opportunity density and its four factors.
 \shortdeck{%
 \begin{frame}
-\headlineframe{Availability is four estimated factors, jointly with preferences}
+\headlineframe{Availability is four factors, estimated with preferences at once}
 \vfill
 \begin{center}
 {\huge\[
@@ -207,7 +317,7 @@ structural point and forwards to it. \par\medskip
 \end{tabular}
 \end{center}
 \vfill
-\begin{center}\caveat{The hours factor carries no household-specific coordinate.}\end{center}
+\begin{center}\caveat{The hours factor is the same for every household. I say so.}\end{center}
 \vfill
 \note{[2.0 min] Name each factor and what varies with the household. \par\medskip
 Access varies with the group-specific unemployment rate, region and urbanisation;
@@ -285,7 +395,7 @@ slide in the short deck.}
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{Deterministic. Nothing in the estimation simulates it.}\end{center}
+\begin{center}\caveat{Same household, same job, same euro. Every time.}\end{center}
 \vfill
 \note{[2.0 min] This is the slide that makes the counterfactual legitimate, and it
 is worth two clean minutes. \par\medskip
@@ -303,7 +413,7 @@ take-up is a property of the household, not of the batch it was priced in. \par\
 % =================================================================== 8
 \shortdeck{%
 \begin{frame}
-\headlineframe{Two things stay conditional, and both are stated as limits}
+\headlineframe{Two things I cannot separate, and I say so}
 \vfill
 \begin{center}
 \begin{tikzpicture}[>=Stealth,
@@ -316,7 +426,7 @@ take-up is a property of the household, not of the batch it was priced in. \par\
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{Structural and model-conditional. Not causal.}\end{center}
+\begin{center}\caveat{This is a decomposition. It is not a causal estimate.}\end{center}
 \vfill
 \note{[2.0 min] What the data pin: the four availability factors, the preference
 block, the statutory-week peak. Then the two conditional items, said plainly. \par\medskip
@@ -352,7 +462,7 @@ different reasons; the backup slide has the design rule.''}}
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{Three heterogeneity extensions; three different failures.}\end{center}
+\begin{center}\caveat{I tried three. All three failed, for three reasons.}\end{center}
 \vfill
 \note{[2.0 min] This is the slide that turns an appendix of failures into a result,
 and in a methods-literate audience it is often the most interesting five minutes of
@@ -385,8 +495,7 @@ on this design, not the existence of heterogeneity. \par\medskip
 \headlineframe{The model reproduces the statutory week: \HoursStatPredPct\%
 against \HoursStatObsPct\% observed}
 \slidefig{hours}
-\begin{center}\caveat{An opportunity peak in the offer density. Not a causal
-estimate.}\end{center}
+\begin{center}\caveat{A peak in what is on offer. Not the statute's effect.}\end{center}
 \note{[2.0 min] Observed \HoursStatObsPct{} per cent in the statutory band against
 \HoursStatPredPct{} model-implied; mean absolute error \HoursMAE{} across
 \HoursNBins{} bins. \par\medskip
@@ -406,10 +515,9 @@ Concede the identified weak spot without being asked: the model under-predicts t
 % 25-MIN: MERGED into slide 10.
 \mergedaway{%
 \begin{frame}
-\headlineframe{Employment and occupation fit closely; the wage side is the
-one real misfit}
+\headlineframe{Employment and occupation fit; the wage side does not}
 \slidefig{fit}
-\begin{center}\caveat{The bottom offered-wage quintile is over-predicted.}\end{center}
+\begin{center}\caveat{I over-predict the bottom wage quintile. A repair failed.}\end{center}
 \note{[1.5 min] Employment \EmpObs{} observed against \EmpPred{} model-implied.
 Occupation: largest deviation across the \OccNCategories{} categories, including
 non-employment, is \OccMaxDev{} --- seven-tenths of a percentage point. \par\medskip
@@ -429,9 +537,9 @@ Occupation fit is shown \emph{internally} here for a reason slide 13 explains. \
 % ================================================================== 12
 \longdeck{%
 \begin{frame}
-\headlineframe{The answer does not depend on the number of drawn jobs}
+\headlineframe{The answer does not move with the number of drawn jobs}
 \slidefig{draws}
-\begin{center}\caveat{Stable from 50 to 400 drawn alternatives.}\end{center}
+\begin{center}\caveat{Fifty drawn jobs to four hundred. Every sign holds.}\end{center}
 \note{[1.0 min] Thirty seconds of content and a minute of credibility. \par\medskip
 Every sign is constant and the nested order holds at every rung. \par\medskip
 State the one exception rather than claiming uniformity: in the male-reference arm
@@ -446,11 +554,9 @@ contribution is not quoted to more than two significant figures.} \par\medskip
 % ================================================================== 13
 \shortdeck{%
 \begin{frame}
-\headlineframe{An outside source the model never saw puts the statutory band
-at \ExtStatBandLFS\%}
+\headlineframe{A source the model never saw puts the band at \ExtStatBandLFS\%}
 \slidefig{external}
-\begin{center}\caveat{Validation only. No external moment enters the
-likelihood.}\end{center}
+\begin{center}\caveat{Validation only. No outside number enters the likelihood.}\end{center}
 \note{[2.5 min] Frame it before showing it: \textbf{validation only --- no moment
 from any external source enters the likelihood, and none of this identifies
 anything.} \par\medskip
@@ -482,67 +588,73 @@ comparison is attempted and none is faked. \par\medskip
 \end{frame}}
 
 % ================================================================== 14
-% EQUATION SLIDE (iv): the welfare measure and the four states.
+% THE SHAPLEY SLIDE.  The four states, the two averaged orders with the
+% numbers plugged in, then the Owen value inside the environment.
 \shortdeck{%
 \begin{frame}
-\headlineframe{Welfare is the flat pay that would leave you as well off}
-\only<1>{%
+\headlineframe{Two orders, averaged: that is the whole decomposition}
+\only<1-2>{%
 \vfill
 \begin{center}
-{\LARGE\[
-  \Wmm_i \;=\; \Wone\!\left(z_i,\, R_i,\, \gopp_i;\, \yref\right)
-\]}
-\vspace{0.4em}
+{\large
 \begin{tabular}{r|cc}
- & {\small own \pref} & {\small reference \pref}\\ \hline
-{\small own \env} & $I_{00}$ & $I_{10}$\\
-{\small reference \env} & $I_{01}$ & $I_{11}$\\
-\end{tabular}
+ & {\normalsize own \pref} & {\normalsize reference \pref}\\ \hline
+{\normalsize own opportunities} & $I_{00}=\StateBase$ & $I_{10}=\StatePrefEq$\\[0.3em]
+{\normalsize reference opportunities} & $I_{01}=\StateEnvEq$ & $I_{11}=\StateBothEq$\\
+\end{tabular}}
 \end{center}
-\vfill
-\begin{center}\caveat{Pay is compensated; the opportunity set is not.}\end{center}
+\vspace{0.6em}
+\onslide<2>{%
+\begin{center}\normalsize
+$C_{\mathrm{pref}} = \tfrac12\!\left[(I_{00}-I_{10})+(I_{01}-I_{11})\right]
+   = \textcolor{chpref}{\LevelPref}$\\[0.45em]
+$C_{\mathrm{env}} = \tfrac12\!\left[(I_{00}-I_{01})+(I_{10}-I_{11})\right]
+   = \textcolor{chenv}{\LevelEnv}$
+\end{center}}
 \vfill}
-\only<2>{%
-\slidefig{matched_pair}
-\begin{center}\caveat{Two real households, the same preferences, different
-opportunity.}\end{center}}
-\note{[1.5 min] BUILD 1 --- the measure. Define it in one sentence and say what
-normative choice it encodes: what flat consumption level, available at every job in
-this household's \textbf{ex-ante estimated opportunity distribution}, would leave
-them as well off as they are --- so pay is compensated and the set is the
-household's own responsibility. \par\medskip
-Say ``estimated opportunity distribution'', not ``the household's own set'': the
-empirical object is a density the model estimates, not an observed menu, and the
-welfare integral is taken over it ex ante rather than over realised draws. \par\medskip
-The 2$\times$2 grid is the whole decomposition apparatus in one picture: own
-preferences and own environment is the baseline; each reference substitution is one
-equalisation operator; the bottom-right cell is the fully common state, and the
-headline slide says it is numerically zero. \par\medskip
-Baseline inequality is \IBaselineShort; equalising the environment alone takes it
-to \IEnvOnlyShort; equalising preferences alone \emph{raises} it to
-\IPrefOnly. \par\medskip
-BUILD 2 --- the pair. Stress that it was \textbf{selected by a rule fixed before
-any household was looked at}, from \EOneNPairs{} admissible pairs matched on
-observed employment, occupation, hours band and wage quintile: two single men, both
-working \EOneHours{} hours in the same occupation in the same wage quintile, whom
-the model gives essentially the same preference profile --- leisure weights
-\EOneOmegaA{} and \EOneOmegaB{} --- and very different opportunity: employment
-probability \EOnePiA{} against \EOnePiB. \par\medskip
-Point at where the difference is \emph{not}: their median wage offers are
-\euro11.38 and \euro11.05, within thirty cents. The whole gap is on the
-participation margin, which is where region, urbanisation and the local
-unemployment rate enter --- so this pair is the household-level face of the
-geographic split on slide 17. \par\medskip
-This is the first build of slide 3 on real estimates. Repeat once that these are
-\textbf{densities, not job draws}. \par\medskip
-If asked how this pair was chosen, or why it differs from an earlier version: a
-defect in the selection code left the ranking's opportunity distance without the
-region term. It is repaired, the ranking was re-run over the same admissible pairs
-under the same rule, and this is what it returns --- a cleaner pair, separated by
-\EOneSeparation$\times$ rather than 2.08$\times$, whose gap is geographic rather
-than in the wage offer. \textbf{No number in the welfare decomposition moved}; the
-defect was confined to this illustration. \par\medskip
-25-MIN: KEEP (1.5).}
+\only<3->{%
+\vfill
+\begin{center}
+{\large
+\begin{tabular}{lr}
+\acc & \textcolor{chacc}{\LevelAcc}\\[0.45em]
+\earn & \textcolor{chearn}{\LevelEarn}\\[0.45em]
+\needs & \textcolor{chneeds}{\LevelNeeds}\\[0.6em] \hline
+\onslide<4->{\rule{0pt}{1.5em}of which geographic & \textcolor{chacc}{\LevelGeo}}\\
+\end{tabular}}
+\end{center}
+\vfill}
+\begin{center}\caveat{%
+\only<1>{Equalising preferences alone raises inequality.}%
+\only<2>{The Shapley value averages both orders.}%
+\only<3>{Inside opportunities and budgets, the Owen value.}%
+\only<4->{Almost all of job access is geographic.}}\end{center}
+\note{[2.5 min] BUILD 1 --- the four states, in Gini points. \par\medskip
+Own preferences and own opportunities is where people actually are:
+\StateBase. Give everyone the reference opportunities and it falls to
+\StateEnvEq. Give everyone the reference preferences instead and it \emph{rises},
+to \StatePrefEq{} --- \IPrefOnly{} to six figures. Give them both and it is
+\StateBothEq{} --- zero, to machine precision, and that is tested, not
+assumed. \par\medskip
+Say the counter-intuitive one out loud, because it is real: equalising preferences
+alone raises measured inequality. The households with the worst opportunities are
+the ones whose own tastes currently do most to reconcile them to what they
+have. \par\medskip
+BUILD 2 --- so which order do you take? Both. The Shapley value averages them.
+Read the first line: remove preferences first, or remove them second, and average.
+That gives \LevelPref{} Gini points for preferences. The same average the other way
+round gives \LevelEnv{} for opportunities and budgets. \par\medskip
+The two add to $I_{00}-I_{11}$ exactly, which is what exhaustiveness means
+here. \par\medskip
+BUILD 3 --- inside opportunities and budgets the same averaging runs over three
+players, and that is the Owen value: household endowments and needs \LevelNeeds,
+earning opportunities \LevelEarn, job access \LevelAcc. \par\medskip
+BUILD 4 --- split job access once more and the geographic part is \LevelGeo{} of
+its \LevelAcc; what is left is \LevelOth. Say the caveat with the number: that is a
+fact about how the access block is specified, because the remaining part is
+conditioned on sex alone. It is not a finding that place drives welfare
+inequality. \par\medskip
+25-MIN: KEEP (2.0) --- builds 1 and 2 only.}
 \end{frame}}
 
 % ================================================================== 15
@@ -551,14 +663,14 @@ defect was confined to this illustration. \par\medskip
 % themselves, then the same shares under both kinds of uncertainty.
 \shortdeck{%
 \begin{frame}
-\headlineframe{The environment carries \RndEnv\% of measured welfare inequality}
+\headlineframe{The non-preference environment carries \RndEnv\% of welfare inequality}
 \only<1>{%
 \vfill
 \begin{center}
 {\LARGE\[
   \underbrace{C_{\mathrm{pref}}}_{\textcolor{chpref}{\text{preferences}}}
   \;+\;
-  \underbrace{C_{\mathrm{env}}}_{\textcolor{chenv}{\text{the environment}}}
+  \underbrace{C_{\mathrm{env}}}_{\textcolor{chenv}{\text{opportunities and budgets}}}
   \;=\; I_{00} - I_{11}
 \]}
 \vspace{-0.4em}
@@ -625,14 +737,75 @@ them to those sets. \par\medskip
 25-MIN: KEEP (2.5) --- this is the slide the talk exists for.}
 \end{frame}}
 
+% ==================================================================
+% THE TWO ANSWERS.  Titled with the research question, placed directly
+% after the headline.  One build per question.
+\shortdeck{%
+\begin{frame}
+\headlineframe{How much of welfare inequality is unequal job opportunities?}
+\only<1>{%
+\vfill
+\begin{center}{\large
+\begin{tabular}{lr}
+\acc{} and \earn & \textcolor{chacc}{\wband{\ShareMarket}{\BandMarket}\%}\\[0.7em]
+the whole non-preference environment &
+  \textcolor{chenv}{\wband{\ShareEnv}{\BandEnv}\%}\\[0.7em]
+\pref & \textcolor{chpref}{\SharePref\%}\\
+\end{tabular}}
+\end{center}
+\vfill}
+\only<2->{%
+\vfill
+\begin{center}{\large
+\begin{tabular}{lr}
+\pref{} share & \BenchSharePrefRURO\% $\to$ \BenchSharePrefRUMB\%\\[0.7em]
+measured inequality & $-$\RndBenchDropRaw\%\\[0.7em]
+relabelled to \needs & \RelabelNeeds\%\\[0.7em]
+out of the total & \RelabelOut\%\\[0.7em]
+the sex gap in tastes & $+0.43 \to -1.99$\\
+\end{tabular}}
+\end{center}
+\vfill}
+\begin{center}\caveat{%
+\only<1>{Opportunities and budgets carry almost all of it.}%
+\only<2->{Omitted opportunities are relabelled, not turned into taste.}}\end{center}
+\note{[2.5 min] This slide answers the two questions the paper asks, in
+order. \par\medskip
+BUILD 1 --- how much of measured welfare inequality is unequal job opportunities?
+Job access and earning opportunities together remove \ShareMarket{} per cent, plus
+or minus \BandMarket. The whole non-preference environment --- those two plus
+household endowments and needs --- removes \ShareEnv, plus or minus \BandEnv.
+Preferences remove \SharePref. \par\medskip
+Say the discipline once: the market-side third is reported separately from the
+budget side on purpose, and no ordering is claimed between job access and earning
+opportunities. \par\medskip
+BUILD 2 --- what changes if the opportunity object is left out? This is the
+paper's own counterfactual about method, and the result is not the one the premise
+predicts. \par\medskip
+The preference share barely moves: \BenchSharePrefRURO{} per cent becomes
+\BenchSharePrefRUMB. Almost nothing is absorbed into taste on the welfare side. \par\medskip
+What happens instead is that measured inequality falls
+\BenchInequalityDropRaw{} per cent, and the market-side contribution the benchmark
+cannot represent is relabelled: \RelabelNeeds{} per cent of it reappears as
+endowments and needs, \RelabelOut{} per cent simply leaves the total, and
+\RelabelPref{} per cent goes to preferences --- a negative number. \par\medskip
+The absorption into tastes is real, but it is on the behavioural side, not in the
+decomposition. The availability constants reappear in the benchmark's utility index
+at essentially their availability values, mean absolute difference
+\BenchConstMAD, and the male-minus-female leisure gap reverses sign, from $+0.428$
+to $-1.991$. \par\medskip
+Say the licensed sentence and stop: omitting heterogeneous opportunities lowers
+measured inequality and misdescribes the environment's composition; it does not
+turn opportunity into taste in the welfare decomposition. \par\medskip
+25-MIN: KEEP (2.0).}
+\end{frame}}
+
 % ================================================================== 16
 \shortdeck{%
 \begin{frame}
-\headlineframe{Inside it, the budget side carries \RndNeeds\% and the market
-side \RndMarket\%}
+\headlineframe{Budgets carry \RndNeeds\%, job opportunities \RndMarket\%}
 \slidefig{environment}
-\begin{center}\caveat{No ordering is claimed between the two market
-channels.}\end{center}
+\begin{center}\caveat{I claim no ordering between job access and earnings.}\end{center}
 \note{[1.5 min] Endowments and needs \ShareNeeds{} per cent (plus or minus
 \BandNeeds), earning opportunities \ShareEarn{} (\BandEarn), job access
 \ShareAcc{} (\BandAcc) --- so the two market-side channels together are
@@ -656,10 +829,9 @@ re-estimation. \par\medskip
 % ================================================================== 17
 \longdeck{%
 \begin{frame}
-\headlineframe{Geography is \RndGeoShareOfAccRaw\% of the job-access channel}
+\headlineframe{Geography is \RndGeoShareOfAccRaw\% of job access, by construction}
 \slidefig{geographic}
-\begin{center}\caveat{A fact about how the access block is specified, not about
-place.}\end{center}
+\begin{center}\caveat{This is about how I specified access. Not about place.}\end{center}
 \note{[2.0 min] Two numbers and one caveat, and the caveat is the point. \par\medskip
 Equalising the geographic access environment removes \textbf{\ShareGeoRaw{} per
 cent (\BandGeoRaw)} of baseline inequality on the raw basis and \ShareGeoEqv{}
@@ -706,8 +878,7 @@ would happen to someone who moved. \par\medskip
 \headlineframe{Job access does twice as much of the work among men,
 \RndSubAccMen\% against \RndSubAccWomen\%}
 \slidefig{subgroup}
-\begin{center}\caveat{Within-subgroup, not a level comparison, and not
-causal.}\end{center}
+\begin{center}\caveat{Within each group. Not a comparison of levels.}\end{center}
 \note{[1.5 min] Say what the estimand is before the number, because it is easy to
 hear as something else. Every reference object is computed \textbf{once over the
 whole population and is common to every group}, so a bar answers \emph{how much of
@@ -742,11 +913,9 @@ are in the appendix. \par\medskip
 % ================================================================== 19
 \shortdeck{%
 \begin{frame}
-\headlineframe{Omit the opportunity object and measured inequality falls
-\RndBenchDropRaw\%}
+\headlineframe{The same result, drawn: the zeros are the benchmark's definition}
 \slidefig{benchmark}
-\begin{center}\caveat{The missing share is relabelled, not turned into
-taste.}\end{center}
+\begin{center}\caveat{Job access and earnings are exactly zero here. By construction.}\end{center}
 \note{[2.5 min] This is the paper's own counterfactual about method and it is worth
 doing properly, because \textbf{the result is not the one the premise predicts} and
 saying so is what makes the rest credible. \par\medskip
@@ -799,13 +968,14 @@ claim it demonstrates a large welfare-level preference-misattribution effect. \p
   \node[left,font=\small,text=chpref] at (-0.25,0.9) {\pref};
   \draw[very thick,chenv] (0,-0.9) -- (0.55,-0.9);
   \fill[chenv] (0,-0.9) circle (5pt); \fill[chenv] (0.55,-0.9) circle (5pt);
-  \node[left,font=\small,text=chenv] at (-0.25,-0.9) {\env};
+  \node[left,font=\small,text=chenv,align=right] at (-0.25,-0.9)
+    {opportunities\\ and budgets};
   \node[right,font=\small] at (5.9,0.9) {moves with the reference};
   \node[right,font=\small] at (5.9,-0.9) {barely moves};
 \end{tikzpicture}
 \end{center}
 \vfill
-\begin{center}\caveat{No sign and no ordering changes anywhere.}\end{center}
+\begin{center}\caveat{No sign changes. No ordering changes. Anywhere.}\end{center}
 \vfill
 \note{[2.0 min] This is the most useful slide for a critical audience and it is a
 strength, not a concession. \par\medskip
@@ -841,10 +1011,9 @@ one bounded economics review. \par\medskip
 % singles stay the quantitative headline.
 \shortdeck{%
 \begin{frame}
-\headlineframe{Couples reproduce the same order, with a sensitive
-preference share}
+\headlineframe{Couples give the same order and a preference share I do not trust}
 \slidefig{couples}
-\begin{center}\caveat{Singles remain the quantitative headline.}\end{center}
+\begin{center}\caveat{Singles stay the headline. Couples are the companion.}\end{center}
 \note{[2.0 min] 2,275 opposite-sex couples, one specification and no search. \par\medskip
 Lead with the finding that was not targeted and is the most striking piece of
 internal consistency in the paper: the \textbf{female statutory-week peak in
@@ -876,7 +1045,7 @@ sensitivity caveat.}
 % sentences folded into the fragility slide and the conclusion.
 \longdeck{%
 \begin{frame}
-\headlineframe{Each limit names the evidence that would lift it}
+\headlineframe{Every limit here names the evidence that would lift it}
 \vfill
 \begin{center}
 \decktable{\small
@@ -890,8 +1059,7 @@ one country, one year & re-estimation; no portability claimed\\
 \end{tabular}}
 \end{center}
 \vfill
-\begin{center}\caveat{Magnitudes provisional pending one bounded
-review.}\end{center}
+\begin{center}\caveat{These magnitudes are provisional. One review is outstanding.}\end{center}
 \vfill
 \note{[1.5 min] Four limits, thirty seconds each at most. \par\medskip
 \textbf{Access versus capability} --- separating them needs external moments on
@@ -913,12 +1081,12 @@ review}. \par\medskip
 % ================================================================== 23
 \shortdeck{%
 \begin{frame}
-\headlineframe{Separating wants from opportunities changes the attribution}
+\headlineframe{Separate what people want from what they can get}
 \vfill
 \begin{center}\large
 \begin{tabular}{r@{\hspace{1.2em}}l}
 \textbf{Method} & every job priced, opportunities estimated\\[1.1em]
-\textbf{Finding} & the environment carries \RndEnv\%\\[1.1em]
+\textbf{Finding} & opportunities and budgets carry \RndEnv\%\\[1.1em]
 \textbf{Margin} & preferences \RndPref\% to \RndPrefMaleRef\%\\
 \end{tabular}
 \end{center}
@@ -958,7 +1126,7 @@ Then stop talking. \par\medskip
 {\small leisure \quad\textperiodcentered\quad consumption}
 \end{center}
 \vfill
-\begin{center}\caveat{Box--Cox in both; consumption normalised.}\end{center}
+\begin{center}\caveat{Box--Cox in both. Consumption fixes the scale.}\end{center}
 \vfill
 \note{Held for: \emph{``What exactly is the utility function?''} \par\medskip
 Box--Cox over leisure and over consumption. The leisure weight
@@ -1049,7 +1217,7 @@ was pre-stated before any cell was read.}}
 
 % ---------------------------------------------------------------- B3
 \begin{frame}
-\headlineframe{B3 --- Equivalization moves the scale with the needs channel}
+\headlineframe{B3 --- The scale moves with the channel that equalises needs}
 \vfill
 \begin{center}
 \decktable{\small
@@ -1057,7 +1225,7 @@ was pre-stated before any cell was read.}}
 \begin{tabular}{l|c|c}
  & \textbf{raw} & \textbf{equivalized}\\ \hline
 \pref & \SharePref\% & \SharePrefEqv\%\\
-\env & \ShareEnv\% & \ShareEnvEqv\%\\ \hline
+opportunities and budgets & \ShareEnv\% & \ShareEnvEqv\%\\ \hline
 \acc & \ShareAcc\% & \ShareAccEqv\%\\
 \earn & \ShareEarn\% & \ShareEarnEqv\%\\
 \needs & \ShareNeeds\% & \ShareNeedsEqv\%\\ \hline
@@ -1093,7 +1261,7 @@ paper adopts the first object.}
 
 % ---------------------------------------------------------------- B4
 \begin{frame}
-\headlineframe{B4 --- The hours-wish evidence has no model counterpart}
+\headlineframe{B4 --- I tried the hours-wish moment; there is no counterpart}
 \vfill
 \begin{center}
 \decktable{\small

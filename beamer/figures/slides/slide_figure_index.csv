@@ -1,10 +1,7 @@
 slide_figure,source_csv,panel
-conceptual_a_slide.pdf,runs/figT1/make_figT1_v1.py,"same preferences, different opportunities"
-conceptual_b_slide.pdf,runs/figT1/make_figT1_v1.py,"same opportunities, different preferences"
 hours_slide.pdf,fig02_hours_bands_obs_vs_pred.csv,twelve hours bins
 fit_slide.pdf,fig03_employment + fig04_occupation,employment and the five occupation categories
 external_slide.pdf,figX1_external_hours_lfs_validation.csv,panel b -- the one validation panel
-matched_pair_slide.pdf,figE1_matched_pair.csv,"leisure weight and employment opportunity mass, the two households"
 headline_slide.pdf,figW02_headline_decomposition.csv,S8 / female reference / raw
 headline_intervals_slide.pdf,figU01_headline_two_intervals.csv,panels B and C / raw
 environment_slide.pdf,figW03_nested_environment.csv,S8 / female reference / raw

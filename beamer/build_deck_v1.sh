@@ -52,6 +52,17 @@ case "${1:-all}" in
 esac
 
 echo
+echo "=== text exports for review ==="
+# A plain-text rendering of each built variant, for reading the deck without
+# opening it and for eyeballing the forbidden-label gate by hand.
+for f in "$OUT"/*.pdf; do
+  [ -e "$f" ] || continue
+  b="$(basename "$f" .pdf)"
+  pdftotext -layout "$f" "$OUT/${b}_text.txt"
+  printf '  %-46s %s lines\n' "${b}_text.txt" "$(wc -l < "$OUT/${b}_text.txt")"
+done
+
+echo
 echo "=== the per-slide table ==="
 python slide_table_v1.py --csv slide_table_v1.csv
 

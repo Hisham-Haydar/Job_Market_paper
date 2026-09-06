@@ -4,6 +4,8 @@ build/*
 !build/JMP_seminar_deck_v1.pdf
 !build/JMP_seminar_deck_v1_25min.pdf
 !build/JMP_seminar_deck_v1_rehearsal.pdf
+# the plain-text renderings, for reading and reviewing the deck
+!build/*_text.txt
 
 # stray intermediates if anyone compiles in place
 *.aux
