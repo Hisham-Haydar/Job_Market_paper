@@ -1,0 +1,1450 @@
+% Jobs and Well-Being Measurement -- BEAMER deck (residue of the spoken script)
+% Slides carry FORMAL OBJECTS ONLY; the full narration lives in \note{}.
+% Rehearse with the notes on a second screen:
+%   the option below splits each page into slide (left) + notes (right).
+
+% ====================================================================
+% TIMING BUDGET (target ~20 min: title + 11 main frames)
+%   0. Title ....................................... 0.5 min
+%   1. Motivation .................................. 1.8 min
+%   2. The conflict ................................ 1.5 min
+%   3. The model (front-loaded) ...................... 3 min
+%   4. Axioms: irrelevant & infeasible jobs .......... 1 min
+%   5. Axioms: compensation .......................... 1 min
+%   6. Axioms: responsibility ........................ 1 min
+%   7. The measures ................................ 2.3 min
+%   8. Classification (table) ........................ 2 min
+%   9. Conclusion -- Lesson 1 ...................... 2.3 min
+%  10. Conclusion -- Lesson 2 ...................... 2.3 min
+%  11. What is a job? .............................. 1.3 min
+%   --------------------------------------------------------
+%   TOTAL .......................................... 20.0 min
+% ====================================================================
+\documentclass[10pt]{beamer}
+\usetheme{metropolis}
+\definecolor{deepred}{RGB}{150,25,35}
+\setbeamercolor{frametitle}{bg=deepred}
+\setbeamertemplate{navigation symbols}{}
+% metropolis-defined accents (safe: these beamercolors exist in metropolis)
+\setbeamercolor{progress bar}{fg=deepred}
+\setbeamercolor{title separator}{fg=deepred}
+% --- CHANGE 2: frame number as current/total, in deep red ---
+\metroset{numbering=fraction}
+\setbeamercolor{footline}{fg=deepred}
+% --- backup appendix: keep main frame total at /11 ---
+\usepackage{appendixnumberbeamer}
+% --- VISIBLE link colours for rehearsal (internal hyperlinks shown in deep red) ---
+\hypersetup{colorlinks=true,linkcolor=deepred,citecolor=deepred,urlcolor=deepred}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+% --- sketch palette: red = agent i / A ; blue = agent h / A' ; green = y' ; cyan = y ---
+\definecolor{agenti}{RGB}{200,30,40}
+\definecolor{agenth}{RGB}{20,80,200}
+% grouped fade for the whole agent-h unit on frame 7 (1 = solid, 0.18 = dimmed)
+% per-agent opacities as PLAIN numbers (default solid). Frames 3 & 11 leave these.
+\newcommand{\iop}{1}   % agent i (red) unit opacity
+\newcommand{\hop}{1}   % agent h (blue) unit opacity
+\newcommand{\hopacity}{\hop}% backward-compatible alias used by the base for blue
+\newcommand{\DimH}{\renewcommand{\hop}{0.12}}
+\newcommand{\ShowH}{\renewcommand{\hop}{1}}
+\newcommand{\DimI}{\renewcommand{\iop}{0.12}}
+\newcommand{\ShowI}{\renewcommand{\iop}{1}}
+% \cmpsign expands to the sign shown between the two W's (default gtrless).
+\newcommand{\cmpsign}{\ \,$\gtrless$\ \,}
+% overlay spec controlling when the base W-comparison label appears
+\newcommand{\LabelOv}{\rH-}
+% overlay spec controlling when pay labels y(.), y'(.) appear
+\newcommand{\PayLabOv}{\rC}
+% convenience switches
+\newcommand{\PayOff}{\renewcommand{\PayLabOv}{0}}% show no pay labels
+\newcommand{\PayOn}{\renewcommand{\PayLabOv}{\rC}}% restore default
+% restore all figure switches to default (frames 3 & 11 call this)
+\newcommand{\ResetFig}{%
+  \renewcommand{\iop}{1}%
+  \renewcommand{\hop}{1}%
+  \renewcommand{\cmpsign}{\ \,$\gtrless$\ \,}%
+  \renewcommand{\LabelOv}{\rH-}%
+  \PayOn%
+}
+
+% --- notes on a second screen (rehearsal view) ---
+\usepackage{pgfpages}
+% \setbeameroption{show notes on second screen=right}
+% --- fix: long notes were overflowing the note column; render them
+%     smaller, ragged-right, with tight paragraph spacing so the full
+%     text stays legible and inside the frame on the second screen. ---
+\setbeamertemplate{note page}{%
+  \vspace{0.3em}\par
+  {\scriptsize\setlength{\parskip}{0.5em}\setlength{\parindent}{0pt}%
+   \raggedright\insertnote\par}%
+}
+
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% --- measure box (used in appendix characterizations) ---
+\newtheorem{Measure}{Measure}
+
+% --- table glyphs: satisfied / incompatible (bold visible empty set) / open ---
+\newcommand{\yes}{$+$}
+\newcommand{\no}{\ensuremath{\boldsymbol{\emptyset}}}
+
+% --- CHANGE 4: classification-grid helpers ---
+% measure name -> characterization-proof target (appendix, next prompt)
+\newcommand{\Wm}[1]{\hyperlink{char:w#1}{$W^{#1}$}}
+% FRANCOIS-FIX: bold measure names for singleton cells in the classification table.
+\newcommand{\BWm}[1]{\hyperlink{char:w#1}{$\mathbf{W}^{#1}$}}
+\newcommand{\BWmJ}{\hyperlink{char:w5}{$\mathbf{W}^{5,\mathcal J}$}}
+% impossibility cell: bold, deep-red, prominent empty set -> impossibility target
+\newcommand{\wall}[1]{\onslide<2->{\hyperlink{#1}{\textcolor{deepred}{\Large$\boldsymbol{\emptyset}$}}}}
+% measure cell revealed last
+\newcommand{\mset}[1]{\onslide<3->{#1}}
+
+% --- reveal-step switches for the ONE shared figure ---
+% Frame 3 reveals the base over clicks 1..8 (\BaseStaged);
+% frames 7 & 11 show the whole base at once (\BaseAllOn) then add on later clicks.
+\newcommand{\rA}{1}\newcommand{\rB}{1}\newcommand{\rC}{1}\newcommand{\rD}{1}
+\newcommand{\rE}{1}\newcommand{\rF}{1}\newcommand{\rG}{1}\newcommand{\rH}{1}
+\newcommand{\BaseStaged}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{2}\renewcommand{\rC}{3}\renewcommand{\rD}{4}%
+  \renewcommand{\rE}{5}\renewcommand{\rF}{6}\renewcommand{\rG}{7}\renewcommand{\rH}{8}}
+\newcommand{\BaseAllOn}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{1}\renewcommand{\rC}{1}\renewcommand{\rD}{1}%
+  \renewcommand{\rE}{1}\renewcommand{\rF}{1}\renewcommand{\rG}{1}\renewcommand{\rH}{1}}
+
+% ====================================================================
+% SINGLE SHARED MODEL FIGURE.
+% Introduced on frame 3 and REUSED (not redrawn) on frames 7 and 11.
+% One source of truth: the base figure cannot drift between slides.
+% Per-frame ADDITIONS are passed as the (mandatory) argument #1 and are
+% overlaid on top of the same base (frame 7: W^1 construction; frame 11: job
+% duplication). The base reveals over clicks 1..8 on frame 3 (\BaseStaged) and
+% appears all at once on frames 7 & 11 (\BaseAllOn).
+% ====================================================================
+\newcommand{\ModelScale}{0.92}
+\newcommand{\ModelFigure}[1]{%
+\begin{center}
+\begin{tikzpicture}[scale=\ModelScale,>=Stealth]
+  % ===== ONE shared general figure (defined once; reused on frames 3,7,11) =====
+  % Discrete jobs j,k,l; indifference levels are LINEAR SEGMENTS joining adjacent
+  % jobs. One segment per agent, through that agent's bundle. Segments CROSS
+  % between j and k (agents rank the jobs oppositely).
+  %   jobs:  j=2.2  k=5.0  l=7.8
+  %   agent i (red):  A={j,k}, at job j, bundle z_i ABOVE y'(j); rank k P l P j
+  %   agent h (blue): A'={k,l}, at job k, bundle z_h;             rank j P l P k
+  % Pay LABELS flash once (\only) then vanish; pay DOTS persist (\onslide).
+  % z_i dashed connector flashes once (\only) then vanishes; z_i dot persists.
+  % (1) axes
+  \onslide<\rA->{%
+    \draw[->,thick] (0,0) -- (0,6.2) node[above] {$c$};
+    \draw[->,thick] (0,0) -- (10.4,0) node[right] {$\mathcal{J}$};}
+  % (2) three discrete jobs on the horizontal axis
+  \onslide<\rB->{%
+    \foreach \xx/\lab in {2.2/j,5.0/k,7.8/\ell}{%
+      \draw[thick] (\xx,0.09) -- (\xx,-0.09);
+      \node[below,font=\small] at (\xx,-0.14) {$\lab$};}}
+  % (3) pay profiles: DOTS persist; LABELS appear only on the reveal step then clear
+  \onslide<\rC->{%
+    \fill[agenti,opacity=\iop] (2.2,2.6) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (5.0,1.7) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (7.8,3.4) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (2.2,1.5) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (5.0,2.3) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (7.8,2.6) circle (2.2pt);}
+  \only<\PayLabOv>{%
+    \node[agenti,left,font=\scriptsize,opacity=\iop]  at (2.2,2.6) {$y(j)$};
+    \node[agenti,below,font=\scriptsize,opacity=\iop] at (5.0,1.7) {$y(k)$};
+    \node[agenti,right,font=\scriptsize,opacity=\iop] at (7.8,3.4) {$y(\ell)$};
+    \node[agenth,left,font=\scriptsize,opacity=\hopacity]  at (2.2,1.5) {$y'(j)$};
+    \node[agenth,above,font=\scriptsize,opacity=\hopacity] at (5.0,2.3) {$y'(k)$};
+    \node[agenth,right,font=\scriptsize,opacity=\hopacity] at (7.8,2.6) {$y'(\ell)$};}
+  % (4) bundle z_i at job j, ABOVE y'(j): dashed connector flashes once, dot persists
+  \onslide<\rD->{%
+    \fill[agenti,opacity=\iop] (2.2,4.5) circle (2.6pt);
+    \node[agenti,above right,font=\small,opacity=\iop] at (2.25,4.52) {$z_i$};
+  }
+  % dashed connector should flash ONLY on stage \rD (stage 4 on slide 3)
+  \only<\rD>{\draw[dashed,thick,agenti] (2.2,2.6) -- (2.2,4.52);}
+  % (5) ability sets: A={j,k} (red), A'={k,l} (blue) braces under the axis
+  \onslide<\rE->{%
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenti,thick,opacity=\iop]
+      (2.2,-0.5) -- (5.0,-0.5)
+      node[midway,below,agenti,font=\scriptsize,opacity=\iop] {$A=\{j,k\}$};
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenth,thick,opacity=\hopacity]
+      (5.1,-0.95) -- (7.8,-0.95)
+      node[midway,below,agenth,font=\scriptsize,opacity=\hopacity] {$A'=\{k,\ell\}$};}
+  % (6) agent i indifference segment through z_i: high at j, LOW at k, mid at l
+  %     (rank k P l P j) -- crosses agent h between j and k
+  \onslide<\rF->{%
+    \draw[agenti,thick,opacity=\iop] (2.2,4.5) -- (5.0,1.4) -- (7.8,3.3);
+    \node[agenti,font=\scriptsize,opacity=\iop] at (8.05,3.3) {$R_i$};}
+  % (7) agent h indifference segment: LOW at j, high at k, mid at l
+  %     (rank j P l P k) -- whole unit fades on the measures frame
+  \onslide<\rG->{%
+    \fill[agenth,opacity=\hopacity] (5.0,4.2) circle (2.6pt);
+    \node[agenth,above,font=\small,opacity=\hopacity] at (5.05,4.4) {$z_h$};
+    \draw[agenth,thick,opacity=\hopacity] (2.2,1.0) -- (5.0,4.2) -- (7.8,2.6);
+    \node[agenth,font=\scriptsize,opacity=\hopacity] at (8.05,2.6) {$R_h$};}
+  % (8) the well-being comparison label
+  % (8) well-being label as three nodes: red W (fades with \iop), the sign
+  %     (\cmpsign), and blue W (fades with \hop).
+  \onslide<\LabelOv>{%
+    \node[agenti,opacity=\iop,anchor=west,font=\small] (Wi) at (0.25,5.8)
+      {$W( z_i,R_i,A;\mathbf y)$};
+    \node[anchor=west,font=\small] (Wsgn) at (Wi.east) {\cmpsign};
+    \node[agenth,opacity=\hop,anchor=west,font=\small] at (Wsgn.east)
+      {$W(z_h,R_h,A';\mathbf y')$};}
+ 
+
+  % ===== per-frame additions, overlaid on the identical base (never redrawn) =====
+  #1
+\end{tikzpicture}
+\end{center}
+}
+
+\begin{document}
+
+\title[Jobs and Well-Being Measurement]{Jobs and Well-Being Measurement}
+\author{%
+  \begin{tabular}{c}
+    Hisham Haydar\\[2pt]
+    {\scriptsize LISER and University of Luxembourg}
+  \end{tabular}%
+  \hspace{1.5em}%
+  \begin{tabular}{c}
+    Fran\c{c}ois Maniquet\\[2pt]
+    {\scriptsize CORE (UCLouvain) and LISER}
+  \end{tabular}}
+\institute{}
+\date{\footnotesize \href{hhttps://www.uniba.it/it/}{UNIBA , Bari 2026 } \,\textperiodcentered\, \href{https://www.liser.lu/events/2026-Bari-conference}{Second International Conference on Inequalities and Opportunities}}
+% SCRIPT-FIX: explicit title frame so the presenter version has an opening note.
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\note{[0.5 min] First, I would like to thank the organizers of the meeting, and also all colleagues who presented earlier today and who will present later, for the interesting and valuable work and effort. \par\medskip This is joint work with François Maniquet. The work belongs to a broader project whose aim is to bridge discrete-choice labor-supply models and income-tax theory, This is why the title is \emph{Jobs and Well-Being Measurement}: we ask how well-being measurement changes when labor supply is described as a choice among jobs, rather than as a choice of hours at a wage. \par\medskip Today I focus on what changes axiomatically when the primitive object is a job.}
+\end{frame}
+
+% ==================================================================== 1
+\begin{frame}
+\frametitle{Motivation}
+% FRANCOIS-FIX (C): slide now shows the THEORY-vs-ESTIMATION mismatch the note lands on,
+% then the bridge (jobs in the theory) and the object we measure. Sparse, no prose.
+\vspace{0.4em}
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Theory derives from}\\[0.4em]
+\[
+ z=(c,\ell),\qquad y=w\ell
+\]
+{\small continuous hours $\ell$ at a wage $w$}
+
+\column{0.46\textwidth}
+\centering
+\textbf{Estimation uses}\\[0.4em]
+\[
+ j\in\{j_1,\dots,j_n\}
+\]
+{\small discrete-choice labor supply}
+\end{columns}
+
+\vfill
+\begin{center}
+{\small the two primitives don't match}\\[0.5em]
+$\Longrightarrow$\ \ put jobs in the theory:\quad
+$z=(c,j),\ \ A\subseteq\mathcal J,\ \ \mathbf y$\\[0.8em]
+{\Large $W(z,R,A;\mathbf y)$}\quad{\footnotesize measure first; aggregate later}
+\end{center}
+\vfill
+\note{[1.8 min] Let me begin with the usual chain in optimal tax theory --- and with one mismatch hidden inside it. \par\medskip On the theory side, we derive a tax formula from a social welfare function, and to do that we first have to measure individual well-being. That derivation almost always assumes the same thing: individuals choose labor time given a wage. The wage is exogenous, it stands in for productivity, and people pick hours along a continuous line. \par\medskip But on the empirical side, when those preferences are actually estimated, the standard tool is a discrete-choice labor-supply model. There, labor supply is not a point on a continuum; it is a choice from a finite menu of jobs. So the primitive used to derive the theory and the primitive used to estimate it are simply not the same object. \par\medskip What we do is close that gap by putting jobs into the theory itself. A person no longer chooses hours at a wage; they occupy a job, taken from the set of jobs they are able to hold, and the jobs pay an income profile. The single wage splits into two separate objects: which jobs you can take --- that is $A$ --- and what those jobs pay --- that is $\mathbf y$. \par\medskip And the object we actually study is a well-being measure, $W(z,R,A;\mathbf y)$. We measure one person's well-being first, and leave the aggregation --- the social welfare function, the tax --- for later. The whole question for today is whether moving from hours to jobs changes how we should measure well-being. The answer, theoretically, is that it changes quite a lot.}
+\end{frame}
+
+% ==================================================================== 2
+\begin{frame}
+\frametitle{The conflict}
+% FRANCOIS-FIX: slide was a bit empty; added sparse labels for the two principles.
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Compensation}\\[0.35em]
+{\small unequal productivity should not become unequal well-being}
+\column{0.46\textwidth}
+\centering
+\textbf{Responsibility}\\[0.35em]
+{\small preference-based choices should not be compensated}
+\end{columns}
+
+\vfill
+\begin{center}
+{\large Compensation \qquad vs.\qquad Responsibility}
+\end{center}
+\[
+\nexists\, W:\quad \text{Full Compensation}\ \wedge\ \text{Full Responsibility}
+\]
+\begin{flushright}\small[Fleurbaey \& Maniquet, \emph{SCW} 2005]\end{flushright}
+
+\vfill
+\begin{center}
+Full Comp.\ $+$ weak Resp.\qquad\textbf{or}\qquad Full Resp.\ $+$ weak Comp.
+\end{center}
+\vfill
+\note{[1.5 min] Before I introduce the jobs model, I need to recall the classical conflict that organizes the whole talk. \par\medskip In the literature on deriving social welfare criteria for labor income taxation, there are two principles we would like to respect. The first is compensation. People should not be penalized for unequal productive circumstances. If someone earns less because of lower productivity, this is something a fair criterion may want to compensate. \par\medskip The second principle is responsibility. People should be held responsible for their preferences, especially their tastes for work, leisure, consumption, or job characteristics. If someone chooses an option because of their own preferences, this should not automatically generate a compensation claim. \par\medskip The problem is that these two principles are attractive separately, but they cannot both be imposed in full. The classical result is that no well-being measure can satisfy Full Compensation and Full Responsibility together. \par\medskip This is why the literature is structured around compromises. Either one keeps Full Compensation and weakens Responsibility, or one keeps Full Responsibility and weakens Compensation. The point of this talk is that, once we move to a jobs model, the space of possible compromises becomes more structured. We can see more precisely where the conflict comes from and where it can be weakened.}
+\end{frame}
+
+% ==================================================================== 3
+\begin{frame}
+\frametitle{The model}
+\ResetFig
+\ShowH
+\BaseStaged
+\ModelFigure{}
+\note{[3 min] Now let me introduce the model. I will build the picture slowly, because the picture carries most of the intuition. \par\medskip On the vertical axis I put consumption, c. On the horizontal axis I put jobs, the elements of the set calligraphic J. These are not hours on a continuous line. They are discrete jobs. Let me put three jobs: j, k, and l. \par\medskip Each job has a pre-tax income. This is the income profile y. So y of j, y of k, and y of l are the amounts the jobs pay before tax. These dots are the laissez-faire pay points. \par\medskip A bundle is a pair: a job and an after-tax consumption level. So z is not simply an income. It is a person occupying a particular job and consuming a particular amount. I place it away from the pre-tax dot because taxes and subsidies may make consumption different from pre-tax income. \par\medskip Now, the individual cannot necessarily take every job. They have an ability set A, which is the subset of jobs they are able to occupy. A bundle is feasible for them if its job belongs to A. \par\medskip The individual also has preferences over job-consumption bundles. These preferences need not be quasi-linear. The person may care directly about the job: hours, tasks, amenities, flexibility, location, or other characteristics. \par\medskip Then we can add another individual, with another ability set, another pay profile, and another preference ordering. The important modeling step is that the classical wage is split into two objects. There is A, the set of jobs the person can occupy. And there is y, what these jobs pay. \par\medskip Once A and y are separated, we can ask more precise normative questions. Should we compensate differences in pay? Should we compensate differences in ability sets? Should preferences over jobs a person cannot take matter? \par\medskip The object we study is a well-being measure W of z, R, A, given y. It assigns a number to an individual at a bundle, with preferences R and ability set A, facing the income profile y. The rest of the talk is about which such measures satisfy which compensation and responsibility axioms.}
+\end{frame}
+
+% ==================================================================== 4
+% FRANCOIS-FIX: reduced mathematical density. Slide now states the two job notions in words;
+% full definitions remain in the appendix glossary and in the speaker notes.
+\begin{frame}
+\frametitle{Axioms: irrelevant \& infeasible jobs}
+\small
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\textbf{Irrelevant job}\\[0.45em]
+\begin{itemize}\itemsep0.55em
+  \item feasible: belongs to $A$
+  \item never chosen under any uniform tax/subsidy
+  \item deleting it should not change $W$
+\end{itemize}
+\vspace{0.3em}
+\hyperlink{glossary}{\footnotesize formal IIJ definition}
+
+\column{0.48\textwidth}
+\pause
+\textbf{Infeasible job}\\[0.45em]
+\begin{itemize}\itemsep0.55em
+  \item outside the ability set $A$
+  \item cannot be chosen
+  \item preferences over it should not change $W$
+\end{itemize}
+\vspace{0.3em}
+{\footnotesize agree only on feasible bundles $Z(A)$}
+\end{columns}
+\note{[1 min] Let me now introduce two axioms that are genuinely specific to the jobs model. I will state them mostly in words, because the formal definitions are in the appendix and the intuition is more important here. \par\medskip First, an irrelevant job. This is a job that belongs to your ability set, so you can take it, but you would never take it under any uniform tax or subsidy shift used in the measurement construction. It is dominated by another feasible job. The axiom says that if such a job never plays any role in your choice, then deleting it from the ability set should not change measured well-being. \par\medskip Second, an infeasible job. This is a job outside your ability set. You cannot take it. The axiom says that your preferences over such jobs should not matter for your well-being. If two preference relations agree on the feasible bundle set Z(A), then they should give the same well-being number, even if they disagree over infeasible jobs. \par\medskip These two ideas do not exist in the classical wage-hours model. They appear only because jobs and ability sets are explicit objects.}
+\end{frame}
+
+% ==================================================================== 5
+\begin{frame}
+\frametitle{Axioms: compensation}
+\textbf{Full Compensation.}\quad For all $z,z'\in Z$, $R\in\mathcal R$, $A,A'\subseteq\mathcal J$, $\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$:
+\[
+z\,I\,z'\ \Rightarrow\ W(z,R,A;\mathbf y)=W(z',R,A';\mathbf y')
+\]
+\pause
+\[
+\text{Full Compensation}\ \Longleftrightarrow\ \text{Independence of }\mathbf y\ \wedge\ \text{Independence of }A
+\]
+\pause
+\vspace{0.3em}
+\textbf{Independence of $\mathbf y$.}\quad For all $z\in Z$, $R\in\mathcal R$, $A\subseteq\mathcal J$, $\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$:
+\[
+W(z,R,A;\mathbf y)=W(z,R,A;\mathbf y')
+\]
+\note{[1 min] Now the compensation side. Full Compensation is the strongest version. It says that if two bundles are indifferent according to the same preference relation, then they should receive the same well-being number, regardless of the ability sets and regardless of what jobs pay. \par\medskip In words, once the person is equally well-off according to their own preferences, differences in productivity should not affect the well-being measure. \par\medskip In the jobs model, this strong axiom can be decomposed. Full Compensation is equivalent to Independence of y together with Independence of A. Independence of y says that if we hold fixed the person, the bundle, the preferences, and the ability set, and change only the income profile attached to jobs, then measured well-being should not change. \par\medskip This decomposition is possible only because A and y are separate objects. In the classical model, the wage simultaneously represents opportunity and pay. Here we can compensate one dimension while leaving the other open to responsibility.}
+\end{frame}
+
+% ==================================================================== 6
+\begin{frame}
+\frametitle{Axioms: responsibility}
+\textbf{Full Responsibility.}\quad For all $R,R'\in\mathcal R$, $A\subseteq\mathcal J$, $\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, $t\in\mathbb R$:
+\[
+\mathbf y(A)=\mathbf y'(A)\ \Rightarrow\ W(\argmax_{(A,\mathbf y-t)}R,R,A;\mathbf y)=W(\argmax_{(A,\mathbf y-t)}R',R',A;\mathbf y')
+\]
+\pause
+\vspace{0.3em}
+\textbf{Responsibility for Equal Pay.}\quad For all $R,R'\in\mathcal R$, $A\subseteq\mathcal J$, $\mathbf y\in\mathbb R_+^{\mathcal J}$ with $\mathbf y(j)=\mathbf y(j')$ for all $j,j'\in A$:
+\[
+W(\argmax_{(A,\mathbf y)}R,R,A;\mathbf y)=W(\argmax_{(A,\mathbf y)}R',R',A;\mathbf y)
+\]
+\note{[1 min] Now the responsibility side. Full Responsibility looks at laissez-faire choices. Given A and y, each preference relation selects its best feasible bundle. Full Responsibility says that the well-being assigned at such a laissez-faire optimum should not depend on the preference relation itself. \par\medskip In words, once individuals choose the best option available to them, their different preferences are treated as responsibility variables. The measure neither rewards nor punishes them for those preferences. \par\medskip This is a strong axiom, so we also use weaker responsibility axioms. The one shown here is Responsibility for Equal Pay. If every job in the ability set pays the same, then there is no pay difference left. Any remaining difference in the chosen job is due to preferences over jobs. In that restricted case, the axiom says: hold individuals responsible. \par\medskip This is exactly the logic of compromise: full principles conflict, but restricted principles may be compatible.}
+\end{frame}
+
+% ==================================================================== 7
+
+% ==================================================================== 7
+\begin{frame}
+\frametitle{The measures}
+% Dimming MUST be set BEFORE \ModelFigure (the base reads \iop/\hop as it draws;
+% setting them inside the argument is too late). \only<range> redefines the plain
+% opacity number per overlay; the base then dims the right agent each click.
+%   7a (1):      both solid; sign = gtrless (we do NOT yet know which is better)
+%   7b-7d (2-4): BLUE dimmed (not gone); build red W^1; only red W shown, no sign
+%   7b'-7d'(5-7):RED  dimmed (not gone); build blue W^1; only blue W shown, no sign
+%   7e (8):      both solid; clean label  W_i < W_h
+\renewcommand{\LabelOv}{1,8-}% base comparison label only on 7a (gtrless) and 7e (<)
+\renewcommand{\cmpsign}{\ \,$\gtrless$\ \,}% 7a sign = gtrless (unknown); 7e overridden below
+\only<2-4>{\renewcommand{\hop}{0.12}}% blue dimmed during red's phase
+\only<5-7>{\renewcommand{\iop}{0.12}}% red dimmed during blue's phase
+\only<8->{\renewcommand{\cmpsign}{\ \,$<$\ \,}}% 7e: strict <, blue better off than red
+\BaseAllOn
+\ModelFigure{%
+  % ===== PHASE 1 (clicks 2-4): W^1 on agent i (RED). A={j,k}; i prefers k. =====
+  \onslide<2-4>{%
+    \draw[dashed,thick,agenti] (2.2,1.4) -- (5.0,1.4) 
+      node[midway,below,font=\scriptsize] {$\mathbf y^{w}$ on $A$};
+    \fill[agenti] (2.2,1.4) circle (1.7pt); \fill[agenti] (5.0,1.4) circle (1.7pt);}%
+  \onslide<3-4>{%
+    \draw[agenti,thick] (5.0,1.4) circle (4.5pt);
+    \node[agenti,font=\scriptsize,anchor=north] at (5.0,1.05) {$\sim z_i$};}%
+  \onslide<4>{%
+    \draw[dotted,thick,agenti] (5.0,1.4) -- (0,1.4);
+    \fill[agenti] (0,1.4) circle (1.7pt);
+    \node[agenti,anchor=east,font=\small] at (-0.08,1.4) {$W^{1}_i$};}%
+  \onslide<2-4>{%
+    \node[agenti,anchor=west,font=\small] at (0.25,5.8) {$W( z_i,R_i,A;\mathbf y)$};}%
+  % ===== PHASE 2 (clicks 5-7): W^1 on agent h (BLUE). A'={k,l}; j infeasible; h prefers l. =====
+  \onslide<5-7>{%
+    \draw[dashed,thick,agenth] (5.0,2.6) -- (7.8,2.6)
+      node[midway,above,font=\scriptsize] {$\mathbf y^{w}$ on $A'$};
+    \fill[agenth] (5.0,2.6) circle (1.7pt); \fill[agenth] (7.8,2.6) circle (1.7pt);}%
+  \onslide<6-7>{%
+    \draw[agenth,thick] (7.8,2.6) circle (4.5pt);
+    \node[agenth,font=\scriptsize,anchor=north] at (7.8,2.25) {$\sim z_h$};}%
+  \onslide<7>{%
+    \draw[dotted,thick,agenth] (7.8,2.6) -- (0,2.6);
+    \fill[agenth] (0,2.6) circle (1.7pt);
+    \node[agenth,anchor=east,font=\small] at (-0.08,2.6) {$W^{1}_h$};}%
+  \onslide<5-7>{%
+    \node[agenth,anchor=west,font=\small] at (0.25,5.8) {$W(z_h,R_h,A';\mathbf y')$};}%
+  % ===== 7e (click 8): keep BOTH W^1 readings; base label shows  W_i < W_h . =====
+  \onslide<8->{%
+    \draw[dashed,thick,agenti] (2.2,1.4) -- (5.0,1.4);
+    \fill[agenti] (2.2,1.4) circle (1.7pt); \fill[agenti] (5.0,1.4) circle (1.7pt);
+    \draw[agenti,thick] (5.0,1.4) circle (4.5pt);
+    \draw[dotted,thick,agenti] (5.0,1.4) -- (0,1.4);
+    \fill[agenti] (0,1.4) circle (1.7pt);
+    \node[agenti,anchor=east,font=\small] at (-0.08,1.4) {$W^{1}_i$};
+    \draw[dashed,thick,agenth] (5.0,2.6) -- (7.8,2.6);
+    \fill[agenth] (5.0,2.6) circle (1.7pt); \fill[agenth] (7.8,2.6) circle (1.7pt);
+    \draw[agenth,thick] (7.8,2.6) circle (4.5pt);
+    \draw[dotted,thick,agenth] (7.8,2.6) -- (0,2.6);
+    \fill[agenth] (0,2.6) circle (1.7pt);
+    \node[agenth,anchor=east,font=\small] at (-0.08,2.6) {$W^{1}_h$};}%
+}
+\begin{center}\small
+$W^{1}$\ \ (Ind.\ $\mathbf y\ \wedge$ Resp.\ Equal Pay; unique)\qquad $W^{1},\dots,W^{6}$
+\end{center}
+\note{[2.3 min] Let me show one measure, W-one. The point is not to memorize the formula, but to see what a compromise measure looks like. \par\medskip Start with the red individual. Ignore the actual pay profile. Put the same consumption level on all jobs in the individual’s ability set. Among these feasible jobs, the preference relation selects one job. Here it selects k. Then move this common consumption level until being at that selected job is exactly indifferent to the actual bundle z-i. The level we read on the vertical axis is W-one for this individual. \par\medskip Now repeat the same construction for the blue individual. The blue individual's favourite job overall may be infeasible, so we restrict attention to the jobs they can actually take. Among feasible jobs, the selected one is l. We again move the equal-pay level until this selected feasible job is indifferent to the actual bundle. That gives W-one for the blue individual. \par\medskip Normatively, this measure combines one compensation idea and one responsibility idea. It satisfies Independence of y, because it ignores the actual pay profile. It satisfies Responsibility for Equal Pay, because once all feasible jobs pay the same, the choice among them reflects preferences over jobs. \par\medskip The theorem is that W-one is the unique measure satisfying these two axioms. The other measures in the paper are obtained by changing which compensation and responsibility restrictions we impose.}
+\end{frame}
+
+% ====================================================================
+% DROP-IF-SHORT: if running long, comment out the entire classification
+% frame below (from \begin{frame} through its matching \end{frame}).
+% The talk still flows without it:
+%   motivation -> conflict -> model -> axioms -> measures -> conclusions.
+% The table is a synthesis aid, not a logical dependency: nothing in the
+% two conclusion frames requires it to have been shown. (Note: the table
+% is the hyperlink hub for the Q&A backup slides via tab:classification;
+% if you cut it, reach those backups by other navigation, or keep the
+% frame and simply skip past it live.)
+% ====================================================================
+% ==================================================================== 8
+\begin{frame}
+\frametitle{Classification}
+\hypertarget{tab:classification}{}%
+\begin{center}\footnotesize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l|c|c|c|c|c|c}
+ & \shortstack{Full\\Resp.} & \hyperlink{glossary}{\shortstack{Pref.\\Job}} & \shortstack{Equal\\Pay} & IPIJ & \hyperlink{glossary}{\shortstack{Weak\\Resp.}} & \hyperlink{glossary}{\shortstack{Ref.\\Abil.}}\\ \hline
+Full Comp.\        & \wall{imp:classical} & \wall{imp:thm2} & \wall{imp:thm1} & \mset{\BWm{4}}       & \mset{\BWm{6}}       & \wall{imp:refabil} \\
+Ind.\ $\mathbf y$  & \wall{imp:thm2}      & \wall{imp:thm2} & \mset{\BWm{1}}  & \mset{\Wm{1},\Wm{4}} & \mset{\Wm{1},\Wm{6}} & \wall{imp:refabil} \\
+Ind.\ $A$          & \wall{imp:thm1}      & \mset{\BWmJ}     & \wall{imp:thm1} & \mset{\BWm{4}}       & \mset{\BWm{6}}       & \mset{\BWm{5}}     \\
+IIJ                & \mset{\BWm{3}}       & \mset{\BWm{3}}  & \mset{\Wm{1},\Wm{3}} & \mset{\Wm{1},\Wm{3},\Wm{4}} & \mset{\Wm{1},\Wm{3},\Wm{6}} & \mset{\BWm{5}} \\
+Comp.\ Ref.\ Pref. & \mset{\BWm{2}}       & \mset{\BWm{2}}  & \mset{\Wm{1},\Wm{2}} & \mset{\Wm{1},\Wm{2},\Wm{4}} & \mset{\Wm{1},\Wm{2},\Wm{6}} & \wall{imp:refabil} \\
+\end{tabular}
+\end{center}
+\note{[2 min] This table is the classification. Rows are compensation axioms; columns are responsibility axioms. Each cell asks: is there a well-being measure satisfying both the row axiom and the column axiom? \par\medskip The empty-set cells are walls. They are impossibility results. They appear mainly where a strong compensation axiom meets a strong responsibility axiom. The top-left cell is the classical impossibility: Full Compensation and Full Responsibility cannot be satisfied together. \par\medskip The named measures show where compromise is possible. If a measure is in bold, it is the unique measure for that cell, up to an increasing transformation. If several measures appear, then the pair of axioms is compatible but does not yet characterize a unique measure. \par\medskip The important point is the geography of the table. Once we move away from the strong-against-strong corner, many cells are populated. So the jobs model creates more intermediate axioms, and therefore more intermediate compromises. One important cell is Independence of \(A\) with Responsibility for Preferred Job. These two axioms are compatible: the corresponding measure is the reference-ability measure \(W^{5,\mathcal J}\), where the reference set is the whole job set.}
+\end{frame}
+
+% ==================================================================== 9
+\begin{frame}
+\frametitle{Conclusion --- Lesson 1}
+\vfill
+\begin{center}{\Huge \textcolor{deepred}{Easier:}}\\[0.25em]{\large compromise in the middle}\end{center}
+\vfill
+\begin{itemize}\itemsep0.7em
+  \item<2-> Split of $A$ and $\mathbf y$ (one wage $\to$ two objects)
+  \item<3-> Different consumption spaces (infeasible jobs)
+  \item<4-> Typology of jobs $\Rightarrow$ new weak axioms
+  \item<5-> Wall splits: $A$-conflict \,$+$\, $\mathbf y$-conflict\quad(classical $=$ corollary)
+  \item<6-> IIJ derivable: Full Resp.\ $+$ laissez-faire tie
+\end{itemize}
+\vfill
+\note{[2.3 min] Let me now state the first lesson. In the jobs model, compromise between compensation and responsibility is easier in the middle of the table. \par\medskip There are three reasons. First, A and y are separated. In the classical model, the wage simultaneously determines opportunities and pay. Here ability and pay are distinct objects, so we can write axioms that target one dimension without automatically targeting the other. \par\medskip Second, individuals can have different consumption spaces, because they may have different feasible job sets. Some jobs are feasible for one person and infeasible for another. This is not just a complication; it is useful structure. \par\medskip Third, jobs generate a typology: feasible jobs, infeasible jobs, irrelevant jobs, equally paid jobs, reference jobs. These distinctions let us formulate weaker axioms that do not exist in the classical model. \par\medskip The two formal messages are the following. The classical wall splits into more precise conflicts: one associated with A and one associated with y. And IIJ is not merely an additional assumption. Under Full Responsibility plus the laissez-faire tie, irrelevant jobs drop out automatically. The model itself explains why they should not matter.}
+\end{frame}
+
+% ==================================================================== 10
+\begin{frame}
+\frametitle{Conclusion --- Lesson 2}
+\vfill
+\begin{center}{\Huge \textcolor{deepred}{Harder:}}\\[0.25em]{\large fewer extreme measures}\end{center}
+\vfill
+\begin{itemize}\itemsep0.7em
+  \item<2-> Fewer measures at the extremes
+  \item<3-> Full compensation: only $W^{4},\,W^{6}$
+  \item<4-> Lost linearity --- in $\ell$ and in $w$
+  \item<5-> No reference wage (e.g.\ minimum legal wage)
+  \item<6-> No reference labor time (Kolm); no ``cross''
+\end{itemize}
+\vfill
+\note{[2.3 min] The second lesson is the counterweight. The jobs model gives us more room in the middle, but fewer clean options at the extremes. \par\medskip If we insist on full compensation or full responsibility all the way, the table becomes sparse. Full compensation, for example, is satisfied only by W-four and W-six. \par\medskip The reason is that the jobs model gives up the continuous linear structure of the classical labor model. In the classical representation, consumption is wage times labor time, and many measures exploit this line. We can use a reference wage, or a reference labor time, or sometimes a cross of the two. \par\medskip In the jobs model, alternatives are points. Each job may have income, hours, and other characteristics, but there is no common continuous line on which everyone can be evaluated. There is no universal reference wage, and no universal reference labor-time axis, in the same sense. \par\medskip So the final message is two-sided. The model is richer because it separates ability, pay, and job identity. That richness creates new compromises. But it is also less linear, and therefore less permissive at the extreme axiomatic corners.}
+\end{frame}
+
+% ==================================================================== 11
+\begin{frame}
+\frametitle{What is a job?}
+\ResetFig
+\ShowH
+\PayOff            % 11a/11b: NO y(.)/y'(.) pay-labels
+\renewcommand{\LabelOv}{2-1}% 11a/11b: NEVER show the comparison label
+\BaseAllOn
+{\renewcommand{\ModelScale}{0.85}% shrink just this slide so the caption fits
+\ModelFigure{%
+  \onslide<2->{%
+    \draw[thick] (5.65,0.09) -- (5.65,-0.09);
+    \node[below,font=\small] at (5.65,-0.14) {$k'$};
+    \fill[agenti] (5.65,1.7) circle (2.2pt);          % same pay height as k
+    \draw[gray,dashed,thin] (5.0,1.7) -- (5.65,1.7);  % identical-pay guide
+    \draw[decorate,decoration={brace,amplitude=4pt,mirror},thick]
+      (5.0,-0.62) -- (5.65,-0.62)
+      node[midway,below,font=\scriptsize] {$k\equiv k'$: same job};}%
+}}
+
+\vspace{-0.2em}
+\begin{center}
+  \large Job Duplication \& Job Neutrality
+\end{center}
+\note{[1.3 min] Let me end with one final issue: what counts as a job? \par\medskip If two alternatives have exactly the same pay and the person is indifferent between them in every relevant respect, then treating them as two different jobs would be artificial. Job Duplication says that adding a duplicate job should not change well-being. \par\medskip Job Neutrality says that relabelling jobs should not change well-being either. A job has no normative identity just because of its name. What matters are its characteristics and its place in the preference ordering. \par\medskip Together, these axioms say that for two jobs to count as genuinely distinct, they must differ substantively. This gives an additional restriction on admissible measures and helps clarify what the object of the model really is. \par\medskip That is where I will stop. Thank you.}
+% \ResetFig \ShowH \PayOff \renewcommand {\LabelOv }{}
+\end{frame}
+
+% ============================================================
+% BACKUP-SLIDE APPENDIX (Q&A).  Frames after \appendix do NOT
+% count toward the main total (appendixnumberbeamer), so the
+% main denominator stays /11.  Every theorem/proof is verbatim
+% from updated_draft.tex; each frame round-trips to the table.
+% ============================================================
+\appendix
+
+% ==================================================================== closing
+% Closing slide. Placed AFTER \appendix so it does NOT increment the main
+% frame count (denominator stays /11). It is the natural forward-advance
+% target after frame 11 (What is a job?): advancing once from the last
+% content frame lands here, and the talk's linear flow ends here.
+\begin{frame}[standout]
+  Thank you
+
+  \vspace{1em}
+  {\normalsize\href{mailto:hisham.hadyar@liser.lu}{\texttt{Hisham.Hadyar@liser.lu}}}
+\end{frame}
+
+% ====================================================================
+% APPENDIX GATE -- the backup frames below are Q&A reference only.
+% They are reached ONLY by clicking a cell in the classification table
+% (\hyperlink targets char:w1..char:w6 and the imp:* impossibility
+% targets); each backup frame returns via its \beamerreturnbutton.
+% Sitting after \appendix, they are excluded from the frame count
+% (appendixnumberbeamer) and from the metropolis progress bar, and the
+% navigation symbols are off -- so the linear flow ENDS at the Thank-you
+% slide above and does not run on into the proofs.
+% NOTE: a single PDF cannot physically forbid scrolling to its own pages
+% in a continuous-scroll viewer; present in full-screen / single-page
+% mode so that forward-advance stops at the Thank-you slide and the
+% backups appear only when their hyperlinks are clicked.
+% ====================================================================
+
+\begin{frame}{Backup: impossibilities and characterizations}
+\small
+These are reference slides for question time. Each is reached by clicking a
+cell in the classification table; the button returns there.
+% AESTHETIC-FIX (A-Medium-8): maintained-axioms preface so the backup proofs do not look
+% like they assume less than they use.
+\par\smallskip
+\textbf{Maintained throughout:} Representation, Job Duplication Invariance, Job
+Neutrality, and continuity/monotonicity in consumption.
+\begin{itemize}\footnotesize
+  \item Walls: \hyperlink{imp:classical}{classical}, \hyperlink{imp:thm1}{Theorem 1}, \hyperlink{imp:thm2}{Theorem 2}, \hyperlink{imp:refabil}{reference abilities}
+  \item Measures: \hyperlink{char:w1}{$W^1$}, \hyperlink{char:w2}{$W^2$}, \hyperlink{char:w3}{$W^3$}, \hyperlink{char:w4}{$W^4$}, \hyperlink{char:w5}{$W^5$}, \hyperlink{char:w6}{$W^6$}
+\end{itemize}
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+% AESTHETIC-FIX (A-Medium-9): backup glossary of axioms the classification table uses in its
+% columns/rows but the main slides never state formally. Formal one-liners only (sparse rule).
+% Reached from the table column headers; also hosts the full Irr(...) set-builder moved off frame 4.
+\begin{frame}[allowframebreaks]{Backup: axiom glossary}
+\hypertarget{glossary}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\footnotesize
+\textbf{Independence of $A$.}\quad
+$z\,I\,z'\ \Rightarrow\ W(z,R,A;\mathbf y)=W(z',R,A';\mathbf y)$\quad (all $A,A'$, same $\mathbf y$).
+
+\medskip
+\textbf{Responsibility When the Preferred Job is Possible.}\quad
+If $\argmax_{(\mathcal J,\mathbf y)}R\in A$ and $\argmax_{(\mathcal J,\mathbf y)}R'\in A$, then
+\[
+W(\argmax_{(A,\mathbf y)}R,R,A;\mathbf y)=W(\argmax_{(A,\mathbf y)}R',R',A;\mathbf y).
+\]
+
+\medskip
+\textbf{Weak Responsibility.}\quad Same conclusion, but only when $\mathbf y$ is constant
+on $A$ (equal pay) \emph{and} the preferred job is possible.
+
+\medskip
+\textbf{Responsibility for Reference Abilities} (reference set $\bar A$).\quad
+\[
+W(\argmax_{(\bar A,\mathbf y)}R,R,A;\mathbf y)=W(\argmax_{(\bar A,\mathbf y)}R',R',A';\mathbf y).
+\]
+
+\medskip
+\textbf{Irrelevant jobs (full definition).}
+{\scriptsize
+\[
+Irr(A;R,\mathbf y)=\bigl\{\, j\in A : \exists\, j'\in A,\ \mathbf y(j')<\mathbf y(j),\ \forall t\in\mathbb R,\ (\mathbf y(j')-t,j')\,P\,(\mathbf y(j)-t,j)\,\bigr\}.
+\]}
+
+\medskip
+% FM-NOTES-MERGE: formal IIJ/IPIJ definitions restored in the glossary after simplifying slide 4.
+\textbf{Independence of Irrelevant Jobs (IIJ).}\quad
+For $j'\in Irr(A;R,\mathbf y)$ other than the job of $z$,
+\[
+W(z,R,A;\mathbf y)=W(z,R,A\setminus\{j'\};\mathbf y).
+\]
+
+\medskip
+\textbf{Independence of Preferences over Infeasible Jobs (IPIJ).}\quad
+For all evaluated bundles $\bar z\in Z(A)$, if
+\[
+x\,R\,x'\Longleftrightarrow x\,R'\,x'
+\quad\text{for all }x,x'\in Z(A)=\{(c,j):j\in A\},
+\]
+then
+\[
+W(\bar z,R,A;\mathbf y)=W(\bar z,R',A;\mathbf y).
+\]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Classical wall: Full Compensation vs Full Responsibility}
+\hypertarget{imp:classical}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+
+\scriptsize
+\begin{corollary}
+There is no well-being measure $W$ that satisfies Full Compensation and Full
+Responsibility.
+\end{corollary}
+
+\begin{proof}
+Full Compensation implies Independence of $\mathbf y$. Full Responsibility
+implies Responsibility When the Preferred Job is Possible: taking $t=0$ and
+$\mathbf y'=\mathbf y$ in Full Responsibility (so its antecedent
+$\mathbf y(A)=\mathbf y'(A)$ holds trivially) yields, for every $A$ and every
+$R,R'$,
+\begin{equation*}
+W(\argmax_{(A,\mathbf y)}R,R,A;\mathbf y)
+=W(\argmax_{(A,\mathbf y)}R',R',A;\mathbf y),
+\end{equation*}
+which is the conclusion of Responsibility When the Preferred Job is Possible
+(indeed without invoking its feasibility antecedent). The conclusion follows
+from Impossibility Theorem~2 (\hyperlink{imp:thm2}{link}).
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Impossibility Theorem 1: Ind.\ of $A$ vs Resp.\ for Equal Pay}
+\hypertarget{imp:thm1}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+
+\scriptsize
+\begin{theorem}
+There is no well-being measure $W$ that satisfies Representation, Independence
+of $A$, and Responsibility For Equal Pay.
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between theorem block and proof block; each is a beamer box and indivisible, so they must be on separate continuation frames
+\framebreak
+\begin{proof}
+Suppose for contradiction that $W$ satisfies the three axioms. Let
+$A=\{j_1,j_2\}\subseteq\mathcal J$ with $j_1\neq j_2$, and let
+$\mathbf y\in\mathbb R_+^{\mathcal J}$ satisfy $\mathbf y(j_1)=\mathbf
+y(j_2)=\bar y$ for some $\bar y\geq 0$. Take $R,R'\in\mathcal R$ such that
+$(c,j_1)\,P_R\,(c,j_2)$ for all $c\geq 0$ and $(c,j_2)\,P_{R'}\,(c,j_1)$ for all
+$c\geq 0$, both monotone in consumption.
+
+Under the equal-pay profile $\mathbf y$ restricted to $A$, the laissez-faire
+bundles are
+\begin{equation*}
+\argmax_{(A,\mathbf y)}R=(\bar y,j_1)
+\qquad\text{and}\qquad
+\argmax_{(A,\mathbf y)}R'=(\bar y,j_2).
+\end{equation*}
+By Responsibility For Equal Pay,
+\begin{equation*}
+W((\bar y,j_1),R,A;\mathbf y)=W((\bar y,j_2),R',A;\mathbf y).\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: imp:thm1 proof split after the Responsibility for Equal Pay equation; Independence of A argument and contradiction continue in new proof block
+\framebreak
+\begin{proof}[(continued)]
+Consider now the bundle $(\bar y,j_2)$ under preferences $R$. By Independence of
+$A$ applied with the singleton $A_2=\{j_2\}$ (with $j_2\in A\cap A_2$),
+\begin{equation*}
+W((\bar y,j_2),R,A;\mathbf y)=W((\bar y,j_2),R,A_2;\mathbf y),
+\end{equation*}
+% APPENDIX-OVERFLOW-FIX: wide inline equation promoted to displayed to prevent line overflow
+and similarly
+\begin{equation*}
+W((\bar y,j_2),R',A;\mathbf y)=W((\bar y,j_2),R',A_2;\mathbf y).
+\end{equation*}
+On the singleton ability set $A_2$, the feasible bundle space is
+$\{(c,j_2):c\geq 0\}$, on which $R$ and $R'$ both rank purely by consumption (by
+monotonicity), so they coincide. Hence
+\begin{equation*}
+W((\bar y,j_2),R,A;\mathbf y)=W((\bar y,j_2),R',A;\mathbf y).\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: imp:thm1 second proof block split after singleton-j_2 argument; j_1 argument and contradiction continue in new block
+\framebreak
+\begin{proof}[(continued)]
+By the same argument applied to $(\bar y,j_1)$ with the singleton
+$A_1=\{j_1\}$,
+\begin{equation*}
+W((\bar y,j_1),R,A;\mathbf y)=W((\bar y,j_1),R',A;\mathbf y).
+\end{equation*}
+
+Combining (*) with (*) and
+(*),
+\begin{equation*}
+W((\bar y,j_1),R',A;\mathbf y)=W((\bar y,j_2),R',A;\mathbf y).
+\end{equation*}
+But by Representation at $(R',A,\mathbf y)$, since $(\bar y,j_2)\,P_{R'}\,(\bar
+y,j_1)$,
+\begin{equation*}
+W((\bar y,j_2),R',A;\mathbf y)>W((\bar y,j_1),R',A;\mathbf y),
+\end{equation*}
+a contradiction.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Impossibility Theorem 2: Ind.\ of $\mathbf y$ vs Resp.\ when Preferred Job Possible}
+\hypertarget{imp:thm2}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+
+\scriptsize
+\begin{theorem}
+There is no well-being measure $W$ that satisfies Representation, Independence
+of $\mathbf y$, and Responsibility When the Preferred Job is Possible.
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between theorem block and proof block; both are beamer boxes and cannot straddle a frame boundary
+\framebreak
+\begin{proof}
+Suppose for contradiction that $W$ satisfies the three axioms. Fix
+$A=\mathcal J$, so that for every $R\in\mathcal R$ and $\mathbf
+y\in\mathbb R_+^{\mathcal J}$ the antecedent of Responsibility When the
+Preferred Job is Possible holds: $\argmax_{(\mathcal
+J,\mathbf y)}R\in\mathcal J=A$. By the axiom, for every $\mathbf y$ there is a
+value $\psi(\mathbf y)\in\mathbb R$ with
+\begin{equation*}
+W\!\big(\argmax_{(\mathcal J,\mathbf y)}R,\,R,\,\mathcal J;\,\mathbf y\big)
+=\psi(\mathbf y)\quad\text{for all }R\in\mathcal R.\end{equation*}
+
+Fix distinct $j_0,j_1\in\mathcal J$ and choose $\mathbf y,\mathbf y'$ by
+\begin{equation*}
+\mathbf y(j_0)=10,\quad \mathbf y(j_1)=20,\quad \mathbf y(j)=0\ (j\notin\{j_0,j_1\}),
+\end{equation*}
+\begin{equation*}
+\mathbf y'(j_0)=10+\Delta,\quad \mathbf y'(j_1)=20,\quad \mathbf y'(j)=0\ (j\notin\{j_0,j_1\}),
+\end{equation*}
+with $\Delta>0$ small enough that the pay ranking is unchanged.
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: imp:thm2 setup proof block split after y/y' definitions; R-choice, W=ψ pairs, and contradiction continue in subsequent blocks
+\framebreak
+\begin{proof}[(continued)]
+Choose $R\in\mathcal R$ with $\argmax_{(\mathcal J,\mathbf y)}R=(10,j_0)$ and
+$\argmax_{(\mathcal J,\mathbf y')}R=(10+\Delta,j_0)$. By (*),
+% APPENDIX-OVERFLOW-FIX: wide paired W=psi equations split onto separate lines to prevent horizontal overflow
+\begin{align*}
+W((10,j_0),R,\mathcal J;\mathbf y)&=\psi(\mathbf y),\\
+W((10+\Delta,j_0),R,\mathcal J;\mathbf y')&=\psi(\mathbf y').
+\end{align*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: imp:thm2 first proof block split after R-block; R'-block, psi equality, and contradiction continue in two further blocks
+\framebreak
+\begin{proof}[(continued)]
+Choose $R'\in\mathcal R$ with $\argmax_{(\mathcal
+J,\mathbf y)}R'=\argmax_{(\mathcal J,\mathbf y')}R'=(20,j_1)$, possible since
+$\mathbf y(j_1)=\mathbf y'(j_1)$. By (*),
+% APPENDIX-OVERFLOW-FIX: second wide paired W=psi equations split onto separate lines
+\begin{align*}
+W((20,j_1),R',\mathcal J;\mathbf y)&=\psi(\mathbf y),\\
+W((20,j_1),R',\mathcal J;\mathbf y')&=\psi(\mathbf y').
+\end{align*}
+By Independence of $\mathbf y$ applied to $(20,j_1)$,
+$W((20,j_1),R',\mathcal J;\mathbf y)=W((20,j_1),R',\mathcal J;\mathbf y')$, hence
+$\psi(\mathbf y)=\psi(\mathbf y')$.
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: imp:thm2 third proof block: contradiction via Representation and Independence of y
+\framebreak
+\begin{proof}[(continued)]
+On the other hand, by Representation at $(R,\mathcal J,\mathbf y)$, since
+$(10+\Delta,j_0)\,P_R\,(10,j_0)$,
+\begin{equation*}
+W((10+\Delta,j_0),R,\mathcal J;\mathbf y)>W((10,j_0),R,\mathcal J;\mathbf y)
+=\psi(\mathbf y).
+\end{equation*}
+By Independence of $\mathbf y$ applied to $(10+\Delta,j_0)$,
+\begin{equation*}
+W((10+\Delta,j_0),R,\mathcal J;\mathbf y)
+=W((10+\Delta,j_0),R,\mathcal J;\mathbf y')=\psi(\mathbf y'),
+\end{equation*}
+so $\psi(\mathbf y')>\psi(\mathbf y)$, contradicting $\psi(\mathbf
+y)=\psi(\mathbf y')$.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Reference-Abilities column: where the walls come from}
+\hypertarget{imp:refabil}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+
+\scriptsize
+\normalsize
+\textbf{Which axioms clash.} Responsibility for Reference Abilities is satisfied by
+\emph{only} one measure, $W^5$ (the Reference-Ability measure): see the table's
+\textbf{Resp.\ Ref.\ Abilities} row, where the single $+$ sits under $W^5$.
+And $W^5$ rests on \emph{Independence of $A$} (it evaluates every agent against a
+common reference set $\bar A$), so it fails \emph{Independence of $\mathbf y$},
+\emph{Full Compensation}, and \emph{Compensation for Reference Preferences}
+(the $-$ entries in the $W^5$ column for those rows).
+
+\medskip
+\textbf{Why those cells are empty.} A cell in the Reference-Abilities column is
+nonempty only if its row axiom is \emph{also} satisfied by $W^5$. That holds for
+\emph{Ind.\ of $A$} and \emph{IIJ} (both $+$ for $W^5$, giving the two $W^5$
+cells), but fails for \emph{Full Compensation}, \emph{Ind.\ of $\mathbf y$}, and
+\emph{Comp.\ for Reference Preferences}. Hence those three cells are walls: no
+measure reconciles Responsibility for Reference Abilities with a compensation
+requirement that forces dependence on the wage profile or on indifferent bundles
+across reference preferences. (See the $W^5$ characterization, \hyperlink{char:w5}{$W^5$}, for the formal role of $\bar A$ and $R^h$.)
+
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^1$ (Equal-Pay measure)}
+\hypertarget{char:w1}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+
+\scriptsize
+\begin{Measure}
+    \begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=w.
+\end{equation*}
+\end{Measure}
+\begin{theorem}
+If a well-being measure $W$ satisfies Responsibility For Equal Pay and
+Independence of $\mathbf y$, then $W=W^1$ (under the maintained structural axioms).
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between theorem block and proof block so each occupies its own continuation frame
+\framebreak
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, if there exists
+$w\in\mathbb R_+$ such that
+\begin{align*}
+z&=\argmax_{(A,\mathbf y^w)}R,\\
+z'&=\argmax_{(A',\mathbf y^w)}R',\end{align*}
+where $\mathbf y^w$ is the equal-pay profile $\mathbf y^w(j)=w$ for all
+$j\in\mathcal J$, then (*) $W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y')$.
+
+Let $z,z'$ and $w$ satisfy (*). By Independence of
+$\mathbf y$,
+\begin{equation*}
+(*)\Leftrightarrow W(z,R,A;\mathbf y^w)=W(z',R',A';\mathbf y^w).
+\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: char:w1 first proof block split after Independence of y step; Representation and Responsibility For Equal Pay reductions continue in new block
+\framebreak
+\begin{proof}[(continued)]
+Let $\bar z=(w,j)=\argmax_{(A,\mathbf y^w)}R$ with $j\in A$ and
+$\bar z'=(w,j')=\argmax_{(A',\mathbf y^w)}R'$ with $j'\in A'$. By
+Representation, $W(z,R,A;\mathbf y^w)=W(\bar z,R,A;\mathbf y^w)$ and
+$W(z',R',A';\mathbf y^w)=W(\bar z',R',A';\mathbf y^w)$, so
+\begin{equation*}
+(*)\Leftrightarrow W(\bar z,R,A;\mathbf y^w)=W(\bar z',R',A';\mathbf y^w).
+\end{equation*}
+Since $\mathbf y^w$ is an equal-pay profile on every set, Responsibility For
+Equal Pay gives $W(\bar z,R,A;\mathbf y^w)=W(\bar z,R^c,A;\mathbf y^w)$ and
+$W(\bar z',R',A';\mathbf y^w)=W(\bar z',R^c,A';\mathbf y^w)$, where $R^c$ ranks
+purely by consumption. Hence
+\begin{equation*}
+(*)\Leftrightarrow W(\bar z,R^c,A;\mathbf y^w)=W(\bar z',R^c,A';\mathbf y^w).
+\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: W^1 proof split after Responsibility for Equal Pay reduction; Job Duplication Invariance and final Representation steps continue in new proof block
+\framebreak
+\begin{proof}[(continued)]
+Let $\bar A=A\cup A'$. By Job Duplication Invariance applied
+$\lvert\bar A\setminus A\rvert$ times,
+$W(\bar z,R^c,A;\mathbf y^w)=W(\bar z,R^c,\bar A;\mathbf y^w)$; applied
+$\lvert\bar A\setminus A'\rvert$ times,
+$W(\bar z',R^c,A';\mathbf y^w)=W(\bar z',R^c,\bar A;\mathbf y^w)$. Hence
+\begin{equation*}
+(*)\Leftrightarrow W(\bar z,R^c,\bar A;\mathbf y^w)=W(\bar z',R^c,\bar
+A;\mathbf y^w).
+\end{equation*}
+By construction $\bar z=(w,j)$ and $\bar z'=(w,j')$ have equal consumption, so
+$\bar z\,I^c\,\bar z'$; by Representation the two values are equal, which
+completes the proof.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^2$}
+\hypertarget{char:w2}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\begin{Measure}
+    \begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where there exists $t\in\mathbb{R}$ such that 
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=\mathbf{y(j')}-t,
+\end{equation*}
+and 
+\begin{equation*}
+\label{ }
+w=\max_{j\in A}\mathbf{y}(j)-t.
+\end{equation*}
+In particular, if $z=\argmax_A R$, then $W(z, R, A;\mathbf{y})=\max_{j\in A}\mathbf{y}(j)$.
+
+\end{Measure}
+\scriptsize
+\begin{theorem}
+If a well-being measure $W$ satisfies Full Responsibility and Compensation for
+the Horizontal Reference Preference $R^h$, then $W=W^2$ (under the maintained structural axioms).
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between W^2 theorem block and proof block; each is a beamer box and indivisible
+\framebreak
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, and $t,t'\in\mathbb R$, if
+there exists $w\in\mathbb R$ such that
+\begin{align*}
+z\,&I\,\argmax_{(A,\mathbf y-t)}R,\\
+z'\,&I'\,\argmax_{(A',\mathbf y'-t')}R',\\
+w&=\max_{j\in A}\mathbf y(j)-t=\max_{j'\in A'}\mathbf y'(j')-t',\end{align*}
+then (*) $W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y')$.
+
+Let $z,z'$ and $w,t,t'$ satisfy (*). Let
+% APPENDIX-OVERFLOW-FIX: four argmax definitions split into two rows to prevent horizontal overflow
+\begin{equation*}
+\begin{aligned}
+&\tilde z\in\argmax_{(A,\mathbf y-t)}R,\qquad
+\tilde z'\in\argmax_{(A',\mathbf y'-t')}R',\\
+&\bar z\in\argmax_{(A,\mathbf y-t)}R^h,\qquad
+\bar z'\in\argmax_{(A',\mathbf y'-t')}R^h.
+\end{aligned}
+\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: char:w2 first proof block split after argmax definitions; Representation and Full Responsibility reductions continue in new block
+\framebreak
+\begin{proof}[(continued)]
+By Representation, since $z\,I\,\tilde z$ and $z'\,I'\,\tilde z'$,
+\begin{equation*}
+W(z,R,A;\mathbf y)=W(\tilde z,R,A;\mathbf y),\qquad
+W(z',R',A';\mathbf y')=W(\tilde z',R',A';\mathbf y'),
+\end{equation*}
+so $(*)\Leftrightarrow W(\tilde z,R,A;\mathbf y)=W(\tilde z',R',A';\mathbf y')$.
+By Full Responsibility (*) applied within $(A,\mathbf y)$ with the tax
+$t$, the value at the own laissez-faire is independent of the preference:
+$W(\tilde z,R,A;\mathbf y)=W(\bar z,R^h,A;\mathbf y)$, and likewise
+$W(\tilde z',R',A';\mathbf y')=W(\bar z',R^h,A';\mathbf y')$. Hence
+\begin{equation*}
+(*)\Leftrightarrow W(\bar z,R^h,A;\mathbf y)=W(\bar z',R^h,A';\mathbf y').
+\end{equation*}
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: char:w2 proof split after Full Responsibility step; construction and Compensation for R^h complete the argument in new block
+\framebreak
+\begin{proof}[(continued)]
+By construction $\bar z=(w,j)$ for some $j\in A$ and $\bar z'=(w,j')$ for some
+$j'\in A'$ (each is the consumption-maximal bundle of its taxed set, with
+consumption $w$ by (*)), so $\bar z\,I^h\,\bar z'$. By Compensation
+for the Horizontal Reference Preference $R^h$,
+\begin{equation*}
+W(\bar z,R^h,A;\mathbf y)=W(\bar z',R^h,A';\mathbf y'),
+\end{equation*}
+which completes the proof.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^3$ (Laissez-Faire measure)}
+\hypertarget{char:w3}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\begin{Measure}
+    \begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where 
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=\mathbf{y}(j')+w.
+\end{equation*}
+
+\end{Measure}
+\scriptsize
+\textbf{Full responsibility.}
+\begin{equation*}
+\mathbf y(A)=\mathbf y'(A)\ \Rightarrow\
+W(\argmax_{(A,\mathbf y-t)}R,R,A;\mathbf y)
+=W(\argmax_{(A,\mathbf y-t)}R',R',A;\mathbf y'),
+\end{equation*}
+
+% CONTENT-FIX: Equal Well-Being at Laissez-Faire (EWLF) stated formally. This is the cross-situation "laissez-faire tie" named on the Lesson-1 slide; previously only informal. It is required for the characterization (see the FLAG on the value lemma below): Full Responsibility alone does not discipline the laissez-faire pay level.
+\medskip\textbf{Equal Well-Being at Laissez-Faire (EWLF).}\quad
+For all $R,R'\in\mathcal R$, nonempty $A,A'\subseteq\mathcal J$, and
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$,
+\begin{equation*}
+W\!\big(\argmax_{(A,\mathbf y)}R,\,R,\,A;\,\mathbf y\big)
+=W\!\big(\argmax_{(A',\mathbf y')}R',\,R',\,A';\,\mathbf y'\big).
+\end{equation*}
+
+% APPENDIX-OVERFLOW-FIX: manual framebreak between FR axiom and supporting lemmas to prevent single-frame overflow
+\framebreak
+
+\medskip\textbf{Supporting lemmas.}
+
+\begin{lemma}[Existence and uniqueness of the laissez-faire shift]
+For all $z\in Z$, $R\in\mathcal R$, $A\subseteq\mathcal J$, $A\neq\varnothing$,
+and $\mathbf y\in\mathbb R_+^{\mathcal J}$, there is a unique $w\in\mathbb R$
+with $z\,I\,\argmax_{(A,\mathbf y+w)}R$.
+\end{lemma}
+
+\begin{proof}
+Let $\mathbf u_R$ be a continuous representation of $R$ and set
+$\phi(w)=\max_{j\in A}\mathbf u_R(\mathbf y(j)+w,j)$. Each
+$w\mapsto\mathbf u_R(\mathbf y(j)+w,j)$ is continuous and strictly increasing by
+monotonicity; the finite upper envelope $\phi$ is therefore a continuous,
+strictly increasing bijection onto $\mathbb R$. Hence there is a unique $w$ with
+$\phi(w)=\mathbf u_R(z)$, i.e.\ with $z\,I\,\argmax_{(A,\mathbf y+w)}R$.
+\end{proof}
+
+% APPENDIX-OVERFLOW-FIX: framebreak between Lemma 1 proof and Lemma 2 to distribute dense content
+\framebreak
+
+% CONTENT-FIX: trimming lemma recast structurally --- it now speaks only about laissez-faire optima (which jobs can ever be argmax), with no appeal to Independence of Irrelevant Jobs. IIJ is derived from this lemma plus the value lemma (Remark below).
+\begin{lemma}[Irrelevant jobs are never laissez-faire optima]
+Fix $R\in\mathcal R$, $A\subseteq\mathcal J$, $\mathbf y\in\mathbb R_+^{\mathcal
+J}$ and $w\in\mathbb R$, and let $\bar z=\argmax_{(A,\mathbf y+w)}R$ with job
+$\bar\jmath$. Write $A_c:=A\setminus Irr(A;R,\mathbf y)$. Then:
+(i) $Irr(A;R,\mathbf y+w)=Irr(A;R,\mathbf y)$;
+(ii) $\bar\jmath\notin Irr(A;R,\mathbf y)$;
+(iii) for every $w\in\mathbb R$, $\argmax_{(A,\mathbf y+w)}R=\argmax_{(A_c,\mathbf
+y+w)}R$; deleting irrelevant jobs never removes the laissez-faire optimum at any
+shift.
+\end{lemma}
+
+\begin{proof}
+(i) Irrelevance is quantified over all taxes $t\in\mathbb R$; the substitution
+$t\mapsto t+w$ is a bijection of $\mathbb R$, so the dominating condition holds
+for $\mathbf y$ at all $t$ iff it holds at all $t$ shifted by $w$. Thus
+$Irr(A;R,\mathbf y)$ does not depend on $w$.
+
+(ii) If $\bar\jmath\in Irr(A;R,\mathbf y)$ there would be $j'\in A$ with
+$\mathbf y(j')<\mathbf y(\bar\jmath)$ and
+$(\mathbf y(j')-t,j')\,P\,(\mathbf y(\bar\jmath)-t,\bar\jmath)$ for all $t$;
+taking $t=-w$ contradicts $\bar z=\argmax_{(A,\mathbf y+w)}R$. So
+$\bar\jmath\in A_c$, and removing dominated jobs leaves the maximizer fixed:
+$\bar z=\argmax_{(A_c,\mathbf y+w)}R$.
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: proof block closed before framebreak and reopened after; beamer silently ignores \framebreak inside a boxed proof block, so the split must occur between two proof environments
+\framebreak
+\begin{proof}[(continued)]
+% MERGE: D's corrected part (iii) placed inside C's close/reopen structure
+% CONTENT-FIX: part (iii) proved as a statement about laissez-faire optima only (argmax-invariance under deletion), replacing the prior dominated-chain argument that invoked Independence of Irrelevant Jobs.
+(iii) By (i) the irrelevant set $Irr(A;R,\mathbf y)$ is the same at every shift,
+and by (ii), applied at an arbitrary shift $w'$, the maximizer
+$\argmax_{(A,\mathbf y+w')}R$ is never one of the irrelevant jobs. By definition
+of irrelevance each $j\in Irr(A;R,\mathbf y)$ is strictly dominated at every tax
+by a lower-paid job in $A$, so its best attainable bundle lies strictly below
+the top at every shift; deleting jobs that are never maximizers cannot change
+the maximizer. Hence $\argmax_{(A,\mathbf y+w')}R=\argmax_{(A_c,\mathbf
+y+w')}R$ for every $w'\in\mathbb R$. In particular $\bar\jmath\in A_c$ and
+$\bar z=\argmax_{(A_c,\mathbf y+w)}R$.
+\end{proof}
+
+% APPENDIX-OVERFLOW-FIX: framebreak between Lemma 2 and Lemma 3 to separate dense proof content
+\framebreak
+
+% CONTENT-FIX: hypotheses strengthened to Full Responsibility (*) + Equal Well-Being at Laissez-Faire (EWLF). FR alone is insufficient: W^flat(z,R,A;y) = W^3(z,R,A;y) + min_{j in A} y(j) satisfies both FR and Independence of Irrelevant Jobs, yet is NOT kappa o W^3 (its laissez-faire value moves with min_{j in A} y(j)). EWLF is the cross-situation axiom that pins the laissez-faire level. See the FLAG in the proof for the one step that needs EWLF's full force.
+\begin{lemma}[Laissez-faire value; scale convention]
+If $W$ satisfies Full Responsibility (*) and Equal Well-Being at Laissez-Faire,
+then there is a strictly
+increasing $\kappa:\mathbb R\to\mathbb R$ such that, for all $R,A,\mathbf y$ and
+all $w\in\mathbb R$,
+\begin{equation*}
+W\!\big(\argmax_{(A,\mathbf y+w)}R,\,R,\,A;\,\mathbf y\big)=\kappa(w).
+\end{equation*}
+Setting $\kappa(w)=w$ recovers the laissez-faire normalization; this is a choice
+of cardinal scale, not a substantive axiom.
+\end{lemma}
+
+\begin{proof}
+Fix $w$ and write $V(R,A,\mathbf y):=W(\argmax_{(A,\mathbf y+w)}R,R,A;\mathbf
+y)$. By Full Responsibility (*), $V$ is independent of $R$ (the across-preference
+half) and invariant across profiles agreeing on $A$ (the across-profile half,
+with $t=-w$); since the laissez-faire bundle depends on $\mathbf y$ only through
+$\mathbf y(A)$, $V$ is a function of $(A,\mathbf y(A),w)$ alone. At $w=0$, Equal
+Well-Being at Laissez-Faire makes $V$ a single constant across all
+$(R,A,\mathbf y)$; call it $\kappa(0)$.
+% CONTENT-FIX FLAG (please confirm against your Local-EWLF + Singleton-Calibration decomposition):
+% Carrying the no-tax tie from w=0 to general w removes the residual dependence of V on
+% (A, y(A)). Full Responsibility holds y(A) fixed, so it cannot bridge the base profile y
+% to the shifted profile y+w (which differs on A by w); EWLF as stated above pins only the
+% w=0 tie at a fixed profile. The line below therefore invokes EWLF in the across-profile /
+% uniform-shift form needed to transport the tie to every w. W^flat shows FR alone cannot
+% do this. THIS is the single step to verify against the operative form of EWLF in the paper.
+By Equal Well-Being at Laissez-Faire applied along the uniform shift
+$\mathbf y\mapsto\mathbf y+w$, the tie extends from $w=0$ to every $w$, so $V$
+depends on $w$ alone; write it $\kappa(w)$. On $A=\{j\}$ with $\mathbf y(j)=0$
+the laissez-faire bundle is $(w,j)$, and monotonicity with Representation gives
+$\kappa(w')>\kappa(w)$ for $w'>w$, so $\kappa$ is strictly increasing.
+\end{proof}
+
+% CONTENT-FIX: Remark added to DERIVE Independence of Irrelevant Jobs from FR + EWLF (via the two lemmas), matching the Lesson-1 slide claim "IIJ derivable: Full Resp. + laissez-faire tie." IIJ is therefore not assumed anywhere below. Plain bold paragraph used (no remark environment) to avoid any undefined-environment risk.
+\medskip\textbf{Remark (Independence of Irrelevant Jobs is derived).}\quad
+Fix any $z\in Z$, and let $j'\in Irr(A;R,\mathbf y)$ be a job other than that of
+$z$. By the lemma on
+laissez-faire optima (iii), deleting $j'$ leaves $\argmax_{(A,\mathbf y+w)}R$
+unchanged at every shift, so the unique shift $w$ with
+$z\,I\,\argmax_{(A,\mathbf y+w)}R$ (existence/uniqueness lemma) is the same in
+$A$ and in $A\setminus\{j'\}$. By the laissez-faire value lemma both
+$W(z,R,A;\mathbf y)$ and $W(z,R,A\setminus\{j'\};\mathbf y)$ equal $\kappa(w)$,
+whence $W(z,R,A;\mathbf y)=W(z,R,A\setminus\{j'\};\mathbf y)$. This is exactly
+Independence of Irrelevant Jobs.
+
+% CONTENT-FIX: characterizing hypotheses changed from {Full Responsibility, Independence of Irrelevant Jobs} to {Full Responsibility, Equal Well-Being at Laissez-Faire}. IIJ is now derived (Remark above), not assumed; and FR + IIJ alone do NOT characterize W^3 (W^flat counterexample, noted on the value lemma).
+\begin{theorem}
+If a well-being measure $W$ satisfies Full Responsibility and Equal Well-Being
+at Laissez-Faire, then $W$ represents the same well-being ordering as $W^3$; that
+is, $W=\kappa\circ W^3$ for some strictly increasing
+$\kappa:\mathbb R\to\mathbb R$.
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between W^3 characterization theorem block and its proof block
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, if there exists
+$w\in\mathbb R$ such that
+\begin{align*}
+z\,&I\,\argmax_{(A,\mathbf y+w)}R,\\
+z'\,&I'\,\argmax_{(A',\mathbf y'+w)}R',\end{align*}
+then (*) $W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y')$, with common value
+$\kappa(w)$.
+
+Let $z,z'$ and $w$ satisfy (*), and let
+$\bar z\in\argmax_{(A,\mathbf y+w)}R$, $\bar z'\in\argmax_{(A',\mathbf
+y'+w)}R'$. By Representation, since $z\,I\,\bar z$ and $z'\,I'\,\bar z'$,
+\begin{equation*}
+W(z,R,A;\mathbf y)=W(\bar z,R,A;\mathbf y),\qquad
+W(z',R',A';\mathbf y')=W(\bar z',R',A';\mathbf y'),
+\end{equation*}
+so $(*)\Leftrightarrow W(\bar z,R,A;\mathbf y)=W(\bar z',R',A';\mathbf y')$.
+Let $A_c=A\setminus Irr(A;R,\mathbf y)$ and $A_c'=A'\setminus Irr(A';R',\mathbf
+y')$.
+% CONTENT-FIX: trimming step cites Independence of Irrelevant Jobs as DERIVED (Remark above), applied repeatedly; it is no longer assumed as a hypothesis.
+By Independence of Irrelevant Jobs --- derived above (Remark) --- applied
+repeatedly,
+\begin{equation*}
+W(\bar z,R,A;\mathbf y)=W(\bar z,R,A_c;\mathbf y),\qquad
+W(\bar z',R',A';\mathbf y')=W(\bar z',R',A_c';\mathbf y'),
+\end{equation*}
+with $\bar z=\argmax_{(A_c,\mathbf y+w)}R$ and
+$\bar z'=\argmax_{(A_c',\mathbf y'+w)}R'$. Hence
+$(*)\Leftrightarrow W(\bar z,R,A_c;\mathbf y)=W(\bar z',R',A_c';\mathbf y')$.
+% CONTENT-FIX: value lemma now also uses Equal Well-Being at Laissez-Faire (EWLF), which pins the laissez-faire level across situations.
+By the laissez-faire value lemma, which uses Full Responsibility (FR) ---
+independence across preferences and invariance across profiles agreeing on the
+ability set --- together with Equal Well-Being at Laissez-Faire (EWLF), each
+side equals $\kappa(w)$:
+\begin{equation*}
+W(\bar z,R,A_c;\mathbf y)=\kappa(w)=W(\bar z',R',A_c';\mathbf y'),
+\end{equation*}
+so $(*)$ holds. By the existence/uniqueness lemma the shift $w$ is exactly
+$W^3(z,R,A;\mathbf y)$, whence $W(z,R,A;\mathbf y)=\kappa(W^3(z,R,A;\mathbf y))$
+for every argument, with $\kappa$ strictly increasing. Thus $W$ and $W^3$
+represent the same ordering.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^4$ (Staying-Home Equivalent)}
+\hypertarget{char:w4}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\begin{Measure}
+    \begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,(w,o).
+\end{equation*}
+
+\end{Measure}
+\scriptsize
+\begin{theorem}[$W^4$]
+If a well-being measure $W$ satisfies Full Compensation and Independence of
+Preferences over Infeasible Jobs, then $W$ is ordinally equivalent to $W^4$.
+\end{theorem}
+
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, if there exists
+$w\in\mathbb R_+$ such that $z\,I\,(w,o)$ and $z'\,I'\,(w,o)$, then (*)
+$W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y')$.
+
+By Full Compensation, since $z\,I\,(w,o)$ and $z'\,I'\,(w,o)$,
+\begin{equation*}
+W(z,R,A;\mathbf y)=W((w,o),R,A;\mathbf y),\qquad
+W(z',R',A';\mathbf y')=W((w,o),R',A';\mathbf y'),
+\end{equation*}
+so $(*)\Leftrightarrow W((w,o),R,A;\mathbf y)=W((w,o),R',A';\mathbf y')$. By
+Full Compensation applied to the trivial indifference $(w,o)\,I\,(w,o)$, the
+environment aligns to the singleton $\{o\}$ with the zero profile $\mathbf 0$:
+\begin{equation*}
+W((w,o),R,A;\mathbf y)=W((w,o),R,\{o\};\mathbf 0),\qquad
+W((w,o),R',A';\mathbf y')=W((w,o),R',\{o\};\mathbf 0).
+\end{equation*}
+% CONTENT-FIX: IPIJ invocation made explicit about the feasible set Z({o}); R and R' need only agree on attainable bundles, matching the restricted antecedent on the axioms slide.
+On $\{o\}$ the feasible set is $Z(\{o\})=\{(c,o):c\geq 0\}$, on which every
+preference ranks by consumption (monotonicity), so $R$ and $R'$ coincide on
+$Z(\{o\})$. By Independence of Preferences over Infeasible Jobs (whose
+antecedent requires agreement only on $Z(\{o\})$),
+\begin{equation*}
+W((w,o),R,\{o\};\mathbf 0)=W((w,o),R',\{o\};\mathbf 0),
+\end{equation*}
+which completes the proof.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^5$ (Reference-Ability measure)}
+\hypertarget{char:w5}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\begin{Measure}
+    \begin{equation*}
+W(z,R,A;\mathbf{y})=w
+\Leftrightarrow
+z\,I\,\max_R\{B\}
+\end{equation*}
+
+where
+
+\begin{equation*}
+z'=(c',j')\in B
+\Leftrightarrow
+j'\in \bar{A}
+\textrm{ and }
+c'=\mathbf{y}(j')+w.
+\end{equation*}
+
+In particular, if $z=\argmax_{(\bar{A},\mathbf{y})}R$, then $W(z,R,A;\mathbf{y})=0$.
+\end{Measure}
+\scriptsize
+\textbf{Supporting lemma.}
+
+\begin{lemma}[Shift-coherence of the reference optimum]
+For all $R\in\mathcal R$, $\mathbf y\in\mathbb R_+^{\mathcal J}$ and
+$w,w'\in\mathbb R$,
+% APPENDIX-OVERFLOW-FIX: wide nested-superscript argmax equation promoted to displayed to prevent inline overflow
+\begin{equation*}
+\argmax_{(\bar A,(\mathbf y^{+w})^{+w'})}R=\argmax_{(\bar A,\mathbf y^{+(w+w')})}R.
+\end{equation*}
+In particular the responsibility step may be read at the base
+profile $\mathbf y$ and at $\mathbf y^{+w}$ interchangeably, since both refer to
+the same reference optimum.
+\end{lemma}
+
+\begin{proof}
+Uniform shifts compose additively coordinatewise:
+$(\mathbf y^{+w})^{+w'}=\mathbf y^{+(w+w')}$, so the two maximization problems
+coincide.
+\end{proof}
+
+\medskip\textbf{Characterization theorems.}
+
+\begin{theorem}[$W^5$, general reference set]
+Fix $\bar A\subseteq\mathcal J$, $\bar A\neq\varnothing$.
+% CONTENT-FIX: dropped "Compensation for the Horizontal Reference Preference R^h" from the hypotheses. W^{5,bar A} provably fails that axiom (it fails Independence of y, a special case), so it cannot characterize W^5. The horizontal step in the proof uses only Representation at fixed (R^h, bar A, y).
+If a well-being measure
+$W$ satisfies Independence of $A$ and Responsibility for Reference Abilities
+(relative to $\bar A$), then $W=\kappa\circ W^{5,\bar A}$ for some strictly increasing
+$\kappa$.
+\end{theorem}
+% APPENDIX-OVERFLOW-FIX: framebreak between W^5 theorem block and proof block
+\framebreak
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y\in\mathbb R_+^{\mathcal J}$, if there exists $w\in\mathbb R$ with
+\begin{align*}
+z\,&I\,\argmax_{(\bar A,\mathbf y^{+w})}R,\\
+z'\,&I'\,\argmax_{(\bar A,\mathbf y^{+w})}R',\end{align*}
+then (*) $W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y)$, with common value
+$\kappa(w)$.
+
+Let $\tilde z\in\argmax_{(\bar A,\mathbf y^{+w})}R$,
+$\tilde z'\in\argmax_{(\bar A,\mathbf y^{+w})}R'$, and
+$\bar z,\bar z'\in\argmax_{(\bar A,\mathbf y^{+w})}R^h$. By Representation, since
+$z\,I\,\tilde z$ and $z'\,I'\,\tilde z'$,
+\begin{equation*}
+W(z,R,A;\mathbf y)=W(\tilde z,R,A;\mathbf y),\qquad
+W(z',R',A';\mathbf y)=W(\tilde z',R',A';\mathbf y).
+\end{equation*}
+By Independence of $A$,
+\begin{equation*}
+W(\tilde z,R,A;\mathbf y)=W(\tilde z,R,\bar A;\mathbf y),\qquad
+W(\tilde z',R',A';\mathbf y)=W(\tilde z',R',\bar A;\mathbf y),
+\end{equation*}
+so $(*)\Leftrightarrow W(\tilde z,R,\bar A;\mathbf y)=W(\tilde z',R',\bar
+A;\mathbf y)$.
+\end{proof}
+% APPENDIX-OVERFLOW-FIX: W^5 general proof split after Independence of A reduction; Responsibility for Reference Abilities and Compensation for R^h steps continue in new proof block
+\framebreak
+\begin{proof}[(continued)]
+The bundles $\tilde z$ and $\bar z$ are reference optima at the
+same shift $w$; by the shift-coherence lemma the responsibility step applies at
+the base profile $\mathbf y$. By Responsibility for Reference Abilities,
+\begin{equation*}
+W(\tilde z,R,\bar A;\mathbf y)=W(\bar z,R^h,\bar A;\mathbf y),\qquad
+W(\tilde z',R',\bar A;\mathbf y)=W(\bar z',R^h,\bar A;\mathbf y),
+\end{equation*}
+so $(*)\Leftrightarrow W(\bar z,R^h,\bar A;\mathbf y)=W(\bar z',R^h,\bar
+A;\mathbf y)$. By construction $\bar z=(v,j^*)$ and $\bar z'=(v,j^{**})$ with
+$v=\max_{j\in\bar A}\mathbf y(j)+w$ and
+$j^*,j^{**}\in\argmax_{j\in\bar A}\mathbf y(j)$, so $\bar z\,I^h\,\bar z'$.
+% CONTENT-FIX: discharge by Representation at (R^h, bar A, y), not Compensation for R^h. Both bundles share the same ability set bar A and the same profile y; here I^h is the agent's own indifference, so Representation gives the equality directly.
+By Representation at $(R^h,\bar A,\mathbf y)$, since $\bar z\,I^h\,\bar z'$,
+\begin{equation*}
+W(\bar z,R^h,\bar A;\mathbf y)=W(\bar z',R^h,\bar A;\mathbf y),
+\end{equation*}
+establishing $(*)$. The common value is $\kappa(w)$ by the reference
+laissez-faire scale convention, and by existence/uniqueness of the reference
+shift the value of $w$ is $W^{5,\bar A}(z,R,A;\mathbf y)$. Hence
+$W=\kappa\circ W^{5,\bar A}$.
+\end{proof}
+
+% APPENDIX-OVERFLOW-FIX: framebreak between the two W^5 theorems so each has its own continuation frame
+\framebreak
+
+\begin{theorem}[$W^5$, special case $\bar A=\mathcal J$]
+% CONTENT-FIX: same deletion as the general theorem --- removed "Compensation for the Horizontal Reference Preference R^h" from the hypotheses.
+Fix $\bar A=\mathcal J$. If a well-being measure $W$ satisfies Independence of
+$A$ and Responsibility When the Preferred Job is Possible, then
+$W=\kappa\circ W^{5,\mathcal J}$ for some strictly increasing $\kappa$.
+\end{theorem}
+
+\begin{proof}
+The argument is that of the general-reference-set theorem above with $\bar A=\mathcal J$, except
+that Responsibility for Reference Abilities is replaced by Responsibility When
+the Preferred Job is Possible. With $\bar A=\mathcal J$ the reference optimum
+$\tilde z=\argmax_{(\mathcal J,\mathbf y^{+w})}R$ has its job in $\mathcal J$
+trivially, so the antecedent $\argmax_{(\mathcal J,\mathbf y^{+w})}R\in\mathcal
+J$ holds for every $R$; the axiom then delivers
+$W(\tilde z,R,\mathcal J;\mathbf y)=W(\bar z,R^h,\mathcal J;\mathbf y)$, with
+the shift-coherence lemma keeping the profile at $\mathbf y$.
+% CONTENT-FIX: "Compensation for R^h" replaced by "Representation" in the parenthetical, matching the general-theorem fix.
+The remaining steps
+(Representation, Independence of $A$, and the value
+convention) are verbatim, giving $W=\kappa\circ W^{5,\mathcal J}$.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Characterization of $W^6$ (Min-of-Equal-Pay measure)}
+\hypertarget{char:w6}{}%
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\begin{Measure}
+     If there exists $w\in\mathbb{R}_{+}$, such that $z\,I\,\argmax_{(\mathcal{J},\mathbf{y}^w)}R$ and $z'\,I'\,\argmax_{(\mathcal{J},\mathbf{y}^w)}R'$ then $W(z,R,A;\mathbf{y})=W(z',R',A';\mathbf{y}')$.
+
+\end{Measure}
+\scriptsize
+\begin{theorem}
+If a well-being measure $W$ satisfies Full Compensation and Weak
+Responsibility, then $W=W^6$ (under the maintained structural axioms).
+\end{theorem}
+
+\begin{proof}
+We show that for all $z,z'\in Z$, $R,R'\in\mathcal R$, $A,A'\in 2^{\mathcal J}$,
+$\mathbf y,\mathbf y'\in\mathbb R_+^{\mathcal J}$, if there exists
+$w\in\mathbb R_+$ such that
+\begin{align*}
+z\,&I\,\argmax_{(\mathcal J,\mathbf y^w)}R,\\
+z'\,&I'\,\argmax_{(\mathcal J,\mathbf y^w)}R',\end{align*}
+where $\mathbf y^w(j)=w$ for all $j\in\mathcal J$, then (*)
+$W(z,R,A;\mathbf y)=W(z',R',A';\mathbf y')$.
+
+Let $z,z'$ and $w$ satisfy (*), and let
+$\bar z\in\argmax_{(\mathcal J,\mathbf y^w)}R$,
+$\bar z'\in\argmax_{(\mathcal J,\mathbf y^w)}R'$; then $\bar z=(w,\bar\jmath)$ and
+$\bar z'=(w,\bar\jmath')$ for some $\bar\jmath,\bar\jmath'\in\mathcal J$. By Full
+Compensation,
+\begin{equation*}
+W(z,R,A;\mathbf y)=W(z,R,\mathcal J;\mathbf y^w),\qquad
+W(z',R',A';\mathbf y')=W(z',R',\mathcal J;\mathbf y^w).
+\end{equation*}
+By Representation, since $z\,I\,\bar z$ and $z'\,I'\,\bar z'$,
+\begin{equation*}
+W(z,R,\mathcal J;\mathbf y^w)=W(\bar z,R,\mathcal J;\mathbf y^w),\qquad
+W(z',R',\mathcal J;\mathbf y^w)=W(\bar z',R',\mathcal J;\mathbf y^w).
+\end{equation*}
+Hence $(*)\Leftrightarrow W(\bar z,R,\mathcal J;\mathbf y^w)=W(\bar
+z',R',\mathcal J;\mathbf y^w)$. Since $\mathbf y^w$ is equal-pay on
+$\mathcal J$ and the preferred job over $\mathcal J$ is feasible in
+$\mathcal J$, Weak Responsibility applies and gives the equality, which
+completes the proof.
+\end{proof}
+
+\medskip
+\hyperlink{tab:classification}{\beamerreturnbutton{Back to classification table}}
+\end{frame}
+
+\end{document}

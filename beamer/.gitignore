@@ -1,0 +1,18 @@
+# LaTeX build intermediates.  The three built PDFs ARE committed (see below);
+# everything else in build/ is regenerable by ./build_deck_v1.sh.
+build/*
+!build/JMP_seminar_deck_v1.pdf
+!build/JMP_seminar_deck_v1_25min.pdf
+!build/JMP_seminar_deck_v1_rehearsal.pdf
+
+# stray intermediates if anyone compiles in place
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb

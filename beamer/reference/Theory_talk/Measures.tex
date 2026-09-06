@@ -1,0 +1,101 @@
+\section{Measures}
+
+Measure 1: We restrict our attention to the individual's ability set, without looking at the pre-tax incomes associated to these jobs, and we look at the preferred job and its corresponding consumption level that leaves the individual indifferent to their current bundle.
+\begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=w.
+\end{equation*}
+If I'm right, this measure satisfies Independence of $\mathbf{y}$ and Responsibility For Equal Pay. I am confident it is the only measure to satisfy these two axioms. To be proven.
+
+Measure 2: We restrict our attention to the individual's ability set, we look at the preferred job in this set to which the individual is indifferent to their current bundle, where ``preferred job'' means that the tax (or subsidy) that would leave them indifferent is minimal, and we apply this tax (or subsidy) to all the jobs in the ability set to identify the "best-paid equivalent" job, the pay of which is the well-being of the individual.
+\begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where there exists $t\in\mathbb{R}$ such that 
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=\mathbf{y(j')}-t,
+\end{equation*}
+and 
+\begin{equation*}
+\label{ }
+w=\max_{j\in A}\mathbf{y}(j)-t.
+\end{equation*}
+In particular, if $z=\argmax_A R$, then $W(z, R, A;\mathbf{y})=\max_{j\in A}\mathbf{y}(j)$.
+
+If I'm right, this measure satisfies Full Responsibility and Compensation for Reference Preferences if the reference preferenes are $R^{c}\in\mathcal{R}$ defined by 
+\begin{equation*}
+\label{ }
+z=(c;j)\,R^{c}\,z'=(c',j')\Leftrightarrow c\geq c'.
+\end{equation*} 
+I am reasonably confident it is the only measure to satisfy these two axioms and some other ones that will extend Job Neutrality. To be proven.
+
+Measure 3: The Laisser-Faire measure. All individuals have the same well-being at laisser-faire. Otherwise, compute the amount of tax $t$ that leaves the individual indifferent between their current bundle and maximizing over their ability set and paying $t$ (better to write it as a subsidy I guess).
+\begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where 
+\begin{equation*}
+\label{ }
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=\mathbf{y}(j')+w.
+\end{equation*}
+I think the Laisser-Faire measure satisfies Full Responsibility and Independence of Irrelevant Jobs and it is the only one that satisfies these two axioms
+
+Measure 4: The Staying-Home Equivalent measure. Assume there is a ``job'', say $o$, consisting of staying home, with $\mathbf{y}(o)=0$, such that everybody has it in their ability set: for all $A\in\mathcal{A}$, $o\in A$. Then, we can measure well-being by computing the consumption level that leaves an individual indifferent between their current bundle and staying home with that consumption level.
+
+\begin{equation*}
+\label{ }
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,(w,o).
+\end{equation*}
+
+
+Measure 5: The Reference Ability LF measure. We fix a reference ability set $\bar{A}\subseteq \mathcal{J}$. Instead of evaluating an individual relative to their own actual ability set, as in the Laisser-Faire measure, we evaluate them relative to a common reference set of jobs. The idea is to compute the amount of subsidy that, when added uniformly to all jobs in the reference ability set, makes the individual indifferent between their current bundle and the best job they would choose in that subsidized reference set. In this way, well-being is measured relative to a common benchmark of job opportunities. 
+\begin{equation*}
+W(z,R,A;\mathbf{y})=w
+\Leftrightarrow
+z\,I\,\max_R\{B\}
+\end{equation*}
+
+where
+
+\begin{equation*}
+z'=(c',j')\in B
+\Leftrightarrow
+j'\in \bar{A}
+\textrm{ and }
+c'=\mathbf{y}(j')+w.
+\end{equation*}
+
+In particular, if $z=\argmax_{(\bar{A},\mathbf{y})}R$, then $W(z,R,A;\mathbf{y})=0$.
+This measure satisfies Independence of $A$, Independence of Irrelevant Jobs, and a responsibility principle relative to the reference ability set $\bar{A}$. It does not satisfy Independence of $\mathbf{y}$, and in general it does not satisfy Full Responsibility, since the latter is defined with respect to the actual ability set $A$ rather than the reference ability set $\bar{A}$.  As a special case, if we take $\bar{A}=\mathcal{J}$, then the measure satisfies Responsibility When the Preferred Job is Possible, since whenever an individual's preferred job in $(\mathcal{J},\mathbf{y})$ belongs to the actual ability set $A$, the preferred feasible bundle in $(A,\mathbf{y})$ coincides with the preferred bundle in the reference set and therefore receives well-being level $0$.
+
+
+Measure 6: We compute the consumption level that would leave an individual indifferent between their actual bundle and getting this consumption level with their preferred job over all existing jobs. If there exists $w\in\mathbb{R}_{+}$, such that $z\,I\,\argmax_{(\mathcal{J},\mathbf{y}^w)}R$ and $z'\,I'\,\argmax_{(\mathcal{J},\mathbf{y}^w)}R'$ then $W(z,R,A;\mathbf{y})=W(z',R',A';\mathbf{y}')$.
+
+This measure satisfies Full Compensation and Weak Responsibility.\\
+
+\begin{tabular}{r|c|c|c|c|c|c|}
+     & $W^1$ & $W^2$ & $W^3$ & $W^4$ & $W^5$ & $W^6$ \\
+Representation & + & + & + & + & + & + \\
+Job Duplication Invariance & + & + & + & + & + & + \\
+Job Neutrality & + & + & + & + & + & + \\
+Full Compensation     & - & - & - & + & - & + \\
+Ind. of $\mathbf{y}$     & + & - & - & + & - & + \\
+Ind. of $A$     & - & - & - & + & + & + \\
+Comp.\ for $R^{h}$     & + & + & - & + & - & + \\
+Comp.\ for Ref. Pref.     & + & - & - & + & - & + \\
+Ind.\ of Irr.\ Jobs (IIJ)     & + & - & + & + & + & + \\
+Full Responsibility     & - & + & + & - & - & - \\
+Resp.\ For Equal Pay     & + & + & + & - & - & - \\
+Resp.\ When Pref. Job is Poss.     & - & + & + & - & - & - \\
+Weak Resp.     & + & + & + & - & - & +\\
+Ind.\ Pref.\ Infeas.\ Jobs (IPIJ)    & + & + & + & + & - & - \\
+Resp.\ Ref.\ Abilities   & - & - & ? & - & + & - \\
+\end{tabular}

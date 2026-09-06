@@ -1,0 +1,134 @@
+\section{Axioms}
+Basic axioms. First, $W$ is a utility representation.
+
+Representation: For all $z,z'\in Z$, $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y}\in \mathbb{R}_{+}^{\mathcal{J}}$, 
+\begin{equation*}
+\label{label1}
+z\,R\,z'\Leftrightarrow W(z,R,A;\mathbf{y})\geq W(z',R,A;\mathbf{y}).
+\end{equation*}
+
+Two axioms that deal with the question: what is a job? First, Job Multiplication captures the idea that there is no difference between being able to occupy two jobs that are completely identical, both in terms of pay and preferences, or being able to occupy only one of these jobs.
+
+Job Duplication Invariance: For all $z=(c,j)\in Z$, $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y}\in \mathbb{R}_{+}^{\mathcal{J}}$, $j'\in \mathcal{J}\setminus A$, if $\mathbf{y}(j')=\mathbf{y}(j)$ and $(x,j)\,I\,(x,j')$ for all $x\in\mathbb{R}_{+}$, then
+\begin{equation*}
+\label{label2}
+W(z,R,A;\mathbf{y})=W(z,R,A\cup\{j'\};\mathbf{y}).
+\end{equation*}
+
+To define the second axiom, we need the following terminology. Let $\pi:\mathcal{J}\rightarrow \mathcal{J}$ denote a permutation on $\mathcal{J}$. We let $\Pi$ denote the set of all permutations on $\mathcal{J}$. We let $\pi(A)\in 2^{\mathcal{J}}$ denote the permutation of elements of $A$ in $\mathcal{J}$, that is $j\in\pi(A)$ if and only if there exists $j'\in A$ such that $j=\pi(j')$. For $z=(j,c)$, we define $\pi(z)=(\pi(j),c)$. We also define $\pi(\mathbf{y})$ as follows: $\pi(\mathbf{y})(j)=\mathbf{y}(\pi(j))$. Finally, we define $\pi(R)\in\mathcal{R}$ as follows: $z/,R\,z'$ if and only if $\pi(z)\,\pi(R)\,\pi(z')$.
+
+Job Neutrality: For all $z\in Z$, $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y}\in \mathbb{R}_{+}^{\mathcal{J}}$, $\pi\in\Pi$,
+\begin{equation*}
+\label{ }
+W(z,R,A;\mathbf{y})=W(\pi(z),\pi(R),\pi(A);\pi(\mathbf{y})).
+\end{equation*}
+
+I guess we will need axioms of Continuity.
+
+We begin with compensation axioms.
+
+Full Compensation: For all $z,z'\in Z$, $R\in \mathcal{R}$, $A,A'\subseteq \mathcal{J}$, $\mathbf{y}, \mathbf{y}' \in \mathbb{R}_{+}^{\mathcal{J}}$, 
+\begin{equation*}
+\label{ }
+z\,I\,z'\Rightarrow W(z,R,A;\mathbf{y})=W(z',R,A';\mathbf{y}').
+\end{equation*}
+
+We can decompose Full Compensation into these two, weaker, axioms.
+
+Independence of $\mathbf{y}$: For all $z\in Z$, $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y}, \mathbf{y}' \in \mathbb{R}_{+}^{\mathcal{J}}$, 
+\begin{equation*}
+\label{ }
+W(z,R,A;\mathbf{y})=W(z,R,A;\mathbf{y}').
+\end{equation*}
+
+Independence of $A$: For all $z,z'\in Z$, $R\in \mathcal{R}$, $A,A'\subseteq \mathcal{J}$, $\mathbf{y}\in \mathbb{R}_{+}^{\mathcal{J}}$, 
+\begin{equation*}
+\label{ }
+z\,I\,z'\Rightarrow W(z,R,A;\mathbf{y})=W(z',R,A';\mathbf{y}).
+\end{equation*}
+
+These two properties are different in nature. Independence of $\mathbf{y}$ implies that individuals are not responsible for how much the jobs they are able to take pay. This leaves the possibility to hold individuals responsible for the set of jobs they are able to take. Independence of $A$ implies that individuals are not responsible for the set of jobs they are able to take but well-being may be measured by reference to pre-tax incomes. This leaves the possibility to make well-being differ among individuals on the basis that one of them happens to like jobs that are more productive.
+
+It is easy to see that a well-being measure $W$ satisfies Full Compensation if and only if it satisfies Independence of $\mathbf{y}$ and Independence of $A$. We should study them separately, but we should also check which well-being measures satisfies Full Compensation.
+
+Compensation for Reference Preferences. There exists $\tilde{\mathcal{R}}\subseteq\mathcal{R}$ such that or all $z,z'\in Z$, $R\in \tilde{\mathcal{R}}$, $A,A'\subseteq \mathcal{J}$, $\mathbf{y}, \mathbf{y}' \in \mathbb{R}_{+}^{\mathcal{J}}$, 
+\begin{equation*}
+\label{ }
+z\,I\,z'\Rightarrow W(z,R,A;\mathbf{y})=W(z',R,A';\mathbf{y}').
+\end{equation*}
+
+We will refer specifically to the case in which the reference class $\tilde{\mathcal R}$ is the singleton containing the \emph{horizontal} reference preference $R^h\in\mathcal R$, defined by
+\begin{equation*}
+z=(c,j)\,R^h\,z'=(c',j')\Leftrightarrow c\geq c',
+\end{equation*}
+that is, the preference that ranks bundles purely by consumption, ignoring job identity. Compensation for Reference Preferences with $\tilde{\mathcal R}=\{R^h\}$ will be called \emph{Compensation for the Horizontal Reference Preference}.
+
+Job $j$ is irrelevant for an individual of type $(R,A)$ at pre-tax incomes $\mathbf{y}(j)$ if $j\in A$ but this individual will never take job $j$: there is another job, $j'$, which this individual can take, which pays less, and independently of the tax (by tax progressivity the tax on $j$ cannot be lower than that on $j'$) this individual always prefers taking job $j'$: $j$ is irrelevant for individual $(R,A)$, if $j\in A$ and there exists $j'\in A$ such that $\mathbf{y}(j')<\mathbf{y}(j)$ and for all $t\in\mathbb{R}$, $z,z'\in Z$ such that $z=(\mathbf{y}(j)-t,j)$ and $z'=(\mathbf{y}(j')-t,j')$: $z'\,P\,z$. For $(R,A)$ we let $Irr(A;R,\mathbf{y})$ denote the set of irrelevant jobs for an individual of type $(R,A)$ facing pre-tax incomes $\mathbf{y}$.
+
+Independence of Irrelevant Jobs: For all $z=(c,j)\in Z$, $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $j'\in A$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$, if $j\neq j'$ and $j'\in Irr(A;R,\mathbf{y})$, then
+\begin{equation*}
+\label{ }
+W(z,R,A;\mathbf{y})=W(z,R,A\setminus\{j'\};\mathbf{y})
+\end{equation*}
+
+Full Compensation implies Independence of $\mathbf{y}$, Compensation for Reference Preferences and Independence of Irrelevant Jobs.
+
+
+
+A job $j$ is infeasible for an individual of type $(R,A)$ if this individual is not able to take it, that is, if $j\notin A$. Since bundles are of the form $z=(c,j)$, if $j\notin A$, then no bundle containing job $j$ can be chosen by this individual. Therefore, preferences over such infeasible jobs should not affect the well-being level assigned to feasible bundles. In other words, only the restriction of preferences to feasible bundles should matter for well-being measurement.
+
+Independence of Preferences over Infeasible Jobs (IPIJ) : 
+For all $R,R'\in\mathcal R$, all $A\subseteq \mathcal J$, all $\mathbf y\in\mathbb R_+^{\mathcal J}$, if for all $z,z'\in Z$,
+\[
+z\,R\,z' \ \Longleftrightarrow\ z\,R'\,z',
+\]
+then for all $z\in Z $,
+\begin{equation*}
+\label{}
+W(z,R,A;\mathbf y)=W(z,R',A;\mathbf y).
+\end{equation*}
+Full Compensation does not imply Independence of Preferences over Infeasible Jobs, since the former compares indifferent bundles under a fixed preference relation, whereas the latter requires invariance of the well-being measure to changes in preferences outside the feasible set
+
+Next, responsibility axioms. We use the following terminology: $\max_{R}\{A;\mathbf{y}\}$ stands for any of the preferred bundles among those composed of jobs in $A$ and their pre-tax income in $\mathbf{y}$, absent any taxation. Note that if there are several bundles that maximize $R$ in $A$, they are indifferent to each other.
+
+We now turn to the responsibility axioms. To define them, we need the following terminology. First, for $R\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$, we let $\argmax_{(A,\mathbf{y})}R$ denote one of the bundles that maximizes preferences $R$ in the set of bundles defined by the pair $(A,\mathbf{y})$. Note that if there are several best bundles in $(A,\mathbf{y})$, the. Second, for $A\subseteq \mathcal{J}$ and $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$, we write $\mathbf{y}(A)$ to denote the restriction of vector $\mathbf{y}$ to elements of $A$.
+
+
+
+Full Responsibility: For all $R,R'\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y}, \mathbf{y'} \in \mathbb{R}_{+}^{\mathcal{J}}$, $t\in \mathbb{R}$, 
+\begin{equation*}
+\label{ }
+\mathbf{y}(A) = \mathbf{y'}(A)\Rightarrow W(\argmax_{(A,\mathbf{y-t})}R,R,A;\mathbf{y})=W(\argmax_{(A,\mathbf{y -t })}R',R',A;\mathbf{y'}).
+\end{equation*}
+
+
+Responsibility For Equal Pay: For all $R,R'\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$ such that $\mathbf{y}(j)=\mathbf{y}(j')$ for all $j,j'\in A$, 
+\begin{equation*}
+\label{ }
+W(\argmax_{(A,\mathbf{y})}R,R,A;\mathbf{y})=W(\argmax_{(A,\mathbf{y})}R',R',A;\mathbf{y}).
+\end{equation*}
+
+
+Responsibiltiy For Reference Abilities : for all $R,R' \in \mathcal{R}$ $A,A',\bar A \subseteq \mathcal{J}$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$
+\begin{equation*}
+\label{ }
+W(\argmax_{(\bar A,\mathbf{y})}R,R,A;\mathbf{y})=W(\argmax_{(\bar A,\mathbf{y})}R',R',A';\mathbf{y}).
+\end{equation*}
+
+
+Responsibility When the Preferred Job is Possible: we apply Responsibility only if at least one of the jobs that individuals prefer over all existing jobs is in the ability set. 
+
+Responsibility When the Preferred Job is Possible: For all $R,R'\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$, if $\argmax_{(\mathcal{J},\mathbf{y})}R\in A$ and $\argmax_{(\mathcal{J},\mathbf{y})}R'\in A$ then
+\begin{equation*}
+\label{ }
+W(\argmax_{(A,\mathbf{y})}R,R,A;\mathbf{y})=W(\argmax_{(A,\mathbf{y})}R',R',A;\mathbf{y}).
+\end{equation*}
+
+
+We can combine the restrictions to Responsibility contained in the latter two axioms and obtain the following axiom.
+
+Weak Responsibility: For all $R,R'\in \mathcal{R}$, $A\subseteq \mathcal{J}$, $\mathbf{y} \in \mathbb{R}_{+}^{\mathcal{J}}$ such that $\mathbf{y}(j)=\mathbf{y}(j')$ for all $j,j'\in A$, if $\argmax_{(\mathcal{J},\mathbf{y})}R\in A$ and $\argmax_{(\mathcal{J},\mathbf{y})}R'\in A$ then
+\begin{equation*}
+\label{ }
+W(\argmax_{(A,\mathbf{y})}R,R,A;\mathbf{y})=W(\argmax_{(A,\mathbf{y})}R',R',A;\mathbf{y}).
+\end{equation*}

@@ -1,0 +1,264 @@
+%=====================================================================
+%  SECTION: What the jobs model buys that the continuous model cannot
+%  Drop-in for "Jobs and Well-Being Measurement" (Haydar & Maniquet 2025)
+%  Notation follows the draft: bundles z=(c,j), j in J, ability set
+%  A \subseteq J, pre-tax income profile y: J -> R_+, preferences R over
+%  (c,j), well-being measure W(z,R,A;y). Measures W^3 (own-A laisser-faire)
+%  and W^{5,\bar A} (reference-ability laisser-faire).
+%
+%  Every substantive claim is annotated with its support, traceable to
+%  INDEX_Motivation_Taxation_SWF.md. Three cautions from that index are
+%  built in: (A1) we never say the continuous model "cannot carry
+%  attributes"; (A4) genuinely new features are flagged as new; (B1/B3/B4)
+%  aggregation and tax shapes are presented as precedented/natural, NOT as
+%  theorems of this model.
+%=====================================================================
+
+\section{What the model adds to the classical labour--leisure benchmark}
+\label{sec:contribution}
+
+The standard normative model of labour income taxation, descending from
+\textcite{mirrlees1971}, represents an individual's work by a scalar labour
+supply $\ell\in[0,1]$ and an exogenous wage $w_i$, so that pre-tax income is
+$w_i\ell$ and the only behavioural margin is \emph{how much} the individual
+works. The fair-allocation refinement of this model
+\textcite{FleurbaeyManiquet2006,FleurbaeyManiquet2007,fleurbaey_maniquet_2018}
+retains the same primitive: heterogeneity is carried by the single index
+$w_i$, and a worker's situation is a point on a one-dimensional, fully
+divisible, completely ordered labour line.
+
+Our model replaces that line with a discrete set of jobs. An individual is
+described by preferences $R$ over consumption--job bundles $(c,j)$, an
+ability set $A\subseteq\mathcal J$ of jobs she can hold, and a pre-tax income
+profile $\mathbf y:\mathcal J\to\mathbb R_+$ that prices each job. This is not
+a cosmetic change of variables. We first state precisely what the
+substitution does and does not claim against the classical model
+(\S\ref{sub:claim}), then draw out the four consequences that motivate the
+exercise: the separation of opportunity from choice
+(\S\ref{sub:separation}), the relocation of the compensation--responsibility
+cut (\S\ref{sub:compresp}), the appearance of feasibility phenomena with no
+continuous analogue (\S\ref{sub:feasibility}), and the implications for how a
+well-being measure should enter social evaluation and taxation
+(\S\ref{sub:swf}).
+
+\subsection{What is and is not being claimed}
+\label{sub:claim}
+
+It would be wrong to claim that the continuous model cannot accommodate
+non-pecuniary job characteristics; one can always append attributes to the
+pair $(c,\ell)$. The claim is narrower and structural. The continuous model
+does not represent a \emph{heterogeneous feasible set of jobs} that differs
+across individuals, and it does not distinguish \emph{which} categorical,
+unordered job an individual holds---only the quantity of labour she supplies.
+Two jobs with identical hours and identical pay but different content are, in
+the labour-line representation, the same point.\footnote{%
+\textcite{fleurbaey2008income}, \S5.7, explicitly identifies job heterogeneity
+as a limitation of the consumption--leisure model and offers informal
+remedies (absorbing job unpleasantness into a zero-equivalent reference, or
+assuming the unskilled share similar jobs);
+\citet{fleurbaey_maniquet_2019} confront the issue directly by treating
+employment and labour as discrete, non-classical goods that violate both
+monotonicity and cardinal divisibility. Our contribution is to make the job a
+primitive carrying fixed non-pecuniary attributes, rather than to patch the
+labour-line model.}
+That a job is categorical---neither ``more is better'' nor convexly
+combinable with another job---is exactly the pair of properties
+(\citealp{fleurbaey_maniquet_2019}, on relaxing monotonicity and cardinality)
+that the labour scalar $\ell$ is built to satisfy and that the job index $j$
+is built to deny. We model preferences over $(c,j)$ so that
+$(c,j)\mathrel{I}(c,j')$ may fail even when $\mathbf y(j)=\mathbf y(j')$:
+equal pay need not mean equal well-being, because the jobs themselves differ.
+
+\subsection{Opportunity and choice become separate primitives}
+\label{sub:separation}
+
+The central structural gain is the disentangling of three objects that the
+classical wage $w_i$ fuses into one. In the Mirrleesian model the wage
+simultaneously encodes what the individual \emph{can} do (her productive
+opportunity) and indexes the budget line along which she \emph{chooses}
+(her position $w_i\ell$); pay and productivity are the same number. Our
+primitives separate them: the ability set $A$ is the opportunity, the chosen
+bundle $(c,j)$ is the choice, and the profile $\mathbf y$ is the price
+attached to opportunities. Holding the non-pecuniary content of a job fixed
+in preferences while letting $\mathbf y$ vary lets the same task at different
+pay---across regions, sectors, or time---be represented without altering how
+the individual feels about the job itself.\footnote{%
+The varying-$\mathbf y$ formulation is a modelling convenience, not a claim
+that the classical model fixes pay. A sufficiently rich $\mathcal J$ with a
+fixed profile could represent the same situations; we let the pecuniary
+attribute vary while holding the non-pecuniary attribute fixed because it is
+the more economical representation. Cf.\ the analogous point in
+\citet{ManiquetMoramarco2026} that actual incomes do not deliver
+preference-consistent comparisons across agents facing different prices.}
+
+The discrete opportunity set is the categorical counterpart of the unequal
+\emph{skills} of the fair-allocation literature
+\cite{FleurbaeyManiquet1996,FleurbaeyManiquet2006}: where that literature
+replaces a common budget line by an individual scalar skill $a_i\in\mathbb
+R_+$, we replace it by an individual \emph{set} $A\subseteq\mathcal J$. The
+difference is that a set of categorical jobs carries no order. There is no
+labour line to be tangent to, and so the single-crossing structure on which
+the continuous characterizations rely---and whose breakdown under
+two-dimensional heterogeneity in skill \emph{and} preferences
+\citet{FleurbaeyManiquet2006} themselves flag as the source of ranking
+reversals and bunching---is simply unavailable. In its place, the laisser-faire
+benchmark underlying $W^3$ and $W^{5,\bar A}$ is constructed by adding a
+\emph{uniform subsidy} to pre-tax income across a set of jobs and asking which
+job the individual would then choose. This is the discrete-opportunity
+analogue of moving along a budget line, but it is an operation on a set, not a
+point on a continuum.\footnote{%
+We do not claim novelty for evaluating agents against opportunity sets as
+such; the egalitarian-equivalence and equal-well-being-for-equal-budget
+traditions do this. The novel primitive is the \emph{discrete, unordered,
+agent-specific} feasible set $A$ together with a separately varying pay
+profile $\mathbf y$.}
+
+\subsection{Where the compensation--responsibility cut is drawn}
+\label{sub:compresp}
+
+Because opportunity and choice are fused in the classical wage, the
+compensation--responsibility distinction there must be drawn along a single
+dimension, which is the source of the recurring tension between compensating
+low skill and respecting heterogeneous preferences over labour. Separating
+the primitives relocates the cut. In our framework the question
+``responsibility for what, compensation for what?'' becomes the question
+``\emph{relative to whose opportunity set is well-being measured?}'' and the
+two coherent answers are precisely our two measures.
+
+\paragraph{The two measures are the two sides of the cut.}
+The own-set measure $W^3$ evaluates each individual relative to her
+\emph{own} ability set $A$: it holds her responsible for the opportunities she
+faces and for her choice within them. The reference-set measure
+$W^{5,\bar A}$ evaluates every individual relative to a \emph{common}
+reference set $\bar A$: it compensates for differences in opportunity by
+refusing to let the actual set $A$ affect the measured level. The axis that
+distinguishes the two measures in our classification---own $A$ versus
+reference $\bar A$---\emph{is} the compensation--responsibility axis, now
+drawn over opportunity sets rather than over a wage scalar. This is made
+visible by a single entry in the classification table: $W^{5,\bar A}$
+satisfies Responsibility for Reference Abilities while $W^3$ does not, and
+that one row is the formal expression of the distinction.
+
+\paragraph{A structural by-product: responsibility absorbs the
+irrelevant-jobs principle.}
+The discrete model also yields a sharpening of the cut that the continuous
+model cannot state. We show (\S\ref{sec:W3}, Proposition on the redundancy of
+Independence of Irrelevant Jobs) that Independence of Irrelevant Jobs is
+\emph{not} an independent normative commitment once one imposes Full
+Responsibility together with the laisser-faire normalization: under the
+maintained Representation axiom, the principle that feasible-but-dominated
+jobs are normatively inert is a \emph{consequence} of holding individuals
+responsible for their choices within a fixed opportunity set. In the
+continuous model this statement has no analogue, because every labour level is
+feasible and chosen by someone; there is no notion of a feasible-but-never-taken
+alternative whose deletion must be shown not to matter. That Independence of
+Irrelevant Jobs is derivable rather than postulated is, in this sense, a
+result about the internal structure of responsibility in a discrete-jobs
+world.\footnote{%
+The independence of \emph{irrelevant commodities} in the consumption setting
+\textcite{FleurbaeyTadenuma2007} is a structural cousin of this principle but
+concerns commodities in a divisible bundle, not feasible-but-unchosen jobs in
+a categorical set; we invoke it as an analogy, not an identity.}
+
+\subsection{Feasibility phenomena with no continuous analogue}
+\label{sub:feasibility}
+
+In a continuum every labour level $\ell\in[0,1]$ is feasible, so a battery of
+distinctions that are central to our analysis cannot even be posed there. A
+job may be \emph{infeasible} (outside $A$), \emph{feasible but irrelevant}
+(in $A$ yet dominated at every tax, hence never chosen), or simply
+\emph{not currently held}. These are three different situations, and the
+continuous model collapses all of them, because the only sense in which a
+labour level is ``not held'' is that the individual chose a different
+one.\footnote{%
+The three-way distinction parallels, but is not imported from,
+\citet{FleurbaeyTadenuma2007}, \S6, who separate goods that are unavailable,
+available-but-unconsumed, and in shortage, and who note that how finely
+alternatives are individuated is a borderline of model specification. We make
+the analogous individuation choices for jobs explicitly.}
+The axioms that govern these distinctions---Job Duplication Invariance, Job
+Neutrality, Independence of Irrelevant Jobs, and Independence of Preferences
+over Infeasible Jobs---are accordingly new to this setting and should be read
+as such, not as restatements of axioms from the divisible-goods literature.
+
+The staying-home option is the cleanest instance. We include in every ability
+set a job $o$ representing non-employment, present in all $A$ by construction.
+This has a precise precedent in the assignment literature: the null object of
+\citet{Maniquet2008}, always available and conferring only money, is the
+structural ancestor of our staying-home job, and it is what allows the measure
+to be defined for individuals at the boundary of the labour market---the
+unemployed and the non-participating---whom the continuous model can represent
+only by the degenerate device of a zero wage above the current labour level
+\textcite[cf.][]{FleurbaeyManiquet2007}.
+
+\subsection{Implications for social evaluation and taxation}
+\label{sub:swf}
+
+A well-being measure is an input to social evaluation, not a social ordering
+in itself. We therefore separate measurement from aggregation, following the
+program of \citet{FleurbaeyManiquet2017} and \citet{fleurbaey_maniquet_2019}:
+well-being is first measured agent by agent, and only then aggregated. This
+separation is a methodological stance rather than a theorem of the present
+model, and we note its one important qualification---that the choice of
+aggregator is not fully independent of the choice of measure once fairness
+properties are imposed on allocations
+\textcite[][p.~785]{fleurbaey_maniquet_2019}, so that the responsibility content
+of $W^3$ versus $W^{5,\bar A}$ does constrain which aggregators preserve the
+intended fairness properties.
+
+\paragraph{Why measure first, aggregate second.}
+The separation is not merely tidy; it is a way around an impossibility. Direct
+aggregation of ordinal, non-comparable preferences runs into dictatorship
+results: even weak independence together with the Pareto principle forces the
+social ranking to track a single individual unless the informational basis or
+the domain is enriched \textcite{FleurbaeyTadenuma2007}. Constructing an
+individual measure $W$ first---an object denominated in a common unit and
+comparable across agents---and aggregating that, rather than aggregating raw
+preferences, is precisely how the fair-allocation program sidesteps the
+impossibility.
+
+\paragraph{A natural aggregator, presented as such.}
+When the individual measure is constructed from fairness axioms rather than
+assumed, the social-ordering-function literature shows that the aggregator
+those axioms permit is essentially the leximin criterion
+\textcite{Maniquet2016,FleurbaeyManiquet2006,Valletta2009,ManiquetNeumann2021}.
+We present maximin/leximin aggregation of our measures as the precedented and
+axiomatically natural choice, \emph{not} as a result already established for
+the discrete-jobs model; a full aggregation theorem in this setting is left to
+future work, and the precedents themselves caution that it is the richness of
+the preference domain, not the aggregation axioms alone, that forces extreme
+inequality aversion---under quasi-linear preferences a broad class of concave
+aggregators would qualify \textcite[][p.~213]{Maniquet2008}.
+
+\paragraph{The policy direction is immediate in the measure's units.}
+Because $W^3$ and $W^{5,\bar A}$ are denominated in the uniform subsidy $w$,
+the measure is already in the unit of the policy instrument: a leximin
+objective $\max\min_i W_i$ reads directly as ``raise the subsidy, or lower the
+tax, of the worst-off type,'' which is the discrete-jobs analogue of the
+one-dimensional read-off of a tax reform from the budget frontier in the
+continuous model \textcite[][\S3.1]{Maniquet2016}. The characteristic shapes that
+the continuous fair-tax model delivers---non-positive marginal rates at the
+bottom, the largest subsidy at the lowest opportunity, a basic-income
+rationale as the lowest opportunity degenerates
+\textcite{FleurbaeyManiquet2006,FleurbaeyManiquet2007,ManiquetNeumann2021}---are
+the natural conjectures for the discrete model and the right benchmark to
+test against, but they are outputs of the continuous tax apparatus and would
+have to be re-derived for the discrete-jobs optimal-tax problem; we do not
+claim them as theorems here.
+
+\subsection{Summary of the contribution}
+\label{sub:summary}
+
+The exercise is worth carrying out because separating opportunity, choice, and
+price into the three primitives $A$, $(c,j)$, and $\mathbf y$ lets the model
+state things the labour-line model cannot: that equal pay need not mean equal
+well-being when jobs differ in content; that the compensation--responsibility
+distinction is a choice of reference opportunity set, with $W^3$ and
+$W^{5,\bar A}$ as its two coherent resolutions; that the irrelevant-jobs
+principle is a consequence of responsibility rather than a separate axiom; and
+that feasibility, infeasibility, and the staying-home margin are distinct
+phenomena rather than a single labour quantity. None of these requires denying
+that the continuous model is a powerful and well-understood benchmark; each
+identifies a question that becomes expressible only once labour time is treated
+as an attribute attached to a discrete, categorical, possibly infeasible job
+rather than as a quantity chosen freely on a continuum.

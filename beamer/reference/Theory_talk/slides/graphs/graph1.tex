@@ -1,0 +1,88 @@
+% ============================================================
+% (A) PREAMBLE COLOURS  --  add near the existing \definecolor lines.
+%     Sketch palette:  red = agent i / A ;  blue = agent h / A' ;
+%     green = agent i's pay profile y' ;  cyan = agent h's pay profile y.
+% ============================================================
+\definecolor{agenti}{RGB}{200,30,40}     % agent i  (red)
+\definecolor{agenth}{RGB}{20,80,200}      % agent h  (blue)
+\definecolor{profy}{RGB}{20,150,70}       % y'  profile of agent i (green)
+\definecolor{profyy}{RGB}{30,170,210}     % y   profile of agent h (cyan)
+
+% -- a grouped fade for the whole agent-h "unit" on frame 7 --
+% \hdim expands to an opacity used by every agent-h element; 1 = solid, 0.2 = dimmed.
+\newcommand{\hopacity}{1}
+\newcommand{\DimH}{\renewcommand{\hopacity}{0.18}}
+\newcommand{\ShowH}{\renewcommand{\hopacity}{1}}
+
+% ============================================================
+% (B) THE ONE SHARED FIGURE  --  replace the existing \ModelFigure macro.
+%     Discrete jobs j,k,l; indifference levels are LINEAR SEGMENTS joining
+%     adjacent feasible jobs (no smooth curves). Reused on frames 3/7/11.
+%     Reveal steps \rA..\rH driven by \BaseStaged / \BaseAllOn (unchanged).
+%
+%     Job x-positions:        j = 2.2   k = 5.0   l = 7.8
+%     Agent i (red) pay y'    y'(j)=(2.2,2.6)  y'(k)=(5.0,1.9)  y'(l)=(7.8,3.4)
+%     Agent h (blue) pay y    y(j) =(2.2,1.5)  y(k) =(5.0,1.7)  y(l) =(7.8,2.6)
+%     z-tilde (agent i, at j, ABOVE y'(j)):  (2.2,4.5)
+%     agent h current bundle (at k):          (5.0,2.2)
+% ============================================================
+\newcommand{\ModelFigure}[1]{%
+\begin{center}
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  % (1) axes
+  \onslide<\rA->{%
+    \draw[->,thick] (0,0) -- (0,6.2) node[above] {$c$};
+    \draw[->,thick] (0,0) -- (10.4,0) node[right] {$\mathcal{J}$};}
+  % (2) three discrete jobs on the horizontal axis
+  \onslide<\rB->{%
+    \foreach \xx/\lab in {2.2/j,5.0/k,7.8/l}{%
+      \draw[thick] (\xx,0.09) -- (\xx,-0.09);
+      \node[below,font=\small] at (\xx,-0.14) {$\lab$};}}
+  % (3) pay profiles: agent i's y' in GREEN, agent h's y in CYAN (h fades as a unit)
+  \onslide<\rC->{%
+    % --- agent i (green y') ---
+    \fill[profy] (2.2,2.6) circle (2.2pt) node[left,font=\scriptsize] {$y'(j)$};
+    \fill[profy] (5.0,1.9) circle (2.2pt) node[below,font=\scriptsize] {$y'(k)$};
+    \fill[profy] (7.8,3.4) circle (2.2pt) node[right,font=\scriptsize] {$y'(l)$};
+    % --- agent h (cyan y) : part of the h unit, dims with \hopacity ---
+    \fill[profyy,opacity=\hopacity] (2.2,1.5) circle (2.2pt)
+      node[below,font=\scriptsize,opacity=\hopacity] {$y(j)$};
+    \fill[profyy,opacity=\hopacity] (5.0,1.7) circle (2.2pt);
+    \fill[profyy,opacity=\hopacity] (7.8,2.6) circle (2.2pt)
+      node[right,font=\scriptsize,opacity=\hopacity] {$y(l)$};}
+  % (4) bundle z-tilde: agent i, at job j, ABOVE the y'(j) pay-dot
+  \onslide<\rD->{%
+    \draw[agenti,dashed] (2.2,2.6) -- (2.2,4.5);
+    \fill[agenti] (2.2,4.5) circle (2.6pt);
+    \node[agenti,above right,font=\small] at (2.25,4.52) {$\tilde z$};}
+  % (5) ability sets: A={j,k} (red) and A'={k,l} (blue) braces under the axis
+  \onslide<\rE->{%
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenti,thick]
+      (2.2,-0.5) -- (5.0,-0.5)
+      node[midway,below,agenti,font=\scriptsize] {$A=\{j,k\}$};
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenth,thick,opacity=\hopacity]
+      (5.1,-0.95) -- (7.8,-0.95)
+      node[midway,below,agenth,font=\scriptsize,opacity=\hopacity] {$A'=\{k,l\}$};}
+  % (6) agent i indifference level: ONE red LINEAR SEGMENT through z-tilde.
+  %     Discrete jobs -> straight segment joining the points at this level.
+  %     Ranking at equal pay  k P l P j : k highest, then l, then j (lowest, =z-tilde's level).
+  \onslide<\rF->{%
+    \draw[agenti,thick] (2.2,4.5) -- (5.0,2.55) -- (7.8,3.15);
+    \node[agenti,font=\scriptsize] at (8.05,3.15) {$I_i$};}
+  % (7) agent h: ONE blue LINEAR SEGMENT through h's current bundle (at k).
+  %     Ranking at equal pay  j P l P k. Whole h unit fades with \hopacity.
+  \onslide<\rG->{%
+    \fill[agenth,opacity=\hopacity] (5.0,2.2) circle (2.6pt);
+    \node[agenth,below right,font=\small,opacity=\hopacity] at (5.05,2.2) {$z_h$};
+    \draw[agenth,thick,opacity=\hopacity] (2.2,3.1) -- (5.0,2.2) -- (7.8,2.75);
+    \node[agenth,font=\scriptsize,opacity=\hopacity] at (8.05,2.75) {$I_h$};}
+  % (8) the well-being comparison label
+  \onslide<\rH->{%
+    \node[anchor=west,font=\small,fill=white,inner sep=1pt] at (0.25,5.8)
+      {\textcolor{agenti}{$W(\tilde z,R_i,A;\mathbf y')$}\ \,$\gtrless$\ \,%
+       \textcolor{agenth}{$W'(z_h,R_h,A';\mathbf y)$}};}
+  % ===== per-frame additions, overlaid on the identical base (never redrawn) =====
+  #1
+\end{tikzpicture}
+\end{center}
+}

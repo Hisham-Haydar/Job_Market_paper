@@ -1,0 +1,13 @@
+% ====================================================================
+% The rehearsal build.
+%
+% A driver, not a second deck: it turns on beamer's second-screen note
+% view and \input{}s the same JMP_seminar_deck_v1.tex, so the rehearsal
+% PDF and the projection PDF can never drift.
+%
+% Each page is twice as wide: the slide on the left, that slide's
+% \note{} on the right.  Open it on the presenter screen and put the
+% projection build (JMP_seminar_deck_v1.pdf) on the beamer.
+% ====================================================================
+\def\RehearsalDeck{}
+\input{JMP_seminar_deck_v1.tex}

@@ -1,0 +1,113 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 1252
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}
+%\input{tcilatex}
+
+
+
+\documentclass[12pt,thmsb]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=authoryear,natbib=true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{theorem}
+\usepackage{longtable}
+\usepackage[refpage]{nomencl}
+\usepackage{amssymb}
+%\usepackage{sw20lart}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[toc, page]{appendix}
+\captionsetup[figure]{font=footnotesize,labelfont=small}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+
+%%%%%%%%%%%%%%%
+%\usepackage{afterpage}
+
+%\newcommand\blankpage{%
+%    \null
+%    \thispagestyle{empty}%
+%    \addtocounter{page}{-1}%
+%    \newpage}
+%%%%%%%%%%%%%%%
+
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{TCIstyle=article/art4.lat,lart,article}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=1252}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Fri Jul 28 07:54:46 2000}
+%TCIDATA{LastRevised=Wednesday, February 18, 2015 03:58:45}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+\geometry{top=1.25in, bottom=1.25in, left=1.25in, right=1.25in}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{axiom}{Axiom}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newenvironment{proof}[1][Proof]{\noindent \textbf{#1.} }{\  \rule{0.5em}{0.5em}}
+%\input{tcilatex}
+\newcommand{\note}[1]{\textcolor{red}{\textbf{#1}}}
+
+
+% Note: Best to have hyperref be the last package loaded
+\usepackage[
+				colorlinks=true,
+%            linkcolor=red,
+				linkcolor=black,
+%            citecolor=blue,
+				citecolor=black,
+				bookmarks=true
+				]{hyperref}
+
+\begin{document}
+\title{Jobs and Well-Being Measurement\thanks{}}
+\author{Hisham Haydar\thanks{Department of Economics, University of Luxembourg, and LISER. Email: hisham.haydar@liser.lu} \and Fran\c{c}ois Maniquet\thanks{LIDAM/CORE, Universit\'{e} catholique de Louvain, and LISER. Email: francois.maniquet@uclouvain.be.}}
+\date{February 2025}
+\maketitle
+
+\begin{abstract}
+We measure well-being in a model in which individuals take one job in their ability set and have heterogenous preferences over jobs and how much they are paid.
+
+JEL Classification: H21, D63.
+
+Keywords: jobs, well-being.
+\end{abstract}
+
+\input{Model}
+\input{Axioms}
+\input{Measures}
+\input{results_section}
+% Temporary: print the whole .bib even if citekeys in the text don't match yet
+% (remove this once your \cite{...} keys exist in references.bib)
+% \nocite{*}
+% \printbibliography
+
+\end{document} 

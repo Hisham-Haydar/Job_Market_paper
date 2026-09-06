@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}\usepackage{textcomp}
+\usepackage{amsmath,amssymb}\usepackage{xcolor}
+\usepackage[margin=1.8cm]{geometry}\usepackage{microtype}\usepackage{parskip}
+\linespread{1.05}\setlength{\parskip}{0.55em}
+\definecolor{clkbg}{RGB}{255,242,204}\definecolor{clkfg}{RGB}{146,64,14}
+\definecolor{nxtbg}{RGB}{219,234,254}\definecolor{nxtfg}{RGB}{30,64,128}
+\definecolor{flagbg}{RGB}{255,228,230}\definecolor{flagfg}{RGB}{159,18,57}
+\definecolor{bar}{RGB}{150,25,35}
+\newcommand{\clk}[1]{\par\smallskip\noindent\colorbox{clkbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{clkfg}{\textbf{$\blacktriangleright$~CLICK}}\quad\textit{#1}}}\par\smallskip}
+\newcommand{\nxt}{\par\smallskip\noindent\colorbox{nxtbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{nxtfg}{\textbf{CLICK $\rightarrow$ next slide}}}}\par\medskip}
+\newcommand{\flg}[1]{\par\smallskip\noindent\colorbox{flagbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{flagfg}{\textbf{$\triangle$~CHECK vs DECK:}}~ #1}}\par\smallskip}
+\newcommand{\theend}{\par\smallskip\noindent\colorbox{nxtbg}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{nxtfg}{\textbf{END --- Thank-you slide.}} \itshape Stop unless there is Q\&A; then use the table hyperlinks or the backup proofs.}}\par}
+\newcommand{\arr}[1]{\par\noindent{\itshape On arrival: #1}\par\smallskip}
+\newcommand{\shdr}[3]{\par\bigskip{\color{bar}\rule{\linewidth}{1.3pt}}\par\nopagebreak\smallskip\nopagebreak\noindent{\large\bfseries #1}\hfill{\bfseries\color{bar}#2}\par\nopagebreak{\small\itshape #3}\par\smallskip}
+\begin{document}
+\begin{center}{\LARGE\bfseries Jobs \& Well-Being Measurement}\\[2pt]
+{\large Spoken script (your voice) --- with click cues}\\[3pt]
+{\small\itshape read aloud; \textbf{$\blacktriangleright$~CLICK} = press advance once; pink = mismatch with the deck to resolve.}\\[2pt]
+{\small\itshape Ends at Lesson 2 ($\approx$18--19 min) --- ``What is a job?'' (slide 11) is not in this script; see the flag at the end.}\end{center}
+\bigskip
+
+\shdr{Title slide}{0.5 min}{static — no build}
+First, allow me to thank the organizing committee, and my colleagues who have presented and who will present, for their interesting work.
+
+This is joint work with Fran\c{c}ois Maniquet. We aim to bridge discrete-choice labor-supply models and income-tax theory --- hence the title, \emph{Jobs and Well-Being Measurement}. We ask how the measurement of well-being changes once labor supply is described as a choice among jobs, rather than a choice of labor time given an exogenous wage.
+
+\nxt
+\shdr{Slide 1 · Motivation}{1.8 min}{static — no build}
+Let me begin with the usual chain in optimal tax theory, and one hidden mismatch inside it. On the theory side, we derive a tax formula from a social welfare function, and this requires an individual well-being measure. This process almost always assumes that individuals choose their labor time on a continuum, given an exogenous wage that corresponds to their productivity.
+
+But when preferences for labor supply are estimated, the tools used are discrete-choice labor-supply models, and there labor supply is modelled as a choice from a finite set of labor-time/income pairs --- jobs. So the primitive used to derive the theory and the primitive used to estimate preferences are not the same object.
+
+What we do to close this gap is to put jobs into the theory. A person no longer chooses labor time freely; they choose, or occupy, a job from a finite set of jobs they are able to hold, and this job pays an income and comes with all its characteristics. We split the wage into two separate objects: first, which jobs a person can do --- the ability set $A$; and second, how much each is paid --- $y$.
+
+Given this, we study the well-being measure $W(z,R,A;y)$. The whole question of today's talk is whether moving from hours to jobs changes how we should measure well-being. And the answer is yes --- quite a lot.
+
+\nxt
+\shdr{Slide 2 · The conflict}{1.5 min}{static — no build}
+Before I introduce the model, I want to recall the classical conflict that organizes the whole talk.
+
+In the literature on deriving social welfare criteria for labor-income taxation, there are two principles we would like to respect. The first is \emph{compensation}: people should not be penalized for unequal productive circumstances. If someone earns less because of lower productivity, this is something a fair criterion would want to compensate for. The second is \emph{responsibility}: people should be held responsible for their preferences, especially those concerning consumption and leisure. If someone chooses an option because they prefer it, this should not automatically generate a compensation claim.
+
+The problem is that these two principles, attractive separately, cannot be imposed fully together. We know from the classical result, since the work of Fleurbaey and Maniquet in 2005, that no well-being measure satisfies both in full.
+
+Hence the literature is structured around compromises: either keep full compensation and weaken responsibility, or the opposite. The point of this talk is that once we move to a model of jobs, we can see more precisely where the conflict comes from and how it can be weakened.
+
+\nxt
+\shdr{Slide 3 · The model}{3 min}{builds in 8 steps — 7 clicks}
+\arr{the \textbf{axes} (consumption $c$, jobs $\mathcal J$)}
+Now let me introduce the model. I will build the picture gradually, since the whole intuition lives in it. We have consumption on the vertical axis and jobs on the horizontal axis --- please note that these are discrete points, and that the distance between the jobs here has no meaning.
+
+\clk{the three jobs $j,k,\ell$ appear}
+So let there be three jobs: $j$, $k$, and $\ell$.
+
+\clk{pay dots appear ($y(\cdot)$ for both agents)}
+Each job pays a pre-tax income --- these are the consumption values in the laissez-faire case --- and we can allow for several pay profiles, blue or red here.
+
+\clk{the bundle $z_i$ appears}
+A bundle is a pair: a job and an after-tax consumption level.
+
+\clk{the ability sets $A=\{j,k\}$, $A'=\{k,\ell\}$ appear}
+Now, the individual need not have the possibility of occupying every job; a bundle $z$ is available only if its corresponding job is in the ability set.
+
+\clk{agent $i$'s indifference line $R_i$ appears}
+The individual has preferences over job--consumption bundles.
+
+\clk{the second agent appears ($z_h$ and $R_h$)}
+We can add another agent, with different abilities, a different pay profile, and different preferences. The important modelling stance is that the classical wage is now split into two objects, $A$ and $y$. Once $A$ and $y$ are separated, we can ask more precise normative questions: do we want to compensate for differences in pay? for differences in abilities? should preferences over jobs a person cannot take matter?
+
+\clk{the comparison label $W_i \gtrless W_h$ appears}
+The object we study is the well-being measure: it assigns a number to an individual at a bundle, with preferences $R$ and ability set $A$, facing income profile $y$.
+
+\nxt
+\shdr{Slide 4 · Axioms: irrelevant \& infeasible jobs}{1 min}{1 click}
+Let me introduce two axioms that are genuinely specific to the jobs model; I will state them verbally. First, \emph{Independence of Irrelevant Jobs}. What is an irrelevant job? It is a job that is feasible but always dominated by another feasible job --- there is no uniform tax or subsidy that would make you take it. The axiom states that if such a job never plays a role in your choice, then deleting it should not change the well-being value.
+
+\clk{the second axiom (IPIJ / infeasible) appears}
+Second, \emph{Independence of Preferences over Infeasible Jobs}. It says that if a job is not in your ability set --- you can never take it --- then your well-being measure should not depend on it. In other terms: if two preference relations agree on all jobs in $A$ and disagree only on jobs outside it, then the resulting well-being should be the same, at the same bundle, ability set, and income profile.
+
+These two ideas do not exist in the classical model; they appear only because jobs and abilities are explicit here.
+
+\nxt
+\shdr{Slide 5 · Axioms: compensation}{1 min}{2 clicks}
+Now we move to compensation. \emph{Full Compensation} states that if two bundles are indifferent to each other under the same preference relation, then --- regardless of the ability sets and of what the jobs pay --- the well-being should be the same. In words: once a person is equally well off according to their preferences, differences in productivity and in pay should not affect their measure of well-being.
+
+\clk{decomposition: Full Comp.\ $\Longleftrightarrow$ Ind.\ $y\ \wedge$\ Ind.\ $A$}
+In the jobs model this axiom can be decomposed into two: \emph{Independence of $y$} and \emph{Independence of $A$}.
+
+\clk{Independence of $y$ appears}
+Independence of $y$ states: take the same preference relation, the same ability set, the same bundle; if they are paid differently, this should not change the well-being the agent receives. So a measure that satisfies this axiom compensates for differences in pay profiles, and lets differences in abilities be treated separately.
+
+\nxt
+\shdr{Slide 6 · Axioms: responsibility}{1 min}{1 click}
+Now the responsibility side. \emph{Full Responsibility} looks at laissez-faire choices: given $A$ and $y$, each preference relation selects its best feasible bundle. Full Responsibility says that the well-being assigned to such a laissez-faire optimum should not depend on the preferences. So once a person chooses their best alternative, their differences are treated as responsibility variables, and should be neither penalized nor compensated.
+
+\clk{Responsibility for Equal Pay appears}
+This is a strong axiom; we can weaken it by assuming that if all jobs are paid the same, then the remaining differences are subject to responsibility. This is an example of a compromise: full principles conflict, but restricted principles may be compatible.
+
+\nxt
+\shdr{Slide 7 · The measures}{2.3 min}{builds in 8 steps — 7 clicks}
+\arr{both agents solid; sign shown as $\gtrless$ (we don't yet know who is better off)}
+Let me show one measure --- the equal-pay measure, $W^1$ --- as a good example of a compromise. Our same graph comes back. Start with the red individual; ignore the actual pay profile.
+
+\clk{blue dims; red equal-pay line across $A=\{j,k\}$}
+Put the same consumption level on all the jobs in the ability set --- here, jobs $j$ and $k$.
+
+\clk{red's preferred feasible job $k$ is marked}
+Now, among these feasible jobs, job $k$ is the one chosen by the preference relation.
+
+\clk{read-off: $W^1$ for the red agent}
+Then we move the common consumption level until there is indifference between the consumption at the preferred job and the current bundle; the corresponding value is the well-being number.
+
+\clk{red dims; blue equal-pay line across $A'=\{k,\ell\}$}
+Now do the same exercise for the blue individual. Here we have an interesting illustration: the overall preferred job is not in the ability set --- job $j$ --- so we restrict ourselves to the preferred job within the ability set.
+
+\clk{blue's preferred feasible job $\ell$ is marked}
+We choose job $\ell$,
+
+\clk{read-off: $W^1$ for the blue agent (different height)}
+and assign the equal-pay measure value for this job.
+
+\clk{both solid again; label shows $W_i < W_h$}
+Normatively, this measure combines one compensation idea and one responsibility idea: it satisfies Independence of $y$ and Responsibility for Equal Pay. We characterize this measure as the only one that satisfies both --- and we likewise characterize five other measures, six in total in the jobs model.
+
+\nxt
+\shdr{Slide 8 · Classification}{2 min}{builds in 3 stages — 2 clicks}
+\arr{the empty axioms $\times$ axioms grid}
+This table shows the classification, with compensation axioms on the rows and responsibility axioms on the columns. Each cell answers the question: is there a well-being measure that satisfies both the row axiom and the column axiom?
+
+\clk{the walls ($\emptyset$ impossibilities) fill in}
+The empty-set cells are walls --- impossibilities, for which we have produced the proofs. They appear mainly where strong forms of axioms meet: the top-left of the table.
+
+\clk{the named measures fill in}
+As we move through the table, more measures can satisfy both axioms; where a single measure appears, that is a characterization. The important point is that once we move away from strong-versus-strong, we have compromises, and more measures can satisfy both.
+
+\nxt
+\shdr{Slide 9 · Conclusion — Lesson 1 (Easier)}{2.3 min}{5 bullets — 5 clicks}
+Two concluding lessons. \textbf{Lesson 1: what is easier in the jobs model?} First, compromise between compensation and responsibility is easier --- as we see in the middle of the table.
+
+\clk{bullet 1: split of $A$ and $y$}
+There are three reasons. First, the separation of $y$ and $A$. In contrast to the classical model, where the wage simultaneously represents productivity and pay, here ability and pay are separated, and we can have an axiom that targets one and not the other.
+
+\clk{bullet 2: different consumption spaces}
+Second, by construction the model lets individuals have different consumption spaces: what is feasible for me need not be feasible for you, and this adds useful structure.
+
+\clk{bullet 3: typology of jobs $\Rightarrow$ new weak axioms}
+Third, the typology of jobs adds new axioms --- IIJ, IPIJ, and other weak axioms.
+
+\clk{bullet 4: the wall splits ($A$-conflict $+\ y$-conflict)}
+And the classical wall splits here into more precise conflicts: one associated with $A$, the other with $y$.
+
+\clk{bullet 5: IIJ derivable (Full Resp.\ $+$ laissez-faire tie)}
+\flg{your deck reveals a 5th bullet here --- \textbf{``IIJ derivable''} --- but this script has no line for it. Either add one sentence (e.g.\ ``and IIJ is not an extra assumption: under Full Responsibility plus the laissez-faire tie, irrelevant jobs drop out by themselves''), or remove the bullet. Cutting it is defensible --- it is the claim resting on the EWLF step you are still confirming with Fran\c{c}ois.}
+\nxt
+\shdr{Slide 10 · Conclusion — Lesson 2 (Harder)}{2.3 min}{5 bullets — 5 clicks}
+\clk{bullet 1: fewer measures at the extremes}
+\textbf{Lesson 2: what is harder?} As a counterweight, the jobs model gives more room in the middle, but fewer options at the extremes.
+
+\clk{bullet 2: full compensation --- only $W^4, W^6$}
+For example, from the table, only two measures satisfy full compensation --- and the same holds for full responsibility.
+
+\clk{bullet 3: lost linearity (in $\ell$ and in $w$)}
+The reason is that the jobs model gives up the linearity of the classical model. Classically, consumption is wage times labor time, and many measures exploit this structure --- a reference wage, a reference labor time, some cross of the two.
+
+\clk{bullet 4: no reference wage}
+In the jobs model, the alternatives are points: each job has an income and a labor time, but there is no common continuous line on which everyone can be evaluated. There is no universal reference wage, for example.
+
+\clk{bullet 5: no reference labor time (Kolm); no cross}
+\flg{deck bullet 5 --- ``no reference labor time / no cross'' --- has no dedicated line (you touch it inside the previous point). Fine to leave; or add: ``and no universal reference labor time either.''}
+
+\nxt
+\shdr{Slide 11 ·what is a job? }{1.3 min}{1 click1}
+Let me end with one final issue: what counts as a job?
+\clk{a duplicate job $k'$ appears ($k \equiv k'$, identical pay)}
+
+If two alternatives have exactly the same pay and the person is indifferent between them in every relevant
+respect, then treating them as two different jobs would be artificial. Job Duplication says that adding a
+duplicate job should not change well-being.
+Job Neutrality says that relabelling jobs should not change well-being either. A job has no normative identity
+just because of its name. What matters are its characteristics and its place in the preference ordering.
+Together, these axioms say that for two jobs to count as genuinely distinct, they must differ substantively.
+So the final message is that this richness creates new compromises, but it is also less linear, and therefore less permissive at the extreme axiomatic corners.
+
+And here I would like to stop. Thank you.
+
+
+\theend
+\end{document}

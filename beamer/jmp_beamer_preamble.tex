@@ -1,0 +1,169 @@
+% ====================================================================
+% jmp_beamer_preamble.tex --- shared preamble for the JMP seminar deck.
+%
+% REUSED VERBATIM from the companion theory talk
+%   beamer/reference/Theory_talk/slides/Presentation.tex
+%     "Jobs and Well-Being Measurement" (Haydar and Maniquet)
+% so that the two decks read as one visual family.  The elements carried
+% over unchanged are marked [THEORY-TALK] below; everything else is an
+% addition this deck needs and the theory talk does not.
+%
+% Consistency is the point: same class options, same theme, same accent
+% colour, same frame numbering, same appendix handling, same visible-link
+% convention, same note-page template, same two-agent sketch palette.
+% ====================================================================
+
+% ---- [THEORY-TALK] class, theme and the deep-red accent -------------
+\usetheme{metropolis}
+\definecolor{deepred}{RGB}{150,25,35}
+\setbeamercolor{frametitle}{bg=deepred}
+\setbeamertemplate{navigation symbols}{}
+% metropolis-defined accents (safe: these beamercolors exist in metropolis)
+\setbeamercolor{progress bar}{fg=deepred}
+\setbeamercolor{title separator}{fg=deepred}
+% frame number as current/total, in deep red
+\metroset{numbering=fraction}
+\setbeamercolor{footline}{fg=deepred}
+% backup appendix: keep the main frame total at the running-order count
+\usepackage{appendixnumberbeamer}
+% VISIBLE link colours for rehearsal (internal hyperlinks in deep red)
+\hypersetup{colorlinks=true,linkcolor=deepred,citecolor=deepred,urlcolor=deepred}
+
+% ---- [THEORY-TALK] encoding, language, maths, tables, tikz ----------
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage[official]{eurosym}   % \euro --- this deck quotes euro magnitudes
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,positioning,fit,backgrounds}
+
+% ---- [THEORY-TALK] the two-agent sketch palette --------------------
+% red = agent i / household A ; blue = agent h / household B
+\definecolor{agenti}{RGB}{200,30,40}
+\definecolor{agenth}{RGB}{20,80,200}
+
+% ---- [THEORY-TALK] notes on a second screen (rehearsal view) -------
+% The rehearsal build turns this on; the projection build leaves it off.
+\usepackage{pgfpages}
+% Long notes overflow the note column by default; render them smaller,
+% ragged-right, with tight paragraph spacing so the full text stays
+% legible and inside the frame on the second screen.
+%
+% This deck's notes are longer than the theory talk's -- several run past
+% one note page at \scriptsize and produced overfull \vbox warnings.  The
+% template below keeps the theory talk's look and adds two things it
+% needs: \tiny with a tighter baseline, and an \allowbreak-friendly
+% vertical box so a long note breaks across note pages instead of
+% overflowing.  Hyphenation is relaxed so no line runs into the margin.
+\setbeamertemplate{note page}{%
+  \vspace{0.3em}\par
+  {\tiny\setlength{\parskip}{0.45em}\setlength{\parindent}{0pt}%
+   \setlength{\emergencystretch}{3em}%
+   \linespread{1.05}\selectfont
+   \raggedright\insertnote\par}%
+}
+% Notes are prose, not code: let TeX hyphenate freely rather than push a
+% long word past the measure.
+\hyphenpenalty=50
+\tolerance=2000
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% ====================================================================
+% ADDITIONS for this deck (not in the theory talk)
+% ====================================================================
+
+% ---- channel colours ------------------------------------------------
+% One colour per decomposition channel, used consistently on every slide
+% that names a channel.  Preferences take the theory talk's agent-red so
+% the two decks agree on which side of the argument is which.
+\definecolor{chpref}{RGB}{200,30,40}     % preferences   (= agenti)
+\definecolor{chacc}{RGB}{20,80,200}      % job access    (= agenth)
+\definecolor{chearn}{RGB}{200,120,20}    % earning opportunities
+\definecolor{chneeds}{RGB}{40,120,70}    % endowments and needs
+\definecolor{chenv}{RGB}{60,60,70}       % the whole environment
+
+% ---- the paper's notation ------------------------------------------
+% Audience-facing channel names are WORDS on the slides; these commands
+% exist so the words are spelled the same way every time they appear.
+\newcommand{\pref}{\textcolor{chpref}{preferences}}
+\newcommand{\Pref}{\textcolor{chpref}{Preferences}}
+\newcommand{\acc}{\textcolor{chacc}{job access}}
+\newcommand{\Acc}{\textcolor{chacc}{Job access}}
+\newcommand{\earn}{\textcolor{chearn}{earning opportunities}}
+\newcommand{\Earn}{\textcolor{chearn}{Earning opportunities}}
+\newcommand{\needs}{\textcolor{chneeds}{household endowments and needs}}
+\newcommand{\Needs}{\textcolor{chneeds}{Household endowments and needs}}
+\newcommand{\env}{\textcolor{chenv}{the environment}}
+\newcommand{\Env}{\textcolor{chenv}{The environment}}
+
+% Symbols.  The theory-paper symbols W, z, R, A, y appear ONLY where the
+% companion paper is cited; the estimation notation is separate.
+\newcommand{\Wmeasure}{W}                      % theory-paper measure
+\newcommand{\Jset}{\mathcal{J}}                % theory-paper job space
+\newcommand{\Wone}{W^{1}}                      % theory-paper W^1
+\newcommand{\yref}{\mathbf{y}^{w}}             % theory-paper reference pay
+\newcommand{\gopp}{g}                          % estimated offer density
+\newcommand{\uutil}{u}                         % preference index
+\newcommand{\Wmm}{\mathrm{W}}                  % money-metric welfare level
+
+% ---- headline / caveat call-outs -----------------------------------
+\newcommand{\headline}[1]{{\large\textcolor{deepred}{#1}}}
+\newcommand{\caveat}[1]{{\footnotesize\textcolor{deepred}{#1}}}
+% a number with its numerical-integration band
+\newcommand{\wband}[2]{#1\,\ensuremath{\pm}\,#2}
+
+% ---- the 25-minute variant ------------------------------------------
+% Every frame carries \shortdeck (in the 25-minute running order) or
+% \longdeck (45-minute only).  \DeckShort, set by the driver file, drops
+% the \longdeck frames; the default keeps everything.
+%
+% The frozen plan's 25-minute running order is 16 slides, reached from the
+% 23 by FIVE cuts and TWO merges:
+%   CUT   -> backup : 9, 12, 17, 18, 22          (\longdeck)
+%   MERGE           : 6+7 -> one slide, 10+11 -> one slide
+% So three tags, not two.  A merged pair is written as two full frames for
+% the 45-minute deck; in the short deck the SECOND of the pair drops and
+% the first shows its merged content.  23 - 5 - 2 = 16.
+%
+% Usage:  \shortdeck{\begin{frame}...\end{frame}}     kept in both
+%         \longdeck{\begin{frame}...\end{frame}}      45-minute only (cut)
+%         \mergedaway{\begin{frame}...\end{frame}}    45-minute only (merged)
+%         \ifDeckShort ... \else ... \fi              inline merged content
+\newif\ifDeckShort\DeckShortfalse
+\newcommand{\shortdeck}[1]{#1}                       % always kept
+\newcommand{\longdeck}[1]{\ifDeckShort\else#1\fi}    % cut to backup at 25 min
+\newcommand{\mergedaway}[1]{\ifDeckShort\else#1\fi}  % folded into the previous
+% content shown only in the merged (25-minute) form of a slide
+\newcommand{\mergedonly}[1]{\ifDeckShort#1\fi}
+
+% ---- figure helper ---------------------------------------------------
+% Every figure is a PDF from the frozen sprint set, included by name from
+% beamer/figures/.  \deckfig{name}{width fraction} keeps the call sites
+% uniform and makes a missing file fail loudly at compile time.
+\graphicspath{{figures/}}
+% Heights leave room for the frametitle, the one caption line every figure
+% slide carries, and the metropolis footline -- a taller box overflows the
+% frame and shows up as an overfull \vbox.
+\newcommand{\deckfig}[2]{%
+  \begin{center}\includegraphics[width=#2\textwidth,height=0.70\textheight,%
+    keepaspectratio]{#1}\end{center}}
+\newcommand{\deckfigtwo}[4]{%
+  \begin{columns}[c,onlytextwidth]
+  \column{0.49\textwidth}\includegraphics[width=\textwidth,height=0.60\textheight,%
+    keepaspectratio]{#1}\\{\centering\scriptsize #2\par}
+  \column{0.49\textwidth}\includegraphics[width=\textwidth,height=0.60\textheight,%
+    keepaspectratio]{#3}\\{\centering\scriptsize #4\par}
+  \end{columns}}
+
+% ---- tables ---------------------------------------------------------
+% Several slides carry a comparison table that is naturally wider than the
+% text block.  \decktable shrinks one to the measure rather than letting it
+% run into the margin (an overfull \hbox), and never enlarges a narrow one.
+\newcommand{\decktable}[1]{%
+  \begin{center}\resizebox{\textwidth}{!}{#1}\end{center}}
+
+\endinput
