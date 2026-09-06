@@ -23,6 +23,7 @@ JOBS_SHORT=JMP_seminar_deck_v1_25min
 JOBS_REH=JMP_seminar_deck_v1_rehearsal
 
 python make_deck_macros_v1.py
+python make_slide_figures_v1.py
 mkdir -p "$OUT"
 
 build_one () {          # $1 = driver .tex basename
@@ -49,6 +50,10 @@ case "${1:-all}" in
     ;;
   *) echo "usage: $0 [all|full|short|rehearsal]"; exit 2 ;;
 esac
+
+echo
+echo "=== the per-slide table ==="
+python slide_table_v1.py --csv slide_table_v1.csv
 
 echo
 echo "=== verification ==="

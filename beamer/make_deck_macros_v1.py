@@ -192,6 +192,16 @@ def build(sprint, out):
     m.num("SharePrefEnvLo", hd["C_pref_over_I00"].min(), src, dp=1, pct=True)
     m.num("SharePrefEnvHi", hd["C_pref_over_I00"].max(), src, dp=1, pct=True)
 
+    # Rounded forms for the slide HEADLINES.  A headline carries one number and
+    # it is spoken, so it is quoted to the nearest point; the exact value and
+    # its band stay in the speaker notes and on the figure.  Only the channels
+    # a headline actually names get one -- an unused macro is an orphan the
+    # verifier rejects.
+    for stem in ("Pref", "Env", "Needs", "Market"):
+        col = dict(channels)[stem]
+        m.num("Rnd" + stem, prim[col], src, dp=0, pct=True)
+    m.num("RndPrefMaleRef", male["C_pref_over_I00"], src, dp=0, pct=True)
+
     # ------------------------------ slide 15, second click: the two intervals
     src = "SPRINT/tables/parameter_uncertainty_v1.csv"
     pu = pd.read_csv(tables / "parameter_uncertainty_v1.csv")
@@ -225,6 +235,9 @@ def build(sprint, out):
         m.num("GeoShareOfAcc" + tag, row["C_geo_share_of_C_acc"], src, dp=2, pct=True)
         m.num("BandGeoShareOfAcc" + tag, row["C_geo_share_of_C_acc__E_T"],
               src, dp=2, pct=True)
+        if tag == "Raw":          # only the raw share reaches a headline
+            m.num("RndGeoShareOfAcc" + tag, row["C_geo_share_of_C_acc"],
+                  src, dp=0, pct=True)
 
     # ---------------------- slide 17, second click: 24 regional environments
     src = "SPRINT/figures/figG02_regional_access_environments.csv"
@@ -249,7 +262,6 @@ def build(sprint, out):
     for tag, grp in (("Men", "men"), ("Women", "women")):
         acc = sub(grp, "C_acc_over_I00")
         m.num("SubAcc" + tag, acc["estimate"], src, dp=2, pct=True)
-        m.num("SubAccBand" + tag, acc["E_T"], src, dp=2, pct=True)
         m.num("SubAcc" + tag + "MaleRef",
               sub(grp, "C_acc_over_I00", arm="singles_male_structural_zero")["estimate"],
               src, dp=2, pct=True)
@@ -258,6 +270,7 @@ def build(sprint, out):
               src, dp=2, pct=True)
         m.num("SubGeo" + tag, sub(grp, "C_geo_over_I00")["estimate"],
               src, dp=2, pct=True)
+        m.num("RndSubAcc" + tag, acc["estimate"], src, dp=0, pct=True)
     m.num("SubPrefMenFemRef", sub("men", "s_pref")["estimate"],
           src, dp=2, pct=True, signed=True)
     m.num("SubPrefMenMaleRef",
@@ -302,6 +315,9 @@ def build(sprint, out):
         if tag == "Raw":
             m.num("BenchSharePrefRURO", ruro["C_pref_over_I00"], src, dp=1, pct=True)
             m.num("BenchSharePrefRUMB", rumbd["C_pref_over_I00"], src, dp=1, pct=True)
+            m.num("RndBenchDropRaw",
+                  abs((float(rumbd["I00"]) - float(ruro["I00"]))
+                      / float(ruro["I00"])), src, dp=0, pct=True)
         m.num("BenchInequalityDrop" + tag,
               (float(rumbd["I00"]) - float(ruro["I00"])) / float(ruro["I00"]),
               src, dp=1, pct=True, signed=True)

@@ -110,10 +110,41 @@
 \newcommand{\uutil}{u}                         % preference index
 \newcommand{\Wmm}{\mathrm{W}}                  % money-metric welfare level
 
-% ---- headline / caveat call-outs -----------------------------------
-\newcommand{\headline}[1]{{\large\textcolor{deepred}{#1}}}
+% ---- the slide grammar ----------------------------------------------
+% Every frame is a HEADLINE -- the message as a sentence, carrying its one
+% number -- plus ONE visual or ONE equation.  Body text is at most twelve
+% words, a single caption line at most.  Everything else is in \note{}.
+%
+% \headlineframe{...} sets that sentence as the frame title.  It is a
+% sentence, not a label, so it is set ragged-right over up to two lines
+% and never hyphenated.
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,sep=0pt,ht=2.4em,dp=0.9em]{frametitle}%
+    \hspace*{1.2em}%
+    \begin{minipage}{0.92\paperwidth}%
+      \raggedright\hyphenpenalty=10000\exhyphenpenalty=10000
+      \insertframetitle\par
+    \end{minipage}%
+  \end{beamercolorbox}%
+}
+\newcommand{\headlineframe}[1]{\frametitle{#1}}
+
+% \caveat is the ONE optional caption line under a visual.
 \newcommand{\caveat}[1]{{\footnotesize\textcolor{deepred}{#1}}}
-% a number with its numerical-integration band
+
+% \slideeq{...} is the equation-slide counterpart of \slidefig: an equation
+% is the visual on those frames, so it is set at display scale rather than
+% body scale, centred in the same band a figure would occupy.
+\newcommand{\slideeq}[1]{%
+  \vfill
+  \begin{center}\Large #1\end{center}
+  \vfill}
+% the word-gloss row that names each symbol underneath an equation
+\newcommand{\glossrow}[1]{{\footnotesize #1}}
+% \headline emphasises a phrase inside a frame body (used sparingly).
+\newcommand{\headline}[1]{{\large\textcolor{deepred}{#1}}}
+% a number with its numerical-integration band (notes and backup tables)
 \newcommand{\wband}[2]{#1\,\ensuremath{\pm}\,#2}
 
 % ---- the 25-minute variant ------------------------------------------
@@ -144,26 +175,40 @@
 % Every figure is a PDF from the frozen sprint set, included by name from
 % beamer/figures/.  \deckfig{name}{width fraction} keeps the call sites
 % uniform and makes a missing file fail loudly at compile time.
-\graphicspath{{figures/}}
-% Heights leave room for the frametitle, the one caption line every figure
-% slide carries, and the metropolis footline -- a taller box overflows the
-% frame and shows up as an overfull \vbox.
+\graphicspath{{figures/}{figures/slides/}}
+
+% \slidefig{name} places the SLIDE-NATIVE variant figures/slides/<name>_slide.pdf.
+% Those are rendered 16:9 with every text element at >= 18 pt and with no
+% title, footnote, status stamp or internal label, so a frame needs no
+% caption of its own -- the headline says what it means and the one \caveat
+% line, if any, says what it is not.  The height leaves room for the
+% two-line headline, that caption line and the metropolis footline.
+% The slide figures are already 16:9, so on a 16:9 frame the binding
+% constraint is HEIGHT, not width: asking for the full text width and then
+% capping the height leaves the figure floating in white space.  Fill the
+% available band instead -- the height left once the two-line headline, the
+% one caption line and the footline have taken theirs.
+\newcommand{\slidefig}[1]{%
+  \vspace{-0.9em}%
+  \begin{center}\includegraphics[height=0.70\textheight,width=\textwidth,%
+    keepaspectratio]{#1_slide}\end{center}%
+  \vspace{-1.0em}}
+
+% Retained for the paper-style figures, should any frame still want one.
 \newcommand{\deckfig}[2]{%
   \begin{center}\includegraphics[width=#2\textwidth,height=0.70\textheight,%
     keepaspectratio]{#1}\end{center}}
-\newcommand{\deckfigtwo}[4]{%
-  \begin{columns}[c,onlytextwidth]
-  \column{0.49\textwidth}\includegraphics[width=\textwidth,height=0.60\textheight,%
-    keepaspectratio]{#1}\\{\centering\scriptsize #2\par}
-  \column{0.49\textwidth}\includegraphics[width=\textwidth,height=0.60\textheight,%
-    keepaspectratio]{#3}\\{\centering\scriptsize #4\par}
-  \end{columns}}
 
 % ---- tables ---------------------------------------------------------
 % Several slides carry a comparison table that is naturally wider than the
 % text block.  \decktable shrinks one to the measure rather than letting it
 % run into the margin (an overfull \hbox), and never enlarges a narrow one.
+% On a 16:9 frame, scaling a narrow table to the full text width makes it
+% tall enough to overflow, so the box is capped: never wider than the text
+% block, and never enlarged beyond its natural size.
 \newcommand{\decktable}[1]{%
-  \begin{center}\resizebox{\textwidth}{!}{#1}\end{center}}
+  \begin{center}%
+    \resizebox{\ifdim\width>0.8\textwidth 0.8\textwidth\else\width\fi}{!}{#1}%
+  \end{center}}
 
 \endinput
