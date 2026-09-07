@@ -1,8 +1,8 @@
 {
   "_meta": {
     "generated_by": "beamer/make_numbers_of_record_v1.py",
-    "n_entries": 415,
-    "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance.",
+    "n_entries": 566,
+    "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance. Keys prefixed 'fd_' come from the final-sample descriptives block, runs/final_descriptives/, and are read from the frozen tables named in each entry's source field.",
     "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
   },
   "entries": {
@@ -2447,6 +2447,1063 @@
       "reference": "Status flag on the WISHMORE-variable coding check used in the external validation (an unresolved coding-ambiguity caveat, not a pass/fail gate).",
       "source": "runs/external_hours_lfs/xh1_table_record_v1.json",
       "value": "WISHMORE_CODING_UNRESOLVED"
+    },
+    "fd_age__mean_weighted__couple_the_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of age, unit: the man.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 39.84025051109256
+    },
+    "fd_age__mean_weighted__couple_the_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of age, unit: the woman.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 37.81895080858797
+    },
+    "fd_age__mean_weighted__single_adult_the_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of age, unit: the decider.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 41.02015678396426
+    },
+    "fd_annualised_gross_employee_earnings_eur_year__mean_weighted__couple_the_employed_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of annualised gross employee earnings (EUR/year), unit: the employed man.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 36059.41279658308
+    },
+    "fd_annualised_gross_employee_earnings_eur_year__mean_weighted__couple_the_employed_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of annualised gross employee earnings (EUR/year), unit: the employed woman.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 26164.29344756744
+    },
+    "fd_annualised_gross_employee_earnings_eur_year__mean_weighted__single_adult_the_employed_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of annualised gross employee earnings (EUR/year), unit: the employed decider.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 27510.203615566763
+    },
+    "fd_children_members_under_20__mean_weighted__couple_the_household": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of children (members under 20), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 1.2305853800240276
+    },
+    "fd_children_members_under_20__mean_weighted__single_adult_the_household": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of children (members under 20), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 0.3638837101621816
+    },
+    "fd_composition_screen__dropped_by_the_composition_screen": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "households",
+      "reference": "composition screen, itemised: nan",
+      "source": "runs/final_descriptives/fd_composition_screen_v1.csv",
+      "value": 1456
+    },
+    "fd_composition_screen__excl_2adult_no_link": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "households",
+      "reference": "composition screen, itemised: two adults not mutually linked as partners",
+      "source": "runs/final_descriptives/fd_composition_screen_v1.csv",
+      "value": 452
+    },
+    "fd_composition_screen__excl_3plus_adults": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "households",
+      "reference": "composition screen, itemised: three or more adults",
+      "source": "runs/final_descriptives/fd_composition_screen_v1.csv",
+      "value": 930
+    },
+    "fd_composition_screen__excl_no_adult": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "households",
+      "reference": "composition screen, itemised: no adult aged 20 or over",
+      "source": "runs/final_descriptives/fd_composition_screen_v1.csv",
+      "value": 21
+    },
+    "fd_composition_screen__excl_same_sex": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "households",
+      "reference": "composition screen, itemised: two mutually linked adults of the same sex",
+      "source": "runs/final_descriptives/fd_composition_screen_v1.csv",
+      "value": 53
+    },
+    "fd_correction__deciders_capped_at_70h": {
+      "basis": "raw EUROMOD input at the hours screen",
+      "column_or_key": "mutations.capped_over_70h",
+      "reference": "Employed deciders observed above 70 h/week, capped at the support boundary.",
+      "source": "runs/final_descriptives/fd_step1_funnel_v1.json",
+      "value": 25
+    },
+    "fd_correction__deciders_made_inactive_at_or_below_5h": {
+      "basis": "raw EUROMOD input at the hours screen",
+      "column_or_key": "mutations.to_inactive_le5h",
+      "reference": "Employed deciders observed at or below 5 h/week, moved to the non-employment alternative.",
+      "source": "runs/final_descriptives/fd_step1_funnel_v1.json",
+      "value": 6
+    },
+    "fd_correction__deciders_preserved_at_6_to_9h": {
+      "basis": "raw EUROMOD input at the hours screen, before the wage-bound drop",
+      "column_or_key": "mutations.preserved_6_to_9h_not_floored_to_10",
+      "reference": "Employed deciders observed at 6-9 h/week whose hours the superseded rule lifted to ten and the accepted correction preserves. Counted at the screen; some sit in households the wage bound later removes.",
+      "source": "runs/final_descriptives/fd_step1_funnel_v1.json",
+      "value": 19
+    },
+    "fd_couples_regime_denominator": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "denominator_unweighted",
+      "reference": "The common denominator of the four joint participation regimes.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 2275
+    },
+    "fd_couples_regime_households__bb": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "households_unweighted",
+      "reference": "Unweighted couple households in regime BB (both spouses employed).",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 1941
+    },
+    "fd_couples_regime_households__mo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "households_unweighted",
+      "reference": "Unweighted couple households in regime MO (man employed, woman not employed).",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 167
+    },
+    "fd_couples_regime_households__nn": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "households_unweighted",
+      "reference": "Unweighted couple households in regime NN (neither spouse employed).",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 50
+    },
+    "fd_couples_regime_households__total": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "households_unweighted",
+      "reference": "Unweighted couple households in regime TOTAL (all four regimes).",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 2275
+    },
+    "fd_couples_regime_households__wo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "households_unweighted",
+      "reference": "Unweighted couple households in regime WO (woman employed, man not employed).",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 117
+    },
+    "fd_couples_regime_mean_disposable_income__bb": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_disposable_income_weighted",
+      "reference": "Weighted mean household disposable income, EUR per month, within regime BB.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 4551.932379203916
+    },
+    "fd_couples_regime_mean_disposable_income__mo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_disposable_income_weighted",
+      "reference": "Weighted mean household disposable income, EUR per month, within regime MO.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 2933.1419952157444
+    },
+    "fd_couples_regime_mean_disposable_income__nn": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_disposable_income_weighted",
+      "reference": "Weighted mean household disposable income, EUR per month, within regime NN.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 1417.645263327562
+    },
+    "fd_couples_regime_mean_disposable_income__total": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_disposable_income_weighted",
+      "reference": "Weighted mean household disposable income, EUR per month, within regime TOTAL.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 4251.172496441646
+    },
+    "fd_couples_regime_mean_disposable_income__wo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_disposable_income_weighted",
+      "reference": "Weighted mean household disposable income, EUR per month, within regime WO.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 2676.7233623299803
+    },
+    "fd_couples_regime_share_weighted__bb": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted share of couple households in the joint participation regime BB (both spouses employed). Denominator: all 2275 couple households.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 0.8430077103140404
+    },
+    "fd_couples_regime_share_weighted__mo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted share of couple households in the joint participation regime MO (man employed, woman not employed). Denominator: all 2275 couple households.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 0.0813319545535257
+    },
+    "fd_couples_regime_share_weighted__nn": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted share of couple households in the joint participation regime NN (neither spouse employed). Denominator: all 2275 couple households.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 0.0216202268799546
+    },
+    "fd_couples_regime_share_weighted__total": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted share of couple households in the joint participation regime TOTAL (all four regimes). Denominator: all 2275 couple households.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 1.0
+    },
+    "fd_couples_regime_share_weighted__wo": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted share of couple households in the joint participation regime WO (woman employed, man not employed). Denominator: all 2275 couple households.",
+      "source": "runs/final_descriptives/fd_couples_regimes_v1.csv",
+      "value": 0.054040108252479
+    },
+    "fd_disposable_income_eur_month__median_weighted__couple_the_household": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of disposable income (EUR/month), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 3851.533352865666
+    },
+    "fd_disposable_income_eur_month__median_weighted__single_adult_the_household": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of disposable income (EUR/month), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 1759.332015863622
+    },
+    "fd_disposable_income_mean_weighted__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "mean_weighted",
+      "reference": "weighted mean of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2246.0128862746224
+    },
+    "fd_disposable_income_mean_weighted__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "mean_weighted",
+      "reference": "weighted mean of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 4251.172496441646
+    },
+    "fd_disposable_income_mean_weighted__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "mean_weighted",
+      "reference": "weighted mean of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 1764.8286048783698
+    },
+    "fd_disposable_income_mean_weighted__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "mean_weighted",
+      "reference": "weighted mean of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 1944.8046208381704
+    },
+    "fd_disposable_income_median_weighted__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "median_weighted",
+      "reference": "weighted median of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2063.006475515054
+    },
+    "fd_disposable_income_median_weighted__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "median_weighted",
+      "reference": "weighted median of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3851.533352865666
+    },
+    "fd_disposable_income_median_weighted__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "median_weighted",
+      "reference": "weighted median of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 1588.0119659090624
+    },
+    "fd_disposable_income_median_weighted__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "median_weighted",
+      "reference": "weighted median of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 1759.332015863622
+    },
+    "fd_disposable_income_nonpositive_excluded__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income",
+      "column_or_key": "excluded_from_positive_domain_indices",
+      "reference": "Households with a non-positive simulated disposable income, excluded from the ratio and entropy indices and floored to 1 EUR before the positive-domain utility transform.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0
+    },
+    "fd_disposable_income_nonpositive_excluded__couple_raw": {
+      "basis": "couple, observed disposable income",
+      "column_or_key": "excluded_from_positive_domain_indices",
+      "reference": "Households with a non-positive simulated disposable income, excluded from the ratio and entropy indices and floored to 1 EUR before the positive-domain utility transform.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0
+    },
+    "fd_disposable_income_nonpositive_excluded__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income",
+      "column_or_key": "excluded_from_positive_domain_indices",
+      "reference": "Households with a non-positive simulated disposable income, excluded from the ratio and entropy indices and floored to 1 EUR before the positive-domain utility transform.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3
+    },
+    "fd_disposable_income_nonpositive_excluded__single_adult_raw": {
+      "basis": "single-adult, observed disposable income",
+      "column_or_key": "excluded_from_positive_domain_indices",
+      "reference": "Households with a non-positive simulated disposable income, excluded from the ratio and entropy indices and floored to 1 EUR before the positive-domain utility transform.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3
+    },
+    "fd_disposable_income_p10_weighted__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "p10_weighted",
+      "reference": "weighted 10th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 1234.8108787036
+    },
+    "fd_disposable_income_p10_weighted__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "p10_weighted",
+      "reference": "weighted 10th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2389.597132747
+    },
+    "fd_disposable_income_p10_weighted__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "p10_weighted",
+      "reference": "weighted 10th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 847.994095524648
+    },
+    "fd_disposable_income_p10_weighted__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "p10_weighted",
+      "reference": "weighted 10th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 977.831045605101
+    },
+    "fd_disposable_income_p90_over_p10__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "P90_over_P10",
+      "reference": "weighted P90/P10 ratio of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2.754813324010356
+    },
+    "fd_disposable_income_p90_over_p10__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "P90_over_P10",
+      "reference": "weighted P90/P10 ratio of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2.6900352746223293
+    },
+    "fd_disposable_income_p90_over_p10__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "P90_over_P10",
+      "reference": "weighted P90/P10 ratio of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3.232907208582054
+    },
+    "fd_disposable_income_p90_over_p10__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "P90_over_P10",
+      "reference": "weighted P90/P10 ratio of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3.026605835326234
+    },
+    "fd_disposable_income_p90_weighted__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "p90_weighted",
+      "reference": "weighted 90th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 3401.6734612856126
+    },
+    "fd_disposable_income_p90_weighted__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "p90_weighted",
+      "reference": "weighted 90th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 6428.100579225806
+    },
+    "fd_disposable_income_p90_weighted__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "p90_weighted",
+      "reference": "weighted 90th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2741.4862242566533
+    },
+    "fd_disposable_income_p90_weighted__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "p90_weighted",
+      "reference": "weighted 90th percentile of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 2959.509148591552
+    },
+    "fd_disposable_income_theil_l__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Theil_L",
+      "reference": "Theil-L index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.0875127544478114
+    },
+    "fd_disposable_income_theil_l__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "Theil_L",
+      "reference": "Theil-L index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.0915351082396847
+    },
+    "fd_disposable_income_theil_l__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Theil_L",
+      "reference": "Theil-L index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.126805425410098
+    },
+    "fd_disposable_income_theil_l__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "Theil_L",
+      "reference": "Theil-L index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.1195517687943316
+    },
+    "fd_disposable_income_theil_t__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Theil_T",
+      "reference": "Theil-T index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.0890860698886003
+    },
+    "fd_disposable_income_theil_t__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "Theil_T",
+      "reference": "Theil-T index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.0936435739091161
+    },
+    "fd_disposable_income_theil_t__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Theil_T",
+      "reference": "Theil-T index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.1281150344670714
+    },
+    "fd_disposable_income_theil_t__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "Theil_T",
+      "reference": "Theil-T index of observed household disposable income, EUR per month unless a ratio or an index.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.1171974272909974
+    },
+    "fd_employed_rows_at_70h_cap__both_all_employed_deciders": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_at_the_70h_cap",
+      "reference": "Employed deciders at the 70-hour support cap, all employed deciders.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 61
+    },
+    "fd_employed_rows_at_70h_cap__couple_the_employed_man": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_at_the_70h_cap",
+      "reference": "Employed deciders at the 70-hour support cap, the employed man.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 41
+    },
+    "fd_employed_rows_at_70h_cap__couple_the_employed_woman": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_at_the_70h_cap",
+      "reference": "Employed deciders at the 70-hour support cap, the employed woman.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 9
+    },
+    "fd_employed_rows_at_70h_cap__single_adult_the_employed_decider": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_at_the_70h_cap",
+      "reference": "Employed deciders at the 70-hour support cap, the employed decider.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 11
+    },
+    "fd_employed_rows_below_10h__both_all_employed_deciders": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_below_10h",
+      "reference": "Employed deciders below ten weekly hours, all employed deciders -- the rows the superseded floor lifted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 18
+    },
+    "fd_employed_rows_below_10h__couple_the_employed_man": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_below_10h",
+      "reference": "Employed deciders below ten weekly hours, the employed man -- the rows the superseded floor lifted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 1
+    },
+    "fd_employed_rows_below_10h__couple_the_employed_woman": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_below_10h",
+      "reference": "Employed deciders below ten weekly hours, the employed woman -- the rows the superseded floor lifted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 10
+    },
+    "fd_employed_rows_below_10h__single_adult_the_employed_decider": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "rows_below_10h",
+      "reference": "Employed deciders below ten weekly hours, the employed decider -- the rows the superseded floor lifted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 7
+    },
+    "fd_employed_unweighted__both_all_employed_deciders": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "employed_unweighted",
+      "reference": "Employed deciders, all employed deciders, unweighted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 5514
+    },
+    "fd_employed_unweighted__couple_the_employed_man": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "employed_unweighted",
+      "reference": "Employed deciders, the employed man, unweighted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 2108
+    },
+    "fd_employed_unweighted__couple_the_employed_woman": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "employed_unweighted",
+      "reference": "Employed deciders, the employed woman, unweighted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 2058
+    },
+    "fd_employed_unweighted__single_adult_the_employed_decider": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "employed_unweighted",
+      "reference": "Employed deciders, the employed decider, unweighted.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 1348
+    },
+    "fd_employment_rate_weighted__couple_the_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted employment rate of the man. High by construction: the retirement, disability and labour-status screens removed the groups with weak attachment, so this is employment among people for whom working is a live option, not a French employment rate.",
+      "source": "runs/final_descriptives/fd_descriptives_categorical_v1.csv",
+      "value": 0.9243396648675662
+    },
+    "fd_employment_rate_weighted__couple_the_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted employment rate of the woman. High by construction: the retirement, disability and labour-status screens removed the groups with weak attachment, so this is employment among people for whom working is a live option, not a French employment rate.",
+      "source": "runs/final_descriptives/fd_descriptives_categorical_v1.csv",
+      "value": 0.8970478185665196
+    },
+    "fd_employment_rate_weighted__single_adult_the_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "share_weighted",
+      "reference": "Weighted employment rate of the decider. High by construction: the retirement, disability and labour-status screens removed the groups with weak attachment, so this is employment among people for whom working is a live option, not a French employment rate.",
+      "source": "runs/final_descriptives/fd_descriptives_categorical_v1.csv",
+      "value": 0.8708469214057849
+    },
+    "fd_equivalized_disposable_income_eur_month__median_weighted__couple_the_household": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of equivalized disposable income (EUR/month), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 2063.006475515054
+    },
+    "fd_equivalized_disposable_income_eur_month__median_weighted__single_adult_the_household": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of equivalized disposable income (EUR/month), unit: the household.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 1588.0119659090624
+    },
+    "fd_funnel_every_adult_aged_20_to_60__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: every adult aged 20 to 60",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 5793
+    },
+    "fd_funnel_every_adult_aged_20_to_60__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: every adult aged 20 to 60",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 3662
+    },
+    "fd_funnel_every_adult_aged_20_to_60__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: every adult aged 20 to 60",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2303
+    },
+    "fd_funnel_every_adult_aged_20_to_60__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: every adult aged 20 to 60",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1907
+    },
+    "fd_funnel_every_adult_aged_20_to_60__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: every adult aged 20 to 60",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2131
+    },
+    "fd_funnel_final_couple_households_modelled__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: FINAL: couple households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2275
+    },
+    "fd_funnel_final_couple_households_modelled__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: FINAL: couple households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2275
+    },
+    "fd_funnel_final_couple_households_modelled__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: FINAL: couple households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 0
+    },
+    "fd_funnel_final_single_adult_households_modelled__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: FINAL: single-adult households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1555
+    },
+    "fd_funnel_final_single_adult_households_modelled__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: FINAL: single-adult households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 0
+    },
+    "fd_funnel_final_single_adult_households_modelled__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: FINAL: single-adult households (modelled)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1555
+    },
+    "fd_funnel_hours_and_wage_inside_the_modelled_support__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: hours and wage inside the modelled support",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 3830
+    },
+    "fd_funnel_hours_and_wage_inside_the_modelled_support__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: hours and wage inside the modelled support",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2275
+    },
+    "fd_funnel_hours_and_wage_inside_the_modelled_support__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: hours and wage inside the modelled support",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 48
+    },
+    "fd_funnel_hours_and_wage_inside_the_modelled_support__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: hours and wage inside the modelled support",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 9
+    },
+    "fd_funnel_hours_and_wage_inside_the_modelled_support__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: hours and wage inside the modelled support",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1555
+    },
+    "fd_funnel_labour_status_in_scope__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: labour status in scope",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 4010
+    },
+    "fd_funnel_labour_status_in_scope__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: labour status in scope",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2412
+    },
+    "fd_funnel_labour_status_in_scope__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: labour status in scope",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 806
+    },
+    "fd_funnel_labour_status_in_scope__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: labour status in scope",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 157
+    },
+    "fd_funnel_labour_status_in_scope__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: labour status in scope",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1598
+    },
+    "fd_funnel_no_adult_still_in_education__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: no adult still in education",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 5557
+    },
+    "fd_funnel_no_adult_still_in_education__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: no adult still in education",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 3521
+    },
+    "fd_funnel_no_adult_still_in_education__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: no adult still in education",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 141
+    },
+    "fd_funnel_no_adult_still_in_education__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: no adult still in education",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 95
+    },
+    "fd_funnel_no_adult_still_in_education__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: no adult still in education",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2036
+    },
+    "fd_funnel_no_other_employable_or_earning_member__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: no other employable or earning member",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 3887
+    },
+    "fd_funnel_no_other_employable_or_earning_member__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: no other employable or earning member",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 2323
+    },
+    "fd_funnel_no_other_employable_or_earning_member__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: no other employable or earning member",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 89
+    },
+    "fd_funnel_no_other_employable_or_earning_member__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: no other employable or earning member",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 34
+    },
+    "fd_funnel_no_other_employable_or_earning_member__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: no other employable or earning member",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1564
+    },
+    "fd_funnel_no_retirement_disability_or_survivor_benefit__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: no retirement, disability or survivor benefit",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 4973
+    },
+    "fd_funnel_no_retirement_disability_or_survivor_benefit__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: no retirement, disability or survivor benefit",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 3218
+    },
+    "fd_funnel_no_retirement_disability_or_survivor_benefit__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: no retirement, disability or survivor benefit",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 303
+    },
+    "fd_funnel_no_retirement_disability_or_survivor_benefit__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: no retirement, disability or survivor benefit",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 281
+    },
+    "fd_funnel_no_retirement_disability_or_survivor_benefit__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: no retirement, disability or survivor benefit",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 1755
+    },
+    "fd_funnel_one_or_two_adult_households_composition_screen__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: one- or two-adult households (composition screen)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 10003
+    },
+    "fd_funnel_one_or_two_adult_households_composition_screen__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: one- or two-adult households (composition screen)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 5965
+    },
+    "fd_funnel_one_or_two_adult_households_composition_screen__dropped_couples": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_couples",
+      "reference": "households of that type removed by the screen: one- or two-adult households (composition screen)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 0
+    },
+    "fd_funnel_one_or_two_adult_households_composition_screen__dropped_singles": {
+      "basis": "raw EUROMOD input, unweighted households",
+      "column_or_key": "dropped_singles",
+      "reference": "households of that type removed by the screen: one- or two-adult households (composition screen)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 0
+    },
+    "fd_funnel_one_or_two_adult_households_composition_screen__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: one- or two-adult households (composition screen)",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 4038
+    },
+    "fd_funnel_reconciliation_verdict": {
+      "basis": "identifier-by-identifier comparison of the recomputed funnel against both final frames",
+      "column_or_key": "reconciliation_gate.VERDICT",
+      "reference": "PASS means the recomputed single-adult and couple branches land on exactly the household identifier sets the two final frames carry.",
+      "source": "runs/final_descriptives/fd_step1_funnel_v1.json",
+      "value": "PASS"
+    },
+    "fd_funnel_the_raw_france_2016_input_file__all": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_all",
+      "reference": "households of either modelled type surviving this screen: the raw France 2016 input file",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 11459
+    },
+    "fd_funnel_the_raw_france_2016_input_file__couples": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_couples",
+      "reference": "couple households surviving this screen: the raw France 2016 input file",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 5965
+    },
+    "fd_funnel_the_raw_france_2016_input_file__singles": {
+      "basis": "raw EUROMOD input FR_2016_a3.txt, corrected floor-5 construction, unweighted households",
+      "column_or_key": "households_singles",
+      "reference": "single-adult households surviving this screen: the raw France 2016 input file",
+      "source": "runs/final_descriptives/fd_funnel_v1.csv",
+      "value": 4038
+    },
+    "fd_gini_disposable_income__couple_equivalized_modified_oecd": {
+      "basis": "couple, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Gini_weighted_from_plotted_lorenz",
+      "reference": "The weighted Gini of OBSERVED disposable income, computed as twice the area between the diagonal and exactly the Lorenz polyline figD11 draws, so the plotted and the stated value are the same number. Not the paper's welfare inequality.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.2265046121634535
+    },
+    "fd_gini_disposable_income__couple_raw": {
+      "basis": "couple, observed disposable income, raw basis",
+      "column_or_key": "Gini_weighted_from_plotted_lorenz",
+      "reference": "The weighted Gini of OBSERVED disposable income, computed as twice the area between the diagonal and exactly the Lorenz polyline figD11 draws, so the plotted and the stated value are the same number. Not the paper's welfare inequality.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.2309045311633707
+    },
+    "fd_gini_disposable_income__single_adult_equivalized_modified_oecd": {
+      "basis": "single-adult, observed disposable income, equivalized (modified OECD) basis",
+      "column_or_key": "Gini_weighted_from_plotted_lorenz",
+      "reference": "The weighted Gini of OBSERVED disposable income, computed as twice the area between the diagonal and exactly the Lorenz polyline figD11 draws, so the plotted and the stated value are the same number. Not the paper's welfare inequality.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.2670788994368451
+    },
+    "fd_gini_disposable_income__single_adult_raw": {
+      "basis": "single-adult, observed disposable income, raw basis",
+      "column_or_key": "Gini_weighted_from_plotted_lorenz",
+      "reference": "The weighted Gini of OBSERVED disposable income, computed as twice the area between the diagonal and exactly the Lorenz polyline figD11 draws, so the plotted and the stated value are the same number. Not the paper's welfare inequality.",
+      "source": "runs/final_descriptives/fd_observed_inequality_v1.csv",
+      "value": 0.2557114591288182
+    },
+    "fd_hourly_wage_eur_hour__median_weighted__couple_the_employed_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of hourly wage (EUR/hour), unit: the employed man.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 15.442308
+    },
+    "fd_hourly_wage_eur_hour__median_weighted__couple_the_employed_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of hourly wage (EUR/hour), unit: the employed woman.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 13.543269
+    },
+    "fd_hourly_wage_eur_hour__median_weighted__single_adult_the_employed_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "median_weighted",
+      "reference": "median weighted of hourly wage (EUR/hour), unit: the employed decider.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 14.072116
+    },
+    "fd_matched_pair_admissible_pairs": {
+      "basis": "the matched-pair search",
+      "column_or_key": "rankings.employed.n_pairs",
+      "reference": "Admissible employed pairs the matching rule ranked; the plotted pair is the argmax of the rule over them, not a hand pick.",
+      "source": "runs/figE1_matched_households/e1_matched_households_v1.json",
+      "value": 19116
+    },
+    "fd_matched_pair_median_conditional_wage_offer__household_a": {
+      "basis": "the forward matched pair, final singles model",
+      "column_or_key": "exp(pairs.employed::forward.household_1.mu_wage_location)",
+      "reference": "The median of the wage-offer density CONDITIONAL on employment, EUR per hour.",
+      "source": "runs/figE1_matched_households/e1_matched_households_v1.json",
+      "value": 11.377891724216985
+    },
+    "fd_matched_pair_median_conditional_wage_offer__household_b": {
+      "basis": "the forward matched pair, final singles model",
+      "column_or_key": "exp(pairs.employed::forward.household_2.mu_wage_location)",
+      "reference": "The median of the wage-offer density CONDITIONAL on employment, EUR per hour.",
+      "source": "runs/figE1_matched_households/e1_matched_households_v1.json",
+      "value": 11.054767070890719
+    },
+    "fd_matched_pair_opportunity_mass_at_employment__household_a": {
+      "basis": "the forward matched pair, final singles model",
+      "column_or_key": "pairs.employed::forward.household_1.pi_participation",
+      "reference": "p^opp(E=1), the NORMALISED OPPORTUNITY MASS at employment for this household -- the integral of the opportunity density over employed jobs divided by its integral over all jobs. It is NOT the probability the household is observed employed, which additionally weights each job by exp(u).",
+      "source": "runs/figE1_matched_households/e1_matched_households_v1.json",
+      "value": 0.8512569269830625
+    },
+    "fd_matched_pair_opportunity_mass_at_employment__household_b": {
+      "basis": "the forward matched pair, final singles model",
+      "column_or_key": "pairs.employed::forward.household_2.pi_participation",
+      "reference": "p^opp(E=1), the NORMALISED OPPORTUNITY MASS at employment for this household -- the integral of the opportunity density over employed jobs divided by its integral over all jobs. It is NOT the probability the household is observed employed, which additionally weights each job by exp(u).",
+      "source": "runs/figE1_matched_households/e1_matched_households_v1.json",
+      "value": 0.34886761364270275
+    },
+    "fd_matched_pair_plotted_object": {
+      "basis": "the matched-pair figure",
+      "column_or_key": "object_identified.is",
+      "reference": "Which object the matched-pair panels plot, resolved from the source computation rather than from the previous labels.",
+      "source": "runs/final_descriptives/fd_step6_e1_v2.json",
+      "value": "p^opp(E=1), the normalised opportunity mass at employment"
+    },
+    "fd_min_employed_hours__both_all_employed_deciders": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "minimum_employed_hours",
+      "reference": "Minimum observed weekly hours among the employed, all employed deciders. This supersedes every earlier statement that the minimum is ten.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 6.0
+    },
+    "fd_min_employed_hours__couple_the_employed_man": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "minimum_employed_hours",
+      "reference": "Minimum observed weekly hours among the employed, the employed man. This supersedes every earlier statement that the minimum is ten.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 9.0
+    },
+    "fd_min_employed_hours__couple_the_employed_woman": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "minimum_employed_hours",
+      "reference": "Minimum observed weekly hours among the employed, the employed woman. This supersedes every earlier statement that the minimum is ten.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 6.0
+    },
+    "fd_min_employed_hours__single_adult_the_employed_decider": {
+      "basis": "corrected chosen rows of the final frames",
+      "column_or_key": "minimum_employed_hours",
+      "reference": "Minimum observed weekly hours among the employed, the employed decider. This supersedes every earlier statement that the minimum is ten.",
+      "source": "runs/final_descriptives/fd_hours_support_v1.csv",
+      "value": 6.0
+    },
+    "fd_weekly_hours_continuous__mean_weighted__couple_the_employed_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of weekly hours (continuous), unit: the employed man.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 41.40756960061775
+    },
+    "fd_weekly_hours_continuous__mean_weighted__couple_the_employed_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of weekly hours (continuous), unit: the employed woman.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 35.974669556920794
+    },
+    "fd_weekly_hours_continuous__mean_weighted__single_adult_the_employed_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "mean_weighted",
+      "reference": "mean weighted of weekly hours (continuous), unit: the employed decider.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 37.748299706278544
+    },
+    "fd_weekly_hours_continuous__min__couple_the_employed_man": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "min",
+      "reference": "min of weekly hours (continuous), unit: the employed man.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 9.0
+    },
+    "fd_weekly_hours_continuous__min__couple_the_employed_woman": {
+      "basis": "final couples sample, floor5_switch frame, weighted by dwt",
+      "column_or_key": "min",
+      "reference": "min of weekly hours (continuous), unit: the employed woman.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 6.0
+    },
+    "fd_weekly_hours_continuous__min__single_adult_the_employed_decider": {
+      "basis": "final singles sample, floor-5 corrected frame, weighted by dwt",
+      "column_or_key": "min",
+      "reference": "min of weekly hours (continuous), unit: the employed decider.",
+      "source": "runs/final_descriptives/fd_descriptives_continuous_v1.csv",
+      "value": 6.0
     },
     "geo_share_of_C_acc_equivalized": {
       "basis": "S8, female reference, equivalized basis",
