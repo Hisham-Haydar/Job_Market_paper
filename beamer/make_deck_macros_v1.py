@@ -5,7 +5,7 @@ Every number that appears on a slide of JMP_seminar_deck_v1.tex is defined here
 and read from a named artefact.  No decomposition percentage, and no fit or
 welfare magnitude, is typed into the .tex by hand.
 
-The provenance table at the end of manuscript/JMP_seminar_deck_content_v1.md is
+The provenance table at the end of manuscript/JMP_seminar_deck_content_v2.md is
 the authority for which artefact backs which slide; this script follows it.
 
 Usage:  python beamer/make_deck_macros_v1.py [--sprint PATH] [--out PATH]

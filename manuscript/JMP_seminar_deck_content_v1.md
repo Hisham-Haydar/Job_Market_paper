@@ -1,3 +1,9 @@
+> **Superseded by v2 — kept for provenance.**
+> The live deck content is `JMP_seminar_deck_content_v2.md`, which is what
+> `beamer/deck_content_v4.py` builds and what the integration verifier's
+> deck-side claim checks read. Nothing here is shipped or checked; this file
+> is retained only to show what the deck said before the v2 rewrite.
+
 # Unequal Job Opportunities and the Measurement of Welfare Inequality
 ## Seminar deck — slide-by-slide content
 
