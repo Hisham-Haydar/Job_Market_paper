@@ -1,203 +1,116 @@
 # Consistency gate v1
 
-**Verdict: FAIL.** The values that are actually tied to a numbers-of-record key agree with that key, but the requested cross-artifact gate does not close. There is one direct model-notation conflict, one incorrect Shapley chart label, material coverage gaps for states/decomposition uncertainty and the couples limitation, incomplete reference labels, and many forbidden/internal-phrase hits.
+**Overall: FAIL.** The registry-backed numerical results checked agree at their displayed precision. The three artifacts do not yet agree on model notation, the hours reference, the welfare definition, or coverage of the decomposition. The R-263 semantic gate is also unclosed: the implemented split combines non-labour income with other budget characteristics, whereas the supplied ruling asks whether those characteristics are separately swappable.
 
-Audit date: 2026-09-07. This was a read-only audit of the named inputs. No audited input was edited.
+Audit: 2026-09-07. This report replaces the obsolete 203-entry audit with a fresh audit of the current **271-entry** registry. No audited artifact was edited or executed. No pricing, fitting, welfare integration, or admission decision was performed. Only this report is the intended JMP commit; MNL is not committed.
 
-## Scope and method
+## Scope, authority, and evidence
 
-- Registry: `reports/numbers_of_record_v1.json` (203 entries). Every entry has `value`, `source`, `basis`, and `reference`.
-- Paper: `manuscript/JMP_working_paper_for_seminar_v2.md`.
-- HTML: `reports/JMP_research_story_report_v1.html`. The parsed `NOR-DATA` object is exactly equal to the external registry across all 203 entries. `AUX-DATA` was also read. All 573 `.n` spans resolve to an existing `NOR-DATA` or `AUX-DATA` key; none resolves to `MISSING`. The rendered values below were reconstructed with the page's own `fmt` rules, so both the embedded values and the displayed precision were checked.
-- Notebook artifact: executed outputs and Markdown in `MNL/experiments/JMP_SEMINAR_SPRINT/JMP_research_lab.ipynb`, with its declared coverage in `runs/research_lab/CELL_MAP_v1.md`.
-- Deck: `beamer/build/JMP_seminar_deck_v1_text.txt`.
+The item order below follows the D checklist enumerated in the user's request. A separate document containing that deputy checklist was not located in the searched JMP/MNL governance and sprint records; no additional requirements are attributed to an unseen document. The user's supplied R-263 wording is the authority for the additional semantic/cost/admission checks. `reports/canonical_notation_v1.md`, especially ??2?5 and ?7, supplies the existing notation and W1 contract; it is not a substitute for checking the actual artifacts.
 
-Input SHA-256 values at audit time:
+Locations use these aliases:
 
-| input | SHA-256 |
-|---|---|
-| registry | `7A707D8580F6E82BC1EF0A16977C6A7C0613F91F5CDBFE3D44FC779058E8F74F` |
-| paper | `E8353A3884186AFBAD55CB8DC407A767DC8578EEFFB2EDF42074D8304A42AE88` |
-| HTML | `2C7352FDA7C1DC52910F267D2B9609959678F609FA0EB3CEF9B70402D19B7D2F` |
-| notebook | `DD80D596B89BA49FFDC0660A7482308F01E6A84386BA52AAA99D061F47601325` |
-| cell map | `4658E65D69C13EFA9A256D781781497463054BD630FEB9F887A0A58B9F244D17` |
-| deck text | `A46BE4C68CD5CA5ED15AF745D7B9FC0CFC0A9C9C54BB11BD9FA65CC5F50371C4` |
+- **J**: `JMP/reports/numbers_of_record_v1.json`; registry locations are exact `entries.<key>` paths.
+- **P**: `JMP/manuscript/JMP_working_paper_for_seminar_v2.md`; locations are physical, one-based lines.
+- **H**: `JMP/reports/JMP_research_story_report_v1.html`; locations are physical line:column, plus section/selector where useful. Large columns reflect embedded images on minified lines.
+- **N**: `MNL/experiments/JMP_SEMINAR_SPRINT/JMP_research_lab.ipynb`; cells and outputs are **one-based**, including Markdown cells. Physical JSON lines are also given for discrepancies.
+- **NE**: `MNL/experiments/JMP_SEMINAR_SPRINT/runs/nested_endowments/`.
 
-“Not stated” below is not treated as a contradictory value unless the requested rule requires the statement everywhere. It is nevertheless shown so that coverage is explicit. Rounding is treated as numerically consistent, but it does not satisfy a request for the full recorded objective.
+Read the whole registry and the paper, HTML text/equations/data/rendering functions, and notebook Markdown, code, and saved executed outputs. The notebook has 28 cells, 14 code cells with execution counts 1?14, and zero saved error outputs. Its controls select singles `certified_replay`, not a new fit. Executed output is evidence of the saved run, not a claim that this audit re-executed it. Embedded raster figures were not independently OCR-audited; the gate below concerns equations, prose, data bindings, and saved textual/tabular outputs.
 
-## Item-by-item gate
+The HTML `NOR-DATA` object is exactly equal to J, including all 271 entries and metadata. All **616 numeric spans** resolve through the HTML's `lookup` rules to NOR or AUX keys; none is missing. AUX is a separate source block, not part of J. The displayed precision follows `fmt`; rounding alone is not a numerical failure. This does **not** prove that the prose names the right quantity.
 
-| item | paper | HTML | notebook | deck | registry | verdict |
-|---|---|---|---|---|---|---|
-| Raw-frame households | 11,459, lines 1012–1014 and 1027 | 11,459, line 113, §3, `n_households_raw_frame` span | Not printed | Not stated | `n_households_raw_frame = 11459` (line 1048) | PASS where stated; incomplete coverage |
-| Singles households | 1,555, lines 1043–1054 | 1,555, line 113, §3 | Executed output 1,555, lines 364 and 547 | 1,555, line 210 | `n_households_singles = 1555` (line 1055) | PASS |
-| Couples households / CR1 clusters | 2,275, lines 1044–1045, 2674, 2724 | 2,275, line 113, §3 | Not printed under the executed singles controls | 2,275, line 628 | `n_households_couples = 2275`; `n_couples_clusters = 2275` (lines 1041 and 1034) | PASS where stated; incomplete notebook coverage |
-| Alternatives per household | 101 = observed + 100 draws, lines 1052–1054 | 101, lines 113/157, §§3–4 and §7 | Executed output 101, lines 365 and 548 | Observed + 100 draws, lines 191–192 (101 implicit) | `n_alternatives = 101` (line 1027) | PASS |
-| Priced singles rows | 157,055, lines 1052–1054 | 157,055, line 113, §3 | Executed output 157,055, line 366 | 157,055, line 204 | `n_priced_rows_singles = 157055` (line 1090) | PASS |
-| Active parameters | 41, lines 1076–1080 and Appendix A.1 | 41, line 157, §7 | Executed output 41, lines 486 and 598 | 41, line 186 | `n_params_active = 41` (line 1062) | PASS |
-| Interior / active-bound parameters | 39 / 2, lines 1080–1082 and Appendix A.4 | 39 / 2, line 157, §7 | Executed output 39 / 2, lines 599–600 | Not stated | `n_params_interior = 39`; `n_params_at_bound = 2` (lines 1076 and 1069) | PASS where stated |
-| 51-coordinate representation is provenance-only and confined to allowed sites | Correct meaning in Appendix A.4, but `51` and/or `S8` also occur outside A.4 (Appendix A.3 and self-check); see hit ledger | One rendered 51 is in a provenance box, but another is in §22 Q31; embedded `NOR-DATA` also contains 140 `S8` and seven standalone `51` hits | Many `S8`/`51` hits in Markdown, code, outputs, and metadata; cell map repeats both | Neither appears | `n_params_provenance = 51` (line 1083), explicitly provenance | **FAIL** |
-| Final singles negLL | Exact 18022.764617170084, line 3486 | Embedded value exact; rendered as 18022.7646 in §7 because the span uses `f4` | Exact executed output, lines 488–489 and 546 | Not stated | `negll_singles_final = 18022.764617170084` (line 1111) | Numeric PASS; HTML display is rounded |
-| Final couples negLL | 43,493.342239 (rounded), line 2722 | Embedded value exact; rendered as 43493.3422 in §11 (`f4`) | Exact executed output 43493.342239066726, lines 1669 and 1675 | Not stated | `negll_couples_final = 43493.342239066726` (line 1104) | **FAIL exact-display coverage** |
-| Model equations, symbols, and factor names | Four opportunity factors: `g^E`, `g^H`, `g^Occ`, `g^W`, lines 687–733 | Five terms in assembled index: `g^E`, `g^H`, `g^Acc`, `g^Occ`, `g^W`, lines 127–154, §6 | Markdown uses `g^E`, `g^H`, `g^W`, and collapsed `g^{market}`, physical lines 789–790 | Four factors `gE`, `gH`, `gOcc`, `gW`, lines 178–180 | No equation/symbol key | **FAIL** |
-| W1 statement | Uniform pay on own reachable set; pay differences neutralized; set differences remain, lines 765–784 | All three clauses are present in §13, physical line 166 | Only names W1/common RQMC support; no uniform-pay, neutralization, or set-retention statement, lines 673–679 and 789–795 | Uniform pay/own reachable set, lines 66 and 422–424; does not explicitly say pay differences are neutralized and set differences remain | No semantic W1 key | **FAIL coverage** |
-| Four singles states, raw, both references, RQMC | All points and half-widths agree, lines 1982–1990 | Female-raw points only; no male arm or state bands | Female-raw points only, executed lines 699–702; cell map line 17 declares that limited coverage | Female-raw points rounded, lines 444–445; no bands or male arm | All eight point keys and all eight `__rqmc_band` keys exist | PASS values; **FAIL requested coverage** |
-| Four singles states, equivalized, both references, RQMC | Female-primary points reappear at lines 2893–2896; I00 and its band appear for both references at 2052–2053; remaining states/bands are not fully displayed | Only female I00 is rendered; no complete equivalized state grid or bands | Not printed | Not stated | All eight point keys and all eight `__rqmc_band` keys exist | **FAIL requested coverage** |
-| Singles decomposition, raw/equivalized, both references, RQMC | Table 7.1, lines 2039–2055, agrees for all five contribution points, shares, and contribution half-widths | Female raw/equivalized points and shares are rendered; male points/bands and all contribution RQMC bands are not rendered | Female-raw contribution points only, executed lines 703–707; no shares/bands/other arms | Selected rounded female-reference shares, lines 489, 493–520 and 743–749; no complete grid/bands | Point/share keys and contribution `__rqmc_band` keys exist; no registry keys exist for the RQMC bands on the shares printed in paper Table 7.1 | PASS values; **FAIL requested coverage and registry coverage** |
-| CR1 functional intervals | Appendix F prints female-primary/raw headline contributions and shares, lines 3988–4002; only I00 among the four states | Renders eight female-primary/raw headline CR1 keys in §§15/19; state CR1 keys are unused | Runs CR1 parameter inference, but does not print any functional CR1 interval | Only environment-share interval [89.1, 95.8], lines 489–490 | Fifteen female-primary/raw CR1 keys exist; no male-reference or equivalized CR1 keys exist | **FAIL requested coverage and registry coverage** |
-| Couples states/decomposition | States on both bases and raw/equivalized component points, lines 2810–2830; component bands are incomplete | Selected equivalized state/component points only; no couples RQMC bands rendered | Only raw I1111 executed, line 1670 | Not stated | State points/bands exist on both bases; component points/bands exist only equivalized | **FAIL coverage** |
-| Shapley 93.7/6.3 versus one-factor 77/+10 | Correct and explicit, lines 2099–2109 | Correct and explicit in §14 and §22 Q13–Q14, physical lines 166 and 176 | States Shapley identities but prints neither comparison nor distinction, lines 673–679 | 77 versus rounded 94 is distinguished at lines 451–452, but the preference +10 leg is omitted and Shapley plots are labelled as shares “removed” at lines 505 and 619–626 | `C_env_female_raw_share`, `C_pref_female_raw_share`, `equalization_env_only`, `equalization_pref_only` | **FAIL** |
-| Reference labels: female primary; male structural zero; never averaged | Correct, e.g. lines 1987–1988, 2219–2243 | Correct in §§15, 19 and Q28, physical lines 166/176 | Says only “female-reference raw-basis”; no male structural-zero label or never-averaged rule, line 679 | Says “female reference” / “male reference”; omits primary, structural-zero, sensitivity, and never averaged, lines 485–490 | Basis strings on female/male state and contribution keys; `beta_l_nkids_male_status` supplies the structural-zero status | **FAIL** |
-| Couples `beta_ll` absent, welfare 0, limitation | Correct and explicitly a limitation, lines 2687–2719 and 3247–3257 | Correct and explicitly a limitation in §§11/20 and Q21, physical lines 157/166/176 | Exact absence/value/form are printed at lines 1671–1673, but the notebook never calls the omission a limitation | Not stated; “preference share is not robustly identified” at lines 612–613 is not the `beta_ll` contract | `beta_ll_status`; `beta_ll_welfare_effective_value`; `beta_ll_cross_leisure_form` | **FAIL** |
-| RURO/RUM: 6.3 vs 6.4; −24.2%; three destinations; +0.428 → −1.991 | Complete and correct, lines 1864–1934 | Complete and key-rendered in §18 and Q19, physical lines 166/176 | Not stated | 6.3→6.4 and rounded −24% at lines 519–520; rounded gap at 547; only the needs destination is named, not all three | Exact `rum_*` keys listed under discrepancies | **FAIL coverage** |
-| Geography: 87.6% of access; 13.05% of I00; not causal | Complete and guarded, lines 2474–2499 and 2627–2631 | Complete and guarded in §17/Q17–Q18, physical lines 166/176 | Not stated | 13% and “not causal” at lines 592/609; 87.6% is absent | `geo_share_of_C_acc_raw`; `geo_share_of_I00_raw` | **FAIL coverage** |
-| Sex subgroup: 19.6 vs 9.8 | 19.58 vs 9.79, lines 2612–2624 | 19.6 vs 9.8 in §17/Q16, physical lines 166/176 | Not stated | 19.6 vs 9.8, lines 600–604 | `subgroup_men_acc_share_raw`; `subgroup_women_acc_share_raw` | PASS values; incomplete notebook coverage |
-| Obsolete/internal phrase scan | 34 hits | Reader-visible, post-render, and embedded-data hits; detailed below | 40 notebook hits + 5 cell-map hits | No hits | Registry excluded from the requested four-artifact prose grep | **FAIL** |
+All 17 saved stream `key = value` lines with registry keys match J exactly. Independently parsed N cell 18's saved HTML tables: **48 state point/band values**, **80 contribution point/band/share values**, and **30 CR1 endpoints** match J at the saved display precision, with zero discrepancies. The 40 contribution-share RQMC endpoints are not in J and are excluded from that count. N's final ?EXACT PASS? is scoped to values it passed through `reproduce`; it does not certify omitted panels or all equation text.
 
-## Registry values for the state and decomposition audit
+## D checklist: item-by-item result
 
-All state and contribution point/band keys below come from `tables/headline_decomposition_v1.csv`. The artifact displays are rounded versions of these values where present.
+| Item | Result | Evidence and exact discrepancies / limits |
+|---|---|---|
+| 1. Sample sizes and choice geometry | **PASS** for stated values | J: `n_households_raw_frame=11459`, `n_households_singles=1555`, `n_households_couples=n_couples_clusters=2275`, `n_alternatives=101`, `n_priced_rows_singles=157055`. P 1010?1054 and 2722 agree. H ?3 (`#s3`, NOR spans with these keys) agrees. N cell 8/output 1, physical lines 381?383, prints 1555, 101, 157055; cell 12/output 1 repeats 1555/101. `1555?101=157055`. Coverage limit: the saved singles notebook does not print the raw-frame or couples sample counts; code in its unselected couples branch is not executed evidence. |
+| 2. Singles parameter counts | **PASS** | J `n_params_active=41`, `n_params_interior=39`, `n_params_at_bound=2`, `n_params_provenance=51`. P 1074?1083 and Appendix A.4 (3654?3683); H ?7, starting 169:643; N cells 10/output 11 and 14/output 1 agree. The 51-coordinate storage vector is distinguished from the 41 active parameters; 39+2=41. N cell 10's old S0/LOC4 loader logs report a different historical 50/40 layout and objective, not the final model. |
+| 2a. Couples parameter counts | **FAIL ? registry/coverage gap** | P 2729 and 2771?2773 give 46 free, 12 pinned, one active bound, 45 interior. J has no couples parameter-count keys; N's saved outputs do not print these counts. They cannot be certified across all three against J. This is missing evidence, not a conflicting numerical estimate. |
+| 3. Final negative log-likelihood | **FAIL ? quantity label; numerical PASS** | J singles `18022.764617170084`, couples `43493.342239066726`. P 3536 prints the exact singles objective; P 2770/3918 prints couples rounded to `43493.342239`. N cell 10/output 11 and cell 26/output 1 (2968?2974) print exact values. H uses the correct keys but calls the positive values **?log-likelihood?**, at **169:1114 (?7)** and **169:2562526 (?11)**. They are negative log-likelihoods; a log-likelihood would have the opposite sign. Both H spans use `f4`, so the display is 18022.7646 / 43493.3422. Rounded display is consistent but is not full-precision reproduction. |
+| 4. Model equations and the same symbols | **FAIL** | All three now state four factors E/H/Occ/W; the former fifth-factor assembled HTML product is fixed. But H ?6 uses `omega_ig`, `BC`, `working_ij`, `age_i`, `nkids_i`, and code-style coefficients, versus P 665?683 / N cell 9's `beta_ell^g(x_i)`, `mathcal B`, `E_ij`, normalized `a_i`, `k_i` and canonical coefficients. H **128:997 and 131:1** introduce `omega_ig`; normalization/scaling is not carried with that equation. P **703?707** and N cell 9 (physical line 428) set the F35 coefficient to zero, while H **144:10/237** says residual bins are the reference and estimates F35. P **3558** itself reports `beta_h_f35=2.5795`; H `AUX-DATA.params41.beta_h_f35.estimate=2.579482184820325`. P 710?716 mentions an added peak, but the purported final equation does not distinguish a normalized base coefficient from the added peak; N repeats the zero without the distinction. See detailed model finding below. |
+| 5. Welfare definition / W1 statement | **FAIL** | P **768?787** and N cells **17 and 23** state uniform pay on the household's own opportunity distribution, neutralization of within-set pay differences, retention of set differences, and the same coalition's set/preferences on both sides. H ?13 describes some of these intuitions but its equation at **171:59** uses `BC(w_i / needs_i; theta_c)` and then defines `W1_i=w_i`, with `needs_i` explicitly the composition scale at **176:8**. P **936 onward** and N cell 23 instead define equivalized welfare as raw W1 divided by that scale. H also introduces a **common reference household** at **169:3542579**, conflicting with its own subsequent ?own preferences? description, and never states the same-coalition requirement. These are substantive definition differences, not stylistic paraphrases. |
+| 6. Singles state/decomposition numbers | **PASS ? numerical** | P Tables 7.0/7.1 (1982?1998, 2062?2078), H ??14?15 NOR spans, and N cell 18/output 2 and output 4 agree with the preferred-model J entries for both references/bases wherever displayed. The comparison rows called ?benchmark? in P's main table refer to the occupation-conditioned positive-model benchmark, not the common-choice-set RUM of ?6.7; its distinct 3.32% is not an inconsistency with RUM's 6.45%. All four sets of top-level and nested point identities recomputed from J close within `2.1e-16`. |
+| 6a. Decomposition coverage and uncertainty | **FAIL ? missing coverage** | N cell 18 prints all 16 singles states and all 20 main contributions with RQMC bands, plus all 15 registry-backed female/raw CR1 intervals. H **?14 (178:466604)** has female/raw state points, and **?15 (178:804990)** selected female results/reference shares, not the complete raw/equivalized ? reference state/component band grid. Its embedded JSON is not a displayed panel. J has no main-component share-band keys corresponding to P Table 7.1's `?` share bands and N cell 18/output 4's 40 share-band endpoints. P Appendix F 4050?4063 does not print all four state CR1 intervals. Record these omissions separately from correct printed numbers. |
+| 6b. Couples decomposition | **FAIL ? coverage; numerical PASS where stated** | J now contains both raw and equivalized `couples_C_{P,E,A,B,D}_...` points and bands, as well as both state grids. P **2860?2863 and 2875?2878** matches the points and displayed preference/environment bands. H ?11 has selected equivalized component/state points. N **cell 26/output 1** prints only `couples_state_I1111_raw=-2.9648169878079993e-30`, not the full couples decomposition. Raw/equivalized couples point vectors are listed below. |
+| 6c. New nested endowments/needs numbers | **FAIL ? notebook coverage; numerical PASS in P/H** | J `C_nonlabour_*`, `C_composition_*`, their shares/bands, and `one_factor_*` agree with **P 2194?2225 and 4102?4116**, and **H ?16 (178:1182799)**. N has **no** `C_nonlabour`, `C_composition`, `ne_step4`, or `one_factor_composition` in any cell or saved output. Its complete main-channel table is not the new split. Numeric agreement does not settle R-263 semantics; see below. |
+| 6d. Shapley attribution versus one-factor change | **PASS** | J gives environment/preference shares `0.936963789847732 / 0.0630362101522682`; environment-only reduction `0.7693714527689889`; preference-only reduction `-0.10455612692647487` (an increase). P **2120?2131**, H ?14 and Q13/Q14, N **cell 17 and cell 18/output 8** correctly distinguish 93.7/6.3 attributed from about 77% reduction / 10% increase. No literal ?removes 93.7? claim remains. |
+| 7. Reference labels | **PASS ? conventions** | P **2268?2288**, H **?15 and ?16**, N **cell 17/output grid in cell 18 and cell 25** identify female-primary and male structural-zero sensitivity and say never averaged. J's older basis strings often just say ?female reference?/?male reference?; `beta_l_nkids_male_status` explicitly supplies ?ABSENT; structural zero by the sex-specific shifter specification?. P **2851?2856** correctly explains that couples have one shared vector with per-sex coordinates, not a singles-style sex-reference arm. Coverage limits above still apply. |
+| 8. Couples beta_ll status and limitation | **PASS ? semantics; symbol mismatch belongs to item 4** | J `beta_ll_status=ABSENT`, `beta_ll_welfare_effective_value=0.0`, and `beta_ll_cross_leisure_form` specifies a product of two Box?Cox leisure terms. P **2735?2767**, H **?11 around 169:2899564** and ?20, N **cells 1, 23, 25 and cell 26/output 1 (2968?2972)** say absent from estimation, effective zero in welfare, and a limitation on identifying cross-spouse leisure complementarity. It is not an estimated zero. |
+| 9. RUM/RURO comparison | **PASS** | P **1863?1932**, H **?18 (178:2311437)** and Q19, N **cell 20/outputs 3 and 5** agree: 6.3% versus 6.4% preference shares; ?24.2% raw measured inequality; leisure gap +0.428 ? ?1.991; omitted opportunity contribution destinations ?4.0% preferences, +36.0% needs, +68.0% out of total, raw female-primary. J keys `rum_share_pref_RURO_raw`, `rum_share_pref_RUMB_raw`, `rum_inequality_drop_raw`, `rum_leisure_gap_final`, `rum_leisure_gap_benchmark`, and the three `rum_omitted_share_*` entries match. Signed destinations sum to 1 within floating precision. |
+| 10. Geographic result | **PASS** | J `geo_share_of_C_acc_raw=0.8762210468904318`, `geo_share_of_I00_raw=0.1305378483307594`; P **2522?2547**, H **?17 (178:1192945)**, N **cell 20/outputs 6?7** agree on 87.6% of access, 13.05% of baseline inequality, with a descriptive/not-causal guard. H/P distinguish the housing-allowance zone in needs from the structural access geography. J equivalized access ratio exceeds one (`1.0191956700745002`): this is a signed contribution, not a percentage to clip. |
+| 11. Requested obsolete-claim grep | **PASS for the three obsolete phrases; provenance hits remain** | No literal `removes 93.7`, `reference leisure`, or `beta_ll estimated` in any of P/H/N. `S8`, `LOC4`, and `C_P` still occur as source labels, data keys, a mapping, and notebook execution logs. They are not automatically obsolete economic claims. Exact contextual inventory below. Separate semantic failures remain despite this lexical PASS. |
 
-### Four singles states
+## Model and W1 discrepancies requiring resolution
 
-| basis / reference | I00 point; RQMC band | I10 point; RQMC band | I01 point; RQMC band | I11 point; RQMC band |
+1. **The saved walkthrough contradicts its new four-factor labels.** N cell 23 says local-market access is inside `g^E`; cell 24/output 8 still prints `log_gE`, **`log_gAcc_raw`**, `log_gOcc_raw`, and `center` separately (physical HTML-output header **2396**, text output **2462**, code **2834/2880**). At displayed row 0, `log_gE=-3.334378` is just the intercept and `log_gAcc_raw=-0.967484` is separate; thus the printed `log_gE` is not the full `log g^E` defined in P 697?699 or N cell 9. The code accounts for the components and centering, so this finding is about a misleading symbol mapping, not evidence that the saved likelihood sum is numerically wrong. H fixed the five-factor assembled equation; N fixed its Markdown but not these output column meanings.
+2. **F35 is simultaneously described as normalized and estimated.** P 703?707 and N cell 9's `beta_F35=0` cannot serve unqualified as the final-model hours equation when P 3558 and H ?7 report the nonzero estimated statutory peak. The paper's following paragraph distinguishes an added peak but the equation does not name it separately; the notebook omits that qualification. Resolve the final equation and its symbols together across the three artifacts. The registry has counts, not equation keys, so agreement with J cannot resolve this.
+3. **The HTML W1 equation inserts the normative scale into raw inversion.** H 171?177 defines a flat `w_i/needs_i` inside utility and labels `w_i` raw W1. P and N apply the composition scale after computing raw W1. Independent code evidence: `MNL/experiments/JMP_SEMINAR_SPRINT/runs/final_singles_welfare/run_ss8_step1_states_v1.py:20` describes both bases as readings of the same W1 vector; `run_ss9_step4b_calibration_identity_v1.py:12?15` explicitly gives equivalized W1 divided by the scale. H's generic `V_i` for expected maximum also differs from the canonical alternative index `V_ij`. There is no same-coalition superscript or explicit same-coalition sentence to disambiguate the inversion.
+4. **Obsolete/unsubstantiated welfare-family claim:** H **178:2921**, ?13 ?Three things this is not?, calls W1 a **?lower bound within its own family?** and says other measures produce roughly double the inequality. P **792?799** instead presents W4/W6 as normative-reference disclosures and expressly says they are not evidence of quantitative robustness. J contains no welfare-family inequality entries that establish a lower bound. This categorical bound claim is unsupported by the named record, even though none of the requested six grep strings catches it.
+
+## R-263: nested endowments-and-needs gate
+
+| Required step | Result | Evidence / exact discrepancy |
+|---|---|---|
+| Semantic partition: distinguish resources, composition, and other household budget characteristics | **FAIL ? third-group separability not established** | `NE/ne_step1_gate_v1.json`, **`G2_schedule_object`, `G3_category_c_variation.decision`, `DECISION.three_way_rejected_because`**. G2 asks whether a separate household-specific **policy schedule** exists and rejects it because policy is common. The user's group (c) instead consists of **inputs**: housing costs, zone, tenure. G3 records real variation (`xhc`: 1425 values) but folds these inputs into resources because the schedule consumes them jointly with income. Joint use by a function does not itself imply overlapping operands or prevent separate swaps; interactions are what the nested attribution averages. The gate does not test the stated third-group question. |
+| Definitions in artifacts match implemented operands | **FAIL ? narrower resource wording and unsupported ?no third factor?** | P **2186?2188** at least broadens resources to include budget-side characteristics; H **?16 ?What enters the channel? (178:1182799 onward)** defines resources as capital/private transfers/income without disclosing housing cost, tenure, and rent zone inside the computed resource component. Both **P 2215?2218** and **H 178:1191137** justify ?no third factor? by the common-policy argument above. `NE/ne_step1_gate_v1.json:DECISION.exact_economic_definitions` and `DECISION.geography_note` explicitly include housing/tenure and `drg01` in resources. J's component label ?non-labour resources? therefore cannot certify an income-only attribution. |
+| Composition and normative scale move together exactly once | **PASS ? implementation inspected** | `NE/ne_step1_gate_v1.json:G4_composition_counted_once`; `NE/run_ne_step4_nested_v1.py:204?211`, `m_of5`, uses the medoid scale iff `DB` belongs to the coalition; lines **539?541** apply it. The scale moves with composition, not DA/resources. The saved result's `state_panel_scale_map` and `ALL_IDENTITIES_PASS=true` support the implementation. This prevents the specific duplicate scale assignment; it does not establish the broader economic validity of folding group (c). |
+| Project partial household ? node pricing before pricing; stop above 24h | **PASS ? recorded projection** | `NE/ne_step2_projection_v1.json:projection` has **2,550,200 nodes per panel**, two new panels, **5,100,400 total**, at 0.008936416260151132 seconds/node: **12.661h total**, 6.33h/panel. `stop_rule.threshold_hours=24`, `exceeds_threshold=false`. `no_collapse` explicitly retains own composition or own resources; neither partial panel is priced as one full-medoid row per node. This is the recorded projection, not a new runtime estimate. |
+| Compute/report numerical nesting | **PASS ? recorded arithmetic** | `NE/ne_step4_nested_v1.json:ALL_IDENTITIES_PASS=true`, status `NE_STEP4_DONE`. Component points/bands in J match its `results.singles_female` / `results.singles_male_structural_zero` entries. The saved four-arm identity residuals are at most `1.3877787807814457e-17`. Re-summing the externally rounded J parent values gives residuals below `1e-16`, not a substantive discrepancy. |
+| Admission only after semantic gate closes | **FAIL ? not certifiable** | P **2185?2228** and H **?16** already present the split as a main result. `NE/NOTES_admission_criteria_v1.md:?1` treats the same G2 schedule-object argument as settled. `NE/ne_step1_gate_v1.json:LABEL`, `ne_step4_nested_v1.json:LABEL`, and `MNL/experiments/JMP_SEMINAR_SPRINT/decision_log.md:Entry 21` retain `NESTED_ENDOWMENTS_PROVISIONAL_PENDING_ECONOMICS_REVIEW`. The existence of presentation text is not evidence that the user's semantic condition was satisfied. No clean admission under the supplied group-(c) test is established by the inspected evidence. This audit does not revoke prior decisions or rerun the chain; it flags that admission cannot pass this gate. |
+
+The scale code and arithmetic passing do not cure the semantic failure. The current two-way result is a split of **bundled non-labour resources plus other budget inputs** versus **composition/demographic needs**, not the proposed clean three-way split. No causal tax-policy contribution is inferred.
+
+## Numerical comparison ledger
+
+All entries below are J values rounded only for readability. The female raw states are `I00=0.1342765561540117`, `I10=0.1483159928025005`, `I01=0.030968007072983`, `I11=0`. N cell 18/output 2 matches all 16 preferred states and their bands. P prints the two bases in Tables 7.0a/b; H only displays selected states.
+
+| Reference / basis | C_pref | C_env | C_acc | C_earn | C_needs | Resource share of I00 | Composition share of I00 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| female / raw | 0.008464285 | 0.125812271 | 0.020004282 | 0.027682254 | 0.078125735 | 45.72817% | 12.45454% |
+| female / equivalized | 0.013178945 | 0.151926492 | 0.015982086 | 0.026813692 | 0.109130715 | 33.24988% | 32.84771% |
+| male / raw | 0.014623491 | 0.119653065 | 0.018227221 | 0.029947478 | 0.071478366 | 41.72693% | 11.50527% |
+| male / equivalized | 0.018116860 | 0.146988577 | 0.014262570 | 0.028812654 | 0.103913354 | 30.30667% | 32.63090% |
+
+The new nested female raw points are resources `0.061402210037595856` and composition `0.016723525149377097`; equivalized `0.054897353290892174` and `0.054233361466988206`. P and H match these. N does not display this split. The female raw shares **of the needs channel** are 78.59/21.41%, whereas the shares **of total inequality** are 45.73/12.45%: these denominators must not be interchanged.
+
+| Couples basis | I0000 | I1000 | I0111 | I1111 | C_pref | C_env | C_acc | C_earn | C_needs |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| raw | 0.144738789 | 0.139612832 | 0.00946696032 | -2.96481699e-30 | 0.00729645835 | 0.13744233 | 0.0195618352 | 0.0458980302 | 0.0719824651 |
+| equivalized | 0.141547243 | 0.140573245 | 0.00946696032 | -2.83510624e-30 | 0.00522047914 | 0.136326763 | 0.0178164013 | 0.0407669112 | 0.077743451 |
+
+## Requested grep: exact contextual locations
+
+Case-sensitive literal search, equivalent to `rg -n -F -e "removes 93.7" -e "reference leisure" -e "beta_ll estimated" -e "S8" -e "LOC4" -e "C_P"` over P/H/N. Case-insensitive checks also found zero instances of the first three phrases. A case-insensitive substring search for `C_P` additionally matches legitimate `C_pref`/`C_composition` strings; those are not old `C_P` labels. Base64 image payloads can randomly contain `S8`/`LOC4`; these binary-encoding coincidences are excluded from the semantic inventory while retaining original source coordinates.
+
+| Term | Paper | HTML (excluding image payloads) | Notebook | Classification |
 |---|---|---|---|---|
-| raw / female | `0.1342765561540117`; `[0.1323395837115014, 0.1362135285965221]` | `0.1483159928025005`; `[0.1467823742438407, 0.1498496113611603]` | `0.030968007072983`; `[0.0300573196720756, 0.0318786944738903]` | `0`; `[-6.762487618736419e-31, 6.762487618736419e-31]` |
-| raw / male structural zero | `0.1342765561540117`; `[0.1323395837115014, 0.1362135285965221]` | `0.1359975812428928`; `[0.1336570174111281, 0.1383381450746575]` | `0.030968007072983`; `[0.0300573196720756, 0.0318786944738903]` | `-2.0352478302954915e-31`; `[-9.660254247518414e-31, 5.589758586927431e-31]` |
-| equivalized / female | `0.1651054368471445`; `[0.1630913900801445, 0.1671194836141445]` | `0.1697155540038542`; `[0.1683314464361179, 0.1710996615715905]` | `0.030968007072983`; `[0.0300573196720756, 0.0318786944738903]` | `0`; `[-6.762487618736419e-31, 6.762487618736419e-31]` |
-| equivalized / male structural zero | `0.1651054368471445`; `[0.1630913900801445, 0.1671194836141445]` | `0.1598397247236699`; `[0.1577603587168635, 0.1619190907304764]` | `0.030968007072983`; `[0.0300573196720756, 0.0318786944738903]` | `-2.0352478302954915e-31`; `[-9.660254247518414e-31, 5.589758586927431e-31]` |
+| `removes 93.7` | 0 | 0 | 0 | PASS: absent |
+| `reference leisure` | 0 | 0 | 0 | PASS: absent |
+| `beta_ll estimated` | 0 | 0 | 0 | PASS: absent |
+| `S8` | `3681:37`, `4315:80` | 201 occurrences, all in `NOR-DATA`, line 190 | `1983:73`, `2908:39`, `2975:22` | P A.4/provenance verdict identifier; H registry metadata (also available to tooltips/self-check); N source lookup/filter and saved gate log. Not active-model claims. |
+| `LOC4` | `3681:67` | `190:40428` | `477:55`, `512:55` | P provenance mapping; H embedded metadata; N saved historical-loader logs. |
+| `C_P` | `3682:38`, `4431:75`, `4431:160`, `4435:91`, `4435:116` | `169:2901993` (the `data-k="couples_C_P_equivalized"` binding in ?11), plus 15 embedded metadata/key hits on line 190 listed below | `1548:37` | Mapping/source keys, not an obsolete reader-facing contribution name. |
 
-Exact keys are `state_I{00,10,01,11}_{female,male}_{raw,equivalized}` and the corresponding exact `__rqmc_band` keys. The brace notation here abbreviates the displayed grid; it is not a literal registry key.
+H line 190 `C_P` columns: `47477, 47599, 47655, 47790, 47923, 48008, 48138, 48238, 48286, 48423, 48543, 48611, 48801, 48856, 48981`.
 
-### Five singles contributions
+H line 190 `S8` columns (complete list):
 
-Each cell is `point; RQMC band; share of I00`. The share has a point key but no share-band key in the registry.
+`452, 715, 1014, 1262, 1512, 1839, 2122, 2368, 2626, 2921, 3165, 3408, 3687, 3941, 4328, 4708, 5081, 5516, 5919, 6350, 6713, 7069, 7419, 7830, 8209, 8632, 9034, 9431, 9820, 10270, 10688, 11134, 11512, 11885, 12251, 12679, 13074, 13509, 13775, 14077, 14328, 14581, 14911, 15198, 15447, 15709, 16008, 16255, 16501, 16784, 17032, 17295, 17594, 17842, 18092, 18420, 18702, 18947, 19206, 19500, 19744, 19987, 20265, 20517, 20855, 21191, 21460, 21767, 22021, 22277, 22609, 22900, 23152, 23417, 23720, 23970, 24219, 24506, 24762, 25134, 25499, 25857, 26278, 26665, 27081, 27429, 27770, 28104, 28500, 28863, 29269, 29656, 30038, 30411, 30847, 31250, 31683, 32045, 32403, 32754, 33166, 33545, 33971, 34310, 34645, 34911, 35214, 35465, 35718, 36047, 36334, 36583, 36845, 37144, 37391, 37637, 37919, 38171, 38498, 38824, 39151, 39459, 39644, 39804, 40118, 40631, 40648, 40817, 40950, 40997, 41077, 55823, 56139, 57921, 58193, 58463, 58727, 58999, 59247, 61305, 61648, 63333, 63735, 64153, 64562, 64977, 65371, 65830, 66282, 66744, 67196, 67641, 68804, 69243, 69485, 70300, 70737, 71041, 71451, 71590, 71733, 71815, 72931, 73201, 73313, 74243, 74519, 74654, 74986, 75316, 75559, 75848, 76075, 76362, 76601, 76886, 77109, 77396, 77656, 77945, 78189, 78476, 78732, 79017, 79257, 79544, 79801, 80090, 80331, 80618, 80871, 81156, 81393, 81680, 81944, 82240, 82488, 82782, 83062, 83354, 83618`
 
-| basis / reference | preferences | environment | job access | earning opportunities | endowments and needs |
-|---|---|---|---|---|---|
-| raw / female | `0.0084642852122471`; `[0.0075503278692388, 0.0093782425552553]`; `0.0630362101522682` | `0.1258122709417646`; `[0.124489477663436, 0.1271350642200932]`; `0.936963789847732` | `0.0200042817777703`; `[0.0187145549060242, 0.0212940086495163]`; `0.1489782159353708` | `0.0276822539770213`; `[0.0251600552395777, 0.0302044527144649]`; `0.2061585042832832` | `0.0781257351869729`; `[0.0766684440931391, 0.0795830262808067]`; `0.5818270696290777` |
-| raw / male structural zero | `0.0146234909920509`; `[0.0139159306208809, 0.015331051363221]`; `0.1089057644230776` | `0.1196530651619608`; `[0.117890666013225, 0.1214154643106965]`; `0.8910942355769224` | `0.0182272212727959`; `[0.0170335918094355, 0.0194208507361563]`; `0.1357438840767543` | `0.0299474782444308`; `[0.0269234280394479, 0.0329715284494137]`; `0.2230283461401992` | `0.0714783656447339`; `[0.0700117598169577, 0.0729449714725102]`; `0.5323220053599687` |
-| equivalized / female | `0.0131789449581366`; `[0.0123466940846208, 0.0140111958316523]`; `0.0798213869258452` | `0.1519264918890079`; `[0.1506558778819214, 0.1531971058960944]`; `0.9201786130741548` | `0.0159820855595331`; `[0.0149792984909266, 0.0169848726281397]`; `0.0967992687868267` | `0.0268136915715943`; `[0.0244368757425815, 0.029190507400607]`; `0.1624034440272162` | `0.1091307147578803`; `[0.1081069343269357, 0.1101544951888249]`; `0.6609759002601117` |
-| equivalized / male structural zero | `0.0181168595982287`; `[0.0174678879804773, 0.0187658312159802]`; `0.1097290310009685` | `0.1469885772489157`; `[0.1453600258394945, 0.148617128658337]`; `0.8902709689990315` | `0.014262569872177`; `[0.0133737130759095, 0.0151514266684445]`; `0.0863846166700216` | `0.0288126537674288`; `[0.0259786256106405, 0.0316466819242171]`; `0.1745106297989672` | `0.1039133536093099`; `[0.1028273329595843, 0.1049993742590354]`; `0.6293757225300425` |
+These provenance hits would fail a blanket ban on any internal string outside the permitted provenance sites (in particular P 4315 and N's saved logs), but such a ban is distinct from the user's request to flag obsolete **claims**. They are exposed here rather than silently removed or treated as model errors.
 
-Exact key stems are `C_pref`, `C_env`, `C_acc`, `C_earn`, and `C_needs`, followed by `_{female,male}_{raw,equivalized}`; point shares add `_share`, and contribution bands add `__rqmc_band`.
+## Snapshot integrity
 
-### CR1 intervals actually present in the registry
+SHA-256 of each audited input, verified again before committing the report:
 
-All are female-primary/raw only and come from `tables/parameter_uncertainty_v1.csv`. This is the complete registry set; there are no male-reference or equivalized CR1 keys.
-
-| exact registry key | interval |
+| Input | SHA-256 |
 |---|---|
-| `I00_female_raw__cr1_interval` | `[0.1265054798962954, 0.1476004552022276]` |
-| `I10_female_raw__cr1_interval` | `[0.1380949179360541, 0.1600459967144833]` |
-| `I01_female_raw__cr1_interval` | `[0.0211053865838387, 0.044749799528547]` |
-| `I11_female_raw__cr1_interval` | `[-2.3146699305643366e-31, 0]` |
-| `C_pref_female_raw__cr1_interval` | `[0.005805322656376, 0.0144945261868043]` |
-| `C_env_female_raw__cr1_interval` | `[0.1176117869956335, 0.1380149226185865]` |
-| `C_acc_female_raw__cr1_interval` | `[0.015737693459865, 0.0284598783354103]` |
-| `C_earn_female_raw__cr1_interval` | `[0.0209690499448844, 0.0378875433712228]` |
-| `C_needs_female_raw__cr1_interval` | `[0.0719569420804525, 0.0821697126931477]` |
-| `s_pref_female_raw__cr1_interval` | `[0.0422382635475491, 0.1088977103864352]` |
-| `s_env_female_raw__cr1_interval` | `[0.8911022896135646, 0.9577617364524508]` |
-| `C_geo_female_raw__cr1_interval` | `[0.01300698485765, 0.0260968300193562]` |
-| `C_geo_over_I00_female_raw__cr1_interval` | `[0.0955627823280031, 0.1824441683885542]` |
-| `C_oth_female_raw__cr1_interval` | `[0.0004047187309422, 0.006209818595329]` |
-| `C_oth_over_I00_female_raw__cr1_interval` | `[0.0029474483125079, 0.0453360093764786]` |
+| JSON | `c840e06cc02e0b0b7f91049eefeffec221707ee25cb21bb7af28bbe07dcbf4ec` |
+| Paper | `def16f4561e0cc3c52d00de6f6b155df77f454fa6cd45902bb566622d73816f9` |
+| HTML | `60b90b1386697eb5d930fb84b68eabf01cfb71a39b1a08247d63fcd19af788c0` |
+| Notebook | `8f545447d3c6b760ee4c93e64db52c360a6ac3e46e4fc69d8beab6643ef546da` |
 
-## Discrepancies
-
-1. **The model factors do not use the same symbols or factor names.** Paper lines 687–733 and deck lines 178–180 use four factors, with local-market access inside `g^E`: `g^E g^H g^Occ g^W`. HTML §6, physical lines 127–154, separates `g^Acc` and therefore assembles five terms. Notebook Markdown physical lines 789–790 uses `g^{market}` and does not name `g^Acc` or `g^Occ` separately. Registry key: **none**; the registry has no equation/symbol contract.
-
-2. **The notebook and deck do not carry the complete W1 statement.** Paper lines 765–784 and HTML §13 (physical line 166) say uniform pay over the household's own reachable set, pay differences within the set are neutralized, and set differences remain. Notebook Markdown lines 673–679/789–795 only names W1 and its support. Deck lines 66 and 422–424 gives uniform pay over the reachable/own set but omits the latter two explicit clauses. Registry key: **none**; the registry has no W1 semantic key. The forbidden phrase `reference leisure` also appears in paper line 3870, although it refers to the alternative couples measure rather than W1.
-
-3. **The requested state/decomposition uncertainty grid is not represented end to end.** Paper Table 7.1 (lines 2039–2055) is the broadest contribution display, but the complete four-state grid with bands is raw-only (lines 1982–1990), and CR1 state intervals other than I00 are not printed. HTML renders only five of 32 singles state point/band keys and 32 of 65 five-channel point/share/band keys; it uses eight of the 15 CR1 keys. Notebook cell 9 deliberately prints only the nine female-reference/raw point keys (cell-map line 17; notebook outputs 699–707). Deck gives selected rounded values without the grid. Exact registry keys are the state and contribution keys tabulated above. The registry itself has no share-RQMC keys and no male/equivalized CR1 keys.
-
-4. **The deck mislabels Shapley attributions as quantities “removed.”** Lines 493–505 display the 58/21/15 Shapley channel shares, but line 505 labels the axis `share of measured welfare inequality removed (%)`; the couples comparison repeats `share ... removed (%)` at lines 619–626. This conflicts with paper lines 2099–2109 and HTML §22 Q14, both of which explicitly prohibit saying that a Shapley share removes a percentage. The deck correctly distinguishes environment-only 77% from rounded Shapley 94% at lines 451–452, but omits the preferences-only +10 leg. Registry keys: `C_needs_female_raw_share`, `C_earn_female_raw_share`, `C_acc_female_raw_share`, `C_env_female_raw_share`, `C_pref_female_raw_share`, `equalization_env_only`, `equalization_pref_only`.
-
-5. **Reference labels are incomplete in notebook and deck.** Notebook line 679 says only female-reference/raw and supplies no male-reference convention or never-averaged rule. Deck lines 485–490 say `female reference` and `male reference`, not female primary and male structural-zero sensitivity, and never say the arms are not averaged. Paper lines 2219–2243 and HTML §§15/19/Q28 are correct. Registry keys: `state_I10_male_raw`, `state_I10_male_equivalized`, `C_pref_male_raw`, `C_pref_male_equivalized`, and `beta_l_nkids_male_status` (the last records the structural zero).
-
-6. **The couples cross-leisure omission is not described as a limitation everywhere.** Notebook lines 12–15 and executed lines 1671–1673 correctly record absence, effective zero, and form, but never call this a limitation. The deck does not state the contract at all. Paper lines 2687–2719/3247–3257 and HTML §§11/20/Q21 do. Registry keys: `beta_ll_status`, `beta_ll_welfare_effective_value`, `beta_ll_cross_leisure_form`.
-
-7. **The RUM/RURO comparison is incomplete in two artifacts.** Notebook contains none of the requested comparison. Deck lines 519–520 show 6.3→6.4 and rounded 24%, and line 547 shows rounded +0.43→−1.99, but the deck omits two of the three destinations and does not give −24.2%. Paper lines 1864–1934 and HTML §18/Q19 are complete. Registry keys: `rum_share_pref_RURO_raw`, `rum_share_pref_RUMB_raw`, `rum_inequality_drop_raw`, `rum_omitted_share_leaves_measured_total`, `rum_omitted_share_relabelled_as_needs`, `rum_omitted_share_relabelled_as_preferences`, `rum_leisure_gap_final`, `rum_leisure_gap_benchmark`.
-
-8. **The geographic statement is incomplete in notebook and deck.** Notebook has no geographic result. Deck lines 592 and 609 round 13.05% to 13% and state `not causal`, but never show 87.6% of job access. Paper lines 2474–2499 and HTML §17/Q17–Q18 are complete. Registry keys: `geo_share_of_C_acc_raw`, `geo_share_of_I00_raw` (with `geo_share_of_I00_raw__band`).
-
-9. **The sex-subgroup result is absent from the notebook.** Paper lines 2612–2624, HTML §17/Q16, and deck lines 600–604 agree after rounding on 19.6% for men versus 9.8% for women. Registry keys: `subgroup_men_acc_share_raw`, `subgroup_women_acc_share_raw`.
-
-10. **Full negLL precision is not displayed consistently.** Notebook outputs and registry carry both full values. Paper carries the singles value exactly at line 3486 but rounds couples at line 2722; HTML embeds both exact values but renders both with four decimals; deck states neither. Registry keys: `negll_singles_final`, `negll_couples_final`.
-
-11. **The raw couples contribution grid is not registry-backed.** Paper lines 2827–2830 display raw and equivalized couples component points. The registry has exact `couples_C_A_equivalized`, `couples_C_B_equivalized`, `couples_C_D_equivalized`, `couples_C_E_equivalized`, and `couples_C_P_equivalized` point/band keys, but no corresponding raw component keys. Therefore the raw row cannot be checked against the named registry. The couples state point/band keys do cover both bases.
-
-## Obsolete/internal phrase hit ledger
-
-The search was case-insensitive. `51` was counted only as a standalone integer/coordinate token, not as the decimal tail in values such as 35.51 or 51.23. Locations are `line:column`. The registry itself was not one of the requested four prose artifacts and is not included in this ledger.
-
-### Paper — 34 hits
-
-| term | every location | classification |
-|---|---|---|
-| `ruling` | `15:15`, `4162:146`, `4412:104` | forbidden/internal |
-| `PROVISIONAL` | `31:18`, `35:62`, `166:48`, `622:43`, `2126:34`, `2547:9`, `3308:30` | forbidden |
-| `PENDING` | `35:74`, `166:60`, `2126:46`, `2547:21`, `3308:42` | forbidden |
-| `deputy` | `72:2`, `4162:114` | forbidden/internal |
-| `S8` | `3474:60`, `3483:38`, `3584:16`, `4147:247`, `4240:71`, `4242:149` | all outside Appendix A.4; forbidden by the location rule |
-| `LOC4` | `3475:38`, `3535:31`, `3584:33` | forbidden/internal |
-| standalone `51` | `3588:50`, `3610:25`, `3621:51`, `4147:103`, `4193:118` | `3610:25` and `3621:51` are permitted in Appendix A.4; the other three are outside it |
-| `reference leisure` | `3870:59` | forbidden phrase; occurs in Appendix D.3 |
-| `bootstrap` | `3958:17`, `4086:739` | literal hits, both in the correct negated phrase “not a bootstrap”; still hits under the requested grep |
-
-No paper hits: `removes 93.7`, `beta_ll estimated`, `C_P`.
-
-### HTML
-
-Reader-visible source text has five hits, all on the minified body line 166:
-
-| term | exact reader-visible location | classification |
-|---|---|---|
-| `PROVISIONAL` | line 166, §16 “Splitting it further: the current status,” three occurrences; §16 “Why the channel is as large as it is,” one occurrence | forbidden |
-| `PENDING` | line 166, §16 “Splitting it further: the current status,” one occurrence | forbidden |
-
-Post-render, standalone `51` appears twice: line `157:533358`, §7 “The two boundary-active coefficients,” inside `.box.prov` (permitted); and line `176:43305`, §22 Q31, outside a provenance box (forbidden).
-
-The minified embedded data are non-prose but were also searched, because the audit expressly required reading them:
-
-| block | term | every source location | classification |
-|---|---|---|---|
-| `NOR-DATA` | `S8` | line 178, 140 occurrences | embedded registry metadata; outside a rendered provenance box, so the literal raw-file location rule fails |
-| `NOR-DATA` | `LOC4` | `178:21644` | embedded registry metadata; forbidden/internal hit |
-| `NOR-DATA` | `C_P` | `178:26361`, `178:26417`, `178:26685`, `178:26770`, `178:26948`, `178:27003`, `178:27128` | embedded couples key/reference metadata; forbidden/internal hit |
-| `NOR-DATA` | standalone `51` | `178:39331`, `178:40130`, `178:40152`, `178:40421`, `178:41495`, `178:41554`, `178:41700` | embedded provenance metadata, but not a rendered provenance box |
-| `AUX-DATA` | all searched terms | none | — |
-
-No reader-visible or embedded HTML hits: `removes 93.7`, `reference leisure`, `beta_ll estimated`, `bootstrap`, `ruling`, `deputy`. No reader-visible `S8`, `LOC4`, or `C_P` hit occurs before considering the embedded data.
-
-### Notebook — 40 hits
-
-| term | every location |
-|---|---|
-| `bootstrap` | `59:9`, `87:8`, `266:14` |
-| standalone `51` | `64:30`, `64:58`, `67:136`, `144:23`, `145:23`, `146:19`, `154:34`, `190:27`, `196:32`, `199:54`, `211:34`, `211:65`, `215:30`, `215:61`, `388:27`, `396:54`, `487:30`, `496:9`, `496:33`, `498:11`, `498:25`, `498:46`, `499:44`, `501:62`, `505:20`, `508:48`, `1712:235`, `1748:62`, `1785:30` |
-| `S8` | `390:96`, `1609:39`, `1676:22` |
-| `LOC4` | `423:55`, `458:55`, `1568:39` |
-| `C_P` | `676:6`, `724:16` |
-
-All are outside the only allowed S8/51 sites (HTML provenance boxes and paper Appendix A.4). No notebook hits: `removes 93.7`, `reference leisure`, `beta_ll estimated`, `PENDING`, `PROVISIONAL`, `ruling`, `deputy`.
-
-### Cell map — 5 hits
-
-| term | every location |
-|---|---|
-| `bootstrap` | `10:7` |
-| standalone `51` | `10:158`, `13:42` |
-| `S8` | `13:16` |
-| `C_P` | `17:94` |
-
-No cell-map hits for the other searched terms.
-
-### Deck — zero hits
-
-No searched obsolete/internal phrase occurs in the deck text layer.
-
-## Bottom line
-
-There is no evidence that a key-bound numeric span was populated from the wrong registry value: the embedded registry matches the external registry, every HTML span resolves, and the notebook's executed final gate reports exact equality for every key it prints (physical lines 1732–1733). The overall consistency gate still **fails** because semantic notation, presentation labels, required limitations/reference conventions, uncertainty coverage, and phrase/location discipline are not consistent across the four artifacts.
+The prior gate's claim that the HTML/notebook lacked all four-factor equations, W1 language, RUM/geography panels, and a couples limitation is stale. Those changes were rechecked above rather than carried forward. The remaining FAILs concern the current files. Numerical PASS does not override a semantic or coverage FAIL.
