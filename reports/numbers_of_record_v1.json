@@ -1,0 +1,1634 @@
+{
+  "_meta": {
+    "generated_by": "beamer/make_numbers_of_record_v1.py",
+    "n_entries": 203,
+    "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance.",
+    "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
+  },
+  "entries": {
+    "C_acc_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_acc",
+      "reference": "Gini-point contribution of channel C_acc to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0159820855595331
+    },
+    "C_acc_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_acc__band_lo / C_acc__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_acc.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0149792984909266,
+        0.0169848726281397
+      ]
+    },
+    "C_acc_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_acc_over_I00",
+      "reference": "Channel C_acc as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0967992687868267
+    },
+    "C_acc_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_acc",
+      "reference": "Gini-point contribution of channel C_acc to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0200042817777703
+    },
+    "C_acc_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_acc (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.015737693459865,
+        0.0284598783354103
+      ]
+    },
+    "C_acc_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_acc__band_lo / C_acc__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_acc.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0187145549060242,
+        0.0212940086495163
+      ]
+    },
+    "C_acc_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_acc_over_I00",
+      "reference": "Channel C_acc as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1489782159353708
+    },
+    "C_acc_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_acc",
+      "reference": "Gini-point contribution of channel C_acc to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.014262569872177
+    },
+    "C_acc_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_acc__band_lo / C_acc__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_acc.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0133737130759095,
+        0.0151514266684445
+      ]
+    },
+    "C_acc_male_equivalized_share": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_acc_over_I00",
+      "reference": "Channel C_acc as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0863846166700216
+    },
+    "C_acc_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_acc",
+      "reference": "Gini-point contribution of channel C_acc to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0182272212727959
+    },
+    "C_acc_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_acc__band_lo / C_acc__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_acc.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0170335918094355,
+        0.0194208507361563
+      ]
+    },
+    "C_acc_male_raw_share": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_acc_over_I00",
+      "reference": "Channel C_acc as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1357438840767543
+    },
+    "C_earn_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_earn",
+      "reference": "Gini-point contribution of channel C_earn to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0268136915715943
+    },
+    "C_earn_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_earn__band_lo / C_earn__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_earn.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0244368757425815,
+        0.029190507400607
+      ]
+    },
+    "C_earn_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_earn_over_I00",
+      "reference": "Channel C_earn as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1624034440272162
+    },
+    "C_earn_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_earn",
+      "reference": "Gini-point contribution of channel C_earn to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0276822539770213
+    },
+    "C_earn_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_earn (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0209690499448844,
+        0.0378875433712228
+      ]
+    },
+    "C_earn_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_earn__band_lo / C_earn__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_earn.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0251600552395777,
+        0.0302044527144649
+      ]
+    },
+    "C_earn_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_earn_over_I00",
+      "reference": "Channel C_earn as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.2061585042832832
+    },
+    "C_earn_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_earn",
+      "reference": "Gini-point contribution of channel C_earn to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0288126537674288
+    },
+    "C_earn_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_earn__band_lo / C_earn__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_earn.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0259786256106405,
+        0.0316466819242171
+      ]
+    },
+    "C_earn_male_equivalized_share": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_earn_over_I00",
+      "reference": "Channel C_earn as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1745106297989672
+    },
+    "C_earn_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_earn",
+      "reference": "Gini-point contribution of channel C_earn to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0299474782444308
+    },
+    "C_earn_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_earn__band_lo / C_earn__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_earn.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0269234280394479,
+        0.0329715284494137
+      ]
+    },
+    "C_earn_male_raw_share": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_earn_over_I00",
+      "reference": "Channel C_earn as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.2230283461401992
+    },
+    "C_env_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_env",
+      "reference": "Gini-point contribution of channel C_env to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1519264918890079
+    },
+    "C_env_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_env__band_lo / C_env__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_env.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1506558778819214,
+        0.1531971058960944
+      ]
+    },
+    "C_env_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_env_over_I00",
+      "reference": "Channel C_env as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.9201786130741548
+    },
+    "C_env_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_env",
+      "reference": "Gini-point contribution of channel C_env to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1258122709417646
+    },
+    "C_env_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_env (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.1176117869956335,
+        0.1380149226185865
+      ]
+    },
+    "C_env_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_env__band_lo / C_env__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_env.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.124489477663436,
+        0.1271350642200932
+      ]
+    },
+    "C_env_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_env_over_I00",
+      "reference": "Channel C_env as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.936963789847732
+    },
+    "C_env_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_env",
+      "reference": "Gini-point contribution of channel C_env to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1469885772489157
+    },
+    "C_env_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_env__band_lo / C_env__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_env.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1453600258394945,
+        0.148617128658337
+      ]
+    },
+    "C_env_male_equivalized_share": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_env_over_I00",
+      "reference": "Channel C_env as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.8902709689990315
+    },
+    "C_env_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_env",
+      "reference": "Gini-point contribution of channel C_env to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1196530651619608
+    },
+    "C_env_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_env__band_lo / C_env__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_env.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.117890666013225,
+        0.1214154643106965
+      ]
+    },
+    "C_env_male_raw_share": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_env_over_I00",
+      "reference": "Channel C_env as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.8910942355769224
+    },
+    "C_geo_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_geo (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.01300698485765,
+        0.0260968300193562
+      ]
+    },
+    "C_geo_over_I00_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_geo_over_I00 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0955627823280031,
+        0.1824441683885542
+      ]
+    },
+    "C_needs_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_needs",
+      "reference": "Gini-point contribution of channel C_needs to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1091307147578803
+    },
+    "C_needs_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_needs__band_lo / C_needs__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_needs.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1081069343269357,
+        0.1101544951888249
+      ]
+    },
+    "C_needs_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_needs_over_I00",
+      "reference": "Channel C_needs as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.6609759002601117
+    },
+    "C_needs_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_needs",
+      "reference": "Gini-point contribution of channel C_needs to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0781257351869729
+    },
+    "C_needs_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_needs (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0719569420804525,
+        0.0821697126931477
+      ]
+    },
+    "C_needs_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_needs__band_lo / C_needs__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_needs.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0766684440931391,
+        0.0795830262808067
+      ]
+    },
+    "C_needs_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_needs_over_I00",
+      "reference": "Channel C_needs as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.5818270696290777
+    },
+    "C_needs_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_needs",
+      "reference": "Gini-point contribution of channel C_needs to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1039133536093099
+    },
+    "C_needs_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_needs__band_lo / C_needs__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_needs.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1028273329595843,
+        0.1049993742590354
+      ]
+    },
+    "C_needs_male_equivalized_share": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_needs_over_I00",
+      "reference": "Channel C_needs as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.6293757225300425
+    },
+    "C_needs_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_needs",
+      "reference": "Gini-point contribution of channel C_needs to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0714783656447339
+    },
+    "C_needs_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_needs__band_lo / C_needs__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_needs.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0700117598169577,
+        0.0729449714725102
+      ]
+    },
+    "C_needs_male_raw_share": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_needs_over_I00",
+      "reference": "Channel C_needs as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.5323220053599687
+    },
+    "C_oth_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_oth (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0004047187309422,
+        0.006209818595329
+      ]
+    },
+    "C_oth_over_I00_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_oth_over_I00 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0029474483125079,
+        0.0453360093764786
+      ]
+    },
+    "C_pref_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_pref",
+      "reference": "Gini-point contribution of channel C_pref to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0131789449581366
+    },
+    "C_pref_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_pref__band_lo / C_pref__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_pref.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0123466940846208,
+        0.0140111958316523
+      ]
+    },
+    "C_pref_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_pref_over_I00",
+      "reference": "Channel C_pref as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0798213869258452
+    },
+    "C_pref_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_pref",
+      "reference": "Gini-point contribution of channel C_pref to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0084642852122471
+    },
+    "C_pref_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for C_pref (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.005805322656376,
+        0.0144945261868043
+      ]
+    },
+    "C_pref_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_pref__band_lo / C_pref__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_pref.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0075503278692388,
+        0.0093782425552553
+      ]
+    },
+    "C_pref_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_pref_over_I00",
+      "reference": "Channel C_pref as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0630362101522682
+    },
+    "C_pref_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_pref",
+      "reference": "Gini-point contribution of channel C_pref to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0181168595982287
+    },
+    "C_pref_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_pref__band_lo / C_pref__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_pref.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0174678879804773,
+        0.0187658312159802
+      ]
+    },
+    "C_pref_male_equivalized_share": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "C_pref_over_I00",
+      "reference": "Channel C_pref as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1097290310009685
+    },
+    "C_pref_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_pref",
+      "reference": "Gini-point contribution of channel C_pref to inequality I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0146234909920509
+    },
+    "C_pref_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_pref__band_lo / C_pref__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for C_pref.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0139159306208809,
+        0.015331051363221
+      ]
+    },
+    "C_pref_male_raw_share": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "C_pref_over_I00",
+      "reference": "Channel C_pref as a share of I00 (baseline inequality).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1089057644230776
+    },
+    "I00_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for I00 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.1265054798962954,
+        0.1476004552022276
+      ]
+    },
+    "I01_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for I01 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0211053865838387,
+        0.044749799528547
+      ]
+    },
+    "I10_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for I10 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.1380949179360541,
+        0.1600459967144833
+      ]
+    },
+    "I11_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for I11 (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        -2.3146699305643366e-31,
+        0.0
+      ]
+    },
+    "beta_l_nkids_female": {
+      "basis": "S8 corrected-floor5, param=beta_l_nkids_sf",
+      "column_or_key": "C_single_female.estimate",
+      "reference": "Female singles leisure child-count shifter: certified INTERIOR estimate of the final S8 model (not pinned, not at a bound).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": 1.1690321192492115
+    },
+    "beta_l_nkids_female_se": {
+      "basis": "S8 corrected-floor5, param=beta_l_nkids_sf",
+      "column_or_key": "C_single_female.se_robust",
+      "reference": "CR1/HC1 sandwich robust standard error for beta_l_nkids_sf (G_clusters=1555, K_interior=39).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": 0.6083410010711509
+    },
+    "beta_l_nkids_female_z": {
+      "basis": "S8 corrected-floor5, param=beta_l_nkids_sf",
+      "column_or_key": "C_single_female.z_robust",
+      "reference": "Robust z-statistic for beta_l_nkids_sf.",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": 1.921672412661337
+    },
+    "beta_l_nkids_male_historical_test": {
+      "basis": "historical S-battery S4 (pre-floor5 S0/LOC4 frame)",
+      "column_or_key": "C_single_male.estimate",
+      "reference": "Male singles child-count shifter: a HISTORICAL, REJECTED test estimate (record_decision=REJECT), not part of the certified 41-parameter S8 vector. final_S8_status: ABSENT; structural zero by the sex-specific shifter specification. Scope caveat: tested on the pre-floor5 frame; no new test performed on the final corrected S8 model.",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": 1.6468093414844969
+    },
+    "beta_l_nkids_male_status": {
+      "basis": "S8 final",
+      "column_or_key": "C_single_male.final_S8_status",
+      "reference": "Status of the male child-count shifter in the certified S8 model: ABSENT (structural zero).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": "ABSENT; structural zero by the sex-specific shifter specification"
+    },
+    "beta_ll_cross_leisure_form": {
+      "basis": "n/a",
+      "column_or_key": "B_couples_beta_ll.cross_leisure_form",
+      "reference": "Functional form the (absent) cross-leisure term would take: beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": "beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female)"
+    },
+    "beta_ll_status": {
+      "basis": "couples cross-leisure interaction term",
+      "column_or_key": "B_couples_beta_ll.status",
+      "reference": "Existence status of the beta_ll cross-leisure interaction term: ABSENT from the certified couples spec (non-PD on the joint frame; fixing it moved the weak direction to couples-male leisure).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": "ABSENT"
+    },
+    "beta_ll_welfare_effective_value": {
+      "basis": "couples welfare pipeline",
+      "column_or_key": "B_couples_beta_ll.welfare_effective_beta_ll",
+      "reference": "The effective value the welfare pipeline uses for beta_ll: exactly 0.0, confirmed by absence of a stored interaction_name in build_V (not an estimated-then-zeroed coordinate).",
+      "source": "runs/param_child_v1/parameter_records_v1.json",
+      "value": 0.0
+    },
+    "couples_C_A_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_A.estimate",
+      "reference": "Couples channel contribution C_A (Gini points, equivalized).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.017816401265632314
+    },
+    "couples_C_A_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_A.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples channel C_A.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.01682313187732268,
+        0.018809670653941946
+      ]
+    },
+    "couples_C_B_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_B.estimate",
+      "reference": "Couples channel contribution C_B (Gini points, equivalized).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.04076691117636427
+    },
+    "couples_C_B_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_B.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples channel C_B.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.03849939689395592,
+        0.043034425458772625
+      ]
+    },
+    "couples_C_D_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_D.estimate",
+      "reference": "Couples channel contribution C_D (Gini points, equivalized).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.07774345104563052
+    },
+    "couples_C_D_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples channel C_D.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.07568486026917798,
+        0.07980204182208306
+      ]
+    },
+    "couples_C_E_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_E.estimate",
+      "reference": "Couples channel contribution C_E (Gini points, equivalized).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.1363267634876271
+    },
+    "couples_C_E_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_E.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples channel C_E.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.1350999663854864,
+        0.13755356058976778
+      ]
+    },
+    "couples_C_P_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_P.estimate",
+      "reference": "Couples channel contribution C_P (Gini points, equivalized).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.0052204791440029485
+    },
+    "couples_C_P_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.contributions_equivalized.C_P.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples channel C_P.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.004896808626930004,
+        0.005544149661075893
+      ]
+    },
+    "couples_male_leisure_sensitivity_max": {
+      "basis": "couples C_P channel",
+      "column_or_key": "relative_delta (quantity=C_P, max abs across sensitivity arms)",
+      "reference": "Largest relative movement of the couples preference-channel contribution C_P across the male-leisure sensitivity battery.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.7312638054566766
+    },
+    "couples_state_I0000_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I0000.estimate",
+      "reference": "Couples Gini-points state I0000 ({}): baseline -- own preferences, own environment.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.14154724263163004
+    },
+    "couples_state_I0000_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I0000.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I0000.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.14043190461990496,
+        0.14266258064335513
+      ]
+    },
+    "couples_state_I0000_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I0000.estimate",
+      "reference": "Couples Gini-points state I0000 ({}): baseline -- own preferences, own environment.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.144738788806401
+    },
+    "couples_state_I0000_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I0000.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I0000.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.14362281862895016,
+        0.14585475898385186
+      ]
+    },
+    "couples_state_I0111_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I0111.estimate",
+      "reference": "Couples Gini-points state I0111 ({A,B,D}): environment equalised (A, B and D together).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.009466960317079921
+    },
+    "couples_state_I0111_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I0111.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I0111.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.00860438439922762,
+        0.010329536234932223
+      ]
+    },
+    "couples_state_I0111_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I0111.estimate",
+      "reference": "Couples Gini-points state I0111 ({A,B,D}): environment equalised (A, B and D together).",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.009466960317079921
+    },
+    "couples_state_I0111_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I0111.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I0111.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.008604384399227618,
+        0.010329536234932225
+      ]
+    },
+    "couples_state_I1000_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I1000.estimate",
+      "reference": "Couples Gini-points state I1000 ({P}): preferences equalised to the reference block.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.14057324466070406
+    },
+    "couples_state_I1000_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I1000.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I1000.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.13952457418879421,
+        0.1416219151326139
+      ]
+    },
+    "couples_state_I1000_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I1000.estimate",
+      "reference": "Couples Gini-points state I1000 ({P}): preferences equalised to the reference block.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": 0.139612832423352
+    },
+    "couples_state_I1000_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I1000.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I1000.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        0.13864784377363676,
+        0.14057782107306727
+      ]
+    },
+    "couples_state_I1111_equivalized": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I1111.estimate",
+      "reference": "Couples Gini-points state I1111 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": -2.8351062445913994e-30
+    },
+    "couples_state_I1111_equivalized__rqmc_band": {
+      "basis": "couples R240 baseline, equivalized basis",
+      "column_or_key": "B_couples.principal_states_equivalized.I1111.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I1111.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        -3.572280949917989e-30,
+        -2.09793153926481e-30
+      ]
+    },
+    "couples_state_I1111_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I1111.estimate",
+      "reference": "Couples Gini-points state I1111 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": -2.9648169878079993e-30
+    },
+    "couples_state_I1111_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "B_couples.principal_states_raw.I1111.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for couples state I1111.",
+      "source": "runs/final_couples_welfare/cw_step4_pooled_v1.json",
+      "value": [
+        -3.660576363365855e-30,
+        -2.2690576122501432e-30
+      ]
+    },
+    "drawcount_ladder": {
+      "basis": "n/a",
+      "column_or_key": "R column, unique values",
+      "reference": "Draw-count ladder over which parameter stability is checked (R = number of drawn jobs, alternatives = R+1).",
+      "source": "figures/figS6_02_coefficient_stability.csv",
+      "value": [
+        50,
+        100,
+        200,
+        400
+      ]
+    },
+    "drawcount_max_deviation_full_range": {
+      "basis": "n/a",
+      "column_or_key": "deviation_in_R100_SE (max abs, full R=50..400 range)",
+      "reference": "Largest coefficient movement (in R=100 standard-error units) across the full 50-400 draw-count range.",
+      "source": "figures/figS6_02_coefficient_stability.csv",
+      "value": 0.5620050951174173
+    },
+    "drawcount_max_deviation_geq_reference": {
+      "basis": "n/a",
+      "column_or_key": "deviation_in_R100_SE (max abs, R >= 100 only)",
+      "reference": "Largest coefficient movement (in R=100 SE units) restricted to R >= the reference draw count of 100 (NOT the full 50-400 range).",
+      "source": "figures/figS6_02_coefficient_stability.csv",
+      "value": 0.2131419627369137
+    },
+    "drawcount_status": {
+      "basis": "n/a",
+      "column_or_key": "STATUS",
+      "reference": "Completion status of the draw-count stability estimation sweep.",
+      "source": "runs/drawcount_s6/s6_drawcount_estimation_v1.json",
+      "value": "S6_ESTIMATION_DONE"
+    },
+    "equalization_env_only": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "(I00 - I01) / I00",
+      "reference": "Inequality reduction from equalizing environment alone, as a share of baseline inequality I00 (the headline 77%% figure).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.7693714527689889
+    },
+    "equalization_pref_only": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "(I00 - I10) / I00",
+      "reference": "Inequality reduction from equalizing preferences alone, as a share of baseline inequality I00 (the headline +10%% figure).",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": -0.10455612692647487
+    },
+    "external_validation_n_rows": {
+      "basis": "n/a",
+      "column_or_key": "table.n_rows",
+      "reference": "Row count of the external LFS hours-validation table (7 hour-bands x 3 sex categories: male, female, pooled).",
+      "source": "runs/external_hours_lfs/xh1_table_record_v1.json",
+      "value": 21
+    },
+    "external_validation_statutory_band_lfs": {
+      "basis": "sex=pooled, band=F35",
+      "column_or_key": "lfs_share_of_focal_bands",
+      "reference": "Share of workers in the statutory-hours band (F35), lfs source.",
+      "source": "tables/external_hours_validation_v1.csv",
+      "value": 0.372455727537311
+    },
+    "external_validation_statutory_band_obs": {
+      "basis": "sex=pooled, band=F35",
+      "column_or_key": "sample_obs_share_of_focal_bands",
+      "reference": "Share of workers in the statutory-hours band (F35), obs source.",
+      "source": "tables/external_hours_validation_v1.csv",
+      "value": 0.343282833139378
+    },
+    "external_validation_statutory_band_pred": {
+      "basis": "sex=pooled, band=F35",
+      "column_or_key": "model_pred_share_of_focal_bands",
+      "reference": "Share of workers in the statutory-hours band (F35), pred source.",
+      "source": "tables/external_hours_validation_v1.csv",
+      "value": 0.346088777663633
+    },
+    "external_validation_wishmore_status": {
+      "basis": "n/a",
+      "column_or_key": "wishmore_verdict.status",
+      "reference": "Status flag on the WISHMORE-variable coding check used in the external validation (an unresolved coding-ambiguity caveat, not a pass/fail gate).",
+      "source": "runs/external_hours_lfs/xh1_table_record_v1.json",
+      "value": "WISHMORE_CODING_UNRESOLVED"
+    },
+    "geo_share_of_C_acc_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_geo_share_of_C_acc",
+      "reference": "Geographic channel as a share of the total access channel C_acc.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 1.0191956700745002
+    },
+    "geo_share_of_C_acc_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_geo_share_of_C_acc",
+      "reference": "Geographic channel as a share of the total access channel C_acc.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 0.8762210468904318
+    },
+    "geo_share_of_I00_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_geo_over_I00",
+      "reference": "Geographic-access channel C_geo as a share of I00.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 0.0986573956139115
+    },
+    "geo_share_of_I00_equivalized__band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "C_geo_over_I00__E_T",
+      "reference": "RQMC scramble-jackknife half-width for the geographic share of I00.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 0.0054588169413816
+    },
+    "geo_share_of_I00_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_geo_over_I00",
+      "reference": "Geographic-access channel C_geo as a share of I00.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 0.1305378483307594
+    },
+    "geo_share_of_I00_raw__band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "C_geo_over_I00__E_T",
+      "reference": "RQMC scramble-jackknife half-width for the geographic share of I00.",
+      "source": "tables/nested_geographic_access_v1.csv",
+      "value": 0.0074081238243367
+    },
+    "n_alternatives": {
+      "basis": "reference draw count R=100",
+      "column_or_key": "estimate_R100 column name (R=100 -> 101 alternatives)",
+      "reference": "Choice-set size: 100 drawn jobs plus the observed job, inserted deterministically.",
+      "source": "SPRINT/figures/figS6_02_coefficient_stability.csv",
+      "value": 101
+    },
+    "n_couples_clusters": {
+      "basis": "couples R240",
+      "column_or_key": "estimation.inference.G_clusters",
+      "reference": "CR1 cluster count for couples inference (identical to the couples household count).",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2275
+    },
+    "n_households_couples": {
+      "basis": "couples estimation sample",
+      "column_or_key": "gates.G1_rectangular.n_households",
+      "reference": "Couples estimation-sample household count; identical to the R240 estimation's G_clusters (CR1 cluster count for couples inference).",
+      "source": "runs/couples_clean_baseline/r240_step0_gates_v1.json",
+      "value": 2275
+    },
+    "n_households_raw_frame": {
+      "basis": "n/a",
+      "column_or_key": "raw_link_audit.households",
+      "reference": "Total raw-frame households (singles + couples pooled, pre-estimation-sample filtering) used for the child-linkage audit.",
+      "source": "runs/param_child_v1/child_age_aggregates_v1.json",
+      "value": 11459
+    },
+    "n_households_singles": {
+      "basis": "singles estimation sample",
+      "column_or_key": "equivalence_scale.n_households",
+      "reference": "Singles estimation-sample household count; also the CR1 cluster count G_clusters for singles inference.",
+      "source": "runs/final_singles_welfare/ss8_step1_states_v1.json",
+      "value": 1555
+    },
+    "n_params_active": {
+      "basis": "n/a",
+      "column_or_key": "coordinates_41",
+      "reference": "Active singles parameter-vector length (the certified 41-coordinate compact spec); bitwise-equal negLL/gradient to the 51-coordinate form.",
+      "source": "runs/param_child_v1/compact_evaluation_v1.json",
+      "value": 41
+    },
+    "n_params_at_bound": {
+      "basis": "S8 singles",
+      "column_or_key": "prose: '... 10 pinned and 2 free-but-at-a-bound coordinates are held at theta-hat'",
+      "reference": "2 of the 41 active parameters are free but sit at an active bound; held fixed at theta-hat during RQMC resampling (39 + 2 = 41).",
+      "source": "tables/parameter_uncertainty_v1.md",
+      "value": 2
+    },
+    "n_params_interior": {
+      "basis": "S8 singles",
+      "column_or_key": "prose: 'K = 100 draws ... 39 interior coordinates are drawn'",
+      "reference": "Of the 41 active parameters, 39 are interior (drawn under RQMC resampling) and 2 are free-but-at-a-bound.",
+      "source": "tables/parameter_uncertainty_v1.md",
+      "value": 39
+    },
+    "n_params_provenance": {
+      "basis": "n/a",
+      "column_or_key": "coordinates_51",
+      "reference": "Full 51-coordinate provenance vector = 41 active + 10 dropped/pinned coordinates never consumed by the singles branches (8 inactive couples coordinates + 2 pinned year effects retained as fixed parameters).",
+      "source": "runs/param_child_v1/compact_evaluation_v1.json",
+      "value": 51
+    },
+    "n_priced_rows_singles": {
+      "basis": "singles, 1555 households x 101 alternatives",
+      "column_or_key": "row_counts.singles (== row_counts.total for this singles-only export)",
+      "reference": "Total priced alternative-rows for the singles estimation sample (1555 x 101 = 157055). This export contains singles only; it is not a combined singles+couples total.",
+      "source": "export/gpu_research_bundle_v1/data/fr_p2a_singles2016_regionlive_margqh_floor5_v1__mnlmeta.json",
+      "value": 157055
+    },
+    "n_regional_environments": {
+      "basis": "n/a",
+      "column_or_key": "count of rows per profile",
+      "reference": "Number of distinct regional employment-opportunity environments illustrated for the matched-pair households.",
+      "source": "figures/figG02_regional_access_environments.csv",
+      "value": 24
+    },
+    "negll_couples_final": {
+      "basis": "R240 four-leg single optimum",
+      "column_or_key": "estimation.negll",
+      "reference": "Final couples negative log-likelihood, R240 certified estimation.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 43493.342239066726
+    },
+    "negll_singles_final": {
+      "basis": "S8, compact 41/51-coordinate spec",
+      "column_or_key": "negll_anchor (== negll51 == negll41)",
+      "reference": "Final singles negative log-likelihood; bitwise-identical whether evaluated on the 41-coordinate active vector or the 51-coordinate provenance vector.",
+      "source": "runs/param_child_v1/compact_evaluation_v1.json",
+      "value": 18022.764617170084
+    },
+    "regional_opportunity_mass_range_A": {
+      "basis": "profile=household_1",
+      "column_or_key": "employment_opportunity_mass (min, max)",
+      "reference": "Range of employment-opportunity mass across the 24 regional environments, for the matched-pair household household_1.",
+      "source": "figures/figG02_regional_access_environments.csv",
+      "value": [
+        0.7681640104708662,
+        0.8576028918220687
+      ]
+    },
+    "regional_opportunity_mass_range_B": {
+      "basis": "profile=household_2",
+      "column_or_key": "employment_opportunity_mass (min, max)",
+      "reference": "Range of employment-opportunity mass across the 24 regional environments, for the matched-pair household household_2.",
+      "source": "figures/figG02_regional_access_environments.csv",
+      "value": [
+        0.3453309788115904,
+        0.6205829044342464
+      ]
+    },
+    "rum_bench_LR_statistic": {
+      "basis": "RUM_B vs S8",
+      "column_or_key": "step6_nesting.variants.RUM_B.LR_statistic_2x_negll_gap",
+      "reference": "Likelihood-ratio statistic (2x negLL gap) for the nested benchmark test.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 258.17604796586966
+    },
+    "rum_bench_const_mad": {
+      "basis": "n/a",
+      "column_or_key": "positive_side_misclassification.relocated_constants[*].difference (mean |.|)",
+      "reference": "Mean absolute difference between RURO/S8 availability constants and their RUM_B relocated-as-taste counterparts, across the hour-band constants.",
+      "source": "runs/rum_benchmark_final/rb_step4_misclassification_v1.json",
+      "value": 0.03711552325782898
+    },
+    "rum_bench_df": {
+      "basis": "RUM_B vs S8",
+      "column_or_key": "step6_nesting.variants.RUM_B.df",
+      "reference": "Degrees of freedom for the RUM benchmark LR test.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 25
+    },
+    "rum_bench_n_constants": {
+      "basis": "n/a",
+      "column_or_key": "positive_side_misclassification.relocated_constants (count with beta_h_ prefix)",
+      "reference": "Number of hour-band availability constants compared in the misclassification test.",
+      "source": "runs/rum_benchmark_final/rb_step4_misclassification_v1.json",
+      "value": 5
+    },
+    "rum_bench_negll": {
+      "basis": "RUM_B (common-choice-set benchmark)",
+      "column_or_key": "step6_nesting.variants.RUM_B.negll",
+      "reference": "negLL of the nested RUM benchmark model.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 18151.85264115302
+    },
+    "rum_bench_negll_gap": {
+      "basis": "RUM_B vs S8",
+      "column_or_key": "step6_nesting.variants.RUM_B.negll_gap",
+      "reference": "Nats gap between the benchmark and preferred model's negLL.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 129.08802398293483
+    },
+    "rum_inequality_drop_equivalized": {
+      "basis": "equivalized basis, female reference",
+      "column_or_key": "(I00[!=RURO] - I00[RURO]) / I00[RURO]",
+      "reference": "Relative change in baseline inequality I00 moving from RURO/S8 to the RUM_B benchmark.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": -0.1528524629335527
+    },
+    "rum_inequality_drop_raw": {
+      "basis": "raw basis, female reference",
+      "column_or_key": "(I00[!=RURO] - I00[RURO]) / I00[RURO]",
+      "reference": "Relative change in baseline inequality I00 moving from RURO/S8 to the RUM_B benchmark.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": -0.24155680563397186
+    },
+    "rum_leisure_gap_benchmark": {
+      "basis": "RUM_B benchmark",
+      "column_or_key": "positive_side_misclassification.sex_specific_leisure_block.leisure_intercept_gap_male_minus_female.RUM_B",
+      "reference": "Male-minus-female leisure-intercept gap under the RUM_B benchmark model (the sign reverses relative to RURO/S8).",
+      "source": "runs/rum_benchmark_final/rb_step4_misclassification_v1.json",
+      "value": -1.991174553931128
+    },
+    "rum_leisure_gap_final": {
+      "basis": "S8 (preferred model)",
+      "column_or_key": "positive_side_misclassification.sex_specific_leisure_block.leisure_intercept_gap_male_minus_female.RURO_S8",
+      "reference": "Male-minus-female leisure-intercept gap under the preferred RURO/S8 model.",
+      "source": "runs/rum_benchmark_final/rb_step4_misclassification_v1.json",
+      "value": 0.42834817195874564
+    },
+    "rum_omitted_share_leaves_measured_total": {
+      "basis": "n/a",
+      "column_or_key": "panel b, quantity='leaves the measured total'",
+      "reference": "Where the market-side share the benchmark cannot represent actually goes: leaves the measured total.",
+      "source": "figures/figR01_benchmark_decomposition.csv",
+      "value": 0.6801797501684651
+    },
+    "rum_omitted_share_relabelled_as_needs": {
+      "basis": "n/a",
+      "column_or_key": "panel b, quantity='reappears as endowments and needs'",
+      "reference": "Where the market-side share the benchmark cannot represent actually goes: reappears as endowments and needs.",
+      "source": "figures/figR01_benchmark_decomposition.csv",
+      "value": 0.3595854107789491
+    },
+    "rum_omitted_share_relabelled_as_preferences": {
+      "basis": "n/a",
+      "column_or_key": "panel b, quantity='reappears as preferences'",
+      "reference": "Where the market-side share the benchmark cannot represent actually goes: reappears as preferences.",
+      "source": "figures/figR01_benchmark_decomposition.csv",
+      "value": -0.0397651609474142
+    },
+    "rum_pref_model_n_free": {
+      "basis": "S8 (preferred model)",
+      "column_or_key": "step6_nesting.comparator.n_free",
+      "reference": "Free-parameter count of the preferred specification in the benchmark test.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 41
+    },
+    "rum_pref_model_negll": {
+      "basis": "S8 (preferred model)",
+      "column_or_key": "step6_nesting.comparator.negll",
+      "reference": "negLL of the preferred RURO/S8 specification, used as the nesting comparator for the RUM benchmark.",
+      "source": "runs/rum_benchmark_final/rb_step1_estimation_v1.json",
+      "value": 18022.764617170084
+    },
+    "rum_share_pref_RUMB_equivalized": {
+      "basis": "equivalized basis, female reference",
+      "column_or_key": "C_pref_over_I00 (model!=RURO)",
+      "reference": "Preference channel's share of I00 under the RUM_B benchmark model.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": 0.0714627553632522
+    },
+    "rum_share_pref_RUMB_raw": {
+      "basis": "raw basis, female reference",
+      "column_or_key": "C_pref_over_I00 (model!=RURO)",
+      "reference": "Preference channel's share of I00 under the RUM_B benchmark model.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": 0.064492821186593
+    },
+    "rum_share_pref_RURO_equivalized": {
+      "basis": "equivalized basis, female reference",
+      "column_or_key": "C_pref_over_I00 (model=RURO)",
+      "reference": "Preference channel's share of I00 under the preferred RURO/S8 model.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": 0.0798213869258452
+    },
+    "rum_share_pref_RURO_raw": {
+      "basis": "raw basis, female reference",
+      "column_or_key": "C_pref_over_I00 (model=RURO)",
+      "reference": "Preference channel's share of I00 under the preferred RURO/S8 model.",
+      "source": "tables/rum_benchmark_decomposition_v1.csv",
+      "value": 0.0630362101522682
+    },
+    "s_env_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for s_env (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.8911022896135646,
+        0.9577617364524508
+      ]
+    },
+    "s_pref_female_raw__cr1_interval": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "parameter_lo_2p5 / parameter_hi_97p5",
+      "reference": "CR1/HC1 sandwich delta-method 95% interval for s_pref (K_interior=100 clusters-corrected).",
+      "source": "tables/parameter_uncertainty_v1.csv",
+      "value": [
+        0.0422382635475491,
+        0.1088977103864352
+      ]
+    },
+    "state_I00_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I00",
+      "reference": "Gini-points state I00 ({}): baseline.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1651054368471445
+    },
+    "state_I00_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I00__band_lo / I00__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1630913900801445,
+        0.1671194836141445
+      ]
+    },
+    "state_I00_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I00",
+      "reference": "Gini-points state I00 ({}): baseline.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1342765561540117
+    },
+    "state_I00_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I00__band_lo / I00__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1323395837115014,
+        0.1362135285965221
+      ]
+    },
+    "state_I00_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I00",
+      "reference": "Gini-points state I00 ({}): baseline.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1651054368471445
+    },
+    "state_I00_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I00__band_lo / I00__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1630913900801445,
+        0.1671194836141445
+      ]
+    },
+    "state_I00_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I00",
+      "reference": "Gini-points state I00 ({}): baseline.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1342765561540117
+    },
+    "state_I00_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I00__band_lo / I00__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I00.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1323395837115014,
+        0.1362135285965221
+      ]
+    },
+    "state_I01_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I01",
+      "reference": "Gini-points state I01 ({A,B,D}): environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.030968007072983
+    },
+    "state_I01_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I01__band_lo / I01__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I01.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0300573196720756,
+        0.0318786944738903
+      ]
+    },
+    "state_I01_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I01",
+      "reference": "Gini-points state I01 ({A,B,D}): environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.030968007072983
+    },
+    "state_I01_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I01__band_lo / I01__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I01.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0300573196720756,
+        0.0318786944738903
+      ]
+    },
+    "state_I01_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I01",
+      "reference": "Gini-points state I01 ({A,B,D}): environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.030968007072983
+    },
+    "state_I01_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I01__band_lo / I01__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I01.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0300573196720756,
+        0.0318786944738903
+      ]
+    },
+    "state_I01_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I01",
+      "reference": "Gini-points state I01 ({A,B,D}): environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.030968007072983
+    },
+    "state_I01_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I01__band_lo / I01__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I01.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.0300573196720756,
+        0.0318786944738903
+      ]
+    },
+    "state_I10_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I10",
+      "reference": "Gini-points state I10 ({P}): preferences equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1697155540038542
+    },
+    "state_I10_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I10__band_lo / I10__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I10.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1683314464361179,
+        0.1710996615715905
+      ]
+    },
+    "state_I10_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I10",
+      "reference": "Gini-points state I10 ({P}): preferences equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1483159928025005
+    },
+    "state_I10_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I10__band_lo / I10__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I10.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1467823742438407,
+        0.1498496113611603
+      ]
+    },
+    "state_I10_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I10",
+      "reference": "Gini-points state I10 ({P}): preferences equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1598397247236699
+    },
+    "state_I10_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I10__band_lo / I10__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I10.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1577603587168635,
+        0.1619190907304764
+      ]
+    },
+    "state_I10_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I10",
+      "reference": "Gini-points state I10 ({P}): preferences equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.1359975812428928
+    },
+    "state_I10_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I10__band_lo / I10__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I10.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        0.1336570174111281,
+        0.1383381450746575
+      ]
+    },
+    "state_I11_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I11",
+      "reference": "Gini-points state I11 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0
+    },
+    "state_I11_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "I11__band_lo / I11__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I11.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        -6.762487618736419e-31,
+        6.762487618736419e-31
+      ]
+    },
+    "state_I11_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I11",
+      "reference": "Gini-points state I11 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": 0.0
+    },
+    "state_I11_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "I11__band_lo / I11__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I11.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        -6.762487618736419e-31,
+        6.762487618736419e-31
+      ]
+    },
+    "state_I11_male_equivalized": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I11",
+      "reference": "Gini-points state I11 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": -2.0352478302954915e-31
+    },
+    "state_I11_male_equivalized__rqmc_band": {
+      "basis": "S8, male reference, equivalized basis",
+      "column_or_key": "I11__band_lo / I11__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I11.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        -9.660254247518414e-31,
+        5.589758586927431e-31
+      ]
+    },
+    "state_I11_male_raw": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I11",
+      "reference": "Gini-points state I11 ({A,B,D,P}): preferences AND environment equalised.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": -2.0352478302954915e-31
+    },
+    "state_I11_male_raw__rqmc_band": {
+      "basis": "S8, male reference, raw basis",
+      "column_or_key": "I11__band_lo / I11__band_hi",
+      "reference": "RQMC scramble-jackknife band (8 scrambles) for state I11.",
+      "source": "tables/headline_decomposition_v1.csv",
+      "value": [
+        -9.660254247518414e-31,
+        5.589758586927431e-31
+      ]
+    },
+    "subgroup_men_acc_share_equivalized": {
+      "basis": "sex=men, female reference, equivalized basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the men subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.1673500025360623
+    },
+    "subgroup_men_acc_share_male_ref": {
+      "basis": "sex=men, male reference, raw basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the men subgroup, male reference arm.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.1844142854018198
+    },
+    "subgroup_men_acc_share_raw": {
+      "basis": "sex=men, female reference, raw basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the men subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.1958021940554673
+    },
+    "subgroup_men_geo_share": {
+      "basis": "sex=men, female reference, raw basis",
+      "column_or_key": "estimate (quantity=C_geo_over_I00)",
+      "reference": "Geographic channel's share of I00 for the men subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.1621841401457718
+    },
+    "subgroup_men_pref_share_female_ref": {
+      "basis": "sex=men, female reference, raw basis",
+      "column_or_key": "estimate (quantity=s_pref)",
+      "reference": "Preference channel's share for men under the female reference arm.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": -0.0268900856826738
+    },
+    "subgroup_men_pref_share_male_ref": {
+      "basis": "sex=men, male reference, raw basis",
+      "column_or_key": "estimate (quantity=s_pref)",
+      "reference": "Preference channel's share for men under the male reference arm (sign flips relative to the female reference).",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.0277801993139168
+    },
+    "subgroup_women_acc_share_equivalized": {
+      "basis": "sex=women, female reference, equivalized basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the women subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.0717128428294281
+    },
+    "subgroup_women_acc_share_male_ref": {
+      "basis": "sex=women, male reference, raw basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the women subgroup, male reference arm.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.0902088206967427
+    },
+    "subgroup_women_acc_share_raw": {
+      "basis": "sex=women, female reference, raw basis",
+      "column_or_key": "estimate (quantity=C_acc_over_I00)",
+      "reference": "Access channel's share of I00 for the women subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.0979447497905044
+    },
+    "subgroup_women_geo_share": {
+      "basis": "sex=women, female reference, raw basis",
+      "column_or_key": "estimate (quantity=C_geo_over_I00)",
+      "reference": "Geographic channel's share of I00 for the women subgroup.",
+      "source": "tables/subgroup_decomposition_v1.csv",
+      "value": 0.1307809971441337
+    }
+  }
+}
