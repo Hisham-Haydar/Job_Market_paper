@@ -1,0 +1,1397 @@
+# =========================================================================== #
+# JMP FINAL RICH-ENGINE TERM CONTRACT v1
+#
+# Goal-2 request "GOAL 2 -> GOAL 1 - FINAL RICH-ENGINE TERM CONTRACT".
+# Goal-1 authority: R-258.2.
+#
+# SEMANTIC EXTRACTION ONLY. Nothing here was re-estimated, inferred from a
+# parameter name, or filled in from a package parser convention. Every formula
+# is transcribed from the cited file:line. Where the final model has no object
+# answering a requested package name, the status is NOT_ACTIVE_IN_FINAL_MODEL
+# and the actual Goal-1 object is named instead. Where a fact is genuinely not
+# established on disk, the status is UNDEFINED.
+#
+# Statuses used: ACTIVE | NOT_ACTIVE_IN_FINAL_MODEL | UNDEFINED
+# =========================================================================== #
+
+contract:
+  id: "JMP_final_rich_engine_terms_contract_v1"
+  version: 1
+  produced_for: "Goal 2 (dclaborsupply package), reproduction of the Goal-1 singles anchor"
+  produced_by: "Goal 1 (MNL research repository)"
+  authority: "Goal-1 R-258.2; Goal-2 request 'FINAL RICH-ENGINE TERM CONTRACT'"
+  task_class: "semantic extraction only"
+  prohibitions_observed:
+    re_estimated: false
+    goal1_code_modified: false
+    final_model_changed: false
+    mnl_modified_other_than_this_document: false
+    package_pin_moved: false
+    new_robustness_specification_created: false
+  reading_rule: >-
+    Read, never infer. A requested object that the final model does not carry is
+    reported NOT_ACTIVE_IN_FINAL_MODEL with the actual object named, not
+    reconstructed from the package parser's dormant branch for that key.
+
+# =========================================================================== #
+# A. FINAL MODEL BINDING
+# =========================================================================== #
+A_final_model_binding:
+  status: ACTIVE
+
+  model_identity:
+    spec_id: "S8"
+    name: "S8_corrected_floor5_v1"
+    label: "corrected S8 - the retained final positive singles model"
+    goal1_status: "FORMALLY_RETAIN_CORRECTED_S8_AS_FINAL_POSITIVE_MODEL (R-232)"
+    composition: "S8 = S0 (the LOC4-preferred base) + S3 (the explicit 35-hour opportunity peak)"
+    s5_education_rebuild_included: false
+    s5_note: >-
+      build_variant2("S8", include_s5=s5_promote) admits the S5 education
+      rebuild only if the S5 admission test PROMOTEs
+      (scripts/ps1/run_ps1_battery_part2.py:394, rule at :376-388). The
+      accepted 51-name vector carries beta_w_educL / beta_w_educH and carries
+      NO beta_w_edu_g* coordinate, so S5 was NOT promoted and the S8 of record
+      is S0 + S3 only.
+
+  a_to_z_lab:
+    orchestrator_source: "experiments/JMP_SEMINAR_SPRINT/runs/research_lab/a_to_z_lab.py"
+    notebook: "experiments/JMP_SEMINAR_SPRINT/JMP_GPU_lab.ipynb"
+    git_commit: "dc96aa3"
+    git_commit_subject: "feat(sprint): A-to-Z research lab, verifier checks 8-9, window close-out"
+    repository: "MNL"
+    singles_context_builder: "experiments/JMP_SEMINAR_SPRINT/runs/research_lab/a_to_z_lab.py:312-338 (_singles_context)"
+    default_mode: >-
+      certified-record replay: the stored theta is evaluated on the real frame,
+      which preserves the bitwise anchors (a_to_z_lab.py:1-8).
+
+  executable_specification_is_built_in_code:
+    warning: >-
+      There is NO single YAML that the package can parse to obtain the final
+      model. The certified BASE spec is parsed by the frozen package parser and
+      is then EXTENDED TWICE in Goal-1 mission code. A package-only parse of
+      either YAML reproduces neither the 51-coordinate vector nor the anchor.
+    step_1_parse:
+      path: "scripts/bpool/specs/estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml"
+      sha256: "492bcfa9c766bfcb5d8536f5e920cc0b00ffa600b7b89db60b250365f331f211"
+      verbatim_copy_travelling_in_the_bundle: "experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/spec/estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml"
+      copy_sha256_verified_equal: true
+      declares_wage_spec: "vw"
+      n_coordinates_after_this_step: 47
+      note: >-
+        The header of this YAML says 49; the certified parse is 47 because
+        beta_ll is removed (fixed at 0) and theta_l_m is moved to fixed_params.
+    step_2_loc4_m3_extension:
+      source: "scripts/loc4/loc4_spec_extension.py :: build_loc4_spec (:105-180)"
+      adds: ["delta_occ_2", "delta_occ_3", "delta_occ_4"]
+      appended_at_end_of_vector: true
+      n_coordinates_after_this_step: 50
+    step_3_s3_peak_extension:
+      source: 'scripts/ps1/run_ps1_battery_part2.py :: build_variant2("S8") (:182-242, S3 block at :203-221)'
+      adds: ["beta_h_f35"]
+      appended_last: true
+      n_coordinates_after_this_step: 51
+
+  declaration_of_record:
+    path: "experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/spec/estimation_spec_S8_corrected_floor5_v1.yaml"
+    sha256: "dfc13329b0d6097b817a3191b1bdc8da052b3777162ccfc054e1258c62c5f7ab"
+    nature: >-
+      A DECLARATION, not a new specification: every coordinate, bound, pin and
+      estimate in it is read out of the estimation record below and reproduces
+      its digests. It is not parsed by the estimator.
+
+  accepted_results_record:
+    path: "experiments/JMP_PS1/runs/ps1r222_floor5/ps1r222_s5b_estimation_v1.json"
+    sha256: "56358c09a706420d53836f6b47c220c9a2fcb00ff775f8e11a64af2ca132556e"
+    json_key_of_the_final_model: "S8"
+    negll_field: "S8.corrected_optimum_negll"
+
+  accepted_theta_table:
+    path: "experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/reference/theta_S8_floor5_v1.csv"
+    sha256: "97581c07f89b55bd8a622e0a694f7a4e4d79e2da37f167ded3ffcdbc15bf3b6d"
+    theta_float64_bytes_sha256: "e4b2f16e0d638f9586156f00e03b0498bb01a29fef32f6146135e26beb7ec5e7"
+    note: >-
+      theta_float64_bytes_sha256 digests the raw float64 buffer of the 51-vector
+      in the parameter order below, NOT the CSV text. It is the digest that must
+      match on a parity reproduction.
+
+  accepted_negll: 18022.764617170084
+
+  anchors_of_record:
+    negll: 18022.764617170084
+    n_coordinates: 51
+    n_free: 41
+    n_pinned: 10
+    n_interior: 39
+    hessian_free_block_min_eig: 0.44222607911798956
+    hessian_free_block_condition_number: 118286.19289851203
+    max_abs_gradient_over_interior_coordinates: 4.008480362927003e-05
+
+  frame:
+    frame_id: "fr_p2a_singles2016_regionlive_margqh_floor5_v1"
+    stem_parquet: "outputs/p2a_singles2016/region_live_margqh_floor5_v1/fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet"
+    stem_sha256: "6f558f5ecfeabd4aa60a8199f43576c27f15cb203a6b9dc0e2df04b20145173b"
+    geometry_sha256: "a91b1f81752c8406a0b12f38a2e4e9bab0aa04640cb31bf730cacf7795be23e1"
+    mnlmeta_sha256: "26a131c2e5140082962b2aa16c0699118a116f618bbfa5766530ed5a570519ec"
+    rows: 157055
+    households: 1555
+    alternatives_per_household: 101
+    cluster_key: "idorighh"
+    group: "singles only (male and female singles); the couples block does not enter"
+
+  package_pin_used_by_goal1:
+    gitlink: "27756a06"
+    gitlink_full: "27756a06ea189339aa82915ed2124628afed20eb"
+    repository: "dclaborsupply-monorepo"
+    engine_path_at_pin: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py"
+    parser_path_at_pin: "packages/dclaborsupply/src/dclaborsupply/spec/parser.py"
+    loader_path_at_pin: "packages/dclaborsupply/src/dclaborsupply/data/loader.py"
+    note: >-
+      Goal-2's public main b042431c is NOT the pin the anchor was produced under.
+      The anchor binds to 27756a06.
+
+  # ----- the ordered parameter vector: THIS ORDER IS THE CONTRACT ----------- #
+  parameter_vector:
+    ordering_is_binding: true
+    ordering_note: >-
+      theta is a plain float64 vector; every gradient, Hessian and covariance in
+      the record is in exactly this order. The engine itself resolves parameters
+      by NAME (engine_jax.py:128, pidx), so order is a reporting/parity contract,
+      not a model fact - but a parity check that reorders the vector will
+      silently disagree with the theta byte digest.
+    n: 51
+    coordinates:
+      - {index: 0,  name: beta_l0_sm,        status: FREE,   inference_status: INTERIOR,         bounds: [0.05, 50.0],   estimate: 4.672055445527302}
+      - {index: 1,  name: beta_l_age_sm,     status: FREE,   inference_status: INTERIOR,         bounds: [-5.0, 5.0],    estimate: 0.6782385001023288}
+      - {index: 2,  name: beta_l_age2_sm,    status: FREE,   inference_status: NA_ACTIVE_BOUND,  bounds: [-1.0, 1.0],    estimate: 1.0}
+      - {index: 3,  name: theta_l_sm,        status: FREE,   inference_status: INTERIOR,         bounds: [-8.0, 0.95],   estimate: -1.7464258533579462}
+      - {index: 4,  name: beta_l0_sf,        status: FREE,   inference_status: INTERIOR,         bounds: [0.05, 50.0],   estimate: 4.243707273568556}
+      - {index: 5,  name: beta_l_age_sf,     status: FREE,   inference_status: INTERIOR,         bounds: [-5.0, 5.0],    estimate: -0.018741257041055157}
+      - {index: 6,  name: beta_l_age2_sf,    status: FREE,   inference_status: NA_ACTIVE_BOUND,  bounds: [-1.0, 1.0],    estimate: 1.0}
+      - {index: 7,  name: beta_l_nkids_sf,   status: FREE,   inference_status: INTERIOR,         bounds: [-5.0, 5.0],    estimate: 1.1690321192492115}
+      - {index: 8,  name: theta_l_sf,        status: FREE,   inference_status: INTERIOR,         bounds: [-8.0, 0.95],   estimate: -1.0792578035738531}
+      - {index: 9,  name: theta_c_singles,   status: FREE,   inference_status: INTERIOR,         bounds: [-8.0, 0.95],   estimate: 0.168019403191226}
+      - {index: 10, name: beta_l0_m,         status: PINNED, inference_status: PINNED, bounds: [1.0e-06, 50.0], estimate: 1.0e-06,             pinned_value: 1.0e-06}
+      - {index: 11, name: beta_l_age_m,      status: PINNED, inference_status: PINNED, bounds: [-5.0, 5.0],  estimate: -0.067236897452355,    pinned_value: -0.067236897452355}
+      - {index: 12, name: beta_l_age2_m,     status: PINNED, inference_status: PINNED, bounds: [-1.0, 1.0],  estimate: 0.0877504891847849,    pinned_value: 0.0877504891847849}
+      - {index: 13, name: beta_l0_f,         status: PINNED, inference_status: PINNED, bounds: [0.05, 50.0], estimate: 10.052237044896549,    pinned_value: 10.052237044896549}
+      - {index: 14, name: beta_l_age_f,      status: PINNED, inference_status: PINNED, bounds: [-5.0, 5.0],  estimate: -1.780253386288037,    pinned_value: -1.780253386288037}
+      - {index: 15, name: beta_l_age2_f,     status: PINNED, inference_status: PINNED, bounds: [-1.0, 1.0],  estimate: 1.0,                   pinned_value: 1.0}
+      - {index: 16, name: beta_l_nkids_f,    status: PINNED, inference_status: PINNED, bounds: [-5.0, 5.0],  estimate: 0.5857198501055841,    pinned_value: 0.5857198501055841}
+      - {index: 17, name: theta_l_f,         status: PINNED, inference_status: PINNED, bounds: [-8.0, 0.95], estimate: -2.131739110508045,    pinned_value: -2.131739110508045}
+      - {index: 18, name: beta_E,            status: FREE,   inference_status: INTERIOR, bounds: [-25.0, 25.0], estimate: -3.3343780667951135}
+      - {index: 19, name: beta_h_pt1,        status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 0.17303503763434225}
+      - {index: 20, name: beta_h_pt2,        status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 0.5496793390714966}
+      - {index: 21, name: beta_h_ft,         status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 2.430305456148084}
+      - {index: 22, name: beta_h_lh,         status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 0.42930277252138715}
+      - {index: 23, name: beta_E_gsur,       status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -1.2524704306308985}
+      - {index: 24, name: beta_E_drgn2,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.21493713582053}
+      - {index: 25, name: beta_E_drgn3,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.04916968264562013}
+      - {index: 26, name: beta_E_drgn4,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.6584569435080381}
+      - {index: 27, name: beta_E_drgn5,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.30596396739836}
+      - {index: 28, name: beta_E_drgn6,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.5412219828309833}
+      - {index: 29, name: beta_E_drgn7,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.36663428621093264}
+      - {index: 30, name: beta_E_drgn8,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.28029637177310085}
+      - {index: 31, name: beta_E_y2015,      status: PINNED, inference_status: PINNED, bounds: [-5.0, 5.0], estimate: -0.2546064112385174, pinned_value: -0.2546064112385174}
+      - {index: 32, name: beta_E_y2017,      status: PINNED, inference_status: PINNED, bounds: [-5.0, 5.0], estimate: -0.0694711073761977, pinned_value: -0.0694711073761977}
+      - {index: 33, name: beta_E_drgur,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: -0.015606020452828367}
+      - {index: 34, name: beta_E_drgmd,      status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 0.0790900414840594}
+      - {index: 35, name: beta_occ_2_m,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: -1.3113590167484315}
+      - {index: 36, name: beta_occ_3_m,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: -1.9329203572272105}
+      - {index: 37, name: beta_occ_4_m,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: 0.004667933866887038}
+      - {index: 38, name: beta_occ_2_f,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: 0.011803063802612793}
+      - {index: 39, name: beta_occ_3_f,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: -0.40525509219577066}
+      - {index: 40, name: beta_occ_4_f,      status: FREE,   inference_status: INTERIOR, bounds: [-15.0, 15.0], estimate: 0.7173622544221028}
+      - {index: 41, name: beta_w0,           status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 20.0], estimate: 2.124934268292595}
+      - {index: 42, name: beta_w_educL,      status: FREE,   inference_status: INTERIOR, bounds: [-5.0, 5.0], estimate: 0.05626963578902826}
+      - {index: 43, name: beta_w_educH,      status: FREE,   inference_status: INTERIOR, bounds: [-5.0, 5.0], estimate: 0.1512706305423729}
+      - {index: 44, name: beta_w_pexp,       status: FREE,   inference_status: INTERIOR, bounds: [-1.0, 1.0], estimate: 0.21968082760657937}
+      - {index: 45, name: beta_w_pexp2,      status: FREE,   inference_status: INTERIOR, bounds: [-0.1, 0.1], estimate: -0.016521545772628838}
+      - {index: 46, name: sigma,             status: FREE,   inference_status: INTERIOR, bounds: [0.1, 20.0], estimate: 0.3895349656055167}
+      - {index: 47, name: delta_occ_2,       status: FREE,   inference_status: INTERIOR, bounds: [-4.0, 4.0], estimate: -0.04844141757340943}
+      - {index: 48, name: delta_occ_3,       status: FREE,   inference_status: INTERIOR, bounds: [-4.0, 4.0], estimate: 0.04665407844125951}
+      - {index: 49, name: delta_occ_4,       status: FREE,   inference_status: INTERIOR, bounds: [-4.0, 4.0], estimate: 0.273906336636581}
+      - {index: 50, name: beta_h_f35,        status: FREE,   inference_status: INTERIOR, bounds: [-10.0, 10.0], estimate: 2.579482184820325}
+
+    pinned_coordinates: [beta_l0_m, beta_l_age_m, beta_l_age2_m, beta_l0_f,
+                         beta_l_age_f, beta_l_age2_f, beta_l_nkids_f, theta_l_f,
+                         beta_E_y2015, beta_E_y2017]
+    pinned_count: 10
+    at_active_bound_coordinates: [beta_l_age2_sm, beta_l_age2_sf]
+    at_active_bound_note: >-
+      FREE (they were estimated) but sitting on the box at the optimum. They
+      carry a large outward derivative that the KKT projection zeroes and have
+      NO standard error. Free 41 minus these 2 = 39 interior coordinates.
+    couples_pin_note: >-
+      On a SINGLES-ONLY frame the couples leisure block does not enter the
+      objective at all, so the gradient entries of the couples pins are exactly
+      0.0. That is the frame, not the pin.
+    fixed_not_in_the_vector:
+      beta_c: 1.0
+      beta_c_note: "consumption scale numeraire, utility.consumption.fixed_value; never a coordinate"
+      theta_l_m: -0.8
+      theta_l_m_note: "base-spec fixed_params; couples-only, inert on this frame"
+      beta_ll: 0.0
+      beta_ll_note: "couples leisure interaction, removed from the parent spec; couples-only"
+
+  proposal:
+    convention: "exact_marginal"
+    chosen_inclusion: "deterministic_unit"
+    chosen_row_correction:
+      log_prior: 0.0
+      inclusion_probability: 1.0
+      meaning: >-
+        The observed chosen alternative is INSERTED deterministically. Its
+        inclusion probability is 1 and its log proposal correction is exactly 0.
+        It is NOT treated as though it had been drawn from q.
+    sampled_rows_log_prior: "log q_exact_marginal"
+    non_employment_rows_log_prior: "log(0.10)"
+    identity: "log_prior = log_q_E + working * (log_q_H + log_q_W + log_q_Occ)"
+    prior_from_log_prior: "clip(exp(clip(log_prior, -700, 700)), 1e-16, None)"
+    engine_consumption_of_the_prior:
+      note: >-
+        The engine does NOT read log_prior. It reads the materialized `prior`
+        column and takes its own log (engine_jax.py:138-139:
+        prior = jnp.asarray(data.prior); log_prior = jnp.log(prior)), after the
+        loader has applied an EPS floor (loader.py:514). V then subtracts
+        log_prior (engine_jax.py:274).
+    metadata_binding:
+      mnlmeta_convention: "marginal"
+      mnlmeta_chosen_rows: "log_prior == 0.0 exactly"
+      equivalent_to_deputy_names: true
+      binding: >-
+        "marginal" (mnlmeta) == exact_marginal (deputy C1);
+        "log_prior == 0.0 exactly" (mnlmeta) == deterministic_unit (deputy C1).
+      mnlmeta_log_q_H: "log q_H^marg(h) = log sum_k (w_k/width_k) 1{h in [a_k,b_k)}, from h alone"
+      mnlmeta_scope: "simulated working rows only (draw > 0 & working == 1)"
+      frame_file_edited: false
+    authority: "deputy ruling C1 (O-5); R-232 parity condition; R-220 s11"
+
+  inference:
+    family: "CR1 / HC1 on household-clustered scores"
+    G_clusters: 1555
+    K_interior: 39
+    bread: "H_II^-1 on the INTERIOR block"
+    correction: "c = G / (G - K_interior)"
+    note: >-
+      K_interior is PRIMARY (R-184.1). The alternative c = G/(G-K_free) inflates
+      every robust SE by 0.066% and changes ZERO significance verdicts.
+
+  objective:
+    form: "negative log-likelihood, summed over households"
+    engine_expression: "V = u + log_h + log_w + log_market - log_prior ; per = V_obs - logsumexp(V) ; negLL = -sum(per)"
+    source: "engine_jax.py:274-280"
+    observed_row_selection: "column-0 contract (use_actual_choice=False, the validated real-data path)"
+    source_of_selection_rule: "engine_jax.py:103-111; loader.py:392"
+
+# =========================================================================== #
+# B. THE WAGE OBJECT
+# =========================================================================== #
+B_wage_object:
+  status: ACTIVE
+  requested_under_package_name: "loc_empirical"
+
+  is_this_loc_empirical:
+    answer: false
+    explanation: >-
+      The final model does NOT declare wage_spec 'loc_empirical'. It declares
+      wage_spec 'vw' (a single log-normal wage density with common mean shifters
+      and a single sigma), and the occupation conditioning is added as three
+      extra WAGE MEAN SHIFTERS on the loc4 one-hots by Goal-1 MISSION CODE, not
+      by any package wage_spec branch. At the pinned gitlink 27756a06 both
+      'loc_empirical' and 'vw_occupation' exist in the parser as dormant keys
+      (parser.py:54, :458, :575-590, :1533-1563) and NEITHER is exercised.
+    actual_goal1_object:
+      wage_spec_declared: "vw"
+      declared_at: "estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml, specification.wage_spec; re-declared in estimation_spec_S8_corrected_floor5_v1.yaml, specification.wage_spec"
+      name_in_the_goal1_term_registry: "earning.lognormal_intercept_education_experience_sigma"
+      occupation_conditioning_term: "earning.occupation_wage_location_delta_occ_2_3_4"
+      registry_source: "experiments/JMP_SEMINAR_SPRINT/runs/research_lab/a_to_z_lab.py:57-68 (SUPPORTED_TERMS)"
+    difference_from_the_package_loc_empirical_branch: >-
+      parser.py:1553-1563 gives loc_empirical a per-group INTERCEPT and a
+      per-group SIGMA. The final Goal-1 object has ONE sigma shared across all
+      occupation categories and NO per-group intercept coordinate: it has a
+      single reference intercept beta_w0 plus three additive LOCATION shifts on
+      loc4 one-hots. Implementing loc_empirical as the parser defines it would
+      add three sigma coordinates the final model does not have and would not
+      reproduce the anchor.
+
+  exact_mathematical_log_density:
+    transcribed_from: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:249-259 (at gitlink 27756a06)"
+    verbatim_code: |
+      mu = jnp.zeros_like(u)
+      for cname, arr in wage_terms:
+          mu = mu + (P(cname) if arr is None else P(cname) * arr)
+      sigma = P(sigma_name)
+      resid = (log_wage - mu) / sigma
+      log_w_full = -0.5 * resid**2 - jnp.log(sigma) - 0.5 * LOG2PI - log_wage
+      log_w = jnp.where(working > 0, log_w_full, 0.0)
+    mathematics: >-
+      log f_W(w_ij) = -0.5 * ((log w_ij - mu_ij) / sigma)^2 - log(sigma)
+                      - 0.5 * log(2*pi) - log(w_ij)
+    it_is: >-
+      the log-density of a LOG-NORMAL in the LEVEL of the wage w. The final
+      -log(w) term is the Jacobian of the change of variable from log w to w; it
+      is what makes this a density in w rather than in log w. It is a data-only
+      term (no parameter), but it must be present for the anchor to reproduce.
+    LOG2PI_definition: "float(np.log(2 * np.pi)), engine_jax.py:221 (the singles builder; the couples builder has its own at :429)"
+    sigma_enters_as: "sigma itself (a standard deviation), NOT sigma^2 and NOT log-sigma; -log(sigma) is the normalizing term"
+
+  worker_gating:
+    gated: true
+    rule: "log_w = where(working > 0, log_w_full, 0.0)"
+    source: "engine_jax.py:259"
+    meaning: >-
+      Non-working rows contribute EXACTLY 0.0 to the wage term. This is the
+      Wave-0.1 invariant (engine_jax.py:22-24). The gate is on the `working`
+      array, matching the prep-side mask.
+    non_worker_log_wage_value:
+      value: "log(EPS) on rows where wage == 0"
+      source: "loader.py:149-162 (_wage_log): returns np.log(np.maximum(wage, EPS))"
+      note: >-
+        The value is finite but arbitrary; it is multiplied out by the gate. Any
+        reimplementation must keep the gate OUTSIDE the log so the arbitrary
+        value never reaches the sum, and must not produce NaN there.
+
+  occupation_group_mask_definition:
+    mechanism: >-
+      NOT a mask over separate group-specific densities. The occupation entered
+      the wage object as three ADDITIVE LOCATION SHIFTS on the loc4 one-hot
+      indicator columns, inside the SINGLE mu equation. There is one density,
+      not four.
+    mask_columns: ["loc4_2", "loc4_3", "loc4_4"]
+    mask_semantics: "loc4_k == 1.0 iff the alternative's occupation category is k, else 0.0"
+    reference_category_carries_no_column: "loc4_1 exists in the loaded data but is NOT a wage mean shifter"
+    source_of_the_columns: "loader.py:520 (_loc4 returns loc4, loc4_1..loc4_4); engine_jax.py:185-193 binds them via spec.wage_mean_shifters"
+
+  exact_mean_equation:
+    formula: >-
+      mu_ij = beta_w0
+              + beta_w_educL * educL_i
+              + beta_w_educH * educH_i
+              + beta_w_pexp  * pexp_years_i
+              + beta_w_pexp2 * pexp_years2_i
+              + delta_occ_2 * loc4_2_ij
+              + delta_occ_3 * loc4_3_ij
+              + delta_occ_4 * loc4_4_ij
+    accumulation_source: "engine_jax.py:253-255"
+    shifter_list_source_base: "estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml, wage_opportunity.mean_shifters (intercept, educL, educH, pexp_years, pexp_years2)"
+    shifter_list_source_extension: "scripts/loc4/loc4_spec_extension.py:151 (spec.wage_mean_shifters = list(base_spec.wage_mean_shifters) + new_shifters)"
+    intercept_handling: >-
+      The shifter whose variable is the literal string "intercept" is bound with
+      arr = None and added as the bare coefficient (engine_jax.py:187-189,
+      :254). There is no column of ones.
+
+  intercept_parameterization:
+    form: "reference intercept + group shifts"
+    NOT_independent_group_intercepts: true
+    reference_intercept: "beta_w0"
+    group_shifts: ["delta_occ_2", "delta_occ_3", "delta_occ_4"]
+    attached_to: ["loc4_2", "loc4_3", "loc4_4"]
+    reference_group: "loc4 category k = 1"
+    reference_constraint: "delta_occ_1 == 0 BY OMISSION - the reference category carries no coordinate at all"
+    reference_constraint_source: "scripts/loc4/loc4_spec_extension.py:163-167 (prov['reference_constraint'])"
+    reference_derivation: >-
+      The reference category is not hard-coded. read_occupation_block
+      (loc4_spec_extension.py:61-113) recovers it as the one-hot that is ABSENT
+      from the certified spec's occupation shifters, and raises if that
+      inference is not unique (:94-98). The certified spec declares
+      occupation_opportunity.reference: 1, and the absent one-hot is loc4_1.
+    design_identity: "mu_i(X, k) = mu_i(X) + delta_occ(k), with delta_occ(reference) == 0"
+    design_source: "scripts/loc4/loc4_spec_extension.py:9-13 (BINDING DESIGN, design v4 s1.3)"
+
+  common_mean_shifters:
+    list: [beta_w0, beta_w_educL, beta_w_educH, beta_w_pexp, beta_w_pexp2]
+    common_across: "occupation categories AND sexes AND marital status"
+
+  regressor_attached_to_every_coefficient:
+    beta_w0:       {regressor: "intercept (no column; bare coefficient)", varies_by_alternative: false}
+    beta_w_educL:  {regressor: "educL",        varies_by_alternative: false}
+    beta_w_educH:  {regressor: "educH",        varies_by_alternative: false}
+    beta_w_pexp:   {regressor: "pexp_years",   varies_by_alternative: false}
+    beta_w_pexp2:  {regressor: "pexp_years2",  varies_by_alternative: false}
+    delta_occ_2:   {regressor: "loc4_2",       varies_by_alternative: true}
+    delta_occ_3:   {regressor: "loc4_3",       varies_by_alternative: true}
+    delta_occ_4:   {regressor: "loc4_4",       varies_by_alternative: true}
+    sigma:         {regressor: "none - dispersion, enters as -log(sigma) and in the standardized residual", varies_by_alternative: false}
+    educM_is_not_a_coefficient: >-
+      educM is loaded (loader.py:528-529) but carries NO wage coefficient. It is
+      the omitted education reference.
+
+  exact_education_inputs:
+    columns_used_in_the_wage_mean: ["educL", "educH"]
+    omitted_reference_column: "educM"
+    construction:
+      source: "scripts/p2a/run_p2a_regionlive_rebuild.py:596-599"
+      code: |
+        deh = pd.to_numeric(df["deh"], errors="coerce")
+        df["educL"] = deh.isin([0, 1, 2]).astype("int8")
+        df["educM"] = deh.isin([3, 4]).astype("int8")
+        df["educH"] = deh.eq(5).astype("int8")
+      source_variable: "deh (EU-SILC highest education level attained)"
+      partition: "educL = deh in {0,1,2}; educM = deh in {3,4} (REFERENCE, omitted); educH = deh == 5"
+      exhaustive_and_mutually_exclusive: true
+    interpretation: >-
+      beta_w_educL and beta_w_educH are contrasts against educM, NOT absolute
+      education effects.
+    s5_alternative_partition_not_used: >-
+      An alternative four-group education partition (beta_w_edu_g1..g4) exists
+      in scripts/ps1/run_ps1_battery_part2.py (the S5 rebuild) and was NOT
+      promoted into S8. It is absent from the 51-name vector.
+
+  exact_experience_inputs:
+    columns_used_in_the_wage_mean: ["pexp_years", "pexp_years2"]
+    pexp_years_construction:
+      source: "scripts/p2a/run_p2a_regionlive_rebuild.py:684-686"
+      code: |
+        singles_dec["pexp_years_raw"] = np.minimum(
+            pexp_raw.fillna(0.0).clip(lower=0.0), cap.fillna(0.0)).astype(float)
+        singles_dec["pexp_years"] = singles_dec["pexp_years_raw"] / 20.0
+      raw_source: "p_liwwh, else p_dew, else p_dey (dag - 6 - dey); capped above by (dag - 15) clipped at 0"
+      raw_source_line: "scripts/p2a/run_p2a_regionlive_rebuild.py:682-684"
+      SCALING_IS_STRUCTURAL_AND_BINDING: true
+      scaling: "pexp_years = pexp_years_raw / 20.0"
+      range_gate: "pexp_years must lie in [0, 2.6]; the build raises StopRun('S-1','G-18') otherwise (run_p2a_regionlive_rebuild.py:687-688)"
+      TRAP: >-
+        The STRUCTURAL wage block reads pexp_years, which is RAW YEARS DIVIDED
+        BY 20. The PROPOSAL (q^W) reads pexp_years_raw, in raw years. Using the
+        wrong column silently evaluates the mean at a twentieth (or twenty
+        times) the intended experience. This is asserted, not trusted, in
+        Goal-1 code: scripts/ps1/run_ps1_s16a_qw_proposal.py:484-490.
+    pexp_years2_construction:
+      source: "packages/dclaborsupply/src/dclaborsupply/data/loader.py:539 (at gitlink 27756a06)"
+      code: "pexp_years2=(pexp ** 2 if pexp is not None else None)"
+      DERIVED_IN_THE_LOADER: true
+      note: >-
+        pexp_years2 is NOT read from a parquet column by the loader; it is
+        computed as the square of the ALREADY-SCALED pexp_years. So
+        pexp_years2 = (raw/20)^2, not (raw^2)/20 and not raw^2. A frame column
+        named pexp_years2 may exist on the stem
+        (run_p2a_regionlive_rebuild.py:686 writes one, identically defined) but
+        the loader ignores it and recomputes.
+
+  dispersion_parameterization:
+    parameter_name: "sigma"
+    form: "sigma itself, a standard deviation on the log scale"
+    NOT_sigma_squared: true
+    NOT_log_sigma: true
+    NOT_otherwise_transformed: true
+    enters_the_density_as: "resid = (log_wage - mu) / sigma ; and the additive term -log(sigma)"
+    source: "engine_jax.py:256-258"
+    bounds: [0.1, 20.0]
+    positivity: "enforced by the lower box bound 0.1, not by a transformation"
+    estimate: 0.3895349656055167
+    common_across_occupations: true
+    occupation_specific: false
+    sex_specific: false
+    common_across_marital_status: true
+    shared_sigma_assertion_source: >-
+      scripts/loc4/loc4_spec_extension.py:167-168
+      (prov['sigma'] = {'shared_across_categories': True,
+      'occupation_specific_sigma_introduced': False}); the builder also HALTS if
+      the base spec declares no wage_variance_param (:129-131).
+
+  sex_sharing:
+    mean_coefficients: "COMMON across sexes"
+    dispersion: "COMMON across sexes"
+    occupation_location_shifts: "COMMON across sexes"
+    mechanism: >-
+      build_jax_singles_ll is instantiated once per sex (is_male True/False,
+      engine_jax.py:103), but the wage block reads UNSUFFIXED coefficient names
+      (engine_jax.py:185-194): the suffix machinery applies to the leisure block
+      (suffix _sm/_sf, :125) and, only under an explicit gender_split argument,
+      to the HOURS block (:175). No gender_split was used for the final model,
+      and no wage coefficient is splittable by that mechanism in any case.
+    contrast_with_occupation_ACCESS: >-
+      The occupation ACCESS coefficients beta_occ_k_m / beta_occ_k_f ARE
+      sex-specific (they carry applies_to male/female). The occupation WAGE
+      LOCATION shifts delta_occ_k are NOT. These are different objects on the
+      same loc4 one-hots and must not be conflated.
+
+  exact_parameter_names_and_ordering:
+    mean_block_in_vector_order: [beta_w0, beta_w_educL, beta_w_educH, beta_w_pexp, beta_w_pexp2]
+    mean_block_indices: [41, 42, 43, 44, 45]
+    dispersion: {name: sigma, index: 46}
+    occupation_location_block_in_vector_order: [delta_occ_2, delta_occ_3, delta_occ_4]
+    occupation_location_indices: [47, 48, 49]
+    ordering_origin: >-
+      41-46 come from the certified base parse (parser.py:1531-1538 appends the
+      mean shifters in YAML order, then sigma). 47-49 are APPENDED AT THE END by
+      the LOC4 extension so that theta[:47] stays coordinate-aligned with the
+      certified 47-vector (loc4_spec_extension.py:33-37, :169-173).
+
+  bounds_and_pins:
+    beta_w0:      {bounds: [-10.0, 20.0], pinned: false, at_bound: false}
+    beta_w_educL: {bounds: [-5.0, 5.0],   pinned: false, at_bound: false}
+    beta_w_educH: {bounds: [-5.0, 5.0],   pinned: false, at_bound: false}
+    beta_w_pexp:  {bounds: [-1.0, 1.0],   pinned: false, at_bound: false}
+    beta_w_pexp2: {bounds: [-0.1, 0.1],   pinned: false, at_bound: false}
+    sigma:        {bounds: [0.1, 20.0],   pinned: false, at_bound: false}
+    delta_occ_2:  {bounds: [-4.0, 4.0],   pinned: false, at_bound: false}
+    delta_occ_3:  {bounds: [-4.0, 4.0],   pinned: false, at_bound: false}
+    delta_occ_4:  {bounds: [-4.0, 4.0],   pinned: false, at_bound: false}
+    delta_bound_origin: >-
+      B = ceil(log_range_L) = 4.0, FROZEN by design v4 s1.5. The extension
+      module neither computes nor widens it: the caller evaluates it on the
+      recorded frozen-box field and passes it in
+      (loc4_spec_extension.py:107-111, applied at :156-157).
+    initial_values_of_the_delta_block: 0.0
+    initial_value_source: "loc4_spec_extension.py:157"
+
+  structural_channel:
+    channel: "earning opportunities"
+    target_object: "g^W"
+    contributes_to_target_V: true
+    enters_V_as: "the additive term log_w in V = u + log_h + log_w + log_market - log_prior (engine_jax.py:274)"
+
+  rum_treatment:
+    removed_by_genuine_rum: true
+    what_survives: >-
+      Under a genuine RUM the household-specific earning-opportunity density g^W
+      is replaced by the COMMON g-bar: the same wage density is applied to every
+      household, so no term indexed by the household's own opportunity set
+      remains. What survives into the RUM objective is (i) the wage LEVEL as an
+      argument of the budget - the wage still determines consumption at each
+      hours alternative, so the wage COLUMN is still consumed; and (ii) the
+      common g-bar normalization, which is constant across a household's
+      alternatives and therefore cancels in the conditional-logit ratio. The
+      estimated coefficients beta_w0, beta_w_educL, beta_w_educH, beta_w_pexp,
+      beta_w_pexp2, sigma, delta_occ_2, delta_occ_3, delta_occ_4 do NOT appear in
+      the RUM objective as opportunity parameters.
+    rum_benchmark_authority: "Goal-1 R-250.2 (RUM benchmark closed)"
+
+  proposal_interaction:
+    alters_proposal_prior: false
+    statement: >-
+      The wage object does NOT enter q. It is a TARGET-side (V-side) object only.
+    what_q_W_actually_conditions_on:
+      regressors: ["educL", "educH", "pexp_years_raw", "pexp_years_raw squared", "loc4", "year_tag"]
+      experience_column: "pexp_years_raw (RAW years), NOT the structural pexp_years = raw/20"
+      source: "scripts/ps1/run_ps1_s16a_qw_proposal.py:481-495 (arm construction), :509 (arm_mu call)"
+      q_W_form: "log_q_lognormal(w, mu_q, sigma_q) - a log-normal proposal density with its OWN mu and sigma"
+      frozen_on_this_frame: >-
+        log_q_W travels BITWISE on the floor5 frame; it is not recomputed at
+        estimation time. The frame's mnlmeta records that the floor correction
+        changed only log_q_H, log_prior and prior
+        (proposal_density_convention.changed_fields).
+    separation_is_deliberate: >-
+      The structural wage parameters and the proposal wage parameters are
+      distinct objects that happen to share a functional family. Estimation
+      never updates q. Any reimplementation that recomputes the proposal from
+      the structural theta will not reproduce the anchor.
+
+  implementing_source_of_record:
+    log_density: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:249-259 (gitlink 27756a06)"
+    shifter_binding: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:178-195 (gitlink 27756a06)"
+    log_wage_materialization: "packages/dclaborsupply/src/dclaborsupply/data/loader.py:149-162, :538 (gitlink 27756a06)"
+    pexp_columns: "packages/dclaborsupply/src/dclaborsupply/data/loader.py:520, :539 (gitlink 27756a06)"
+    occupation_location_extension: "scripts/loc4/loc4_spec_extension.py:105-180 (build_loc4_spec)"
+    base_shifter_declaration: "experiments/JMP_SEMINAR_SPRINT/export/gpu_research_bundle_v1/spec/estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml, wage_opportunity block"
+    goal1_orchestration: "experiments/JMP_SEMINAR_SPRINT/runs/research_lab/a_to_z_lab.py:312-338"
+
+  why_the_extension_lives_in_mission_code_not_the_package:
+    reason: >-
+      Design v4 s1.6 FREEZES the estimation package at gitlink 27756a06. The
+      package parser enforces an exclusion restriction (parser.py:655-701): a
+      loc4_* variable may not appear in wage_opportunity.mean_shifters while
+      occupation_opportunity.shifters is non-empty. LOC4 deliberately enters
+      that restriction and answers it at design level. The extension is
+      therefore applied to the PARSED EstimationSpec OBJECT in mission code -
+      no package file is read, written or imported differently.
+    source: "scripts/loc4/loc4_spec_extension.py:15-43 (module docstring)"
+    CONSEQUENCE_FOR_GOAL_2: >-
+      A package reimplementation that wants this model from a single YAML must
+      either relax that exclusion restriction or provide a first-class way to
+      declare occupation-conditional wage LOCATION shifts with a SHARED sigma.
+      The dormant loc_empirical branch is NOT that way: it gives per-group
+      sigmas.
+    loader_contract: >-
+      load_singles is called with the CERTIFIED spec, so every loaded array is
+      bitwise the baseline arm's. The loc4 one-hot columns the extension reads
+      are already bound because occupation_opportunity routes them through
+      market_opportunity_shifters (parser.py:703-718).
+
+# =========================================================================== #
+# C. VW_OCCUPATION
+# =========================================================================== #
+C_vw_occupation:
+  status: NOT_ACTIVE_IN_FINAL_MODEL
+  requested_under_package_name: "vw_occupation"
+  determination: >-
+    The frozen final Goal-1 model contains NO object corresponding to the
+    package parser name vw_occupation. The specification declares
+    wage_spec: "vw". At gitlink 27756a06 vw_occupation is a dormant parser key
+    (parser.py:54, :458, :575, :1541-1549) whose branch would create
+    occupation-specific, SEX-SPECIFIC Mincer equations - a per-occupation
+    intercept, experience, experience-squared, education AND variance, each with
+    _sm and _sf suffixes. None of those coordinate names appears anywhere in the
+    51-name accepted vector.
+  actual_wage_object_instead: "see section B_wage_object"
+  actual_wage_object_summary: >-
+    ONE log-normal wage density (wage_spec "vw") with common mean shifters
+    (beta_w0, beta_w_educL, beta_w_educH, beta_w_pexp, beta_w_pexp2), ONE sigma
+    shared across occupations and sexes, plus three additive occupation LOCATION
+    shifts delta_occ_{2,3,4} on the loc4 one-hots with category 1 as the
+    reference by omission.
+  evidence:
+    - "estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml (sha 492bcfa9...): specification.wage_spec = 'vw'"
+    - "estimation_spec_S8_corrected_floor5_v1.yaml (sha dfc13329...): specification.wage_spec = 'vw'"
+    - "scripts/loc4/loc4_spec_extension.py:124-127 HALTS unless the certified spec declares wage_spec 'vw'"
+    - "The 51-name vector contains no *_sm / *_sf wage coefficient and exactly one sigma"
+  do_not: >-
+    Do not reconstruct this section from parser.py:1541-1549. That branch was
+    never exercised and its parameterization contradicts the final model on
+    dispersion (per-occupation sigma) and on sex sharing (per-sex coefficients).
+  all_subfields_requested_by_goal2: NOT_ACTIVE_IN_FINAL_MODEL
+
+# =========================================================================== #
+# D. OCCUPATION-SPECIFIC HOURS
+# =========================================================================== #
+D_occupation_specific_hours:
+  status: NOT_ACTIVE_IN_FINAL_MODEL
+  determination: >-
+    The final model contains NO dedicated occupation-specific-hours object. No
+    hours coefficient is indexed by occupation, and no loc4 one-hot appears in
+    hours_opportunity.shifters - the package parser would in fact REFUSE such a
+    spec (parser.py:686-701: "Occupation variables ... appear in
+    hours_opportunity.shifters; loc4/loc may only appear in
+    occupation_opportunity at M0"). The hours block and the occupation block are
+    separate additive terms in V; there is no hours-by-occupation interaction.
+  actual_active_hours_object: "see D_active_hours_object below"
+
+D_active_hours_object:
+  status: ACTIVE
+  name_in_the_goal1_term_registry: "hours.working_pt1_pt2_f35_ft_lh"
+  registry_source: "experiments/JMP_SEMINAR_SPRINT/runs/research_lab/a_to_z_lab.py:62"
+
+  exact_mathematical_term:
+    transcribed_from: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:244-247 (at gitlink 27756a06)"
+    verbatim_code: |
+      log_h = jnp.zeros_like(u)
+      for cname, arr, uw in hours:
+          x = arr * working if uw else arr
+          log_h = log_h + P(cname) * x
+    mathematics: >-
+      log_h_ij = beta_E * working_ij
+                 + beta_h_pt1 * working_pt1_ij
+                 + beta_h_pt2 * working_pt2_ij
+                 + beta_h_f35 * working_f35_ij
+                 + beta_h_ft  * working_ft_ij
+                 + beta_h_lh  * working_lh_ij
+    note_on_the_working_interaction: >-
+      The base spec attaches NO interaction key to the hours shifters, so
+      uw is False for all of them (engine_jax.py:173-174) and each band column
+      is used as-is. The band columns are themselves already zero on non-working
+      rows by construction, so the term is worker-gated by the DATA, not by a
+      multiplication in the engine. beta_E's regressor IS the working indicator.
+
+  the_five_common_bands:
+    beta_E:
+      column: "working"
+      interval: "hours > 0 (the employment margin itself, not an hours band)"
+      role: "the level of the employment/participation opportunity"
+      estimate: -3.3343780667951135
+    beta_h_pt1:
+      column: "working_pt1"
+      interval: "[17.5, 21.5)"
+      lower_closed: true
+      upper_closed: false
+      estimate: 0.17303503763434225
+    beta_h_pt2:
+      column: "working_pt2"
+      interval: "[28.5, 30.5)"
+      lower_closed: true
+      upper_closed: false
+      estimate: 0.5496793390714966
+    beta_h_f35:
+      column: "working_f35"
+      interval: "[33.5, 36.5)"
+      lower_closed: true
+      upper_closed: false
+      estimate: 2.579482184820325
+      added_by: "the S3 extension in build_variant2('S8')"
+    beta_h_ft:
+      column: "working_ft"
+      interval: "[36.5, 40.5]"
+      lower_closed: true
+      upper_closed: true
+      estimate: 2.430305456148084
+    beta_h_lh:
+      column: "working_lh"
+      interval: "[44.5, 70.0]"
+      lower_closed: true
+      upper_closed: true
+      estimate: 0.42930277252138715
+    interval_source_pt1_pt2_ft_lh: "scripts/loc4/loc4_stage1_lib.py:233-238 (BAND_FLAGS, transcribed verbatim from scripts/welfare/m08_qw_stage_a.py:78-83)"
+    interval_source_f35: "scripts/ps1/run_ps1_battery_part1.py:88 (F35_LO, F35_HI = 33.5, 36.5); applied at scripts/ps1/run_ps1_battery_part2.py:206"
+    f35_column_construction:
+      source: "scripts/ps1/run_ps1_battery_part2.py:204-212"
+      code: |
+        hrs = pd.to_numeric(er["hours"]).to_numpy(np.float64)
+        wk  = pd.to_numeric(er["working"]).to_numpy(np.float64)
+        f35 = ((hrs >= F35_LO) & (hrs < F35_HI) & (wk > 0)).astype(np.float64)
+        er["working_f35"] = f35
+      explicit_working_gate_in_the_column: true
+
+  normalization_which_band_is_the_zero:
+    ANSWER: >-
+      The zero is the UNCOVERED hours region - every working hours value that
+      falls in NO declared band. It is NOT the F35 band.
+    detail: >-
+      In the certified BASE spec, F35 [33.5, 36.5) was the reference: it carried
+      no coefficient, and the base spec's own comment says so
+      ("long-hours [44.5,70]; F35 remains reference", hours_opportunity block).
+      The S3 extension of S8 ADDS beta_h_f35 on exactly that interval, so under
+      the FINAL model F35 is no longer the zero. What remains at exp(0) is the
+      residual, non-contiguous set of working hours covered by no band:
+      (0, 17.5) U [21.5, 28.5) U [30.5, 33.5) U (40.5, 44.5) U (70.0, h_max].
+    corroborating_source: >-
+      scripts/loc4/loc4_stage1_lib.py:242-266 (log_I_H_closed_form): the closed
+      form integrates the piecewise-constant factor as
+      base_width * exp(0) + sum_k width_k * exp(beta_k), and states the form as
+      "sum of band widths times exp(band coefficient), reference band at exp(0)"
+      (:265). The reference width is total_width minus covered width (:255).
+    disjointness_is_asserted_not_assumed:
+      source: "scripts/ps1/run_ps1_battery_part2.py:207-210"
+      code: |
+        band = sum(er[f"working_{n}"] for n in ("pt1","pt2","ft","lh"))
+        if float(np.sum(f35 * (band > 0))) != 0.0:
+            raise Stop("the narrow F35 band overlaps an existing hours band")
+      consequence: "The six band columns are mutually exclusive by construction and this is enforced before estimation."
+    reporting_block_is_stale_on_this_point:
+      where: "estimation_spec_joint_pooled_v1_bll0_tlmpin.yaml, reporting.hours_bins, key 'f35', reference: true"
+      caution: >-
+        That flag describes the BASE spec and is used by post-estimation plots
+        only ("estimation uses hours_opportunity above"). Under S8 it is no
+        longer the reference. Do not read the normalization off the reporting
+        block.
+
+  meaning_of_each_peak_parameter:
+    answer: "log-density coefficients of a piecewise-constant hours factor"
+    NOT_a_density_location: true
+    NOT_a_mixture_mass: true
+    NOT_a_bandwidth: true
+    detail: >-
+      Each beta_h_* is the log of the multiplicative opportunity weight on its
+      hours band, relative to the uncovered reference region at exp(0). The
+      hours opportunity factor is piecewise constant in h: it equals exp(beta_k)
+      on band k and exp(0) elsewhere. beta_h_f35 = 2.5795 therefore says the
+      35-hour band carries exp(2.5795) ~ 13.2 times the opportunity weight of an
+      unbanded working hours value - the "peak" is a step in a step function,
+      not a kernel with a location and a width.
+    beta_E_is_different: >-
+      beta_E multiplies the working indicator, not an hours band. It shifts the
+      whole employment branch relative to non-employment, and is the
+      participation-margin level rather than an hours-shape coefficient.
+
+  part_time_definition:
+    answer: "There is no single part-time indicator. Part time is carried by TWO disjoint narrow bands: pt1 = [17.5, 21.5) and pt2 = [28.5, 30.5)."
+    caution: >-
+      These are NARROW bands around modal part-time hours, not an exhaustive
+      partition of part-time. Hours between 21.5 and 28.5, for example, fall in
+      the uncovered reference region and carry weight exp(0).
+  full_time_definition:
+    answer: "ft = [36.5, 40.5], closed at both ends. Under S8 the 35-hour interval is a SEPARATE band and is not part of ft."
+  treatment_of_the_35_hour_interval:
+    answer: >-
+      [33.5, 36.5) is its own band carrying its own coefficient beta_h_f35. In
+      the certified base it was the omitted reference; the S3 extension of S8
+      promotes it to an explicit coordinate. S8 nests the base BITWISE at
+      beta_h_f35 = 0 - a nesting gate that the run asserts before estimating
+      (scripts/ps1/run_ps1_battery_part2.py:248-264, invoked at :396-400).
+  treatment_of_long_hours:
+    answer: "lh = [44.5, 70.0], closed at both ends. Hours in (40.5, 44.5) and above 70.0 are in the uncovered reference region."
+
+  exact_parameter_names_and_ordering:
+    names_in_vector_order: [beta_E, beta_h_pt1, beta_h_pt2, beta_h_ft, beta_h_lh, beta_h_f35]
+    indices: [18, 19, 20, 21, 22, 50]
+    ordering_caution: >-
+      beta_h_f35 is NOT adjacent to the other hours coefficients. It is index 50,
+      appended LAST, after the delta_occ block. The ordering is historical
+      (base parse -> LOC4 extension -> S3 extension), and it is binding for the
+      theta byte digest.
+    ordering_source: "scripts/ps1/run_ps1_battery_part2.py:216 (B1._append_coord(spec_model, 'beta_h_f35', ...))"
+
+  sex_sharing:
+    answer: "COMMON across sexes"
+    mechanism: >-
+      The engine supports a gender_split of HOURS coefficients (engine_jax.py:
+      117-122, :175), reading coef+'_m' / coef+'_f' when a base name is in the
+      split set. The final model uses NO gender split: no beta_h_*_m or
+      beta_h_*_f coordinate exists in the 51-name vector. The band DATA columns
+      are also unsuffixed for singles.
+    also_common_across: ["occupations", "marital status"]
+    historical_note: >-
+      A gender-split variant (beta_E_m/f, beta_h_pt2_m/f) was estimated on an
+      earlier couples-inclusive baseline and FAILED its synthetic identification
+      gate; it is not part of this model.
+
+  bounds_and_pins:
+    beta_E:      {bounds: [-25.0, 25.0], pinned: false, at_bound: false}
+    beta_h_pt1:  {bounds: [-10.0, 10.0], pinned: false, at_bound: false}
+    beta_h_pt2:  {bounds: [-10.0, 10.0], pinned: false, at_bound: false}
+    beta_h_ft:   {bounds: [-10.0, 10.0], pinned: false, at_bound: false}
+    beta_h_lh:   {bounds: [-10.0, 10.0], pinned: false, at_bound: false}
+    beta_h_f35:  {bounds: [-10.0, 10.0], pinned: false, at_bound: false}
+    f35_bound_origin: "copied from beta_h_ft's bounds; initial value 0.0 (run_ps1_battery_part2.py:216)"
+
+  structural_channel:
+    channel: "job access - the hours dimension of the opportunity set"
+    target_object: "g^H"
+    contributes_to_target_V: true
+    enters_V_as: "the additive term log_h in V = u + log_h + log_w + log_market - log_prior (engine_jax.py:274)"
+
+  rum_treatment:
+    removed_by_genuine_rum: true
+    what_happens: >-
+      Under a genuine RUM the hours-opportunity factor is not a separate
+      opportunity object: the band constants RELOCATE into the utility index u
+      (the RUM-B relocation). They survive as alternative-specific PREFERENCE
+      constants over hours bands rather than as opportunity weights. The
+      economic reading changes even where the fitted numbers are similar: an
+      opportunity weight says jobs at 35 hours are more AVAILABLE; a preference
+      constant says 35-hour jobs are more LIKED.
+    rum_benchmark_authority: "Goal-1 R-250.2"
+
+  proposal_interaction:
+    changes_proposal_prior: false
+    statement: >-
+      The structural hours term does NOT enter q. The proposal has its own,
+      SEPARATE hours density q^H.
+    q_H_definition:
+      formula: "log q_H^marg(h) = log sum_k (w_k / width_k) * 1{h in [a_k, b_k)}"
+      derived_from: "h alone"
+      source: "frame metadata proposal_density_convention.log_q_H, in fr_p2a_singles2016_regionlive_margqh_floor5_v1__mnlmeta.json"
+      scope: "simulated working rows only (draw > 0 and working == 1)"
+      authority: "JMP-M08E E0 audit v1, verdict E0-CONFIRMED-MARGINAL"
+      relation_to_the_structural_bands: >-
+        q^H is a normalized MIXTURE over bands with masses w_k and widths
+        width_k. The structural log_h is an UNNORMALIZED piecewise-constant
+        log-weight. They are different objects on a similar band geometry and
+        must not be identified with one another.
+    frame_note: >-
+      log_q_H is the field the floor-5 correction rebuilt (mnlmeta
+      changed_fields = [log_q_H, log_prior, prior]). It travels on the frame and
+      is never recomputed from theta.
+
+  implementing_source_of_record:
+    accumulation: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:244-247 (gitlink 27756a06)"
+    shifter_binding: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:166-176 (gitlink 27756a06)"
+    band_column_loading: "packages/dclaborsupply/src/dclaborsupply/data/loader.py:50 (_HOURS_BANDS), :530-531 (gitlink 27756a06)"
+    f35_construction_and_gate: "scripts/ps1/run_ps1_battery_part2.py:203-221"
+    band_intervals: "scripts/loc4/loc4_stage1_lib.py:233-238; scripts/ps1/run_ps1_battery_part1.py:88"
+    normalization_closed_form: "scripts/loc4/loc4_stage1_lib.py:242-266"
+
+# =========================================================================== #
+# E. ENGINE-READY ARRAYS
+# =========================================================================== #
+# Column-level only. No household rows, no observations, no data values.
+# "varies_by_alternative": whether the column differs across the 101 rows of one
+#                          household's choice set.
+# "sex_specific":          whether the column's VALUE or NAME depends on sex on
+#                          this singles frame.
+# "role":                  STRUCTURAL_INPUT (enters V through a parameter) vs
+#                          DATA_ROLE (indexing, grouping, gating, normalization,
+#                          or a proposal field that travels but is not
+#                          re-derived).
+# =========================================================================== #
+E_engine_ready_arrays:
+  status: ACTIVE
+  frame_id: "fr_p2a_singles2016_regionlive_margqh_floor5_v1"
+  loader_entry_point: "packages/dclaborsupply/src/dclaborsupply/data/loader.py :: load_singles (:505-550 at gitlink 27756a06)"
+  sex_handling_note: >-
+    The frame is loaded ONCE PER SEX (is_male True/False). Column NAMES are
+    unsuffixed for singles; sex enters through which households are in the
+    group, through the leisure coefficient suffix (_sm / _sf), and through the
+    two rules noted below (n_children zeroing, occupation-access applies_to).
+
+  working_indicator:
+    column: "working"
+    varies_by_alternative: true
+    sex_specific: false
+    role: STRUCTURAL_INPUT
+    detail: "regressor of beta_E; also the gate for the wage term and for every market/occupation shifter (interaction: [working])"
+    source: "loader.py:530 (bands['working']); engine_jax.py:137"
+
+  occupation_group_masks:
+    columns:
+      - column: "loc4"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "the integer occupation category; the source of the one-hots, not itself a regressor"
+      - column: "loc4_1"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "REFERENCE category one-hot; loaded but attached to NO coefficient in either the access or the wage block"
+      - column: "loc4_2"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_occ_2_m OR beta_occ_2_f (access, sex-selected by applies_to) AND of delta_occ_2 (wage location, sex-common)"
+      - column: "loc4_3"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_occ_3_m / beta_occ_3_f AND of delta_occ_3"
+      - column: "loc4_4"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_occ_4_m / beta_occ_4_f AND of delta_occ_4"
+    shared_column_warning: >-
+      The SAME loc4_k column carries TWO different structural terms with
+      different sex rules: occupation ACCESS (sex-specific coefficient, selected
+      by applies_to male/female at engine_jax.py:203-209, worker-gated by the
+      interaction) and wage LOCATION (sex-common coefficient, inside mu, gated
+      by the wage worker gate). Do not merge them.
+    source: "loader.py:519 (_loc4); parser.py:703-718 routes the access shifters into market_opportunity_shifters"
+
+  wage:
+    column: "wage"
+    varies_by_alternative: true
+    sex_specific: false
+    role: DATA_ROLE
+    detail: >-
+      Read by the loader, validated (non-negative everywhere; strictly positive
+      wherever working == 1), then IMMEDIATELY transformed to log_wage. The
+      level column is not itself passed to the engine as a wage-term input.
+    source: "loader.py:521 (_opt_or_none), :149-162 (_wage_log)"
+
+  log_wage:
+    column: "log_wage"
+    materialized_separately: true
+    materialized_where: "IN THE LOADER, not in the frame"
+    varies_by_alternative: true
+    sex_specific: false
+    role: STRUCTURAL_INPUT
+    formula: "log(max(wage, EPS))"
+    detail: >-
+      Appears TWICE in the wage log-density: inside the standardized residual
+      (log_wage - mu)/sigma, and as the standalone Jacobian term -log_wage. A
+      frame may also carry its own log_wage column; the loader does not read it
+      for this field - it recomputes from `wage`.
+    source: "loader.py:538, :149-162; engine_jax.py:195, :257-258"
+
+  experience:
+    column: "pexp_years"
+    varies_by_alternative: false
+    sex_specific: false
+    role: STRUCTURAL_INPUT
+    scaling: "raw years / 20.0 (see B_wage_object.exact_experience_inputs)"
+    detail: "regressor of beta_w_pexp. The RAW column pexp_years_raw also exists on the stem but is a PROPOSAL input only."
+    source: "loader.py:520; construction at scripts/p2a/run_p2a_regionlive_rebuild.py:686"
+
+  experience_squared:
+    column: "pexp_years2"
+    varies_by_alternative: false
+    sex_specific: false
+    role: STRUCTURAL_INPUT
+    derived_in_the_loader: true
+    formula: "pexp_years ** 2, i.e. (raw/20)^2"
+    detail: "regressor of beta_w_pexp2. The loader recomputes it and ignores any frame column of the same name."
+    source: "loader.py:539"
+
+  education_inputs:
+    columns:
+      - column: "educL"
+        varies_by_alternative: false
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_w_educL"
+      - column: "educM"
+        varies_by_alternative: false
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "loaded but carries NO coefficient - the omitted education reference"
+      - column: "educH"
+        varies_by_alternative: false
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_w_educH"
+    source: "loader.py:528-529; construction at scripts/p2a/run_p2a_regionlive_rebuild.py:596-599"
+
+  hours_band_variables:
+    columns:
+      - column: "working_pt1"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_h_pt1; 1 on [17.5, 21.5) and working, else 0"
+      - column: "working_pt2"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_h_pt2; [28.5, 30.5)"
+      - column: "working_f35"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: >-
+          regressor of beta_h_f35; [33.5, 36.5) and working > 0. NOT a package
+          column: it is constructed by Goal-1 mission code onto the engine-ready
+          frame before the objective is built (run_ps1_battery_part2.py:206-212).
+          The package loader at gitlink 27756a06 does not know this name; it
+          reaches the engine because build_variant2 appends the shifter to
+          spec.hours_shifters and the engine binds shifters by name.
+      - column: "working_ft"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_h_ft; [36.5, 40.5]"
+      - column: "working_lh"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: "regressor of beta_h_lh; [44.5, 70.0]"
+      - column: "hours"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: >-
+          The hours level. Not a regressor anywhere in the final model. It is the
+          source of the band columns and of q^H, and it is read by mission code to
+          build working_f35.
+    source: "loader.py:50 (_HOURS_BANDS), :530-531; F35 at run_ps1_battery_part2.py:204-212"
+
+  occupation_specific_hours_inputs:
+    status: NOT_ACTIVE_IN_FINAL_MODEL
+    detail: "No such array exists. No hours column is indexed by occupation and no loc4 column enters the hours block."
+
+  proposal_prior:
+    columns:
+      - column: "prior"
+        varies_by_alternative: true
+        sex_specific: false
+        role: STRUCTURAL_INPUT
+        detail: >-
+          The ONLY proposal field the engine reads. It is materialized on the
+          frame as clip(exp(clip(log_prior,-700,700)), 1e-16, None), floored again
+          at EPS by the loader, and the engine takes its log and SUBTRACTS it from
+          V. Structural in the sense that it changes the objective; it is data,
+          never re-derived from theta.
+        source: "loader.py:514; engine_jax.py:138-139, :274"
+      - column: "log_prior"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: >-
+          Present on the frame and the object of the proposal identity, but NOT
+          read by the engine - the engine re-derives log(prior) from the `prior`
+          column after the EPS floor. Exactly 0.0 on chosen rows, log(0.10) on
+          non-employment rows.
+      - column: "log_q_E"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "employment-margin proposal component; a term of the identity, not read by the engine"
+      - column: "log_q_H"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "hours proposal component; rebuilt by the floor-5 correction; not read by the engine"
+      - column: "log_q_W"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "wage proposal component; travels BITWISE; not read by the engine"
+      - column: "log_q_Occ"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: "occupation proposal component; not read by the engine"
+      - column: "wage_mu"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: >-
+          The PROPOSAL's wage mean, used to build log_q_W. It is NOT the
+          structural mu of section B and must not be confused with it.
+
+  chosen_indicator:
+    columns:
+      - column: "is_chosen"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: >-
+          Validated to be chosen-FIRST: the observed alternative must occupy row 0
+          of each household block (loader.py:392, the column-0 contract). It
+          becomes actual_choice on the loaded object, which the final model's
+          objective does NOT read (use_actual_choice=False) because the
+          column-0 contract already places the observed row.
+        source: "loader.py:505 (_validate_chosen_first), :544"
+      - column: "draw"
+        varies_by_alternative: true
+        sex_specific: false
+        role: DATA_ROLE
+        detail: >-
+          Draw index within the choice set. draw == 0 IS the deterministic chosen
+          row - the row on which log_prior is set to exactly 0.0. Used for frame
+          selection and gating, not by the objective.
+
+  every_other_array_used_by_the_rich_terms:
+    utility_block:
+      - {column: "c_norm",   varies_by_alternative: true,  sex_specific: false, role: STRUCTURAL_INPUT, detail: "consumption, Box-Cox transformed with theta_c_singles; loaded as max(c_norm, EPS)"}
+      - {column: "l_norm",   varies_by_alternative: true,  sex_specific: false, role: STRUCTURAL_INPUT, detail: "leisure, Box-Cox transformed with theta_l_sm / theta_l_sf"}
+      - {column: "age_norm", varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_l_age_sm / beta_l_age_sf"}
+      - {column: "age_norm2",varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_l_age2_sm / beta_l_age2_sf (both AT AN ACTIVE BOUND at the optimum)"}
+      - {column: "n_children", varies_by_alternative: false, sex_specific: true, role: STRUCTURAL_INPUT, detail: "regressor of beta_l_nkids_sf FEMALE ONLY; the loader ZEROES the array for the male group because the shifter is declared gender_specific (loader.py:512-513, :527)"}
+      - {column: "c_scale",  varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "normalization constant from mnlmeta, not a regressor"}
+      - {column: "l_scale",  varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "normalization constant from mnlmeta, not a regressor"}
+    market_access_block:
+      columns:
+        - {column: "gsur",  varies_by_alternative: true,  sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_gsur, SCALED BY 10.0 in the engine (market_opportunity.variable_scales), worker-gated by interaction"}
+        - {column: "reg2",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn2, worker-gated"}
+        - {column: "reg3",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn3, worker-gated"}
+        - {column: "reg4",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn4, worker-gated"}
+        - {column: "reg5",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn5, worker-gated"}
+        - {column: "reg6",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn6, worker-gated"}
+        - {column: "reg7",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn7, worker-gated"}
+        - {column: "reg8",  varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_drgn8, worker-gated"}
+        - {column: "drgn1", varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "region 1 indicator; the omitted regional reference, no coefficient"}
+        - {column: "drgur", varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "urban (db100==1), regressor of beta_E_drgur, worker-gated"}
+        - {column: "drgmd", varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "middle (db100==2), regressor of beta_E_drgmd, worker-gated"}
+        - {column: "drgru", varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "rural (db100==3); the omitted urbanisation reference, no coefficient"}
+        - {column: "year_2015_indicator", varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_y2015, which is PINNED; contributes a fixed offset, not a free direction"}
+        - {column: "year_2017_indicator", varies_by_alternative: false, sex_specific: false, role: STRUCTURAL_INPUT, detail: "regressor of beta_E_y2017, which is PINNED"}
+      centering:
+        applies_to: "the ASSEMBLED log_market index only, after all market and occupation shifters are summed"
+        rule: "proposal-weighted within-choice-set centering"
+        spec_keys: "market_opportunity.center_within_choice_set: true; center_weights: proposal"
+        source: "engine_jax.py:196-198, :266-272; _center_proposal defined at engine_jax.py:94, called at :268"
+        caution: >-
+          Centering is applied to the sum, NOT per shifter, and it consumes the
+          `prior` array. The occupation ACCESS terms are inside the centered
+          index because the parser appends them to market_opportunity_shifters.
+          The wage location shifts delta_occ_k are NOT - they sit in log_w.
+    grouping_and_inference:
+      - {column: "idhh",       varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "choice-set (household) identifier; defines group_starts / group_ends"}
+      - {column: "cluster_id", varies_by_alternative: false, sex_specific: false, role: DATA_ROLE, detail: "== idorighh; the CR1 cluster key, 1555 clusters; used only by the sandwich"}
+    female_indicator:
+      column: "female"
+      varies_by_alternative: false
+      sex_specific: true
+      role: DATA_ROLE
+      detail: "set by the loader to all-zeros for the male group and all-ones for the female group (loader.py:532); not a regressor in this model"
+    in_couple_indicator:
+      column: "in_couple"
+      varies_by_alternative: false
+      sex_specific: false
+      role: DATA_ROLE
+      detail: "set to all-zeros on a singles frame (loader.py:533); not a regressor"
+    excluded_by_construction:
+      household_level_observations: "none included in this contract"
+      raw_rows: "none included in this contract"
+
+# =========================================================================== #
+# F. CHANNEL AND RUM CONTRACT
+# =========================================================================== #
+# One row per rich final-model term. No silent channel inference: each row's
+# channel is the one Goal-1 assigns it, and the target/proposal columns are read
+# off the engine expression and the frame metadata, not deduced from naming.
+# =========================================================================== #
+F_channel_and_rum_contract:
+  status: ACTIVE
+  V_expression: "V = u + log_h + log_w + log_market - log_prior"
+  V_expression_source: "packages/dclaborsupply/src/dclaborsupply/likelihood/engine_jax.py:274 (gitlink 27756a06)"
+  general_rule: >-
+    No structural term contributes to q, and no proposal component contributes
+    to V except through the single subtracted log_prior. The two sides share
+    data columns but never parameters.
+
+  terms:
+    - term: "utility.box_cox_consumption"
+      status: ACTIVE
+      parameters: [theta_c_singles]
+      fixed_companion: "beta_c = 1.0 (scale numeraire, not a coordinate)"
+      structural_channel: "preferences (consumption)"
+      survives_genuine_rum: true
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+
+    - term: "utility.box_cox_leisure"
+      status: ACTIVE
+      parameters: [theta_l_sm, theta_l_sf]
+      structural_channel: "preferences (leisure curvature)"
+      survives_genuine_rum: true
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+
+    - term: "utility.leisure_intercept_age_age2_children"
+      status: ACTIVE
+      parameters: [beta_l0_sm, beta_l_age_sm, beta_l_age2_sm, beta_l0_sf, beta_l_age_sf, beta_l_age2_sf, beta_l_nkids_sf]
+      structural_channel: "preferences (needs / taste shifters on leisure)"
+      survives_genuine_rum: true
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      note: "beta_l_age2_sm and beta_l_age2_sf are AT AN ACTIVE BOUND (+1.0) at the optimum and carry no standard error."
+
+    - term: "hours.working_pt1_pt2_f35_ft_lh"
+      status: ACTIVE
+      parameters: [beta_E, beta_h_pt1, beta_h_pt2, beta_h_ft, beta_h_lh, beta_h_f35]
+      structural_channel: "job access - hours opportunity (g^H)"
+      survives_genuine_rum: false
+      rum_disposition: "constants RELOCATE into u as alternative-specific preference constants (RUM-B); the availability reading does not survive"
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      separate_proposal_counterpart: "q^H (log_q_H), a normalized band mixture derived from h alone; a DIFFERENT object"
+
+    - term: "job_access.gsur_region_urbanisation_year"
+      status: ACTIVE
+      parameters: [beta_E_gsur, beta_E_drgn2, beta_E_drgn3, beta_E_drgn4, beta_E_drgn5, beta_E_drgn6, beta_E_drgn7, beta_E_drgn8, beta_E_drgur, beta_E_drgmd, beta_E_y2015, beta_E_y2017]
+      structural_channel: "job access - market/location opportunity"
+      survives_genuine_rum: false
+      rum_disposition: "removed; under a genuine RUM these availability shifters are recovered as tastes rather than access"
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      note: "beta_E_y2015 and beta_E_y2017 are PINNED. This index is proposal-weighted centered within each choice set."
+
+    - term: "job_access.occupation_loc4_sex_specific"
+      status: ACTIVE
+      parameters: [beta_occ_2_m, beta_occ_3_m, beta_occ_4_m, beta_occ_2_f, beta_occ_3_f, beta_occ_4_f]
+      structural_channel: "job access - occupation opportunity (O^Occ)"
+      sex_specific: true
+      reference: "loc4 category 1, omitted"
+      survives_genuine_rum: false
+      rum_disposition: "removed; relocates into preferences over occupations"
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      separate_proposal_counterpart: "q^Occ (log_q_Occ); a DIFFERENT object"
+      routing_note: "parsed from occupation_opportunity but computed inside log_market, so it is INSIDE the within-choice-set centering"
+
+    - term: "earning.lognormal_intercept_education_experience_sigma"
+      status: ACTIVE
+      parameters: [beta_w0, beta_w_educL, beta_w_educH, beta_w_pexp, beta_w_pexp2, sigma]
+      structural_channel: "earning opportunities (g^W)"
+      survives_genuine_rum: false
+      rum_disposition: "removed - g is replaced by the common g-bar; the wage survives only as an argument of the budget, and the common normalization cancels across a household's alternatives"
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      separate_proposal_counterpart: "q^W (log_q_W), a log-normal with its OWN mu and sigma over RAW experience years; a DIFFERENT object"
+
+    - term: "earning.occupation_wage_location_delta_occ_2_3_4"
+      status: ACTIVE
+      parameters: [delta_occ_2, delta_occ_3, delta_occ_4]
+      structural_channel: "earning opportunities (g^W) - occupation-conditional LOCATION"
+      sex_specific: false
+      reference: "loc4 category 1, delta_occ_1 == 0 by omission"
+      survives_genuine_rum: false
+      rum_disposition: "removed with the rest of g^W"
+      contributes_to_target_V: true
+      contributes_to_proposal_q: false
+      both: false
+      profile_note: >-
+        This is the ONE term the Goal-1 lab marks as unsupported on the
+        laptop_jax_cpu and laptop_torch_cuda profiles; it is supported on
+        server_jax_cpu (a_to_z_lab.py:70-83). Any Goal-2 reproduction must be on
+        a profile that carries it.
+
+    - term: "utility.couples_leisure_block (INERT on this frame)"
+      status: NOT_ACTIVE_IN_FINAL_MODEL
+      parameters: [beta_l0_m, beta_l_age_m, beta_l_age2_m, beta_l0_f, beta_l_age_f, beta_l_age2_f, beta_l_nkids_f, theta_l_f]
+      why_listed: >-
+        These 8 coordinates OCCUPY POSITIONS 10-17 of the 51-vector and are part
+        of the theta byte digest, so a parity reproduction must carry them at
+        their pinned values. They are listed here for completeness of the
+        vector, not as active model terms.
+      structural_channel: "preferences (couples leisure) - not exercised on a singles-only frame"
+      all_pinned: true
+      survives_genuine_rum: "not applicable - the term does not enter this model's objective"
+      contributes_to_target_V: false
+      contributes_to_proposal_q: false
+      both: false
+      gradient_at_the_optimum: "exactly 0.0 for all eight, because the couples block does not enter a singles-only objective"
+
+    - term: "proposal.exact_marginal"
+      status: ACTIVE
+      parameters: []
+      structural_channel: "sampling correction (not an economic channel)"
+      survives_genuine_rum: true
+      survives_note: "the sampling correction is a property of how alternatives were drawn, not of the model; any estimator on this frame needs it"
+      contributes_to_target_V: true
+      contributes_to_V_how: "subtracted: V includes the term -log_prior"
+      contributes_to_proposal_q: true
+      both: true
+      both_is_intended: true
+      both_explanation: >-
+        This is the ONE row where 'both' is genuinely correct, and it is not a
+        channel ambiguity. The object IS the proposal density q, and it enters
+        the target only as the McFadden sampling correction -log q. It carries
+        no free parameter, so no economic coefficient is shared between the two
+        sides.
+
+    - term: "proposal.chosen_deterministic_unit"
+      status: ACTIVE
+      parameters: []
+      structural_channel: "sampling correction (chosen-row convention)"
+      survives_genuine_rum: true
+      contributes_to_target_V: true
+      contributes_to_V_how: "the chosen row's log_prior is exactly 0.0, so it contributes exactly 0 to V's correction"
+      contributes_to_proposal_q: true
+      both: true
+      both_is_intended: true
+      both_explanation: >-
+        Same reading as proposal.exact_marginal: the chosen alternative is
+        inserted deterministically with inclusion probability 1, so its
+        correction is 0 on both sides by construction. No parameter is shared.
+
+  terms_absent_from_the_final_model:
+    - {name: "vw_occupation", status: NOT_ACTIVE_IN_FINAL_MODEL, see: "C_vw_occupation"}
+    - {name: "loc_empirical", status: NOT_ACTIVE_IN_FINAL_MODEL, see: "B_wage_object.is_this_loc_empirical"}
+    - {name: "occupation-specific hours", status: NOT_ACTIVE_IN_FINAL_MODEL, see: "D_occupation_specific_hours"}
+    - {name: "gender-split hours (beta_E_m/f, beta_h_pt2_m/f)", status: NOT_ACTIVE_IN_FINAL_MODEL, reason: "failed its synthetic identification gate; not in the 51-name vector"}
+    - {name: "S5 four-group education partition (beta_w_edu_g1..g4)", status: NOT_ACTIVE_IN_FINAL_MODEL, reason: "the S5 admission test did not PROMOTE; not in the 51-name vector"}
+    - {name: "random leisure intercept (HP)", status: NOT_ACTIVE_IN_FINAL_MODEL, reason: "not identified; closed at R-226"}
+    - {name: "opportunity frailty (HO)", status: NOT_ACTIVE_IN_FINAL_MODEL, reason: "not identified; closed at R-227.2"}
+    - {name: "couples leisure block and beta_ll", status: NOT_ACTIVE_IN_FINAL_MODEL, reason: "singles-only frame; the couples coordinates are pinned and their gradients are exactly 0.0"}
+
+# =========================================================================== #
+# UNDEFINED ITEMS
+# =========================================================================== #
+undefined_items:
+  count: 0
+  items: []
+  note: >-
+    Every field requested by the Goal-2 request was resolvable from the frozen
+    record, the frozen frame metadata, or the implementing source at the pinned
+    gitlink. Sections C and D are NOT_ACTIVE_IN_FINAL_MODEL rather than
+    UNDEFINED: the determination that the object is absent is itself a positive
+    reading of the record, and the actual Goal-1 object is named in each case.
+
+# =========================================================================== #
+# REPRODUCTION CAUTIONS (the traps a package-side reimplementation will hit)
+# =========================================================================== #
+reproduction_cautions:
+  - id: C-1
+    caution: "There is no single parseable YAML for this model. The base parse is extended twice in Goal-1 mission code (A_final_model_binding.executable_specification_is_built_in_code)."
+  - id: C-2
+    caution: "wage_spec is 'vw', not 'loc_empirical' and not 'vw_occupation'. The occupation conditioning is three extra wage MEAN SHIFTERS with a SHARED sigma."
+  - id: C-3
+    caution: "pexp_years is raw years / 20.0 for the STRUCTURAL block; pexp_years_raw is what the PROPOSAL uses. pexp_years2 is recomputed in the loader as (raw/20)^2 and any frame column of that name is ignored."
+  - id: C-4
+    caution: "Under S8 the hours reference is the UNCOVERED region at exp(0), not F35. The reporting.hours_bins 'reference: true' flag on f35 describes the base spec and is stale for the final model."
+  - id: C-5
+    caution: "beta_h_f35 is index 50, appended last, NOT adjacent to the other hours coefficients. The parameter order is binding for the theta byte digest."
+  - id: C-6
+    caution: "working_f35 is built by Goal-1 mission code onto the engine-ready frame; the package loader at the pin does not know the column name."
+  - id: C-7
+    caution: "The wage log-density carries the Jacobian term -log_wage. Omitting it gives a density in log w, not in w, and will not reproduce the anchor."
+  - id: C-8
+    caution: "The occupation ACCESS coefficients are sex-specific; the occupation WAGE LOCATION shifts are sex-common. They read the SAME loc4_k columns."
+  - id: C-9
+    caution: "The market index is proposal-weighted centered within the choice set AFTER the occupation access shifters are summed into it. The wage location shifts are not centered."
+  - id: C-10
+    caution: "The engine reads the materialized `prior` column and takes its own log, after an EPS floor in the loader. It does not read log_prior."
+  - id: C-11
+    caution: "n_children is ZEROED by the loader for the male singles group because the shifter is declared gender_specific."
+  - id: C-12
+    caution: "Goal-2's public main b042431c is not the pin the anchor was produced under. The anchor binds to gitlink 27756a06."
