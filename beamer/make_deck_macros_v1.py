@@ -335,7 +335,7 @@ def build(sprint, out):
             m.num("BenchSharePrefRUMB", rumbd["C_pref_over_I00"], src, dp=1, pct=True)
             m.num("RndBenchDropRaw",
                   abs((float(rumbd["I00"]) - float(ruro["I00"]))
-                      / float(ruro["I00"])), src, dp=0, pct=True)
+                      / float(ruro["I00"])), src, dp=1, pct=True)
         m.num("BenchInequalityDrop" + tag,
               (float(rumbd["I00"]) - float(ruro["I00"])) / float(ruro["I00"]),
               src, dp=1, pct=True, signed=True)
@@ -378,6 +378,10 @@ def build(sprint, out):
     # v4: the author's precise display rounding. No estimates are changed.
     src = 'SPRINT/tables/headline_decomposition_v1.csv'
     m.num('VEnvAlone',(float(prim['I00'])-float(prim['I01']))/float(prim['I00']),src+'; (I00-I01)/I00',dp=0,pct=True)
+    # the other single-order leg. Equalising preferences alone RAISES inequality,
+    # so (I00-I10)/I00 is negative and the slide states it as a rise; the macro
+    # carries the magnitude so no sign is hand-typed.
+    m.num('VPrefAlone',abs((float(prim['I00'])-float(prim['I10']))/float(prim['I00'])),src+'; |(I00-I10)/I00|',dp=0,pct=True)
     for name, col, dp in [('VStateBase','I00',3), ('VStatePref','I10',3),
                           ('VStateEnv','I01',3), ('VStateCommon','I11',3),
                           ('VLevelEnv','C_env',3)]:
@@ -397,6 +401,10 @@ def build(sprint, out):
     src = 'SPRINT/tables/parameter_uncertainty_v1.csv'
     m.num('VParEnvLo',se['parameter_lo_2p5'],src,dp=1,pct=True)
     m.num('VParEnvHi',se['parameter_hi_97p5'],src,dp=1,pct=True)
+    # the preference share carries a CR1 interval too, and the headline slide
+    # prints both rather than only the environment's.
+    m.num('VParPrefLo',sp['parameter_lo_2p5'],src,dp=1,pct=True)
+    m.num('VParPrefHi',sp['parameter_hi_97p5'],src,dp=1,pct=True)
     src = 'SPRINT/figures/fig02_hours_bands_obs_vs_pred.csv'
     m.num('VHoursObs',f35['observed'],src,dp=1,pct=True)
     m.num('VHoursPred',f35['predicted'],src,dp=1,pct=True)

@@ -85,8 +85,8 @@
     "headline": "The model reproduces the hours distribution, employment and occupation shares.",
     "element": "hours",
     "builds": 1,
-    "on_slide_words": 67,
-    "body_words": 57,
+    "on_slide_words": 70,
+    "body_words": 60,
     "pdf_page": 13
   },
   {
@@ -130,8 +130,8 @@
     "headline": "A two-player Shapley game: preferences against the complete non-preference environment.",
     "element": "equations + table",
     "builds": 1,
-    "on_slide_words": 82,
-    "body_words": 72,
+    "on_slide_words": 93,
+    "body_words": 83,
     "pdf_page": 19
   },
   {
@@ -148,8 +148,8 @@
     "headline": "The non-preference environment accounts for 94% of measured welfare inequality; preferences for 6%.",
     "element": "headline_references",
     "builds": 1,
-    "on_slide_words": 49,
-    "body_words": 36,
+    "on_slide_words": 50,
+    "body_words": 37,
     "pdf_page": 21
   },
   {
@@ -157,8 +157,8 @@
     "headline": "Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%.",
     "element": "environment",
     "builds": 1,
-    "on_slide_words": 49,
-    "body_words": 34,
+    "on_slide_words": 54,
+    "body_words": 39,
     "pdf_page": 22
   },
   {
@@ -166,8 +166,8 @@
     "headline": "Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences.",
     "element": "text",
     "builds": 1,
-    "on_slide_words": 54,
-    "body_words": 35,
+    "on_slide_words": 55,
+    "body_words": 36,
     "pdf_page": 23
   },
   {
@@ -175,8 +175,8 @@
     "headline": "The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste.",
     "element": "benchmark",
     "builds": 1,
-    "on_slide_words": 54,
-    "body_words": 38,
+    "on_slide_words": 55,
+    "body_words": 39,
     "pdf_page": 24
   },
   {
@@ -202,8 +202,8 @@
     "headline": "Couples reproduce the same environment ordering; their preference share is not robustly identified.",
     "element": "couples",
     "builds": 1,
-    "on_slide_words": 49,
-    "body_words": 36,
+    "on_slide_words": 65,
+    "body_words": 52,
     "pdf_page": 28
   },
   {

@@ -111,8 +111,8 @@ tax-benefit system.
 The model reproduces the hours distribution, employment and occupation shares.
 
                                                  30
-                                                          observed
-                                                          model-implied
+                                                           observed
+                                                           model-implied
                                                  25
 
 
@@ -128,75 +128,68 @@ tax-benefit system.
                                                   5
 
                                                   0
-
-
-
-
-                                                                                         40 FT
                                                       0
                                                            0
-                                                                .5
+                                                                  .5
 
-                                                                     21 T1
-                                                                              .5
+                                                                        21 T 1
+                                                                                 .5
 
-                                                                     30 T2
-                                                                              .5
+                                                                                      30 T 2
+                                                                                               .5
+                                                                                               ef
+                                                                                                     FT
+                                                                                                          4.5
 
+                                                                                                                LH
 
-
-
-                                                                                                  .5
-                                                                                                        LH
-                                                                              ef
-
-
-
-
-                                                                                                         +
-                                                          0-1
+                                                                                                                     +
+                                                          0- 1
 
 
 
 
-                                                                                                       70
-                                                                          5r
-                                                              -17
+                                                                                                                     70
+                                                                                           5r
+                                                                 - 17
 
 
 
-                                                                           28
+                                                                              28
 
 
-                                                                           33
+                                                                                            33
+                                                                               P
 
 
-
-
-                                                                                               44
-                                                                            P
-
-
-                                                                            P
-                                                                       .5-
-
-
-                                                                       .5-
+                                                                                             P
 
 
 
 
-                                                                                           .5-
-                                                                       F3
-                                                            10
+                                                                                                          4
+                                                                          .5-
 
 
-                                                                          weekly hours
+                                                                                        .5-
+
+
+
+
+                                                                                                      .5-
+                                                                                        F3
+                                                             10
+
+
+
+
+                                                                                                     40
+                                                                                      weekly hours
 
    35-hour band 24.9% observed, 25.2% model-implied; employment 87.1% / 86.7%; mean absolute band error
    0.008.
 
-                                                                                                             7/15
+                                                                                                                          7/15
 Equivalent income at a common reference pay, under four preference–environment states.
 
 
@@ -231,13 +224,13 @@ environment.
                              Cpref = 21 [(I00 − I10 ) + (I01 − I11 )] = 0.0085
 
                              Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
-    equalizing the environment alone reduces inequality by 77%; the Shapley attribution to the
-   environment is 94%.
+    equalizing the environment alone reduces inequality by 77%, equalizing preferences alone raises it by
+   10%; the Shapley attribution averages the two orders and gives the environment 94%.
 
    the environment is then split by an Owen value into job access, earning opportunities, and household
    endowments and needs.
 
-                                                                                                          9/15
+                                                                                                            9/15
 The non-preference environment accounts for 94% of measured welfare inequality;
 preferences for 6%.
 
@@ -254,27 +247,26 @@ preferences for 6%.
                                                                                       male reference
                                     0.00   0.02   0.04        0.06    0.08     0.10    0.12      0.14
                                                          contribution (Gini points)
-   93.7 ± 0.6 / 6.3 ± 0.6 (female reference); 89.1 / 10.9 (male reference); parameter-uncertainty interval for the
-   environment share [89.1, 95.8].
+   93.7 ± 0.6 / 6.3 ± 0.6 female-primary; 89.1 / 10.9 male structural-zero; never averaged. Parameter intervals:
+   environment [89.1, 95.8], preferences [4.2, 10.9].
 
-                                                                                                                     10/15
+                                                                                                                   10/15
 Household endowments and needs 58%, earning opportunities 21%, job access 15%; job
 opportunities together 36%.
 
 
-
                household endowments
-                           and needs                                                    58%
+                           and needs                                                      58%
 
-                 earning opportunities                    21%
+                 earning opportunities                     21%
 
-                           job access              15%
-                                         0   10      20         30     40      50      60       70
-                                             share of measured welfare inequality removed (%)
+                           job access               15%
+                                         0   10       20         30     40      50       60        70
+                                             share of measured welfare inequality attributed (%)
+   integration bands ± 1.5 / ± 1.6 / ± 1.1; ordering identical under both reference conventions and under
+   equivalization.
 
-   ordering identical under both reference conventions and under equivalization.
-
-                                                                                                     11/15
+                                                                                                            11/15
 Unequal job opportunities account for about a third of measured welfare inequality;
 omitting them re-attributes almost nothing to preferences.
 
@@ -282,10 +274,10 @@ omitting them re-attributes almost nothing to preferences.
 
 
    (1) job access + earning opportunities: 35.5% ± 1.0 of measured inequality (the complete
-   environment 93.7%).
+   environment 93.7% ± 0.6).
 
    (2) Omitting heterogeneous opportunities: preference share 6.3% → 6.4%; measured inequality
-   falls 24%; the market-side contribution is relabelled into endowments and needs.
+   falls 24.2%; the market-side contribution is relabelled into endowments and needs.
 
 
 
@@ -295,26 +287,27 @@ omitting them re-attributes almost nothing to preferences.
 as taste.
 
 
-                                                     100   final model        benchmark
+                                                         100   final model        benchmark
 
 
 
-                   measured inequality removed (%)
-                      share of that model's own
-                                                      80
+                    measured inequality attributed (%)
+                        share of that model's own
+                                                          80
 
-                                                      60
+                                                          60
 
-                                                      40
+                                                          40
 
-                                                      20
+                                                          20
 
-                                                       0     job           earning        endowments   preferences
-                                                           access        opportunities     and needs
+                                                           0                                               preferences
+                                                                 job           earning        endowments
+                                                               access        opportunities     and needs
 
    35-hour coefficient: 2.58 as availability, 2.55 as preference; leisure-intercept sex gap +0.43 → −1.99.
 
-                                                                                                                     13/15
+                                                                                                                         13/15
 The preference share is the sensitive margin; the environment’s internal structure is stable.
 
 
@@ -366,7 +359,7 @@ as taste.
          beta_l_nkids_sf
                theta_l_sf
          theta_c_singles
-                            2     0            2          4   6   8
+                            −2    0            2          4   6   8
                                                    estimate
 B1 — The estimated coefficients: job access
 
@@ -393,7 +386,7 @@ as taste.
            beta_occ_3_f
            beta_occ_4_f
              beta_h_f35
-                           4   3        2      1         0   1   2   3
+                           −4   −3    −2      −1         0   1   2   3
                                               estimate
 B1 — The estimated coefficients: earning opportunities
 

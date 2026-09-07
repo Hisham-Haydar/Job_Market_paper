@@ -468,6 +468,28 @@ def build(sprint, out):
               "RQMC scramble-jackknife band for couples channel %s." % ch)
 
     sens = pd.read_csv(runs / "final_couples_welfare" / "cw_step3b_sensitivity_table_v1.csv")
+    #: the RAW couples contributions. The step-4 artefact carries an
+    #: equivalized contributions block only, so the raw row the paper
+    #: prints had nothing to check against. This table carries one
+    #: baseline and one band per quantity per basis; the raw baselines
+    #: are those contributions.
+    src_sens = "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv"
+    raw_sens = sens[sens.basis == "raw"].drop_duplicates("quantity")
+    for ch in ("C_P", "C_E", "C_A", "C_B", "C_D"):
+        row = raw_sens[raw_sens.quantity == ch]
+        if len(row) != 1:
+            raise SystemExit("expected one raw baseline for %s" % ch)
+        row = row.iloc[0]
+        n.add("couples_%s_raw" % ch, float(row["baseline"]), src_sens,
+              "baseline (basis=raw, quantity=%s)" % ch,
+              "couples R240 baseline, raw basis",
+              "Couples channel contribution %s (Gini points, raw)." % ch)
+        n.add("couples_%s_raw__rqmc_band" % ch,
+              [float(row["band_lo"]), float(row["band_hi"])], src_sens,
+              "band_lo / band_hi (basis=raw, quantity=%s)" % ch,
+              "couples R240 baseline, raw basis",
+              "RQMC scramble-jackknife band for couples channel %s, raw."
+              % ch)
     n.add("couples_male_leisure_sensitivity_max", float(sens[sens.quantity == "C_P"].relative_delta.abs().max()),
           "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
           "relative_delta (quantity=C_P, max abs across sensitivity arms)",

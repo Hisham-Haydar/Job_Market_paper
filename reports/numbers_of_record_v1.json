@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generated_by": "beamer/make_numbers_of_record_v1.py",
-    "n_entries": 203,
+    "n_entries": 213,
     "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance.",
     "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
   },
@@ -689,6 +689,23 @@
         0.018809670653941946
       ]
     },
+    "couples_C_A_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "baseline (basis=raw, quantity=C_A)",
+      "reference": "Couples channel contribution C_A (Gini points, raw).",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.01956183518817622
+    },
+    "couples_C_A_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "band_lo / band_hi (basis=raw, quantity=C_A)",
+      "reference": "RQMC scramble-jackknife band for couples channel C_A, raw.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": [
+        0.0185141384420438,
+        0.0206095319343085
+      ]
+    },
     "couples_C_B_equivalized": {
       "basis": "couples R240 baseline, equivalized basis",
       "column_or_key": "B_couples.contributions_equivalized.C_B.estimate",
@@ -704,6 +721,23 @@
       "value": [
         0.03849939689395592,
         0.043034425458772625
+      ]
+    },
+    "couples_C_B_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "baseline (basis=raw, quantity=C_B)",
+      "reference": "Couples channel contribution C_B (Gini points, raw).",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.04589803020059647
+    },
+    "couples_C_B_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "band_lo / band_hi (basis=raw, quantity=C_B)",
+      "reference": "RQMC scramble-jackknife band for couples channel C_B, raw.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": [
+        0.0433161039376796,
+        0.0484799564635133
       ]
     },
     "couples_C_D_equivalized": {
@@ -723,6 +757,23 @@
         0.07980204182208306
       ]
     },
+    "couples_C_D_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "baseline (basis=raw, quantity=C_D)",
+      "reference": "Couples channel contribution C_D (Gini points, raw).",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.07198246506756387
+    },
+    "couples_C_D_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "band_lo / band_hi (basis=raw, quantity=C_D)",
+      "reference": "RQMC scramble-jackknife band for couples channel C_D, raw.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": [
+        0.0701291214046176,
+        0.07383580873051
+      ]
+    },
     "couples_C_E_equivalized": {
       "basis": "couples R240 baseline, equivalized basis",
       "column_or_key": "B_couples.contributions_equivalized.C_E.estimate",
@@ -740,6 +791,23 @@
         0.13755356058976778
       ]
     },
+    "couples_C_E_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "baseline (basis=raw, quantity=C_E)",
+      "reference": "Couples channel contribution C_E (Gini points, raw).",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.13744233045633655
+    },
+    "couples_C_E_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "band_lo / band_hi (basis=raw, quantity=C_E)",
+      "reference": "RQMC scramble-jackknife band for couples channel C_E, raw.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": [
+        0.1363388061148732,
+        0.1385458547977998
+      ]
+    },
     "couples_C_P_equivalized": {
       "basis": "couples R240 baseline, equivalized basis",
       "column_or_key": "B_couples.contributions_equivalized.C_P.estimate",
@@ -755,6 +823,23 @@
       "value": [
         0.004896808626930004,
         0.005544149661075893
+      ]
+    },
+    "couples_C_P_raw": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "baseline (basis=raw, quantity=C_P)",
+      "reference": "Couples channel contribution C_P (Gini points, raw).",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": 0.007296458350064455
+    },
+    "couples_C_P_raw__rqmc_band": {
+      "basis": "couples R240 baseline, raw basis",
+      "column_or_key": "band_lo / band_hi (basis=raw, quantity=C_P)",
+      "reference": "RQMC scramble-jackknife band for couples channel C_P, raw.",
+      "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
+      "value": [
+        0.0068629526541201,
+        0.0077299640460087
       ]
     },
     "couples_male_leisure_sensitivity_max": {

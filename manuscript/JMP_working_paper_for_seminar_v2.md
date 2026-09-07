@@ -12,7 +12,7 @@
 
 *This note is the only place in the paper where a status tag appears. It is to be
 stripped at final. Everything not listed here is on the record of an accepted run
-or a ratified ruling.*
+or an accepted decision.*
 
 *File of record: `JMP/manuscript/JMP_working_paper_for_seminar_v2.md`. Version 1
 is retained unchanged as the frozen seminar text; version 2 is the master
@@ -29,12 +29,11 @@ This is a **seminar working paper**, not a submission and not a final-publicatio
 claim. It is written to be argued with. Three things follow.
 
 **First, what is provisional.** Every welfare and decomposition magnitude in §7,
-§8 and Appendix D carries the label
-`FINAL_SINGLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW` (singles) or
-`FINAL_COUPLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW` (couples). They are computed,
-internally verified, gate-passed and reproducible; they are *provisional pending
-one bounded economics review*, which is the review this seminar is part of. The
-specific items that review is asked to look at are:
+§8 and Appendix D is computed, internally verified, checked against its own
+artefacts and reproducible; each is nonetheless *provisional pending one bounded
+economics review*, which is the review this seminar is part of, and each carries
+that standing on its own artefacts. The specific items that review is asked to
+look at are:
 
 | item | where | what the review is asked |
 |---|---|---|
@@ -67,14 +66,13 @@ text; what did not is marked `[PLACEHOLDER]`, with nothing written in its place.
   fixes the framing that comparison will be read under; it is the paper's one
   remaining placeholder.
 
-**Third, two authorizations are not on disk.** The consolidated Goal-1 rulings
-register ends at R-233. The freeze direction this draft is written under
-(deputy s12 plus addendum s1, Goal-1 R-244.3) and the interpretation discipline
-it quotes in §7.3 are taken from the sprint decision log, which is the surface
-of record for the sprint, rather than from the rulings document. Where §7.3
-quotes the interpretation discipline it quotes the sprint record's own wording.
-This is disclosed rather than smoothed over, on the same convention §3, §4 and
-§10 already use for authorizations that post-date the register.
+**Third, two authorizations post-date the consolidated register.** The freeze
+direction this draft is written under, and the interpretation discipline it
+quotes in §7.3, are taken from the sprint decision log rather than from the
+consolidated register, which closes earlier. Where §7.3 quotes the
+interpretation discipline it quotes the sprint record's own wording. This is
+disclosed rather than smoothed over, on the same convention §3, §4 and §10
+already use for authorizations that post-date the register.
 
 **Fourth, how the paper names things.** The main text, every figure and every
 table use economic language only: *final singles model* (or *preferred RURO
@@ -1989,6 +1987,31 @@ on the raw basis:
 | benchmark, female reference | 0.139434 ± 0.002905 | 0.145693 ± 0.002747 | 0.015506 ± 0.000802 | $0.000\mathrm{e}{+}00$ |
 | benchmark, male structural zero | 0.139434 ± 0.002905 | 0.140756 ± 0.003056 | 0.015506 ± 0.000802 | $0.000\mathrm{e}{+}00$ |
 
+The same four cells on the coalition-consistent equivalized basis, with the
+same bands:
+
+| model / reference | $I^{00}$ | $I^{10}$ | $I^{01}$ | $I^{11}$ |
+|---|---:|---:|---:|---:|
+| preferred, female reference (primary) | 0.165105 ± 0.002014 | 0.169716 ± 0.001384 | 0.030968 ± 0.000911 | $0.000\mathrm{e}{+}00$ |
+| preferred, male structural zero | 0.165105 ± 0.002014 | 0.159840 ± 0.002079 | 0.030968 ± 0.000911 | $-2.035\mathrm{e}{-}31$ |
+| benchmark, female reference | 0.166462 ± 0.002933 | 0.167818 ± 0.002560 | 0.015506 ± 0.000802 | $0.000\mathrm{e}{+}00$ |
+| benchmark, male structural zero | 0.166462 ± 0.002933 | 0.163833 ± 0.002830 | 0.015506 ± 0.000802 | $0.000\mathrm{e}{+}00$ |
+
+**$I^{01}$ is the same number on both bases, and that is a property of the
+construction rather than a coincidence.** Equalising the environment equalises
+endowments and needs with it, so the equivalence scale is common in that state
+and the raw and equivalized measures coincide there.
+
+**The states carry a second, wider uncertainty, and it is reported separately.**
+The $\pm$ figures above are eight-scramble integration precision. Propagating
+the CR1 asymptotic distribution of $\hat\theta$ through the same machinery
+gives, on the female-primary raw arm: $I^{00}$ [0.126505, 0.147600], $I^{10}$
+[0.138095, 0.160046], $I^{01}$ [0.021105, 0.044750], and $I^{11}$ zero to
+machine precision at both ends. Those intervals are three to six times the
+integration bands and are **never merged** with them. They exist for the
+female-primary raw arm only; no CR1 interval was computed for the
+male-reference or equivalized states, and none is implied for them here.
+
 Baseline money-metric inequality among French single adults is a Gini of about
 **0.134** under the preferred model. Equalising the environment alone — a
 single-order counterfactual, not the attributed share — takes it to
@@ -3471,8 +3494,10 @@ it should not be settled by whoever happens to write the code.
 # Appendices
 
 > **Legend for the technical appendices.** The appendices retain the internal
-> specification labels, because reproduction needs them: **S8** is the *final
-> singles model* of the main text; **LOC4 / S0** is the *occupation-conditioned
+> specification labels, because reproduction needs them. The mapping between the
+> repository's internal names and this paper's audience-facing ones is given once,
+> in the provenance note at A.4. The *final singles model* of the main text is the
+> preferred specification of A.1; the *occupation-conditioned
 > wage specification benchmark*; **A, B, D, P** are the decomposition's four
 > channels — job access, earning opportunities, household endowments and needs,
 > and preferences. No label in this legend appears anywhere in §1–§11 or on any
@@ -3480,7 +3505,7 @@ it should not be settled by whoever happens to write the code.
 
 ## Appendix A — The parameter tables
 
-### A.1 The preferred specification (S8): all 41 estimated coordinates
+### A.1 The preferred specification: all 41 estimated coordinates
 
 Robust CR1 standard errors, $G = 1{,}555$ clusters, $K_{\text{interior}} = 39$,
 read against $z_{0.975} = 1.959964$. Objective 18022.764617170084. The ten pinned
@@ -3532,7 +3557,7 @@ does not mean.
 | `delta_occ_3` | earning opportunities — occupation wage-location | 0.0467 | 0.0365 | −0.0249 | 0.1183 | 1.28 | interior |
 | `delta_occ_4` | earning opportunities — occupation wage-location | 0.2739 | 0.0352 | 0.2049 | 0.3429 | 7.78 | interior |
 
-### A.2 The nested benchmark (LOC4 / S0): all 40 estimated coordinates
+### A.2 The nested benchmark: all 40 estimated coordinates
 
 Identical specification less `beta_h_f35`. Objective 18453.4750133318.
 
@@ -3581,11 +3606,11 @@ Identical specification less `beta_h_f35`. Objective 18453.4750133318.
 
 ### A.3 Specification comparison
 
-| | preferred (S8) | benchmark (LOC4 / S0) |
+| | preferred | benchmark |
 |---|---:|---:|
 | active coordinates (the reported parameterization) | **41** | **40** |
 | of which interior / at an active bound | 39 / 2 | 38 / 2 |
-| storage-vector length, provenance only (A.4) | 51 | 50 |
+| storage-vector length | see the provenance note at A.4 | |
 | objective | 18022.764617 | 18453.475013 |
 | likelihood ratio, 1 d.f. | **861.42** | — |
 | AIC | 36127.529 | 36986.950 |
@@ -3626,6 +3651,17 @@ criterion in this paper uses $k = 41$. And the resampling of Appendix F draws th
 $\hat\theta$; the 10 non-estimated coordinates are not part of that object at
 all. The registry entries `n_params_active`, `n_params_interior`,
 `n_params_at_bound` and `n_params_provenance` carry these four numbers.
+
+**The internal names, for reconciliation only.** The estimation repository
+labels the preferred specification `S8` and the nested benchmark `LOC4 / S0`,
+and its table columns use the stems `C_P`, `C_E`, `C_A`, `C_B` and `C_D` for the
+five contributions this paper writes as $C_{\mathrm{pref}}$,
+$C_{\mathrm{env}}$, $C_{\mathrm{acc}}$, $C_{\mathrm{earn}}$ and
+$C_{\mathrm{needs}}$. Those labels appear in this paper here and nowhere else:
+they are storage names, they carry no economic content, and the audience-facing
+names are the only ones used in the text, the tables and the figures. A reader
+reconciling a number here against the repository's own files needs the mapping
+once, which is what this paragraph is for.
 
 ---
 
@@ -3794,7 +3830,7 @@ not simplified to fit the faster hardware.
 ### D.1 The clean both-flexible baseline: 46 free coordinates
 
 Robust CR1 standard errors, $G = 2{,}275$ clusters, $K_{\text{interior}} = 45$.
-Objective 43493.342239. One active bound. Twelve further coordinates are pinned
+Objective 43493.342239066726, at the full precision the record carries. One active bound. Twelve further coordinates are pinned
 inert and are not displayed.
 
 | coordinate | block | estimate | s.e. | $z$ |
@@ -3867,7 +3903,7 @@ with the verdict.
 
 ### D.3 The alternative couples measure
 
-The mission's stated measure — both spouses placed at the reference leisure bundle
+The alternative measure — both spouses placed at a fixed leisure bundle
 of 35 hours — is reported in full and **not** as a headline level. $I^{0000}$ is
 0.370193 raw and 0.361790 equivalized; the fully common state is numerically zero
 on both; the preference contribution is $+0.010276$ raw and $+0.008753$
@@ -4144,7 +4180,7 @@ then bound by its artefact source in the second column alone.*
 | numeral / claim | source | record key |
 |---|---|---|
 | 1,555 single-adult households; 101 alternatives; 157,055 rows | `MNL/experiments/JMP_PS1/decision_note.md` §11.2; `SPRINT/decision_log.md` Entry 1 §1 | `n_households_singles, n_alternatives, n_priced_rows_singles` |
-| "41 estimated structural parameters"; 41 active = 39 interior + 2 at a bound (storage-vector length 51 is provenance only, Appendix A.4) | `SPRINT/decision_log.md` Entry 2 (block table); `MNL/.../ps1r222_floor5/ps1r222_s5b_estimation_v1.json` `S8.n_free` | `n_params_active, n_params_provenance, n_params_interior, n_params_at_bound` |
+| "41 estimated structural parameters"; 41 active = 39 interior + 2 at a bound (the storage-vector length is provenance only, Appendix A.4) | `SPRINT/decision_log.md` Entry 2 (block table); `MNL/.../ps1r222_floor5/ps1r222_s5b_estimation_v1.json`, the preferred specification's `n_free` | `n_params_active, n_params_provenance, n_params_interior, n_params_at_bound` |
 | the guarded headline sentence, verbatim | `SPRINT/decision_log.md` Entry 8 §3 (emitted by `SPRINT/runs/headline_table/…build_headline_table_v1.py` from the table) | `C_env_female_raw_share, C_pref_female_raw_share, equalization_env_only, equalization_pref_only` |
 | environment 89.0–93.7 % (preferred model, two references, two bases); 89.0–96.7 % over all eight rows | `SPRINT/tables/headline_decomposition_v1.csv`, `C_env_over_I00` column | `C_env_female_raw_share, C_env_male_raw_share, C_env_female_equivalized_share, C_env_male_equivalized_share` |
 | job access 14.9 ± 1.1; earning opportunities 20.6 ± 1.6; combined 35.5 ± 0.9 (raw); combined 25.9 ± 0.9 (equivalized) | same, the final-model female-reference rows, `C_acc_over_I00`, `C_earn_over_I00`, `C_acc_plus_C_earn_over_I00` | `C_acc_female_raw_share, C_earn_female_raw_share, C_acc_female_equivalized_share, C_earn_female_equivalized_share` |
@@ -4159,7 +4195,7 @@ then bound by its artefact source in the second column alone.*
 | claim | source | record key |
 |---|---|---|
 | the four neighbouring literatures and the closest papers | `JMP/docs/JMP_literature_positioning_memo_v3.md` §§1–4 | — |
-| the Decoster–Haan paragraph, verbatim, and its four positioning points | same, §3 "Added at Goal-1 R-227 s11" (deputy text entered verbatim by ruling) | — |
+| the Decoster–Haan paragraph, verbatim, and its four positioning points | same, §3 (positioning text entered verbatim from the accepted source) | — |
 | the Jacquet–Jia–Thoresen distinctness argument (three differences) | same, §§4, 7 | — |
 | Capéau, Decoster and Dekkers (2016): $\log q(x)=\eta_q'x$ on region, education, age, sex and the type-specific unemployment rate; log-normal wage offer; hours density conditioned on sex alone; **no occupation channel**; no welfare object and no decomposition | `JMP/JMP_literature/03_summaries/T1A/Capeau_et_al_2015_RURO.md` §§3, 5–7; `JMP/JMP_literature/03_summaries/T1A/Capeau_Decoster_2016.md` §5 | — |
 | Aaberge, Colombino and Wennemo (2009) estimate the opportunity measure as **common scalars** $\theta_0,\pi_1,\pi_2$ with no covariates | `JMP/JMP_literature/03_summaries/T1A/Aaberge_et_al_2009.md` §§4b, 5, "no circumstance-varying access" | — |
@@ -4190,14 +4226,14 @@ then bound by its artefact source in the second column alone.*
 |---|---|---|
 | `FR_2016_a3`; 11,459 households; the eight-step waterfall to 1,555; the composition itemisation 930/452/53/21 | `JMP/manuscript/sections/03_data.md` §3.1, Table 3.1 | `n_households_raw_frame, n_households_singles` |
 | 2,275 couples; 2,236 persons; 4,547,080 represented; Table 4.2 composition | same | `n_households_couples, n_couples_clusters` |
-| the reported parameterization: 41 active, 39 interior, 2 at a bound; $k=41$; $K_{\rm interior}=39$; storage length 51 in Appendix A.4 only | `SPRINT/decision_log.md` Entry 2 | `n_params_active, n_params_provenance, n_params_interior, n_params_at_bound` |
+| the reported parameterization: 41 active, 39 interior, 2 at a bound; $k=41$; $K_{\rm interior}=39$; the storage length in Appendix A.4 only | `SPRINT/decision_log.md` Entry 2 | `n_params_active, n_params_provenance, n_params_interior, n_params_at_bound` |
 | `yivwg` identity at 100.0 %; `wage == yivwg` bitwise on 1,348 rows; the 21 zero-earnings workers | `decision_note.md` §22.2–§22.4 | — |
 | Table 4.3 hours bands and worker counts 34/172/389/436/296 on $n=1{,}327$ | `03_data.md` Table 3.3; `decision_note.md` §22.3 | — |
 | Table 4.4 occupation key and weighted shares 27.5/15.4/9.4/47.6 % | `03_data.md` Table 3.4 | — |
 | occupation composition by sex (38 % of men, 18 % of women in group 1) | `03_data.md` §3.2 | — |
 | wage mean €15.47, median €14.05, range €2.06–€94.76, p01 €3.14, p99 €41.72 | `decision_note.md` §22.3 | — |
 | geography: 22 NUTS-2 régions, cells 3–245, median 53.5, 5 under 30; 8 zones, 122–279; `drgur` 832 / `drgmd` 328 / `drgru` 395; `gsur` 47 values, $[0.053183,0.225]$, mean 0.09451 | `03_data.md` §3.3 | `n_regional_environments` |
-| missing-region verification: $N=11{,}459$, difference 0, 22 codes, flag count 0, weighted share 0.0000 %, 245 genuine | `03_data.md` §3.3 (rulings document R-210) | — |
+| missing-region verification: $N=11{,}459$, difference 0, 22 codes, flag count 0, weighted share 0.0000 %, 245 genuine | `03_data.md` §3.3 (register entry R-210) | — |
 | Corse: three households | `03_data.md` §3.3 | — |
 | `gsur` is the group-specific unemployment rate (external lookup, exclusion-restricted, offer-only) | `MNL/docs/methods/RURO_METHODS_AND_PIPELINE_MANUAL_v1.md` l. 476; `MNL/docs/specifications/RURO_CONTINUOUS_MNL_VARIABLE_DICTIONARY_v1.md`; `MNL/docs/specifications/RURO_model_spec_contract_v4_ruro_occ.md` §20 | — |
 | take-up seed 20162016, rates 0.548 / 0.265, realised 0.542 / 0.292, the mask | `03_data.md` §3.4 | — |
@@ -4237,9 +4273,9 @@ then bound by its artefact source in the second column alone.*
 |---|---|---|
 | every coefficient, standard error and $z$ in §6.1 and Appendix A.1 | `SPRINT/figures/fig08_coefficients_by_block.csv` (41 rows) | — |
 | every coefficient in Appendix A.2 | `ps1r222_s5b_estimation_v1.json`, `S0.parameter_table` | — |
-| employment 0.8708 / 0.8668; statutory band 0.2485 / 0.2520 | same, `S8.household_level_predictive_fit` | — |
+| employment 0.8708 / 0.8668; statutory band 0.2485 / 0.2520 | same, `household_level_predictive_fit` | — |
 | hours-grid MAE 0.0083 (preferred) and 0.0338 (benchmark); the twelve-bin deviations | `SPRINT/model_comparison.csv`, `hours_grid_mae`; `ps1r222_s5b_estimation_v1.json`, `hours_grid` | — |
-| occupation largest deviation 0.0070; wage-quintile largest deviation 0.0532 and the five quintile deviations | `ps1r222_s5b_estimation_v1.json`, `S8.occupation_and_wage_fit` | — |
+| occupation largest deviation 0.0070; wage-quintile largest deviation 0.0532 and the five quintile deviations | `ps1r222_s5b_estimation_v1.json`, `occupation_and_wage_fit` | — |
 | rank median 101, top-1/5/10 = 0.000, Brier 1.0229; the comparability rule | same, `scale_caveat`; `SPRINT/decision_log.md` Entry 1 §5 | — |
 | the figure was withdrawn from the paper set | `SPRINT/figures/figure_index_paper_v1.csv`, row `fig06_chosen_rank_topk` | — |
 | $\beta_{h,\rm F35}=2.5795$, s.e. 0.0983, $z$ 26.24; LR 861.42; $\Delta$AIC $-859.42$; $\Delta$BIC $-854.07$ | `ps1r222_s5b_estimation_v1.json`, `model_comparison.corrected` | — |
@@ -4338,7 +4374,7 @@ then bound by its artefact source in the second column alone.*
 | the couples common support and its gates | `SPRINT/decision_log.md` Entry 9 §3 | — |
 | the four principal states and the constant fully common vector at €1,713.16 | same, Entry 9 §7 | `couples_state_I0000_raw, couples_state_I1000_raw, couples_state_I0111_raw, couples_state_I1111_raw` |
 | the exhaustiveness audit: 23 arguments, job access 11 / earning opportunities 6 / preferences 5 / endowments and needs 1, 0 unassigned | same | — |
-| the couples decomposition, both bases, with intervals | same | `couples_C_P_equivalized, couples_C_E_equivalized, couples_C_A_equivalized, couples_C_B_equivalized, couples_C_D_equivalized` |
+| the couples decomposition, both bases, with intervals | same | `couples_C_P_raw, couples_C_E_raw, couples_C_A_raw, couples_C_B_raw, couples_C_D_raw, couples_C_P_equivalized, couples_C_E_equivalized, couples_C_A_equivalized, couples_C_B_equivalized, couples_C_D_equivalized` |
 | levels: raw mean €1,836.8 / median €1,761.8; equivalized €972.7 / €921.5 | same | — |
 | the directional difference from singles | same | — |
 | the sensitivity arms table and the material verdict (29 of 140; $C_{\mathrm{pref}}$ 73.1 %) | same, Entry 9 §8; `SPRINT/runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv` | `couples_male_leisure_sensitivity_max` |
@@ -4409,7 +4445,7 @@ then bound by its artefact source in the second column alone.*
 | MC bands are integration precision | stated in the drafting note, §3.6, §7.3 and §10.2; no band is described as a confidence interval anywhere |
 | no unqualified "ability"; $A_i$ reserved | §3.1 fixes the four terms; $A_i$ appears only in the reserved sense and in the non-identification sentence |
 | the non-identification sentence travels with the access channel | §1.2, §3.1, §7.3 and §10.1 |
-| no cell described as a compensating variation | §3.4 states the prohibition and quotes the governing ruling |
+| no cell described as a compensating variation | §3.4 states the prohibition and quotes the governing decision |
 | no cross-measure quantitative robustness claim | $W^4$/$W^6$ appear only as normative-reference disclosures (§3.3) and in Appendix D.3 as a measure fact |
 | no intra-couple welfare statement | §8.5 states it explicitly |
 | no Corse-specific statement | §4.3 records the disclosure; none is made |
@@ -4461,7 +4497,6 @@ should replace it when it travels.
 
 ---
 
-*End of paper. Every welfare and decomposition magnitude above carries
-`FINAL_SINGLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW` or
-`FINAL_COUPLES_PROVISIONAL_PENDING_ECONOMICS_REVIEW` on its own artefacts, as the
-drafting note records.*
+*End of paper. Every welfare and decomposition magnitude above is provisional
+pending the bounded economics review, and carries that standing on its own
+artefacts, as the drafting note records.*

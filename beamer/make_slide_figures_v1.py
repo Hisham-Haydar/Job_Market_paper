@@ -200,7 +200,7 @@ def f_headline(sprint, out):
     fig, ax = new_ax()
     hbar_with_band(ax, lab, pct(d["estimate"] / base),
                    pct(d["band_lo"] / base), pct(d["band_hi"] / base), col,
-                   "share of measured welfare inequality removed  (%)")
+                   "share of measured welfare inequality attributed  (%)")
     for i, v in enumerate(pct(d["estimate"] / base)):
         ax.annotate("%.0f%%" % v, xy=(v, len(lab) - 1 - i), xytext=(14, 0),
                     textcoords="offset points", va="center",
@@ -237,7 +237,7 @@ def f_headline_intervals(sprint, out):
         tick.set_fontweight("bold")
     ax.set_ylim(-0.6, len(rows) - 0.4)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("share of measured welfare inequality removed  (%)",
+    ax.set_xlabel("share of measured welfare inequality attributed  (%)",
                   labelpad=12)
     ax.legend(handles=[
         Line2D([], [], color=GREY, lw=9, label="integration band"),
@@ -264,7 +264,7 @@ def f_environment(sprint, out):
     fig, ax = new_ax()
     hbar_with_band(ax, lab, pct(d["estimate"] / base),
                    pct(d["band_lo"] / base), pct(d["band_hi"] / base), col,
-                   "share of measured welfare inequality removed  (%)")
+                   "share of measured welfare inequality attributed  (%)")
     for i, v in enumerate(pct(d["estimate"] / base)):
         ax.annotate("%.0f%%" % v, xy=(v, len(lab) - 1 - i), xytext=(14, 0),
                     textcoords="offset points", va="center",
@@ -290,7 +290,7 @@ def f_geographic(sprint, out):
     et = pct(d["E_T"] / base)
     fig, ax = new_ax()
     hbar_with_band(ax, lab, v, v - et, v + et, col,
-                   "share of measured welfare inequality removed  (%)")
+                   "share of measured welfare inequality attributed  (%)")
     for i, x in enumerate(v):
         ax.annotate("%.1f%%" % x, xy=(x, len(lab) - 1 - i), xytext=(14, 0),
                     textcoords="offset points", va="center",
@@ -314,8 +314,8 @@ def f_subgroup(sprint, out):
                 capsize=7, capthick=2.0, zorder=4)
     ax.set_yticks(y)
     ax.set_yticklabels(list(d["group"]))
-    ax.set_xlabel("share of that group's own measured inequality removed\n"
-                  "by equalising job access  (%)", labelpad=14,
+    ax.set_xlabel("share of that group's own measured inequality\n"
+                  "attributed to job access  (%)", labelpad=14,
                   fontsize=MIN_PT + 1)
     ax.grid(axis="y", visible=False)
     for i, x in enumerate(v):
@@ -348,7 +348,7 @@ def f_benchmark(sprint, out):
     ax.set_xticks(x)
     ax.set_xticklabels([CHANNEL_SHORT[words(CHANNEL_WORDS, c)]
                         for c in chans], fontsize=MIN_PT)
-    ax.set_ylabel("share of that model's own\nmeasured inequality removed  (%)",
+    ax.set_ylabel("share of that model's own\nmeasured inequality attributed  (%)",
                   labelpad=14, fontsize=MIN_PT + 1)
     ax.legend(handles=[
         Patch(facecolor=GREY, alpha=0.92, label=words(MODEL_WORDS, "RURO")),
@@ -549,7 +549,7 @@ def f_couples(sprint, out):
     ax.set_xticks(x)
     ax.set_xticklabels([CHANNEL_SHORT[words(CHANNEL_WORDS, c)]
                         for c in chans], fontsize=MIN_PT)
-    ax.set_ylabel("share of measured inequality\nremoved  (%)", labelpad=14,
+    ax.set_ylabel("share of measured inequality\nattributed  (%)", labelpad=14,
                   fontsize=MIN_PT + 1)
     ax.legend(handles=[Patch(facecolor=GREY, alpha=0.92, label="singles"),
                        Patch(facecolor=GREY, alpha=0.42, hatch="//",

@@ -838,8 +838,8 @@ def sections(F):
               "earlier project documents are provenance artefacts.",
               "There are two legitimate representations. The active one, "
               + n("n_params_active", "int") + ", is what the singles likelihood "
-              "consumes and what enters information criteria. The provenance vector, "
-              + n("n_params_provenance", "int") + ", adds ten coordinates that are "
+              "consumes and what enters information criteria. The longer provenance "
+              "vector adds ten further coordinates that are "
               "dropped or pinned and never consumed &mdash; eight inactive couples "
               "coordinates in the shared parameter block and two pinned year effects, "
               "identically zero on a single-year frame. The two give bitwise identical "

@@ -278,10 +278,10 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
  C_{\mathrm{env}}&=\tfrac12[(I_{00}-I_{01})+(I_{10}-I_{11})]=\VLevelEnv
 \end{aligned}
 \]}
-{\small\raggedright equalizing the environment alone reduces inequality by \VEnvAlone{}\%; the Shapley attribution to the environment is \VRoundEnv{}\%.\par}
+{\small\raggedright equalizing the environment alone reduces inequality by \VEnvAlone{}\%, equalizing preferences alone raises it by \VPrefAlone{}\%; the Shapley attribution averages the two orders and gives the environment \VRoundEnv{}\%.\par}
 \vfill
 \caveat{the environment is then split by an Owen value into job access, earning opportunities, and household endowments and needs.}\par
-\note{Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions: equalizing the environment by itself removes 77 per cent of inequality; the Shapley value, which averages over the order in which preferences and environment are equalized, attributes 94 per cent to it. Every share on this slide is on the raw welfare basis; the equivalized basis is the companion, and the two are always named.}
+\note{Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions: equalizing the environment by itself reduces inequality by 77 per cent, and equalizing preferences by itself raises it by 10 per cent; the Shapley value, which averages over the order in which preferences and environment are equalized, attributes 94 per cent to the environment. An attribution is never a quantity removed. Every share on this slide is on the raw welfare basis; the equivalized basis is the companion, and the two are always named.}
 \end{frame}}
 
 % SLIDE 13b
@@ -302,8 +302,8 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \headlineframe{The non-preference environment accounts for \VRoundEnv{}\% of measured welfare inequality; preferences for \VRoundPref{}\%.}
 \slidefig{headline_references}
 \vfill
-\caveat{\VShareEnv{} \ensuremath{\pm} \VBandEnv{} / \VSharePref{} \ensuremath{\pm} \VBandEnv{} (female reference); \VMaleEnv{} / \VMalePref{} (male reference); parameter-uncertainty interval for the environment share [\VMaleEnv{}, \VParEnvHi{}].}\par
-\note{Under the primary reference, the non-preference environment accounts for 93.7 per cent of measured money-metric inequality and preferences for 6.3; under the alternative reference, 89 and 11. The bands are integration precision; the parameter-uncertainty interval, propagated from the cluster-robust covariance, runs from 89 to 96 for the environment share.}
+\caveat{\VShareEnv{} \ensuremath{\pm} \VBandEnv{} / \VSharePref{} \ensuremath{\pm} \VBandEnv{} female-primary; \VMaleEnv{} / \VMalePref{} male structural-zero; never averaged. Parameter intervals: environment [\VParEnvLo{}, \VParEnvHi{}], preferences [\VParPrefLo{}, \VParPrefHi{}].}\par
+\note{Under the female-primary reference, the non-preference environment accounts for 93.7 per cent of measured money-metric inequality and preferences for 6.3; under the male structural-zero sensitivity, 89 and 11. The two conventions are reported as a pair and never averaged. The bands are integration precision; the parameter-uncertainty interval, propagated from the cluster-robust covariance, runs from 89 to 96 for the environment share and from 4 to 11 for preferences. The two kinds of uncertainty are never merged.}
 \end{frame}}
 
 % SLIDE 15
@@ -312,7 +312,7 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \headlineframe{Household endowments and needs \VRoundNeeds{}\%, earning opportunities \VRoundEarn{}\%, job access \VRoundAcc{}\%; job opportunities together \VRoundMarket{}\%.}
 \slidefig{environment}
 \vfill
-\caveat{ordering identical under both reference conventions and under equivalization.}\par
+\caveat{integration bands \ensuremath{\pm} \VBandNeeds{} / \ensuremath{\pm} \VBandEarn{} / \ensuremath{\pm} \VBandAcc{}; ordering identical under both reference conventions and under equivalization.}\par
 \note{Within the environment the budget side — non-labour income, household composition and their tax-benefit treatment — is the largest component at 58 per cent. Job access and earning opportunities together, the market-side contribution, account for 36 per cent of measured inequality. This ordering does not change across references or equivalence scales, and it is a structural, model-conditional result, not a claim that job opportunities are unimportant.}
 \end{frame}}
 
@@ -322,7 +322,7 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \headlineframe{Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences.}
 \vfill
 {\normalsize\raggedright
-(\DocOne{}) job access + earning opportunities: \VShareMarket{}\% \ensuremath{\pm} \VBandMarket{} of measured inequality (the complete environment \VShareEnv{}\%).
+(\DocOne{}) job access + earning opportunities: \VShareMarket{}\% \ensuremath{\pm} \VBandMarket{} of measured inequality (the complete environment \VShareEnv{}\% \ensuremath{\pm} \VBandEnv{}).
 \par\medskip
 (\DocTwo{}) Omitting heterogeneous opportunities: preference share \BenchSharePrefRURO{}\% \ensuremath{\to} \BenchSharePrefRUMB{}\%; measured inequality falls \RndBenchDropRaw{}\%; the market-side contribution is relabelled into endowments and needs.\par}
 \vfill
@@ -375,8 +375,8 @@ couples male-leisure pin & up to \VCouplesMove{}\% & unchanged\\[0.3em]
 \headlineframe{Couples reproduce the same environment ordering; their preference share is not robustly identified.}
 \slidefig{couples}
 \vfill
-\caveat{\NCouples{} couples; employment matched to four decimals; \StatHours{}-hour peak \VCouplePeakFemale{} (women) and \VCouplePeakMale{} (men).}\par
-\note{A clean both-flexible couples model converges and fits participation and hours by spouse closely. The environment decomposition has the same ordering as for singles. The couples preference share, however, moves by up to 73 per cent under admissible movement of the male leisure block, so singles remain the quantitative headline and couples the extension.}
+\caveat{\NCouples{} couples; employment matched to four decimals; \StatHours{}-hour peak \VCouplePeakFemale{} (women) and \VCouplePeakMale{} (men). Cross-leisure interaction absent; welfare runs it at exactly zero --- spouse leisure complementarity is not estimated here.}\par
+\note{A clean both-flexible couples model converges and fits participation and hours by spouse closely. The environment decomposition has the same ordering as for singles. The couples preference share, however, moves by up to 73 per cent under admissible movement of the male leisure block, so singles remain the quantitative headline and couples the extension. One limitation to volunteer before it is asked: the cross-leisure interaction between the spouses' leisure is absent from this specification. It was not estimated and found small, and it was not estimated and then set to zero -- it is not in the model, the welfare pipeline evaluates couples utility at exactly zero for it, and the omission is forced by identification. Read every couples number as conditional on that absence.}
 \end{frame}}
 
 % SLIDE 21

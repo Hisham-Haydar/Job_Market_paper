@@ -26,6 +26,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
 #doc{flex:1 1 auto;min-width:0;padding:34px 46px 140px;max-width:1000px}
 h1{font-size:31px;line-height:1.22;margin:.1em 0 .1em;letter-spacing:-.01em}
 .sub{color:var(--mut);font-size:15.5px;margin:0 0 4px}
+.bandnote{color:var(--mut);font-size:10.5px;font-weight:400;white-space:nowrap}
 h2{font-size:23px;margin:2.4em 0 .5em;padding-top:.45em;border-top:2px solid var(--ink);
   line-height:1.25;letter-spacing:-.005em}
 h3{font-size:17.5px;margin:1.7em 0 .4em;color:var(--accent)}

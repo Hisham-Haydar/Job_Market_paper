@@ -25,20 +25,20 @@ Counts are measured from the PDF text layer: headline, prose, table/equation tex
 | 6 | Preferences and an opportunity density, in one likelihood. | equations | 1 | 53 |
 | 7 | Each household: its observed job plus 100 drawn alternatives, all priced through the tax-benefit system. | equations | 1 | 43 |
 | 8 | France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours. | observed_hours | 1 | 36 |
-| 9 | The model reproduces the hours distribution, employment and occupation shares. | hours | 1 | 67 |
+| 9 | The model reproduces the hours distribution, employment and occupation shares. | hours | 1 | 70 |
 | 9b | Estimated indifference curves and the price of an hour, by age and sex | indifference_curves / compensation_by_age | 2 | 52 |
 | 10 | What the data pin down, and what remains conditional. | text | 1 | 43 |
 | 11 | An independent source puts the 35-hour concentration at 37%; the sample at 34%; the model at 35%. | external | 1 | 49 |
 | 12 | Equivalent income at a common reference pay, under four preference–environment states. | equations + table | 1 | 83 |
-| 13 | A two-player Shapley game: preferences against the complete non-preference environment. | equations + table | 1 | 82 |
+| 13 | A two-player Shapley game: preferences against the complete non-preference environment. | equations + table | 1 | 93 |
 | 13b | The distribution of equivalent income under the four states | welfare_distributions | 1 | 42 |
-| 14 | The non-preference environment accounts for 94% of measured welfare inequality; preferences for 6%. | headline_references | 1 | 49 |
-| 15 | Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%. | environment | 1 | 49 |
-| 16 | Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences. | text | 1 | 54 |
-| 17 | The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste. | benchmark | 1 | 54 |
+| 14 | The non-preference environment accounts for 94% of measured welfare inequality; preferences for 6%. | headline_references | 1 | 50 |
+| 15 | Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%. | environment | 1 | 54 |
+| 16 | Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences. | text | 1 | 55 |
+| 17 | The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste. | benchmark | 1 | 55 |
 | 18 | The preference share is the sensitive margin; the environment's internal structure is stable. | table | 1 | 50 |
 | 19 | Within job access, nearly all of the household-varying contribution is geographic; job access matters twice as much for men. | regional_profiles / subgroup | 2 | 56 |
-| 20 | Couples reproduce the same environment ordering; their preference share is not robustly identified. | couples | 1 | 49 |
+| 20 | Couples reproduce the same environment ordering; their preference share is not robustly identified. | couples | 1 | 65 |
 | 21 | Each limit names the evidence that would lift it. | table | 1 | 40 |
 | 22 | Conclusion | text | 1 | 54 |
 | B1a | B1 — The estimated coefficients: preferences | coefficients_1 | 1 | 22 |
@@ -91,4 +91,4 @@ The build regenerates number macros and the seven v4.1 panels, reuses existing v
 
 Machine-readable evidence: [verification](build/verification_v4.json), [slide table](build/slide_table_v4.json).
 
-Content SHA-256: `dcdb2f3395026d97c64c5e3ddc72b49656241f613e495de71233914b59ff93a8`.
+Content SHA-256: `7fc32780abdad8fc5a96741d38ad46c59efa7fd4d422ede6a21433b041572f25`.

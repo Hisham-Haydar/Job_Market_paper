@@ -481,8 +481,8 @@ def sections(F):
       "index minus the log proposal density:</p>")
     W('<div class="eq">'
       "V_ij  =  u_ij                 preferences over consumption and leisure\n"
-      "       +  log g^H_ij           employment and hours opportunity\n"
-      "       +  log g^Acc_ij         local market access\n"
+      "       +  log g^E_ij           job access, including local market access\n"
+      "       +  log g^H_ij           the hours-band opportunity\n"
       "       +  log g^Occ_ij         occupation opportunity\n"
       "       +  log g^W_ij           the wage offer's density\n"
       "       -  log q_ij             the proposal correction\n"
@@ -531,14 +531,20 @@ def sections(F):
       "parameter table.</li>")
     W("</ul>")
 
-    W("<h3>Block 2 &mdash; employment access</h3>")
+    W("<h3>Block 2 &mdash; job access, <em>g<sup>E</sup></em></h3>")
     W('<div class="eq">'
-      "log g^E_ij  =  beta_E · working_ij"
+      "log g^E_ij  =  working_ij · [  beta_E                        the level\n"
+      "                            +  beta_E_gsur  · unemployment_rate_i\n"
+      "                            +  SUM_r beta_E_drgn_r · region_ir\n"
+      "                            +  beta_E_drgur · urban_i\n"
+      "                            +  beta_E_drgmd · intermediate_i  ]"
       "</div>")
-    W("<p>The employment margin: a single intercept shifting how much density the "
-      "opportunity distribution places on <em>being employed at all</em> rather than on "
-      "the non-employment state. It is the level of the access surface; the regressors "
-      "that tilt it by circumstance are in block&nbsp;5.</p>")
+    W("<p>The employment margin: how much density the opportunity distribution "
+      "places on <em>being employed at all</em> rather than on the non-employment "
+      "state, and how that level is tilted by circumstance. <b>Local market access "
+      "is part of this factor, not a factor of its own</b> &mdash; the intercept is "
+      "the level of the access surface and the remaining terms tilt it. Block&nbsp;5 "
+      "reads those tilt terms one at a time.</p>")
 
     W("<h3>Block 3 &mdash; hours access</h3>")
     W('<div class="eq">'
@@ -571,12 +577,17 @@ def sections(F):
       "well paid <em>and</em> hard to get into, which a single occupation coefficient "
       "could not express.</p>")
 
-    W("<h3>Block 5 &mdash; local market access</h3>")
+    W("<h3>Block 5 &mdash; what tilts job access "
+      "(the interior of <em>g<sup>E</sup></em>)</h3>")
     W('<div class="eq">'
-      "log g^Acc_ij  =  working_ij · [  beta_E_gsur  · unemployment_rate_i\n"
-      "                              +  SUM_r beta_E_drgn_r · region_ir\n"
-      "                              +  beta_E_drgur · urban_i\n"
-      "                              +  beta_E_drgmd · intermediate_i  ]"
+      "the circumstance terms inside log g^E_ij, read one at a time:\n"
+      "\n"
+      "     beta_E_gsur  · unemployment_rate_i\n"
+      "  +  SUM_r beta_E_drgn_r · region_ir\n"
+      "  +  beta_E_drgur · urban_i\n"
+      "  +  beta_E_drgmd · intermediate_i\n"
+      "\n"
+      "  (NOT a separate factor: there is no g^Acc in this model)"
       "</div>")
     W("<p>The circumstances that tilt job access. The local unemployment rate is the "
       "sharpest of them. Region indicators are NUTS-1 with one omitted; urbanisation is "
@@ -622,7 +633,10 @@ def sections(F):
 
     W("<h3>The assembled likelihood</h3>")
     W('<div class="eq">'
-      "V_ij   =  u_ij + log g^E_ij + log g^H_ij + log g^Acc_ij\n"
+      "g_ij   =  g^E_ij · g^H_ij · g^Occ_ij · g^W_ij        four factors\n"
+      "\n"
+      "V_ij   =  u_ij + log g_ij  -  log q_ij\n"
+      "       =  u_ij + log g^E_ij + log g^H_ij\n"
       "                + log g^Occ_ij + log g^W_ij  -  log q_ij\n"
       "\n"
       "P_i    =  exp(V_i0) / SUM_j exp(V_ij)\n"

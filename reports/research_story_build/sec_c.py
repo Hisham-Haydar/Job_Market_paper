@@ -286,31 +286,57 @@ def sections(F):
 
       '<tr class="grouphead"><td colspan="5">First level: preferences against the environment</td></tr>'
       "<tr><td><b>Preferences</b></td>"
-      '<td class="num">' + n("C_pref_female_raw", "f4") + "</td>"
-      '<td class="num">' + n("C_pref_female_raw_share", "pct", 2) + "</td>"
-      '<td class="num">' + n("C_pref_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("C_pref_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_pref_female_raw__rqmc_band", "range")
+      + '</small>' + "</td>"
+      '<td class="num">' + n("C_pref_female_raw_share", "pct", 2)
+      + '<br><small class="bandnote">parameter interval '
+      + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
+      + '</small>' + "</td>"
+      '<td class="num">' + n("C_pref_female_equivalized", "f4")
+      + '<br><small class="bandnote">' + n("C_pref_female_equivalized__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_pref_female_equivalized_share", "pct", 2) + "</td></tr>"
       "<tr><td><b>Non-preference environment</b></td>"
-      '<td class="num">' + n("C_env_female_raw", "f4") + "</td>"
-      '<td class="num">' + n("C_env_female_raw_share", "pct", 2) + "</td>"
-      '<td class="num">' + n("C_env_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("C_env_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_env_female_raw__rqmc_band", "range")
+      + '</small>' + "</td>"
+      '<td class="num">' + n("C_env_female_raw_share", "pct", 2)
+      + '<br><small class="bandnote">parameter interval '
+      + n("s_env_female_raw__cr1_interval", "rangepct", 1)
+      + '</small>' + "</td>"
+      '<td class="num">' + n("C_env_female_equivalized", "f4")
+      + '<br><small class="bandnote">' + n("C_env_female_equivalized__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_env_female_equivalized_share", "pct", 2) + "</td></tr>"
 
       '<tr class="grouphead"><td colspan="5">Second level: inside the environment</td></tr>'
       "<tr><td><b>Job access</b></td>"
-      '<td class="num">' + n("C_acc_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("C_acc_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_acc_female_raw__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_acc_female_raw_share", "pct", 2) + "</td>"
-      '<td class="num">' + n("C_acc_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("C_acc_female_equivalized", "f4")
+      + '<br><small class="bandnote">' + n("C_acc_female_equivalized__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_acc_female_equivalized_share", "pct", 2) + "</td></tr>"
       "<tr><td><b>Earning opportunities</b></td>"
-      '<td class="num">' + n("C_earn_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("C_earn_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_earn_female_raw__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_earn_female_raw_share", "pct", 2) + "</td>"
-      '<td class="num">' + n("C_earn_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("C_earn_female_equivalized", "f4")
+      + '<br><small class="bandnote">' + n("C_earn_female_equivalized__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_earn_female_equivalized_share", "pct", 2) + "</td></tr>"
       "<tr><td><b>Endowments and needs</b></td>"
-      '<td class="num">' + n("C_needs_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("C_needs_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_needs_female_raw__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_needs_female_raw_share", "pct", 2) + "</td>"
-      '<td class="num">' + n("C_needs_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("C_needs_female_equivalized", "f4")
+      + '<br><small class="bandnote">' + n("C_needs_female_equivalized__rqmc_band", "range")
+      + '</small>' + "</td>"
       '<td class="num">' + n("C_needs_female_equivalized_share", "pct", 2) + "</td></tr>"
 
       '<tr class="grouphead"><td colspan="5">Third level: inside job access</td></tr>'
@@ -453,13 +479,13 @@ def sections(F):
       "structural checks pass: the coalition states are coherent, the sub-players act "
       "through distinct budget panels rather than being mechanically indistinguishable, "
       "and the split is a genuine nesting rather than a re-decomposition.</p>")
-    W(box("warn", "Status at the time of writing: provisional, and therefore not "
+    W(box("warn", "Status at the time of writing: not admitted, and therefore not "
                   "reported as a result",
-          "<p>The nested endowments-and-needs split carries a <b>provisional</b> label "
-          "pending economics review. It has not been admitted, and no ADMITTED verdict "
+          "<p>The nested endowments-and-needs split is <b>still under economics review</b>. "
+          "It has not been admitted, and no ADMITTED verdict "
           "exists for it on disk at build time.</p>"
-          "<p><b>Its numbers are therefore not printed in this document.</b> Reporting a "
-          "provisional split alongside admitted results would put two different evidential "
+          "<p><b>Its numbers are therefore not printed in this document.</b> Reporting an "
+          "unadmitted split alongside admitted results would put two different evidential "
           "standards in the same table. If it is admitted before the seminar, this "
           "section gains a table; if it is not, the qualitative account above is what "
           "should be said.</p>"
@@ -471,7 +497,7 @@ def sections(F):
 
     W("<h3>Why the channel is as large as it is</h3>")
     W("<p>The magnitude surprises people, so it is worth having the intuition ready. "
-      "Three reasons, none of which requires the provisional split:</p>")
+      "Three reasons, none of which requires that split:</p>")
     W("<ul>")
     W("<li><b>It is the only channel that operates on non-employed households.</b> Job "
       "access and earning opportunities work through the labour market. For a household "
