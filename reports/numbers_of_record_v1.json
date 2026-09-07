@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generated_by": "beamer/make_numbers_of_record_v1.py",
-    "n_entries": 271,
+    "n_entries": 415,
     "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance.",
     "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
   },
@@ -1250,12 +1250,985 @@
         0.0077299640460087
       ]
     },
+    "couples_active_bound_coordinate": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "estimation.active_set",
+      "reference": "Name of the single active-bound couples coordinate.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": "beta_w_pexp2"
+    },
     "couples_male_leisure_sensitivity_max": {
       "basis": "couples C_P channel",
       "column_or_key": "relative_delta (quantity=C_P, max abs across sensitivity arms)",
       "reference": "Largest relative movement of the couples preference-channel contribution C_P across the male-leisure sensitivity battery.",
       "source": "runs/final_couples_welfare/cw_step3b_sensitivity_table_v1.csv",
       "value": 0.7312638054566766
+    },
+    "couples_param_beta_E_drgmd__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgmd].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgmd.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.3562352370824809
+    },
+    "couples_param_beta_E_drgmd__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgmd].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgmd at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.17209598004096976
+    },
+    "couples_param_beta_E_drgmd__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgmd].z_robust",
+      "reference": "Robust z statistic of beta_E_drgmd.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -2.0699800018435894
+    },
+    "couples_param_beta_E_drgn2__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn2].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn2.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.15894730587514125
+    },
+    "couples_param_beta_E_drgn2__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn2].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn2 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.23157881109513154
+    },
+    "couples_param_beta_E_drgn2__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn2].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn2.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.6863637701717296
+    },
+    "couples_param_beta_E_drgn3__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn3].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn3.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.10099286075941176
+    },
+    "couples_param_beta_E_drgn3__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn3].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn3 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.27011072331196384
+    },
+    "couples_param_beta_E_drgn3__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn3].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn3.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.37389430349557157
+    },
+    "couples_param_beta_E_drgn4__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn4].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn4.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.10521181686421673
+    },
+    "couples_param_beta_E_drgn4__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn4].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn4 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.2785644619595291
+    },
+    "couples_param_beta_E_drgn4__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn4].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn4.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.3776928906297541
+    },
+    "couples_param_beta_E_drgn5__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn5].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn5.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.20992981043235492
+    },
+    "couples_param_beta_E_drgn5__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn5].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn5 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.24342800534483425
+    },
+    "couples_param_beta_E_drgn5__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn5].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn5.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.8623897243662388
+    },
+    "couples_param_beta_E_drgn6__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn6].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn6.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.390528122599944
+    },
+    "couples_param_beta_E_drgn6__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn6].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn6 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.2589233357318463
+    },
+    "couples_param_beta_E_drgn6__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn6].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn6.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.5082770407546198
+    },
+    "couples_param_beta_E_drgn7__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn7].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn7.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.33866593433750874
+    },
+    "couples_param_beta_E_drgn7__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn7].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn7 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.24508114828647776
+    },
+    "couples_param_beta_E_drgn7__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn7].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn7.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.3818522424321222
+    },
+    "couples_param_beta_E_drgn8__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn8].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgn8.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.26344975218419686
+    },
+    "couples_param_beta_E_drgn8__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn8].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgn8 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.24471775477980512
+    },
+    "couples_param_beta_E_drgn8__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgn8].z_robust",
+      "reference": "Robust z statistic of beta_E_drgn8.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.0765453140956063
+    },
+    "couples_param_beta_E_drgur__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgur].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_drgur.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.20319806720685563
+    },
+    "couples_param_beta_E_drgur__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgur].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_drgur at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.15251632145864408
+    },
+    "couples_param_beta_E_drgur__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_drgur].z_robust",
+      "reference": "Robust z statistic of beta_E_drgur.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.3323037512542832
+    },
+    "couples_param_beta_E_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -3.0782032492793454
+    },
+    "couples_param_beta_E_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.2719683124501873
+    },
+    "couples_param_beta_E_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_f].z_robust",
+      "reference": "Robust z statistic of beta_E_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -11.318242267077116
+    },
+    "couples_param_beta_E_gsur__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_gsur].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_gsur.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.2111114229099196
+    },
+    "couples_param_beta_E_gsur__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_gsur].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_gsur at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.14666980374710478
+    },
+    "couples_param_beta_E_gsur__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - employment and local market access",
+      "column_or_key": "parameter_table[param=beta_E_gsur].z_robust",
+      "reference": "Robust z statistic of beta_E_gsur.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -8.25740126439507
+    },
+    "couples_param_beta_E_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_E_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -2.7898466560371387
+    },
+    "couples_param_beta_E_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_E_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.28201964108355815
+    },
+    "couples_param_beta_E_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_E_m].z_robust",
+      "reference": "Robust z statistic of beta_E_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -9.892384251388183
+    },
+    "couples_param_beta_h_f35_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_f35_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.5474353465752366
+    },
+    "couples_param_beta_h_f35_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_f35_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.07349990305578902
+    },
+    "couples_param_beta_h_f35_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_f].z_robust",
+      "reference": "Robust z statistic of beta_h_f35_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 34.65903002132728
+    },
+    "couples_param_beta_h_f35_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_f35_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 3.291531874713006
+    },
+    "couples_param_beta_h_f35_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_f35_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.10221967149242311
+    },
+    "couples_param_beta_h_f35_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_f35_m].z_robust",
+      "reference": "Robust z statistic of beta_h_f35_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 32.200571833739325
+    },
+    "couples_param_beta_h_ft_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_ft_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.20988882751316
+    },
+    "couples_param_beta_h_ft_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_ft_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.078261369306652
+    },
+    "couples_param_beta_h_ft_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_f].z_robust",
+      "reference": "Robust z statistic of beta_h_ft_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 28.23728803995416
+    },
+    "couples_param_beta_h_ft_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_ft_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 3.3165789058326367
+    },
+    "couples_param_beta_h_ft_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_ft_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.10366883234100661
+    },
+    "couples_param_beta_h_ft_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_ft_m].z_robust",
+      "reference": "Robust z statistic of beta_h_ft_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 31.99205422631881
+    },
+    "couples_param_beta_h_lh_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_lh_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.0718303146411241
+    },
+    "couples_param_beta_h_lh_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_lh_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.1712068533826183
+    },
+    "couples_param_beta_h_lh_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_f].z_robust",
+      "reference": "Robust z statistic of beta_h_lh_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.4195527995634353
+    },
+    "couples_param_beta_h_lh_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_lh_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1.7476459872866545
+    },
+    "couples_param_beta_h_lh_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_lh_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.15721826236153477
+    },
+    "couples_param_beta_h_lh_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_lh_m].z_robust",
+      "reference": "Robust z statistic of beta_h_lh_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 11.116049503637282
+    },
+    "couples_param_beta_h_pt1_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_pt1_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.025520610504570804
+    },
+    "couples_param_beta_h_pt1_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_pt1_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.13709419464648925
+    },
+    "couples_param_beta_h_pt1_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_f].z_robust",
+      "reference": "Robust z statistic of beta_h_pt1_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.18615383802631605
+    },
+    "couples_param_beta_h_pt1_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_pt1_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.5169544696207772
+    },
+    "couples_param_beta_h_pt1_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_pt1_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.2600897004750186
+    },
+    "couples_param_beta_h_pt1_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt1_m].z_robust",
+      "reference": "Robust z statistic of beta_h_pt1_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.9876006957470052
+    },
+    "couples_param_beta_h_pt2_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_pt2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1.1063440324456157
+    },
+    "couples_param_beta_h_pt2_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_pt2_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.11740304401221295
+    },
+    "couples_param_beta_h_pt2_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_f].z_robust",
+      "reference": "Robust z statistic of beta_h_pt2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 9.423469738404119
+    },
+    "couples_param_beta_h_pt2_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_h_pt2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.4783451598121864
+    },
+    "couples_param_beta_h_pt2_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_h_pt2_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.2357921979455258
+    },
+    "couples_param_beta_h_pt2_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male hours opportunity",
+      "column_or_key": "parameter_table[param=beta_h_pt2_m].z_robust",
+      "reference": "Robust z statistic of beta_h_pt2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.028672551424694
+    },
+    "couples_param_beta_l0_f__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l0_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l0_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 9.2815006979732
+    },
+    "couples_param_beta_l0_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l0_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l0_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 3.897451452777296
+    },
+    "couples_param_beta_l0_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l0_f].z_robust",
+      "reference": "Robust z statistic of beta_l0_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.3814281743931076
+    },
+    "couples_param_beta_l0_m__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l0_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l0_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.9315828176543732
+    },
+    "couples_param_beta_l0_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l0_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l0_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.5688449290620091
+    },
+    "couples_param_beta_l0_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l0_m].z_robust",
+      "reference": "Robust z statistic of beta_l0_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 5.15357115424827
+    },
+    "couples_param_beta_l_age2_f__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l_age2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.01684764427451841
+    },
+    "couples_param_beta_l_age2_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l_age2_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.012082796035876732
+    },
+    "couples_param_beta_l_age2_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_f].z_robust",
+      "reference": "Robust z statistic of beta_l_age2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1.3943498031824502
+    },
+    "couples_param_beta_l_age2_m__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l_age2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.005457498656883606
+    },
+    "couples_param_beta_l_age2_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l_age2_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.0025544774254121876
+    },
+    "couples_param_beta_l_age2_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age2_m].z_robust",
+      "reference": "Robust z statistic of beta_l_age2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.1364442694196017
+    },
+    "couples_param_beta_l_age_f__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l_age_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.18076727749898924
+    },
+    "couples_param_beta_l_age_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l_age_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.15452294239992576
+    },
+    "couples_param_beta_l_age_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_f].z_robust",
+      "reference": "Robust z statistic of beta_l_age_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.1698410261379808
+    },
+    "couples_param_beta_l_age_m__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l_age_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.007014866755388457
+    },
+    "couples_param_beta_l_age_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l_age_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.024660948132472892
+    },
+    "couples_param_beta_l_age_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=beta_l_age_m].z_robust",
+      "reference": "Robust z statistic of beta_l_age_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.2844524353932469
+    },
+    "couples_param_beta_l_nkids_f__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_nkids_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_l_nkids_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.5585786538900587
+    },
+    "couples_param_beta_l_nkids_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_nkids_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_l_nkids_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1.3009538322675878
+    },
+    "couples_param_beta_l_nkids_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=beta_l_nkids_f].z_robust",
+      "reference": "Robust z statistic of beta_l_nkids_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.4293608581915972
+    },
+    "couples_param_beta_occ_2_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.20444552162544274
+    },
+    "couples_param_beta_occ_2_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_2_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.08024542694593052
+    },
+    "couples_param_beta_occ_2_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_f].z_robust",
+      "reference": "Robust z statistic of beta_occ_2_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.547752930060406
+    },
+    "couples_param_beta_occ_2_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.5288445905469519
+    },
+    "couples_param_beta_occ_2_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_2_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.09158652231208185
+    },
+    "couples_param_beta_occ_2_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_2_m].z_robust",
+      "reference": "Robust z statistic of beta_occ_2_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -16.692899260192466
+    },
+    "couples_param_beta_occ_3_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_3_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.11059410136698583
+    },
+    "couples_param_beta_occ_3_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_3_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.08472752234976054
+    },
+    "couples_param_beta_occ_3_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_f].z_robust",
+      "reference": "Robust z statistic of beta_occ_3_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.3052913421738739
+    },
+    "couples_param_beta_occ_3_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_3_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -2.1687008693498613
+    },
+    "couples_param_beta_occ_3_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_3_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.11735091965323878
+    },
+    "couples_param_beta_occ_3_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_3_m].z_robust",
+      "reference": "Robust z statistic of beta_occ_3_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -18.480476128846487
+    },
+    "couples_param_beta_occ_4_f__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_f].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_4_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.9332942037864944
+    },
+    "couples_param_beta_occ_4_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_4_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.06881735727330704
+    },
+    "couples_param_beta_occ_4_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - female occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_f].z_robust",
+      "reference": "Robust z statistic of beta_occ_4_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 13.561901252324052
+    },
+    "couples_param_beta_occ_4_m__estimate": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_m].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_occ_4_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.3057204759461737
+    },
+    "couples_param_beta_occ_4_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_occ_4_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.051660717617602825
+    },
+    "couples_param_beta_occ_4_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: job access - male occupation availability",
+      "column_or_key": "parameter_table[param=beta_occ_4_m].z_robust",
+      "reference": "Robust z statistic of beta_occ_4_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 5.91785190072549
+    },
+    "couples_param_beta_w0__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w0].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_w0.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 2.1452900261501937
+    },
+    "couples_param_beta_w0__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w0].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_w0 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.019365553130258537
+    },
+    "couples_param_beta_w0__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w0].z_robust",
+      "reference": "Robust z statistic of beta_w0.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 110.77866001142996
+    },
+    "couples_param_beta_w_educH__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educH].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_w_educH.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.1729815612997116
+    },
+    "couples_param_beta_w_educH__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educH].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_w_educH at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.01912379334735321
+    },
+    "couples_param_beta_w_educH__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educH].z_robust",
+      "reference": "Robust z statistic of beta_w_educH.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 9.045358217262516
+    },
+    "couples_param_beta_w_educL__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educL].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_w_educL.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.050240917877667865
+    },
+    "couples_param_beta_w_educL__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educL].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_w_educL at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.02141459442020952
+    },
+    "couples_param_beta_w_educL__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_educL].z_robust",
+      "reference": "Robust z statistic of beta_w_educL.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -2.34610643992651
+    },
+    "couples_param_beta_w_pexp2__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp2].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_w_pexp2.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.1
+    },
+    "couples_param_beta_w_pexp2__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp2].se_robust_CR1_Kint",
+      "reference": "Active-bound coordinate: literal NA in every inferential field, by the CR1 convention.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": "NA (active bound)"
+    },
+    "couples_param_beta_w_pexp2__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp2].z_robust",
+      "reference": "Active-bound coordinate: literal NA in every inferential field.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": "NA (active bound)"
+    },
+    "couples_param_beta_w_pexp__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp].estimate",
+      "reference": "Couples clean-baseline point estimate of beta_w_pexp.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.4485050774761583
+    },
+    "couples_param_beta_w_pexp__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of beta_w_pexp at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.013650241078543048
+    },
+    "couples_param_beta_w_pexp__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=beta_w_pexp].z_robust",
+      "reference": "Robust z statistic of beta_w_pexp.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 32.85693453291224
+    },
+    "couples_param_delta_occ_2__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_2].estimate",
+      "reference": "Couples clean-baseline point estimate of delta_occ_2.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -0.09368968236857289
+    },
+    "couples_param_delta_occ_2__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_2].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of delta_occ_2 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.022570499910118565
+    },
+    "couples_param_delta_occ_2__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_2].z_robust",
+      "reference": "Robust z statistic of delta_occ_2.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -4.150979497205152
+    },
+    "couples_param_delta_occ_3__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_3].estimate",
+      "reference": "Couples clean-baseline point estimate of delta_occ_3.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.02427973343728394
+    },
+    "couples_param_delta_occ_3__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_3].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of delta_occ_3 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.02273187327344087
+    },
+    "couples_param_delta_occ_3__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_3].z_robust",
+      "reference": "Robust z statistic of delta_occ_3.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1.0680920637390467
+    },
+    "couples_param_delta_occ_4__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_4].estimate",
+      "reference": "Couples clean-baseline point estimate of delta_occ_4.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.22265133702220308
+    },
+    "couples_param_delta_occ_4__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_4].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of delta_occ_4 at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.022083079795229964
+    },
+    "couples_param_delta_occ_4__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - occupation wage location",
+      "column_or_key": "parameter_table[param=delta_occ_4].z_robust",
+      "reference": "Robust z statistic of delta_occ_4.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 10.082440451548642
+    },
+    "couples_param_sigma__estimate": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=sigma].estimate",
+      "reference": "Couples clean-baseline point estimate of sigma.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.3779043986378341
+    },
+    "couples_param_sigma__se_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=sigma].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of sigma at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.00737595526100762
+    },
+    "couples_param_sigma__z_robust": {
+      "basis": "R240 couples clean baseline; block: earning opportunities - wage-offer density",
+      "column_or_key": "parameter_table[param=sigma].z_robust",
+      "reference": "Robust z statistic of sigma.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 51.23463812688704
+    },
+    "couples_param_theta_l_f__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=theta_l_f].estimate",
+      "reference": "Couples clean-baseline point estimate of theta_l_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.866863037689599
+    },
+    "couples_param_theta_l_f__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=theta_l_f].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of theta_l_f at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.23606183305784365
+    },
+    "couples_param_theta_l_f__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - female leisure",
+      "column_or_key": "parameter_table[param=theta_l_f].z_robust",
+      "reference": "Robust z statistic of theta_l_f.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -7.908364573413062
+    },
+    "couples_param_theta_l_m__estimate": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=theta_l_m].estimate",
+      "reference": "Couples clean-baseline point estimate of theta_l_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -1.032063120736749
+    },
+    "couples_param_theta_l_m__se_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=theta_l_m].se_robust_CR1_Kint",
+      "reference": "Cluster-robust CR1 standard error of theta_l_m at K_interior.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 0.12239745127513083
+    },
+    "couples_param_theta_l_m__z_robust": {
+      "basis": "R240 couples clean baseline; block: preferences - male leisure",
+      "column_or_key": "parameter_table[param=theta_l_m].z_robust",
+      "reference": "Robust z statistic of theta_l_m.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": -8.43206382146658
     },
     "couples_state_I0000_equivalized": {
       "basis": "couples R240 baseline, equivalized basis",
@@ -1524,12 +2497,47 @@
       "source": "SPRINT/figures/figS6_02_coefficient_stability.csv",
       "value": 101
     },
+    "n_couples_K_interior": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "estimation.inference.K_interior",
+      "reference": "K_interior used by the couples CR1 finite-sample correction.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 45
+    },
+    "n_couples_at_bound": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "estimation.active_set (length)",
+      "reference": "Coordinates resting on an active bound in the couples clean baseline.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 1
+    },
     "n_couples_clusters": {
       "basis": "couples R240",
       "column_or_key": "estimation.inference.G_clusters",
       "reference": "CR1 cluster count for couples inference (identical to the couples household count).",
       "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
       "value": 2275
+    },
+    "n_couples_free": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "estimation.n_free",
+      "reference": "Free coordinates of the couples clean baseline.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 46
+    },
+    "n_couples_interior": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "estimation.n_interior",
+      "reference": "Interior coordinates of the couples clean baseline.",
+      "source": "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
+      "value": 45
+    },
+    "n_couples_pinned": {
+      "basis": "R240 couples clean baseline",
+      "column_or_key": "k_pinned",
+      "reference": "Coordinates pinned inert in the couples specification, outside the 46 free set; they are not displayed in the coefficient table.",
+      "source": "runs/couples_clean_baseline/r240_step1_spec_v1.json",
+      "value": 12
     },
     "n_households_couples": {
       "basis": "couples estimation sample",

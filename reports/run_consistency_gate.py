@@ -116,7 +116,7 @@ class DocParse(HTMLParser):
     provenance sites of spec s10.
     """
 
-    SKIP = {"script", "style", "code"}
+    SKIP = {"script", "style"}
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -124,13 +124,17 @@ class DocParse(HTMLParser):
         self.sec = "front"
         self.text = {}          # sec -> list of str  (prose)
         self.prov = {}          # sec -> list of str  (provenance boxes)
+        self.code = {}          # sec -> list of str  (<code> spans)
         self.keys = {}          # sec -> set of data-k
         self.skip_depth = 0
         self.prov_depth = 0
+        self.code_depth = 0
         self.stack = []
         self._pending_h2 = None
 
     def _t(self):
+        if self.code_depth:
+            return self.code.setdefault(self.sec, [])
         if self.prov_depth:
             return self.prov.setdefault(self.sec, [])
         return self.text.setdefault(self.sec, [])
@@ -148,6 +152,9 @@ class DocParse(HTMLParser):
         cls = set((d.get("class") or "").split())
         if tag == "h2" and re.fullmatch(r"s\d+", d.get("id") or ""):
             self.sec = d["id"]
+        if tag == "code":
+            self.code_depth += 1
+            self.stack[-1][1] = "code"
         if "prov" in cls:
             self.prov_depth += 1
             self.stack[-1][1] = "prov"
@@ -163,6 +170,8 @@ class DocParse(HTMLParser):
                 self.skip_depth -= 1
             elif mark == "prov":
                 self.prov_depth -= 1
+            elif mark == "code":
+                self.code_depth -= 1
 
     def handle_endtag(self, tag):
         if not self.in_doc:
@@ -174,6 +183,8 @@ class DocParse(HTMLParser):
                         self.skip_depth -= 1
                     elif mark == "prov":
                         self.prov_depth -= 1
+                    elif mark == "code":
+                        self.code_depth -= 1
                 del self.stack[i:]
                 return
 
@@ -186,12 +197,15 @@ def html_passages():
     p = DocParse()
     p.feed(PATHS["H"].read_text(encoding="utf-8"))
     out = []
-    for sec in sorted(set(p.text) | set(p.prov)):
+    for sec in sorted(set(p.text) | set(p.prov) | set(p.code)):
         out.append(Passage("H", sec, " ".join(p.text.get(sec, [])), "prose",
                            p.keys.get(sec, set())))
         if p.prov.get(sec):
             out.append(Passage("H", sec + " (provenance)",
                                " ".join(p.prov[sec]), "provenance"))
+        if p.code.get(sec):
+            out.append(Passage("H", sec + " (code)",
+                               " ".join(p.code[sec]), "code"))
     return out, p
 
 
@@ -957,6 +971,328 @@ for a in ARTS:
     it10.set(a, not bad)
     for b in dict.fromkeys(bad):
         it10.note(a, b)
+
+
+# ==========================================================================
+# ITEM 11 - the boundary-active coordinates carry the age-bound diagnostic
+# ==========================================================================
+
+AB_TRIGGER = ("beta_l_age2_sm", "boundary-active", "bound-active",
+              "bound-activity", "age-squared coefficients",
+              "active box bound", "active bound at the optimum")
+AB_FACTS = {
+    "AB-1 widened by a factor of five": (
+        r"factor of\s+(five|5)|\bfive\b[^.]{0,40}half-width|"
+        r"\u00b15 to \u00b125|\+/-5 to \+/-25|5 to \u00b125"),
+    "AB-2 the bounds disappear": (
+        r"bounds? disappear|active set goes (from )?(two|2)? ?to (zero|empty|0)|"
+        r"2 ?(to|\u2192|->) ?0|become interior|every coordinate is interior|"
+        r"all 41 coordinates become interior"),
+    "AB-3 negligible gain, not a chi-square": (
+        r"0\.552|0\.55\b"),
+    "AB-4 +1.0 inside both intervals": (
+        r"\+1\.0[^.]{0,80}inside both|inside both[^.]{0,60}interval|"
+        r"lies inside both"),
+    "AB-5 the unit re-expression": (
+        r"0\.034845|0\.035\b"),
+    "AB-6 the retention verdict": (
+        r"retain(ed|ing)? the preferred specification|retain_s8_close|"
+        r"specification of record is retained|verdict is to retain"),
+}
+
+it11 = item(11, "Boundary-active coordinates: the age-bound line (spec \u00a711)")
+for a in ARTS:
+    trig = [p for p in PROSE[a] if any_of(p, *AB_TRIGGER)]
+    if not trig:
+        it11.set(a, True, "artifact does not introduce the boundary-active "
+                          "coordinates", na=True)
+        continue
+    near = scope(a, trig)
+    blob = " ".join(p.txt for p in near)
+    raw = " ".join(p.raw for p in near)
+    keys = set()
+    for p in near:
+        keys |= p.keys
+    bad = []
+    # In H the figures are rendered from the agebound AUX group at page load,
+    # so the binding is the print site; elsewhere the numeral is.
+    NUMERIC_AS_KEY = {
+        "AB-3 negligible gain, not a chi-square": "agebound.delta_negll",
+        "AB-5 the unit re-expression": "agebound.lambda40_m",
+    }
+    for name, rx in AB_FACTS.items():
+        if a == "H" and NUMERIC_AS_KEY.get(name) in keys:
+            continue
+        if not re.search(rx, blob + " " + raw, re.I):
+            bad.append("missing: %s" % name)
+    if not (re.search(r"0\.055555|0\.056\b", blob + " " + raw)
+            or (a == "H" and "agebound.lambda40_f" in keys)):
+        bad.append("missing: AB-5 the second unit re-expression value")
+    if not (re.search(r"3\.477|3\.475", raw)
+            or (a == "H" and {"agebound.ci_m", "agebound.ci_f"} <= keys)):
+        bad.append("missing: AB-4 the freed 95 %% intervals")
+    if not re.search(r"chi-square|chi square|not a likelihood-ratio|"
+                     r"no degree of freedom|k is identical|"
+                     r"same free coordinates", blob):
+        bad.append("AB-3: the gain is not disclaimed as a non-chi-square "
+                   "statistic")
+    it11.set(a, not bad)
+    for b in dict.fromkeys(bad):
+        it11.note(a, b)
+
+# ==========================================================================
+# ITEM 12 - the consumption curvature is MAINTAINED, not tested
+# ==========================================================================
+
+it12 = item(12, "Consumption curvature: maintained, not tested (spec \u00a712)")
+for a in ARTS:
+    # A bare theta_c inside a displayed utility equation is not a report of
+    # the estimate; the trigger is the named curvature or its value.
+    trig = [p for p in PROSE[a]
+            if any_of(p, "consumption curvature", "theta_c_singles")
+            or re.search(r"theta_c\s*=\s*0\.168|\u03b8_c\s*=\s*0\.168",
+                         p.txt)]
+    if not trig:
+        it12.set(a, True, "artifact does not report the consumption curvature",
+                 na=True)
+        continue
+    near = scope(a, trig)
+    blob = " ".join(p.txt for p in near)
+    bad = []
+    if not re.search(r"maintain(ed)?|by construction of the certified", blob):
+        bad.append("TC-1: the curvature is not stated as maintained common")
+    if not re.search(r"never (been )?tested|not tested|never proposed|"
+                     r"no test of it exists", blob):
+        bad.append("TC-1: `not tested sex-specifically` is not stated")
+    if not re.search(r"numeraire", blob):
+        bad.append("TC-1: the scale-numeraire reason is missing")
+    if not re.search(r"parsimony|never proposed", blob):
+        bad.append("TC-1: the parsimony reason is missing")
+    if re.search(r"(rejected|test(ed)?)[^.]{0,60}sex-specific consumption|"
+                 r"sex-specific consumption curvature[^.]{0,40}(rejected|"
+                 r"was tested)", blob):
+        bad.append("TC-2: a sex-specific curvature is described as tested or "
+                   "rejected")
+    # TC-3: the limitations list
+    lim = [p for p in PROSE[a]
+           if any_of(p, "not identify", "limitation", "does not claim",
+                     "candidate money-metric")]
+    limblob = " ".join(p.txt for p in scope(a, lim)) if lim else ""
+    if "consumption curvature" not in limblob and "theta_c" not in limblob:
+        bad.append("TC-3: absent from the limitations list")
+    elif "money-metric sensitivity" not in limblob and \
+            "money metric" not in limblob:
+        bad.append("TC-3: not named as a candidate money-metric sensitivity")
+    it12.set(a, not bad)
+    for b in dict.fromkeys(bad):
+        it12.note(a, b)
+
+# ==========================================================================
+# ITEM 13 - the couples coefficient table
+# ==========================================================================
+
+COUPLES_PARAMS = sorted(
+    k[len("couples_param_"):-len("__estimate")] for k in J
+    if k.startswith("couples_param_") and k.endswith("__estimate"))
+
+it13 = item(13, "The couples coefficient table (spec \u00a713)")
+for a in ARTS:
+    trig = [p for p in PROSE[a]
+            if any_of(p, "46 free coordinates", "couples_param_",
+                      "clean both-flexible baseline")]
+    if not trig:
+        it13.set(a, True, "artifact does not carry the couples coefficient "
+                          "table", na=True)
+        continue
+    near = scope(a, trig)
+    blob = " ".join(p.txt for p in near)
+    raw = " ".join(p.raw for p in near)
+    keys = set()
+    for p in near:
+        keys |= p.keys
+    bad = []
+    if len(COUPLES_PARAMS) != 46:
+        bad.append("CT-1: the registry does not carry 46 couples coordinates")
+    missing = [c for c in COUPLES_PARAMS
+               if c not in raw and ("couples_param_%s__estimate" % c) not in keys]
+    if missing:
+        bad.append("CT-1: %d coordinates absent from the table (%s ...)"
+                   % (len(missing), ", ".join(missing[:4])))
+    for blk in ("male leisure", "female leisure", "hours opportunity",
+                "occupation", "wage"):
+        if blk not in blob:
+            bad.append("CT-1: block `%s` is not named" % blk)
+    if not re.search(r"robust|cr1", blob):
+        bad.append("CT-2: the robust CR1 standard errors are not named")
+    if "beta_w_pexp2" not in raw and \
+            "couples_active_bound_coordinate" not in keys:
+        bad.append("CT-2: the active-bound coordinate is not identified")
+    for cnt in ("n_couples_free", "n_couples_interior", "n_couples_at_bound",
+                "n_couples_pinned"):
+        v = str(val(cnt))
+        if v not in raw and cnt not in keys:
+            bad.append("CT-3: count %s (%s) does not travel with the table"
+                       % (cnt, v))
+    if a == "H":
+        unbound = [c for c in COUPLES_PARAMS
+                   if ("couples_param_%s__estimate" % c) not in keys]
+        if unbound:
+            bad.append("CT-4: %d coefficients are not bound to a registry key"
+                       % len(unbound))
+    if not ("absent" in blob and re.search(r"beta_ll|cross-leisure", blob)):
+        bad.append("CT-5: the table's note does not state the beta_ll ABSENT row")
+    it13.set(a, not bad)
+    for b in dict.fromkeys(bad):
+        it13.note(a, b)
+
+# ==========================================================================
+# ITEM 14 - children: the male term and child age
+# ==========================================================================
+
+it14 = item(14, "Children: the male term and child age (spec \u00a714)")
+for a in ARTS:
+    trig = [p for p in PROSE[a]
+            if any_of(p, "beta_l_nkids", "child-count shifter",
+                      "children-in-leisure", "male child")]
+    if not trig:
+        it14.set(a, True, "artifact does not report the male child term",
+                 na=True)
+        continue
+    near = scope(a, trig)
+    blob = " ".join(p.txt for p in near)
+    raw = " ".join(p.raw for p in near)
+    keys = set()
+    for p in near:
+        keys |= p.keys
+    bad = []
+    # H renders every numeral from a binding at page load, so the binding is
+    # the print site there.
+    if not (re.search(r"1\.6468|1\.65\b", raw)
+            or "beta_l_nkids_male_historical_test" in keys):
+        bad.append("CH-1: the tested estimate is not printed")
+    if not (re.search(r"1\.8671|1\.87\b", raw)
+            or "chron.male_child_se" in keys):
+        bad.append("CH-1: the robust standard error of the test is not printed")
+    if not (re.search(r"0\.88\b", raw) or "chron.male_child_z" in keys):
+        bad.append("CH-1: the z of the test is not printed")
+    if not re.search(r"\btested\b", blob):
+        bad.append("CH-1: the term is not stated to have been tested")
+    if not re.search(r"not identified|do(es)? not support|"
+                     r"indistinguishable from zero|not pinned down", blob):
+        bad.append("CH-1: `not identified` is not stated")
+    if not re.search(r"exposure|of single men|of the 1,555|apply to", blob):
+        bad.append("CH-1: the exposure of the term is not stated")
+    if not (re.search(r"12\.75|5\.85|\b91\b", raw)
+            or "child.male_with_children" in keys):
+        bad.append("CH-1: the exposure figure of record is not printed")
+    if "absent" not in blob or "structural zero" not in blob:
+        bad.append("CH-2: the ABSENT / structural-zero status is not stated")
+    if re.search(r"(?<!not )(?<!never )estimated as zero|not significant", blob):
+        bad.append("CH-2: the term is described as estimated as zero or "
+                   "insignificant")
+    if not re.search(r"not been re-?run|has not been re-?run|"
+                     r"pre-correction|pre-floor5|earlier frame|"
+                     r"historical test uses", blob):
+        bad.append("CH-3: the scope caveat on the historical frame is missing")
+    if not (re.search(r"date of birth", blob)
+            and re.search(r"parent.child link", blob)
+            and re.search(r"pre-school|under six|under 6", blob)
+            and re.search(r"youngest", blob)):
+        bad.append("CH-4: the child-age variables are not all named "
+                   "(date of birth, parent-child link, youngest, pre-school)")
+    if not re.search(r"post-seminar|future work|next step|not in the baseline",
+                     blob):
+        bad.append("CH-4: child age is not named as post-seminar work")
+    it14.set(a, not bad)
+    for b in dict.fromkeys(bad):
+        it14.note(a, b)
+
+# ==========================================================================
+# ITEM 15 - execution profiles and backend parity
+# ==========================================================================
+
+OBSOLETE_BACKEND = [
+    "cannot represent the specification",
+    "cannot represent this specification",
+    "gpu grammar cannot represent",
+    "the gpu path is not available",
+]
+
+it15 = item(15, "Execution profiles and backend parity (spec \u00a715)")
+for a in ARTS:
+    trig = [p for p in ALL[a]
+            if any_of(p, "server_jax_cpu", "laptop_torch_cuda",
+                      "execution profile")]
+    prose_trig = [p for p in PROSE[a]
+                  if any_of(p, "server_jax_cpu", "laptop_torch_cuda",
+                            "execution profile")]
+    bad = []
+    # BP-3 applies to every artifact, whether or not it names the profiles
+    for p in PROSE[a]:
+        for f in OBSOLETE_BACKEND:
+            if f in p.txt:
+                bad.append("BP-3: %s carries the obsolete `%s`" % (p.loc, f))
+        if re.search(r"occupation-condition(al|ed) wage[^.]{0,120}\bcannot\b|"
+                     r"\bcannot\b[^.]{0,120}occupation-condition(al|ed) wage",
+                     p.txt):
+            bad.append("BP-3: %s still pairs the occupation-conditioned wage "
+                       "with `cannot`" % p.loc)
+    if not prose_trig:
+        if bad:
+            it15.set(a, False)
+            for b in dict.fromkeys(bad):
+                it15.note(a, b)
+        else:
+            it15.set(a, True, "artifact does not carry the profile table, and "
+                              "no obsolete backend claim remains", na=True)
+        continue
+    near = scope(a, prose_trig)
+    if a == "H":
+        secs = {p.loc.split(" (")[0] for p in near}
+        near = [p for p in ALL["H"] if p.loc.split(" (")[0] in secs]
+    blob = " ".join(p.txt for p in near)
+    raw = " ".join(p.raw for p in near)
+    for prof in ("server_jax_cpu", "laptop_jax_cpu", "laptop_torch_cuda"):
+        spots = [m.start() for m in re.finditer(re.escape(prof), blob)]
+        if not spots:
+            bad.append("BP: profile %s is not listed" % prof)
+            continue
+        # In H the profile name is a <code> span and its status word is in the
+        # neighbouring table cell, so the status is checked over the section.
+        near_ok = any("supported" in blob[i:i + 400] for i in spots)
+        if not (near_ok or (a == "H" and "supported" in blob)):
+            bad.append("BP: %s is not stated SUPPORTED" % prof)
+    if not re.search(r"pkg-?04b|1eed2756", blob):
+        bad.append("BP: the parity clearance is not named (PKG-04B / 1eed2756)")
+    if not re.search(r"18022\.764617170084", raw):
+        bad.append("BP-1: the exact negLL is not printed with the parity claim")
+    for name, rx in (("gradient", r"gradient"), ("hessian", r"hessian"),
+                     ("scores", r"score"), ("covariance/CR1", r"covariance|cr1"),
+                     ("standard errors", r"standard error|robust se"),
+                     ("active-bound set", r"active[- ]bound"),
+                     ("pinned", r"pinned")):
+        if not re.search(rx, blob):
+            bad.append("BP-1: the parity list omits %s" % name)
+    if not re.search(r"cuda[^.]{0,120}(not available|unavailable|exported|"
+                     r"outstanding)|not available[^.]{0,60}cuda|"
+                     r"cuda_not_available", blob):
+        bad.append("BP-2: the CUDA device caveat is missing")
+    if not re.search(r"default[^.]{0,80}(unchanged|remains)|"
+                     r"remains the default|profile unchanged", blob):
+        bad.append("BP-4: the default-unchanged statement is missing")
+    if not re.search(r"runtime is not re-?established|not re-?established|"
+                     r"no speed claim|diagnostic", blob):
+        bad.append("BP-4: runtime is not disclaimed")
+    if a == "N":
+        code_blob = " ".join(p.txt for p in N_CODE)
+        if "bench_backends" not in code_blob:
+            bad.append("BP-5: the notebook has no benchmark cell")
+        elif "skipped" not in code_blob:
+            bad.append("BP-5: the benchmark cell does not print SKIPPED")
+    it15.set(a, not bad)
+    for b in dict.fromkeys(bad):
+        it15.note(a, b)
+
 
 
 # ==========================================================================

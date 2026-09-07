@@ -679,7 +679,14 @@ with $\tilde{\ell}_{ij}=(\bar L-h_{ij})/\lambda_{\ell}$,
 $\tilde{c}_{ij}=c_{ij}/\lambda_c$, $a_i$ age centred and scaled by ten, $k_i$ the
 number of children, and $\beta_c\equiv 1$ as the scale numeraire. The consumption
 curvature $\theta_c$ is shared by the two sexes by construction of the certified
-specification; the leisure curvature $\theta_{\ell}^{g}$ is not. The leisure
+specification — a **maintained** common curvature, not a tested restriction —
+while the leisure curvature $\theta_{\ell}^{g}$ is not. Two reasons hold it
+common, and both are conventions rather than findings: $\beta_c\equiv 1$ makes
+the consumption block the **scale numeraire** of the money metric, so splitting
+its curvature by sex would split the metric itself; and **parsimony** — a
+sex-specific consumption curvature was never proposed in the specification
+search and has therefore **never been tested**. §10 carries it as a candidate
+money-metric sensitivity. The leisure
 normaliser is $\lambda_{\ell}=10$ hours.
 
 **The opportunity density.** Availability factorises into four margins, each
@@ -1366,6 +1373,21 @@ probabilities agreeing to $6.11\times10^{-16}$, marginal rates of substitution t
 $5.55\times10^{-16}$ in relative terms, and indifference curves to
 $2.17\times10^{-10}$ euros.
 
+**And what the bound costs is measured, not assumed.** §5.5 widens the admissible
+box on the four singles quadratic-age coordinates by a **factor of five** on
+half-widths — linear $\pm5\to\pm25$, quadratic $\pm1\to\pm5$ — with nothing else
+changed. The **bounds disappear**: the active set goes from two to zero and all 41
+coordinates become interior. The objective gain is **$\Delta$negLL 0.552**, so
+$\Delta\mathrm{AIC}=\Delta\mathrm{BIC}=-1.104$ and, because $k$ is identical, it is
+*not* a chi-square statistic. The two released coordinates land at $1.447$
+($[-0.584, 3.477]$) for men and $1.722$ ($[-0.032, 3.475]$) for women, and **the
+bound value $+1.0$ lies inside both intervals**; combined with the
+$\lambda_{\ell}=40$ re-expression above, which sends $+1.0$ to $0.035$ and
+$0.056$ strictly interior with no re-estimation, the bound is a unit artefact
+binding on a curvature the data do not pin down. **The verdict is to retain the
+preferred specification, and the margin is close** — the widened box fails the
+limb asking for a materially better objective. The four limbs are in §5.5.
+
 ### 5.3 Draw-count stability
 
 The estimator is a simulated one, so the first question about any coefficient is
@@ -1608,9 +1630,35 @@ counterpart** to that coefficient in the specification, a structural absence tha
 turns out to matter a great deal for the welfare layer and is dealt with in §7.5
 and Appendix B.
 
+**The male term was tested, is not identified, and would apply to few
+households — in that order.** It was *tested*: the historical S-battery arm added
+one male child-count shifter to the nested benchmark and returned $+1.6468$
+(robust s.e. $1.8671$, $z = 0.88$), flagged on the boundary diagnostic, with
+$\Delta\mathrm{AIC} = +1.506$ and $\Delta\mathrm{BIC} = +6.855$ / $+11.470$; the
+female term was essentially unmoved by its presence. It is *not identified* on
+that evidence. And its *exposure* is small: 91 of the 714 single men in the
+estimation sample have a child in the frame — 12.75 per cent of single men and
+5.85 per cent of the 1,555 households (9.36 and 4.48 per cent weighted). Its
+status in the certified model is therefore **absent — a structural zero by the
+sex-specific shifter specification** — not an estimate of zero, and not a
+coefficient dropped for want of significance. **One scope caveat travels with
+it**: that test was run on the pre-correction benchmark frame and has *not* been
+re-run on the final corrected model.
+
+**Child age is named as post-seminar work, with its variables.** The raw frame of
+11,459 households carries the parent–child link and each child's date of birth,
+so three variables are constructible with no new data: each resident child's
+**age**, the **age of the youngest child**, and a **pre-school indicator** for a
+youngest child under six. A count treats a two-year-old and a fifteen-year-old
+alike, which is the most likely reason the count term is imprecise; replacing it
+is a concrete next step, and it is named here as future work rather than
+reported as a result.
+
 **The consumption curvature is $\theta_c = 0.168$** (s.e. 0.074, $z=2.27$),
 comfortably inside the unit interval and well away from both the log limit and
-linearity.
+linearity. It is a **maintained common** curvature in the sense of §3.2: the
+number is a level, not a test of pooling, and no sex-specific alternative was
+estimated against it.
 
 **The access block is where the sharpest coefficients are.** The employment level
 is $\beta_E = -3.334$ ($z=-9.30$). The group-specific unemployment rate carries
@@ -3350,6 +3398,22 @@ identification device.
 
 ### 10.2 The welfare layer
 
+**A sex-specific consumption curvature is maintained away, not tested, and it is
+the untested assumption closest to the money metric.** $	heta_c$ is common to the
+two sexes by construction of the certified specification (§3.2), for two reasons
+that are conventions rather than findings: $eta_c\equiv 1$ makes the consumption
+block the scale numeraire of the metric, so a sex-split curvature would split the
+metric itself, and a sex-specific curvature was never proposed in the
+specification search. No test of it exists anywhere in this paper, and the
+estimate $	heta_c = 0.168$ is a level rather than evidence for pooling. It
+belongs on this list because the money metric is obtained by **inverting the
+consumption block**: a curvature that differed by sex would move $W^1$ for men and
+for women by different amounts, and so would move the preference/environment
+split through the same channel as the reference convention of §7.5 and the
+equivalence scale of §3.5. It is named here as a **candidate money-metric
+sensitivity**; closing it means re-estimating with the curvature freed by sex on
+the frozen frame and re-running the whole welfare layer on the result.
+
 **Normative-reference sensitivity is real, and is reported as a range.** §7.5. The
 sign of the preference contribution, the environment's dominance and the nested
 order are identical under both ratified reference blocks; the magnitude of the
@@ -3877,12 +3941,18 @@ seventeenth significant digit — it was caught by diffing every pre-existing ce
 against the committed version, and the register is now read and written with a
 non-parsing CSV path that refuses to write unless every pre-existing row
 round-trips exactly. And the whole sprint runs on a CPU automatic-differentiation
-backend rather than a GPU one, for two reasons: at 1,555 households by 101
-alternatives the per-step work is small relative to kernel-launch overhead, so the
-CPU route is about 2.7 times faster; and, more importantly, the public package's
-GPU grammar cannot represent this specification exactly, because it lacks the
-occupation-conditional wage location and occupation-specific hours. The model was
-not simplified to fit the faster hardware.
+backend, which remains the default and is the profile every certified number in
+this paper was produced on. That is now a choice of default rather than a
+constraint: under the accepted package the Torch route **represents this
+specification exactly** and reproduces it numerically — the objective bitwise
+equal at negLL 18022.764617170084, and gradient, Hessian, household scores, the
+clustered covariance and the robust standard errors all agreeing to machine
+precision, with the same active-bound and pinned sets. The earlier statement that
+a backend could not represent the occupation-conditional wage location is
+superseded and has been withdrawn. Runtime has not been re-established across
+backends and no speed claim is made here; the parity record's own outstanding
+item is the device-level CUDA comparison, which was exported rather than run,
+because CUDA was not available on the machine that produced that record.
 
 ---
 
@@ -3892,8 +3962,15 @@ not simplified to fit the faster hardware.
 
 Robust CR1 standard errors, $G = 2{,}275$ clusters, $K_{\text{interior}} = 45$.
 **couples clean baseline negLL 43493.342239066726**, the negative
-log-likelihood at the full precision the record carries. One active bound. Twelve further coordinates are pinned
-inert and are not displayed.
+log-likelihood at the full precision the record carries. **46 free coordinates:
+45 interior and one on an active bound** (`beta_w_pexp2`, which carries no
+standard error by the CR1 convention). Twelve further coordinates are pinned
+inert and are not displayed. Every cell below is bound to a registry key —
+`couples_param_<coordinate>__estimate`, `__se_robust` and `__z_robust`, with the
+counts under `n_couples_free`, `n_couples_interior`, `n_couples_at_bound` and
+`n_couples_pinned` — emitted by the generator from
+`r240_step3_estimation_v1.json`, so no couples coefficient in this paper is typed
+by hand.
 
 | coordinate | block | estimate | s.e. | $z$ |
 |---|---|---:|---:|---:|
@@ -3943,6 +4020,14 @@ inert and are not displayed.
 | `delta_occ_2` | occupation wage-location | −0.0937 | 0.0226 | −4.15 |
 | `delta_occ_3` | occupation wage-location | 0.0243 | 0.0227 | 1.07 |
 | `delta_occ_4` | occupation wage-location | 0.2227 | 0.0221 | 10.08 |
+
+***The cross-leisure interaction is not a row of this table, and its absence is
+the point of the note.*** $\beta_{\ell\ell}$ is not a coordinate of this model:
+it is **absent** from the specification, the welfare pipeline uses an effective
+value of exactly **0.0**, and the form it would take is
+`beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female)`. It was not estimated
+and found small, and it was not estimated and then set to zero. §8.1 gives the
+identification reason and the named extension.
 
 ### D.2 The male-leisure sensitivity arms
 
@@ -4521,7 +4606,7 @@ then bound by its artefact source in the second column alone.*
 | Appendix C, the engine-ready gate at maximum absolute difference 0.0 and the exact objective reproduction | same, Entry 9 §6 | — |
 | Appendix C, the $\log S$ trap (~€37/month) and the closed-form checks at $1.9\times10^{-15}$ / $3.6\times10^{-15}$; the chosen-flag inertness at $7.1\times10^{-15}$ | same, Entry 9 §7 | — |
 | Appendix C, the CSV round-trip defect (131 cells) and the register discipline | same, Entry 8 §7 | — |
-| Appendix C, JAX CPU 20.9 s against Torch CUDA 56.2 s; the two missing generic capabilities | same, Entry 3 | — |
+| Appendix C, backend parity: objective bitwise equal, gradient / Hessian / scores / CR1 covariance / robust SE at machine precision, identical active-bound and pinned sets; CUDA device comparison exported, not run | `SPRINT/export/pkg04b_final_s8_parity_v1.json`, `comparisons`, `cuda_disposition` | `negll_singles_final` |
 | the figure set, and why no audit count is quoted | `SPRINT/figures/figure_index_paper_v1.csv` (paper set), `figAB_index_agebound_addendum_s2_v1.csv`, `figX_index_external_hours_v1.csv`, `figW_index_final_singles_welfare_v1.csv`, `figC_index_final_couples_welfare_v1.csv`; the deferral of the whole-directory refresh is `SPRINT/decision_log.md` Entry 10 §9 | — |
 
 ### (k) Claim discipline — observed prohibitions

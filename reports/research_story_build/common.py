@@ -162,6 +162,60 @@ def build_aux() -> dict:
         "cr1_finite_sample_constant": 1.0257256,
         "wage_q1_over_prediction_pp": 5.3,
     }
+    # -- male exposure to a child-count term ---------------------------------- #
+    # Computed on the certified singles frame: how many single men the male
+    # child-count shifter would apply to at all.
+    frame = (MNL / "outputs/p2a_singles2016/region_live_margqh_floor5_v1"
+             / "fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet")
+    import pandas as _pd
+    hh = _pd.read_parquet(frame, columns=["idorighh", "dgn", "dwt", "n_children"])
+    hh = hh.drop_duplicates(subset=["idorighh"])
+    men = hh[hh["dgn"] == 1]
+    men_k = men["n_children"] > 0
+    aux["child"] = {
+        "male_units": int(len(men)),
+        "male_with_children": int(men_k.sum()),
+        "male_with_children_share_of_men": float(men_k.mean()),
+        "male_with_children_share_of_sample": float(men_k.sum() / len(hh)),
+        "male_with_children_share_of_men_weighted":
+            float(men["dwt"][men_k].sum() / men["dwt"].sum()),
+        "male_with_children_share_of_sample_weighted":
+            float(men["dwt"][men_k].sum() / hh["dwt"].sum()),
+    }
+    aux["_sources"]["child"] = (
+        "outputs/p2a_singles2016/region_live_margqh_floor5_v1/"
+        "fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet; "
+        "household-level, dgn==1, n_children>0; dwt-weighted shares alongside")
+
+    # -- the age-bound diagnostic --------------------------------------------- #
+    # Read from the artefact, except the two lambda_ell = 40 re-expression values,
+    # which are the exact-map figures transcribed from the decision note.
+    ab = json.loads((SPRINT / "runs/agebound_addendum_s2/ab_verdict_v1.json")
+                    .read_text(encoding="utf-8"))
+    B = ab["B_materially_better_objective"]
+    fm = B["_freed_coefficients"]["beta_l_age2_sm"]
+    ff = B["_freed_coefficients"]["beta_l_age2_sf"]
+    aux["agebound"] = {
+        "delta_negll": B["_objective_gain"],
+        "twice_the_gain": B["_twice_the_gain"],
+        "delta_aic": B["_dAIC"],
+        "released_m": fm["estimate"],
+        "released_f": ff["estimate"],
+        "ci_m": [fm["ci95_lo"], fm["ci95_hi"]],
+        "ci_f": [ff["ci95_lo"], ff["ci95_hi"]],
+        "bound_of_record": fm["S8_value"],
+        "active_set_widened": len(ab["A_well_behaved"]["_active_set_AGEWIDE"]),
+        "verdict": ab["verdict"],
+        "failing_limb": ab["failing_limb"],
+        "lambda40_m": 0.034845,
+        "lambda40_f": 0.055555,
+    }
+    aux["_sources"]["agebound"] = (
+        "experiments/JMP_SEMINAR_SPRINT/runs/agebound_addendum_s2/"
+        "ab_verdict_v1.json; the two lambda_ell = 40 re-expression values from "
+        "experiments/JMP_PS1/decision_note.md section 1 (exact map, no "
+        "re-estimation)")
+
     aux["_sources"]["chron"] = ("experiments/JMP_PS1/decision_note.md "
                                 "sections 2 and 31 (per-spec verdict table; "
                                 "S9 selection criteria table)")

@@ -169,6 +169,23 @@ def sections(F):
       "<td>Exogenous variation in location &mdash; a mover design, a policy "
       "discontinuity, or panel variation.</td></tr>"
 
+      "<tr><td><b>A sex-specific consumption curvature</b></td>"
+      "<td><b>Maintained, not tested.</b> The consumption curvature "
+      "<code>theta_c</code> is shared by the two sexes by construction of the "
+      "certified specification: the consumption coefficient is the scale "
+      "numeraire, so the consumption block carries the units of the money metric, "
+      "and a sex-split curvature would split the metric itself; and a "
+      "sex-specific curvature was never proposed in the specification search. "
+      "This is the untested assumption closest to the headline: the money metric "
+      "inverts the consumption block, so a sex-specific curvature would move "
+      + lit("W1", "the carrier welfare measure, a name not a result")
+      + " for men and women by different amounts. "
+      "<b>A candidate money-metric sensitivity, named rather than dismissed.</b></td>"
+      "<td>Re-estimation with the curvature freed by sex, on the frozen frame, "
+      "and the whole welfare layer re-run on the result &mdash; the reference "
+      "convention and the equivalence scale are the two other places the metric "
+      "is known to move.</td></tr>"
+
       "<tr><td><b>Labour-demand equilibrium</b></td>"
       "<td>The opportunity density is a reduced-form description of what households "
       "face. No firm side is modelled, so nothing prices the general-equilibrium "
@@ -323,29 +340,83 @@ def sections(F):
     W('<div class="scroll"><table><thead><tr><th>Profile</th><th>Status</th>'
       "<th>What it means</th></tr></thead><tbody>"
       "<tr><td><code>server_jax_cpu</code></td>"
-      '<td><span class="tag yes">compatible</span></td>'
-      "<td><b>The only profile that can run the preferred specification.</b> All "
-      "certified results are on it.</td></tr>"
+      '<td><span class="tag yes">supported</span></td>'
+      "<td><b>The default, and the profile every certified result is on.</b> It is "
+      "unchanged by the parity clearance below.</td></tr>"
       "<tr><td><code>laptop_jax_cpu</code></td>"
-      '<td><span class="tag no">expected incompatible</span></td>'
-      "<td>Fails the gate by design.</td></tr>"
+      '<td><span class="tag yes">supported</span></td>'
+      "<td><b>Parity-cleared</b>, and it is worth saying which clearance: the "
+      "accepted package <b>" + lit("PKG-04B", "the accepted package, a name") + "</b> (" + lit("commit 1eed2756",
+      "the accepted package commit, an identifier") + "), whose supported grammar "
+      "carries the occupation-conditional wage location that the legacy public pin "
+      "(" + lit("258d6eda", "the superseded public package pin, an identifier")
+      + ") lacked. Its <code>unsupported_forms_used</code> list is empty on this "
+      "specification.</td></tr>"
       "<tr><td><code>laptop_torch_cuda</code></td>"
-      '<td><span class="tag no">expected incompatible</span></td>'
-      "<td>Fails specifically on the occupation-conditioned wage term: that backend "
-      "<b>cannot represent the specification</b>. A GPU does not help here, and it is "
-      "slower besides.</td></tr>"
+      '<td><span class="tag yes">supported</span></td>'
+      "<td><b>Supported for the frozen final singles model</b>, on the "
+      + lit("Goal&nbsp;2", "the programme goal it was cleared under, a name")
+      + " parity record. The Torch route reproduces the model exactly &mdash; see the "
+      "parity list below. A GPU is not required and the default does not "
+      "change.</td></tr>"
       "</tbody></table></div>")
-    W(box("warn", "The compatibility rule, and why it is a feature",
-          "<p>The gate <b>fails loudly rather than falling back</b>. A profile that "
-          "cannot represent the specification raises an error naming the offending "
-          "term; it does not silently estimate a nearby model. Running block&nbsp;0 "
-          "before anything else is therefore not a formality &mdash; it is the check "
-          "that the numbers you are about to produce are the numbers you think they "
-          "are.</p>"
-          "<p>The practical consequence: <b>the GPU path is not available for this "
-          "paper.</b> If asked why a large model is estimated on CPU, the answer is that "
-          "the alternative backend cannot express the occupation-conditioned wage block "
-          "and is slower on this problem anyway.</p>"))
+
+    W(box("key", "The backend parity, itemised",
+          "<p>The frozen final singles model was run through the accepted package "
+          "on both routes and compared against the reference implementation. The "
+          "verdict of record is <code>GOAL1_PKG04B_PARITY_ACCEPT</code>.</p>"
+          "<ul>"
+          "<li><b>Objective: bitwise equal.</b> negLL "
+          + lit("18022.764617170084", "the singles negLL of record, at full "
+                "precision, reproduced identically on both routes")
+          + " on the reference, the package JAX route and the package Torch route "
+          "&mdash; identical hexadecimal representation, "
+          + lit("0", "the ULP distance between the two doubles") + " ULP.</li>"
+          "<li><b>Gradient, Hessian, household scores.</b> Torch against JAX at "
+          "machine precision: gradient "
+          + lit("1.4&times;10<sup>&minus;13</sup>", "the maximum absolute "
+                "difference, a measured tolerance") + " maximum absolute "
+          "difference, Hessian "
+          + lit("3.6&times;10<sup>&minus;12</sup>", "the same, on the 41&times;41 "
+                "free block") + ", and the full "
+          + n("n_households_singles", "int") + "&times;"
+          + n("n_params_active", "int") + " score matrix at "
+          + lit("2.8&times;10<sup>&minus;14</sup>", "the same, on the score "
+                "matrix") + ".</li>"
+          "<li><b>Inference.</b> The clustered covariance agrees at "
+          + lit("1.6&times;10<sup>&minus;13</sup>", "the same, on the CR1 "
+                "covariance") + " and the robust standard errors at "
+          + lit("4.2&times;10<sup>&minus;14</sup>", "the same, on the robust "
+                "standard errors") + ".</li>"
+          "<li><b>Bounds and the active set.</b> The same two coordinates rest on "
+          "an active bound, the same ten coordinates are pinned with gradients "
+          "exactly zero, and the one-sided optimality condition holds on both "
+          "routes.</li>"
+          "</ul>"
+          "<p><b>One device-level caveat, and it belongs here.</b> The parity "
+          "artefact records that CUDA was <em>not available</em> on the machine it "
+          "ran on, so the measured Torch comparison is Torch on CPU against JAX; "
+          "the CUDA bundle was exported and the device-level comparison is the "
+          "artefact's own named outstanding item. What is established is that the "
+          "Torch backend represents and reproduces this model exactly &mdash; not "
+          "that a GPU run has been timed or compared.</p>"))
+
+    W(box("warn", "The compatibility rule, and why it is still a feature",
+          "<p>The gate <b>fails loudly rather than falling back</b>. A profile "
+          "whose grammar does not carry a selected term raises an error naming the "
+          "offending term; it does not silently estimate a nearby model. Running "
+          "block&nbsp;0 before anything else is therefore not a formality &mdash; "
+          "it is the check that the numbers you are about to produce are the "
+          "numbers you think they are.</p>"
+          "<p>The notebook's laptop profiles are still pinned to the legacy public "
+          "package, so the expected-failure cell still fires and still names the "
+          "occupation wage-location term. That is a statement about the pinned "
+          "overlay, not about the backend: under the accepted package the term "
+          "exists on both laptop routes.</p>"
+          "<p><b>What has not been re-established is runtime.</b> The default "
+          "profile is unchanged, no backend is claimed to be faster than another "
+          "here, and the notebook's benchmark cell is a diagnostic on whatever "
+          "machine it runs on rather than a number of record.</p>"))
 
     W(box("warn", "Two traps worth knowing before touching the code",
           "<ul>"

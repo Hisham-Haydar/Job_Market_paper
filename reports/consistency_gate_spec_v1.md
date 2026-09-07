@@ -4,7 +4,9 @@
 the sole authority for what `reports/run_consistency_gate.py` checks and for what
 "PASS" means. `reports/consistency_gate_v1.md` was a prose audit; it is superseded
 as an *instrument* by this spec, and is never overwritten. Gate reports produced
-under this spec are numbered from **v2**.
+under this spec are numbered from **v2**. Amendments A and B (Goal-1 R-271 and
+the Goal-2 backend note) add items 11-15; they are checked and reported exactly
+like items 1-10.
 
 Authority order, unchanged: **registry (J) > paper v2 (P) > story HTML (H) > deck
 content (D) > research-lab notebook (N)**. Where the spec fixes a canonical form,
@@ -411,9 +413,163 @@ D (the deck) has **no** permitted site for any term in this table.
 
 ---
 
-## 11. Pass rule and reporting
+---
 
-- Each of the ten gate items yields one verdict per artifact: **PASS**, **FAIL**,
+# Amendment A — content items (Goal-1 R-271)
+
+Items 11 to 14 are added to the gate. They are checked exactly like items 1–10
+and appear in the same verdict matrix.
+
+## 11. The boundary-active coordinates carry the age-bound diagnostic (GATE ITEM 11)
+
+Two free coordinates — `beta_l_age2_sm` and `beta_l_age2_sf` — rest on an active
+box bound at $+1.0$ in the $\lambda_\ell = 10$ unit and carry no standard error.
+**Wherever an artifact introduces them, one line must carry the diagnostic and
+its verdict**, so that a reader never meets the bound without meeting what it
+costs.
+
+**Required, in the same passage as the boundary-active coordinates** (H §7, and
+paper §5 — §5.2, where §5 states the bound-activity fact):
+
+| # | fact | value of record |
+|---|---|---|
+| AB-1 | the box was widened by a **factor of five** on half-widths | linear $\pm5\to\pm25$, quadratic $\pm1\to\pm5$ |
+| AB-2 | **the bounds disappear** | active bounds $2\to0$, interior $39\to41$ |
+| AB-3 | the objective gain is negligible | $\Delta$negLL **0.552** (18022.7646 → 18022.2124); $\Delta$AIC $=\Delta$BIC $=-1.104$; **not** a chi-square statistic |
+| AB-4 | **$+1.0$ lies inside both freed intervals** | men $1.447$, $[-0.584, 3.477]$; women $1.722$, $[-0.032, 3.475]$ |
+| AB-5 | the bound is a **unit artefact**: the exact $\lambda_\ell=40$ re-expression, no re-estimation, sends $+1.0$ to strictly interior values | **0.034845** (men) and **0.055555** (women) — 0.035 / 0.056 |
+| AB-6 | the **retention verdict** | the preferred specification is retained, and the margin is close (`RETAIN_S8_CLOSE`) |
+
+The line must also point at where the full diagnostic lives: **H §19**, paper
+§5.5. Detection: the passage naming the two boundary-active coordinates must
+carry a pointer plus AB-1…AB-6.
+
+## 12. The consumption curvature is MAINTAINED, not tested (GATE ITEM 12)
+
+$\theta_c$ is **shared across the sexes by construction of the certified
+specification**. It is a *maintained assumption*, and the two reasons are stated:
+
+1. $\beta_c \equiv 1$ is the **scale numeraire**, so the consumption block carries
+   the units of the money metric and a sex-split curvature would split the metric
+   itself;
+2. **parsimony** — the specification search never proposed a sex-specific
+   consumption curvature, so it was never tested.
+
+**Rules.**
+
+- **TC-1.** Wherever $\theta_c$ is reported (H §7, paper §3.2 and §6.1), the
+  passage says it is **maintained common** and **not tested sex-specifically**.
+- **TC-2.** No artifact may describe the common curvature as an estimated or
+  tested restriction, or imply a sex-specific curvature was rejected. `theta_c`
+  = 0.168 (s.e. 0.074, $z$ = 2.27) is the *level*, not a test of pooling.
+- **TC-3.** It appears in the **limitations list** — H §20 and paper §10 — as a
+  named **candidate money-metric sensitivity**: the money metric inverts the
+  consumption block, so a sex-specific curvature would move $W^1$ for men and
+  women differently and is the untested assumption closest to the headline.
+
+## 13. The couples coefficient table (GATE ITEM 13)
+
+The R240 clean baseline's **46 free coordinates** are printed in full, by
+economic block and spouse, with robust CR1 standard errors, in **H §11** and
+**paper Appendix D.1**.
+
+- **CT-1.** 46 rows, one per coordinate of
+  `runs/couples_clean_baseline/r240_step3_estimation_v1.json:parameter_table`,
+  in its nine blocks: male leisure (4), female leisure (5), male hours
+  opportunity (6), female hours opportunity (6), employment access (10), male
+  occupation opportunity (3), female occupation opportunity (3), wage (6),
+  occupation wage location (3).
+- **CT-2.** Each row carries the estimate and the **robust CR1 standard error at
+  $K_{\text{interior}}$** (`se_robust_CR1_Kint`), with $z$; the single
+  active-bound coordinate `beta_w_pexp2` carries no standard error.
+- **CT-3.** The counts travel with the table: **46 free, 45 interior, 1 active
+  bound, 12 pinned inert**, $G = 2{,}275$, $K_{\text{interior}} = 45$.
+- **CT-4.** Every numeral is **bound to a registry key** emitted by
+  `beamer/make_numbers_of_record_v1.py` — `couples_param_<name>__estimate`,
+  `__se_robust`, `__z_robust`, and the counts `n_couples_free`,
+  `n_couples_interior`, `n_couples_at_bound`, `n_couples_pinned`. Hand-typed
+  couples coefficients are a FAIL.
+- **CT-5.** The table's **note states the `beta_ll` ABSENT row**: the
+  cross-leisure interaction is not a row of this table because it is not a
+  coordinate of the model — status ABSENT, welfare-effective 0.0, form
+  `beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female)`.
+
+## 14. Children: the male term and child age (GATE ITEM 14)
+
+In **H §12** (and the paper's matching paragraph in §6.1):
+
+- **CH-1.** The male child-count shifter is described in three parts and all
+  three appear: it was **tested** (historical S-battery S4, one male child-count
+  shifter added to S0: $+1.6468$, robust s.e. $1.8671$, $z = 0.88$, W-4 flagged;
+  $\Delta$AIC $+1.506$, $\Delta$BIC $+6.855$ / $+11.470$); it is **not
+  identified** on that evidence; and its **exposure** in the estimation sample is
+  small — 91 of 714 single men (**12.75 %** of single men, **5.85 %** of the
+  1,555-household sample; weighted 9.36 % and 4.48 %).
+- **CH-2.** Its status in the certified model is **ABSENT; structural zero by the
+  sex-specific shifter specification** — never "estimated as zero", never "not
+  significant" (this is item 6's REF-3, restated at its own site).
+- **CH-3.** The **scope caveat** travels with it: the historical test was run on
+  the pre-floor5 S0/LOC4 frame and has **not** been re-run on the final corrected
+  S8 model.
+- **CH-4.** The **child-age variables are named as post-seminar work**, by name
+  and not by gesture: each child's **date of birth** and the **parent–child link**
+  are already in the raw frame of 11,459 households, so a child's **age**, the
+  **youngest-child age**, and a **pre-school (under-6) indicator** are
+  constructible with no new data. They are named as future work, not as a
+  result.
+
+---
+
+# Amendment B — Torch parity and execution profiles (Goal-2 note)
+
+## 15. Execution profiles and backend parity (GATE ITEM 15)
+
+Checked in **H §21** and the **notebook**. The statement is about *capability and
+numerical parity*, never about runtime.
+
+| profile | required status | required qualification |
+|---|---|---|
+| `server_jax_cpu` | **SUPPORTED** | the profile every certified result is on; the default |
+| `laptop_jax_cpu` | **SUPPORTED** | *parity-cleared* — and the artifact must say **which** clearance: the accepted package **PKG-04B**, commit `1eed2756`, whose `unsupported_forms_used` is empty and which carries the occupation-conditional wage location the legacy public pin `258d6eda` lacked |
+| `laptop_torch_cuda` | **SUPPORTED** for the **frozen final singles model** | Goal-2 parity, from `export/pkg04b_final_s8_parity_v1.json`, verdict `GOAL1_PKG04B_PARITY_ACCEPT` |
+
+- **BP-1 (the parity list).** Where Torch support is claimed, the parity is
+  itemised and matches the artefact: **negLL 18022.764617170084 exact** (bitwise,
+  0 ULP); **gradient** max abs $1.42\times10^{-13}$; **Hessian**
+  $3.64\times10^{-12}$; **household scores** $2.84\times10^{-14}$ over the full
+  $1555\times41$ matrix; **CR1 covariance** $1.58\times10^{-13}$; **robust SE**
+  $4.24\times10^{-14}$; the **active-bound set** `{beta_l_age2_sm,
+  beta_l_age2_sf}` and the **10 pinned coordinates** identical, pinned gradients
+  exactly 0.0.
+- **BP-2 (the device caveat, required).** The parity artefact records
+  `torch_cuda_available: false` on the server and
+  `cuda_disposition.status = CUDA_NOT_AVAILABLE_SERVER_LAPTOP_BUNDLE_EXPORTED`:
+  the measured Torch comparison is **Torch CPU against JAX**, and the CUDA
+  *device* comparison is the named outstanding item. An artifact claiming Torch
+  support must carry this caveat; claiming a measured CUDA parity is a FAIL.
+- **BP-3 (the obsolete sentence is gone).** The claim that a backend **cannot
+  represent** the occupation-conditioned wage location or the final hours
+  specification is **removed everywhere** — paper Appendix C, H §21, notebook.
+  Detection: the strings `cannot represent the specification`, `cannot represent
+  this specification`, and `GPU grammar cannot represent`, and any sentence
+  pairing `occupation-conditional wage location` / `occupation-conditioned wage`
+  with `cannot`.
+- **BP-4 (the default is unchanged).** `server_jax_cpu` remains the default
+  profile, and every artifact says so. **Runtime is not re-established**: the old
+  "the CPU route is about 2.7 times faster" comparison is retired rather than
+  restated, and no new runtime claim is made outside the benchmark cell's own
+  printed output.
+- **BP-5 (the benchmark cell).** The notebook carries a benchmark cell comparing
+  complete-model runtime across the available profiles. It **runs only where the
+  backend is installed** and otherwise prints `SKIPPED` with the reason. Its
+  output is a **diagnostic on the machine it ran on**, is labelled as such, and
+  is not a number of record.
+
+---
+
+## 16. Pass rule and reporting
+
+- Each of the fifteen gate items yields one verdict per artifact: **PASS**, **FAIL**,
   or **N/A** (the artifact does not report that object at all — N/A must be
   *justified* by the absence of every trigger, never used to excuse a partial
   report).

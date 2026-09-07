@@ -583,6 +583,77 @@ def build(sprint, out):
           "Largest relative movement of the couples preference-channel contribution "
           "C_P across the male-leisure sensitivity battery.")
 
+    # ================================================================
+    # COUPLES COEFFICIENT TABLE -- the R240 clean baseline, 46 free
+    # coordinates by economic block and spouse (Amendment A item 3).
+    # ================================================================
+    r240 = jload(runs / "couples_clean_baseline" / "r240_step3_estimation_v1.json")
+    src_r240 = "runs/couples_clean_baseline/r240_step3_estimation_v1.json"
+    est = r240["estimation"]
+    ptab = r240["parameter_table"]
+    if len(ptab) != 46:
+        raise SystemExit("couples parameter_table is not 46 rows")
+    BLOCK_LABEL = {
+        "leisure_male": "preferences - male leisure",
+        "leisure_female": "preferences - female leisure",
+        "hours_opportunity_male": "job access - male hours opportunity",
+        "hours_opportunity_female": "job access - female hours opportunity",
+        "employment_access": "job access - employment and local market access",
+        "occupation_opportunity_male": "job access - male occupation availability",
+        "occupation_opportunity_female": "job access - female occupation availability",
+        "wage": "earning opportunities - wage-offer density",
+        "wage_location_delta_occ": "earning opportunities - occupation wage location",
+    }
+    for row in ptab:
+        name = row["param"]
+        label = BLOCK_LABEL.get(row["block"], row["block"])
+        base = "couples_param_%s" % name
+        n.add(base + "__estimate", float(row["estimate"]), src_r240,
+              "parameter_table[param=%s].estimate" % name,
+              "R240 couples clean baseline; block: " + label,
+              "Couples clean-baseline point estimate of %s." % name)
+        if row["at_active_bound"]:
+            n.add(base + "__se_robust", "NA (active bound)", src_r240,
+                  "parameter_table[param=%s].se_robust_CR1_Kint" % name,
+                  "R240 couples clean baseline; block: " + label,
+                  "Active-bound coordinate: literal NA in every inferential field, "
+                  "by the CR1 convention.")
+            n.add(base + "__z_robust", "NA (active bound)", src_r240,
+                  "parameter_table[param=%s].z_robust" % name,
+                  "R240 couples clean baseline; block: " + label,
+                  "Active-bound coordinate: literal NA in every inferential field.")
+        else:
+            n.add(base + "__se_robust", float(row["se_robust_CR1_Kint"]), src_r240,
+                  "parameter_table[param=%s].se_robust_CR1_Kint" % name,
+                  "R240 couples clean baseline; block: " + label,
+                  "Cluster-robust CR1 standard error of %s at K_interior." % name)
+            n.add(base + "__z_robust", float(row["z_robust"]), src_r240,
+                  "parameter_table[param=%s].z_robust" % name,
+                  "R240 couples clean baseline; block: " + label,
+                  "Robust z statistic of %s." % name)
+
+    n.add("n_couples_free", int(est["n_free"]), src_r240,
+          "estimation.n_free", "R240 couples clean baseline",
+          "Free coordinates of the couples clean baseline.")
+    n.add("n_couples_interior", int(est["n_interior"]), src_r240,
+          "estimation.n_interior", "R240 couples clean baseline",
+          "Interior coordinates of the couples clean baseline.")
+    n.add("n_couples_at_bound", len(est["active_set"]), src_r240,
+          "estimation.active_set (length)", "R240 couples clean baseline",
+          "Coordinates resting on an active bound in the couples clean baseline.")
+    n.add("couples_active_bound_coordinate", ", ".join(est["active_set"]), src_r240,
+          "estimation.active_set", "R240 couples clean baseline",
+          "Name of the single active-bound couples coordinate.")
+    r240spec = jload(runs / "couples_clean_baseline" / "r240_step1_spec_v1.json")
+    src_r240s = "runs/couples_clean_baseline/r240_step1_spec_v1.json"
+    n.add("n_couples_pinned", int(r240spec["k_pinned"]), src_r240s,
+          "k_pinned", "R240 couples clean baseline",
+          "Coordinates pinned inert in the couples specification, outside the 46 "
+          "free set; they are not displayed in the coefficient table.")
+    n.add("n_couples_K_interior", int(est["inference"]["K_interior"]), src_r240,
+          "estimation.inference.K_interior", "R240 couples clean baseline",
+          "K_interior used by the couples CR1 finite-sample correction.")
+
     n.add("n_couples_clusters", 2275,
           "runs/couples_clean_baseline/r240_step3_estimation_v1.json",
           "estimation.inference.G_clusters", "couples R240",
