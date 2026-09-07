@@ -43,6 +43,11 @@ def lookup(src: str, key: str):
         return MISSING if e is None else e.get("value")
     cur = AUX
     for part in key.split("."):
+        if isinstance(cur, list):
+            if not part.isdigit() or int(part) >= len(cur):
+                return MISSING
+            cur = cur[int(part)]
+            continue
         if not isinstance(cur, dict) or part not in cur:
             return MISSING
         cur = cur[part]

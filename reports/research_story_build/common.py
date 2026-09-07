@@ -17,6 +17,7 @@ MNL = Path("C:/Users/hisham/Repo/MNL")
 JMP = Path("C:/Users/hisham/Repo/Job_Market_paper")
 SPRINT = MNL / "experiments/JMP_SEMINAR_SPRINT"
 FIGDIR = SPRINT / "figures"
+LOCAL_FIGDIR = Path(__file__).resolve().parent / "figures"
 TABDIR = SPRINT / "tables"
 NOR_PATH = JMP / "reports/numbers_of_record_v1.json"
 
@@ -40,6 +41,20 @@ def a(key: str, fmt: str = "auto", d: int | None = None, note: str = "") -> str:
     nt = (' data-note="%s"' % esc(note)) if note else ""
     return '<span class="n" data-src="aux" data-k="%s" data-f="%s"%s%s></span>' % (
         esc(key), esc(fmt), dd, nt)
+
+
+def math(tex: str, label: str = "", note: str = "") -> str:
+    """A rendered display equation.  Marked `eq` so the numeral self-check
+    treats it as notation rather than as a result, exactly as the ASCII
+    equation blocks are treated."""
+    lb = ('<span class="lbl">%s</span>' % esc(label)) if label else ""
+    nt = ('<p class="mathnote">%s</p>' % note) if note else ""
+    return ('<div class="math eq">%s' % lb) + r"\[" + tex + r"\]" + "</div>" + nt
+
+
+def imath(tex: str) -> str:
+    """Inline maths."""
+    return '<span class="eq">' + r"\(" + tex + r"\)" + "</span>"
 
 
 def lit(text: str, why: str) -> str:
@@ -74,6 +89,17 @@ def _num(v):
         return float(s)
     except ValueError:
         return s
+
+
+_AUX_CACHE: dict | None = None
+
+
+def aux_data() -> dict:
+    """The auxiliary block, built once and reused by the section modules."""
+    global _AUX_CACHE
+    if _AUX_CACHE is None:
+        _AUX_CACHE = build_aux()
+    return _AUX_CACHE
 
 
 def build_aux() -> dict:
@@ -162,6 +188,101 @@ def build_aux() -> dict:
         "cr1_finite_sample_constant": 1.0257256,
         "wage_q1_over_prediction_pp": 5.3,
     }
+    # -- sample construction and descriptives --------------------------------- #
+    # The reader's-guide notebook exports every table it prints as a frozen CSV;
+    # these are read rather than transcribed.
+    RG = MNL / "outputs/p2a_singles2016/notebook_dev_v3"
+
+    def _rg(name):
+        return read_csv_rows(RG / name)
+
+    sample = {}
+    flow = _rg("results_discussion_table1_1_sample_flow.csv")
+    sample["flow"] = [
+        {"step": r["step"], "households": _num(r["households"]),
+         "dropped": _num(r["dropped"]),
+         "share_of_file": _num(r["share of file total"])}
+        for r in flow]
+    screen = _rg("results_discussion_table1_1a_composition_screen.csv")
+    sample["composition_screen"] = [
+        {"reason": r["what it means"] or r["class (name in the code)"],
+         "households": _num(r["households"])} for r in screen]
+    cw = _rg("results_discussion_table11_1_couples_waterfall.csv")
+    sample["couples_flow"] = [
+        {"step": r["step"], "all": _num(r["households (all)"]),
+         "singles": _num(r["single-adult"]), "couples": _num(r["couples (m/f)"]),
+         "couples_dropped": _num(r["couples dropped"]),
+         "screen": r["what the screen is"]} for r in cw]
+    comp = _rg("descriptives_categorical_v1.csv")
+    sample["categorical"] = [
+        {"dimension": r["dimension"], "category": r["category"],
+         "n": _num(r["households_unweighted"]),
+         "share_unweighted": _num(r["share_unweighted"]),
+         "share_weighted": _num(r["share_weighted"])} for r in comp]
+    cont = _rg("descriptives_continuous_v1.csv")
+    sample["continuous"] = [
+        {"dimension": r["dimension"], "unit": r["unit"],
+         "n": _num(r["n_households_unweighted"]),
+         "mean_weighted": _num(r["mean_weighted"]),
+         "median_weighted": _num(r["median_weighted"]),
+         "p10_weighted": _num(r["p10_weighted"]),
+         "p90_weighted": _num(r["p90_weighted"]),
+         "min": _num(r["min"]), "max": _num(r["max"])} for r in cont]
+    ineq = {r["index"]: _num(r["observed disposable income"])
+            for r in _rg("results_discussion_table3_1_observed_inequality.csv")}
+    sample["observed"] = ineq
+    sample["region_key"] = [
+        {"code": _num(r["code"]), "name": r["region name (NUTS-1)"],
+         "parts": r["constituent NUTS-2 regions"]}
+        for r in _rg("results_discussion_table1_3_region_key.csv")]
+
+    # children and urbanisation are not in the exported descriptive tables, so
+    # they are computed here from the certified singles frame, household level.
+    import pandas as _pd2
+    _fr = (MNL / "outputs/p2a_singles2016/region_live_margqh_floor5_v1"
+           / "fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet")
+    _cols = ["idorighh", "dwt", "n_children", "drgur", "drgmd"]
+    _hh = _pd2.read_parquet(_fr, columns=_cols).drop_duplicates(subset=["idorighh"])
+    _w = _hh["dwt"]
+    sample["children"] = []
+    for k in sorted(_hh["n_children"].unique()):
+        m = _hh["n_children"] == k
+        sample["children"].append(
+            {"n_children": int(k), "households": int(m.sum()),
+             "share_unweighted": float(m.mean()),
+             "share_weighted": float(_w[m].sum() / _w.sum())})
+    _urb = [("urban", _hh["drgur"] == 1),
+            ("intermediate", _hh["drgmd"] == 1),
+            ("rural", (_hh["drgur"] != 1) & (_hh["drgmd"] != 1))]
+    sample["urbanisation"] = [
+        {"zone": name, "households": int(m.sum()),
+         "share_unweighted": float(m.mean()),
+         "share_weighted": float(_w[m].sum() / _w.sum())}
+        for name, m in _urb]
+
+    aux["sample"] = sample
+    # -- derived readings: e^beta ratios, for the plain-language column ------- #
+    import math as _m
+    ratios = {}
+    for k, r in aux["params41"].items():
+        e = r.get("estimate")
+        if isinstance(e, (int, float)):
+            ratios[k] = {"exp": _m.exp(e), "pct": (_m.exp(e) - 1.0) * 100.0}
+    aux["ratio"] = ratios
+    aux["_sources"]["ratio"] = ("exp(estimate) and 100*(exp(estimate)-1) of every "
+                                "coordinate in the params41 block; arithmetic on "
+                                "the reported coefficients, no new estimation")
+
+    aux["_sources"]["sample"] = (
+        "outputs/p2a_singles2016/notebook_dev_v3/ - the reader's-guide "
+        "notebook's frozen exports: results_discussion_table1_1_sample_flow.csv, "
+        "table1_1a_composition_screen.csv, table11_1_couples_waterfall.csv, "
+        "table3_1_observed_inequality.csv, table1_3_region_key.csv, "
+        "descriptives_categorical_v1.csv and "
+        "descriptives_continuous_v1.csv. Children and urbanisation are "
+        "computed household-level from the certified singles frame in "
+        "outputs/p2a_singles2016/region_live_margqh_floor5_v1/.")
+
     # -- male exposure to a child-count term ---------------------------------- #
     # Computed on the certified singles frame: how many single men the male
     # child-count shifter would apply to at all.
@@ -252,6 +373,10 @@ def encode_figure(stem: str) -> tuple[str, int]:
     from PIL import Image
 
     src = FIGDIR / (stem + ".png")
+    if not src.is_file():
+        # figures reused from the reader's-guide notebook are staged in the
+        # report's own store so the build is reproducible from a clone
+        src = LOCAL_FIGDIR / (stem + ".png")
     im = Image.open(src)
     if im.mode not in ("RGB", "RGBA"):
         im = im.convert("RGBA")

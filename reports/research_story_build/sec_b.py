@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Sections 7-12: parameterization, chronology, fit, external validation,
 couples, children."""
-from common import n, a, lit, box
+import json
+
+from common import n, a, lit, box, math, imath, aux_data, NOR_PATH
 
 
 # The audience-facing grouping of the 41 estimated coordinates.
@@ -56,7 +58,7 @@ PARAM_GLOSS = {
                        "Section&nbsp;12.",
     "theta_l_sf": "Box&ndash;Cox curvature on leisure, women.",
     "theta_c_singles": "Box&ndash;Cox curvature on consumption. Well inside the unit interval, so marginal utility of income falls with income. "
-                       "<b>Shared by the two sexes by construction of the certified specification</b>, for two reasons: the consumption coefficient is the scale numeraire, so the consumption block carries the units of the money metric and splitting its curvature would split the metric itself; and parsimony &mdash; a sex-specific consumption curvature was never proposed in the specification search, so it was <b>never tested</b>. The estimate is a level, not a test of pooling. Section&nbsp;20 carries it as a candidate money-metric sensitivity.",
+                       "<b>Shared by the two sexes by construction of the specification</b>, for two reasons: the consumption coefficient is the scale numeraire, so the consumption block carries the units of the money metric and splitting its curvature would split the metric itself; and parsimony &mdash; a sex-specific consumption curvature was never proposed in the specification search, so it was <b>never tested</b>. The estimate is a level, not a test of pooling. Section&nbsp;20 carries it as a candidate money-metric sensitivity.",
 
     "beta_E": "Employment-margin intercept: the level of offer density on working at "
               "all, against the non-employment state.",
@@ -158,69 +160,470 @@ def _hours_table():
 
 
 def sections(F):
+    _AUX = aux_data()
+    _J = json.loads(NOR_PATH.read_text(encoding="utf-8"))["entries"]
     H = []
     W = H.append
 
     # ===================================================================== 7 ==
-    W('<h2 id="s7" class="exempt">7. The estimated model, coefficient by coefficient</h2>')
+    W('<h2 id="s7" class="exempt">7. The estimated model, coefficient by '
+      "coefficient</h2>")
 
-    W("<p>The preferred specification estimates <b>" + n("n_params_active", "int")
-      + "</b> coordinates. Of those, <b>" + n("n_params_interior", "int")
-      + "</b> are interior at the optimum and <b>" + n("n_params_at_bound", "int")
-      + "</b> are free but sit at an active bound. The <b>"
-      + lit("singles final model negLL 18022.764617170084",
-            "the canonical full-precision label of the singles negative "
+    W('<p class="lede">Both applications of section&nbsp;6, side by side, block by '
+      'block. Every coordinate carries a reading in economic units, because a '
+      'coefficient in a log-density or inside a Box&ndash;Cox transformation is '
+      'not interpretable at sight.</p>')
+
+    W("<p>The single-adult model estimates "
+      + n("n_params_active", "int") + " coordinates, of which "
+      + n("n_params_interior", "int") + " are interior at the optimum and "
+      + n("n_params_at_bound", "int") + " rest on an active bound; the couple "
+      "model estimates " + n("n_couples_free", "int") + ", of which "
+      + n("n_couples_interior", "int") + " are interior and "
+      + n("n_couples_at_bound", "int") + " on a bound. At those optima the "
+      "<b>" + lit("singles final model negLL 18022.764617170084",
+                  "the canonical full-precision label of the singles negative "
+                  "log-likelihood; the bound rendering follows")
+      + "</b> and the <b>"
+      + lit("couples clean baseline negLL 43493.342239066726",
+            "the canonical full-precision label of the couples negative "
             "log-likelihood; the bound rendering follows")
-      + "</b> is the negative log-likelihood at that optimum &mdash; "
-      "a positive number, because the sign is flipped &mdash; rendered here as <b>"
-      + n("negll_singles_final", "f4") + "</b>. Standard errors are the "
-      "household-clustered robust sandwich over " + n("n_households_singles", "int")
-      + " clusters.</p>")
+      + "</b>. Both are <b>negative log-likelihoods</b> &mdash; positive numbers, "
+      "because the sign is flipped &mdash; rendered here as "
+      + n("negll_singles_final", "f4") + " and "
+      + n("negll_couples_final", "f4") + ". A negLL is a badness-of-fit score: "
+      "lower is better, and only differences between models on the same data "
+      "mean anything.</p>")
 
-    W(_param_table())
+    W(box("key", "How to read these tables",
+          "<p><b>The standard errors.</b> Every standard error here is "
+          "<b>clustered on the household</b>. A household contributes "
+          + n("n_alternatives", "int") + " rows to the likelihood &mdash; its "
+          "observed job and the drawn alternatives &mdash; and those rows are "
+          "not independent of one another: they share the household's "
+          "circumstances, its budget and its draws. Clustering allows the "
+          "disturbances within a household to be correlated in an arbitrary way, "
+          "and only assumes independence <em>across</em> households. The "
+          "sandwich carries a finite-sample correction of "
+          + imath(r"G/(G-K)") + ", where " + imath("G") + " is the number of "
+          "households and " + imath("K") + " the number of coordinates that "
+          "inference is taken over &mdash; "
+          + n("n_households_singles", "int") + " and "
+          + n("n_params_interior", "int") + " for the single-adult model, "
+          + n("n_couples_clusters", "int") + " and "
+          + n("n_couples_K_interior", "int") + " for the couple model.</p>"
+          "<p><b>The reading column.</b> Where a coefficient sits inside a log "
+          "density, " + imath(r"e^{\beta}") + " is a <b>ratio of availability</b> "
+          "against the reference category, and that is how it is reported. Where "
+          "it sits in the centre of the log wage-offer distribution, it is "
+          "reported as a <b>percentage difference</b> in that centre. Where it is "
+          "a curvature or a normalisation, the column says what it does and, if "
+          "it has no standalone magnitude, says that instead.</p>"
+          "<p><b>Two coordinates carry no standard error</b>, in the single-adult "
+          "model, and one in the couple model. They rest on an <b>active bound</b> "
+          "&mdash; the optimiser was free to move them and came to rest against "
+          "the edge of the admissible region, where the usual sampling "
+          "distribution does not apply. They are marked, and the boxes above "
+          "explain what that costs.</p>"))
 
-    W("<h3>The two boundary-active coefficients</h3>")
-    W("<p>The quadratic age terms in both leisure weights, <code>beta_l_age2_sm</code> "
-      "and <code>beta_l_age2_sf</code>, are <b>free parameters that happen to rest on an "
-      "active bound at the optimum</b>. They are not pinned and they were not fixed by "
-      "hand: the optimiser was free to move them and did not.</p>")
-    W(box("key", "What the bound costs, in one line",
-          "<p>Section&nbsp;19&rsquo;s age-bound diagnostic answers it. The admissible "
-          "box on the four singles quadratic-age coordinates is widened by a factor "
-          "of <b>five</b> on half-widths ("
-          + lit("linear from &plusmn;5 to &plusmn;25, quadratic from &plusmn;1 to "
-                "&plusmn;5", "the declared admissible box of the diagnostic, a "
-                "design constant")
-          + ") and nothing else changes: the "
-          "<b>bounds disappear</b> &mdash; the active set goes from "
-          + n("n_params_at_bound", "int") + " to zero and every one of the "
-          + n("n_params_active", "int") + " coordinates becomes interior. The "
-          "objective gain is <b>&Delta;negLL "
-          + a("agebound.delta_negll", "f3") + "</b>, so &Delta;AIC = "
-          "&Delta;BIC = "
-          + a("agebound.delta_aic", "sf3")
-          + " and it is <em>not</em> a chi-square statistic: the two "
+    def _sing(k, fmt="f4"):
+        return a("params41." + k + ".estimate", fmt)
+
+    def _singse(k):
+        r = _AUX["params41"].get(k)
+        if r is None:
+            return '<span class="bound">&mdash;</span>'
+        if r.get("at_active_bound"):
+            return '<span class="bound">at bound</span>'
+        return a("params41." + k + ".se_robust", "f4")
+
+    def _cpl(k, fmt="f4"):
+        return n("couples_param_" + k + "__estimate", fmt)
+
+    def _cplse(k):
+        e = _J.get("couples_param_" + k + "__se_robust")
+        if e is None:
+            return '<span class="bound">&mdash;</span>'
+        if isinstance(e.get("value"), str):
+            return '<span class="bound">at bound</span>'
+        return n("couples_param_" + k + "__se_robust", "f4")
+
+    DASH = '<td class="num">&mdash;</td><td class="num">&mdash;</td>'
+
+    def row(label, sk, ck, reading):
+        """One coordinate: singles cell pair, couples cell pair, reading."""
+        cells = ""
+        if sk:
+            cells += ('<td class="num">' + _sing(sk) + "</td>"
+                      '<td class="num">' + _singse(sk) + "</td>")
+        else:
+            cells += DASH
+        if ck:
+            cells += ('<td class="num">' + _cpl(ck) + "</td>"
+                      '<td class="num">' + _cplse(ck) + "</td>")
+        else:
+            cells += DASH
+        return ("<tr><td><code>" + label + "</code></td>" + cells
+                + "<td>" + reading + "</td></tr>")
+
+    def head(title):
+        return ('<tr class="grouphead"><td colspan="6">%s</td></tr>' % title)
+
+    W('<div class="scroll"><table><thead>'
+      '<tr><th rowspan="2">Coordinate</th>'
+      '<th class="num" colspan="2">Single adult</th>'
+      '<th class="num" colspan="2">Couple</th>'
+      '<th rowspan="2">What this number means</th></tr>'
+      '<tr><th class="num">Estimate</th><th class="num">Std. error</th>'
+      '<th class="num">Estimate</th><th class="num">Std. error</th></tr>'
+      "</thead><tbody>"
+
+      # ------------------------------------------------ preferences, male
+      + head("Preferences &mdash; the value of time, men")
+      + row("beta_l0", "beta_l0_sm", "beta_l0_m",
+            "The <b>level of the leisure weight</b> for a man at the centre of "
+            "the age range and with no children. It multiplies transformed "
+            "leisure in utility, against a consumption coefficient fixed at one, "
+            "so it is the price of time in consumption units before the age "
+            "profile is applied. On its own it is not comparable across the two "
+            "models, because each is read against its own leisure curvature.")
+      + row("beta_l_age", "beta_l_age_sm", "beta_l_age_m",
+            "The <b>slope of the age profile</b> of the value of time, per decade "
+            "of age from the centre. Read it with the row below rather than "
+            "alone: together the two trace a curve, and the curve is what has "
+            "economic content.")
+      + row("beta_l_age2", "beta_l_age2_sm", "beta_l_age2_m",
+            "The <b>curvature of that age profile</b>. In the single-adult model "
+            "this coordinate rests on an <b>active bound</b> and carries no "
+            "standard error; the implied profile is U-shaped in age with an "
+            "interior minimum around forty, which section&nbsp;19 plots and "
+            "tests. A positive value means the value of time is highest at the "
+            "ends of the working life and lowest in the middle of it.")
+      + row("theta_l", "theta_l_sm", "theta_l_m",
+            "The <b>concavity of leisure</b>. Strongly negative in both models: "
+            "the marginal value of an extra hour of time falls off sharply, so "
+            "the tenth hour of leisure in a week is worth far less than the "
+            "first. This is what stops the model from predicting that everyone "
+            "either works nothing or works the maximum.")
+
+      # ---------------------------------------------- preferences, female
+      + head("Preferences &mdash; the value of time, women")
+      + row("beta_l0", "beta_l0_sf", "beta_l0_f",
+            "The level of the leisure weight for a woman, on the same reading as "
+            "the male row above.")
+      + row("beta_l_age", "beta_l_age_sf", "beta_l_age_f",
+            "The slope of the female age profile, per decade.")
+      + row("beta_l_age2", "beta_l_age2_sf", "beta_l_age2_f",
+            "The curvature of the female age profile. In the single-adult model "
+            "this too rests on an <b>active bound</b> and carries no standard "
+            "error.")
+      + row("beta_l_nkids", "beta_l_nkids_sf", "beta_l_nkids_f",
+            "The <b>shift in the value of time per resident child</b>, for women "
+            "only. Positive, as expected: each child raises what an hour at home "
+            "is worth, which lowers labour supply at any given budget. On the "
+            "single-adult estimate the shift is about "
+            + a("ratio.beta_l_nkids_sf.pct", "f0")
+            + "&nbsp;per cent of a unit of the leisure weight per child, and it "
+            "is on the edge of conventional significance rather than comfortably "
+            "inside it. There is <b>no male counterpart</b> in either model; "
+            "section&nbsp;12 gives the test, the exposure and the reason.")
+      + row("theta_l", "theta_l_sf", "theta_l_f",
+            "The concavity of leisure for women, on the same reading as the male "
+            "row.")
+
+      # ------------------------------------------------ consumption curvature
+      + head("Consumption curvature")
+      + row("theta_c", "theta_c_singles", None,
+            "The <b>concavity of consumption</b>: how fast the marginal value of "
+            "an extra euro falls as income rises. Comfortably inside the unit "
+            "interval, so marginal utility of income declines but does not "
+            "collapse &mdash; well away from both the linear case and the "
+            "logarithmic one. It governs the whole income&ndash;time trade-off, "
+            "and therefore the money metric of section&nbsp;13. It is "
+            "<b>maintained common across the sexes by construction</b> and was "
+            "never tested sex-specifically: see the note below. In the couple "
+            "model consumption enters logarithmically by the same convention, so "
+            "there is no coordinate to report.")
+
+      # ----------------------------------------------------- employment access
+      + head("Employment access &mdash; is work available at all?")
+      + row("beta_E", "beta_E", None,
+            "The <b>level of the employment margin</b>: how much offer density "
+            "sits on working packages against the non-employment package, for a "
+            "household in the reference region and zone. Strongly negative, so "
+            "any one working package is much less available than not working "
+            "&mdash; which is the offer-side counterpart of a fixed cost of "
+            "work. It is <b>not</b> a probability of employment; that is a "
+            "property of the whole density, and section&nbsp;9 compares it with "
+            "the observed employment rate.")
+      + row("beta_E_m", None, "beta_E_m",
+            "The same level for the man in a couple. The couple model estimates "
+            "it per spouse, because the participation margin differs sharply by "
+            "sex.")
+      + row("beta_E_f", None, "beta_E_f",
+            "The same level for the woman in a couple.")
+      # ------------------------------------------- geography and local market
+      + head("Geography and the local labour market &mdash; how access is tilted")
+      + row("beta_E_gsur", "beta_E_gsur", "beta_E_gsur",
+            "The <b>group unemployment rate</b>: the rate for the household's own "
+            "region, education and sex. This is the sharpest access coefficient "
+            "in the model and the exclusion restriction that identifies access "
+            "separately from taste. Read it as a change in the <b>log odds that "
+            "work is available</b>: a rise of one full unit in the rate &mdash; "
+            "the whole " + lit("0-to-1", "the range of a rate, a definition")
+            + " range &mdash; multiplies the availability of every "
+            "working package by " + a("ratio.beta_E_gsur.exp", "f3") + ". Over "
+            "the range actually observed in these data, roughly five to "
+            "twenty-three per cent, that is a substantial but not overwhelming "
+            "tilt.")
+      + row("beta_E_drgn2", "beta_E_drgn2", "beta_E_drgn2",
+            "A <b>region indicator</b>, against the omitted region, once the "
+            "continuous unemployment rate is already in. Multiplies working "
+            "availability by " + a("ratio.beta_E_drgn2.exp", "f2") + ". None of "
+            "the seven region indicators has an interval excluding zero: "
+            "geography enters through the <em>rate</em> rather than through the "
+            "zone, which is a finding rather than a failure.")
+      + row("beta_E_drgn3", "beta_E_drgn3", "beta_E_drgn3",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn3.exp", "f2") + ".")
+      + row("beta_E_drgn4", "beta_E_drgn4", "beta_E_drgn4",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn4.exp", "f2") + ".")
+      + row("beta_E_drgn5", "beta_E_drgn5", "beta_E_drgn5",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn5.exp", "f2") + ".")
+      + row("beta_E_drgn6", "beta_E_drgn6", "beta_E_drgn6",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn6.exp", "f2") + ".")
+      + row("beta_E_drgn7", "beta_E_drgn7", "beta_E_drgn7",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn7.exp", "f2") + ".")
+      + row("beta_E_drgn8", "beta_E_drgn8", "beta_E_drgn8",
+            "Region indicator; availability ratio "
+            + a("ratio.beta_E_drgn8.exp", "f2") + ".")
+      + row("beta_E_drgur", "beta_E_drgur", "beta_E_drgur",
+            "<b>Urban</b> against rural residence: availability ratio "
+            + a("ratio.beta_E_drgur.exp", "f2") + ". Indistinguishable from one, "
+            "again because the unemployment rate already carries the local "
+            "market.")
+      + row("beta_E_drgmd", "beta_E_drgmd", "beta_E_drgmd",
+            "<b>Intermediate</b> zone against rural: availability ratio "
+            + a("ratio.beta_E_drgmd.exp", "f2") + ".")
+
+      # ------------------------------------------------------------- hours
+      + head("Hours &mdash; at which lengths of week is work available?")
+      + row("beta_h_pt1", "beta_h_pt1", "beta_h_pt1_m",
+            "<b>Short part time</b> against the hours regions the bands do not "
+            "cover: " + a("ratio.beta_h_pt1.exp", "f2") + " times as much offer "
+            "density. Short part-time work is thin on the ground, which is the "
+            "offer-side reading of a fact the descriptive hours distribution "
+            "shows directly.")
+      + row("beta_h_pt2", "beta_h_pt2", "beta_h_pt2_m",
+            "<b>Long part time</b>: " + a("ratio.beta_h_pt2.exp", "f2")
+            + " times the uncovered region.")
+      + row("beta_h_ft", "beta_h_ft", "beta_h_ft_m",
+            "<b>Above-statutory full time</b>: "
+            + a("ratio.beta_h_ft.exp", "f1") + " times the uncovered region. "
+            "This and the peak below are where the offer density concentrates.")
+      + row("beta_h_lh", "beta_h_lh", "beta_h_lh_m",
+            "<b>Long hours</b>: " + a("ratio.beta_h_lh.exp", "f2")
+            + " times the uncovered region. Long-hours jobs are scarcer than "
+            "full-time ones on the offer side, so the model does not explain "
+            "long hours by a taste for work alone.")
+      + row("beta_h_pt1_f", None, "beta_h_pt1_f",
+            "The same short part-time coordinate for the woman in a couple. The "
+            "couple model estimates the whole hours profile per spouse.")
+      + row("beta_h_pt2_f", None, "beta_h_pt2_f",
+            "Long part time, woman in a couple.")
+      + row("beta_h_ft_f", None, "beta_h_ft_f",
+            "Above-statutory full time, woman in a couple.")
+      + row("beta_h_lh_f", None, "beta_h_lh_f",
+            "Long hours, woman in a couple.")
+
+      # -------------------------------------------------------- the 35h peak
+      + head("The statutory-week peak")
+      + row("beta_h_f35", "beta_h_f35", "beta_h_f35_m",
+            "The <b>institutionally motivated opportunity peak</b>: a separate "
+            "mass point on the statutory week, over and above the band "
+            "structure. In the single-adult model the fitted density of "
+            "<em>available</em> packages is <b>"
+            + a("ratio.beta_h_f35.exp", "f1")
+            + " times denser</b> at the statutory week than in the uncovered "
+            "hours region. It is the single largest specification improvement in "
+            "the paper. It is <b>not</b> an estimate of the causal effect of the "
+            "statute: no counterfactual removing the statute is computed "
+            "anywhere, and section&nbsp;14.4 states that placing this feature in "
+            "the offer density rather than in preferences is a modelling choice "
+            "the data do not adjudicate.")
+      + row("beta_h_f35_f", None, "beta_h_f35_f",
+            "The same peak for the woman in a couple. That the peak appears "
+            "separately for each spouse, on data the single-adult model never "
+            "saw, is corroboration of the institutional reading.")
+
+      # ------------------------------------------------------- occupation
+      + head("Occupation availability &mdash; which kinds of job are reachable?")
+      + row("beta_occ_2_m", "beta_occ_2_m", "beta_occ_2_m",
+            "Occupation group " + lit("2", "an occupation group label") + " against group " + lit("1", "an occupation group label")
+            + ", <b>men</b>: "
+            + a("ratio.beta_occ_2_m.exp", "f2") + " times as reachable. Large "
+            "and precisely estimated &mdash; the occupation margin is where the "
+            "sharpest sex differences in this model sit.")
+      + row("beta_occ_3_m", "beta_occ_3_m", "beta_occ_3_m",
+            "Group " + lit("3", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ", men: " + a("ratio.beta_occ_3_m.exp", "f2")
+            + " times as reachable.")
+      + row("beta_occ_4_m", "beta_occ_4_m", "beta_occ_4_m",
+            "Group " + lit("4", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ", men: " + a("ratio.beta_occ_4_m.exp", "f2")
+            + " times as reachable &mdash; that is, indistinguishable from "
+            "equally reachable.")
+      + row("beta_occ_2_f", "beta_occ_2_f", "beta_occ_2_f",
+            "Group " + lit("2", "an occupation group label") + " against group " + lit("1", "an occupation group label")
+            + ", <b>women</b>: "
+            + a("ratio.beta_occ_2_f.exp", "f2") + ".")
+      + row("beta_occ_3_f", "beta_occ_3_f", "beta_occ_3_f",
+            "Group " + lit("3", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ", women: "
+            + a("ratio.beta_occ_3_f.exp", "f2") + ".")
+      + row("beta_occ_4_f", "beta_occ_4_f", "beta_occ_4_f",
+            "Group " + lit("4", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ", women: "
+            + a("ratio.beta_occ_4_f.exp", "f2") + " times as reachable. The "
+            "contrast with the male coefficient on the same group is the "
+            "occupation-access sex difference the model identifies.")
+
+      # ----------------------------------------------------- wage offers
+      + head("Earning opportunities &mdash; where the wage-offer distribution sits")
+      + row("beta_w0", "beta_w0", "beta_w0",
+            "The <b>intercept of the log wage-offer centre</b>, at middle "
+            "education, occupation group " + lit("1", "an occupation group label") + " and the origin "
+            "of the experience "
+            "profile. On its own it locates the distribution; it has no "
+            "standalone economic reading, and the rows below are read against "
+            "it.")
+      + row("beta_w_educL", "beta_w_educL", "beta_w_educL",
+            "<b>Low education</b> against the middle group: the centre of the "
+            "wage-offer distribution differs by "
+            + a("ratio.beta_w_educL.pct", "sf1") + "&nbsp;per cent at the same "
+            "experience and occupation. Small and imprecise.")
+      + row("beta_w_educH", "beta_w_educH", "beta_w_educH",
+            "<b>High education</b> against the middle group: "
+            + a("ratio.beta_w_educH.pct", "sf1") + "&nbsp;per cent on the centre "
+            "of the offer distribution, at the same experience and occupation. "
+            "This is a statement about <em>observed earning capacity</em>, not "
+            "about ability, and section&nbsp;14.4 keeps the two apart.")
+      + row("beta_w_pexp", "beta_w_pexp", "beta_w_pexp",
+            "The <b>linear experience term</b> in the offer centre. Read with "
+            "the square below: together they trace a profile that rises and then "
+            "flattens, which is the standard shape and a check that the offer "
+            "density is behaving sensibly.")
+      + row("beta_w_pexp2", "beta_w_pexp2", "beta_w_pexp2",
+            "The <b>square of experience</b>, giving the profile its concavity. "
+            "In the couple model this coordinate rests on an <b>active bound</b> "
+            "and carries no standard error.")
+      + row("sigma", "sigma", "sigma",
+            "The <b>spread of the wage-offer distribution</b>, common to every "
+            "household. A log-scale standard deviation of about "
+            + _sing("sigma", "f2") + " means the offer distribution around its "
+            "centre is wide: pay is genuinely uncertain conditional on "
+            "education, experience and occupation, which is precisely why the "
+            "model treats it as a density rather than a number.")
+
+      # ------------------------------------------ occupation wage location
+      + head("Occupation wage location &mdash; what each kind of job pays")
+      + row("delta_occ_2", "delta_occ_2", "delta_occ_2",
+            "Occupation group " + lit("2", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ": "
+            + a("ratio.delta_occ_2.pct", "sf1") + "&nbsp;per cent on the centre "
+            "of the wage-offer distribution, at the same education and "
+            "experience. <b>Not</b> a causal occupational premium: it is where "
+            "that group's offer distribution sits.")
+      + row("delta_occ_3", "delta_occ_3", "delta_occ_3",
+            "Group " + lit("3", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ": " + a("ratio.delta_occ_3.pct", "sf1")
+            + "&nbsp;per cent on the offer centre.")
+      + row("delta_occ_4", "delta_occ_4", "delta_occ_4",
+            "Group " + lit("4", "an occupation group label") + " against group " + lit("1", "an occupation group label") + ": " + a("ratio.delta_occ_4.pct", "sf1")
+            + "&nbsp;per cent on the offer centre. Together with the occupation "
+            "<em>access</em> rows above, this is what lets the model say that a "
+            "group is better paid and no easier to enter &mdash; the "
+            "distinction a single occupation coefficient cannot make.")
+
+      + "</tbody></table></div>")
+
+    # -------------------------------------------- the two maintained points
+    W("<h3>The restrictions the tables carry, stated rather than buried</h3>")
+
+    W(box("warn", "The two boundary-active coordinates, and what the bound costs",
+          "<p>The quadratic age terms in both single-adult leisure weights are "
+          "<b>free parameters that came to rest on an active bound</b> at the "
+          "optimum. They were not pinned and were not fixed by hand: the "
+          "optimiser could move them and did not. A coordinate at a bound has no "
+          "usual sampling distribution, which is why the standard-error cells "
+          "are empty rather than large.</p>"
+          "<p>Section&nbsp;19's diagnostic answers what that costs. The "
+          "admissible region on the four quadratic-age coordinates is widened by "
+          "a factor of <b>five</b> on half-widths ("
+          + lit("linear from &plusmn;5 to &plusmn;25, quadratic from &plusmn;1 "
+                "to &plusmn;5", "the declared admissible box of the diagnostic, "
+                "a design constant")
+          + "), nothing else changes, and the <b>bounds disappear</b>: the active "
+          "set goes from " + n("n_params_at_bound", "int") + " to zero and all "
+          + n("n_params_active", "int") + " coordinates become interior. The "
+          "objective improves by only <b>&Delta;negLL "
+          + a("agebound.delta_negll", "f3") + "</b>, so &Delta;AIC = &Delta;BIC = "
+          + a("agebound.delta_aic", "sf3") + " &mdash; and because the two "
           "specifications have the same free coordinates and differ only by the "
-          "admissible region. The two released coordinates land at "
+          "admissible region, that is <em>not</em> a chi-square statistic and no "
+          "<em>p</em>-value is quoted. The freed coordinates land at "
           + a("agebound.released_m", "f3") + " for men, interval "
           + a("agebound.ci_m", "range") + ", and "
           + a("agebound.released_f", "f3") + " for women, "
-          + a("agebound.ci_f", "range")
-          + " &mdash; and the bound value <b>"
+          + a("agebound.ci_f", "range") + " &mdash; and the bound value "
           + lit("+1.0", "the box ceiling of record, a design constant")
-          + " lies inside both</b>. The "
-          "bound is also a <b>unit artefact</b>: re-expressing the accepted point "
-          "at the " + lit("40", "the alternative leisure normaliser, a unit "
-                              "choice") + "-hour leisure normaliser by the exact "
-          "map, with no "
-          "re-estimation, sends those coefficients from "
+          + " lies <b>inside both</b>. The bound is also a <b>unit artefact</b>: "
+          "re-expressing the accepted point at the "
+          + lit("40", "the alternative leisure normaliser, a unit choice")
+          + "-hour leisure normaliser by the exact map, with no re-estimation, "
+          "sends those coefficients from "
           + lit("+1.0", "the box ceiling of record, a design constant") + " to "
           + a("agebound.lambda40_m", "f3") + " and "
           + a("agebound.lambda40_f", "f3") + ", strictly interior.</p>"
-          "<p><b>The verdict is to retain the preferred specification, and the "
-          "margin is close.</b> The widened box fails the limb that asks for a "
-          "materially better objective, so the specification of record keeps its "
-          "two bound-active coordinates. Section&nbsp;19 carries all four limbs.</p>"))
+          "<p><b>The verdict is to retain the specification reported here, and "
+          "the margin is close.</b> The widened box fails the limb that asks for "
+          "a materially better objective. The bound binds on a curvature the "
+          "data do not pin down, and releasing it moves no coefficient this "
+          "report interprets by as much as one standard error.</p>"))
+
+    W(box("warn", "The consumption curvature is maintained common, not tested",
+          "<p><b>" + imath(r"\theta_c") + " is shared by the two sexes by "
+          "construction of the specification</b>, and no sex-specific "
+          "alternative was ever estimated against it. Two reasons hold it "
+          "common, and both are conventions rather than findings.</p>"
+          "<ul>"
+          "<li><b>The scale numeraire.</b> Utility in a discrete-choice model is "
+          "identified only up to scale, and the consumption coefficient is what "
+          "fixes that scale. The consumption block therefore carries the units of "
+          "the money metric, and splitting its curvature by sex would split the "
+          "metric itself &mdash; men and women would be measured on differently "
+          "curved euro scales.</li>"
+          "<li><b>Parsimony.</b> A sex-specific consumption curvature was never "
+          "proposed in the specification search, so it was <b>never tested</b>. "
+          "The estimate in the table is a level, not evidence for pooling.</li>"
+          "</ul>"
+          "<p>This is the untested assumption closest to the headline, because "
+          "the money metric of section&nbsp;13 is obtained by <em>inverting the "
+          "consumption block</em>: a curvature that differed by sex would move "
+          "the welfare measure for men and for women by different amounts, and "
+          "so would move the preference/environment split through the same "
+          "channel as the reference convention. Section&nbsp;20 carries it as a "
+          "named candidate sensitivity.</p>"))
+
+    W(F.fig("figAB01_leisure_weight_by_age",
+            "The estimated value of time as a profile over age, by sex &mdash; "
+            "the age coefficients of the first two blocks read as a curve rather "
+            "than as numbers. Strictly positive across the working ages and "
+            "U-shaped, with an interior minimum around forty."))
+    W(F.fig("figAB02_mrs_by_age_sex",
+            "The same preferences read as a price: the consumption a household "
+            "would need to be given to stay as well off after one more hour of "
+            "work a week, by age and sex. This is the leisure block in euros, "
+            "which is the form the money metric of section&nbsp;13 uses."))
+
     W("<p>Three consequences, all of which get asked:</p>")
     W("<ul>")
     W("<li><b>They carry no standard error.</b> The usual asymptotic argument needs an "
@@ -504,7 +907,8 @@ def sections(F):
           "claims to explain. It cannot, by itself, be evidence the model is right &mdash; "
           "a model fits its own estimation sample partly by construction.</p>"
           "<p><b>Section&nbsp;10 is external validation</b>: the model against an "
-          "independent data source that entered no likelihood, no gate and no merge. "
+          "independent data source that entered no likelihood, no estimation step and "
+          "no merge. "
           "Keep the two apart in the talk, because conflating them invites exactly the "
           "objection you do not want.</p>"))
 
@@ -539,7 +943,7 @@ def sections(F):
           "<em>worse</em> under the preferred model than under the benchmark without the "
           "peak. Every other occupation metric moves the right way: the share fit, the "
           "Brier score and probabilistic accuracy all improve.</p>"
-          "<p>This is an argmax-relocation artefact. Redistributing probability mass "
+          "<p>This is an argmax-relocation effect. Redistributing probability mass "
           "across hours bands can flip which occupation is modally most likely for a "
           "household without making the probability distribution worse &mdash; and by "
           "the calibrated measures it is better. It is reported rather than "
@@ -600,7 +1004,8 @@ def sections(F):
 
     W(box("warn", "Validation is not identification",
           "<p><b>No moment from the labour force survey enters the likelihood.</b> It is "
-          "not an instrument, it enters no gate, no merge and no covariate, and it does "
+          "not an instrument, it enters no estimation step, no merge and no covariate, "
+      "and it does "
           "not identify preferences against opportunities. It can only show that "
           "features the estimated model prices are <em>visible in an independent "
           "source</em>. If someone asks &ldquo;what identifies the opportunity "
@@ -637,7 +1042,7 @@ def sections(F):
     W("<p><b>The point is the qualitative one.</b> A pronounced concentration at the "
       "statutory week is present in a survey the model never saw. That is what licenses "
       "reading the peak coefficient as an institutional feature of what is offered "
-      "rather than as a fitted artefact.</p>")
+      "rather than as an accident of the fit.</p>")
 
     W(_hours_table())
     W(F.fig("figX1_external_hours_lfs_validation",
@@ -951,7 +1356,7 @@ def sections(F):
           '<div class="eq">'
           "u_household  =  ... +  beta_ll · BC( leisure_male )  ·  BC( leisure_female )"
           "\n\n"
-          "the form of record, verbatim:\n"
+          "the same form written out:\n"
           "  beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female)"
           "</div>"
           "<p><b>Its status in the estimated model is <code>"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sections 19-23: robustness, limits, reproduction, the question bank, and the
 mechanical self-check."""
-from common import n, a, lit, box, qa
+from common import n, a, lit, box, qa, math, imath
 
 
 def sections(F):
@@ -172,7 +172,7 @@ def sections(F):
       "<tr><td><b>A sex-specific consumption curvature</b></td>"
       "<td><b>Maintained, not tested.</b> The consumption curvature "
       "<code>theta_c</code> is shared by the two sexes by construction of the "
-      "certified specification: the consumption coefficient is the scale "
+      "specification: the consumption coefficient is the scale "
       "numeraire, so the consumption block carries the units of the money metric, "
       "and a sex-split curvature would split the metric itself; and a "
       "sex-specific curvature was never proposed in the specification search. "
@@ -231,12 +231,12 @@ def sections(F):
 
       "<tr><td><b>A synthetic recovery certificate for the preferred model itself</b></td>"
       "<td>The preferred specification was accepted on a real-data protocol. It never "
-      "took a full synthetic recovery gate of its own; what exists is favourable but "
-      "weak &mdash; the zero-heterogeneity legs of the three extension gates, whose "
+      "took a full synthetic recovery test of its own; what exists is favourable but "
+      "weak &mdash; the zero-heterogeneity legs of the three extension tests, whose "
       "data-generating process <em>is</em> the preferred model, in which its "
       "coefficients were not displaced beyond Monte-Carlo error. This is recorded as a "
       "limitation, not as a pass.</td>"
-      "<td>A full synthetic recovery gate at production scale.</td></tr>"
+      "<td>A full synthetic recovery test at production scale.</td></tr>"
       "</tbody></table></div>")
 
     W(box("warn", "Two further items to have ready",
@@ -258,7 +258,7 @@ def sections(F):
     W("<p>Everything in this document is reproducible from a single research notebook, "
       "<code>experiments/JMP_SEMINAR_SPRINT/JMP_GPU_lab.ipynb</code>. It is organised so "
       "that <b>only the assignments in the control cell are edited</b>; every stage "
-      "writes its own artefact and can be re-run without re-running the stages before "
+      "writes its own output file and can be re-run without re-running the stages before "
       "it.</p>")
 
     W("<h3>The control cell &mdash; the only place you change anything</h3>")
@@ -341,7 +341,8 @@ def sections(F):
       "<th>What it means</th></tr></thead><tbody>"
       "<tr><td><code>server_jax_cpu</code></td>"
       '<td><span class="tag yes">supported</span></td>'
-      "<td><b>The default, and the profile every certified result is on.</b> It is "
+      "<td><b>The default, and the profile every result in this report was "
+      "produced on.</b> It is "
       "unchanged by the parity clearance below.</td></tr>"
       "<tr><td><code>laptop_jax_cpu</code></td>"
       '<td><span class="tag yes">supported</span></td>'
@@ -364,7 +365,7 @@ def sections(F):
     W(box("key", "The backend parity, itemised",
           "<p>The frozen final singles model was run through the accepted package "
           "on both routes and compared against the reference implementation. The "
-          "verdict of record is <code>GOAL1_PKG04B_PARITY_ACCEPT</code>.</p>"
+          "recorded verdict is <code>GOAL1_PKG04B_PARITY_ACCEPT</code>.</p>"
           "<ul>"
           "<li><b>Objective: bitwise equal.</b> negLL "
           + lit("18022.764617170084", "the singles negLL of record, at full "
@@ -549,7 +550,8 @@ def sections(F):
               "returns disposable income under the actual French rules. The budget "
               "constraint is therefore exact and non-linear, with every kink and "
               "withdrawal, rather than a linearised net wage. The cost is that the draw "
-              "geometry is frozen and digest-pinned: changing choice sets means "
+              "alternatives are generated once and then held fixed: changing choice sets "
+              "means "
               "re-pricing.",
               "Section&nbsp;3, the boxed note; notebook block&nbsp;1."))
 
@@ -618,7 +620,8 @@ def sections(F):
               + n("state_I00_female_raw__rqmc_band", "range") + ") &mdash; a rise of "
               + n("equalization_pref_only", "pctabs", 1) + ". Preferences and "
               "environments are correlated in a partly offsetting way in the data. This "
-              "is not an artefact, and it is the reason the Shapley attribution and the "
+              "is not an accident of the arithmetic, and it is the reason the Shapley "
+              "attribution and the "
               "one-factor equalization differ so sharply.",
               "Section&nbsp;14, step one."))
 
@@ -824,7 +827,8 @@ def sections(F):
     Q.append(("Isn&rsquo;t the labour force survey comparison just validating your "
               "model against itself?",
               "No &mdash; and it is not identification either. No moment from that "
-              "survey enters the likelihood, any gate, any merge or any covariate. It is "
+              "survey enters the likelihood, any estimation step, any merge or any "
+              "covariate. It is "
               "an independent source, used only to show that features the model prices "
               "are visible elsewhere.",
               "Keep validation and identification apart. What identifies the opportunity "
@@ -1003,7 +1007,7 @@ def sections(F):
       "<th>Source</th></tr></thead><tbody>"
       "<tr><td><code>NOR-DATA</code></td>"
       "<td>The numbers of record: scalar results, shares, bands and intervals, each with "
-      "its own reference text and the frozen artefact it was read from.</td>"
+      "its own reference text and the data file it was read from.</td>"
       "<td><code>reports/numbers_of_record_v1.json</code>, embedded verbatim.</td></tr>"
       "<tr><td><code>AUX-DATA</code></td>"
       "<td>Per-row artefacts the numbers file does not carry as scalars: the "
@@ -1044,5 +1048,161 @@ def sections(F):
           "chronology group is the only one transcribed from a prose record "
           "(<code>decision_note.md</code>) rather than a machine-readable artefact, and "
           "it is flagged as such in the register.</p>"))
+
+    # ==================================================================== 24 ==
+    W('<h2 id="s24" class="exempt">24. Glossary</h2>')
+    W('<p class="lede">Every technical term this report uses, defined in words. '
+      'Each is also defined where it first appears; this is the place to look it '
+      'up afterwards.</p>')
+
+    def g(term, body):
+        return ("<tr><td><b>" + term + "</b></td><td>" + body + "</td></tr>")
+
+    W('<div class="scroll"><table><thead><tr><th>Term</th><th>What it means</th>'
+      "</tr></thead><tbody>"
+
+      + g("Active bound",
+          "A parameter the optimiser was free to move that came to rest against "
+          "the edge of the region it was allowed to search. It is not fixed by "
+          "hand and it is not pinned. Because it sits on the edge, the usual "
+          "sampling distribution does not apply to it, so no standard error is "
+          "reported for it. Section&nbsp;7 reports what the bound costs.")
+
+      + g("Box&ndash;Cox transformation",
+          "A one-parameter family of curves, " + imath(r"(z^{\theta}-1)/\theta")
+          + ", used here to describe how the value of consumption and of time "
+          "falls off as you get more of them. At " + imath(r"\theta=1")
+          + " it is a straight line, so each extra unit is worth as much as the "
+          "last. As " + imath(r"\theta") + " falls the curve bends and each "
+          "extra unit is worth less. At " + imath(r"\theta=0") + " it is the "
+          "logarithm.")
+
+      + g("Cluster-robust standard error",
+          "A standard error that allows the disturbances belonging to one "
+          "household to be correlated with each other in an arbitrary way, and "
+          "assumes independence only <em>across</em> households. It is used here "
+          "because each household contributes "
+          + n("n_alternatives", "int") + " rows to the likelihood &mdash; its "
+          "observed job and its drawn alternatives &mdash; and those rows share "
+          "the household&rsquo;s circumstances, budget and draws, so treating "
+          "them as independent observations would overstate precision. The "
+          "estimator carries a finite-sample correction of "
+          + imath(r"G/(G-K)") + ", with " + imath("G") + " households and "
+          + imath("K") + " coordinates.")
+
+      + g("Equivalence scale",
+          "A divisor that converts a household&rsquo;s income or welfare into a "
+          "per-person-equivalent figure, so that households of different size "
+          "and composition can be compared. Two adults need more than one adult "
+          "to reach the same standard of living, but less than twice as much. "
+          "Every result in this report is given on both the raw and the "
+          "equivalized basis.")
+
+      + g("Equivalent income",
+          "A money-metric welfare measure: the income figure that, under a "
+          "stated reference situation, would leave a household exactly as well "
+          "off as it actually is. The carrier measure of this paper is one, and "
+          "section&nbsp;13 defines it.")
+
+      + g("EUROMOD",
+          "The European Union&rsquo;s tax-benefit microsimulation model, run "
+          "here on the French system. Given a household&rsquo;s composition, its "
+          "non-labour income and a job, it applies the actual rules &mdash; "
+          "income tax, social contributions, family benefits, housing benefit, "
+          "social assistance &mdash; and returns the disposable income that job "
+          "would produce for that household. It is run once in advance on every "
+          "alternative, and its answers are frozen into the estimation data.")
+
+      + g("Importance sampling",
+          "A way of computing an average over a distribution you cannot draw "
+          "from directly: you draw instead from a convenient distribution and "
+          "re-weight each draw by how much more or less likely it was under the "
+          "distribution you actually wanted. Here it is what allows a set of job "
+          "packages to stand in for the whole space of packages.")
+
+      + g("Jackknife band",
+          "An interval built by recomputing a quantity several times, each time "
+          "leaving out one of the repetitions that produced it, and measuring "
+          "how much the answer moves. The bands in this report are computed over "
+          "eight independent scrambles of the integration draws, so they measure "
+          "<b>how precisely the integral was computed</b> &mdash; not how "
+          "precisely the parameters were estimated. Those two are different and "
+          "are never merged.")
+
+      + g("Money metric",
+          "A way of putting welfare in euros so that it can be compared across "
+          "people who have different preferences: convert each "
+          "household&rsquo;s situation into the amount of money that, under a "
+          "stated reference, would leave <em>that same household</em> equally "
+          "well off. It respects preferences, because the conversion is done "
+          "through the household&rsquo;s own utility function.")
+
+      + g("Owen value",
+          "The Shapley value applied to a game whose players are grouped in a "
+          "nested structure. It is what allows the environment to be split into "
+          "job access, earning opportunities and endowments and needs "
+          "<em>without</em> disturbing the split between preferences and "
+          "environment one level above.")
+
+      + g("Pinned coordinate",
+          "A parameter held at a fixed value throughout, by the "
+          "specification, rather than estimated. It is not the same as an "
+          "active bound, where the optimiser was free to move the parameter and "
+          "came to rest at the edge of the search region. Pinned coordinates are "
+          "inert: they contribute nothing to the gradient and carry no standard "
+          "error, and they are excluded from every parameter count in this "
+          "report.")
+
+      + g("Proposal density",
+          "The distribution the alternative job packages are drawn from. It is "
+          "chosen by the analyst, it is computation rather than economics, it "
+          "carries no parameter of interest, and it is subtracted back out of "
+          "the index so that it cancels from every reported result. It is never "
+          "called an opportunity, an offer or an availability &mdash; those "
+          "words belong to the estimated opportunity density alone.")
+
+      + g("Quadrature support",
+          "The finite set of points at which an integral is actually evaluated "
+          "on a computer. In the welfare layer every household is evaluated on "
+          "the same set of points, so that a difference in where the arithmetic "
+          "was done cannot show up as a difference in welfare. It is not a "
+          "common set of jobs.")
+
+      + g("Randomised quasi-Monte Carlo",
+          "A method for computing an integral that places its evaluation points "
+          "more evenly than random sampling would, and then randomises the whole "
+          "pattern so that the error can still be measured. It converges faster "
+          "than plain random sampling, and the randomisation is what makes the "
+          "jackknife band above possible.")
+
+      + g("Sampled-alternatives likelihood",
+          "A likelihood in which each decision unit is given its observed choice "
+          "plus a manageable number of drawn alternatives rather than the whole "
+          "choice space. Subtracting the logarithm of the proposal density from "
+          "the index makes the resulting estimator consistent for the model over "
+          "the full space.")
+
+      + g("Shapley value",
+          "A rule from cooperative game theory for dividing a total among the "
+          "factors that produced it. It gives each factor its <b>average "
+          "marginal contribution over every order</b> in which the factors could "
+          "be brought in. It is the reason the attribution in this report is "
+          "order-independent and sums exactly to the total. A Shapley share is "
+          "<em>attributed to</em> a factor; it is never the amount that factor "
+          "would remove on its own, and sections&nbsp;14 and&nbsp;16 show how "
+          "far apart those two can be.")
+
+      + "</tbody></table></div>")
+
+    W(box("key", "Two pairs that are easy to confuse",
+          "<p><b>Integration band against parameter interval.</b> The first says "
+          "how precisely a number was computed from the draws; the second says "
+          "how precisely it is known given that the coefficients were estimated. "
+          "The second is three to six times the first. They are reported on "
+          "separate lines and never merged.</p>"
+          "<p><b>Attributed against removed.</b> A Shapley share is an average "
+          "over orders. The amount a factor removes when equalised by itself is "
+          "a different quantity, and for a factor that shares its work with "
+          "another it can be several times smaller.</p>"))
 
     return H

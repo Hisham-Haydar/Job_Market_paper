@@ -49,6 +49,7 @@ TOC = [
         ("s21", "21", "Reproduction: the hands-on guide"),
         ("s22", "22", "Seminar question bank"),
         ("s23", "23", "Self-check: every numeral to its key"),
+        ("s24", "24", "Glossary"),
     ]),
 ]
 
@@ -72,7 +73,7 @@ def front_matter() -> str:
              "answers to the questions it invites.</p>")
     W.append('<p class="sub">Single-adult and couple households, France. Every numeral '
              "on this page is rendered from an embedded data block; hover any of them "
-             "for its key, its definition and the artefact it came from.</p>")
+             "for its key, its definition and the data file it was read from.</p>")
     W.append(box("key", "The paper in five lines", (
         "<ul>"
         "<li><b>Question.</b> How much of welfare inequality is preference, and how "

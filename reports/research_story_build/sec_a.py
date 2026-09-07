@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """Sections 1-11 of the research-story report."""
-from common import n, a, lit, box, esc
+from common import n, a, lit, box, esc, math, imath, aux_data
 
 
 def sections(F):
     """F is a FigureBank."""
+    _AUX = aux_data()
     H = []
     W = H.append
 
@@ -104,7 +105,7 @@ def sections(F):
           "hands-on reproduction guide keyed to the research notebook; and section 22 "
           "the seminar question bank. Every numeral in the document is rendered from an embedded "
           "data block at page load &mdash; hover any bolded number to see its key, its "
-          "definition and the frozen artefact it was read from. Section&nbsp;23 audits "
+          "definition and the data file it was read from. Section&nbsp;23 audits "
           "that claim mechanically.</p>"))
 
     # ===================================================================== 2 ==
@@ -236,7 +237,8 @@ def sections(F):
           "non-linear</b>, with every kink, benefit withdrawal and interaction the real "
           "system contains, rather than a linearised or approximated net wage. The cost "
           "is that the choice sets cannot be changed without re-running the simulator, "
-          "which is why the draw geometry is frozen and digest-pinned.</p>"))
+          "which is why the drawn alternatives are generated once and then held "
+          "fixed.</p>"))
 
     W("<h3>Samples and restrictions</h3>")
     W('<div class="scroll"><table><thead><tr><th>Sample</th><th class="num">Households</th>'
@@ -266,6 +268,256 @@ def sections(F):
       'taking a position on how a couple shares its resources. Section&nbsp;11 explains '
       'why the couples results are reported as a companion rather than as the '
       'headline.</p>')
+
+    # ---- the sample-construction waterfall ------------------------------- #
+    W("<h3>How the estimation sample is built, screen by screen</h3>")
+    W("<p>Nothing is dropped for convenience, and every screen has an economic "
+      "reason. The model describes the labour supply of prime-age adults who are "
+      "in a position to work, facing a household budget that depends on their own "
+      "job and on nobody else&rsquo;s. Each row below removes the households for "
+      "which that description fails, and says why. The <b>same</b> screens are "
+      "applied to single-adult and to couple households, so the two samples are "
+      "the output of one construction rather than two.</p>")
+
+    WHY = [
+        "The starting file: every French household in the income reference year.",
+        "<b>A classification step, not a behavioural one.</b> The model is written "
+        "for a decision unit of one adult, or of two partnered adults; a household "
+        "with three or more adults, or with two adults who are not partners, does "
+        "not have one. Itemised below.",
+        "<b>Age.</b> Below " + lit("20", "lower age bound of the estimation sample")
+        + " and above " + lit("60", "upper age bound of the estimation sample")
+        + " the labour-supply margin is dominated by "
+        "schooling and by retirement, which this model does not represent. For a "
+        "couple the screen binds on <em>both</em> adults.",
+        "<b>Still in education.</b> A full-time student&rsquo;s hours are a "
+        "schooling decision rather than a choice from an offer set.",
+        "<b>Retirement or disability income.</b> A household drawing a pension, a "
+        "disability benefit or a survivor&rsquo;s benefit faces a different "
+        "participation margin, and its non-employment state is not the same "
+        "object as a job-seeker&rsquo;s.",
+        "<b>Labour status in scope.</b> Keeps deciders who are employed, unemployed "
+        "or inactive, and drops statuses for which an offer set is not defined.",
+        "<b>No other earning or employable member.</b> If a non-decider in the "
+        "household is work-capable or is earning, the household budget depends on a "
+        "labour supply the model does not represent, and the decision unit would no "
+        "longer be the household.",
+        "<b>Hours and wage inside the modelled support.</b> Working hours are "
+        "floored and capped, and an employed decider&rsquo;s hourly wage must lie "
+        "inside the priced range; outside it the alternative cannot be priced "
+        "through the tax-benefit simulator at all.",
+        "<b>The estimation sample</b>, split by decision unit.",
+    ]
+
+    def _flowrow(i):
+        b = "sample.flow.%d." % i
+        drop = ('<td class="num">&mdash;</td>' if i in (0, 8)
+                else '<td class="num">' + a(b + "dropped", "int") + "</td>")
+        return ("<tr><td>" + a(b + "step", "raw") + "</td>"
+                '<td class="num">' + a(b + "households", "int") + "</td>"
+                + drop
+                + '<td class="num">' + a(b + "share_of_file", "pct", 1) + "</td>"
+                + "<td>" + WHY[i] + "</td></tr>")
+
+    W('<div class="scroll"><table><thead><tr><th>Screen</th>'
+      '<th class="num">Households remaining</th><th class="num">Dropped</th>'
+      '<th class="num">Share of the file</th><th>Why this screen exists</th>'
+      "</tr></thead><tbody>"
+      + "".join(_flowrow(i) for i in range(9))
+      + "</tbody></table></div>")
+
+    W("<p>The composition screen at the second row removes "
+      + a("sample.composition_screen.4.households", "int")
+      + " households, and it is worth itemising, because it is the only screen a "
+      "reader might mistake for a behavioural restriction:</p>")
+    W("<ul>"
+      + "".join("<li><b>" + a("sample.composition_screen.%d.households" % i, "int")
+                + "</b> &mdash; " + a("sample.composition_screen.%d.reason" % i, "raw")
+                + "</li>" for i in range(4))
+      + "</ul>")
+
+    W(F.fig("rg_fig1_1_sample_funnel",
+            "The sample-construction waterfall: the number of households "
+            "surviving each screen, and what each screen removes.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+
+    W("<h3>The two samples come out of one waterfall</h3>")
+    W("<p>The table below carries the single-adult and the couple counts side by "
+      "side at every step, so the couple sample is visibly the second application "
+      "of the same construction. The right-hand column states the screen in the "
+      "terms the construction actually uses.</p>")
+
+    def _cwrow(i):
+        b = "sample.couples_flow.%d." % i
+        return ("<tr><td>" + a(b + "step", "raw") + "</td>"
+                '<td class="num">' + a(b + "all", "int") + "</td>"
+                '<td class="num">' + a(b + "singles", "int") + "</td>"
+                '<td class="num">' + a(b + "couples", "int") + "</td>"
+                '<td class="num">' + a(b + "couples_dropped", "int") + "</td>"
+                "<td>" + a(b + "screen", "raw") + "</td></tr>")
+
+    W('<div class="scroll"><table><thead><tr><th>Step</th>'
+      '<th class="num">All</th><th class="num">Single-adult</th>'
+      '<th class="num">Couples</th><th class="num">Couples dropped</th>'
+      "<th>What the screen is</th></tr></thead><tbody>"
+      + "".join(_cwrow(i) for i in range(8))
+      + "</tbody></table></div>")
+    W(F.fig("rg_fig11_1_couples_waterfall",
+            "The same waterfall with the couple households traced separately.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+
+    # ---- descriptive distributions ---------------------------------------- #
+    W("<h3>What the sample looks like</h3>")
+    W("<p>Every share below is weighted by the survey weight, so it describes the "
+      "population the sample stands for; the counts beside it are unweighted "
+      "households. Read these as the setting the model has to reproduce, not as "
+      "results.</p>")
+
+    CAT = _AUX["sample"]["categorical"]
+    DIM_TITLE = [
+        ("sex", "Sex of the decider"),
+        ("education", "Education, in three groups"),
+        ("employment", "Employment"),
+        ("hours band", "Weekly hours, in the bands the model uses"),
+        ("occupation (loc4)", "Occupation of the observed job"),
+        ("region (drgn1 code categories)", "Region"),
+    ]
+    body = []
+    for dim, title in DIM_TITLE:
+        rr = [i for i, r in enumerate(CAT) if r["dimension"] == dim]
+        if not rr:
+            continue
+        body.append('<tr class="grouphead"><td colspan="4">%s</td></tr>' % title)
+        for i in rr:
+            b = "sample.categorical.%d." % i
+            label = a(b + "category", "raw")
+            if dim.startswith("region"):
+                code = int(str(CAT[i]["category"]).split("=")[-1])
+                label = a("sample.region_key.%d.name" % (code - 1), "raw")
+            body.append("<tr><td>" + label + "</td>"
+                        + '<td class="num">' + a(b + "n", "int") + "</td>"
+                        + '<td class="num">' + a(b + "share_unweighted", "pct", 1)
+                        + "</td>"
+                        + '<td class="num">' + a(b + "share_weighted", "pct", 1)
+                        + "</td></tr>")
+    body.append('<tr class="grouphead"><td colspan="4">Children in the household'
+                "</td></tr>")
+    for i in range(len(_AUX["sample"]["children"])):
+        b = "sample.children.%d." % i
+        body.append("<tr><td>" + a(b + "n_children", "int") + " children</td>"
+                    + '<td class="num">' + a(b + "households", "int") + "</td>"
+                    + '<td class="num">' + a(b + "share_unweighted", "pct", 1)
+                    + "</td>"
+                    + '<td class="num">' + a(b + "share_weighted", "pct", 1)
+                    + "</td></tr>")
+    body.append('<tr class="grouphead"><td colspan="4">Urbanisation of the place '
+                "of residence</td></tr>")
+    for i in range(3):
+        b = "sample.urbanisation.%d." % i
+        body.append("<tr><td>" + a(b + "zone", "raw") + "</td>"
+                    + '<td class="num">' + a(b + "households", "int") + "</td>"
+                    + '<td class="num">' + a(b + "share_unweighted", "pct", 1)
+                    + "</td>"
+                    + '<td class="num">' + a(b + "share_weighted", "pct", 1)
+                    + "</td></tr>")
+    W('<div class="scroll"><table><thead><tr><th>Category</th>'
+      '<th class="num">Households</th><th class="num">Share, unweighted</th>'
+      '<th class="num">Share, weighted</th></tr></thead><tbody>'
+      + "".join(body) + "</tbody></table></div>")
+
+    W("<p>Three of those rows are worth a sentence. The sample is majority female "
+      "and highly educated, and "
+      + a("sample.categorical.5.share_weighted", "pct", 0) + " are employed "
+      "&mdash; high, because the screens above removed exactly the groups with low "
+      "attachment, which makes this the right denominator for a model of the "
+      "labour supply of people who could plausibly be working. Nearly three "
+      "quarters of these households have no resident child. And the hours "
+      "distribution is not smooth: the band containing the statutory week holds "
+      "more households than any other, which is the institutional fact "
+      "section&nbsp;6 has to represent.</p>")
+
+    W("<p>The continuous variables, weighted:</p>")
+    W('<div class="scroll"><table><thead><tr><th>Variable</th><th>Unit</th>'
+      '<th class="num">Mean</th><th class="num">Median</th>'
+      '<th class="num">10th pct</th><th class="num">90th pct</th>'
+      '<th class="num">Min</th><th class="num">Max</th></tr></thead><tbody>'
+      + "".join(
+          "<tr><td>" + a("sample.continuous.%d.dimension" % i, "raw") + "</td>"
+          + "<td>" + a("sample.continuous.%d.unit" % i, "raw") + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.mean_weighted" % i, "f2")
+          + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.median_weighted" % i, "f2")
+          + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.p10_weighted" % i, "f2")
+          + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.p90_weighted" % i, "f2")
+          + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.min" % i, "f2") + "</td>"
+          + '<td class="num">' + a("sample.continuous.%d.max" % i, "f2") + "</td>"
+          "</tr>" for i in range(len(_AUX["sample"]["continuous"])))
+      + "</tbody></table></div>")
+
+    W(F.fig("rg_fig2_2_hours_bands",
+            "The observed distribution of weekly hours, with the band structure "
+            "the hours factor of the opportunity density uses. The concentration "
+            "at the statutory week is the most visible institutional feature in "
+            "these data, and section&nbsp;6 explains how the model represents it.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+    W(F.fig("rg_fig2_3_wage_age",
+            "Observed hourly wages against age, by education group. The level "
+            "difference across education and the concavity in experience are what "
+            "the wage-offer location of section&nbsp;6 estimates &mdash; there as "
+            "a density over the pay a household could be offered, rather than as "
+            "a regression on the pay the employed are observed at.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+    W(F.fig("rg_fig2_4_occupation_by_sex",
+            "Occupation composition of the observed jobs, by sex. The strong sex "
+            "difference here is what the occupation factor of the opportunity "
+            "density is estimated against.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+    W(F.fig("rg_fig2_1_income_distributions",
+            "The income distributions in this sample: earned income, non-labour "
+            "income, and disposable income after the tax-benefit system. "
+            "Non-labour income is the part of the budget that does not move with "
+            "the job taken; it enters the endowments-and-needs channel of "
+            "section&nbsp;16.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
+
+    W("<h3>Observed inequality, before any model</h3>")
+    W("<p>The decomposition of sections&nbsp;14&ndash;16 is carried on a "
+      "model-based welfare measure rather than on income. It is still worth "
+      "knowing what inequality looks like in the raw data, because that is the "
+      "quantity a reader arrives with. On <b>observed disposable income</b> in "
+      "this sample the weighted <b>Gini coefficient</b> &mdash; a summary of "
+      "dispersion running from "
+      + lit("0", "the lower limit of the Gini coefficient, a definition")
+      + ", when every household has the same income, to "
+      + lit("1", "the upper limit of the Gini coefficient, a definition")
+      + ", when one household has all of it &mdash; is "
+      + a("sample.observed.Gini (weighted)", "f3") + ", with a mean of "
+      + a("sample.observed.mean", "f0") + " and a median of "
+      + a("sample.observed.median", "f0")
+      + " euros a month, and a ratio of the "
+      + lit("90th", "a percentile of the observed income distribution")
+      + " to the " + lit("10th", "a percentile of the observed income distribution")
+      + " percentile of "
+      + a("sample.observed.P90/P10", "f2") + ".</p>")
+    W(box("warn", "This is not the paper's headline number, and the difference "
+                  "is not presentational",
+          "<p>Observed disposable income and the welfare measure of "
+          "section&nbsp;13 are different objects, and their inequality figures are "
+          "not comparable. Disposable income counts the money a household "
+          "receives. The welfare measure asks what uniform pay, offered across the "
+          "jobs that household can reach, would leave it exactly as well off as it "
+          "actually is &mdash; so it credits time not spent working, and it "
+          "credits a wide set of reachable jobs even when the job actually taken "
+          "is identical. A household working sixty hours for a given income is not "
+          "as well off as one working thirty for the same income, and the Gini of "
+          "income cannot see that.</p>"))
+    W(F.fig("rg_fig3_1_lorenz_and_deciles",
+            "Observed disposable income: the Lorenz curve and the decile means. "
+            "Descriptive only; no model quantity appears on either axis.",
+            "Reproduced from the reader's-guide notebook's frozen export."))
 
     W("<h3>The variables, and what each one does</h3>")
     W('<div class="scroll"><table><thead><tr><th>Variable</th><th>Construction</th>'
@@ -508,164 +760,370 @@ def sections(F):
 
     # ===================================================================== 6 ==
     W('<h2 id="s6" class="exempt">6. The structural model, complete</h2>')
-    W('<p>These are the final equations, in the order the estimation code evaluates '
-      'them. <em>g</em> denotes sex; <em>BC</em> is the Box&ndash;Cox transform '
-      '<em>BC(y;&theta;) = (y<sup>&theta;</sup> ' + lit("&minus; 1)/&theta;",
-      "the Box-Cox functional form, a definition") + '</em>, which is '
-      '<em>log y</em> at <em>' + lit("&theta; = 0", "the Box-Cox limiting case, a definition") + '</em>.</p>')
 
-    W("<h3>Block 1 &mdash; utility / preferences</h3>")
-    W('<div class="eq">'
-      "u_ij  =  beta_l_g(x_i)  ·  BC( leisure_ij ; theta_l,g )\n"
-      "      +  beta_c        ·  BC( consumption_ij ; theta_c )\n"
-      "\n"
-      "beta_l_g(x_i)  =  beta_l0_g  +  beta_l_age_g · a_i\n"
-      "                             +  beta_l_age2_g · a_i^2\n"
-      "                             +  beta_l_nkids_g · k_i     (single women only)\n"
-      "\n"
-      "     a_i   age, centred and scaled by ten\n"
-      "     k_i   number of children"
-      "</div>")
-    W("<ul>")
-    W("<li><b><em>&beta;<sub>&#8467;</sub><sup>g</sup>(x<sub>i</sub>)</em>, the "
-      "leisure weight.</b> How much this "
-      "household values time, as a function of age, age squared and &mdash; for single "
-      "women &mdash; the number of children. This is the taste object the whole paper "
-      "is about separating from opportunity.</li>")
-    W("<li><b><em>&theta;<sub>l</sub></em> and <em>&theta;<sub>c</sub></em>, the "
-      "curvatures.</b> The Box&ndash;Cox exponents on leisure and consumption govern "
-      "diminishing marginal utility and hence the willingness to trade income for time. "
-      "They are estimated separately by sex for leisure and pooled for consumption.</li>")
-    W("<li><b><em>&beta;<sub>c</sub></em> is fixed, not estimated.</b> Utility is only "
-      "identified up to scale in a logit model; fixing the consumption coefficient is "
-      "the scale normalisation. It is why there is no consumption coefficient in the "
-      "parameter table.</li>")
-    W("</ul>")
+    W('<p class="lede">The model is written once, for a generic <b>decision '
+      'unit</b>, and then applied twice: to a single adult, and to a couple. '
+      'Everything in this section is the model itself; the estimates are '
+      'section&nbsp;7.</p>')
 
-    W("<h3>Block 2 &mdash; job access, <em>g<sup>E</sup></em></h3>")
-    W('<div class="eq">'
-      "log g^E_ij  =  E_ij · [  beta_E                        the level\n"
-      "                            +  beta_E_gsur  · unemployment_rate_i\n"
-      "                            +  SUM_r beta_E_drgn_r · region_ir\n"
-      "                            +  beta_E_drgur · urban_i\n"
-      "                            +  beta_E_drgmd · intermediate_i  ]"
-      "</div>")
-    W("<p>The employment margin: how much density the opportunity distribution "
-      "places on <em>being employed at all</em> rather than on the non-employment "
-      "state, and how that level is tilted by circumstance. <b>Local market access "
-      "is part of this factor, not a factor of its own</b> &mdash; the intercept is "
-      "the level of the access surface and the remaining terms tilt it. Block&nbsp;5 "
-      "reads those tilt terms one at a time.</p>")
+    W(box("key", "The shape of the argument, before any algebra",
+          "<p>A decision unit faces a set of <b>job packages</b>. A package is a "
+          "bundle of hours, an occupation and an hourly wage &mdash; and, once the "
+          "tax-benefit system has been solved for it, a disposable income. Two "
+          "objects govern which package is observed.</p>"
+          "<ul>"
+          "<li><b>Preferences</b> say how the unit <em>ranks</em> the packages it "
+          "can reach. This is a utility function over consumption and time.</li>"
+          "<li><b>The opportunity density</b> says how <em>available</em> each "
+          "package is to that unit. This is a probability density over the space "
+          "of packages, and it differs from one unit to another.</li>"
+          "</ul>"
+          "<p>The observed job is the package that maximises the sum of the two, "
+          "up to an extreme-value shock. Every question in this paper is about "
+          "how much of the dispersion in outcomes comes from the first object and "
+          "how much from the second.</p>"))
 
-    W("<h3>Block 3 &mdash; hours access</h3>")
-    W('<div class="eq">'
-      "log g^H_ij  =  SUM_b  beta_h_b · E_ij · 1[ hours_ij in band b ]\n"
-      "\n"
-      "bands:   PT1  [17.5, 21.5]      short part time\n"
-      "         PT2  [28.5, 30.5]      long part time\n"
-      "         F35  [33.5, 36.5)      the statutory week\n"
-      "         FT   [36.5, 40.5]      standard full time\n"
-      "         LH   [44.5, 70]        long hours\n"
-      "\n"
-      "the step structure is read against the residual bins and the statutory\n"
-      "band, both at zero (beta_F35 = 0 as a band step); the preferred model\n"
-      "then adds one separate coefficient on the 35-hour indicator, over and\n"
-      "above the band structure - the opportunity peak, beta_h_f35"
-      "</div>")
-    W("<p><b>This block is the institutional content of the model.</b> Each coefficient "
-      "is the log density the opportunity distribution places on jobs in that hours "
-      "band, relative to the residual bins. The French statutory working week gives "
-      "employers a strong reason to post at one particular length, and a spike of that "
-      "kind is a property of what is <em>offered</em>, not of anyone&rsquo;s indifference "
-      "curve. Section&nbsp;8 shows that adding the statutory-week coefficient is the "
-      "single largest specification improvement in the paper.</p>")
+    # ================================================================= generic
+    W("<h3>6.1 The generic decision unit</h3>")
 
-    W("<h3>Block 4 &mdash; occupation access</h3>")
-    W('<div class="eq">'
-      "log g^Occ_ij  =  SUM_k  beta_occ_k,g · E_ij · 1[ occupation_ij = k ]\n"
-      "\n"
-      "         k in {2,3,4};  group 1 is the dropped reference;  g = sex"
-      "</div>")
-    W("<p>How reachable each occupation group is, estimated separately for men and "
-      "women. This is <b>access</b>, not pay: what each group pays is block&nbsp;6. "
-      "Keeping the two apart is what allows the model to say that an occupation is "
-      "well paid <em>and</em> hard to get into, which a single occupation coefficient "
-      "could not express.</p>")
+    W("<p><b>Utility.</b> The unit values consumption and time, both through a "
+      "<b>Box&ndash;Cox transformation</b> &mdash; a flexible one-parameter family "
+      "that nests the logarithm and the linear case, and whose parameter measures "
+      "how fast marginal value falls off:</p>")
+    W(math(r"\mathcal{B}(z;\theta)=\frac{z^{\theta}-1}{\theta},\qquad "
+           r"\mathcal{B}(z;0)=\log z .",
+           "the Box-Cox transformation",
+           "At " + imath(r"\theta=1") + " the transformation is linear and the "
+           "marginal value of the good is constant. As " + imath(r"\theta") +
+           " falls the function bends: the lower it goes, the faster the value of "
+           "an extra unit declines. At " + imath(r"\theta=0") + " it is the "
+           "logarithm. Negative values are admissible and mean sharper concavity "
+           "still."))
 
-    W("<h3>Block 5 &mdash; what tilts job access "
-      "(the interior of <em>g<sup>E</sup></em>)</h3>")
-    W('<div class="eq">'
-      "the circumstance terms inside log g^E_ij, read one at a time:\n"
-      "\n"
-      "     beta_E_gsur  · unemployment_rate_i\n"
-      "  +  SUM_r beta_E_drgn_r · region_ir\n"
-      "  +  beta_E_drgur · urban_i\n"
-      "  +  beta_E_drgmd · intermediate_i\n"
-      "\n"
-      "  (NOT a separate factor: the model has no separate access factor)"
-      "</div>")
-    W("<p>The circumstances that tilt job access. The local unemployment rate is the "
-      "sharpest of them. Region indicators are NUTS-1 with one omitted; urbanisation is "
-      "urban and intermediate against rural. <b>None of these variables appears "
-      "anywhere in preferences.</b> That exclusion is not incidental &mdash; it is what "
-      "makes the geographic exercise of section&nbsp;17 a well-defined operation on "
-      "the access block.</p>")
+    W("<p>Utility over a package " + imath("j") + " for unit " + imath("i")
+      + " is a weighted sum of transformed leisure and transformed consumption:</p>")
+    W(math(r"u_{ij}\;=\;\sum_{s\in S_i}\beta_{\ell}^{g(s)}(\mathbf{x}_i)\,"
+           r"\mathcal{B}\!\left(\tilde{\ell}_{sij};\theta_{\ell}^{g(s)}\right)"
+           r"\;+\;\beta_c\,\mathcal{B}\!\left(\tilde{c}_{ij};\theta_c\right),",
+           "utility of a package"))
+    W("<p>where " + imath(r"S_i") + " is the set of adults in the decision unit, "
+      + imath(r"g(s)") + " is the sex of adult " + imath("s") + ", "
+      + imath(r"\tilde\ell_{sij}=(\bar L-h_{sij})/\lambda_\ell") + " is that "
+      "adult's leisure in the package (total time less hours worked, in units of "
+      + imath(r"\lambda_\ell=10") + " hours), and " + imath(r"\tilde c_{ij}") +
+      " is the household's disposable income in the package. The leisure weight "
+      "is itself a function of the unit's characteristics:</p>")
+    W(math(r"\beta_{\ell}^{g}(\mathbf{x}_i)\;=\;\beta_{\ell 0}^{g}"
+           r"+\beta_{\ell a}^{g}a_i+\beta_{\ell a^{2}}^{g}a_i^{2}"
+           r"+\mathbb{1}\{g=\text{women}\}\,\beta_{\ell k}^{g}k_i ,",
+           "how the value of time varies across units"))
+    W("<p>with " + imath("a_i") + " age, centred and measured in decades, and "
+      + imath("k_i") + " the number of resident children. <b>"
+      + imath(r"\beta_c\equiv 1") + " is a normalisation, not an estimate</b>: "
+      "utility in a discrete-choice model is identified only up to scale, and "
+      "fixing the consumption coefficient is what fixes that scale. It is also "
+      "what makes the money metric of section&nbsp;13 well defined, because it "
+      "puts utility on a euro footing.</p>")
 
-    W("<h3>Block 6 &mdash; earning opportunities / the wage-offer technology</h3>")
-    W('<div class="eq">'
-      "mu_ij  =  beta_w0\n"
-      "       +  beta_w_educL · educ_low_i   +  beta_w_educH · educ_high_i\n"
-      "       +  beta_w_pexp  · pexp_i       +  beta_w_pexp2 · pexp_i^2\n"
-      "       +  SUM_k delta_occ_k · 1[ occupation_ij = k ]\n"
-      "\n"
-      "log g^W_ij  =  E_ij · [ -0.5·( (log w_ij - mu_ij) / sigma )^2\n"
-      "                              - log sigma  - 0.5·log(2·pi)  - log w_ij ]"
-      "</div>")
-    W("<ul>")
-    W("<li><b>A log-normal offer density</b> with a household-specific location "
-      "<em>&mu;</em> and a <b>common dispersion <em>&sigma;</em></b>. The final "
-      "<code>&minus;log w</code> term is the Jacobian of the change of variables from "
-      "the log wage to the wage level; it is there because the choice object is the "
-      "wage, not its logarithm.</li>")
-    W("<li><b>Education and experience shift the location only.</b> They are excluded "
-      "from preferences and from access. Someone with more schooling faces a "
-      "better-located offer distribution; that is an opportunity statement, and "
-      "deliberately not an ability statement.</li>")
-    W("<li><b>The occupation wage-location shifts <em>&delta;<sub>occ</sub></em></b> "
-      "are what makes the wage offer occupation-conditioned: each occupation group has "
-      "its own location on the same dispersion. Section&nbsp;8 explains why this was "
-      "added and what it repaired.</li>")
-    W("</ul>")
+    W("<p><b>The opportunity density.</b> Availability is a product of four "
+      "factors, each equal to one at its own reference, and the last three "
+      "switched off on the non-employment package:</p>")
+    W(math(r"g_{ij}\;=\;g^{E}_{ij}\cdot g^{H}_{ij}\cdot g^{\mathrm{Occ}}_{ij}"
+           r"\cdot g^{W}_{ij},\qquad "
+           r"E_{ij}=\mathbb{1}\{\text{the package involves work}\}.",
+           "the opportunity density, four factors"))
+    W("<p>They answer four different questions about the market a unit faces: "
+      "<b>is work available at all</b>, <b>at which hours</b>, <b>in which "
+      "occupation</b>, and <b>at what pay</b>. Section&nbsp;6.3 takes them one at "
+      "a time.</p>")
 
-    W("<h3>Block 7 &mdash; the proposal density</h3>")
-    W('<div class="eq">'
-      "log q_i0  =  0                              observed job, deterministic\n"
-      "log q_ij  =  log q_E + log q_Occ + log q_H + log q_W      sampled rows\n"
-      "\n"
-      "                       with q_H the EXACT MARGINAL of the hours mixture"
-      "</div>")
-    W("<p>Not a behavioural object. It is the sampler, subtracted out. Section&nbsp;5.</p>")
+    W("<p><b>The index, and why the two objects must be separated by exclusion "
+      "restrictions.</b> Preferences and availability enter one index "
+      "additively:</p>")
+    W(math(r"V_{ij}\;=\;\underbrace{u_{ij}}_{\text{how it is ranked}}"
+           r"+\underbrace{\log g_{ij}}_{\text{how available it is}}"
+           r"-\underbrace{\log q_{ij}}_{\text{sampling correction}} .",
+           "the index of a package"))
+    W("<p>Because the two enter as a sum, their <em>total</em> is identified by "
+      "the choices, but their <em>parts</em> are not &mdash; unless some variables "
+      "move one and not the other. That is what the exclusion restrictions do: "
+      "the local unemployment rate, the region and the urbanisation of the place "
+      "of residence enter availability and never preferences; age and children "
+      "enter preferences and never availability. Nothing about the functional "
+      "form does this work.</p>")
 
-    W("<h3>The assembled likelihood</h3>")
-    W('<div class="eq">'
-      "g_ij   =  g^E_ij · g^H_ij · g^Occ_ij · g^W_ij        four factors\n"
-      "\n"
-      "V_ij   =  u_ij + log g_ij  -  log q_ij\n"
-      "       =  u_ij + log g^E_ij + log g^H_ij\n"
-      "                + log g^Occ_ij + log g^W_ij  -  log q_ij\n"
-      "\n"
-      "P_i    =  exp(V_i0) / SUM_j exp(V_ij)\n"
-      "negLL  =  - SUM_i log P_i"
-      "</div>")
-    W('<p>Preferences and opportunities enter the <em>same</em> index additively. That '
-      'is exactly why separating them needs exclusion restrictions rather than '
-      'functional form: without variables that shift one block and not the other, the '
-      'sum would be identified but its parts would not.</p>')
+    W("<p><b>The sampled-alternatives likelihood.</b> The set of conceivable job "
+      "packages is far too large to enumerate, so it is sampled. Each unit "
+      "carries its observed package plus " + n("n_alternatives", "int")
+      + " packages in all &mdash; the observed one plus drawn alternatives "
+      "from a known <b>proposal density</b> "
+      + imath("q_{ij}") + ", giving a choice set of " + n("n_alternatives", "int")
+      + ". Subtracting " + imath(r"\log q_{ij}") + " from the index &mdash; the "
+      "<b>sampling correction</b> &mdash; makes the likelihood over the sampled "
+      "set consistent for the model over the full set:</p>")
+    W(math(r"P_i\;=\;\frac{\exp V_{i j^{*}_i}}{\sum_{j\in\mathcal{C}_i}\exp V_{ij}},"
+           r"\qquad \hat\theta=\arg\min_\theta\;-\!\sum_{i=1}^{N}\log P_i(\theta).",
+           "the sampled-alternatives likelihood"))
+    W("<p>The proposal density is <b>computation, not economics</b>. It is chosen "
+      "by the analyst, it carries no parameter of interest, and it cancels from "
+      "everything the paper reports. It is never an opportunity, an offer or an "
+      "availability: those words belong to " + imath("g_{ij}") + " alone.</p>")
 
-    W(box("say", "The one-sentence version for the talk",
-          "<p>&ldquo;A household&rsquo;s observed job maximises preferences over a set "
-          "it did not choose; the model estimates the density of that set and the "
-          "preferences jointly, with the tax system solved exactly at every "
-          "alternative.&rdquo;</p>"))
+    # ============================================================ instantiation
+    W("<h3>6.2 The same model, applied twice</h3>")
+    W("<p>Only the decision unit changes. Everything above is untouched.</p>")
+
+    W('<div class="scroll"><table><thead><tr><th></th>'
+      "<th>Application 1 &mdash; the single adult</th>"
+      "<th>Application 2 &mdash; the couple</th></tr></thead><tbody>"
+
+      "<tr><td><b>The unit</b></td>"
+      "<td>One adult. " + n("n_households_singles", "int") + " households.</td>"
+      "<td>Two partnered adults, decided jointly. "
+      + n("n_households_couples", "int") + " households.</td></tr>"
+
+      "<tr><td><b>Leisure terms in utility</b></td>"
+      "<td><b>One.</b> The sum over " + imath("S_i") + " has a single term, so "
+      "utility is a function of one leisure and one consumption.</td>"
+      "<td><b>Two.</b> The sum has a male and a female term, each with its own "
+      "leisure weight and its own curvature. Consumption remains a single "
+      "household-level argument.</td></tr>"
+
+      "<tr><td><b>An alternative</b></td>"
+      "<td>A job package for the adult, or non-employment.</td>"
+      "<td>A <b>joint alternative</b>: a package for <em>each</em> spouse "
+      "simultaneously, including the case where one or both do not work. The "
+      "couple chooses a pair, not two things separately.</td></tr>"
+
+      "<tr><td><b>The budget</b></td>"
+      "<td>The household's disposable income under the actual tax-benefit rules, "
+      "given that adult's earnings and the household's non-labour income.</td>"
+      "<td>The <b>household</b> budget, priced once for the pair. This is not "
+      "presentational: French income tax and means-tested benefits are assessed "
+      "on the household, so one spouse's earnings change the other's effective "
+      "return to work. Pricing the pair jointly is the only way to represent "
+      "that.</td></tr>"
+
+      "<tr><td><b>Participation regimes</b></td>"
+      "<td>Two: works, or does not.</td>"
+      "<td><b>Four</b>, and the draws respect them. A joint alternative falls "
+      "into one of the four regimes &mdash; neither works, only the man works, "
+      "only the woman works, both work &mdash; and the sampler is constructed so "
+      "that each regime receives its own share of the drawn alternatives rather "
+      "than being left to chance. Without that, the rare regimes would be "
+      "represented by too few draws to estimate against.</td></tr>"
+
+      "<tr><td><b>Opportunity density</b></td>"
+      "<td>The four factors, once.</td>"
+      "<td>The four factors, <b>per spouse</b>, on a shared parameter vector with "
+      "per-sex coordinates: each spouse has an employment margin, an hours "
+      "profile and an occupation profile of their own, while the wage-offer "
+      "technology and the local access terms are common.</td></tr>"
+
+      "<tr><td><b>What is <em>not</em> in the couple model</b></td>"
+      "<td>&mdash;</td>"
+      "<td>A term in <em>both</em> spouses' leisure &mdash; the natural way for "
+      "one spouse's time at home to change the value of the other's. It is "
+      "<b>absent from the specification</b>, not estimated and set to zero. "
+      "Section&nbsp;11 gives the reason and the consequence.</td></tr>"
+      "</tbody></table></div>")
+
+    W(box("warn", "One model, two applications - and why the couple is not an "
+                  "appendix",
+          "<p>The couple is the second application of the model above, estimated "
+          "on the same frame with the same screens, the same proposal, the same "
+          "correction and the same likelihood. Its parameters appear beside the "
+          "singles parameters in section&nbsp;7, block by block, for that "
+          "reason.</p>"
+          "<p>What makes the single-adult sample the headline is not that it came "
+          "first. It is that in a one-adult household the <b>welfare unit and the "
+          "decision unit coincide</b>, so a money-metric welfare level is well "
+          "defined without taking a position on how a couple divides its "
+          "resources. Section&nbsp;11 states the couple's own limitation "
+          "plainly.</p>"))
+
+    # ============================================================ the densities
+    W("<h3>6.3 The four factors of the opportunity density</h3>")
+    W("<p>Each factor is a statement about the market, not about the person's "
+      "taste. Each is normalised so that it equals one at a stated reference, "
+      "which is what makes its coefficients readable as ratios.</p>")
+
+    # ---- (a) employment access
+    W("<h4>(a) Employment access &mdash; is work available at all?</h4>")
+    W("<p><b>What it says about the market.</b> How much density the opportunity "
+      "distribution places on <em>being employed at all</em> rather than on the "
+      "non-employment package, and how that level is tilted by the labour market "
+      "the household lives in. It is a level shift applied to every working "
+      "package alike.</p>")
+    W(math(r"\log g^{E}_{ij}=E_{ij}\Bigl[\beta_{E}"
+           r"+\beta_{s}\,s_i"
+           r"+\textstyle\sum_{r=2}^{8}\beta_{r}\mathbb{1}\{R_i=r\}"
+           r"+\beta_{u}U_i+\beta_{m}M_i\Bigr]",
+           "employment access"))
+    W("<p><b>Reference.</b> The non-employment package, at which the factor is "
+      "one by construction, and &mdash; among working packages &mdash; a "
+      "household in the omitted region living in a rural zone. <b>Regressors.</b> "
+      + imath("s_i") + " is the <b>unemployment rate of the household's own "
+      "group</b>, defined by region, education and sex, and looked up from an "
+      "external source rather than estimated: it is the exclusion restriction "
+      "that identifies access separately from taste. " + imath("R_i") + " is the "
+      "region of residence, seven indicators against an omitted eighth. "
+      + imath("U_i") + " and " + imath("M_i") + " are urban and intermediate "
+      "residence against rural. <b>None of these appears in preferences</b>, "
+      "which is what makes the geographic exercise of section&nbsp;17 a "
+      "well-defined operation.</p>")
+
+    # ---- (b) hours
+    W("<h4>(b) Hours &mdash; at which hours is work available?</h4>")
+    W("<p><b>What it says about the market.</b> Employers do not post a smooth "
+      "continuum of weekly hours. They post a few conventional lengths, and in "
+      "France one of them is written into the statute. This factor is a step "
+      "density over hours bands, plus a separate mass point at the statutory "
+      "week.</p>")
+    W(math(r"\log g^{H}_{ij}=\sum_{b}\beta_{b}\,\mathbb{1}\{h_{ij}\in B_b\}"
+           r"\;+\;\beta_{h,\mathrm{F35}}\,\mathbb{1}\{h_{ij}\in B_{\mathrm{F35}}\},"
+           r"\qquad \beta_{\mathrm{F35}}\equiv 0 \ \text{as a band step}",
+           "the hours-offer density"))
+    W("<p><b>Reference and normalisation, kept apart.</b> The step structure is "
+      "read against the hours regions the bands do not cover <em>and</em> against "
+      "the statutory band, both at zero: that is the meaning of "
+      + imath(r"\beta_{\mathrm{F35}}\equiv 0") + ", and it is why only four band "
+      "coefficients are estimated. The preferred specification then adds "
+      "<b>one separate coefficient</b> on the statutory-week indicator, over and "
+      "above the band structure. The two are different objects and the report "
+      "never conflates them: the first fixes the origin, the second is an "
+      "estimated feature of the offer distribution.</p>")
+
+    # ---- (c) occupation
+    W("<h4>(c) Occupation &mdash; which kinds of job are reachable?</h4>")
+    W("<p><b>What it says about the market.</b> How reachable each of four "
+      "occupation groups is, estimated separately for men and for women. This is "
+      "<b>access, not pay</b>: what each group pays is the next factor. Keeping "
+      "them apart is what lets the model say that an occupation is well paid "
+      "<em>and</em> hard to get into &mdash; something a single occupation "
+      "coefficient could not express.</p>")
+    W(math(r"\log g^{\mathrm{Occ}}_{ij}=E_{ij}\sum_{k=2}^{4}"
+           r"\beta^{\mathrm{occ}}_{k,g}\,\mathbb{1}\{o_{ij}=k\},"
+           r"\qquad \beta^{\mathrm{occ}}_{1,g}\equiv 0",
+           "occupation availability"))
+    W("<p><b>Reference.</b> Occupation group " + lit("1", "an occupation group label")
+      + ", whose coefficient is fixed at zero for each sex; the other three "
+      "are read against it. <b>Regressor.</b> "
+      "The occupation of the package, in four groups built from the standard "
+      "occupational classification.</p>")
+
+    # ---- (d) wage offers
+    W("<h4>(d) Wage offers &mdash; at what pay?</h4>")
+    W("<p><b>What it says about the market.</b> Conditional on an occupation, the "
+      "pay a household could be offered is a distribution, not a number. This "
+      "factor is a log-normal density over the hourly wage whose <em>centre</em> "
+      "depends on the household's schooling and experience and on the occupation "
+      "of the package, and whose spread is common to everyone.</p>")
+    W(math(r"\mu_{ij}=\beta_{w0}+\beta_{wL}L_i+\beta_{wH}H_i+\beta_{wx}x_i"
+           r"+\beta_{wx^{2}}x_i^{2}+\textstyle\sum_{k}\delta_{\mathrm{occ},k}"
+           r"\mathbb{1}\{o_{ij}=k\}",
+           "the centre of the wage-offer distribution"))
+    W(math(r"\log g^{W}_{ij}=E_{ij}\Bigl[-\tfrac12\Bigl("
+           r"\tfrac{\log w_{ij}-\mu_{ij}}{\sigma}\Bigr)^{2}"
+           r"-\log\sigma-\tfrac12\log 2\pi-\log w_{ij}\Bigr]",
+           "the wage-offer density"))
+    W("<p><b>Reference.</b> Middle education, occupation group "
+      + lit("1", "an occupation group label") + ", at the "
+      "experience profile's origin. <b>Regressors.</b> " + imath("L_i")
+      + " and " + imath("H_i") + " are low and high education against the middle "
+      "group; " + imath("x_i") + " is potential experience, entering as a "
+      "quadratic so the profile can rise and then flatten. The final "
+      + imath(r"-\log w_{ij}") + " term is the <b>Jacobian</b> of the change of "
+      "variable from the log wage to the wage itself &mdash; it is there because "
+      "the object being chosen is the wage, not its logarithm, and omitting it "
+      "would tilt the density.</p>")
+    W(box("key", "Why this is an <em>opportunity</em> and not a Mincer regression",
+          "<p>The same variables &mdash; schooling, experience &mdash; appear in "
+          "a conventional wage regression. The difference is the object being "
+          "described. A wage regression describes the pay of <b>the people "
+          "observed working</b>. This density describes the pay attached to a "
+          "package <b>a household could be offered</b>, including packages it did "
+          "not take and occupations it is not in. It is estimated jointly with "
+          "the rest of the model from choices, not fitted to observed earnings, "
+          "and it is carried <em>inside</em> the opportunity set.</p>"
+          "<p>The reading that follows is deliberate: education shifts where a "
+          "household's offer distribution sits. That is a statement about "
+          "<b>observed earning capacity</b>, and section&nbsp;14.4 is explicit "
+          "that it is not a statement about ability.</p>"))
+
+    # ---- the worked household
+    W("<h3>6.4 One household, one package, all four factors</h3>")
+    W("<p>The four factors multiply. Because each is normalised to one at its own "
+      "reference, the availability weight of a package can be read as a product "
+      "of ratios against a reference package, and each ratio is "
+      + imath(r"e^{\beta}") + " for the coefficient concerned. That is the whole "
+      "arithmetic, and it is worth doing once explicitly.</p>")
+    W("<p><b>The reference package</b> is: work is available; hours in the region "
+      "the bands do not cover; occupation group "
+      + lit("1", "an occupation group label") + "; and a wage at the centre of "
+      "the offer distribution for that household. <b>The package we build</b> is "
+      "a full-time job just above the statutory week, in occupation group "
+      + lit("4", "an occupation group label") + ", for "
+      "a man, at the centre of his own offer distribution. Reading down the "
+      "column, each row multiplies the one above it.</p>")
+
+    def _wrow(label, key, what):
+        return ("<tr><td>" + label + "</td>"
+                "<td><code>" + key + "</code></td>"
+                '<td class="num">' + a("params41." + key + ".estimate", "f4")
+                + "</td>"
+                '<td class="num">' + a("ratio." + key + ".exp", "f2") + "&times;</td>"
+                "<td>" + what + "</td></tr>")
+
+    W('<div class="scroll"><table><thead><tr><th>Step</th><th>Coefficient</th>'
+      '<th class="num">Estimate</th><th class="num">Multiplies availability by</th>'
+      "<th>What that step says</th></tr></thead><tbody>"
+      + _wrow("<b>" + lit("1", "a step number in the worked example") + ". Is work available at all?</b>", "beta_E",
+              "The employment level. Working packages start far below the "
+              "non-employment package in availability: this is the fixed cost of "
+              "having a job at all, on the offer side.")
+      + _wrow("<b>" + lit("2", "a step number in the worked example") + ". Tilt for the local market</b>", "beta_E_gsur",
+              "Multiplied for each unit of the household's own group unemployment "
+              "rate. A worse local market for this region, education and sex "
+              "lowers the availability of every working package.")
+      + _wrow("<b>" + lit("3", "a step number in the worked example") + ". At which hours?</b>", "beta_h_ft",
+              "The band just above the statutory week, against the uncovered "
+              "hours region. Full-time work is an order of magnitude more "
+              "available than the hours nobody posts.")
+      + _wrow("<b>" + lit("4", "a step number in the worked example") + ". In which occupation?</b>", "beta_occ_4_m",
+              "Occupation group " + lit("4", "an occupation group label") + " against group "
+              + lit("1", "an occupation group label") + ", for a man. Close to one here: "
+              "for men these two groups are about equally reachable.")
+      + "<tr><td><b>" + lit("5", "a step number in the worked example") + ". At what pay?</b></td>"
+      "<td><code>sigma</code></td>"
+      '<td class="num">' + a("params41.sigma.estimate", "f4") + "</td>"
+      '<td class="num">&mdash;</td>'
+      "<td>The wage factor is a density rather than a ratio against a reference "
+      "category: it is highest at the centre of the household's own offer "
+      "distribution and falls away from it at a rate set by the common spread. "
+      "A package paying far above or below that centre is correspondingly less "
+      "available.</td></tr>"
+      "</tbody></table></div>")
+    W("<p>Multiply the four ratios and you have how much more, or less, available "
+      "this package is for this household than the reference package &mdash; "
+      "before any preference has been consulted. The household's <em>choice</em> "
+      "then weighs that availability against how it ranks the package. Two "
+      "households with identical tastes and different values of the group "
+      "unemployment rate face different products at step 2, and that difference "
+      "is exactly what the decomposition of sections&nbsp;14&ndash;16 "
+      "attributes.</p>")
+    W(box("warn", "What these ratios are, and are not",
+          "<p>They are properties of the <b>estimated offer density</b>: how much "
+          "weight the fitted distribution of available packages places on one "
+          "region of the package space relative to another. They are not "
+          "vacancy counts, they are not causal effects of any policy or "
+          "characteristic, and they are conditional on the specification and the "
+          "exclusion restrictions above.</p>"))
+
+    W(box("say", "The one-sentence version",
+          "<p>&ldquo;A household&rsquo;s observed job maximises its preferences "
+          "over a set of jobs it did not choose; the model estimates the density "
+          "of that set and the preferences jointly, with the tax-benefit system "
+          "solved exactly at every alternative.&rdquo;</p>"))
 
     return H

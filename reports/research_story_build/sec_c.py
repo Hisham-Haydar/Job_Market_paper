@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sections 13-18: the welfare measure, the decomposition, the headline results,
 endowments and needs, geography, and the common-opportunity benchmark."""
-from common import n, a, lit, box
+from common import n, a, lit, box, math, imath
 
 
 def sections(F):
@@ -189,7 +189,7 @@ def sections(F):
           "and environments are correlated in a partly offsetting way: people adapt to "
           "the environment they face. Imposing a single reference preference on everyone "
           "removes that adaptation, so households in bad environments no longer make the "
-          "best of them, and the spread widens. This is not a numerical artefact and it "
+          "best of them, and the spread widens. This is not a numerical accident and it "
           "is not a bug &mdash; it is the single most important thing to understand "
           "about the decomposition, because it is why the two methods below give "
           "different answers.</p>"))
@@ -319,6 +319,232 @@ def sections(F):
     W(F.fig("figW03_nested_environment",
             "The environment opened into job access, earning opportunities, and "
             "household endowments and needs."))
+
+    # ================================================== the operators, exactly
+    W("<h3>14.3 The four operators, in words and in mathematics</h3>")
+    W("<p>Each counterfactual replaces one object with a common reference and "
+      "holds everything else at the household&rsquo;s own value. The welfare "
+      "measure is then re-computed from scratch on the modified household and "
+      "the inequality of the resulting distribution is recorded. Each operator "
+      "below is stated twice: once as an English sentence of the form <em>we "
+      "replace X by its reference, holding Y fixed, and re-evaluate welfare</em>, "
+      "and once as a formula.</p>")
+
+    W("<h4>Equalising preferences</h4>")
+    W("<p><b>In words.</b> We replace the household&rsquo;s own preference block "
+      "&mdash; the leisure weight, its age and child terms, and both "
+      "Box&ndash;Cox curvatures &mdash; by the reference preference block, "
+      "holding its opportunity density, its wage-offer location and its budget "
+      "fixed, and re-evaluate welfare. The reference block appears on "
+      "<em>both</em> sides of the money-metric inversion, so the household is "
+      "valued throughout as if it had the reference tastes.</p>")
+    W(math(r"\Theta^{\text{pref}}_i \;\longmapsto\; \bar\Theta^{\text{pref}},"
+           r"\qquad\text{everything else at its own value},",
+           "equalising preferences"))
+    W("<p>and " + imath(r"W^1_i") + " is re-solved with " + imath(r"\bar\Theta^{\text{pref}}")
+      + " in the utility function on the attained side and on the reference side "
+      "alike.</p>")
+
+    W("<h4>Equalising job access</h4>")
+    W("<p><b>In words.</b> We replace each household&rsquo;s access index &mdash; "
+      "the employment, hours and occupation availability it faces &mdash; by the "
+      "population reference access index, holding its wage-offer location, its "
+      "budget and its preferences at their own values, and re-evaluate welfare. "
+      "A household that faced a thin set of reachable jobs is given the common "
+      "one; what its jobs <em>pay</em>, and what it can buy with that pay, does "
+      "not move.</p>")
+    W(math(r"\bigl(g^{E}_i,\,g^{H}_i,\,g^{\mathrm{Occ}}_i\bigr)"
+           r"\;\longmapsto\;\bigl(\bar g^{E},\,\bar g^{H},\,\bar g^{\mathrm{Occ}}\bigr),"
+           r"\qquad g^{W}_i,\ B_i,\ \Theta^{\text{pref}}_i \ \text{fixed}.",
+           "equalising job access"))
+
+    W("<h4>Equalising earning opportunities</h4>")
+    W("<p><b>In words.</b> We replace the education and experience loadings that "
+      "position a household&rsquo;s wage-offer distribution by the reference "
+      "loadings, holding its access, its budget and its preferences fixed, and "
+      "re-evaluate welfare. The household keeps the same set of reachable jobs; "
+      "what changes is where the pay attached to those jobs sits.</p>")
+    W(math(r"\mu_i(\cdot)\;\longmapsto\;\bar\mu(\cdot):\quad"
+           r"\bigl(\beta_{wL}L_i,\ \beta_{wH}H_i,\ \beta_{wx}x_i,"
+           r"\ \beta_{wx^2}x_i^{2}\bigr)\ \longmapsto\ \text{reference loadings},",
+           "equalising earning opportunities"))
+    W("<p>with the occupation shifts " + imath(r"\delta_{\mathrm{occ}}")
+      + " and the common spread " + imath(r"\sigma") + " unchanged, because they "
+      "are properties of the package and of the market rather than of the "
+      "person.</p>")
+
+    W("<h4>Equalising endowments and needs</h4>")
+    W("<p><b>In words.</b> We replace the household&rsquo;s budget-side "
+      "characteristics &mdash; its non-labour income, its composition and its "
+      "housing costs &mdash; by a common <b>medoid profile</b>, a single actual "
+      "profile chosen to sit at the centre of the observed distribution rather "
+      "than an average that might correspond to no real household. Every "
+      "alternative is then <b>re-priced through the tax-benefit system</b> at "
+      "that profile, so the household faces the budget the reference profile "
+      "would generate. Its access, its wage-offer location and its preferences "
+      "are held fixed.</p>")
+    W(math(r"\bigl(y^{\text{non-labour}}_i,\ \text{composition}_i,"
+           r"\ \text{housing}_i\bigr)\;\longmapsto\;\bar D,"
+           r"\qquad c_{ij}\;\longmapsto\;\mathrm{TaxBen}\bigl(w_{ij},h_{ij},\bar D\bigr).",
+           "equalising endowments and needs"))
+    W("<p><b>The equivalence scale travels with this operator, and that is "
+      "load-bearing.</b> The scale is a function of household composition, and "
+      "composition is one of the things this operator replaces. If the scale "
+      "were frozen at each household&rsquo;s observed value while composition "
+      "moved, the state in which everything has been equalised would still show "
+      "the inequality of the frozen scales, and the accounting would not close. "
+      "Moving the scale with the factor is what makes the fully-equalised state "
+      "numerically zero.</p>")
+
+    W("<h4>The common quadrature support &mdash; a numerical device, not an "
+      "operator</h4>")
+    W("<p><b>In words.</b> All households are evaluated on <em>one</em> set of "
+      "integration nodes. This is a statement about arithmetic, not about the "
+      "economy: without it, the fact that two households happened to be "
+      "integrated over different node sets could show up as a difference in "
+      "welfare, and finite integration support would be counted as inequality. "
+      "It is <b>not</b> a common list of jobs, and no household is claimed to "
+      "face the same opportunities as any other because of it. The economics is "
+      "entirely in " + imath(r"g_{ij}") + ", which remains household-specific "
+      "throughout.</p>")
+
+    # ------------------------------------------------------- the RUM benchmark
+    W("<h3>14.4 What the common-opportunity benchmark actually is</h3>")
+    W(box("warn", "It is a replacement, not a switch",
+          "<p>The benchmark of section&nbsp;18 is <b>not</b> the model with a "
+          "factor switched off, and reading it that way gets the comparison "
+          "wrong. It is a <b>different model</b>, re-estimated from scratch, in "
+          "which every household&rsquo;s own opportunity density "
+          + imath("g_i") + " is replaced by a <b>single population-common "
+          "density</b> " + imath(r"\bar g") + ", normalised to integrate to "
+          "one:</p>"
+          + math(r"g_{ij}\;\longmapsto\;\bar g_j,\qquad "
+                 r"\int \bar g \,=\,1,\qquad "
+                 r"\hat\Theta^{\text{pref}}\ \text{re-estimated against}\ \bar g .")
+          + "<p>Two things follow, and both matter for how section&nbsp;18 is "
+          "read. First, the preference block is <b>re-estimated</b> against the "
+          "common density: the benchmark's tastes are not the preferred "
+          "model's tastes, which is exactly why the sex difference in the "
+          "valuation of leisure comes out with the opposite sign. Second, "
+          "because " + imath(r"\bar g") + " is a proper density rather than a "
+          "constant, the benchmark is a genuine random-utility model of the "
+          "conventional kind &mdash; every household faces the same choice set "
+          "&mdash; and not a degenerate version of this one.</p>"))
+
+    # ============================================ the classification argument
+    W("<h3>14.5 Why these objects are preferences, job access, earning "
+      "opportunities and endowments and needs &mdash; and where the line is a "
+      "choice</h3>")
+    W("<p>A decomposition is only as meaningful as its partition. Every "
+      "estimated object in section&nbsp;6 is assigned to exactly one channel, "
+      "and the assignment is argued here rather than asserted. Some of it is "
+      "deduction from what the object <em>is</em>. Some of it is a defensible "
+      "choice that the data cannot settle, and those places are named "
+      "explicitly at the end.</p>")
+
+    W('<div class="scroll"><table><thead><tr><th>Channel</th>'
+      "<th>What is in it</th><th>Why it belongs there</th>"
+      "</tr></thead><tbody>"
+
+      "<tr><td><b>Preferences</b></td>"
+      "<td>The utility parameters: both leisure weights with their age and child "
+      "terms, both leisure curvatures, and the consumption curvature.</td>"
+      "<td>These are the objects that say how a household <em>ranks</em> "
+      "packages it can reach. They enter " + imath("u_{ij}") + " and nothing "
+      "else. Two households with identical opportunity densities and different "
+      "preference parameters face the same set of jobs and value it "
+      "differently &mdash; which is precisely the responsibility side of the "
+      "cut this paper is making.</td></tr>"
+
+      "<tr><td><b>Job access</b></td>"
+      "<td>The employment margin and its geographic tilts; the hours-offer "
+      "density including the statutory-week peak; occupation availability by "
+      "sex.</td>"
+      "<td>All three govern <em>which packages are available</em>, and none of "
+      "them says anything about what a package pays. That is the dividing line, "
+      "and it is a property of the functional form rather than a judgement: "
+      + imath(r"g^{E}, g^{H}, g^{\mathrm{Occ}}") + " are densities over the "
+      "employment, hours and occupation coordinates of a package, and the wage "
+      "coordinate does not appear in any of them.</td></tr>"
+
+      "<tr><td><b>Earning opportunities</b></td>"
+      "<td>The wage-offer location: its intercept, the education loadings, the "
+      "experience profile, and the occupation wage shifts.</td>"
+      "<td>This is the <em>pay attached to a package</em>, given the "
+      "household&rsquo;s observed education and experience. It is the only "
+      "block in which the wage coordinate appears. Calling it earning "
+      "opportunities rather than earning ability is deliberate: it is what the "
+      "market offers someone with this observed schooling and this observed "
+      "experience, and it is estimated from choices over packages, not from a "
+      "wage equation fitted to the employed.</td></tr>"
+
+      "<tr><td><b>Endowments and needs</b></td>"
+      "<td>Non-labour income; household composition; housing costs; and the "
+      "tax-benefit system&rsquo;s operation on all three.</td>"
+      "<td>These reach welfare only through the <em>budget</em>. They change "
+      "what a given job is worth to a household without changing which jobs are "
+      "available or what any job pays. They are the part of a household&rsquo;s "
+      "circumstances that has nothing to do with the labour market it "
+      "faces.</td></tr>"
+      "</tbody></table></div>")
+
+    W(box("warn", "Four places where the line is a choice, not a deduction",
+          "<p>Each of these is a decision the data do not adjudicate. They are "
+          "listed so that a reader can disagree with a specific one rather than "
+          "with the exercise.</p>"
+          "<ol>"
+          "<li><b>Household composition enters twice, and is counted once.</b> "
+          "It shapes the equivalence scale &mdash; how much income a household "
+          "needs to reach a given standard of living &mdash; and it also enters "
+          "the tax-benefit schedule, through family benefits and the tax "
+          "treatment of dependants. Both routes are placed in endowments and "
+          "needs, and the <b>scale travels with the factor</b> when it is "
+          "equalised. The alternative, splitting the scale out as a fifth "
+          "channel, would count composition twice and the accounting would no "
+          "longer close.</li>"
+          "<li><b>The statutory-week peak is placed in the offer density, not "
+          "in preferences.</b> A mass point at the "
+          + lit("35", "the statutory weekly hours in France, an institution")
+          + "-hour week could in principle be a "
+          "feature of what employers post <em>or</em> a taste for the "
+          "conventional week. The identification literature's own warning "
+          "applies with full force here: the induced utility and the hours-offer "
+          "density are not separately identified non-parametrically, so "
+          "<b>the data do not adjudicate this placement</b>. The model puts it "
+          "in availability and says so; an independent labour force survey the "
+          "estimation never saw shows the same concentration, which is "
+          "corroboration, not proof.</li>"
+          "<li><b>The consumption curvature is common across the sexes by "
+          "construction, and was never tested.</b> Section&nbsp;7 gives the two "
+          "reasons &mdash; the consumption coefficient is the scale numeraire of "
+          "the money metric, and a sex-specific curvature was never proposed. "
+          "It sits in preferences because that is what it is; what is a choice "
+          "is holding it common, and it is the untested assumption closest to "
+          "the headline.</li>"
+          "<li><b>The access density may mix capability with availability.</b> "
+          "What is estimated is how much offer density sits on working packages "
+          "for a household with these circumstances. That can reflect the "
+          "market this household faces, or something about the household that "
+          "the observed variables do not capture and that a reader might call "
+          "capability. <b>The design does not separate them</b>, so nothing here "
+          "should be read as a pure demand-side quantity, and no ordering of "
+          "'the market's fault' against 'the person's endowment' is "
+          "claimed.</li>"
+          "</ol>"))
+
+    W(box("key", "The test a classification has to pass",
+          "<p>The partition is not a matter of taste alone, because it has to "
+          "close. Every household-varying object in the estimation frame is "
+          "assigned to exactly one channel: none is assigned twice, none is left "
+          "unassigned, and none is named in the accounting but absent from the "
+          "frame. Because the assignment is exhaustive, the state in which all "
+          "four channels are replaced by their references is a state in which "
+          "households differ in nothing at all &mdash; and its measured "
+          "inequality is "
+          + n("state_I11_female_raw", "sci", 1) + " Gini points, numerically "
+          "zero. <b>That number is the audit of the classification.</b> A "
+          "partition with a gap in it would leave a residue there, and this one "
+          "does not.</p>"))
 
     # ==================================================================== 15 ==
     W('<h2 id="s15" class="exempt">15. Headline results</h2>')

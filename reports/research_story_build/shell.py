@@ -27,6 +27,9 @@ body{margin:0;background:var(--bg);color:var(--ink);
 h1{font-size:31px;line-height:1.22;margin:.1em 0 .1em;letter-spacing:-.01em}
 .sub{color:var(--mut);font-size:15.5px;margin:0 0 4px}
 .bandnote{color:var(--mut);font-size:10.5px;font-weight:400;white-space:nowrap}
+.math{margin:14px 0 16px;overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.math .lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}
+.mathnote{color:var(--mut);font-size:13.5px;margin:-8px 0 16px}
 h2{font-size:23px;margin:2.4em 0 .5em;padding-top:.45em;border-top:2px solid var(--ink);
   line-height:1.25;letter-spacing:-.005em}
 h3{font-size:17.5px;margin:1.7em 0 .4em;color:var(--accent)}
@@ -343,6 +346,20 @@ tocSpy();
 """
 
 
+# MathJax 3: inline \( ... \), display \[ ... \].  The self-check walks the
+# rendered DOM, so maths is marked `eq` and excluded from the numeral audit the
+# same way the ASCII equation blocks always were.
+MATHJAX_CONFIG = r"""
+window.MathJax = {
+  tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
+        processEscapes: true},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreHtmlClass: 'no-mathjax'},
+  chtml: {scale: 1.0, displayAlign: 'left', displayIndent: '0'}
+};
+"""
+
+
 def page(title: str, toc_html: str, body_html: str, nor_json: str, aux_json: str) -> str:
     return (
         "<!doctype html>\n"
@@ -357,6 +374,10 @@ def page(title: str, toc_html: str, body_html: str, nor_json: str, aux_json: str
         "</div>\n"
         '<script id="NOR-DATA" type="application/json">' + nor_json + "</script>\n"
         '<script id="AUX-DATA" type="application/json">' + aux_json + "</script>\n"
+        "<script>" + MATHJAX_CONFIG + "</script>\n"
+        '<script id="MathJax-script" async '
+        'src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/'
+        'tex-mml-chtml.min.js"></script>\n'
         "<script>" + JS + "</script>\n"
         "</body></html>\n"
     )
