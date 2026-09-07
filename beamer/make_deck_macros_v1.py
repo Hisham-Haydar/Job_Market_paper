@@ -398,6 +398,24 @@ def build(sprint, out):
             m.num('VBand'+stem, half, src, dp=1, pct=True)
     for stem in ['Pref','Env']:
         m.num('VMale'+stem, male['C_'+stem.lower()+'_over_I00'], src, dp=1, pct=True)
+    # ---- slide 15b: the nested endowments/needs split (R-263) -------------
+    ne_p = sprint / 'runs/nested_endowments/ne_step4_nested_v1.json'
+    if ne_p.is_file():
+        ne = json.loads(ne_p.read_text(encoding='utf-8'))
+        if ne.get('status') != 'NE_STEP4_DONE':
+            raise SystemExit('nested endowments artefact is not NE_STEP4_DONE')
+        nsrc = 'SPRINT/runs/nested_endowments/ne_step4_nested_v1.json'
+        fr = ne['results']['singles_female']['raw']['contributions']
+        m.num('VNestRes', fr['C_nonlabour_over_I00']['estimate'], nsrc, dp=0, pct=True)
+        m.num('VNestComp', fr['C_composition_over_I00']['estimate'], nsrc, dp=0, pct=True)
+        # slide 13 prints the attributed share against the one-factor effect,
+        # so both carry one decimal: the whole point is that they differ.
+        m.num('VNestCompAttr', fr['C_composition_over_I00']['estimate'], nsrc,
+              dp=2, pct=True)
+        m.num('VNestCompAlone',
+              ne['results']['singles_female']['raw']['one_factor_effects']
+              ['one_factor_composition_share_of_I00'], nsrc, dp=2, pct=True)
+
     src = 'SPRINT/tables/parameter_uncertainty_v1.csv'
     m.num('VParEnvLo',se['parameter_lo_2p5'],src,dp=1,pct=True)
     m.num('VParEnvHi',se['parameter_hi_97p5'],src,dp=1,pct=True)

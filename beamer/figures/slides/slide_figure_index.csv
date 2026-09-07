@@ -11,6 +11,7 @@ coefficients_3_slide.pdf,fig08_coefficients_by_block.csv,blocks: earning capacit
 observed_hours_slide.pdf,fig01_observed_hours_35h_peak.csv,observed hours; statutory band shaded
 headline_references_slide.pdf,figW02_headline_decomposition.csv,raw; signed contributions; both reference conventions
 regional_profiles_slide.pdf,figG02_regional_access_environments.csv,fixed profiles across regional access environments
+nested_needs_slide.pdf,runs/nested_endowments/ne_step4_nested_v1.json,nested endowments/needs split; both bases; both reference arms
 household_a_employment_slide.pdf,figE1_matched_pair.csv,household A / employment mass
 household_a_hours_slide.pdf,figE1_matched_pair.csv,household A / hours_offer_density / divided by employment mass
 household_a_occupation_slide.pdf,figE1_matched_pair.csv,household A / occupation_offer_probability / divided by employment mass

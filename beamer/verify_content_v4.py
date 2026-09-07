@@ -169,10 +169,10 @@ def main(build='build',jobs=None):
     check('number macros equal regenerated source values',probe.read_bytes()==(HERE/'deck_numbers_v1.tex').read_bytes())
     probe.unlink()
     print('=== 3. frames, orders and pages ===')
-    check('exactly 25 running-order slides',len(frames)==len(slides)==25)
+    check('exactly 26 running-order slides',len(frames)==len(slides)==26)
     check('exact 45-minute order including insertions',ids==[s['number'] for s in slides],str(ids))
     check('exact unchanged 25-minute order',[n for n,t in zip(ids,tags) if t=='shortdeck']==short==[1,2,3,5,6,7,9,12,13,14,15,16,17,18,22],str(short))
-    check('the final plan has eight full-only slides',tags.count('longdeck')==8)
+    check('the final plan has nine full-only slides',tags.count('longdeck')==9)
     check('the final plan has two merges',tags.count('mergedaway')==2)
     check('B1 in three blocks, then B2--B6',len(backups)==8 and
           [re.search(r'B\d',argument(f,'headlineframe')).group() for f in backups]==['B1']*3+['B2','B3','B4','B5','B6'])
@@ -279,7 +279,7 @@ def main(build='build',jobs=None):
     # v3's <=12-word cap is superseded by the exact longer author text.
     # The authored-prose gates above retain and strengthen its purpose:
     # prohibit unauthorised copy instead of silently accepting extra words.
-    check('25-slide content replaces the legacy 12-word ceiling',len(slides)==25,'word counts reported; verbatim content gates enforced above')
+    check('26-slide content replaces the legacy 12-word ceiling',len(slides)==26,'word counts reported; verbatim content gates enforced above')
     print('=== 7. slide figure fonts and text ===')
     style=json.loads((slidedir/'slide_style_v1.json').read_text())
     pts={k:v for k,v in style.items() if k.endswith('size') and isinstance(v,(int,float))}

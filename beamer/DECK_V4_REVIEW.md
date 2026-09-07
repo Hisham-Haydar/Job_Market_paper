@@ -6,9 +6,9 @@ Verifier: **PASS — 56/56 checks.** All three logs have zero errors, zero overf
 
 | Build | Pages | PDF | Text export |
 |---|---:|---|---|
-| Full | 38 | [Open](build/JMP_seminar_deck_v1.pdf) | [Text](build/JMP_seminar_deck_v1_text.txt) |
+| Full | 39 | [Open](build/JMP_seminar_deck_v1.pdf) | [Text](build/JMP_seminar_deck_v1_text.txt) |
 | 25-minute | 23 | [Open](build/JMP_seminar_deck_v1_25min.pdf) | [Text](build/JMP_seminar_deck_v1_25min_text.txt) |
-| Rehearsal | 38 | [Open](build/JMP_seminar_deck_v1_rehearsal.pdf) | [Text](build/JMP_seminar_deck_v1_rehearsal_text.txt) |
+| Rehearsal | 39 | [Open](build/JMP_seminar_deck_v1_rehearsal.pdf) | [Text](build/JMP_seminar_deck_v1_rehearsal_text.txt) |
 
 ## Per-slide table
 
@@ -30,10 +30,11 @@ Counts are measured from the PDF text layer: headline, prose, table/equation tex
 | 10 | What the data pin down, and what remains conditional. | text | 1 | 43 |
 | 11 | An independent source puts the 35-hour concentration at 37%; the sample at 34%; the model at 35%. | external | 1 | 49 |
 | 12 | Equivalent income at a common reference pay, under four preference–environment states. | equations + table | 1 | 83 |
-| 13 | A two-player Shapley game: preferences against the complete non-preference environment. | equations + table | 1 | 93 |
+| 13 | A two-player Shapley game: preferences against the complete non-preference environment. | equations + table | 1 | 99 |
 | 13b | The distribution of equivalent income under the four states | welfare_distributions | 1 | 42 |
 | 14 | The non-preference environment accounts for 94% of measured welfare inequality; preferences for 6%. | headline_references | 1 | 50 |
 | 15 | Household endowments and needs 58%, earning opportunities 21%, job access 15%; job opportunities together 36%. | environment | 1 | 54 |
+| 15b | Inside the budget channel: non-labour resources 46%, household composition 12% of inequality; equal once equivalized | nested_needs | 1 | 65 |
 | 16 | Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences. | text | 1 | 55 |
 | 17 | The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste. | benchmark | 1 | 55 |
 | 18 | The preference share is the sensitive margin; the environment's internal structure is stable. | table | 1 | 50 |
@@ -91,4 +92,4 @@ The build regenerates number macros and the seven v4.1 panels, reuses existing v
 
 Machine-readable evidence: [verification](build/verification_v4.json), [slide table](build/slide_table_v4.json).
 
-Content SHA-256: `7fc32780abdad8fc5a96741d38ad46c59efa7fd4d422ede6a21433b041572f25`.
+Content SHA-256: `d3e49516a4e69ec1b8482188ba13d3f7d36fa7a5960e07a54445267058e8df01`.

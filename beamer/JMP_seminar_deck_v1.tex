@@ -278,7 +278,7 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
  C_{\mathrm{env}}&=\tfrac12[(I_{00}-I_{01})+(I_{10}-I_{11})]=\VLevelEnv
 \end{aligned}
 \]}
-{\small\raggedright equalizing the environment alone reduces inequality by \VEnvAlone{}\%, equalizing preferences alone raises it by \VPrefAlone{}\%; the Shapley attribution averages the two orders and gives the environment \VRoundEnv{}\%.\par}
+{\small\raggedright equalizing the environment alone reduces inequality by \VEnvAlone{}\%, equalizing preferences alone raises it by \VPrefAlone{}\%; the Shapley attribution averages the two orders and gives the environment \VRoundEnv{}\%; composition: attributed \VNestCompAttr{}\%, equalized alone \VNestCompAlone{}\%.\par}
 \vfill
 \caveat{the environment is then split by an Owen value into job access, earning opportunities, and household endowments and needs.}\par
 \note{Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions: equalizing the environment by itself reduces inequality by 77 per cent, and equalizing preferences by itself raises it by 10 per cent; the Shapley value, which averages over the order in which preferences and environment are equalized, attributes 94 per cent to the environment. An attribution is never a quantity removed. Every share on this slide is on the raw welfare basis; the equivalized basis is the companion, and the two are always named.}
@@ -315,6 +315,17 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \caveat{integration bands \ensuremath{\pm} \VBandNeeds{} / \ensuremath{\pm} \VBandEarn{} / \ensuremath{\pm} \VBandAcc{}; ordering identical under both reference conventions and under equivalization.}\par
 \note{Within the environment the budget side — non-labour income, household composition and their tax-benefit treatment — is the largest component at 58 per cent. Job access and earning opportunities together, the market-side contribution, account for 36 per cent of measured inequality. This ordering does not change across references or equivalence scales, and it is a structural, model-conditional result, not a claim that job opportunities are unimportant.}
 \end{frame}}
+
+% SLIDE 15b
+\longdeck{%
+\begin{frame}[t]
+\headlineframe{Inside the budget channel: non-labour resources \VNestRes{}\%, household composition \VNestComp{}\% of inequality; equal once equivalized}
+\slidefig{nested_needs}
+\vfill
+\caveat{nested Shapley split of endowments and needs; two factors; the tax-benefit schedule is common to all and is not a separate factor}\par
+\note{Inside the budget channel, non-labour resources do most of the work on the raw basis - forty-six per cent of measured inequality against twelve for household composition. Once welfare is equivalized for needs, the two are equal, and which one leads depends on the reference convention: the equivalence scale does first-order work here. Composition is also the clearest case of why attribution and equalization differ: it is attributed twelve per cent, but equalizing it alone removes two.}
+\end{frame}}
+
 
 % SLIDE 16
 \shortdeck{%

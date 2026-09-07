@@ -225,7 +225,8 @@ environment.
 
                              Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
     equalizing the environment alone reduces inequality by 77%, equalizing preferences alone raises it by
-   10%; the Shapley attribution averages the two orders and gives the environment 94%.
+   10%; the Shapley attribution averages the two orders and gives the environment 94%; composition:
+   attributed 12.45%, equalized alone 2.00%.
 
    the environment is then split by an Owen value into job access, earning opportunities, and household
    endowments and needs.

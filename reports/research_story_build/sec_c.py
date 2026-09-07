@@ -229,6 +229,16 @@ def sections(F):
           "preference&ndash;environment interaction: bringing the environment in "
           "<em>after</em> preferences have been equalized removes more inequality than "
           "bringing it in first, and the Shapley value counts both orders.</p>"
+          "<p><b>A second example, where the gap is far larger.</b> The environment "
+          "is the mild case: its two numbers differ by about a fifth. One level "
+          "down, <b>household composition</b> is attributed "
+          + n("C_composition_female_raw_share", "pct", 2)
+          + " of baseline inequality, while equalizing it alone reduces inequality by "
+          + n("one_factor_composition_raw", "pct", 2)
+          + " &mdash; a gap of more than six-fold in the same quantity, on the same "
+          "basis. A factor that shares most of its work with its partner is attributed "
+          "far more than it removes by itself. Section&nbsp;16 gives that split in "
+          "full.</p>"
           "<p><b>The sentence to avoid.</b> Never say a Shapley share &ldquo;removes "
           "<em>x</em> per cent of inequality&rdquo;. It is an average over orders, not "
           "the result of any single intervention. The number that answers &ldquo;what if "
@@ -472,28 +482,94 @@ def sections(F):
           "this paper does not answer that question and would need a policy module to "
           "do so.</p>"))
 
-    W("<h3>Splitting it further: the current status</h3>")
+    W("<h3>Splitting it further: which ingredient carries the channel</h3>")
     W("<p>The obvious next question is which of the two ingredients &mdash; resources or "
-      "composition &mdash; carries the channel. A nested split of exactly that kind, "
-      "using the same Owen machinery one level deeper, has been constructed and run. Its "
-      "structural checks pass: the coalition states are coherent, the sub-players act "
-      "through distinct budget panels rather than being mechanically indistinguishable, "
-      "and the split is a genuine nesting rather than a re-decomposition.</p>")
-    W(box("warn", "Status at the time of writing: not admitted, and therefore not "
-                  "reported as a result",
-          "<p>The nested endowments-and-needs split is <b>still under economics review</b>. "
-          "It has not been admitted, and no ADMITTED verdict "
-          "exists for it on disk at build time.</p>"
-          "<p><b>Its numbers are therefore not printed in this document.</b> Reporting an "
-          "unadmitted split alongside admitted results would put two different evidential "
-          "standards in the same table. If it is admitted before the seminar, this "
-          "section gains a table; if it is not, the qualitative account above is what "
-          "should be said.</p>"
-          "<p><b>What to say if asked in the meantime:</b> that the channel combines "
-          "non-labour resources with composition and needs; that separating them is a "
-          "well-posed exercise using the same machinery, already built; and that it is "
-          "under review rather than complete. That is a better answer than a "
-          "number.</p>"))
+      "composition &mdash; carries the channel. The same Owen machinery, applied one "
+      "level deeper, answers it. The partition identity closes at machine precision on "
+      "every cell, with no renormalization, so this is a genuine nesting rather than a "
+      "second decomposition.</p>")
+    W('<div class="scroll"><table><thead><tr><th>Factor</th>'
+      '<th class="num">Raw, Gini points</th><th class="num">Raw, % of I00</th>'
+      '<th class="num">Raw, % of the channel</th>'
+      '<th class="num">Equivalized, Gini points</th>'
+      '<th class="num">Equivalized, % of I00</th>'
+      '<th class="num">Equivalized, % of the channel</th></tr></thead><tbody>'
+      "<tr><td><b>Non-labour resources</b></td>"
+      '<td class="num">' + n("C_nonlabour_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_nonlabour_female_raw__rqmc_band", "range")
+      + "</small></td>"
+      '<td class="num">' + n("C_nonlabour_female_raw_share", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_nonlabour_female_raw_share_of_needs", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_nonlabour_female_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("C_nonlabour_female_equivalized__rqmc_band", "range") + "</small></td>"
+      '<td class="num">' + n("C_nonlabour_female_equivalized_share", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_nonlabour_female_equivalized_share_of_needs", "pct", 2)
+      + "</td></tr>"
+      "<tr><td><b>Household composition and needs</b></td>"
+      '<td class="num">' + n("C_composition_female_raw", "f4")
+      + '<br><small class="bandnote">' + n("C_composition_female_raw__rqmc_band", "range")
+      + "</small></td>"
+      '<td class="num">' + n("C_composition_female_raw_share", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_composition_female_raw_share_of_needs", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_composition_female_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("C_composition_female_equivalized__rqmc_band", "range") + "</small></td>"
+      '<td class="num">' + n("C_composition_female_equivalized_share", "pct", 2) + "</td>"
+      '<td class="num">' + n("C_composition_female_equivalized_share_of_needs", "pct", 2)
+      + "</td></tr>"
+      "</tbody></table></div>")
+    W("<p class=\"sub\">Female-primary reference. Bands are eight-scramble "
+      "integration precision. The male structural-zero arm is below; the two are "
+      "reported as a pair and never averaged.</p>")
+
+    W("<p><b>About four to one raw, and level once welfare is equivalized.</b> "
+      "On the raw basis non-labour resources carry "
+      + n("C_nonlabour_female_raw_share", "pct", 2) + " of measured inequality against "
+      + n("C_composition_female_raw_share", "pct", 2) + " for composition. On the "
+      "coalition-consistent equivalized basis the two are "
+      + n("C_nonlabour_female_equivalized_share", "pct", 2) + " and "
+      + n("C_composition_female_equivalized_share", "pct", 2)
+      + " &mdash; a gap well inside overlapping bands. The equivalence scale is doing "
+      "first-order work here, not adjusting a level.</p>")
+
+    W(box("warn", "Which factor leads is reference-dependent, and is not claimed",
+          "<p>Under the <b>male structural-zero</b> convention the equivalized ordering "
+          "<em>reverses</em>: composition "
+          + n("C_composition_male_equivalized_share", "pct", 2) + " against resources "
+          + n("C_nonlabour_male_equivalized_share", "pct", 2)
+          + ". Under the female-primary convention the same comparison is a dead heat "
+          "inside the band. <b>The raw ordering &mdash; resources first &mdash; is the "
+          "one that holds under both conventions</b>, and it is the only ordering "
+          "claimed.</p>"
+          "<p>Raw, male arm: resources "
+          + n("C_nonlabour_male_raw_share", "pct", 2) + ", composition "
+          + n("C_composition_male_raw_share", "pct", 2) + ".</p>"))
+
+    W(box("say", "Composition is the clearest case of why attribution is not "
+                 "equalization",
+          "<p>Composition is <b>attributed</b> "
+          + n("C_composition_female_raw_share", "pct", 2)
+          + " of baseline inequality. Equalizing it <b>alone</b> reduces inequality by "
+          + n("one_factor_composition_raw", "pct", 2)
+          + " &mdash; more than a six-fold gap in the same quantity, on the same basis, "
+          "in the same table.</p>"
+          "<p>The Shapley value averages over the orders in which the factors are "
+          "equalized. For a factor that shares most of its work with its partner, that "
+          "average sits far above what the factor removes by itself. The other legs, "
+          "raw and equivalized: resources alone "
+          + n("one_factor_nonlabour_raw", "pct", 2) + " and "
+          + n("one_factor_nonlabour_equivalized", "pct", 2) + "; the whole channel "
+          + n("one_factor_needs_total_raw", "pct", 2) + " and "
+          + n("one_factor_needs_total_equivalized", "pct", 2)
+          + ". The one-factor effects do not depend on the reference convention.</p>"))
+
+    W("<p><b>There is no third factor.</b> The tax-benefit schedule is one common "
+      "policy function applied to every household, not a household-specific object "
+      "that could be swapped between them, so it is <b>retained qualitatively</b> and "
+      "is not a factor of the split. Neither number above is a causal contribution of "
+      "the tax-benefit system: both are model-implied attributions under a fixed "
+      "policy.</p>")
 
     W("<h3>Why the channel is as large as it is</h3>")
     W("<p>The magnitude surprises people, so it is worth having the intuition ready. "

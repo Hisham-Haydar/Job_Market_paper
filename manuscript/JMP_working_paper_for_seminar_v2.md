@@ -2182,27 +2182,52 @@ throughout.
    The design does not identify that ordering, so no ranking is claimed.
 4. **The two reference conventions are reported as a range and never averaged.**
 
-**What is inside the endowments-and-needs channel, qualitatively.** The largest
-nested contribution is also the least internally resolved, and it is worth saying
-plainly what it contains. Two economically distinct ingredients travel together
-in it. The first is **non-labour resources**: the household's non-labour income
-and the budget-side characteristics that condition its claims on the tax–benefit
-system. The second is **composition and needs**: household size and the
-demographic background that determines what a given income has to cover, which is
-also what the equivalence scale of §3.5 responds to. The two act through
-different parts of the same budget mapping — the first mostly through what enters
-the schedule, the second mostly through how the schedule and the scale respond to
-who is in the household — and a reader is entitled to ask which does more of the
-work.
+**Inside the endowments-and-needs channel.** The largest nested contribution
+splits two ways, by the same Owen machinery one level deeper. **Non-labour
+resources** are the household's non-labour income and the budget-side
+characteristics conditioning its claims on the tax–benefit system.
+**Household composition and needs** are household size and the demographic
+background determining what a given income has to cover — which is also what the
+equivalence scale of §3.5 responds to. On the preferred model with the female
+reference:
 
-**This paper does not answer that question, and no split of the channel is
-reported here.** Separating them requires its own coalition-consistent
-construction and its own exhaustiveness test, on the same standard as the four
-channels above; until such a construction has passed that test, the honest
-statement is that the channel is large and internally undecomposed. Nothing in
-§7 or §11 should be read as attributing the size of this channel to either
-ingredient, and the qualitative pairing above is offered as a description of the
-channel's contents, not as a finding about their relative size.
+| factor | raw, Gini points | raw, % of $I^{00}$ | raw, % of the channel | equiv., Gini points | equiv., % of $I^{00}$ | equiv., % of the channel |
+|---|---:|---:|---:|---:|---:|---:|
+| non-labour resources | 0.061402 ± 0.001702 | 45.73 ± 1.80 | 78.59 ± 1.81 | 0.054897 ± 0.001583 | 33.25 ± 1.33 | 50.30 ± 1.30 |
+| household composition and needs | 0.016724 ± 0.001493 | 12.45 ± 1.00 | 21.41 ± 1.81 | 0.054233 ± 0.001431 | 32.85 ± 0.68 | 49.70 ± 1.30 |
+
+*Bands are eight-scramble integration precision. The male structural-zero arm is
+in Appendix G; the two arms are reported as a pair and never averaged. The
+partition identity $C_{\mathrm{nonlabour}}+C_{\mathrm{composition}}=C_{\mathrm{needs}}$
+closes at machine precision on every row — the largest residual over the four
+cells is $1.4\times10^{-17}$ — with no renormalisation.*
+
+**The split is about four to one on the raw basis and level once welfare is
+equivalized, and that movement is the result.** Raw, non-labour resources carry
+45.7 per cent of measured inequality against 12.5 for composition, a ratio of
+3.7 to 1. On the coalition-consistent equivalized basis the two are 33.2 and
+32.8 — a gap of 0.4 percentage points, well inside bands that overlap — so the
+equivalence scale is doing first-order work here rather than adjusting a level.
+**Which factor leads is therefore reference-dependent and is not claimed.** Under
+the male structural-zero convention the equivalized ordering *reverses*,
+composition 32.6 against resources 30.3; under the female convention the same
+comparison is a dead heat inside the band. The raw ordering, resources first, is
+the one that holds under both conventions. There is no third factor: the
+tax–benefit schedule is one common policy function applied to every household,
+not a household-specific object that could be swapped between them, so it is
+**retained qualitatively** and is not a factor of the split.
+
+**Composition is also the clearest illustration of why an attribution is not an
+equalisation.** It is *attributed* 12.45 per cent of baseline inequality, but
+equalising it **alone** reduces inequality by only 2.00 per cent — a gap of more
+than six-fold in the same quantity, on the same basis, in the same table.
+Equalising non-labour resources alone reduces inequality by 35.30 per cent and
+the whole channel by 46.04 per cent (equivalized: 23.17, 20.30 and 56.11). The
+Shapley value averages over the orders in which the factors are equalised, and
+for a factor that shares most of its work with its partner the average is far
+above what the factor removes by itself. Neither number is a **causal
+contribution of the tax–benefit system**: both are model-implied attributions
+under a fixed policy, holding estimated preferences and the observed frame fixed.
 
 ### 7.4 Raw against equivalized
 
@@ -4068,6 +4093,31 @@ anywhere in this paper without its parameter interval.**
 
 ---
 
+## Appendix G — The nested endowments-and-needs split, sensitivity arm
+
+§7.3 reports the split on the female-primary reference. This is the same split
+on the male structural-zero sensitivity, on the same construction and the same
+integration design. The two arms are reported as a pair and never averaged.
+
+| factor | raw, Gini points | raw, % of $I^{00}$ | raw, % of the channel | equiv., Gini points | equiv., % of $I^{00}$ | equiv., % of the channel |
+|---|---:|---:|---:|---:|---:|---:|
+| non-labour resources | 0.056029 ± 0.001284 | 41.73 ± 1.44 | 78.39 ± 1.14 | 0.050038 ± 0.001097 | 30.31 ± 1.01 | 48.15 ± 0.77 |
+| household composition and needs | 0.015449 ± 0.000927 | 11.51 ± 0.63 | 21.61 ± 1.14 | 0.053875 ± 0.000808 | 32.63 ± 0.51 | 51.85 ± 0.77 |
+
+**The raw ordering is the same as the female arm's and the equivalized ordering
+is not.** Raw, non-labour resources lead on both conventions. Equivalized,
+composition leads here — 32.63 against 30.31 — where on the female arm the same
+comparison is a dead heat inside the band. That reversal is why §7.3 claims the
+raw ordering and declines to claim the equivalized one.
+
+**The one-factor equalisation effects do not depend on the reference
+convention** and are identical on the two arms: equalising non-labour resources
+alone reduces measured inequality by 35.30 per cent raw and 23.17 equivalized,
+composition alone by 2.00 and 20.30, and the whole channel by 46.04 and 56.11.
+The partition identity closes at exactly zero on both rows of this arm.
+
+---
+
 ## Figures and tables
 
 *Every caption below is self-contained: it states the population, whether the
@@ -4359,6 +4409,10 @@ then bound by its artefact source in the second column alone.*
 | the steelman: ±5 % wage neighbourhood gives a median wage ratio 1.02 and an aggregate of 19.4 %, and the block is still exactly inert | same, the steelman table | — |
 | model 24.3 % against 20.3 % external, but declining in hours external = yes, model = no; zero at long hours against 7.6 % | same, ground (c) | — |
 | verdict: no clean counterpart; the external moment stays descriptive and enters no likelihood, gate or calibration | same, the verdict block | `external_validation_wishmore_status` |
+
+| the nested endowments-and-needs split, female primary: resources 45.73 / 12.45 composition raw; 33.25 / 32.85 equivalized; shares of the channel; identity residual $1.4\times10^{-17}$ | `SPRINT/runs/nested_endowments/ne_step4_nested_v1.json` | `C_nonlabour_female_raw, C_nonlabour_female_raw_share, C_nonlabour_female_raw_share_of_needs, C_composition_female_raw, C_composition_female_raw_share, C_composition_female_raw_share_of_needs, C_nonlabour_female_equivalized, C_nonlabour_female_equivalized_share, C_nonlabour_female_equivalized_share_of_needs, C_composition_female_equivalized, C_composition_female_equivalized_share, C_composition_female_equivalized_share_of_needs, nested_needs_identity_residual_female_raw` |
+| the one-factor effects: resources alone 35.30 / 23.17, composition alone 2.00 / 20.30, the whole channel 46.04 / 56.11; common to both reference arms | same | `one_factor_nonlabour_raw, one_factor_composition_raw, one_factor_needs_total_raw, one_factor_nonlabour_equivalized, one_factor_composition_equivalized, one_factor_needs_total_equivalized` |
+| Appendix G, the male structural-zero arm of the split | same | `C_nonlabour_male_raw, C_nonlabour_male_raw_share, C_nonlabour_male_raw_share_of_needs, C_composition_male_raw, C_composition_male_raw_share, C_composition_male_raw_share_of_needs, C_nonlabour_male_equivalized, C_nonlabour_male_equivalized_share, C_nonlabour_male_equivalized_share_of_needs, C_composition_male_equivalized, C_composition_male_equivalized_share, C_composition_male_equivalized_share_of_needs, nested_needs_identity_residual_male_raw` |
 
 ### (h) §8 — couples
 

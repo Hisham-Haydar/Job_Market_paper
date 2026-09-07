@@ -130,8 +130,8 @@
     "headline": "A two-player Shapley game: preferences against the complete non-preference environment.",
     "element": "equations + table",
     "builds": 1,
-    "on_slide_words": 93,
-    "body_words": 83,
+    "on_slide_words": 99,
+    "body_words": 89,
     "pdf_page": 19
   },
   {
@@ -162,13 +162,22 @@
     "pdf_page": 22
   },
   {
+    "number": "15b",
+    "headline": "Inside the budget channel: non-labour resources 46%, household composition 12% of inequality; equal once equivalized",
+    "element": "nested_needs",
+    "builds": 1,
+    "on_slide_words": 65,
+    "body_words": 50,
+    "pdf_page": 23
+  },
+  {
     "number": 16,
     "headline": "Unequal job opportunities account for about a third of measured welfare inequality; omitting them re-attributes almost nothing to preferences.",
     "element": "text",
     "builds": 1,
     "on_slide_words": 55,
     "body_words": 36,
-    "pdf_page": 23
+    "pdf_page": 24
   },
   {
     "number": 17,
@@ -177,7 +186,7 @@
     "builds": 1,
     "on_slide_words": 55,
     "body_words": 39,
-    "pdf_page": 24
+    "pdf_page": 25
   },
   {
     "number": 18,
@@ -186,7 +195,7 @@
     "builds": 1,
     "on_slide_words": 50,
     "body_words": 37,
-    "pdf_page": 25
+    "pdf_page": 26
   },
   {
     "number": 19,
@@ -195,7 +204,7 @@
     "builds": 2,
     "on_slide_words": 56,
     "body_words": 37,
-    "pdf_page": 26
+    "pdf_page": 27
   },
   {
     "number": 20,
@@ -204,7 +213,7 @@
     "builds": 1,
     "on_slide_words": 65,
     "body_words": 52,
-    "pdf_page": 28
+    "pdf_page": 29
   },
   {
     "number": 21,
@@ -213,7 +222,7 @@
     "builds": 1,
     "on_slide_words": 40,
     "body_words": 31,
-    "pdf_page": 29
+    "pdf_page": 30
   },
   {
     "number": 22,
@@ -222,7 +231,7 @@
     "builds": 1,
     "on_slide_words": 54,
     "body_words": 53,
-    "pdf_page": 30
+    "pdf_page": 31
   },
   {
     "number": "B1a",
@@ -231,7 +240,7 @@
     "builds": 1,
     "on_slide_words": 22,
     "body_words": 17,
-    "pdf_page": 31
+    "pdf_page": 32
   },
   {
     "number": "B1b",
@@ -240,7 +249,7 @@
     "builds": 1,
     "on_slide_words": 37,
     "body_words": 31,
-    "pdf_page": 32
+    "pdf_page": 33
   },
   {
     "number": "B1c",
@@ -249,7 +258,7 @@
     "builds": 1,
     "on_slide_words": 21,
     "body_words": 15,
-    "pdf_page": 33
+    "pdf_page": 34
   },
   {
     "number": "B2",
@@ -258,7 +267,7 @@
     "builds": 1,
     "on_slide_words": 23,
     "body_words": 17,
-    "pdf_page": 34
+    "pdf_page": 35
   },
   {
     "number": "B3",
@@ -267,7 +276,7 @@
     "builds": 1,
     "on_slide_words": 49,
     "body_words": 39,
-    "pdf_page": 35
+    "pdf_page": 36
   },
   {
     "number": "B4",
@@ -276,7 +285,7 @@
     "builds": 1,
     "on_slide_words": 41,
     "body_words": 36,
-    "pdf_page": 36
+    "pdf_page": 37
   },
   {
     "number": "B5",
@@ -285,7 +294,7 @@
     "builds": 1,
     "on_slide_words": 53,
     "body_words": 46,
-    "pdf_page": 37
+    "pdf_page": 38
   },
   {
     "number": "B6",
@@ -294,6 +303,6 @@
     "builds": 1,
     "on_slide_words": 35,
     "body_words": 30,
-    "pdf_page": 38
+    "pdf_page": 39
   }
 ]

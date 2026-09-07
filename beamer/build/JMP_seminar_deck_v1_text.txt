@@ -21,7 +21,7 @@ France 2016, EU-SILC priced through EUROMOD.
 
 
 
-                                                                                    2/25
+                                                                                    2/26
 Three literatures, one gap.
 
 
@@ -43,7 +43,7 @@ France 2016, EU-SILC priced through EUROMOD.
 
 
 
-                                                                                                              3/25
+                                                                                                              3/26
 A job is a package; welfare is compared on the set of reachable jobs.
 
 
@@ -66,7 +66,7 @@ France 2016, EU-SILC priced through EUROMOD.
    W1 : the uniform pay across the jobs you can reach that would leave you as well off - Haydar and Maniquet
    (companion paper).
 
-                                                                                                               4/25
+                                                                                                               4/26
 Empirically the set is an estimated distribution and the pay is an offer density.
 
 
@@ -89,7 +89,7 @@ France 2016, EU-SILC priced through EUROMOD.
 
    estimated jointly with preferences; nodes are integration support, not a list of jobs.
 
-                                                                                            5/25
+                                                                                            5/26
 For one household: its estimated employment mass, hours weights, occupation shares and
 wage-offer density
 
@@ -106,7 +106,7 @@ wage-offer density
                                   0%    Non-employment                           Employment
    estimated opportunity distribution; nodes are integration support, not a list of jobs
 
-                                                                                              6/25
+                                                                                              6/26
 For one household: its estimated employment mass, hours weights, occupation shares and
 wage-offer density
 
@@ -126,7 +126,7 @@ wage-offer density
                                                                      Weekly hours offered
    estimated opportunity distribution; nodes are integration support, not a list of jobs
 
-                                                                                                       6/25
+                                                                                                       6/26
 For one household: its estimated employment mass, hours weights, occupation shares and
 wage-offer density
 
@@ -146,7 +146,7 @@ wage-offer density
                                                                     Occupation group
    estimated opportunity distribution; nodes are integration support, not a list of jobs
 
-                                                                                               6/25
+                                                                                               6/26
 For one household: its estimated employment mass, hours weights, occupation shares and
 wage-offer density
 
@@ -165,7 +165,7 @@ wage-offer density
                                                              Hourly wage offer (EUR)
    estimated opportunity distribution; nodes are integration support, not a list of jobs
 
-                                                                                                      6/25
+                                                                                                      6/26
 Preferences and an opportunity density, in one likelihood.
 
 
@@ -187,7 +187,7 @@ wage-offer density
 
 
 
-                                                                                           7/25
+                                                                                           7/26
 Each household: its observed job plus 100 drawn alternatives, all priced through the
 tax-benefit system.
 
@@ -206,7 +206,7 @@ tax-benefit system.
 
 
 
-                                                                                       8/25
+                                                                                       8/26
 France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours.
 
 
@@ -237,7 +237,7 @@ tax-benefit system.
 
    EU-SILC 2016; weights; 1,348 employed.
 
-                                                                                                9/25
+                                                                                                9/26
 The model reproduces the hours distribution, employment and occupation shares.
 
                                                  30
@@ -319,7 +319,7 @@ tax-benefit system.
    35-hour band 24.9% observed, 25.2% model-implied; employment 87.1% / 86.7%; mean absolute band error
    0.008.
 
-                                                                                                                          10/25
+                                                                                                                          10/26
 Estimated indifference curves and the price of an hour, by age and sex
 
 
@@ -340,7 +340,7 @@ tax-benefit system.
                                                                            Weekly hours worked
    Box-Cox preferences at the estimated parameters; own budget; one household per sex
 
-                                                                                                                11/25
+                                                                                                                11/26
 Estimated indifference curves and the price of an hour, by age and sex
 
                                           80
@@ -360,7 +360,7 @@ tax-benefit system.
                                                                    Age
    Box-Cox preferences at the estimated parameters; own budget; one household per sex
 
-                                                                                              11/25
+                                                                                              11/26
 What the data pin down, and what remains conditional.
 
 
@@ -382,7 +382,7 @@ tax-benefit system.
 
 
 
-                                                                                                   12/25
+                                                                                                   12/26
 An independent source puts the 35-hour concentration at 37%; the sample at 34%; the
 model at 35%.
 
@@ -406,7 +406,7 @@ model at 35%.
 
    Labour Force Survey 2016; validation only; no external moment enters the likelihood.
 
-                                                                                                      13/25
+                                                                                                      13/26
 Equivalent income at a common reference pay, under four preference–environment states.
 
 
@@ -428,7 +428,7 @@ model at 35%.
    preferences on both sides of the inversion; common quadrature support.
 
 
-                                                                                                               14/25
+                                                                                                               14/26
 A two-player Shapley game: preferences against the complete non-preference
 environment.
 
@@ -442,12 +442,13 @@ environment.
 
                              Cenv = 12 [(I00 − I01 ) + (I10 − I11 )] = 0.126
     equalizing the environment alone reduces inequality by 77%, equalizing preferences alone raises it by
-   10%; the Shapley attribution averages the two orders and gives the environment 94%.
+   10%; the Shapley attribution averages the two orders and gives the environment 94%; composition:
+   attributed 12.45%, equalized alone 2.00%.
 
    the environment is then split by an Owen value into job access, earning opportunities, and household
    endowments and needs.
 
-                                                                                                            15/25
+                                                                                                            15/26
 The distribution of equivalent income under the four states
 
                                  0.006
@@ -462,7 +463,7 @@ environment.
                                                 Equivalent income (EUR per month)
    the fully common state collapses to a point
 
-                                                                                                  16/25
+                                                                                                  16/26
 The non-preference environment accounts for 94% of measured welfare inequality;
 preferences for 6%.
 
@@ -482,7 +483,7 @@ preferences for 6%.
    93.7 ± 0.6 / 6.3 ± 0.6 female-primary; 89.1 / 10.9 male structural-zero; never averaged. Parameter intervals:
    environment [89.1, 95.8], preferences [4.2, 10.9].
 
-                                                                                                                   17/25
+                                                                                                                   17/26
 Household endowments and needs 58%, earning opportunities 21%, job access 15%; job
 opportunities together 36%.
 
@@ -498,7 +499,32 @@ opportunities together 36%.
    integration bands ± 1.5 / ± 1.6 / ± 1.1; ordering identical under both reference conventions and under
    equivalization.
 
-                                                                                                            18/25
+                                                                                                            18/26
+Inside the budget channel: non-labour resources 46%, household composition 12% of
+inequality; equal once equivalized
+
+                                                                     raw                     female primary
+                                                                                           equivalized
+                                                   50                                        male structural zero
+
+
+                    share of measured inequality
+                                                   40
+                           attributed (%)
+                                                   30
+
+                                                   20
+
+                                                   10
+
+                                                    0
+                                                        non-labour     composition   non-labour    composition
+                                                        resources       and needs    resources      and needs
+
+   nested Shapley split of endowments and needs; two factors; the tax-benefit schedule is common to all and is not
+   a separate factor
+
+                                                                                                                     19/26
 Unequal job opportunities account for about a third of measured welfare inequality;
 omitting them re-attributes almost nothing to preferences.
 
@@ -514,7 +540,7 @@ omitting them re-attributes almost nothing to preferences.
 
 
 
-                                                                                                 19/25
+                                                                                                 20/26
 The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability
 as taste.
 
@@ -539,7 +565,7 @@ as taste.
 
    35-hour coefficient: 2.58 as availability, 2.55 as preference; leisure-intercept sex gap +0.43 → −1.99.
 
-                                                                                                                         20/25
+                                                                                                                         21/26
 The preference share is the sensitive margin; the environment’s internal structure is stable.
 
 
@@ -559,7 +585,7 @@ as taste.
 
 
 
-                                                                                                    21/25
+                                                                                                    22/26
 Within job access, nearly all of the household-varying contribution is geographic; job
 access matters twice as much for men.
 
@@ -584,7 +610,7 @@ access matters twice as much for men.
 
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
-                                                                                                                 22/25
+                                                                                                                 23/26
 Within job access, nearly all of the household-varying contribution is geographic; job
 access matters twice as much for men.
 
@@ -601,7 +627,7 @@ access matters twice as much for men.
 
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
-                                                                                                      22/25
+                                                                                                      23/26
 Couples reproduce the same environment ordering; their preference share is not robustly
 identified.
 
@@ -623,7 +649,7 @@ identified.
    2,275 couples; employment matched to four decimals; 35-hour peak 2.55 (women) and 3.29 (men). Cross-leisure
    interaction absent; welfare runs it at exactly zero — spouse leisure complementarity is not estimated here.
 
-                                                                                                                 23/25
+                                                                                                                 24/26
 Each limit names the evidence that would lift it.
 
 
@@ -642,7 +668,7 @@ identified.
 
 
 
-                                                                                        24/25
+                                                                                        25/26
 Conclusion
 
 
@@ -660,7 +686,7 @@ identified.
 
 
 
-                                                                                               25/25
+                                                                                               26/26
 B1 — The estimated coefficients: preferences
 
 

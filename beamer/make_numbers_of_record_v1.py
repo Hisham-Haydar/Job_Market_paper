@@ -347,6 +347,92 @@ def build(sprint, out):
               "environments, for the matched-pair household %s." % prof)
 
     # ================================================================
+    # NESTED ENDOWMENTS AND NEEDS  (R-263)
+    # ================================================================
+    ne_path = runs / "nested_endowments" / "ne_step4_nested_v1.json"
+    if ne_path.is_file():
+        ne = json.loads(ne_path.read_text(encoding="utf-8"))
+        if ne.get("status") != "NE_STEP4_DONE":
+            raise SystemExit("nested endowments artefact is %s, not NE_STEP4_DONE"
+                             % ne.get("status"))
+        if not ne.get("ALL_IDENTITIES_PASS"):
+            raise SystemExit("nested endowments run does not pass its identities")
+        src_ne = "runs/nested_endowments/ne_step4_nested_v1.json"
+        ARMS = (("singles_female", "female", "female reference"),
+                ("singles_male_structural_zero", "male", "male structural-zero"))
+        CHAN = (("C_nonlabour", "non-labour resources"),
+                ("C_composition", "household composition and needs"))
+        for arm_key, arm_tag, arm_lab in ARMS:
+            for basis in ("raw", "equivalized"):
+                blk = ne["results"][arm_key][basis]
+                c = blk["contributions"]
+                bas = "S8, %s, %s basis" % (arm_lab, basis)
+                for ch, ch_lab in CHAN:
+                    stem = "%s_%s_%s" % (ch, arm_tag, basis)
+                    e = c[ch]
+                    n.add(stem, float(e["estimate"]), src_ne,
+                          "results.%s.%s.contributions.%s.estimate"
+                          % (arm_key, basis, ch), bas,
+                          "Nested contribution of %s inside endowments and needs "
+                          "(Gini points)." % ch_lab)
+                    n.add(stem + "__rqmc_band",
+                          [float(e["band_lo"]), float(e["band_hi"])], src_ne,
+                          "results.%s.%s.contributions.%s.band_lo / band_hi"
+                          % (arm_key, basis, ch), bas,
+                          "RQMC scramble-jackknife band for %s." % ch_lab)
+                    #: the share fields carry their own jackknife bands, so
+                    #: the ratio band is the run's own and is not composed
+                    #: from the bands on numerator and denominator.
+                    for suf, field, what in (
+                            ("_share", ch + "_over_I00",
+                             "baseline inequality I00"),
+                            ("_share_of_needs", ch + "_share_of_C_D",
+                             "the parent endowments-and-needs channel")):
+                        sh = c[field]
+                        n.add(stem + suf, float(sh["estimate"]), src_ne,
+                              "results.%s.%s.contributions.%s.estimate"
+                              % (arm_key, basis, field), bas,
+                              "%s as a share of %s." % (ch_lab, what))
+                        n.add(stem + suf + "__rqmc_band",
+                              [float(sh["band_lo"]), float(sh["band_hi"])],
+                              src_ne,
+                              "results.%s.%s.contributions.%s.band_lo / band_hi"
+                              % (arm_key, basis, field), bas,
+                              "RQMC scramble-jackknife band for %s as a share "
+                              "of %s." % (ch_lab, what))
+                ident = blk["identity_2_C_nonlabour_plus_C_composition_equals_C_D"]
+                n.add("nested_needs_identity_residual_%s_%s" % (arm_tag, basis),
+                      float(ident["residual"]), src_ne,
+                      "results.%s.%s.identity_2_C_nonlabour_plus_C_composition_"
+                      "equals_C_D.residual" % (arm_key, basis), bas,
+                      "Residual of the partition identity C_nonlabour + "
+                      "C_composition - C_D; must vanish at machine precision.")
+        #: the one-factor effects do not depend on the preference reference.
+        #: Asserted here, then keyed by basis alone.
+        ONE = (("nonlabour", "one_factor_nonlabour_share_of_I00",
+                "non-labour resources"),
+               ("composition", "one_factor_composition_share_of_I00",
+                "household composition and needs"),
+               ("needs_total", "one_factor_D_total_share_of_I00",
+                "the whole endowments-and-needs channel"))
+        for basis in ("raw", "equivalized"):
+            vals = [ne["results"][a]["one_factor_effects"] if False else
+                    ne["results"][a][basis]["one_factor_effects"]
+                    for a, _, _ in ARMS]
+            for tag, field, lab in ONE:
+                v = [float(x[field]) for x in vals]
+                if abs(v[0] - v[1]) > 1e-12:
+                    raise SystemExit(
+                        "one-factor %s differs across reference arms (%r)"
+                        % (tag, v))
+                n.add("one_factor_%s_%s" % (tag, basis), v[0], src_ne,
+                      "results.*.%s.one_factor_effects.%s" % (basis, field),
+                      "S8, %s basis; common to both reference arms" % basis,
+                      "Fall in measured inequality, as a share of I00, from "
+                      "equalizing %s ALONE. This is the one-factor "
+                      "counterfactual, NOT the Shapley attribution." % lab)
+
+    # ================================================================
     # SEX SUBGROUP NUMBERS
     # ================================================================
     sg = pd.read_csv(tables / "subgroup_decomposition_v1.csv")

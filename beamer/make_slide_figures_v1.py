@@ -475,6 +475,59 @@ def f_headline_references(sprint, out):
     save(fig,'headline_references',out,src,'raw; signed contributions; both reference conventions')
 
 
+def f_nested_needs(sprint, out):
+    """Inside the budget channel: resources against composition, both bases.
+
+    Bands are the ratio's OWN jackknife, taken from `<channel>_over_I00` in the
+    STEP 4 artefact. The figures/ CSV for this split composes the share band
+    from the contribution band divided by I00, which understates it by about a
+    third; section 7.2's rule is that ratios are jackknifed whole.
+    """
+    src = "runs/nested_endowments/ne_step4_nested_v1.json"
+    ne = json.loads((sprint / "runs" / "nested_endowments"
+                     / "ne_step4_nested_v1.json").read_text(encoding="utf-8"))
+    if ne.get("status") != "NE_STEP4_DONE" or not ne.get("ALL_IDENTITIES_PASS"):
+        raise SystemExit("nested endowments artefact is not a passed STEP 4")
+    ARMS = [("singles_female", "female reference"),
+            ("singles_male_structural_zero", "male reference")]
+    CH = [("C_nonlabour", "non-labour\nresources", ACC[0]),
+          ("C_composition", "composition\nand needs", ACC[4])]
+    fig, ax = new_ax()
+    w = 0.19
+    xt, xl = [], []
+    for bi, basis in enumerate(["raw", "equivalized"]):
+        for ci, (ch, lab, col) in enumerate(CH):
+            centre = bi * 1.25 + ci * 0.46
+            xt.append(centre)
+            xl.append(lab)
+            for ai, (arm, _) in enumerate(ARMS):
+                r = ne["results"][arm][basis]["contributions"][ch + "_over_I00"]
+                v = pct(r["estimate"])
+                lo, hi = pct(r["band_lo"]), pct(r["band_hi"])
+                x = centre + (ai - 0.5) * w
+                ax.bar(x, v, width=w, color=col,
+                       alpha=0.92 if ai == 0 else 0.42, edgecolor="white",
+                       linewidth=1.6, hatch=None if ai == 0 else "//", zorder=3)
+                ax.errorbar(x, v, yerr=[[v - lo], [hi - v]], fmt="none",
+                            ecolor=INK, capsize=5, lw=1.8, zorder=4)
+    ax.set_xticks(xt)
+    ax.set_xticklabels(xl, fontsize=MIN_PT)
+    ax.set_ylabel("share of measured inequality\nattributed  (%)", labelpad=14,
+                  fontsize=MIN_PT + 1)
+    ax.set_ylim(0, 56)
+    for bi, t in enumerate(["raw", "equivalized"]):
+        ax.annotate(t, xy=(bi * 1.25 + 0.23, 53), ha="center",
+                    fontsize=MIN_PT + 2, fontweight="bold", color=INK)
+    ax.legend(handles=[Patch(facecolor=GREY, alpha=0.92,
+                             label="female primary"),
+                       Patch(facecolor=GREY, alpha=0.42, hatch="//",
+                             label="male structural zero")],
+              loc="upper right", ncol=1)
+    ax.grid(axis="x", visible=False)
+    save(fig, "nested_needs", out, src,
+         "nested endowments/needs split; both bases; both reference arms")
+
+
 def f_regional_profiles(sprint, out):
     """Same profile across regional environments; one panel, same source CSV."""
     src='figG02_regional_access_environments.csv'
@@ -691,10 +744,11 @@ def build(sprint: pathlib.Path, out: pathlib.Path, missing_only=False) -> int:
         # v4 explicitly reuses existing panels; only these three were absent.
         targets=[(f_observed_hours,'observed_hours'),
                  (f_headline_references,'headline_references'),
-                 (f_regional_profiles,'regional_profiles')]
+                 (f_regional_profiles,'regional_profiles'),
+                 (f_nested_needs,'nested_needs')]
         chosen=[f for f,name in targets if not (out/(name+'_slide.pdf')).exists()]
     else:
-        chosen=FIGURES+[f_observed_hours,f_headline_references,f_regional_profiles]
+        chosen=FIGURES+[f_observed_hours,f_headline_references,f_regional_profiles,f_nested_needs]
     for fn in chosen:
         with matplotlib.rc_context(SLIDE_RC):
             fn(sprint, out)

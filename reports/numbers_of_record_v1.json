@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generated_by": "beamer/make_numbers_of_record_v1.py",
-    "n_entries": 213,
+    "n_entries": 271,
     "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance.",
     "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
   },
@@ -111,6 +111,210 @@
       "reference": "Channel C_acc as a share of I00 (baseline inequality).",
       "source": "tables/headline_decomposition_v1.csv",
       "value": 0.1357438840767543
+    },
+    "C_composition_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition.estimate",
+      "reference": "Nested contribution of household composition and needs inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.054233361466988206
+    },
+    "C_composition_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.05280216204842686,
+        0.05566456088554955
+      ]
+    },
+    "C_composition_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition_over_I00.estimate",
+      "reference": "household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.3284771386250456
+    },
+    "C_composition_female_equivalized_share__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.32167714727158375,
+        0.3352771299785074
+      ]
+    },
+    "C_composition_female_equivalized_share_of_needs": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition_share_of_C_D.estimate",
+      "reference": "household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.49695781418926327
+    },
+    "C_composition_female_equivalized_share_of_needs__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_composition_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.4839573585469917,
+        0.5099582698315348
+      ]
+    },
+    "C_composition_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition.estimate",
+      "reference": "Nested contribution of household composition and needs inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.016723525149377097
+    },
+    "C_composition_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.0152305691550727,
+        0.018216481143681493
+      ]
+    },
+    "C_composition_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition_over_I00.estimate",
+      "reference": "household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.12454538326255286
+    },
+    "C_composition_female_raw_share__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.1145384055284851,
+        0.13455236099662063
+      ]
+    },
+    "C_composition_female_raw_share_of_needs": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition_share_of_C_D.estimate",
+      "reference": "household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.21405910753164537
+    },
+    "C_composition_female_raw_share_of_needs__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_composition_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.19591091322670925,
+        0.23220730183658148
+      ]
+    },
+    "C_composition_male_equivalized": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition.estimate",
+      "reference": "Nested contribution of household composition and needs inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.05387539024016447
+    },
+    "C_composition_male_equivalized__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.05306758863577031,
+        0.054683191844558623
+      ]
+    },
+    "C_composition_male_equivalized_share": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition_over_I00.estimate",
+      "reference": "household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.3263090015021285
+    },
+    "C_composition_male_equivalized_share__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.32117281960433597,
+        0.331445183399921
+      ]
+    },
+    "C_composition_male_equivalized_share_of_needs": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition_share_of_C_D.estimate",
+      "reference": "household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.5184645511752363
+    },
+    "C_composition_male_equivalized_share_of_needs__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_composition_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.5107432486955555,
+        0.526185853654917
+      ]
+    },
+    "C_composition_male_raw": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition.estimate",
+      "reference": "Nested contribution of household composition and needs inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.01544888513167279
+    },
+    "C_composition_male_raw__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.014521558363214436,
+        0.01637621190013114
+      ]
+    },
+    "C_composition_male_raw_share": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition_over_I00.estimate",
+      "reference": "household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.11505273574303852
+    },
+    "C_composition_male_raw_share__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.10872300048761897,
+        0.12138247099845807
+      ]
+    },
+    "C_composition_male_raw_share_of_needs": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition_share_of_C_D.estimate",
+      "reference": "household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.21613372091434987
+    },
+    "C_composition_male_raw_share_of_needs__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_composition_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for household composition and needs as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.20472646390367505,
+        0.2275409779250247
+      ]
     },
     "C_earn_female_equivalized": {
       "basis": "S8, female reference, equivalized basis",
@@ -449,6 +653,210 @@
       "reference": "Channel C_needs as a share of I00 (baseline inequality).",
       "source": "tables/headline_decomposition_v1.csv",
       "value": 0.5323220053599687
+    },
+    "C_nonlabour_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour.estimate",
+      "reference": "Nested contribution of non-labour resources inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.054897353290892174
+    },
+    "C_nonlabour_female_equivalized__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.05331429184289461,
+        0.05648041473888974
+      ]
+    },
+    "C_nonlabour_female_equivalized_share": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour_over_I00.estimate",
+      "reference": "non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.3324987616350661
+    },
+    "C_nonlabour_female_equivalized_share__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.31915136191775284,
+        0.34584616135237933
+      ]
+    },
+    "C_nonlabour_female_equivalized_share_of_needs": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour_share_of_C_D.estimate",
+      "reference": "non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.5030421858107368
+    },
+    "C_nonlabour_female_equivalized_share_of_needs__rqmc_band": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.contributions.C_nonlabour_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.4900417301684652,
+        0.5160426414530084
+      ]
+    },
+    "C_nonlabour_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour.estimate",
+      "reference": "Nested contribution of non-labour resources inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.061402210037595856
+    },
+    "C_nonlabour_female_raw__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.05970043403144553,
+        0.06310398604374619
+      ]
+    },
+    "C_nonlabour_female_raw_share": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour_over_I00.estimate",
+      "reference": "non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.4572816863665247
+    },
+    "C_nonlabour_female_raw_share__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.4392405023580547,
+        0.47532287037499477
+      ]
+    },
+    "C_nonlabour_female_raw_share_of_needs": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour_share_of_C_D.estimate",
+      "reference": "non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.7859408924683544
+    },
+    "C_nonlabour_female_raw_share_of_needs__rqmc_band": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.contributions.C_nonlabour_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.7677926981634186,
+        0.8040890867732903
+      ]
+    },
+    "C_nonlabour_male_equivalized": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour.estimate",
+      "reference": "Nested contribution of non-labour resources inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.05003796336914543
+    },
+    "C_nonlabour_male_equivalized__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.048940542954221206,
+        0.05113538378406965
+      ]
+    },
+    "C_nonlabour_male_equivalized_share": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour_over_I00.estimate",
+      "reference": "non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.303066721027914
+    },
+    "C_nonlabour_male_equivalized_share__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.29292355927470476,
+        0.3132098827811232
+      ]
+    },
+    "C_nonlabour_male_equivalized_share_of_needs": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour_share_of_C_D.estimate",
+      "reference": "non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.4815354488247638
+    },
+    "C_nonlabour_male_equivalized_share_of_needs__rqmc_band": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.contributions.C_nonlabour_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.47381414634508245,
+        0.4892567513044451
+      ]
+    },
+    "C_nonlabour_male_raw": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour.estimate",
+      "reference": "Nested contribution of non-labour resources inside endowments and needs (Gini points).",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.0560294805130612
+    },
+    "C_nonlabour_male_raw__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.05474526696859789,
+        0.057313694057524504
+      ]
+    },
+    "C_nonlabour_male_raw_share": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour_over_I00.estimate",
+      "reference": "non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.41726926961693017
+    },
+    "C_nonlabour_male_raw_share__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour_over_I00.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of baseline inequality I00.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.4028765278898664,
+        0.43166201134399396
+      ]
+    },
+    "C_nonlabour_male_raw_share_of_needs": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour_share_of_C_D.estimate",
+      "reference": "non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.7838662790856501
+    },
+    "C_nonlabour_male_raw_share_of_needs__rqmc_band": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.contributions.C_nonlabour_share_of_C_D.band_lo / band_hi",
+      "reference": "RQMC scramble-jackknife band for non-labour resources as a share of the parent endowments-and-needs channel.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": [
+        0.7724590220749755,
+        0.7952735360963247
+      ]
     },
     "C_oth_female_raw__cr1_interval": {
       "basis": "S8, female reference, raw basis",
@@ -1199,6 +1607,76 @@
       "reference": "Final singles negative log-likelihood; bitwise-identical whether evaluated on the 41-coordinate active vector or the 51-coordinate provenance vector.",
       "source": "runs/param_child_v1/compact_evaluation_v1.json",
       "value": 18022.764617170084
+    },
+    "nested_needs_identity_residual_female_equivalized": {
+      "basis": "S8, female reference, equivalized basis",
+      "column_or_key": "results.singles_female.equivalized.identity_2_C_nonlabour_plus_C_composition_equals_C_D.residual",
+      "reference": "Residual of the partition identity C_nonlabour + C_composition - C_D; must vanish at machine precision.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 1.3877787807814457e-17
+    },
+    "nested_needs_identity_residual_female_raw": {
+      "basis": "S8, female reference, raw basis",
+      "column_or_key": "results.singles_female.raw.identity_2_C_nonlabour_plus_C_composition_equals_C_D.residual",
+      "reference": "Residual of the partition identity C_nonlabour + C_composition - C_D; must vanish at machine precision.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": -1.3877787807814457e-17
+    },
+    "nested_needs_identity_residual_male_equivalized": {
+      "basis": "S8, male structural-zero, equivalized basis",
+      "column_or_key": "results.singles_male_structural_zero.equivalized.identity_2_C_nonlabour_plus_C_composition_equals_C_D.residual",
+      "reference": "Residual of the partition identity C_nonlabour + C_composition - C_D; must vanish at machine precision.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.0
+    },
+    "nested_needs_identity_residual_male_raw": {
+      "basis": "S8, male structural-zero, raw basis",
+      "column_or_key": "results.singles_male_structural_zero.raw.identity_2_C_nonlabour_plus_C_composition_equals_C_D.residual",
+      "reference": "Residual of the partition identity C_nonlabour + C_composition - C_D; must vanish at machine precision.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.0
+    },
+    "one_factor_composition_equivalized": {
+      "basis": "S8, equivalized basis; common to both reference arms",
+      "column_or_key": "results.*.equivalized.one_factor_effects.one_factor_composition_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing household composition and needs ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.2030080800661317
+    },
+    "one_factor_composition_raw": {
+      "basis": "S8, raw basis; common to both reference arms",
+      "column_or_key": "results.*.raw.one_factor_effects.one_factor_composition_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing household composition and needs ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.02002476922778645
+    },
+    "one_factor_needs_total_equivalized": {
+      "basis": "S8, equivalized basis; common to both reference arms",
+      "column_or_key": "results.*.equivalized.one_factor_effects.one_factor_D_total_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing the whole endowments-and-needs channel ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.5611296686127798
+    },
+    "one_factor_needs_total_raw": {
+      "basis": "S8, raw basis; common to both reference arms",
+      "column_or_key": "results.*.raw.one_factor_effects.one_factor_D_total_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing the whole endowments-and-needs channel ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.4603683631874766
+    },
+    "one_factor_nonlabour_equivalized": {
+      "basis": "S8, equivalized basis; common to both reference arms",
+      "column_or_key": "results.*.equivalized.one_factor_effects.one_factor_nonlabour_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing non-labour resources ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.23173907336229058
+    },
+    "one_factor_nonlabour_raw": {
+      "basis": "S8, raw basis; common to both reference arms",
+      "column_or_key": "results.*.raw.one_factor_effects.one_factor_nonlabour_share_of_I00",
+      "reference": "Fall in measured inequality, as a share of I00, from equalizing non-labour resources ALONE. This is the one-factor counterfactual, NOT the Shapley attribution.",
+      "source": "runs/nested_endowments/ne_step4_nested_v1.json",
+      "value": 0.3530357369255362
     },
     "regional_opportunity_mass_range_A": {
       "basis": "profile=household_1",

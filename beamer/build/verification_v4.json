@@ -52,14 +52,14 @@
       "detail": ""
     },
     {
-      "check": "exactly 25 running-order slides",
+      "check": "exactly 26 running-order slides",
       "pass_": true,
       "detail": ""
     },
     {
       "check": "exact 45-minute order including insertions",
       "pass_": true,
-      "detail": "[1, 2, 3, 4, 5, '5b', 6, 7, 8, 9, '9b', 10, 11, 12, 13, '13b', 14, 15, 16, 17, 18, 19, 20, 21, 22]"
+      "detail": "[1, 2, 3, 4, 5, '5b', 6, 7, 8, 9, '9b', 10, 11, 12, 13, '13b', 14, 15, '15b', 16, 17, 18, 19, 20, 21, 22]"
     },
     {
       "check": "exact unchanged 25-minute order",
@@ -67,7 +67,7 @@
       "detail": "[1, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15, 16, 17, 18, 22]"
     },
     {
-      "check": "the final plan has eight full-only slides",
+      "check": "the final plan has nine full-only slides",
       "pass_": true,
       "detail": ""
     },
@@ -134,7 +134,7 @@
     {
       "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1",
       "pass_": true,
-      "detail": "38 pages / 33 frames"
+      "detail": "39 pages / 34 frames"
     },
     {
       "check": "page aspect / notes second screen: JMP_seminar_deck_v1",
@@ -214,7 +214,7 @@
     {
       "check": "PDF pages = frames + overlays: JMP_seminar_deck_v1_rehearsal",
       "pass_": true,
-      "detail": "38 pages / 33 frames"
+      "detail": "39 pages / 34 frames"
     },
     {
       "check": "page aspect / notes second screen: JMP_seminar_deck_v1_rehearsal",
@@ -257,7 +257,7 @@
       "detail": ""
     },
     {
-      "check": "25-slide content replaces the legacy 12-word ceiling",
+      "check": "26-slide content replaces the legacy 12-word ceiling",
       "pass_": true,
       "detail": "word counts reported; verbatim content gates enforced above"
     },
@@ -283,9 +283,9 @@
     }
   ],
   "page_counts": {
-    "JMP_seminar_deck_v1": 38,
+    "JMP_seminar_deck_v1": 39,
     "JMP_seminar_deck_v1_25min": 23,
-    "JMP_seminar_deck_v1_rehearsal": 38
+    "JMP_seminar_deck_v1_rehearsal": 39
   },
-  "content_sha256": "7fc32780abdad8fc5a96741d38ad46c59efa7fd4d422ede6a21433b041572f25"
+  "content_sha256": "d3e49516a4e69ec1b8482188ba13d3f7d36fa7a5960e07a54445267058e8df01"
 }
