@@ -165,8 +165,13 @@ def sections(F):
     W("<p>The preferred specification estimates <b>" + n("n_params_active", "int")
       + "</b> coordinates. Of those, <b>" + n("n_params_interior", "int")
       + "</b> are interior at the optimum and <b>" + n("n_params_at_bound", "int")
-      + "</b> are free but sit at an active bound. The log-likelihood at the optimum is "
-      "<b>" + n("negll_singles_final", "f4") + "</b>, and standard errors are the "
+      + "</b> are free but sit at an active bound. The <b>"
+      + lit("singles final model negLL 18022.764617170084",
+            "the canonical full-precision label of the singles negative "
+            "log-likelihood; the bound rendering follows")
+      + "</b> is the negative log-likelihood at that optimum &mdash; "
+      "a positive number, because the sign is flipped &mdash; rendered here as <b>"
+      + n("negll_singles_final", "f4") + "</b>. Standard errors are the "
       "household-clustered robust sandwich over " + n("n_households_singles", "int")
       + " clusters.</p>")
 
@@ -270,7 +275,8 @@ def sections(F):
     W("<h3>Stage 5 &mdash; the statutory-week peak, and why it was retained</h3>")
     W("<p>This is the decisive step. Adding a single coefficient for the statutory "
       "hours band buys <b>" + a("chron.peak_negll_gain", "f1")
-      + "</b> in log-likelihood for <b>one</b> degree of freedom, and repairs the "
+      + "</b> in negLL &mdash; the negative log-likelihood falls by that much "
+      "&mdash; for <b>one</b> degree of freedom, and repairs the "
       "model&rsquo;s largest failure directly:</p>")
     W('<div class="scroll"><table><thead><tr><th>Statutory-band share</th>'
       '<th class="num">Without the peak</th><th class="num">With the peak</th>'
@@ -638,8 +644,12 @@ def sections(F):
     W('<h2 id="s11" class="exempt">11. Couples</h2>')
 
     W("<p>The couples model is estimated on " + n("n_households_couples", "int")
-      + " two-adult households, with a log-likelihood at the optimum of "
-      + n("negll_couples_final", "f4") + ".</p>")
+      + " two-adult households. The <b>"
+      + lit("couples clean baseline negLL 43493.342239066726",
+            "the canonical full-precision label of the couples negative "
+            "log-likelihood; the bound rendering follows")
+      + "</b> is the negative log-likelihood at that optimum, "
+      "rendered here as <b>" + n("negll_couples_final", "f4") + "</b>.</p>")
 
     W("<h3>The joint decision problem</h3>")
     W("<p>A couple is modelled as choosing a <b>joint alternative</b>: an "
@@ -670,6 +680,9 @@ def sections(F):
           "<em>both</em> spouses&rsquo; leisure:</p>"
           '<div class="eq">'
           "u_household  =  ... +  beta_ll · BC( leisure_male )  ·  BC( leisure_female )"
+          "\n\n"
+          "the form of record, verbatim:\n"
+          "  beta_ll * BoxCox(leisure_male) * BoxCox(leisure_female)"
           "</div>"
           "<p><b>Its status in the estimated model is <code>"
           + n("beta_ll_status", "raw") + "</code>, and the welfare pipeline uses the "
@@ -700,25 +713,44 @@ def sections(F):
     W("<p>The same welfare machinery runs on couples. It is exhaustive in the same "
       "sense: equalizing everything drives measured inequality to "
       + n("couples_state_I1111_equivalized", "sci", 1)
-      + " Gini points from a baseline of "
-      + n("couples_state_I0000_equivalized", "f3") + ".</p>")
+      + " Gini points (RQMC band "
+      + n("couples_state_I1111_equivalized__rqmc_band", "range")
+      + ") from a baseline of "
+      + n("couples_state_I0000_equivalized", "f3") + " (band "
+      + n("couples_state_I0000_equivalized__rqmc_band", "range") + ").</p>")
     W('<div class="scroll"><table><thead><tr><th>Channel</th>'
-      '<th class="num">Gini points</th><th>Reading</th></tr></thead><tbody>'
+      '<th class="num">Gini points, with the eight-scramble RQMC band</th>'
+      '<th>Reading</th></tr></thead><tbody>'
       "<tr><td><b>Preferences</b></td>"
-      '<td class="num">' + n("couples_C_P_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("couples_C_P_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("couples_C_P_equivalized__rqmc_band", "range")
+      + "</small></td>"
       "<td>Small, as in singles &mdash; but the least stable quantity in the couples "
       "model.</td></tr>"
       "<tr><td><b>Job access</b></td>"
-      '<td class="num">' + n("couples_C_A_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("couples_C_A_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("couples_C_A_equivalized__rqmc_band", "range")
+      + "</small></td>"
       "<td>The employment and hours opportunity margin.</td></tr>"
       "<tr><td><b>Earning opportunities</b></td>"
-      '<td class="num">' + n("couples_C_B_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("couples_C_B_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("couples_C_B_equivalized__rqmc_band", "range")
+      + "</small></td>"
       "<td>The wage-offer technology, both spouses.</td></tr>"
       "<tr><td><b>Endowments and needs</b></td>"
-      '<td class="num">' + n("couples_C_D_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("couples_C_D_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("couples_C_D_equivalized__rqmc_band", "range")
+      + "</small></td>"
       "<td>Non-labour resources and household composition.</td></tr>"
       "<tr><td><b>The environment, total</b></td>"
-      '<td class="num">' + n("couples_C_E_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("couples_C_E_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("couples_C_E_equivalized__rqmc_band", "range")
+      + "</small></td>"
       "<td>Everything that is not preference.</td></tr>"
       "</tbody></table></div>")
 

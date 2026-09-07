@@ -319,11 +319,11 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 % SLIDE 15b
 \longdeck{%
 \begin{frame}[t]
-\headlineframe{Inside the budget channel: non-labour resources \VNestRes{}\%, household composition \VNestComp{}\% of inequality; equal once equivalized}
+\headlineframe{Inside the budget channel: non-labour resources \VNestRes{}\%, household composition and needs \VNestComp{}\% of inequality; equal once equivalized}
 \slidefig{nested_needs}
 \vfill
-\caveat{nested Shapley split of endowments and needs; two factors; the tax-benefit schedule is common to all and is not a separate factor}\par
-\note{Inside the budget channel, non-labour resources do most of the work on the raw basis - forty-six per cent of measured inequality against twelve for household composition. Once welfare is equivalized for needs, the two are equal, and which one leads depends on the reference convention: the equivalence scale does first-order work here. Composition is also the clearest case of why attribution and equalization differ: it is attributed twelve per cent, but equalizing it alone removes two.}
+\caveat{nested Shapley split of endowments and needs; two factors - non-labour resources, and household composition and needs; the tax-benefit schedule is common policy, not a third factor; descriptive, not causal}\par
+\note{Inside the budget channel, non-labour resources do most of the work on the raw basis - 45.73 plus or minus 1.80 per cent of measured inequality against 12.45 plus or minus 1.00 for household composition and needs. Once welfare is equivalized for needs, the two are level, 33.25 plus or minus 1.33 against 32.85 plus or minus 0.68, and which one leads is reference-dependent and is not claimed: the male arm reverses the equivalized ordering and the female arm is a dead heat inside the band, so only the raw ordering holds under both. The equivalence scale does first-order work here. Composition is also the clearest case of why attribution and equalization differ: it is attributed 12.45 per cent, but equalizing it alone removes 2.00. None of this is causal.}
 \end{frame}}
 
 
@@ -347,7 +347,7 @@ $I_{10}=\VStatePref$ & $I_{11}=\VStateCommon$\\
 \slidefig{benchmark}
 \vfill
 \caveat{\StatHours{}-hour coefficient: \VPeakAvailability{} as availability, \VPeakTaste{} as preference; leisure-intercept sex gap \VGapFinal{} \ensuremath{\to} \ensuremath{\VGapBench}.}\par
-\note{Estimated on the same data, the common-opportunity model matches the aggregate hours, employment and occupation shares as well as the RURO model does — in places better — while its likelihood is 129 nats worse. The availability constants come back as preference parameters, and the sex gap in the leisure intercept reverses sign. The welfare decomposition changes little in shares and much in level.}
+\note{Estimated on the same data, the common-opportunity model matches the aggregate hours, employment and occupation shares as well as the RURO model does — in places better — while its negLL is 129 nats worse. The availability constants come back as preference parameters, and the sex gap in the leisure intercept reverses sign, from plus 0.428 to minus 1.991 — that reversal, not a rise in the preference share, is the finding. The omitted market-side share has three destinations, and they are measured exactly: minus 4.0 per cent to preferences, plus 36.0 per cent to endowments and needs, and plus 68.0 per cent out of the measured total altogether. The welfare decomposition changes little in shares and much in level.}
 \end{frame}}
 
 % SLIDE 18
@@ -377,7 +377,7 @@ couples male-leisure pin & up to \VCouplesMove{}\% & unchanged\\[0.3em]
 }
 \vfill
 \caveat{geographic access \VGeo{}\% of inequality, job access \VRoundAcc{}\%; men \RndSubAccMen{}\%, women \RndSubAccWomen{}\%; structural, not causal.}\par
-\note{Geography enters only through the employment margin, so a nested split attributes nearly all of the household-varying access contribution to the geographic block — but job access as a whole is 15 per cent of inequality. Holding an individual's characteristics fixed and moving only the regional access environment moves money-metric welfare by up to a factor of two for a low-education profile. By sex, job access accounts for twice as large a share of men's measured inequality as of women's, a result that is stable across references.}
+\note{Geography enters only through the employment margin, so a nested split attributes 87.6 per cent of the job-access channel — 13.05 plus or minus 0.74 per cent of baseline inequality — to the geographic block, while job access as a whole is 15 per cent of inequality. The housing-allowance rent zone sits inside endowments and needs and is a distinct object from this structural access geography. By sex, job access is 19.58 per cent of men's measured inequality against 9.79 for women, and the men's preference share is minus 2.69 per cent under the female-primary reference and plus 2.78 under the male structural-zero sensitivity — a sign change with the reference, and the two are never averaged. Holding an individual's characteristics fixed and moving only the regional access environment moves money-metric welfare by up to a factor of two for a low-education profile. Job access accounts for twice as large a share of men's measured inequality as of women's, a result that is stable across references.}
 \end{frame}}
 
 % SLIDE 20
@@ -387,7 +387,7 @@ couples male-leisure pin & up to \VCouplesMove{}\% & unchanged\\[0.3em]
 \slidefig{couples}
 \vfill
 \caveat{\NCouples{} couples; employment matched to four decimals; \StatHours{}-hour peak \VCouplePeakFemale{} (women) and \VCouplePeakMale{} (men). Cross-leisure interaction absent; welfare runs it at exactly zero --- spouse leisure complementarity is not estimated here.}\par
-\note{A clean both-flexible couples model converges and fits participation and hours by spouse closely. The environment decomposition has the same ordering as for singles. The couples preference share, however, moves by up to 73 per cent under admissible movement of the male leisure block, so singles remain the quantitative headline and couples the extension. One limitation to volunteer before it is asked: the cross-leisure interaction between the spouses' leisure is absent from this specification. It was not estimated and found small, and it was not estimated and then set to zero -- it is not in the model, the welfare pipeline evaluates couples utility at exactly zero for it, and the omission is forced by identification. Read every couples number as conditional on that absence.}
+\note{A clean both-flexible couples model converges and fits participation and hours by spouse closely. The environment decomposition has the same ordering as for singles. The couples preference share, however, moves by up to 73 per cent under admissible movement of the male leisure block, so singles remain the quantitative headline and couples the extension. One limitation to volunteer before it is asked: the cross-leisure interaction between the spouses' leisure is absent from this specification. It was not estimated and found small, and it was not estimated and then set to zero -- it is not in the model at all. The form it would take is a coefficient times the Box-Cox of male leisure times the Box-Cox of female leisure; the welfare pipeline uses an effective value of exactly 0.0 for it, and the omission is forced by identification. It is a named limitation on identifying cross-spouse leisure complementarity. Read every couples number as conditional on that absence.}
 \end{frame}}
 
 % SLIDE 21

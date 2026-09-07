@@ -40,8 +40,9 @@ def sections(F):
       'The preference and environment contributions are Shapley/Owen values on an '
       'explicit cooperative game whose grand coalition is verified to close: '
       'equalizing everything drives measured inequality to <span class="mono">'
-      + n("state_I11_female_raw", "sci", 1) + "</span> Gini points, numerically zero. "
-      "Nothing is left in an unexplained residual.</li>")
+      + n("state_I11_female_raw", "sci", 1) + "</span> Gini points (RQMC band "
+      + n("state_I11_female_raw__rqmc_band", "range")
+      + "), numerically zero. Nothing is left in an unexplained residual.</li>")
     W('<li><b>A benchmark that prices the modelling convention itself.</b> The same '
       'welfare machinery is run on a re-estimated model in which everyone faces the '
       'same opportunities. The comparison shows exactly what is lost, and &mdash; the '
@@ -54,10 +55,16 @@ def sections(F):
 
     W("<h3>The result, in one paragraph</h3>")
     W('<p>On single-adult households in France, measured welfare inequality is '
-      + n("state_I00_female_raw", "f3") + ' Gini points on the raw basis. Of that, '
+      + n("state_I00_female_raw", "f3") + ' Gini points on the raw basis (RQMC band '
+      + n("state_I00_female_raw__rqmc_band", "range") + '). Of that, '
       'preferences account for ' + n("C_pref_female_raw_share", "pct", 1)
-      + ' and the non-preference environment for '
-      + n("C_env_female_raw_share", "pct", 1) + '. Inside the environment, household '
+      + ' &mdash; parameter interval '
+      + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
+      + ' &mdash; and the non-preference environment for '
+      + n("C_env_female_raw_share", "pct", 1) + ', parameter interval '
+      + n("s_env_female_raw__cr1_interval", "rangepct", 1)
+      + '. Integration bands and parameter intervals are two different objects '
+      'and are never merged. Inside the environment, household '
       'endowments and needs are the largest single component at '
       + n("C_needs_female_raw_share", "pct", 1) + ' of baseline inequality, with the '
       'two market-side channels &mdash; job access '
@@ -509,15 +516,19 @@ def sections(F):
 
     W("<h3>Block 1 &mdash; utility / preferences</h3>")
     W('<div class="eq">'
-      "u_ij  =  omega_ig  ·  BC( leisure_ij ; theta_l,g )\n"
-      "      +  beta_c    ·  BC( consumption_ij ; theta_c )\n"
+      "u_ij  =  beta_l_g(x_i)  ·  BC( leisure_ij ; theta_l,g )\n"
+      "      +  beta_c        ·  BC( consumption_ij ; theta_c )\n"
       "\n"
-      "omega_ig  =  beta_l0_g  +  beta_l_age_g · age_i\n"
-      "                        +  beta_l_age2_g · age_i^2\n"
-      "                        +  beta_l_nkids_g · nkids_i      (single women only)"
+      "beta_l_g(x_i)  =  beta_l0_g  +  beta_l_age_g · a_i\n"
+      "                             +  beta_l_age2_g · a_i^2\n"
+      "                             +  beta_l_nkids_g · k_i     (single women only)\n"
+      "\n"
+      "     a_i   age, centred and scaled by ten\n"
+      "     k_i   number of children"
       "</div>")
     W("<ul>")
-    W("<li><b><em>&omega;<sub>ig</sub></em>, the leisure weight.</b> How much this "
+    W("<li><b><em>&beta;<sub>&#8467;</sub><sup>g</sup>(x<sub>i</sub>)</em>, the "
+      "leisure weight.</b> How much this "
       "household values time, as a function of age, age squared and &mdash; for single "
       "women &mdash; the number of children. This is the taste object the whole paper "
       "is about separating from opportunity.</li>")
@@ -533,7 +544,7 @@ def sections(F):
 
     W("<h3>Block 2 &mdash; job access, <em>g<sup>E</sup></em></h3>")
     W('<div class="eq">'
-      "log g^E_ij  =  working_ij · [  beta_E                        the level\n"
+      "log g^E_ij  =  E_ij · [  beta_E                        the level\n"
       "                            +  beta_E_gsur  · unemployment_rate_i\n"
       "                            +  SUM_r beta_E_drgn_r · region_ir\n"
       "                            +  beta_E_drgur · urban_i\n"
@@ -548,14 +559,18 @@ def sections(F):
 
     W("<h3>Block 3 &mdash; hours access</h3>")
     W('<div class="eq">'
-      "log g^H_ij  =  SUM_b  beta_h_b · working_ij · 1[ hours_ij in band b ]\n"
+      "log g^H_ij  =  SUM_b  beta_h_b · E_ij · 1[ hours_ij in band b ]\n"
       "\n"
       "bands:   PT1  [17.5, 21.5]      short part time\n"
       "         PT2  [28.5, 30.5]      long part time\n"
       "         F35  [33.5, 36.5)      the statutory week\n"
       "         FT   [36.5, 40.5]      standard full time\n"
       "         LH   [44.5, 70]        long hours\n"
-      "         residual bins          normalised to zero"
+      "\n"
+      "the step structure is read against the residual bins and the statutory\n"
+      "band, both at zero (beta_F35 = 0 as a band step); the preferred model\n"
+      "then adds one separate coefficient on the 35-hour indicator, over and\n"
+      "above the band structure - the opportunity peak, beta_h_f35"
       "</div>")
     W("<p><b>This block is the institutional content of the model.</b> Each coefficient "
       "is the log density the opportunity distribution places on jobs in that hours "
@@ -567,7 +582,7 @@ def sections(F):
 
     W("<h3>Block 4 &mdash; occupation access</h3>")
     W('<div class="eq">'
-      "log g^Occ_ij  =  SUM_k  beta_occ_k,g · working_ij · 1[ occupation_ij = k ]\n"
+      "log g^Occ_ij  =  SUM_k  beta_occ_k,g · E_ij · 1[ occupation_ij = k ]\n"
       "\n"
       "         k in {2,3,4};  group 1 is the dropped reference;  g = sex"
       "</div>")
@@ -587,7 +602,7 @@ def sections(F):
       "  +  beta_E_drgur · urban_i\n"
       "  +  beta_E_drgmd · intermediate_i\n"
       "\n"
-      "  (NOT a separate factor: there is no g^Acc in this model)"
+      "  (NOT a separate factor: the model has no separate access factor)"
       "</div>")
     W("<p>The circumstances that tilt job access. The local unemployment rate is the "
       "sharpest of them. Region indicators are NUTS-1 with one omitted; urbanisation is "
@@ -603,7 +618,7 @@ def sections(F):
       "       +  beta_w_pexp  · pexp_i       +  beta_w_pexp2 · pexp_i^2\n"
       "       +  SUM_k delta_occ_k · 1[ occupation_ij = k ]\n"
       "\n"
-      "log g^W_ij  =  working_ij · [ -0.5·( (log w_ij - mu_ij) / sigma )^2\n"
+      "log g^W_ij  =  E_ij · [ -0.5·( (log w_ij - mu_ij) / sigma )^2\n"
       "                              - log sigma  - 0.5·log(2·pi)  - log w_ij ]"
       "</div>")
     W("<ul>")

@@ -21,29 +21,50 @@ def sections(F):
       "labour-supply model. But utility is not comparable across people either: each "
       "household has its own preference parameters, and the numbers its own utility "
       "function produces have no meaning next to anyone else&rsquo;s.</p>")
-    W("<p>The standard resolution is a <b>money metric</b>: convert each "
-      "household&rsquo;s situation into the amount of money that would make a common "
-      "<em>reference</em> household equally well off. That number is in euros, so it is "
-      "comparable; and it is computed by inverting the household&rsquo;s <em>own</em> "
-      "preferences, so it respects them.</p>")
+    W("<p>The resolution is a <b>money metric</b>: convert each household&rsquo;s "
+      "situation into the consumption level that, under a stated <em>reference "
+      "object</em>, would leave <em>that same household</em> exactly as well off as "
+      "its own opportunity situation. That number is in euros, so it is comparable; "
+      "and it is computed by inverting the household&rsquo;s <em>own</em> preferences, "
+      "so it respects them. The reference object is not another household &mdash; for "
+      "the carrier measure it is the household&rsquo;s own opportunity distribution "
+      "with pay held flat.</p>")
 
     W("<h3>The measure, precisely</h3>")
+    W("<p><b>" + lit("W1", "the carrier welfare measure, a name not a result")
+      + "<sub>i</sub> is the uniform pay offered at every job in household "
+      "i&rsquo;s own opportunity distribution that reproduces the expected welfare "
+      "it actually attains.</b> That is the canonical sentence of the "
+      "paper&rsquo;s section&nbsp;3.3, and it is the only definition used here.</p>")
     W('<div class="eq">'
-      "Find the flat consumption level  w_i  that solves\n"
+      "Find the flat pay level  w_i  that solves\n"
       "\n"
-      "    log SUM_j exp[ u_leisure(l_ij)  +  beta_c · BC( w_i / needs_i ; theta_c )\n"
-      "                                    +  log g_ij ]   =   V_i\n"
+      "    log SUM_j exp[ u_leisure(l_ij)  +  beta_c · BC( w_i ; theta_c )\n"
+      "                                    +  log g_ij ]   =   V_i^S\n"
       "\n"
-      "where  V_i  is the household's actual expected-maximum utility\n"
-      "       g_ij is the household's own opportunity density over its own job set\n"
-      "       needs_i is the equivalence scale of the household's composition\n"
+      "where  V_i^S is the household's attained expected-maximum utility in\n"
+      "             coalition S\n"
+      "       g_ij  is the household's own opportunity density over its own\n"
+      "             job set\n"
       "\n"
-      "        W1_i  =  w_i          in euros per month"
+      "        W1_i  =  w_i          in euros per month\n"
+      "\n"
+      "no equivalence scale appears inside this inversion: equivalization is\n"
+      "applied to the raw W1 vector afterwards (see below)"
       "</div>")
-    W("<p>In words: <b>hold the household&rsquo;s own job set, its own opportunity "
-      "density and its own preferences fixed, strip the variation in pay across jobs "
-      "and replace it with a single flat consumption level, and ask what that level has "
-      "to be to leave the household exactly as well off as it actually is.</b></p>")
+    W("<p>Three clauses travel with the measure and none of them is optional.</p>")
+    W("<ul>"
+      "<li>It <b>neutralizes</b> pay differences within the reachable set: the same "
+      "flat pay is offered at every job in the household&rsquo;s own set, so no "
+      "variation in what jobs <em>pay</em> survives into the measure.</li>"
+      "<li><b>Differences in the set itself remain</b>, and are exactly what the "
+      "decomposition of sections&nbsp;14&ndash;16 attributes.</li>"
+      "<li>The inversion uses <b>the same coalition&rsquo;s set and preferences on "
+      "both sides</b> &mdash; utility and the opportunity index are taken from the "
+      "coalition being evaluated on the attained side and on the reference side "
+      "alike, which is what makes the four-channel accounting exhaustive rather than "
+      "approximately so.</li>"
+      "</ul>")
 
     W("<h3>What it neutralizes and what it retains</h3>")
     W('<div class="scroll"><table><thead><tr>'
@@ -85,11 +106,16 @@ def sections(F):
           "<li><b>It is not an income measure.</b> Two households with identical "
           "disposable income get different values if their hours, their reachable sets "
           "or their preferences differ.</li>"
-          "<li><b>It is not the only defensible measure.</b> It is the most conservative "
-          "of a family. Measures that compensate more fully for opportunity differences "
-          "produce roughly double the inequality. Choosing the conservative member means "
-          "the paper&rsquo;s inequality findings are a lower bound within its own "
-          "family.</li>"
+          "<li><b>It is not the only defensible measure.</b> "
+          + lit("W4", "a member of the welfare family, a name not a result")
+          + " and " + lit("W6", "a member of the welfare family, a name not a result")
+          + " sit in the same family under different responsibility cuts, and they "
+          "are reported as <em>normative-reference disclosures</em>: they show how "
+          "the valuation moves when the responsibility cut moves. They are <b>not</b> "
+          "evidence that the "
+          + lit("W1", "the carrier welfare measure, a name not a result")
+          + " magnitude is robust, and no cross-measure quantitative robustness claim "
+          "is made here in any form.</li>"
           "</ul>"))
 
     W("<h3>Raw and equivalized, and why equivalization has to be coalition-consistent</h3>")
@@ -109,7 +135,9 @@ def sections(F):
       "means the scale moves with the composition channel: when composition is "
       "equalized, so is the scale. That is what makes the fully-equalized state "
       "numerically zero, at " + n("state_I11_female_raw", "sci", 1)
-      + " Gini points, and hence what makes the decomposition exhaustive.</p>")
+      + " Gini points (RQMC band "
+      + n("state_I11_female_raw__rqmc_band", "range")
+      + "), and hence what makes the decomposition exhaustive.</p>")
 
     W(F.fig("figW01_welfare_distributions",
             "The welfare distribution in the four principal states. The baseline and "
@@ -127,19 +155,28 @@ def sections(F):
       "household&rsquo;s own value with a common reference value where indicated.</p>")
 
     W('<div class="scroll"><table><thead><tr><th>State</th><th>Preferences</th>'
-      "<th>Environment</th><th>Inequality (Gini points, raw)</th>"
+      "<th>Environment</th>"
+      "<th>Inequality (Gini points, raw) with its eight-scramble RQMC band</th>"
       "<th>What it means</th></tr></thead><tbody>"
       "<tr><td><b>Baseline</b></td><td>own</td><td>own</td>"
-      '<td class="num">' + n("state_I00_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("state_I00_female_raw", "f4")
+      + '<br><small class="bandnote">'
+      + n("state_I00_female_raw__rqmc_band", "range") + "</small></td>"
       "<td>The world as it is.</td></tr>"
       "<tr><td><b>Preferences equalized</b></td><td>reference</td><td>own</td>"
-      '<td class="num">' + n("state_I10_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("state_I10_female_raw", "f4")
+      + '<br><small class="bandnote">'
+      + n("state_I10_female_raw__rqmc_band", "range") + "</small></td>"
       "<td>Everyone wants the same things; environments still differ.</td></tr>"
       "<tr><td><b>Environment equalized</b></td><td>own</td><td>reference</td>"
-      '<td class="num">' + n("state_I01_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("state_I01_female_raw", "f4")
+      + '<br><small class="bandnote">'
+      + n("state_I01_female_raw__rqmc_band", "range") + "</small></td>"
       "<td>Everyone faces the same world; tastes still differ.</td></tr>"
       "<tr><td><b>Both equalized</b></td><td>reference</td><td>reference</td>"
-      '<td class="num">' + n("state_I11_female_raw", "sci", 1) + "</td>"
+      '<td class="num">' + n("state_I11_female_raw", "sci", 1)
+      + '<br><small class="bandnote">'
+      + n("state_I11_female_raw__rqmc_band", "range") + "</small></td>"
       "<td>Identical people in an identical world. Must be zero if the two factors "
       "are exhaustive.</td></tr>"
       "</tbody></table></div>")
@@ -192,16 +229,24 @@ def sections(F):
       "<em>less</em> than nothing when brought in first.</td></tr>"
       "<tr><td><b>Preferences last</b></td>"
       "<td>Move from the environment-equalized state to the fully-equalized state: "
-      "from " + n("state_I01_female_raw", "f4") + " down to "
-      + n("state_I11_female_raw", "sci", 1) + ".</td>"
+      "from " + n("state_I01_female_raw", "f4") + " (band "
+      + n("state_I01_female_raw__rqmc_band", "range") + ") down to "
+      + n("state_I11_female_raw", "sci", 1) + " (band "
+      + n("state_I11_female_raw__rqmc_band", "range") + ").</td>"
       "<td><b>Positive and substantial</b> &mdash; once environments are common, all "
       "remaining inequality is preference-driven by construction.</td></tr>"
       "</tbody></table></div>")
     W("<p>The Shapley value for preferences is the average of those two marginal "
-      "contributions: " + n("C_pref_female_raw", "f4") + " Gini points, which is "
-      + n("C_pref_female_raw_share", "pct", 2) + " of baseline inequality. The "
-      "environment takes the rest, " + n("C_env_female_raw", "f4") + " points or "
-      + n("C_env_female_raw_share", "pct", 2) + ". By construction the two <b>sum "
+      "contributions: " + n("C_pref_female_raw", "f4") + " Gini points (RQMC band "
+      + n("C_pref_female_raw__rqmc_band", "range") + "), which is "
+      + n("C_pref_female_raw_share", "pct", 2) + " of baseline inequality &mdash; "
+      "parameter interval " + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
+      + ". The environment takes the rest, " + n("C_env_female_raw", "f4")
+      + " points (band " + n("C_env_female_raw__rqmc_band", "range") + ") or "
+      + n("C_env_female_raw_share", "pct", 2) + ", parameter interval "
+      + n("s_env_female_raw__cr1_interval", "rangepct", 1) + ". The integration band "
+      "and the parameter interval are two different objects and are <b>never "
+      "merged</b>. By construction the two contributions <b>sum "
       "exactly to the total</b>: that is the property the one-factor method lacks.</p>")
 
     W(box("warn", "The two methods are different objects. Do not mix the language.",
@@ -289,9 +334,13 @@ def sections(F):
 
       '<tr class="grouphead"><td colspan="5">Total</td></tr>'
       "<tr><td><b>Baseline inequality</b></td>"
-      '<td class="num">' + n("state_I00_female_raw", "f4") + "</td>"
+      '<td class="num">' + n("state_I00_female_raw", "f4")
+      + '<br><small class="bandnote">'
+      + n("state_I00_female_raw__rqmc_band", "range") + '</small>' + "</td>"
       '<td class="num">&mdash;</td>'
-      '<td class="num">' + n("state_I00_female_equivalized", "f4") + "</td>"
+      '<td class="num">' + n("state_I00_female_equivalized", "f4")
+      + '<br><small class="bandnote">'
+      + n("state_I00_female_equivalized__rqmc_band", "range") + '</small>' + "</td>"
       '<td class="num">&mdash;</td></tr>'
 
       '<tr class="grouphead"><td colspan="5">First level: preferences against the environment</td></tr>'
@@ -359,7 +408,8 @@ def sections(F):
 
     W("<h3>What to say about each of these</h3>")
     W("<ul>")
-    W("<li><b>Total welfare inequality</b> is " + n("state_I00_female_raw", "f4")
+    W("<li><b>Total welfare inequality</b> (with its band in the table above) is "
+      + n("state_I00_female_raw", "f4")
       + " Gini points on the raw basis and " + n("state_I00_female_equivalized", "f4")
       + " equivalized. Equivalizing <em>raises</em> measured inequality, because "
       "household composition and the money available are not independent.</li>")
@@ -520,8 +570,11 @@ def sections(F):
       + "</td></tr>"
       "</tbody></table></div>")
     W("<p class=\"sub\">Female-primary reference. Bands are eight-scramble "
-      "integration precision. The male structural-zero arm is below; the two are "
-      "reported as a pair and never averaged.</p>")
+      "integration precision, jackknifed as whole quantities rather than composed "
+      "from the bands on numerator and denominator. The male structural-zero arm is "
+      "below; the two are reported as a pair and never averaged. The split is "
+      "<b>descriptive and model-conditional, not causal</b>: nothing here is the "
+      "effect of composition, of an endowment, or of any policy.</p>")
 
     W("<p><b>About four to one raw, and level once welfare is equivalized.</b> "
       "On the raw basis non-labour resources carry "

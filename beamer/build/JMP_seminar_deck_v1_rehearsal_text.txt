@@ -219,43 +219,34 @@ tax-benefit system.                                                             
 
 
                                                                                        8/26
-France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours.                  The estimation sample is single-adult households aged 20 to 60. The institution that dominates the
-                                                                                                       hours distribution is visible: a quarter of households are employed in the 35-hour band. A model
-                                                                                                       without an explicit peak there misses the hours distribution badly; with it, the fit is close.
+France 2016: 1,555 single-adult households; one in four employed at exactly 35 hours.                 The estimation sample is single-adult households aged 20 to 60. The institution that dominates the
+                                                                                                      hours distribution is visible: a quarter of households are employed in the 35-hour band. A model
+                                                                                                      without an explicit peak there misses the hours distribution badly; with it, the fit is close.
 
-                                               20
-
-
-
-
-                     share of households (%)
-                                               15
+                                              20
 
 
 
-                                               10
+                    share of households (%)
+                                              15
 
+                                              10
 
+                                               5
 
-                                                5
-
-
-
-                                                0
-                                                    0   10   20   30       40    50   60   70
-                                                                  weekly hours
-
-
+                                               0
+                                                   0   10   20   30       40    50   60   70
+                                                                 weekly hours
 
    EU-SILC 2016; weights; 1,348 employed.
 
-                                                                                                9/26
-The model reproduces the hours distribution, employment and occupation shares.                                                    Observed against model-implied shares by hours band: the statutory band is matched to within half a
-                                                                                                                                  point, employment and the four occupation groups to within a point. The one visible misfit is the
-                                                                                                                                  bottom of the offered-wage distribution, which the model over-predicts by about five points; I tested
+                                                                                               9/26
+The model reproduces the hours distribution, employment and occupation shares.                                       Observed against model-implied shares by hours band: the statutory band is matched to within half a
+                                                                                                                     point, employment and the four occupation groups to within a point. The one visible misfit is the
+                                                                                                                     bottom of the offered-wage distribution, which the model over-predicts by about five points; I tested
                                                  30
-                                                           observed                                                               an hours-conditioned repair and it did not improve the fit.
-                                                           model-implied
+                                                          observed                                                   an hours-conditioned repair and it did not improve the fit.
+                                                          model-implied
                                                  25
 
 
@@ -271,68 +262,75 @@ tax-benefit system.                                                             
                                                   5
 
                                                   0
+
+
+
+
+                                                                                         40 FT
                                                       0
                                                            0
-                                                                  .5
+                                                                .5
 
-                                                                        21 T 1
-                                                                                 .5
+                                                                     21 T1
+                                                                              .5
 
-                                                                                      30 T 2
-                                                                                               .5
-                                                                                               ef
-                                                                                                     FT
-                                                                                                          4.5
-
-                                                                                                                LH
-
-                                                                                                                     +
-                                                          0- 1
+                                                                     30 T2
+                                                                              .5
 
 
 
 
-                                                                                                                     70
-                                                                                           5r
-                                                                 - 17
+                                                                                                        LH
+                                                                              ef
 
 
-
-                                                                              28
-
-
-                                                                                            33
-                                                                               P
+                                                                                                  .5
 
 
-                                                                                             P
+                                                                                                         +
+                                                          0-1
 
 
 
 
-                                                                                                          4
-                                                                          .5-
-
-
-                                                                                        .5-
-
+                                                                                                       70
+                                                                          5r
+                                                              -17
 
 
 
-                                                                                                      .5-
-                                                                                        F3
-                                                             10
+                                                                           28
+
+
+                                                                           33
 
 
 
 
-                                                                                                     40
-                                                                                      weekly hours
+                                                                                               44
+                                                                            P
+
+
+                                                                            P
+                                                                       .5-
+
+
+                                                                       .5-
+
+
+
+
+                                                                                           .5-
+                                                                       F3
+                                                            10
+
+
+                                                                          weekly hours
 
    35-hour band 24.9% observed, 25.2% model-implied; employment 87.1% / 86.7%; mean absolute band error
    0.008.
 
-                                                                                                                          10/26
+                                                                                                             10/26
 Estimated indifference curves and the price of an hour, by age and sex                                                  These are the estimated preferences themselves. The curves are steep at long hours and flat at short
                                                                                                                         hours, and the leisure weight is U-shaped in age with its minimum around forty. The price of one more
                                                                                                                         weekly hour - the consumption that keeps a household indifferent - is what the welfare measure trades
@@ -401,32 +399,32 @@ tax-benefit system.                                                             
 
 
                                                                                                    12/26
-An independent source puts the 35-hour concentration at 37%; the sample at 34%; the                           The Labour Force Survey never enters the estimation. Its share of employment in the 35-hour band,
-model at 35%.                                                                                                 among the bands the model prices, is 37 per cent; the estimation sample gives 34 and the model 35,
-                                                                                                              and the survey’s ordering of women above men is reproduced by a model with no sex-specific hours
-                                                                                                              coordinate. The survey also documents underemployment declining in hours and a large positive gap
+An independent source puts the 35-hour concentration at 37%; the sample at 34%; the                         The Labour Force Survey never enters the estimation. Its share of employment in the 35-hour band,
+model at 35%.                                                                                               among the bands the model prices, is 37 per cent; the estimation sample gives 34 and the model 35,
+                                                                                                            and the survey’s ordering of women above men is reproduced by a model with no sex-specific hours
 
 
 
 
-                    share in the statutory 35-hour band (%)
-                                                              50                 external benchmark           between desired and actual hours at short hours — context for the thin short-hours opportunities the
-                                                                                 observed sample              model estimates, not a moment it matches.
-                                                              40                 model-implied
+                  share in the statutory 35-hour band (%)
+                                                                                                            coordinate. The survey also documents underemployment declining in hours and a large positive gap
+                                                            50                 external benchmark           between desired and actual hours at short hours — context for the thin short-hours opportunities the
+                                                                               observed sample
+                                                                               model-implied                model estimates, not a moment it matches.
+                                                            40
 
+                                                            30
 
-                                                              30
+                                                            20
 
-                                                              20
+                                                            10
 
-                                                              10
-
-                                                               0
-                                                                   all   women        men
+                                                             0
+                                                                 all   women        men
 
    Labour Force Survey 2016; validation only; no external moment enters the likelihood.
 
-                                                                                                      13/26
+                                                                                                    13/26
 Equivalent income at a common reference pay, under four preference–environment states.                                 Welfare is the money-metric level: the uniform pay across the jobs a household can reach that would
                                                                                                                        leave it exactly as well off as its actual opportunity situation. Inequality is then evaluated under four
                                                                                                                        states - each household’s own preferences and environment, and each replaced by a common reference
@@ -525,32 +523,32 @@ opportunities together 36%.                                                     
    equivalization.
 
                                                                                                             18/26
-Inside the budget channel: non-labour resources 46%, household composition 12% of                                            Inside the budget channel, non-labour resources do most of the work on the raw basis - forty-six per
-inequality; equal once equivalized                                                                                           cent of measured inequality against twelve for household composition. Once welfare is equivalized for
-                                                                                                                             needs, the two are equal, and which one leads depends on the reference convention: the equivalence
-                                                                                                                             scale does first-order work here. Composition is also the clearest case of why attribution and
-                                                                     raw                     female primary
-                                                                                           equivalized
-                                                   50                                        male structural zero            equalization differ: it is attributed twelve per cent, but equalizing it alone removes two.
+Inside the budget channel: non-labour resources 46%, household composition and needs                                       Inside the budget channel, non-labour resources do most of the work on the raw basis - 45.73 plus or
+12% of inequality; equal once equivalized                                                                                  minus 1.80 per cent of measured inequality against 12.45 plus or minus 1.00 for household composition
+                                                                                                                           and needs. Once welfare is equivalized for needs, the two are level, 33.25 plus or minus 1.33 against
+                                                                    raw                   equivalized
+                                                                                            female primary
+                                                                                                                           32.85 plus or minus 0.68, and which one leads is reference-dependent and is not claimed: the male arm
+                                                  50                                        male structural zero           reverses the equivalized ordering and the female arm is a dead heat inside the band, so only the raw
+                                                                                                                           ordering holds under both. The equivalence scale does first-order work here. Composition is also the
 
+                   share of measured inequality
+                                                  40                                                                       clearest case of why attribution and equalization differ: it is attributed 12.45 per cent, but equalizing it
+                                                                                                                           alone removes 2.00. None of this is causal.
+                          attributed (%)
+                                                  30
 
-                    share of measured inequality
-                                                   40
-                           attributed (%)
-                                                   30
+                                                  20
 
-                                                   20
+                                                  10
 
-                                                   10
+                                                   0   non-labour     composition   non-labour    composition
+                                                       resources       and needs    resources      and needs
 
-                                                    0
-                                                        non-labour     composition   non-labour    composition
-                                                        resources       and needs    resources      and needs
+   nested Shapley split of endowments and needs; two factors - non-labour resources, and household composition
+   and needs; the tax-benefit schedule is common policy, not a third factor; descriptive, not causal
 
-   nested Shapley split of endowments and needs; two factors; the tax-benefit schedule is common to all and is not
-   a separate factor
-
-                                                                                                                     19/26
+                                                                                                                   19/26
 Unequal job opportunities account for about a third of measured welfare inequality;                      To the first question: about a third of measured money-metric inequality is attributable to unequal job
 omitting them re-attributes almost nothing to preferences.                                               opportunities in the strict sense — access and earning opportunities — within an environment share of
                                                                                                          94 per cent. To the second: a common-choice-set model does not turn opportunity into taste at the
@@ -568,31 +566,32 @@ omitting them re-attributes almost nothing to preferences.                      
 
 
                                                                                                  20/26
-The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability                                     Estimated on the same data, the common-opportunity model matches the aggregate hours,
-as taste.                                                                                                                        employment and occupation shares as well as the RURO model does — in places better — while its
-                                                                                                                                 likelihood is 129 nats worse. The availability constants come back as preference parameters, and the
-                                                                                                                                 sex gap in the leisure intercept reverses sign. The welfare decomposition changes little in shares and
-                                                         100   final model        benchmark                                      much in level.
+The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability                                    Estimated on the same data, the common-opportunity model matches the aggregate hours,
+as taste.                                                                                                                       employment and occupation shares as well as the RURO model does — in places better — while its
+                                                                                                                                negLL is 129 nats worse. The availability constants come back as preference parameters, and the sex
+                                                                                                                                gap in the leisure intercept reverses sign, from plus 0.428 to minus 1.991 — that reversal, not a rise in
+                                                        100   final model        benchmark                                      the preference share, is the finding. The omitted market-side share has three destinations, and they are
 
 
 
-                    measured inequality attributed (%)
-                        share of that model's own
-                                                          80
+                   measured inequality attributed (%)
+                                                                                                                                measured exactly: minus 4.0 per cent to preferences, plus 36.0 per cent to endowments and needs, and
 
-                                                          60
+                       share of that model's own
+                                                         80                                                                     plus 68.0 per cent out of the measured total altogether. The welfare decomposition changes little in
+                                                                                                                                shares and much in level.
+                                                         60
 
-                                                          40
+                                                         40
 
-                                                          20
+                                                         20
 
-                                                           0                                               preferences
-                                                                 job           earning        endowments
-                                                               access        opportunities     and needs
+                                                          0     job           earning        endowments   preferences
+                                                              access        opportunities     and needs
 
    35-hour coefficient: 2.58 as availability, 2.55 as preference; leisure-intercept sex gap +0.43 → −1.99.
 
-                                                                                                                         21/26
+                                                                                                                        21/26
 The preference share is the sensitive margin; the environment’s internal structure is stable.               From 50 to 400 nested draws the largest coefficient move is half a standard error, and from 100
                                                                                                             upward a fifth; no sign or ordering moves.
 
@@ -614,21 +613,21 @@ as taste.                                                                       
 
 
                                                                                                     22/26
-Within job access, nearly all of the household-varying contribution is geographic; job                                   Geography enters only through the employment margin, so a nested split attributes nearly all of the
-access matters twice as much for men.                                                                                    household-varying access contribution to the geographic block — but job access as a whole is 15 per
-                                                                                                                         cent of inequality. Holding an individual’s characteristics fixed and moving only the regional access
-                                                                                                                         environment moves money-metric welfare by up to a factor of two for a low-education profile. By sex,
+Within job access, nearly all of the household-varying contribution is geographic; job                                   Geography enters only through the employment margin, so a nested split attributes 87.6 per cent of
+access matters twice as much for men.                                                                                    the job-access channel — 13.05 plus or minus 0.74 per cent of baseline inequality — to the geographic
+                                                                                                                         block, while job access as a whole is 15 per cent of inequality. The housing-allowance rent zone sits
+                                                                                                                         inside endowments and needs and is a distinct object from this structural access geography. By sex,
                                                         1400   household 1
 
 
 
                     equivalent income (euros / month)
-                                                               household 2                                               job access accounts for twice as large a share of men’s measured inequality as of women’s, a result that
-                                                                                                                         is stable across references.
-                                                        1200
-
-                                                        1000
-
+                                                               household 2                                               job access is 19.58 per cent of men’s measured inequality against 9.79 for women, and the men’s
+                                                                                                                         preference share is minus 2.69 per cent under the female-primary reference and plus 2.78 under the
+                                                        1200                                                             male structural-zero sensitivity — a sign change with the reference, and the two are never averaged.
+                                                                                                                         Holding an individual’s characteristics fixed and moving only the regional access environment moves
+                                                        1000                                                             money-metric welfare by up to a factor of two for a low-education profile. Job access accounts for twice
+                                                                                                                         as large a share of men’s measured inequality as of women’s, a result that is stable across references.
                                                          800
 
                                                          600
@@ -640,20 +639,22 @@ access matters twice as much for men.                                           
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
                                                                                                                  23/26
-Within job access, nearly all of the household-varying contribution is geographic; job                        Geography enters only through the employment margin, so a nested split attributes nearly all of the
-access matters twice as much for men.                                                                         household-varying access contribution to the geographic block — but job access as a whole is 15 per
-                                                                                                              cent of inequality. Holding an individual’s characteristics fixed and moving only the regional access
-                                                                                                              environment moves money-metric welfare by up to a factor of two for a low-education profile. By sex,
-                                                                                                              job access accounts for twice as large a share of men’s measured inequality as of women’s, a result that
-                         men                                                          19.6%                   is stable across references.
+Within job access, nearly all of the household-varying contribution is geographic; job                        Geography enters only through the employment margin, so a nested split attributes 87.6 per cent of
+access matters twice as much for men.                                                                         the job-access channel — 13.05 plus or minus 0.74 per cent of baseline inequality — to the geographic
+                                                                                                              block, while job access as a whole is 15 per cent of inequality. The housing-allowance rent zone sits
+                                                                                                              inside endowments and needs and is a distinct object from this structural access geography. By sex,
+                                                                                                              job access is 19.58 per cent of men’s measured inequality against 9.79 for women, and the men’s
+                         men                                                         19.6%                    preference share is minus 2.69 per cent under the female-primary reference and plus 2.78 under the
+                                                                                                              male structural-zero sensitivity — a sign change with the reference, and the two are never averaged.
+                                                                                                              Holding an individual’s characteristics fixed and moving only the regional access environment moves
+                                                                                                              money-metric welfare by up to a factor of two for a low-education profile. Job access accounts for twice
+                                                                                                              as large a share of men’s measured inequality as of women’s, a result that is stable across references.
 
 
-
-
-                       women                             9.8%
-                               0         5                10             15           20      25
-                                          share of that group's own measured inequality
-                                                    attributed to job access (%)
+                      women                             9.8%
+                               0        5                10             15           20      25
+                                         share of that group's own measured inequality
+                                                   attributed to job access (%)
 
    geographic access 13% of inequality, job access 15%; men 20%, women 10%; structural, not causal.
 
@@ -666,17 +667,16 @@ identified.                                                                     
 
 
                    share of measured inequality
-                                                                                                                         not estimated and found small, and it was not estimated and then set to zero – it is not in the model,
-                                                  50                                                                     the welfare pipeline evaluates couples utility at exactly zero for it, and the omission is forced by
-
+                                                                                                                         not estimated and found small, and it was not estimated and then set to zero – it is not in the model
+                                                  50                                                                     at all. The form it would take is a coefficient times the Box-Cox of male leisure times the Box-Cox of
                           attributed (%)
-                                                                                                                         identification. Read every couples number as conditional on that absence.
-                                                  40
-                                                  30
+                                                                                                                         female leisure; the welfare pipeline uses an effective value of exactly 0.0 for it, and the omission is
+                                                  40                                                                     forced by identification. It is a named limitation on identifying cross-spouse leisure complementarity.
+                                                  30                                                                     Read every couples number as conditional on that absence.
+
                                                   20
                                                   10
-                                                   0                                          preferences
-                                                         job       earning       endowments
+                                                   0     job       earning       endowments   preferences
                                                        access    opportunities    and needs
 
    2,275 couples; employment matched to four decimals; 35-hour peak 2.55 (women) and 3.29 (men). Cross-leisure
@@ -738,7 +738,7 @@ B1 — The estimated coefficients: preferences
          beta_l_nkids_sf
                theta_l_sf
          theta_c_singles
-                            −2    0            2          4   6   8
+                            2     0            2          4   6   8
                                                    estimate
                                                                          The job-access block: the group-specific unemployment rate, the region dummies and the urbanisation categories, plus the employment level.
 B1 — The estimated coefficients: job access
@@ -768,7 +768,7 @@ B1 — The estimated coefficients: job access
            beta_occ_3_f
            beta_occ_4_f
              beta_h_f35
-                           −4   −3    −2      −1         0   1   2   3
+                           4   3        2      1         0   1   2   3
                                               estimate
                                                                       The earning-opportunity block: the occupation-availability weights and the wage-offer technology.
 B1 — The estimated coefficients: earning opportunities

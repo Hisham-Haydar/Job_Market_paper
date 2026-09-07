@@ -82,7 +82,11 @@ def front_matter() -> str:
         "decompose an opportunity-sensitive money-metric welfare measure by Shapley "
         "attribution.</li>"
         "<li><b>Headline.</b> Preferences " + n("C_pref_female_raw_share", "pct", 1)
-        + ", the non-preference environment " + n("C_env_female_raw_share", "pct", 1)
+        + " (parameter interval "
+        + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
+        + "), the non-preference environment "
+        + n("C_env_female_raw_share", "pct", 1) + " (parameter interval "
+        + n("s_env_female_raw__cr1_interval", "rangepct", 1) + ")"
         + " &mdash; of which endowments and needs "
         + n("C_needs_female_raw_share", "pct", 1) + ", earning opportunities "
         + n("C_earn_female_raw_share", "pct", 1) + ", job access "

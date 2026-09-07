@@ -699,16 +699,29 @@ $$
 +\beta_{u}U_i+\beta_{m}M_i\Bigr].
 $$
 
-*The hours-band factor* $g^{H}$ is a step density over five bands, the statutory
-35-hour band being the reference with its coefficient normalised to zero:
+*The hours-band factor* $g^{H}$ is a step density over five bands. Its zero level
+sits at the residual bins **and** at the statutory band — the 35-hour band step is
+normalised to zero, which is why A.1 estimates four band coefficients rather than
+five — and, separately from that normalisation, the preferred specification
+estimates one 35-hour indicator over and above the band structure, the
+opportunity peak of the next paragraph:
 
 $$
 \log g^{H}_{ij}=\sum_{b}\beta_{b}\,\mathbb{1}\{h_{ij}\in B_b\},
-\qquad \beta_{\mathrm{F35}}\equiv 0 .
+\qquad \beta_{\mathrm{F35}}\equiv 0
+\quad\text{(the band step)},
 $$
 
-The preferred positive specification adds one coefficient on a 35-hour indicator
-inside this factor. We label it an **institutionally motivated opportunity peak**:
+$$
+\text{plus, in the preferred specification, } \beta_{h,\mathrm{F35}}\,
+\mathbb{1}\{h_{ij}\in B_{\mathrm{F35}}\}
+\quad\text{(the added opportunity peak, } \hat\beta_{h,\mathrm{F35}}=2.5795).
+$$
+
+The normalised band step and the added peak are **different objects and are never
+conflated**: the first fixes the origin of the step density, the second is the
+41st estimated coordinate. We label the second an **institutionally motivated
+opportunity peak**:
 it is a feature of the estimated offer density at the statutory week, not an
 estimate of the causal effect of any statute. The restricted model at that
 coefficient equal to zero reproduces the benchmark objective to
@@ -1501,7 +1514,7 @@ does not repeat.
 | free coordinates $k$ | 41 | 41 |
 | active bounds at the optimum | 2 | **0** |
 | interior coordinates | 39 | **41** |
-| objective | 18022.7646 | 18022.2124 |
+| negLL | 18022.7646 | 18022.2124 |
 | free-block minimum eigenvalue | $+0.442$ | $+0.439$ |
 | hours-grid share MAE | 0.008345 | 0.008269 |
 
@@ -1670,8 +1683,10 @@ the files remain on disk.
 ### 6.3 The 35-hour peak
 
 The single coordinate the preferred specification adds to the benchmark is a
-shifter on the statutory-week indicator inside the hours-offer density. Its
-estimate is
+shifter on the statutory-week indicator inside the hours-offer density. It sits
+**over and above the band structure** and is not the band step
+$eta_{\mathrm{F35}}\equiv 0$ of \S3.2, which is a normalisation of the origin
+and is never estimated. Its estimate is
 
 $$
 \hat\beta_{h,\mathrm{F35}} = 2.5795 \quad (\text{s.e. } 0.0983,\ z = 26.24,\
@@ -1682,7 +1697,7 @@ and it is the largest single improvement any one coordinate makes to this
 specification: the likelihood-ratio statistic against the nested benchmark is
 **861.42** on one degree of freedom, $\Delta\mathrm{AIC} = -859.42$ and
 $\Delta\mathrm{BIC} = -854.07$. The restriction is genuine — the preferred model at
-that coordinate equal to zero reproduces the benchmark's objective on the same
+that coordinate equal to zero reproduces the benchmark's negLL on the same
 frame to $2.9\times10^{-10}$ — so this is a one-degree-of-freedom nesting and not a
 reparameterisation.
 
@@ -1866,7 +1881,8 @@ magnitude. Measured leisure preference shifts toward the group facing the less
 favourable offer environment, which is exactly what the confound predicts.
 
 **Welfare inequality falls.** Baseline money-metric inequality is **24.2 per cent
-lower** under the benchmark on the raw basis, 0.101841 against 0.134277, and
+lower** under the benchmark on the raw basis, 0.101841 against 0.134277 (bands in
+Table 7.0a), and
 **15.3 per cent lower** on the equivalized basis, 0.139869 against 0.165105.
 Giving every household the same offer environment removes real dispersion in
 well-being, because a large part of the dispersion *is* the offer environment.
@@ -1884,7 +1900,7 @@ share is a ratio, and in this comparison its denominator moves. Measured
 inequality falls by 24 per cent when the opportunity object is dropped, so a
 constant share is *not* a constant amount of attributed inequality. In absolute
 Gini points the preference contribution falls from **0.008464 under the preferred
-model to 0.006568 under the benchmark** — a decline of 22.4 per cent — while
+model to 0.006568 under the benchmark** (bands in Table 7.1a) — a decline of 22.4 per cent — while
 its share rises from 6.30 to 6.45 per cent. Both statements are true of the same
 two numbers: the preference contribution shrinks in absolute terms almost exactly
 in step with the total, which is what leaves the ratio flat. The correct reading
@@ -2123,7 +2139,7 @@ a refusal instead of the sentence. It printed the sentence.
 is quantitatively large.** Equalising the environment alone reduces inequality by
 **77 per cent** ($I^{00} \to I^{01}$, 0.134277 to 0.030968); equalising
 preferences alone *raises* it by **10 per cent** ($I^{00} \to I^{10}$, 0.134277
-to 0.148316). The Shapley attribution averages the two orders — the environment
+to 0.148316). All four state levels carry their bands in Table 7.0a. The Shapley attribution averages the two orders — the environment
 entering first, and the environment entering after preferences — and returns
 **93.7 per cent to the environment and 6.3 per cent to preferences**. Neither
 attributed share is the result of any one equalisation, and the environment's
@@ -2196,11 +2212,18 @@ reference:
 | non-labour resources | 0.061402 ± 0.001702 | 45.73 ± 1.80 | 78.59 ± 1.81 | 0.054897 ± 0.001583 | 33.25 ± 1.33 | 50.30 ± 1.30 |
 | household composition and needs | 0.016724 ± 0.001493 | 12.45 ± 1.00 | 21.41 ± 1.81 | 0.054233 ± 0.001431 | 32.85 ± 0.68 | 49.70 ± 1.30 |
 
-*Bands are eight-scramble integration precision. The male structural-zero arm is
+*Bands are eight-scramble integration precision, jackknifed as whole quantities:
+a share band is the jackknife of the ratio, never the contribution band divided
+by $I^{00}$. The male structural-zero arm is
 in Appendix G; the two arms are reported as a pair and never averaged. The
 partition identity $C_{\mathrm{nonlabour}}+C_{\mathrm{composition}}=C_{\mathrm{needs}}$
 closes at machine precision on every row — the largest residual over the four
 cells is $1.4\times10^{-17}$ — with no renormalisation.*
+
+**The two denominators are different and are never interchanged.** 45.73 and
+12.45 per cent are shares **of total baseline inequality** $I^{00}$; 78.59 and
+21.41 per cent are shares **of the needs channel** $C_{\mathrm{needs}}$ itself.
+Every figure below states which denominator it is on.
 
 **The split is about four to one on the raw basis and level once welfare is
 equivalized, and that movement is the result.** Raw, non-labour resources carry
@@ -2225,13 +2248,15 @@ Equalising non-labour resources alone reduces inequality by 35.30 per cent and
 the whole channel by 46.04 per cent (equivalized: 23.17, 20.30 and 56.11). The
 Shapley value averages over the orders in which the factors are equalised, and
 for a factor that shares most of its work with its partner the average is far
-above what the factor removes by itself. Neither number is a **causal
-contribution of the tax–benefit system**: both are model-implied attributions
-under a fixed policy, holding estimated preferences and the observed frame fixed.
+above what the factor removes by itself. **The whole split is descriptive and
+model-conditional, and it is not causal.** Neither number is a causal
+contribution of the tax–benefit system, of an endowment, or of household
+composition: both are model-implied attributions under a fixed policy, holding
+estimated preferences and the observed frame fixed.
 
 ### 7.4 Raw against equivalized
 
-| object (preferred model, female reference) | raw | equivalized | change |
+| object (preferred model, female reference); bands in Tables 7.0a/b and 7.1a/b | raw | equivalized | change |
 |---|---:|---:|---|
 | $I^{00}$ | 0.134277 | **0.165105** | $+22.96\%$ |
 | $C_{\mathrm{pref}}$ | $+0.008464$ | $+0.013179$ | |
@@ -2239,6 +2264,9 @@ under a fixed policy, holding estimated preferences and the observed frame fixed
 | $C_{\mathrm{pref}}/I^{00}$ | 6.30 % | 7.98 % | |
 | job access / earning opportunities / endowments and needs | 0.0200 / 0.0277 / 0.0781 | 0.0160 / 0.0268 / 0.1091 | same order on both |
 | mean $W^1$ | €1,384.1 / month | €1,265.7 / month | |
+
+Bands on every quantity in this table are in Tables 7.0a/b and 7.1a/b; they are
+not repeated here, and they are never composed from the bands on their parts.
 
 Equivalizing raises measured inequality by roughly a fifth and raises both
 contributions, but **changes no qualitative conclusion**: the reference-sensitivity
@@ -2859,8 +2887,11 @@ vector at the couples-medoid arguments and there is nothing to average.
 
 | basis | $I^{0000}$ | $I^{1000}$ | $I^{0111}$ | $I^{1111}$ |
 |---|---:|---:|---:|---:|
-| raw | 0.144739 | 0.139613 | 0.009467 | $-2.965\mathrm{e}{-}30$ |
-| equivalized | 0.141547 | 0.140573 | 0.009467 | $-2.835\mathrm{e}{-}30$ |
+| raw | 0.144739 ± 0.001116 | 0.139613 ± 0.000965 | 0.009467 ± 0.000863 | $-2.965\mathrm{e}{-}30$ ± 0.000000 |
+| equivalized | 0.141547 ± 0.001115 | 0.140573 ± 0.001049 | 0.009467 ± 0.000863 | $-2.835\mathrm{e}{-}30$ ± 0.000000 |
+
+Eight-scramble jackknife bands, as everywhere else; they are integration
+precision, never merged with parameter uncertainty.
 
 **Exhaustiveness holds for couples too**: the fully common state returns a
 *constant* welfare vector — range exactly $0.0$ across all 2,275 households at
@@ -2874,8 +2905,8 @@ one channel (11 to job access, 6 to earning opportunities, 5 to preferences,
 
 | basis | $C_{\mathrm{pref}}$ | $C_{\mathrm{env}}$ | $C_{\mathrm{pref}}/I^{0000}$ | $C_{\mathrm{acc}}$ | $C_{\mathrm{earn}}$ | $C_{\mathrm{needs}}$ | order |
 |---|---:|---:|---:|---:|---:|---:|---|
-| raw | $+0.007296$ [0.006863, 0.007730] | $+0.137442$ [0.136339, 0.138546] | 5.04 % | 0.019562 | 0.045898 | **0.071982** | needs > earning opp. > access |
-| equivalized | $+0.005220$ [0.004897, 0.005544] | $+0.136327$ [0.135100, 0.137554] | 3.69 % | 0.017816 | 0.040767 | **0.077743** | needs > earning opp. > access |
+| raw | $+0.007296$ [0.006863, 0.007730] | $+0.137442$ [0.136339, 0.138546] | 5.04 % | 0.019562 [0.018514, 0.020610] | 0.045898 [0.043316, 0.048480] | **0.071982** [0.070129, 0.073836] | needs > earning opp. > access |
+| equivalized | $+0.005220$ [0.004897, 0.005544] | $+0.136327$ [0.135100, 0.137554] | 3.69 % | 0.017816 [0.016823, 0.018810] | 0.040767 [0.038499, 0.043034] | **0.077743** [0.075685, 0.079802] | needs > earning opp. > access |
 
 Levels: raw mean €1,836.8 and median €1,761.8 a month; equivalized mean €972.7 and
 median €921.5. **The same nested order the singles module found, on both bases**, and
@@ -2936,12 +2967,15 @@ aggregation does **not** fire and pooling is licensed.
 **Pooled, equivalized only** (2,275 couples and 1,555 singles; weighted shares
 54.0 per cent couple, 46.0 per cent single):
 
-| state | pooled | singles | couples |
+| state; singles and couples bands in Tables 7.0b and 8.1 | pooled | singles | couples |
 |---|---:|---:|---:|
 | $I^{0000}$ | **0.173235** | 0.165105 | 0.141547 |
 | $I^{1000}$ | 0.166195 | 0.169716 | 0.140573 |
 | $I^{0111}$ | 0.093217 | 0.030968 | 0.009467 |
 | $I^{1111}$ | **0.068282** | 0.0 | 0.0 |
+
+The singles and couples columns carry the bands of Tables 7.0b and 8.1; the
+pooled column is not a registry quantity and no band is claimed for it.
 
 Pooled mean equivalized $W^1$ is €1,107.5 a month, against €1,265.7 for singles and
 €972.7 for couples.
@@ -3533,7 +3567,9 @@ it should not be settled by whoever happens to write the code.
 ### A.1 The preferred specification: all 41 estimated coordinates
 
 Robust CR1 standard errors, $G = 1{,}555$ clusters, $K_{\text{interior}} = 39$,
-read against $z_{0.975} = 1.959964$. Objective 18022.764617170084. The ten pinned
+read against $z_{0.975} = 1.959964$. **singles final model negLL
+18022.764617170084** &mdash; the negative log-likelihood at the optimum, positive
+because the sign is flipped. The ten pinned
 non-estimated coordinates are not displayed. Two coordinates rest on active box
 bounds and carry no standard error; §5.2 and §5.5 establish what that does and
 does not mean.
@@ -3584,7 +3620,7 @@ does not mean.
 
 ### A.2 The nested benchmark: all 40 estimated coordinates
 
-Identical specification less `beta_h_f35`. Objective 18453.4750133318.
+Identical specification less `beta_h_f35`. negLL 18453.4750133318.
 
 | coordinate | estimate | s.e. | $z$ | status |
 |---|---:|---:|---:|---|
@@ -3636,7 +3672,7 @@ Identical specification less `beta_h_f35`. Objective 18453.4750133318.
 | active coordinates (the reported parameterization) | **41** | **40** |
 | of which interior / at an active bound | 39 / 2 | 38 / 2 |
 | storage-vector length | see the provenance note at A.4 | |
-| objective | 18022.764617 | 18453.475013 |
+| negLL | 18022.764617 | 18453.475013 |
 | likelihood ratio, 1 d.f. | **861.42** | — |
 | AIC | 36127.529 | 36986.950 |
 | BIC (households) | 36346.848 | 37200.919 |
@@ -3855,7 +3891,8 @@ not simplified to fit the faster hardware.
 ### D.1 The clean both-flexible baseline: 46 free coordinates
 
 Robust CR1 standard errors, $G = 2{,}275$ clusters, $K_{\text{interior}} = 45$.
-Objective 43493.342239066726, at the full precision the record carries. One active bound. Twelve further coordinates are pinned
+**couples clean baseline negLL 43493.342239066726**, the negative
+log-likelihood at the full precision the record carries. One active bound. Twelve further coordinates are pinned
 inert and are not displayed.
 
 | coordinate | block | estimate | s.e. | $z$ |
@@ -3915,7 +3952,7 @@ the baseline.
 
 | arm | objective | $\Delta$ vs baseline | likelihood ratio |
 |---|---:|---:|---:|
-| baseline | 43493.342239 | 0 | 0 |
+| baseline negLL | 43493.342239 | 0 | 0 |
 | `beta_l0_m` low / high | 43497.338227 / 43495.640532 | $+4.00$ / $+2.30$ | 7.99 / 4.60 |
 | `theta_l_m` low / high | 43496.746134 / 43497.449608 | $+3.40$ / $+4.11$ | 6.81 / 8.22 |
 | `beta_l_age2_m` low / high | 43496.570333 / 43495.427341 | $+3.23$ / $+2.09$ | 6.46 / 4.17 |
@@ -4048,7 +4085,7 @@ are at the female-primary reference.
 
 ### The headline quantities, raw basis
 
-| quantity | point | RQMC band | CR1 parameter interval | parameter ÷ RQMC width |
+| quantity | point | RQMC band | CR1 parameter interval (**never merged** with the band) | parameter ÷ RQMC width |
 |---|---:|---|---|---:|
 | $I^{00}$ | 0.134277 | [0.132340, 0.136214] | [0.126505, 0.147600] | 5.4× |
 | preference contribution | 0.008464 | [0.007550, 0.009378] | [0.005805, 0.014495] | 4.8× |
@@ -4078,7 +4115,8 @@ sampling error.
 
 **The headline split survives.** The preference share is 6.30 per cent with a
 parameter interval of [4.22, 10.89], and the environment share 93.70 with
-[89.11, 95.78]. The environment remains dominant across the interval, and the sign
+[89.11, 95.78]; these are parameter intervals, and they are **never merged** with
+the integration bands quoted beside them. The environment remains dominant across the interval, and the sign
 of the preference contribution does not change within it.
 
 **The geographic share of job access is the widest of the reported quantities**, at
@@ -4257,7 +4295,7 @@ then bound by its artefact source in the second column alone.*
 | numeral / claim | source | record key |
 |---|---|---|
 | Box–Cox utility; the four-factor opportunity density; the within-set centring convention | `JMP/manuscript/sections/02_framework.md` §2.1 | — |
-| $\beta_c \equiv 1$; $\beta_{\mathrm{F35}} \equiv 0$; $\beta^{\rm occ}_{1,g}\equiv 0$; $\lambda_\ell = 10$ | same, self-check (a) | — |
+| $\beta_c \equiv 1$; the band step $\beta_{\mathrm{F35}} \equiv 0$, distinct from the separately estimated 35-hour opportunity peak $\beta_{h,\rm F35}$; $\beta^{\rm occ}_{1,g}\equiv 0$; $\lambda_\ell = 10$ | same, self-check (a) | — |
 | the restricted preferred model reproduces the benchmark objective to $2.9\times10^{-10}$ | `ps1r222_s5b_estimation_v1.json`, `model_comparison.nesting_on_the_corrected_frame.abs_gap` | — |
 | the welfare family; $W^1$ as carrier; $W^4$/$W^6$ as normative-reference disclosures; the excluded best-paid-equivalent measure | `02_framework.md` §2.3 | — |
 | common quadrature support: domination minimum slack $+3.226$ nats over 3,184,640 comparisons; effective sample size $\approx$ one third higher | `decision_note.md` §21.3, §21.4 | — |
@@ -4308,7 +4346,7 @@ then bound by its artefact source in the second column alone.*
 | W3: correlation at the $\pm0.99$ box endpoint; leisure within-set spread 0.073 / 0.127; no valid null reference | `decision_note.md` §30.6, §30.7 | — |
 | HP / HO real data not run, by rule | `decision_note.md` §26.5, §29.5 | — |
 | age-bound diagnostic: box $\pm5\to\pm25$ and $\pm1\to\pm5$; $k$ identical at 41; active set 2 → 0; interior 39 → 41 | `SPRINT/runs/agebound_addendum_s2/ab_step1_estimation_v1.json`, `admissible_region`, `comparison` | — |
-| objective 18022.2124 vs 18022.7646; gain 0.552; twice the gain 1.104; $\Delta$AIC $=\Delta$BIC $=-1.104$; **not** a chi-square statistic | same, `comparison.not_a_likelihood_ratio_test` | — |
+| negLL 18022.2124 vs 18022.7646; gain 0.552; twice the gain 1.104; $\Delta$AIC $=\Delta$BIC $=-1.104$; **not** a chi-square statistic | same, `comparison.not_a_likelihood_ratio_test` | — |
 | released coordinates 1.4466 (s.e. 1.036, $z$ 1.396) and 1.7218 (s.e. 0.895, $z$ 1.925) | `SPRINT/runs/agebound_addendum_s2/ab_parameter_movement_v1.csv` | — |
 | largest movement 0.72 SE (`beta_l_nkids_sf`), then $-0.61$ and $-0.43$; F35 2.5795 → 2.5692 | same | — |
 | hours-grid MAE 0.008345 → 0.008269; curvature $+0.442$ → $+0.439$ | `ab_step1_estimation_v1.json`, `comparison`; `SPRINT/runs/agebound_addendum_s2/ab_hours_band_fit_v1.csv` | — |
@@ -4339,7 +4377,7 @@ then bound by its artefact source in the second column alone.*
 
 | numeral | source | record key |
 |---|---|---|
-| benchmark objective 18,151.85 against 18,022.76; gap 129.1 nats; 16 free parameters against 41 | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting.variants.RUM_B` | `rum_bench_negll, negll_singles_final, rum_bench_negll_gap, rum_pref_model_n_free, n_params_active` |
+| benchmark negLL 18,151.85 against 18,022.76; gap 129.1 nats; 16 free parameters against 41 | `SPRINT/runs/rum_benchmark_final/rb_step1_estimation_v1.json`, `step6_nesting.variants.RUM_B` | `rum_bench_negll, negll_singles_final, rum_bench_negll_gap, rum_pref_model_n_free, n_params_active` |
 | likelihood-ratio 258.2 on 25 degrees of freedom, reported as an **upper bound** | same, `LR_statistic_2x_negll_gap`, `df`, `statistic_is_an_upper_bound` | `rum_bench_LR_statistic, rum_bench_df` |
 | AIC 36,127.5 against 36,335.7; BIC 36,346.8 against 36,421.3; per-household log-score gap 0.083 | same | — |
 | fit mean absolute deviation: hours 0.0080/0.0083, occupation 0.0029/0.0034, wage quintiles 0.0203/0.0261, employment 0.0042/0.0041 | `SPRINT/runs/rum_benchmark_final/rb_step2_fit_comparison_v1.csv`, `__summary__` rows | — |
@@ -4419,7 +4457,7 @@ then bound by its artefact source in the second column alone.*
 | numeral | source | record key |
 |---|---|---|
 | 2,275 households × 101 joint alternatives; 46 free, 12 pinned; the three named absences | `SPRINT/decision_log.md` Entry 6 | `n_households_couples, n_alternatives, beta_ll_status` |
-| objective 43493.342239; spread $1.353\times10^{-9}$; minimum eigenvalue $+0.1105$; one active bound; $G=2{,}275$, $K_{\rm interior}=45$ | same; `SPRINT/runs/couples_clean_baseline/r240_step3_estimation_v1.json` | `negll_couples_final` |
+| negLL 43493.342239; spread $1.353\times10^{-9}$; minimum eigenvalue $+0.1105$; one active bound; $G=2{,}275$, $K_{\rm interior}=45$ | same; `SPRINT/runs/couples_clean_baseline/r240_step3_estimation_v1.json` | `negll_couples_final` |
 | the two recovery gates (42/4/0 and 38/8/0); the three MARGINAL male-leisure coordinates at 0.78 / 0.85 / 0.65 SE | `SPRINT/decision_log.md` Entry 6 | — |
 | the pre-registration error and its correction; observed median $\mathrm{mean}|z|$ 0.773 against 0.798 | same |
 | all fit numbers in §8.3 | `r240_step3_estimation_v1.json`, `fit` | — |

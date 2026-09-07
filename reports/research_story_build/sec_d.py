@@ -540,8 +540,11 @@ def sections(F):
               "preference removes that adaptation, so households in bad environments no "
               "longer make the best of them and the spread widens.",
               "The preferences-equalized state is "
-              + n("state_I10_female_raw", "f4") + " against a baseline of "
-              + n("state_I00_female_raw", "f4") + " &mdash; a rise of "
+              + n("state_I10_female_raw", "f4") + " (RQMC band "
+              + n("state_I10_female_raw__rqmc_band", "range")
+              + ") against a baseline of "
+              + n("state_I00_female_raw", "f4") + " (band "
+              + n("state_I00_female_raw__rqmc_band", "range") + ") &mdash; a rise of "
               + n("equalization_pref_only", "pctabs", 1) + ". Preferences and "
               "environments are correlated in a partly offsetting way in the data. This "
               "is not an artefact, and it is the reason the Shapley attribution and the "
@@ -555,7 +558,9 @@ def sections(F):
               "in. The equalization effect is one specific intervention with everything "
               "else left alone.",
               "The environment&rsquo;s Shapley share is "
-              + n("C_env_female_raw_share", "pct", 1) + ", while equalizing the "
+              + n("C_env_female_raw_share", "pct", 1) + " (parameter interval "
+              + n("s_env_female_raw__cr1_interval", "rangepct", 1)
+              + "), while equalizing the "
               "environment alone removes " + n("equalization_env_only", "pctabs", 1)
               + " of baseline inequality. The gap is the "
               "preference&ndash;environment interaction: bringing the environment in "
@@ -733,7 +738,7 @@ def sections(F):
               "preferences means assuming everyone happens to have a taste kink at "
               "exactly the legal threshold.",
               "It costs one coefficient and buys "
-              + a("chron.peak_negll_gain", "f1") + " in log-likelihood, moving the "
+              + a("chron.peak_negll_gain", "f1") + " in negLL &mdash; the negative log-likelihood falls by that much &mdash; moving the "
               "predicted statutory-band share from "
               + a("chron.f35_share_without_peak", "f3") + " to "
               + a("chron.f35_share_with_peak", "f3") + " against an observed "
@@ -781,7 +786,9 @@ def sections(F):
               "answer. Worried about the preference <em>level</em>; not about the "
               "qualitative conclusion.",
               "The preference share moves from "
-              + n("C_pref_female_raw_share", "pct", 2) + " under the female reference to "
+              + n("C_pref_female_raw_share", "pct", 2) + " (parameter interval "
+              + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
+              + ") under the female reference to "
               + n("C_pref_male_raw_share", "pct", 2) + " under the male structural-zero "
               "reference &mdash; a movement larger than every other source of "
               "uncertainty in the paper combined, and far larger than either the "
@@ -876,7 +883,7 @@ def sections(F):
               "their evidence rather than dropped.",
               "The preferred specification is the <em>most parsimonious</em> admitted "
               "extension, not the richest: it costs one free coefficient and buys "
-              + a("chron.peak_negll_gain", "f1") + " in log-likelihood. Two variants "
+              + a("chron.peak_negll_gain", "f1") + " in negLL, a fall in the negative log-likelihood. Two variants "
               "that a likelihood-ratio test <em>favoured</em> were nonetheless stopped "
               "&mdash; an additive hours term in the wage location, on the Bayesian "
               "criterion and because it degraded five of seven fit metrics; and a "

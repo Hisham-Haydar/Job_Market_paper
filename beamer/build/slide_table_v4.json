@@ -85,8 +85,8 @@
     "headline": "The model reproduces the hours distribution, employment and occupation shares.",
     "element": "hours",
     "builds": 1,
-    "on_slide_words": 70,
-    "body_words": 60,
+    "on_slide_words": 67,
+    "body_words": 57,
     "pdf_page": 13
   },
   {
@@ -163,11 +163,11 @@
   },
   {
     "number": "15b",
-    "headline": "Inside the budget channel: non-labour resources 46%, household composition 12% of inequality; equal once equivalized",
+    "headline": "Inside the budget channel: non-labour resources 46%, household composition and needs 12% of inequality; equal once equivalized",
     "element": "nested_needs",
     "builds": 1,
-    "on_slide_words": 65,
-    "body_words": 50,
+    "on_slide_words": 74,
+    "body_words": 57,
     "pdf_page": 23
   },
   {
@@ -184,8 +184,8 @@
     "headline": "The benchmark fits the marginals as well, is 129 log-points worse, and recovers availability as taste.",
     "element": "benchmark",
     "builds": 1,
-    "on_slide_words": 55,
-    "body_words": 39,
+    "on_slide_words": 54,
+    "body_words": 38,
     "pdf_page": 25
   },
   {
