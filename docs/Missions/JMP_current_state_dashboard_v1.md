@@ -220,6 +220,7 @@ boundaries of record are `JMP_M08_LOC4_manuscript_claim_set_v2.md`.
 | **Ex-ante continuum diagnostic** | **RUN TO THE FAILURE BRANCH** — 8 of the 9 ruled sources measured ABSENT as drivers; the surviving object is the money-metric inversion's household-specific FROZEN REFERENCE CORE, returned at R-208 and ruled on at R-209 | interim R-206, superseded by R-207; R-208 / R-209; decision note §19.7 |
 | **Lane B — wage treatment (`W0`/`W1`/`W2`)** | **CLOSED at R-220 s2** — `W0_W1_W2_AXIS_CLOSED`; the STEP-1 W2-gate halt is discharged, W1 and W2 are not estimated. The audit that produced this: — the audit overturns the ruling's premise: in FR_2016_a3 `yivwg` **is** the observed hourly wage (`yem×(12/yemmy)/(lhw×52/12)`) for **100%** of persons who have one, so W1 is a near no-op (10 households, all hours-clip artefacts) and W2's stated object — the non-worker wage location — is **provably inert** (bitwise-unchanged negLL over all 15,814 non-working rows). No estimation run | deputy ruling ss1,3,4 / R-218; MNL `experiments/JMP_PS1/decision_note.md` §22 |
 | **Lane B — the ten-household `lhw` audit (R-220 s3)** | **ANSWERED `NO`; FINAL POSITIVE-MODEL SELECTION HALTED** — the chosen node is priced at `hours_model × yivwg × 52/12` (verified 88/88), so the ten clipped households carry earnings wrong by −27% to +67% and disposable income by −24.5% to +13.1%. **3 are intentional support projections** (the 70 h cap); **7 are an unintended inconsistency** (the 10 h floor — the model's hours support reaches 5 h and the frame carries 2,225 sub-10 h alternatives). Smallest correction + one re-estimation proposed, not run | R-220 s3; MNL `experiments/JMP_PS1/decision_note.md` §23 |
+| **Parity-axis re-halt — `.gitignore` additions + package gitlink advance** | **DISCHARGED at HEAD `70206352` (2026-09-08)** — dated, one-time carve-out for `.gitignore` (+41/−0) and `dclaborsupply-monorepo` `27756a06`→`55bb0d0e` (criterion-A + truncated-wage-support, 10 files / +602/−69); NO SCIENTIFIC INTERPRETATION attaches to the pin move; battery PASS 5/5 | Goal-1 R-227 s9 (deputy, 2026-09-08); MNL `experiments/JMP_PS1/decision_note.md` §36 |
 
 ### JMP-M08T2 — closed
 
@@ -878,7 +879,9 @@ Reproduced before and after every gated commit; read-only, seconds. Run from
    plus the U6 pin set — **76 pins** (52 + 24).
 2. Re-hash every pinned key via `base_path` / `verified_path`.
 3. `parity_axis_evidence("5b0e3d29e28126e1b3ee0340a243c09755da0b3b")`.
-4. Assert the `dclaborsupply-monorepo` gitlink is still `27756a06`.
+4. Assert the `dclaborsupply-monorepo` gitlink is `55bb0d0e` — the R-227 s9
+   discharged advance from `27756a06` (§5.1 below). Any OTHER gitlink value
+   is still a halt.
 
 **R-179.1 — the battery is run in FULL, always.** All four steps and all 76 pins,
 before **and** after every gated commit. **No scoped subset is licensed** by any
@@ -979,6 +982,45 @@ gitlink still `27756a06`. The halt on the **next U6 / welfare run** is lifted. N
 new general parity review is required and none was run. **Do not widen the
 criterion to admit modifications generally, and do not detach the axis** — those
 remain the wrong answers; this carve-out is the right one, and it is closed.
+
+### 5.1 Re-halt DISCHARGED at R-227 s9 (2026-09-08) — `.gitignore` additions and the package gitlink advance `27756a06` -> `55bb0d0e`
+
+The axis **re-halted** at MNL HEAD `70206352`, past two further non-addition
+items beyond the three §5 carve-out paths: `.gitignore` (`M`) and the
+`dclaborsupply-monorepo` gitlink (`M`). Deputy ruling of record, dated
+**2026-09-08** (deputy's s9): **PARITY-AXIS RE-HALT DISCHARGE (`.gitignore`
+ADDITIONS, PACKAGE GITLINK ADVANCE `27756a06` -> `55bb0d0e`)**. Full record:
+MNL `experiments/JMP_PS1/decision_note.md` §36.
+
+**`.gitignore`** — sha256 before `6eee7b8d…4873a96`, after `73a17e9c…cab4c5b`;
+**+41 / −0 lines**, additions-only, folded into the existing
+`R227_PARITY_CARVEOUT` table (no new mechanism).
+
+**Package gitlink advance** — `27756a06ea189339aa82915ed2124628afed20eb` ->
+`55bb0d0ea7a1ad2d683f8b2b2a9f7bfb3d5118df`, via submodule commits `eb18fd7`
+("structural truncated wage support") and `55bb0d0` ("sampled multiset
+criterion A", the named criterion-A implementation). Exact diff summary
+between the two commits: **10 files changed, 602 insertions(+), 69
+deletions(-)** across `dclaborsupply`'s `data/loader.py`,
+`likelihood/{engine_jax,engine_numpy,wage_density}.py`, `spec/parser.py`, and
+five test files.
+
+**NO SCIENTIFIC INTERPRETATION ATTACHES TO THIS PIN MOVEMENT.** The discharge
+unblocks the parity-axis gitlink identity check mechanically; it certifies no
+result, model or estimate, and does not evaluate criterion-A or the
+truncated-wage-support change on their merits.
+
+`scripts/welfare/m08_u6_rebind.py` gains `R227_S9_DISCHARGE_AUTHORITY`,
+`R227_S9_DISCHARGE_DATE`, the `.gitignore` carve-out entry, and
+`R227_S9_GITLINK_DISCHARGE` + `_resolve_r227_s9_gitlink`, which accepts the
+gitlink as intact iff it is unchanged **or** exactly this pinned before/after
+pair — any other move still halts.
+
+**Battery re-run at MNL `70206352` — ALL PASS 5/5.** Gate self-pin OK;
+`open_gate` 52 + 24 = 76 OK; 76/76 pins re-hashed; `parity_axis_evidence`
+`materially_intact = True` over **1,757** changed paths (**1,748 additions**,
+4 HK-01 renames, **4** R-227 s10/s9 carve-out resolutions — the original three
+plus `.gitignore` — **0** blocking); gitlink assertion PASS at `55bb0d0e`.
 
 ---
 
