@@ -1,0 +1,22 @@
+% Standalone render of the companion theory talk's W^1 read-off panel.
+% The construction is imported verbatim from beamer/theory_model_figure.tex,
+% which is the same source the seminar deck uses; only the overlay staging is
+% collapsed to a single always-on spec so the panel renders as a static figure.
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,bm}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,positioning,fit,backgrounds}
+\definecolor{agenti}{RGB}{200,30,40}
+\definecolor{agenth}{RGB}{20,80,200}
+
+% beamer overlay commands, neutralised: every layer is drawn once.
+\newcommand{\onslide}[2][]{}
+\let\origonslide\onslide
+\renewcommand{\onslide}[1][]{}
+\newcommand{\only}[2][]{#2}
+
+\input{../../../beamer/theory_model_figure.tex}
+
+\begin{document}
+\ModelFigure{\WoneRedI{1-}\WoneBlueH{1-}}
+\end{document}
