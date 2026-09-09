@@ -113,6 +113,30 @@ for _tag, _bc, _base in [('singles', 2.0387318, 1938.238719107138),
              'EUR/month')
     register('scale_nat_eur_' + _tag, int(round(_base * (_f - 1.0))), _S11,
              'derived', 'EUR/month at the stated baseline')
+    register('scale_nat_pct_' + _tag, round((_f - 1.0) * 100.0, 1), _S11,
+             'derived', 'per cent change in consumption')
+
+# ---- COND-1: conditioning on parameter-standardized coordinates -----------
+# Each coordinate is scaled by its cluster-robust standard error, or by its
+# bound half-width where the coordinate is active. Raw-coordinate condition
+# numbers describe units; these describe the information in the likelihood.
+_COND1 = ('COND-1 scaled conditioning diagnostic on the s11 specifications '
+          'of record')
+for _k, _v in [('cond_std_singles', 728),
+               ('cond_std_couples', 9443),
+               ('cond_std_couples_ex', 234)]:
+    register(_k, _v, _COND1, 'diagnostic', 'condition number, standardized '
+             'coordinates')
+
+# ---- the weighting the estimated order implies ----------------------------
+# 2**beta_c is the weight an alternative paying twice the median carries;
+# derived here so it cannot drift from the estimate it is read against.
+register('pm_weight_double', round(2.0 ** 2.0387318, 2), _S11, 'derived',
+         'implied weight relative to the median alternative')
+for _k, _v, _u in [('pm_ratio_p95p5', 95.6, 'implied weight ratio'),
+                   ('pm_ratio_arith', 9.4, 'implied weight ratio')]:
+    register(_k, _v, 'figP07 weighting panel, p5-p95 span of reachable '
+             'consumption', 'derived', _u)
 
 # ---- the power-mean identity gate -----------------------------------------
 register('pm_cases', 1000,
@@ -417,9 +441,9 @@ def resolve(text, target):
     # Evidence that is commissioned but not yet returned. Each token is
     # visible in the text and counted by the document verifier.
     text=text.replace('{{PENDING-HINV}}',
-                      'That check is commissioned and its result is not yet on record, so the separation is argued here from the construction rather than shown; the figure quoted above for the movement under an equalised wage block is the total across all three routes, not the direct one.')
-    text=text.replace('{{PENDING-COND}}',
-                      'A scaled conditioning diagnostic, which reports the same curvature after putting the coordinates on comparable units, is commissioned and not yet on record.')
+                      'That check is commissioned and its result is not yet on record, so the separation is argued here from the construction rather than shown; the figure quoted above is the total movement, across every route by which the equalisation reaches the measure, and not the direct channel alone.')
+    # PENDING-COND retired: COND-1 has returned and the
+    # standardized diagnostic is reported in the fit section.
     s='example__single__baseline__'; c='example__couple__baseline__'
     worked=(r'$$\begin{aligned} W_{\rm single}&\simeq '+val(s+'lambda','.2f')+
             r'\left[1+'+val(s+'theta','.6f')+r'('+val(s+'logJ','.5f')+'-'+val(s+'logH','.5f')+
