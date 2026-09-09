@@ -3,6 +3,19 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath,amssymb,booktabs,longtable,array,graphicx,calc}
+\usepackage{ragged2e}
+\usepackage{needspace}
+\raggedbottom
+% Float discipline. The panel figures are about 0.43\textheight each, so the
+% default allowance of several top floats lets two of them plus a long-captioned
+% table exceed the page and produce an overfull vbox in the output routine.
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{1}
+\setcounter{totalnumber}{2}
+\renewcommand{\topfraction}{0.6}
+\renewcommand{\bottomfraction}{0.4}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.7}
 \usepackage{xurl}
 \usepackage[round]{natbib}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
@@ -77,7 +90,7 @@ The data are French EU-SILC, collection year 2016, with income reference year 20
 
 \subsection{The estimation samples}\label{the-estimation-samples}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
@@ -123,7 +136,7 @@ The second kind removes households for whom the model does not define an offer s
 
 The third kind is support. An employed decider's observed hours must lie in the closed interval \([5, 70]\) hours per week and the delivered hourly wage in \([2, 590]\) euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is \emph{unsupported} occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive \emph{simulated} alternatives are not a reason to drop a household, and are instead excluded from that household's choice domain.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
@@ -158,7 +171,7 @@ Description
 
 \subsection{What the households look like}\label{what-the-households-look-like}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.2247\linewidth}>{\raggedright\arraybackslash}p{0.2247\linewidth}>{\raggedright\arraybackslash}p{0.2247\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.2247\linewidth}>{\RaggedRight\arraybackslash}p{0.2247\linewidth}>{\RaggedRight\arraybackslash}p{0.2247\linewidth}@{}}
 \caption{Descriptive means on the estimation samples. Weighted by the household cross-sectional weight; one row per household, with spouse-specific variables carried on the household row. Hours and wages are conditional on employment. These are observed inputs, not model predictions.}\tabularnewline
 \toprule\noalign{}
 Measure & Single-adult decider & Couple man & Couple woman \\
@@ -185,7 +198,7 @@ Households (unweighted) & 1,540 & 2,223 & \\
 
 Education is the three-level ISCED grouping, with the medium level as the omitted reference in the wage equation. Potential experience is years since leaving education, entering the wage equation in units of 20 years, with the square recomputed after scaling rather than carried forward. A child is any resident household member under 20, counted without a parent link. Age enters preferences centred on the sample mean decider age and divided by 10 years.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.1650\linewidth}>{\raggedright\arraybackslash}p{0.1650\linewidth}>{\raggedright\arraybackslash}p{0.1650\linewidth}>{\raggedright\arraybackslash}p{0.1650\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.1650\linewidth}>{\RaggedRight\arraybackslash}p{0.1650\linewidth}>{\RaggedRight\arraybackslash}p{0.1650\linewidth}>{\RaggedRight\arraybackslash}p{0.1650\linewidth}@{}}
 \caption{Observed joint participation regimes among the 2,223 estimated couple households. These are joint regimes, not two spouse marginals.}\tabularnewline
 \toprule\noalign{}
 Regime & Meaning & Weighted share & Mean hours, man & Mean hours, woman \\
@@ -369,7 +382,7 @@ v(S)=I_\varnothing-I_S .
 
 \(v\) is a cooperative game on four players: the worth of a coalition is the inequality it removes when its factors are equalized together. Two points about \(T_S\) are part of the economics and not of the notation. First, \(T_S\) is a single simultaneous substitution map, not an ordered product \(\prod_{k\in S}T_k\): a product is not well defined unless the operators commute on the permitted objects, and the budget operator does not commute with the others, since it reprices. Second, an operator changes a \emph{pathway}, not every occurrence of a raw characteristic. Education enters both the offered-wage location and the local-market lookup; \(T_B\) substitutes the first and leaves the second in place.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
@@ -417,7 +430,7 @@ The interactions are allocated with the \textbf{grouped Shapley--Owen--Shorrocks
 
 The estimated model has 41 free coordinates for single adults, of which 40 are interior, and 47 for couples, all interior. The criterion is 6253.463 and 10283.034 respectively. Across ten terminal paths from five starts under two polishing contracts, the criterion varies by 1.1e-10 for single adults and 1.3e-09 for couples, and the smallest eigenvalue of the exact Hessian on the interior block is 0.1669 and 0.0771. One single-adult coordinate, the female age-square term in the leisure weight, sits at a box endpoint; its interval is reported under the active-set convention in the appendix and it is excluded from the interior curvature.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
@@ -466,7 +479,7 @@ Direct cross-leisure term & Not applicable & Not applicable & 0 (restricted) & 0
 
 The consumption weight is 2.0387 with a cluster-robust standard error of 0.2917 for single adults and 2.1017 with 0.2939 for couples. Two things follow. Because the estimate exceeds one, the money metric of Section 4 is a power mean of order above one rather than an arithmetic mean. And because utility is on the unit-scale shock, one natural unit of the index corresponds to multiplying consumption by \(\exp(1/\beta_c)\), a factor of 1.633 for single adults and 1.609 for couples. That is a proportional statement: there is no single euro value of a unit of utility independent of the consumption at which it is evaluated.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
@@ -519,7 +532,7 @@ Occupation 3 \(\xi_3\) & -0.4060 (0.1440) & -2.2532 (0.1244) & -0.1804 (0.0923) 
 Occupation 4 \(\xi_4\) & 0.5632 (0.1225) & 0.1594 (0.0618) & 0.8159 (0.0799) \\
 \end{longtable}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.4200\linewidth}>{\raggedright\arraybackslash}p{0.2590\linewidth}>{\raggedright\arraybackslash}p{0.2590\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.4200\linewidth}>{\RaggedRight\arraybackslash}p{0.2590\linewidth}>{\RaggedRight\arraybackslash}p{0.2590\linewidth}@{}}
 \caption{The wage block and the consumption weight. The offered log wage is normal with mean \(\mu_i(k)\) and dispersion \(\sigma\), truncated to {[}2, 590{]} EUR/hour and renormalized on that support. Experience enters in units of twenty years. Slopes and \(\sigma\) are common across the two singles sex groups and across spouses within couples; the singles and couples models are estimated separately, so the two columns are not restricted to agree.}\tabularnewline
 \toprule\noalign{}
 Coefficient & Singles & Couples \\
@@ -575,7 +588,7 @@ The fit reported here is a population prediction, computed by integrating the es
 \caption{Observed against model population shares, margin by margin, for both estimated specifications. Model shares are population predictions computed by direct integration over the estimated opportunity distribution, not sampled-menu choice probabilities.}
 \end{figure}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}@{}}
 \caption{Observed against model population shares, singles. The model column is a population prediction computed by direct integration over the estimated opportunity distribution and the taste shocks; it is not a sampled-menu choice probability and not an in-sample fitted value. The denominator column states the population each share is taken over.}\tabularnewline
 \toprule\noalign{}
 Unit & Moment & Observed & Model & Absolute deviation & Denominator \\
@@ -623,7 +636,7 @@ Woman & Occupation group 4 & 0.4879 & 0.4875 & 0.0004 & workers \\
 Woman & Mean log wage & 2.5968 & 2.6207 & 0.0238 & workers \\
 \end{longtable}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}@{}}
 \caption{Observed against model population shares, couples. The model column is a population prediction computed by direct integration over the estimated opportunity distribution and the taste shocks; it is not a sampled-menu choice probability and not an in-sample fitted value. The denominator column states the population each share is taken over.}\tabularnewline
 \toprule\noalign{}
 Unit & Moment & Observed & Model & Absolute deviation & Denominator \\
@@ -667,7 +680,7 @@ Woman & Mean log wage & 2.6072 & 2.6319 & 0.0247 & workers \\
 
 The mean absolute deviation over all population moments is 0.0130 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band \([36.5,40.5]\), which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The model also assigns no mass to observed hours below ten, where the observed shares are around one per cent. Both are limitations of the banded hours density and we report them rather than summarise them away.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
@@ -713,7 +726,7 @@ The two re-estimated common-opportunity benchmarks are worse by 141.64 and by a 
 
 \subsection{Money-metric well-being}\label{money-metric-well-being}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.1550\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}>{\raggedright\arraybackslash}p{0.1212\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.1550\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}>{\RaggedRight\arraybackslash}p{0.1212\linewidth}@{}}
 \caption{The distribution of money-metric well-being, and the priced disposable income it replaces. Levels are in euros per month of equivalent flat consumption, weighted. Levels are not comparable between the two household types: each type carries its own reference construction, and the Gini of the money metric and the Gini of income are not two estimates of one quantity.}\tabularnewline
 \toprule\noalign{}
 Population & Basis & Mean & p10 & Median & p90 & Gini \\
@@ -751,7 +764,7 @@ Levels differ from income in opposite directions for the two types, and the leve
 
 \subsection{The decomposition}\label{the-decomposition}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
@@ -800,7 +813,7 @@ The allocated shares are not those numbers. An allocated share is an average of 
 
 Since \(I_{01}\ge 0\) for a nonnegative index, a negative \(C_P\) forces \(I_{00}-I_{10}<0\), so a negative allocated share does imply that preference-only equalization raises inequality. The converse does not hold, and the single-adult Gini is the counterexample: \(C_P>0\) while \(I_{10}>I_{00}\). This is a consequence of the closure of \emph{this} exhaustive two-group game with a nonnegative index; it is not a general property of a Shapley allocation.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
@@ -861,7 +874,7 @@ The allocation is exhaustive. The maximum absolute top-level identity residual i
 
 \subsection{Index sensitivity}\label{index-sensitivity}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
@@ -966,7 +979,7 @@ The flat-consumption reference of Section 4 is one member of a family. A natural
 
 The first premise holds for every household in both samples. The second does not: the opportunity object entering the reference mass is an unnormalized index whose median mass on that domain is 0.077283 for single adults and 147.963 for couples. Omitting that mass makes the comparison depend on an arbitrary multiplicative scale, and it is the reason earlier signed gaps had the wrong sign for couples and happened not to reverse for single adults. Both earlier levels are withdrawn.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
@@ -1025,7 +1038,7 @@ A third reference, which flattens the sum of a resource base and gross pay rathe
 
 \subsection{The consumption normalizer}\label{the-consumption-normalizer}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
@@ -1086,7 +1099,7 @@ The tables below report every coordinate of the two estimated parameter vectors,
 
 One single-adult coordinate, the female age-square term, is at its box endpoint. Under the active-set convention its interval is not reported, the interior curvature is computed after removing it, and the parameter draws used for the welfare intervals hold it at its estimate.
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}@{}}
 \caption{The complete singles parameter vector. Standard errors are cluster-robust on the household. A coordinate marked restricted is held by the specification and contributes no degree of freedom.}\tabularnewline
 \toprule\noalign{}
 Coordinate & Estimate & CR1 s.e. & z & Box & Status \\
@@ -1152,7 +1165,7 @@ Coordinate & Estimate & CR1 s.e. & z & Box & Status \\
 \path{beta_c} & 2.03873 & 0.291729 & 6.988 & {[}0.05, 50{]} & estimated \\
 \end{longtable}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.2500\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}>{\raggedright\arraybackslash}p{0.1292\linewidth}@{}}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.2500\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}>{\RaggedRight\arraybackslash}p{0.1292\linewidth}@{}}
 \caption{The complete couples parameter vector. Standard errors are cluster-robust on the household. A coordinate marked restricted is held by the specification and contributes no degree of freedom.}\tabularnewline
 \toprule\noalign{}
 Coordinate & Estimate & CR1 s.e. & z & Box & Status \\
@@ -1215,7 +1228,7 @@ Coordinate & Estimate & CR1 s.e. & z & Box & Status \\
 
 \section{Appendix B. Inequality indices and the allocation rule}\label{appendix-b.-inequality-indices-and-the-allocation-rule}
 
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{The six inequality indices, defined on a weighted distribution of strictly positive levels with mean \(\mu\). Multiplying an index by a positive constant scales its level and its contributions but not its shares, so GE(2) and the squared coefficient of variation are the same game. Atkinson(1) and GE(0) rank any positive distribution identically because \(A(1)=1-e^{-GE(0)}\); their shares can nevertheless differ, because a nonlinear transformation does not commute with averaging marginal contributions over coalition orders.}\tabularnewline

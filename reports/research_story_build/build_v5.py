@@ -1182,6 +1182,19 @@ header = (r'''\documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath,amssymb,booktabs,longtable,array,graphicx,calc}
+\usepackage{ragged2e}
+\usepackage{needspace}
+\raggedbottom
+% Float discipline. The panel figures are about 0.43\textheight each, so the
+% default allowance of several top floats lets two of them plus a long-captioned
+% table exceed the page and produce an overfull vbox in the output routine.
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{1}
+\setcounter{totalnumber}{2}
+\renewcommand{\topfraction}{0.6}
+\renewcommand{\bottomfraction}{0.4}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.7}
 \usepackage{xurl}
 \usepackage[round]{natbib}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
@@ -1210,13 +1223,22 @@ def wrap_table(m):
     total = .98 - .014 * n
     widths = [first] + [(total - first) / (n - 1)] * (n - 1)
     return (r'\begin{longtable}[]{@{}'
-            + ''.join(r'>{\raggedright\arraybackslash}p{' + f'{w:.4f}'
+            # \RaggedRight, not \raggedright: the latter carries infinite
+            # glue shrinkage, and longtable splitting a page inside such a cell
+            # produces an overfull vbox that runs past the bottom margin.
+            + ''.join(r'>{\RaggedRight\arraybackslash}p{' + f'{w:.4f}'
                       + r'\linewidth}' for w in widths) + r'@{}}')
 
 
 body = re.sub(r'\\begin\{longtable\}\[\]\{@\{\}([lrc]+)@\{\}\}', wrap_table, body)
-body = body.replace(r'\begin{longtable}',
-                    r'\small\setlength{\tabcolsep}{3pt}\begin{longtable}')
+# \Needspace forces the page to break BEFORE a table when too little room is
+# left: pandoc's longtable keeps its caption and header together in one
+# unbreakable chunk, and starting that chunk near the foot of a page is what
+# produced the overfull vbox that ran past the bottom margin.
+body = body.replace(
+    r'\begin{longtable}',
+    r'\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}'
+    r'\begin{longtable}')
 tex = (header + body + '\n\\bibliographystyle{plainnat}\n'
        '\\bibliography{JMP_working_paper_for_seminar_v5}\n\\end{document}\n')
 (PAPER / 'JMP_working_paper_for_seminar_v5.tex').write_text(tex, encoding='utf-8')
