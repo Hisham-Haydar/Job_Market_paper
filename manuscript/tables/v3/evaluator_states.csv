@@ -1,0 +1,9 @@
+Type,State,log J,log H,W (EUR/month)
+Single,baseline,3.14536,3.40517,1360.54
+Single,preferences,3.87947,4.16789,1320.34
+Single,environment,3.14667,3.46102,1284.76
+Single,all,3.89573,4.23506,1251.25
+Couple,baseline,5.53703,6.30227,1777.82
+Couple,preferences,5.36884,6.13396,1778.04
+Couple,environment,5.49386,6.30248,1702.34
+Couple,all,5.33144,6.13373,1713.16

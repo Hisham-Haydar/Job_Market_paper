@@ -44,6 +44,28 @@ Say: The Labour Force Survey never enters the estimation. Its share of employmen
 12 — The welfare measure. Headline: Equivalent income at a common reference pay, under four preference–environment states. Equation: W1_i solves Omega_i(flat pay w on own set) = Omega_i(actual), i.e. the uniform pay w over the household's own opportunity distribution that reproduces its attained expected welfare. Caption: reference environment = common job access, earning opportunities and budget; the same coalition's set and preferences on both sides of the inversion; common quadrature support.
 Say: Welfare is the money-metric level: the uniform pay across the jobs a household can reach that would leave it exactly as well off as its actual opportunity situation. Inequality is then evaluated under four states - each household's own preferences and environment, and each replaced by a common reference - using the same measure, the same reference construction and the same numerical support in all four. The fully common state is the exhaustiveness test: it must be zero.
 
+> **SUPERSEDED — WELFARE BLOCK (slides 13 to 20). Do not present.**
+>
+> Every welfare number in the slides below comes from the historical welfare
+> record and is retracted by the s12 corrected record. The ordering is the
+> substantive casualty: these slides say household endowments and needs are the
+> largest nested contribution at 58 per cent against 15 for job access. On the
+> corrected frame, for single adults, job access leads at 49.16 per cent against
+> 34.20 for resources and needs, and the narrow job-opportunity total — access
+> plus earning opportunities — is 55.92 per cent rather than "about a third".
+> Preferences are 9.88 per cent, not 6.3. The baseline Gini is 0.193596, not
+> 0.134. For couples the ordering differs again: access 8.23 per cent, earning
+> opportunities 35.72, resources and needs 51.20, so slide 20's claim that
+> couples reproduce the singles ordering is now backwards.
+>
+> The block is not rebased in place because four of its quantities have no
+> counterpart on the corrected frame and cannot be supplied without inventing
+> them: the cluster-robust parameter intervals, which are a blocking return item;
+> the integration bands on the nested split; the sex and geography subgroup
+> panels; and the benchmark welfare destinations. The paper and the research-story
+> report carry the corrected decomposition in full, and the deck should be rebuilt
+> from them once the intervals return.
+
 13 — The decomposition. Headline: A two-player Shapley game: preferences against the complete non-preference environment. Table I00 = 0.134, I10 = 0.148, I01 = 0.031, I11 = 0.000; lines C_pref = ½[(I00 − I10) + (I01 − I11)] = 0.0085, C_env = ½[(I00 − I01) + (I10 − I11)] = 0.126. On slide: equalizing the environment alone reduces inequality by 77%, equalizing preferences alone raises it by 10%; the Shapley attribution averages the two orders and gives the environment 94%; composition: attributed 12.45%, equalized alone 2.00%. Caption: the environment is then split by an Owen value into job access, earning opportunities, and household endowments and needs.
 Say: Equalizing preferences alone raises inequality slightly, from 0.134 to 0.148; equalizing the environment alone collapses it to 0.031; the fully common state is numerically zero. The Shapley value averages the two orders, which is what makes the attribution order-independent and exhaustive. Inside the environment, a grouped Owen value splits the contribution three ways. Two numbers, two questions: equalizing the environment by itself reduces inequality by 77 per cent, and equalizing preferences by itself raises it by 10 per cent; the Shapley value, which averages over the order in which preferences and environment are equalized, attributes 94 per cent to the environment. An attribution is never a quantity removed. Every share on this slide is on the raw welfare basis; the equivalized basis is the companion, and the two are always named.
 

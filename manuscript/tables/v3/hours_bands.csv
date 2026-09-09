@@ -1,0 +1,6 @@
+Band,Interval,Width
+Part-time lower,"[17.5, 21.5)",4
+Part-time upper,"[28.5, 30.5)",2
+Narrow full-time,"[33.5, 36.5)",3
+Full-time upper,"[36.5, 40.5]",4
+Long hours,"[44.5, 70]",25.5

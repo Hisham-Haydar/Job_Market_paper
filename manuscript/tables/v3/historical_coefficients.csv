@@ -1,0 +1,7 @@
+Coefficient,Single men,Single women,Couple men,Couple women
+Leisure intercept,4.6721,4.2437,2.9316,9.2815
+Age slope,0.6782,-0.0187,-0.0070,-0.1808
+Age square,1.0000,1.0000,0.0055,0.0168
+Leisure curvature,-1.7464,-1.0793,-1.0321,-1.8669
+Consumption curvature,0.1680,0.1680,0.0000,0.0000
+Female child slope,Restricted zero,1.1690,Restricted zero,-0.5586

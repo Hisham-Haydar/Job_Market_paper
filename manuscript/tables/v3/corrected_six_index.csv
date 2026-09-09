@@ -1,0 +1,13 @@
+Population and index,Preferences,Access,Earning opportunities,Resources and needs,Access + earnings
+"Singles, Gini",9.88,49.16,6.76,34.20,55.92
+"Singles, Atkinson(1)",-7.21,55.12,5.18,46.90,60.31
+"Singles, Atkinson(2)",-6.83,58.49,4.77,43.57,63.27
+"Singles, GE(0)",-7.86,55.42,5.26,47.19,60.67
+"Singles, GE(1)",-7.59,49.64,5.22,52.73,54.87
+"Singles, Half CV squared",-8.52,40.89,4.78,62.86,45.67
+"Couples, Gini",4.85,8.23,35.72,51.20,43.95
+"Couples, Atkinson(1)",2.52,6.38,30.50,60.60,36.88
+"Couples, Atkinson(2)",2.74,6.94,33.10,57.21,40.05
+"Couples, GE(0)",2.55,6.40,30.48,60.57,36.88
+"Couples, GE(1)",2.27,5.70,27.09,64.94,32.79
+"Couples, Half CV squared",2.03,4.95,22.87,70.16,27.82

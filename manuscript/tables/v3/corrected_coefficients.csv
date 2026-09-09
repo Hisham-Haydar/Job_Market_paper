@@ -1,0 +1,7 @@
+Coefficient,Single men,Single women,Couple men,Couple women
+Leisure intercept $\beta_{\ell0}$,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate
+Age slope $\beta_{\ell a}$,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate
+Age-square slope $\beta_{\ell a2}$,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate
+Child slope $\beta_{\ell n}$,Restricted zero,Pending corrected estimate,Restricted zero,Pending corrected estimate
+Leisure curvature $\theta_\ell$,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate,Pending corrected estimate
+Consumption curvature $\theta_c$,Fixed at zero (SCALE-1),Fixed at zero (SCALE-1),Fixed log,Fixed log

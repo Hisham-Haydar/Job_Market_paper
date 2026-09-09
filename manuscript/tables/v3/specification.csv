@@ -1,0 +1,12 @@
+Component,Singles,Couples
+Decision,One job,One joint job pair under shared budget
+Consumption,Estimated common Box–Cox curvature,Log consumption
+Leisure,Sex-specific weights and curvatures,Spouse-specific weights and curvatures
+Children,Female leisure weight only,Female leisure weight only
+Direct leisure interaction,Not applicable,Restricted to zero
+Hours opportunities,Shared across sexes,Separate spouse band coefficients
+Occupation access,Sex-specific,Spouse-sex-specific
+Wage block,Shared across sexes within singles,Shared across spouses within couples; separate estimation from singles
+Consumption aggregation,All-member household aggregation,All-member household aggregation
+Proposal participation,Single work/non-work draw,"Joint regime first, then conditional spouse jobs"
+Welfare unit,Household,Household; within-couple allocation not identified

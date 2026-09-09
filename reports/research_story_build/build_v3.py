@@ -163,6 +163,103 @@ flatten('descriptive',FD,'final_descriptives_v1.json (historical priced frames)'
 for package in ['jax','jaxlib','euromod']:
     register('installed_'+package,importlib.metadata.version(package),'build environment package metadata','installed software','version')
 
+
+# ---- s12: the corrected welfare record ------------------------------------
+# Read from the run artifact, not transcribed. _s12row asserts a unique match so
+# a renamed reference or basis fails the build instead of silently selecting the
+# wrong row.
+S12 = SPRINT/'runs/s12_welfare_record'
+_S12 = pd.read_csv(S12/'s12_six_index_attributions_v1.csv')
+_S12SRC = ('s12_six_index_attributions_v1.csv; corrected frame at the s11 '
+           'specifications of record')
+_INDICES = [('gini','Gini'),('atkinson1','Atkinson(1)'),('atkinson2','Atkinson(2)'),
+            ('ge0','GE(0)'),('ge1','GE(1)'),('cv2','Half CV squared')]
+_ARMS = [('singles','singles','singles_female'),
+         ('singlesmz','singles','singles_male_structural_zero'),
+         ('couples','couples','household-own')]
+
+def _s12row(sample, reference, basis, index):
+    m = _S12[(_S12['sample']==sample)&(_S12['reference']==reference)
+             &(_S12['basis']==basis)&(_S12['index']==index)]
+    if len(m)!=1:
+        raise SystemExit('s12 row not unique: %r %d'%((sample,reference,basis,index),len(m)))
+    return m.iloc[0]
+
+def _num(r, col):
+    v = r[col]
+    try:
+        f = float(v)
+    except (TypeError, ValueError):
+        return None
+    return None if f!=f else f
+
+_W = {}
+for _tag, _sample, _ref in _ARMS:
+    for _ix, _ixlabel in _INDICES:
+        r = _s12row(_sample, _ref, 'raw', _ix)
+        base = float(r['I00'])
+        cell = {'base': base}
+        for comp, col in [('P','C_P'),('A','C_A'),('B','C_B'),('AB','C_AB'),
+                          ('D','C_D'),('E','C_E'),('res','C_resources'),
+                          ('comp','C_composition'),('geo','C_geo')]:
+            c = _num(r, col)
+            cell[comp] = c
+            cell['sh_'+comp] = None if c is None else 100.0*c/base
+        for st in ['I00','I10','I01','I11']:
+            cell[st] = float(r[st])
+        _W[(_tag,_ix)] = cell
+
+# the headline arms, Gini on the raw basis
+for _tag, _, _ in _ARMS:
+    c = _W[(_tag,'gini')]
+    for st in ['I00','I10','I01','I11']:
+        register('w_%s_%s'%(st.lower(),_tag), round(c[st],6), _S12SRC,
+                 'corrected result', 'Gini units')
+    for comp in ['P','A','B','AB','D','E','res','comp','geo']:
+        if c[comp] is None:
+            continue
+        register('w_c%s_%s'%(comp,_tag), round(c[comp],6), _S12SRC,
+                 'corrected result', 'Gini points')
+        register('w_sh%s_%s'%(comp,_tag), round(c['sh_'+comp],2), _S12SRC,
+                 'corrected result', 'per cent of baseline inequality')
+
+# ---- exhaustiveness: a tested property, passed ----------------------------
+for _k, _v, _u in [('w_resid_top','2.8e-17','Gini units'),
+                   ('w_resid_nested','5.6e-17','Gini units'),
+                   ('w_i11_max','1.3e-15','Gini units')]:
+    register(_k, _v, 's12_welfare_record_report_v1.md::Exhaustiveness',
+             'verified identity', _u)
+
+# ---- wage neutrality: now evidence ----------------------------------------
+# The bound differs by population; reporting one joint bound would be false for
+# couples, whose maximum is four times the singles maximum.
+for _k, _v, _st, _u in [
+        ('w_dlogh_singles','1.8e-15','verified identity','log units'),
+        ('w_dlogh_couples','7.1e-15','verified identity','log units'),
+        ('w_direct_median',0,'corrected result','EUR/month'),
+        ('w_attain_median_singles',-17.43,'corrected result','EUR/month'),
+        ('w_attain_median_couples',110.53,'corrected result','EUR/month')]:
+    register(_k, _v, 's12_welfare_record_report_v1.md::Wage-density neutrality',
+             _st, _u)
+
+# ---- the corrected medians the nat is evaluated at ------------------------
+for _tag, _c, _cp in [('singles',1760.63,2875.34),('couples',3854.22,6202.61)]:
+    register('w_median_c_'+_tag, _c,
+             's12_welfare_record_report_v1.md::Gate-first identity',
+             'corrected result', 'EUR/month')
+    register('w_median_cprime_'+_tag, _cp,
+             's12_welfare_record_report_v1.md::Gate-first identity',
+             'corrected result', 'EUR/month')
+
+# ---- W3: a singles-only diagnostic ---------------------------------------
+for _k, _v, _u in [('w3_bracketed_singles',1540,'households'),
+                   ('w3_n_singles',1540,'households'),
+                   ('w3_bracketed_couples',9,'households'),
+                   ('w3_n_couples',2223,'households'),
+                   ('w3_negative_couples',2103,'households')]:
+    register(_k, _v, 's12_welfare_record_report_v1.md::W3', 'diagnostic', _u)
+
+
 def table(name, caption, headers, rows):
     with (TABLE/(name+'.csv')).open('w',newline='',encoding='utf-8') as f:
         w=csv.writer(f); w.writerow(headers); w.writerows(rows)
@@ -237,19 +334,49 @@ for typ in ['single','couple']:
         rows.append([typ.title(),state,val(pre+'logJ','.5f'),val(pre+'logH','.5f'),val(pre+'W','.2f')])
 TABLES['example_states']=table('evaluator_states','Same anonymous households through the principal equalization states. Population: the examples immediately above; measure: normalized log integrals (dimensionless) and equivalent income (EUR/month); reference: each state’s flat-consumption map; status: model-implied historical-parameter evaluator outputs, not population inequalities.',['Type','State','log J','log H','W (EUR/month)'],rows)
 
-TABLES['operators']=table('operators','Structural equalization operators for both household types. Measure: input substitutions, not causal effects; units inherited from each input; reference: selected representative profile and coalition-consistent monetary map; status: extracted broad operators, with corrected resources/needs subdivision pending.',['Operator','Replaced / profile','Household-specific remainder','Repricing','Reference map'],[
+TABLES['operators']=table('operators','Structural equalization operators for both household types. Measure: input substitutions, not causal effects; units inherited from each input; reference: selected representative profile and coalition-consistent monetary map; status: extracted broad operators. The resources/needs subdivision is resolved for single-adult households and unavailable for couples.',['Operator','Replaced / profile','Household-specific remainder','Repricing','Reference map'],[
  ['Preferences P','Singles: weighted mean index arguments and complete reference-sex coefficient/curvature block. Couples: medoid spouse arguments, own spouse coefficients','Budget roster, resources, access and wage shifters unless separately equalized','No for pure utility shifters','Replace L on both sides'],
  ['Access A','Singles: weighted mean access arguments and marginalized normalized occupation table. Couples: medoid market arguments','Preferences, wage locations, budget inputs; couple sex-specific occupation coefficients remain','No for pure access indices','Replace opportunity weights on both sides'],
  ['Wage opportunities B','Singles: weighted education shares and experience moments. Couples: medoid spouse education/experience; squares recomputed. Estimated wage coefficients retained','Preference and access pathways of same covariates','Not from an index change alone on common priced jobs','Replace wage weights on both sides'],
  ['Budget D','Policy inputs from representative budget household, including resource and needs pathways','Non-D structural pathways','Yes; rerun household budget','Use new consumption in J; state L and opportunities in H'],
  ['Resources within D','Corrected resource fields and take-up; work-history priority pending','Composition/needs unless separately changed','Yes when policy inputs change','No independent new reference; follow resulting state'],
  ['Needs within D','Roster/needs and linked scale, selected needs profile','Resource and utility-child pathways unless separately changed','Yes; update needs scale','Follow resulting state; no hidden P change']])
-TABLES['states']=table('corrected_welfare_states','Corrected within-type welfare states. Population: single-adult and couple households; measure: household-survey-weighted Gini, dimensionless Gini units, raw household equivalent income; reference: coalition-consistent flat-consumption maps and designated within-type profiles; status: corrected results pending. Equivalized results require their own panel, not a change of units within a row.',['State','Singles Gini','Couples Gini'],[[x,'Pending','Pending'] for x in ['Own preferences, own environment','Common preferences, own environment','Own preferences, common environment','Common preferences, common environment']])
-TABLES['contributions']=table('corrected_attribution','Corrected grouped attribution. Population: each household type, survey weighted; all numerical cells are contributions in Gini points; reference: raw within-type baseline and declared grouping; status: corrected results pending. Percentage shares, parameter intervals, integration bands and reference ranges must be supplied separately.',['Component','Singles Gini points','Couples Gini points'],[[x,'Pending','Pending'] for x in ['Preferences','Access','Earning opportunities','Access + earnings (market opportunities)','Budget resources/needs','All non-preference circumstances','Resources suballocation (dependency pending)','Needs suballocation (dependency pending)']])
+_STATE_ROWS=[('Own preferences, own environment','I00'),
+             ('Common preferences, own environment','I10'),
+             ('Own preferences, common environment','I01'),
+             ('Common preferences, common environment','I11')]
+TABLES['states']=table('corrected_welfare_states','Corrected within-type welfare states on the corrected frame. Population: single-adult and couple households; measure: household-survey-weighted Gini of the ex-ante money metric, dimensionless Gini units, raw household basis; reference: coalition-consistent flat-consumption maps and the designated within-type profiles, female-primary for singles; status: corrected results. The fully-common state is zero to the precision reported in the text, which is a tested property of the game and not an imposed constraint. Equivalized results occupy their own panel, not a change of units within a row.',['State','Singles Gini','Couples Gini'],
+    [[lab,format(_W[('singles','gini')][st],'.6f'),
+          format(_W[('couples','gini')][st],'.6f')] for lab,st in _STATE_ROWS])
+_ATTR_ROWS=[('Preferences','P'),('Access','A'),('Earning opportunities','B'),
+            ('Access + earnings (market opportunities)','AB'),
+            ('Budget resources/needs','D'),
+            ('All non-preference circumstances','E'),
+            ('Resources suballocation','res'),
+            ('Household composition and needs suballocation','comp')]
+def _attr(tag,comp):
+    c=_W[(tag,'gini')]
+    if c[comp] is None: return ['Not available','Not available']
+    return [format(c[comp],'.6f'),format(c['sh_'+comp],'.2f')]
+TABLES['contributions']=table('corrected_attribution','Corrected grouped attribution on the corrected frame. Population: each household type, survey weighted; contributions in Gini points beside the share of the baseline inequality of that same population; reference: raw within-type baseline and the declared grouping; status: corrected results. Shares are taken against the baseline of the same population and are not comparable as levels across the two columns. Parameter intervals, integration bands and reference ranges occupy separate reporting fields and are not combined into one band. The couples resources/needs suballocation is not available: no separately repriced couples partial pair exists, and the cells are therefore marked rather than imputed.',['Component','Singles Gini points','Singles share (per cent)','Couples Gini points','Couples share (per cent)'],
+    [[lab]+_attr('singles',comp)+_attr('couples',comp)
+     for lab,comp in _ATTR_ROWS])
 rows=[]
 for name,k in [('Leisure intercept','beta_l0'),('Age slope','beta_l_age'),('Age square','beta_l_age2'),('Leisure curvature','theta_l'),('Consumption curvature','theta_c')]:
     rows.append([name]+[val('pf_'+k+'__'+g,'.4f') for g in ['singles_male','singles_female','couples_male','couples_female']])
 rows.append(['Female child slope','Restricted zero',val('pf_beta_l_nkids__singles_female','.4f'),'Restricted zero',val('pf_beta_l_nkids__couples_female','.4f')])
+
+# The qualitative ordering is reported index by index because a share is a
+# property of the index as much as of the decomposition. Every row was rerun;
+# none is transferred from the Gini.
+_sixrows=[]
+for _pop,_tag in [('Singles','singles'),('Couples','couples')]:
+    for _ix,_ixlabel in _INDICES:
+        _c=_W[(_tag,_ix)]
+        _sixrows.append(['%s, %s'%(_pop,_ixlabel)]
+                        +[format(_c['sh_'+k],'.2f') for k in ['P','A','B','D']]
+                        +[format(_c['sh_AB'],'.2f')])
+TABLES['six_index']=table('corrected_six_index','Index-specific attribution on the corrected frame. Population: each household type, survey weighted, raw basis, female-primary reference for singles; measure: share of the baseline inequality of that same index, per cent; status: corrected results. Each row was recomputed for its own index against its own baseline; no share is transferred between indices. Shares within a row sum to one hundred by exhaustiveness. A negative preference share means equalizing preferences alone would raise measured inequality, which is a property of the attribution game and not an error.',['Population and index','Preferences','Access','Earning opportunities','Resources and needs','Access + earnings'],_sixrows)
 TABLES['historical_coefficients']=table('historical_coefficients','Historical coefficients solely for evaluator replication. Population: old single-adult and couple estimation frames; measure: deterministic-utility parameters on registered scales; reference: historical hybrid criterion and historical support; status: NOT corrected estimates. Conditional constrained-inference tables must be regenerated after the refit.',['Coefficient','Single men','Single women','Couple men','Couple women'],rows)
 
 plt.rcParams.update({'font.size':11,'axes.spines.top':False,'axes.spines.right':False,'savefig.dpi':180})
@@ -437,7 +564,7 @@ def resolve(text, target):
     # The one sentence of the abstract that awaits the corrected welfare
     # numbers carries a visible token. The document verifier counts it.
     text=text.replace('{{PENDING-WELFARE}}',
-                      '**[AWAITING CORRECTED WELFARE NUMBERS]**')
+                      '**[AWAITING PARAMETER INTERVALS ON THESE SHARES]**')
     # Evidence that is commissioned but not yet returned. Each token is
     # visible in the text and counted by the document verifier.
     text=text.replace('{{PENDING-HINV}}',

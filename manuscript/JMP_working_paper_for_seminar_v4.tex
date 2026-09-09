@@ -28,10 +28,10 @@ Second, the behavioural account requires the opportunity distribution: a re-esti
 
 Third, the welfare object is not the theoretical measure but its stochastic, ex-ante extension, and we establish the relationship rather than assuming it. In particular the reference neutralises pay in the utility index while a residual pay channel survives through the opportunity distribution, so the extension does not inherit independence of pay.
 
-**[AWAITING CORRECTED WELFARE NUMBERS]** The decomposition of well-being inequality into job access, earning opportunities, resources and needs awaits re-evaluation on the corrected frame and is not reported here.
+Fourth, the decomposition itself. Among single adults, job access and earning opportunities together account for 55.92 per cent of measured inequality in the metric — job access alone 49.16 per cent — against 9.88 per cent for preferences and 34.20 for household resources and needs. Among couples the ordering is different: earning opportunities and resources with household composition dominate, at 35.72 and 51.20 per cent against 8.23 for access. The attribution is exhaustive and the identity is verified rather than imposed. **[AWAITING PARAMETER INTERVALS ON THESE SHARES]**
 \end{abstract}
 
-\emph{Status note, stated once. The corrected positive estimation is complete for singles and couples and is what this document reports. The welfare decomposition is not: re-evaluating it on the corrected frame is held by an unresolved reproducibility control, so no corrected welfare headline appears below. Where a welfare magnitude is unavailable on the corrected frame it is absent, never replaced by a historical value.}
+\emph{Status note, stated once. The corrected positive estimation and the corrected welfare decomposition are both complete for singles and couples, and both are what this document reports. Three welfare items are not complete: the cluster-robust parameter intervals on the headline shares, the reconciliation of the bridge statistics between the two welfare measures, and the couples suballocation of resources against household composition. Each is named where it bears. Where a magnitude is unavailable on the corrected frame it is absent, never replaced by a historical value, and the nested resources and needs percentages of earlier drafts are withdrawn rather than relabelled as current.}
 
 \section{Introduction}\label{introduction}
 
@@ -69,7 +69,9 @@ Two distinctions organize the paper. First, employment and occupation access are
 
 The paper measures how explicitly modelling household-specific labour-market opportunities changes cross-sectional inequality in an ex-ante money metric and its attribution across preferences, job access, earnings opportunities, resources and needs. Joint preference--opportunity estimation is inherited from the latent-jobs literature, not invented here. The contribution is this estimand, its French single-adult and couple applications, and the comparison with re-estimated common-opportunity benchmarks.
 
-The behavioural half of that answer is now available and is reported below: corrected samples, a single converged optimum for each population, fresh clustered inference, and a population-level fit that never uses sampled-menu probabilities. The welfare half is not. This document therefore states the welfare measure exactly, establishes its relationship to the normative principle, and reports the diagnostics that relationship makes computable --- but it does not report a corrected percentage of inequality due to opportunities, a causal effect of geography, or a ranking of the opportunity share between singles and couples.
+Both halves of that answer are now available. The behavioural half gives corrected samples, a single converged optimum for each population, fresh clustered inference, and a population-level fit that never uses sampled-menu probabilities. The welfare half gives the decomposition, and the answer to the paper's own question is direct for single adults: \textbf{unequal job opportunities --- job access together with earning opportunities --- account for about 56 per cent of measured well-being inequality among single adults.} Job access alone carries 49.16 per cent of it, earning opportunities 6.76, preferences 9.88, and household resources and needs 34.20. Among couples the composition of the answer changes rather than its exhaustiveness, and the contrast between the two household types is itself one of the findings.
+
+What is not reported is narrower, and is named at each point where it bears: the parameter intervals on these shares, the reconciliation of the bridge statistics between the two welfare measures, and the couples suballocation of resources against household composition. No causal effect of geography is claimed anywhere, and no share is pooled across household types.
 
 \section{Related literature}\label{related-literature}
 
@@ -622,15 +624,15 @@ so the entire difference between them is one scalar per household, \(\Delta_i=L_
 
 \textbf{A coincidence in the small-shock limit, and why it does not bind here.} On the estimated preference domain --- leisure positively valued, no intrinsic value of work beyond the leisure term, non-work always available --- non-work is the deterministic maximiser of the reference taste index. This was checked rather than assumed and holds for every household in the sample on which the check could be run. Consequently \(\lim_{\tau\to0}W^{1\text{-EA}}=W^{4\text{-EA}}\) exactly. This is a \textbf{mathematical limit of the stochastic construction}: it says what the measure would become if the idiosyncratic shocks were shrunk to nothing. It is not an estimate, not a scenario, and not something done to the data anywhere in this paper. Throughout, \(\tau\) is the scale of the idiosyncratic shocks; \(\sigma\) is reserved for the dispersion of the wage-offer distribution and is a different object.
 
-The two are nevertheless far apart at the estimated scale, because \(W^{1\text{-EA}}\) integrates rather than maximises. The non-work atom carries a weighted median of roughly six per cent of the reference integral and never more than ninety per cent for any household; \(\Delta_i\) is negative for every household; and \(W^{4\text{-EA}}/W^{1\text{-EA}}\) has a median of 34.2 with a minimum of 2.79. The distinction is quantitative and large, and it is carried entirely by the smoothing. We report the coincidence as a property of the measure under freely available non-employment, not as a defect repaired by adding accessibility thresholds or job amenities.
+The two are nevertheless distinct at the estimated scale, because \(W^{1\text{-EA}}\) integrates where \(W^{4\text{-EA}}\) maximises, and the separation is carried entirely by that smoothing. We do not put a number on it here. The statistics that compared the two measures in earlier drafts were computed under a different scale convention, a different support and a different sample, and they have been returned for reconciliation against the corrected frame; no ratio between the two measures is printed in this document until that returns. One specific claim is withdrawn rather than merely deferred: the earlier statement that the household gap \(\Delta_i\) is negative for every household does not hold on the corrected frame for single adults, where the sign is not uniform, though it does hold throughout the couples panel. We report the coincidence as a property of the measure under freely available non-employment, not as a defect repaired by adding accessibility thresholds or job amenities.
 
 \textbf{The utility scale is identified, and this closes the question the bridge raised.} An earlier version of this argument had to record the shock scale as a normalisation: with the consumption weight fixed at one as a numeraire, \(\tau\) was not separately identified, and the separation of \(W^{1\text{-EA}}\) from \(W^{4\text{-EA}}\) rested on a scale nobody had estimated. That is no longer the position. Fixing \(\tau=1\) and the consumption curvature at zero, and estimating the consumption weight instead, identifies the scale: \(\beta_c\) is 2.03873 (standard error 0.291729) for single-adult households and 2.10172 (0.293879) for couples. The restriction is not free-standing algebra: it improves the likelihood by 23.7526 and 15.659 log-points, and the population fit improves with it, from 0.01523 to 0.01304 for singles and from 0.01385 to 0.013595 for couples.
 
-Under log consumption a unit of the shock scale is \emph{proportional}, not additive: one nat maps to \(C'=C\exp(1/\beta_c)\), a rise of 63.3 per cent in consumption for singles and 60.9 per cent for couples, at whatever level it is applied. That proportional form is the scale-free statement and is how the nat should be read. A euro amount exists only against a stated baseline: evaluated at the normalizing consumption of EUR 1,938 per month for singles, one nat is about EUR 1,227; at EUR 4,248 for couples, about EUR 2,588. Quoted without its baseline, either euro figure means nothing. The money metric is therefore reported on an estimated scale. No declared-scale sensitivity is required, because the scale is no longer declared.
+Under log consumption a unit of the shock scale is \emph{proportional}, not additive: one nat maps to \(C'=C\exp(1/\beta_c)\), a rise of 63.3 per cent in consumption for singles and 60.9 per cent for couples, at whatever level it is applied. That proportional form is the scale-free statement and is how the nat should be read. In ratio form the factor is 1.633 for singles and 1.609 for couples. A euro amount exists only against a stated baseline: evaluated at the corrected chosen-consumption median of EUR 1,760.63 per month, one nat carries a single-adult household to EUR 2,875.34; for couples, from EUR 3,854.22 to EUR 6,202.61. Quoted without its baseline, either euro figure means nothing. The money metric is therefore reported on an estimated scale. No declared-scale sensitivity is required, because the scale is no longer declared.
 
 \textbf{What the estimated order does to the measure.} At \(\theta_c=0\) the measure is a power mean of order \(\beta_c\) of the consumption attached to the alternatives a household can reach. The order is doing two jobs at once, and this is what makes the estimate economically substantive rather than a fitting constant: \(\beta_c\) is simultaneously the order of the mean and the elasticity of an alternative's implied weight with respect to its own consumption. At the estimate an alternative paying twice the median carries 4.11 times the weight of the median alternative, not twice it; across the observed fifth-to-ninety-fifth percentile span of reachable consumption the implied weight ratio is 95.6 to one, against 9.4 to one under an arithmetic mean. By the power-mean inequality an order above one raises the measure relative to the arithmetic mean and tilts it toward the best-paying alternatives a household can actually reach. Two limits belong with this reading and should travel with the panel that draws it. The power-mean representation exists only at \(\theta_c=0\); away from that restriction the aggregator has no such closed form. And the panel varies \(\beta_c\) inside the aggregator's kernel, holding the estimated model fixed --- it shows what the weighting would do at other orders, and is not a re-estimation of the model under \(\beta_c=1\).
 
-\textbf{What the reference does and does not neutralise.} The reference neutralises pay \emph{in the utility index}: the Box--Cox consumption term is constant across alternatives, so job pay enters the reference utility nowhere. It does not follow that the measure as a whole is pay-free. The wage is a coordinate of the alternative, so it survives in the opportunity density after being neutralised in utility, and equalising the wage block moves \(W^{1\text{-EA}}\) by up to EUR 438, or 34 per cent, for some households. Because the reference index is pay-free by construction, that movement can only travel through the opportunity distribution. Separating the direct reference-set channel from the indirect attainment channel within that movement requires knowing whether the household's own attainment normalizer \(H_i\) is invariant to the equalisation. That check is commissioned and its result is not yet on record, so the separation is argued here from the construction rather than shown; the figure quoted above is the total movement, across every route by which the equalisation reaches the measure, and not the direct channel alone. The accurate statement, used throughout, is therefore: \emph{the reference neutralises pay differences in the utility index, while a residual pay channel reaches the measure through the wage limb of the opportunity distribution.} Two consequences bind how the results are read. Earning opportunities are a component of the stochastic opportunity distribution, not a separate pay schedule outside it. And \(W^{1\text{-EA}}\) accordingly \textbf{does not inherit independence of pay} from the theoretical measure: that property holds of the reference index, and the stochastic extension does not carry it.
+\textbf{What the reference does and does not neutralise.} The reference neutralises pay \emph{in the utility index}: the Box--Cox consumption term is constant across alternatives, so job pay enters the reference utility nowhere. It does not follow that the measure as a whole is pay-free. The wage is a coordinate of the alternative, so it survives in the opportunity density after being neutralised in utility, and equalising the wage block moves \(W^{1\text{-EA}}\) by up to EUR 438, or 34 per cent, for some households. Because the reference index is pay-free by construction, that movement can only travel through the opportunity distribution. Separating the direct reference-set channel from the indirect attainment channel within that movement requires knowing whether the household's own attainment normalizer \(H_i\) is invariant to the equalisation, and it is. Because the bounded wage density is normalized and the non-consumption utility carries no wage term, the largest household \(|\Delta\log H_i|\) found is 1.8e-15 for singles and 7.1e-15 for couples --- numerical zero in both, though not the same numerical zero, and we quote each rather than the smaller of the two. The direct channel accordingly moves the median household by EUR 0 exactly, and the entire movement travels through attainment: a median of EUR -17.43 for singles and EUR +110.53 for couples. The licensed statement is therefore that \emph{the reference is directly pay-neutral, while earning opportunities affect the measure through attainment} --- which is the same distinction drawn axiomatically in the introduction, now measured. The accurate statement, used throughout, is therefore: \emph{the reference neutralises pay differences in the utility index, while a residual pay channel reaches the measure through the wage limb of the opportunity distribution.} Two consequences bind how the results are read. Earning opportunities are a component of the stochastic opportunity distribution, not a separate pay schedule outside it. And \(W^{1\text{-EA}}\) accordingly \textbf{does not inherit independence of pay} from the theoretical measure: that property holds of the reference index, and the stochastic extension does not carry it.
 
 \textbf{Frame.} These magnitudes come from a certified evaluation that is not the final corrected frame. The closed forms and the small-shock limit are algebraic and hold on any frame; the magnitudes are specific to the one they were computed on.
 
@@ -728,9 +730,9 @@ Integration uncertainty is assessed by re-evaluating this final statistic after 
 
 \subsection{Equalization operators and their pathways}\label{equalization-operators-and-their-pathways}
 
-Counterfactual equalization replaces specified structural inputs by declared reference operands without re-estimation. It is not a wholesale replacement of a household's raw record every time one covariate appears in a channel. Singles additionally select the complete estimated reference-sex preference block when preferences are equalized; couples retain each spouse's coefficient block and substitute its reference arguments. The broad environment comprises access \(A\), wage opportunities \(B\) and budget endowments/needs \(D\); the preference block is \(P\). The budget block's proposed resources/needs subdivision remains pending corrected pathway assignments and repricing.
+Counterfactual equalization replaces specified structural inputs by declared reference operands without re-estimation. It is not a wholesale replacement of a household's raw record every time one covariate appears in a channel. Singles additionally select the complete estimated reference-sex preference block when preferences are equalized; couples retain each spouse's coefficient block and substitute its reference arguments. The broad environment comprises access \(A\), wage opportunities \(B\) and budget endowments/needs \(D\); the preference block is \(P\). The budget block's resources/needs subdivision is resolved for single-adult households on the corrected pathway assignments and repricing, and remains unavailable for couples.
 
-Structural equalization operators for both household types. Measure: input substitutions, not causal effects; units inherited from each input; reference: selected representative profile and coalition-consistent monetary map; status: extracted broad operators, with corrected resources/needs subdivision pending.
+Structural equalization operators for both household types. Measure: input substitutions, not causal effects; units inherited from each input; reference: selected representative profile and coalition-consistent monetary map; status: extracted broad operators. The resources/needs subdivision is resolved for single-adult households and unavailable for couples.
 
 { % do not increment counter
 \small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
@@ -770,7 +772,7 @@ For budget pricing, the reference instead is an actual representative household,
 
 The pathway rule is essential. Age can enter leisure preferences, experience-dependent wage locations and policy eligibility. Education can enter the wage equation and the group-unemployment lookup. Children can enter female leisure utility, the household budget and the needs scale. Equalizing the preference pathway of children changes the utility shifter, not the tax roster. Equalizing earnings opportunities changes their structural wage shifters, not preferences or the employment-access lookup. Equalizing composition changes the budget/needs pathway, not a preference shifter unless \(P\) is also in the coalition. Pure preference-shifter substitution therefore does not automatically require repricing.
 
-Conversely, moving a policy input that changes entitlement requires new budget evaluation. Work-history fields overwritten by the alternative's employment state cannot also be independently equalized as fixed resources without a declared priority and economic interpretation. Correcting the fringe-benefit, company-car and imputed-rent classifications is necessary but does not alone resolve that operator dependency. The prior nested resource/needs percentages are withdrawn, not relabelled as current. Until that dependency is resolved and the affected panels are repriced, neither a corrected resources share nor a corrected needs share is established.
+Conversely, moving a policy input that changes entitlement requires new budget evaluation. Work-history fields overwritten by the alternative's employment state cannot also be independently equalized as fixed resources without a declared priority and economic interpretation. Correcting the fringe-benefit, company-car and imputed-rent classifications is necessary but does not alone resolve that operator dependency. The prior nested resource/needs percentages are withdrawn, not relabelled as current. For single-adult households the dependency is now resolved on the corrected partition and the repriced panels, so a corrected resources share and a corrected composition-and-needs share are established and reported below. For couples no separately repriced partial pair exists, so neither couples share is established and the cells are marked rather than imputed.
 
 In every coalition, the same state's non-consumption utility and opportunities enter both attained value and its flat-consumption reference map. The reference map is recalculated when those inputs change. \(q\), numerical centring constants and integration normalizers are not independent economic factors to equalize. A different assignment of pathways is a different decomposition, not a silent robustness adjustment.
 
@@ -796,9 +798,9 @@ The narrower market-opportunity allocation is \(C_A+C_B\). Resources and needs r
 
 \subsection{Welfare results, benchmarks and limits of the empirical answer}\label{welfare-results-benchmarks-and-limits-of-the-empirical-answer}
 
-The results begin with the welfare states before the attribution. The following tables place singles and couples on the same unit and reference basis and leave missing corrected results explicitly pending. No historical estimate is presented as a corrected number. The household examples above explain the calculation but cannot substitute for the population tables.
+The results begin with the welfare states, before the attribution that is derived from them. The tables place singles and couples on the same unit and reference basis. No historical estimate appears as a corrected number, and the household examples above explain the calculation without substituting for the population tables.
 
-Corrected within-type welfare states. Population: single-adult and couple households; measure: household-survey-weighted Gini, dimensionless Gini units, raw household equivalent income; reference: coalition-consistent flat-consumption maps and designated within-type profiles; status: corrected results pending. Equivalized results require their own panel, not a change of units within a row.
+Corrected within-type welfare states on the corrected frame. Population: single-adult and couple households; measure: household-survey-weighted Gini of the ex-ante money metric, dimensionless Gini units, raw household basis; reference: coalition-consistent flat-consumption maps and the designated within-type profiles, female-primary for singles; status: corrected results. The fully-common state is zero to the precision reported in the text, which is a tested property of the game and not an imposed constraint. Equivalized results occupy their own panel, not a change of units within a row.
 
 { % do not increment counter
 \small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.4800\linewidth}>{\raggedright\arraybackslash}p{0.2150\linewidth}>{\raggedright\arraybackslash}p{0.2150\linewidth}@{}}
@@ -808,41 +810,115 @@ State & Singles Gini & Couples Gini \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Own preferences, own environment & Pending & Pending \\
-Common preferences, own environment & Pending & Pending \\
-Own preferences, common environment & Pending & Pending \\
-Common preferences, common environment & Pending & Pending \\
+Own preferences, own environment & 0.193596 & 0.132465 \\
+Common preferences, own environment & 0.218795 & 0.129046 \\
+Own preferences, common environment & 0.063459 & 0.009427 \\
+Common preferences, common environment & 0.000000 & 0.000000 \\
 \end{longtable}
 }
 
-Corrected grouped attribution. Population: each household type, survey weighted; all numerical cells are contributions in Gini points; reference: raw within-type baseline and declared grouping; status: corrected results pending. Percentage shares, parameter intervals, integration bands and reference ranges must be supplied separately.
+Corrected grouped attribution on the corrected frame. Population: each household type, survey weighted; contributions in Gini points beside the share of the baseline inequality of that same population; reference: raw within-type baseline and the declared grouping; status: corrected results. Shares are taken against the baseline of the same population and are not comparable as levels across the two columns. Parameter intervals, integration bands and reference ranges occupy separate reporting fields and are not combined into one band. The couples resources/needs suballocation is not available: no separately repriced couples partial pair exists, and the cells are therefore marked rather than imputed.
 
 { % do not increment counter
-\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{0.4800\linewidth}>{\raggedright\arraybackslash}p{0.2150\linewidth}>{\raggedright\arraybackslash}p{0.2150\linewidth}@{}}
+\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
 \toprule\noalign{}
-Component & Singles Gini points & Couples Gini points \\
+\begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles Gini points
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles share (per cent)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples Gini points
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples share (per cent)
+\end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Preferences & Pending & Pending \\
-Access & Pending & Pending \\
-Earning opportunities & Pending & Pending \\
-Access + earnings (market opportunities) & Pending & Pending \\
-Budget resources/needs & Pending & Pending \\
-All non-preference circumstances & Pending & Pending \\
-Resources suballocation (dependency pending) & Pending & Pending \\
-Needs suballocation (dependency pending) & Pending & Pending \\
+Preferences & 0.019130 & 9.88 & 0.006423 & 4.85 \\
+Access & 0.095181 & 49.16 & 0.010901 & 8.23 \\
+Earning opportunities & 0.013079 & 6.76 & 0.047313 & 35.72 \\
+Access + earnings (market opportunities) & 0.108260 & 55.92 & 0.058215 & 43.95 \\
+Budget resources/needs & 0.066206 & 34.20 & 0.067827 & 51.20 \\
+All non-preference circumstances & 0.174466 & 90.12 & 0.126042 & 95.15 \\
+Resources suballocation & 0.047204 & 24.38 & Not available & Not available \\
+Household composition and needs suballocation & 0.019002 & 9.82 & Not available & Not available \\
 \end{longtable}
 }
 
-The table includes access plus earnings opportunities, so it will answer the title's narrower question once corrected results exist. The broad non-preference total is reported separately. Conditional parameter intervals, integration bands and reference ranges occupy separate reporting fields; there is no combined uncertainty band. The resources/needs suballocation requires the additional budget-pathway resolution, and its old nested percentages are not displayed as evidence.
+\textbf{The headline.} For single adults the narrow job-opportunity total, access plus earning opportunities, is 55.92 per cent of measured inequality in the metric. Within it, job access carries 49.16 per cent and earning opportunities 6.76: the access margin, not the wage margin, does almost all of the work for singles. Preferences account for 9.88 per cent and household resources and needs for 34.20, with the broad non-preference total 90.12. Under the male structural-zero reference the same quantities are 10.17, 51.55, 7.56 and 30.72 per cent: the ordering is unchanged and the two arms are reported side by side, never averaged.
+
+\textbf{A retraction, at its exact scope.} Earlier drafts of this project reported that budget-side endowments and needs were the largest nested contribution. On the corrected specification that is false for single adults: access alone exceeds resources and needs, 49.16 per cent against 34.20, and the narrow opportunity total exceeds it by more. The earlier nested percentages are withdrawn and are not reproduced anywhere in this document. Two qualifications keep the retraction honest. It is a statement about the headline Gini and holds under four of the five other indices, but it reverses under the half-squared coefficient of variation, the most top-sensitive of the six, where resources and needs do lead for singles. And for couples the superseded ordering is not merely surviving but correct under every index. The claim that fails is the general one.
+
+\textbf{The singles/couples contrast, as a finding.} Access dominates for single adults; earning opportunities together with resources and household composition dominate for couples, where access is only 8.23 per cent against 35.72 for earning opportunities and 51.20 for resources and needs. This is a result of the decomposition. A mechanism for it is not, and we offer the following as a hypothesis only: couples have a joint participation margin that single adults lack, so a restriction on one earner's access can be absorbed by the other; two earners expose the household to the dispersion of wage offers twice over; and larger and more varied rosters make resources and needs a larger part of any comparison between households. None of these three is tested here, nothing in the attribution identifies a mechanism, and the contrast rather than its explanation is what the numbers support.
+
+Index-specific attribution on the corrected frame. Population: each household type, survey weighted, raw basis, female-primary reference for singles; measure: share of the baseline inequality of that same index, per cent; status: corrected results. Each row was recomputed for its own index against its own baseline; no share is transferred between indices. Shares within a row sum to one hundred by exhaustiveness. A negative preference share means equalizing preferences alone would raise measured inequality, which is a property of the attribution game and not an error.
+
+{ % do not increment counter
+\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Population and index
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Preferences
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Access
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Earning opportunities
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Resources and needs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Access + earnings
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Singles, Gini & 9.88 & 49.16 & 6.76 & 34.20 & 55.92 \\
+Singles, Atkinson(1) & -7.21 & 55.12 & 5.18 & 46.90 & 60.31 \\
+Singles, Atkinson(2) & -6.83 & 58.49 & 4.77 & 43.57 & 63.27 \\
+Singles, GE(0) & -7.86 & 55.42 & 5.26 & 47.19 & 60.67 \\
+Singles, GE(1) & -7.59 & 49.64 & 5.22 & 52.73 & 54.87 \\
+Singles, Half CV squared & -8.52 & 40.89 & 4.78 & 62.86 & 45.67 \\
+Couples, Gini & 4.85 & 8.23 & 35.72 & 51.20 & 43.95 \\
+Couples, Atkinson(1) & 2.52 & 6.38 & 30.50 & 60.60 & 36.88 \\
+Couples, Atkinson(2) & 2.74 & 6.94 & 33.10 & 57.21 & 40.05 \\
+Couples, GE(0) & 2.55 & 6.40 & 30.48 & 60.57 & 36.88 \\
+Couples, GE(1) & 2.27 & 5.70 & 27.09 & 64.94 & 32.79 \\
+Couples, Half CV squared & 2.03 & 4.95 & 22.87 & 70.16 & 27.82 \\
+\end{longtable}
+}
+
+\textbf{Shares are index-specific.} Every row of that panel was recomputed for its own index against its own baseline; no share is transferred from the Gini, and a share is a property of the index as much as of the decomposition. Two things are worth reading off it. The singles/couples contrast is not an artefact of the Gini: access exceeds earning opportunities for singles, and earning opportunities exceed access for couples, under all six. The preference share is not robust in the same way: for single adults it is positive only under the Gini and negative under the other five, meaning that equalizing preferences alone would raise measured inequality on those indices. That is a property of the attribution game, not an error, and it is why the headline preference figure is quoted as a Gini share and not as a general preference contribution.
+
+\textbf{Exhaustiveness is tested, not assumed.} The maximum absolute top-level identity residual is 2.8e-17 Gini units and the nested access/earnings/budget residual 5.6e-17; the fully-common state reaches 1.3e-15. The decomposition therefore closes on the corrected frame, which is a property to check rather than a justification of the grouping.
+
+\textbf{Earning opportunities reach the measure through attainment, and this is now shown.} Parameter intervals, integration bands and reference ranges occupy separate reporting fields; there is no combined uncertainty band.
 
 \subsubsection{What the common-opportunity comparison removes}\label{what-the-common-opportunity-comparison-removes}
 
 The re-estimated random-utility benchmark with common opportunities keeps a positive common opportunity distribution. Setting \(g=0\) would eliminate alternatives, not remove heterogeneity. In the first benchmark, the common density retains an hours structure and the preference parameters are re-estimated. In the second, the common structural opportunity density uses equal work/non-work mass and uniform working hours, while an employment constant and hours indicators move into utility and are re-estimated; occupation and wage distributions remain common. The numerical proposal is separate and is retained. These are distinct constructions, not interchangeable names for one common model. Their exact expressions and parameter counts are reproduced from the extraction in the appendix.
 
 The comparison tests how a different maintained opportunity representation changes the estimated preferences and welfare assessment. It does not establish that omitted opportunities must all be absorbed by preferences or must inflate the preference share. Re-estimation changes several components jointly. The sampled criteria and numerical reference laws do not support the former nested likelihood-ratio interpretation; no such test is reported. Both benchmark arms are re-estimated on the corrected frame and the same scale specification and are reported above; the welfare calculations that would accompany them await the rebuild.
+
+\subsubsection{What is still outstanding}\label{what-is-still-outstanding}
+
+Three welfare items are outstanding and none is substituted. The bridge statistics relating the two welfare measures have been returned for reconciliation, so no ratio between them is printed here; the figure quoted in earlier drafts was computed under a different scale convention and a different support and is not carried forward. The cluster-robust parameter intervals on the headline shares are a blocking return item on this run and are not replaced with historical draws, which is why the shares above appear without intervals rather than with borrowed ones. And the couples suballocation of resources against household composition is unavailable for want of a separately repriced partial pair; those cells are marked, not imputed.
+
+The relative-index companion measure is reported as a single-adult diagnostic only. On the theory-strict domain all 1,540 single-adult households bracket, with no signed negatives, so relative indices are licensed there. For couples the measure is not computable: only 9 of 2,223 households bracket on that domain, and the household-resource variant, which does bracket for all of them, is negative for 2,103. No relative index is applied to couples anywhere below.
 
 \subsubsection{External comparisons and support sensitivity}\label{external-comparisons-and-support-sensitivity}
 
@@ -852,7 +928,7 @@ The earlier integrability audit supplied a candidate bounded wage interval; subs
 
 \subsubsection{Conclusion}\label{conclusion}
 
-An income distribution alone does not distinguish preferences from job access, earning opportunities, resources and needs. A joint latent-jobs model makes those mechanisms explicit but separates them only under substantive restrictions. The implemented ex-ante money metric has a precise flat-consumption interpretation and a verified closed form; it is not a fixed-leisure metric and is not necessarily increasing under menu expansion. The grouped decomposition allocates interactions according to a stated hierarchy rather than identifying causal effects. Corrected estimates and the dependent within-type and pooled distributional results remain necessary before the paper can give a quantitative answer about the role of unequal job opportunities in France.
+An income distribution alone does not distinguish preferences from job access, earning opportunities, resources and needs. A joint latent-jobs model makes those mechanisms explicit but separates them only under substantive restrictions. The implemented ex-ante money metric has a precise flat-consumption interpretation and a verified closed form; it is not a fixed-leisure metric and is not necessarily increasing under menu expansion. The grouped decomposition allocates interactions according to a stated hierarchy rather than identifying causal effects. The corrected estimates and the within-type distributional results are now in hand, so the quantitative answer for France can be stated: among single adults unequal job opportunities account for about 56 per cent of measured well-being inequality, carried mostly by the access margin, while among couples earning opportunities and household resources and needs carry most of it and access little. Pooling across household types, the parameter intervals on these shares, and the couples resources-against-composition split remain outstanding, and none of the three is required for the statement just made.
 
 \appendix
 
