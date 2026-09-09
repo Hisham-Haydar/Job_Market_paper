@@ -89,7 +89,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 14. The report carries the explanatory apparatus — PASS
 
-- report: 20 questions, history and notebook collapsed, worked household present
+- report: 20 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
 
 ## 15. The novelty claim is conservative and fully conjoined — PASS
 

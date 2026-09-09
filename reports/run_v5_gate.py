@@ -586,8 +586,15 @@ for bad in ['log utility gives an arithmetic consumption average',
             'the first picture is generic motivation',
             'corrected nested attribution is not established']:
     forbid(it, bad, arts='HM')
+# The notebook description must disclose the generation gap. Saying only what
+# the notebook can do, without saying which artifacts it is pointed at, is the
+# overstatement the v4 review objected to.
+for need in ['replay and refit interface', 'not a source-to-results',
+             'specification-driven', 'preceded the specifications of record']:
+    if need not in MD_RAW.lower().replace('’', "'"):
+        it.fail('report: the notebook description omits %r' % need)
 it.note('report: %d questions, history and notebook collapsed, worked '
-        'household present' % nq)
+        'household present, notebook generation gap disclosed' % nq)
 
 
 # --------------------------------------------------------------------------- #
