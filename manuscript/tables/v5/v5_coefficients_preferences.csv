@@ -1,0 +1,9 @@
+Coefficient,Single men,Single women,Couple men,Couple women
+"Leisure weight, intercept $\beta_{\ell 0}$",8.5199 (3.5480),5.8683 (2.1346),3.9814 (0.7466),13.1029 (4.7760)
+"Leisure weight, age $\beta_{\ell a}$",1.4820 (1.0236),0.0678 (0.4792),-0.0080 (0.0287),-0.1228 (0.1260)
+"Leisure weight, age squared $\beta_{\ell a^2}$",0.7783 (0.7732),1.0000 (at bound),0.0065 (0.0030),0.0073 (0.0103)
+"Leisure weight, children $\beta_{\ell n}$",0 (restricted),0.1666 (0.4422),0 (restricted),-0.3055 (1.1472)
+Leisure curvature $\theta_\ell$,-1.6263 (0.3301),-0.9274 (0.2161),-0.9761 (0.1357),-1.6863 (0.2458)
+Consumption weight $\beta_c$,2.0387 (0.2917),2.0387 (0.2917),2.1017 (0.2939),2.1017 (0.2939)
+Consumption curvature $\theta_c$,0 (restricted),0 (restricted),0 (restricted),0 (restricted)
+Direct cross-leisure term,Not applicable,Not applicable,0 (restricted),0 (restricted)

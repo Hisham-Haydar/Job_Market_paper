@@ -1,0 +1,7 @@
+Population,Basis,Mean,p10,Median,p90,Gini
+Single-adult,Household,"4,354","2,643","4,139","6,219",0.1936
+Single-adult,Equivalized,"3,957","2,286","3,722","5,819",0.2089
+Single-adult,Priced disposable income,--,--,--,--,0.2533
+Couple,Household,"1,839","1,353","1,767","2,326",0.1325
+Couple,Equivalized,972,721,928,"1,229",0.1274
+Couple,Priced disposable income,--,--,--,--,0.2310

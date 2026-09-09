@@ -1,0 +1,4 @@
+Panel,Single-adult (EUR/month),Couple (EUR/month),Role
+"Estimation frame, 101 sampled alternatives per household","1,938.238719","4,247.875047",Constant of record
+"Welfare panel, 2,048 common integration nodes","1,774.518218","3,821.448012",Recomputed over its own rows; inert
+"Predecessor frames, before the sample correction","1,911.108058","3,821.448012",Superseded

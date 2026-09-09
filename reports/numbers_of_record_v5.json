@@ -1,0 +1,3139 @@
+{
+  "build_date": "09 September 2026",
+  "model_of_record": "S11 specifications of record: tau = 1, theta_c = 0, beta_c estimated; welfare at S12 on the 1,540 / 2,223 estimation frames",
+  "entries": {
+    "collection_year": {
+      "value": 2016,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "EU-SILC collection year"
+    },
+    "income_year": {
+      "value": 2015,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "income reference year"
+    },
+    "policy_year": {
+      "value": 2015,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "EUROMOD policy system"
+    },
+    "time_endowment": {
+      "value": 80,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "hours/week"
+    },
+    "leisure_scale": {
+      "value": 10,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "hours/week"
+    },
+    "hours_floor": {
+      "value": 5,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "hours/week"
+    },
+    "hours_cap": {
+      "value": 70,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "hours/week"
+    },
+    "wage_lo": {
+      "value": 2,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "EUR/hour"
+    },
+    "wage_hi": {
+      "value": 590,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "EUR/hour"
+    },
+    "experience_scale": {
+      "value": 20,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "years"
+    },
+    "age_scale": {
+      "value": 10,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "years"
+    },
+    "child_cutoff": {
+      "value": 20,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "years of age"
+    },
+    "gsur_scale": {
+      "value": 10,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "multiplier on the unemployment fraction"
+    },
+    "n_draws": {
+      "value": 100,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "sampled alternatives per household"
+    },
+    "n_nodes": {
+      "value": 2048,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "common integration nodes per household"
+    },
+    "n_alt_rows": {
+      "value": 101,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "rows per household in the criterion"
+    },
+    "n_occ": {
+      "value": 4,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "occupation groups"
+    },
+    "hours_reference_width": {
+      "value": 26.5,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "hours/week"
+    },
+    "cr1_draws": {
+      "value": 100,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "parameter draws"
+    },
+    "n_scrambles": {
+      "value": 8,
+      "source": "model definition, bound to the executed specification",
+      "status": "definition",
+      "units": "RQMC scrambles"
+    },
+    "lambda_c_singles": {
+      "value": 1938.238719107138,
+      "source": "v5_step2_welfare_evidence_v1.json::lambda_c_reconciliation",
+      "status": "definition",
+      "units": "EUR/month"
+    },
+    "lambda_c_welfare_panel_singles": {
+      "value": 1774.5182182328458,
+      "source": "v5_step2_welfare_evidence_v1.json::lambda_c_reconciliation",
+      "status": "definition",
+      "units": "EUR/month"
+    },
+    "lambda_c_couples": {
+      "value": 4247.875047307145,
+      "source": "v5_step2_welfare_evidence_v1.json::lambda_c_reconciliation",
+      "status": "definition",
+      "units": "EUR/month"
+    },
+    "lambda_c_welfare_panel_couples": {
+      "value": 3821.448012098882,
+      "source": "v5_step2_welfare_evidence_v1.json::lambda_c_reconciliation",
+      "status": "definition",
+      "units": "EUR/month"
+    },
+    "lambda_c_maxdev": {
+      "value": 2.6645352591003757e-15,
+      "source": "v5_step2_welfare_evidence_v1.json::lambda_c_reconciliation",
+      "status": "verified identity",
+      "units": "relative difference"
+    },
+    "n_singles": {
+      "value": 1540,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "sample",
+      "units": "households"
+    },
+    "negll_singles": {
+      "value": 6253.46307438,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-likelihood units"
+    },
+    "gain_singles": {
+      "value": 23.752611,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-points"
+    },
+    "kfree_singles": {
+      "value": 41,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "kint_singles": {
+      "value": 40,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "interior coordinates"
+    },
+    "mae_singles": {
+      "value": 0.01304,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "mean absolute deviation over the population moments"
+    },
+    "beta_c_singles": {
+      "value": 2.038731824410903,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "weight on log consumption"
+    },
+    "beta_c_se_singles": {
+      "value": 0.2917294715975947,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "cluster-robust standard error"
+    },
+    "sigma_singles": {
+      "value": 0.3815052460538545,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-wage dispersion"
+    },
+    "n_couples": {
+      "value": 2223,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "sample",
+      "units": "households"
+    },
+    "negll_couples": {
+      "value": 10283.034369351,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-likelihood units"
+    },
+    "gain_couples": {
+      "value": 15.659005,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-points"
+    },
+    "kfree_couples": {
+      "value": 47,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "kint_couples": {
+      "value": 47,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "interior coordinates"
+    },
+    "mae_couples": {
+      "value": 0.013595,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "mean absolute deviation over the population moments"
+    },
+    "beta_c_couples": {
+      "value": 2.101720268206207,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "weight on log consumption"
+    },
+    "beta_c_se_couples": {
+      "value": 0.2938791259474335,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "cluster-robust standard error"
+    },
+    "sigma_couples": {
+      "value": 0.3630752972618962,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-wage dispersion"
+    },
+    "negll_ruma": {
+      "value": 6403.974284931,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-likelihood units"
+    },
+    "negll_rumb": {
+      "value": 6395.107857484,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-likelihood units"
+    },
+    "rum_gap": {
+      "value": 141.64,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "log-points"
+    },
+    "mae_ruma": {
+      "value": 0.026952,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "mean absolute deviation over the population moments"
+    },
+    "mae_rumb": {
+      "value": 0.026072,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "mean absolute deviation over the population moments"
+    },
+    "kfree_rumb": {
+      "value": 16,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "kfree_ruma": {
+      "value": 10,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "mineig_singles": {
+      "value": 0.166893,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "diagnostic",
+      "units": "smallest Hessian eigenvalue on the interior block"
+    },
+    "mineig_couples": {
+      "value": 0.0770744,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "diagnostic",
+      "units": "smallest Hessian eigenvalue on the interior block"
+    },
+    "spread_singles": {
+      "value": "1.1e-10",
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "diagnostic",
+      "units": "negLL spread over ten terminal paths"
+    },
+    "spread_couples": {
+      "value": "1.3e-09",
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "diagnostic",
+      "units": "negLL spread over ten terminal paths"
+    },
+    "nat_factor_singles": {
+      "value": 1.6331,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "derived",
+      "units": "multiplicative factor on consumption"
+    },
+    "nat_pct_singles": {
+      "value": 63.3,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "derived",
+      "units": "per cent increase in consumption"
+    },
+    "nat_factor_couples": {
+      "value": 1.6093,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "derived",
+      "units": "multiplicative factor on consumption"
+    },
+    "nat_pct_couples": {
+      "value": 60.9,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "derived",
+      "units": "per cent increase in consumption"
+    },
+    "pm_weight_double": {
+      "value": 4.11,
+      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
+      "status": "derived",
+      "units": "contribution to the power moment, relative to the median alternative"
+    },
+    "w_i00_singles": {
+      "value": 0.1935959644576167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i10_singles": {
+      "value": 0.2187949925313458,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i01_singles": {
+      "value": 0.063459117316644,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i11_singles": {
+      "value": 2.0220162250745012e-16,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_cP_gini_singles": {
+      "value": 0.0191300446214573,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_gini_singles": {
+      "value": 9.88,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_gini_singles": {
+      "value": 0.0951813450447365,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_gini_singles": {
+      "value": 49.16,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_gini_singles": {
+      "value": 0.0130789106922456,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_gini_singles": {
+      "value": 6.76,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_gini_singles": {
+      "value": 0.1082602557369822,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_gini_singles": {
+      "value": 55.92,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_gini_singles": {
+      "value": 0.0662056640991769,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_gini_singles": {
+      "value": 34.2,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_gini_singles": {
+      "value": 0.1744659198361591,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_gini_singles": {
+      "value": 90.12,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_gini_singles": {
+      "value": 0.1935959644576167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson1_singles": {
+      "value": -0.0043805368181296,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson1_singles": {
+      "value": -7.21,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson1_singles": {
+      "value": 0.0335073920679466,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson1_singles": {
+      "value": 55.12,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson1_singles": {
+      "value": 0.0031516781377781,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson1_singles": {
+      "value": 5.18,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson1_singles": {
+      "value": 0.0366590702057247,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson1_singles": {
+      "value": 60.31,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson1_singles": {
+      "value": 0.0285094451388896,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson1_singles": {
+      "value": 46.9,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson1_singles": {
+      "value": 0.0651685153446144,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson1_singles": {
+      "value": 107.21,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson1_singles": {
+      "value": 0.0607879785264838,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson2_singles": {
+      "value": -0.0078942606084229,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson2_singles": {
+      "value": -6.83,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson2_singles": {
+      "value": 0.0675699551766271,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson2_singles": {
+      "value": 58.49,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson2_singles": {
+      "value": 0.0055118078501063,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson2_singles": {
+      "value": 4.77,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson2_singles": {
+      "value": 0.0730817630267334,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson2_singles": {
+      "value": 63.27,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson2_singles": {
+      "value": 0.0503268763109157,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson2_singles": {
+      "value": 43.57,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson2_singles": {
+      "value": 0.1234086393376492,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson2_singles": {
+      "value": 106.83,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson2_singles": {
+      "value": 0.1155143787292263,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge0_singles": {
+      "value": -0.0049290079102381,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge0_singles": {
+      "value": -7.86,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge0_singles": {
+      "value": 0.0347538192403632,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge0_singles": {
+      "value": 55.42,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge0_singles": {
+      "value": 0.0032974098400259,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge0_singles": {
+      "value": 5.26,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge0_singles": {
+      "value": 0.0380512290803892,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge0_singles": {
+      "value": 60.67,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge0_singles": {
+      "value": 0.0295918091250993,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge0_singles": {
+      "value": 47.19,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge0_singles": {
+      "value": 0.0676430382054885,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge0_singles": {
+      "value": 107.86,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge0_singles": {
+      "value": 0.0627140302952504,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge1_singles": {
+      "value": -0.0050038856481528,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge1_singles": {
+      "value": -7.59,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge1_singles": {
+      "value": 0.0327090964154566,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge1_singles": {
+      "value": 49.64,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge1_singles": {
+      "value": 0.0034421660805728,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge1_singles": {
+      "value": 5.22,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge1_singles": {
+      "value": 0.0361512624960295,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge1_singles": {
+      "value": 54.87,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge1_singles": {
+      "value": 0.0347426765734203,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge1_singles": {
+      "value": 52.73,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge1_singles": {
+      "value": 0.0708939390694499,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge1_singles": {
+      "value": 107.59,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge1_singles": {
+      "value": 0.065890053421297,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_cv2_singles": {
+      "value": -0.0131229150843393,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_cv2_singles": {
+      "value": -8.52,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_cv2_singles": {
+      "value": 0.0629496901426404,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_cv2_singles": {
+      "value": 40.89,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_cv2_singles": {
+      "value": 0.0073622974457577,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_cv2_singles": {
+      "value": 4.78,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_cv2_singles": {
+      "value": 0.0703119875883982,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_cv2_singles": {
+      "value": 45.67,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_cv2_singles": {
+      "value": 0.0967737681232772,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_cv2_singles": {
+      "value": 62.86,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_cv2_singles": {
+      "value": 0.1670857557116755,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_cv2_singles": {
+      "value": 108.52,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_cv2_singles": {
+      "value": 0.1539628406273361,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_i00_singlesmz": {
+      "value": 0.1935959644576167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i10_singlesmz": {
+      "value": 0.2176812155935288,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i01_singlesmz": {
+      "value": 0.063459117316644,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i11_singlesmz": {
+      "value": 2.0290440422240321e-16,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_cP_gini_singlesmz": {
+      "value": 0.0196869330903659,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_gini_singlesmz": {
+      "value": 10.17,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_gini_singlesmz": {
+      "value": 0.0998004445838746,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_gini_singlesmz": {
+      "value": 51.55,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_gini_singlesmz": {
+      "value": 0.0146351349494421,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_gini_singlesmz": {
+      "value": 7.56,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_gini_singlesmz": {
+      "value": 0.1144355795333167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_gini_singlesmz": {
+      "value": 59.11,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_gini_singlesmz": {
+      "value": 0.0594734518339338,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_gini_singlesmz": {
+      "value": 30.72,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_gini_singlesmz": {
+      "value": 0.1739090313672506,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_gini_singlesmz": {
+      "value": 89.83,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_gini_singlesmz": {
+      "value": 0.1935959644576167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson1_singlesmz": {
+      "value": -0.0037744947779186,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson1_singlesmz": {
+      "value": -6.21,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson1_singlesmz": {
+      "value": 0.0355907547693165,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson1_singlesmz": {
+      "value": 58.55,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson1_singlesmz": {
+      "value": 0.0035280174491428,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson1_singlesmz": {
+      "value": 5.8,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson1_singlesmz": {
+      "value": 0.0391187722184594,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson1_singlesmz": {
+      "value": 64.35,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson1_singlesmz": {
+      "value": 0.0254437010859444,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson1_singlesmz": {
+      "value": 41.86,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson1_singlesmz": {
+      "value": 0.0645624733044038,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson1_singlesmz": {
+      "value": 106.21,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson1_singlesmz": {
+      "value": 0.0607879785264838,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson2_singlesmz": {
+      "value": -0.0072293050477034,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson2_singlesmz": {
+      "value": -6.26,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson2_singlesmz": {
+      "value": 0.0718786694528889,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson2_singlesmz": {
+      "value": 62.22,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson2_singlesmz": {
+      "value": 0.0061789428898185,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson2_singlesmz": {
+      "value": 5.35,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson2_singlesmz": {
+      "value": 0.0780576123427074,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson2_singlesmz": {
+      "value": 67.57,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson2_singlesmz": {
+      "value": 0.0446860714342223,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson2_singlesmz": {
+      "value": 38.68,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson2_singlesmz": {
+      "value": 0.1227436837769297,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson2_singlesmz": {
+      "value": 106.26,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson2_singlesmz": {
+      "value": 0.1155143787292263,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge0_singlesmz": {
+      "value": -0.0042735416721687,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge0_singlesmz": {
+      "value": -6.81,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge0_singlesmz": {
+      "value": 0.0368891983345436,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge0_singlesmz": {
+      "value": 58.82,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge0_singlesmz": {
+      "value": 0.0036913401758632,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge0_singlesmz": {
+      "value": 5.89,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge0_singlesmz": {
+      "value": 0.0405805385104069,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge0_singlesmz": {
+      "value": 64.71,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge0_singlesmz": {
+      "value": 0.0264070334570123,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge0_singlesmz": {
+      "value": 42.11,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge0_singlesmz": {
+      "value": 0.0669875719674192,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge0_singlesmz": {
+      "value": 106.81,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge0_singlesmz": {
+      "value": 0.0627140302952504,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge1_singlesmz": {
+      "value": -0.0037300674942379,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge1_singlesmz": {
+      "value": -5.66,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge1_singlesmz": {
+      "value": 0.0347343620208814,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge1_singlesmz": {
+      "value": 52.72,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge1_singlesmz": {
+      "value": 0.0038665723672472,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge1_singlesmz": {
+      "value": 5.87,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge1_singlesmz": {
+      "value": 0.0386009343881286,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge1_singlesmz": {
+      "value": 58.58,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge1_singlesmz": {
+      "value": 0.0310191865274061,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge1_singlesmz": {
+      "value": 47.08,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge1_singlesmz": {
+      "value": 0.0696201209155348,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge1_singlesmz": {
+      "value": 105.66,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge1_singlesmz": {
+      "value": 0.065890053421297,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_cv2_singlesmz": {
+      "value": -0.0075552632312494,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_cv2_singlesmz": {
+      "value": -4.91,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_cv2_singlesmz": {
+      "value": 0.0673311311016238,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_cv2_singlesmz": {
+      "value": 43.73,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_cv2_singlesmz": {
+      "value": 0.0083785706298773,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_cv2_singlesmz": {
+      "value": 5.44,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_cv2_singlesmz": {
+      "value": 0.0757097017315012,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_cv2_singlesmz": {
+      "value": 49.17,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_cv2_singlesmz": {
+      "value": 0.0858084021270843,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_cv2_singlesmz": {
+      "value": 55.73,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_cv2_singlesmz": {
+      "value": 0.1615181038585856,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_cv2_singlesmz": {
+      "value": 104.91,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_cv2_singlesmz": {
+      "value": 0.1539628406273361,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_i00_couples": {
+      "value": 0.132464643562111,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i10_couples": {
+      "value": 0.1290459343428092,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i01_couples": {
+      "value": 0.0094274278744513,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_i11_couples": {
+      "value": 1.247649852530561e-31,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index units"
+    },
+    "w_cP_gini_couples": {
+      "value": 0.0064230685468765,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_gini_couples": {
+      "value": 4.85,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_gini_couples": {
+      "value": 0.0109014271057387,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_gini_couples": {
+      "value": 8.23,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_gini_couples": {
+      "value": 0.0473132075617089,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_gini_couples": {
+      "value": 35.72,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_gini_couples": {
+      "value": 0.0582146346674476,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_gini_couples": {
+      "value": 43.95,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_gini_couples": {
+      "value": 0.0678269403477867,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_gini_couples": {
+      "value": 51.2,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_gini_couples": {
+      "value": 0.1260415750152344,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_gini_couples": {
+      "value": 95.15,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_gini_couples": {
+      "value": 0.132464643562111,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson1_couples": {
+      "value": 0.0007620629777665,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson1_couples": {
+      "value": 2.52,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson1_couples": {
+      "value": 0.0019258509406784,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson1_couples": {
+      "value": 6.38,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson1_couples": {
+      "value": 0.0092105061783602,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson1_couples": {
+      "value": 30.5,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson1_couples": {
+      "value": 0.0111363571190386,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson1_couples": {
+      "value": 36.88,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson1_couples": {
+      "value": 0.0182987585133814,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson1_couples": {
+      "value": 60.6,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson1_couples": {
+      "value": 0.0294351156324201,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson1_couples": {
+      "value": 97.48,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson1_couples": {
+      "value": 0.0301971786101862,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_atkinson2_couples": {
+      "value": 0.0015137807732108,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_atkinson2_couples": {
+      "value": 2.74,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_atkinson2_couples": {
+      "value": 0.0038362091499093,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_atkinson2_couples": {
+      "value": 6.94,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_atkinson2_couples": {
+      "value": 0.0182864061364342,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_atkinson2_couples": {
+      "value": 33.1,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_atkinson2_couples": {
+      "value": 0.0221226152863436,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_atkinson2_couples": {
+      "value": 40.05,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_atkinson2_couples": {
+      "value": 0.0316030369227541,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_atkinson2_couples": {
+      "value": 57.21,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_atkinson2_couples": {
+      "value": 0.0537256522090977,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_atkinson2_couples": {
+      "value": 97.26,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_atkinson2_couples": {
+      "value": 0.0552394329823088,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge0_couples": {
+      "value": 0.0007828725155695,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge0_couples": {
+      "value": 2.55,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge0_couples": {
+      "value": 0.0019619289226558,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge0_couples": {
+      "value": 6.4,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge0_couples": {
+      "value": 0.0093455635492091,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge0_couples": {
+      "value": 30.48,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge0_couples": {
+      "value": 0.0113074924718649,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge0_couples": {
+      "value": 36.88,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge0_couples": {
+      "value": 0.0185721400785458,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge0_couples": {
+      "value": 60.57,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge0_couples": {
+      "value": 0.0298796325504108,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge0_couples": {
+      "value": 97.45,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge0_couples": {
+      "value": 0.0306625050659804,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_ge1_couples": {
+      "value": 0.0007876208874707,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_ge1_couples": {
+      "value": 2.27,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_ge1_couples": {
+      "value": 0.0019732865992472,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_ge1_couples": {
+      "value": 5.7,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_ge1_couples": {
+      "value": 0.0093845405265481,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_ge1_couples": {
+      "value": 27.09,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_ge1_couples": {
+      "value": 0.0113578271257953,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_ge1_couples": {
+      "value": 32.79,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_ge1_couples": {
+      "value": 0.0224919915788168,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_ge1_couples": {
+      "value": 64.94,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_ge1_couples": {
+      "value": 0.0338498187046122,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_ge1_couples": {
+      "value": 97.73,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_ge1_couples": {
+      "value": 0.0346374395920828,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_cP_cv2_couples": {
+      "value": 0.0017885798201613,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shP_cv2_couples": {
+      "value": 2.03,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cA_cv2_couples": {
+      "value": 0.0043602313664937,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shA_cv2_couples": {
+      "value": 4.95,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cB_cv2_couples": {
+      "value": 0.0201570840798662,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shB_cv2_couples": {
+      "value": 22.87,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cAB_cv2_couples": {
+      "value": 0.0245173154463599,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shAB_cv2_couples": {
+      "value": 27.82,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cD_cv2_couples": {
+      "value": 0.0618365468926407,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shD_cv2_couples": {
+      "value": 70.16,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_cE_cv2_couples": {
+      "value": 0.0863538623390006,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "w_shE_cv2_couples": {
+      "value": 97.97,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "w_base_cv2_couples": {
+      "value": 0.0881424421591619,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "index level"
+    },
+    "w_shP_singles": {
+      "value": 9.88,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cP_singles": {
+      "value": 0.0191300446214573,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shA_singles": {
+      "value": 49.16,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cA_singles": {
+      "value": 0.0951813450447365,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shB_singles": {
+      "value": 6.76,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cB_singles": {
+      "value": 0.0130789106922456,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shAB_singles": {
+      "value": 55.92,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cAB_singles": {
+      "value": 0.1082602557369822,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shD_singles": {
+      "value": 34.2,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cD_singles": {
+      "value": 0.0662056640991769,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shE_singles": {
+      "value": 90.12,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cE_singles": {
+      "value": 0.1744659198361591,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shP_singlesmz": {
+      "value": 10.17,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cP_singlesmz": {
+      "value": 0.0196869330903659,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shA_singlesmz": {
+      "value": 51.55,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cA_singlesmz": {
+      "value": 0.0998004445838746,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shB_singlesmz": {
+      "value": 7.56,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cB_singlesmz": {
+      "value": 0.0146351349494421,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shAB_singlesmz": {
+      "value": 59.11,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cAB_singlesmz": {
+      "value": 0.1144355795333167,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shD_singlesmz": {
+      "value": 30.72,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cD_singlesmz": {
+      "value": 0.0594734518339338,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shE_singlesmz": {
+      "value": 89.83,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cE_singlesmz": {
+      "value": 0.1739090313672506,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shP_couples": {
+      "value": 4.85,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cP_couples": {
+      "value": 0.0064230685468765,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shA_couples": {
+      "value": 8.23,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cA_couples": {
+      "value": 0.0109014271057387,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shB_couples": {
+      "value": 35.72,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cB_couples": {
+      "value": 0.0473132075617089,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shAB_couples": {
+      "value": 43.95,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cAB_couples": {
+      "value": 0.0582146346674476,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shD_couples": {
+      "value": 51.2,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cD_couples": {
+      "value": 0.0678269403477867,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "w_shE_couples": {
+      "value": 95.15,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "w_cE_couples": {
+      "value": 0.1260415750152344,
+      "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "of_P_singles": {
+      "value": -13.02,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
+    "of_E_singles": {
+      "value": 67.22,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
+    "of_P_rise_singles": {
+      "value": 13.0,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent change in the baseline Gini, sign in the text"
+    },
+    "of_P_couples": {
+      "value": 2.58,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
+    "of_E_couples": {
+      "value": 92.88,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
+    "of_P_rise_couples": {
+      "value": 2.6,
+      "source": "v5_one_factor_vs_shapley_v1.csv",
+      "status": "result",
+      "units": "per cent change in the baseline Gini, sign in the text"
+    },
+    "cr1_lo_P_couples": {
+      "value": 1.8,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_P_couples": {
+      "value": 9.7,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_P_couples": {
+      "value": 4.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_P_couples": {
+      "value": 5.2,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_A_couples": {
+      "value": 6.8,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_A_couples": {
+      "value": 11.6,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_A_couples": {
+      "value": 7.6,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_A_couples": {
+      "value": 8.8,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_B_couples": {
+      "value": 30.2,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_B_couples": {
+      "value": 38.3,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_B_couples": {
+      "value": 33.2,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_B_couples": {
+      "value": 38.2,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_AB_couples": {
+      "value": 39.7,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_AB_couples": {
+      "value": 47.7,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_AB_couples": {
+      "value": 41.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_AB_couples": {
+      "value": 46.4,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_D_couples": {
+      "value": 46.4,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_D_couples": {
+      "value": 54.4,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_D_couples": {
+      "value": 48.9,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_D_couples": {
+      "value": 53.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_P_singles": {
+      "value": 6.1,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_P_singles": {
+      "value": 20.7,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_P_singles": {
+      "value": 9.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_P_singles": {
+      "value": 10.3,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_A_singles": {
+      "value": 36.0,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_A_singles": {
+      "value": 61.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_A_singles": {
+      "value": 48.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_A_singles": {
+      "value": 49.9,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_B_singles": {
+      "value": 2.7,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_B_singles": {
+      "value": 10.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_B_singles": {
+      "value": 6.1,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_B_singles": {
+      "value": 7.4,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_AB_singles": {
+      "value": 43.0,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_AB_singles": {
+      "value": 66.4,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_AB_singles": {
+      "value": 55.0,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_AB_singles": {
+      "value": 56.9,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "cr1_lo_D_singles": {
+      "value": 21.3,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 2.5th parameter percentile"
+    },
+    "cr1_hi_D_singles": {
+      "value": 41.2,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "interval",
+      "units": "per cent, 97.5th parameter percentile"
+    },
+    "rq_lo_D_singles": {
+      "value": 33.5,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "rq_hi_D_singles": {
+      "value": 34.9,
+      "source": "s12_s11_cr1_headline_shares_v1.csv",
+      "status": "band",
+      "units": "per cent, RQMC integration band"
+    },
+    "wl_mean_raw_singles": {
+      "value": 4354.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_median_raw_singles": {
+      "value": 4139.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p10_raw_singles": {
+      "value": 2643.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p90_raw_singles": {
+      "value": 6219.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_gini_raw_singles": {
+      "value": 0.193596,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "wl_mean_equivalized_singles": {
+      "value": 3957.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_median_equivalized_singles": {
+      "value": 3722.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p10_equivalized_singles": {
+      "value": 2286.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p90_equivalized_singles": {
+      "value": 5819.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_gini_equivalized_singles": {
+      "value": 0.208944,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "wl_mean_raw_couples": {
+      "value": 1839.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_median_raw_couples": {
+      "value": 1767.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p10_raw_couples": {
+      "value": 1353.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p90_raw_couples": {
+      "value": 2326.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_gini_raw_couples": {
+      "value": 0.132465,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "wl_mean_equivalized_couples": {
+      "value": 972.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_median_equivalized_couples": {
+      "value": 928.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p10_equivalized_couples": {
+      "value": 721.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_p90_equivalized_couples": {
+      "value": 1229.0,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "wl_gini_equivalized_couples": {
+      "value": 0.127421,
+      "source": "v5_welfare_distributions_v1.csv",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "inc_gini_singles": {
+      "value": 0.253339,
+      "source": "v5_step2_welfare_evidence_v1.json::lorenz_observed_income",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "inc_gini_couples": {
+      "value": 0.231031,
+      "source": "v5_step2_welfare_evidence_v1.json::lorenz_observed_income",
+      "status": "result",
+      "units": "Gini units"
+    },
+    "resid_top": {
+      "value": "2.8e-17",
+      "source": "s12_welfare_record_report_v1.md::Exhaustiveness",
+      "status": "verified identity",
+      "units": "index units"
+    },
+    "resid_nested": {
+      "value": "5.6e-17",
+      "source": "s12_welfare_record_report_v1.md::Exhaustiveness",
+      "status": "verified identity",
+      "units": "index units"
+    },
+    "i11_max": {
+      "value": "1.3e-15",
+      "source": "s12_welfare_record_report_v1.md::Exhaustiveness",
+      "status": "verified identity",
+      "units": "index units"
+    },
+    "dlogh_singles": {
+      "value": "1.8e-15",
+      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
+      "status": "verified identity",
+      "units": "log units"
+    },
+    "dlogh_couples": {
+      "value": "7.1e-15",
+      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
+      "status": "verified identity",
+      "units": "log units"
+    },
+    "direct_median": {
+      "value": 0,
+      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "attain_median_singles": {
+      "value": -17.43,
+      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "attain_median_couples": {
+      "value": 110.53,
+      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
+      "status": "result",
+      "units": "EUR/month"
+    },
+    "gint_med_singles": {
+      "value": 0.077283,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "diagnostic",
+      "units": "opportunity mass on the H domain"
+    },
+    "w41_med_singles": {
+      "value": 0.9843,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio after unit-mass normalization"
+    },
+    "w41_min_singles": {
+      "value": 0.9169,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio"
+    },
+    "w41_max_singles": {
+      "value": 0.999,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio"
+    },
+    "delta_med_singles": {
+      "value": 0.0322,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "nats"
+    },
+    "gint_med_couples": {
+      "value": 147.962795,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "diagnostic",
+      "units": "opportunity mass on the H domain"
+    },
+    "w41_med_couples": {
+      "value": 0.6242,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio after unit-mass normalization"
+    },
+    "w41_min_couples": {
+      "value": 0.5211,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio"
+    },
+    "w41_max_couples": {
+      "value": 0.7171,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "ratio"
+    },
+    "delta_med_couples": {
+      "value": 0.9906,
+      "source": "s12_w4_premise_audit_v1.json",
+      "status": "result",
+      "units": "nats"
+    },
+    "w3_bracketed_singles": {
+      "value": 1540,
+      "source": "s12_welfare_record_report_v1.md::W3",
+      "status": "diagnostic",
+      "units": "households"
+    },
+    "w3_bracketed_couples": {
+      "value": 9,
+      "source": "s12_welfare_record_report_v1.md::W3",
+      "status": "diagnostic",
+      "units": "households"
+    },
+    "w3_negative_couples": {
+      "value": 2103,
+      "source": "s12_welfare_record_report_v1.md::W3",
+      "status": "diagnostic",
+      "units": "households"
+    },
+    "rk_a_gt_b_singles": {
+      "value": 6,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_b_gt_a_singles": {
+      "value": 0,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_a_gt_d_singles": {
+      "value": 4,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_ab_gt_d_singles": {
+      "value": 5,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_d_largest_of_pabd_singles": {
+      "value": 2,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_p_negative_singles": {
+      "value": 5,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_p_positive_singles": {
+      "value": 1,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_a_gt_b_couples": {
+      "value": 0,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_b_gt_a_couples": {
+      "value": 6,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_a_gt_d_couples": {
+      "value": 0,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_ab_gt_d_couples": {
+      "value": 0,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_d_largest_of_pabd_couples": {
+      "value": 6,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_p_negative_couples": {
+      "value": 0,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "rk_p_positive_couples": {
+      "value": 6,
+      "source": "v5_step2_welfare_evidence_v1.json::ranking_statements",
+      "status": "result",
+      "units": "indices out of six"
+    },
+    "installed_jax": {
+      "value": "0.10.1",
+      "source": "build environment package metadata",
+      "status": "software",
+      "units": "version"
+    },
+    "installed_jaxlib": {
+      "value": "0.10.1",
+      "source": "build environment package metadata",
+      "status": "software",
+      "units": "version"
+    },
+    "installed_euromod": {
+      "value": "0.2.17",
+      "source": "build environment package metadata",
+      "status": "software",
+      "units": "version"
+    }
+  },
+  "used_keys": [
+    "age_scale",
+    "attain_median_couples",
+    "attain_median_singles",
+    "beta_c_couples",
+    "beta_c_se_couples",
+    "beta_c_se_singles",
+    "beta_c_singles",
+    "child_cutoff",
+    "collection_year",
+    "cr1_draws",
+    "cr1_hi_A_singles",
+    "cr1_lo_A_singles",
+    "delta_med_couples",
+    "delta_med_singles",
+    "direct_median",
+    "dlogh_couples",
+    "dlogh_singles",
+    "experience_scale",
+    "gain_couples",
+    "gain_singles",
+    "gint_med_couples",
+    "gint_med_singles",
+    "gsur_scale",
+    "hours_cap",
+    "hours_floor",
+    "hours_reference_width",
+    "i11_max",
+    "inc_gini_couples",
+    "inc_gini_singles",
+    "income_year",
+    "installed_euromod",
+    "installed_jax",
+    "kfree_couples",
+    "kfree_ruma",
+    "kfree_rumb",
+    "kfree_singles",
+    "kint_singles",
+    "lambda_c_maxdev",
+    "leisure_scale",
+    "mae_couples",
+    "mae_ruma",
+    "mae_rumb",
+    "mae_singles",
+    "mineig_couples",
+    "mineig_singles",
+    "n_alt_rows",
+    "n_couples",
+    "n_draws",
+    "n_nodes",
+    "n_occ",
+    "n_scrambles",
+    "n_singles",
+    "nat_factor_couples",
+    "nat_factor_singles",
+    "negll_couples",
+    "negll_ruma",
+    "negll_rumb",
+    "negll_singles",
+    "of_E_couples",
+    "of_E_singles",
+    "of_P_couples",
+    "of_P_rise_singles",
+    "pm_weight_double",
+    "policy_year",
+    "resid_nested",
+    "resid_top",
+    "rk_a_gt_b_singles",
+    "rk_a_gt_d_singles",
+    "rk_ab_gt_d_singles",
+    "rk_b_gt_a_couples",
+    "rk_d_largest_of_pabd_couples",
+    "rk_p_negative_singles",
+    "rq_hi_A_singles",
+    "rq_lo_A_singles",
+    "rum_gap",
+    "spread_couples",
+    "spread_singles",
+    "time_endowment",
+    "w3_bracketed_couples",
+    "w3_bracketed_singles",
+    "w3_negative_couples",
+    "w41_max_couples",
+    "w41_max_singles",
+    "w41_med_couples",
+    "w41_med_singles",
+    "w41_min_couples",
+    "w41_min_singles",
+    "w_i00_singles",
+    "w_i10_singles",
+    "w_shAB_singles",
+    "w_shA_couples",
+    "w_shA_singles",
+    "w_shA_singlesmz",
+    "w_shB_couples",
+    "w_shB_singles",
+    "w_shB_singlesmz",
+    "w_shD_couples",
+    "w_shD_singles",
+    "w_shD_singlesmz",
+    "w_shP_couples",
+    "w_shP_singles",
+    "w_shP_singlesmz",
+    "wage_hi",
+    "wage_lo",
+    "wl_gini_raw_couples",
+    "wl_gini_raw_singles",
+    "wl_median_raw_singles"
+  ],
+  "unused_keys": [
+    "cr1_hi_AB_couples",
+    "cr1_hi_AB_singles",
+    "cr1_hi_A_couples",
+    "cr1_hi_B_couples",
+    "cr1_hi_B_singles",
+    "cr1_hi_D_couples",
+    "cr1_hi_D_singles",
+    "cr1_hi_P_couples",
+    "cr1_hi_P_singles",
+    "cr1_lo_AB_couples",
+    "cr1_lo_AB_singles",
+    "cr1_lo_A_couples",
+    "cr1_lo_B_couples",
+    "cr1_lo_B_singles",
+    "cr1_lo_D_couples",
+    "cr1_lo_D_singles",
+    "cr1_lo_P_couples",
+    "cr1_lo_P_singles",
+    "installed_jaxlib",
+    "kint_couples",
+    "lambda_c_couples",
+    "lambda_c_singles",
+    "lambda_c_welfare_panel_couples",
+    "lambda_c_welfare_panel_singles",
+    "nat_pct_couples",
+    "nat_pct_singles",
+    "of_P_rise_couples",
+    "of_P_singles",
+    "rk_a_gt_b_couples",
+    "rk_a_gt_d_couples",
+    "rk_ab_gt_d_couples",
+    "rk_b_gt_a_singles",
+    "rk_d_largest_of_pabd_singles",
+    "rk_p_negative_couples",
+    "rk_p_positive_couples",
+    "rk_p_positive_singles",
+    "rq_hi_AB_couples",
+    "rq_hi_AB_singles",
+    "rq_hi_A_couples",
+    "rq_hi_B_couples",
+    "rq_hi_B_singles",
+    "rq_hi_D_couples",
+    "rq_hi_D_singles",
+    "rq_hi_P_couples",
+    "rq_hi_P_singles",
+    "rq_lo_AB_couples",
+    "rq_lo_AB_singles",
+    "rq_lo_A_couples",
+    "rq_lo_B_couples",
+    "rq_lo_B_singles",
+    "rq_lo_D_couples",
+    "rq_lo_D_singles",
+    "rq_lo_P_couples",
+    "rq_lo_P_singles",
+    "sigma_couples",
+    "sigma_singles",
+    "w_base_atkinson1_couples",
+    "w_base_atkinson1_singles",
+    "w_base_atkinson1_singlesmz",
+    "w_base_atkinson2_couples",
+    "w_base_atkinson2_singles",
+    "w_base_atkinson2_singlesmz",
+    "w_base_cv2_couples",
+    "w_base_cv2_singles",
+    "w_base_cv2_singlesmz",
+    "w_base_ge0_couples",
+    "w_base_ge0_singles",
+    "w_base_ge0_singlesmz",
+    "w_base_ge1_couples",
+    "w_base_ge1_singles",
+    "w_base_ge1_singlesmz",
+    "w_base_gini_couples",
+    "w_base_gini_singles",
+    "w_base_gini_singlesmz",
+    "w_cAB_atkinson1_couples",
+    "w_cAB_atkinson1_singles",
+    "w_cAB_atkinson1_singlesmz",
+    "w_cAB_atkinson2_couples",
+    "w_cAB_atkinson2_singles",
+    "w_cAB_atkinson2_singlesmz",
+    "w_cAB_couples",
+    "w_cAB_cv2_couples",
+    "w_cAB_cv2_singles",
+    "w_cAB_cv2_singlesmz",
+    "w_cAB_ge0_couples",
+    "w_cAB_ge0_singles",
+    "w_cAB_ge0_singlesmz",
+    "w_cAB_ge1_couples",
+    "w_cAB_ge1_singles",
+    "w_cAB_ge1_singlesmz",
+    "w_cAB_gini_couples",
+    "w_cAB_gini_singles",
+    "w_cAB_gini_singlesmz",
+    "w_cAB_singles",
+    "w_cAB_singlesmz",
+    "w_cA_atkinson1_couples",
+    "w_cA_atkinson1_singles",
+    "w_cA_atkinson1_singlesmz",
+    "w_cA_atkinson2_couples",
+    "w_cA_atkinson2_singles",
+    "w_cA_atkinson2_singlesmz",
+    "w_cA_couples",
+    "w_cA_cv2_couples",
+    "w_cA_cv2_singles",
+    "w_cA_cv2_singlesmz",
+    "w_cA_ge0_couples",
+    "w_cA_ge0_singles",
+    "w_cA_ge0_singlesmz",
+    "w_cA_ge1_couples",
+    "w_cA_ge1_singles",
+    "w_cA_ge1_singlesmz",
+    "w_cA_gini_couples",
+    "w_cA_gini_singles",
+    "w_cA_gini_singlesmz",
+    "w_cA_singles",
+    "w_cA_singlesmz",
+    "w_cB_atkinson1_couples",
+    "w_cB_atkinson1_singles",
+    "w_cB_atkinson1_singlesmz",
+    "w_cB_atkinson2_couples",
+    "w_cB_atkinson2_singles",
+    "w_cB_atkinson2_singlesmz",
+    "w_cB_couples",
+    "w_cB_cv2_couples",
+    "w_cB_cv2_singles",
+    "w_cB_cv2_singlesmz",
+    "w_cB_ge0_couples",
+    "w_cB_ge0_singles",
+    "w_cB_ge0_singlesmz",
+    "w_cB_ge1_couples",
+    "w_cB_ge1_singles",
+    "w_cB_ge1_singlesmz",
+    "w_cB_gini_couples",
+    "w_cB_gini_singles",
+    "w_cB_gini_singlesmz",
+    "w_cB_singles",
+    "w_cB_singlesmz",
+    "w_cD_atkinson1_couples",
+    "w_cD_atkinson1_singles",
+    "w_cD_atkinson1_singlesmz",
+    "w_cD_atkinson2_couples",
+    "w_cD_atkinson2_singles",
+    "w_cD_atkinson2_singlesmz",
+    "w_cD_couples",
+    "w_cD_cv2_couples",
+    "w_cD_cv2_singles",
+    "w_cD_cv2_singlesmz",
+    "w_cD_ge0_couples",
+    "w_cD_ge0_singles",
+    "w_cD_ge0_singlesmz",
+    "w_cD_ge1_couples",
+    "w_cD_ge1_singles",
+    "w_cD_ge1_singlesmz",
+    "w_cD_gini_couples",
+    "w_cD_gini_singles",
+    "w_cD_gini_singlesmz",
+    "w_cD_singles",
+    "w_cD_singlesmz",
+    "w_cE_atkinson1_couples",
+    "w_cE_atkinson1_singles",
+    "w_cE_atkinson1_singlesmz",
+    "w_cE_atkinson2_couples",
+    "w_cE_atkinson2_singles",
+    "w_cE_atkinson2_singlesmz",
+    "w_cE_couples",
+    "w_cE_cv2_couples",
+    "w_cE_cv2_singles",
+    "w_cE_cv2_singlesmz",
+    "w_cE_ge0_couples",
+    "w_cE_ge0_singles",
+    "w_cE_ge0_singlesmz",
+    "w_cE_ge1_couples",
+    "w_cE_ge1_singles",
+    "w_cE_ge1_singlesmz",
+    "w_cE_gini_couples",
+    "w_cE_gini_singles",
+    "w_cE_gini_singlesmz",
+    "w_cE_singles",
+    "w_cE_singlesmz",
+    "w_cP_atkinson1_couples",
+    "w_cP_atkinson1_singles",
+    "w_cP_atkinson1_singlesmz",
+    "w_cP_atkinson2_couples",
+    "w_cP_atkinson2_singles",
+    "w_cP_atkinson2_singlesmz",
+    "w_cP_couples",
+    "w_cP_cv2_couples",
+    "w_cP_cv2_singles",
+    "w_cP_cv2_singlesmz",
+    "w_cP_ge0_couples",
+    "w_cP_ge0_singles",
+    "w_cP_ge0_singlesmz",
+    "w_cP_ge1_couples",
+    "w_cP_ge1_singles",
+    "w_cP_ge1_singlesmz",
+    "w_cP_gini_couples",
+    "w_cP_gini_singles",
+    "w_cP_gini_singlesmz",
+    "w_cP_singles",
+    "w_cP_singlesmz",
+    "w_i00_couples",
+    "w_i00_singlesmz",
+    "w_i01_couples",
+    "w_i01_singles",
+    "w_i01_singlesmz",
+    "w_i10_couples",
+    "w_i10_singlesmz",
+    "w_i11_couples",
+    "w_i11_singles",
+    "w_i11_singlesmz",
+    "w_shAB_atkinson1_couples",
+    "w_shAB_atkinson1_singles",
+    "w_shAB_atkinson1_singlesmz",
+    "w_shAB_atkinson2_couples",
+    "w_shAB_atkinson2_singles",
+    "w_shAB_atkinson2_singlesmz",
+    "w_shAB_couples",
+    "w_shAB_cv2_couples",
+    "w_shAB_cv2_singles",
+    "w_shAB_cv2_singlesmz",
+    "w_shAB_ge0_couples",
+    "w_shAB_ge0_singles",
+    "w_shAB_ge0_singlesmz",
+    "w_shAB_ge1_couples",
+    "w_shAB_ge1_singles",
+    "w_shAB_ge1_singlesmz",
+    "w_shAB_gini_couples",
+    "w_shAB_gini_singles",
+    "w_shAB_gini_singlesmz",
+    "w_shAB_singlesmz",
+    "w_shA_atkinson1_couples",
+    "w_shA_atkinson1_singles",
+    "w_shA_atkinson1_singlesmz",
+    "w_shA_atkinson2_couples",
+    "w_shA_atkinson2_singles",
+    "w_shA_atkinson2_singlesmz",
+    "w_shA_cv2_couples",
+    "w_shA_cv2_singles",
+    "w_shA_cv2_singlesmz",
+    "w_shA_ge0_couples",
+    "w_shA_ge0_singles",
+    "w_shA_ge0_singlesmz",
+    "w_shA_ge1_couples",
+    "w_shA_ge1_singles",
+    "w_shA_ge1_singlesmz",
+    "w_shA_gini_couples",
+    "w_shA_gini_singles",
+    "w_shA_gini_singlesmz",
+    "w_shB_atkinson1_couples",
+    "w_shB_atkinson1_singles",
+    "w_shB_atkinson1_singlesmz",
+    "w_shB_atkinson2_couples",
+    "w_shB_atkinson2_singles",
+    "w_shB_atkinson2_singlesmz",
+    "w_shB_cv2_couples",
+    "w_shB_cv2_singles",
+    "w_shB_cv2_singlesmz",
+    "w_shB_ge0_couples",
+    "w_shB_ge0_singles",
+    "w_shB_ge0_singlesmz",
+    "w_shB_ge1_couples",
+    "w_shB_ge1_singles",
+    "w_shB_ge1_singlesmz",
+    "w_shB_gini_couples",
+    "w_shB_gini_singles",
+    "w_shB_gini_singlesmz",
+    "w_shD_atkinson1_couples",
+    "w_shD_atkinson1_singles",
+    "w_shD_atkinson1_singlesmz",
+    "w_shD_atkinson2_couples",
+    "w_shD_atkinson2_singles",
+    "w_shD_atkinson2_singlesmz",
+    "w_shD_cv2_couples",
+    "w_shD_cv2_singles",
+    "w_shD_cv2_singlesmz",
+    "w_shD_ge0_couples",
+    "w_shD_ge0_singles",
+    "w_shD_ge0_singlesmz",
+    "w_shD_ge1_couples",
+    "w_shD_ge1_singles",
+    "w_shD_ge1_singlesmz",
+    "w_shD_gini_couples",
+    "w_shD_gini_singles",
+    "w_shD_gini_singlesmz",
+    "w_shE_atkinson1_couples",
+    "w_shE_atkinson1_singles",
+    "w_shE_atkinson1_singlesmz",
+    "w_shE_atkinson2_couples",
+    "w_shE_atkinson2_singles",
+    "w_shE_atkinson2_singlesmz",
+    "w_shE_couples",
+    "w_shE_cv2_couples",
+    "w_shE_cv2_singles",
+    "w_shE_cv2_singlesmz",
+    "w_shE_ge0_couples",
+    "w_shE_ge0_singles",
+    "w_shE_ge0_singlesmz",
+    "w_shE_ge1_couples",
+    "w_shE_ge1_singles",
+    "w_shE_ge1_singlesmz",
+    "w_shE_gini_couples",
+    "w_shE_gini_singles",
+    "w_shE_gini_singlesmz",
+    "w_shE_singles",
+    "w_shE_singlesmz",
+    "w_shP_atkinson1_couples",
+    "w_shP_atkinson1_singles",
+    "w_shP_atkinson1_singlesmz",
+    "w_shP_atkinson2_couples",
+    "w_shP_atkinson2_singles",
+    "w_shP_atkinson2_singlesmz",
+    "w_shP_cv2_couples",
+    "w_shP_cv2_singles",
+    "w_shP_cv2_singlesmz",
+    "w_shP_ge0_couples",
+    "w_shP_ge0_singles",
+    "w_shP_ge0_singlesmz",
+    "w_shP_ge1_couples",
+    "w_shP_ge1_singles",
+    "w_shP_ge1_singlesmz",
+    "w_shP_gini_couples",
+    "w_shP_gini_singles",
+    "w_shP_gini_singlesmz",
+    "wl_gini_equivalized_couples",
+    "wl_gini_equivalized_singles",
+    "wl_mean_equivalized_couples",
+    "wl_mean_equivalized_singles",
+    "wl_mean_raw_couples",
+    "wl_mean_raw_singles",
+    "wl_median_equivalized_couples",
+    "wl_median_equivalized_singles",
+    "wl_median_raw_couples",
+    "wl_p10_equivalized_couples",
+    "wl_p10_equivalized_singles",
+    "wl_p10_raw_couples",
+    "wl_p10_raw_singles",
+    "wl_p90_equivalized_couples",
+    "wl_p90_equivalized_singles",
+    "wl_p90_raw_couples",
+    "wl_p90_raw_singles"
+  ]
+}

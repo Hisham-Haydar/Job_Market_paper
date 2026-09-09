@@ -1,0 +1,20 @@
+Coefficient,Singles,Couple men,Couple women
+Employment constant $\beta_E$,-3.1735 (0.4053),-2.1233 (0.3195),-2.8148 (0.3021)
+"Group unemployment rate $\beta_{E,gsur}$",-1.4422 (0.2356),-1.1924 (0.1557),shared with the man
+"Densely populated $\beta_{E,u}$",-0.0288 (0.2209),-0.1823 (0.1657),shared with the man
+"Intermediate density $\beta_{E,m}$",0.0641 (0.2614),-0.4174 (0.1861),shared with the man
+"Region 2 $\beta_{E,2}$",-0.3780 (0.3292),-0.1546 (0.2442),shared with the man
+"Region 3 $\beta_{E,3}$",-0.1117 (0.3891),0.0873 (0.2808),shared with the man
+"Region 4 $\beta_{E,4}$",-0.8218 (0.3810),0.0150 (0.3068),shared with the man
+"Region 5 $\beta_{E,5}$",-0.5162 (0.3274),-0.1455 (0.2555),shared with the man
+"Region 6 $\beta_{E,6}$",-0.7222 (0.3528),-0.2844 (0.2748),shared with the man
+"Region 7 $\beta_{E,7}$",-0.5374 (0.3503),-0.1396 (0.2651),shared with the man
+"Region 8 $\beta_{E,8}$",-0.4512 (0.3401),-0.1659 (0.2660),shared with the man
+"Hours band: Part-time lower, [17.5, 21.5)",0.0298 (0.1972),-1.1094 (0.3791),-0.5173 (0.1629)
+"Hours band: Part-time upper, [28.5, 30.5)",0.7080 (0.1928),0.0835 (0.2378),1.1586 (0.1214)
+"Hours band: Narrow full-time, [33.5, 36.5)",2.0656 (0.0894),2.2888 (0.0821),2.0284 (0.0682)
+"Hours band: Full-time upper, [36.5, 40.5]",1.9387 (0.0997),2.3801 (0.0866),1.6825 (0.0798)
+"Hours band: Long hours, [44.5, 70]",-0.0834 (0.1772),0.6977 (0.1335),-0.3109 (0.1615)
+Occupation 2 $\xi_2$,0.1135 (0.1374),-1.5097 (0.0967),0.2074 (0.0891)
+Occupation 3 $\xi_3$,-0.4060 (0.1440),-2.2532 (0.1244),-0.1804 (0.0923)
+Occupation 4 $\xi_4$,0.5632 (0.1225),0.1594 (0.0618),0.8159 (0.0799)

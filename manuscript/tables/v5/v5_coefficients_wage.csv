@@ -1,0 +1,11 @@
+Coefficient,Singles,Couples
+Intercept $\beta_{w0}$,2.0138 (0.0561),2.0480 (0.0335)
+Low education $\beta_{wL}$,0.0566 (0.0372),-0.0433 (0.0217)
+High education $\beta_{wH}$,0.1491 (0.0308),0.1817 (0.0197)
+Potential experience $\beta_{wx}$,0.2408 (0.0862),0.5643 (0.0546)
+Experience squared $\beta_{wx^2}$,-0.0282 (0.0390),-0.1598 (0.0243)
+Occupation 2 $\delta_2$,-0.0347 (0.0399),-0.0740 (0.0231)
+Occupation 3 $\delta_3$,0.0622 (0.0383),0.0394 (0.0228)
+Occupation 4 $\delta_4$,0.2785 (0.0368),0.2146 (0.0223)
+Log-wage dispersion $\sigma$,0.3815 (0.0133),0.3631 (0.0072)
+Consumption weight $\beta_c$,2.0387 (0.2917),2.1017 (0.2939)

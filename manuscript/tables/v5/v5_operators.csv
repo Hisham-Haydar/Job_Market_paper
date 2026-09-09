@@ -1,0 +1,5 @@
+Operator,What is replaced,What is retained,Repricing
+$T_P$ preferences,"Singles: the arguments of the leisure weight and the complete reference-sex leisure block. Couples: the medoid spouse arguments, with own spouse coefficients retained","Budget roster, resources, access and wage pathways of the same characteristics",No: pure utility shifters do not change the budget
+$T_A$ job access,The arguments of the employment index and the occupation access table,"Preferences, wage location, budget inputs; sex-specific occupation coefficients",No: the priced jobs are unchanged
+$T_B$ earning opportunities,"The arguments of the offered-wage location: education shares and experience moments, with squares recomputed rather than averaged",The estimated wage coefficients and dispersion; the preference and access pathways of the same characteristics,No on a common priced node set: the change is in the density over nodes
+$T_D$ resources and needs,"The non-labour budget inputs, the household roster and the needs profile",Every non-budget structural pathway,Yes: the household budget is recomputed through the tax-benefit system

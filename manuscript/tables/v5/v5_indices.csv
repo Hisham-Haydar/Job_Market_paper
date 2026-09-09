@@ -1,0 +1,7 @@
+Index,Definition
+Gini,"$\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert$, for $W,\tilde W$ independent draws from the distribution"
+Atkinson(1),$1-\exp\!\big(\mathbb{E}\log W\big)/\mu$
+Atkinson(2),$1-\big(\mathbb{E}[W^{-1}]\big)^{-1}/\mu$
+GE(0),$\mathbb{E}\log(\mu/W)$
+GE(1),$\mathbb{E}\big[(W/\mu)\log(W/\mu)\big]$
+GE(2) $=CV^2/2$,$\tfrac{1}{2}\mathbb{E}\big[(W/\mu)^2-1\big]$

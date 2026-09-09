@@ -1,0 +1,5 @@
+Regime,Meaning,Weighted share,"Mean hours, man","Mean hours, woman"
+BB,both spouses employed,0.8435,41.0,35.9
+MO,"man employed, woman not employed",0.0796,41.5,0.0
+WO,"woman employed, man not employed",0.0547,0.0,35.0
+NN,neither spouse employed,0.0222,0.0,0.0

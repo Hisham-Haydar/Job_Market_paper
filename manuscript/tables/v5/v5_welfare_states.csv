@@ -1,0 +1,7 @@
+State,Single-adult,Couple
+"Own preferences, own circumstances",0.193596,0.132465
+"Common preferences, own circumstances",0.218795,0.129046
+"Own preferences, common circumstances",0.063459,0.009427
+"Common preferences, common circumstances",0.000000,0.000000
+*Preferences equalized alone: change in the Gini (per cent)*,+13.02,-2.58
+*All other circumstances equalized alone: change (per cent)*,-67.22,-92.88

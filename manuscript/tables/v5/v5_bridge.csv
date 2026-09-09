@@ -1,0 +1,3 @@
+Population,Non-work maximizes $L$,Median $\int\hat g$,Median $W^4/W^1$,Range,Median $\Delta$ (nats),$\Delta\ge 0$ everywhere
+Single-adult,yes,0.077283,0.9843,"[0.9169, 0.9990]",0.0322,yes
+Couple,yes,147.962795,0.6242,"[0.5211, 0.7171]",0.9906,yes

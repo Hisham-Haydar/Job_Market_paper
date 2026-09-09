@@ -1,0 +1,13 @@
+Population and index,Baseline level,Preferences (per cent),Access,Earning opportunities,Resources and needs,Access + earnings
+"Single-adult, Gini",0.193596,9.88,49.16,6.76,34.20,55.92
+"Single-adult, Atkinson(1)",0.060788,-7.21,55.12,5.18,46.90,60.31
+"Single-adult, Atkinson(2)",0.115514,-6.83,58.49,4.77,43.57,63.27
+"Single-adult, GE(0)",0.062714,-7.86,55.42,5.26,47.19,60.67
+"Single-adult, GE(1)",0.065890,-7.59,49.64,5.22,52.73,54.87
+"Single-adult, GE(2) $=CV^2/2$",0.153963,-8.52,40.89,4.78,62.86,45.67
+"Couple, Gini",0.132465,4.85,8.23,35.72,51.20,43.95
+"Couple, Atkinson(1)",0.030197,2.52,6.38,30.50,60.60,36.88
+"Couple, Atkinson(2)",0.055239,2.74,6.94,33.10,57.21,40.05
+"Couple, GE(0)",0.030663,2.55,6.40,30.48,60.57,36.88
+"Couple, GE(1)",0.034637,2.27,5.70,27.09,64.94,32.79
+"Couple, GE(2) $=CV^2/2$",0.088142,2.03,4.95,22.87,70.16,27.82
