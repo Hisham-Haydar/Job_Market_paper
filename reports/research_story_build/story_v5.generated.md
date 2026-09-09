@@ -153,19 +153,21 @@ A job is a package $j$: an employment state $e\in\{0,1\}$ and, when employed, an
 Let $C_i(j)$ be priced monthly disposable consumption at $j$ and $\ell_i(j)$ normalized leisure, $(80-h)/10$ hours per week, floored at one hour. For a single adult of sex group $g$, deterministic utility is
 
 $$
-u_i(j)=\underbrace{\omega_{ig}\,\mathrm{BC}\!\left(\ell_i(j);\theta_{\ell g}\right)}_{L_i(j)}
-\;+\;\beta_c\log\!\big(C_i(j)/\lambda_c\big),
+u_{ij}=\underbrace{\beta_{\ell}^{g}(\mathbf x_i)\;
+\mathcal B\!\left(\tilde\ell_{ij};\theta_{\ell}^{g}\right)}_{L_{ij}}
+\;+\;\beta_c\log\tilde c_{ij},
 \qquad
-\omega_{ig}=\beta_{\ell 0,g}+\beta_{\ell a,g}a_i+\beta_{\ell a^2,g}a_i^{2}
-+\mathbf 1\{g=\text{f}\}\,\beta_{\ell n,g}n_i,
+\beta_{\ell}^{g}(\mathbf x_i)=\beta_{\ell 0}^{g}+\beta_{\ell a}^{g}a_i
++\beta_{\ell a^{2}}^{g}a_i^{2}
++\mathbb 1\{g=\text{women}\}\,\beta_{\ell k}^{g}k_i,
 $$
 
-where $\mathrm{BC}(x;\theta)=(x^{\theta}-1)/\theta$ and $\mathrm{BC}(x;0)=\log x$, $a_i$ is centred age in decades, and $n_i$ is the child count. For a couple the index is additive across spouses with no direct cross-leisure term,
+where $\mathcal B(z;\theta)=(z^{\theta}-1)/\theta$ with $\mathcal B(z;0)=\log z$, $\tilde\ell_{ij}$ is normalized leisure, $\tilde c_{ij}=C_{ij}/\lambda_c$, $a_i$ is centred age in decades and $k_i$ is the child count. For a couple the index is additive across spouses with no direct cross-leisure term,
 
 $$
-u_i(j)=\omega_{im}\mathrm{BC}(\ell_{im};\theta_{\ell m})
-      +\omega_{if}\mathrm{BC}(\ell_{if};\theta_{\ell f})
-      +\beta_c\log\!\big(C_i(j)/\lambda_c\big),
+u_{ij}=\beta_{\ell}^{m}(\mathbf x_i)\,\mathcal B(\tilde\ell^{m}_{ij};\theta_{\ell}^{m})
+      +\beta_{\ell}^{f}(\mathbf x_i)\,\mathcal B(\tilde\ell^{f}_{ij};\theta_{\ell}^{f})
+      +\beta_c\log\tilde c_{ij},
 $$
 
 with consumption the tax-unit sum over all members. We write $L_i(j)$ throughout for the complete non-consumption part of the index, which for a couple contains both leisure terms.
@@ -184,18 +186,15 @@ The normalizer $\lambda_c$ is a units convention. Under exact log consumption it
 
 ## Opportunities
 
-The opportunity kernel gives the relative intensity with which packages are available to household $i$, before any choice is made. Up to a household constant it factors as
+The opportunity density gives the relative intensity with which packages are available to household $i$, before any choice is made. It is a product of **four** factors, switched off on non-employment by the employment indicator $E_{ij}=\mathbb 1\{h_{ij}>0\}$:
 
 $$
-\log\widetilde g_i(1,k,h,w)=\beta_E+x_i^{E\prime}\gamma
-   +\xi_{k,g}+H(h)+\log\phi\!\left(w\mid\mu_i(k),\sigma\right),
-\qquad
-\log\widetilde g_i(0)=0,
+g_{ij}=g^{E}_{ij}\cdot\left(g^{H}_{ij}\cdot g^{\mathrm{Occ}}_{ij}\cdot g^{W}_{ij}\right)^{E_{ij}} .
 $$
 
-with four blocks. **Employment access** $\beta_E+x_i^{E\prime}\gamma$ carries the group unemployment measure, region and urbanisation, and multiplies the working indicator. **Occupation access** is $\xi_{k,g}$ with group one the omitted reference. The **hours density** $H(h)$ elevates five bands over a residual reference set of total width 26.5 hours per week; the narrow full-time band $[33.5,36.5)$ is a density elevation over an interval, not an atom at thirty-five hours. The **wage density** $\phi$ is log-normal with location $\mu_i(k)=\beta_{w0}+\beta_{wL}\mathrm{educL}_i+\beta_{wH}\mathrm{educH}_i+\beta_{wx}x_i+\beta_{wx^2}x_i^{2}+\delta_k$ and dispersion $\sigma$, truncated to $[2,590]$ euros per hour and renormalized on that support.
+**Access**, $g^{E}_{ij}=\exp\{\beta_E+\beta_s s_i+\sum_{r=2}^{8}\beta_r\,\mathrm{reg}_{ir}+\beta_u u_i+\beta_m m_i\}$, carries the local group unemployment measure $s_i$, the region indicators and urbanisation, and is the factor inside which local-market access lives. **Hours**, $g^{H}_{ij}=\exp\{\sum_b \beta_b\mathbb 1\{h_{ij}\in b\}\}$, elevates five bands over a residual reference set of total width 26.5 hours per week, so every band coefficient is read against that residual and none of the five is normalized to zero; the narrow full-time band $[33.5,36.5)$ is a density elevation over an interval, not an atom at thirty-five hours. **Occupation**, $g^{\mathrm{Occ}}_{ij}=\exp\{\beta^{\mathrm{occ}}_{k,g}\}$ with $\beta^{\mathrm{occ}}_{1,g}\equiv 0$. **Wage offer**, $g^{W}_{ij}$, is log-normal with location $\mu_i=\beta_{w0}+\beta_{wL}L_i+\beta_{wH}H_i+\beta_{wx}x_i+\beta_{wx^{2}}x_i^{2}+\delta_{\mathrm{occ}}$ and dispersion $\sigma$, truncated to $[2,590]$ euros per hour and renormalized on that support.
 
-Two properties of the normalization matter later. Write $\widehat g_i=\widetilde g_i/Z_i$ for the kernel normalized to a probability density on the whole package space. The wage factor integrates to one *conditional on employment and occupation*, because the truncated density is renormalized on its own support; and the non-consumption index $L_i$ has no wage argument. Together these give the reference the pay-neutrality property established in Section 4.
+Two properties of the normalization matter later. Write $\widehat g_{ij}=g_{ij}/Z_i$ for the density normalized to unit mass on the whole package space. The wage factor integrates to one *conditional on employment and occupation*, because the truncated density is renormalized on its own support; and the non-consumption index $L_{ij}$ has no wage argument. Together these give the reference the pay-neutrality property established in Section 4.
 
 The four blocks are what the decomposition later separates. Employment and occupation access are one mechanism; the distribution of wages conditional on an occupation is another; neither is the same as non-labour resources or household needs.
 
@@ -209,16 +208,22 @@ Choices alone do not separate a taste for leisure from a scarcity of jobs at tha
 
 ## Estimation
 
-The choice set is a continuum, so the likelihood is evaluated over sampled alternatives. For each household we draw 100 alternatives from a proposal density $q_i$ and place the observed choice in the set as well, giving 101 rows. The contribution of household $i$ is the conditional probability of its observed package within that set, corrected for the proposal:
+The choice set is a continuum, so the likelihood is evaluated over sampled alternatives. For each household we draw $R=100$ alternatives from a proposal density $q_{ij}$ and place the observed package in the set as well, giving a set $\mathcal C_i$ with $|\mathcal C_i|=101$ rows. Write the sampled-set index
 
 $$
-\Pr\!\left(y_i\mid \text{set}\right)=
-\frac{n_{y}\exp\!\big\{a_i(y)-\log q_i(y)\big\}}
-     {\sum_{s\in\text{slots}}\exp\!\big\{a_i(s)-\log q_i(s)\big\}},
-\qquad a_i(j)=u_i(j)+\log\widetilde g_i(j).
+V_{ij}=u_{ij}+\log g_{ij}-\log q_{ij},
+\qquad
+q_{ij}=q^{E}_{ij}\left(q^{H}_{ij}q^{W}_{ij}q^{\mathrm{Occ}}_{ij}\right)^{E_{ij}} .
 $$
 
-The denominator runs over slots rather than distinct packages, and a package drawn more than once keeps its multiplicity, $n_y$; the chosen package carries the same proposal correction as any other row. The proposal is fitted out of fold, so a household's own outcome never enters the proposal used to score it. For couples the proposal draws the joint participation regime first and then the two spouse packages conditional on it.
+The contribution of household $i$ is then the conditional probability of its observed package $y$ within that set,
+
+$$
+\Pr\!\left(y\mid\mathcal C_i\right)=
+\frac{n_{y}\exp V_{iy}}{\sum_{s\in\mathcal C_i}\exp V_{is}} .
+$$
+
+The denominator runs over slots rather than distinct packages, and a package drawn more than once keeps its multiplicity, $n_y$; the observed package carries the same proposal correction as any other row. The proposal density is a computational device and never an economic object: it is not an offer, an availability or an opportunity. The proposal is fitted out of fold, so a household's own outcome never enters the proposal used to score it. For couples the proposal draws the joint participation regime first and then the two spouse packages conditional on it.
 
 Standard errors are cluster-robust on the household. Optimization uses five starts under two polishing contracts, ten terminal paths in all; we report the spread of the criterion across those paths and the eigenvalues of the exact Hessian at the selected optimum. Those diagnostics support a stable local solution found from the starts tested. They are not a proof of global uniqueness, and we do not claim one.
 

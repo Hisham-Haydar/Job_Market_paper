@@ -248,17 +248,19 @@
 <h2 id="preferences">Preferences</h2>
 <p>Let <span class="math inline">\(C_i(j)\)</span> be priced monthly disposable consumption at <span class="math inline">\(j\)</span> and <span class="math inline">\(\ell_i(j)\)</span> normalized leisure, <span class="math inline">\((80-h)/10\)</span> hours per week, floored at one hour. For a single adult of sex group <span class="math inline">\(g\)</span>, deterministic utility is</p>
 <p><span class="math display">\[
-u_i(j)=\underbrace{\omega_{ig}\,\mathrm{BC}\!\left(\ell_i(j);\theta_{\ell g}\right)}_{L_i(j)}
-\;+\;\beta_c\log\!\big(C_i(j)/\lambda_c\big),
+u_{ij}=\underbrace{\beta_{\ell}^{g}(\mathbf x_i)\;
+\mathcal B\!\left(\tilde\ell_{ij};\theta_{\ell}^{g}\right)}_{L_{ij}}
+\;+\;\beta_c\log\tilde c_{ij},
 \qquad
-\omega_{ig}=\beta_{\ell 0,g}+\beta_{\ell a,g}a_i+\beta_{\ell a^2,g}a_i^{2}
-+\mathbf 1\{g=\text{f}\}\,\beta_{\ell n,g}n_i,
+\beta_{\ell}^{g}(\mathbf x_i)=\beta_{\ell 0}^{g}+\beta_{\ell a}^{g}a_i
++\beta_{\ell a^{2}}^{g}a_i^{2}
++\mathbb 1\{g=\text{women}\}\,\beta_{\ell k}^{g}k_i,
 \]</span></p>
-<p>where <span class="math inline">\(\mathrm{BC}(x;\theta)=(x^{\theta}-1)/\theta\)</span> and <span class="math inline">\(\mathrm{BC}(x;0)=\log x\)</span>, <span class="math inline">\(a_i\)</span> is centred age in decades, and <span class="math inline">\(n_i\)</span> is the child count. For a couple the index is additive across spouses with no direct cross-leisure term,</p>
+<p>where <span class="math inline">\(\mathcal B(z;\theta)=(z^{\theta}-1)/\theta\)</span> with <span class="math inline">\(\mathcal B(z;0)=\log z\)</span>, <span class="math inline">\(\tilde\ell_{ij}\)</span> is normalized leisure, <span class="math inline">\(\tilde c_{ij}=C_{ij}/\lambda_c\)</span>, <span class="math inline">\(a_i\)</span> is centred age in decades and <span class="math inline">\(k_i\)</span> is the child count. For a couple the index is additive across spouses with no direct cross-leisure term,</p>
 <p><span class="math display">\[
-u_i(j)=\omega_{im}\mathrm{BC}(\ell_{im};\theta_{\ell m})
-      +\omega_{if}\mathrm{BC}(\ell_{if};\theta_{\ell f})
-      +\beta_c\log\!\big(C_i(j)/\lambda_c\big),
+u_{ij}=\beta_{\ell}^{m}(\mathbf x_i)\,\mathcal B(\tilde\ell^{m}_{ij};\theta_{\ell}^{m})
+      +\beta_{\ell}^{f}(\mathbf x_i)\,\mathcal B(\tilde\ell^{f}_{ij};\theta_{\ell}^{f})
+      +\beta_c\log\tilde c_{ij},
 \]</span></p>
 <p>with consumption the tax-unit sum over all members. We write <span class="math inline">\(L_i(j)\)</span> throughout for the complete non-consumption part of the index, which for a couple contains both leisure terms.</p>
 <p>Three features of this specification are decisions and are worth naming. The consumption curvature is exactly zero, so the consumption term is <span class="math inline">\(\beta_c\log(C/\lambda_c)\)</span> and the marginal utility of consumption is <span class="math inline">\(\beta_c/C\)</span>, independent of the normalizer. The consumption weight <span class="math inline">\(\beta_c\)</span> is <strong>estimated</strong>, not fixed at one. And the random-utility shock is i.i.d. type-I extreme value with scale one, so utility is measured in the natural unit of that scale. Fixing the shock scale is a normalization; additionally fixing <span class="math inline">\(\beta_c\)</span> would be a substantive restriction relative to that normalization, and estimating <span class="math inline">\(\beta_c\)</span> removes it. Neither step identifies an absolute cardinal utility scale, and fixing the consumption functional form is not by itself what identifies the shock scale.</p>
@@ -271,15 +273,12 @@ u_i(j)=\omega_{im}\mathrm{BC}(\ell_{im};\theta_{\ell m})
 <figcaption aria-hidden="true">Leisure-normalizer sensitivity. Under a change of normalizer the coefficients move by more than an order of magnitude while the indifference curves and the marginal rate of substitution coincide exactly. This is a coordinate change of the estimated model, not a re-estimation, and it does not bear on whether a bound binds: reparameterization multiplies a coefficient and its box endpoint by the same factor.</figcaption>
 </figure>
 <h2 id="opportunities">Opportunities</h2>
-<p>The opportunity kernel gives the relative intensity with which packages are available to household <span class="math inline">\(i\)</span>, before any choice is made. Up to a household constant it factors as</p>
+<p>The opportunity density gives the relative intensity with which packages are available to household <span class="math inline">\(i\)</span>, before any choice is made. It is a product of <strong>four</strong> factors, switched off on non-employment by the employment indicator <span class="math inline">\(E_{ij}=\mathbb 1\{h_{ij}&gt;0\}\)</span>:</p>
 <p><span class="math display">\[
-\log\widetilde g_i(1,k,h,w)=\beta_E+x_i^{E\prime}\gamma
-   +\xi_{k,g}+H(h)+\log\phi\!\left(w\mid\mu_i(k),\sigma\right),
-\qquad
-\log\widetilde g_i(0)=0,
+g_{ij}=g^{E}_{ij}\cdot\left(g^{H}_{ij}\cdot g^{\mathrm{Occ}}_{ij}\cdot g^{W}_{ij}\right)^{E_{ij}} .
 \]</span></p>
-<p>with four blocks. <strong>Employment access</strong> <span class="math inline">\(\beta_E+x_i^{E\prime}\gamma\)</span> carries the group unemployment measure, region and urbanisation, and multiplies the working indicator. <strong>Occupation access</strong> is <span class="math inline">\(\xi_{k,g}\)</span> with group one the omitted reference. The <strong>hours density</strong> <span class="math inline">\(H(h)\)</span> elevates five bands over a residual reference set of total width 26.5 hours per week; the narrow full-time band <span class="math inline">\([33.5,36.5)\)</span> is a density elevation over an interval, not an atom at thirty-five hours. The <strong>wage density</strong> <span class="math inline">\(\phi\)</span> is log-normal with location <span class="math inline">\(\mu_i(k)=\beta_{w0}+\beta_{wL}\mathrm{educL}_i+\beta_{wH}\mathrm{educH}_i+\beta_{wx}x_i+\beta_{wx^2}x_i^{2}+\delta_k\)</span> and dispersion <span class="math inline">\(\sigma\)</span>, truncated to <span class="math inline">\([2,590]\)</span> euros per hour and renormalized on that support.</p>
-<p>Two properties of the normalization matter later. Write <span class="math inline">\(\widehat g_i=\widetilde g_i/Z_i\)</span> for the kernel normalized to a probability density on the whole package space. The wage factor integrates to one <em>conditional on employment and occupation</em>, because the truncated density is renormalized on its own support; and the non-consumption index <span class="math inline">\(L_i\)</span> has no wage argument. Together these give the reference the pay-neutrality property established in Section 4.</p>
+<p><strong>Access</strong>, <span class="math inline">\(g^{E}_{ij}=\exp\{\beta_E+\beta_s s_i+\sum_{r=2}^{8}\beta_r\,\mathrm{reg}_{ir}+\beta_u u_i+\beta_m m_i\}\)</span>, carries the local group unemployment measure <span class="math inline">\(s_i\)</span>, the region indicators and urbanisation, and is the factor inside which local-market access lives. <strong>Hours</strong>, <span class="math inline">\(g^{H}_{ij}=\exp\{\sum_b \beta_b\mathbb 1\{h_{ij}\in b\}\}\)</span>, elevates five bands over a residual reference set of total width 26.5 hours per week, so every band coefficient is read against that residual and none of the five is normalized to zero; the narrow full-time band <span class="math inline">\([33.5,36.5)\)</span> is a density elevation over an interval, not an atom at thirty-five hours. <strong>Occupation</strong>, <span class="math inline">\(g^{\mathrm{Occ}}_{ij}=\exp\{\beta^{\mathrm{occ}}_{k,g}\}\)</span> with <span class="math inline">\(\beta^{\mathrm{occ}}_{1,g}\equiv 0\)</span>. <strong>Wage offer</strong>, <span class="math inline">\(g^{W}_{ij}\)</span>, is log-normal with location <span class="math inline">\(\mu_i=\beta_{w0}+\beta_{wL}L_i+\beta_{wH}H_i+\beta_{wx}x_i+\beta_{wx^{2}}x_i^{2}+\delta_{\mathrm{occ}}\)</span> and dispersion <span class="math inline">\(\sigma\)</span>, truncated to <span class="math inline">\([2,590]\)</span> euros per hour and renormalized on that support.</p>
+<p>Two properties of the normalization matter later. Write <span class="math inline">\(\widehat g_{ij}=g_{ij}/Z_i\)</span> for the density normalized to unit mass on the whole package space. The wage factor integrates to one <em>conditional on employment and occupation</em>, because the truncated density is renormalized on its own support; and the non-consumption index <span class="math inline">\(L_{ij}\)</span> has no wage argument. Together these give the reference the pay-neutrality property established in Section 4.</p>
 <p>The four blocks are what the decomposition later separates. Employment and occupation access are one mechanism; the distribution of wages conditional on an occupation is another; neither is the same as non-labour resources or household needs.</p>
 <blockquote>
 <p><strong>What the kernel adds, concretely.</strong> Two employed single adults can share an employment state, an occupation group, an hours band and an observed-wage quintile, and still differ substantially in their estimated opportunity kernels: the mass the kernel places on employment, the shape of the hours density, the occupation mass and the conditional wage location are all household-specific. Two people who look identical in an income table are, in this model, facing different menus. An earlier draft illustrated this with a matched pair of households; that illustration was drawn at the superseded consumption numeraire and is not reproduced here rather than shipped with a disclaimer.</p>
@@ -287,14 +286,18 @@ u_i(j)=\omega_{im}\mathrm{BC}(\ell_{im};\theta_{\ell m})
 <h2 id="identification-in-words">Identification, in words</h2>
 <p>Choices alone do not separate a taste for leisure from a scarcity of jobs at that number of hours. Three kinds of restriction do the work. Preferences are smooth in hours through the leisure index, while the opportunity density is a step function over bands, so a spike in observed hours at a band is read as availability rather than as a kink in tastes. Excluded shifters enter availability and not preferences: the local group unemployment measure and the regional and urbanisation indicators shift the employment index and appear nowhere in utility. And the wage-offer distribution is specified as independent of offered hours conditional on occupation, which separates the wage location from the hours density. These are the restrictions of <span class="citation" data-cites="capeau2016">Capéau et al. (2016)</span> and <span class="citation" data-cites="dagsvikjia2016">Dagsvik and Jia (2016)</span>, maintained here rather than tested. The regional variation supports the access block conditional on those restrictions; it does not establish separate identification on its own, and it is not a causal design.</p>
 <h2 id="estimation">Estimation</h2>
-<p>The choice set is a continuum, so the likelihood is evaluated over sampled alternatives. For each household we draw 100 alternatives from a proposal density <span class="math inline">\(q_i\)</span> and place the observed choice in the set as well, giving 101 rows. The contribution of household <span class="math inline">\(i\)</span> is the conditional probability of its observed package within that set, corrected for the proposal:</p>
+<p>The choice set is a continuum, so the likelihood is evaluated over sampled alternatives. For each household we draw <span class="math inline">\(R=100\)</span> alternatives from a proposal density <span class="math inline">\(q_{ij}\)</span> and place the observed package in the set as well, giving a set <span class="math inline">\(\mathcal C_i\)</span> with <span class="math inline">\(|\mathcal C_i|=101\)</span> rows. Write the sampled-set index</p>
 <p><span class="math display">\[
-\Pr\!\left(y_i\mid \text{set}\right)=
-\frac{n_{y}\exp\!\big\{a_i(y)-\log q_i(y)\big\}}
-     {\sum_{s\in\text{slots}}\exp\!\big\{a_i(s)-\log q_i(s)\big\}},
-\qquad a_i(j)=u_i(j)+\log\widetilde g_i(j).
+V_{ij}=u_{ij}+\log g_{ij}-\log q_{ij},
+\qquad
+q_{ij}=q^{E}_{ij}\left(q^{H}_{ij}q^{W}_{ij}q^{\mathrm{Occ}}_{ij}\right)^{E_{ij}} .
 \]</span></p>
-<p>The denominator runs over slots rather than distinct packages, and a package drawn more than once keeps its multiplicity, <span class="math inline">\(n_y\)</span>; the chosen package carries the same proposal correction as any other row. The proposal is fitted out of fold, so a household’s own outcome never enters the proposal used to score it. For couples the proposal draws the joint participation regime first and then the two spouse packages conditional on it.</p>
+<p>The contribution of household <span class="math inline">\(i\)</span> is then the conditional probability of its observed package <span class="math inline">\(y\)</span> within that set,</p>
+<p><span class="math display">\[
+\Pr\!\left(y\mid\mathcal C_i\right)=
+\frac{n_{y}\exp V_{iy}}{\sum_{s\in\mathcal C_i}\exp V_{is}} .
+\]</span></p>
+<p>The denominator runs over slots rather than distinct packages, and a package drawn more than once keeps its multiplicity, <span class="math inline">\(n_y\)</span>; the observed package carries the same proposal correction as any other row. The proposal density is a computational device and never an economic object: it is not an offer, an availability or an opportunity. The proposal is fitted out of fold, so a household’s own outcome never enters the proposal used to score it. For couples the proposal draws the joint participation regime first and then the two spouse packages conditional on it.</p>
 <p>Standard errors are cluster-robust on the household. Optimization uses five starts under two polishing contracts, ten terminal paths in all; we report the spread of the criterion across those paths and the eigenvalues of the exact Hessian at the selected optimum. Those diagnostics support a stable local solution found from the starts tested. They are not a proof of global uniqueness, and we do not claim one.</p>
 <h1 id="4-money-metric-well-being-and-structural-inequality-decompos">4. Money-metric well-being and structural inequality decomposition</h1>
 <h2 id="the-measure">The measure</h2>
