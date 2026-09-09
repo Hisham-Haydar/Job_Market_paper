@@ -27,36 +27,56 @@ def sections(F):
       "its own opportunity situation. That number is in euros, so it is comparable; "
       "and it is computed by inverting the household&rsquo;s <em>own</em> preferences, "
       "so it respects them. The reference object is not another household &mdash; for "
-      "the carrier measure it is the household&rsquo;s own opportunity distribution "
+      "the primary measure it is the household&rsquo;s own opportunity distribution "
       "with pay held flat.</p>")
 
     W("<h3>The measure, precisely</h3>")
-    W("<p><b>" + lit("W1", "the carrier welfare measure, a name not a result")
+    W("<p>Three integrals must be named separately. Opportunity mass is "
+      + imath(r"G_{i,S}=\int_{\mathcal J}\widetilde g_{i,S}(j)\nu(dj)")
+      + "; the utility-weighted structural normalizer is "
+      + imath(r"Z_{i,S}=\int_{\mathcal J}e^{u_{i,S}(j)}"
+              r"\widetilde g_{i,S}(j)\nu(dj)")
+      + "; and the implemented normalized object is "
+      + imath(r"J_{i,S}=Z_{i,S}/G_{i,S}")
+      + ". Thus " + imath(r"V_{i,S}=\log J_{i,S}")
+      + ". Opportunity-density height, opportunity probability mass and induced "
+      "choice probability are different quantities. The calculation is ex ante: it "
+      "averages over potential job packages before the logarithm and inversion. "
+      "Evaluating only the observed choice would answer an ex-post question instead.</p>")
+    W("<p><b>" + lit("W1", "the primary welfare measure, a name not a result")
       + "<sub>i</sub> is the uniform pay offered at every job in household "
       "i&rsquo;s own opportunity distribution that reproduces the expected welfare "
       "it actually attains.</b> That is the canonical sentence of the "
       "paper&rsquo;s section&nbsp;3.3, and it is the only definition used here.</p>")
-    W('<div class="eq">'
-      "Find the flat pay level  w_i  that solves\n"
-      "\n"
-      "    log SUM_j exp[ u_leisure(l_ij)  +  beta_c · BC( w_i ; theta_c )\n"
-      "                                    +  log g_ij ]   =   V_i^S\n"
-      "\n"
-      "where  V_i^S is the household's attained expected-maximum utility in\n"
-      "             coalition S\n"
-      "       g_ij  is the household's own opportunity density over its own\n"
-      "             job set\n"
-      "\n"
-      "        W1_i  =  w_i          in euros per month\n"
-      "\n"
-      "no equivalence scale appears inside this inversion: equivalization is\n"
-      "applied to the raw W1 vector afterwards (see below)"
-      "</div>")
+    W(math(r"J_{i,S}=\int_{\mathcal J}\exp\{u_{i,S}(C_{i,S}(j)/\lambda_c,"
+           r"\ell_{i,S}(j))\}\widehat g_{i,S}(j)\nu(dj),\qquad "
+           r"V_{i,S}=\log J_{i,S},",
+           "attained ex-ante value"))
+    W(math(r"\Phi_{i,S}(m)=\log\int_{\mathcal J}\exp\{L_{i,S}(j)+"
+           r"BC(m/\lambda_c;\theta_{c,S})\}\widehat g_{i,S}(j)\nu(dj),"
+           r"\quad L_{i,S}(j)=u_{i,S}(j)-BC(C_{i,S}(j)/\lambda_c;\theta_{c,S}),",
+           "coalition-consistent reference map"))
+    W(math(r"\Phi_{i,S}(W_{i,S})=V_{i,S},",
+           "money-metric inversion",
+           "<span class='exempt'>The unique m is flat disposable consumption in real-2016 euros per month "
+           "at every alternative, including the non-employment atom. It replaces "
+           "consumption in the comparator; it does not replace wages or rerun EUROMOD.</span>"))
+    W(box("key", "Calculation, rationale, assumptions, alternative", "<p><b>Calculated:</b> "
+          "the monthly flat-consumption amount that reproduces the coalition's attained "
+          "ex-ante value. <b>Why:</b> it maps household-specific preference scales into "
+          "one declared money unit. <b>Assumptions:</b> positive finite structural "
+          "normalizers, common dominating measure, valid positive-domain utility, a "
+          "coalition-consistent reference map, and a unique root in the permitted "
+          "bracket. <b>Alternative:</b> observed income discards leisure and offer "
+          "variation; ex-post welfare evaluates the chosen job only; a common-reference "
+          "opportunity density changes the interpersonal comparison; compensating "
+          "variation answers a policy-change question rather than a cross-sectional "
+          "level question.</p>"))
     W("<p>Three clauses travel with the measure and none of them is optional.</p>")
     W("<ul>"
-      "<li>It <b>neutralizes</b> pay differences within the reachable set: the same "
-      "flat pay is offered at every job in the household&rsquo;s own set, so no "
-      "variation in what jobs <em>pay</em> survives into the measure.</li>"
+      "<li>It flattens disposable consumption only in the <b>reference comparator</b>. "
+      "Actual wage and earnings opportunities still affect attained ex-ante welfare "
+      "and therefore the compensating amount.</li>"
       "<li><b>Differences in the set itself remain</b>, and are exactly what the "
       "decomposition of sections&nbsp;14&ndash;16 attributes.</li>"
       "<li>The inversion uses <b>the same coalition&rsquo;s set and preferences on "
@@ -70,10 +90,11 @@ def sections(F):
     W('<div class="scroll"><table><thead><tr>'
       "<th>Neutralized by the measure itself</th><th>Retained by the measure itself</th>"
       "</tr></thead><tbody><tr><td>"
-      "<ul><li><b>The dispersion of pay across the jobs in a household&rsquo;s set.</b> "
-      "Pay enters only through one flat scalar, so a household is not rewarded in the "
-      "measure for facing a steep wage gradient it did not take up.</li>"
-      "<li><b>The unit of utility.</b> Everything is expressed in euros.</li>"
+      "<ul><li><b>Disposable consumption in the reference map.</b> The comparator "
+      "uses one flat scalar; the attained side retains actual budget effects.</li>"
+      "<li><b>A common reporting unit.</b> Results are expressed in euros, but a common "
+      "unit alone does not establish ethically valid interpersonal comparison; that "
+      "rests on the stated reference and responsibility cut.</li>"
       "<li><b>Household size, in the equivalized version.</b> Two adults needing more "
       "than one does not count as being better off.</li></ul>"
       "</td><td>"
@@ -90,8 +111,10 @@ def sections(F):
           "<p><b>The measure is opportunity-sensitive.</b> Because it inverts the "
           "expected maximum over the household&rsquo;s <em>whole reachable "
           "distribution</em> rather than evaluating the one job it took, a household "
-          "with a wider or better-located opportunity density scores higher even when "
-          "its observed job is identical to someone else&rsquo;s.</p>"
+          "can score differently even when its observed job is identical to someone "
+          "else&rsquo;s. A blanket monotonicity claim for every widening is not made: an "
+          "opportunity change moves both attained welfare and the household's own-set "
+          "reference map, so the sign requires conditions not established here.</p>"
           "<p>This is precisely what a common-choice-set model cannot express, and it is "
           "why section&nbsp;18&rsquo;s benchmark measures substantially less inequality: "
           "having removed the variation in reachable sets, there is less for the "
@@ -113,7 +136,7 @@ def sections(F):
           "are reported as <em>normative-reference disclosures</em>: they show how "
           "the valuation moves when the responsibility cut moves. They are <b>not</b> "
           "evidence that the "
-          + lit("W1", "the carrier welfare measure, a name not a result")
+          + lit("W1", "the primary welfare measure, a name not a result")
           + " magnitude is robust, and no cross-measure quantitative robustness claim "
           "is made here in any form.</li>"
           "</ul>"))
@@ -185,14 +208,11 @@ def sections(F):
           "<p><b>Equalizing preferences alone makes measured inequality go up, not "
           "down.</b> The preferences-equalized state is <em>higher</em> than the "
           "baseline.</p>"
-          "<p>The reason is straightforward once stated. In the real world, preferences "
-          "and environments are correlated in a partly offsetting way: people adapt to "
-          "the environment they face. Imposing a single reference preference on everyone "
-          "removes that adaptation, so households in bad environments no longer make the "
-          "best of them, and the spread widens. This is not a numerical accident and it "
-          "is not a bug &mdash; it is the single most important thing to understand "
-          "about the decomposition, because it is why the two methods below give "
-          "different answers.</p>"))
+          "<p>The sign is generated by the observed joint distribution, the chosen "
+          "counterfactual references and nonlinear interactions. It does not identify "
+          "preference formation or prove that people adapted their tastes to their "
+          "environments; adaptation is only one possible story requiring separate "
+          "evidence. The sign is why isolated equalization and attribution differ.</p>"))
 
     W("<h3>Step two, method A: one-factor equalization counterfactuals</h3>")
     W("<p>The most intuitive question: <em>how much inequality disappears if I equalize "
@@ -203,8 +223,8 @@ def sections(F):
       "<tr><td><b>Preferences only</b></td>"
       '<td class="num">' + n("equalization_pref_only", "signpct", 1) + "</td>"
       "<td>Inequality <b>rises</b> by " + n("equalization_pref_only", "pctabs", 1)
-      + ". Removing preference heterogeneity removes the adaptation that partly "
-      "offsets environmental disadvantage.</td></tr>"
+      + ". The sign follows from the joint distribution, references and interactions; "
+      "it is not evidence of preference adaptation.</td></tr>"
       "<tr><td><b>Environment only</b></td>"
       '<td class="num">' + n("equalization_env_only", "signpct", 1) + "</td>"
       "<td>Inequality <b>falls</b> by " + n("equalization_env_only", "pctabs", 1)
@@ -428,7 +448,7 @@ def sections(F):
           "valuation of leisure comes out with the opposite sign. Second, "
           "because " + imath(r"\bar g") + " is a proper density rather than a "
           "constant, the benchmark is a genuine random-utility model of the "
-          "conventional kind &mdash; every household faces the same choice set "
+          "standard kind &mdash; every household faces the same choice set "
           "&mdash; and not a degenerate version of this one.</p>"))
 
     # ============================================ the classification argument
@@ -507,7 +527,7 @@ def sections(F):
           + lit("35", "the statutory weekly hours in France, an institution")
           + "-hour week could in principle be a "
           "feature of what employers post <em>or</em> a taste for the "
-          "conventional week. The identification literature's own warning "
+          "common working week. The identification literature's own warning "
           "applies with full force here: the induced utility and the hours-offer "
           "density are not separately identified non-parametrically, so "
           "<b>the data do not adjudicate this placement</b>. The model puts it "
@@ -547,11 +567,19 @@ def sections(F):
           "does not.</p>"))
 
     # ==================================================================== 15 ==
-    W('<h2 id="s15" class="exempt">15. Headline results</h2>')
-
-    W("<p>Single-adult households, France, the reference year. The primary reference "
-      "convention is the female reference; the male structural-zero reference is the "
+    W('<h2 id="s15" class="exempt">15. Current-implementation results and pending correction</h2>')
+    W("<p><b>Status: historical bridge, not corrected output.</b> These are the current "
+      "estimates under the sampled-alternatives criterion and wage density presently "
+      "implemented for single-adult households in France. The primary reference "
+      "choice is the female reference; the male structural-zero reference is the "
       "official sensitivity, and the two are <b>never averaged</b>.</p>")
+    W(box("warn", "What is pending", "<p>The estimator and bounded, renormalised "
+          "wage support require a new fit. The four corrected resource-field "
+          "classifications require new pricing of the nested resource/composition "
+          "states. Until those outputs exist, the table below records historical "
+          "current-implementation values only; it cannot establish corrected levels, "
+          "shares or ordering. The chosen-row-free common-support welfare integrator "
+          "does not inherit the chosen-row term: its contribution is exactly zero.</p>"))
 
     W('<div class="scroll"><table><thead><tr><th>Quantity</th>'
       '<th class="num">Raw</th><th class="num">Share of baseline</th>'
@@ -686,7 +714,7 @@ def sections(F):
           "parameter-uncertainty interval. It is why the paper reports a preference "
           "contribution that is <em>small</em> rather than one that is a specific "
           "number, and why the two references are never averaged &mdash; averaging two "
-          "different normative conventions produces a quantity that answers no "
+          "different normative references produces a quantity that answers no "
           "question.</p>"
           "<p><b>What survives.</b> The environment dominates under both references. The "
           "ordering of the three environment sub-channels is unchanged. In the subgroup "
@@ -729,23 +757,27 @@ def sections(F):
 
     W("<h3>What enters the channel</h3>")
     W("<ol>")
-    W("<li><b>Non-labour resources.</b> Capital income, private transfers, and any "
-      "household income that does not vary with the job taken. Two otherwise identical "
-      "households with different asset income have different budgets at every "
-      "alternative.</li>")
+    W("<li><b>Non-labour resources.</b> The frozen input list is "
+      "<code>ypp, yse, ysemy, yiy, ypr, ypt, yptmp, yot, yds, ydses_o, yempv, "
+      "yemmy, bed, bun, bunmy, bunmt, bunct, bhl, bho, bhotn, bhoot, bsa, bsa00, "
+      "bsaot, bsaoa, bdi, bsuwd, pdi, pdimy, pdi00, poa, poamy, poa00, psu, "
+      "psumy, twl, tad, tis, tscer, xmp, xpp, xhc, xhcrt, xhcmomi, xhcot, amrrm, "
+      "amrtn, aca, ate, aco, afc, yem_f, yse_f, bsa00yn_a</code>. Each is an "
+      "EUROMOD input copied across a household's alternatives. Field-level units and "
+      "time bases are <b class=\"exempt\">UNRESOLVED B1</b>.</li>")
     W("<li><b>Household composition, and the needs it generates.</b> The number of "
       "dependants determines both what the tax-benefit system pays and what the "
       "household requires to reach a given standard of living. In the equivalized "
       "results the equivalence scale moves with this sub-player, which is what makes "
       "the decomposition close.</li>")
     W("<li><b>The tax-benefit system&rsquo;s operation on both of the above.</b> The "
-      "simulator applies the actual French rules; family benefits, housing benefit and "
+      "simulator applies its coded France rules; family benefits, housing benefit and "
       "social assistance all respond to composition and to non-labour income.</li>")
     W("</ol>")
 
     W(box("warn", "There is no &ldquo;contribution of the tax system&rdquo; here, and "
                   "it must not be invented",
-          "<p>The tax-benefit system is <b>held fixed at the actual French rules in "
+          "<p>The tax-benefit system is <b>held fixed at the coded <span class='exempt'>France-2016</span> rules in "
           "every state of the decomposition</b>. It is never varied, so nothing in this "
           "channel &mdash; or in any other &mdash; is the effect of the tax system, the "
           "effect of a reform, or a measure of redistribution achieved.</p>"
@@ -813,13 +845,13 @@ def sections(F):
       "first-order work here, not adjusting a level.</p>")
 
     W(box("warn", "Which factor leads is reference-dependent, and is not claimed",
-          "<p>Under the <b>male structural-zero</b> convention the equivalized ordering "
+          "<p>Under the <b>male structural-zero</b> reference choice the equivalized ordering "
           "<em>reverses</em>: composition "
           + n("C_composition_male_equivalized_share", "pct", 2) + " against resources "
           + n("C_nonlabour_male_equivalized_share", "pct", 2)
-          + ". Under the female-primary convention the same comparison is a dead heat "
+          + ". Under the female-primary reference choice the same comparison is a dead heat "
           "inside the band. <b>The raw ordering &mdash; resources first &mdash; is the "
-          "one that holds under both conventions</b>, and it is the only ordering "
+          "one that holds under both reference definitions</b>, and it is the only ordering "
           "claimed.</p>"
           "<p>Raw, male arm: resources "
           + n("C_nonlabour_male_raw_share", "pct", 2) + ", composition "
@@ -841,7 +873,7 @@ def sections(F):
           + n("one_factor_nonlabour_equivalized", "pct", 2) + "; the whole channel "
           + n("one_factor_needs_total_raw", "pct", 2) + " and "
           + n("one_factor_needs_total_equivalized", "pct", 2)
-          + ". The one-factor effects do not depend on the reference convention.</p>"))
+          + ". The one-factor effects do not depend on the reference choice.</p>"))
 
     W("<p><b>There is no third factor.</b> The tax-benefit schedule is one common "
       "policy function applied to every household, not a household-specific object "
@@ -850,23 +882,14 @@ def sections(F):
       "the tax-benefit system: both are model-implied attributions under a fixed "
       "policy.</p>")
 
-    W("<h3>Why the channel is as large as it is</h3>")
-    W("<p>The magnitude surprises people, so it is worth having the intuition ready. "
-      "Three reasons, none of which requires that split:</p>")
-    W("<ul>")
-    W("<li><b>It is the only channel that operates on non-employed households.</b> Job "
-      "access and earning opportunities work through the labour market. For a household "
-      "with no earner, the entire budget is non-labour resources and transfers, so all "
-      "of its position is in this channel.</li>")
-    W("<li><b>It acts on the level of the budget, not on its slope.</b> The market "
-      "channels shift the <em>distribution of achievable</em> outcomes; non-labour "
-      "income shifts the budget at <em>every</em> alternative simultaneously. A "
-      "level shift moves the money-metric measure more than a change in the shape of "
-      "the reachable set does.</li>")
-    W("<li><b>It absorbs composition, which is highly unequal and strongly correlated "
-      "with everything else.</b> Lone parenthood raises needs and constrains labour "
-      "supply at the same time.</li>")
-    W("</ul>")
+    W("<h3>What the large channel does and does not establish</h3>")
+    W("<p>The attribution is a computed interaction-aware counterfactual, not a theorem "
+      "about mechanisms. Actually non-employed households still evaluate potential "
+      "working alternatives, so job access and earning opportunities can affect their "
+      "ex-ante welfare. Fixed resource inputs can also change budget slopes through "
+      "means testing and non-linear taxes; no general result says a level shift must "
+      "matter more than an opportunity change. The large resource/composition share is "
+      "reported without those unsupported explanations.</p>")
     W("<p>Section&nbsp;18 sharpens this: under the common-opportunity benchmark, a "
       "substantial part of the market-side contribution the benchmark cannot represent "
       "<b>reappears inside this channel</b>, at "
@@ -935,23 +958,23 @@ def sections(F):
             "The regional employment-opportunity environments the illustration moves "
             "a household across."))
     W(F.fig("figE1R_reverse_pair",
-            "The reverse matched pair: two households given nearly the same opportunity "
-            "distribution and the same observed job, ranked on the distance between "
-            "their preference profiles. The companion to the forward pair in "
-            "section&nbsp;4."))
+            "The reverse matched-pair diagnostic uses the employed-stratum restrictions "
+            "of common employment status, occupation, model hours band and observed-wage "
+            "quintile. It restricts total-variation opportunity distance to its "
+            "admissible-set tenth percentile, then maximises preference distance. Similar "
+            "opportunities and comparable observed jobs are not identical opportunities, "
+            "jobs or preferences."))
 
     W(box("warn", "What the geographic result is and is not",
           "<ul>"
-          "<li><b>It operates through the employment-access margin only.</b> In this "
-          "model region, urbanisation and local slack enter <em>only</em> the "
-          "employment-access block. The exercise therefore moves how likely employment "
-          "is, and nothing else.</li>"
-          "<li><b>Hours, occupation and wage distributions are held invariant.</b> The "
-          "counterfactual does not give a household another region&rsquo;s wage "
-          "structure or hours composition. Those channels are separately identified and "
-          "separately equalized elsewhere; here they are fixed. The number is therefore "
-          "a <em>lower</em> bound on anything one might mean by the total importance of "
-          "place.</li>"
+          "<li><b>It is channel-conditional.</b> Region, urbanisation and local slack are "
+          "the geographic regressors assigned to employment access; hours, occupation "
+          "and wage-capacity primitives are fixed in this nested exercise.</li>"
+          "<li><b>It is not a lower bound on place.</b> Geography also travels through "
+          "location-sensitive inputs to the coded tax-benefit budget. Because those "
+          "inputs and the conditional hours, occupation and wage distributions are not "
+          "jointly reassigned here, the sign of omitted place channels is unknown. The "
+          "number is only the geographic part of modeled job access.</li>"
           "<li><b>It is a structural counterfactual, not a causal region effect.</b> It "
           "asks what the estimated model implies if the geographic access arguments took "
           "a common value. It does <b>not</b> say what would happen if someone moved, or "
@@ -970,36 +993,48 @@ def sections(F):
     # ==================================================================== 18 ==
     W('<h2 id="s18" class="exempt">18. The common-opportunity benchmark</h2>')
 
-    W("<p>This is the section that prices the modelling convention the paper argues "
+    W("<p>This is the section that prices the common-opportunity restriction the paper argues "
       "against, and it produced the most interesting negative result in the "
       "project.</p>")
 
     W("<h3>Exactly what is changed</h3>")
-    W("<p><b>One thing.</b> The heterogeneous opportunity density is replaced by a "
+    W("<p><b>The defining restriction.</b> The heterogeneous opportunity density is replaced by a "
       "<em>common</em> one: every household faces the same offer environment. Everything "
-      "else &mdash; the preference specification, the budget from the simulator, the "
-      "sample, the frame, the estimation protocol, the welfare measure, the "
-      "decomposition machinery &mdash; is held identical, and the benchmark is "
-      "<b>re-estimated</b> rather than being the preferred model with terms switched "
-      "off. That matters: a fair comparison must let the restricted model do the best it "
-      "can.</p>")
-    W("<p>The result is a conventional random-utility labour-supply model of the kind "
+      "else &mdash; the sample, proposal, coded criterion, budget, welfare measure and "
+      "decomposition machinery &mdash; is retained. The preference block is "
+      "re-estimated: RUM-A re-estimates the ten singles preference constants and "
+      "curvatures, while RUM-B also moves the work constant and five hours-band "
+      "constants into utility, for sixteen free constants. Surviving opportunity "
+      "coefficients are held at their preferred-model values, so the criterion gap "
+      "below is descriptive rather than a test.</p>")
+    W(math(r"\bar g(e=0)=\pi_0,\qquad \bar g(1,k,h,w)=\pi_1\bar p(k)p_H(h)"
+           r"\phi_{LN}(w\mid\bar\mu(k),\widehat\sigma)."))
+    W("<p>Here the two employment masses sum to one, the occupation probabilities sum "
+      "to one, and the hours and wage densities integrate to one over their supports. "
+      "RUM-A retains the normalised reference employment margin and certified band "
+      "density. RUM-B assigns one half to each employment state and uses the uniform "
+      "hours density on <span class=\"math exempt\">[5,70]</span>. Both retain the common "
+      "occupation probability mass function and reference Mincer lognormal. The index "
+      "is</p>")
+    W(math(r"\eta^{RUM}_{ij}=u^{RUM}_{ij}+\log\bar g(j)-\log q_{ij}."))
+    W("<p>The benchmark therefore also inherits <b class=\"exempt\">UNRESOLVED L1</b>.</p>")
+    W("<p>The result is a standard random-utility labour-supply model of the kind "
       "the literature standardly estimates. The comparison is therefore not a straw man; "
       "it is the alternative most readers already have in mind.</p>")
 
     W('<div class="scroll"><table><thead><tr><th></th>'
       "<th>Estimated model, heterogeneous opportunities</th>"
       "<th>Common-opportunity benchmark</th></tr></thead><tbody>"
-      "<tr><td><b>Log-likelihood</b></td>"
+      "<tr><td><b>Negative log criterion</b></td>"
       '<td class="num">' + n("rum_pref_model_negll", "f2") + "</td>"
       '<td class="num">' + n("rum_bench_negll", "f2") + "</td></tr>"
       "<tr><td><b>Free parameters</b></td>"
       '<td class="num">' + n("rum_pref_model_n_free", "int") + "</td>"
       '<td class="num">&mdash;</td></tr>'
-      "<tr><td><b>Likelihood-ratio statistic</b></td>"
+      "<tr><td><b>Descriptive twice-criterion gap</b></td>"
       '<td class="num" colspan="2">' + n("rum_bench_LR_statistic", "f1")
-      + " on " + n("rum_bench_df", "int") + " degrees of freedom &mdash; the "
-      "restriction is decisively rejected</td></tr>"
+      + ". It is an upper bound for the freely re-optimised restriction, not a "
+      "likelihood-ratio test.</td></tr>"
       "<tr><td><b>Measured inequality, change</b></td>"
       '<td class="num">&mdash;</td>'
       '<td class="num">' + n("rum_inequality_drop_raw", "signpct", 1) + " raw, "
@@ -1028,7 +1063,7 @@ def sections(F):
       "sign.</b> The male-minus-female leisure intercept gap is "
       + n("rum_leisure_gap_final", "sf4") + " in the estimated model and "
       + n("rum_leisure_gap_benchmark", "sf4") + " in the benchmark. Not smaller &mdash; "
-      "<b>opposite</b>. A researcher using the conventional model would conclude the "
+      "<b>opposite</b>. A researcher using the standard model would conclude the "
       "opposite thing about male and female tastes for time from the very same "
       "data.</li>")
     W("</ul>")

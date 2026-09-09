@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aaberge et~al.(2004)Aaberge, Colombino, and Str{\o}m]{aaberge2004}
+Rolf Aaberge, Ugo Colombino, and Steinar Str{\o}m.
+\newblock Do more equal slices shrink the cake? an empirical investigation of
+  tax-transfer reform proposals in italy.
+\newblock \emph{Journal of Population Economics}, 17:\penalty0 767--785, 2004.
+\newblock \doi{10.1007/s00148-004-0193-2}.
+
+\bibitem[Audoly et~al.(2025)Audoly, McGee, Ocampo, and Paz-Pardo]{audoly2025}
+Richard Audoly, Rory McGee, Sergio Ocampo, and Gonzalo Paz-Pardo.
+\newblock A practitioner's note on the shapley--owen--shorrocks decomposition.
+\newblock Staff Report 1163, Federal Reserve Bank of New York, 2025.
+
+\bibitem[Cap{\'e}au et~al.(2016)Cap{\'e}au, Decoster, and Dekkers]{capeau2016}
+Bart Cap{\'e}au, Andr{\'e} Decoster, and Gijs Dekkers.
+\newblock Estimating and simulating with a random utility random opportunity
+  model of job choice: Presentation and application to belgium.
+\newblock \emph{International Journal of Microsimulation}, 9\penalty0
+  (2):\penalty0 144--191, 2016.
+
+\bibitem[Dagsvik and Jia(2016)]{dagsvikjia2016}
+John~K. Dagsvik and Zhiyang Jia.
+\newblock Labor supply as a choice among latent jobs: Unobserved heterogeneity
+  and identification.
+\newblock \emph{Journal of Applied Econometrics}, 31\penalty0 (3):\penalty0
+  487--506, 2016.
+
+\bibitem[Dagsvik and Str{\o}m(2006)]{dagsvikstrom2006}
+John~K. Dagsvik and Steinar Str{\o}m.
+\newblock Sectoral labour supply, choice restrictions and functional form.
+\newblock \emph{Journal of Applied Econometrics}, 21\penalty0 (6):\penalty0
+  803--826, 2006.
+
+\bibitem[Decoster and Haan(2015)]{decosterhaan2015}
+Andr{\'e} Decoster and Peter Haan.
+\newblock Empirical welfare analysis with preference heterogeneity.
+\newblock \emph{International Tax and Public Finance}, 22\penalty0
+  (2):\penalty0 224--251, 2015.
+
+\bibitem[Haydar and Maniquet(2025)]{haydarmaniquet}
+Hisham Haydar and Fran{\c c}ois Maniquet.
+\newblock Jobs and well-being measurement.
+\newblock Companion theory manuscript, February; distinct from this empirical
+  application, 2025.
+
+\bibitem[Jacquet et~al.(2026)Jacquet, Jia, and Thoresen]{jacquet2026}
+Laurence Jacquet, Zhiyang Jia, and Thor~O. Thoresen.
+\newblock How much does responsibility matter in fairness measurement?
+\newblock Working Paper 12418, CESifo, 2026.
+
+\bibitem[Shorrocks(2013)]{shorrocks2013}
+Anthony~F. Shorrocks.
+\newblock Decomposition procedures for distributional analysis: A unified
+  framework based on the shapley value.
+\newblock \emph{Journal of Economic Inequality}, 11:\penalty0 99--126, 2013.
+
+\bibitem[Sutherland and Figari(2013)]{sutherlandfigari2013}
+Holly Sutherland and Francesco Figari.
+\newblock Euromod: The european union tax-benefit microsimulation model.
+\newblock EUROMOD Working Paper EM8/13, Institute for Social and Economic
+  Research, University of Essex, 2013.
+
+\end{thebibliography}

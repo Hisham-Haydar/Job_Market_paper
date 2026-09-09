@@ -5,6 +5,7 @@
 \usepackage{lmodern,amsmath,amssymb,booktabs,longtable,array,graphicx,calc}
 \usepackage{ragged2e}
 \usepackage{needspace}
+\usepackage{float}
 \raggedbottom
 % Float discipline. The panel figures are about 0.43\textheight each, so the
 % default allowance of several top floats lets two of them plus a long-captioned
@@ -34,7 +35,7 @@
 We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. We then introduce and implement a structural decomposition of the resulting inequality: well-being is recomputed under counterfactual equalizations of preferences, job access, earning opportunities, and household resources and needs, and the interactions among them are allocated with a grouped Shapley--Owen--Shorrocks rule. In the baseline Gini decomposition, labour-market opportunities account for 55.9 per cent of well-being inequality among single-adult households, of which job access alone carries 49.2 per cent, against 9.9 per cent for preferences and 34.2 per cent for household resources and needs. Among couples the balance differs: earning opportunities and resources and needs account for 35.7 and 51.2 per cent, while job access accounts for 8.2 and preferences for 4.8. Access exceeds earning opportunities for single adults, and the ordering reverses for couples, under all six inequality indices we report; the sign of the single-adult preference contribution is not robust across indices.
 \end{abstract}
 
-\emph{Preliminary results. Intervals on the headline shares are cluster-robust parameter percentiles from 100 draws and are reported separately from the integration band, never merged with it. The subdivision of couples resources against household composition requires a repricing that has not been run and is reported jointly.}
+\emph{Preliminary results. Intervals on the headline shares are cluster-robust parameter percentiles from 100 draws and are reported separately from the integration band, never merged with it. The subdivision of couples resources against household composition rests on a repricing completed after this draft was planned; the joint contribution remains the headline component and the subdivision is reported beside it.}
 
 \section{Introduction}\label{introduction}
 
@@ -50,7 +51,7 @@ The ambiguity matters for measurement, not only for interpretation. If we want t
 
 The argument being solved for is an amount of consumption, so the measure is money-metric by construction; there is no second conversion from an index into euros.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Own-set equal-consumption equivalents. Individuals with preferences R\_i,R\_h and ability sets A=\textbackslash\{j,k\textbackslash\} and A\^{}\{\textbackslash prime\}=\textbackslash\{k,\textbackslash ell\textbackslash\} attain z\_i and z\_h. For each individual, a common consumption level is assigned to every job in their own set; the level at which the preferred reference job becomes indifferent to the attained bundle is the money metric. Adapted from Haydar and Maniquet (2026), work in progress. This is the deterministic construction; the estimated measure is its ex-ante extension, defined in Section 4.}]{figures/v5/theory_w1.png}
 \caption{\textbf{Own-set equal-consumption equivalents.} Individuals with preferences \(R_i,R_h\) and ability sets \(A=\{j,k\}\) and \(A^{\prime}=\{k,\ell\}\) attain \(z_i\) and \(z_h\). For each individual, a common consumption level is assigned to every job in their own set; the level at which the preferred reference job becomes indifferent to the attained bundle is the money metric. Adapted from Haydar and Maniquet (2026), work in progress. This is the deterministic construction; the estimated measure is its ex-ante extension, defined in Section 4.}
@@ -190,7 +191,7 @@ Delivered hourly wage, employed (EUR/hour) & -- & -- & -- \\
 Households (unweighted) & 1,540 & 2,223 & \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Weighted distributions on the estimation samples: age, usual weekly hours among employed deciders, education, and the delivered hourly wage input. Observed inputs, not model predictions.}]{figures/v5/figV08_data_panel.png}
 \caption{Weighted distributions on the estimation samples: age, usual weekly hours among employed deciders, education, and the delivered hourly wage input. Observed inputs, not model predictions.}
@@ -220,7 +221,7 @@ NN & neither spouse employed & 0.0222 & 0.0 & 0.0 \\
 
 For a given work arrangement the tax-benefit model is given the implied gross labour inputs, weekly hours, hourly wage, and earnings split at the thirty-five hour threshold, together with the household's non-labour inputs and roster, and returns disposable income. Only deciders receive counterfactual overrides; other members keep their baseline values. The accounting identity linking original income, benefits, taxes and social contributions to disposable income holds to machine precision at both the person and the household-alternative level, before and after the benefit take-up adjustment. Disposable income is summed over all resident members of the household.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Weighted distributions on the estimation samples: simulated disposable income at the observed job, children under twenty, the incidence of non-labour budget inputs by family, and urbanisation. Panel (a) is a tax-benefit output evaluated at the observed choice; panel (c) reports inputs to that calculation. The two are never added, and stocks are never summed with monthly flows.}]{figures/v5/figV09_resources_panel.png}
 \caption{Weighted distributions on the estimation samples: simulated disposable income at the observed job, children under twenty, the incidence of non-labour budget inputs by family, and urbanisation. Panel (a) is a tax-benefit output evaluated at the observed choice; panel (c) reports inputs to that calculation. The two are never added, and stocks are never summed with monthly flows.}
@@ -336,7 +337,7 @@ Writing \(r_{i,S}(dj)=e^{L_{i,S}(j)}\widehat g_{i,S}(j)\,d\nu(j)/H_{i,S}\) for t
 
 The measure is therefore a \textbf{weighted power mean of consumption of order \(\beta_c\)}, taken under a reference measure that weights packages by their non-consumption value and their availability. It is an arithmetic mean only at \(\beta_c=1\). The normalizer \(\lambda_c\) cancels between the two forms, which is why the constant is a units convention and not a modelling choice; we verify this numerically to a maximum relative deviation of 2.7e-15 across four widely separated values.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={The consumption coefficient as the order of a power mean. Left: the contribution an alternative makes to the consumption power moment, relative to the median alternative, against the linear comparison at \textbackslash beta\_c=1. Right: the marginal effect of that alternative's consumption on the resulting equivalent amount, which carries exponent \textbackslash beta\_c-1, against the flat comparison at \textbackslash beta\_c=1. Neither curve is a reference probability weight: holding the reference measure fixed, those weights do not vary with consumption at all.}]{figures/v5/figV07_power_mean.png}
 \caption{The consumption coefficient as the order of a power mean. Left: the contribution an alternative makes to the consumption power moment, relative to the median alternative, against the linear comparison at \(\beta_c=1\). Right: the marginal effect of that alternative's consumption on the resulting equivalent amount, which carries exponent \(\beta_c-1\), against the flat comparison at \(\beta_c=1\). Neither curve is a reference probability weight: holding the reference measure fixed, those weights do not vary with consumption at all.}
@@ -558,19 +559,19 @@ Consumption weight \(\beta_c\) & 2.0387 (0.2917) & 2.1017 (0.2939) \\
 
 The year indicators carried by the pooled specification are identically zero on this single-year sample and contribute nothing; they are restrictions, not estimates. The singles and couples models are estimated separately, so their wage blocks are not restricted to agree, and the difference between the two experience profiles should not be read as a test.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Indifference curves in consumption and leisure, single-adult households, at one representative household of each sex. The budget set, the opportunity density and the taste shock are not drawn, so a curve is not a set of attainable bundles. The consumption axis is logarithmic; under log consumption every finite utility target is attainable at a finite positive consumption, which may lie outside the plotted range.}]{figures/v5/figP01_indifference_curves_singles.png}
 \caption{Indifference curves in consumption and leisure, single-adult households, at one representative household of each sex. The budget set, the opportunity density and the taste shock are not drawn, so a curve is not a set of attainable bundles. The consumption axis is logarithmic; under log consumption every finite utility target is attainable at a finite positive consumption, which may lie outside the plotted range.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Indifference curves in consumption and each spouse's leisure, couple households, with the partner's leisure held at its observed value. Conditional slices of a joint object, not attainable sets.}]{figures/v5/figP02_indifference_curves_couples.png}
 \caption{Indifference curves in consumption and each spouse's leisure, couple households, with the partner's leisure held at its observed value. Conditional slices of a joint object, not attainable sets.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Marginal rate of substitution between leisure and consumption, by age and sex, in euros per month per additional recurring weekly hour of leisure. A compensation along an indifference curve, not a behavioural response to a wage change.}]{figures/v5/figP04_mrs_by_age_sex.png}
 \caption{Marginal rate of substitution between leisure and consumption, by age and sex, in euros per month per additional recurring weekly hour of leisure. A compensation along an indifference curve, not a behavioural response to a wage change.}
@@ -582,7 +583,7 @@ The indifference curves and the marginal rate of substitution are the economics;
 
 The fit reported here is a population prediction, computed by integrating the estimated model over the opportunity distribution and the taste shocks. It is not a sampled-menu choice probability and it is not an in-sample fitted value.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Observed against model population shares, margin by margin, for both estimated specifications. Model shares are population predictions computed by direct integration over the estimated opportunity distribution, not sampled-menu choice probabilities.}]{figures/v5/figV06_fit_by_margin.png}
 \caption{Observed against model population shares, margin by margin, for both estimated specifications. Model shares are population predictions computed by direct integration over the estimated opportunity distribution, not sampled-menu choice probabilities.}
@@ -746,13 +747,13 @@ Couple & Equivalized & 972 & 721 & 928 & 1,229 & 0.1274 \\
 Couple & Priced disposable income & -- & -- & -- & -- & 0.2310 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={The distribution of money-metric well-being, by household type and basis, with weighted medians marked. Levels are not comparable across the two panels: each household type carries its own reference construction.}]{figures/v5/figV02_welfare_distributions.png}
 \caption{The distribution of money-metric well-being, by household type and basis, with weighted medians marked. Levels are not comparable across the two panels: each household type carries its own reference construction.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Lorenz curves of money-metric well-being and of the priced disposable income it replaces, over the same households and the same weights. The two curves answer different questions about the same households; their Gini values are not two estimates of one quantity.}]{figures/v5/figV01_welfare_lorenz.png}
 \caption{Lorenz curves of money-metric well-being and of the priced disposable income it replaces, over the same households and the same weights. The two curves answer different questions about the same households; their Gini values are not two estimates of one quantity.}
@@ -801,7 +802,7 @@ Common preferences, common circumstances & 0.000000 & 0.000000 \\
 
 The four states are the coalition values of the two-group game. Reading them directly gives the one-factor effects. For single adults, equalizing preferences alone \emph{raises} the Gini by 13.0 per cent, from 0.193596 to 0.218795; equalizing all non-preference circumstances alone lowers it by 67.2 per cent. For couples, equalizing preferences alone lowers the Gini by 2.6 per cent and equalizing all other circumstances lowers it by 92.9. The fully common state is zero to 1.3e-15 in index units, which is a tested property of the game and not an imposed constraint.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Equalizing one group alone against the grouped Shapley share. For single-adult households, equalizing preferences alone raises the Gini while the preference share is positive; the share averages marginal contributions over coalition orders and the one-factor effect does not.}]{figures/v5/figV04_one_factor_vs_shapley.png}
 \caption{Equalizing one group alone against the grouped Shapley share. For single-adult households, equalizing preferences alone raises the Gini while the preference share is positive; the share averages marginal contributions over coalition orders and the one-factor effect does not.}
@@ -819,7 +820,7 @@ Since \(I_{01}\ge 0\) for a nonnegative index, a negative \(C_P\) forces \(I_{00
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\caption{Grouped attribution of well-being inequality. Contributions in Gini points beside the share of the baseline Gini of the same population, per cent, with the 95 per cent cluster-robust parameter interval in brackets from 100 draws. Shares are taken against the baseline of the same population and are not comparable as levels across the two populations. The parameter interval and the RQMC integration band measure different things and are never combined; the integration band is reported separately in the text and in the figure. The couples subdivision of resources against household composition is not available and is reported jointly.}\tabularnewline
+\caption{Grouped attribution of well-being inequality. Contributions in Gini points beside the share of the baseline Gini of the same population, per cent, with the 95 per cent cluster-robust parameter interval in brackets from 100 draws. Shares are taken against the baseline of the same population and are not comparable as levels across the two populations. The parameter interval and the RQMC integration band measure different things and are never combined; the integration band is reported separately in the text and in the figure. Resources and needs enter here as one component of the four-player game; its subdivision into non-labour resources and household composition is a nested attribution and has its own table.}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Component
@@ -858,7 +859,7 @@ Resources and needs & 0.066206 & 34.20 {[}21.3, 41.2{]} & 0.067827 & 51.20 {[}46
 All non-preference circumstances & 0.174466 & 90.12 & 0.126042 & 95.15 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={The grouped attribution, signed, in per cent of each population's own baseline Gini. The black bar is the 95 per cent cluster-robust parameter interval; the shaded bar is the RQMC integration band. They measure different things and are never combined.}]{figures/v5/figV03_signed_decomposition.png}
 \caption{The grouped attribution, signed, in per cent of each population's own baseline Gini. The black bar is the 95 per cent cluster-robust parameter interval; the shaded bar is the RQMC integration band. They measure different things and are never combined.}
@@ -871,6 +872,75 @@ We report that contrast as a finding and attach no mechanism to it. A second ear
 The parameter interval and the integration band measure different things and are never combined. The integration band on the single-adult access share is 48.5 to 49.9 per cent, an order of magnitude narrower than the parameter interval, which is the expected ordering: the numerical integration is the accurate part and the parameters are the uncertain part.
 
 The allocation is exhaustive. The maximum absolute top-level identity residual is 2.8e-17 in index units and the nested residual 5.6e-17. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model or the normative content of the operators.
+
+\subsection{Inside the budget channel: resources against composition and needs}\label{inside-the-budget-channel-resources-against-composition-and-needs}
+
+The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. It requires two further counterfactual panels, each repriced through the tax-benefit system, and it is done here on the corrected partition of the budget fields into 58 resource fields, 46 composition and needs fields and 6 geographic fields, which travel with resources.
+
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\caption{The subdivision of the resources-and-needs contribution into non-labour resources and household composition and needs, reported as ``resources / composition'' in every cell. Columns two and five are shares of that population's baseline inequality; the remaining columns are shares of the resources-and-needs channel itself, which the two cells divide. The couple cells come from two counterfactual panels repriced through the tax-benefit system on the corrected partition of 58 resource fields, 46 composition and needs fields and 6 geographic fields, and sum to the joint contribution to a residual of 1.4e-17 in index units. The single-adult cells come from panels priced on an earlier partition of the same fields, so they are reported for comparison and the two populations' channel shares are indicative rather than like for like.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Index
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: share of baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: share of channel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: channel, equivalized
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: share of baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: share of channel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: channel, equivalized
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Index
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: share of baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: share of channel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couples: channel, equivalized
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: share of baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: share of channel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Singles: channel, equivalized
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gini & 32.88 / 18.33 & 64.2 / 35.8 & 57.1 / 42.9 & 24.38 / 9.82 & 71.3 / 28.7 & 46.1 / 53.9 \\
+Atkinson(1) & 49.14 / 11.46 & 81.1 / 18.9 & 73.7 / 26.3 & 34.38 / 12.52 & 73.3 / 26.7 & 48.3 / 51.7 \\
+Atkinson(2) & 44.42 / 12.79 & 77.6 / 22.4 & 68.3 / 31.7 & 31.33 / 12.24 & 71.9 / 28.1 & 44.2 / 55.8 \\
+GE(0) & 49.15 / 11.42 & 81.2 / 18.8 & 73.8 / 26.2 & 34.62 / 12.57 & 73.4 / 26.6 & 48.4 / 51.6 \\
+GE(1) & 55.49 / 9.44 & 85.5 / 14.5 & 80.4 / 19.6 & 39.26 / 13.47 & 74.4 / 25.6 & 53.4 / 46.6 \\
+GE(2) \(=CV^2/2\) & 63.15 / 7.01 & 90.0 / 10.0 & 87.7 / 12.3 & 47.04 / 15.81 & 74.8 / 25.2 & 58.7 / 41.3 \\
+\end{longtable}
+
+Three statements are supported, and a fourth that suggests itself is not.
+
+First, \textbf{non-labour resources lead the channel in both populations on the household basis, under all six indices} --- 6 of six for couples and 6 of six for single adults. On the Gini the couples channel divides 64.2 to 35.8, which is 32.88 and 18.33 per cent of total inequality; the single-adult channel divides 71.3 to 28.7, or 24.38 and 9.82 per cent of total.
+
+Second, \textbf{the resources share of the channel is widest under GE(2) and narrowest under the Gini in both populations.} The Gini is the index least sensitive to the tails, and it is where composition matters most; the squared coefficient of variation is the most tail-sensitive, and it is where resources dominate. The spread is large --- for couples, from 64.2 per cent of the channel under the Gini to 90.0 under GE(2) --- so the division of this channel is considerably more index-sensitive than the four-way decomposition above it.
+
+Third, \textbf{equivalizing raises the composition share in both populations, under all 6 of the six indices.} This is not an artefact and it is not a surprise: the equivalence scale is owned by the composition operator, so a state in which composition is equalized is also a state in which every household is put on a common scale. Equalizing composition therefore removes both the direct effect of household size on the budget and the effect of size on the scale by which the resulting level is deflated. For single adults the effect is strong enough to reverse the ordering: on the equivalized basis resources lead the channel in only 2 of the six indices, and composition leads under the Gini, both Atkinson indices and GE(0). For couples the ordering survives equivalization, under all 6 of the six.
+
+The statement that does \emph{not} survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, 35.8 against 28.7 per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under 1 of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The two populations' panels also rest on different partitions of the budget fields, which is a second reason to treat the cross-population comparison of channel shares as indicative.
 
 \subsection{Index sensitivity}\label{index-sensitivity}
 
@@ -935,7 +1005,7 @@ Couple, GE(1) & 0.034637 & 2.27 & 5.70 & 27.09 & 64.94 & 32.79 \\
 Couple, GE(2) \(=CV^2/2\) & 0.088142 & 2.03 & 4.95 & 22.87 & 70.16 & 27.82 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Attribution shares under six inequality indices. Each index keeps its own coalition values and its own allocation. Access exceeds earning opportunities for single adults under all six and the ordering reverses for couples under all six; the singles preference share changes sign outside the Gini.}]{figures/v5/figV05_six_index_shares.png}
 \caption{Attribution shares under six inequality indices. Each index keeps its own coalition values and its own allocation. Access exceeds earning opportunities for single adults under all six and the ordering reverses for couples under all six; the singles preference share changes sign outside the Gini.}
@@ -1081,7 +1151,7 @@ Three normalizing constants were in circulation between the estimation frames an
 
 The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
 
-The couples subdivision of resources against household composition is not available: it requires two repriced counterfactual panels that have not been run, and we report the two jointly at 51.20 per cent rather than imputing a split. The parameter intervals cover the Gini shares; the other five indices are reported as point estimates.
+The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. The corresponding subdivision for single adults is \emph{not} reported: the only priced panels available for it encode an earlier partition of the budget fields, so its two cells are not comparable with the couples cells and are not a current result.
 
 \section{Conclusion}\label{conclusion}
 

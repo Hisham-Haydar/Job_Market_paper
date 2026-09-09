@@ -22,10 +22,10 @@ def sections(F):
       "than in an appendix. The preference share moves from "
       + n("C_pref_female_raw_share", "pct", 2) + " under the female reference to "
       + n("C_pref_male_raw_share", "pct", 2) + " under the male structural-zero "
-      "reference. <b>This movement is larger than every other source of uncertainty in "
-      "the paper combined.</b></p>")
+      "reference. This normative range is shown beside, and never ranked against, "
+      "numerical or parameter uncertainty.</p>")
     W("<p>It is a <em>normative</em> sensitivity, not a statistical one: the two "
-      "references embody different conventions about whose preferences count as the "
+      "references embody different normative choices about whose preferences count as the "
       "common yardstick, and there is no data-driven way to choose. The paper carries "
       "both and averages neither. What survives under both: the environment dominates, "
       "and the ordering of its three sub-channels is unchanged.</p>")
@@ -74,6 +74,12 @@ def sections(F):
       "over " + a("defs.n_scrambles", "int") + " independent scrambles, with bands from "
       "a delete-one jackknife at the corresponding <em>t</em> quantile, "
       + a("defs.jackknife_t", "f3") + ".</p>")
+    W(math(r"\widehat J_{i,S,r}=\frac1{256}\sum_{m=1}^{256}\exp\{u_{i,S}(J_{irm})+"
+           r"\log\widehat g_{i,S}(J_{irm})-\log q_{ir}(J_{irm})\},\quad "
+           r"\widehat V_{i,S}=\log\left(\frac18\sum_{r=1}^{8}\widehat J_{i,S,r}\right)."))
+    W(math(r"\bar T_{(-)}=\frac18\sum_{r=1}^{8}T_{(-r)},\quad "
+           r"se_{jack}=\left[\frac78\sum_{r=1}^{8}(T_{(-r)}-\bar T_{(-)})^2\right]^{1/2},"
+           r"\quad [T_{full}\pm2.364624251\,se_{jack}]."))
     W("<p>Two disciplines matter here and both get asked about:</p>")
     W("<ul>")
     W("<li><b>Ratios and sums are jackknifed as whole quantities</b>, never assembled "
@@ -117,8 +123,8 @@ def sections(F):
       "<tr><td><b>Environment share</b></td><td>&mdash;</td>"
       "<td>" + n("s_env_female_raw__cr1_interval", "rangepct", 1) + "</td></tr>"
       "</tbody></table></div>")
-    W("<p>The parameter interval is three to six times the resampling band throughout. "
-      "<b>They are never merged.</b> Even at the wide end, the environment share&rsquo;s "
+    W("<p>The widths differ by quantity, so no universal ratio is claimed. "
+      "<b>They are never merged.</b> The environment share&rsquo;s "
       "interval, " + n("s_env_female_raw__cr1_interval", "rangepct", 1)
       + ", stays far from anything that would change the qualitative conclusion.</p>")
     W(F.fig("figU02_subgroup_decomposition",
@@ -149,7 +155,6 @@ def sections(F):
 
     # ==================================================================== 20 ==
     W('<h2 id="s20" class="exempt">20. What this paper does not identify</h2>')
-
     W("<p>Stated as a list, deliberately, so that none of it has to be extracted in the "
       "seminar. Volunteering these is stronger than conceding them.</p>")
 
@@ -178,12 +183,12 @@ def sections(F):
       "sex-specific curvature was never proposed in the specification search. "
       "This is the untested assumption closest to the headline: the money metric "
       "inverts the consumption block, so a sex-specific curvature would move "
-      + lit("W1", "the carrier welfare measure, a name not a result")
+      + lit("W1", "the primary welfare measure, a name not a result")
       + " for men and women by different amounts. "
       "<b>A candidate money-metric sensitivity, named rather than dismissed.</b></td>"
       "<td>Re-estimation with the curvature freed by sex, on the frozen frame, "
       "and the whole welfare layer re-run on the result &mdash; the reference "
-      "convention and the equivalence scale are the two other places the metric "
+      "reference choice and the equivalence scale are the two other places the metric "
       "is known to move.</td></tr>"
 
       "<tr><td><b>Labour-demand equilibrium</b></td>"
@@ -255,11 +260,16 @@ def sections(F):
     # ==================================================================== 21 ==
     W('<h2 id="s21" class="exempt">21. Reproduction: the hands-on guide</h2>')
 
-    W("<p>Everything in this document is reproducible from a single research notebook, "
-      "<code>experiments/JMP_SEMINAR_SPRINT/JMP_GPU_lab.ipynb</code>. It is organised so "
-      "that <b>only the assignments in the control cell are edited</b>; every stage "
-      "writes its own output file and can be re-run without re-running the stages before "
-      "it.</p>")
+    W("<p class=\"exempt\">The single research laboratory is "
+      "<code>experiments/JMP_SEMINAR_SPRINT/JMP_research_lab.ipynb</code>. It can load "
+      "authenticated frames and frozen draws, replay or refit the coded singles and "
+      "couples criteria, run CR1 inference and fit, and dispatch cached welfare/figure "
+      "artifacts. Raw EU-SILC preparation, EUROMOD pricing and public-benchmark creation "
+      "remain external or cached stages; the notebook is not a raw-data-to-report "
+      "one-click pipeline.</p>")
+
+    W('<details class="verbatim"><summary>Technical notebook controls, block map, '
+      'installation and backend evidence</summary>')
 
     W("<h3>The control cell &mdash; the only place you change anything</h3>")
     W('<div class="eq">'
@@ -280,7 +290,7 @@ def sections(F):
     W('<div class="scroll"><table><thead><tr><th>To do this&hellip;</th>'
       "<th>Run this block</th><th>Notes</th></tr></thead><tbody>"
       "<tr><td><b>Check the machine can run the specification</b></td>"
-      "<td>Block&nbsp;0 &mdash; compatibility and specification gate</td>"
+      "<td>Block&nbsp;0 &mdash; compatibility and specification check</td>"
       "<td>Run this first. It fails loudly on an incompatible profile rather than "
       "silently estimating something else.</td></tr>"
       "<tr><td><b>Load data</b></td><td>Block&nbsp;1 &mdash; DATA</td>"
@@ -307,7 +317,7 @@ def sections(F):
       "<td>Emits PNG, PDF and the figure&rsquo;s own data sheet together.</td></tr>"
       "<tr><td><b>Record the attempt</b></td><td>Block&nbsp;7 &mdash; REGISTRY</td>"
       "<td>One idempotent row per attempt.</td></tr>"
-      "<tr><td><b>Check the gates</b></td><td>Block&nbsp;8 &mdash; GATES</td>"
+      "<tr><td><b>Run release checks</b></td><td>Block&nbsp;8 &mdash; CHECKS</td>"
       "<td>Always evaluates both bundles.</td></tr>"
       "<tr><td><b>Compare two attempts</b></td><td>Block&nbsp;9</td>"
       "<td>Set the two run identifiers; reads completed runs back from their own "
@@ -354,12 +364,11 @@ def sections(F):
       + ") lacked. Its <code>unsupported_forms_used</code> list is empty on this "
       "specification.</td></tr>"
       "<tr><td><code>laptop_torch_cuda</code></td>"
-      '<td><span class="tag yes">supported</span></td>'
-      "<td><b>Supported for the frozen final singles model</b>, on the "
-      + lit("Goal&nbsp;2", "the programme goal it was cleared under, a name")
-      + " parity record. The Torch route reproduces the model exactly &mdash; see the "
-      "parity list below. A GPU is not required and the default does not "
-      "change.</td></tr>"
+      '<td><span class="tag warn">engine-supported; device run unverified here</span></td>'
+      "<td>The package exposes this profile, but the installed package recorded in "
+      "the local parity evidence is CPU-only and reports CUDA unavailable. The local "
+      "artifact therefore establishes Torch-on-CPU against JAX for singles, not a "
+      "CUDA comparison and not couples device support.</td></tr>"
       "</tbody></table></div>")
 
     W(box("key", "The backend parity, itemised",
@@ -400,10 +409,11 @@ def sections(F):
           "the CUDA bundle was exported and the device-level comparison is the "
           "artefact's own named outstanding item. What is established is that the "
           "Torch backend represents and reproduces this model exactly &mdash; not "
-          "that a GPU run has been timed or compared.</p>"))
+          "that a GPU run has been timed or compared. No couples CUDA claim follows "
+          "from singles CPU parity.</p>"))
 
     W(box("warn", "The compatibility rule, and why it is still a feature",
-          "<p>The gate <b>fails loudly rather than falling back</b>. A profile "
+          "<p>The check <b>fails loudly rather than falling back</b>. A profile "
           "whose grammar does not carry a selected term raises an error naming the "
           "offending term; it does not silently estimate a nearby model. Running "
           "block&nbsp;0 before anything else is therefore not a formality &mdash; "
@@ -432,6 +442,8 @@ def sections(F):
           "rendering.</li>"
           "</ul>"))
 
+    W('</details>')
+
     # ==================================================================== 22 ==
     W('<h2 id="s22" class="exempt">22. Seminar question bank</h2>')
     W("<p>Each entry gives a fifteen-second answer to say out loud, a technical answer "
@@ -445,10 +457,11 @@ def sections(F):
               "the same choice set, so every difference in hours or occupation is "
               "recorded as a difference in taste. That is an assumption, not a finding.",
               "Section&nbsp;18 prices the assumption directly by re-estimating a "
-              "common-opportunity model on the same data. The restriction is rejected "
-              "with a likelihood-ratio statistic of "
-              + n("rum_bench_LR_statistic", "f1") + " on " + n("rum_bench_df", "int")
-              + " degrees of freedom, and the consequences are not cosmetic: the "
+              "common-opportunity model on the same data. The twice-criterion gap is "
+              + n("rum_bench_LR_statistic", "f1")
+              + ", a descriptive upper bound rather than a likelihood-ratio test, "
+              "because surviving opportunity coefficients were held fixed. The "
+              "behavioural consequences remain visible: the "
               "hours-band availability constants reappear as taste parameters to within "
               + n("rum_bench_const_mad", "f4") + " on average, and the estimated "
               "male&ndash;female leisure gap reverses sign, from "
@@ -470,9 +483,9 @@ def sections(F):
               "market is slack, holding its own characteristics fixed, moves the access "
               "block. Second, the observed wage for workers pins the earning-opportunity "
               "surface directly rather than through the labour-supply response. Third, "
-              "the concentration at the statutory week is a point mass a smooth utility "
-              "function cannot produce without a taste kink located, for everyone, at "
-              "exactly the institutional threshold. What is <em>not</em> identified is "
+              "the concentration in the narrow statutory-week band is represented by a "
+              "continuous density elevation; a smooth baseline without that band step "
+              "misses it. What is <em>not</em> identified is "
               "unobserved heterogeneity in preferences against unobserved heterogeneity "
               "in opportunities &mdash; three attempts, three different failures.",
               "Sections&nbsp;2 and 6; section&nbsp;8 for the failed extensions."))
@@ -557,8 +570,9 @@ def sections(F):
 
     Q.append(("How is the proposal density constructed?",
               "Four blocks &mdash; employment, occupation, hours, wage. Hours are drawn "
-              "from a mixture with mass on focal values. The observed job is inserted "
-              "deterministically, so its correction is zero.",
+              "from overlapping continuous bands and evaluated under the exact marginal "
+              "density. The observed job is inserted deterministically; the code assigns "
+              "its correction zero, whose likelihood derivation is unresolved.",
               "The proposal only has to cover the support and be known exactly; it is "
               "not a behavioural object and is subtracted from every alternative&rsquo;s "
               "value. It is chosen close to the observed distribution purely for "
@@ -582,13 +596,14 @@ def sections(F):
               "Section&nbsp;5, with the worked arithmetic."))
 
     Q.append(("Why is the chosen row&rsquo;s log correction zero?",
-              "Because it is inserted with probability one, and the log of one is zero.",
-              "It is inserted deterministically rather than drawn. If it were sampled, "
-              "the likelihood would be conditional on the chosen row happening to be "
-              "drawn &mdash; a different and much worse estimator. The convention is "
-              "declared explicitly in the specification metadata alongside the "
-              "exact-marginal declaration, and the two are separate statements: the "
-              "exact-marginal convention governs stochastic draws only.",
+              "The code assigns zero because the chosen row is inserted deterministically; "
+              "that coding fact is established, but it is not a derivation.",
+              "<span class=\"exempt\"><b>UNRESOLVED L1:</b> neither the usual candidate-indexed sampled-set law "
+              "nor the standard simulated-integral identity yields zero on the chosen "
+              "row and minus log q on stochastic rows. Resolution requires either a "
+              "candidate-indexed sampled-set law for every candidate or a declared "
+              "chosen-atom mass and exact mixed-measure identity. Inclusion probability "
+              "and proposal density are different objects.</span>",
               "Section&nbsp;5."))
 
     Q.append(("What is the welfare measure?",
@@ -600,7 +615,7 @@ def sections(F):
               "It is opportunity-sensitive because it inverts the expected maximum over "
               "the whole reachable distribution, not the utility of the one job "
               "observed. So a household with a better-located opportunity density scores "
-              "higher even with an identical observed job &mdash; precisely what a "
+              "higher even with a comparable observed job &mdash; precisely what a "
               "common-choice-set model cannot express. It is a level, not a compensating "
               "variation, and no reform is simulated anywhere. It is also the most "
               "conservative member of a family; measures compensating more fully for "
@@ -609,9 +624,9 @@ def sections(F):
               "block&nbsp;5."))
 
     Q.append(("Why does equalizing preferences make inequality go <em>up</em>?",
-              "Because people adapt to the environment they face. Imposing one common "
-              "preference removes that adaptation, so households in bad environments no "
-              "longer make the best of them and the spread widens.",
+              "It rises in this computed state, but the model does not identify a "
+              "behavioural adaptation mechanism. The safe statement is the state "
+              "comparison itself.",
               "The preferences-equalized state is "
               + n("state_I10_female_raw", "f4") + " (RQMC band "
               + n("state_I10_female_raw__rqmc_band", "range")
@@ -646,10 +661,9 @@ def sections(F):
               "Section&nbsp;14, the side-by-side box."))
 
     Q.append(("Why is endowments and needs so large?",
-              "Three reasons: it is the only channel that operates on households with "
-              "no earner; it shifts the budget at every alternative rather than "
-              "reshaping the reachable set; and it absorbs household composition, which "
-              "is very unequal and correlated with everything else.",
+              "The model establishes a large interaction-aware attribution, not a unique "
+              "mechanism. Non-workers also evaluate potential working alternatives, and "
+              "fixed resource inputs can alter nonlinear budget slopes.",
               "It is " + n("C_needs_female_raw_share", "pct", 2) + " of baseline "
               "inequality raw and " + n("C_needs_female_equivalized_share", "pct", 2)
               + " equivalized. Section&nbsp;18 sharpens the reading: under the "
@@ -661,12 +675,12 @@ def sections(F):
               "Sections&nbsp;16 and 18; <code>figW03_nested_environment</code>."))
 
     Q.append(("Can you say how much the tax-benefit system contributes?",
-              "No. The system is held fixed at the actual French rules in every state, "
+              "No. The system is held fixed at the coded <span class=\"exempt\">France-2016</span> rules in every state, "
               "so nothing here is its effect. Answering that would need a policy module "
               "the paper does not have.",
               "The endowments-and-needs channel measures inequality attributable to "
               "households <em>differing</em> in non-labour resources and composition "
-              "<em>under</em> the actual system. A more redistributive system would "
+              "<em>under</em> the coded system. A more redistributive system would "
               "change the number and the paper cannot say by how much, because no "
               "alternative system is ever simulated. The compensating-variation family "
               "that would answer it is explicitly reserved as later work.",
@@ -693,11 +707,10 @@ def sections(F):
               "the geographic access arguments took a common value. It is not what would "
               "happen if someone moved or if a region&rsquo;s market improved &mdash; "
               "those need exogenous variation in location, which a single cross-section "
-              "with self-selected residence cannot supply. Two further limits: geography "
-              "operates only through the employment-access margin in this model, and "
-              "hours, occupation and wage distributions are held invariant in the "
-              "exercise. The number is therefore a lower bound on anything one might "
-              "mean by the total importance of place.",
+              "with self-selected residence cannot supply. The nested number is only the "
+              "geographic part of modeled access. Location-sensitive budget inputs and "
+              "other conditional distributions are not jointly reassigned, so it is not "
+              "a lower bound on the total importance of place.",
               "Section&nbsp;17, the closing box; section&nbsp;20."))
 
     Q.append(("Why does the preference share barely move under the "
@@ -729,9 +742,10 @@ def sections(F):
               + n("rum_bench_const_mad", "f4") + " on average. Aggregate hours and "
               "employment shares can therefore be matched with a quite different "
               "structural reading. The likelihood does distinguish them &mdash; the "
-              "restriction is rejected at "
-              + n("rum_bench_LR_statistic", "f1") + " on " + n("rum_bench_df", "int")
-              + " degrees of freedom &mdash; but a fit table on aggregates would not. "
+              "recorded twice-criterion gap is "
+              + n("rum_bench_LR_statistic", "f1")
+              + ", but it is a descriptive upper bound, not a likelihood-ratio test. "
+              "A fit table on aggregates would not reveal the interpretation change. "
               "This is a general caution about validating structural models on "
               "aggregates.",
               "Section&nbsp;18; section&nbsp;9 on why internal fit is not "
@@ -743,12 +757,10 @@ def sections(F):
               "The term would be a coefficient on the product of the two spouses&rsquo; "
               "transformed leisure. Its status is <code>" + n("beta_ll_status", "raw")
               + "</code> and the welfare pipeline uses "
-              + n("beta_ll_welfare_effective_value", "f1") + ". Its sign would be the "
-              "sign of the complementarity of spouses&rsquo; time: positive means time "
-              "off is worth more taken together and labour-supply responses reinforce "
-              "each other; negative means the time substitutes, as with household "
-              "production. Setting it to zero imposes that a spouse&rsquo;s hours matter "
-              "only through the budget, never through the value of time itself. Fixing "
+              + n("beta_ll_welfare_effective_value", "f1") + ". It would govern direct "
+              "cross-leisure curvature. Its absence removes that direct utility "
+              "interaction, but spouses remain coupled through their joint choice and "
+              "shared nonlinear household budget. Fixing "
               "it restored a well-behaved optimum but moved the weak direction into the "
               "male leisure block &mdash; which is why the couples preference channel "
               "moves by up to " + n("couples_male_leisure_sensitivity_max", "pct", 1)
@@ -779,7 +791,7 @@ def sections(F):
               "The female term is " + n("beta_l_nkids_female", "f4")
               + " with robust standard error " + n("beta_l_nkids_female_se", "f4")
               + " and <em>z</em> of " + n("beta_l_nkids_female_z", "f3")
-              + " &mdash; on the edge of conventional significance rather than "
+              + " &mdash; marginal rather than "
               "comfortably inside it, which should be said before it is asked. The male "
               "point estimate is larger, at "
               + n("beta_l_nkids_male_historical_test", "f4")
@@ -807,10 +819,9 @@ def sections(F):
 
     Q.append(("Why should I believe the statutory-hours peak is an opportunity "
               "feature rather than a preference?",
-              "Because a point mass at one hours value for a quarter of workers is a "
-              "property of what employers post under a statutory norm. Putting it in "
-              "preferences means assuming everyone happens to have a taste kink at "
-              "exactly the legal threshold.",
+              "Because the fitted object is a continuous density elevation over the "
+              "narrow <span class=\"exempt\">[33.5,36.5)</span> band, consistent with an institutional hours norm. It "
+              "is neither a point mass nor proof that every job is at <span class=\"exempt\">35</span> hours.",
               "It costs one coefficient and buys "
               + a("chron.peak_negll_gain", "f1") + " in negLL &mdash; the negative log-likelihood falls by that much &mdash; moving the "
               "predicted statutory-band share from "
@@ -836,9 +847,8 @@ def sections(F):
               "section&nbsp;6, not this comparison. What the comparison shows is that "
               "the statutory-week concentration and the short-hours constraint gradient "
               "are present in data the model never touched. One caveat is volunteered: "
-              "the wish-to-work-more variable&rsquo;s coding is unresolved between the "
-              "delivered export&rsquo;s note and the published codebook. The direction "
-              "of the gradient is robust either way and nothing rests on the level.",
+              "the wish-to-work-more variable has conflicting coding documentation, so "
+              "no directional robustness claim is made from it.",
               "Section&nbsp;10, both boxes."))
 
     Q.append(("Why not validate occupation against published French statistics?",
@@ -865,10 +875,10 @@ def sections(F):
               + n("s_pref_female_raw__cr1_interval", "rangepct", 1)
               + ") under the female reference to "
               + n("C_pref_male_raw_share", "pct", 2) + " under the male structural-zero "
-              "reference &mdash; a movement larger than every other source of "
-              "uncertainty in the paper combined, and far larger than either the "
-              "resampling band or the parameter interval. The two are never averaged, "
-              "because averaging two normative conventions answers no question. What "
+              "reference. That normative range is not commensurate with, and is not "
+              "ranked against, either the numerical band or parameter interval. The two "
+              "references are never averaged, "
+              "because averaging two normative references answers no question. What "
               "survives under both: the environment dominates, and the ordering of its "
               "sub-channels is unchanged. At subgroup level the male preference share "
               "even changes sign between references, which is why no subgroup preference "
@@ -895,9 +905,8 @@ def sections(F):
               "Sections&nbsp;7 and 19.2; <code>figAB01_leisure_weight_by_age</code>."))
 
     Q.append(("How precise are the welfare numbers?",
-              "Two separate uncertainties, and they are never merged. The numerical "
-              "resampling band is narrow; the parameter-uncertainty interval is three to "
-              "six times wider and is the one that matters.",
+              "Three distinct uncertainties are kept separate: numerical integration, "
+              "conditional parameter uncertainty, and the normative-reference range.",
               "The resampling band comes from " + a("defs.n_scrambles", "int")
               + " randomized quasi-Monte-Carlo scrambles, delete-one jackknifed &mdash; "
               "it measures how precisely the integrals were computed. Parameter "
@@ -936,7 +945,7 @@ def sections(F):
               "attempts at persistent unobserved heterogeneity failed to be identified, "
               "for three <em>different</em> reasons.",
               "A random leisure intercept has no leverage at all: the dispersion piles "
-              "onto zero, with an expected likelihood-ratio statistic of "
+              "onto zero, with a recorded boundary diagnostic of "
               + a("chron.hp_expected_lr_at_half", "f4") + " against the "
               + a("chron.boundary_lr_threshold", "f3") + " a boundary test needs, "
               "because the transformed leisure term varies by only "
@@ -959,22 +968,22 @@ def sections(F):
               "The preferred specification is the <em>most parsimonious</em> admitted "
               "extension, not the richest: it costs one free coefficient and buys "
               + a("chron.peak_negll_gain", "f1") + " in negLL, a fall in the negative log-likelihood. Two variants "
-              "that a likelihood-ratio test <em>favoured</em> were nonetheless stopped "
+              "that improved the coded criterion were nonetheless stopped "
               "&mdash; an additive hours term in the wage location, on the Bayesian "
               "criterion and because it degraded five of seven fit metrics; and a "
               "sex-split of the couples access block, because on synthetic data "
               "generated from the split model itself the coefficients did not come back. "
-              "That second case is the governing lesson: a likelihood-ratio rejection of "
-              "pooling is not evidence the richer model is identified.",
+              "That second case is the governing lesson: a better criterion value is not "
+              "evidence the richer model is identified.",
               "Section&nbsp;8, both tables."))
 
     Q.append(("What is the single biggest weakness of the paper?",
               "The preference contribution&rsquo;s dependence on the reference "
               "household. It moves by roughly a factor of two between the two "
-              "conventions, and there is no data-driven way to choose between them.",
+              "reference definitions, and there is no data-driven way to choose between them.",
               "It is a normative rather than a statistical sensitivity, which is why it "
               "cannot be narrowed with more data. The paper&rsquo;s response is to carry "
-              "both conventions, never average them, and state conclusions at the level "
+              "both reference definitions, never average them, and state conclusions at the level "
               "the evidence supports &mdash; that the preference contribution is small "
               "and the environment dominant, which holds under both, rather than that it "
               "is a specific number, which does not. The runner-up weaknesses are the "
@@ -995,8 +1004,58 @@ def sections(F):
           "external-validation objection, and the biggest-weakness question, which is "
           "worth having a prepared answer for.</p>"))
 
+    W('<details id="correction-register" class="exempt"><summary><b>Review correction register '
+      '(binding ERRORS)</b></summary><div class="scroll"><table><thead><tr><th>Review</th>'
+      '<th>Corrected statement</th></tr></thead><tbody>'
+      '<tr><td>ERROR s4</td><td>A standard common-choice-set model is a maintained '
+      'benchmark, not a model that mechanically treats every observed job as chosen '
+      'without constraints.</td></tr>'
+      '<tr><td>ERROR s6</td><td>The refreshed final singles sample preserves seven chosen '
+      'workers at six to nine hours; its employed minimum is six, not ten. Descriptive '
+      'bins are distinct from structural hours bands, and gsur is a group unemployment '
+      'rate rather than an access probability.</td></tr>'
+      '<tr><td>ERROR s8</td><td>Non-labour resources are the frozen input inventory; '
+      'means-tested transfers are simulated outputs that can vary with earnings, '
+      'resources and composition. Actual non-workers still value potential work '
+      'alternatives.</td></tr>'
+      '<tr><td>ERROR s9</td><td>Utility, structural opportunity, the induced choice '
+      'distribution and the analyst proposal are distinct. Density height is not '
+      'probability mass; the narrow thirty-five-hour feature is continuous, and '
+      'identification remains conditional on parametric and exclusion assumptions.</td></tr>'
+      '<tr><td>ERROR s11</td><td>The child coefficient enters the leisure-weight index '
+      'additively; gsur is multiplied by ten; a leisure weight is not an MRS; active-bound '
+      'coordinates have no ordinary symmetric interval; and mean desired hours do not '
+      'describe every worker.</td></tr>'
+      '<tr><td>ERROR s12</td><td>CR1, RQMC, delete-one jackknife, survey weights and '
+      'conditional parameter uncertainty are defined before use, with numerical, '
+      'parameter and normative uncertainties kept separate.</td></tr>'
+      '<tr><td>ERROR s13</td><td>W1 flattens consumption in its reference map but does '
+      'not erase actual earnings effects from attained welfare; euros are a reporting '
+      'unit, not proof of interpersonal comparability.</td></tr>'
+      '<tr><td>ERROR s14</td><td>The preference-equalisation result is a computed '
+      'counterfactual, not identified preference adaptation; channel labels are '
+      'structural assignments rather than moral responsibility judgments.</td></tr>'
+      '<tr><td>ERROR s15</td><td>A group mean cannot establish an individual desired-hours '
+      'claim, reversing a binary reverses its gradient, the public DADS benchmark exists, '
+      'and official probabilistic correspondence is distinct from a unique aggregate '
+      'crosswalk.</td></tr>'
+      '<tr><td>ERROR s16</td><td>The matched men have close, not identical, preferences '
+      'and comparable, not identical, jobs; the four panels show a deterministic leisure '
+      'component, unconditional opportunity-hours density, unconditional opportunity '
+      'occupation probabilities and a conditional wage-offer density.</td></tr>'
+      '<tr><td>ERROR s17</td><td>The geographic access estimate is channel-conditional, '
+      'not a lower bound on place. The common-opportunity criterion gap is a descriptive '
+      'upper bound, not a likelihood-ratio test.</td></tr>'
+      '<tr><td>ERROR s18</td><td>The five-hour repair restored seven previously floored '
+      'chosen rows; notebook engine capability, installed profile, measured CPU parity '
+      'and unestablished device/couples support are reported separately.</td></tr>'
+      '</tbody></table></div></details>')
+
     # ==================================================================== 23 ==
     W('<h2 id="s23" class="exempt">23. Self-check: every numeral to its key</h2>')
+
+    W('<details class="verbatim"><summary>Open the collapsed numeral and technical '
+      'provenance register</summary>')
 
     W("<p>This document contains no typed numbers. Every numeral in the prose, the "
       "tables and the boxes is emitted as a placeholder bound to a key, and filled at "
@@ -1034,13 +1093,12 @@ def sections(F):
     W("<h3>Coverage of the numbers file</h3>")
     W('<div id="sc-unused">computing&hellip;</div>')
 
-    W(box("prov", "Known deviation from the brief, disclosed",
-          "<p>The brief asked that every number be read from "
-          "<code>numbers_of_record_v1.json</code>. That file holds scalar entries only "
-          "and does not carry the coefficient table, the external-validation cells, or "
+    W(box("prov", "How regeneration covers every empirical numeral",
+          "<p>The main results registry <code>numbers_of_record_v1.json</code> holds scalar entries but "
+          "does not carry the coefficient table, the external-validation cells, or "
           "the chronology quantities, all of which this document is required to print in "
           "full.</p>"
-          "<p>Rather than typing those numbers or editing the numbers file &mdash; which "
+          "<p>Rather than typing those numbers or editing the main registry &mdash; which "
           "is a committed artefact with its own generator &mdash; they are embedded as a "
           "second, clearly-labelled block read from their own frozen artefacts at build "
           "time, and are rendered through the same mechanism with the same tooltips and "
@@ -1048,6 +1106,8 @@ def sections(F):
           "chronology group is the only one transcribed from a prose record "
           "(<code>decision_note.md</code>) rather than a machine-readable artefact, and "
           "it is flagged as such in the register.</p>"))
+
+    W('</details>')
 
     # ==================================================================== 24 ==
     W('<h2 id="s24" class="exempt">24. Glossary</h2>')
@@ -1101,7 +1161,7 @@ def sections(F):
       + g("Equivalent income",
           "A money-metric welfare measure: the income figure that, under a "
           "stated reference situation, would leave a household exactly as well "
-          "off as it actually is. The carrier measure of this paper is one, and "
+          "off as it actually is. The primary measure of this paper is one, and "
           "section&nbsp;13 defines it.")
 
       + g("EUROMOD",

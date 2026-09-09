@@ -8,7 +8,7 @@ Build date: 09 September 2026.
 
 We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. We then introduce and implement a structural decomposition of the resulting inequality: well-being is recomputed under counterfactual equalizations of preferences, job access, earning opportunities, and household resources and needs, and the interactions among them are allocated with a grouped Shapley--Owen--Shorrocks rule. In the baseline Gini decomposition, labour-market opportunities account for 55.9 per cent of well-being inequality among single-adult households, of which job access alone carries 49.2 per cent, against 9.9 per cent for preferences and 34.2 per cent for household resources and needs. Among couples the balance differs: earning opportunities and resources and needs account for 35.7 and 51.2 per cent, while job access accounts for 8.2 and preferences for 4.8. Access exceeds earning opportunities for single adults, and the ordering reverses for couples, under all six inequality indices we report; the sign of the single-adult preference contribution is not robust across indices.
 
-*Preliminary results. Intervals on the headline shares are cluster-robust parameter percentiles from 100 draws and are reported separately from the integration band, never merged with it. The subdivision of couples resources against household composition requires a repricing that has not been run and is reported jointly.*
+*Preliminary results. Intervals on the headline shares are cluster-robust parameter percentiles from 100 draws and are reported separately from the integration band, never merged with it. The subdivision of couples resources against household composition rests on a repricing completed after this draft was planned; the joint contribution remains the headline component and the subdivision is reported beside it.*
 
 # 1. Introduction
 
@@ -588,7 +588,7 @@ $$2\,C_P=I_{00}-I_{10}+I_{01}.$$
 Since $I_{01}\ge 0$ for a nonnegative index, a negative $C_P$ forces $I_{00}-I_{10}<0$, so a negative allocated share does imply that preference-only equalization raises inequality. The converse does not hold, and the single-adult Gini is the counterexample: $C_P>0$ while $I_{10}>I_{00}$. This is a consequence of the closure of *this* exhaustive two-group game with a nonnegative index; it is not a general property of a Shapley allocation.
 
 
-Table: Grouped attribution of well-being inequality. Contributions in Gini points beside the share of the baseline Gini of the same population, per cent, with the 95 per cent cluster-robust parameter interval in brackets from 100 draws. Shares are taken against the baseline of the same population and are not comparable as levels across the two populations. The parameter interval and the RQMC integration band measure different things and are never combined; the integration band is reported separately in the text and in the figure. The couples subdivision of resources against household composition is not available and is reported jointly.
+Table: Grouped attribution of well-being inequality. Contributions in Gini points beside the share of the baseline Gini of the same population, per cent, with the 95 per cent cluster-robust parameter interval in brackets from 100 draws. Shares are taken against the baseline of the same population and are not comparable as levels across the two populations. The parameter interval and the RQMC integration band measure different things and are never combined; the integration band is reported separately in the text and in the figure. Resources and needs enter here as one component of the four-player game; its subdivision into non-labour resources and household composition is a nested attribution and has its own table.
 
 |Component|Singles: Gini points|Singles: share [95 per cent]|Couples: Gini points|Couples: share [95 per cent]|
 |---|---|---|---|---|
@@ -612,6 +612,34 @@ We report that contrast as a finding and attach no mechanism to it. A second ear
 The parameter interval and the integration band measure different things and are never combined. The integration band on the single-adult access share is 48.5 to 49.9 per cent, an order of magnitude narrower than the parameter interval, which is the expected ordering: the numerical integration is the accurate part and the parameters are the uncertain part.
 
 The allocation is exhaustive. The maximum absolute top-level identity residual is 2.8e-17 in index units and the nested residual 5.6e-17. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model or the normative content of the operators.
+
+## Inside the budget channel: resources against composition and needs
+
+The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. It requires two further counterfactual panels, each repriced through the tax-benefit system, and it is done here on the corrected partition of the budget fields into 58 resource fields, 46 composition and needs fields and 6 geographic fields, which travel with resources.
+
+
+Table: The subdivision of the resources-and-needs contribution into non-labour resources and household composition and needs, reported as "resources / composition" in every cell. Columns two and five are shares of that population’s baseline inequality; the remaining columns are shares of the resources-and-needs channel itself, which the two cells divide. The couple cells come from two counterfactual panels repriced through the tax-benefit system on the corrected partition of 58 resource fields, 46 composition and needs fields and 6 geographic fields, and sum to the joint contribution to a residual of 1.4e-17 in index units. The single-adult cells come from panels priced on an earlier partition of the same fields, so they are reported for comparison and the two populations’ channel shares are indicative rather than like for like.
+
+|Index|Couples: share of baseline|Couples: share of channel|Couples: channel, equivalized|Singles: share of baseline|Singles: share of channel|Singles: channel, equivalized|
+|---|---|---|---|---|---|---|
+|Gini|32.88 / 18.33|64.2 / 35.8|57.1 / 42.9|24.38 / 9.82|71.3 / 28.7|46.1 / 53.9|
+|Atkinson(1)|49.14 / 11.46|81.1 / 18.9|73.7 / 26.3|34.38 / 12.52|73.3 / 26.7|48.3 / 51.7|
+|Atkinson(2)|44.42 / 12.79|77.6 / 22.4|68.3 / 31.7|31.33 / 12.24|71.9 / 28.1|44.2 / 55.8|
+|GE(0)|49.15 / 11.42|81.2 / 18.8|73.8 / 26.2|34.62 / 12.57|73.4 / 26.6|48.4 / 51.6|
+|GE(1)|55.49 / 9.44|85.5 / 14.5|80.4 / 19.6|39.26 / 13.47|74.4 / 25.6|53.4 / 46.6|
+|GE(2) $=CV^2/2$|63.15 / 7.01|90.0 / 10.0|87.7 / 12.3|47.04 / 15.81|74.8 / 25.2|58.7 / 41.3|
+
+
+
+Three statements are supported, and a fourth that suggests itself is not.
+
+First, **non-labour resources lead the channel in both populations on the household basis, under all six indices** — 6 of six for couples and 6 of six for single adults. On the Gini the couples channel divides 64.2 to 35.8, which is 32.88 and 18.33 per cent of total inequality; the single-adult channel divides 71.3 to 28.7, or 24.38 and 9.82 per cent of total.
+
+Second, **the resources share of the channel is widest under GE(2) and narrowest under the Gini in both populations.** The Gini is the index least sensitive to the tails, and it is where composition matters most; the squared coefficient of variation is the most tail-sensitive, and it is where resources dominate. The spread is large — for couples, from 64.2 per cent of the channel under the Gini to 90.0 under GE(2) — so the division of this channel is considerably more index-sensitive than the four-way decomposition above it.
+
+Third, **equivalizing raises the composition share in both populations, under all 6 of the six indices.** This is not an artefact and it is not a surprise: the equivalence scale is owned by the composition operator, so a state in which composition is equalized is also a state in which every household is put on a common scale. Equalizing composition therefore removes both the direct effect of household size on the budget and the effect of size on the scale by which the resulting level is deflated. For single adults the effect is strong enough to reverse the ordering: on the equivalized basis resources lead the channel in only 2 of the six indices, and composition leads under the Gini, both Atkinson indices and GE(0). For couples the ordering survives equivalization, under all 6 of the six.
+
+The statement that does *not* survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, 35.8 against 28.7 per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under 1 of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The two populations' panels also rest on different partitions of the budget fields, which is a second reason to treat the cross-population comparison of channel shares as indicative.
 
 ## Index sensitivity
 
@@ -704,7 +732,7 @@ Three normalizing constants were in circulation between the estimation frames an
 
 The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
 
-The couples subdivision of resources against household composition is not available: it requires two repriced counterfactual panels that have not been run, and we report the two jointly at 51.20 per cent rather than imputing a split. The parameter intervals cover the Gini shares; the other five indices are reported as point estimates.
+The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. The corresponding subdivision for single adults is *not* reported: the only priced panels available for it encode an earlier partition of the budget fields, so its two cells are not comparable with the couples cells and are not a current result.
 
 # 7. Conclusion
 
@@ -977,11 +1005,11 @@ It is withdrawn. The corrected computation gives 49.16 per cent to job access ag
 
 ## 17. Is the couples resources-versus-composition split available?
 
-No. It requires two separately repriced counterfactual panels which have not been run. The two are reported jointly at 51.20 per cent and no split is imputed.
+Yes, now. Two counterfactual panels were repriced through the tax-benefit system and the split is an index-specific rerun rather than an imputation: on the raw Gini, non-labour resources carry 32.88 per cent of the baseline and household composition and needs 18.33, summing to the joint 51.20 per cent to a residual of 1.4e-17 in index units. The joint component is still what the headline decomposition reports; the split is nested inside it. The corresponding split for single adults is *not* available: the only priced panels for it encode an earlier partition of the budget fields and are not comparable.
 
 ## 18. What is still genuinely unresolved?
 
-Three things. The sample screens on an outcome of the modelled process, and we have not established what correction, if any, the conditional likelihood requires as a result. The sampling law assumed by the sampled-set derivation is supported by diagnostics rather than established by construction. And the couples subdivision of resources against household composition awaits a repricing. Everything else described as pending in earlier drafts is now computed and reported.
+Two things, both econometric. The sample screens on an outcome of the modelled process, and we have not established what correction, if any, the conditional likelihood requires as a result. And the sampling law assumed by the sampled-set derivation is supported by diagnostics rather than established by construction. One measurement item also remains: the single-adult subdivision of the budget channel rests on panels priced under an earlier partition of the budget fields, so its channel shares are not like-for-like with the couples ones. Everything else described as pending in earlier drafts is now computed and reported.
 
 ## 19. Is any of this causal?
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Replicate the in-browser self-check in Python, so the build can be gated.
+"""Replicate the in-browser self-check in Python before the build is released.
 
 Classification of every numeral found in the document body:
 
@@ -20,7 +20,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 OUT = Path("C:/Users/hisham/Repo/Job_Market_paper/reports/"
-           "JMP_research_story_report_v1.html")
+           "JMP_research_story_report_v2.html")
 
 html = OUT.read_text(encoding="utf-8")
 
@@ -136,7 +136,7 @@ class Doc(HTMLParser):
         rest = RANGE.sub(" ", rest)
         rest = CROSSREF.sub(" ", rest)
         if re.search(r"[0-9]", rest):
-            self.stray.append(rest.strip()[:200])
+            self.stray.append(rest.strip()[:500])
         else:
             self.crossrefs.append(txt[:110])
 

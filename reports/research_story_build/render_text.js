@@ -3,7 +3,7 @@
 const fs = require('fs');
 const vm = require('vm');
 
-const P = 'C:/Users/hisham/Repo/Job_Market_paper/reports/JMP_research_story_report_v1.html';
+const P = 'C:/Users/hisham/Repo/Job_Market_paper/reports/JMP_research_story_report_v2.html';
 const html = fs.readFileSync(P, 'utf8');
 
 function grab(id) {

@@ -9,7 +9,7 @@ import sys
 from html.parser import HTMLParser
 
 HTML = pathlib.Path(r"C:\Users\hisham\Repo\Job_Market_paper\reports"
-                    r"\JMP_research_story_report_v1.html")
+                    r"\JMP_research_story_report_v2.html")
 
 
 class Doc(HTMLParser):

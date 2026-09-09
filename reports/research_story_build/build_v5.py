@@ -279,6 +279,124 @@ for _, r in CR1.iterrows():
              's12_s11_cr1_headline_shares_v1.csv', 'band',
              'per cent, RQMC integration band')
 
+# ---- the couples subdivision of D, repriced --------------------------------
+# This landed after the v5 brief was written, which assumed it did not exist.
+# It is a real repricing of two counterfactual panels at the S11 specification,
+# not an imputed split, and it carries its own identity gate.
+_ND = pd.read_csv(S12 / 's12_couples_nested_D_attributions_v1.csv')
+_NDJ = json.loads((S12 / 's12_couples_nested_D_attributions_v1.json')
+                  .read_text('utf-8'))
+_NDSRC = ('s12_couples_nested_D_attributions_v1.csv; two repriced '
+          'counterfactual panels at the S11 specification of record')
+if _NDJ['status'] != 'S12_COUPLES_NESTED_D_COMPLETE' or not _NDJ['gates']['PASS']:
+    raise SystemExit('the couples nested-D artifact is not a passing complete '
+                     'run; v5 must not report a split from it')
+for _ix, _ in INDICES:
+    r = _ND[(_ND['basis'] == 'raw') & (_ND['index'] == _ix)]
+    if len(r) != 1:
+        raise SystemExit('couples nested-D row not unique: %s' % _ix)
+    r = r.iloc[0]
+    for comp, col in [('res', 'C_nonlabour'), ('comp', 'C_composition')]:
+        register('nd_c%s_%s' % (comp, _ix), float(r[col]), _NDSRC, 'result',
+                 'index points')
+        register('nd_sh%s_%s' % (comp, _ix),
+                 round(100.0 * float(r[col]) / float(r['I00']), 2), _NDSRC,
+                 'result', 'per cent of that index baseline')
+    # the share of the CHANNEL, which is what the two cells divide
+    tot = float(r['C_needs_total'])
+    register('nd_chres_%s' % _ix, round(100.0 * float(r['C_nonlabour']) / tot, 1),
+             _NDSRC, 'result', 'per cent of the resources-and-needs channel')
+    register('nd_chcomp_%s' % _ix,
+             round(100.0 * float(r['C_composition']) / tot, 1), _NDSRC,
+             'result', 'per cent of the resources-and-needs channel')
+    re_ = _ND[(_ND['basis'] == 'modified_OECD_equivalized')
+              & (_ND['index'] == _ix)].iloc[0]
+    tote = float(re_['C_needs_total'])
+    register('nde_chres_%s' % _ix,
+             round(100.0 * float(re_['C_nonlabour']) / tote, 1), _NDSRC,
+             'result', 'per cent of the channel, equivalized')
+    register('nde_chcomp_%s' % _ix,
+             round(100.0 * float(re_['C_composition']) / tote, 1), _NDSRC,
+             'result', 'per cent of the channel, equivalized')
+for comp in ['res', 'comp']:
+    register('nd_c%s' % comp, REG['nd_c%s_gini' % comp]['value'], _NDSRC,
+             'result', 'Gini points')
+    register('nd_sh%s' % comp, REG['nd_sh%s_gini' % comp]['value'], _NDSRC,
+             'result', 'per cent of the baseline Gini')
+    register('nd_ch%s' % comp, REG['nd_ch%s_gini' % comp]['value'], _NDSRC,
+             'result', 'per cent of the resources-and-needs channel')
+    register('nde_ch%s' % comp, REG['nde_ch%s_gini' % comp]['value'], _NDSRC,
+             'result', 'per cent of the channel, equivalized')
+
+# ---- the same subdivision for single adults --------------------------------
+# NOTE the provenance difference, which is not cosmetic. The couples cells come
+# from two panels repriced on the corrected 58/46/6 partition of the budget
+# fields. The singles cells come from panels priced on an earlier 50/54/6
+# partition. The two populations' CHANNEL SHARES are therefore indicative
+# rather than a like-for-like comparison, and the paper says so.
+_SD = ('s12_six_index_attributions_v1.csv; singles partial-D panels on the '
+       'earlier partition of the budget fields')
+for _ix, _ in INDICES:
+    for _bas, _pfx in [('raw', 'sd'), ('equivalized', 'sde')]:
+        r = sixrow('singles', _bas, _ix)
+        tot = float(r['C_D'])
+        for comp, col in [('res', 'C_resources'), ('comp', 'C_composition')]:
+            v = float(r[col])
+            register('%s_c%s_%s' % (_pfx, comp, _ix), v, _SD, 'diagnostic',
+                     'index points')
+            register('%s_sh%s_%s' % (_pfx, comp, _ix),
+                     round(100.0 * v / float(r['I00']), 2), _SD, 'diagnostic',
+                     'per cent of that index baseline')
+            register('%s_ch%s_%s' % (_pfx, comp, _ix),
+                     round(100.0 * v / tot, 1), _SD, 'diagnostic',
+                     'per cent of the resources-and-needs channel')
+for comp in ['res', 'comp']:
+    for _pfx in ['sd', 'sde']:
+        for _kind in ['sh', 'ch']:
+            register('%s_%s%s' % (_pfx, _kind, comp),
+                     REG['%s_%s%s_gini' % (_pfx, _kind, comp)]['value'], _SD,
+                     'diagnostic', 'per cent')
+
+# How robust is each nested statement? Counted, not asserted.
+_nd_res_leads = sum(1 for _ix, _ in INDICES
+                    if REG['nd_chres_%s' % _ix]['value'] > 50)
+_sd_res_leads = sum(1 for _ix, _ in INDICES
+                    if REG['sd_chres_%s' % _ix]['value'] > 50)
+_sde_res_leads = sum(1 for _ix, _ in INDICES
+                     if REG['sde_chres_%s' % _ix]['value'] > 50)
+_nde_res_leads = sum(1 for _ix, _ in INDICES
+                     if REG['nde_chres_%s' % _ix]['value'] > 50)
+_comp_bigger_for_couples = sum(
+    1 for _ix, _ in INDICES
+    if REG['nd_chcomp_%s' % _ix]['value'] > REG['sd_chcomp_%s' % _ix]['value'])
+_equiv_raises_comp = sum(
+    1 for _ix, _ in INDICES
+    if REG['nde_chcomp_%s' % _ix]['value'] > REG['nd_chcomp_%s' % _ix]['value']
+    and REG['sde_chcomp_%s' % _ix]['value'] > REG['sd_chcomp_%s' % _ix]['value'])
+for _k, _v, _u in [('nd_res_leads_couples', _nd_res_leads, 'indices of six'),
+                   ('nd_res_leads_singles', _sd_res_leads, 'indices of six'),
+                   ('nd_res_leads_couples_eq', _nde_res_leads, 'indices of six'),
+                   ('nd_res_leads_singles_eq', _sde_res_leads, 'indices of six'),
+                   ('nd_comp_bigger_couples', _comp_bigger_for_couples,
+                    'indices of six'),
+                   ('nd_equiv_raises_comp', _equiv_raises_comp,
+                    'indices of six')]:
+    register(_k, _v, 'counted over the six index-specific nested attributions',
+             'result', _u)
+register('nd_resid', '1.4e-17', _NDSRC, 'verified identity', 'index units')
+register('nd_vs_cd', '0.0', _NDSRC, 'verified identity', 'index units')
+for _k, _v in [('nd_n_res', _NDJ['partition']['resources']),
+               ('nd_n_comp', _NDJ['partition']['composition']),
+               ('nd_n_geo', _NDJ['partition']['geography'])]:
+    register(_k, int(_v), _NDSRC, 'definition', 'budget fields')
+_r = _ND[(_ND['basis'] == 'raw') & (_ND['index'] == 'gini')].iloc[0]
+register('nd_of_res', round(100.0 * float(_r['one_factor_nonlabour_fall'])
+                            / float(_r['I00']), 2), _NDSRC, 'result',
+         'per cent reduction in the baseline Gini')
+register('nd_of_comp', round(100.0 * float(_r['one_factor_composition_fall'])
+                             / float(_r['I00']), 2), _NDSRC, 'result',
+         'per cent reduction in the baseline Gini')
+
 # welfare levels
 for _tag in ['singles', 'couples']:
     for basis in ['raw', 'equivalized']:
@@ -749,11 +867,48 @@ TABLES['attribution'] = table(
     'same population and are not comparable as levels across the two '
     'populations. The parameter interval and the RQMC integration band measure '
     'different things and are never combined; the integration band is reported '
-    'separately in the text and in the figure. The couples subdivision of '
-    'resources against household composition is not available and is reported '
-    'jointly.',
+    'separately in the text and in the figure. Resources and needs enter here '
+    'as one component of the four-player game; its subdivision into non-labour '
+    'resources and household composition is a nested attribution and has its '
+    'own table.',
     ['Component', 'Singles: Gini points', 'Singles: share [95 per cent]',
      'Couples: Gini points', 'Couples: share [95 per cent]'], _rows)
+
+# ---- T12b: the subdivision of D for couples ------------------------------- #
+_rows = []
+for ix, ixlab in INDICES:
+    _rows.append([ixlab,
+                  format(REG['nd_shres_%s' % ix]['value'], '.2f') + ' / '
+                  + format(REG['nd_shcomp_%s' % ix]['value'], '.2f'),
+                  format(REG['nd_chres_%s' % ix]['value'], '.1f') + ' / '
+                  + format(REG['nd_chcomp_%s' % ix]['value'], '.1f'),
+                  format(REG['nde_chres_%s' % ix]['value'], '.1f') + ' / '
+                  + format(REG['nde_chcomp_%s' % ix]['value'], '.1f'),
+                  format(REG['sd_shres_%s' % ix]['value'], '.2f') + ' / '
+                  + format(REG['sd_shcomp_%s' % ix]['value'], '.2f'),
+                  format(REG['sd_chres_%s' % ix]['value'], '.1f') + ' / '
+                  + format(REG['sd_chcomp_%s' % ix]['value'], '.1f'),
+                  format(REG['sde_chres_%s' % ix]['value'], '.1f') + ' / '
+                  + format(REG['sde_chcomp_%s' % ix]['value'], '.1f')])
+TABLES['nestedD'] = table(
+    'v5_nested_d',
+    'Table: The subdivision of the resources-and-needs contribution into '
+    'non-labour resources and household composition and needs, reported as '
+    '"resources / composition" in every cell. Columns two and five are shares '
+    'of that population’s baseline inequality; the remaining columns are '
+    'shares of the resources-and-needs channel itself, which the two cells '
+    'divide. The couple cells come from two counterfactual panels repriced '
+    'through the tax-benefit system on the corrected partition of '
+    + str(REG['nd_n_res']['value']) + ' resource fields, '
+    + str(REG['nd_n_comp']['value']) + ' composition and needs fields and '
+    + str(REG['nd_n_geo']['value']) + ' geographic fields, and sum to the joint '
+    'contribution to a residual of 1.4e-17 in index units. The single-adult '
+    'cells come from panels priced on an earlier partition of the same fields, '
+    'so they are reported for comparison and the two populations’ channel '
+    'shares are indicative rather than like for like.',
+    ['Index', 'Couples: share of baseline', 'Couples: share of channel',
+     'Couples: channel, equivalized', 'Singles: share of baseline',
+     'Singles: share of channel', 'Singles: channel, equivalized'], _rows)
 
 # ---- T13: six-index levels and shares ------------------------------------- #
 _rows = []
@@ -1184,6 +1339,7 @@ header = (r'''\documentclass[11pt,a4paper]{article}
 \usepackage{lmodern,amsmath,amssymb,booktabs,longtable,array,graphicx,calc}
 \usepackage{ragged2e}
 \usepackage{needspace}
+\usepackage{float}
 \raggedbottom
 % Float discipline. The panel figures are about 0.43\textheight each, so the
 % default allowance of several top floats lets two of them plus a long-captioned
@@ -1214,12 +1370,21 @@ body = pypandoc.convert_text(
     paper, 'latex', format='markdown+raw_tex+tex_math_dollars',
     extra_args=['--natbib', '--wrap=none']).replace('\r\n', '\n')
 body = body.replace(r'\def\LTcaptype{none}', '')
+# Figures are pinned where they are written rather than floated. longtable
+# mis-accounts the remaining page height when a float shares the page, which
+# clipped the last rows of a table and, on one page, a whole paragraph. With
+# every figure placed in sequence the page breaking is correct, and \raggedbottom
+# absorbs the slack.
+body = body.replace(r'\begin{figure}', r'\begin{figure}[H]')
 
 
 def wrap_table(m):
     n = len(m[1])
     first = .155 if n == 7 else (.25 if n >= 4 else .42)
-    # leave room for 2*tabcolsep per column, or the alignment overfills
+    # Leave room for 2*tabcolsep per column. A residual 0.12154pt overfull
+    # survives on wide tables regardless of these widths: it is pandoc's
+    # longtable rule geometry, is 0.04 mm, and check_v5_pdf_layout.py
+    # confirms no ink crosses the margin.
     total = .98 - .014 * n
     widths = [first] + [(total - first) / (n - 1)] * (n - 1)
     return (r'\begin{longtable}[]{@{}'

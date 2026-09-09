@@ -11,20 +11,26 @@ def sections(F):
 
     # ===================================================================== 1 ==
     W('<h2 id="s1" class="exempt">1. Executive overview</h2>')
-    W('<p class="lede">Two people hold different jobs. One of them earns less, works '
-      'fewer hours, and lives in a weaker local labour market. How much of the gap '
-      'between them is something they chose, and how much is something they faced?</p>')
+    W('<p class="lede"><b>Random Utility&ndash;Random Opportunity (RURO)</b> is a '
+      'job-choice model in which random utility ranks alternatives while a separate, '
+      'household-specific opportunity density governs which jobs are available. This '
+      'paper asks how much inequality in money-metric well-being is associated with '
+      'unequal job access and unequal earning opportunities rather than heterogeneous '
+      'preferences, after separately accounting for non-labour resources and household '
+      'composition.</p>')
 
     W("<h3>The research question</h3>")
-    W('<p>Standard labour-supply models answer that question by assumption. They give '
-      'every worker the same budget set and let observed differences in hours, '
-      'occupation and pay fall out of differences in taste. Anyone who works part time '
-      'is revealed to prefer leisure; anyone in a low-paying occupation is revealed to '
-      'prefer it. That is a modelling convention, not a finding, and it does most of '
-      'the normative work in any welfare statement built on top of it.</p>')
-    W('<p>This paper asks what happens when the convention is dropped. It estimates a '
-      'model in which each household draws its job from an <em>individual-specific '
-      'opportunity distribution</em> &mdash; how likely employment is at all, which '
+    W('<p>Standard discrete-choice labour-supply models can allow '
+      'household-specific budgets and heterogeneous tastes while using a common menu '
+      'of hours or placing limited structure on job availability. When '
+      'household-specific access restrictions are omitted, estimated preference '
+      'parameters may partly capture those restrictions. This paper makes the '
+      'opportunity mechanism explicit and examines its consequences for welfare '
+      'measurement and attribution.</p>')
+    W('<p>This paper asks what happens when the common-opportunity restriction is relaxed. It estimates a '
+      'model in which available alternatives are generated from an '
+      '<em>individual-specific opportunity distribution</em> &mdash; how likely '
+      'employment is at all, which '
       'hours are on offer, which occupations are reachable, and what pay each of them '
       'carries &mdash; jointly with the preferences that rank the jobs that are '
       'reachable. It then asks how much of the inequality in a preference-respecting '
@@ -33,18 +39,21 @@ def sections(F):
 
     W("<h3>The contribution</h3>")
     W("<ol>")
-    W('<li><b>A jointly estimated random-opportunity labour-supply model on French '
-      'micro-data</b>, in which the opportunity side is not calibrated or imposed but '
-      'estimated from the same choice outcomes, with the tax-benefit system solved '
-      'exactly at every alternative rather than approximated.</li>')
-    W('<li><b>A welfare decomposition that respects preferences and is exhaustive.</b> '
+    W('<li><b>An integrated empirical architecture.</b> Joint estimation of tastes and '
+      'opportunities is inherited from the RURO and latent-jobs literature. The exact '
+      'increment here is to carry explicitly modelled job access and wage-offer '
+      'opportunities through estimation, money-metric welfare and nested inequality '
+      'attribution, and then compare that accounting with a re-estimated '
+      'common-opportunity model.</li>')
+    W('<li><b>A welfare decomposition that respects preferences and is algebraically exhaustive.</b> '
       'The preference and environment contributions are Shapley/Owen values on an '
-      'explicit cooperative game whose grand coalition is verified to close: '
+      'explicit cooperative game. Under the current implementation, the grand coalition closes: '
       'equalizing everything drives measured inequality to <span class="mono">'
       + n("state_I11_female_raw", "sci", 1) + "</span> Gini points (RQMC band "
       + n("state_I11_female_raw__rqmc_band", "range")
-      + "), numerically zero. Nothing is left in an unexplained residual.</li>")
-    W('<li><b>A benchmark that prices the modelling convention itself.</b> The same '
+      + "), numerically zero. This is an accounting identity, not identification, and "
+      "must be recomputed after the estimator, support and resource corrections.</li>")
+    W('<li><b>A benchmark that prices the common-opportunity restriction itself.</b> The same '
       'welfare machinery is run on a re-estimated model in which everyone faces the '
       'same opportunities. The comparison shows exactly what is lost, and &mdash; the '
       'more surprising result &mdash; where the lost attribution actually goes.</li>')
@@ -54,8 +63,29 @@ def sections(F):
       'identity rather than as an approximation.</li>')
     W("</ol>")
 
-    W("<h3>The result, in one paragraph</h3>")
-    W('<p>On single-adult households in France, measured welfare inequality is '
+    W(box("key", "Weights and three uncertainties, defined before the results",
+          "<div class=\"exempt\"><p><b>Survey weights</b> make descriptive and welfare aggregates represent "
+          "the target population; they do not enter the unweighted summed estimation "
+          "criterion. <b>Household-cluster-robust CR1 inference</b> uses one score per "
+          "household, permits arbitrary dependence among that household's alternative "
+          "rows, assumes independence across households, and applies the adopted "
+          "finite-sample factor " + imath(r"G/(G-K_I)") + " on interior coordinates. "
+          "A <b>conditional parameter interval</b> propagates that CR1 covariance while "
+          "holding the active set, model, data, policy build and normative reference "
+          "fixed.</p><p><b>Randomized quasi-Monte Carlo (RQMC)</b> uses randomized, "
+          "deliberately well-spread integration points for latent-job integrals. A "
+          "<b>leave-one-scramble-out jackknife</b> omits one complete independent "
+          "scramble, recomputes the entire statistic and uses variation across those "
+          "replicates as a numerical-integration band&mdash;not a sampling confidence "
+          "interval. The third uncertainty is a <b>normative-reference range</b>, the "
+          "movement across defensible reference households. Numerical RQMC bands, "
+          "conditional CR1 parameter intervals and normative-reference ranges answer "
+          "different questions and are never pooled.</p></div>"))
+
+    W("<h3>What the current-implementation results say &mdash; and do not say</h3>")
+    W('<p><b>Status: historical bridge, not a corrected estimate.</b> Under the '
+      'criterion and unbounded wage density presently implemented for single-adult '
+      'households in France, measured welfare inequality is '
       + n("state_I00_female_raw", "f3") + ' Gini points on the raw basis (RQMC band '
       + n("state_I00_female_raw__rqmc_band", "range") + '). Of that, '
       'preferences account for ' + n("C_pref_female_raw_share", "pct", 1)
@@ -65,7 +95,8 @@ def sections(F):
       + n("C_env_female_raw_share", "pct", 1) + ', parameter interval '
       + n("s_env_female_raw__cr1_interval", "rangepct", 1)
       + '. Integration bands and parameter intervals are two different objects '
-      'and are never merged. Inside the environment, household '
+      'and are never merged. The older nested resource/composition split is stale '
+      'after the field reclassification and is not a current finding. In that historical split, household '
       'endowments and needs are the largest single component at '
       + n("C_needs_female_raw_share", "pct", 1) + ' of baseline inequality, with the '
       'two market-side channels &mdash; job access '
@@ -76,8 +107,11 @@ def sections(F):
       'a household lives account for ' + n("geo_share_of_C_acc_raw", "pct", 1)
       + ' of the job-access channel on the raw basis. The attribution shares are '
       'considerably more robust than the preference level: the preference contribution '
-      'moves materially with the choice of reference household, whereas the broad '
-      'structure of the environment does not.</p>')
+      'moves with the choice of reference household. Normative-reference ranges, '
+      'conditional parameter intervals and numerical-integration bands are reported '
+      'as three different uncertainty objects; the evidence does not rank one as '
+      'uniformly dominant. The corrected estimator, support and dependent downstream '
+      'statistics are pending, so no final magnitude or component ordering can yet be drawn.</p>')
 
     W(box("warn", "The one claim this paper does not make",
           "<p>None of this is causal. No component is the effect of the French "
@@ -88,9 +122,10 @@ def sections(F):
           "identified.</p>"))
 
     W(F.fig("figT1_conceptual",
-            "The whole paper in one picture. A household&rsquo;s observed job is one "
-            "draw from a personal opportunity distribution, evaluated by personal "
-            "preferences. Two households can end up in the same job for opposite "
+            "The whole paper in one picture. A household ranks the alternatives "
+            "generated by its opportunity process using its preferences; the chosen "
+            "job is therefore not itself an unselected opportunity draw. Two households "
+            "can end up in the same job for opposite "
             "reasons, and in different jobs for no preference reason at all. The "
             "estimation separates the two surfaces; the welfare stage equalizes them "
             "one at a time.",
@@ -98,12 +133,14 @@ def sections(F):
             "carries an estimated quantity."))
 
     W(box("key", "How to use this document",
-          "<p>Sections 2&ndash;6 are the model and the data; sections 7&ndash;8 the "
-          "specification and how it was reached; sections 9&ndash;10 fit and external "
-          "evidence; sections 11&ndash;12 couples and children; sections 13&ndash;18 the "
-          "welfare results; sections 19&ndash;20 robustness and limits; section 21 the "
+          "<p>The report moves from question and literature through data, the shared "
+          "household framework, both applications, estimation and fit. It then builds "
+          "money-metric welfare and inequality attribution step by step before turning "
+          "to results, comparisons, uncertainty and limitations. A compact scientific "
+          "history follows the limitations. Section 21 is the "
           "hands-on reproduction guide keyed to the research notebook; and section 22 "
-          "the seminar question bank. Every numeral in the document is rendered from an embedded "
+      "seminar question bank. Literature positioning and the bibliography are in "
+      "section&nbsp;2. Every numeral in the document is rendered from an embedded "
           "data block at page load &mdash; hover any bolded number to see its key, its "
           "definition and the data file it was read from. Section&nbsp;23 audits "
           "that claim mechanically.</p>"))
@@ -114,6 +151,27 @@ def sections(F):
     W('<p>Everything in the paper follows from one distinction, and the whole '
       'identification argument is about whether that distinction can be made from '
       'choice data at all.</p>')
+
+    W("<h3>Four literature strands and the exact incremental contribution</h3>")
+    W('<p><b>Latent jobs and constrained labour supply.</b> Aaberge, Dagsvik and '
+      'Str&oslash;m; Aaberge, Colombino and Wennemo; Dagsvik and Jia; and Cap&eacute;au, '
+      'Decoster and Dekkers establish the random-job/opportunity tradition and its '
+      'identification restrictions. Jointly estimating preferences and opportunities '
+      'is not invented here. <b>Heterogeneous-preference welfare.</b> Decoster and Haan, '
+      'Bargain and coauthors, and Decancq, Fleurbaey and Schokkaert show why welfare '
+      'measurement depends on heterogeneous tastes and an explicit normative reference. '
+      '<b>Responsibility-sensitive job-choice welfare.</b> Jacquet, Jia and Thoresen '
+      'compare standard and circumstance-only compensating variation for a tax reform; '
+      'this paper instead studies cross-sectional well-being levels and counterfactual '
+      'inequality attribution. <b>Distributional decomposition.</b> Shorrocks and the '
+      'grouped Owen implementation described by Audoly and coauthors allocate '
+      'interactions; they neither identify the structural blocks nor determine the '
+      'ethical responsibility boundary.</p>')
+    W('<p><b>Incremental contribution.</b> The paper integrates these strands by '
+      'carrying estimated job-access and wage-offer opportunities into a '
+      'coalition-consistent money metric and a nested inequality decomposition, with a '
+      're-estimated household-common opportunity benchmark. No claim is made that any '
+      'single ingredient is new.</p>')
 
     W('<div class="scroll"><table><thead><tr>'
       "<th>Two reasons a job is not observed</th><th>What it means</th>"
@@ -194,6 +252,49 @@ def sections(F):
       'be identified, for three different reasons; the joint version was never '
       'authorized. Sections&nbsp;8 and 20 give the evidence.</p>')
 
+    W('<details class="technical"><summary><b>Bibliography (existing literature '
+      'corpus)</b></summary><div class="exempt"><ul>'
+      '<li>Aaberge, Rolf, John K. Dagsvik, and Steinar Str&oslash;m. 1995. '
+      '&ldquo;Labor Supply Responses and Welfare Effects of Tax Reforms.&rdquo; '
+      '<i>Scandinavian Journal of Economics</i> 97(4): 635&ndash;659.</li>'
+      '<li>Aaberge, R., U. Colombino, and T. Wennemo. 2009. &ldquo;Evaluating '
+      'Alternative Representations of the Choice Sets in Models of Labor '
+      'Supply.&rdquo; <i>Journal of Economic Surveys</i> 23(3): 586&ndash;612.</li>'
+      '<li>Audoly, R., R. McGee, S. Ocampo, and G. Paz-Pardo. 2025. &ldquo;A '
+      'Practitioner&rsquo;s Note on the Shapley-Owen-Shorrocks Decomposition.&rdquo; '
+      'Federal Reserve Bank of New York Staff Report 1163.</li>'
+      '<li>Bargain, Olivier, Andr&eacute; Decoster, Mathias Dolls, Dirk Neumann, '
+      'Andreas Peichl, and Sebastian Siegloch. 2013. &ldquo;Welfare, labor supply '
+      'and heterogeneous preferences: evidence for Europe and the US.&rdquo; '
+      '<i>Social Choice and Welfare</i> 41: 789&ndash;817.</li>'
+      '<li>Cap&eacute;au, B., A. Decoster, and G. Dekkers. 2016. &ldquo;Estimating '
+      'and Simulating with a Random Utility Random Opportunity Model of Job '
+      'Choice.&rdquo; <i>International Journal of Microsimulation</i> 9(2): '
+      '144&ndash;191.</li>'
+      '<li>Dagsvik, John K., and Zhiyang Jia. 2016. &ldquo;Labor Supply as a '
+      'Choice Among Latent Jobs: Unobserved Heterogeneity and Identification.&rdquo; '
+      '<i>Journal of Applied Econometrics</i> 31(3): 487&ndash;506.</li>'
+      '<li>Decancq, Koen, Marc Fleurbaey, and Erik Schokkaert. 2015. '
+      '&ldquo;Happiness, Equivalent Incomes and Respect for Individual '
+      'Preferences.&rdquo; <i>Economica</i> 82(S1): 1082&ndash;1106.</li>'
+      '<li>Decoster, Andr&eacute;, and Peter Haan. 2015. &ldquo;Empirical Welfare '
+      'Analysis with Preference Heterogeneity.&rdquo; <i>International Tax and '
+      'Public Finance</i> 22(2): 224&ndash;251.</li>'
+      '<li>Jacquet, Laurence, Zhiyang Jia, and Thor O. Thoresen. 2026. '
+      '&ldquo;How Much Does Responsibility Matter in Fairness Measurement?&rdquo; '
+      'CESifo Working Paper 12418.</li>'
+      '<li>Shorrocks, Anthony F. 2013. &ldquo;Decomposition Procedures for '
+      'Distributional Analysis.&rdquo; <i>Journal of Economic Inequality</i> 11: '
+      '99&ndash;126.</li>'
+      '<li>Sutherland, Holly, and Francesco Figari. 2013. &ldquo;EUROMOD: The '
+      'European Union Tax-Benefit Microsimulation Model.&rdquo; EUROMOD Working '
+      'Paper EM8/13.</li>'
+      '<li>van Soest, Arthur. 1995. &ldquo;Structural Models of Family Labor '
+      'Supply.&rdquo; <i>Journal of Human Resources</i> 30(1): 63&ndash;88.</li>'
+      '</ul><p>Entries are copied from <code>Literature/Literature_collection.md</code>; '
+      'this is the report bibliography, not a claim-complete literature survey.</p>'
+      '</div></details>')
+
     # ===================================================================== 3 ==
     W('<h2 id="s3" class="exempt">3. Data</h2>')
 
@@ -213,7 +314,7 @@ def sections(F):
       "<tr><td><b>EUROMOD</b></td>"
       "<td>The EU tax-benefit microsimulation model, run on the French system.</td>"
       "<td><b>The budget constraint.</b> Converts a (hours, wage, occupation) job into "
-      "disposable income for that household, under the actual French rules including "
+      "disposable income for that household under the coded policy rules, inputs and "
       "income tax, social contributions, family benefits, housing benefit and social "
       "assistance.</td></tr>"
       "<tr><td><b>EU-LFS (Enqu&ecirc;te Emploi) " + lit("2016", "calendar year of the benchmark")
@@ -231,11 +332,16 @@ def sections(F):
           + " priced rows &mdash; " + n("n_households_singles", "int")
           + " households &times; " + n("n_alternatives", "int")
           + " alternatives &mdash; the simulator returns the disposable income that job "
-          "would generate for that household under the actual French rules. Those "
-          "incomes are frozen into the estimation frame. Estimation then reads them.</p>"
-          "<p>The consequence is that the budget constraint is <b>exact and "
-          "non-linear</b>, with every kink, benefit withdrawal and interaction the real "
-          "system contains, rather than a linearised or approximated net wage. The cost "
+          "would generate for that household under the coded France policy system. "
+          "Those incomes are frozen into the estimation frame. Estimation then reads "
+          "them. The source audit establishes the connector release, model root, "
+          "production policy-file digest and the <code>FR_2015</code> system binding; the compact "
+          "reproducibility appendix records those identifiers.</p><p>The consequence "
+          "is that the budget constraint is <b>non-linear "
+          "and exactly evaluated within the frozen build</b>, with every coded kink, "
+          "benefit withdrawal and interaction, rather than a linearised net wage. "
+          "This does not claim that actual taxes, take-up or incomes are observed "
+          "without error. The cost "
           "is that the choice sets cannot be changed without re-running the simulator, "
           "which is why the drawn alternatives are generated once and then held "
           "fixed.</p>"))
@@ -303,9 +409,9 @@ def sections(F):
         "labour supply the model does not represent, and the decision unit would no "
         "longer be the household.",
         "<b>Hours and wage inside the modelled support.</b> Working hours are "
-        "floored and capped, and an employed decider&rsquo;s hourly wage must lie "
-        "inside the priced range; outside it the alternative cannot be priced "
-        "through the tax-benefit simulator at all.",
+        "restricted to the model support and capped, and an employed decider&rsquo;s "
+        "hourly wage must lie inside the research support. These are estimation "
+        "restrictions, not limits on what EUROMOD can calculate.",
         "<b>The estimation sample</b>, split by decision unit.",
     ]
 
@@ -337,9 +443,11 @@ def sections(F):
       + "</ul>")
 
     W(F.fig("rg_fig1_1_sample_funnel",
-            "The sample-construction waterfall: the number of households "
-            "surviving each screen, and what each screen removes.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "One common sample-construction funnel branching to the corrected final "
+            "single-adult and couple samples. The correction preserves the observed "
+            "six-to-nine-hour choices of seven workers; it does not impose a ten-hour "
+            "minimum.",
+            "Regenerated from the certified funnel and both frozen final frames."))
 
     W("<h3>The two samples come out of one waterfall</h3>")
     W("<p>The table below carries the single-adult and the couple counts side by "
@@ -428,14 +536,18 @@ def sections(F):
     W("<p>Three of those rows are worth a sentence. The sample is majority female "
       "and highly educated, and "
       + a("sample.categorical.5.share_weighted", "pct", 0) + " are employed "
-      "&mdash; high, because the screens above removed exactly the groups with low "
-      "attachment, which makes this the right denominator for a model of the "
-      "labour supply of people who could plausibly be working. Nearly three "
+      "&mdash; high partly because the screens exclude students, retirees and other "
+      "out-of-scope households. Estimates describe these retained prime-age decision "
+      "units and need not generalize to the excluded population. Nearly three "
       "quarters of these households have no resident child. And the hours "
       "distribution is not smooth: the band containing the statutory week holds "
       "more households than any other, which is the institutional fact "
       "section&nbsp;6 has to represent.</p>")
 
+    W("<p>The legacy singles table below is retained as a frozen descriptive export. "
+      "The refreshed plots that follow are computed from the final corrected chosen "
+      "rows for both populations; the final singles minimum employed hours is "
+      + a("final_desc.minimum_employed_hours.singles", "f0") + ", not ten.</p>")
     W("<p>The continuous variables, weighted:</p>")
     W('<div class="scroll"><table><thead><tr><th>Variable</th><th>Unit</th>'
       '<th class="num">Mean</th><th class="num">Median</th>'
@@ -458,30 +570,35 @@ def sections(F):
       + "</tbody></table></div>")
 
     W(F.fig("rg_fig2_2_hours_bands",
-            "The observed distribution of weekly hours, with the band structure "
-            "the hours factor of the opportunity density uses. The concentration "
-            "at the statutory week is the most visible institutional feature in "
-            "these data, and section&nbsp;6 explains how the model represents it.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "Observed continuous weekly hours for employed singles and, separately, "
+            "men and women in couples. Histogram bins are descriptive; the shaded "
+            "interval is the distinct structural density band from "
+            + a("defs.f35_lo", "f1") + " to " + a("defs.f35_hi", "f1") + ".",
+            "Regenerated from the corrected floor-five final chosen rows."))
     W(F.fig("rg_fig2_3_wage_age",
-            "Observed hourly wages against age, by education group. The level "
-            "difference across education and the concavity in experience are what "
-            "the wage-offer location of section&nbsp;6 estimates &mdash; there as "
-            "a density over the pay a household could be offered, rather than as "
-            "a regression on the pay the employed are observed at.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "Separate final-sample distributions of age and observed hourly wages for "
+            "workers. This is not a wage-against-age profile; observed-worker wages "
+            "are selected outcomes rather than the latent wage-offer density.",
+            "Regenerated from corrected singles and clean-couples chosen rows."))
     W(F.fig("rg_fig2_4_occupation_by_sex",
-            "Occupation composition of the observed jobs, by sex. The strong sex "
-            "difference here is what the occupation factor of the opportunity "
-            "density is estimated against.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "Survey-weighted occupation composition among employed singles, coupled "
+            "men and coupled women. Categories are the paper's research aggregation "
+            "of ISCO-08, not official ILO task classes.",
+            "Regenerated from both final chosen-row samples."))
     W(F.fig("rg_fig2_1_income_distributions",
-            "The income distributions in this sample: earned income, non-labour "
-            "income, and disposable income after the tax-benefit system. "
-            "Non-labour income is the part of the budget that does not move with "
-            "the job taken; it enters the endowments-and-needs channel of "
-            "section&nbsp;16.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "Final-sample household disposable consumption, shown raw within "
+            "household type and after the disclosed modified-OECD scale. Household "
+            "income is counted once per couple. This is neither earned income nor a "
+            "decomposition of resource inputs.",
+            "Regenerated from final chosen rows and the executed equivalence rule."))
+    W(F.fig("rg_fig2_5_resource_inputs",
+            "Actual frozen resource inputs ypp, yse, yiy, ypr, ypt and yot: the "
+            "survey-weighted share of final households with a non-zero recorded value, "
+            "by household type. Newly simulated means-tested benefits are outputs and "
+            "are not relabelled as fixed resources.",
+            "Regenerated from the frozen France input and final household identifiers. "
+            "Field-level units and time bases are UNRESOLVED B1, so the plot reports "
+            "incidence rather than guessing units."))
 
     W("<h3>Observed inequality, before any model</h3>")
     W("<p>The decomposition of sections&nbsp;14&ndash;16 is carried on a "
@@ -515,9 +632,10 @@ def sections(F):
           "as well off as one working thirty for the same income, and the Gini of "
           "income cannot see that.</p>"))
     W(F.fig("rg_fig3_1_lorenz_and_deciles",
-            "Observed disposable income: the Lorenz curve and the decile means. "
-            "Descriptive only; no model quantity appears on either axis.",
-            "Reproduced from the reader's-guide notebook's frozen export."))
+            "Survey-weighted Lorenz curves of final-sample disposable consumption for "
+            "singles and couples, raw within type and modified-OECD equivalized. "
+            "Descriptive only; no welfare quantity appears on either axis.",
+            "Regenerated from both final chosen-row samples using survey weights."))
 
     W("<h3>The variables, and what each one does</h3>")
     W('<div class="scroll"><table><thead><tr><th>Variable</th><th>Construction</th>'
@@ -533,9 +651,13 @@ def sections(F):
       + lit("5", "number of hours bands carried by the opportunity block")
       + " mutually exclusive bands plus a residual.</td>"
       "<td>Job access (the hours-opportunity block), leisure, and the budget.</td></tr>"
-      "<tr><td><b>Occupation</b></td><td>A "
-      + lit("four", "number of task-based occupation groups") + "-group "
-      "task-based aggregation of ISCO, with group "
+      "<tr><td><b>Occupation</b></td><td class=\"exempt\">The International Standard Classification "
+      "of Occupations, 2008 vintage (ISCO-08), is collapsed into a "
+      + lit("four", "number of research occupation groups") + "-group research "
+      "aggregation: group 1 combines major groups 6&ndash;9; group 2 is major "
+      "group 5; group 3 is major group 4; and group 4 combines major groups "
+      "1&ndash;3. The task labels are broad proxies&mdash;not every job in groups "
+      "6&ndash;9 is literally routine. Group "
       + lit("1", "the dropped reference occupation group")
       + " the dropped reference.</td>"
       "<td>Occupation access (which groups are reachable) and the wage-offer location "
@@ -552,7 +674,8 @@ def sections(F):
       "density, so it is a dependent object, not a regressor.</td>"
       "<td>Earning opportunities; and the budget, through earnings.</td></tr>"
       "<tr><td><b>Household composition and children</b></td>"
-      "<td>Number of dependent children, from the household roster. Parent&ndash;child "
+      "<td>The operative count is every household member younger than "
+      + lit("20", "model child-age cutoff") + ", without a parent-link requirement. Parent&ndash;child "
       "links are available on the raw frame, so child <em>ages</em> could be "
       "constructed &mdash; see section&nbsp;12.</td>"
       "<td>Preferences (the leisure weight, single women only) and the budget, through "
@@ -567,9 +690,12 @@ def sections(F):
       "<tr><td><b>Local unemployment rate</b></td><td>A continuous regional "
       "labour-market slack measure.</td><td>Job access only. It is the sharpest "
       "single access regressor in the model.</td></tr>"
-      "<tr><td><b>Non-labour resources</b></td><td>Capital income, transfers not "
-      "conditioned on work, and other household income that does not vary with the job "
-      "taken.</td><td>The budget at every alternative &mdash; hence the "
+      "<tr><td><b>Non-labour resources</b></td><td>The exact frozen input block is "
+      "listed in section&nbsp;16 and copied across a household's alternatives. It "
+      "includes reported benefit and tax inputs. Newly simulated means-tested "
+      "benefits remain outputs that can change with earnings and composition; they "
+      "are not fixed resources. Field-level units are <span class=\"exempt\">UNRESOLVED B1</span>.</td><td>The "
+      "budget at every alternative &mdash; hence the "
       "endowments-and-needs channel of section&nbsp;16.</td></tr>"
       "</tbody></table></div>")
 
@@ -658,11 +784,29 @@ def sections(F):
           "decomposition equalizes.</p>"))
 
     W(F.fig("figE1_matched_pair",
-            "Two real households the model gives the <em>same</em> preference profile "
-            "and that took the <em>same</em> observed job, ranked first on the distance "
-            "between their estimated opportunity distributions. Same taste, same "
-            "outcome, different reachable sets &mdash; the case a common-choice-set "
-            "model cannot represent at all."))
+            "<b>Similar estimated preferences, different employment-access "
+            "environments.</b> The two employed single men share observed occupation "
+            "group 4, a model hours band and observed-wage quintile 4. Their "
+            "leisure-preference curves satisfy the forward rule's lowest-decile "
+            "distance tolerance; they are close, not identical. Panel (a) plots the "
+            "deterministic leisure component of utility. Panel (b) plots the "
+            "unconditional employment-hours opportunity density and reports the "
+            "non-employment atom. Panel (c) plots unconditional employment-occupation "
+            "opportunity probabilities. Panel (d) plots the occupation-mixture wage-"
+            "offer density conditional on employment and marks observed wages. In this "
+            "same-sex comparison, conditional hours and occupation profiles are common, "
+            "so unconditional mass differences arise primarily at employment access. "
+            "Median conditional wage offers are "
+            + "&euro;" + n("fd_matched_pair_median_conditional_wage_offer__household_a", "f2")
+            + " and &euro;"
+            + n("fd_matched_pair_median_conditional_wage_offer__household_b", "f2")
+            + ", similar rather than dramatically different. The forward rule restricts "
+            "preference distance to its admissible-set tenth percentile and maximises "
+            "total-variation opportunity distance. "
+            "The example is model-conditional, not a causal regional effect, ability "
+            "ranking or count of available jobs. The clean rule additionally requires "
+            "the maximized opportunity distance to be at least 1.5 times its "
+            "admissible-set median; no identifier is displayed."))
 
     # ===================================================================== 5 ==
     W('<h2 id="s5" class="exempt">5. Proposal sampling and the correction</h2>')
@@ -677,9 +821,9 @@ def sections(F):
       'non-employment state.</li>')
     W('<li><b>Occupation.</b> If working, draw one of the '
       + lit("four", "number of task-based occupation groups") + ' task-based groups.</li>')
-    W('<li><b>Hours.</b> If working, draw weekly hours from a <em>mixture</em>: mass '
-      'concentrated on focal values (the statutory week, standard full time, common '
-      'part-time schedules) together with a spread-out component covering the rest of '
+    W('<li><b>Hours.</b> If working, draw weekly hours from a <em>continuous mixture</em>: '
+      'narrow uniform components around focal schedules (the statutory week, standard '
+      'full time and common part-time schedules), plus a broad uniform component over '
       'the support.</li>')
     W('<li><b>Wage.</b> Draw an hourly offer conditional on the drawn occupation.</li>')
     W("</ol>")
@@ -688,14 +832,24 @@ def sections(F):
       'distribution so that draws land where the likelihood has mass, which is a '
       'variance-reduction device and nothing more.</p>')
 
-    W("<h3>The observed job, and why its correction is zero</h3>")
-    W('<p>The observed job is <b>inserted deterministically</b> in every '
-      'household&rsquo;s set. It is not drawn. Its inclusion probability is one, and '
-      'the logarithm of one is zero, so its proposal correction is exactly zero.</p>')
-    W('<p>Two things follow, and both get asked. First, this is not a convenience: if '
-      'the chosen row were sampled, the likelihood would be conditional on the chosen '
-      'row happening to be drawn, which is a different and much worse estimator. '
-      'Second, if a sampled row happens to land on the same economic job as the '
+    W("<h3>The observed job, the historical hybrid and the corrective estimator</h3>")
+    W('<p class="exempt">The observed job is <b>inserted deterministically</b> in every '
+      'household&rsquo;s estimation set. The historical code assigns that row zero correction, '
+      'assigns stochastic rows minus log of their exact marginal proposal density, and '
+      'includes every row in the denominator. The criterion audit establishes that this '
+      'is a hybrid: it is a finite-draw approximation to the direct simulated population '
+      'log-density, not the exact conditional sampled-alternatives likelihood.</p>')
+    W('<p>The authorised correction generates new iid joint alternatives and applies '
+      'the conditional sampling derivation. If ' + imath(r'D_i') + ' is the sampled '
+      'multiset and ' + imath(r'\pi(D_i\mid j)') + ' its sampling law when candidate '
+      + imath(r'j') + ' is treated as chosen, then ' + imath(r'P(j\mid D_i)\propto '
+      r'e^{a_i(j)}\pi(D_i\mid j)') + '. Under iid draws from ' + imath(r'q_i') + ', '
+      'factorisation gives a correction ' + imath(r'-\log q_i(j)') + ' on every '
+      'candidate, including the chosen one, with multiplicities retained. The current '
+      'scrambled-Halton wage point set is dependent within household, so merely changing '
+      'the stored chosen-row correction would not create that estimator. Pilot-proposal '
+      'independence or a cross-fitted construction also remains to be fixed and documented.</p>')
+    W('<p>If a sampled row happens to land on the same economic job as the '
       'observed one, the two rows are <b>kept separately with their own '
       'corrections</b> and are not silently deduplicated &mdash; they play different '
       'roles in the estimator.</p>')
@@ -707,35 +861,27 @@ def sections(F):
       'the correction is the <b>marginal</b> density of the value, summing over every '
       'component that could have produced it. It is not the joint density of the '
       'value <em>and</em> its label.</p>')
-    W('<p>The earlier convention used the joint. Because focal hours values can be '
+    W('<p>The earlier implementation used the joint density. Because focal hours values can be '
       'produced by more than one mixture component, that understated the density at '
       'exactly the values where most of the data sit, and the resulting objective was a '
       'likelihood in the <em>labelled</em> space rather than in the job space the model '
       'is about. Correcting it to the exact marginal changed the proposal correction '
       'and nothing else in the specification, and improved the fit substantially. '
-      '<b>Exact marginal <em>q</em> is the final convention</b> for every stochastic '
+      '<b>Exact marginal <em>q</em> is the retained rule</b> for every stochastic '
       'row.</p>')
 
-    W(box("key", "A simple numerical example",
-          "<p>Suppose the hours proposal is a two-component mixture and a draw returns "
-          "exactly the statutory week. Suppose the focal component would produce that "
-          "value with density " + lit("0.30", "illustrative arithmetic, not an estimate")
-          + " and the spread-out component would produce it with density "
-          + lit("0.05", "illustrative arithmetic, not an estimate") + ".</p>"
-          "<div class=\"eq\">"
-          "WRONG (joint, labelled space)   q = 0.30          log q = -1.204\n"
-          "RIGHT (exact marginal)          q = 0.30 + 0.05   log q = -1.050\n"
-          "                                  = 0.35\n"
-          "difference in the correction    log(0.35/0.30)    = +0.154 per affected row"
-          "</div>"
-          "<p>The correction enters the value of every alternative with a minus sign, "
-          "so understating <em>q</em> at focal hours <em>inflates</em> those "
-          "alternatives&rsquo; values. The model then has to work against an artificial "
-          "boost at exactly the hours values where the data concentrate, and the "
-          "hours-opportunity coefficients absorb the distortion. That is why the error "
-          "mattered for the economics and not only for the arithmetic.</p>"))
-
-    W("<h3>Where the correction sits in the likelihood</h3>")
+    W(box("key", "Exact singles proposal",
+          "<p>For a stochastic row the extracted proposal is "
+          + imath(r"q_i(j)=q_E(e)[q_O(k\mid dgn_i,educ3_i)q_H(h)q_W(w\mid i,k)]^e")
+          + ". The employment masses are " + imath(r"q_E(0)=0.10") + " and "
+          + imath(r"q_E(1)=0.90") + ". The hours proposal is the continuous mixture "
+          + imath(r"q_H(h)=\sum_b \omega_b(b_b-a_b)^{-1}\mathbf 1_{[a_b,b_b)}(h)")
+          + " over " + imath(r"PT1,PT2,F35,FT,LH,BG[5,70]") + " with weights "
+          + imath(r"(.15,.10,.24,.20,.10,.21)") + ". Overlapping component contributions "
+          "are summed under the same Lebesgue base measure; no atom mass is added to a "
+          "density height. Occupation is conditioned on sex and education group, and "
+          "the wage proposal is the extracted occupation-conditioned lognormal.</p>"))
+    W("<h3>Where the correction sits in the historical and successor likelihoods</h3>")
     W("<p>The value of alternative <em>j</em> to household <em>i</em> is the structural "
       "index minus the log proposal density:</p>")
     W('<div class="eq">'
@@ -752,11 +898,14 @@ def sections(F):
       "P_i(observed)  =  exp(V_i0) / SUM_j exp(V_ij)\n"
       "negLL          =  - SUM_i  log P_i(observed)"
       "</div>")
-    W('<p>The subtraction is the entire content of sampled-choice correction: it makes '
-      'the estimator consistent for the parameters of the true continuous model, and '
-      'it makes the answer independent of the sampler in the limit. Because it enters '
-      'additively and is <em>known</em>, an error in it is not a nuisance &mdash; it is '
-      'a misspecification of every alternative&rsquo;s value.</p>')
+    W('<p class="exempt">This display is the exact <b>historically coded criterion</b>, a negative sum rather than '
+      'an average. At finite sampling resolution, the proposal changes stochastic-row '
+      'weights, probabilities and generally the optimizer; it does not simply cancel. '
+      'The usual conditional sampled-alternatives derivation would apply minus log q to '
+      'every candidate, including the observed candidate, while the usual simulated-'
+      'integral identity omits the extra chosen-row denominator term. Neither yields '
+      'the historical code. The corrected estimator is pending, so the existing '
+      'parameters and downstream statistics are not presented as corrected.</p>')
 
     # ===================================================================== 6 ==
     W('<h2 id="s6" class="exempt">6. The structural model, complete</h2>')
@@ -800,38 +949,73 @@ def sections(F):
            "logarithm. Negative values are admissible and mean sharper concavity "
            "still."))
 
-    W("<p>Utility over a package " + imath("j") + " for unit " + imath("i")
-      + " is a weighted sum of transformed leisure and transformed consumption:</p>")
-    W(math(r"u_{ij}\;=\;\sum_{s\in S_i}\beta_{\ell}^{g(s)}(\mathbf{x}_i)\,"
-           r"\mathcal{B}\!\left(\tilde{\ell}_{sij};\theta_{\ell}^{g(s)}\right)"
-           r"\;+\;\beta_c\,\mathcal{B}\!\left(\tilde{c}_{ij};\theta_c\right),",
-           "utility of a package"))
-    W("<p>where " + imath(r"S_i") + " is the set of adults in the decision unit, "
-      + imath(r"g(s)") + " is the sex of adult " + imath("s") + ", "
-      + imath(r"\tilde\ell_{sij}=(\bar L-h_{sij})/\lambda_\ell") + " is that "
-      "adult's leisure in the package (total time less hours worked, in units of "
-      + imath(r"\lambda_\ell=10") + " hours), and " + imath(r"\tilde c_{ij}") +
-      " is the household's disposable income in the package. The leisure weight "
-      "is itself a function of the unit's characteristics:</p>")
-    W(math(r"\beta_{\ell}^{g}(\mathbf{x}_i)\;=\;\beta_{\ell 0}^{g}"
-           r"+\beta_{\ell a}^{g}a_i+\beta_{\ell a^{2}}^{g}a_i^{2}"
-           r"+\mathbb{1}\{g=\text{women}\}\,\beta_{\ell k}^{g}k_i ,",
-           "how the value of time varies across units"))
-    W("<p>with " + imath("a_i") + " age, centred and measured in decades, and "
-      + imath("k_i") + " the number of resident children. <b>"
+    W("<p>The executed applications use the following type-specific utilities:</p>")
+    W(math(r"u_{ig}(j)=\omega_{ig}BC(\ell_i(j);\theta_{\ell g})"
+           r"+BC(c_i(j);\theta_c),\quad "
+           r"\omega_{ig}=\beta_{\ell0,g}+\beta_{\ell a,g}a_i"
+           r"+\beta_{\ell a^2,g}a_i^2+1\{g=sf\}\beta_{\ell n,g}n_i,",
+           "singles utility"))
+    W(math(r"u_i(j)=\omega_{im}BC(\ell_{im}(j);\theta_{\ell m})"
+           r"+\omega_{if}BC(\ell_{if}(j);\theta_{\ell f})+\log c_i(j),",
+           "clean-couples utility",
+           "The direct cross-leisure term beta_ll is absent and structurally zero. "
+           "Joint consumption, non-linear taxes and transfers, income effects and the "
+           "joint choice still connect spouses; their decisions are not independent."))
+    W(math(r"c_i(j)=C_i(j)/\lambda_c,\qquad "
+           r"\ell_{is}(j)=\max\{80-h_{is}(j),1\}/\lambda_{\ell s},\qquad "
+           r"a_{is}=(A_{is}-\bar A_s)/10,",
+           "utility inputs and units",
+           "C is post-take-up disposable consumption in euros per month; h is weekly "
+           "hours; each spouse uses own age. The time endowment is eighty weekly hours "
+           "and the positive-domain leisure floor is one hour."))
+    W("<p>The model child count " + imath("n_i") + " is the number of all household "
+      "members younger than twenty, without requiring a biological or legal parent "
+      "link. <b>"
       + imath(r"\beta_c\equiv 1") + " is a normalisation, not an estimate</b>: "
       "utility in a discrete-choice model is identified only up to scale, and "
-      "fixing the consumption coefficient is what fixes that scale. It is also "
-      "what makes the money metric of section&nbsp;13 well defined, because it "
-      "puts utility on a euro footing.</p>")
-
-    W("<p><b>The opportunity density.</b> Availability is a product of four "
-      "factors, each equal to one at its own reference, and the last three "
-      "switched off on the non-employment package:</p>")
+      "fixing the consumption coefficient fixes utility scale. It does <em>not</em> "
+      "by itself put utility in euros. Euros arise from the separately defined "
+      "flat-consumption reference and inversion in section&nbsp;13.</p>")
+    W("<p><b>Budget.</b> The job-varying labour inputs and the post-simulation "
+      "consumption transformation are:</p>")
+    W(math(r"Y_i^D(j)=T_{FR,2015}(y_i^L(j),r_i,d_i,z_i;\tau)=ils\_dispy_i(j),"
+           r"\qquad y_i^L(j)=\{lhw,yivwg,yem00,yemxp,yem\},",
+           "executed budget map"))
+    W(math(r"yem00=\min(h,35)w\,52/12,\quad yemxp=\max(h-35,0)w\,52/12,"
+           r"\quad yem=yem00+yemxp,",
+           "monthly labour earnings from weekly hours and hourly wages"))
+    W(math(r"C_i^{raw}(j)=ils\_dispy_i(j)-bsa00\_s_i(j)[1-t_i(e_j)],\qquad "
+           r"C_i(j)=\max\{C_i^{raw}(j),1\},",
+           "take-up adjustment and positive-domain floor",
+           "<span class='exempt'>Non-positive simulated disposable incomes are floored at one real-2016 "
+           "euro per month, not discarded.</span>"))
+    W("<p><b>The opportunity kernel and density.</b> Availability begins as a product "
+      "of four unnormalised relative factors. A reference-category index may equal "
+      "one, but the lognormal wage density is not a reference-normalised ratio. The "
+      "kernel is divided by its full mixed-support integral for welfare:</p>")
     W(math(r"g_{ij}\;=\;g^{E}_{ij}\cdot g^{H}_{ij}\cdot g^{\mathrm{Occ}}_{ij}"
            r"\cdot g^{W}_{ij},\qquad "
            r"E_{ij}=\mathbb{1}\{\text{the package involves work}\}.",
            "the opportunity density, four factors"))
+    W(math(r"\widehat g_i(j)=\widetilde g_i(j)/G_i,\qquad "
+           r"G_i=\int_{\mathcal J}\widetilde g_i(z)\,\nu(dz),",
+           "full-support opportunity normalisation",
+           "The base measure has one counting atom at non-employment and, under "
+           "employment, counting measure over occupations times Lebesgue measure "
+           "over weekly hours and hourly wages. The historical fitted model has "
+           "unbounded positive wage support. The initial corrective candidate uses "
+           "a bounded, renormalised truncated-lognormal offer density on two to one "
+           "hundred fifty euros per hour, with upper-cap sensitivity at one hundred "
+           "twenty and one hundred seventy-five. This is a disclosed support "
+           "assumption for the trimmed target population, not an identified offer maximum."))
+    W(math(r"g_i^{W,B}(w\mid k)=g_i^W(w\mid k)"
+           r"\,\mathbf 1\{2\le w\le w_{max}\}/D_i(k),\quad "
+           r"D_i(k)=\Phi((\log w_{max}-\mu_i(k))/\sigma)-"
+           r"\Phi((\log 2-\mu_i(k))/\sigma),",
+           "bounded wage-offer correction",
+           "The occupation- and parameter-dependent divisor stays inside estimation, "
+           "derivatives and welfare. Simply dropping outside nodes would define a "
+           "different model. The corrected fit and cap sensitivity are pending."))
     W("<p>They answer four different questions about the market a unit faces: "
       "<b>is work available at all</b>, <b>at which hours</b>, <b>in which "
       "occupation</b>, and <b>at what pay</b>. Section&nbsp;6.3 takes them one at "
@@ -847,10 +1031,13 @@ def sections(F):
     W("<p>Because the two enter as a sum, their <em>total</em> is identified by "
       "the choices, but their <em>parts</em> are not &mdash; unless some variables "
       "move one and not the other. That is what the exclusion restrictions do: "
-      "the local unemployment rate, the region and the urbanisation of the place "
-      "of residence enter availability and never preferences; age and children "
-      "enter preferences and never availability. Nothing about the functional "
-      "form does this work.</p>")
+      "the local group unemployment rate, region and urbanisation are assigned to "
+      "employment access and excluded from preferences. Identification nevertheless "
+      "depends on functional-form restrictions, channel assignments, observed "
+      "variation and the economic validity of those exclusions. Sorting and omitted "
+      "local preferences or amenities can violate the interpretation. Age also enters "
+      "earning opportunities through potential experience, so a raw characteristic "
+      "may affect several structural paths.</p>")
 
     W("<p><b>The sampled-alternatives likelihood.</b> The set of conceivable job "
       "packages is far too large to enumerate, so it is sampled. Each unit "
@@ -859,19 +1046,27 @@ def sections(F):
       "from a known <b>proposal density</b> "
       + imath("q_{ij}") + ", giving a choice set of " + n("n_alternatives", "int")
       + ". Subtracting " + imath(r"\log q_{ij}") + " from the index &mdash; the "
-      "<b>sampling correction</b> &mdash; makes the likelihood over the sampled "
-      "set consistent for the model over the full set:</p>")
+      "<b>historical sampling correction</b> gives the implemented criterion below. "
+      "The criterion audit identifies this as a hybrid finite-draw approximation, "
+      "not an exact conditional likelihood:</p>")
     W(math(r"P_i\;=\;\frac{\exp V_{i j^{*}_i}}{\sum_{j\in\mathcal{C}_i}\exp V_{ij}},"
            r"\qquad \hat\theta=\arg\min_\theta\;-\!\sum_{i=1}^{N}\log P_i(\theta).",
-           "the sampled-alternatives likelihood"))
+           "the historically implemented sampled-alternatives criterion"))
+    W("<p>The successor conditional estimator requires newly generated iid joint "
+      "alternatives. Under that sampling law, every candidate receives "
+      + imath(r"-\log q_i(j)") + ", including the chosen candidate, and repeated "
+      "atoms retain their multiplicities. Conditional exactness concerns the "
+      "conditioned sampling experiment; it does not make the finite-sample maximiser "
+      "unbiased or remove sampling uncertainty.</p>")
     W("<p>The proposal density is <b>computation, not economics</b>. It is chosen "
-      "by the analyst, it carries no parameter of interest, and it cancels from "
-      "everything the paper reports. It is never an opportunity, an offer or an "
+      "by the analyst and carries no parameter of interest. At finite resolution it "
+      "affects numerical weights and generally does not cancel. It is never an opportunity, an offer or an "
       "availability: those words belong to " + imath("g_{ij}") + " alone.</p>")
 
     # ============================================================ instantiation
     W("<h3>6.2 The same model, applied twice</h3>")
-    W("<p>Only the decision unit changes. Everything above is untouched.</p>")
+    W("<p>The applications share a RURO architecture but differ in consequential "
+      "specification details. The table makes those differences explicit.</p>")
 
     W('<div class="scroll"><table><thead><tr><th></th>'
       "<th>Application 1 &mdash; the single adult</th>"
@@ -888,6 +1083,11 @@ def sections(F):
       "<td><b>Two.</b> The sum has a male and a female term, each with its own "
       "leisure weight and its own curvature. Consumption remains a single "
       "household-level argument.</td></tr>"
+
+      "<tr><td><b>Consumption transformation</b></td>"
+      "<td>Box&ndash;Cox consumption with an estimated curvature maintained common "
+      "across single men and women; sex-specific curvature was not tested.</td>"
+      "<td>Log consumption: theta_c is fixed at zero and beta_c at one.</td></tr>"
 
       "<tr><td><b>An alternative</b></td>"
       "<td>A job package for the adult, or non-employment.</td>"
@@ -931,8 +1131,9 @@ def sections(F):
     W(box("warn", "One model, two applications - and why the couple is not an "
                   "appendix",
           "<p>The couple is the second application of the model above, estimated "
-          "on the same frame with the same screens, the same proposal, the same "
-          "correction and the same likelihood. Its parameters appear beside the "
+          "on a parallel final frame with common screens but a joint-quadrant proposal, "
+          "spouse-specific hours mixtures and joint household alternatives. Its coded "
+          "correction and likelihood have the analogous form. Its parameters appear beside the "
           "singles parameters in section&nbsp;7, block by block, for that "
           "reason.</p>"
           "<p>What makes the single-adult sample the headline is not that it came "
@@ -944,9 +1145,10 @@ def sections(F):
 
     # ============================================================ the densities
     W("<h3>6.3 The four factors of the opportunity density</h3>")
-    W("<p>Each factor is a statement about the market, not about the person's "
-      "taste. Each is normalised so that it equals one at a stated reference, "
-      "which is what makes its coefficients readable as ratios.</p>")
+    W("<p>Each factor is assigned a market role rather than a taste role. Index "
+      "coefficients exponentiate into relative <em>density heights</em> where the "
+      "formula warrants it; they are not automatically probability or mass ratios. "
+      "The product receives one full-support normalisation.</p>")
 
     # ---- (a) employment access
     W("<h4>(a) Employment access &mdash; is work available at all?</h4>")
@@ -956,7 +1158,7 @@ def sections(F):
       "the household lives in. It is a level shift applied to every working "
       "package alike.</p>")
     W(math(r"\log g^{E}_{ij}=E_{ij}\Bigl[\beta_{E}"
-           r"+\beta_{s}\,s_i"
+           r"+10\beta_{s}\,s_i"
            r"+\textstyle\sum_{r=2}^{8}\beta_{r}\mathbb{1}\{R_i=r\}"
            r"+\beta_{u}U_i+\beta_{m}M_i\Bigr]",
            "employment access"))
@@ -965,8 +1167,10 @@ def sections(F):
       "household in the omitted region living in a rural zone. <b>Regressors.</b> "
       + imath("s_i") + " is the <b>unemployment rate of the household's own "
       "group</b>, defined by region, education and sex, and looked up from an "
-      "external source rather than estimated: it is the exclusion restriction "
-      "that identifies access separately from taste. " + imath("R_i") + " is the "
+      "external source rather than estimated. A one-percentage-point increase changes "
+      "the log working-opportunity factor by " + imath(r"10\beta_s\times0.01")
+      + "; it is not a percentage-point change in employment. The exclusion is an "
+      "economic identifying assumption, not proof. " + imath("R_i") + " is the "
       "region of residence, seven indicators against an omitted eighth. "
       + imath("U_i") + " and " + imath("M_i") + " are urban and intermediate "
       "residence against rural. <b>None of these appears in preferences</b>, "
@@ -976,23 +1180,20 @@ def sections(F):
     # ---- (b) hours
     W("<h4>(b) Hours &mdash; at which hours is work available?</h4>")
     W("<p><b>What it says about the market.</b> Employers do not post a smooth "
-      "continuum of weekly hours. They post a few conventional lengths, and in "
+      "continuum of weekly hours. They post a few common lengths, and in "
       "France one of them is written into the statute. This factor is a step "
-      "density over hours bands, plus a separate mass point at the statutory "
-      "week.</p>")
-    W(math(r"\log g^{H}_{ij}=\sum_{b}\beta_{b}\,\mathbb{1}\{h_{ij}\in B_b\}"
-           r"\;+\;\beta_{h,\mathrm{F35}}\,\mathbb{1}\{h_{ij}\in B_{\mathrm{F35}}\},"
-           r"\qquad \beta_{\mathrm{F35}}\equiv 0 \ \text{as a band step}",
+      "density over disjoint hours bands. The statutory feature is an elevated "
+      "continuous density over the narrow interval around thirty-five hours, not an "
+      "atom at exactly thirty-five.</p>")
+    W(math(r"H(h)=\beta_{pt1}1_{[17.5,21.5)}+\beta_{pt2}1_{[28.5,30.5)}"
+           r"+\beta_{35}1_{[33.5,36.5)}+\beta_{ft}1_{[36.5,40.5]}"
+           r"+\beta_{lh}1_{[44.5,70]},",
            "the hours-offer density"))
-    W("<p><b>Reference and normalisation, kept apart.</b> The step structure is "
-      "read against the hours regions the bands do not cover <em>and</em> against "
-      "the statutory band, both at zero: that is the meaning of "
-      + imath(r"\beta_{\mathrm{F35}}\equiv 0") + ", and it is why only four band "
-      "coefficients are estimated. The preferred specification then adds "
-      "<b>one separate coefficient</b> on the statutory-week indicator, over and "
-      "above the band structure. The two are different objects and the report "
-      "never conflates them: the first fixes the origin, the second is an "
-      "estimated feature of the offer distribution.</p>")
+    W(math(r"I_H=26.5+4e^{\beta_{pt1}}+2e^{\beta_{pt2}}+3e^{\beta_{35}}"
+           r"+4e^{\beta_{ft}}+25.5e^{\beta_{lh}},\qquad p_H(h)=e^{H(h)}/I_H,",
+           "hours normaliser and conditional density",
+           "Integrated band mass equals density height times band width. A height "
+           "ratio is therefore not a probability ratio across unequal-width bands."))
 
     # ---- (c) occupation
     W("<h4>(c) Occupation &mdash; which kinds of job are reachable?</h4>")
@@ -1037,9 +1238,13 @@ def sections(F):
       "variable from the log wage to the wage itself &mdash; it is there because "
       "the object being chosen is the wage, not its logarithm, and omitting it "
       "would tilt the density.</p>")
+    W(math(r"\operatorname{median}(W\mid i,k)=e^{\mu_i(k)},\quad "
+           r"E[W\mid i,k]=e^{\mu_i(k)+\sigma^2/2},\quad "
+           r"\operatorname{mode}(W\mid i,k)=e^{\mu_i(k)-\sigma^2},",
+           "lognormal location is not its mean"))
     W(box("key", "Why this is an <em>opportunity</em> and not a Mincer regression",
           "<p>The same variables &mdash; schooling, experience &mdash; appear in "
-          "a conventional wage regression. The difference is the object being "
+          "a standard wage regression. The difference is the object being "
           "described. A wage regression describes the pay of <b>the people "
           "observed working</b>. This density describes the pay attached to a "
           "package <b>a household could be offered</b>, including packages it did "

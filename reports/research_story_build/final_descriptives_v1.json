@@ -1,0 +1,84 @@
+{
+  "source": "frozen corrected singles and clean-couples chosen rows",
+  "n_singles": 1555,
+  "n_couples": 2275,
+  "minimum_employed_hours": {
+    "singles": 6.0,
+    "couple_men": 9.0,
+    "couple_women": 6.0
+  },
+  "summaries": {
+    "singles_age": {
+      "n": 1555,
+      "mean_weighted": 41.02015678396426,
+      "median_weighted": 42.0,
+      "p10_weighted": 26.0,
+      "p90_weighted": 55.0,
+      "min": 20.0,
+      "max": 60.0
+    },
+    "couple_men_age": {
+      "n": 2275,
+      "mean_weighted": 39.84025051109256,
+      "median_weighted": 40.0,
+      "p10_weighted": 28.0,
+      "p90_weighted": 53.0,
+      "min": 20.0,
+      "max": 60.0
+    },
+    "couple_women_age": {
+      "n": 2275,
+      "mean_weighted": 37.81895080858797,
+      "median_weighted": 37.0,
+      "p10_weighted": 26.0,
+      "p90_weighted": 51.51515774709023,
+      "min": 20.0,
+      "max": 60.0
+    },
+    "singles_disposable": {
+      "n": 1555,
+      "mean_weighted": 1945.0116822655705,
+      "median_weighted": 1759.3336150117977,
+      "p10_weighted": 978.4036332357791,
+      "p90_weighted": 2958.88135393151,
+      "min": 1.0,
+      "max": 14203.174163543612
+    },
+    "couples_disposable": {
+      "n": 2275,
+      "mean_weighted": 4251.172496441646,
+      "median_weighted": 3851.528376445742,
+      "p10_weighted": 2389.584977897696,
+      "p90_weighted": 6429.5457918309385,
+      "min": 208.36029861111118,
+      "max": 23304.542369363448
+    }
+  },
+  "resource_variables_displayed": [
+    "ypp",
+    "yse",
+    "yiy",
+    "ypr",
+    "ypt",
+    "yot"
+  ],
+  "resource_nonzero_share": {
+    "singles": [
+      0.001074604602836686,
+      0.02706216812867569,
+      0.7520681780423005,
+      0.04794315682777615,
+      0.13718187708208265,
+      0.018023722264563547
+    ],
+    "couples": [
+      0.0010288756528493272,
+      0.054993190142585545,
+      0.8719974653147934,
+      0.11930268696466016,
+      0.05267476632607632,
+      0.016569550910552913
+    ]
+  },
+  "unit_caveat": "Field-level units and time bases are documented in MNL/docs/corr/fr2016_drd_field_dictionary_v1.csv; remaining questions concern economic factor allocation, not dictionary coverage."
+}

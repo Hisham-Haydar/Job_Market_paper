@@ -375,7 +375,7 @@
       "units": "index units"
     },
     "w_i11_singles": {
-      "value": 2.0220162250745012e-16,
+      "value": 2.0220162250745007e-16,
       "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
       "status": "result",
       "units": "index units"
@@ -867,7 +867,7 @@
       "units": "index units"
     },
     "w_i11_singlesmz": {
-      "value": 2.0290440422240321e-16,
+      "value": 2.029044042224032e-16,
       "source": "s12_six_index_attributions_v1.csv; corrected welfare record at the S11 specifications of record",
       "status": "result",
       "units": "index units"
@@ -2324,6 +2324,900 @@
       "status": "band",
       "units": "per cent, RQMC integration band"
     },
+    "nd_cres_gini": {
+      "value": 0.0435511967367386,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_gini": {
+      "value": 32.88,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_gini": {
+      "value": 0.0242757436110481,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_gini": {
+      "value": 18.33,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_gini": {
+      "value": 64.2,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_gini": {
+      "value": 35.8,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_gini": {
+      "value": 57.1,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_gini": {
+      "value": 42.9,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres_atkinson1": {
+      "value": 0.0148381196620373,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_atkinson1": {
+      "value": 49.14,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_atkinson1": {
+      "value": 0.003460638851344,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_atkinson1": {
+      "value": 11.46,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_atkinson1": {
+      "value": 81.1,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_atkinson1": {
+      "value": 18.9,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_atkinson1": {
+      "value": 73.7,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_atkinson1": {
+      "value": 26.3,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres_atkinson2": {
+      "value": 0.0245388739665919,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_atkinson2": {
+      "value": 44.42,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_atkinson2": {
+      "value": 0.0070641629561621,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_atkinson2": {
+      "value": 12.79,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_atkinson2": {
+      "value": 77.6,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_atkinson2": {
+      "value": 22.4,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_atkinson2": {
+      "value": 68.3,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_atkinson2": {
+      "value": 31.7,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres_ge0": {
+      "value": 0.0150718619439808,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_ge0": {
+      "value": 49.15,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_ge0": {
+      "value": 0.0035002781345649,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_ge0": {
+      "value": 11.42,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_ge0": {
+      "value": 81.2,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_ge0": {
+      "value": 18.8,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_ge0": {
+      "value": 73.8,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_ge0": {
+      "value": 26.2,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres_ge1": {
+      "value": 0.0192215894344119,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_ge1": {
+      "value": 55.49,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_ge1": {
+      "value": 0.0032704021444049,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_ge1": {
+      "value": 9.44,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_ge1": {
+      "value": 85.5,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_ge1": {
+      "value": 14.5,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_ge1": {
+      "value": 80.4,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_ge1": {
+      "value": 19.6,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres_cv2": {
+      "value": 0.0556581150270825,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shres_cv2": {
+      "value": 63.15,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_ccomp_cv2": {
+      "value": 0.0061784318655581,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "index points"
+    },
+    "nd_shcomp_cv2": {
+      "value": 7.01,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of that index baseline"
+    },
+    "nd_chres_cv2": {
+      "value": 90.0,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nd_chcomp_cv2": {
+      "value": 10.0,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres_cv2": {
+      "value": 87.7,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nde_chcomp_cv2": {
+      "value": 12.3,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_cres": {
+      "value": 0.0435511967367386,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "nd_shres": {
+      "value": 32.88,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "nd_chres": {
+      "value": 64.2,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chres": {
+      "value": 57.1,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "nd_ccomp": {
+      "value": 0.0242757436110481,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "Gini points"
+    },
+    "nd_shcomp": {
+      "value": 18.33,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the baseline Gini"
+    },
+    "nd_chcomp": {
+      "value": 35.8,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "nde_chcomp": {
+      "value": 42.9,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent of the channel, equivalized"
+    },
+    "sd_cres_gini": {
+      "value": 0.0472036249569349,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_gini": {
+      "value": 24.38,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_gini": {
+      "value": 71.3,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_gini": {
+      "value": 0.0190020391422419,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_gini": {
+      "value": 9.82,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_gini": {
+      "value": 28.7,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_gini": {
+      "value": 0.0416610878434455,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_gini": {
+      "value": 19.94,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_gini": {
+      "value": 46.1,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_gini": {
+      "value": 0.0487569817322149,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_gini": {
+      "value": 23.33,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_gini": {
+      "value": 53.9,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_cres_atkinson1": {
+      "value": 0.0209006338318429,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_atkinson1": {
+      "value": 34.38,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_atkinson1": {
+      "value": 73.3,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_atkinson1": {
+      "value": 0.0076088113070467,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_atkinson1": {
+      "value": 12.52,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_atkinson1": {
+      "value": 26.7,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_atkinson1": {
+      "value": 0.0191128628763848,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_atkinson1": {
+      "value": 27.53,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_atkinson1": {
+      "value": 48.3,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_atkinson1": {
+      "value": 0.020462133196958,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_atkinson1": {
+      "value": 29.48,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_atkinson1": {
+      "value": 51.7,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_cres_atkinson2": {
+      "value": 0.0361887998352228,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_atkinson2": {
+      "value": 31.33,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_atkinson2": {
+      "value": 71.9,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_atkinson2": {
+      "value": 0.0141380764756928,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_atkinson2": {
+      "value": 12.24,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_atkinson2": {
+      "value": 28.1,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_atkinson2": {
+      "value": 0.032283844651889,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_atkinson2": {
+      "value": 24.42,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_atkinson2": {
+      "value": 44.2,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_atkinson2": {
+      "value": 0.040698528859552,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_atkinson2": {
+      "value": 30.79,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_atkinson2": {
+      "value": 55.8,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_cres_ge0": {
+      "value": 0.0217086344622115,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_ge0": {
+      "value": 34.62,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_ge0": {
+      "value": 73.4,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_ge0": {
+      "value": 0.0078831746628878,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_ge0": {
+      "value": 12.57,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_ge0": {
+      "value": 26.6,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_ge0": {
+      "value": 0.0199421894037804,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_ge0": {
+      "value": 27.72,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_ge0": {
+      "value": 48.4,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_ge0": {
+      "value": 0.0212407204114975,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_ge0": {
+      "value": 29.52,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_ge0": {
+      "value": 51.6,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_cres_ge1": {
+      "value": 0.0258653938795425,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_ge1": {
+      "value": 39.26,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_ge1": {
+      "value": 74.4,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_ge1": {
+      "value": 0.0088772826938778,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_ge1": {
+      "value": 13.47,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_ge1": {
+      "value": 25.6,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_ge1": {
+      "value": 0.0243394331595389,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_ge1": {
+      "value": 32.73,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_ge1": {
+      "value": 53.4,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_ge1": {
+      "value": 0.0212742403871269,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_ge1": {
+      "value": 28.61,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_ge1": {
+      "value": 46.6,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_cres_cv2": {
+      "value": 0.0724258859553945,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shres_cv2": {
+      "value": 47.04,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chres_cv2": {
+      "value": 74.8,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_ccomp_cv2": {
+      "value": 0.0243478821678827,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sd_shcomp_cv2": {
+      "value": 15.81,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sd_chcomp_cv2": {
+      "value": 25.2,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_cres_cv2": {
+      "value": 0.0706330682244024,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shres_cv2": {
+      "value": 41.39,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chres_cv2": {
+      "value": 58.7,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sde_ccomp_cv2": {
+      "value": 0.0496992843925204,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "index points"
+    },
+    "sde_shcomp_cv2": {
+      "value": 29.12,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of that index baseline"
+    },
+    "sde_chcomp_cv2": {
+      "value": 41.3,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent of the resources-and-needs channel"
+    },
+    "sd_shres": {
+      "value": 24.38,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sd_chres": {
+      "value": 71.3,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sde_shres": {
+      "value": 19.94,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sde_chres": {
+      "value": 46.1,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sd_shcomp": {
+      "value": 9.82,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sd_chcomp": {
+      "value": 28.7,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sde_shcomp": {
+      "value": 23.33,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "sde_chcomp": {
+      "value": 53.9,
+      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "status": "diagnostic",
+      "units": "per cent"
+    },
+    "nd_res_leads_couples": {
+      "value": 6,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_res_leads_singles": {
+      "value": 6,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_res_leads_couples_eq": {
+      "value": 6,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_res_leads_singles_eq": {
+      "value": 2,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_comp_bigger_couples": {
+      "value": 1,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_equiv_raises_comp": {
+      "value": 6,
+      "source": "counted over the six index-specific nested attributions",
+      "status": "result",
+      "units": "indices of six"
+    },
+    "nd_resid": {
+      "value": "1.4e-17",
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "verified identity",
+      "units": "index units"
+    },
+    "nd_vs_cd": {
+      "value": "0.0",
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "verified identity",
+      "units": "index units"
+    },
+    "nd_n_res": {
+      "value": 58,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "definition",
+      "units": "budget fields"
+    },
+    "nd_n_comp": {
+      "value": 46,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "definition",
+      "units": "budget fields"
+    },
+    "nd_n_geo": {
+      "value": 6,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "definition",
+      "units": "budget fields"
+    },
+    "nd_of_res": {
+      "value": 18.54,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
+    "nd_of_comp": {
+      "value": 5.76,
+      "source": "s12_couples_nested_D_attributions_v1.csv; two repriced counterfactual panels at the S11 specification of record",
+      "status": "result",
+      "units": "per cent reduction in the baseline Gini"
+    },
     "wl_mean_raw_singles": {
       "value": 4354.0,
       "source": "v5_welfare_distributions_v1.csv",
@@ -2740,6 +3634,22 @@
     "n_singles",
     "nat_factor_couples",
     "nat_factor_singles",
+    "nd_chcomp",
+    "nd_chres",
+    "nd_chres_cv2",
+    "nd_chres_gini",
+    "nd_comp_bigger_couples",
+    "nd_equiv_raises_comp",
+    "nd_n_comp",
+    "nd_n_geo",
+    "nd_n_res",
+    "nd_res_leads_couples",
+    "nd_res_leads_couples_eq",
+    "nd_res_leads_singles",
+    "nd_res_leads_singles_eq",
+    "nd_resid",
+    "nd_shcomp",
+    "nd_shres",
     "negll_couples",
     "negll_ruma",
     "negll_rumb",
@@ -2761,6 +3671,10 @@
     "rq_hi_A_singles",
     "rq_lo_A_singles",
     "rum_gap",
+    "sd_chcomp",
+    "sd_chres",
+    "sd_shcomp",
+    "sd_shres",
     "spread_couples",
     "spread_singles",
     "time_endowment",
@@ -2821,6 +3735,59 @@
     "lambda_c_welfare_panel_singles",
     "nat_pct_couples",
     "nat_pct_singles",
+    "nd_ccomp",
+    "nd_ccomp_atkinson1",
+    "nd_ccomp_atkinson2",
+    "nd_ccomp_cv2",
+    "nd_ccomp_ge0",
+    "nd_ccomp_ge1",
+    "nd_ccomp_gini",
+    "nd_chcomp_atkinson1",
+    "nd_chcomp_atkinson2",
+    "nd_chcomp_cv2",
+    "nd_chcomp_ge0",
+    "nd_chcomp_ge1",
+    "nd_chcomp_gini",
+    "nd_chres_atkinson1",
+    "nd_chres_atkinson2",
+    "nd_chres_ge0",
+    "nd_chres_ge1",
+    "nd_cres",
+    "nd_cres_atkinson1",
+    "nd_cres_atkinson2",
+    "nd_cres_cv2",
+    "nd_cres_ge0",
+    "nd_cres_ge1",
+    "nd_cres_gini",
+    "nd_of_comp",
+    "nd_of_res",
+    "nd_shcomp_atkinson1",
+    "nd_shcomp_atkinson2",
+    "nd_shcomp_cv2",
+    "nd_shcomp_ge0",
+    "nd_shcomp_ge1",
+    "nd_shcomp_gini",
+    "nd_shres_atkinson1",
+    "nd_shres_atkinson2",
+    "nd_shres_cv2",
+    "nd_shres_ge0",
+    "nd_shres_ge1",
+    "nd_shres_gini",
+    "nd_vs_cd",
+    "nde_chcomp",
+    "nde_chcomp_atkinson1",
+    "nde_chcomp_atkinson2",
+    "nde_chcomp_cv2",
+    "nde_chcomp_ge0",
+    "nde_chcomp_ge1",
+    "nde_chcomp_gini",
+    "nde_chres",
+    "nde_chres_atkinson1",
+    "nde_chres_atkinson2",
+    "nde_chres_cv2",
+    "nde_chres_ge0",
+    "nde_chres_ge1",
+    "nde_chres_gini",
     "of_P_rise_couples",
     "of_P_singles",
     "rk_a_gt_b_couples",
@@ -2849,6 +3816,82 @@
     "rq_lo_D_singles",
     "rq_lo_P_couples",
     "rq_lo_P_singles",
+    "sd_ccomp_atkinson1",
+    "sd_ccomp_atkinson2",
+    "sd_ccomp_cv2",
+    "sd_ccomp_ge0",
+    "sd_ccomp_ge1",
+    "sd_ccomp_gini",
+    "sd_chcomp_atkinson1",
+    "sd_chcomp_atkinson2",
+    "sd_chcomp_cv2",
+    "sd_chcomp_ge0",
+    "sd_chcomp_ge1",
+    "sd_chcomp_gini",
+    "sd_chres_atkinson1",
+    "sd_chres_atkinson2",
+    "sd_chres_cv2",
+    "sd_chres_ge0",
+    "sd_chres_ge1",
+    "sd_chres_gini",
+    "sd_cres_atkinson1",
+    "sd_cres_atkinson2",
+    "sd_cres_cv2",
+    "sd_cres_ge0",
+    "sd_cres_ge1",
+    "sd_cres_gini",
+    "sd_shcomp_atkinson1",
+    "sd_shcomp_atkinson2",
+    "sd_shcomp_cv2",
+    "sd_shcomp_ge0",
+    "sd_shcomp_ge1",
+    "sd_shcomp_gini",
+    "sd_shres_atkinson1",
+    "sd_shres_atkinson2",
+    "sd_shres_cv2",
+    "sd_shres_ge0",
+    "sd_shres_ge1",
+    "sd_shres_gini",
+    "sde_ccomp_atkinson1",
+    "sde_ccomp_atkinson2",
+    "sde_ccomp_cv2",
+    "sde_ccomp_ge0",
+    "sde_ccomp_ge1",
+    "sde_ccomp_gini",
+    "sde_chcomp",
+    "sde_chcomp_atkinson1",
+    "sde_chcomp_atkinson2",
+    "sde_chcomp_cv2",
+    "sde_chcomp_ge0",
+    "sde_chcomp_ge1",
+    "sde_chcomp_gini",
+    "sde_chres",
+    "sde_chres_atkinson1",
+    "sde_chres_atkinson2",
+    "sde_chres_cv2",
+    "sde_chres_ge0",
+    "sde_chres_ge1",
+    "sde_chres_gini",
+    "sde_cres_atkinson1",
+    "sde_cres_atkinson2",
+    "sde_cres_cv2",
+    "sde_cres_ge0",
+    "sde_cres_ge1",
+    "sde_cres_gini",
+    "sde_shcomp",
+    "sde_shcomp_atkinson1",
+    "sde_shcomp_atkinson2",
+    "sde_shcomp_cv2",
+    "sde_shcomp_ge0",
+    "sde_shcomp_ge1",
+    "sde_shcomp_gini",
+    "sde_shres",
+    "sde_shres_atkinson1",
+    "sde_shres_atkinson2",
+    "sde_shres_cv2",
+    "sde_shres_ge0",
+    "sde_shres_ge1",
+    "sde_shres_gini",
     "sigma_couples",
     "sigma_singles",
     "w_base_atkinson1_couples",

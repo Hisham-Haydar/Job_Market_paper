@@ -283,9 +283,9 @@ def sections(F):
       + row("beta_l0", "beta_l0_sm", "beta_l0_m",
             "The <b>level of the leisure weight</b> for a man at the centre of "
             "the age range and with no children. It multiplies transformed "
-            "leisure in utility, against a consumption coefficient fixed at one, "
-            "so it is the price of time in consumption units before the age "
-            "profile is applied. On its own it is not comparable across the two "
+            "leisure in utility. It is not a price or an MRS. A local consumption "
+            "compensation slope also depends on both curvatures, both scales, "
+            "consumption and leisure. On its own it is not comparable across the two "
             "models, because each is read against its own leisure curvature.")
       + row("beta_l_age", "beta_l_age_sm", "beta_l_age_m",
             "The <b>slope of the age profile</b> of the value of time, per decade "
@@ -319,12 +319,13 @@ def sections(F):
             "error.")
       + row("beta_l_nkids", "beta_l_nkids_sf", "beta_l_nkids_f",
             "The <b>shift in the value of time per resident child</b>, for women "
-            "only. Positive, as expected: each child raises what an hour at home "
-            "is worth, which lowers labour supply at any given budget. On the "
-            "single-adult estimate the shift is about "
-            + a("ratio.beta_l_nkids_sf.pct", "f0")
-            + "&nbsp;per cent of a unit of the leisure weight per child, and it "
-            "is on the edge of conventional significance rather than comfortably "
+            "only. One additional model-defined child changes the additive leisure-"
+            "weight index by " + a("params41.beta_l_nkids_sf.estimate", "f4")
+            + " model units in singles; exponentiating it is a formula error. At the "
+            "single-female reference index, the profile-specific proportional change "
+            "is about twenty-seven and a half per cent, not an elasticity. The couple "
+            "estimate has the opposite sign and is imprecise. The singles estimate "
+            "is marginal rather than comfortably precise "
             "inside it. There is <b>no male counterpart</b> in either model; "
             "section&nbsp;12 gives the test, the exposure and the reason.")
       + row("theta_l", "theta_l_sf", "theta_l_f",
@@ -342,7 +343,7 @@ def sections(F):
             "and therefore the money metric of section&nbsp;13. It is "
             "<b>maintained common across the sexes by construction</b> and was "
             "never tested sex-specifically: see the note below. In the couple "
-            "model consumption enters logarithmically by the same convention, so "
+            "model consumption enters logarithmically under the same restriction, so "
             "there is no coordinate to report.")
 
       # ----------------------------------------------------- employment access
@@ -367,15 +368,14 @@ def sections(F):
       + row("beta_E_gsur", "beta_E_gsur", "beta_E_gsur",
             "The <b>group unemployment rate</b>: the rate for the household's own "
             "region, education and sex. This is the sharpest access coefficient "
-            "in the model and the exclusion restriction that identifies access "
-            "separately from taste. Read it as a change in the <b>log odds that "
-            "work is available</b>: a rise of one full unit in the rate &mdash; "
-            "the whole " + lit("0-to-1", "the range of a rate, a definition")
-            + " range &mdash; multiplies the availability of every "
-            "working package by " + a("ratio.beta_E_gsur.exp", "f3") + ". Over "
-            "the range actually observed in these data, roughly five to "
-            "twenty-three per cent, that is a substantial but not overwhelming "
-            "tilt.")
+            "in the model. The executed regressor is ten times the underlying rate. "
+            "With the singles coefficient, a one-percentage-point increase multiplies "
+            "the relative working-opportunity factor by about "
+            + lit("0.8823", "derived from the extracted coefficient and executed scale")
+            + ", an approximately eleven-point-eight-per-cent change in that factor, "
+            "not an eleven-point-eight-percentage-point employment change. The full "
+            "choice implication requires normalisation and utility. The same factor-ten "
+            "transform is independently present in the clean-couples specification.")
       + row("beta_E_drgn2", "beta_E_drgn2", "beta_E_drgn2",
             "A <b>region indicator</b>, against the omitted region, once the "
             "continuous unemployment rate is already in. Multiplies working "
@@ -444,12 +444,13 @@ def sections(F):
       + head("The statutory-week peak")
       + row("beta_h_f35", "beta_h_f35", "beta_h_f35_m",
             "The <b>institutionally motivated opportunity peak</b>: a separate "
-            "mass point on the statutory week, over and above the band "
-            "structure. In the single-adult model the fitted density of "
+            "continuous density elevation over the narrow "
+            + imath(r"[33.5,36.5)") + " hours band, not an atom at exactly thirty-five. In the "
+            "single-adult model the fitted density height of "
             "<em>available</em> packages is <b>"
             + a("ratio.beta_h_f35.exp", "f1")
-            + " times denser</b> at the statutory week than in the uncovered "
-            "hours region. It is the single largest specification improvement in "
+            + " times higher</b> in that band than in the uncovered hours region. "
+            "Integrated mass also depends on band width. It is the single largest specification improvement in "
             "the paper. It is <b>not</b> an estimate of the causal effect of the "
             "statute: no counterfactual removing the statute is computed "
             "anywhere, and section&nbsp;14.4 states that placing this feature in "
@@ -575,14 +576,12 @@ def sections(F):
           + a("agebound.released_f", "f3") + " for women, "
           + a("agebound.ci_f", "range") + " &mdash; and the bound value "
           + lit("+1.0", "the box ceiling of record, a design constant")
-          + " lies <b>inside both</b>. The bound is also a <b>unit artefact</b>: "
-          "re-expressing the accepted point at the "
-          + lit("40", "the alternative leisure normaliser, a unit choice")
-          + "-hour leisure normaliser by the exact map, with no re-estimation, "
-          "sends those coefficients from "
-          + lit("+1.0", "the box ceiling of record, a design constant") + " to "
-          + a("agebound.lambda40_m", "f3") + " and "
-          + a("agebound.lambda40_f", "f3") + ", strictly interior.</p>"
+          + " lies <b>inside both</b>. This widened-bound re-estimation is the relevant "
+          "sensitivity. A change of leisure units does not make boundary activity "
+          "disappear: a true reparameterisation must transform the admissible set too. "
+          "The earlier reported values " + a("agebound.lambda40_m", "f3") + " and "
+          + a("agebound.lambda40_f", "f3") + " are therefore not evidence of "
+          "interiority and carry no inferential verdict here.</p>"
           "<p><b>The verdict is to retain the specification reported here, and "
           "the margin is close.</b> The widened box fails the limb that asks for "
           "a materially better objective. The bound binds on a curvature the "
@@ -593,7 +592,7 @@ def sections(F):
           "<p><b>" + imath(r"\theta_c") + " is shared by the two sexes by "
           "construction of the specification</b>, and no sex-specific "
           "alternative was ever estimated against it. Two reasons hold it "
-          "common, and both are conventions rather than findings.</p>"
+          "common, and both are maintained reference choices rather than findings.</p>"
           "<ul>"
           "<li><b>The scale numeraire.</b> Utility in a discrete-choice model is "
           "identified only up to scale, and the consumption coefficient is what "
@@ -610,7 +609,7 @@ def sections(F):
           "consumption block</em>: a curvature that differed by sex would move "
           "the welfare measure for men and for women by different amounts, and "
           "so would move the preference/environment split through the same "
-          "channel as the reference convention. Section&nbsp;20 carries it as a "
+          "channel as the reference choice. Section&nbsp;20 carries it as a "
           "named candidate sensitivity.</p>"))
 
     W(F.fig("figAB01_leisure_weight_by_age",
@@ -698,9 +697,9 @@ def sections(F):
 
     W("<h3>Stage 3 &mdash; the exact proposal correction</h3>")
     W("<p>The hours-mixture correction of section&nbsp;5. This is a correctness fix, "
-      "not a specification choice: the earlier convention optimised a likelihood in the "
+      "not a specification choice: the earlier implementation optimised a likelihood in the "
       "labelled space rather than the job space. Everything downstream is on the "
-      "corrected convention, and pre-correction results are retained as history rather "
+      "corrected rule, and pre-correction results are retained as history rather "
       "than compared against.</p>")
 
     W("<h3>Stage 4 &mdash; occupation-conditioned wage shifts</h3>")
@@ -732,29 +731,24 @@ def sections(F):
       '<td class="num">' + a("chron.hours_grid_mae_with_peak", "f4") + "</td>"
       '<td class="num">&mdash;</td></tr>'
       "</tbody></table></div>")
-    W("<p><b>The economic reason it belongs in the opportunity block and not in "
-      "preferences.</b> A spike at one hours value is a property of what employers post "
-      "under a statutory norm. No smooth, well-behaved utility function generates a "
-      "point mass at a single hours value for a quarter of the workforce; you would "
-      "need a kink in preferences located at exactly the institutional threshold, for "
-      "everyone, which is an assumption about tastes that happens to coincide with a "
-      "law. Placing it in the offer density says instead that the law shapes what is "
-      "offered. Section&nbsp;10 shows the same concentration in an independent "
-      "labour-force survey, which is what makes the reading credible rather than "
-      "convenient.</p>")
+    W("<p><b>The economic interpretation is maintained, not non-parametrically "
+      "proved.</b> The elevated density covers the continuous narrow interval "
+      + imath(r"[33.5,36.5)") + ", not a point mass. Its concentration supports the "
+      "relevance of an institutional hours feature, but the choice data do not prove "
+      "that the whole feature belongs to offers rather than tastes. The model assigns "
+      "it to opportunities and discloses that channel choice.</p>")
     W("<p>It is also the <em>most parsimonious</em> admitted extension, not the "
       "richest: it costs exactly one free coefficient over the nested benchmark, and it "
       "is the only variant in the whole search whose robust intervals all stay clear of "
       "their bounds.</p>")
 
     W("<h3>Stage 6 &mdash; the five-hour support correction</h3>")
-    W("<p>The employed alternatives&rsquo; hours support carries a floor of "
-      + lit("5", "hours floor of the corrected support") + " hours per week: below "
-      "that, the alternative is the non-employment state rather than a nominal job. "
-      "Without the floor, the sampler places density on economically meaningless "
-      "near-zero-hours jobs whose simulated budgets are dominated by benefit "
-      "withdrawal. The correction required re-pricing and re-estimation; it defines the "
-      "frame all current results are on, and results predating it are history.</p>")
+    W("<p>The corrected employed support begins at "
+      + lit("5", "hours floor of the corrected support") + " hours per week. The "
+      "historical repair did not newly remove benefit-dominated near-zero jobs: it "
+      "preserved the actual six-to-nine-hour observations of seven chosen workers that "
+      "an older construction had floored at ten. The repair required re-pricing and "
+      "re-estimation and defines the frame for every current result.</p>")
 
     W("<h3>The variants that were tried and rejected</h3>")
     W("<p>Each of these was estimated. Each was rejected on economic and empirical "
@@ -793,7 +787,7 @@ def sections(F):
       "shift.</td>"
       "<td><b>The new degree of freedom is not supported.</b> The interaction enters at "
       "<em>z</em> = " + a("chron.wage_edu_interaction_z", "f2")
-      + ", and the Bayesian criterion moves the wrong way under both conventions. The "
+      + ", and the Bayesian criterion moves the wrong way under both reference definitions. The "
       "richer wage location does not buy anything the common shift does not already "
       "deliver.</td></tr>"
 
@@ -807,7 +801,7 @@ def sections(F):
       "<tr><td><b>Per-sex occupation preference shifters</b></td>"
       "<td>Let occupation enter tastes, not only access.</td>"
       "<td><b>Opposite-signed, insignificant, and boundary-touching.</b> The male and "
-      "female shifters come out with opposite signs, neither reaches conventional "
+      "female shifters come out with opposite signs, neither is estimated precisely, "
       "significance, and both intervals touch their bounds. The Bayesian penalty is "
       "large. Retained as a diagnostic only.</td></tr>"
 
@@ -1000,7 +994,9 @@ def sections(F):
     W("<p>One genuinely independent source is used: the French labour force survey for "
       "the same year, "
       + n("external_validation_n_rows", "int") + " reported cells across hours bands "
-      "and sex.</p>")
+      "and sex. The assembled public DADS wage benchmark is a distinct available "
+      "artifact; restricted DADS/BTS microdata are not available. The two facts must "
+      "not be collapsed into a claim that no wage benchmark exists.</p>")
 
     W(box("warn", "Validation is not identification",
           "<p><b>No moment from the labour force survey enters the likelihood.</b> It is "
@@ -1053,17 +1049,17 @@ def sections(F):
     W("<h3>The wish-to-work-more gradient, and its caveat</h3>")
     W("<p>The survey asks employed people whether they would like to work more hours. "
       "The reported rate falls monotonically as hours rise &mdash; short-hours workers "
-      "are far more likely to say yes &mdash; which is the direction the model implies. "
-      "Independently, mean desired hours exceed the <em>upper bound</em> of the "
-      "short-hours bands, meaning every worker in those bands wants more hours, with no "
-      "distributional assumption at all.</p>")
-    W(box("warn", "A coding ambiguity that is disclosed, not resolved",
-          "<p>The delivered survey export&rsquo;s own note gives the opposite code map "
-          "for the wish-to-work-more variable from the published codebook. The status "
-          "carried is <code>" + n("external_validation_wishmore_status", "raw")
-          + "</code>. The <em>direction</em> of the gradient is robust either way; which "
-          "absolute level is correct is not resolved. Nothing in the paper rests on "
-          "it &mdash; but it should be volunteered rather than discovered.</p>"))
+      "are far more likely to say yes in the coded table. This remains descriptive "
+      "context because the model has no desired-hours outcome. A group mean desired "
+      "hours above a band's upper edge does <em>not</em> imply that every worker in "
+      "that band wants more hours, and even the mean gap requires the same conditional "
+      "population on both sides.</p>")
+    W(box("warn", "Coding direction is not robust to binary reversal",
+          "<p>A genuine reversal maps a reported share p to one minus p and reverses an "
+          "increasing/decreasing gradient. The earlier claim of direction robustness is "
+          "unsupported and withdrawn. Reliable official underemployment figures are "
+          "retained only as context; they do not validate offer weights or identify a "
+          "preference/constraint wedge.</p>"))
 
     W("<h3>Why occupation cannot be validated the same way</h3>")
     W("<p>The obvious external check &mdash; compare modelled occupation shares to "
@@ -1073,9 +1069,10 @@ def sections(F):
     W("<li>Published French aggregates are on the national socio-professional "
       "classification. The model&rsquo;s groups are a <em>task-based</em> aggregation of "
       "the international standard classification.</li>")
-    W("<li>No official crosswalk exists between the relevant vintages of the two "
-      "schemes. Building the link needs four intermediate tables, not two, and each "
-      "step is many-to-many.</li>")
+    W("<li>Official probabilistic correspondences can exist, but the published coarse "
+      "cells do not yield a unique aggregate mapping into this paper's four research "
+      "groups. An official correspondence and a unique aggregate crosswalk are "
+      "different objects.</li>")
     W("<li>A many-to-many crosswalk applied to aggregate shares produces a comparison "
       "whose disagreement is uninterpretable: any gap could be the model or could be "
       "the mapping.</li>")
@@ -1105,14 +1102,17 @@ def sections(F):
       "the two separately would get the budget wrong at every alternative.</p>")
     W("<p>The observed joint pair is inserted deterministically, exactly as in the "
       "singles model, and the joint proposal is the product of the two spouses&rsquo; "
-      "marginal proposals with the same exact-marginal convention.</p>")
+      "marginal proposals with the same exact-marginal rule.</p>")
     W("<p>Preferences are the natural extension: each spouse has a leisure weight with "
       "its own intercept and age profile, and the household has a single consumption "
       "term over the joint budget. It is a <b>unitary</b> model &mdash; one household "
       "objective, not a bargaining problem.</p>")
 
     W(F.fig("r240_couples_participation_obs_vs_pred",
-            "Observed and predicted participation, couples, by spouse."))
+            "Observed and predicted shares of the four joint participation regimes: "
+            "neither works, man only, woman only, and both work. Every share uses the "
+            "same denominator of all 2,275 clean-couples households; these are joint "
+            "regime probabilities, not separate spouse marginals."))
     W(F.fig("r240_couples_hours_obs_vs_pred_by_spouse",
             "Observed and predicted hours by spouse."))
     W(F.fig("r240_couples_coefficients_by_block",
@@ -1129,7 +1129,7 @@ def sections(F):
       + n("n_couples_at_bound", "int") + " on an active bound (<code>"
       + n("couples_active_bound_coordinate", "raw") + "</code>, which carries no "
       "standard error by the " + lit("CR1", "the sandwich family, a name")
-      + " convention). A further "
+      + " restriction). A further "
       + n("n_couples_pinned", "int") + " coordinates are pinned inert and are not "
       "displayed.</p>")
     W('<div class="scroll"><table><thead><tr><th>Coefficient</th><th>What it is</th>'
@@ -1371,18 +1371,19 @@ def sections(F):
           "reinforce each other. Negative means the spouses&rsquo; time substitutes, as "
           "it would if household production has to be covered by someone: one partner "
           "working more raises the value of the other&rsquo;s time at home. Setting it "
-          "to zero imposes that a spouse&rsquo;s hours affect the other only through the "
-          "household <em>budget</em>, never through the value of time itself. For a "
+          "to zero removes the direct leisure interaction. Spouses still interact "
+          "through joint consumption, income effects, non-linear household taxes and "
+          "transfers, and the joint choice problem; their decisions are not independent. For a "
           "model of joint labour supply that is a real restriction, and it is the "
           "restriction most likely to be challenged.</p>"
           "<p><b>Why it is zero.</b> Including it made the joint estimation problem "
           "ill-conditioned: the curvature at the optimum lost positive definiteness. "
           "Fixing it at zero restored a well-behaved optimum, but the weak direction "
           "then <em>moved</em> to the male leisure block rather than disappearing &mdash; "
-          "which is why the male-leisure sensitivity below is material. Identifying the "
-          "interaction is an <b>immediate post-seminar extension</b>, and the right "
-          "answer to a question about it is that the model as it stands cannot separate "
-          "it, not that it was found to be zero.</p>"))
+          "which is why the male-leisure sensitivity below is material. This historical "
+          "curvature failure motivated the restriction, but does not prove that the "
+          "interaction is unidentifiable in every corrected couples specification. "
+          "Estimating it is post-seminar work; it was not found to be zero.</p>"))
 
     W("<h3>Couples welfare, and why singles remain the headline</h3>")
     W("<p>The same welfare machinery runs on couples. It is exhaustive in the same "
@@ -1393,6 +1394,10 @@ def sections(F):
       + ") from a baseline of "
       + n("couples_state_I0000_equivalized", "f3") + " (band "
       + n("couples_state_I0000_equivalized__rqmc_band", "range") + ").</p>")
+    W("<p class=\"exempt\">These are RQMC numerical-integration bands only. Couples welfare does not "
+      "carry the same conditional CR1 parameter-uncertainty propagation as the singles "
+      "headline; male-leisure specification sensitivity is reported separately. The "
+      "uncertainty sources are not merged.</p>")
     W('<div class="scroll"><table><thead><tr><th>Channel</th>'
       '<th class="num">Gini points, with the eight-scramble RQMC band</th>'
       '<th>Reading</th></tr></thead><tbody>'
@@ -1488,11 +1493,12 @@ def sections(F):
       '<td><span class="tag no">absent</span> tested and rejected</td></tr>'
       "</tbody></table></div>")
 
-    W("<p>The female term is positive and economically sizeable: each dependent child "
-      "raises the weight a single mother places on time at home, which lowers her "
-      "labour supply at any given budget. It is on the edge of conventional "
-      "significance rather than comfortably inside it, and that should be said before "
-      "it is asked.</p>")
+    W("<p>For single women, one additional model-defined child adds "
+      + n("beta_l_nkids_female", "f4") + " model units to the leisure-weight index. "
+      "It is not exponentiated and is not itself a labour-supply elasticity. The "
+      "estimated couples-female term is negative and imprecise, so the two applications "
+      "do not support a universal positive childcare-preference statement. The singles "
+      "term is only marginally precise.</p>")
     W("<p><b>Tested, not identified, and applying to few households &mdash; the "
       "three things to say about the male term, in that order.</b> It was "
       "<b>tested</b>: the historical S-battery arm added one male child-count "

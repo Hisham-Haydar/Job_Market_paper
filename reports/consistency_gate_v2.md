@@ -2,7 +2,7 @@
 
 **Overall: PASS.** Instrument: `reports/run_consistency_gate.py`, implementing `reports/consistency_gate_spec_v1.md`. `reports/consistency_gate_v1.md` is retained unchanged.
 
-Run over a freshly rebuilt H (`reports/research_story_build/build.py`), a freshly re-executed N (14 code cells, execution counts 1-14, zero error outputs), and the deck content file the three rebuilt PDFs were compiled from.
+Run over the current build of H and the current saved execution of N.
 
 ## Verdict matrix
 
@@ -18,8 +18,13 @@ Run over a freshly rebuilt H (`reports/research_story_build/build.py`), a freshl
 | 8 | The RUM block (spec §8) | **PASS** | **PASS** | **PASS** | **N/A** |
 | 9 | Geographic and sex results (spec §9) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 10 | Forbidden terms and permitted sites (spec §10) | **PASS** | **PASS** | **PASS** | **PASS** |
+| 11 | Boundary-active coordinates: the age-bound line (spec §11) | **PASS** | **PASS** | **N/A** | **N/A** |
+| 12 | Consumption curvature: maintained, not tested (spec §12) | **PASS** | **PASS** | **N/A** | **N/A** |
+| 13 | The couples coefficient table (spec §13) | **PASS** | **PASS** | **N/A** | **N/A** |
+| 14 | Children: the male term and child age (spec §14) | **PASS** | **PASS** | **N/A** | **N/A** |
+| 15 | Execution profiles and backend parity (spec §15) | **N/A** | **PASS** | **N/A** | **PASS** |
 
-0 of 40 (item, artifact) cells FAIL.
+0 of 60 (item, artifact) cells FAIL.
 
 ## Evidence
 
@@ -31,7 +36,7 @@ All four artifacts PASS with no exceptions recorded.
 
 **paper v2 — PASS**
 
-- canonical sentence at 781-785
+- canonical sentence at 788-792
 
 **story HTML — PASS**
 
@@ -44,8 +49,8 @@ All four artifacts PASS with no exceptions recorded.
 
 **research-lab notebook (markdown) — PASS**
 
-- PARA-3 at cell 17/blk 2
-- PARA-3 at cell 23/blk 4
+- PARA-3 at cell 18/blk 2
+- PARA-3 at cell 24/blk 4
 
 ### 3. negLL labels (spec §3)
 
@@ -84,6 +89,56 @@ All four artifacts PASS with no exceptions recorded.
 ### 10. Forbidden terms and permitted sites (spec §10)
 
 All four artifacts PASS with no exceptions recorded.
+
+### 11. Boundary-active coordinates: the age-bound line (spec §11)
+
+**deck content v2.2 — N/A**
+
+- artifact does not introduce the boundary-active coordinates
+
+**research-lab notebook (markdown) — N/A**
+
+- artifact does not introduce the boundary-active coordinates
+
+### 12. Consumption curvature: maintained, not tested (spec §12)
+
+**deck content v2.2 — N/A**
+
+- artifact does not report the consumption curvature
+
+**research-lab notebook (markdown) — N/A**
+
+- artifact does not report the consumption curvature
+
+### 13. The couples coefficient table (spec §13)
+
+**deck content v2.2 — N/A**
+
+- artifact does not carry the couples coefficient table
+
+**research-lab notebook (markdown) — N/A**
+
+- artifact does not carry the couples coefficient table
+
+### 14. Children: the male term and child age (spec §14)
+
+**deck content v2.2 — N/A**
+
+- artifact does not report the male child term
+
+**research-lab notebook (markdown) — N/A**
+
+- artifact does not report the male child term
+
+### 15. Execution profiles and backend parity (spec §15)
+
+**paper v2 — N/A**
+
+- artifact does not carry the profile table, and no obsolete backend claim remains
+
+**deck content v2.2 — N/A**
+
+- artifact does not carry the profile table, and no obsolete backend claim remains
 
 ## Inputs
 

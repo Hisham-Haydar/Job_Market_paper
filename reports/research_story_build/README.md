@@ -1,4 +1,4 @@
-# Generator for `JMP_research_story_report_v1.html`
+# Generator for `JMP_research_story_report_v2.html`
 
 The report is **generated, not hand-written**. No numeral is typed into the prose:
 every one is emitted as a placeholder bound to a key and filled in the browser from
@@ -7,9 +7,9 @@ one of two embedded JSON blocks.
 ## Rebuild
 
 ```
-python build.py       # writes ../JMP_research_story_report_v1.html
-python verify.py      # gate: both self-checks must PASS
-node   jscheck.js     # gate: page JS parses; every bound span renders
+../../../MNL/.venv/Scripts/python.exe build.py
+../../../MNL/.venv/Scripts/python.exe verify.py
+node jscheck.js       # page JS parses; every bound span renders
 node   render_text.js rendered.txt   # proof-reading dump with values substituted
 ```
 
@@ -20,7 +20,7 @@ node   render_text.js rendered.txt   # proof-reading dump with values substitute
 | numbers of record | `../numbers_of_record_v1.json` | every scalar result |
 | coefficient table | `MNL/experiments/JMP_SEMINAR_SPRINT/figures/fig08_coefficients_by_block.csv` | the 41-coordinate table |
 | external validation | `MNL/experiments/JMP_SEMINAR_SPRINT/tables/external_hours_validation_v1.csv` | the hours-band cells |
-| figures | `MNL/experiments/JMP_SEMINAR_SPRINT/figures/*.png` | 31 embedded, downscaled to 1200px |
+| figures | `MNL/experiments/JMP_SEMINAR_SPRINT/figures/*.png` | embedded report figures, downscaled to 1200px |
 
 Chronology quantities and structural definitions are transcribed in `common.py`
 (`aux["chron"]`, `aux["defs"]`) from `MNL/experiments/JMP_PS1/decision_note.md`
@@ -39,7 +39,7 @@ register in section 23.
 ## The self-check
 
 Section 23 audits the document in the browser on every load. `verify.py`
-replicates that audit in Python so the build can be gated. Every numeral in the
+replicates that audit in Python before release. Every numeral in the
 body is classified as one of:
 
 - **bound** — rendered from a key (must resolve; Check A)
@@ -49,6 +49,24 @@ body is classified as one of:
 - **unclassified** — must be zero (Check B)
 
 ## Editing
+
+The current v3 report and paper use `v3_sections.py` as their shared editable
+economic prose and `build_v3.py` as the authoring/build entry point. This replaces
+the older section assembly for v3 only; v2 remains unchanged. Run the builder
+with the MNL scientific Python environment, then compile the v3 TeX in
+`manuscript/` with pdflatex, bibtex and two pdflatex passes. The bibliography,
+`manuscript/figures/v3/` and `manuscript/tables/v3/` are the paper dependencies.
+
+`extract_v3_examples.py` regenerates anonymous examples through the existing
+executed welfare evaluator. It performs no pricing or estimation. Its input-pin
+checks and disclosed history-only runtime exception are inherited from the
+WELF-ID script. Examples remain historical-parameter diagnostics.
+`check_v3_render.py` opens the HTML with networking disabled, tests every math
+container and image, checks PDF references, and renders PDF pages for inspection.
+The v3 registry imports source values before formatting. Corrected estimates
+must enter through reviewed successor inputs and regeneration, never manual
+replacement of rendered values. Fresh corrected notebook orchestration remains
+pending; historical replay is explicitly labelled in the canonical notebook.
 
 Prose lives in `sec_a.py` (§1–6), `sec_b.py` (§7–12), `sec_c.py` (§13–18),
 `sec_d.py` (§19–23). Emit numbers with `n("key", fmt, digits)` for the numbers

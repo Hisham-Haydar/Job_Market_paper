@@ -1,0 +1,166 @@
+\begin{thebibliography}{24}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aaberge and Colombino(2018)]{aaberge2018}
+Rolf Aaberge and Ugo Colombino.
+\newblock Structural labour supply models and microsimulation.
+\newblock \emph{International Journal of Microsimulation}, 11\penalty0
+  (1):\penalty0 162--197, 2018.
+
+\bibitem[Aaberge et~al.(1995)Aaberge, Dagsvik, and Str{\o}m]{aaberge1995}
+Rolf Aaberge, John~K. Dagsvik, and Steinar Str{\o}m.
+\newblock Labor supply responses and welfare effects of tax reforms.
+\newblock \emph{Scandinavian Journal of Economics}, 97\penalty0 (4):\penalty0
+  635--659, 1995.
+
+\bibitem[Aaberge et~al.(1999)Aaberge, Colombino, and Str{\o}m]{aaberge1999}
+Rolf Aaberge, Ugo Colombino, and Steinar Str{\o}m.
+\newblock Labour supply in italy: An empirical analysis of joint household
+  decisions, with taxes and quantity constraints.
+\newblock \emph{Journal of Applied Econometrics}, 14\penalty0 (4):\penalty0
+  403--422, 1999.
+
+\bibitem[Aaberge et~al.(2004)Aaberge, Colombino, and Str{\o}m]{aaberge2004}
+Rolf Aaberge, Ugo Colombino, and Steinar Str{\o}m.
+\newblock Do more equal slices shrink the cake? an empirical investigation of
+  tax-transfer reform proposals in {I}taly.
+\newblock \emph{Journal of Population Economics}, 17:\penalty0 767--785, 2004.
+\newblock \doi{10.1007/s00148-004-0193-2}.
+
+\bibitem[Audoly et~al.(2025)Audoly, McGee, Ocampo, and Paz-Pardo]{audoly2025}
+Richard Audoly, Rory McGee, Sergio Ocampo, and Gonzalo Paz-Pardo.
+\newblock A practitioner's note on the shapley--owen--shorrocks decomposition.
+\newblock Staff Report 1163, Federal Reserve Bank of New York, 2025.
+
+\bibitem[Bargain(2012)]{bargain2012}
+Olivier Bargain.
+\newblock Back to the future: decomposition analysis of distributive policies
+  using behavioural simulations.
+\newblock \emph{International Tax and Public Finance}, 19:\penalty0 708--731,
+  2012.
+\newblock \doi{10.1007/s10797-011-9203-y}.
+
+\bibitem[Bargain et~al.(2013)Bargain, Decoster, Dolls, Neumann, Peichl, and
+  Siegloch]{bargain2013}
+Olivier Bargain, Andr{\'e} Decoster, Mathias Dolls, Dirk Neumann, Andreas
+  Peichl, and Sebastian Siegloch.
+\newblock Welfare, labor supply and heterogeneous preferences: Evidence for
+  europe and the us.
+\newblock \emph{Social Choice and Welfare}, 41:\penalty0 789--817, 2013.
+
+\bibitem[Cap{\'e}au et~al.(2016)Cap{\'e}au, Decoster, and Dekkers]{capeau2016}
+Bart Cap{\'e}au, Andr{\'e} Decoster, and Gijs Dekkers.
+\newblock Estimating and simulating with a random utility random opportunity
+  model of job choice: Presentation and application to belgium.
+\newblock \emph{International Journal of Microsimulation}, 9\penalty0
+  (2):\penalty0 144--191, 2016.
+
+\bibitem[Creedy and H{\'e}rault(2011)]{creedyherault2011}
+John Creedy and Nicolas H{\'e}rault.
+\newblock Decomposing inequality and social welfare changes: the use of
+  alternative welfare metrics.
+\newblock Working Paper 8/11, Melbourne Institute of Applied Economic and
+  Social Research, 2011.
+
+\bibitem[Dagsvik and Jia(2016)]{dagsvikjia2016}
+John~K. Dagsvik and Zhiyang Jia.
+\newblock Labor supply as a choice among latent jobs: Unobserved heterogeneity
+  and identification.
+\newblock \emph{Journal of Applied Econometrics}, 31\penalty0 (3):\penalty0
+  487--506, 2016.
+
+\bibitem[Dagsvik and Str{\o}m(2006)]{dagsvikstrom2006}
+John~K. Dagsvik and Steinar Str{\o}m.
+\newblock Sectoral labour supply, choice restrictions and functional form.
+\newblock \emph{Journal of Applied Econometrics}, 21\penalty0 (6):\penalty0
+  803--826, 2006.
+
+\bibitem[Decoster and Haan(2015)]{decosterhaan2015}
+Andr{\'e} Decoster and Peter Haan.
+\newblock Empirical welfare analysis with preference heterogeneity.
+\newblock \emph{International Tax and Public Finance}, 22\penalty0
+  (2):\penalty0 224--251, 2015.
+
+\bibitem[Fleurbaey and Maniquet(2006)]{fleurbaeymaniquet2006}
+Marc Fleurbaey and Fran{\c c}ois Maniquet.
+\newblock Fair income tax.
+\newblock \emph{The Review of Economic Studies}, 73\penalty0 (1):\penalty0
+  55--83, 2006.
+
+\bibitem[Fleurbaey and Maniquet(2017)]{fleurbaeymaniquet2017}
+Marc Fleurbaey and Fran{\c c}ois Maniquet.
+\newblock Fairness and well-being measurement.
+\newblock \emph{Mathematical Social Sciences}, 90:\penalty0 119--126, 2017.
+\newblock \doi{10.1016/j.mathsocsci.2017.02.005}.
+
+\bibitem[Fleurbaey and Maniquet(2018)]{fleurbaeymaniquet2018}
+Marc Fleurbaey and Fran{\c c}ois Maniquet.
+\newblock Optimal income taxation theory and principles of fairness.
+\newblock \emph{Journal of Economic Literature}, 56\penalty0 (3):\penalty0
+  1029--1079, 2018.
+\newblock \doi{10.1257/jel.20171238}.
+
+\bibitem[Jacquet et~al.(2026)Jacquet, Jia, and Thoresen]{jacquet2026}
+Laurence Jacquet, Zhiyang Jia, and Thor~O. Thoresen.
+\newblock How much does responsibility matter in fairness measurement?
+\newblock Working Paper 12418, CESifo, 2026.
+
+\bibitem[Jessen(2019)]{jessen2019}
+Robin Jessen.
+\newblock Why has income inequality in {G}ermany increased from 2002 to 2011? a
+  behavioral microsimulation decomposition.
+\newblock \emph{Review of Income and Wealth}, 65\penalty0 (3):\penalty0
+  540--560, 2019.
+\newblock \doi{10.1111/roiw.12397}.
+
+\bibitem[Jia and Thoresen(2021)]{jiathoresen2021}
+Zhiyang Jia and Thor~O. Thoresen.
+\newblock Welfare effects of tax policy change when there are choice
+  restrictions on labour supply.
+\newblock Discussion Paper 959, Statistics Norway, Research Department, 2021.
+
+\bibitem[M{\"u}hlhan(2023)]{muehlhan2023}
+Jannek M{\"u}hlhan.
+\newblock The german job miracle and its impact on income inequality: a
+  decomposition study.
+\newblock \emph{International Journal of Microsimulation}, 16\penalty0
+  (1):\penalty0 28--64, 2023.
+\newblock \doi{10.34196/ijm.00274}.
+
+\bibitem[Owen(1977)]{owen1977}
+Guillermo Owen.
+\newblock Values of games with a priori unions.
+\newblock In Rudolf Henn and Otto Moeschlin, editors, \emph{Mathematical
+  Economics and Game Theory}, pages 76--88. Springer, Berlin, 1977.
+\newblock \doi{10.1007/978-3-642-45494-3_7}.
+
+\bibitem[Sastre and Trannoy(2002)]{sastretrannoy2002}
+Mercedes Sastre and Alain Trannoy.
+\newblock Shapley inequality decomposition by factor components: some
+  methodological issues.
+\newblock \emph{Journal of Economics}, 77\penalty0 (S1):\penalty0 51--89, 2002.
+\newblock \doi{10.1007/BF03052500}.
+
+\bibitem[Shorrocks(1982)]{shorrocks1982}
+Anthony~F. Shorrocks.
+\newblock Inequality decomposition by factor components.
+\newblock \emph{Econometrica}, 50\penalty0 (1):\penalty0 193--211, 1982.
+\newblock \doi{10.2307/1912537}.
+
+\bibitem[Shorrocks(2013)]{shorrocks2013}
+Anthony~F. Shorrocks.
+\newblock Decomposition procedures for distributional analysis: A unified
+  framework based on the shapley value.
+\newblock \emph{Journal of Economic Inequality}, 11:\penalty0 99--126, 2013.
+
+\bibitem[Sutherland and Figari(2013)]{sutherlandfigari2013}
+Holly Sutherland and Francesco Figari.
+\newblock Euromod: The european union tax-benefit microsimulation model.
+\newblock EUROMOD Working Paper EM8/13, Institute for Social and Economic
+  Research, University of Essex, 2013.
+
+\end{thebibliography}

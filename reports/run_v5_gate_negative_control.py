@@ -20,6 +20,9 @@ MUTATIONS = [
      r'fixed at one at the numeraire beta_c = 1 and so'),
     (2, 'tex', 'g^{E}_{ij}', 'g^{Acc}_{ij}'),
     (5, 'md', 'directly pay-neutral', 'shown to fail Independence of pay'),
+    (9, 'tex', 'repriced through the tax-benefit system',
+     'obtained by splitting the joint cell'),
+    (9, 'tex', 'earlier partition', 'same partition'),
     (10, 'tex', 'The estimated model has',
      'The SCALE-1 CERTIFIED estimated model has'),
     (15, 'md', 'We claim no new allocation principle.',
@@ -34,14 +37,31 @@ FILES = {
 }
 
 
+EXPECTED_ITEMS = 16
+
+
 def run_gate(root: Path):
+    """Run the gate and refuse to interpret a crash as a clean result.
+
+    A gate that dies on an import or a missing input prints no item lines, and
+    an earlier version of this control read that as "no failures" -- which made
+    every mutation look uncaught and, worse, would have made a broken gate look
+    like a passing one.
+    """
     r = subprocess.run([PY, str(root / 'reports/run_v5_gate.py')],
                        capture_output=True, text=True)
-    fails = set()
+    fails, seen = set(), 0
     for line in r.stdout.splitlines():
         m = re.match(r'^(\d+)\s+.*\s(PASS|FAIL)\s*$', line)
-        if m and m.group(2) == 'FAIL':
-            fails.add(int(m.group(1)))
+        if m:
+            seen += 1
+            if m.group(2) == 'FAIL':
+                fails.add(int(m.group(1)))
+    if seen != EXPECTED_ITEMS:
+        raise SystemExit(
+            'the gate reported %d items, expected %d. It did not run.'
+            '\n--- stdout ---\n%s\n--- stderr ---\n%s'
+            % (seen, EXPECTED_ITEMS, r.stdout, r.stderr))
     return fails, r.stdout
 
 
@@ -59,11 +79,13 @@ def main():
                  root / 'reports/research_story_build/story_v5.generated.md')
     # the gate reads the MNL evidence through JMP.parent
     (base / 'MNL').mkdir(exist_ok=True)
-    src = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/v5_evidence'
-    dst = base / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/v5_evidence'
-    dst.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(src / 'v5_step2_welfare_evidence_v1.json',
-                 dst / 'v5_step2_welfare_evidence_v1.json')
+    sprint = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs'
+    for rel in ['v5_evidence/v5_step2_welfare_evidence_v1.json',
+                's12_welfare_record/s12_six_index_attributions_v1.csv',
+                's12_welfare_record/s12_couples_nested_D_attributions_v1.csv']:
+        d = base / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs' / rel
+        d.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(sprint / rel, d)
 
     clean, out = run_gate(root)
     print('clean copy fails:', sorted(clean) or 'none')

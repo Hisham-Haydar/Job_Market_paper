@@ -203,6 +203,12 @@ def build_aux() -> dict:
          "dropped": _num(r["dropped"]),
          "share_of_file": _num(r["share of file total"])}
         for r in flow]
+    # The old export predates the floor-five chosen-row repair in its label.
+    # Counts are unchanged, but the displayed rule must describe the final frame.
+    for row in sample["flow"]:
+        if "floor 10" in str(row["step"]).lower():
+            row["step"] = ("hours/wage support: 5--70 hours; seven observed "
+                           "6--9-hour choices preserved")
     screen = _rg("results_discussion_table1_1a_composition_screen.csv")
     sample["composition_screen"] = [
         {"reason": r["what it means"] or r["class (name in the code)"],
@@ -241,9 +247,37 @@ def build_aux() -> dict:
     import pandas as _pd2
     _fr = (MNL / "outputs/p2a_singles2016/region_live_margqh_floor5_v1"
            / "fr_p2a_singles2016_regionlive_margqh_floor5_v1__singles.parquet")
-    _cols = ["idorighh", "dwt", "n_children", "drgur", "drgmd"]
-    _hh = _pd2.read_parquet(_fr, columns=_cols).drop_duplicates(subset=["idorighh"])
+    _cols = ["idorighh", "is_chosen", "dwt", "n_children", "drgur", "drgmd", "dag",
+             "hours", "working", "wage", "pexp_years_raw", "gsur"]
+    _all = _pd2.read_parquet(_fr, columns=_cols)
+    _hh = _all[_all["is_chosen"] == 1].drop_duplicates(subset=["idorighh"])
     _w = _hh["dwt"]
+
+    def _weighted_summary(name, unit, frame, col):
+        import numpy as _np
+        z = frame[[col, "dwt"]].dropna().sort_values(col)
+        x = z[col].to_numpy(float)
+        w = z["dwt"].to_numpy(float)
+        p = (_np.cumsum(w) - .5 * w) / w.sum()
+        return {
+            "dimension": name, "unit": unit, "n": int(len(z)),
+            "mean_weighted": float(_np.average(x, weights=w)),
+            "median_weighted": float(_np.interp(.5, p, x)),
+            "p10_weighted": float(_np.interp(.1, p, x)),
+            "p90_weighted": float(_np.interp(.9, p, x)),
+            "min": float(x.min()), "max": float(x.max()),
+        }
+
+    _workers = _hh[_hh["working"] == 1]
+    sample["continuous"] = [
+        _weighted_summary("age", "years", _hh, "dag"),
+        _weighted_summary("hours (all)", "hours/week", _hh, "hours"),
+        _weighted_summary("hours (employed only)", "hours/week", _workers, "hours"),
+        _weighted_summary("observed wage (employed only)", "EUR/hour", _workers, "wage"),
+        _weighted_summary("potential experience", "years", _hh, "pexp_years_raw"),
+        _weighted_summary("gsur (group unemployment rate)", "fraction", _hh, "gsur"),
+        _weighted_summary("members younger than 20", "count", _hh, "n_children"),
+    ]
     sample["children"] = []
     for k in sorted(_hh["n_children"].unique()):
         m = _hh["n_children"] == k
@@ -261,6 +295,12 @@ def build_aux() -> dict:
         for name, m in _urb]
 
     aux["sample"] = sample
+    # Refreshed directly from the frozen floor-five chosen rows for both
+    # household types.  The companion script also regenerates every rg_fig*
+    # image used by the data section.
+    final_desc_path = Path(__file__).resolve().parent / "final_descriptives_v1.json"
+    aux["final_desc"] = json.loads(final_desc_path.read_text(encoding="utf-8"))
+    aux["_sources"]["final_desc"] = str(final_desc_path.relative_to(JMP)).replace("\\", "/")
     # -- derived readings: e^beta ratios, for the plain-language column ------- #
     import math as _m
     ratios = {}
@@ -403,7 +443,31 @@ class FigureBank:
             b64, nb = encode_figure(stem)
             self.used[stem] = b64
             self.bytes += nb
-        cr = ('<div class="credit">%s</div>' % esc(credit)) if credit else ""
+        if stem == "figT1_conceptual":
+            meta = ("Population: synthetic households. Units: illustrative index units. "
+                    "Measure: schematic RURO mechanism. Reference: none. Status: illustrative, not empirical.")
+        elif stem.startswith("rg_fig"):
+            meta = ("Population: final floor-five single-adult and both-flexible couple samples, "
+                    "as identified in the panel legend. Units: axis labels. Measure: survey-weighted "
+                    "observed chosen-row distribution unless the caption states an unweighted count. "
+                    "Reference: FR_2016_a3 delivery, income year and policy system 2015. Status: "
+                    "regenerated descriptive evidence; no model estimate.")
+        elif stem.startswith(("r240_", "figC")):
+            meta = ("Population: both-flexible couple households. Units: axis labels. Measure: "
+                    "observed or model-implied as identified in the legend. Reference: clean-couples "
+                    "current-implementation specification. Status: current-implementation output, "
+                    "not a corrected bounded-support estimate.")
+        elif stem.startswith("figX"):
+            meta = ("Population: external benchmark population identified in the caption. Units: "
+                    "axis labels. Measure: external benchmark comparison, not identification. "
+                    "Reference: named public source. Status: benchmarking evidence.")
+        else:
+            meta = ("Population: final single-adult sample unless the caption names another group. "
+                    "Units: axis labels. Measure: observed or model-implied as identified in the "
+                    "legend. Reference: named welfare or behavioural reference in the caption. "
+                    "Status: current-implementation output, not a corrected bounded-support estimate.")
+        cr = '<div class="credit"><b>Metadata.</b> %s%s</div>' % (
+            esc(meta), (" " + esc(credit)) if credit else "")
         return (
             '<figure class="fig">'
             '<img alt="%s" src="data:image/png;base64,%s">'

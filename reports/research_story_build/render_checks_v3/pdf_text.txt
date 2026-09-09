@@ -1,0 +1,2025 @@
+Unequal Job Opportunities and Well-Being Inequality: A
+Latent-Jobs Structural Decomposition
+Hisham Haydar
+University of Luxembourg and LISER
+Build: 08 September 2026
+Discussion draft; intended circulation 10 September 2026
+Abstract
+Observed differences in earnings and working time can reflect either heterogeneous pref-
+erences or unequal access to jobs. This distinction matters for assessing inequality in well-
+being, yet income comparisons alone do not reveal its importance. We study how much
+inequality in money-metric well-being is attributable to job access and earning opportuni-
+ties rather than preferences, separately accounting for non-labour resources and household
+needs. Using French household data and a tax-benefit microsimulation model, we estimate a
+latent-jobs labour-supply model for single-adult and couple households in which preferences
+and opportunity distributions enter jointly. We construct an ex-ante equivalent-income mea-
+sure and decompose its inequality using explicitly defined counterfactual equalizations and a
+grouped Shapley allocation. A re-estimated common-opportunity benchmark examines how
+omitting opportunity heterogeneity changes the resulting welfare assessment. The analysis
+distinguishes structural attribution from causal effects and makes the role of the monetary
+reference explicit.
+Version note: estimates, wage support and dependent results remain under correction; the
+flat-consumption welfare identity is verified at the historical estimates (source details in the
+reproducibility appendix).
+1
+Introduction
+1.1
+The economic question
+Low earnings can describe someone who prefers more leisure, someone who cannot obtain a well-
+paid job, or someone whose family resources allow a different work choice. These explanations are
+observationally entangled but economically different. Income inequality records their combined
+outcome. It does not tell us how unequal access to employment, hours packages and wage offers
+affects well-being once people value leisure differently.
+The question is therefore not whether income is measured in the right currency. It is how an
+explicit account of labour-market opportunities changes the distribution of a declared money-
+metric measure of well-being. Random Utility–Random Opportunity (RURO) is the framework
+used here: households choose among job packages, and both their preferences and the relative
+intensity of the packages available to them enter the distribution of observed choices. Neither
+opportunities nor preferences are directly observed as complete schedules.
+Two distinctions organize the paper. First, employment and occupation access are not the
+same mechanism as the distribution of wages conditional on an occupation. Second, neither is
+the same as non-labour resources or household needs. The exhaustive non-preference compo-
+nent includes all these circumstances, but only its access and earnings components answer the
+narrower job-opportunity question. Reporting the entire non-preference share as an opportunity
+share would misstate the estimand.
+1
+
+The paper measures how explicitly modelling household-specific labour-market opportunities
+changes cross-sectional inequality in an ex-ante money metric and its attribution across pref-
+erences, job access, earnings opportunities, resources and needs. Joint preference–opportunity
+estimation is inherited from the latent-jobs literature, not invented here. The contribution is this
+estimand, its French single-adult and couple applications, and the comparison with re-estimated
+common-opportunity benchmarks.
+The substantive quantitative answer must await corrected estimation and the dependent
+welfare reconstruction. The available evidence establishes the implemented welfare definition
+and several important distinctions in its interpretation. It does not yet establish a corrected
+percentage of inequality due to opportunities, a causal effect of geography, or a ranking of the
+opportunity share between singles and couples. Throughout the main results, a pending entry
+means precisely that the relevant corrected calculation has not been supplied, not that its value
+is zero.
+2
+Related literature
+2.1
+Related literature and the exact contribution
+2.1.1
+Labour supply as choice among latent jobs
+The structural labour-supply literature supplies the behavioural machinery needed to take non-
+linear taxes and heterogeneous preferences seriously. In a standard discrete-hours application,
+the analyst evaluates a set of hours points, uses a tax-benefit calculator to price them, and
+estimates preferences from observed choices. That representation is useful but does not by itself
+distinguish a low probability of choosing an hours package because it is unattractive from a low
+probability because it is rarely offered. The latent-jobs approach makes this distinction explicit.
+Jobs can differ in remuneration and working time as well as unobserved attributes; a structural
+opportunity measure describes their relative intensity.
+Dagsvik and Strøm study sectoral labour supply with choice restrictions and flexible func-
+tional forms (Dagsvik and Strøm, 2006, model exposition). Sector choice matters because jobs
+in different sectors need not offer the same hours and earnings opportunities. Their framework is
+an antecedent for treating the empirical distribution of work as the product of systematic utility
+and an opportunity component, rather than as a direct image of tastes. What is estimated
+is a behavioural job-choice model, with restrictions on the functions that describe utility and
+sectoral opportunities. The relevant inheritance is the discipline of specifying both functions,
+their domains and their identifying restrictions. It is not permission to import every exclusion,
+shock process or normalization from their model into ours.
+This distinction is especially important at an hours peak. If utility is left sufficiently unre-
+stricted, an observed concentration of hours need not uniquely reveal employer restrictions. Our
+placement of narrow hours bands in the opportunity function, together with a smooth leisure
+utility, is a maintained identifying restriction. The separate role of labour-market shifters relies
+on their exclusion from preferences conditional on the other regressors. The restrictions can be
+economically motivated by working-time institutions, but the histogram alone does not prove
+them. Dagsvik and Jia make unobserved heterogeneity and identification central to the latent-
+jobs formulation (Dagsvik and Jia, 2016). Their contribution cautions against interpreting a
+well-fitting product of preferences and opportunities as a nonparametric recovery of each factor.
+Our application uses observed preference shifters and a restricted opportunity parameterization;
+it does not estimate the full persistent unobserved-heterogeneity structure considered in that
+literature.
+Failed recovery in a tested extension would not prove that such heterogeneity is
+absent in France.
+More specifically, Dagsvik–Strøm’s identification discussion separates the consumption com-
+ponent and conditional wage-offer distribution from the harder leisure/opportunity split. The
+2
+
+leisure factor and offered-hours factor appear as a product; separating them requires additional
+functional restrictions. Their application attributes part-time and full-time clustering to insti-
+tutional or technological restrictions under that parameterization. It does not establish that
+arbitrary preferences could never generate clustering. Their empirical random effect also quali-
+fies the independence-of-irrelevant-alternatives assumption: it is conditional on that effect, not
+an unconditional statement about all households (Dagsvik and Strøm, 2006, identification dis-
+cussion and empirical specification). We inherit the need to declare the separation restriction,
+not their entire stochastic specification.
+Capéau, Decoster and Dekkers provide the closest applied RURO comparison [Capéau et al.
+(2016), sections on opportunities, preferences and estimation; opportunity-process appendix].
+They study job choice in Belgium and estimate preferences and opportunities jointly. Their
+exposition develops the intensity of job offers, the utility attached to jobs, the resulting choice
+probability and the likelihood, rather than treating offer restrictions as a post-estimation adjust-
+ment. Their explicit opportunity-process foundation explains why unobserved jobs may enter
+a probability model without their complete menus being observed. We inherit joint estimation
+and the need to distinguish opportunity intensity from choice probability. We do not claim to
+originate either step.
+The distinguishing restrictions again do essential work. Restrictions on the job intensity
+and utility functions, together with excluded opportunity shifters, separate components that
+choices alone identify only jointly. Our French model uses employment and occupation access,
+banded hours and occupation-conditional wage distributions with a household tax-benefit map.
+It reports single-adult and joint couple applications, then asks about cross-sectional inequality
+in an ex-ante monetary level and its grouped attribution. Those additions change the object
+of evaluation and the empirical organization. They do not establish that our application is the
+first to combine random opportunities with heterogeneous tastes. Nor does the Poisson-process
+foundation in Capéau and coauthors establish that this code implements that foundation: here
+the mixed-measure choice density is explicitly maintained as a reduced structural representation.
+Capéau and coauthors explicitly assume the wage-offer distribution is independent of of-
+fered hours in the identifying argument.
+They also exclude a group-specific unemployment
+rate from preferences while allowing it to shift job availability. Their identification subsection
+explains that the utility and offered-hours factors are not separately recovered nonparametri-
+cally without further restrictions. These are concrete antecedents of our conditional wage/hours
+factorization, labour-market exclusion and smooth-preference/banded-opportunity distinction.
+Their Belgian application already includes single women, single men and couples. Our inclusion
+of both household types is therefore not a novelty claim; the change is the French opportunity-
+sensitive level-inequality estimand and attribution, subject to its own restrictions (Capéau et al.,
+2016, identification and empirical-application subsections).
+2.1.2
+Constrained household choice and welfare already belong together
+Aaberge, Colombino and Strøm study Italian tax-transfer reforms with an estimated model
+of partners’ simultaneous labour-supply decisions and hours restrictions (Aaberge et al., 2004,
+section 2 and Appendix A). They compare alternatives including a flat tax, a negative income
+tax and a workfare arrangement, allowing behavioural responses to alter both resources and
+their distribution. Their budget maps combine spouses’ gross earnings and other income under
+non-linear tax-transfer rules. This is direct prior work combining joint choice, restricted hours
+and welfare, not a separate literature that stops before welfare evaluation.
+Their monetary evaluation uses a reference household, choice set and tax system to translate
+attained utility into equivalent income; differences across tax systems assess reform gains. We
+inherit the lesson that behavioural and distributional evaluation must be linked and that the
+reference must be stated. Our reference instead flattens disposable consumption across alterna-
+tives while retaining the specified state’s non-consumption utility and opportunity weights. Our
+3
+
+main empirical object is a cross-sectional distribution of levels, not the compensating gain from
+replacing a tax schedule. These differences are substantive: one cannot transfer their rankings,
+reform gains or normative reference to our measure merely because both are called equivalent
+income.
+The couple application consequently belongs in the core of the present paper. Jointly pricing
+two earnings streams under a shared household budget is not equivalent to fitting two indepen-
+dent single-person decisions. Even when the deterministic leisure terms are additive, the non-
+linear household budget couples their choices. The maintained absence of a direct cross-leisure
+interaction is a restriction within a joint model, not evidence that the decisions are independent.
+Our narrower contribution is the opportunity-sensitive cross-sectional welfare attribution, not
+the discovery that joint labour supply, hours restrictions and welfare can be analysed together.
+2.1.3
+Heterogeneous preferences and interpersonal welfare comparison
+Decoster and Haan ask how ethical choices about preference heterogeneity change empirical
+welfare orderings and the evaluation of a tax reform [Decoster and Haan (2015); original working-
+paper version, printed pp. 2–5 and section 2]. Their application estimates a discrete-choice model
+of female labour supply in German couples, holding husbands’ labour supply fixed. It uses the
+estimated preference heterogeneity to compare monetary welfare orderings. This is different from
+our joint couple choice model, but it confronts the same normative difficulty: equal incomes or
+common monetary units do not resolve interpersonal comparisons when indifference curves differ.
+Their preference-respecting metrics increase when an individual reaches a higher indiffer-
+ence curve of her own preferences. A reference-preference ordering instead removes preference
+heterogeneity at the evaluative stage. Those are different ethical operations, even when both
+begin with the same estimated behavioural model. Their wage and rent metrics expose different
+choices about which circumstances are neutralized and how industrious or work-averse individ-
+uals are treated. No single ethical rule follows merely from calling a quantity a money metric.
+The working-paper discussion explicitly distinguishes retaining preferences in the ordering from
+replacing them with a planner’s common preference ordering.
+Their comparison gives priority to preference-respecting evaluation and restricts interper-
+sonal comparisons through nested equivalent sets. The wage criterion indexes the household’s
+own indifference curve by a hypothetical net wage with no unearned-income intercept; the
+reference-wage class instead fixes a common net wage and varies the unearned-income inter-
+cept.
+The rent criterion is the zero-reference-wage case.
+Thus the reference removes actual
+wage and non-labour-income circumstances from the comparison setting while preserving the
+individual’s own preference ordering. Their normative discussion distinguishes compensation
+for circumstances from liberal reward for preference-related differences: the rent reference of-
+fers stronger protection to work-averse individuals than the wage reference. Their empirical
+preference estimates also exploit tax-schedule variation across years, not solely cross-sectional
+functional form (Decoster and Haan, 2015, original working-paper version, printed pp. 7–11).
+Our single-policy-year application does not inherit that source of identifying variation. Nor is
+our integration over a reference opportunity distribution equivalent to maximizing over their
+nested deterministic budget sets.
+Our baseline preserves the household’s own non-consumption utility and opportunity weights
+in both attained and reference ex-ante value. Holding that reference fixed, increasing attained
+value increases the equivalent income. This is the limited, precise sense in which the mapping
+respects the household’s estimated evaluation. It is not a claim that our stochastic set-valued
+reference satisfies every axiom attached to Decoster–Haan’s deterministic bundle metrics. In
+particular, because the opportunity distribution enters both sides, changes in the menu cannot be
+assessed by holding the reference curve silently fixed. The preference-equalization counterfactual
+is a separate exercise: it changes preference shifters in attained value and in the reference map.
+It should not be described as a baseline measure that already purges all preference differences.
+4
+
+The companion Haydar–Maniquet theory project likewise studies jobs and well-being
+measurement, but its family of reference principles remains distinct (Haydar and Maniquet,
+2025).
+This application evaluates one specified flat-consumption reference.
+The illustrative
+consumption–leisure diagram motivates the ambiguity in observed work; it neither proves
+an axiomatic characterization of the empirical index nor implements the entire companion
+theory. The separation matters because reference design is a scientific and ethical choice that
+behavioural estimation cannot settle on its own.
+2.1.4
+Responsibility-sensitive reform effects versus cross-sectional levels
+Jacquet, Jia and Thoresen use a job-choice model to compare standard and circumstance-only
+compensating variation for a Norwegian tax reform (Jacquet et al., 2026, sections 3–5). They
+distinguish the welfare effect evaluated with individual preferences from a responsibility-sensitive
+effect computed after replacing preference characteristics by reference values. Their model treats
+couples as unitary joint decision makers, and its observed and unobserved preference hetero-
+geneity informs the comparison. The object is a welfare change between policy regimes, with
+a declared treatment of preference-related differences, rather than the distribution of monetary
+levels under one policy system.
+We inherit their insistence that the preference–circumstance distinction must be made ex-
+plicit in welfare evaluation and that a latent-jobs model is useful for doing so. The empirical
+question changes here: how much cross-sectional inequality in an ex-ante monetary level is
+allocated to preferences, access, earnings opportunities, resources and needs? A reform compen-
+sating variation and a cross-sectional equivalent-income level have different origins and denom-
+inators. Even if their preference-related reform differences were small, that would not establish
+a small preference contribution to our level inequality. Conversely, our decomposition would
+not estimate the welfare gains of their reform. Neither comparison should be presented as a
+numerical validation of the other.
+2.1.5
+Distributional attribution and the role of grouping
+Shorrocks develops decomposition procedures using the Shapley value to allocate a distributional
+change across factors (Shorrocks, 2013). The economic difficulty is that the effect of equalizing
+one factor depends on which others have already been equalized. Non-linear taxes, consumption
+utility and household needs make such interactions unavoidable here. Averaging marginal effects
+across orders produces an exhaustive attribution of the reducible inequality difference without
+assigning all interactions to the last factor changed.
+This is an allocation principle, not an
+identification result or a causal estimator.
+The grouped implementation gives the preference versus non-preference distinction pri-
+ority, then allocates the non-preference component among its mechanisms.
+The Shapley–
+Owen–Shorrocks discussion in Audoly and coauthors clarifies this hierarchy (Audoly et al.,
+2025). Grouping is a maintained economic design choice: it ensures that the broad preference–
+circumstance comparison is not changed solely by subdividing one circumstance into many labels.
+A flat allocation over all subfactors would generally allocate cross-group interactions differently.
+It is a legitimate alternative question, not an algebraic error to be repaired by rescaling its
+contributions.
+Together these literatures narrow the contribution. Latent-job estimation, non-linear taxes,
+joint household choice, preference-sensitive welfare and Shapley allocation all have precedents.
+What the present exercise adds is the explicit measurement of how household-specific labour-
+market opportunities change cross-sectional inequality in the implemented ex-ante money metric,
+separated from resources and needs, with a re-estimated common-opportunity comparison. The
+empirical magnitude and its sensitivity remain to be established by the corrected results.
+5
+
+Figure 1: Motivation only: a schematic single-person consumption–leisure ambiguity. Axes have no
+empirical calibration; menus and preferences are illustrative. The same observed bundle does not identify
+its explanation. The conceptual distinction is related to Haydar–Maniquet’s companion theory paper; no
+fixed-leisure equivalent-income measure is computed.
+3
+Conceptual framework
+3.1
+From observed work to the implemented reference
+An observed job is a package of working time, occupation and hourly remuneration. Simulated
+alternatives are jobs drawn by the analyst to evaluate integrals or a sampled-choice likelihood;
+they are not a recovered list of the jobs a household actually received. A consumption–leisure
+picture clarifies why one observed package cannot identify its explanation. The same bundle
+may be optimal when the household places considerable value on leisure and has broad options,
+or when a more work-oriented household faces a tighter menu.
+The figure is motivation, not an empirical estimate or a computation of our money metric.
+It uses the consumption–leisure distinction discussed by Haydar and Maniquet in the separate
+companion manuscript, Jobs and Well-Being Measurement (Haydar and Maniquet, 2025). The
+graphical construction here is new and schematic. We neither reproduce that paper’s full family
+of welfare measures nor claim its axioms characterize the empirical measure below. In particular,
+no fixed-leisure intersection is labelled as the implemented equivalent income.
+The implemented monetary reference instead assigns the same disposable-consumption
+amount m to every alternative in the reference opportunity distribution.
+Let Li(j) be all
+non-consumption utility at job j, Ci(j) priced monthly disposable consumption, λc its positive
+scaling constant, and bgi the normalized opportunity density.
+Define BC as the Box–Cox
+function specified in the model section. The bridge from a monetary amount to ex-ante value is
+Φi(m) = BC(m/λc; θc) + log
+Z
+exp{Li(j)}bgi(j) dν(j).
+The equivalent income is the amount for which this curve reaches the attained value
+log
+R exp{Li(j) + BC(Ci(j)/λc; θc)}bgi(j)dν(j). The reference retains leisure differences across
+alternatives and, at baseline, the household’s own preferences and opportunity distribution. It
+flattens disposable consumption, not leisure, hourly pay or gross earnings. This distinction is
+the reason for the second early figure.
+Changing the reference to one fixed leisure bundle would change the question and generally
+the monetary answer. Expressing both answers in euros would not make them interchangeable.
+6
+
+Figure 2: Implemented monetary reference for the anonymous single-adult and couple examples. Hori-
+zontal unit: flat monthly disposable consumption in euros; vertical measure: dimensionless ex-ante value.
+The reference curve meets attained value at equivalent income. Status: current evaluator at historical
+estimates and priced inputs; not corrected welfare results. Each curve uses its own baseline opportunity
+distribution and leisure utility.
+The later welfare section derives the implemented identity and shows its numerical evaluation
+for a single adult and a couple.
+4
+Data and institutional setting
+4.1
+French data, timing and institutional setting
+The application uses the French household input delivered for 2016 survey collection, whose
+income-reference year is 2015, priced with the French 2015 policy system. Collection, annual
+income, current hours/status and policy dates are distinct. The input filename does not establish
+a price deflator, and the tables are not labelled “real collection-year euros.” Current-status hours
+combined with annual income require a mixed-period measurement assumption. The source-
+to-sample audit identifies that assumption rather than claiming the data observe a complete
+contemporaneous budget schedule.
+EUROMOD is a tax-benefit microsimulation model: it applies policy rules to household
+inputs to calculate taxes, contributions, benefits and disposable resources (Sutherland and Fi-
+gari, 2013). Its chosen-state disposable income is simulated under the policy rules, not observed
+household consumption expenditure. A counterfactual working job is priced as full-year em-
+ployment at its weekly hours and gross hourly wage. For spouse s, the actual job operator
+uses
+Y reg
+is
+= 52
+12wis min(his, 35),
+Y ot
+is = 52
+12wis max(his −35, 0),
+Yis = Y reg
+is
++ Y ot
+is .
+Here h is hours per week, w gross euros per hour and Y gross euros per month.
+Non-
+employment sets the alternative’s employee earnings and associated job-history inputs accord-
+ingly. Equal total earnings with different regular/overtime hours need not produce identical
+tax inputs. The policy map therefore retains hours and the earnings split, rather than being
+described as a function of wh alone.
+For a household roster Hi, write the corrected target budget as
+Ci(j) = Bτ
+
+{Y reg
+is , Y ot
+is , his}s; ri, di, ti
+
+,
+7
+
+where ri denotes non-labour resources, di composition and other policy-relevant inputs, ti
+the imputed take-up traits, and τ the fixed policy system. Disposable resources must be aggre-
+gated across the complete modelled household using the source’s person/allocation semantics.
+Corrected all-member aggregation for singles is pending; the historical evaluator example explic-
+itly uses its existing decider-based singles consumption. That historical quantity is not labelled
+as the corrected household budget.
+Resource inputs are heterogeneous objects.
+Annual cash flows are supplied as monthly
+equivalents; wealth is a stock; housing costs are expenditure flows; receipt-month variables
+count months; categorical asset indicators are codes. Employee fringe benefits are non-cash and
+must not be added to a positive cash-income subtotal as though they were cash. Company cars
+and imputed housing rent are not childcare or child-unit measures. The field dictionary now
+resolves the formerly missing unit definitions and these semantic mistakes. Whether alternative-
+specific work-history counters belong in an independently equalizable resource block remains
+open, because the job operator overwrites them.
+Take-up is an imputation assumption, not a preference estimated from the job-choice likeli-
+hood. Revealed cases retain their observed trait; other cases use one seeded household trait per
+employment state, with separately calibrated singles and couples rates. The pricing workflow
+must neutralize the simulator’s corresponding random take-up step and apply the trait once.
+The historical positive-consumption floor is not a subsistence estimate. The successor direction
+treats non-positive disposable consumption as outside the utility domain; its implementation
+and affected-sample consequences must be established before the dependent results are used.
+4.2
+Sample construction for singles and couples
+The decision unit is a household with one adult decider or a linked opposite-sex couple of
+deciders. Other residents can affect resources and needs without becoming additional labour-
+supply decision makers. Couples are not obtained by pairing independent estimates for singles.
+Both adults must meet the couple eligibility conditions, and the household is the sampling and
+welfare unit.
+The construction starts with the complete household roster, selects the supported house-
+hold structures, limits each decider’s age, excludes current schooling and retirement, disability
+or survivor-benefit cases, restricts labour-market states, and removes households with an addi-
+tional employable or earning non-decider. The age field records age, not birth year. The last
+historical step screens wages and projects hours onto the old model domain. These are selection
+and measurement operations, not harmless changes of labels. Some employed records without
+observed employee earnings retain imputed wage inputs: the delivered wage input is not uni-
+formly an observed wage. The following counts describe the historical priced estimation frames;
+successor counts will be regenerated from the corrected source-to-sample output rather than
+preserved as targets.
+Historical sample flow. Population: French eligible single-adult and linked couple households;
+unit: unweighted households remaining after each screen; measure: retained count; reference:
+collection-year input and old observation/support rules; status: observed-input construction,
+not corrected successor counts.
+Screen
+Singles
+Couples
+one- or two-adult households (composition screen) 4,038
+5,965
+every adult aged 20 to 60
+2,131
+3,662
+no adult still in education
+2,036
+3,521
+no old-age, disability or survivor pension receipt
+1,755
+3,218
+labour status in scope
+1,598
+2,412
+no other employable or earning member
+1,564
+2,323
+Historical wage screen and hours projection
+1,555
+2,275
+8
+
+The historical minimum positive employed hours is 6 for singles, 9 for couple men and 6
+for couple women. These observed minima do not change the lower endpoint of a continuous
+structural hours support. Genuinely employed low-hours records must not be silently recoded as
+non-employed, and capped high-hours observations must not be represented as exact reports. A
+supported observation rule—exclusion, expanded valid support, or explicit censoring—is pending
+for the successor sample.
+ISCO means the International Standard Classification of Occupations.
+The application
+groups civilian occupations into elementary; services/sales; clerical/craft/operators; and man-
+agers/professionals/technicians. Military occupations do not have a genuine civilian group in
+this mapping. Their household treatment must follow the corrected sample decision, not modal
+re-imputation. The population excludes other household structures and self-employment mar-
+gins not modelled here; its results are not automatically representative of all French adults.
+The preference child count is all resident members below the model’s age cutoff, not neces-
+sarily the decider’s parent-linked minors. Parent-linked children, youngest-child measures and
+the equivalence-scale count are different variables. Their disagreement does not itself establish
+a coding error. Replacing one by another would change the model and requires a new estimate.
+4.3
+Descriptive distributions and what they measure
+Survey weights expand sampled households to their represented population. A household weight
+is used once per household, not once per member or simulated job. The normalized weights ωi =
+dsurvey
+i
+/ P
+j dsurvey
+j
+sum to one and are used for descriptive distributions, population predictions
+and inequality. The structural criterion described later is a sum of household log contributions;
+this is separate from applying survey weights to a population summary.
+Historical sample descriptives. Population: retained singles and couple deciders; household-
+survey-weighted means/fractions/medians; units stated in rows; reference:
+old constructed
+employment/hours/wage inputs; status: observed-input summaries, not model predictions or
+corrected-sample findings.
+Measure
+Singles
+Couple men
+Couple women
+Mean decider age (years)
+41.0
+39.8
+37.8
+Employment fraction
+0.871
+0.924
+0.897
+Mean hours among
+employed (hours/week)
+37.7
+41.4
+36.0
+Median wage input
+among employed
+(EUR/hour)
+14.07
+15.44
+13.54
+The resource distribution uses actual resource inputs, not the distribution of disposable
+consumption as a proxy. Chosen-state consumption is a simulated policy output, while wage
+constructions and hours originate in the survey input with the stated observation rules. These
+distinctions prevent a mechanically persuasive but economically mislabeled comparison.
+The current descriptives reveal the sample and the economic scales used by the historical
+computation. They do not establish corrected behavioural fit. Singles and couples have dif-
+ferent resource pooling and composition; a higher household consumption level for couples is
+not evidence of higher individual well-being without a needs adjustment and an explicit intra-
+household interpretation. The corrected sample and all-member budget rebuild may change the
+distributions, so the figure is marked historical input evidence locally, not only in the version
+note.
+9
+
+Figure 3: Historical input distributions for retained French singles and couples, using household survey
+weights. Left: fraction with nonzero actual resource inputs, not consumption proxies. Right: priced
+chosen-state consumption quantiles, euros/month under the income-reference policy. The singles histor-
+ical aggregation is decider-based; couples use all-member aggregation. Status: historical source/pricing
+evidence, not corrected sample or welfare estimates.
+5
+Structural household model and identification
+5.1
+The household model and its maintained assumptions
+For household i, j is a single job or a joint pair of jobs. A single non-employed alternative
+is denoted 0; working jobs have occupation k, hours h and wage w.
+Let T be the weekly
+time endowment and λℓthe leisure scale in hours per week. Define dimensionless consumption
+c = C/λc and leisure ℓ= (T −h)/λℓon the positive-leisure support.
+The historical guard
+max(T −h, 1) is inactive inside the stated hours domain; it is not authority to expand that
+domain without checking the leisure interpretation.
+BC(z; θ) =
+(
+(zθ −1)/θ,
+θ̸ = 0,
+log z,
+θ = 0,
+z > 0.
+For single adults of sex s, deterministic utility is
+ui(j) = ωisBC(ℓi(j); θℓs) + BC(ci(j); θc),
+ωis = βℓ0,s + βℓa,sai + βℓa2,sa2
+i + 1{s = f}βℓn,fni.
+Here ai is age centred using the frame’s decider-age mean and divided by 10 years; ni counts
+all resident members younger than 20 years. The age square is recomputed after centring and
+scaling. The child effect is additive in the leisure weight. It is not an exponentiated proportional
+change in that weight, and the absence of a male child term is a maintained structural zero, not
+a precise estimated zero.
+For a couple, the actual maintained specification is
+ui(jm, jf) = ωimBC(ℓim; θℓm) + ωifBC(ℓif; θℓf) + log ci(jm, jf),
+ωim = βℓ0,m + βℓa,maim + βℓa2,ma2
+im,
+ωif = βℓ0,f + βℓa,faif + βℓa2,fa2
+if + βℓn,fni,
+βℓℓ= 0.
+The last equality is a maintained restriction on a direct leisure interaction.
+It does not
+estimate an absence of complementarity in behaviour. Both spouses’ earnings determine the
+same non-linear household budget, so their labour-supply decisions remain joint. The female
+10
+
+child term is present in couples as well as singles; its presence and its estimation precision are
+separate facts.
+Maintained specification comparison. Population: single-adult and couple households; mea-
+sure: structural restrictions (no estimated quantities); units: utility on fixed stochastic scale;
+reference: extracted retained utility/opportunity architecture, with corrected support and esti-
+mator pending.
+Component
+Singles
+Couples
+Decision
+One job
+One joint job pair under shared
+budget
+Consumption
+Estimated common Box–Cox
+curvature
+Log consumption
+Leisure
+Sex-specific weights and
+curvatures
+Spouse-specific weights and
+curvatures
+Children
+Female leisure weight only
+Female leisure weight only
+Direct leisure interaction
+Not applicable
+Restricted to zero
+Hours opportunities
+Shared across sexes
+Separate spouse band coefficients
+Occupation access
+Sex-specific
+Spouse-sex-specific
+Wage block
+Shared across sexes within singles Shared across spouses within
+couples; separate estimation from
+singles
+Consumption aggregation
+All-member correction pending
+All-member household
+aggregation
+Proposal participation
+Single work/non-work draw
+Joint regime first, then
+conditional spouse jobs
+Welfare unit
+Household
+Household; within-couple
+allocation not identified
+5.1.1
+What the model assumes
+The decision horizon is static.
+Annualised work packages do not describe search dynamics,
+involuntary duration, savings or intertemporal insurance. The couple household is unitary: one
+deterministic utility ranks joint alternatives. Individual bargaining weights and the distribution
+of consumption within the couple are not separately identified.
+Replacing this model by a
+collective household model would change both the behavioural interpretation and the welfare
+unit.
+The mixed-measure choice density is a maintained reduced structural representation.
+A
+finite-menu iid extreme-value argument alone does not derive a probability density over an
+uncountable continuum of jobs. No verified project-specific latent random-measure foundation
+has been supplied for the continuous model. We therefore do not import a Poisson process from
+another paper by analogy or call log J an expected maximum without that additional argument.
+Support, bounded budgets on compact earnings sets, positive consumption and finite indices
+are required for finite integrals. The utility’s consumption coefficient is fixed at one and the
+choice-shock scale is also fixed. Without a demonstrated parameter/shock reparameterization,
+these jointly impose a restriction; fixing the consumption coefficient is not asserted to be a
+free scale choice. Changing consumption or leisure units requires corresponding parameter and
+stochastic-scale transformations if one wants behavioural invariance. The shared consumption
+curvature across singles is a parsimonious restriction, not a requirement imposed by euro units.
+The opportunity factorization excludes dependence not carried by observed covariates and
+occupation-conditional wages. Opportunity shifters are conditionally excluded from utility. Ex-
+ogeneity, accurate household budget construction and a correctly specified observation/sampling
+law are substantive assumptions, not consequences of a successful optimizer. Numerical sampling
+assumptions concern the analyst’s integration or likelihood approximation, never a household’s
+taste for the sampler.
+11
+
+5.2
+Employment, hours, occupation and wage opportunities
+Let K be the civilian occupation groups, H the declared positive hours interval and [w−, w+]
+the adopted positive bounded wage support. The single-adult job measure is
+ν = δ0 +
+X
+k∈K
+δk ⊗dh ⊗dw.
+It puts one atom at non-employment and continuous density on working hours and wages.
+A density height has reciprocal units relative to this measure; integrating it gives mass. Neither
+the hours endpoints nor the narrow full-time band are additional atoms.
+An equivalent uncentred structural kernel is
+gi(0) = 1,
+gi(k, h, w) = exp{Ei + Osk + Hs(h)} fi(w | k),
+Os1 = 0.
+For singles, the access index is
+Ei = βE + 10βEgugroup
+i
++
+8
+X
+r=2
+γrRir + γUUi + γMMi + γ15Di,15 + γ17Di,17.
+The group unemployment rate ugroup
+i
+is a fraction, not a percentage. Its regressor is ten
+times that fraction. A change ∆u changes this index by 10βEg∆u; it does not change employ-
+ment probability by that amount. The group rate is merged from the external opportunity-year
+lookup using region, three education groups and sex.
+Its source is Eurostat regional unem-
+ployment rates for the broad working-age group, aggregated to the application’s regions with
+population-denominator weights, not labour-force-denominator weights; the latter are a diagnos-
+tic alternative. The source age band is 20–64, and the opportunity year is 2015. Thus education
+has a second pathway through access in addition to the wage equation. These generated group
+inputs are held fixed in the conditional inference; their own sampling uncertainty is not prop-
+agated. Region, urban and intermediate-location dummies are relative to omitted region/rural
+references. The adjacent survey-year terms are inactive in the single-year application.
+Hours enter through Hs(h) = P
+b bbs1{h ∈Bb}, with zero index on the complement. Singles
+share the hours coefficients across sexes; couples have spouse-specific coefficients. The intervals
+and their integrated widths are shown below.
+Hours opportunity bands in both applications. Measure: intervals and integration widths,
+hours/week; reference: extracted historical hours domain; status: model definitions, not ob-
+served masses. The complement has zero band index; endpoints carry no probability atoms.
+Band
+Interval
+Width
+Part-time lower
+[17.5, 21.5)
+4
+Part-time upper
+[28.5, 30.5)
+2
+Narrow full-time
+[33.5, 36.5)
+3
+Full-time upper
+[36.5, 40.5]
+4
+Long hours
+[44.5, 70]
+25.5
+Writing |Bb| for an interval’s width and B0 for the complement,
+IHs = |B0| +
+X
+b
+|Bb|ebbs,
+SOs =
+X
+k∈K
+eOsk.
+Exponentiating a band coefficient gives its density ratio to the complement, not the proba-
+bility of that band. Its normalized mass also depends on the width and IHs. The full-time peak
+is a narrow continuous band around the institutionally salient working week, not a point mass
+precisely at its centre.
+Wage opportunities use a lognormal density with a truncation divisor:
+12
+
+µi(k) = βw0 + βwLEL
+i + βwHEH
+i + βwxxi + βwx2x2
+i + δk,
+δ1 = 0,
+Di(k) = N((log w+ −µi(k))/σ) −N((log w−−µi(k))/σ),
+log fi(w | k) = −log w −log σ −1
+2 log(2π) −(log w −µi(k))2
+2σ2
+−log Di(k).
+Here EL, EH are education indicators, xi is potential experience in years divided by 20
+years, and N is the standard normal cumulative distribution function. The proposal uses raw
+experience in its own calibrated wage equation, so its coefficients cannot be read as structural
+coefficients. The −log w term is the Jacobian for density in hourly wages rather than log wages.
+A location shift moves log wages before truncation; the level mean, median and mode differ, and
+truncation changes their formulas. A plotted mode is not generically a distribution’s “centre.”
+For a couple, gi(jm, jf)
+=
+Q
+s∈{m,f} gis(js) in the opportunity representation, with
+spouse-specific employment intercepts, hours bands and occupation indices, common wage
+slopes/dispersion within the couple estimation, and household market terms multiplying the
+number of working spouses.
+This factorization is not a factorization of choice probabilities:
+joint consumption in ui(jm, jf) prevents that inference.
+Define opportunity mass Gi =
+R gi dν and normalized opportunities bgi = gi/Gi. For singles
+with normalized conditional wage densities,
+Gi = 1 + eEiIHsSOs,
+P opp
+i
+(work) =
+eEiIHsSOs
+1 + eEiIHsSOs
+.
+The employment intercept therefore shifts all working opportunities relative to non-work.
+It cancels in comparisons between working jobs and is not a consumption-side fixed cost of
+work. Opportunity mass is not a literal count of jobs recovered for the household. With finite
+coefficients and strictly positive densities on common support, heterogeneity changes relative
+intensities rather than generating household-specific deterministic feasible sets.
+The choice normalizer is a different integral:
+Zi =
+Z
+eui(j)gi(j)dν(j),
+pi(j) = eui(j)gi(j)
+Zi
+.
+At the non-work atom, pi(0) is a probability. On working support, pi is a density. The
+household’s observed choice reflects both utility and opportunities; bgi, pi and the numerical
+proposal qi must not share a label. Bounded wage support restores a finite domain if the priced
+budget is bounded there. The numerical endpoints adopted for the corrective refit have not
+been established by a completed local result; earlier candidate caps are not presented as the
+final domain. A small removed offer tail does not alone bound the removed utility-weighted tail.
+6
+Estimation and numerical implementation
+6.1
+Estimation under the sampling law
+The population density just defined implies the household log contribution ui(j∗
+i ) + log gi(j∗
+i ) −
+log Zi, where j∗
+i is the observed job. Calculating Zi requires integrating over unobserved pack-
+ages. One must distinguish estimating that population normalizer by integration from condi-
+tioning on a sampled collection of alternatives. They are different estimators, and a correction
+valid for one is not licensed by the name of the other.
+For the conditional sampled-alternatives estimator proposed for the corrective run, let Di =
+(ji0, . . . , jiR) contain the observed job and independent draws from a known proposal density
+qi relative to the same mixed measure. Conditional on a candidate having been chosen, the
+remaining labelled draws have density Q
+r̸=k qi(jir). Therefore
+13
+
+Pr(k chosen | Di) =
+eui(jik)gi(jik)/qi(jik)
+PR
+r=0 eui(jir)gi(jir)/qi(jir),
+ℓi = log Pr(k∗
+i chosen | Di).
+The population normalizer cancels in this conditional ratio. The proposal correction applies
+to every candidate, including the deterministically inserted observed row. Deterministic insertion
+probability one does not mean qi(j∗
+i ) = 1. Repeated non-work atoms must be handled under the
+same labelled-sample or multiplicity rule as the derivation. Positive proposal support wherever
+the structural density is positive is required. If the pilot proposal is estimated from the same
+choices, independence or a valid conditioning/cross-fitting argument also needs to be supplied.
+The available historical wage draws are a scrambled Halton set, not independent draws.
+Their marginal proposal densities do not give the product joint law used above. The conditional
+estimator is therefore a declared corrective target, not a claim that the historical estimates
+already maximize it. A direct simulated population-density estimator can use marginally correct
+dependent integration points instead, but has different finite-integration error. The historical
+hybrid and that alternative are documented only in the history appendix. The corrected sampled
+collection, criterion evaluation and estimates remain pending.
+For singles, the proposal takes the form
+qi(j) = qE(e) [qO(k | s, education)qH(h)qW (w | k, Xi)]e .
+For couples, a joint participation regime Q ∈{NN, MO, WO, BB} is drawn first, where
+these labels mean neither, man only, woman only and both working. Conditional spouse draws
+then give
+qi(jm, jf) = πQ
+Y
+s:es=1
+qO,s(ks)qH,s(hs)qW,s(ws),
+πQ = (1 −κ)bpQ + κ/4.
+Here bpQ is the survey-weighted observed joint-regime share and κ the registered smoothing
+parameter.
+This is not a product of independent marginal participation probabilities.
+The
+hours proposal is an overlapping mixture of focal uniforms and a full-support background:
+qH(h) = P
+b πb1{h ∈Bb}/|Bb|. At a focal hour both background and focal density contribute.
+Structural band coefficients do not determine these proposal mixture weights. Bounded-support
+implementation must evaluate both target and proposal on the declared corrected domain.
+The likelihood also needs an explicit observation rule when the retained sample is selected
+using chosen wages or hours. A structural support rule and a data-dependent retention event
+are not automatically the same conditioning event. Whether the corrected likelihood conditions
+correctly on retention remains a substantive open question; neither preserving historical counts
+nor retaining all currently chosen wages proves the answer.
+6.2
+Parameter interpretation and three distinct uncertainties
+A leisure weight is not a marginal rate of substitution. The willingness to exchange monthly
+consumption for another weekly hour of leisure depends on the derivatives of both utility com-
+ponents at the particular bundle. It therefore also depends on consumption, leisure and the
+curvatures. The child coefficient changes the leisure weight additively; it is neither a percentage
+change in preferences nor a direct wage-equivalent willingness to pay. A positive quadratic age
+coefficient implies convexity of that index; an interior U-shape requires its turning point to lie
+in the observed age range.
+Positive or negative utility cross-derivatives are likewise not, by
+themselves, labour-supply response estimates.
+Household-robust, or cluster-robust, inference allows arbitrary dependence among the alter-
+natives contributing to the same household’s score while treating households as independent
+14
+
+sampling units. If si is the score of household i and H the negative Hessian of the summed
+criterion, the executed small-sample-adjusted sandwich has the form
+d
+Var(bθI) =
+N
+N −KI
+H−1
+I
+ X
+i
+siIs′
+iI
+!
+H−1
+I .
+Here I denotes the interior, freely varying parameter coordinates, KI their count, and N the
+number of households. The factor is the finite-household correction called CR1 in the imple-
+mentation. This calculation is conditional on the selected active constraints, common generated
+group rates, pilot densities, priced data and model. It does not automatically propagate un-
+certainty in those shared generated inputs. Score and Hessian arithmetic can be correct for a
+criterion without establishing that the criterion is the desired structural likelihood.
+Parameters at bounds require constrained inference. An unconstrained symmetric interval
+is not appropriate merely because a numerical optimizer returned a standard error. Transform-
+ing a bounded coefficient, for example into a density ratio, requires transforming the allowed
+domain and valid interval endpoints too. A finite standard error signals estimation uncertainty,
+not non-identification. Conversely, a rejected parameter-recovery exercise concerns that design
+and specification, not the absence of its proposed economic mechanism in the population. No
+unsupported coding-direction robustness or likelihood-ratio interpretation is retained.
+Randomized quasi-Monte Carlo (RQMC) integration uses space-filling numerical point sets
+with independent random scrambles. It reduces and measures numerical integration error con-
+ditional on the data and parameters. The point sets within a scramble are dependent. An
+integration jackknife leaves out one whole scramble at a time and recomputes the final statistic
+to assess how sensitive that numerical calculation is to the scrambles. It does not leave out one
+household and is not a parameter confidence interval. Owen scrambling of integration points
+and an Owen allocation of factor interactions are unrelated uses of the same name.
+The three uncertainties are kept separate. Conditional parameter uncertainty reflects varia-
+tion in estimated structural parameters under the stated inference assumptions. Numerical inte-
+gration uncertainty reflects finite numerical support at fixed inputs and parameters. Normative-
+reference sensitivity records changes induced by alternative reference profiles or welfare choices
+and is not a statistical confidence interval. The sensitivity of a bounded wage-support model is
+an additional maintained-model comparison, not evidence that offer tails identify utility tails.
+7
+Behavioural estimates and fit
+7.1
+Behavioural estimates and fit for both populations
+Singles and couples share the economic architecture but not every restriction.
+The parallel
+coefficient table below records which corrected estimates are required. It also prevents an absent
+parameter from being interpreted as an estimated insignificant effect. Historical coefficients are
+available in the reproducibility appendix for replication of the evaluator example, but they are
+not substitutes for the pending corrected coefficient table.
+Corrected coefficient panel. Populations: singles and couples by sex; measure: structural
+utility coefficients on the stated dimensionless normalization; reference: own characteristics,
+corrected target model; status: corrected estimates and conditional intervals pending.
+Zero
+restrictions are not estimated zeros.
+Coefficient
+Single men
+Single women
+Couple men
+Couple women
+Leisure intercept
+βℓ0
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Age slope βℓa
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+15
+
+Coefficient
+Single men
+Single women
+Couple men
+Couple women
+Age-square slope
+βℓa2
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Child slope βℓn
+Restricted zero
+Pending corrected
+estimate
+Restricted zero
+Pending corrected
+estimate
+Leisure curvature
+θℓ
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Pending corrected
+estimate
+Consumption
+curvature θc
+Pending, shared
+Pending, shared
+Fixed log
+Fixed log
+Child effects are present for women in both household types.
+The male child term and
+the direct couple leisure interaction are restricted to zero. Any claim about the precision of a
+retained female term must use its own conditional interval; an imprecise historical male-child
+extension is not a retained coefficient. Differences in historical male and female standard errors
+cannot be mechanically attributed to the missing leisure interaction.
+Corrected observed-versus-model fit. Population: singles and couple deciders/joint house-
+holds; household-survey weights; units stated in rows; reference: corrected sample and own
+inputs; status: both retained observed and predicted moments pending reconstruction. Joint-
+regime probabilities are not Gini points.
+Moment
+Singles observed
+Singles model
+Couples observed
+Couples model
+Employment
+(fraction)
+Pending
+Pending
+Pending, each
+spouse
+Pending, each
+spouse
+Joint regimes
+(fractions)
+Not applicable
+Not applicable
+Pending, all
+regimes
+Pending, all
+regimes
+Unconditional
+hours (hours/week)
+Pending
+Pending
+Pending, each
+spouse
+Pending, each
+spouse
+Occupation given
+work (fractions)
+Pending
+Pending
+Pending, each
+spouse
+Pending, each
+spouse
+Wage given work
+(EUR/hour)
+Pending
+Pending
+Pending, each
+spouse
+Pending, each
+spouse
+All participation entries are probabilities on a common scale, and all hours entries are hours
+per week.
+Couple fit must include the four joint employment regimes, not only two spouse
+employment marginals.
+Occupation and wage fit are conditional on work where indicated;
+unconditional predictions include non-employment. Matching units avoids the earlier mistake
+of placing a percentage share for singles next to a Gini-point contribution for couples.
+Corrected fit is pending because the sample, budget aggregation, support and estimator
+affect predicted choices together. The current historical fit can diagnose where the old model
+places mass, but cannot establish the fit of its corrected successor. Neither a close aggregate
+hours histogram nor an apparently precise coefficient validates preference–opportunity separa-
+tion without the maintained exclusions and functional restrictions.
+7.2
+Population predictions and the matched-household illustration
+For a statistic t(j), a population prediction integrates first within household and then across
+household weights:
+bE[t] =
+X
+i
+ωi
+Z
+t(j)pi(j; bθ)dν(j).
+For couples, j is a joint job pair. Taking t to be a joint-regime indicator predicts that regime;
+taking it to be a spouse’s hours predicts that spouse’s unconditional hours. Conditioning on
+16
+
+work divides by the model’s work probability and changes the estimand. A mean of chosen or
+predicted hours is not a mean of unconstrained desired hours. The prior matched-counterpart
+exercise did not establish a clean desired-hours counterpart and is not used to make that claim.
+The matched single-adult pair is a historical model illustration of how similar observed work
+can coexist with similar estimated leisure profiles and different opportunity weights. The pair
+shares observed employment, occupation group, model hours band and observed-wage quintile,
+not an identical continuous job. It was selected to have low preference-profile distance and high
+total-variation opportunity distance within those restrictions. Similar profiles are not identical
+preferences; the selected pair is not a causal matched experiment.
+The six panels distinguish a deterministic leisure-utility curve, opportunity employment
+mass, unconditional hours density, unconditional occupation mass, conditional wage density and
+conditional occupation mass. None is a fitted choice probability unless explicitly constructed
+using eug/Z. Multiplying a conditional working density by the opportunity work mass changes
+its integral; it does not change a density into a point probability.
+This local interpretation
+replaces the erroneous four-panel caption.
+The illustration belongs before the welfare conclusions because it teaches the distinction used
+there. It does not identify geography’s causal influence, supply a lower bound on all opportunity
+inequality, or generalize from employed matched singles to couples or actual non-workers. Non-
+workers also receive an ex-ante evaluation over working and non-working alternatives; observing
+non-employment does not make their job opportunities irrelevant.
+8
+Money-metric well-being and decomposition
+8.1
+Welfare: the verified identity and its numerical implementation
+The post-estimation calculation starts from priced consumption and deterministic utility at
+every integration node. It is ex ante with respect to the distribution of job packages in the
+specified reference calculation, not the utility of the observed job alone. All integrals use the
+same mixed job measure. Separate notation is essential:
+Gi,S =
+Z
+gi,Sdν,
+bgi,S = gi,S/Gi,S,
+Zi,S =
+Z
+eui,Sgi,Sdν,
+Ji,S = Zi,S/Gi,S,
+Vi,S = log Ji,S.
+The subscript S denotes which structural pathways have been equalized. Opportunity mass
+G, choice normalizer Z, normalized utility integral J and its logarithm V are not interchangeable.
+In particular, log Z responds to a common multiplication of every opportunity intensity, whereas
+log J does not. An expected-maximum interpretation would require the additional stochastic
+foundation noted above; the implemented functional itself is fully defined by these integrals.
+8.1.1
+The monetary reference and its closed form
+Write deterministic utility as ui,S(j) = Li,S(j)+BC(Ci,S(j)/λc; θc), where L contains the entire
+non-consumption component, including both spouse leisure terms for couples. The reference
+gives one flat monthly disposable-consumption amount to every alternative while
+retaining that state’s L and bg. Define
+Hi,S =
+Z
+eLi,S(j)bgi,S(j)dν(j),
+Φi,S(m) = BC(m/λc; θc) + log Hi,S.
+Money-metric equivalent income Wi,S is the positive monthly euro amount satisfying
+Φi,S(Wi,S) = Vi,S. It is not an hourly wage offer, gross earnings transfer, budget-line intercept
+before tax, or consumption at a fixed leisure point.
+The factorization follows because the
+reference consumption term is constant across alternatives and can be taken outside the
+integral. With the maintained consumption coefficient equal to one,
+17
+
+Figure 4:
+Historical matched employed singles, households A and B (anonymous).
+The matching
+restrictions are common employment state, civilian occupation group, model hours band and observed-
+wage quintile; the forward selection restricts leisure-profile distance to the lowest admissible decile and
+maximizes opportunity distance. Panels: (a) deterministic leisure utility, utility units; (b) normalized
+opportunity mass at work and non-work; (c) unconditional working-hours density, per weekly hour,
+integrating to work mass; (d) unconditional occupation mass, summing to work mass; (e) wage density
+conditional on work, per EUR/hour, integrating to one; (f) occupation mass conditional on work, summing
+to one. All opportunities use each household’s normalized structural kernel, not its utility-weighted choice
+distribution. Similar jobs/preferences are not identical. Status: historical model-implied illustration, not
+corrected or causal evidence.
+18
+
+Wi,S = λc [1 + θc{log Ji,S −log Hi,S}]1/θc ,
+θc̸ = 0.
+This identity has now been checked against the executed evaluator for both household types
+in every principal preference/environment state: maximum absolute difference 3.7×10−10 euros
+per month over 15,320 household-states. The test uses historical parameter vectors and already-
+priced common support, so it verifies the identity and its implementation, not corrected economic
+estimates. The small discrepancy is numerical stopping and floating-point error. The solver
+rerun also reproduces the stored evaluated values.
+For the couple model’s logarithmic consumption utility, the limiting expression simplifies
+further:
+Wi,S = λcelog Ji,S−log Hi,S =
+R Ci,S(j)eLi,S(j)bgi,S(j)dν(j)
+R eLi,S(j)bgi,S(j)dν(j)
+.
+Thus the log-consumption special case is an arithmetic consumption average weighted by eLbg,
+normalized to integrate to one. It is not a geometric mean, a mean under choice probabilities, or
+a consumption average that ignores leisure. The single-adult Box–Cox expression is its nonlinear
+counterpart. The numerical inversion in the production implementation solves this same identity;
+it is not a second welfare object.
+8.1.2
+Existence, precision and what opportunity changes can do
+The derivative Φ′(m) = (m/λc)θc−1/λc is positive for positive m. Hence a root is unique on its
+permitted domain. The Box–Cox inverse base must be positive, and the attained value must
+fall within the reference range. On a finite positive-consumption panel the reference values at
+the smallest and largest priced consumption bracket the attained value; this gives the economic
+reason for a bracket check. The identity audit found a strictly positive inverse base throughout its
+singles calculations. A finite realised panel alone does not prove the existence of the population
+integral on unbounded wages.
+Numerical integration averages importance-corrected contributions over the common nodes,
+then takes the logarithm and inverse; it does not average the inverse of each node or each
+scramble.
+The same opportunity/proposal correction enters J and H.
+Any common mass
+normalization or common node-count factor cancels from their ratio. The integration support
+excludes the staged chosen row, whose contribution is exactly zero. The chosen-row estimation
+defect therefore does not contaminate this integrator mechanically, although a changed estimate
+changes its downstream economic answer.
+There is no unconditional theorem that a wider opportunity set raises this metric. Oppor-
+tunities affect attained value and the reference map simultaneously. In the logarithmic case,
+adding weight on consumption below the existing weighted average can lower W. If all alterna-
+tives have the same consumption C0, the identity gives W = C0 regardless of the opportunity
+intensities. Commonly multiplying g also leaves W unchanged. These are algebraic consequences
+of the implemented definition, not empirical assertions about a reform. Improving actual dispos-
+able consumption pointwise with the reference otherwise fixed raises the measure; that different
+statement follows from its monotonicity.
+8.1.3
+A calculation from the current evaluator, in parallel
+The following examples select an anonymous median-value household within each type from
+the historical evaluator. No household identifiers or detailed demographic profile are exported.
+Displayed jobs are simulated integration nodes, already priced under the historical budget; they
+are not the observed jobs or an exhaustive job menu. The single example is a female single-adult
+household; the couple example includes all joint regimes. Historical singles consumption still
+19
+
+has the aggregation limitation described in the data section. This is a worked current-evaluator
+calculation, not corrected empirical evidence.
+Worked historical-evaluator examples.
+Population:
+one anonymous median-value single
+woman and one couple; jobs: selected simulated nodes; hours/week (man/woman for couples),
+priced consumption EUR/month, non-consumption utility L in utility units; remaining columns:
+normalized numerical node masses on each household’s own common support. Reference: own
+flat consumption; status: model-implied at historical parameters, not corrected findings.
+Type
+Hours
+Consumption
+L
+Opportunity
+Choice
+Reference
+Single
+0.0
+526.02
+3.9001
+0.00023
+0.00016
+0.00037
+Single
+35.0
+961.62
+3.5019
+0.00104
+0.00083
+0.00114
+Single
+70.0
+2676.77
+0.0104
+0.00055
+0.00004
+0.00002
+Single
+20.0
+992.44
+3.7318
+0.00012
+0.00012
+0.00017
+Couple
+0.0/0.0
+543.51
+7.0302
+0.00004
+0.00002
+0.00007
+Couple
+39.1/0.0
+311.24
+6.6780
+0.00035
+0.00009
+0.00050
+Couple
+0.0/19.3
+1269.72
+6.9684
+0.00016
+0.00022
+0.00030
+Couple
+38.7/35.4
+2498.61
+6.5027
+0.00028
+0.00048
+0.00034
+The opportunity column is each node’s normalized importance-corrected contribution to G;
+the choice column normalizes eu times that contribution. The reference column normalizes eL
+times it. They are numerical node masses, not continuous density heights or the probability of
+receiving that exact wage–hours pair. The displayed subset does not sum to one because the
+full integration contains the remaining nodes. Repeated representations of the non-work atom
+must be aggregated before interpreting its total mass.
+Same anonymous households through the principal equalization states.
+Population: the
+examples immediately above; measure: normalized log integrals (dimensionless) and equivalent
+income (EUR/month); reference: each state’s flat-consumption map; status: model-implied
+historical-parameter evaluator outputs, not population inequalities.
+Type
+State
+log J
+log H
+W
+(EUR/month)
+Single
+baseline
+3.14536
+3.40517
+1360.54
+Single
+preferences
+3.87947
+4.16789
+1320.34
+Single
+environment
+3.14667
+3.46102
+1284.76
+Single
+all
+3.89573
+4.23506
+1251.25
+Couple
+baseline
+5.53703
+6.30227
+1777.82
+Couple
+preferences
+5.36884
+6.13396
+1778.04
+Couple
+environment
+5.49386
+6.30248
+1702.34
+Couple
+all
+5.33144
+6.13373
+1713.16
+For example, the displayed baseline entries give the following explicit substitutions (rounding
+is for exposition only):
+Wsingle ≃1774.52 [1 + 0.168019(3.14536 −3.40517)]1/0.168019 ≃1360.54 EUR/month,
+Wcouple ≃3821.45 exp(5.53703 −6.30227) ≃1777.82 EUR/month.
+Starting with the baseline row, subtract log H from log J and apply the boxed inverse using
+the registered consumption scale and curvature. In the single example the scale is 1774.52 eu-
+ros/month and the curvature 0.168019; the couple example uses the logarithmic case and scale
+3821.45 euros/month. For couples the same result is obtained by summing priced consumption
+times the reference column over all nodes. Preference equalization changes L on both sides;
+20
+
+environment equalization changes opportunities and priced budgets using the declared refer-
+ence operands; the full state changes both. The table uses the same household through these
+states. Its numbers are a reproducible diagnostic at existing estimates, not the missing corrected
+distributional attribution.
+One source difference remains consequential: the existing singles welfare panel’s consump-
+tion scale differs from the estimation-frame scale. The evaluator reads the panel’s actual scale,
+which correctly converts its stored normalized consumption back into euros; the worked cal-
+culation reports that value. The identity check does not establish that using the unchanged
+parameter vector on differently scaled consumption preserves the estimated behavioural model.
+That estimation-to-welfare scale equivalence must be reconciled in the corrected rebuild, rather
+than assumed from a comment calling the scale numerical. This does not invalidate the veri-
+fied algebra of the current evaluator, but limits its interpretation as welfare from the corrected
+estimated model.
+8.2
+Interpersonal comparison, household welfare and equivalization
+The baseline monetary comparison retains each household’s preferences and opportunity distri-
+bution in its own flat-consumption reference. It gives a common operational meaning to the
+monetary amount: disposable consumption at every reference alternative. A difference in euros
+is a difference in that specified amount. It is not automatically an equal difference in subjective
+utility, a transferable compensation payment or an interpersonal comparison justified solely by
+the currency unit.
+Actual earning opportunities still affect priced consumption and attained value even though
+the reference replaces actual alternative-specific consumption.
+Reference flattening does not
+erase the actual budget’s earnings effects. Equally, a reference preserving own opportunities need
+not rank menu changes like a fixed common-opportunity reference. The baseline and a common-
+preference counterfactual therefore answer different questions; neither is silently substituted for
+the other.
+The welfare unit for couples is the household.
+The unitary model supplies no empirical
+allocation of this welfare between partners and no within-couple inequality measure. Comparison
+of a couple’s household amount with a single adult’s amount needs an explicit needs adjustment.
+The implemented modified-OECD scale is
+ei = 1 + 0.5(Ni,≥14 −1) + 0.3Ni,<14,
+W eq
+i
+= Wi/ei,
+where Ni,≥14 and Ni,<14 count household members by the scale’s cutoff. This cutoff is distinct
+from the child regressor’s definition. The welfare weights remain household survey weights; an
+individual-weighted analysis would be another population.
+When composition is equalized, the needs scale follows the same counterfactual roster. This
+keeps the budget-side household and the needs denominator economically aligned. Zero residual
+inequality in a grand coalition, where obtained, is a consequence to check, not a normative
+justification for the choice. Holding the scale at its own value or treating scale as a separate
+factor would define different games and can be mathematically coherent if every pathway is
+assigned explicitly. It is incorrect to claim those alternatives necessarily double-count or cannot
+close.
+Raw and equivalized within-type inequality are both useful. Pooled singles–couples inequality
+additionally requires a cross-type reference that makes the household interpretations comparable.
+A failure of one previously tested pooled reference does not prove all pooling impossible, but
+neither may type-specific offsets be added simply to force an exhaustive identity. Corrected
+pooled results and their reference basis remain pending.
+21
+
+8.3
+Weighted inequality and the choice of index
+For positive household equivalent incomes, the implemented weighted Gini is
+I(W) =
+P
+i
+P
+j ωiωj|Wi −Wj|
+2 P
+i ωiWi
+,
+X
+i
+ωi = 1.
+The weights are the household survey weights defined before the descriptive statistics. The
+numerator averages absolute pairwise differences and the denominator scales them by twice
+mean well-being. The index is dimensionless; a contribution expressed in Gini points is not a
+percentage until divided by the stated baseline index. No unreported finite-sample correction is
+appended to this normalized-weight formula. Non-positive values or a non-positive denominator
+require explicit domain handling, not silent exclusion.
+The index treats proportional rescaling of all positive equivalent incomes as leaving inequality
+unchanged. An income Gini and a well-being Gini still concern different distributions: the former
+does not value leisure or integrate opportunities under the declared reference. Their difference is
+not itself a causal opportunity effect. The Gini is used for a transparent common distributional
+scale; an Atkinson index would add explicit inequality-aversion choices, and generalized-entropy
+measures would change tail sensitivity and decomposability.
+Those alternatives change the
+economic weighting of differences. No uncomputed alternative-index numbers are supplied.
+Integration uncertainty is assessed by re-evaluating this final statistic after leaving out a
+scramble, rather than averaging household numerical errors. Parameter uncertainty requires
+recalculating household welfare and inequality under parameter draws. Reference sensitivity
+instead compares complete calculations using alternative normative profiles.
+Keeping these
+operations separate matters especially when the denominator of a reported share also changes.
+8.4
+Equalization operators and their pathways
+Counterfactual equalization replaces specified structural inputs by declared reference operands
+without re-estimation. It is not a wholesale replacement of a household’s raw record every time
+one covariate appears in a channel. Singles additionally select the complete estimated reference-
+sex preference block when preferences are equalized; couples retain each spouse’s coefficient
+block and substitute its reference arguments. The broad environment comprises access A, wage
+opportunities B and budget endowments/needs D; the preference block is P.
+The budget
+block’s proposed resources/needs subdivision remains pending corrected pathway assignments
+and repricing.
+Structural equalization operators for both household types. Measure: input substitutions,
+not causal effects; units inherited from each input; reference: selected representative profile
+and coalition-consistent monetary map; status: extracted broad operators, with corrected re-
+sources/needs subdivision pending.
+Operator
+Replaced / profile
+Household-specific
+remainder
+Repricing
+Reference map
+Preferences P
+Singles: weighted
+mean index
+arguments and
+complete
+reference-sex coeffi-
+cient/curvature
+block. Couples:
+medoid spouse
+arguments, own
+spouse coefficients
+Budget roster,
+resources, access
+and wage shifters
+unless separately
+equalized
+No for pure utility
+shifters
+Replace L on both
+sides
+22
+
+Operator
+Replaced / profile
+Household-specific
+remainder
+Repricing
+Reference map
+Access A
+Singles: weighted
+mean access
+arguments and
+marginalized
+normalized
+occupation table.
+Couples: medoid
+market arguments
+Preferences, wage
+locations, budget
+inputs; couple
+sex-specific
+occupation
+coefficients remain
+No for pure access
+indices
+Replace
+opportunity
+weights on both
+sides
+Wage opportunities
+B
+Singles: weighted
+education shares
+and experience
+moments. Couples:
+medoid spouse edu-
+cation/experience;
+squares
+recomputed.
+Estimated wage
+coefficients retained
+Preference and
+access pathways of
+same covariates
+Not from an index
+change alone on
+common priced
+jobs
+Replace wage
+weights on both
+sides
+Budget D
+Policy inputs from
+representative
+budget household,
+including resource
+and needs
+pathways
+Non-D structural
+pathways
+Yes; rerun
+household budget
+Use new
+consumption in J;
+state L and
+opportunities in H
+Resources within D Corrected resource
+fields and take-up;
+work-history
+priority pending
+Composition/needs
+unless separately
+changed
+Yes when policy
+inputs change
+No independent
+new reference;
+follow resulting
+state
+Needs within D
+Roster/needs and
+linked scale,
+selected needs
+profile
+Resource and
+utility-child
+pathways unless
+separately changed
+Yes; update needs
+scale
+Follow resulting
+state; no hidden P
+change
+The reference construction genuinely differs across the two applications. Singles use survey-
+weighted means of the access, wage and preference index arguments. The mean squared-age or
+squared-experience argument is retained as a separate moment, not replaced by the square of the
+mean. The occupation-access substitution uses the normalized occupation table marginalized
+over its equalized conditioning coordinates. Singles’ primary preference reference selects the full
+female coefficient/curvature block after the shifters are equalized; its child term then applies
+commonly, including to men. The male structural-zero arm is a sensitivity exercise, not a value
+to average with it. This is a common index profile, not an actual synthetic household guaranteed
+feasible for tax pricing.
+For budget pricing, the reference instead is an actual representative household, selected as a
+survey-weighted medoid. Continuous household-input differences are divided by their weighted
+interquartile range; categorical inputs contribute mismatch indicators. The selected household
+minimizes the weighted total distance, with a deterministic profile-based tie-break. Singles use
+household sums and decider categories; couples use household sums and both spouses’ cate-
+gories where necessary. Couple structural substitutions use that medoid’s corresponding spouse
+arguments, never cross-sex coefficient averages.
+These differences must remain visible when
+comparing their attribution, even though the welfare identity is shared.
+The pathway rule is essential.
+Age can enter leisure preferences, experience-dependent
+wage locations and policy eligibility. Education can enter the wage equation and the group-
+unemployment lookup. Children can enter female leisure utility, the household budget and the
+23
+
+needs scale. Equalizing the preference pathway of children changes the utility shifter, not the tax
+roster. Equalizing earnings opportunities changes their structural wage shifters, not preferences
+or the employment-access lookup. Equalizing composition changes the budget/needs pathway,
+not a preference shifter unless P is also in the coalition. Pure preference-shifter substitution
+therefore does not automatically require repricing.
+Conversely, moving a policy input that changes entitlement requires new budget evaluation.
+Work-history fields overwritten by the alternative’s employment state cannot also be indepen-
+dently equalized as fixed resources without a declared priority and economic interpretation. Cor-
+recting the fringe-benefit, company-car and imputed-rent classifications is necessary but does
+not alone resolve that operator dependency. The prior nested resource/needs percentages are
+withdrawn, not relabelled as current. Until that dependency is resolved and the affected panels
+are repriced, neither a corrected resources share nor a corrected needs share is established.
+In every coalition, the same state’s non-consumption utility and opportunities enter both
+attained value and its flat-consumption reference map. The reference map is recalculated when
+those inputs change. q, numerical centring constants and integration normalizers are not inde-
+pendent economic factors to equalize. A different assignment of pathways is a different decom-
+position, not a silent robustness adjustment.
+8.5
+Grouped attribution and interactions
+Start with the preference block P and the broad non-preference block E = {A, B, D}. Let I00
+be baseline inequality, I10 inequality after preferences are equalized, I01 after the environment
+is equalized, and I11 after both. Equalizing a factor does not necessarily reduce inequality. The
+one-factor preference change is I00 −I10; the environment change is I00 −I01. The two-player
+Shapley allocations are instead
+CP = 1
+2[(I00 −I10) + (I01 −I11)],
+CE = 1
+2[(I00 −I01) + (I10 −I11)].
+Each averages the factor’s marginal effect when moved first and when moved second. Thus
+CP +CE = I00−I11, and shares divided by I00 sum to (I00−I11)/I00, not necessarily one. Signed
+allocations are allowed. Calling CE/I00 the percentage removed by equalizing the environment
+would confuse attribution with the one-factor counterfactual.
+Within the environment group, the grouped allocation averages over orders of access, wage
+opportunities and budget endowments/needs while keeping the environment group contiguous
+relative to preferences. If v(S) = I(∅) −I(S) and ΠG is the set of orderings that respect the
+declared grouping, the operational averaging is
+Ck =
+1
+|ΠG|
+X
+π∈ΠG
+[v(Predπ(k) ∪{k}) −v(Predπ(k))] .
+Predπ(k) denotes the factors preceding k in ordering π. The grouping makes the preference–
+circumstance distinction primary and prevents an arbitrary proliferation of circumstance labels
+from changing that top-level comparison. It is an explicit ethical/accounting design, not some-
+thing learned from the likelihood. A flat Shapley game would allocate some interactions differ-
+ently. A further resources/needs split must preserve the declared hierarchy and use correctly
+repriced coalitions, not rescale pieces to recover old totals.
+The narrower market-opportunity allocation is CA + CB. Resources and needs remain sep-
+arate non-preference contributions. Geography can be nested within access under a declared
+operator, but a geographic component is neither a causal instrument nor a lower bound on all
+opportunity inequality. Algebraic exhaustiveness confirms the accounting given the game; it
+does not identify the causal responsibility of a factor or validate the operator definitions.
+24
+
+9
+Welfare results, comparisons and conclusion
+9.1
+Welfare results, benchmarks and limits of the empirical answer
+The results begin with the welfare states before the attribution.
+The following tables place
+singles and couples on the same unit and reference basis and leave missing corrected results
+explicitly pending. No historical estimate is presented as a corrected number. The household
+examples above explain the calculation but cannot substitute for the population tables.
+Corrected within-type welfare states. Population: single-adult and couple households; mea-
+sure: household-survey-weighted Gini, dimensionless Gini units, raw household equivalent in-
+come; reference: coalition-consistent flat-consumption maps and designated within-type profiles;
+status: corrected results pending. Equivalized results require their own panel, not a change of
+units within a row.
+State
+Singles Gini
+Couples Gini
+Own preferences, own environment
+Pending
+Pending
+Common preferences, own environment
+Pending
+Pending
+Own preferences, common environment
+Pending
+Pending
+Common preferences, common environment
+Pending
+Pending
+Corrected grouped attribution. Population: each household type, survey weighted; all nu-
+merical cells are contributions in Gini points; reference: raw within-type baseline and declared
+grouping; status: corrected results pending. Percentage shares, parameter intervals, integration
+bands and reference ranges must be supplied separately.
+Component
+Singles Gini points
+Couples Gini points
+Preferences
+Pending
+Pending
+Access
+Pending
+Pending
+Earning opportunities
+Pending
+Pending
+Access + earnings (market opportunities)
+Pending
+Pending
+Budget resources/needs
+Pending
+Pending
+All non-preference circumstances
+Pending
+Pending
+Resources suballocation (dependency pending)
+Pending
+Pending
+Needs suballocation (dependency pending)
+Pending
+Pending
+The table includes access plus earnings opportunities, so it will answer the title’s narrower
+question once corrected results exist. The broad non-preference total is reported separately.
+Conditional parameter intervals, integration bands and reference ranges occupy separate report-
+ing fields; there is no combined uncertainty band. The resources/needs suballocation requires
+the additional budget-pathway resolution, and its old nested percentages are not displayed as
+evidence.
+9.1.1
+What the common-opportunity comparison removes
+The re-estimated random-utility benchmark with common opportunities keeps a positive com-
+mon opportunity distribution.
+Setting g = 0 would eliminate alternatives, not remove het-
+erogeneity.
+In the first benchmark, the common density retains an hours structure and the
+preference parameters are re-estimated. In the second, the common structural opportunity den-
+sity uses equal work/non-work mass and uniform working hours, while an employment constant
+and hours indicators move into utility and are re-estimated; occupation and wage distributions
+remain common. The numerical proposal is separate and is retained. These are distinct con-
+structions, not interchangeable names for one common model.
+Their exact expressions and
+parameter counts are reproduced from the extraction in the appendix.
+25
+
+The comparison tests how a different maintained opportunity representation changes the
+estimated preferences and welfare assessment. It does not establish that omitted opportunities
+must all be absorbed by preferences or must inflate the preference share. Re-estimation changes
+several components jointly. The sampled criteria and numerical reference laws do not support
+the former nested likelihood-ratio interpretation; no such test is reported. Corrected benchmark
+estimates and welfare calculations are pending alongside the baseline.
+9.1.2
+External comparisons and support sensitivity
+Public wage and hours tables benchmark units, coverage and broad distributions; they do not
+separately identify preferences and opportunity intensities. In particular, published DADS wage
+deciles across cells are not employee-level extreme quantiles. Their coverage differs from the
+household survey sample. A support rule based on a public envelope is a modelling choice, not
+a tax-simulator feasibility limit or a fit-selected parameter.
+The earlier integrability audit supplied a candidate bounded wage interval; subsequent pop-
+ulation evidence supplies alternative cap rules.
+The final adopted corrective support is not
+established by a completed local refit. We use symbolic endpoints in the maintained target and
+do not elevate an obsolete candidate to the final domain. Tail sensitivity must compare both
+removed opportunity mass
+R
+tail g dν and removed utility-weighted mass
+R
+tail eug dν. A small first
+integral alone does not bound the second. The numerical welfare identity remains valid on each
+properly defined finite domain, but its values and attribution need regeneration at corrected
+parameters.
+9.1.3
+Conclusion
+An income distribution alone does not distinguish preferences from job access, earning oppor-
+tunities, resources and needs. A joint latent-jobs model makes those mechanisms explicit but
+separates them only under substantive restrictions. The implemented ex-ante money metric has
+a precise flat-consumption interpretation and a verified closed form; it is not a fixed-leisure metric
+and is not necessarily increasing under menu expansion. The grouped decomposition allocates
+interactions according to a stated hierarchy rather than identifying causal effects. Corrected
+estimates and the dependent within-type and pooled distributional results remain necessary be-
+fore the paper can give a quantitative answer about the role of unequal job opportunities in
+France.
+A
+Historical implementation and reproducibility
+This appendix records the scientific changes without retaining competing models in the main
+exposition. The historical criterion inserted the chosen row with unit correction and used inverse-
+proposal weights only on stochastic rows. With a = u + log g and bZ = R−1 PR
+r=1 ea(jr)/q(jr), it
+was
+ℓold
+i
+= a(j∗
+i ) −log
+h
+ea(j∗
+i ) + R bZi
+i
+.
+The direct simulated population contribution is ℓIS
+i = a(j∗
+i ) −log bZi, so
+ℓold
+i
+= ℓIS
+i −log R −log
+"
+1 + ea(j∗
+i )
+R bZi
+#
+.
+The final term depends on parameters. This explains why removing a constant from a dis-
+played likelihood does not repair the historical estimator. Direct integration requires marginally
+correct proposal nodes; exact conditional sampling requires the appropriate joint sampling law.
+26
+
+The executed Halton wage dependence motivated a targeted estimator correction. This history
+does not change the household’s utility by adding a numerical proposal preference.
+Other changes concerned substance rather than numerical precision: lower-hours projections
+and censoring were distinguished from observations; singles all-member disposable resources were
+found to need reconstruction; source documentation established income/policy timing and field
+semantics; the opportunity integrability question motivated bounded wages; and the welfare
+reference was distinguished from a fixed-leisure diagram. The chosen row was found absent
+from the common welfare support, so the integrator itself did not require the corresponding
+estimation correction. The verified closed form then clarified what that integrator measures.
+The narrow full-time band was retained as a continuous density feature. Child coefficients
+were interpreted additively, group unemployment scaling was corrected, leisure weights were
+separated from marginal rates of substitution, and bound-constrained inference from sym-
+metric unconstrained intervals.
+The matched illustration was resolved as six different pref-
+erence/opportunity panels. Old desired-hours, coding-direction robustness, geographic-lower-
+bound and likelihood-ratio claims lack the required evidence and have been removed. These are
+corrections of errors, not a defence of earlier prose based on its prior approval.
+Historical estimates may reproduce a scientific calculation but do not certify its successor.
+They are listed below solely to reproduce the current-evaluator examples, with the old criterion
+and sample status attached locally. The stale nested resource/needs results are not retained as
+quantitative evidence.
+Historical coefficients solely for evaluator replication. Population: old single-adult and couple
+estimation frames; measure: deterministic-utility parameters on registered scales; reference:
+historical hybrid criterion and historical support; status: NOT corrected estimates. Conditional
+constrained-inference tables must be regenerated after the refit.
+Coefficient
+Single men
+Single women
+Couple men
+Couple women
+Leisure intercept
+4.6721
+4.2437
+2.9316
+9.2815
+Age slope
+0.6782
+-0.0187
+-0.0070
+-0.1808
+Age square
+1.0000
+1.0000
+0.0055
+0.0168
+Leisure curvature
+-1.7464
+-1.0793
+-1.0321
+-1.8669
+Consumption curvature
+0.1680
+0.1680
+0.0000
+0.0000
+Female child slope
+Restricted zero
+1.1690
+Restricted zero
+-0.5586
+A.1
+Source map, notebook and pending calculations
+The canonical notebook remains ../MNL/experiments/JMP_SEMINAR_SPRINT/JMP_resear
+ch_lab.ipynb. Its control, data, estimation, inference, welfare and figure sections expose the
+historical pipeline through runs/research_lab/a_to_z_lab.py.
+Replay evaluates stored
+parameter vectors on authenticated priced inputs; research refitting reuses those inputs and the
+historical criterion. The current module does not freshly reconstruct the raw survey, reprice all
+alternatives or implement the complete corrected estimator merely by selecting its refit mode.
+Fresh corrected stages must be supplied and tested before calling this a complete corrected
+raw-to-results execution.
+The v3 writing source is reports/research_story_build/v3_sections.py; build_v3.py
+resolves one shared numerical register and assembles HTML and LaTeX in their different nar-
+rative orders. It also exports figure/table dependencies. The HTML bundles its mathematical
+renderer for offline use. The companion source appendix maps each formula to corrective docu-
+mentation and executed functions. No headline estimate is manually copied between formats.
+The local singles parity artifact inspected for this build reports CPU evaluation and no
+CUDA availability; it does not establish CUDA parity. Any separately documented historical
+CPU/CUDA comparison would concern that tested parameter representation and environment,
+not automatically the successor bounded-wage or sampled-choice implementation. It would not
+27
+
+establish couples device compatibility either. The current scientific environment evaluated the
+worked examples on the CPU. The couples hours split requires its supported joint evaluation
+branch. Hardware availability, installed software, supported formulas and demonstrated numer-
+ical parity are separate claims; none is inferred from the notebook’s advertised backend labels.
+The remaining substantive calculations are: the adopted bounded support and observa-
+tion/retention rule; corrected all-member singles budgets and non-positive-consumption treat-
+ment; the corrected independent sampling/conditional-likelihood implementation and estimates,
+including proposal-pilot conditioning; full propagation to fit, welfare, attribution, benchmarks
+and support sensitivity; the estimation-to-welfare consumption-scale reconciliation; and the cor-
+rected resources/needs pathway assignment and repricing. A verified continuous-choice stochas-
+tic foundation and an unrestricted scale-equivalence proof remain absent; the text therefore
+maintains the density and fixed consumption coefficient explicitly as restrictions. A defensible
+pooled cross-type reference is also needed. These gaps are not filled by parameter names or
+historical percentages.
+A.1.1
+Source and equation map
+Topic
+Evidence inspected
+Resolution
+Utility, opportunities, proposal,
+inference, Gini, grouped
+allocation
+reports/model_extraction_v1.
+md, sections 1–9; actual
+singles/couples specifications and
+evaluator
+Definitions extracted; old
+timing/build gaps superseded by
+source audit
+Criterion and draw dependence
+MNL/docs/jmp_methodology/JMP
+_sampled_alternatives_criter
+ion_audit_v1.md, sections 1–2
+iid conditional formula
+distinguished from historical
+Halton hybrid
+Support and integrability
+MNL/docs/corr/target_model_a
+nd_integrability_v1.md;
+wmax_rule_evidence_v1.md
+Earlier candidate bounds not
+treated as final adopted support
+Timing, budgets and field units
+MNL/docs/corr/fr2016_source_
+to_estimation_sample_audit_v
+1.md; fr2016_drd_field_dicti
+onary_v1.csv
+FR_2015 policy, 2016 collection,
+2015 income; field dictionary
+resolved
+Exact policy executable
+Source-to-sample audit, section 1
+EUROMOD connector 0.2.17;
+J2.0+ model; production FR.xml
+digest 666aea711f0daa477a546e
+b8a56ea98daadc800456fdeb85db
+8a2307445d8990
+Chosen row in welfare
+MNL/docs/corr/welfare_integr
+ator_chosen_row_v1.md
+(WINT-1)
+Excluded from common support;
+contribution exactly zero
+Closed form
+MNL/docs/corr/welfare_identi
+ty_check_v1.md/json
+(WELF-ID); scripts/corr/che
+ck_welfare_identity_v1.py
+Executed factorization, same
+weights and node factor on both
+sides; no failed identity remains
+open
+Anonymous examples
+extract_v3_examples.py;
+production coalition_core,
+compute_measures,
+cw_states_lib_v1.w1_own
+No identifiers or raw
+demographic profiles exported;
+historical parameters
+Matched figure
+runs/final_descriptives/make
+_e1_figures_v2.py; figures/
+figE1_matched_pair.csv
+Six panels rebuilt from their
+actual plotted series
+Corrected returns
+CORR-3 and dependent welfare
+rebuild
+No completed successor result
+inserted at this build
+28
+
+Topic
+Evidence inspected
+Resolution
+Group unemployment
+scripts/enhanced/enh_prepare
+_FR_gsur_v2.py, lookup sidecar
+for 2015
+Eurostat lfst_r_lfu3rt, ages
+20–64; regional aggregation with
+lfst_r_lfsd2pop population
+weights; three ISCED groups by
+sex; 2016 NUTS crosswalk
+Reference operands
+scripts/welfare/m08_decomp_o
+perators.py, ReferenceOperands
+/ PreferenceBlock /
+OccupationJoint; run_channelD
+_step01_medoid_v1.py;
+run_cw_step2b_medoid_v1.py
+Singles index means and
+reference-sex block differ from
+couple medoid-argument
+substitution; actual budget
+medoids verified
+Welfare panel scale
+scripts/welfare/run_m08_u6e_
+functionals.py, BasisArrays,
+frame-column normalization
+Current panel scale is used to
+recover euros; behavioural
+equivalence to estimation-scale
+utility not established
+A.1.2
+Numerical register and implementation constants
+All inserted empirical values and plotted empirical series are resolved through reports/numb
+ers_of_record_v3.json; generated tables are in manuscript/tables/v3/. Definitions such
+as mathematical zero/one, polynomial powers and integration limits in analytical identities are
+not estimates. Registered scale constants are: singles estimation frame 1911.11 EUR/month,
+distinct from the worked welfare panel’s 1774.52; couples consumption 3821.45 EUR/month;
+leisure 10 hours/week; time endowment 80 hours/week; age scale 10 years; structural experience
+scale 20 years; child-regressor cutoff 20 years; joint-proposal smoothing 0.2. The unresolved
+scale-equivalence issue is explained in the main welfare text, not hidden here. Reported rounded
+values are not fed back into the evaluator.
+A.1.3
+Common-opportunity benchmark definitions
+The historical RUM-A density is ¯g(0) = π0 and ¯g(1, k, h, w) = π1¯p(k)pH(h)f(w | ¯µ(k), bσ), with
+pH = eH/IH, normalized occupation mass and common wage locations. It refits the ten singles
+preference constants/curvatures. RUM-B sets π0 = π1 = 1/2 and uniform positive hours, moves
+the employment constant and five hours indicators into utility, and refits sixteen constants. The
+sampled index is uRUM + log ¯g −log q. Both historical benchmarks inherit the hybrid criterion;
+neither provides the corrected comparison. Source: model_extraction_v1.md, section 8 and
+its executed-function citations.
+A.1.4
+Installed environment and parity evidence
+The examples and document build use the scientific .venv: JAX 0.10.1, jaxlib 0.10.1, and EU-
+ROMOD connector 0.2.17 are installed. JAX device inspection returned cpu:0. No EUROMOD
+pricing was executed by this writing task. The separate export/pkg04b_final_s8_parity_
+v1.json records its own isolated environment and torch_cuda_available=false; it is CPU
+evidence for historical singles, not a new cross-device test or a couples support certificate.
+A.1.5
+Literature checks
+The bibliography is selected from Literature/Literature_collection.md. Detailed com-
+parison uses the local original-paper corpus: Capéau–Decoster–Dekkers model/estimation and
+opportunity-process appendix; Aaberge–Colombino–Strøm (2004), section 2 and Appendix A;
+Decoster–Haan’s original working-paper PDF, printed pages 2–5 and section 2; Jacquet–Jia–
+Thoresen, sections 3–5; and the Dagsvik and decomposition papers’ modelling discussions.
+29
+
+Version-specific working-paper statements are not silently attributed to identical published page
+numbers. The companion manuscript was inspected only for its conceptual boundary and attri-
+bution.
+References
+Rolf Aaberge, Ugo Colombino, and Steinar Strøm. Do more equal slices shrink the cake? an
+empirical investigation of tax-transfer reform proposals in italy. Journal of Population Eco-
+nomics, 17:767–785, 2004. doi: 10.1007/s00148-004-0193-2.
+Richard Audoly, Rory McGee, Sergio Ocampo, and Gonzalo Paz-Pardo. A practitioner’s note
+on the shapley–owen–shorrocks decomposition. Staff Report 1163, Federal Reserve Bank of
+New York, 2025.
+Bart Capéau, André Decoster, and Gijs Dekkers. Estimating and simulating with a random
+utility random opportunity model of job choice: Presentation and application to belgium.
+International Journal of Microsimulation, 9(2):144–191, 2016.
+John K. Dagsvik and Zhiyang Jia. Labor supply as a choice among latent jobs: Unobserved
+heterogeneity and identification. Journal of Applied Econometrics, 31(3):487–506, 2016.
+John K. Dagsvik and Steinar Strøm. Sectoral labour supply, choice restrictions and functional
+form. Journal of Applied Econometrics, 21(6):803–826, 2006.
+André Decoster and Peter Haan. Empirical welfare analysis with preference heterogeneity. In-
+ternational Tax and Public Finance, 22(2):224–251, 2015.
+Hisham Haydar and François Maniquet. Jobs and well-being measurement. Companion theory
+manuscript, February; distinct from this empirical application, 2025.
+Laurence Jacquet, Zhiyang Jia, and Thor O. Thoresen. How much does responsibility matter
+in fairness measurement? Working Paper 12418, CESifo, 2026.
+Anthony F. Shorrocks. Decomposition procedures for distributional analysis: A unified frame-
+work based on the shapley value. Journal of Economic Inequality, 11:99–126, 2013.
+Holly Sutherland and Francesco Figari. Euromod: The european union tax-benefit microsimula-
+tion model. EUROMOD Working Paper EM8/13, Institute for Social and Economic Research,
+University of Essex, 2013.
+30

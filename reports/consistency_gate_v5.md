@@ -14,7 +14,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 6 | Shapley wording: attributed to, not removed | **PASS** |
 | 7 | The six-index statement matches the computed counts | **PASS** |
 | 8 | Parameter intervals and integration bands are never merged | **PASS** |
-| 9 | Resources and needs: couples reported jointly, never imputed | **PASS** |
+| 9 | The budget channel: subdivision repriced, never imputed | **PASS** |
 | 10 | No machine labels, status tokens, private paths or slogans | **PASS** |
 | 11 | Every number is bound to a registered source | **PASS** |
 | 12 | The funnel ends where the estimation begins | **PASS** |
@@ -63,9 +63,13 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 - registry: 20 parameter-interval and 20 integration-band entries, separately typed
 
-## 9. Resources and needs: couples reported jointly, never imputed — PASS
+## 9. The budget channel: subdivision repriced, never imputed — PASS
 
-- registry: no couples resources/composition subdivision is registered
+- the couples subdivision sums to the joint contribution to 0.0e+00 in index units
+- nd_res_leads_couples = 6, recomputed from the source artifact
+- nd_res_leads_couples_eq = 6, recomputed from the source artifact
+- nd_res_leads_singles = 6, recomputed from the source artifact
+- nd_res_leads_singles_eq = 2, recomputed from the source artifact
 
 ## 10. No machine labels, status tokens, private paths or slogans — PASS
 
@@ -73,7 +77,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 447 entries, 107 used by the two documents, every used entry typed and sourced
+- registry: 596 entries, 127 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -81,7 +85,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 13. Figures and tables are present, captioned and rendered — PASS
 
-- paper: 13 figures, 20 tables, 33 captions; report: 16 embedded figures, 20 tables
+- paper: 13 figures, 21 tables, 34 captions; report: 16 embedded figures, 21 tables
 
 ## 14. The report carries the explanatory apparatus — PASS
 

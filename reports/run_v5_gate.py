@@ -384,19 +384,78 @@ for k in rq:
 # --------------------------------------------------------------------------- #
 # 9.  NESTED SEMANTICS AND THE COUPLES D CELL  (spec v1 s5)
 # --------------------------------------------------------------------------- #
-it = item(9, 'Resources and needs: couples reported jointly, never imputed')
+it = item(9, 'The budget channel: subdivision repriced, never imputed')
+E0 = REGJ['entries']
+# The couples subdivision now exists as a repriced result. What the gate must
+# enforce is that it is REPRICED and not an arithmetic split of the joint cell,
+# that its identity residual is reported, and that the single-adult cells are
+# not passed off as being on the same partition.
 for a in 'PM':
-    if 'reported jointly' not in NORM[a] and 'report the two jointly' not in NORM[a]:
-        it.fail('%s: does not state that the couples D cell is reported jointly'
+    if 'repriced through the tax-benefit system' not in NORM[a]:
+        it.fail('%s: does not state that the subdivision is repriced' % NAMES[a])
+    if 'not an arithmetic split' not in NORM[a] and \
+       'not an imputed split' not in NORM[a]:
+        it.fail('%s: does not deny that the subdivision is an arithmetic split'
                 % NAMES[a])
-    if 'is not available' not in NORM[a]:
-        it.fail('%s: does not state that the couples subdivision is unavailable'
-                % NAMES[a])
-for k in ['w_cres_couples', 'w_ccomp_couples', 'w_shres_couples',
-          'w_shcomp_couples']:
-    if k in REGJ['entries']:
-        it.fail('registry: %s exists, so a couples subdivision was imputed' % k)
-it.note('registry: no couples resources/composition subdivision is registered')
+    if 'earlier partition' not in NORM[a]:
+        it.fail('%s: does not disclose that the single-adult cells rest on an '
+                'earlier partition of the budget fields' % NAMES[a])
+for k in ['nd_cres_gini', 'nd_ccomp_gini', 'nd_resid']:
+    if k not in E0:
+        it.fail('registry: %s is missing, so the subdivision is not bound' % k)
+# the two cells must add up to the joint contribution
+if all(k in E0 for k in ['nd_cres_gini', 'nd_ccomp_gini', 'w_cD_couples']):
+    lhs = float(E0['nd_cres_gini']['value']) + float(E0['nd_ccomp_gini']['value'])
+    rhs = float(E0['w_cD_couples']['value'])
+    if abs(lhs - rhs) > 1e-9:
+        it.fail('the couples subdivision does not sum to the joint '
+                'contribution: %.12f against %.12f' % (lhs, rhs))
+    else:
+        it.note('the couples subdivision sums to the joint contribution to '
+                '%.1e in index units' % abs(lhs - rhs))
+# the robustness counts in the prose are recomputed from the source artifacts,
+# not trusted from the registry that wrote them
+import csv as _csv  # noqa: E402
+_ndp = (JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
+        / 's12_couples_nested_D_attributions_v1.csv')
+with _ndp.open(encoding='utf-8') as _f:
+    _nd = list(_csv.DictReader(_f))
+
+
+def _lead(rows, basis, res, comp):
+    return sum(1 for r in rows if r['basis'] == basis
+               and float(r[res]) > float(r[comp]))
+
+
+_checks = [
+    ('nd_res_leads_couples', _lead(_nd, 'raw', 'C_nonlabour', 'C_composition')),
+    ('nd_res_leads_couples_eq', _lead(_nd, 'modified_OECD_equivalized',
+                                      'C_nonlabour', 'C_composition')),
+]
+_sixp = (JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
+         / 's12_six_index_attributions_v1.csv')
+with _sixp.open(encoding='utf-8') as _f:
+    _sx = [r for r in _csv.DictReader(_f)
+           if r['sample'] == 'singles' and r['reference'] == 'singles_female']
+_checks += [
+    ('nd_res_leads_singles', _lead(_sx, 'raw', 'C_resources', 'C_composition')),
+    ('nd_res_leads_singles_eq', _lead(_sx, 'equivalized', 'C_resources',
+                                      'C_composition')),
+]
+for _k, _want in _checks:
+    if _k not in E0:
+        it.fail('registry: %s is missing' % _k)
+    elif int(E0[_k]['value']) != _want:
+        it.fail('registry: %s is %s, recomputation from the source gives %d'
+                % (_k, E0[_k]['value'], _want))
+    else:
+        it.note('%s = %d, recomputed from the source artifact' % (_k, _want))
+# and the cross-population comparison must not be asserted as robust
+forbid(it, 'composition matters more for couples')
+for a in 'PM':
+    if 'we therefore do not report it as a finding' not in NORM[a]:
+        it.fail('%s: the non-robust cross-population comparison is not '
+                'disowned' % NAMES[a])
 
 
 # --------------------------------------------------------------------------- #

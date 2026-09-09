@@ -20,8 +20,9 @@ PRELIM_NOTE = ('Preliminary results. Intervals on the headline shares are '
                'cluster-robust parameter percentiles from 100 draws and are '
                'reported separately from the integration band, never merged '
                'with it. The subdivision of couples resources against '
-               'household composition requires a repricing that has not been '
-               'run and is reported jointly.')
+               'household composition rests on a repricing completed after '
+               'this draft was planned; the joint contribution remains the '
+               'headline component and the subdivision is reported beside it.')
 
 
 # =========================================================================== #
@@ -371,6 +372,22 @@ The parameter interval and the integration band measure different things and are
 
 The allocation is exhaustive. The maximum absolute top-level identity residual is {{n:resid_top}} in index units and the nested residual {{n:resid_nested}}. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model or the normative content of the operators.
 
+## Inside the budget channel: resources against composition and needs
+
+The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. It requires two further counterfactual panels, each repriced through the tax-benefit system, and it is done here on the corrected partition of the budget fields into {{n:nd_n_res}} resource fields, {{n:nd_n_comp}} composition and needs fields and {{n:nd_n_geo}} geographic fields, which travel with resources.
+
+{{table:nestedD}}
+
+Three statements are supported, and a fourth that suggests itself is not.
+
+First, **non-labour resources lead the channel in both populations on the household basis, under all six indices** — {{n:nd_res_leads_couples}} of six for couples and {{n:nd_res_leads_singles}} of six for single adults. On the Gini the couples channel divides {{n:nd_chres|.1f}} to {{n:nd_chcomp|.1f}}, which is {{n:nd_shres|.2f}} and {{n:nd_shcomp|.2f}} per cent of total inequality; the single-adult channel divides {{n:sd_chres|.1f}} to {{n:sd_chcomp|.1f}}, or {{n:sd_shres|.2f}} and {{n:sd_shcomp|.2f}} per cent of total.
+
+Second, **the resources share of the channel is widest under GE(2) and narrowest under the Gini in both populations.** The Gini is the index least sensitive to the tails, and it is where composition matters most; the squared coefficient of variation is the most tail-sensitive, and it is where resources dominate. The spread is large — for couples, from {{n:nd_chres_gini|.1f}} per cent of the channel under the Gini to {{n:nd_chres_cv2|.1f}} under GE(2) — so the division of this channel is considerably more index-sensitive than the four-way decomposition above it.
+
+Third, **equivalizing raises the composition share in both populations, under all {{n:nd_equiv_raises_comp}} of the six indices.** This is not an artefact and it is not a surprise: the equivalence scale is owned by the composition operator, so a state in which composition is equalized is also a state in which every household is put on a common scale. Equalizing composition therefore removes both the direct effect of household size on the budget and the effect of size on the scale by which the resulting level is deflated. For single adults the effect is strong enough to reverse the ordering: on the equivalized basis resources lead the channel in only {{n:nd_res_leads_singles_eq}} of the six indices, and composition leads under the Gini, both Atkinson indices and GE(0). For couples the ordering survives equivalization, under all {{n:nd_res_leads_couples_eq}} of the six.
+
+The statement that does *not* survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, {{n:nd_chcomp|.1f}} against {{n:sd_chcomp|.1f}} per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under {{n:nd_comp_bigger_couples}} of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The two populations' panels also rest on different partitions of the budget fields, which is a second reason to treat the cross-population comparison of channel shares as indicative.
+
 ## Index sensitivity
 
 {{table:sixindex}}
@@ -426,7 +443,7 @@ Three normalizing constants were in circulation between the estimation frames an
 
 The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
 
-The couples subdivision of resources against household composition is not available: it requires two repriced counterfactual panels that have not been run, and we report the two jointly at {{n:w_shD_couples|.2f}} per cent rather than imputing a split. The parameter intervals cover the Gini shares; the other five indices are reported as point estimates.
+The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. The corresponding subdivision for single adults is *not* reported: the only priced panels available for it encode an earlier partition of the budget fields, so its two cells are not comparable with the couples cells and are not a current result.
 '''
 
 # =========================================================================== #
@@ -575,9 +592,9 @@ QA = [
  ('What happened to the earlier claim that endowments and needs were largest for single adults?',
   r'''It is withdrawn. The corrected computation gives {{n:w_shA_singles|.2f}} per cent to job access against {{n:w_shD_singles|.2f}} to resources and needs. The earlier one-factor figure of about seventy-seven per cent is also withdrawn; the current one-factor effect for all non-preference circumstances is {{n:of_E_singles|.1f}} per cent.'''),
  ('Is the couples resources-versus-composition split available?',
-  r'''No. It requires two separately repriced counterfactual panels which have not been run. The two are reported jointly at {{n:w_shD_couples|.2f}} per cent and no split is imputed.'''),
+  r'''Yes, now. Two counterfactual panels were repriced through the tax-benefit system and the split is an index-specific rerun rather than an imputation: on the raw Gini, non-labour resources carry {{n:nd_shres|.2f}} per cent of the baseline and household composition and needs {{n:nd_shcomp|.2f}}, summing to the joint {{n:w_shD_couples|.2f}} per cent to a residual of {{n:nd_resid}} in index units. The joint component is still what the headline decomposition reports; the split is nested inside it. The corresponding split for single adults is *not* available: the only priced panels for it encode an earlier partition of the budget fields and are not comparable.'''),
  ('What is still genuinely unresolved?',
-  r'''Three things. The sample screens on an outcome of the modelled process, and we have not established what correction, if any, the conditional likelihood requires as a result. The sampling law assumed by the sampled-set derivation is supported by diagnostics rather than established by construction. And the couples subdivision of resources against household composition awaits a repricing. Everything else described as pending in earlier drafts is now computed and reported.'''),
+  r'''Two things, both econometric. The sample screens on an outcome of the modelled process, and we have not established what correction, if any, the conditional likelihood requires as a result. And the sampling law assumed by the sampled-set derivation is supported by diagnostics rather than established by construction. One measurement item also remains: the single-adult subdivision of the budget channel rests on panels priced under an earlier partition of the budget fields, so its channel shares are not like-for-like with the couples ones. Everything else described as pending in earlier drafts is now computed and reported.'''),
  ('Is any of this causal?',
   r'''No. The decomposition is an accounting of a structural model under declared counterfactual operators. No regional, educational or occupational effect reported here is identified as a causal effect, and the contrast between single adults and couples is reported as a finding without a mechanism attached to it.'''),
  ('Can the notebook reproduce everything?',
