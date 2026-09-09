@@ -1,7 +1,7 @@
 {
   "_meta": {
     "generated_by": "beamer/make_numbers_of_record_v1.py",
-    "n_entries": 930,
+    "n_entries": 946,
     "note": "Every quantity here is read from a named frozen artefact of the estimation repository. No number is typed by hand. See each entry's 'source' and 'column_or_key' fields for exact provenance. Keys prefixed 'fd_' come from the final-sample descriptives block, runs/final_descriptives/, and are read from the frozen tables named in each entry's source field. Keys prefixed 'pf_' come from the preference-figures block, runs/preference_figures/, and are read from the frozen artefacts named in each entry's source field. Keys prefixed 'pff_' come from the FINAL preference-figures block, runs/preference_figures_final/, at the S11 SCALE-1 parameters (tau = 1, theta_c = 0, beta_c estimated) on the corrected criterion-A frames. They SUPERSEDE the 'pf_' keys, which are retained unchanged as the record of the earlier family and must not be quoted for current results.",
     "sprint_root": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT"
   },
@@ -4758,6 +4758,76 @@
       "source": "runs/preference_figures_final/pff_parameters_v1.csv",
       "value": 10.0
     },
+    "pff_alternative_consumption_n_alternatives": {
+      "basis": "in-domain singles alternatives",
+      "column_or_key": "n_alternatives",
+      "reference": "In-domain alternatives with positive consumption on the corrected criterion-A singles frame.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 154566.0
+    },
+    "pff_alternative_consumption_p01": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p01",
+      "reference": "Quantile p01 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 30.279166385000053
+    },
+    "pff_alternative_consumption_p05": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p05",
+      "reference": "Quantile p05 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 412.46638656888274
+    },
+    "pff_alternative_consumption_p10": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p10",
+      "reference": "Quantile p10 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 773.5023083668112
+    },
+    "pff_alternative_consumption_p25": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p25",
+      "reference": "Quantile p25 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 1198.0297718057425
+    },
+    "pff_alternative_consumption_p50": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p50",
+      "reference": "Quantile p50 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 1724.2396583238428
+    },
+    "pff_alternative_consumption_p75": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p75",
+      "reference": "Quantile p75 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 2395.2747099930557
+    },
+    "pff_alternative_consumption_p90": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p90",
+      "reference": "Quantile p90 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 3226.191271160786
+    },
+    "pff_alternative_consumption_p95": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p95",
+      "reference": "Quantile p95 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 3861.2819989585596
+    },
+    "pff_alternative_consumption_p99": {
+      "basis": "in-domain singles ALTERNATIVES, one row per alternative",
+      "column_or_key": "quantiles_eur_per_month.p99",
+      "reference": "Quantile p99 of monthly disposable consumption over the 154566 in-domain alternatives with positive consumption across 1540 single-adult households, each alternative carrying its household's dwt. The unit is an ALTERNATIVE, not a household, because that is what W1-EA weights.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 5423.3791594095555
+    },
     "pff_beta_c__couples": {
       "basis": "the utility of record at the S11 SCALE-1 FINAL parameters (tau = 1, theta_c = 0, beta_c estimated)",
       "column_or_key": "beta_c",
@@ -6290,6 +6360,48 @@
       "reference": "The transformed upper bound on beta_l_age2_sf in the lambda_l = 10 coordinate. It equals the transformed COEFFICIENT exactly, so the coordinate change does not make the active bound interior. Boundary activity is a property of the estimation box.",
       "source": "runs/preference_figures_final/pff_step2_invariance_v1.json",
       "value": 1.0
+    },
+    "pff_w1_power_mean_identity_max_rel_diff": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "max_relative_difference",
+      "reference": "Worst relative difference between the closed-form W1-EA and the weighted power mean of order beta_c, over 1000 cases: 200 households' real in-domain consumption vectors against 5 random strictly positive non-consumption weight vectors each. The identity is algebraic and must hold for ANY such weights. Tolerance 1e-12.",
+      "source": "runs/preference_figures_final/pff_step1_reference_v1.json",
+      "value": 7.112317244346839e-16
+    },
+    "pff_w1_power_mean_order": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "beta_c_estimated_power_mean_order",
+      "reference": "The ORDER of the power mean that W1-EA is at theta_c = 0. It equals beta_c, which is simultaneously the elasticity of an alternative's implied weight in its own consumption. At beta_c = 1 the measure would be the arithmetic mean of the reachable alternatives' consumption. Holding the non-consumption weights -- leisure and the opportunity kernel -- fixed. This is the AGGREGATOR'S KERNEL and not a recomputation of W1-EA levels, which are on record at the superseded parameters.",
+      "source": "figures/preferences_final/figP07_w1_power_mean_weighting.csv",
+      "value": 2.038731824410903
+    },
+    "pff_w1_weight_multiplier_at_twice_median__beta_c_hat": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "weight_multiplier_at_twice_median__beta_c_hat",
+      "reference": "The weight an alternative paying twice the median alternative carries at the estimated beta_c, relative to the median alternative. Holding the non-consumption weights -- leisure and the opportunity kernel -- fixed. This is the AGGREGATOR'S KERNEL and not a recomputation of W1-EA levels, which are on record at the superseded parameters.",
+      "source": "figures/preferences_final/figP07_w1_power_mean_weighting.csv",
+      "value": 4.108841913814688
+    },
+    "pff_w1_weight_multiplier_at_twice_median__beta_c_one": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "weight_multiplier_at_twice_median__beta_c_one",
+      "reference": "The same multiplier at beta_c = 1, where it is 2 by construction. Holding the non-consumption weights -- leisure and the opportunity kernel -- fixed. This is the AGGREGATOR'S KERNEL and not a recomputation of W1-EA levels, which are on record at the superseded parameters.",
+      "source": "figures/preferences_final/figP07_w1_power_mean_weighting.csv",
+      "value": 2.0
+    },
+    "pff_w1_weight_ratio_p95_over_p05__beta_c_hat": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "weight_ratio_p95_over_p05__beta_c_hat",
+      "reference": "The ratio of implied weights between the p95 and the p5 in-domain alternative at the estimated beta_c. Holding the non-consumption weights -- leisure and the opportunity kernel -- fixed. This is the AGGREGATOR'S KERNEL and not a recomputation of W1-EA levels, which are on record at the superseded parameters.",
+      "source": "figures/preferences_final/figP07_w1_power_mean_weighting.csv",
+      "value": 95.56696667335218
+    },
+    "pff_w1_weight_ratio_p95_over_p05__beta_c_one": {
+      "basis": "the W1-EA aggregator at theta_c = 0",
+      "column_or_key": "weight_ratio_p95_over_p05__beta_c_one",
+      "reference": "The same ratio at beta_c = 1, where it is the consumption ratio itself. Holding the non-consumption weights -- leisure and the opportunity kernel -- fixed. This is the AGGREGATOR'S KERNEL and not a recomputation of W1-EA levels, which are on record at the superseded parameters.",
+      "source": "figures/preferences_final/figP07_w1_power_mean_weighting.csv",
+      "value": 9.361446471017384
     },
     "regional_opportunity_mass_range_A": {
       "basis": "profile=household_1",
