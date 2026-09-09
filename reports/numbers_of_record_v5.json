@@ -159,7 +159,7 @@
       "units": "households"
     },
     "negll_singles": {
-      "value": 6253.46307438,
+      "value": 6253.463074379619,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "log-likelihood units"
@@ -213,7 +213,7 @@
       "units": "households"
     },
     "negll_couples": {
-      "value": 10283.034369351,
+      "value": 10283.03436935076,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "log-likelihood units"
@@ -3577,6 +3577,66 @@
       "source": "build environment package metadata",
       "status": "software",
       "units": "version"
+    },
+    "w_shP_gini_singles_frac_v1": {
+      "value": 0.0988142737120199,
+      "source": "s12_six_index_attributions_v1.csv and s12_s11_cr1_headline_shares_v1.csv (identical, verified same row); corrected welfare record at the S11 specifications of record; full-precision raw fraction, companion to the existing 2-decimal-percent w_sh*_gini_singles entries",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shA_gini_singles_frac_v1": {
+      "value": 0.4916494272563949,
+      "source": "s12_six_index_attributions_v1.csv and s12_s11_cr1_headline_shares_v1.csv (identical, verified same row); corrected welfare record at the S11 specifications of record; full-precision raw fraction, companion to the existing 2-decimal-percent w_sh*_gini_singles entries",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shB_gini_singles_frac_v1": {
+      "value": 0.0675577651057339,
+      "source": "s12_six_index_attributions_v1.csv and s12_s11_cr1_headline_shares_v1.csv (identical, verified same row); corrected welfare record at the S11 specifications of record; full-precision raw fraction, companion to the existing 2-decimal-percent w_sh*_gini_singles entries",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shD_gini_singles_frac_v1": {
+      "value": 0.3419785339258512,
+      "source": "s12_six_index_attributions_v1.csv and s12_s11_cr1_headline_shares_v1.csv (identical, verified same row); corrected welfare record at the S11 specifications of record; full-precision raw fraction, companion to the existing 2-decimal-percent w_sh*_gini_singles entries",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "negll_singles_raw_v1": {
+      "value": 6253.463074379619,
+      "source": "s11_welfare_specs_of_record_v1.json; results.SINGLES.negll; specifications of record, tau = 1, theta_c = 0, beta_c estimated; full-precision companion to the reporting key negll_singles",
+      "status": "result",
+      "units": "log-likelihood units"
+    },
+    "negll_couples_raw_v1": {
+      "value": 10283.03436935076,
+      "source": "s11_welfare_specs_of_record_v1.json; results.COUPLES.negll; specifications of record, tau = 1, theta_c = 0, beta_c estimated; full-precision companion to the reporting key negll_couples",
+      "status": "result",
+      "units": "log-likelihood units"
+    },
+    "w_shP_gini_singles_raw_v1": {
+      "value": 0.0988142737120199,
+      "source": "s12_s11_cr1_headline_shares_v1.csv, row sample=singles reference=singles_female basis=raw index=gini share=share_P, column point; bitwise identical to s12_six_index_attributions_v1.csv column share_P on the same row; full-precision raw fraction, companion to the 2-decimal-percent key w_shP_gini_singles",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shA_gini_singles_raw_v1": {
+      "value": 0.4916494272563949,
+      "source": "s12_s11_cr1_headline_shares_v1.csv, row sample=singles reference=singles_female basis=raw index=gini share=share_A, column point; bitwise identical to s12_six_index_attributions_v1.csv column share_A on the same row; full-precision raw fraction, companion to the 2-decimal-percent key w_shA_gini_singles",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shB_gini_singles_raw_v1": {
+      "value": 0.0675577651057339,
+      "source": "s12_s11_cr1_headline_shares_v1.csv, row sample=singles reference=singles_female basis=raw index=gini share=share_B, column point; bitwise identical to s12_six_index_attributions_v1.csv column share_B on the same row; full-precision raw fraction, companion to the 2-decimal-percent key w_shB_gini_singles",
+      "status": "result",
+      "units": "fraction of that index baseline"
+    },
+    "w_shD_gini_singles_raw_v1": {
+      "value": 0.3419785339258512,
+      "source": "s12_s11_cr1_headline_shares_v1.csv, row sample=singles reference=singles_female basis=raw index=gini share=share_D, column point; bitwise identical to s12_six_index_attributions_v1.csv column share_D on the same row; full-precision raw fraction, companion to the 2-decimal-percent key w_shD_gini_singles",
+      "status": "result",
+      "units": "fraction of that index baseline"
     }
   },
   "used_keys": [
@@ -3651,9 +3711,11 @@
     "nd_shcomp",
     "nd_shres",
     "negll_couples",
+    "negll_couples_raw_v1",
     "negll_ruma",
     "negll_rumb",
     "negll_singles",
+    "negll_singles_raw_v1",
     "of_E_couples",
     "of_E_singles",
     "of_P_couples",
@@ -3691,15 +3753,23 @@
     "w_i10_singles",
     "w_shAB_singles",
     "w_shA_couples",
+    "w_shA_gini_singles_frac_v1",
+    "w_shA_gini_singles_raw_v1",
     "w_shA_singles",
     "w_shA_singlesmz",
     "w_shB_couples",
+    "w_shB_gini_singles_frac_v1",
+    "w_shB_gini_singles_raw_v1",
     "w_shB_singles",
     "w_shB_singlesmz",
     "w_shD_couples",
+    "w_shD_gini_singles_frac_v1",
+    "w_shD_gini_singles_raw_v1",
     "w_shD_singles",
     "w_shD_singlesmz",
     "w_shP_couples",
+    "w_shP_gini_singles_frac_v1",
+    "w_shP_gini_singles_raw_v1",
     "w_shP_singles",
     "w_shP_singlesmz",
     "wage_hi",
