@@ -454,7 +454,7 @@ Table: Observed against model population shares, singles. The model column is a 
 |Man|Hours: [33.5, 36.5)|0.2329|0.2457|0.0128|households|
 |Man|Hours: [36.5, 40.5]|0.3400|0.2452|0.0948|households|
 |Man|Hours: (40.5, 44.5)|0.0691|0.0488|0.0203|households|
-|Man|Hours: [44.5, 70]|0.1626|0.1717|0.0091|households|
+|Man|Hours: [44.5, 70]|0.1658|0.1717|0.0059|households|
 |Man|Occupation group 1|0.3823|0.3774|0.0049|workers|
 |Man|Occupation group 2|0.1069|0.1014|0.0054|workers|
 |Man|Occupation group 3|0.0516|0.0545|0.0029|workers|
@@ -471,7 +471,7 @@ Table: Observed against model population shares, singles. The model column is a 
 |Woman|Hours: [33.5, 36.5)|0.2672|0.2581|0.0091|households|
 |Woman|Hours: [36.5, 40.5]|0.2493|0.2386|0.0107|households|
 |Woman|Hours: (40.5, 44.5)|0.0492|0.0446|0.0045|households|
-|Woman|Hours: [44.5, 70]|0.1159|0.1192|0.0034|households|
+|Woman|Hours: [44.5, 70]|0.1185|0.1192|0.0007|households|
 |Woman|Occupation group 1|0.1795|0.1832|0.0036|workers|
 |Woman|Occupation group 2|0.1976|0.1946|0.0031|workers|
 |Woman|Occupation group 3|0.1349|0.1348|0.0002|workers|
@@ -495,7 +495,7 @@ Table: Observed against model population shares, couples. The model column is a 
 |Man|Hours: [28.5, 30.5)|0.0095|0.0189|0.0094|households|
 |Man|Hours: [33.5, 36.5)|0.2515|0.2507|0.0008|households|
 |Man|Hours: [36.5, 40.5]|0.3274|0.2780|0.0494|households|
-|Man|Hours: [44.5, 70]|0.2461|0.2531|0.0070|households|
+|Man|Hours: [44.5, 70]|0.2576|0.2531|0.0044|households|
 |Man|Occupation group 1|0.3519|0.3516|0.0003|workers|
 |Man|Occupation group 2|0.0797|0.0741|0.0056|workers|
 |Man|Occupation group 3|0.0464|0.0412|0.0052|workers|
@@ -507,7 +507,7 @@ Table: Observed against model population shares, couples. The model column is a 
 |Woman|Hours: [28.5, 30.5)|0.0462|0.0572|0.0110|households|
 |Woman|Hours: [33.5, 36.5)|0.2687|0.2767|0.0080|households|
 |Woman|Hours: [36.5, 40.5]|0.2793|0.2072|0.0721|households|
-|Woman|Hours: [44.5, 70]|0.1061|0.1002|0.0060|households|
+|Woman|Hours: [44.5, 70]|0.1079|0.1002|0.0077|households|
 |Woman|Occupation group 1|0.1653|0.1648|0.0005|workers|
 |Woman|Occupation group 2|0.1922|0.2017|0.0095|workers|
 |Woman|Occupation group 3|0.1533|0.1583|0.0050|workers|
@@ -516,20 +516,20 @@ Table: Observed against model population shares, couples. The model column is a 
 
 
 
-The mean absolute deviation over all population moments is 0.0130 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The model also assigns no mass to observed hours below ten, where the observed shares are around one per cent. Both are limitations of the banded hours density and we report them rather than summarise them away.
+The mean absolute deviation over all population moments is 0.0129 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The model also assigns no mass to observed hours below ten, where the observed shares are around one per cent. Both are limitations of the banded hours density and we report them rather than summarise them away.
 
 
 Table: The estimated model against two re-estimated common-opportunity benchmarks, on the same 1,540 single-adult households, the same sampled alternatives and the same criterion. A better maximized criterion does not by itself establish that a mechanism has been identified; the margin-by-margin comparison in the fit table and figure is the substantive evidence.
 
 |Specification|Free coordinates|Criterion|Difference|Population fit|
 |---|---|---|---|---|
-|Latent jobs with household-specific opportunities|41|6253.463|--|0.0130|
+|Latent jobs with household-specific opportunities|41|6253.463|--|0.0129|
 |Benchmark A: common opportunity distribution, preferences re-estimated|10|6403.974|+150.51|0.0270|
 |Benchmark B: common opportunity shape, employment and hours moved into utility and re-estimated|16|6395.108|+141.64|0.0261|
 
 
 
-The two re-estimated common-opportunity benchmarks are worse by 141.64 and by a larger margin, on the same households, the same sampled alternatives and the same criterion. The comparison is a nested one in the sense that the benchmarks restrict the opportunity block and re-estimate everything else, but we do not convert it into a formal test, because the sampled-alternative criterion is not the likelihood of the observed data and the conditions for a likelihood-ratio distribution are not established here. What the table does support is that the deterioration is concentrated where the opportunity block does its work: the population fit worsens from 0.0130 to 0.0270 and 0.0261, and the occupation margins deteriorate by an order of magnitude, from about half a percentage point to eleven. A better criterion does not by itself establish that a mechanism has been identified.
+The two re-estimated common-opportunity benchmarks are worse by 141.64 and by a larger margin, on the same households, the same sampled alternatives and the same criterion. The comparison is a nested one in the sense that the benchmarks restrict the opportunity block and re-estimate everything else, but we do not convert it into a formal test, because the sampled-alternative criterion is not the likelihood of the observed data and the conditions for a likelihood-ratio distribution are not established here. What the table does support is that the deterioration is concentrated where the opportunity block does its work: the population fit worsens from 0.0129 to 0.0270 and 0.0261, and the occupation margins deteriorate by an order of magnitude, from about half a percentage point to eleven. A better criterion does not by itself establish that a mechanism has been identified.
 
 ## Money-metric well-being
 

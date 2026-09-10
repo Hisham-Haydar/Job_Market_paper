@@ -10,7 +10,7 @@ Man,"Hours: [30.5, 33.5)",0.0107,0.0315,0.0208,households
 Man,"Hours: [33.5, 36.5)",0.2329,0.2457,0.0128,households
 Man,"Hours: [36.5, 40.5]",0.3400,0.2452,0.0948,households
 Man,"Hours: (40.5, 44.5)",0.0691,0.0488,0.0203,households
-Man,"Hours: [44.5, 70]",0.1626,0.1717,0.0091,households
+Man,"Hours: [44.5, 70]",0.1658,0.1717,0.0059,households
 Man,Occupation group 1,0.3823,0.3774,0.0049,workers
 Man,Occupation group 2,0.1069,0.1014,0.0054,workers
 Man,Occupation group 3,0.0516,0.0545,0.0029,workers
@@ -27,7 +27,7 @@ Woman,"Hours: [30.5, 33.5)",0.0290,0.0367,0.0077,households
 Woman,"Hours: [33.5, 36.5)",0.2672,0.2581,0.0091,households
 Woman,"Hours: [36.5, 40.5]",0.2493,0.2386,0.0107,households
 Woman,"Hours: (40.5, 44.5)",0.0492,0.0446,0.0045,households
-Woman,"Hours: [44.5, 70]",0.1159,0.1192,0.0034,households
+Woman,"Hours: [44.5, 70]",0.1185,0.1192,0.0007,households
 Woman,Occupation group 1,0.1795,0.1832,0.0036,workers
 Woman,Occupation group 2,0.1976,0.1946,0.0031,workers
 Woman,Occupation group 3,0.1349,0.1348,0.0002,workers

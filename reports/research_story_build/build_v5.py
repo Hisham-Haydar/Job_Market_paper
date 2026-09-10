@@ -138,9 +138,11 @@ def par(tag, name, col='estimate'):
     return m.iloc[0][col]
 
 
-for _t, _n, _neg, _gain, _free, _int, _mae in [
-        ('singles', 1540, 6253.463074380, 23.752611, 41, 40, 0.013040),
-        ('couples', 2223, 10283.034369351, 15.659005, 47, 47, 0.013595)]:
+for _t, _model, _n, _neg, _gain, _free, _int in [
+        ('singles', 'SINGLES', 1540, 6253.463074380, 23.752611, 41, 40),
+        ('couples', 'COUPLES', 2223, 10283.034369351, 15.659005, 47, 47)]:
+    _mae = _S11REC['results'][_model]['criterion_b_population_fit'][
+        'mean_absolute_error']
     register('n_' + _t, _n, _S11SRC, 'sample', 'households')
     register('negll_' + _t, _neg, _S11SRC, 'estimated', 'log-likelihood units')
     register('gain_' + _t, _gain, _S11SRC, 'estimated', 'log-points')
@@ -160,9 +162,11 @@ register('negll_rumb', 6395.107857484, _S11SRC, 'estimated',
          'log-likelihood units')
 register('rum_gap', round(6395.107857484 - 6253.463074380, 2), _S11SRC,
          'estimated', 'log-points')
-register('mae_ruma', 0.026952, _S11SRC, 'estimated',
+register('mae_ruma', _S11REC['results']['RUM-A']['criterion_b_population_fit'][
+             'mean_absolute_error'], _S11SRC, 'estimated',
          'mean absolute deviation over the population moments')
-register('mae_rumb', 0.026072, _S11SRC, 'estimated',
+register('mae_rumb', _S11REC['results']['RUM-B']['criterion_b_population_fit'][
+             'mean_absolute_error'], _S11SRC, 'estimated',
          'mean absolute deviation over the population moments')
 register('kfree_rumb', 16, _S11SRC, 'estimated', 'free coordinates')
 register('kfree_ruma', 10, _S11SRC, 'estimated', 'free coordinates')

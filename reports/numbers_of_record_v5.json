@@ -183,7 +183,7 @@
       "units": "interior coordinates"
     },
     "mae_singles": {
-      "value": 0.01304,
+      "value": 0.012865506696263924,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "mean absolute deviation over the population moments"
@@ -237,7 +237,7 @@
       "units": "interior coordinates"
     },
     "mae_couples": {
-      "value": 0.013595,
+      "value": 0.013565535399251394,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "mean absolute deviation over the population moments"
@@ -279,13 +279,13 @@
       "units": "log-points"
     },
     "mae_ruma": {
-      "value": 0.026952,
+      "value": 0.027022180138171422,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "mean absolute deviation over the population moments"
     },
     "mae_rumb": {
-      "value": 0.026072,
+      "value": 0.026090514799871053,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "mean absolute deviation over the population moments"
@@ -6343,9 +6343,9 @@
         "sample": "singles",
         "sex": "male",
         "margin": "hours::lh",
-        "observed": 0.16256065557505084,
+        "observed": 0.1658430491213177,
         "model": 0.17169712540922855,
-        "deviation": 0.009136469834177707,
+        "deviation": 0.005854076287910848,
         "denominator": "households"
       },
       {
@@ -6496,9 +6496,9 @@
         "sample": "singles",
         "sex": "female",
         "margin": "hours::lh",
-        "observed": 0.11585519369218207,
+        "observed": 0.1185203208254678,
         "model": 0.1192089677439262,
-        "deviation": 0.0033537740517441267,
+        "deviation": 0.0006886469184583938,
         "denominator": "households"
       },
       {
@@ -6640,9 +6640,9 @@
         "sample": "couples",
         "sex": "male",
         "margin": "hours::lh",
-        "observed": 0.24611629241213148,
+        "observed": 0.2575507045188865,
         "model": 0.25313065679798324,
-        "deviation": 0.007014364385851762,
+        "deviation": -0.004420047720903264,
         "denominator": "households"
       },
       {
@@ -6748,9 +6748,9 @@
         "sample": "couples",
         "sex": "female",
         "margin": "hours::lh",
-        "observed": 0.10614171425634616,
+        "observed": 0.1078978277518769,
         "model": 0.10015327112520205,
-        "deviation": -0.005988443131144119,
+        "deviation": -0.0077445566266748506,
         "denominator": "households"
       },
       {
