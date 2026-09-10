@@ -1,0 +1,124 @@
+\section{Sensitivity and limitations}\label{sensitivity-and-limitations}
+
+\subsection{The normative reference}\label{the-normative-reference}
+
+The reference is a choice, and the results move with it. The single-adult decomposition uses a female-primary reference block; under the alternative male structural-zero reference the shares become 10.17 per cent for preferences, 51.55 for access, 7.56 for earning opportunities and 30.72 for resources and needs. The ordering is unchanged and the magnitudes move by a few percentage points. That sensitivity is real and belongs with the result; it is a property of the normative construction, not a numerical instability.
+
+Equivalization is a second normative choice of the same kind. On the equivalized basis the single-adult access share falls and the resources-and-needs share rises, and the couples pattern moves in the same direction. Both bases are reported throughout; neither is the correct one, and the choice between them is not settled by the data.
+
+\subsection{Two open econometric questions}\label{two-open-econometric-questions}
+
+The sample screens on the observed hours and wage of employed deciders. The estimation sample is therefore selected on an outcome of the process being modelled, and the conditional sampled-set likelihood, which is the right object given a sampled choice set, is not automatically the right object given an outcome-selected sample. We have not established which correction the screen requires, or that none is required. This is an econometric question and not a presentational one, and it is not resolved by the diagnostics reported above.
+
+Separately, the sampled-set probability is derived by conditioning on a labelled collection of slots. Small observed cross-coordinate correlations and a multiplicity distribution consistent with independent draws are diagnostics; they do not by themselves establish the sampling law that the derivation assumes. Both questions are recorded here as open.
+
+\subsection{The bridge to the compensation-side reference}\label{the-bridge-to-the-compensation-side-reference}
+
+The flat-consumption reference of Section 4 is one member of a family. A natural comparison is the reference that flattens consumption only at the non-work bundle, which sits on the compensation side of the same family. If non-work maximizes the non-consumption index and the opportunity density integrates to one on the domain the reference mass uses, then \(H_i\le e^{L_i(o)}\), so the gap \(\Delta_i=L_i(o)-\log H_i\) must be non-negative for every household and the ratio of the two measures is bounded on one side.
+
+The first premise holds for every household in both samples. The second does not: the opportunity object entering the reference mass is an unnormalized index whose median mass on that domain is 0.077283 for single adults and 147.963 for couples. Omitting that mass makes the comparison depend on an arbitrary multiplicative scale, and it is the reason earlier signed gaps had the wrong sign for couples and happened not to reverse for single adults. Both earlier levels are withdrawn.
+
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\caption{The bridge between the two monetary references, after the premise audit. The second column reports whether non-work maximizes the non-consumption index for every household; the third reports the median mass of the opportunity kernel on the domain the reference integral uses. That mass is not one, which is the premise that failed and the reason the earlier signed gaps were scale artefacts. The remaining columns are the bridge after normalizing the kernel on exactly that domain.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Population
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Non-work maximizes \(L\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(\int\hat g\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(W^4/W^1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(\Delta\) (nats)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Delta\ge 0\) everywhere
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Population
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Non-work maximizes \(L\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(\int\hat g\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(W^4/W^1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Median \(\Delta\) (nats)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\Delta\ge 0\) everywhere
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Single-adult & yes & 0.077283 & 0.9843 & {[}0.9169, 0.9990{]} & 0.0322 & yes \\
+Couple & yes & 147.962795 & 0.6242 & {[}0.5211, 0.7171{]} & 0.9906 & yes \\
+\end{longtable}
+
+After normalizing the kernel on exactly the domain the reference mass uses, the bridge is well behaved: the gap is non-negative for every household in both samples and the ratio is at most one everywhere, as the premises require. The median ratio is 0.9843 for single adults and 0.6242 for couples. We report the reconciled bridge as a property comparison between two references and do not use it as a competing headline distribution.
+
+\subsection{The relative-index companion measure}\label{the-relative-index-companion-measure}
+
+A third reference, which flattens the sum of a resource base and gross pay rather than disposable consumption, is defined only where the inversion brackets. It brackets for all 1,540 single-adult households with no negative values, and is therefore usable as a single-adult diagnostic. For couples it brackets for 9 of 2,223 households in the theory-strict form, and the household-resource form produces 2,103 negative values, on which relative inequality indices are not defined. We therefore treat it as a single-adult diagnostic and do not force it into the couples application. Failure to bracket is not by itself proof that a measure does not exist; here the three cases we can distinguish are an insufficient upper bracket, an empty positive-consumption domain and a target below the attainable reference range, and we report which applies rather than a single count.
+
+\subsection{The consumption normalizer}\label{the-consumption-normalizer}
+
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\caption{The consumption normalizer. Three constants were in circulation. Under exact log consumption the normalizer enters utility as the alternative-invariant term \(-\beta_c\log\lambda_c\), so it cancels from every choice probability and exactly from the money metric. The paper reports the estimation-frame constant throughout.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Panel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Single-adult (EUR/month)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couple (EUR/month)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Panel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Single-adult (EUR/month)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Couple (EUR/month)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Estimation frame, 101 sampled alternatives per household & 1,938.238719 & 4,247.875047 & Constant of record \\
+Welfare panel, 2,048 common integration nodes & 1,774.518218 & 3,821.448012 & Recomputed over its own rows; inert \\
+Predecessor frames, before the sample correction & 1,911.108058 & 3,821.448012 & Superseded \\
+\end{longtable}
+
+Three normalizing constants were in circulation between the estimation frames and the welfare panel, because each panel computes the constant as a mean over its own rows. Under exact log consumption the constant is alternative-invariant, so it cancels from every choice probability and exactly from the money metric; the deviation over four widely separated values is 2.7e-15. No reported quantity changes. The paper reports the estimation-frame constant throughout, and the discrepancy is recorded here rather than silently harmonised.
+
+\subsection{What is not established}\label{what-is-not-established}
+
+The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
+
+The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. The corresponding subdivision for single adults is \emph{not} reported: the only priced panels available for it encode an earlier partition of the budget fields, so its two cells are not comparable with the couples cells and are not a current result.
+

@@ -1,0 +1,36 @@
+\section{Appendix B. Inequality indices and the allocation rule}\label{appendix-b.-inequality-indices-and-the-allocation-rule}
+
+\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\caption{The six inequality indices, defined on a weighted distribution of strictly positive levels with mean \(\mu\). Multiplying an index by a positive constant scales its level and its contributions but not its shares, so GE(2) and the squared coefficient of variation are the same game. Atkinson(1) and GE(0) rank any positive distribution identically because \(A(1)=1-e^{-GE(0)}\); their shares can nevertheless differ, because a nonlinear transformation does not commute with averaging marginal contributions over coalition orders.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Index
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Definition
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Index
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Definition
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gini & \(\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert\), for \(W,\tilde W\) independent draws from the distribution \\
+Atkinson(1) & \(1-\exp\!\big(\mathbb{E}\log W\big)/\mu\) \\
+Atkinson(2) & \(1-\big(\mathbb{E}[W^{-1}]\big)^{-1}/\mu\) \\
+GE(0) & \(\mathbb{E}\log(\mu/W)\) \\
+GE(1) & \(\mathbb{E}\big[(W/\mu)\log(W/\mu)\big]\) \\
+GE(2) \(=CV^2/2\) & \(\tfrac{1}{2}\mathbb{E}\big[(W/\mu)^2-1\big]\) \\
+\end{longtable}
+
+Two relations are worth stating because they explain apparent puzzles in the six-index table. First, multiplying an index by a positive constant scales its level and every contribution but leaves the shares unchanged, so GE(2) and the squared coefficient of variation define the same allocation game and are not two robustness checks. Second, \(A(1)=1-e^{-GE(0)}\), so Atkinson(1) and GE(0) rank any distribution of positive levels identically. Their allocated shares can nevertheless differ, because a nonlinear transformation of the index does not commute with averaging marginal contributions over coalition orders. That is a property of the allocation rule, not an inconsistency.
+
+The Owen value for the partition \(\{\{P\},\{A,B,D\}\}\) allocates first between the two unions and then within the second, averaging over the orders of unions and, within a union, over the orders of its members. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to \(I_\varnothing-I_{\{P,A,B,D\}}\) because the game closes, and the closure is verified.
+

@@ -1,0 +1,14 @@
+\section{Appendix D. Data, software and replication}\label{appendix-d.-data-software-and-replication}
+
+\textbf{Data.} French EU-SILC, accessed through Eurostat's harmonised release, with 2016 survey collection and a 2015 income reference year. The harmonised survey is transformed into an input file for EUROMOD \citep{sutherlandfigari2013}, which applies the French 2015 policy system. Regional labour-market conditions come from the Eurostat regional labour-force series. Access to EU-SILC microdata is granted by Eurostat under its research-access conditions and the data cannot be redistributed with this document.
+
+\textbf{Sample.} 1,540 single-adult and 2,223 couple households, constructed by the screens of Section 2.
+
+\textbf{Estimator and inference.} Conditional likelihood over 100 sampled alternatives per household plus the observed choice, with an out-of-fold proposal correction; cluster-robust standard errors on the household. Optimization is checked by five starts under two polishing contracts and curvature by exact Hessian eigenvalues.
+
+\textbf{Welfare computation.} A common integration panel of 2,048 nodes per household, evaluated under all sixteen coalition states. Integration error is measured by 8 randomized quasi-Monte Carlo scrambles; parameter uncertainty by 100 draws from the cluster-robust covariance rebuilt from the Hessian and the household scores, holding maintained restrictions and bound-active coordinates at their values. The two are reported separately and are never combined into one band.
+
+\textbf{Software.} Python with JAX (0.10.1) for automatic differentiation, and the EUROMOD connector (0.2.17).
+
+\textbf{Replication.} Code and derived, non-confidential intermediate artefacts will be made available in a public repository on publication. Confidential microdata remain in their permitted environment, so the replication package reproduces every step conditional on authorised access to EU-SILC.
+
