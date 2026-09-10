@@ -1,5 +1,5 @@
 {
-  "build_date": "09 September 2026",
+  "build_date": "10 September 2026",
   "model_of_record": "S11 specifications of record: tau = 1, theta_c = 0, beta_c estimated; welfare at S12 on the 1,540 / 2,223 estimation frames",
   "entries": {
     "collection_year": {
@@ -159,7 +159,7 @@
       "units": "households"
     },
     "negll_singles": {
-      "value": 6253.463074379619,
+      "value": 6253.46307438,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "log-likelihood units"
@@ -213,7 +213,7 @@
       "units": "households"
     },
     "negll_couples": {
-      "value": 10283.03436935076,
+      "value": 10283.034369351,
       "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
       "status": "estimated",
       "units": "log-likelihood units"
@@ -2662,481 +2662,481 @@
     },
     "sd_cres_gini": {
       "value": 0.0472036249569349,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_gini": {
       "value": 24.38,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_gini": {
       "value": 71.3,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_gini": {
       "value": 0.0190020391422419,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_gini": {
       "value": 9.82,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_gini": {
       "value": 28.7,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_gini": {
       "value": 0.0416610878434455,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_gini": {
       "value": 19.94,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_gini": {
       "value": 46.1,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_gini": {
       "value": 0.0487569817322149,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_gini": {
       "value": 23.33,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_gini": {
       "value": 53.9,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_cres_atkinson1": {
       "value": 0.0209006338318429,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_atkinson1": {
       "value": 34.38,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_atkinson1": {
       "value": 73.3,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_atkinson1": {
       "value": 0.0076088113070467,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_atkinson1": {
       "value": 12.52,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_atkinson1": {
       "value": 26.7,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_atkinson1": {
       "value": 0.0191128628763848,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_atkinson1": {
       "value": 27.53,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_atkinson1": {
       "value": 48.3,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_atkinson1": {
       "value": 0.020462133196958,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_atkinson1": {
       "value": 29.48,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_atkinson1": {
       "value": 51.7,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_cres_atkinson2": {
       "value": 0.0361887998352228,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_atkinson2": {
       "value": 31.33,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_atkinson2": {
       "value": 71.9,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_atkinson2": {
       "value": 0.0141380764756928,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_atkinson2": {
       "value": 12.24,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_atkinson2": {
       "value": 28.1,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_atkinson2": {
       "value": 0.032283844651889,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_atkinson2": {
       "value": 24.42,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_atkinson2": {
       "value": 44.2,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_atkinson2": {
       "value": 0.040698528859552,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_atkinson2": {
       "value": 30.79,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_atkinson2": {
       "value": 55.8,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_cres_ge0": {
       "value": 0.0217086344622115,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_ge0": {
       "value": 34.62,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_ge0": {
       "value": 73.4,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_ge0": {
       "value": 0.0078831746628878,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_ge0": {
       "value": 12.57,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_ge0": {
       "value": 26.6,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_ge0": {
       "value": 0.0199421894037804,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_ge0": {
       "value": 27.72,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_ge0": {
       "value": 48.4,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_ge0": {
       "value": 0.0212407204114975,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_ge0": {
       "value": 29.52,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_ge0": {
       "value": 51.6,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_cres_ge1": {
       "value": 0.0258653938795425,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_ge1": {
       "value": 39.26,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_ge1": {
       "value": 74.4,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_ge1": {
       "value": 0.0088772826938778,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_ge1": {
       "value": 13.47,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_ge1": {
       "value": 25.6,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_ge1": {
       "value": 0.0243394331595389,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_ge1": {
       "value": 32.73,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_ge1": {
       "value": 53.4,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_ge1": {
       "value": 0.0212742403871269,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_ge1": {
       "value": 28.61,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_ge1": {
       "value": 46.6,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_cres_cv2": {
       "value": 0.0724258859553945,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shres_cv2": {
       "value": 47.04,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chres_cv2": {
       "value": 74.8,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_ccomp_cv2": {
       "value": 0.0243478821678827,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sd_shcomp_cv2": {
       "value": 15.81,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sd_chcomp_cv2": {
       "value": 25.2,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_cres_cv2": {
       "value": 0.0706330682244024,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shres_cv2": {
       "value": 41.39,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chres_cv2": {
       "value": 58.7,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sde_ccomp_cv2": {
       "value": 0.0496992843925204,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "index points"
     },
     "sde_shcomp_cv2": {
       "value": 29.12,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of that index baseline"
     },
     "sde_chcomp_cv2": {
       "value": 41.3,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent of the resources-and-needs channel"
     },
     "sd_shres": {
       "value": 24.38,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sd_chres": {
       "value": 71.3,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sde_shres": {
       "value": 19.94,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sde_chres": {
       "value": 46.1,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sd_shcomp": {
       "value": 9.82,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sd_chcomp": {
       "value": 28.7,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sde_shcomp": {
       "value": 23.33,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
     "sde_chcomp": {
       "value": 53.9,
-      "source": "s12_six_index_attributions_v1.csv; singles partial-D panels on the earlier partition of the budget fields",
+      "source": "s12_six_index_attributions_v1.csv; corrected singles nested-D attribution on repriced partial-D panels",
       "status": "diagnostic",
       "units": "per cent"
     },
@@ -3662,7 +3662,6 @@
     "attain_median_couples",
     "attain_median_singles",
     "beta_c_couples",
-    "beta_c_predecessor_fixed",
     "beta_c_se_couples",
     "beta_c_se_singles",
     "beta_c_singles",
@@ -3709,8 +3708,6 @@
     "n_draws",
     "n_nodes",
     "n_occ",
-    "n_predecessor_couples",
-    "n_predecessor_singles",
     "n_scrambles",
     "n_singles",
     "nat_factor_couples",
@@ -3728,15 +3725,12 @@
     "nd_res_leads_couples_eq",
     "nd_res_leads_singles",
     "nd_res_leads_singles_eq",
-    "nd_resid",
     "nd_shcomp",
     "nd_shres",
     "negll_couples",
-    "negll_couples_raw_v1",
     "negll_ruma",
     "negll_rumb",
     "negll_singles",
-    "negll_singles_raw_v1",
     "of_E_couples",
     "of_E_singles",
     "of_P_couples",
@@ -3774,23 +3768,15 @@
     "w_i10_singles",
     "w_shAB_singles",
     "w_shA_couples",
-    "w_shA_gini_singles_frac_v1",
-    "w_shA_gini_singles_raw_v1",
     "w_shA_singles",
     "w_shA_singlesmz",
     "w_shB_couples",
-    "w_shB_gini_singles_frac_v1",
-    "w_shB_gini_singles_raw_v1",
     "w_shB_singles",
     "w_shB_singlesmz",
     "w_shD_couples",
-    "w_shD_gini_singles_frac_v1",
-    "w_shD_gini_singles_raw_v1",
     "w_shD_singles",
     "w_shD_singlesmz",
     "w_shP_couples",
-    "w_shP_gini_singles_frac_v1",
-    "w_shP_gini_singles_raw_v1",
     "w_shP_singles",
     "w_shP_singlesmz",
     "wage_hi",
@@ -3852,6 +3838,7 @@
     "nd_cres_gini",
     "nd_of_comp",
     "nd_of_res",
+    "nd_resid",
     "nd_shcomp_atkinson1",
     "nd_shcomp_atkinson2",
     "nd_shcomp_cv2",
@@ -5426,87 +5413,6 @@
           "active_bound": false
         },
         {
-          "parameter": "theta_c_singles",
-          "estimate": 0.0,
-          "cr1_se": null,
-          "lower": -8.0,
-          "upper": 0.95,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l0_m",
-          "estimate": 1e-06,
-          "cr1_se": null,
-          "lower": 1e-06,
-          "upper": 50.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l_age_m",
-          "estimate": -0.067236897452355,
-          "cr1_se": null,
-          "lower": -5.0,
-          "upper": 5.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l_age2_m",
-          "estimate": 0.0877504891847849,
-          "cr1_se": null,
-          "lower": -1.0,
-          "upper": 1.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l0_f",
-          "estimate": 10.052237044896549,
-          "cr1_se": null,
-          "lower": 0.05,
-          "upper": 50.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l_age_f",
-          "estimate": -1.780253386288037,
-          "cr1_se": null,
-          "lower": -5.0,
-          "upper": 5.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l_age2_f",
-          "estimate": 1.0,
-          "cr1_se": null,
-          "lower": -1.0,
-          "upper": 1.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_l_nkids_f",
-          "estimate": 0.5857198501055841,
-          "cr1_se": null,
-          "lower": -5.0,
-          "upper": 5.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "theta_l_f",
-          "estimate": -2.131739110508045,
-          "cr1_se": null,
-          "lower": -8.0,
-          "upper": 0.95,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
           "parameter": "beta_E",
           "estimate": -3.17353431815379,
           "cr1_se": 0.40533698129218315,
@@ -5621,24 +5527,6 @@
           "lower": -10.0,
           "upper": 10.0,
           "pinned": false,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_E_y2015",
-          "estimate": -0.2546064112385174,
-          "cr1_se": null,
-          "lower": -5.0,
-          "upper": 5.0,
-          "pinned": true,
-          "active_bound": false
-        },
-        {
-          "parameter": "beta_E_y2017",
-          "estimate": -0.0694711073761977,
-          "cr1_se": null,
-          "lower": -5.0,
-          "upper": 5.0,
-          "pinned": true,
           "active_bound": false
         },
         {
@@ -6253,72 +6141,72 @@
         "sample": "singles",
         "sex": "male",
         "margin": "hours::zero",
-        "observed": 0.11950042981602399,
+        "observed": 0.1195004298160239,
         "model": 0.13247875782211713,
-        "deviation": 0.012978328006093137,
+        "deviation": 0.01297832800609322,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::h_0_10",
-        "observed": 0.010928974340164311,
+        "observed": 0.0109289743401643,
         "model": 0.0,
-        "deviation": -0.010928974340164311,
+        "deviation": -0.0109289743401643,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::h_10_17_5",
-        "observed": 0.007490494450706524,
+        "observed": 0.0074904944507065,
         "model": 0.019766239602312687,
-        "deviation": 0.012275745151606163,
+        "deviation": 0.012275745151606187,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::pt1",
-        "observed": 0.011805446781240193,
+        "observed": 0.0118054467812401,
         "model": 0.02150668583370693,
-        "deviation": 0.009701239052466738,
+        "deviation": 0.009701239052466832,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::h_21_5_28_5",
-        "observed": 0.027836878957307572,
+        "observed": 0.0278368789573075,
         "model": 0.054771437457234534,
-        "deviation": 0.026934558499926962,
+        "deviation": 0.026934558499927035,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::pt2",
-        "observed": 0.003925005726009202,
+        "observed": 0.0039250057260092,
         "model": 0.02853401294698898,
-        "deviation": 0.02460900722097978,
+        "deviation": 0.024609007220979782,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::h_30_5_33_5",
-        "observed": 0.010667337846008335,
+        "observed": 0.0106673378460083,
         "model": 0.031516587216088,
-        "deviation": 0.020849249370079665,
+        "deviation": 0.0208492493700797,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "hours::f35",
-        "observed": 0.23289057190172568,
+        "observed": 0.2328905719017256,
         "model": 0.24568878074337738,
-        "deviation": 0.012798208841651698,
+        "deviation": 0.012798208841651781,
         "denominator": "households"
       },
       {
@@ -6334,9 +6222,9 @@
         "sample": "singles",
         "sex": "male",
         "margin": "hours::h_40_5_44_5",
-        "observed": 0.06914012014653403,
+        "observed": 0.069140120146534,
         "model": 0.048838768411622664,
-        "deviation": -0.02030135173491137,
+        "deviation": -0.020301351734911342,
         "denominator": "households"
       },
       {
@@ -6352,36 +6240,36 @@
         "sample": "singles",
         "sex": "male",
         "margin": "occupation::1",
-        "observed": 0.38226394762282456,
+        "observed": 0.3822639476228245,
         "model": 0.3774112621729055,
-        "deviation": -0.00485268544991907,
+        "deviation": -0.004852685449919014,
         "denominator": "workers"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "occupation::2",
-        "observed": 0.10686608800619851,
+        "observed": 0.1068660880061985,
         "model": 0.10143765429202221,
-        "deviation": -0.005428433714176298,
+        "deviation": -0.005428433714176284,
         "denominator": "workers"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "occupation::3",
-        "observed": 0.05158305960202728,
+        "observed": 0.0515830596020272,
         "model": 0.05449325085197789,
-        "deviation": 0.0029101912499506083,
+        "deviation": 0.0029101912499506916,
         "denominator": "workers"
       },
       {
         "sample": "singles",
         "sex": "male",
         "margin": "occupation::4",
-        "observed": 0.45928690476894984,
+        "observed": 0.4592869047689498,
         "model": 0.4666578326830944,
-        "deviation": 0.007370927914144565,
+        "deviation": 0.0073709279141446205,
         "denominator": "workers"
       },
       {
@@ -6406,63 +6294,63 @@
         "sample": "singles",
         "sex": "female",
         "margin": "hours::zero",
-        "observed": 0.13584269843874866,
+        "observed": 0.1358426984387486,
         "model": 0.13345317936327206,
-        "deviation": -0.002389519075476604,
+        "deviation": -0.0023895190754765483,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::h_0_10",
-        "observed": 0.004192466630511505,
+        "observed": 0.0041924666305115,
         "model": 0.0,
-        "deviation": -0.004192466630511505,
+        "deviation": -0.0041924666305115,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::h_10_17_5",
-        "observed": 0.024337269146028802,
+        "observed": 0.0243372691460288,
         "model": 0.025355885746611646,
-        "deviation": 0.0010186166005828438,
+        "deviation": 0.0010186166005828473,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::pt1",
-        "observed": 0.03247700587719935,
+        "observed": 0.0324770058771993,
         "model": 0.03463360026883834,
-        "deviation": 0.00215659439163899,
+        "deviation": 0.0021565943916390384,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::h_21_5_28_5",
-        "observed": 0.060300461255057065,
+        "observed": 0.060300461255057,
         "model": 0.07374011083791641,
-        "deviation": 0.013439649582859349,
+        "deviation": 0.013439649582859411,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::pt2",
-        "observed": 0.02968378788422245,
+        "observed": 0.0296837878842224,
         "model": 0.035523007667637954,
-        "deviation": 0.005839219783415506,
+        "deviation": 0.005839219783415554,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::h_30_5_33_5",
-        "observed": 0.028975775773901768,
+        "observed": 0.0289757757739017,
         "model": 0.03670684080303043,
-        "deviation": 0.0077310650291286635,
+        "deviation": 0.007731065029128733,
         "denominator": "households"
       },
       {
@@ -6478,18 +6366,18 @@
         "sample": "singles",
         "sex": "female",
         "margin": "hours::ft",
-        "observed": 0.24930545846102137,
+        "observed": 0.2493054584610213,
         "model": 0.23864015033083077,
-        "deviation": -0.010665308130190593,
+        "deviation": -0.010665308130190537,
         "denominator": "households"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "hours::h_40_5_44_5",
-        "observed": 0.04916979349942999,
+        "observed": 0.0491697934994299,
         "model": 0.044626968719132,
-        "deviation": -0.004542824780297987,
+        "deviation": -0.004542824780297897,
         "denominator": "households"
       },
       {
@@ -6505,27 +6393,27 @@
         "sample": "singles",
         "sex": "female",
         "margin": "occupation::1",
-        "observed": 0.17952494278836953,
+        "observed": 0.1795249427883695,
         "model": 0.18315639030934272,
-        "deviation": 0.003631447520973191,
+        "deviation": 0.003631447520973219,
         "denominator": "workers"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "occupation::2",
-        "observed": 0.19761858572059104,
+        "observed": 0.197618585720591,
         "model": 0.19455822287831243,
-        "deviation": -0.003060362842278619,
+        "deviation": -0.0030603628422785634,
         "denominator": "workers"
       },
       {
         "sample": "singles",
         "sex": "female",
         "margin": "occupation::3",
-        "observed": 0.13491914057509266,
+        "observed": 0.1349191405750926,
         "model": 0.13476570666421434,
-        "deviation": -0.00015343391087832559,
+        "deviation": -0.00015343391087827007,
         "denominator": "workers"
       },
       {
@@ -6550,27 +6438,27 @@
         "sample": "couples",
         "sex": "household",
         "margin": "quadrant::NN",
-        "observed": 0.022182163362762384,
+        "observed": 0.0221821633627623,
         "model": 0.004340944461498334,
-        "deviation": -0.01784121890126405,
+        "deviation": -0.017841218901263965,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "household",
         "margin": "quadrant::MO",
-        "observed": 0.07939836938138972,
+        "observed": 0.0793983693813897,
         "model": 0.09091607110335086,
-        "deviation": 0.011517701721961135,
+        "deviation": 0.011517701721961163,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "household",
         "margin": "quadrant::WO",
-        "observed": 0.05468093430441641,
+        "observed": 0.0546809343044164,
         "model": 0.07229365360175655,
-        "deviation": 0.017612719297340138,
+        "deviation": 0.017612719297340144,
         "denominator": "households"
       },
       {
@@ -6595,45 +6483,45 @@
         "sample": "couples",
         "sex": "male",
         "margin": "hours::zero",
-        "observed": 0.07686309766717878,
+        "observed": 0.0768630976671787,
         "model": 0.07663459806325487,
-        "deviation": -0.000228499603923904,
+        "deviation": -0.00022849960392383462,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "male",
         "margin": "hours::pt1",
-        "observed": 0.005899077391431702,
+        "observed": 0.0058990773914317,
         "model": 0.004595007882284582,
-        "deviation": -0.00130406950914712,
+        "deviation": -0.0013040695091471183,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "male",
         "margin": "hours::pt2",
-        "observed": 0.00951843805982056,
+        "observed": 0.0095184380598205,
         "model": 0.018903103366439113,
-        "deviation": 0.009384665306618552,
+        "deviation": 0.009384665306618613,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "male",
         "margin": "hours::f35",
-        "observed": 0.25148805217108927,
+        "observed": 0.2514880521710892,
         "model": 0.2506704340678207,
-        "deviation": -0.0008176181032685803,
+        "deviation": -0.0008176181032685248,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "male",
         "margin": "hours::ft",
-        "observed": 0.32741604625023385,
+        "observed": 0.3274160462502338,
         "model": 0.2779896299110032,
-        "deviation": -0.04942641633923067,
+        "deviation": -0.04942641633923062,
         "denominator": "households"
       },
       {
@@ -6658,18 +6546,18 @@
         "sample": "couples",
         "sex": "male",
         "margin": "occupation::2",
-        "observed": 0.07970571425290116,
+        "observed": 0.0797057142529011,
         "model": 0.07411252972877895,
-        "deviation": -0.005593184524122205,
+        "deviation": -0.0055931845241221495,
         "denominator": "workers"
       },
       {
         "sample": "couples",
         "sex": "male",
         "margin": "occupation::3",
-        "observed": 0.04635810773654247,
+        "observed": 0.0463581077365424,
         "model": 0.041186265518221465,
-        "deviation": -0.005171842218321003,
+        "deviation": -0.005171842218320934,
         "denominator": "workers"
       },
       {
@@ -6703,27 +6591,27 @@
         "sample": "couples",
         "sex": "female",
         "margin": "hours::zero",
-        "observed": 0.10158053274415209,
+        "observed": 0.101580532744152,
         "model": 0.09525701556484917,
-        "deviation": -0.0063235171793029205,
+        "deviation": -0.006323517179302837,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "female",
         "margin": "hours::pt1",
-        "observed": 0.028276034826973436,
+        "observed": 0.0282760348269734,
         "model": 0.03346692149915758,
-        "deviation": 0.005190886672184144,
+        "deviation": 0.005190886672184179,
         "denominator": "households"
       },
       {
         "sample": "couples",
         "sex": "female",
         "margin": "hours::pt2",
-        "observed": 0.04622946723612532,
+        "observed": 0.0462294672361253,
         "model": 0.05723788994189103,
-        "deviation": 0.011008422705765714,
+        "deviation": 0.011008422705765727,
         "denominator": "households"
       },
       {
@@ -6739,9 +6627,9 @@
         "sample": "couples",
         "sex": "female",
         "margin": "hours::ft",
-        "observed": 0.27934860087685565,
+        "observed": 0.2793486008768556,
         "model": 0.2072377493370291,
-        "deviation": -0.07211085153982655,
+        "deviation": -0.07211085153982649,
         "denominator": "households"
       },
       {
@@ -6757,27 +6645,27 @@
         "sample": "couples",
         "sex": "female",
         "margin": "occupation::1",
-        "observed": 0.16528457032866412,
+        "observed": 0.1652845703286641,
         "model": 0.16476732210882147,
-        "deviation": -0.000517248219842642,
+        "deviation": -0.0005172482198426143,
         "denominator": "workers"
       },
       {
         "sample": "couples",
         "sex": "female",
         "margin": "occupation::2",
-        "observed": 0.19223418203014112,
+        "observed": 0.1922341820301411,
         "model": 0.201709083179781,
-        "deviation": 0.009474901149639892,
+        "deviation": 0.00947490114963992,
         "denominator": "workers"
       },
       {
         "sample": "couples",
         "sex": "female",
         "margin": "occupation::3",
-        "observed": 0.15326638316986882,
+        "observed": 0.1532663831698688,
         "model": 0.15827886459309032,
-        "deviation": 0.005012481423221499,
+        "deviation": 0.0050124814232215265,
         "denominator": "workers"
       },
       {

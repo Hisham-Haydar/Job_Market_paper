@@ -2,7 +2,7 @@
 
 Hisham Haydar · University of Luxembourg and LISER
 
-Build date: 09 September 2026.
+Build date: 10 September 2026.
 
 ## Abstract
 
@@ -25,10 +25,10 @@ $$u_i(z_i)=\max_{j\in A_i}\,u_i(W_i,j).$$
 The argument being solved for is an amount of consumption, so the measure is money-metric by construction; there is no second conversion from an index into euros.
 
 
-![**Own-set equal-consumption equivalents.** Individuals with preferences $R_i,R_h$ and ability sets $A=\{j,k\}$ and $A^{\prime}=\{k,\ell\}$ attain $z_i$ and $z_h$. For each individual, a common consumption level is assigned to every job in their own set; the level at which the preferred reference job becomes indifferent to the attained bundle is the money metric. Adapted from Haydar and Maniquet (2026), work in progress. This is the deterministic construction; the estimated measure is its ex-ante extension, defined in Section 4.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/theory_w1.png){width=95%}
+![**Own-set equal-consumption equivalents.** The theoretical W1 construction from the companion theory paper. Individuals with preferences $R_i,R_h$ and ability sets $A=\{j,k\}$ and $A^{\prime}=\{k,\ell\}$ attain $z_i$ and $z_h$. For each individual, a common consumption level is assigned to every job in their own set; the level at which the preferred reference job becomes indifferent to the attained bundle is the money metric. Adapted from Haydar and Maniquet (2026), work in progress. This is the deterministic construction; the estimated measure is its ex-ante extension, defined in Section 4.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/theory_w1.png){width=95%}
 
 
-We adapt this principle to an estimated distribution of latent jobs. The empirical object is not the deterministic maximum but its ex-ante counterpart: the household's evaluation of the reference prospect, integrated over the jobs it may reach, is set equal to its evaluation of the prospect it actually faces. Section 4 states the stochastic formulation, derives its closed form, and says precisely which properties of the deterministic criterion carry over and which are not claimed.
+The first figure depicts the theoretical W1 construction adapted from the companion theory paper by Haydar and Maniquet (2026). It constructs a deterministic own-set equal-consumption equivalent, using each individual's preferred reference job. We then adapt this principle to an estimated distribution of latent jobs. The empirical object is its stochastic, ex-ante counterpart: the household's evaluation of the reference prospect, integrated over the jobs it may reach, is set equal to its evaluation of the prospect it actually faces. Section 4 states that implementation and derives its closed form; the deterministic figure does not depict an estimated welfare result.
 
 One comparative static is worth stating plainly at the outset, because it is easy to misread. Holding the attained situation fixed, a person with a larger reference menu may need less uniform consumption to reach the same satisfaction. When actual opportunities change, however, both the attainment and the reference menu change. The net effect on equivalent consumption depends on both. Measuring attainment against one's own opportunities is therefore not a claim that larger menus are intrinsically better, and we make no such claim.
 
@@ -85,7 +85,7 @@ The screens are of three kinds and it is worth separating them. The first two de
 
 The second kind removes households for whom the model does not define an offer set: adults in full-time education, households receiving an old-age, disability or survivor pension, and deciders whose labour-market status lies outside employment, unemployment and inactivity. Together with the pension screen this is why the surviving employment rate is high. The employment share below should be read as a share among people for whom working is a live option, not as a French employment rate.
 
-The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives are not a reason to drop a household, and are instead excluded from that household's choice domain.
+The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives receive a one-euro consumption floor before utility is evaluated. The floor applies to 22,597 single-adult and 59,821 couple node-evaluations; these alternatives enter both the attained integral $J$ and the reference integral $H$.
 
 
 Table: The four occupation groups. ISCO-08 major groups are aggregated into four modelled groups; group 1 is the omitted reference in the estimated occupation block. This is a research aggregation adopted for this paper, not an ILO classification. ISCO 0, the armed forces, has no modelled alternative and is a sample screen; that is unsupported occupation, not missing occupation.
@@ -241,6 +241,8 @@ J_{i,S}=\int e^{L_{i,S}(j)}\left(\frac{C_{i,S}(j)}{\lambda_c}\right)^{\beta_c}\w
 H_{i,S}=\int e^{L_{i,S}(j)}\,\widehat g_{i,S}(j)\,d\nu(j).
 $$
 
+The proposal also enters the finite-node welfare algebra. For singles, write $a_{ir}=\omega_r\exp[L_i(j_r)+\log\widehat g_i(j_r)-\log q_i^W(j_r)]$, where $\omega_r$ is the integration weight. Then $J_i\simeq\sum_r a_{ir}(C_{ir}/\lambda_c)^{\beta_c}$ and $H_i\simeq\sum_r a_{ir}$, with the same nodes and the one-euro floor in the attained consumption. For couples the common-proposal importance terms enter the corresponding joint-regime sums for both integrals. The proposal carries no economic content, but its importance correction is explicit in the welfare calculation as well as in estimation.
+
 The reference offers the same flat monthly amount $m$ at every package while retaining that state's $L$ and $\widehat g$, so the value of the reference is
 
 $$
@@ -268,7 +270,7 @@ The measure is therefore a **weighted power mean of consumption of order $\beta_
 
 Three quantities are easy to conflate and are distinct. The reference probability weight $r_j$ does not vary with consumption at all when the reference measure is held fixed. The *contribution* an alternative makes to the power moment is proportional to $C_j^{\beta_c}$, so an alternative paying twice the median contributes 4.11 times as much at the estimated single-adult coefficient. The *marginal effect* of that alternative's consumption on the resulting amount is $\partial W/\partial C_j=r_jC_j^{\beta_c-1}W^{1-\beta_c}$, with exponent $\beta_c-1$. The figure plots the second and the third and labels each; neither is a statement that the alternative is more available.
 
-$\beta_c$ is the order of this power mean and the coefficient on log consumption. It is not the consumption curvature, which is exactly zero here, and it is not an inequality-aversion parameter across households, which belongs to the index applied in Section 5 and not to the household's own aggregator.
+$\beta_c$ is simultaneously the order of this power mean, the coefficient on log consumption, and the elasticity of an alternative's implied consumption-dependent weight $C_j^{\beta_c}$ in its own consumption. This elasticity concerns the power-moment contribution, holding $r_j$ fixed, rather than the normalized reference probability. It is not the consumption curvature, which is exactly zero here, and it is not an inequality-aversion parameter across households, which belongs to the index applied in Section 5 and not to the household's own aggregator.
 
 ## What the reference does and does not do to pay
 
@@ -280,6 +282,8 @@ Changes in earning opportunities nevertheless change the measure, because they c
 ### A worked household, in the current model
 
 Take the weighted-median single-adult household of the sample: a man in his early fifties with medium education, no children, employed for eighteen hours a week at a delivered wage near fourteen euros an hour, receiving about 1,259 euros a month of simulated disposable income at that job. His money-metric level is 4,139 euros a month at the sample median, and the closed form is checkable by hand: since $W=\lambda_c\exp[(\log J-\log H)/\beta_c]$, the attained-minus-reference gap is $\log J-\log H=\beta_c\log(W/\lambda_c)$. Equalizing his preferences to the reference profile moves his level by about a quarter of a per cent; equalizing all his non-preference circumstances moves it by about eighteen per cent. That asymmetry, household by household, is what the decomposition adds up.
+
+For a transparent two-alternative calculation with equal reference probabilities and consumption of 1,000 and 2,000 euros, the single-adult estimate gives $W=[(1000^{2.0387}+2000^{2.0387})/2]^{1/2.0387}\approx1,584$ euros. The numerator sums powered consumption and the outer exponent is essential. More generally, $r_{ir}=a_{ir}/\sum_s a_{is}$ gives $W=[\sum_r r_{ir}C_{ir}^{\beta_c}]^{1/\beta_c}$; dividing a plain consumption sum by a plain weight sum would be valid only at $\beta_c=1$.
 
 The level is above his own disposable income, and for the median couple it is below theirs. Two things are happening. The reference measure weights packages by non-consumption value and availability, not by how often they are chosen; and the power mean of order $\beta_c>1$ rewards dispersion in reachable consumption. Levels are therefore not an income concept, and they are not comparable between the two household types, each of which carries its own reference construction. We report the levels, use them only within type, and do not offer a mechanism for the between-type difference.
 
@@ -340,18 +344,16 @@ The interactions are allocated with the **grouped Shapley--Owen--Shorrocks** rul
 The estimated model has 41 free coordinates for single adults, of which 40 are interior, and 47 for couples, all interior. The criterion is 6253.463 and 10283.034 respectively. Across ten terminal paths from five starts under two polishing contracts, the criterion varies by 1.1e-10 for single adults and 1.3e-09 for couples, and the smallest eigenvalue of the exact Hessian on the interior block is 0.1669 and 0.0771. One single-adult coordinate, the female age-square term in the leisure weight, sits at a box endpoint; its interval is reported under the active-set convention in the appendix and it is excluded from the interior curvature.
 
 
-Table: The preference block. Cluster-robust standard errors in parentheses, clustered on the household. "Restricted" marks a coordinate held at a value by the specification, not an estimated zero; "at bound" marks an estimate at a box endpoint, whose interval is reported under the active-set convention in the appendix. The consumption weight is common within a population and enters as $\beta_c\log(C/\lambda_c)$.
+Table: The preference block. Cluster-robust standard errors in parentheses, clustered on the household. "At bound" marks an estimate at a box endpoint, whose interval is reported under the active-set convention in the appendix. The consumption weight is common within a population and enters as $\beta_c\log(C/\lambda_c)$.
 
 |Coefficient|Single men|Single women|Couple men|Couple women|
 |---|---|---|---|---|
 |Leisure weight, intercept $\beta_{\ell 0}$|8.5199 (3.5480)|5.8683 (2.1346)|3.9814 (0.7466)|13.1029 (4.7760)|
 |Leisure weight, age $\beta_{\ell a}$|1.4820 (1.0236)|0.0678 (0.4792)|-0.0080 (0.0287)|-0.1228 (0.1260)|
 |Leisure weight, age squared $\beta_{\ell a^2}$|0.7783 (0.7732)|1.0000 (at bound)|0.0065 (0.0030)|0.0073 (0.0103)|
-|Leisure weight, children $\beta_{\ell n}$|0 (restricted)|0.1666 (0.4422)|0 (restricted)|-0.3055 (1.1472)|
+|Leisure weight, children $\beta_{\ell n}$|&mdash;|0.1666 (0.4422)|&mdash;|-0.3055 (1.1472)|
 |Leisure curvature $\theta_\ell$|-1.6263 (0.3301)|-0.9274 (0.2161)|-0.9761 (0.1357)|-1.6863 (0.2458)|
 |Consumption weight $\beta_c$|2.0387 (0.2917)|2.0387 (0.2917)|2.1017 (0.2939)|2.1017 (0.2939)|
-|Consumption curvature $\theta_c$|0 (restricted)|0 (restricted)|0 (restricted)|0 (restricted)|
-|Direct cross-leisure term|Not applicable|Not applicable|0 (restricted)|0 (restricted)|
 
 
 
@@ -402,7 +404,7 @@ Table: The wage block and the consumption weight. The offered log wage is normal
 
 
 
-The year indicators carried by the pooled specification are identically zero on this single-year sample and contribute nothing; they are restrictions, not estimates. The singles and couples models are estimated separately, so their wage blocks are not restricted to agree, and the difference between the two experience profiles should not be read as a test.
+**Maintained restrictions.** Singles: `theta_c_singles = 0`; the couples preference block (`beta_l0_m`, `beta_l_age_m`, `beta_l_age2_m`, `beta_l0_f`, `beta_l_age_f`, `beta_l_age2_f`, `beta_l_nkids_f`, `theta_l_f`) does not enter the singles likelihood; and `beta_E_y2015` and `beta_E_y2017` are absent because the 2015 and 2017 data are not used. Couples: `theta_c = 0`, the male children leisure effect is structurally zero, and the direct cross-leisure term is fixed at zero. These are restrictions, not estimates. The singles and couples models are estimated separately, so their wage blocks are not restricted to agree, and the difference between the two experience profiles should not be read as a test.
 
 
 ![Indifference curves in consumption and leisure, single-adult households, at one representative household of each sex. The budget set, the opportunity density and the taste shock are not drawn, so a curve is not a set of attainable bundles. The consumption axis is logarithmic; under log consumption every finite utility target is attainable at a finite positive consumption, which may lie outside the plotted range.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figP01_indifference_curves_singles.png){width=95%}
@@ -516,7 +518,7 @@ Table: Observed against model population shares, couples. The model column is a 
 
 
 
-The mean absolute deviation over all population moments is 0.0129 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The model also assigns no mass to observed hours below ten, where the observed shares are around one per cent. Both are limitations of the banded hours density and we report them rather than summarise them away.
+The mean absolute deviation over all population moments is 0.0129 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The sub-ten-hour fit cell is also a genuine prediction error: the realized integration panel predicts zero against observed shares around one per cent. Both the structural hours density and the proposal assign positive mass to $(5,10)$: about 4.15 per cent of normalized structural hours mass and 0.00019 per cent conditional proposal mass. With an expected draw count of only 0.249, the realized panel contains no draw there. This is a tail-coverage limitation of the integration panel, distinct from the adjacent-band fit discrepancy. The long-hours bin closes at 70 inclusive, and the observed singles hours partitions close separately by sex.
 
 
 Table: The estimated model against two re-estimated common-opportunity benchmarks, on the same 1,540 single-adult households, the same sampled alternatives and the same criterion. A better maximized criterion does not by itself establish that a mechanism has been identified; the margin-by-margin comparison in the fit table and figure is the substantive evidence.
@@ -615,10 +617,10 @@ The allocation is exhaustive. The maximum absolute top-level identity residual i
 
 ## Inside the budget channel: resources against composition and needs
 
-The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. It requires two further counterfactual panels, each repriced through the tax-benefit system, and it is done here on the corrected partition of the budget fields into 58 resource fields, 46 composition and needs fields and 6 geographic fields, which travel with resources.
+The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. For each population it requires two further counterfactual panels, each repriced through the tax-benefit system. Corrected nested attribution is available for both populations. The couples split uses the corrected partition of the budget fields into 58 resource fields, 46 composition and needs fields and 6 geographic fields, which travel with resources.
 
 
-Table: The subdivision of the resources-and-needs contribution into non-labour resources and household composition and needs, reported as "resources / composition" in every cell. Columns two and five are shares of that population’s baseline inequality; the remaining columns are shares of the resources-and-needs channel itself, which the two cells divide. The couple cells come from two counterfactual panels repriced through the tax-benefit system on the corrected partition of 58 resource fields, 46 composition and needs fields and 6 geographic fields, and sum to the joint contribution to a residual of 1.4e-17 in index units. The single-adult cells come from panels priced on an earlier partition of the same fields, so they are reported for comparison and the two populations’ channel shares are indicative rather than like for like.
+Table: The subdivision of the resources-and-needs contribution into non-labour resources and household composition and needs, reported as "resources / composition" in every cell. Columns two and five are shares of that population’s baseline inequality; the remaining columns are shares of the resources-and-needs channel itself, which the two cells divide. The couple cells come from two counterfactual panels repriced through the tax-benefit system on the corrected partition of 58 resource fields, 46 composition and needs fields and 6 geographic fields, and sum to the joint contribution to a residual of 1.4e-17 in index units. The single-adult cells also report the corrected nested attribution. Both populations use their current repriced partial-D panels; raw and equivalized channel shares are displayed separately.
 
 |Index|Couples: share of baseline|Couples: share of channel|Couples: channel, equivalized|Singles: share of baseline|Singles: share of channel|Singles: channel, equivalized|
 |---|---|---|---|---|---|---|
@@ -631,6 +633,8 @@ Table: The subdivision of the resources-and-needs contribution into non-labour r
 
 
 
+The current nested resources-and-composition table reports both populations. For couples, the raw Gini identity is $C_D=0.067827=0.043551+0.024276$; on the equivalized basis it is $0.072396=0.041364+0.031032$. Singles also have a corrected geography-within-access attribution, reported in the discussion notebook, Section 8, table *Nested geography for singles*; the corresponding budget split is in *Nested resources and composition for both populations*.
+
 Three statements are supported, and a fourth that suggests itself is not.
 
 First, **non-labour resources lead the channel in both populations on the household basis, under all six indices** — 6 of six for couples and 6 of six for single adults. On the Gini the couples channel divides 64.2 to 35.8, which is 32.88 and 18.33 per cent of total inequality; the single-adult channel divides 71.3 to 28.7, or 24.38 and 9.82 per cent of total.
@@ -639,7 +643,7 @@ Second, **the resources share of the channel is widest under GE(2) and narrowest
 
 Third, **equivalizing raises the composition share in both populations, under all 6 of the six indices.** This is not an artefact and it is not a surprise: the equivalence scale is owned by the composition operator, so a state in which composition is equalized is also a state in which every household is put on a common scale. Equalizing composition therefore removes both the direct effect of household size on the budget and the effect of size on the scale by which the resulting level is deflated. For single adults the effect is strong enough to reverse the ordering: on the equivalized basis resources lead the channel in only 2 of the six indices, and composition leads under the Gini, both Atkinson indices and GE(0). For couples the ordering survives equivalization, under all 6 of the six.
 
-The statement that does *not* survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, 35.8 against 28.7 per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under 1 of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The two populations' panels also rest on different partitions of the budget fields, which is a second reason to treat the cross-population comparison of channel shares as indicative.
+The statement that does *not* survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, 35.8 against 28.7 per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under 1 of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The corrected nested tables support these within-population statements; cross-population ordering remains sensitive to the index and equivalization.
 
 ## Index sensitivity
 
@@ -732,7 +736,7 @@ Three normalizing constants were in circulation between the estimation frames an
 
 The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
 
-The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. The corresponding subdivision for single adults is *not* reported: the only priced panels available for it encode an earlier partition of the budget fields, so its two cells are not comparable with the couples cells and are not a current result.
+The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. Corrected nested attributions are reported for both populations in Section 5's resources-and-composition table. For singles, geography is also separated within access in the discussion notebook's Section 8 table *Nested geography for singles*. Their availability is established; the sensitivity of their rankings remains an empirical limitation.
 
 # 7. Conclusion
 
@@ -744,12 +748,12 @@ Three limits should travel with those numbers. The measure is one member of a fa
 
 # 8. Appendix A. The estimated parameter vectors
 
-The tables below report every coordinate of the two estimated parameter vectors, including the coordinates a specification holds fixed. A restricted coordinate contributes no degree of freedom and is not an estimated zero. For the single-adult vector, eight leisure coordinates belonging to the couples block and two year indicators are carried by the pooled specification and are inert on this sample: the year indicators are identically zero on a single-year frame, and the couples leisure coordinates enter no single-adult likelihood term.
+The tables below report only coordinates estimated on the reported sample. **Maintained restrictions.** Singles: `theta_c_singles = 0`; the couples preference block (`beta_l0_m`, `beta_l_age_m`, `beta_l_age2_m`, `beta_l0_f`, `beta_l_age_f`, `beta_l_age2_f`, `beta_l_nkids_f`, `theta_l_f`) does not enter the singles likelihood; and `beta_E_y2015` and `beta_E_y2017` are absent because the 2015 and 2017 data are not used. Couples: `theta_c = 0`, the male children leisure effect is structurally zero, and the direct cross-leisure term is fixed at zero. These are restrictions, not estimates.
 
 One single-adult coordinate, the female age-square term, is at its box endpoint. Under the active-set convention its interval is not reported, the interior curvature is computed after removing it, and the parameter draws used for the welfare intervals hold it at its estimate.
 
 
-Table: The complete singles parameter vector. Standard errors are cluster-robust on the household. A coordinate marked restricted is held by the specification and contributes no degree of freedom.
+Table: The singles estimated coordinates. Standard errors are cluster-robust on the household; boundary-active estimates are marked at bound. Maintained restrictions are stated once in the accompanying note.
 
 |Coordinate|Estimate|CR1 s.e.|z|Box|Status|
 |---|---|---|---|---|---|
@@ -762,15 +766,6 @@ Table: The complete singles parameter vector. Standard errors are cluster-robust
 |\path{beta_l_age2_sf}|1|--|--|[-1, 1]|at bound|
 |\path{beta_l_nkids_sf}|0.166636|0.442236|0.377|[-5, 5]|estimated|
 |\path{theta_l_sf}|-0.927353|0.216128|-4.291|[-8, 0.95]|estimated|
-|\path{theta_c_singles}|0|--|--|[-8, 0.95]|restricted|
-|\path{beta_l0_m}|1e-06|--|--|[1e-06, 50]|restricted|
-|\path{beta_l_age_m}|-0.0672369|--|--|[-5, 5]|restricted|
-|\path{beta_l_age2_m}|0.0877505|--|--|[-1, 1]|restricted|
-|\path{beta_l0_f}|10.0522|--|--|[0.05, 50]|restricted|
-|\path{beta_l_age_f}|-1.78025|--|--|[-5, 5]|restricted|
-|\path{beta_l_age2_f}|1|--|--|[-1, 1]|restricted|
-|\path{beta_l_nkids_f}|0.58572|--|--|[-5, 5]|restricted|
-|\path{theta_l_f}|-2.13174|--|--|[-8, 0.95]|restricted|
 |\path{beta_E}|-3.17353|0.405337|-7.829|[-25, 25]|estimated|
 |\path{beta_h_pt1}|0.0297672|0.197247|0.151|[-10, 10]|estimated|
 |\path{beta_h_pt2}|0.707971|0.192788|3.672|[-10, 10]|estimated|
@@ -784,8 +779,6 @@ Table: The complete singles parameter vector. Standard errors are cluster-robust
 |\path{beta_E_drgn6}|-0.722159|0.35278|-2.047|[-10, 10]|estimated|
 |\path{beta_E_drgn7}|-0.537369|0.350308|-1.534|[-10, 10]|estimated|
 |\path{beta_E_drgn8}|-0.45119|0.340074|-1.327|[-10, 10]|estimated|
-|\path{beta_E_y2015}|-0.254606|--|--|[-5, 5]|restricted|
-|\path{beta_E_y2017}|-0.0694711|--|--|[-5, 5]|restricted|
 |\path{beta_E_drgur}|-0.0287689|0.220916|-0.130|[-10, 10]|estimated|
 |\path{beta_E_drgmd}|0.064133|0.261352|0.245|[-10, 10]|estimated|
 |\path{beta_occ_2_m}|-1.37371|0.158147|-8.686|[-15, 15]|estimated|
@@ -809,7 +802,7 @@ Table: The complete singles parameter vector. Standard errors are cluster-robust
 
 
 
-Table: The complete couples parameter vector. Standard errors are cluster-robust on the household. A coordinate marked restricted is held by the specification and contributes no degree of freedom.
+Table: The couples estimated coordinates. Standard errors are cluster-robust on the household; boundary-active estimates are marked at bound. Maintained restrictions are stated once in the accompanying note.
 
 |Coordinate|Estimate|CR1 s.e.|z|Box|Status|
 |---|---|---|---|---|---|
@@ -907,7 +900,7 @@ A separate point concerns the low-temperature limit. Attained and reference valu
 
 **Estimator and inference.** Conditional likelihood over 100 sampled alternatives per household plus the observed choice, with an out-of-fold proposal correction; cluster-robust standard errors on the household. Optimization is checked by five starts under two polishing contracts and curvature by exact Hessian eigenvalues.
 
-**Welfare computation.** A common integration panel of 2,048 nodes per household, evaluated under all sixteen coalition states. Integration error is measured by 8 randomized quasi-Monte Carlo scrambles; parameter uncertainty by 100 draws from the cluster-robust covariance rebuilt from the Hessian and the household scores, holding restricted and bound-active coordinates at their estimates. The two are reported separately and are never combined into one band.
+**Welfare computation.** A common integration panel of 2,048 nodes per household, evaluated under all sixteen coalition states. Integration error is measured by 8 randomized quasi-Monte Carlo scrambles; parameter uncertainty by 100 draws from the cluster-robust covariance rebuilt from the Hessian and the household scores, holding maintained restrictions and bound-active coordinates at their values. The two are reported separately and are never combined into one band.
 
 **Software.** Python with JAX (0.10.1) for automatic differentiation, and the EUROMOD connector (0.2.17).
 
@@ -941,83 +934,99 @@ This section records how the reported specifications and results came to be what
 
 ## 1. What is the question, in one sentence?
 
-How much of the inequality in money-metric well-being among French households is associated with unequal job opportunities, once preferences, household resources and needs are modelled explicitly and the normative reference is stated?
+How much well-being inequality is associated with unequal job opportunities once preferences, resources and needs are explicit? See the discussion notebook, Section 0, Scope.
 
-## 2. What is a "latent job" and why not just model hours?
+## 2. What is a latent job?
 
-A latent job is a package: an employment state, an occupation, a weekly hours arrangement and an hourly wage, priced through the tax-benefit system. Modelling hours alone forces every restriction a household faces into its preferences, because the only way a model with a single hours choice can explain an unusual number of hours is a taste for it. The latent-jobs framework separates how available a package is from how much a household likes it, and estimates both from one likelihood.
+An employment state, occupation, hours arrangement and wage, priced through the tax-benefit system. Availability and preferences jointly determine choices. See the discussion notebook, Section 4, The estimated model.
 
 ## 3. Which dates does the data cover?
 
-Three dates, used consistently: EU-SILC collection year 2016, income reference year 2015, and the French 2015 policy system in EUROMOD.
+EU-SILC collection year 2016, income reference year 2015, and EUROMOD policy year 2015. See the report Data section and its sample-funnel table.
 
 ## 4. What is the first figure showing?
 
-The theoretical own-set equal-consumption reference: two individuals with different preferences and different sets of reachable jobs, and the construction that assigns each of them a monetary equivalent. It is the deterministic definition, drawn as a definition and not estimated. The measure this paper computes is its ex-ante extension, defined in Section 4.
+The deterministic W1 construction adapted from the companion theory paper, Haydar and Maniquet (2026). See the figure Own-set equal-consumption equivalents. The stochastic implementation follows in Section 4 and the discussion notebook's Construction and the power-mean identity.
 
-## 5. Under log consumption, is the money metric just the average consumption of the jobs a household can reach?
+## 5. Does log consumption make welfare an arithmetic mean?
 
-Only if the consumption weight were one. The measure is a weighted power mean of order $\beta_c$, and $\beta_c$ is estimated at 2.0387 for single adults and 2.1017 for couples. Above one, the mean rewards dispersion in reachable consumption; an alternative paying twice the median contributes 4.11 times as much to the moment. The arithmetic-mean answer belongs to a superseded specification.
+Only at $\beta_c=1$. With $\theta_c=0$ and estimated $\beta_c$, $W=[\sum_r r_{ir}C_{ir}^{\beta_c}]^{1/\beta_c}$. The estimated orders are 2.0387 and 2.1017. See the power-mean figure and the discussion notebook's Construction and the power-mean identity.
 
-## 6. Is $\beta_c$ the same thing as the consumption curvature?
+## 6. What does $\beta_c$ mean for an alternative paying twice the median?
 
-No. The consumption curvature is exactly zero in the reported specification: that is what makes the consumption term $\beta_c\log(C/\lambda_c)$. $\beta_c$ is the coefficient on that log term and, equivalently, the order of the power mean. It is also not the inequality-aversion parameter of an Atkinson index, which is a property of the index applied across households, not of a household's own aggregator.
+It is both the mean's order and the own-consumption elasticity of the implied weight $C^{\beta_c}$, holding the reference probability fixed. Doubling consumption multiplies that contribution by about 4.1 (singles) or 4.3 (couples). See the power-mean figure.
 
-## 7. Does the normalizer $\lambda_c$ affect anything?
+## 7. Does the normalizer $\lambda_c$ affect welfare?
 
-No. Under exact log consumption it enters utility as an alternative-invariant constant, so it cancels from every choice probability and exactly from the money metric. Three values were in circulation because different panels recomputed it over their own rows; the deviation across four widely separated values is 2.7e-15. The paper reports one constant per population.
+It cancels under exact log consumption; the numerical invariance deviation is 2.7e-15. See the discussion notebook, Section 7, Construction and the power-mean identity.
 
-## 8. Is the measure independent of pay?
+## 8. Does the proposal enter welfare, or only estimation?
 
-The reference is directly pay-neutral: replacing the conditional wage density leaves the reference mass unchanged, to 1.8e-15 in log units for single adults. But earning opportunities still change the measure, through what the household attains: the median total change is -17.43 euros a month for single adults and 110.53 for couples. We state the property we established and do not claim, or deny, an axiomatic characterisation for the stochastic functional.
+It enters both: $-\log q_i^W$ corrects the singles welfare sums, and common-proposal terms correct the couples sums. It carries no economic content. See the discussion notebook, Section 7, Construction and the power-mean identity.
 
-## 9. What exactly do the four operators equalize?
+## 9. What happens to simulated non-positive consumption?
 
-The arguments of one structural pathway, with the estimated coefficients left in place. Preferences: the leisure-weight covariates and the reference preference block. Job access: the employment-index covariates and the occupation access table. Earning opportunities: the covariates entering the offered-wage location. Resources and needs: the non-labour budget inputs, the roster and the needs profile, with the household repriced through the tax-benefit system. An operator changes a pathway, not every occurrence of a characteristic: education enters both the wage location and the local-market lookup, and only the named one moves.
+A one-euro floor is applied before utility evaluation: 22,597 singles and 59,821 couples node-evaluations. Those alternatives enter $J$ and $H$ alike. See the discussion notebook, Section 7, Construction and the power-mean identity.
 
-## 10. Why a grouped Shapley value rather than a plain one?
+## 10. Why is predicted mass below ten hours zero?
 
-Because the question is asked in two stages. First preferences against circumstances, then which circumstance. The Owen value for a game with a priori unions is the allocation rule for exactly that structure, and we inherit it. Nothing about the rule is new here; what is application-specific is the game it is applied to.
+The panel contains no draw in $(5,10)$ despite positive structural and proposal mass; its expected count is 0.249. This tail-coverage limitation produces a genuine fit error. See the observed-versus-model fit table in the discussion notebook, Section 6.
 
-## 11. If preferences get a positive share, does equalizing preferences reduce inequality?
+## 11. Do the hours partitions close?
 
-Not necessarily, and for single adults it does not. Equalizing preferences alone would raise the single-adult Gini by 13.0 per cent, while the allocated preference share is a positive 9.88 per cent. A share averages marginal contributions over coalition orders; the one-factor effect is one order. The implication runs one way only: in this exhaustive two-group game with a nonnegative index, $2C_P=I_{00}-I_{10}+I_{01}$, so a *negative* share does imply that preference-only equalization raises inequality. The converse fails, and the single-adult Gini is the counterexample.
+Yes. The long-hours bin includes 70, and observed singles partitions close separately by sex. See the hours-fit table in the discussion notebook, Section 6.
 
-## 12. Which parts of the ranking are robust across indices?
+## 12. Is the measure independent of pay?
 
-Two. Job access exceeds earning opportunities for single adults under all six indices, and the ordering reverses for couples under all six. Beyond that, access alone exceeds resources and needs for single adults under 4 of six, and access plus earnings exceeds it under 5 of six. The single-adult preference share is positive only for the Gini.
+The reference mass is directly pay-neutral, but earning opportunities change attained welfare. This does not establish the deterministic axiom for the stochastic functional. See the reference-bridge table in Appendix C.
 
-## 13. Are the shares statistically distinguishable?
+## 13. What do the four operators equalize?
 
-We report 95 per cent cluster-robust parameter intervals on the Gini shares from 100 draws: the single-adult access share is 49.16 per cent with an interval of 36.0 to 61.5. Those are wide. The orderings in the six-index table are descriptive comparisons of point estimates and we do not convert them into significance statements.
+Preferences, job access, earning opportunities, and household resources and needs, each through its named pathway with coefficients fixed. See the four-operator table in Section 4.
 
-## 14. Why is the exhaustiveness residual not a headline result?
+## 14. Why a grouped Shapley value?
 
-Because it validates the accounting and nothing else. It says the contributions sum to what the game says they should, and that the fully common state is zero to 1.3e-15 in index units. It says nothing about whether the model is identified or whether the operators are normatively appropriate.
+It allocates first between preferences and circumstances, then among circumstance channels. See the discussion notebook, Section 8, Decomposition, and Appendix B's allocation rule.
 
-## 15. Why can the levels not be compared between single adults and couples?
+## 15. Does a positive preference share imply that equalizing preferences reduces inequality?
 
-Each application carries its own reference construction: a female-primary reference block for single adults, a medoid-spouse reference for couples, and a couples index with two leisure terms rather than one. Every share reported is a share of the baseline inequality of its own population, and no distribution is pooled across the two types.
+No. Singles have a positive Gini attribution even though preference-only equalization raises the Gini by 13.0 per cent. See the One-factor effects versus Shapley attributions table in the discussion notebook, Section 8.
 
-## 16. What happened to the earlier claim that endowments and needs were largest for single adults?
+## 16. Which rankings survive all six indices?
 
-It is withdrawn. The corrected computation gives 49.16 per cent to job access against 34.20 to resources and needs. The earlier one-factor figure of about seventy-seven per cent is also withdrawn; the current one-factor effect for all non-preference circumstances is 67.2 per cent.
+Access exceeds earnings for singles; earnings exceeds access for couples. The singles preference contribution changes sign. See the six-index attribution table in the discussion notebook, Section 8.
 
-## 17. Is the couples resources-versus-composition split available?
+## 17. How uncertain are the shares?
 
-Yes, now. Two counterfactual panels were repriced through the tax-benefit system and the split is an index-specific rerun rather than an imputation: on the raw Gini, non-labour resources carry 32.88 per cent of the baseline and household composition and needs 18.33, summing to the joint 51.20 per cent to a residual of 1.4e-17 in index units. The joint component is still what the headline decomposition reports; the split is nested inside it. The corresponding split for single adults is *not* available: the only priced panels for it encode an earlier partition of the budget fields and are not comparable.
+The report gives separate RQMC integration bands and cluster-robust parameter intervals. Six-index rankings are point-estimate comparisons. See the Signed contributions: RQMC bands and CR1 intervals table in the discussion notebook, Section 8.
 
-## 18. What is still genuinely unresolved?
+## 18. What does exhaustiveness establish?
 
-Two things, both econometric. The sample screens on an outcome of the modelled process, and we have not established what correction, if any, the conditional likelihood requires as a result. And the sampling law assumed by the sampled-set derivation is supported by diagnostics rather than established by construction. One measurement item also remains: the single-adult subdivision of the budget channel rests on panels priced under an earlier partition of the budget fields, so its channel shares are not like-for-like with the couples ones. Everything else described as pending in earlier drafts is now computed and reported.
+The contributions close to the declared inequality difference; this checks accounting, not identification. See the discussion notebook, Section 8, Decomposition, and the four-state welfare table.
 
-## 19. Is any of this causal?
+## 19. Can welfare levels be compared across the two populations?
 
-No. The decomposition is an accounting of a structural model under declared counterfactual operators. No regional, educational or occupational effect reported here is identified as a causal effect, and the contrast between single adults and couples is reported as a finding without a mechanism attached to it.
+Each population has its own preference and opportunity reference. Results are compared within population, with raw and equivalized conventions separate. See the welfare state-level table in the discussion notebook, Section 7.
 
-## 20. Can the notebook reproduce everything?
+## 20. Are corrected nested attributions available for both populations?
 
-From the frozen priced frame onwards, yes in principle: refit, inference, population prediction, welfare, coalition states and figures. It cannot reconstruct the raw survey input, generate new alternatives or price them; those three stages run as separate authorised jobs against the microdata environment. One caveat matters and is the single capability gap this document reports: the notebook's code is specification-driven and carries an estimated consumption weight wherever the specification leaves it free, but the artifacts it currently loads are the generation preceding the specifications of record. Re-pointing it is mechanical; re-running it is not, and it is left honestly labelled rather than re-pointed and unverified.
+Yes: singles geography within access, and resources versus composition for both populations. Couples' $C_D$ closes as $0.067827=0.043551+0.024276$ raw and $0.072396=0.041364+0.031032$ equivalized. See both nested tables in the discussion notebook, Section 8.
+
+## 21. What happened to the earlier singles endowments claim?
+
+The current Gini attribution gives access 49.16 per cent and resources and needs 34.20 per cent. See the signed-contribution table in the discussion notebook, Section 8.
+
+## 22. What remains unresolved?
+
+Outcome-based sample selection and the construction of the labelled-slot sampling law remain open econometric items. Corrected nested attribution is available. See the Robustness ledger and open econometric items table in the discussion notebook, Section 9.
+
+## 23. Is this causal?
+
+The decomposition is structural accounting under declared operators; it does not identify causal regional, educational or occupational effects. See the discussion notebook, Section 9, What is robust and what is not.
+
+## 24. Can the notebooks reproduce everything?
+
+The discussion notebook executes checks and renders current results. The research lab replays from priced inputs, with an artifact-generation caveat; raw-data preparation and pricing are separate. See the report's The research notebook section and the discussion notebook, Section 0.
 
 # Bibliography
 

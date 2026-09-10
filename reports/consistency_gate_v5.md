@@ -77,7 +77,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 596 entries, 127 used by the two documents, every used entry typed and sourced
+- registry: 609 entries, 126 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -89,7 +89,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 14. The report carries the explanatory apparatus — PASS
 
-- report: 20 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
+- report: 24 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
 
 ## 15. The novelty claim is conservative and fully conjoined — PASS
 

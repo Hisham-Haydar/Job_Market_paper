@@ -388,8 +388,8 @@ it = item(9, 'The budget channel: subdivision repriced, never imputed')
 E0 = REGJ['entries']
 # The couples subdivision now exists as a repriced result. What the gate must
 # enforce is that it is REPRICED and not an arithmetic split of the joint cell,
-# that its identity residual is reported, and that the single-adult cells are
-# not passed off as being on the same partition.
+# that its identity residual is reported, and that corrected attribution is
+# explicitly available for both populations.
 for a in 'PM':
     if 'repriced through the tax-benefit system' not in NORM[a]:
         it.fail('%s: does not state that the subdivision is repriced' % NAMES[a])
@@ -397,9 +397,10 @@ for a in 'PM':
        'not an imputed split' not in NORM[a]:
         it.fail('%s: does not deny that the subdivision is an arithmetic split'
                 % NAMES[a])
-    if 'earlier partition' not in NORM[a]:
-        it.fail('%s: does not disclose that the single-adult cells rest on an '
-                'earlier partition of the budget fields' % NAMES[a])
+    if 'corrected nested attribution is available for both populations' not in NORM[a]:
+        it.fail('%s: omits the current nested attribution for both populations' % NAMES[a])
+    if 'earlier partition' in NORM[a]:
+        it.fail('%s: retains the superseded singles partition caveat' % NAMES[a])
 for k in ['nd_cres_gini', 'nd_ccomp_gini', 'nd_resid']:
     if k not in E0:
         it.fail('registry: %s is missing, so the subdivision is not bound' % k)

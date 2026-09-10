@@ -67,13 +67,16 @@ def refresh_registry(nor):
     coef = {}
     for sample in ("singles", "couples"):
         rs = rows(S11 / f"s11_{sample}_parameter_table_v1.csv")
+        # A reporting table is an inference object, not the optimizer's storage
+        # vector.  Pinned/structurally absent coordinates have no sampling SE
+        # and are disclosed once in the maintained-restrictions note instead.
         coef[sample] = [{
             "parameter": r["param"], "estimate": num(r["estimate"]),
             "cr1_se": num(r["se_robust_CR1"]), "lower": num(r["lower_bound"]),
             "upper": num(r["upper_bound"]),
             "pinned": r["pinned"].lower() == "true",
             "active_bound": r["active_bound"].lower() == "true",
-        } for r in rs]
+        } for r in rs if r["pinned"].lower() != "true"]
 
     fit = [{
         "sample": r["sample"], "sex": r["sex"], "margin": r["moment"],
@@ -426,9 +429,18 @@ def build(nor):
         rr = []
         for block in ("preferences", "consumption", "access", "hours", "occupation", "wages"):
             for r in [x for x in cr if block_of(x["parameter"]) == block]:
-                mark = "● active" if r["active_bound"] else ("fixed" if r["pinned"] else "")
+                mark = "● active" if r["active_bound"] else ""
                 rr.append([block, f"<code>{html.escape(r['parameter'])}</code>", fmt(r["estimate"]), fmt(r["cr1_se"]), mark])
         coef_html.append(f'<div class="pop"><h3>{sample.title()}</h3>' + table(["Block", "Coefficient", "Estimate", "CR1 SE", "Bound"], rr, "compact") + "</div>")
+    restriction_note = ("<p><b>Maintained restrictions.</b> Singles: "
+                        "<code>theta_c_singles = 0</code>; the couples preference block "
+                        "(<code>beta_l0_m, beta_l_age_m, beta_l_age2_m, beta_l0_f, "
+                        "beta_l_age_f, beta_l_age2_f, beta_l_nkids_f, theta_l_f</code>) "
+                        "does not enter the singles likelihood; and <code>beta_E_y2015</code> "
+                        "and <code>beta_E_y2017</code> are absent because the 2015 and 2017 data "
+                        "are not used. Couples: <code>theta_c = 0</code>, the male children leisure "
+                        "effect is structurally zero, and the direct cross-leisure term is fixed at zero. "
+                        "These are restrictions, not estimates.</p>")
 
     def fit_group(sample):
         rr = []
@@ -488,7 +500,7 @@ def build(nor):
     d_rows = []
     for source, pop in ((s12_ds, "singles"), (s12_dc, "couples")):
         for r in source:
-            if r["sample"] != pop or r["basis"] not in ("raw", "equivalized"):
+            if r["sample"] != pop or r["basis"] not in ("raw", "equivalized", "modified_OECD_equivalized"):
                 continue
             if pop == "singles" and r.get("reference") != "singles_female":
                 continue
@@ -511,7 +523,7 @@ def build(nor):
     {fig("figV08_data_panel", "Continuous hours, structural bands, occupation and wages", cap("employed deciders and spouses in both populations", "weekly hours, weighted shares and euros per hour", "continuous observed work outcomes with the model's support bands overlaid", "population-specific, conditional on employment where stated", "observed"))}
     {fig("figV09_resources_panel", "Raw and equivalized disposable consumption", cap("households in both populations", "euros per month", "tax-benefit disposable consumption at the observed choice", "raw household and modified-OECD-equivalized conventions shown separately", "observed"))}
     {fig("figV01_welfare_lorenz", "Observed disposable-consumption Lorenz curves", cap("households in both populations", "cumulative weighted shares", "Lorenz curves for observed disposable consumption, shown beside welfare for orientation", "within-population ordering; raw and equivalized conventions remain distinct", "observed and estimated, explicitly distinguished in the panel"))}'''))
-    sections.append(("model", "The estimated model", f'''<p class=lead>Estimates are grouped by their economic role. Standard errors are household-cluster robust; the dot marks a coordinate at an active bound. The consumption coefficient has its own block.</p><div class=twocol>{''.join(coef_html)}</div>
+    sections.append(("model", "The estimated model", f'''<p class=lead>Estimates are grouped by their economic role. Standard errors are household-cluster robust; the dot marks a coordinate at an active bound. The consumption coefficient has its own block.</p><div class=twocol>{''.join(coef_html)}</div>{restriction_note}
     <div class=figuregrid>{fig("figP01_indifference_curves_singles", "Single-adult indifference curves", cap("representative single-adult profiles", "monthly euros and weekly leisure", "estimated level sets", "own characteristics at the stated representative profiles", "illustrative from estimated preferences"), True)}
     {fig("figP02_indifference_curves_couples", "Couple indifference curves", cap("representative couple profile", "monthly euros and weekly leisure", "estimated level sets by spouse", "the other spouse's hours held at the panel convention", "illustrative from estimated preferences"), True)}
     {fig("figP03_marginal_utilities", "Marginal utilities", cap("representative profiles from both populations", "utility-index change per leisure or consumption unit", "estimated marginal utility of leisure and consumption", "evaluation points shown in the panel", "illustrative from estimated preferences"), True)}
@@ -519,11 +531,12 @@ def build(nor):
     {fig("figP06_normalization_sensitivity", "Normalization sensitivity", cap("representative profiles in both populations", "relative deviations and re-expressed coefficients", "invariance of preferences to leisure-coordinate normalization", "record normalization compared with alternative coordinates", "illustrative sensitivity"), True)}
     {fig("figP05_euro_value_of_one_nat", "The value of one natural unit", cap("representative consumption levels in both populations", "proportional and euro changes in consumption", "consumption compensation for one natural unit of the utility index", "estimated consumption coefficient, holding the evaluation point fixed", "illustrative from estimated preferences"), True)}
     {fig("figP07_w1_power_mean_weighting", "The power-mean kernel", cap("both estimated population models", "relative consumption and relative kernel weight", "power-mean weighting implied by the estimated consumption coefficient", "median consumption normalized within population", "illustrative algebraic kernel, not a welfare recomputation"), True)}</div>'''))
-    sections.append(("fit", "Fit, margin by margin", f'''<p class=lead>Each row keeps its own deviation; there is no omnibus error headline.</p><div class=twocol><div class=pop><h3>Singles</h3>{fit_group("singles")}</div><div class=pop><h3>Couples</h3>{fit_group("couples")}</div></div><h3>Worker-conditional wage quantiles</h3>{wageq}
+    sections.append(("fit", "Fit, margin by margin", f'''<p class=lead>Each row keeps its own deviation. The sub-ten-hour zero prediction is a genuine fit error caused by tail coverage of the integration panel. Both the structural density and proposal put positive mass on (5,10): about 4.15% of normalized structural hours mass and 0.00019% conditional proposal mass. The expected draw count is 0.249; the realized panel contains no draw there. The long-hours bin includes 70, and observed singles partitions close separately by sex.</p><div class=twocol><div class=pop><h3>Singles</h3>{fit_group("singles")}</div><div class=pop><h3>Couples</h3>{fit_group("couples")}</div></div><h3>Worker-conditional wage quantiles</h3>{wageq}
     {fig("figV06_fit_by_margin", "Observed against model-implied margins", cap("both estimation populations", "shares and mean log euros per hour", "employment, participation regimes, hours bands, occupation and wage-location margins", "model population integration against weighted observations", "observed and model-implied"))}'''))
     sections.append(("opportunities", "The opportunity distributions", f'''<p class=lead>One anonymous weighted-median profile per population. These panels show the estimated components of the opportunity kernel—not choice probabilities and not personal identifiers.</p><div class=twocol>{''.join(opportunity)}</div>
     <figcaption class=standalone>{cap("one anonymous weighted-median profile from each population", "probability mass, density mass and density per euro", "employment or joint-regime access, structural hours, occupation and conditional wage-offer components", "each component normalized on its own displayed support", "illustrative from the estimated model")}</figcaption>'''))
-    sections.append(("welfare", "Welfare", f'''{welfare_table}
+    sections.append(("welfare", "Welfare", f'''<p>With consumption curvature zero and estimated consumption weights {n['beta_c_singles']:.4f} (singles) and {n['beta_c_couples']:.4f} (couples), W = [sum_r r_ir C_ir^beta_c]^(1/beta_c). This is a power mean, arithmetic only at beta_c = 1. The coefficient is both the mean order and the own-consumption elasticity of the implied weight C^beta_c, holding reference probabilities fixed; doubling consumption multiplies the contribution by {2**n['beta_c_singles']:.2f} or {2**n['beta_c_couples']:.2f}. See The power-mean kernel figure.</p>
+    <p>The proposal carries no economic content but enters finite-node welfare through the singles importance correction -log q^W and the couples common-proposal terms in both J and H. Non-positive consumption at simulated nodes receives a one-euro floor before utility evaluation (22,597 singles and 59,821 couples node-evaluations); these alternatives enter J and H alike. See the discussion notebook, Section 7, Construction and the power-mean identity.</p>{welfare_table}
     <div class=figuregrid>{fig("figV02_welfare_distributions", "W1-EA distributions", cap("households in both populations", "equivalent euros per month and density", "estimated own-set equal-consumption welfare distributions", "raw and modified-OECD-equivalized; populations not pooled", "model-implied"))}
     {fig("figV01_welfare_lorenz", "W1-EA Lorenz curves", cap("households in both populations", "cumulative weighted shares", "Lorenz curves and Gini comparisons of W1-EA and observed disposable consumption", "within-population, raw and equivalized conventions shown separately", "observed and model-implied"))}</div>
     <h3>The corrected W4 comparison</h3>{w4_table}<p>The comparison uses the opportunity kernel normalized on exactly the reference domain. The earlier scale-dependent levels are not shown.</p>'''))
@@ -531,7 +544,7 @@ def build(nor):
     {fig("figV03_signed_decomposition", "Signed Gini contributions with two uncertainty summaries", cap("both estimation populations", "percentage points of the reducible Gini", "grouped signed Shapley contributions", "raw basis; RQMC integration bands and CR1 parameter intervals shown side by side and never merged", "model-implied decomposition"))}
     <h3>Six inequality indices</h3>{six_table}{fig("figV05_six_index_shares", "Six-index attribution", cap("both estimation populations", "share of reducible inequality", "grouped attribution under six inequality indices", "raw and equivalized conventions remain separate", "model-implied decomposition"))}
     <h3>Nested access: singles</h3>{geo_table}
-    <h3>Nested resources and composition</h3>{d_table}<p class=small>The singles subdivision uses the available earlier budget-field partition; the couples subdivision uses the corrected partition. They are displayed, but their cross-population composition-share comparison is not treated as robust.</p>
+    <h3>Nested resources and composition</h3>{d_table}<p class=small>Corrected nested attribution is available for both populations: geography within singles access, and resources versus composition within the budget channel for singles and couples. The current tables above report the splits. For couples, C_D = 0.067827 = 0.043551 + 0.024276 raw Gini, and 0.072396 = 0.041364 + 0.031032 equivalized Gini. Cross-population composition-share rankings remain sensitive to the index and equivalization.</p>
     <h3>One factor is not an attribution</h3>{one_table}{fig("figV04_one_factor_vs_shapley", "One-factor effects beside Shapley attributions", cap("both estimation populations", "share of baseline inequality", "single equalization effect versus average marginal attribution", "raw Gini; methods deliberately not combined", "model-implied counterfactual comparison"))}'''))
     robust_cr1 = all(float(r["CR1_p2_5"]) > 0 for r in s12_cr1)
     sections.append(("robustness", "What is robust and what is not", f'''<div class=verdicts><article><h3>Holds across all six indices</h3><p>For singles, access exceeds earnings opportunities. For couples, earnings opportunities exceed access. Resources lead composition on the household basis in both populations.</p></article>

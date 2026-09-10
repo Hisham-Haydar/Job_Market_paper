@@ -19,6 +19,7 @@ import html
 import importlib.metadata
 import json
 import re
+import subprocess
 import urllib.request
 from pathlib import Path
 
@@ -333,13 +334,9 @@ for comp in ['res', 'comp']:
              'result', 'per cent of the channel, equivalized')
 
 # ---- the same subdivision for single adults --------------------------------
-# NOTE the provenance difference, which is not cosmetic. The couples cells come
-# from two panels repriced on the corrected 58/46/6 partition of the budget
-# fields. The singles cells come from panels priced on an earlier 50/54/6
-# partition. The two populations' CHANNEL SHARES are therefore indicative
-# rather than a like-for-like comparison, and the paper says so.
-_SD = ('s12_six_index_attributions_v1.csv; singles partial-D panels on the '
-       'earlier partition of the budget fields')
+# The current singles record includes the corrected resources/composition split.
+_SD = ('s12_six_index_attributions_v1.csv; corrected singles nested-D '
+       'attribution on repriced partial-D panels')
 for _ix, _ in INDICES:
     for _bas, _pfx in [('raw', 'sd'), ('equivalized', 'sde')]:
         r = sixrow('singles', _bas, _ix)
@@ -628,22 +625,17 @@ PREF_ROWS = [
 _rows = []
 for lab, sm, sf, cm, cf in PREF_ROWS:
     _rows.append([lab,
-                  '0 (restricted)' if sm is None else _cell('singles', sm),
+                  '&mdash;' if sm is None else _cell('singles', sm),
                   _cell('singles', sf),
-                  '0 (restricted)' if cm is None else _cell('couples', cm),
+                  '&mdash;' if cm is None else _cell('couples', cm),
                   _cell('couples', cf)])
 _rows.append([r'Consumption weight $\beta_c$',
               _cell('singles', 'beta_c'), _cell('singles', 'beta_c'),
               _cell('couples', 'beta_c'), _cell('couples', 'beta_c')])
-_rows.append([r'Consumption curvature $\theta_c$', '0 (restricted)',
-              '0 (restricted)', '0 (restricted)', '0 (restricted)'])
-_rows.append([r'Direct cross-leisure term', 'Not applicable',
-              'Not applicable', '0 (restricted)', '0 (restricted)'])
 TABLES['pref'] = table(
     'v5_coefficients_preferences',
     'Table: The preference block. Cluster-robust standard errors in '
-    'parentheses, clustered on the household. "Restricted" marks a coordinate '
-    'held at a value by the specification, not an estimated zero; "at bound" '
+    'parentheses, clustered on the household. "At bound" '
     'marks an estimate at a box endpoint, whose interval is reported under the '
     'active-set convention in the appendix. The consumption weight is common '
     'within a population and enters as $\\beta_c\\log(C/\\lambda_c)$.',
@@ -726,8 +718,9 @@ TABLES['wage'] = table(
 for _tag, _key in [('singles', 'fullsingles'), ('couples', 'fullcouples')]:
     _rows = []
     for _, r in PAR[_tag].iterrows():
-        status = ('restricted' if bool(r['pinned'])
-                  else 'at bound' if bool(r['active_bound']) else 'estimated')
+        if bool(r['pinned']):
+            continue
+        status = 'at bound' if bool(r['active_bound']) else 'estimated'
         se = ('--' if pd.isna(r['se_robust_CR1'])
               else format(float(r['se_robust_CR1']), '.6g'))
         z = ('--' if pd.isna(r['z_robust'])
@@ -738,9 +731,9 @@ for _tag, _key in [('singles', 'fullsingles'), ('couples', 'fullcouples')]:
                       status])
     TABLES[_key] = table(
         'v5_full_coefficients_' + _tag,
-        'Table: The complete %s parameter vector. Standard errors are '
-        'cluster-robust on the household. A coordinate marked restricted is '
-        'held by the specification and contributes no degree of freedom.'
+        'Table: The %s estimated coordinates. Standard errors are '
+        'cluster-robust on the household; boundary-active estimates are marked '
+        'at bound. Maintained restrictions are stated once in the accompanying note.'
         % _tag,
         ['Coordinate', 'Estimate', 'CR1 s.e.', 'z', 'Box', 'Status'], _rows)
 
@@ -907,9 +900,9 @@ TABLES['nestedD'] = table(
     + str(REG['nd_n_comp']['value']) + ' composition and needs fields and '
     + str(REG['nd_n_geo']['value']) + ' geographic fields, and sum to the joint '
     'contribution to a residual of 1.4e-17 in index units. The single-adult '
-    'cells come from panels priced on an earlier partition of the same fields, '
-    'so they are reported for comparison and the two populations’ channel '
-    'shares are indicative rather than like for like.',
+    'cells also report the corrected nested attribution. Both populations use '
+    'their current repriced partial-D panels; raw and equivalized channel '
+    'shares are displayed separately.',
     ['Index', 'Couples: share of baseline', 'Couples: share of channel',
      'Couples: channel, equivalized', 'Singles: share of baseline',
      'Singles: share of channel', 'Singles: channel, equivalized'], _rows)
@@ -1085,7 +1078,8 @@ def lfig(key, stem, caption):
 
 
 lfig('theory', 'theory_w1',
-     r'**Own-set equal-consumption equivalents.** Individuals with preferences '
+     r'**Own-set equal-consumption equivalents.** The theoretical W1 construction '
+     r'from the companion theory paper. Individuals with preferences '
      r'$R_i,R_h$ and ability sets $A=\{j,k\}$ and $A^{\prime}=\{k,\ell\}$ '
      r'attain $z_i$ and $z_h$. For each individual, a common consumption level '
      r'is assigned to every job in their own set; the level at which the '
@@ -1541,12 +1535,26 @@ htmlout = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
 (ROOT / 'reports/JMP_research_story_report_v5.html').write_text(
     htmlout, encoding='utf-8')
 
+_existing_register = json.loads((ROOT / 'reports/numbers_of_record_v5.json').read_text('utf-8'))
+# The discussion notebook consumes these registered, reader-facing tables.
+# Preserve them when the story builder refreshes its own scalar register.  The
+# one-time fallback repairs an older story-only register from the committed
+# baseline; subsequent builds preserve the live copy.
+if ('discussion_tables' not in _existing_register
+        or 'n_predecessor_singles' not in _existing_register.get('entries', {})):
+    _baseline = subprocess.check_output(
+        ['git', '-C', str(ROOT), 'show', 'HEAD:reports/numbers_of_record_v5.json'],
+        text=True, encoding='utf-8')
+    _existing_register = json.loads(_baseline)
+
 REGOUT = {'build_date': today,
           'model_of_record': 'S11 specifications of record: tau = 1, '
                              'theta_c = 0, beta_c estimated; welfare at S12 on '
                              'the 1,540 / 2,223 estimation frames',
-          'entries': REG, 'used_keys': sorted(USED),
-          'unused_keys': sorted(set(REG) - USED)}
+          'entries': {**_existing_register.get('entries', {}), **REG}, 'used_keys': sorted(USED),
+          'unused_keys': sorted(set(REG) - USED),
+          'gallery': _existing_register.get('gallery'),
+          'discussion_tables': _existing_register['discussion_tables']}
 (ROOT / 'reports/numbers_of_record_v5.json').write_text(
     json.dumps(REGOUT, indent=2, ensure_ascii=False), encoding='utf-8')
 print('v5: %d registered numbers, %d used; paper and report written.'
