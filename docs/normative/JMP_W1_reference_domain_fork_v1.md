@@ -10,14 +10,30 @@ or (ii) arithmetic performed *in this note* on the S11 parameter tables, labelle
 **[derived here]**. That arithmetic used a throwaway calculator: nothing was saved
 and no project code was written.
 
-**Citability.** Every [derived here] numeral is **memo-grade**. That covers, among
-others, 0.850, 12.1×, "1–5%", the Table 1 factors and the couples threshold 4.278.
-They support this normative memo and **must not be cited in the manuscript until a
-script reproduces them**. Appendix B lists them.
+**Citability: CITABLE.** Every [derived here] numeral — including 0.850, 12.1×,
+"1–5%", the Table 1 factors and the couples threshold 4.278 — is reproduced by
+`docs/normative/scripts/fork_derived_numerals_v1.py` (sha256
+`994c3dfaad7cbafd2f76871ac05629e0ee60947b5a00085f944a0bebe11d8e9c`) against
+`docs/normative/fork_derived_numerals_v1.csv` (sha256
+`2677356a555ec3eb65623227e3d26363925c2d11add1112c8db925213f77bf8e`), reading only
+the accepted S11 parameter tables and the named reference households, at the
+memo's printed precision: **158/158 pass, script exit 0**. REC-1 / Deputy R3
+item 2 is closed. Appendix B lists them.
+
+**P1 (couples parameter-table provenance): RESOLVED.** S11 is the accepted
+baseline for both singles and couples, per dashboard entries R-286 ("the
+preference-figure family is regenerated at the final parameters") and R-291
+("ONE MODEL, EVERYWHERE … the reported specification is the S11 record").
+`experiments/JMP_SEMINAR_SPRINT/runs/couples_clean_baseline/r240_step3_parameter_table_v1.csv`
+(2,275-couple frame) is **provisional**, not accepted, and was used only by the
+non-accepted MEASURE-MAP-1 return. Every couples numeral in this memo uses the
+S11 table; §5.1's threshold 4.278 and R240's 5.52 are not the same claim about
+the same accepted object, and the fork's figures stand.
 
 **Status of the conclusions: PENDING RULING.** Verdicts B and C, the
 recommendation (F), and the amendments to the note are proposals to the PI and
-deputy, not rulings.
+deputy, not rulings. The numerals above are citable; the normative conclusions
+they support are not yet ruled on.
 
 **Builds on** `docs/normative/W1_latent_set_identification_note_v1.md` (hereafter
 **"the note"**). Its equations are cited as (0.1), (1.1) and so on, and its findings
@@ -32,6 +48,7 @@ committed and is recoverable only from this log.
 | **r0 — first pass** | original FORK-1 ruling header | Caught the header's reversed nonworker sign. Verdict **B**, or C if $o$ is a job. Dense-law finding: $A^M$ non-empty almost surely, $\kappa$ irrelevant, M ≈ F × 1.01–1.05. **Recommendation: M**, evaluated under the dense law as the closed form (M.4), with the law-free band. Rationale: (1) the manuscript and the co-author's example read $A$ as market jobs; (2) F makes $W^1\equiv W^4$; (3) under the dense law M has no $\kappa$ and no empty set; (4) the gap to F is small. Empty-set treatments T1–T4, with the $+\infty$ convention inside T4 |
 | **r1 — revised header** | the **PI** replaced header items 2 and 5 and **added item 7, a prior the PI introduced**: that the $\kappa\to\infty$ limit is an Independence-of-$A$ object, so M's access channel lives only at finite $\kappa$ | Pointwise check and the worker upper-bound qualifier (§1.2); treatment (e) analysed separately, with a finite ceiling and a jump at $\emptyset$ (§3.4); §4.4 added. Verifying the PI's prior, this note sharpened it: the $\kappa\to\infty$ limit is exactly **Measure 6 over market jobs**. That disposes of r0's rationales (1) and (2): (1) is delivered only at unidentified finite $\kappa$, and (2) is symmetric ($W^1\equiv W^6$). **Recommendation flipped M → F.** The flip follows from the PI's prior, as verified here; it was not reached independently in r0 |
 | **r2 — closing items** | PI review of r1 | Couples reference configuration explained term by term; man-only becomes the reference in a narrow region (§5.1). Memo-grade label on derived numerals. Theory identities separated from implemented objects, including $W^4$ (§6.1). This log. Co-author source named (§2.8). Committed; hash recorded outside the file |
+| **r3 — REC-1 numeral correction** | REC-1 (Deputy R3 item 2): `docs/normative/scripts/fork_derived_numerals_v1.py` reproduced 154/158 Table 1 numerals; four cells were off beyond the memo's printed rounding | **Cause: double rounding in the first pass** — the calculator's output was rounded to 4 decimals and then again to 3 for the table. **Source: `fork_derived_numerals_v1.csv`.** Four Table 1 cells corrected to the script's values: single men, minimum weight, $\rho(50)$ 0.737→**0.736**; single men, age 20, nonworker-band lower end 1.011→**1.010**; single women, age 20, $\rho(50)$ 0.305→**0.304**; single women, age 60, nonworker-band lower end 1.044→**1.043**. Nothing else in the memo changed. Script now exits 0, 158/158 passing; numerals promoted to CITABLE (§0 status block) |
 
 The revised header items are reproduced verbatim in Appendix C.
 
@@ -177,14 +194,14 @@ under M is bounded. It becomes unbounded only through the empty event.**
 
 | block | $\beta_\ell(\mathbf x)$ case | $\beta_\ell$ | $\rho(20)$ | $\rho(35)$ | $\rho(39)$ | $\rho(50)$ | M/F gap (dense) | nonworker band |
 |---|---|---:|---:|---:|---:|---:|---:|---|
-| single men | minimum (age 33.2) | 7.814 | 0.962 | 0.891 | 0.862 | 0.737 | 1.0089 | [1.009, 9.75] |
+| single men | minimum (age 33.2) | 7.814 | 0.962 | 0.891 | 0.862 | 0.736 | 1.0089 | [1.009, 9.75] |
 | | reference HH (age 43, 39 h) | 8.562 | 0.958 | 0.881 | **0.850** | 0.715 | 1.0098 | [1.010, 12.1] |
-| | age 20 | 9.171 | 0.955 | 0.874 | 0.840 | 0.698 | 1.0105 | [1.011, 14.5] |
+| | age 20 | 9.171 | 0.955 | 0.874 | 0.840 | 0.698 | 1.0105 | [1.010, 14.5] |
 | | age 60 | 13.403 | 0.935 | 0.821 | 0.775 | 0.592 | 1.0153 | [1.015, 49.7] |
 | single women | minimum ($k=0$, age 42.4) | 5.867 | 0.896 | 0.748 | 0.698 | 0.527 | 1.0282 | [1.028, 14.2] |
 | | reference HH (age 41, 1 child, 35 h) | 6.053 | 0.893 | **0.741** | 0.690 | 0.516 | 1.0291 | [1.029, 15.4] |
-| | age 20 ($k=0$) | 10.878 | 0.815 | 0.584 | 0.513 | 0.305 | 1.0529 | [1.053, 137] |
-| | age 60 ($k=0$) | 8.970 | 0.845 | 0.642 | 0.577 | 0.375 | 1.0435 | [1.044, 57.7] |
+| | age 20 ($k=0$) | 10.878 | 0.815 | 0.584 | 0.513 | 0.304 | 1.0529 | [1.053, 137] |
+| | age 60 ($k=0$) | 8.970 | 0.845 | 0.642 | 0.577 | 0.375 | 1.0435 | [1.043, 57.7] |
 
 Box-Cox values used: single men $\theta_\ell=-1.6263$, $\mathcal B(8)=0.594005$,
 $\mathcal B(7.5)=0.591693$; single women $\theta_\ell=-0.9274$, $\mathcal B(8)=0.921565$,
@@ -916,30 +933,43 @@ normalisation, no repair of W1-EA. Stop.
 
 Repository heads at audit time: `Job_Market_paper` `834055e8da5573ae237f40d38229e836b6717270`;
 `MNL` `aa36e816e46568ff448810e5b89c28ea616a2476`. At audit time `docs/normative/`
-was untracked in `Job_Market_paper`. This document is committed on its own. Its
-commit hash and file digest are recorded outside the file, to avoid pinning a file
-to its own hash.
+was untracked in `Job_Market_paper`; under r3 (REC-1) this document, the note it
+builds on, `JMP_W1_fork_ruling_v1.md`, and the REC-1 script/CSV are all tracked
+and committed on `docs/w1-reference-domain-fork`. This document's own commit hash
+and file digest are recorded outside the file, to avoid pinning a file to its own
+hash.
 
 | object | path | sha256 |
 |---|---|---|
 | theory manuscript (authoritative) | `Job_Market_paper/Theory_other_project/jobs_and_wellbeing.tex` | `d8687d3cfb71ce00f81613286e784c71c0e643721987bebf0d57226afe2a02d1` |
 | theorem index | `Job_Market_paper/Theory_other_project/jobs_and_wellbeing.agent.md` | `4940775b8b57ab5ec4278795d2fe7361de8119e2019f45fa3bbf8fce138f4c2a` |
 | the note (starting point) | `Job_Market_paper/docs/normative/W1_latent_set_identification_note_v1.md` | `8b02ff93b94a72327caa8d16476a3bf5c6176894162e0758f03562ee6329e226` |
-| S11 singles parameter table | `MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_parameter_table_v1.csv` | `cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab` |
-| S11 couples parameter table | `…/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv` | `fc1794b437c74ac4e6ab240aaa7c71b7c38ee21512395a175b38c785a5e061c9` |
+| S11 singles parameter table (accepted baseline, P1) | `MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_parameter_table_v1.csv` | `cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab` |
+| S11 couples parameter table (accepted baseline, P1) | `…/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv` | `fc1794b437c74ac4e6ab240aaa7c71b7c38ee21512395a175b38c785a5e061c9` |
 | conventions and reference households (age centre/scale, age support 20–60, $\beta_\ell$ at reference, $C^{\rm obs}$) | `…/runs/preference_figures_final/pff_step1_reference_v1.json` | `594a941ebacad8e4b4462e464732199d836b8ca65c43a0679368e0c03375d41a` |
 | hours support $h_{\min}=5$, $h_{\max}=70$ (`binding.spec_conventions`) | `…/runs/figE1_matched_households/e1_matched_households_v1.json` | `4dbb3e6abf918689a8027ed093ece2aeaf884d64fd2f25c9282cf3396a5c3454` |
 | RURO source, Assumption 2 and Theorem 1 | `Job_Market_paper/Literature/markdowns/Dagsvik_Jia_2016.md` (l.42–51) | `29cf5975c22e40b4224408c48f7cf1f11c6f1d8412e2aff665bc4645ce9a804d` |
 | Theory-talk script (history) | `Job_Market_paper/beamer/reference/Theory_talk/slides/spoken_script_click_cues.tex` (l.103–124) | `f07a475eeb1004d2c6cdbc3376289945f359eec424e9abf26141df44e9029236` |
+| **REC-1 reproduction script** | `Job_Market_paper/docs/normative/scripts/fork_derived_numerals_v1.py` | `994c3dfaad7cbafd2f76871ac05629e0ee60947b5a00085f944a0bebe11d8e9c` |
+| **REC-1 pass/fail table (158/158 pass)** | `Job_Market_paper/docs/normative/fork_derived_numerals_v1.csv` | `2677356a555ec3eb65623227e3d26363925c2d11add1112c8db925213f77bf8e` |
+| Deputy FORK-1 implementation record | `Job_Market_paper/docs/normative/JMP_W1_fork_ruling_v1.md` | recorded outside the file with this commit's hash (pin-recursion rule) |
+
+**P1, not used.** `MNL/experiments/JMP_SEMINAR_SPRINT/runs/couples_clean_baseline/r240_step3_parameter_table_v1.csv`
+(sha256 `c4aee66a2adf8b08f1314913b52ee3c2218a7f5c0cd1b9c42f1ec82e4a21cc8c`) is the
+provisional 2,275-couple R-240 table. It is **not** an input to this memo or to
+the REC-1 script; it is recorded here only because MEASURE-MAP-1 (not accepted)
+used it and reported a different couples threshold (5.52) as a result.
 
 Manuscript line references used: l.97, 107, 111, 114, 124–127, 132–136, 140–144,
 158–162, 198, 200–209, 225–229, 258–266, 306, 339–353 (table), 393–449 (thm:imp1),
 547–595 (thm:w1), 838–869 (thm:w4).
 
-## Appendix B — numbers derived here (not certified; memo-grade)
+## Appendix B — numbers derived here (CITABLE; reproduced by REC-1)
 
-**Not citable in the manuscript until a script reproduces them.** All are
-arithmetic on the S11 tables with $\ell=(80-h)/10$ and
+**Reproduced, 158/158, by `docs/normative/scripts/fork_derived_numerals_v1.py`
+against `docs/normative/fork_derived_numerals_v1.csv` (hashes in the status
+block above and in Appendix A).** All are arithmetic on the S11 tables with
+$\ell=(80-h)/10$ and
 $\mathcal B(z;\theta)=(z^\theta-1)/\theta$:
 - the couples term-by-term table of §5.1: $\Delta\mathcal B$ = 0.008751 and
   0.002045, the threshold 4.2784, the peak ratio 3.33, and the age boundaries;
