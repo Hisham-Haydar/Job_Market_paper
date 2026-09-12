@@ -1,0 +1,67 @@
+worktree: C:/Users/hisham/Repo/Job_Market_paper
+branch: docs/w1-reference-domain-fork
+HEAD: 0ff8f748a4791226648344ddca972f2629eed9c6
+captured_utc: 2026-09-12T19:43:45Z
+--- git status --porcelain=v1 -uall (verbatim) ---
+ M "Literature/md_extractions/__bbox_tmp_Bargain et al_2010_\303\242\342\202\254\305\223Making work pay\303\242\342\202\254\302\235 in a rationed labor market.html"
+ M beamer/build/verification_v4.json
+ M manuscript/JMP_working_paper_for_seminar_v5.aux
+ M manuscript/JMP_working_paper_for_seminar_v5.log
+ M manuscript/tables/v5/v5_benchmark.csv
+ M manuscript/tables/v5/v5_coefficients_preferences.csv
+ M manuscript/tables/v5/v5_full_coefficients_singles.csv
+ M reports/JMP_research_story_report_v2.html
+?? Literature/JMP_core_bibliography.bib
+?? Literature/core_papers/aaberge_colombino_2018.md
+?? Literature/core_papers/aaberge_colombino_strom_1999.md
+?? Literature/core_papers/aaberge_dagsvik_strom_1995.md
+?? Literature/core_papers/audoly_et_al_2025.md
+?? Literature/core_papers/bargain_et_al_2013.md
+?? Literature/core_papers/bargain_et_al_2014.md
+?? Literature/core_papers/capeau_decoster_dekkers_2015.md
+?? Literature/core_papers/dagsvik_jia_2016.md
+?? Literature/core_papers/dagsvik_strom_2006.md
+?? Literature/core_papers/decoster_haan_2015.md
+?? Literature/core_papers/fleurbaey_maniquet_2006.md
+?? Literature/core_papers/fleurbaey_maniquet_2018_jel.md
+?? Literature/core_papers/haydar_maniquet_2026_wip.md
+?? Literature/core_papers/jacquet_jia_thoresen_2026.md
+?? Literature/core_papers/jia_thoresen.md
+?? Literature/core_papers/sastre_trannoy_2002.md
+?? Literature/core_papers/shorrocks_1982.md
+?? Literature/core_papers/shorrocks_2013.md
+?? Literature/corpus_index.md
+?? Theory_other_project/jobs_and_wellbeing.agent.md
+?? Theory_other_project/jobs_and_wellbeing.tex
+?? docs/JMP_BRIDGE1_amendment_v1.md
+?? docs/JMP_W1_stochastic_ability_set_bridge_v1.md
+?? docs/JMP_W1_stochastic_ability_set_bridge_v3.md
+?? docs/JMP_W1_theory_to_implementation_bridge_v1.md
+?? docs/JMP_bridge_source_extract_v1.md
+?? docs/JMP_bridge_source_extract_v2.md
+?? docs/JMP_frame_draw_law_audit_v1.md
+?? docs/JMP_market_set_bridge_and_parallel_work_ruling_v1.md
+?? docs/JMP_seminar_architecture_freeze_2026-09-17_v1.md
+?? docs/JMP_step0_status_v1.md
+?? docs/Missions/JMP_welfare_walkthrough_mission_v1.md
+?? "docs/docs - Shortcut.lnk"
+?? reports/JMP_reference_profiles_v1.csv
+?? reports/JMP_reference_profiles_v1.md
+?? reports/JMP_reference_profiles_v1.tex
+?? reports/JMP_v5_review_and_modular_revision_plan_v1.md
+?? reports/figure_modules/v5_labour_market_opportunity_composition/build_figure.py
+?? reports/figure_modules/v5_labour_market_opportunity_composition/evidence.md
+?? reports/figure_modules/v5_labour_market_opportunity_composition/v5_labour_market_opportunity_composition.csv
+?? reports/figure_modules/v5_labour_market_opportunity_composition/v5_labour_market_opportunity_composition.pdf
+?? reports/figure_modules/v5_labour_market_opportunity_composition/v5_labour_market_opportunity_composition.png
+?? reports/figure_modules/v5_labour_market_opportunity_composition/v5_labour_market_opportunity_composition.tex
+?? reports/leisure_curvature_vs_normalizer.pdf
+?? reports/leisure_intercept_vs_normalizer.pdf
+--- end status ---
+
+--- local branches (git branch -v --no-abbrev) ---
+  docs/seminar-r6               4c4e07e398f44a91b444cd73c2a653ae66d395fc E3-EQ: BASELINE-F-1 equivalised reporting memo and verification
+* docs/w1-reference-domain-fork 0ff8f748a4791226648344ddca972f2629eed9c6 docs(dashboard): record Deputy Goal 1 ruling — bridge verdict D accepted, G-WELFARE-1 commissioned
+  main                          425c4c735c11076bb0d6eb57720de99ceb7a8f5c [ahead 34] docs(dashboard): MEASURE-MAP-1R ACCEPTED, BASELINE-F-1 UNLOCKED
+--- git worktree list ---
+C:/Users/hisham/Repo/Job_Market_paper  0ff8f74 [docs/w1-reference-domain-fork]
