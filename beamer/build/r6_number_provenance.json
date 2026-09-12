@@ -1,0 +1,291 @@
+{
+  "macros": {
+    "EvaluatorCommit": {
+      "raw": null,
+      "rendered": "55bb0d0",
+      "source": "run_provenance.json evaluator_commit"
+    },
+    "FitAdequateCount": {
+      "raw": null,
+      "rendered": "2",
+      "source": "g2_adequacy.csv count of ADEQUATE groups"
+    },
+    "FitBootReps": {
+      "raw": null,
+      "rendered": "200",
+      "source": "run_provenance.json node_bootstrap.replicates"
+    },
+    "FitExtCF": {
+      "raw": 0.8968568030781313,
+      "rendered": "89.7",
+      "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy ADEQUATE"
+    },
+    "FitExtRatioCF": {
+      "raw": 0.16830434918743928,
+      "rendered": "0.17",
+      "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioSF": {
+      "raw": 0.24287439764077678,
+      "rendered": "0.24",
+      "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtSF": {
+      "raw": 0.8680693975279737,
+      "rendered": "86.8",
+      "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy ADEQUATE"
+    },
+    "FitLimitedCount": {
+      "raw": null,
+      "rendered": "2",
+      "source": "g2_adequacy.csv count of limited groups"
+    },
+    "FitNodes": {
+      "raw": null,
+      "rendered": "100",
+      "source": "run_provenance.json predictive_support.full_nodes"
+    },
+    "FitSims": {
+      "raw": null,
+      "rendered": "500",
+      "source": "run_provenance.json simulation.outcome_vectors"
+    },
+    "FrameCouples": {
+      "raw": null,
+      "rendered": "2\\,223",
+      "source": "baseline_f1 samples.couples.unweighted_n"
+    },
+    "FrameSingles": {
+      "raw": null,
+      "rendered": "1\\,540",
+      "source": "baseline_f1 samples.singles.unweighted_n"
+    },
+    "ObjCouples": {
+      "raw": 10283.034369350758,
+      "rendered": "10283.034",
+      "source": "run_provenance.json objective_values.couples"
+    },
+    "ObjSingles": {
+      "raw": 6253.463074379619,
+      "rendered": "6253.463",
+      "source": "run_provenance.json objective_values.singles"
+    },
+    "SCoupActive": {
+      "raw": 47,
+      "rendered": "47",
+      "source": "s11_couples_parameter_table_v1.csv non-pinned rows"
+    },
+    "SCoupParams": {
+      "raw": 47,
+      "rendered": "47",
+      "source": "s11_couples_parameter_table_v1.csv row count"
+    },
+    "SElevenAccessConst": {
+      "raw": -3.17353431815379,
+      "rendered": "-3.174",
+      "source": "s11_singles_parameter_table_v1.csv beta_E estimate"
+    },
+    "SElevenAccessConstZ": {
+      "raw": -7.8293727555694685,
+      "rendered": "-7.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_E z_robust"
+    },
+    "SElevenAccessSur": {
+      "raw": -1.4422400789318612,
+      "rendered": "-1.442",
+      "source": "s11_singles_parameter_table_v1.csv beta_E_gsur estimate"
+    },
+    "SElevenAccessSurZ": {
+      "raw": -6.121804594329831,
+      "rendered": "-6.1",
+      "source": "s11_singles_parameter_table_v1.csv beta_E_gsur z_robust"
+    },
+    "SElevenBetaC": {
+      "raw": 2.038731824410903,
+      "rendered": "2.039",
+      "source": "s11_singles_parameter_table_v1.csv beta_c estimate"
+    },
+    "SElevenBetaCZ": {
+      "raw": 6.988432856119127,
+      "rendered": "7.0",
+      "source": "s11_singles_parameter_table_v1.csv beta_c z_robust"
+    },
+    "SElevenHoursFThirtyFive": {
+      "raw": 2.0655619308364366,
+      "rendered": "2.066",
+      "source": "s11_singles_parameter_table_v1.csv beta_h_f35 estimate"
+    },
+    "SElevenHoursFThirtyFiveZ": {
+      "raw": 23.09234999861884,
+      "rendered": "23.1",
+      "source": "s11_singles_parameter_table_v1.csv beta_h_f35 z_robust"
+    },
+    "SElevenWageEducH": {
+      "raw": 0.14905427891988668,
+      "rendered": "0.149",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_educH estimate"
+    },
+    "SElevenWageEducHZ": {
+      "raw": 4.8330249099103515,
+      "rendered": "4.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_educH z_robust"
+    },
+    "SElevenWagePexp": {
+      "raw": 0.24077041930177193,
+      "rendered": "0.241",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_pexp estimate"
+    },
+    "SElevenWagePexpZ": {
+      "raw": 2.7924389771251006,
+      "rendered": "2.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_pexp z_robust"
+    },
+    "SElevenWageSigma": {
+      "raw": 0.3815052460538545,
+      "rendered": "0.382",
+      "source": "s11_singles_parameter_table_v1.csv sigma estimate"
+    },
+    "SElevenWageSigmaZ": {
+      "raw": 28.7381858888539,
+      "rendered": "28.7",
+      "source": "s11_singles_parameter_table_v1.csv sigma z_robust"
+    },
+    "SSingActive": {
+      "raw": 41,
+      "rendered": "41",
+      "source": "s11_singles_parameter_table_v1.csv non-pinned rows"
+    },
+    "SSingParams": {
+      "raw": 52,
+      "rendered": "52",
+      "source": "s11_singles_parameter_table_v1.csv row count"
+    },
+    "WFCoupCfive": {
+      "raw": 1.7763568394002505e-15,
+      "rendered": "1.8e-15",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C5"
+    },
+    "WFCoupCone": {
+      "raw": 0.0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C1"
+    },
+    "WFCoupCtwo": {
+      "raw": 0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C2"
+    },
+    "WFCoupGini": {
+      "raw": 0.21035441022764906,
+      "rendered": "0.210",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupMean": {
+      "raw": 2495.800865909865,
+      "rendered": "2\\,496",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupMedian": {
+      "raw": 2356.493005647621,
+      "rendered": "2\\,356",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupN": {
+      "raw": 2223,
+      "rendered": "2\\,223",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupNonworkers": {
+      "raw": 50,
+      "rendered": "50",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupWorkers": {
+      "raw": 2173,
+      "rendered": "2\\,173",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFSingCfive": {
+      "raw": 1.7763568394002505e-15,
+      "rendered": "1.8e-15",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C5"
+    },
+    "WFSingCone": {
+      "raw": 0.0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C1"
+    },
+    "WFSingCtwo": {
+      "raw": 0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C2"
+    },
+    "WFSingGini": {
+      "raw": 0.23755220907703214,
+      "rendered": "0.238",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingMean": {
+      "raw": 1434.811649926925,
+      "rendered": "1\\,435",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingMedian": {
+      "raw": 1319.977951506895,
+      "rendered": "1\\,320",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingN": {
+      "raw": 1540,
+      "rendered": "1\\,540",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingNonworkers": {
+      "raw": 204,
+      "rendered": "204",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingWorkers": {
+      "raw": 1336,
+      "rendered": "1\\,336",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    }
+  },
+  "refusals": [
+    "couples_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.3234724308330679); not emitted",
+    "singles_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.30007174905877493); not emitted"
+  ],
+  "sources": {
+    "baseline_f1_full_sample_aggregates_v1.json": {
+      "C_obs_benchmark": "NOT PRODUCED",
+      "executed_commit": "d729cf895e9197716e58875aa1bf13824f022e2e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_v1\\baseline_f1_full_sample_aggregates_v1.json",
+      "pooled_row": false,
+      "recorded_commit": "6048c9f7",
+      "sha256": "6d91bf9e4558c9f658987fc7e696acf9150fb726e0a235d84cd5ca63ff7e56f8",
+      "units": "household EUR/month, unequivalised",
+      "verified_commit": "b5550af5",
+      "weight": "dwt"
+    },
+    "g2_adequacy.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\g2_adequacy.csv",
+      "sha256": "370c8bcb4bcee48fda7c493cebe2435000018498cdc4728808e6a91fc85423ef"
+    },
+    "hard_classification_metrics.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\hard_classification_metrics.csv",
+      "sha256": "32adb8a24fcfb9decc6e38658cdbd6bd46f15931f6c737351f9ca13ae73ae38a"
+    },
+    "run_provenance.json": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\run_provenance.json",
+      "sha256": "a1a6717b1df26c1734a45d0d8efbe773e1be49a37bf2de1ac0f31ef1f2797f8e"
+    },
+    "s11_couples_parameter_table_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_couples_parameter_table_v1.csv",
+      "sha256": "fc1794b437c74ac4e6ab240aaa7c71b7c38ee21512395a175b38c785a5e061c9"
+    },
+    "s11_singles_parameter_table_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_singles_parameter_table_v1.csv",
+      "sha256": "cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab"
+    }
+  }
+}

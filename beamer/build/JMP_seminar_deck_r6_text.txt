@@ -1,0 +1,470 @@
+Unequal Job Opportunities and the Measurement
+of Welfare Inequality
+
+
+Hisham Haydar
+LISER and University of Luxembourg
+
+
+France, EU-SILC priced through EUROMOD.
+
+Seminar of 17 September. Welfare content is presented under ruling R6; the quantitative decomposition is work
+in progress.
+Question and contribution
+Two people with the same tastes and the same wage need not face the same set of jobs.
+
+
+
+
+      How much of measured welfare inequality is attributable to unequal job access and earning
+       opportunities, rather than to preferences?
+
+      What does a model that assumes a common choice set do to that attribution?
+
+
+
+
+   Both questions are about a measure, not about a policy counterfactual.
+
+
+
+
+                                                                                                   2/19
+The contribution is a structural opportunity set plus a welfare measure defined on it.
+
+
+
+
+      A random-utility, random-opportunity (RURO) model in which which jobs a household can
+       reach is estimated, not assumed.
+      The Haydar–Maniquet money-metric measure W 1 , applied on the estimated reachable set
+       rather than on a common grid.
+      A decomposition architecture that separates preferences from job access, earning
+       opportunities and household endowments and needs.
+
+
+   Third item: the architecture is presented today. Its quantitative output is not.
+
+
+
+                                                                                               3/19
+Data and the structural RURO
+model
+France, EU-SILC priced through EUROMOD: 1 540 single-adult and 2 223 couple
+households.
+
+
+
+
+      Estimation frames: corrected criterion-A panels, S11 model of record.
+      Each household: its observed job plus 100 drawn alternatives, every one priced through
+       the tax–benefit system.
+      Weights are the survey weights dwt throughout.
+
+
+
+   S11 is the single model of record on these slides. Earlier S8 and R240 frames and their estimates are not shown
+   and are not comparable.
+
+
+
+                                                                                                                     4/19
+A job is a package; a household draws from its own distribution over packages.
+
+
+
+
+         access                     hours                   occupation         wage offer
+    employment mass          piecewise, 35h peak            sex-specific       log-normal
+
+
+
+
+                         opportunity density gi (·) over reachable jobs                       preferences ui (c, ℓ)
+
+
+
+
+                                               observed job = arg max over the drawn set
+
+
+
+
+   Access and capability are not separately identified; the access factor is their product.
+
+                                                                                                                      5/19
+Preferences and the opportunity density are estimated in one likelihood.
+
+
+
+
+                               
+             Pr(ji | xi ) ∝ exp ui (cij , ℓij ) + log gi (j) − log qi (j)
+
+
+   u preferences   g estimated opportunity density   q numerical proposal density, divided out
+
+
+
+   The proposal correction is what makes the drawn alternatives a simulator for the estimated set rather than the
+   choice set itself.
+
+
+
+                                                                                                                    6/19
+Positive estimates and fit
+S11 model of record: 41 free parameters for singles, 47 for couples.
+
+
+
+
+                                                             singles       couples
+                              free parameters                   41            47
+                              estimation households          1 540         2 223
+                              objective at θ̂             6253.463     10283.034
+
+
+
+
+   Objectives reproduce exactly under the independent diagnostics evaluator, package commit 55bb0d0.
+
+
+
+
+                                                                                                       7/19
+Extensive-margin accuracy is the one fit statistic that passes the quadrature-adequacy
+gate.
+
+
+          single men       withheld: quadrature-limited
+
+
+
+
+       single women                                                                     86.8%
+
+
+
+        coupled men        withheld: quadrature-limited
+
+
+
+
+     coupled women                                                                        89.7%
+
+                       0                  20              40            60               80               100
+                                      extensive-margin accuracy (%), G2-adequate groups only
+
+   G2 gate: Monte Carlo s.e. ≤ 0.25× the sampling s.d. 2 of four groups pass; 2 are quadrature-limited and are
+   withheld, not reported at a worse label.
+
+                                                                                                                 8/19
+Calibration conditioned on prediction: observed hours against predicted hours, by
+predicted decile.
+
+
+
+                                    single men           single women               coupled men         coupled women
+   mean observed hours
+
+
+
+
+                         45
+
+
+                         40
+
+
+                         35
+
+
+                         30
+
+
+                               30         40           30        40            30         40           30        40
+                              predicted E[h | work]   predicted E[h | work]   predicted E[h | work]   predicted E[h | work]
+
+   quadrature-limited; support audit pending
+
+
+
+
+                                                                                                                              9/19
+Evidence for heterogeneous
+opportunities
+The access kernel is estimated, and it varies across households.
+
+                        access constant
+
+                      survey-strata shift
+
+                 regional unemployment
+
+                 regional median income
+
+                                region 2
+
+                                region 3
+
+                                region 4
+
+                                region 5
+
+                                region 6
+
+                                region 7
+
+                                region 8
+
+                                            −4           −3              −2              −1              0
+                                                 S11 singles, log access index; bars are 1.96 x CR1 robust s.e.
+
+
+   S11 singles; horizontal bars are 1.96 × CR1 cluster-robust standard errors. Structural and model-conditional;
+   not causal.
+
+                                                                                                                   10/19
+So is the earning-opportunity kernel: an offer distribution, not a single wage.
+
+
+                   offer location
+
+                  low education
+
+                 high education
+
+                     experience
+
+             experience squared
+
+                 offer dispersion
+
+                   occupation 2
+
+                   occupation 3
+
+                   occupation 4
+                                    0.0            0.5              1.0             1.5              2.0
+                                    S11 singles, log wage-offer density; bars are 1.96 x CR1 robust s.e.
+
+   S11 singles; occupation terms shift the offer location. Dispersion σ̂ = 0.382 (z = 28.7).
+
+
+                                                                                                           11/19
+The welfare measure
+Haydar–Maniquet W 1 : the consumption at home that would leave the household exactly
+as well off.
+
+
+
+
+                                                                                
+                 Wi1 = mi (o; zi ) where ui mi (o), o                               = ui (zi )
+
+
+   zi attained bundle   o the non-employment state    mi the money metric
+
+
+
+   Mapping F is the primary empirical implementation (ruling R1). Mapping M is sensitivity only and requires an
+   unidentified intensity parameter; it is not in the baseline.
+
+
+
+                                                                                                                  12/19
+Under the current specification W 1 coincides with the staying-home equivalent — as a
+fact about this domain.
+
+
+
+                                                             h                  i
+                                  1                      L (j obs )−L (o)
+                                Wi,F      =    Ciobs exp i i βc i
+
+
+
+      Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.
+      No opportunity density g , no proposal q, no shock ε, no intensity κ.
+
+
+   This is an empirical-domain coincidence under log consumption and universally available non-employment. It is
+   not the theorem W 1 = W 4 in the Haydar–Maniquet theory.
+
+
+                                                                                                                   13/19
+Baseline W 1 -F distribution
+Baseline W 1 -F, single adults.
+
+
+
+                                        households                  1 540
+                                        weighted mean               1 435
+                                        weighted median             1 320
+                                        weighted Gini               0.238
+                                        observed workers            1 336
+                                        observed non-workers          204
+
+
+   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+   decomposition, no causal reading.
+
+   Source: MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
+   independently verified b5550af.
+
+
+                                                                                                               14/19
+Baseline W 1 -F, couples.
+
+
+
+
+                                        households                  2 223
+                                        weighted mean               2 496
+                                        weighted median             2 356
+                                        weighted Gini               0.210
+                                        observed workers            2 173
+                                        observed non-workers           50
+
+
+   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+   decomposition, no causal reading.
+
+   Reported separately from singles. No pooled figure: the two samples are separate estimation frames and the
+   welfare unit differs.
+
+
+                                                                                                                15/19
+Decomposition architecture
+Four operators, one at a time: preferences, job access, earning opportunities, household
+endowments and needs.
+
+
+
+
+               operator    replaces, for every household
+               P           its preferences by the common reference preferences
+               A           its job access by the common reference access
+               B           its earning opportunities by the common reference offer distribution
+               D           its household endowments and needs by the common reference budget
+
+
+
+
+   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck.
+
+
+
+                                                                                                            16/19
+The open problem: the baseline is evaluated at the observed bundle, but an operator
+moves it.
+
+
+
+
+                              counterfactual         attained bundle
+           coalition S                                                           WF1 (ziS )   inequality IS
+                               environment                  ziS
+
+
+
+                                               this step is the unresolved one
+
+
+
+
+   Two candidate estimands are under design (R5): a realised-bundle route with conditioned latent heterogeneity,
+   and an ex-ante g -computation route. Neither is executed.
+
+
+
+                                                                                                                   17/19
+Work in progress
+Where the quantitative welfare decomposition stands.
+
+
+
+      Settled. The measure, its reference domain, the measure-correspondence audit, and the
+       descriptive baseline just shown.
+      In design (R5). The counterfactual attainment operator, and the choice between the two
+       estimands.
+      Open. The support audit behind the fit statistics, and coverage of the node set at the
+       hours margin.
+      Withdrawn. Every welfare share previously reported on this project’s slides. They were
+       computed on a different functional.
+
+   No P/A/B/D share is presented in this deck. R6 permits shares only once the revised F implementation has
+   been executed and independently checked; it has not been.
+
+
+                                                                                                              18/19
+What I would like from you today.
+
+
+
+
+      Is Mapping F the reference you would want for this question?
+
+      Which counterfactual attainment estimand would you defend?
+
+      What would convince you the access kernel is identified, given that access and capability
+       are not separated?
+
+
+
+   Thank you.
+
+
+
+
+                                                                                                   19/19
+B1 — Baseline W 1 -F pre-registered checks
+
+
+
+
+                     check                                                 singles     couples
+                     C1 non-workers, max |W 1 − C obs |                    0           0
+                     C2 workers, ratio outside (0, 1)                      0           0
+                     C3 dependency test (g , q, ε, κ)                      PASS        PASS
+                     C4 MEASURE-MAP-1R worked households                   PASS        PASS
+                     C5 indifference identity, max |∆u|                    1.8e-15     1.8e-15
+                     C6 guards triggered                                   0           0
+
+
+
+   All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
+   explained, never clipped; none occurred.
+B2 — The G2 quadrature-adequacy gate
+
+
+
+
+               group                extensive accuracy      G2 label
+               coupled women                      89.7%     ADEQUATE (ratio 0.17)
+               single women                       86.8%     ADEQUATE (ratio 0.24)
+               coupled men                            —     QUADRATURE-LIMITED, withheld
+               single men                             —     QUADRATURE-LIMITED, withheld
+
+
+
+   Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap: 200 replicates over 100
+   nodes. Simulated bands: 500 outcome vectors at fixed θ̂.
+B3 — Authority for what is and is not on these slides
+
+
+
+                 ruling   what it settles here
+                 R1       Mapping F primary; W 1 = W 4 is a domain coincidence
+                 R2       W1-EA retired from the baseline; preserved, not repaired
+                 R4       MEASURE-MAP-1R: the measure-correspondence gate
+                 R5       counterfactual attainment: in design, not executed
+                 R6       what this seminar may present
+                 E1       BASELINE-F-1 authorised, executed, independently verified
+                 E2       C obs is the estimated utility’s own argument
+                 E3       C obs benchmark: not authorised, not produced
+
+
+    R1–R6: docs/normative/JMP W1 fork ruling v1.md, Appendix A. E1–E3: docs/normative/
+    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md.
+
