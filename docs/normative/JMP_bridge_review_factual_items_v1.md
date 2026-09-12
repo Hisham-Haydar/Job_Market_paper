@@ -122,16 +122,16 @@ Total shared-opportunity parameters = 6 + 12 + 6 + 6 = **30**, not the memo's 29
 
 ---
 
-## 4. Check households: sex flag of 1504300 and 1550400
+## 4. Check households: sex flag of H-S1 and H-S2
 
 Both looked up directly in the singles engine-ready frame (`in couples`: False for both — neither is a couple household):
 
 | idhh | dgn | female | household_class |
 |---:|---:|---:|---|
-| 1504300 | 1 | 0 | single |
-| 1550400 | 1 | 0 | single |
+| H-S1 | 1 | 0 | single |
+| H-S2 | 1 | 0 | single |
 
-Coding check across the full singles frame confirms `dgn == 1 ⇔ female == 0` throughout (84,537 rows at `dgn=0/female=1`; 71,003 rows at `dgn=1/female=0`; no exceptions). **Both 1504300 and 1550400 are single men.** This satisfies the review's stated condition for F6 consistency (R9): "the two singles are consistent only if both are men."
+Coding check across the full singles frame confirms `dgn == 1 ⇔ female == 0` throughout (84,537 rows at `dgn=0/female=1`; 71,003 rows at `dgn=1/female=0`; no exceptions). **Both H-S1 and H-S2 are single men.** This satisfies the review's stated condition for F6 consistency (R9): "the two singles are consistent only if both are men."
 
 ---
 
@@ -157,5 +157,5 @@ Invariance, and Job Neutrality are maintained as structural axioms.
 | 1 | Masking incidence at the floor | Masking of market draws by `in_choice_domain` is rare (≪1 masked draw/household on average, max 33/2223/etc.) and does not explain why `h_min` sits above 5h in the frames — that is sampling discreteness of R=100 continuous draws. Only one household (couple, female spouse) has an in-domain draw exactly at the 5h floor. |
 | 2 | Wage support | `[2,170]` (continuous.py `DEFAULT_W_MAX=170.0`) governs the executed draws; `[2,590]` (`s10_estimation_lib_v1.py`, consumed by `_structural_wage_support`) governs the structural log-normal density. The two are inconsistent with each other and unreconciled in source. |
 | 3 | F35 | The S11 specs of record (not the pooled ancestor) carry `beta_h_f35` as a genuinely estimated, non-fixed coefficient (singles and both couples genders). F35 is not the reference band. Shared-opportunity parameter count = 30, not 29. |
-| 4 | Check households | 1504300 and 1550400 are both single men (`dgn=1`, `female=0`). |
+| 4 | Check households | H-S1 and H-S2 are both single men (`dgn=1`, `female=0`). |
 | 5 | Theory domain | `jobs_and_wellbeing.tex:374–377` states $\mathcal J$ (hence every $A$) is finite as a standing assumption of the Results section. |

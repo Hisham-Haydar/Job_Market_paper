@@ -150,14 +150,14 @@ The accepted tables were identified independently of REC-1. The acceptance/certi
 The S11 singles table also carries a **pinned, unused couples-female** theta_l_f = -2.131739110508045; it must not be substituted for either S11 singles-female theta_l_sf or accepted couples-female theta_l_f. Similarly the historical pooled/P2a files carry inactive couples coordinates. No couples parameter is inferred from a singles table. Full table paths and **separate fresh hashes**, including S11 theta arrays, are in Appendix B.
 
 Chosen rows come from:
-- `MNL/outputs/corr/s10_criterion_a_iid_r100_v1/singles_engine_ready_criterion_a_v1.parquet`, source_idhh = 1504300 and 1550400, is_chosen = 1.
-- `MNL/outputs/corr/s10_criterion_a_iid_r100_v1/couples_engine_ready_criterion_a_v1.parquet`, source_idhh = 1485200, is_chosen = 1.
+- `MNL/outputs/corr/s10_criterion_a_iid_r100_v1/singles_engine_ready_criterion_a_v1.parquet`, source_idhh = H-S1 and H-S2, is_chosen = 1.
+- `MNL/outputs/corr/s10_criterion_a_iid_r100_v1/couples_engine_ready_criterion_a_v1.parquet`, source_idhh = H-C1, is_chosen = 1.
 
 **C_obs = consumption = consumption_raw = household EUROMOD-priced disposable consumption after the stored take-up rule; raw, not OECD-equivalised.** The engine argument is c_norm = C_obs/c_scale. This is a numerical normalization of raw consumption, not household equivalisation. Builder evidence: `MNL/experiments/JMP_SEMINAR_SPRINT/runs/s4_corrected_frame/build_s4_corrected_frame_v1.py`:581–589 binds consumption to ils_dispy_takeup without flooring; 848 states resident-member aggregation. Active loader `MNL/dclaborsupply-monorepo/packages/dclaborsupply/src/dclaborsupply/data/loader.py`:581–604 and 654–678 takes c_norm. Active engine `.../likelihood/engine_numpy.py`:528–587 and 1458–1463 evaluates it. S12:607–611 applies OECD equivalisation **after** calculating W1.
 
 The relevant normalizers in the accepted estimation frames are lambda_c = 1938.238719107138 (singles), 4247.875047307145 (couples), and lambda_l = 10 hours. Leisure is 80 − hours. Coefficients include the stored household age, squared-age, and applicable child shifters. At log consumption lambda_c cancels from W1-F. E2 is **resolved as a code/data identification in this return: raw consumption**; the Deputy's E2 ruling remains outside this audit. No ambiguous raw/equivalised branch was found, so no second normative C_obs was invented. The checked couple's m_oecd is 2.1; the two singles' m_oecd is 1.
 
-Neither prescribed household is a nonworker. A read-only selection of is_chosen=1, working=0 singles found the lowest source_idhh **1550400**, which was added. No welfare was calculated for the remaining sample.
+Neither prescribed household is a nonworker. A read-only selection of is_chosen=1, working=0 singles found the lowest source_idhh **H-S2**, which was added. No welfare was calculated for the remaining sample.
 
 ### E2 frozen consumption contract
 
@@ -190,35 +190,35 @@ Per the user's BASELINE_F1 §2 instruction, household levels are retained **only
 
 | Household | (a)=(b) machine precision | W1-F / C_obs | Worker/nonworker criterion | b − a (EUR/month) | W4 utility residual | Dense M − market Measure 6 | Market Measure 6 / W1-F |
 |---|---|---:|---|---:|---:|---:|---:|
-| 1504300 (singles) | PASS | 0.6304345043711471 | PASS: worker, 0 < ratio < 1 | 0.000000000000000e+0 | 0 | 0 | 1.009109531428580 |
-| 1550400 (singles) | PASS | 1.000000000000000 | PASS: nonworker, ratio = 1 exactly | -5.684341886080801e-14 | 0 | 0 | 1.011420950227280 |
-| 1485200 (couples) | PASS | 0.4808435094822490 | PASS: worker, 0 < ratio < 1 | -1.364242052659392e-12 | 0 | 0 | 1.013685498341964 |
+| H-S1 (singles) | PASS | 0.6304345043711471 | PASS: worker, 0 < ratio < 1 | 0.000000000000000e+0 | 0 | 0 | 1.009109531428580 |
+| H-S2 (singles) | PASS | 1.000000000000000 | PASS: nonworker, ratio = 1 exactly | -5.684341886080801e-14 | 0 | 0 | 1.011420950227280 |
+| H-C1 (couples) | PASS | 0.4808435094822490 | PASS: worker, 0 < ratio < 1 | -1.364242052659392e-12 | 0 | 0 | 1.013685498341964 |
 
 The independent W4 inversion has zero utility residual in float64 for all three checks. Differences b−a are within a few floating-point ulps. No household levels are displayed here.
 
-For couple 1485200, the equal-pay equivalent at (5,0) exceeds the minimum by 16.419421020850 EUR/month; at (5,5) the excess is 53.512101589431 EUR/month. The minimum is at **(0,5)**: the woman works 5h; the man is at home. Dense-law M uses that configuration for L(5h), not both spouses at 5h. No sample-wide corner count was calculated.
+For couple H-C1, the equal-pay equivalent at (5,0) exceeds the minimum by 16.419421020850 EUR/month; at (5,5) the excess is 53.512101589431 EUR/month. The minimum is at **(0,5)**: the woman works 5h; the man is at home. Dense-law M uses that configuration for L(5h), not both spouses at 5h. No sample-wide corner count was calculated.
 
 On the historical singles six-node reference grid {0,20,30,35,39,48}, which includes home, literal Measure 6 / W1-F = **1** for both checked singles. The couples Cartesian extension also gives ratio **1** for the checked couple; it is a deterministic comparison universe, not a claimed implemented couples W6 grid. Stored W6 instead uses a mean of exponentials.
 
 ### Stored-versus-literal differences and ratios
 
-S12 baseline state is I00. Both stored singles reference arms agree at baseline for these households. The F4A/F4C pooled keys are 200001504300 and 200001550400, corresponding to source households 1504300 and 1550400 with year_tag=2. This was verified against idorighh in `C:/Users/hisham/MNL/EUROMOD-STORAGE/new_data/fr_p3a_bpool_engine_ready_staged_threeB1__singles.parquet` and F4A:166–178. Full side-by-side levels are restricted; differences below use accepted S11 literal benchmarks.
+S12 baseline state is I00. Both stored singles reference arms agree at baseline for these households. The F4A/F4C pooled keys are 20000_H-S1 and 20000_H-S2, corresponding to source households H-S1 and H-S2 with year_tag=2. This was verified against idorighh in `C:/Users/hisham/MNL/EUROMOD-STORAGE/new_data/fr_p3a_bpool_engine_ready_staged_threeB1__singles.parquet` and F4A:166–178. Full side-by-side levels are restricted; differences below use accepted S11 literal benchmarks.
 
 | Household / artifact | Stored W1 − literal F | Stored W1 / literal F | Stored W4 − literal W4 | Stored W4 / literal W4 | Stored W6 − literal market M6 | Stored W6 / literal market M6 |
 |---|---:|---:|---:|---:|---:|---:|
-| 1504300 / S12 I00 | 2288.964801511282 | 1.90753836343005 | not persisted per household | not available | NOT IMPLEMENTED | not available |
-| 1550400 / S12 I00 | 1910.853416346580 | 5.24217714675763 | not persisted per household | not available | NOT IMPLEMENTED | not available |
-| 1485200 / S12 I00 | -747.472252608102 | 0.718738901018888 | not persisted per household | not available | NOT IMPLEMENTED | not available |
-| 1504300 / F4A | -894.075335961011 | 0.645513261433511 | 4087855.563274350017 | 1621.77011642249 | NOT IMPLEMENTED | not available |
-| 1504300 / F4C | -894.075335961011 | 0.645513261433511 | 46207.524917412527 | 19.3205532535992 | 50434.975293290045 | 20.8161546233874 |
-| 1550400 / F4A | 818.768018234541 | 2.81770037708671 | 3718581.844894440845 | 8256.41236486863 | NOT IMPLEMENTED | not available |
-| 1550400 / F4C | 818.768018234541 | 2.81770037708671 | 43711.478490793925 | 98.0413708965529 | 48339.319032440726 | 107.103573225910 |
-| 1504300 / P2a | -1041.314638162410 | 0.587135205438848 | 5880.958753646906 | 3.33170718883945 | 6190.369568729857 | 3.43222723589166 |
-| 1550400 / P2a | 539.493324091835 | 2.19769848943536 | 1631.246538941956 | 4.62143779791214 | 1734.566399913076 | 4.80732903797976 |
+| H-S1 / S12 I00 | 2288.964801511282 | 1.90753836343005 | not persisted per household | not available | NOT IMPLEMENTED | not available |
+| H-S2 / S12 I00 | 1910.853416346580 | 5.24217714675763 | not persisted per household | not available | NOT IMPLEMENTED | not available |
+| H-C1 / S12 I00 | -747.472252608102 | 0.718738901018888 | not persisted per household | not available | NOT IMPLEMENTED | not available |
+| H-S1 / F4A | -894.075335961011 | 0.645513261433511 | 4087855.563274350017 | 1621.77011642249 | NOT IMPLEMENTED | not available |
+| H-S1 / F4C | -894.075335961011 | 0.645513261433511 | 46207.524917412527 | 19.3205532535992 | 50434.975293290045 | 20.8161546233874 |
+| H-S2 / F4A | 818.768018234541 | 2.81770037708671 | 3718581.844894440845 | 8256.41236486863 | NOT IMPLEMENTED | not available |
+| H-S2 / F4C | 818.768018234541 | 2.81770037708671 | 43711.478490793925 | 98.0413708965529 | 48339.319032440726 | 107.103573225910 |
+| H-S1 / P2a | -1041.314638162410 | 0.587135205438848 | 5880.958753646906 | 3.33170718883945 | 6190.369568729857 | 3.43222723589166 |
+| H-S2 / P2a | 539.493324091835 | 2.19769848943536 | 1631.246538941956 | 4.62143779791214 | 1734.566399913076 | 4.80732903797976 |
 
-Differences are EUR/month and ratios are dimensionless. Historical comparisons include parameter/input-generation differences as well as object definitions; they are not a controlled smoothing-effect estimate. **No stored value is called literal.** Relative to literal Measure 6 on the home-including six-node grid, F4C's W6 gaps are 50457.95106780108 and 48344.46350449004 EUR/month for singles 1504300 and 1550400.
+Differences are EUR/month and ratios are dimensionless. Historical comparisons include parameter/input-generation differences as well as object definitions; they are not a controlled smoothing-effect estimate. **No stored value is called literal.** Relative to literal Measure 6 on the home-including six-node grid, F4C's W6 gaps are 50457.95106780108 and 48344.46350449004 EUR/month for singles H-S1 and H-S2.
 
-S12 W4 was executed (E3/E7), but its per-household values were not retained in the inspected distribution, JSON summaries, or v5 singles cache. A summary cannot identify a selected household's W4. Couples 1485200 has no stored W4/W6 row in these lineages; F4A/F4C/P2a are singles files. Missing entries remain explicitly unavailable; no rerun or invented value fills them.
+S12 W4 was executed (E3/E7), but its per-household values were not retained in the inspected distribution, JSON summaries, or v5 singles cache. A summary cannot identify a selected household's W4. Couples H-C1 has no stored W4/W6 row in these lineages; F4A/F4C/P2a are singles files. Missing entries remain explicitly unavailable; no rerun or invented value fills them.
 
 ## 5. What welfare_identity_check_v1.md verifies
 
