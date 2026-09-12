@@ -160,6 +160,21 @@
       "rendered": "52",
       "source": "s11_singles_parameter_table_v1.csv row count"
     },
+    "WFCoupCEqGini": {
+      "raw": 0.22680484110413296,
+      "rendered": "0.226805",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFCoupCEqMean": {
+      "raw": 2245.109851790558,
+      "rendered": "2\\,245",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFCoupCEqMedian": {
+      "raw": 2062.837017186632,
+      "rendered": "2\\,063",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
     "WFCoupCfive": {
       "raw": 1.7763568394002505e-15,
       "rendered": "1.8e-15",
@@ -200,10 +215,40 @@
       "rendered": "50",
       "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
     },
+    "WFCoupWEqGini": {
+      "raw": 0.19740312655937733,
+      "rendered": "0.197403",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFCoupWEqMean": {
+      "raw": 1310.6149794922967,
+      "rendered": "1\\,311",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFCoupWEqMedian": {
+      "raw": 1237.3524675746198,
+      "rendered": "1\\,237",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
     "WFCoupWorkers": {
       "raw": 2173,
       "rendered": "2\\,173",
       "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFSingCEqGini": {
+      "raw": 0.26329154083246864,
+      "rendered": "0.263292",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFSingCEqMean": {
+      "raw": 1766.4864931555696,
+      "rendered": "1\\,766",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFSingCEqMedian": {
+      "raw": 1588.2908803476698,
+      "rendered": "1\\,588",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
     },
     "WFSingCfive": {
       "raw": 1.7763568394002505e-15,
@@ -245,6 +290,21 @@
       "rendered": "204",
       "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
     },
+    "WFSingWEqGini": {
+      "raw": 0.24980721054552937,
+      "rendered": "0.249807",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFSingWEqMean": {
+      "raw": 1302.0715759810155,
+      "rendered": "1\\,302",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFSingWEqMedian": {
+      "raw": 1165.1408573494155,
+      "rendered": "1\\,165",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
     "WFSingWorkers": {
       "raw": 1336,
       "rendered": "1\\,336",
@@ -267,9 +327,16 @@
       "verified_commit": "b5550af5",
       "weight": "dwt"
     },
+    "couples_equivalised_reporting_v1.json": {
+      "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
+      "memo_commit": "4c4e07e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\couples_equivalised_reporting_v1.json",
+      "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
+      "sha256": "8d6d21b127400bee542eae3decb4b3d227904f6e3eed77d26d1305c0867cc4b7"
+    },
     "g2_adequacy.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\g2_adequacy.csv",
-      "sha256": "370c8bcb4bcee48fda7c493cebe2435000018498cdc4728808e6a91fc85423ef"
+      "sha256": "d8fed2193ff7802b7549caea00ef89366e0579e0adfa58197ccc01c0411125aa"
     },
     "hard_classification_metrics.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\hard_classification_metrics.csv",
@@ -277,7 +344,7 @@
     },
     "run_provenance.json": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\run_provenance.json",
-      "sha256": "a1a6717b1df26c1734a45d0d8efbe773e1be49a37bf2de1ac0f31ef1f2797f8e"
+      "sha256": "f77ccc2a7ff4bb5a2a6e9e1cd5411ccb75f258fc95e861dcf64842c4a1906ffc"
     },
     "s11_couples_parameter_table_v1.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_couples_parameter_table_v1.csv",
@@ -286,6 +353,13 @@
     "s11_singles_parameter_table_v1.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_singles_parameter_table_v1.csv",
       "sha256": "cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab"
+    },
+    "singles_equivalised_reporting_v1.json": {
+      "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
+      "memo_commit": "4c4e07e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\singles_equivalised_reporting_v1.json",
+      "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
+      "sha256": "e34c3bfa0abe5dc9c1fe00a1c04d022eab280b84111f048d14ef03bdf9f2a9e6"
     }
   }
 }

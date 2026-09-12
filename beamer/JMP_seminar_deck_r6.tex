@@ -41,6 +41,10 @@
 \newcommand{\wfunits}{\caveat{Units: household EUR/month, unequivalised;
   survey weight \texttt{dwt}. Descriptive baseline; no counterfactual,
   no decomposition, no causal reading.}}
+\newcommand{\wfunitseq}{\caveat{Units: EUR/month, household-equivalised
+  (modified-OECD scale); survey weight \texttt{dwt}. A descriptive dispersion
+  comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL,
+  pending economics review.}}
 
 \title{Unequal Job Opportunities and the Measurement of Welfare Inequality}
 \author{Hisham Haydar}
@@ -358,82 +362,86 @@ the baseline was allowed to run.}
 \end{frame}
 
 % ================================================================ 6 BASELINE
-\section{Baseline $\Wone$-F distribution}
+\section{Equivalised $\Wone$-F distribution (primary)}
 
 \begin{frame}
-\headlineframe{Baseline $\Wone$-F, single adults.}
+\headlineframe{Baseline $\Wone$-F, equivalised, single adults.}
 \vfill
-\decktable{\begin{tabular}{lr}
+\decktable{\begin{tabular}{lrr}
 \toprule
-households                    & \WFSingN{} \\
-weighted mean                 & \WFSingMean{} \\
-weighted median               & \WFSingMedian{} \\
-weighted Gini                 & \WFSingGini{} \\
+ & $C^{\mathrm{eq}}$ & $\Wone_{F}{}^{\mathrm{eq}}$ \\
 \midrule
-observed workers              & \WFSingWorkers{} \\
-observed non-workers          & \WFSingNonworkers{} \\
+households        & \WFSingN{}         & \WFSingN{} \\
+weighted mean      & \WFSingCEqMean{}   & \WFSingWEqMean{} \\
+weighted median    & \WFSingCEqMedian{} & \WFSingWEqMedian{} \\
+weighted Gini      & \WFSingCEqGini{}   & \WFSingWEqGini{} \\
 \bottomrule
 \end{tabular}}
 \vfill
-\wfunits
-\caveat{Source: \texttt{MNL/outputs/welfare/baseline\_f1\_v1/}
-\texttt{baseline\_f1\_full\_sample\_report\_v1.md}, commit
-\texttt{6048c9f}, independently verified \texttt{b5550af}.}
-\note{Q\&A note --- BASELINE-F-1 ruling, E1, and ruling R6.
-This is the literal observed-bundle Mapping-F distribution and nothing more.
-R6 permits it to be shown as a descriptive baseline because the
-measure-correspondence audit closed and the computation was independently
-checked in time. Two questions I expect. First, why no distribution plot:
-the household-level values live in the restricted environment and may not be
-committed, so the repository carries aggregates only. Second, why no
-comparison against observed consumption: that benchmark, E3, is not
-authorised, it was not produced by the run, and I am not going to construct
-it on the slide. For non-workers the measure equals observed consumption
-exactly by construction; for workers it is strictly below it.}
+\wfunitseq
+\caveat{Source: \texttt{docs/results/}
+\texttt{JMP\_BASELINE\_F1\_equivalised\_reporting\_v1.md}, commit
+\texttt{4c4e07e}, over the verified construction (MNL commit
+\texttt{6048c9f}, independently verified \texttt{b5550af}). This is a
+descriptive dispersion comparison ($C^{\mathrm{eq}}$ against
+$\Wone_F{}^{\mathrm{eq}}$ within the singles sample), not a welfare-loss
+index.}
+\note{Q\&A note --- BASELINE-F-1 ruling, E3-EQ, and ruling R6.
+Equivalised results are primary on this slide: the household-equivalised
+Gini of $\Wone_F$ is below the household-equivalised Gini of observed
+consumption, for singles. I show that as a descriptive dispersion
+comparison only, not as a welfare-loss statement --- the ratio
+$\Wone_F/C^{\mathrm{obs}}$ reflects the systematic leisure term at the
+observed job relative to home leisure, not a monetary loss, and I am not
+constructing a loss index on this slide. The modified-OECD equivalence
+scale used here is flagged PROVISIONAL, pending an economics review that
+has not yet closed; I show the ratified units only, and I will say so if
+asked. The unequivalised construction this equivalises is unchanged and is
+in the backup appendix.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{Baseline $\Wone$-F, couples.}
+\headlineframe{Baseline $\Wone$-F, equivalised, couples.}
 \vfill
-\decktable{\begin{tabular}{lr}
+\decktable{\begin{tabular}{lrr}
 \toprule
-households                    & \WFCoupN{} \\
-weighted mean                 & \WFCoupMean{} \\
-weighted median               & \WFCoupMedian{} \\
-weighted Gini                 & \WFCoupGini{} \\
+ & $C^{\mathrm{eq}}$ & $\Wone_{F}{}^{\mathrm{eq}}$ \\
 \midrule
-observed workers              & \WFCoupWorkers{} \\
-observed non-workers          & \WFCoupNonworkers{} \\
+households        & \WFCoupN{}         & \WFCoupN{} \\
+weighted mean      & \WFCoupCEqMean{}   & \WFCoupWEqMean{} \\
+weighted median    & \WFCoupCEqMedian{} & \WFCoupWEqMedian{} \\
+weighted Gini      & \WFCoupCEqGini{}   & \WFCoupWEqGini{} \\
 \bottomrule
 \end{tabular}}
 \vfill
-\wfunits
-\caveat{Reported separately from singles. No pooled figure: the two samples
-are separate estimation frames and the welfare unit differs.}
-\note{Q\&A note --- BASELINE-F-1 ruling, E1, and ruling R6.
-The couples baseline is on its own slide and there is no pooled row, because
-pooling would need an equivalence scale and the scale is a separate normative
-choice that is not settled. The obvious question is why the couples Gini is
-lower than the singles Gini when the level is higher. I would not read that
-as a finding yet: these are unequivalised household totals, couples pool two
-earnings streams, and the non-employment count is small. The pricing-floor
-issue that affects the neither-work bundle for a subset of couples does not
-enter here, because this baseline is evaluated at the observed bundle and
-never prices the home state.}
+\wfunitseq
+\caveat{Reported separately from singles: no pooled figure, and no
+cross-sample level comparison is drawn on this slide or elsewhere in this
+deck. Source: same memo and commits as the singles equivalised slide.}
+\note{Q\&A note --- BASELINE-F-1 ruling, E3-EQ, and ruling R6.
+Same descriptive comparison, on the couples sample. I am deliberately not
+placing this table next to the singles one: the two are separate estimation
+frames, the welfare unit differs, and R6 forbids presenting a singles/couples
+equivalised-level comparison as a finding. If asked how the couples numbers
+compare to singles, the honest answer is that this deck does not draw that
+comparison, and I would want to see it examined outside a seminar slide
+before treating it as informative. The scale-provisional caveat from the
+singles slide applies here too.}
 \end{frame}
 
 % ================================================================ 7 ARCHITECTURE
 \section{Decomposition architecture}
 
 \begin{frame}
-\headlineframe{Four operators, one at a time: \pref{}, \acc{}, \earn{},
-\needs{}.}
+\headlineframe{Four operators, one at a time: systematic utility
+heterogeneity, \acc{}, \earn{}, \needs{}.}
 \vfill
 \decktable{\begin{tabular}{ll}
 \toprule
 operator & replaces, for every household \\
 \midrule
-$P$ & its \pref{} by the common reference preferences \\
+$P$ & its systematic utility heterogeneity (tastes + reduced-form time
+      constraints) by the common reference \\
 $A$ & its \acc{} by the common reference access \\
 $B$ & its \earn{} by the common reference offer distribution \\
 $D$ & its \needs{} by the common reference budget \\
@@ -441,7 +449,8 @@ $D$ & its \needs{} by the common reference budget \\
 \end{tabular}}
 \vfill
 \caveat{Operators only. No share, no magnitude, no ordering is claimed on
-this slide or anywhere in this deck.}
+this slide or anywhere in this deck. Final decomposition semantics are work
+in progress.}
 \note{Q\&A note --- ruling R2 and ruling R6.
 This is the architecture and deliberately nothing else. The earlier version
 of this talk put shares on this slide. Those shares were computed on an
@@ -450,7 +459,15 @@ established is a different object from Haydar--Maniquet measure one. R2
 retires them from the baseline: they are preserved as historical research
 artifacts, they are not called measure one, and I am not presenting them as
 current results. If asked what the shares were, the answer is that I am not
-going to quote a number whose defining functional has been withdrawn.}
+going to quote a number whose defining functional has been withdrawn.
+On $P$: I no longer call this operator a preference or taste parameter.
+Children enter the current structural specification through a reduced-form
+female time-constraint shifter. In a unitary labour-supply model this term
+may capture both tastes and childcare/home-production constraints; we
+therefore do not interpret it as pure preference heterogeneity. That is why
+$P$ is labelled systematic utility heterogeneity, tastes plus reduced-form
+time constraints, rather than preferences alone, and why the final semantics
+of this decomposition are still work in progress.}
 \end{frame}
 
 \begin{frame}
@@ -547,7 +564,64 @@ what evidence would settle it than defend the current position.}
 \appendix
 
 \begin{frame}
-\headlineframe{B1 --- Baseline $\Wone$-F pre-registered checks}
+\headlineframe{B1 --- Baseline $\Wone$-F, unequivalised, single adults
+(verification backup).}
+\vfill
+\decktable{\begin{tabular}{lr}
+\toprule
+households                    & \WFSingN{} \\
+weighted mean                 & \WFSingMean{} \\
+weighted median               & \WFSingMedian{} \\
+weighted Gini                 & \WFSingGini{} \\
+\midrule
+observed workers              & \WFSingWorkers{} \\
+observed non-workers          & \WFSingNonworkers{} \\
+\bottomrule
+\end{tabular}}
+\vfill
+\wfunits
+\caveat{Secondary/verification slide: the equivalised singles slide (\S6) is
+primary. Source: \texttt{MNL/outputs/welfare/baseline\_f1\_v1/}
+\texttt{baseline\_f1\_full\_sample\_report\_v1.md}, commit
+\texttt{6048c9f}, independently verified \texttt{b5550af}.}
+\note{This is the literal observed-bundle Mapping-F distribution before
+equivalisation, kept here so any question about the un-scaled level or about
+worker/non-worker counts has a one-slide answer. It is not the headline: the
+equivalised slide in \S6 is. For non-workers the measure equals observed
+consumption exactly by construction; for workers it is strictly below it.}
+\end{frame}
+
+\begin{frame}
+\headlineframe{B2 --- Baseline $\Wone$-F, unequivalised, couples
+(verification backup).}
+\vfill
+\decktable{\begin{tabular}{lr}
+\toprule
+households                    & \WFCoupN{} \\
+weighted mean                 & \WFCoupMean{} \\
+weighted median               & \WFCoupMedian{} \\
+weighted Gini                 & \WFCoupGini{} \\
+\midrule
+observed workers              & \WFCoupWorkers{} \\
+observed non-workers          & \WFCoupNonworkers{} \\
+\bottomrule
+\end{tabular}}
+\vfill
+\wfunits
+\caveat{Secondary/verification slide: the equivalised couples slide (\S6) is
+primary. Reported separately from singles. No pooled figure: the two samples
+are separate estimation frames and the welfare unit differs.}
+\note{The couples backup is on its own slide and there is no pooled row,
+because pooling would need an equivalence scale and the scale is a separate
+normative choice not yet ratified. These are unequivalised household totals:
+couples pool two earnings streams, and the non-employment count is small.
+The pricing-floor issue that affects the neither-work bundle for a subset of
+couples does not enter here, because this baseline is evaluated at the
+observed bundle and never prices the home state.}
+\end{frame}
+
+\begin{frame}
+\headlineframe{B3 --- Baseline $\Wone$-F pre-registered checks}
 \vfill
 \decktable{\begin{tabular}{lll}
 \toprule
@@ -572,7 +646,7 @@ confirms the indifference identity to machine precision.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B2 --- The G2 quadrature-adequacy gate}
+\headlineframe{B4 --- The G2 quadrature-adequacy gate}
 \vfill
 \decktable{\begin{tabular}{lrl}
 \toprule
@@ -597,7 +671,7 @@ a quadrature-limited number carries no information about fit.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B3 --- Authority for what is and is not on these slides}
+\headlineframe{B5 --- Authority for what is and is not on these slides}
 \vfill
 \decktable{\begin{tabular}{ll}
 \toprule
@@ -611,12 +685,16 @@ R6 & what this seminar may present \\
 E1 & BASELINE-F-1 authorised, executed, independently verified \\
 E2 & $C^{\mathrm{obs}}$ is the estimated utility's own argument \\
 E3 & $C^{\mathrm{obs}}$ benchmark: not authorised, not produced \\
+E3-EQ & equivalised reporting (\S6) is primary; scale PROVISIONAL \\
 \bottomrule
 \end{tabular}}
 \vfill
 \caveat{R1--R6: \texttt{docs/normative/JMP\_W1\_fork\_ruling\_v1.md},
 Appendix A. E1--E3: \texttt{docs/normative/}
-\texttt{JMP\_W1\_BASELINE\_F1\_authorization\_and\_Cobs\_ruling\_v1.md}.}
+\texttt{JMP\_W1\_BASELINE\_F1\_authorization\_and\_Cobs\_ruling\_v1.md}.
+E3-EQ: \texttt{docs/results/}
+\texttt{JMP\_BASELINE\_F1\_equivalised\_reporting\_v1.md}, commit
+\texttt{4c4e07e}.}
 \note{This backup slide exists so that any question of the form ``why is
 that not here'' has a one-line answer with a document behind it.}
 \end{frame}

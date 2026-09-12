@@ -312,71 +312,77 @@ fact about this domain.                                                         
 
 
                                                                                                                    13/19
-Baseline W 1 -F distribution
-Baseline W 1 -F, single adults.                                                                                        Q&A note — BASELINE-F-1 ruling, E1, and ruling R6. This is the literal observed-bundle Mapping-F
-                                                                                                                       distribution and nothing more. R6 permits it to be shown as a descriptive baseline because the
-                                                                                                                       measure-correspondence audit closed and the computation was independently checked in time. Two
-                                                                                                                       questions I expect. First, why no distribution plot: the household-level values live in the restricted
-                                                                                                                       environment and may not be committed, so the repository carries aggregates only. Second, why no
-                                        households                  1 540                                              comparison against observed consumption: that benchmark, E3, is not authorised, it was not produced
-                                        weighted mean               1 435                                              by the run, and I am not going to construct it on the slide. For non-workers the measure equals
-                                        weighted median             1 320                                              observed consumption exactly by construction; for workers it is strictly below it.
-                                        weighted Gini               0.238
-                                        observed workers            1 336
-                                        observed non-workers          204
+Equivalised W 1 -F distribution
+(primary)
+Baseline W 1 -F, equivalised, single adults.                                                                            Q&A note — BASELINE-F-1 ruling, E3-EQ, and ruling R6. Equivalised results are primary on this
+                                                                                                                        slide: the household-equivalised Gini of WF1 is below the household-equivalised Gini of observed
+                                                                                                                        consumption, for singles. I show that as a descriptive dispersion comparison only, not as a welfare-loss
+                                                                                                                        statement — the ratio WF1 /C obs reflects the systematic leisure term at the observed job relative to
+                                                                                                                        home leisure, not a monetary loss, and I am not constructing a loss index on this slide. The
+                                                             C eq        WF1 eq                                         modified-OECD equivalence scale used here is flagged PROVISIONAL, pending an economics review
+                                 households                1 540         1 540                                          that has not yet closed; I show the ratified units only, and I will say so if asked. The unequivalised
+                                                                                                                        construction this equivalises is unchanged and is in the backup appendix.
+                                 weighted mean             1 766         1 302
+                                 weighted median           1 588         1 165
+                                 weighted Gini         0.263292      0.249807
 
 
-   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
-   decomposition, no causal reading.
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
 
-   Source: MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
-   independently verified b5550af.
-
-
-                                                                                                               14/19
-Baseline W 1 -F, couples.                                                                                               Q&A note — BASELINE-F-1 ruling, E1, and ruling R6. The couples baseline is on its own slide and
-                                                                                                                        there is no pooled row, because pooling would need an equivalence scale and the scale is a separate
-                                                                                                                        normative choice that is not settled. The obvious question is why the couples Gini is lower than the
-                                                                                                                        singles Gini when the level is higher. I would not read that as a finding yet: these are unequivalised
-                                                                                                                        household totals, couples pool two earnings streams, and the non-employment count is small. The
-                                        households                  2 223                                               pricing-floor issue that affects the neither-work bundle for a subset of couples does not enter here,
-                                        weighted mean               2 496                                               because this baseline is evaluated at the observed bundle and never prices the home state.
-                                        weighted median             2 356
-                                        weighted Gini               0.210
-                                        observed workers            2 173
-                                        observed non-workers           50
+   Source: docs/results/ JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e, over the verified
+   construction (MNL commit 6048c9f, independently verified b5550af). This is a descriptive dispersion
+   comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
 
 
-   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
-   decomposition, no causal reading.
+                                                                                                                14/19
+Baseline W 1 -F, equivalised, couples.                                                                                       Q&A note — BASELINE-F-1 ruling, E3-EQ, and ruling R6. Same descriptive comparison, on the
+                                                                                                                             couples sample. I am deliberately not placing this table next to the singles one: the two are separate
+                                                                                                                             estimation frames, the welfare unit differs, and R6 forbids presenting a singles/couples equivalised-level
+                                                                                                                             comparison as a finding. If asked how the couples numbers compare to singles, the honest answer is
+                                                                                                                             that this deck does not draw that comparison, and I would want to see it examined outside a seminar
+                                                                C eq        WF1 eq                                           slide before treating it as informative. The scale-provisional caveat from the singles slide applies here
+                                                                                                                             too.
+                                   households                 2 223         2 223
+                                   weighted mean              2 245         1 311
+                                   weighted median            2 063         1 237
+                                   weighted Gini          0.226805      0.197403
 
-   Reported separately from singles. No pooled figure: the two samples are separate estimation frames and the
-   welfare unit differs.
+
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
+
+   Reported separately from singles: no pooled figure, and no cross-sample level comparison is drawn on this slide
+   or elsewhere in this deck. Source: same memo and commits as the singles equivalised slide.
 
 
-                                                                                                                15/19
+                                                                                                                     15/19
 Decomposition architecture
-Four operators, one at a time: preferences, job access, earning opportunities, household                            Q&A note — ruling R2 and ruling R6. This is the architecture and deliberately nothing else. The
-endowments and needs.                                                                                               earlier version of this talk put shares on this slide. Those shares were computed on an ex-ante
-                                                                                                                    inclusive-value functional, which the measure-correspondence audit established is a different object
-                                                                                                                    from Haydar–Maniquet measure one. R2 retires them from the baseline: they are preserved as
-                                                                                                                    historical research artifacts, they are not called measure one, and I am not presenting them as current
-                                                                                                                    results. If asked what the shares were, the answer is that I am not going to quote a number whose
-                                                                                                                    defining functional has been withdrawn.
-               operator    replaces, for every household
-               P           its preferences by the common reference preferences
-               A           its job access by the common reference access
-               B           its earning opportunities by the common reference offer distribution
-               D           its household endowments and needs by the common reference budget
+Four operators, one at a time: systematic utility heterogeneity, job access, earning                                                      Q&A note — ruling R2 and ruling R6. This is the architecture and deliberately nothing else. The
+opportunities, household endowments and needs.                                                                                            earlier version of this talk put shares on this slide. Those shares were computed on an ex-ante
+                                                                                                                                          inclusive-value functional, which the measure-correspondence audit established is a different object
+                                                                                                                                          from Haydar–Maniquet measure one. R2 retires them from the baseline: they are preserved as
+                                                                                                                                          historical research artifacts, they are not called measure one, and I am not presenting them as current
+                                                                                                                                          results. If asked what the shares were, the answer is that I am not going to quote a number whose
+                                                                                                                                          defining functional has been withdrawn. On P: I no longer call this operator a preference or taste
+                                                                                                                                          parameter. Children enter the current structural specification through a reduced-form female
+               operator   replaces, for every household
+                                                                                                                                          time-constraint shifter. In a unitary labour-supply model this term may capture both tastes and
+               P          its systematic utility heterogeneity (tastes + reduced-form time constraints) by the common reference
+               A          its job access by the common reference access
+                                                                                                                                          childcare/home-production constraints; we therefore do not interpret it as pure preference
+               B          its earning opportunities by the common reference offer distribution                                            heterogeneity. That is why P is labelled systematic utility heterogeneity, tastes plus reduced-form time
+               D          its household endowments and needs by the common reference budget                                               constraints, rather than preferences alone, and why the final semantics of this decomposition are still
+                                                                                                                                          work in progress.
+
+
+   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck. Final
+   decomposition semantics are work in progress.
 
 
 
 
-   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck.
-
-
-
-                                                                                                            16/19
+                                                                                                                                  16/19
 The open problem: the baseline is evaluated at the observed bundle, but an operator                                        Q&A note — ruling R5. Here is the honest statement of where the paper is stuck. The welfare
 moves it.                                                                                                                  measure is evaluated at the bundle the household actually attained. Under a counterfactual that
                                                                                                                            equalises access, the household would attain a different bundle, and the measure needs that bundle.
@@ -443,7 +449,43 @@ moves it.                                                                       
 
 
                                                                                                    19/19
-B1 — Baseline W 1 -F pre-registered checks                                                                    The checks are the reason the baseline is presentable. C1 and C2 are the model-implied domain
+B1 — Baseline W 1 -F, unequivalised, single adults (verification backup).                                       This is the literal observed-bundle Mapping-F distribution before equivalisation, kept here so any
+                                                                                                                question about the un-scaled level or about worker/non-worker counts has a one-slide answer. It is not
+                                                                                                                the headline: the equivalised slide in §6 is. For non-workers the measure equals observed consumption
+                                                                                                                exactly by construction; for workers it is strictly below it.
+                                         households                  1 540
+                                         weighted mean               1 435
+                                         weighted median             1 320
+                                         weighted Gini               0.238
+                                         observed workers            1 336
+                                         observed non-workers          204
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised singles slide (§6) is primary. Source:
+    MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
+    independently verified b5550af.
+B2 — Baseline W 1 -F, unequivalised, couples (verification backup).                                                     The couples backup is on its own slide and there is no pooled row, because pooling would need an
+                                                                                                                        equivalence scale and the scale is a separate normative choice not yet ratified. These are unequivalised
+                                                                                                                        household totals: couples pool two earnings streams, and the non-employment count is small. The
+                                                                                                                        pricing-floor issue that affects the neither-work bundle for a subset of couples does not enter here,
+                                                                                                                        because this baseline is evaluated at the observed bundle and never prices the home state.
+                                           households                   2 223
+                                           weighted mean                2 496
+                                           weighted median              2 356
+                                           weighted Gini                0.210
+                                           observed workers             2 173
+                                           observed non-workers            50
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised couples slide (§6) is primary. Reported separately from singles. No
+    pooled figure: the two samples are separate estimation frames and the welfare unit differs.
+B3 — Baseline W 1 -F pre-registered checks                                                                    The checks are the reason the baseline is presentable. C1 and C2 are the model-implied domain
                                                                                                               conditions. C3 is the dependency test: the baseline API accepts no opportunity density, no proposal,
                                                                                                               no shock and no intensity, and does not read them indirectly. C5 inverts the utility numerically and
                                                                                                               confirms the indifference identity to machine precision.
@@ -460,7 +502,7 @@ moves it.                                                                       
 
    All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
    explained, never clipped; none occurred.
-B2 — The G2 quadrature-adequacy gate                                                                           The gate was fixed before the statistics were computed. It asks whether numerical integration error is
+B4 — The G2 quadrature-adequacy gate                                                                           The gate was fixed before the statistics were computed. It asks whether numerical integration error is
                                                                                                                small enough relative to sampling variation for the statistic to be a statement about the model rather
                                                                                                                than about the quadrature. Withholding rather than downgrading is deliberate: a quadrature-limited
                                                                                                                number carries no information about fit.
@@ -477,22 +519,21 @@ moves it.                                                                       
 
    Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap: 200 replicates over 100
    nodes. Simulated bands: 500 outcome vectors at fixed θ̂.
-B3 — Authority for what is and is not on these slides                                    This backup slide exists so that any question of the form “why is that not here” has a one-line answer
+B5 — Authority for what is and is not on these slides                                    This backup slide exists so that any question of the form “why is that not here” has a one-line answer
                                                                                          with a document behind it.
 
-
-
-                 ruling   what it settles here
-                 R1       Mapping F primary; W 1 = W 4 is a domain coincidence
-                 R2       W1-EA retired from the baseline; preserved, not repaired
-                 R4       MEASURE-MAP-1R: the measure-correspondence gate
-                 R5       counterfactual attainment: in design, not executed
-                 R6       what this seminar may present
-                 E1       BASELINE-F-1 authorised, executed, independently verified
-                 E2       C obs is the estimated utility’s own argument
-                 E3       C obs benchmark: not authorised, not produced
-
+                 ruling    what it settles here
+                 R1        Mapping F primary; W 1 = W 4 is a domain coincidence
+                 R2        W1-EA retired from the baseline; preserved, not repaired
+                 R4        MEASURE-MAP-1R: the measure-correspondence gate
+                 R5        counterfactual attainment: in design, not executed
+                 R6        what this seminar may present
+                 E1        BASELINE-F-1 authorised, executed, independently verified
+                 E2        C obs is the estimated utility’s own argument
+                 E3        C obs benchmark: not authorised, not produced
+                 E3-EQ     equivalised reporting (§6) is primary; scale PROVISIONAL
 
     R1–R6: docs/normative/JMP W1 fork ruling v1.md, Appendix A. E1–E3: docs/normative/
-    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md.
+    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md. E3-EQ: docs/results/
+    JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e.
 

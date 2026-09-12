@@ -29,6 +29,7 @@ MNL = REPO / "MNL"
 POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2"
 S11 = MNL / "experiments" / "JMP_SEMINAR_SPRINT" / "runs" / "s11_welfare_specs_of_record"
 W1F = MNL / "outputs" / "welfare" / "baseline_f1_v1"
+W1FEQ = MNL / "outputs" / "welfare" / "baseline_f1_equivalised_v1"
 
 OUT_TEX = HERE / "deck_numbers_r6.tex"
 OUT_JSON = HERE / "build" / "r6_number_provenance.json"
@@ -61,6 +62,13 @@ def eur(x: float) -> str:
 
 def gini(x: float) -> str:
     return "%.3f" % x
+
+
+def gini6(x: float) -> str:
+    """Six decimals: the precision the E3-EQ equivalised memo reports the
+    headline equivalised Ginis at (docs/results/
+    JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e)."""
+    return "%.6f" % x
 
 
 def pct1(x: float) -> str:
@@ -124,6 +132,41 @@ def main() -> int:
         mac("WF" + tag + "Cfive", "%.1e" % c["C5"]["max_abs_utility_difference"],
             src.replace("samples", "checks") + " C5",
             c["C5"]["max_abs_utility_difference"])
+    tex.append("")
+
+    # ------------------------------------------------------------ W1-F (E3-EQ)
+    # Equivalised reporting is PRIMARY per the Deputy/PI ruling item B.  Pure
+    # re-reporting of the already-verified BASELINE-F-1 W_F/C_obs values under
+    # the modified-OECD household scale; no new welfare construction.  Source:
+    # docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md (commit
+    # 4c4e07e), over the verified construction (MNL 6048c9f, verified
+    # b5550af).  Scale status is PROVISIONAL_PENDING_ECONOMICS_REVIEW for both
+    # samples: the memo flags this explicitly and this generator refuses to
+    # emit a number if either sample's status ever drifts from that string.
+    scale_status_seen: set[str] = set()
+    for grp, tag in (("singles", "Sing"), ("couples", "Coup")):
+        p = W1FEQ / (grp + "_equivalised_reporting_v1.json")
+        eq = json.loads(p.read_text(encoding="utf-8"))
+        prov["sources"][p.name] = {
+            "path": str(p), "sha256": sha256(p),
+            "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
+            "memo_commit": "4c4e07e", "scale_status": eq["equivalised"]["scale_status"]}
+        scale_status_seen.add(eq["equivalised"]["scale_status"])
+        for obj, otag in (("C_eq", "CEq"), ("W_F_eq", "WEq")):
+            v = eq["equivalised"][obj]
+            src = "%s equivalised.%s" % (p.name, obj)
+            mac("WF" + tag + otag + "Gini", gini6(v["dwt_weighted_gini"]), src,
+                v["dwt_weighted_gini"])
+            mac("WF" + tag + otag + "Mean", eur(v["dwt_weighted_mean"]), src,
+                v["dwt_weighted_mean"])
+            mac("WF" + tag + otag + "Median", eur(v["dwt_weighted_median"]), src,
+                v["dwt_weighted_median"])
+    if scale_status_seen != {"PROVISIONAL_PENDING_ECONOMICS_REVIEW"}:
+        raise SystemExit(
+            "REFUSED: equivalence-scale status is not "
+            "PROVISIONAL_PENDING_ECONOMICS_REVIEW for both samples "
+            "(saw %s); the deck's provisional-status caveat would be stale"
+            % sorted(scale_status_seen))
     tex.append("")
 
     # ------------------------------------------------------------- fit / G2

@@ -293,69 +293,72 @@ fact about this domain.
 
 
                                                                                                                    13/19
-Baseline W 1 -F distribution
-Baseline W 1 -F, single adults.
-
-
-
-                                        households                  1 540
-                                        weighted mean               1 435
-                                        weighted median             1 320
-                                        weighted Gini               0.238
-                                        observed workers            1 336
-                                        observed non-workers          204
-
-
-   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
-   decomposition, no causal reading.
-
-   Source: MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
-   independently verified b5550af.
-
-
-                                                                                                               14/19
-Baseline W 1 -F, couples.
+Equivalised W 1 -F distribution
+(primary)
+Baseline W 1 -F, equivalised, single adults.
 
 
 
 
-                                        households                  2 223
-                                        weighted mean               2 496
-                                        weighted median             2 356
-                                        weighted Gini               0.210
-                                        observed workers            2 173
-                                        observed non-workers           50
+                                                             C eq        WF1 eq
+                                 households                1 540         1 540
+                                 weighted mean             1 766         1 302
+                                 weighted median           1 588         1 165
+                                 weighted Gini         0.263292      0.249807
 
 
-   Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
-   decomposition, no causal reading.
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
 
-   Reported separately from singles. No pooled figure: the two samples are separate estimation frames and the
-   welfare unit differs.
+   Source: docs/results/ JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e, over the verified
+   construction (MNL commit 6048c9f, independently verified b5550af). This is a descriptive dispersion
+   comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
 
 
-                                                                                                                15/19
+                                                                                                                14/19
+Baseline W 1 -F, equivalised, couples.
+
+
+
+
+                                                                C eq        WF1 eq
+                                   households                 2 223         2 223
+                                   weighted mean              2 245         1 311
+                                   weighted median            2 063         1 237
+                                   weighted Gini          0.226805      0.197403
+
+
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
+
+   Reported separately from singles: no pooled figure, and no cross-sample level comparison is drawn on this slide
+   or elsewhere in this deck. Source: same memo and commits as the singles equivalised slide.
+
+
+                                                                                                                     15/19
 Decomposition architecture
-Four operators, one at a time: preferences, job access, earning opportunities, household
-endowments and needs.
+Four operators, one at a time: systematic utility heterogeneity, job access, earning
+opportunities, household endowments and needs.
 
 
 
 
-               operator    replaces, for every household
-               P           its preferences by the common reference preferences
-               A           its job access by the common reference access
-               B           its earning opportunities by the common reference offer distribution
-               D           its household endowments and needs by the common reference budget
+               operator   replaces, for every household
+               P          its systematic utility heterogeneity (tastes + reduced-form time constraints) by the common reference
+               A          its job access by the common reference access
+               B          its earning opportunities by the common reference offer distribution
+               D          its household endowments and needs by the common reference budget
 
 
 
 
-   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck.
+   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck. Final
+   decomposition semantics are work in progress.
 
 
 
-                                                                                                            16/19
+
+                                                                                                                                  16/19
 The open problem: the baseline is evaluated at the observed bundle, but an operator
 moves it.
 
@@ -418,7 +421,44 @@ moves it.
 
 
                                                                                                    19/19
-B1 — Baseline W 1 -F pre-registered checks
+B1 — Baseline W 1 -F, unequivalised, single adults (verification backup).
+
+
+
+
+                                         households                  1 540
+                                         weighted mean               1 435
+                                         weighted median             1 320
+                                         weighted Gini               0.238
+                                         observed workers            1 336
+                                         observed non-workers          204
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised singles slide (§6) is primary. Source:
+    MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
+    independently verified b5550af.
+B2 — Baseline W 1 -F, unequivalised, couples (verification backup).
+
+
+
+
+                                           households                   2 223
+                                           weighted mean                2 496
+                                           weighted median              2 356
+                                           weighted Gini                0.210
+                                           observed workers             2 173
+                                           observed non-workers            50
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised couples slide (§6) is primary. Reported separately from singles. No
+    pooled figure: the two samples are separate estimation frames and the welfare unit differs.
+B3 — Baseline W 1 -F pre-registered checks
 
 
 
@@ -435,7 +475,7 @@ moves it.
 
    All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
    explained, never clipped; none occurred.
-B2 — The G2 quadrature-adequacy gate
+B4 — The G2 quadrature-adequacy gate
 
 
 
@@ -450,21 +490,21 @@ moves it.
 
    Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap: 200 replicates over 100
    nodes. Simulated bands: 500 outcome vectors at fixed θ̂.
-B3 — Authority for what is and is not on these slides
+B5 — Authority for what is and is not on these slides
 
 
-
-                 ruling   what it settles here
-                 R1       Mapping F primary; W 1 = W 4 is a domain coincidence
-                 R2       W1-EA retired from the baseline; preserved, not repaired
-                 R4       MEASURE-MAP-1R: the measure-correspondence gate
-                 R5       counterfactual attainment: in design, not executed
-                 R6       what this seminar may present
-                 E1       BASELINE-F-1 authorised, executed, independently verified
-                 E2       C obs is the estimated utility’s own argument
-                 E3       C obs benchmark: not authorised, not produced
-
+                 ruling    what it settles here
+                 R1        Mapping F primary; W 1 = W 4 is a domain coincidence
+                 R2        W1-EA retired from the baseline; preserved, not repaired
+                 R4        MEASURE-MAP-1R: the measure-correspondence gate
+                 R5        counterfactual attainment: in design, not executed
+                 R6        what this seminar may present
+                 E1        BASELINE-F-1 authorised, executed, independently verified
+                 E2        C obs is the estimated utility’s own argument
+                 E3        C obs benchmark: not authorised, not produced
+                 E3-EQ     equivalised reporting (§6) is primary; scale PROVISIONAL
 
     R1–R6: docs/normative/JMP W1 fork ruling v1.md, Appendix A. E1–E3: docs/normative/
-    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md.
+    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md. E3-EQ: docs/results/
+    JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e.
 
