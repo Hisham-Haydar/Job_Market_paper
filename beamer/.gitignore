@@ -9,6 +9,16 @@ build/*
 !build/verification_v4.json
 !build/slide_table_v4.json
 
+# R6 seminar deck (docs/seminar-r6): the built PDFs, their text layers, the
+# build log and the number provenance are committed; everything else is
+# regenerable by `make r6`.
+!build/JMP_seminar_deck_r6.pdf
+!build/JMP_seminar_deck_r6_rehearsal.pdf
+!build/JMP_seminar_deck_r6_text.txt
+!build/JMP_seminar_deck_r6_rehearsal_text.txt
+!build/JMP_seminar_deck_r6_build_log.txt
+!build/r6_number_provenance.json
+
 # stray intermediates if anyone compiles in place
 *.aux
 *.fdb_latexmk
