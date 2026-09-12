@@ -21,8 +21,8 @@
 | Criterion | Result | Evidence in the map |
 |---|---|---|
 | (a) literal W1-F = (b) independent W4 inversion, to machine precision, for every checked household | PASS | §4. Differences b − a ≤ 1.4e-12 EUR/month; W4 utility residual 0 in all three checks. |
-| Nonworker: (a) = C_obs | PASS | 1550400: ratio exactly 1. |
-| Worker: (a) < C_obs | PASS | 1504300: 0.6304; 1485200: 0.4808. |
+| Nonworker: (a) = C_obs | PASS | H-S2: ratio exactly 1. |
+| Worker: (a) < C_obs | PASS | H-S1: 0.6304; H-C1: 0.4808. |
 | Executed W1-EA classed DIFFERENT OBJECT | PASS | §2 and §7. |
 | R4 vocabulary used throughout | PASS | §2, with all 13 columns. |
 | Every ε, opportunity and proposal entry backed by a code line | PASS | Evidence ledger E1–E8. |
@@ -50,9 +50,9 @@ Numerical three-way agreement on the check households is reported below. All thr
 
 | Household | PREP-2 production W / C_obs | MEASURE-MAP-1R W / C_obs | Engine oracle (PREP-2 O1) ΔL difference |
 |---|---|---|---|
-| Single 1504300 | 0.6304345043711471 | 0.6304345043711471 | −1.8e-15 |
-| Couple 1485200 | 0.4808435094822485 | 0.4808435094822490 | 2.2e-15 |
-| Nonworker 1550400 | 1.0 | 1.0 | 0 |
+| Single H-S1 | 0.6304345043711471 | 0.6304345043711471 | −1.8e-15 |
+| Couple H-C1 | 0.4808435094822485 | 0.4808435094822490 | 2.2e-15 |
+| Nonworker H-S2 | 1.0 | 1.0 | 0 |
 
 ### 2.2 Term-by-term assignment of estimated parameters
 
@@ -78,7 +78,7 @@ No further Deputy round-trip is required.
 | F3 | The historical W1-EA path in `BasisArrays` uses `log_ghat` rather than `opp_hat`, so the base-proposal factor is absent. | Historical under R2. Any future revival of an ex-ante functional must address this first. No HFIX work. |
 | F4 | At the check households, stored S12 W1-EA divided by literal W1-F is 1.91, 5.24 and 0.72. | Internal record only. This confirms that the retired object is not a small perturbation of W1-F. Not for presentation (R2, R6). |
 | F5 | `welfare_identity_check_v1` verifies the production J/H identity under S8/R240 parameters with β_c = 1. It predates S11. | Not evidence for any literal distribution. Confirms MM-4 in the fork ruling record. |
-| F6 | Couple 1485200: the market minimum is at (0,5), i.e. the woman works 5 hours and the man is at home. Market Measure 6 / W1-F is between 1.009 and 1.014 across the checks. | Consistent with fork §5 under S11 and with the fork's 1–5% range. Relevant to M-sensitivity only. |
+| F6 | Couple H-C1: the market minimum is at (0,5), i.e. the woman works 5 hours and the man is at home. Market Measure 6 / W1-F is between 1.009 and 1.014 across the checks. | Consistent with fork §5 under S11 and with the fork's 1–5% range. Relevant to M-sensitivity only. |
 | F7 | The 119 couples: not in baseline W1-F; present in the executed ex-ante objects; relevant to counterfactual choice sets. | R5 must specify the positive-consumption domain and the attainment operator. Carried into the R5 design. |
 | F8 | The O-1 (R-85) disposable-income-for-pay substitution affects W2, W3 and W5 only. | No current ruling requires W2, W3 or W5. |
 | F9 | S12 equivalised its outputs after computing W1. | BASELINE-F-1 stays in raw household EUR per month (E2). Any equivalised presentation would be a separately documented transformation and is not authorised now. Singles and couples are reported separately, with no pooled distribution. |
