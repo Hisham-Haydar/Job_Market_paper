@@ -3,7 +3,49 @@
 # JMP Current-State Dashboard v1
 
 **Programme:** Goal 1 — Empirical JMP
-**Last updated:** 2026-09-11, at **GATE-1 — MEASURE-MAP-1R acceptance** —
+**Last updated:** 2026-09-12, at **Deputy Goal 1 ruling — BRIDGE VERDICT ACCEPTED; DIRECT-g WELFARE QUESTION REOPENED** —
+the Deputy has ruled on the bridge review. **The bridge verdict is ACCEPTED** under
+the maintained shock-exclusion rule: verified Mapping-F W1 is literal but has no
+direct opportunity-density dependence, literal market-only W1 under the accepted
+dense law also has no direct opportunity-density dependence, and the old W1-EA
+inclusive-value object is **NOT** Haydar-Maniquet W1 — none of these results are
+relabelled. Of the characterised welfare family, only W1, W2 and W3 are directly
+sensitive to an individual's actual A; under the accepted RURO law W2/W3 do **NOT**
+solve the direct-g problem (their reference expressions do not weight jobs by g,
+so common-support changes in opportunity density leave their A-reference term
+unchanged) — W2/W3 remain candidates for the pay/earning-opportunity dimension
+only, once a valid empirical y mapping exists. This is recorded as connected to
+Job Duplication Invariance: the theory treats ability as set membership and does
+not value duplication of an otherwise identical job, so direct sensitivity to the
+abundance of latent jobs is not automatically compatible with the W1-W6 family.
+**Branch (iii), the epsilon-inclusive marked-set W1, is NOT adopted** — recorded
+as a logically available class-B alternative only (set-sensitive, depends on
+unidentified kappa, invalidates the verified BASELINE-F-1 object); no
+implementation is authorised. **The finite-offer positive-model re-estimation is
+NOT launched** — retained as a post-JMP / later-extension route unless the next
+mission shows no direct-g welfare object is constructible from the accepted
+model. **A new central mission, G-WELFARE-1, is COMMISSIONED** before R5 is
+frozen: a bounded design/identification audit, output
+`JMP_RURO_direct_opportunity_welfare_design_v1.md`, comparing exactly four
+welfare objects (A. literal verified W1_F; B. literal W2/W3; C. epsilon-inclusive
+marked-set W1; D. a proposal-invariant RURO ex-ante expected-maximum/inclusive-
+value money metric) against the accepted S11/R-291 model, with a required final
+verdict of A/B/C/D on identifiability — no numerical execution, no welfare
+rerun, no decomposition, no re-estimation authorised by the mission itself.
+**R5 may continue drafting** the counterfactual-attainment design, but **the
+paper's primary welfare object is NOT frozen** until G-WELFARE-1 returns.
+Household-specific choice-domain masking must not be used as a shortcut for
+opportunity heterogeneity; SRC-3 continues, with any non-positive-priced-
+consumption masking reported separately as EVALUABILITY/BUDGET-DOMAIN
+heterogeneity, not estimated opportunity-density heterogeneity. The ruling, the
+bridge review it accepts, and the factual items it checked are committed
+verbatim/as-produced to `docs/normative/` (`JMP_direct_g_welfare_ruling_v1.md`,
+`JMP_W1_stochastic_ability_set_bridge_review_v1.md`,
+`JMP_bridge_review_factual_items_v1.md`) at commit `e278bcd5f7edba41a05383def5f363a9b3192f75`
+on branch `docs/w1-reference-domain-fork`, **NOT merged to `main`**. **No
+welfare number is promoted, no provisional label is lifted, and no full-sample
+or decomposition execution is authorized by any of this.** The prior header,
+carried forward — 2026-09-11, at **GATE-1 — MEASURE-MAP-1R acceptance** —
 Goal 1's acceptance of MEASURE-MAP-1R (`docs/normative/JMP_measure_map_acceptance_v1.md`,
 committed alongside the map it accepts, `docs/normative/JMP_measure_map_v1.md`)
 is RATIFIED and **BASELINE-F-1 IS UNLOCKED**. MEASURE-MAP-1R's central finding:
