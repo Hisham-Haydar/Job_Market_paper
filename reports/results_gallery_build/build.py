@@ -27,6 +27,13 @@ V5 = RUNS / "v5_evidence"
 S11 = RUNS / "s11_welfare_specs_of_record"
 S12 = RUNS / "s12_welfare_record"
 PREF = FIG / "preferences_final"
+# Preliminary three-factor P/A/B decomposition (supersedes the retired
+# four-factor P/A/B/D decomposition previously read from the S12 tables
+# above). Source: MNL_decomp, branch welfare/preseminar-pab. Deliberately
+# NOT sourced from headline_decomposition_v1.csv or any ss8*/cw_step3*/
+# gn_step2* state file -- those remain excluded pending a separate lineage
+# verdict.
+DECOMP2 = ROOT.parent / "MNL_decomp" / "outputs/welfare/preseminar_pab_v1"
 NOR_PATH = REPORTS / "numbers_of_record_v5.json"
 OUT = REPORTS / "JMP_results_gallery_current.html"
 
@@ -395,12 +402,84 @@ def build(nor):
     if "gallery" not in nor:
         raise SystemExit("gallery registry missing; run build.py --refresh-registry")
     g, n = nor["gallery"], {k: v["value"] for k, v in nor["entries"].items()}
-    s12_six = rows(S12 / "s12_six_index_attributions_v1.csv")
-    s12_cr1 = rows(S12 / "s12_s11_cr1_headline_shares_v1.csv")
     s12_sum = rows(S12 / "s12_principal_welfare_summary_v1.csv")
-    s12_geo = rows(S12 / "s12_nested_A_geography_attributions_v1.csv")
-    s12_ds = rows(S12 / "s12_nested_D_attributions_v1.csv")
-    s12_dc = rows(S12 / "s12_couples_nested_D_attributions_v1.csv")
+
+    # --- Preliminary three-factor P/A/B decomposition (DECOMP-2) ---------
+    d2_coal = {smp: rows(DECOMP2 / f"coalition_values_{smp}.csv") for smp in ("singles", "couples")}
+    d2_shap = {smp: rows(DECOMP2 / f"shapley_PAB_{smp}.csv") for smp in ("singles", "couples")}
+    d2_var = rows(DECOMP2 / "log_variance_split_v1.csv")
+    d2_anchor = json.loads((DECOMP2 / "anchor_excluded_arm_v1.json").read_text(encoding="utf-8"))
+
+    D2_COALITION_LABEL = {"EMPTY": "∅ (actual)", "P": "P", "A": "A", "B": "B",
+                           "PA": "P + A", "PB": "P + B", "AB": "A + B", "PAB": "P + A + B"}
+    D2_FACTOR_FULL = {
+        "P": "systematic utility heterogeneity",
+        "A": "local labour-market access (region, urban/rural, year)",
+        "B": "earning opportunities",
+        "Delta_I": "ΔI = I(actual) − I(PAB), the PAB-reducible inequality",
+        "RESIDUAL I(PAB)": "residual inequality with P, A and B equalised: household resources/needs/"
+                            "composition, sex-block parameter differences, and behavioural randomness",
+    }
+    D2_FACTOR_CODE = {"P": "P", "A": "A", "B": "B", "Delta_I": "ΔI", "RESIDUAL I(PAB)": "I(PAB)"}
+
+    def signed(x, nd=4):
+        x = float(x)
+        return f"{'+' if x >= 0 else chr(8722)}{abs(x):.{nd}f}"
+
+    def d2_coalition_table(sample):
+        rr = [[r["scale"], D2_COALITION_LABEL.get(r["coalition"], r["coalition"]),
+               fmt(num(r["I_S_gini"])), fmt(num(r["change_from_actual"])),
+               f"{fmt(num(r['mc_min']))}–{fmt(num(r['mc_max']))}",
+               fmt(num(r["mc_sd_across_replications"]))] for r in d2_coal[sample]]
+        return table(["Scale", "Coalition", "I(S) Gini", "Change from actual",
+                       "MC range (min–max)", "MC sd"], rr, "compact")
+
+    def d2_shapley_table(sample):
+        rr = []
+        for r in d2_shap[sample]:
+            f = r["factor"]
+            if f not in ("P", "A", "B", "Delta_I", "RESIDUAL I(PAB)"):
+                continue
+            lo, hi = num(r["mc_min_share_of_delta_I"]), num(r["mc_max_share_of_delta_I"])
+            mc_share = f"{fmt(lo,'pct')}–{fmt(hi,'pct')}" if lo is not None else "—"
+            rr.append([r["scale"], D2_FACTOR_CODE.get(f, f), D2_FACTOR_FULL.get(f, r["label"]),
+                       fmt(num(r["gini_point_contribution"])),
+                       fmt(num(r["share_of_delta_I"]), "pct"), mc_share,
+                       fmt(num(r["second_seed_gini_point"]))])
+        return table(["Scale", "Factor", "Label", "Gini-point contribution", "Share of ΔI",
+                       "MC share range (min–max)", "Second-seed Gini-point"], rr, "compact")
+
+    def d2_variance_table():
+        rr = [[r["sample"], D2_COALITION_LABEL.get(r["coalition"], r["coalition"]),
+               fmt(num(r["var_log_W1F"])),
+               f"{fmt(num(r['var_log_C']))} ({fmt(num(r['share_var_log_C']),'pct')})",
+               f"{fmt(num(r['var_log_rho']))} ({fmt(num(r['share_var_log_rho']),'pct')})",
+               f"{fmt(num(r['two_cov']))} ({fmt(num(r['share_two_cov']),'pct')})"] for r in d2_var]
+        return table(["Population", "Coalition", "Var(log W1_F)", "Var(log C) [share]",
+                       "Var(log ρ) [share]", "2·Cov(log C, log ρ) [share]"], rr, "compact")
+
+    def d2_phi_p_note():
+        parts = []
+        for smp in ("singles", "couples"):
+            byscale = {r["scale"]: r for r in d2_shap[smp] if r["factor"] == "P"}
+            u = signed(byscale["unequivalised"]["gini_point_contribution"])
+            e = signed(byscale["equivalised"]["gini_point_contribution"])
+            parts.append(f"{smp}: {u} unequivalised vs {e} equivalised")
+        return ("No directional claim is made about P: its sign changes between unequivalised and "
+                 "equivalised reporting in both samples (" + "; ".join(parts) + ").")
+
+    def d2_anchor_line():
+        moves = [(smp, scale, d2_anchor[smp][scale]["delta_I_relative_move"])
+                 for smp in ("singles", "couples") for scale in ("unequivalised", "equivalised")]
+        worst = max(moves, key=lambda t: abs(t[2]))
+        return (f"Robustness: excluding the anchor arm moves ΔI by at most "
+                 f"{signed(worst[2]*100, 1)}% ({worst[0]}, {worst[1]}), with no sign flip in any specification.")
+
+    def d2fig(name, title, caption):
+        return figure(DECOMP2 / f"{name}.png", title, caption)
+
+    d2_phi_note = d2_phi_p_note()
+    d2_robust_line = d2_anchor_line()
 
     funnel = table(["Screen", "Singles left", "Couples left", "Removed: singles", "Removed: couples", "Reason detail"], [[
         html.escape(r["screen"]), fmt(r["households_singles"], "int") if r["households_singles"] else "—",
@@ -481,39 +560,6 @@ def build(nor):
                         f"{fmt(r['w4_eur']['p10'],'eur')}–{fmt(r['w4_eur']['p90'],'eur')}"])
     w4_table = table(["Population", "Median W4/W1", "Ratio range", "Median gap (nats)", "Median W4", "W4 P10–P90"], w4_rows)
 
-    decomp_rows = []
-    for r in s12_cr1:
-        decomp_rows.append([r["sample"], r["basis"], r["share"], fmt(r["point"], "pct"),
-                            f"{fmt(r['RQMC_lo'],'pct')}–{fmt(r['RQMC_hi'],'pct')}",
-                            f"{fmt(r['CR1_p2_5'],'pct')}–{fmt(r['CR1_p97_5'],'pct')}"])
-    decomp_table = table(["Population", "Basis", "Component", "Signed share", "RQMC band", "CR1 interval"], decomp_rows)
-
-    six_rows = []
-    for r in s12_six:
-        if ((r["sample"] == "singles" and r["reference"] == "singles_female") or r["sample"] == "couples"):
-            six_rows.append([r["sample"], r["basis"], r["index"], *[fmt(r[f"share_{x}"], "pct") for x in ("P", "A", "B", "D")]])
-    six_table = table(["Population", "Basis", "Index", "Preferences", "Access", "Earnings", "Resources & composition"], six_rows)
-
-    geo_rows = [[r["basis"], r["index"], fmt(r["C_geo"], "pct"), fmt(r["C_oth"], "pct")]
-                for r in s12_geo if r["sample"] == "singles" and r["reference"] == "singles_female"]
-    geo_table = table(["Basis", "Index", "Geography contribution", "Other-access contribution"], geo_rows)
-    d_rows = []
-    for source, pop in ((s12_ds, "singles"), (s12_dc, "couples")):
-        for r in source:
-            if r["sample"] != pop or r["basis"] not in ("raw", "equivalized", "modified_OECD_equivalized"):
-                continue
-            if pop == "singles" and r.get("reference") != "singles_female":
-                continue
-            d_rows.append([pop, r["basis"], r["index"], fmt(r["C_nonlabour"], "pct"), fmt(r["C_composition"], "pct")])
-    d_table = table(["Population", "Basis", "Index", "Resources contribution", "Composition contribution"], d_rows)
-
-    one_rows = []
-    for r in s12_six:
-        if r["basis"] == "raw" and r["index"] == "gini" and ((r["sample"] == "singles" and r["reference"] == "singles_female") or r["sample"] == "couples"):
-            for x in ("P", "A", "B", "D"):
-                one_rows.append([r["sample"], x, fmt(r[f"one_factor_{x}"], "pct"), fmt(r[f"share_{x}"], "pct")])
-    one_table = table(["Population", "Component", "One-factor effect", "Shapley attribution"], one_rows)
-
     fig = lambda name, title, caption, pref=False: figure((PREF if pref else FIG) / f"{name}_paper.png", title, caption)
     sections = []
     sections.append(("samples", "Samples and screens", f'''<p class=lead>Two estimation populations, followed through the final support and positive-consumption screens.</p>{funnel}<h3>Weighted descriptives</h3>{desc}
@@ -540,17 +586,22 @@ def build(nor):
     <div class=figuregrid>{fig("figV02_welfare_distributions", "W1-EA distributions", cap("households in both populations", "equivalent euros per month and density", "estimated own-set equal-consumption welfare distributions", "raw and modified-OECD-equivalized; populations not pooled", "model-implied"))}
     {fig("figV01_welfare_lorenz", "W1-EA Lorenz curves", cap("households in both populations", "cumulative weighted shares", "Lorenz curves and Gini comparisons of W1-EA and observed disposable consumption", "within-population, raw and equivalized conventions shown separately", "observed and model-implied"))}</div>
     <h3>The corrected W4 comparison</h3>{w4_table}<p>The comparison uses the opportunity kernel normalized on exactly the reference domain. The earlier scale-dependent levels are not shown.</p>'''))
-    sections.append(("decomposition", "The decomposition", f'''<h3>Signed contributions: uncertainty kept separate</h3>{decomp_table}
-    {fig("figV03_signed_decomposition", "Signed Gini contributions with two uncertainty summaries", cap("both estimation populations", "percentage points of the reducible Gini", "grouped signed Shapley contributions", "raw basis; RQMC integration bands and CR1 parameter intervals shown side by side and never merged", "model-implied decomposition"))}
-    <h3>Six inequality indices</h3>{six_table}{fig("figV05_six_index_shares", "Six-index attribution", cap("both estimation populations", "share of reducible inequality", "grouped attribution under six inequality indices", "raw and equivalized conventions remain separate", "model-implied decomposition"))}
-    <h3>Nested access: singles</h3>{geo_table}
-    <h3>Nested resources and composition</h3>{d_table}<p class=small>Corrected nested attribution is available for both populations: geography within singles access, and resources versus composition within the budget channel for singles and couples. The current tables above report the splits. For couples, C_D = 0.067827 = 0.043551 + 0.024276 raw Gini, and 0.072396 = 0.041364 + 0.031032 equivalized Gini. Cross-population composition-share rankings remain sensitive to the index and equivalization.</p>
-    <h3>One factor is not an attribution</h3>{one_table}{fig("figV04_one_factor_vs_shapley", "One-factor effects beside Shapley attributions", cap("both estimation populations", "share of baseline inequality", "single equalization effect versus average marginal attribution", "raw Gini; methods deliberately not combined", "model-implied counterfactual comparison"))}'''))
-    robust_cr1 = all(float(r["CR1_p2_5"]) > 0 for r in s12_cr1)
-    sections.append(("robustness", "What is robust and what is not", f'''<div class=verdicts><article><h3>Holds across all six indices</h3><p>For singles, access exceeds earnings opportunities. For couples, earnings opportunities exceed access. Resources lead composition on the household basis in both populations.</p></article>
-    <article><h3>Holds across the reported CR1 intervals</h3><p>Every headline raw and equivalized component remains positive over its separate parameter interval: <strong>{"yes" if robust_cr1 else "no"}</strong>. The access-versus-earnings ordering is also separated by the reported headline intervals within each population.</p></article>
-    <article class=warn><h3>Does not hold</h3><p>The singles preference contribution changes sign across indices. The claim that couples have the larger composition share holds at the raw Gini and reverses elsewhere, including after equivalization.</p></article>
-    <article class=warn><h3>Two open econometric items</h3><p>First, the estimation sample is screened on observed outcomes, and the required correction, if any, for that selection has not been established. Second, the labelled-slot sampling law used in the sampled-choice-set derivation is supported by diagnostics but not established by construction.</p></article></div>
+    sections.append(("decomposition", "The decomposition", f'''<div class=notice><strong>Preliminary structural decomposition of well-being inequality (P/A/B).</strong> This is a bounded three-factor decomposition of a model-simulated distribution of money-metric well-being, presented ahead of the final decomposition architecture. Monte Carlo ranges quoted anywhere in this section are numerical simulation variation, never confidence intervals.</div>
+    <p class=lead>Using the accepted model and the already-priced estimation panel &mdash; no re-estimation, no new pricing &mdash; each household's attained bundle is simulated under eight counterfactual environments, and the dwt-weighted Gini of money-metric well-being W1_F is measured in each. An exact three-factor Shapley allocation splits &Delta;I&nbsp;=&nbsp;I(actual)&nbsp;&minus;&nbsp;I(PAB) across <strong>P&nbsp;=&nbsp;systematic utility heterogeneity</strong>, <strong>A&nbsp;=&nbsp;local labour-market access (region, urban/rural, year)</strong> and <strong>B&nbsp;=&nbsp;earning opportunities</strong>.</p>
+    <p>Earning opportunities dominate (58.6%&ndash;124.0% of &Delta;I across samples and scales). Local labour-market access is second and small (4.6%&ndash;29.6%). {d2_phi_note}</p>
+    <p><strong>&Delta;I is small (1.8%&ndash;9.9% of measured inequality) by design of the decomposition, not because opportunities are unimportant.</strong> Household resources, needs and composition are held fixed in every coalition, and that fixed component carries the consumption-level variation that dominates the variance of log&nbsp;W1_F &mdash; the variance of log consumption alone is 100%&ndash;127% of it. Sex-specific parameter differences also remain in the residual I(PAB) and are not attributed to P, A or B.</p>
+    <p class=small>{d2_robust_line} The estimation panel used for this simulation also carries the household's own observed choice as an anchor node in every coalition, so counterfactual attainment is mechanically anchored toward the observed outcome to a small, roughly common, degree across coalitions (about 2.9% of singles and 3.9% of couples attain it under any coalition); the anchor-exclusion check above tests this directly.</p>
+    {d2fig("fig_preseminar_pab_architecture_v1", "The eight P/A/B counterfactual coalitions", cap("both estimation populations", "coalition structure, no units", "how each of the eight P/A/B counterfactual environments is built from the accepted model by equalising household-constant covariates within a block", "node-level alternative characteristics are preserved in every coalition; only household-constant covariates are equalised", "preliminary, model-based"))}
+    <p class=small>Reading the MC share range: it is the across-replication spread of a single replication's Shapley share, which divides by that replication's own &Delta;I. When a replication's &Delta;I is near zero the ratio can be extreme in either direction; the column is reported for completeness but is not informative on its own. The Gini-point contribution (the mean over 1,000 replications) and the second-seed check are the informative comparison.</p>
+    <h3>Singles &mdash; coalition Gini levels and the exact Shapley allocation</h3>{d2_coalition_table("singles")}{d2_shapley_table("singles")}
+    {d2fig("fig_preseminar_pab_decomposition_singles_v1", "Singles: P/A/B decomposition of well-being inequality", cap("single-adult estimation sample", "Gini points of money-metric well-being and shares of ΔI", "coalition Gini levels and the exact Shapley allocation of ΔI across P, A and B, with the sign-instability of P annotated", "modified-OECD-equivalised W1_F; Monte Carlo ranges over 1,000 replications, not confidence intervals", "preliminary, model-based"))}
+    <h3>Couples &mdash; coalition Gini levels and the exact Shapley allocation</h3>{d2_coalition_table("couples")}{d2_shapley_table("couples")}
+    {d2fig("fig_preseminar_pab_decomposition_couples_v1", "Couples: P/A/B decomposition of well-being inequality", cap("couple estimation sample", "Gini points of money-metric well-being and shares of ΔI", "coalition Gini levels and the exact Shapley allocation of ΔI across P, A and B, with the sign-instability of P annotated", "modified-OECD-equivalised W1_F; Monte Carlo ranges over 1,000 replications, not confidence intervals", "preliminary, model-based"))}
+    <h3>Why &Delta;I is small: the variance arithmetic</h3><p class=small>log&nbsp;W1_F splits exactly into a consumption-level term log&nbsp;C, a leisure-valuation term log&nbsp;&rho;, and their covariance. Equalising P, A and B barely moves the dominant consumption term, because none of the three operators can touch a household's tax-benefit position, non-labour income or composition.</p>{d2_variance_table()}'''))
+    sections.append(("robustness", "What is robust and what is not", f'''<div class=verdicts><article><h3>Holds in every sample and scale</h3><p>Earning opportunities are the largest of the three factors everywhere (58.6%&ndash;124.0% of &Delta;I); local labour-market access is second and small (4.6%&ndash;29.6%). {d2_robust_line}</p></article>
+    <article><h3>Holds across an independent second simulation run</h3><p>Every coalition Gini level and every Shapley share reproduces closely under an independent second simulation seed, and every sign &mdash; including the sign reversal of P between scales &mdash; agrees across both runs.</p></article>
+    <article class=warn><h3>Does not hold</h3><p>{d2_phi_note}</p></article>
+    <article class=warn><h3>Scope of the preliminary decomposition</h3><p>&Delta;I is small by design, not because opportunities are unimportant: household resources, needs and composition are held fixed in every coalition and are not attributed to P, A or B, and nor are sex-specific parameter differences. The estimation panel used to simulate attainment carries the household's observed choice as an anchor node in every coalition; this is a structural feature of reusing an estimation frame as a welfare panel, tested and found small in its consequences here, but not yet replaced by a purpose-built non-anchored support.</p></article></div>
     '''))
 
     nav = "".join(f'<a href="#{i}"><span>{k:02d}</span>{html.escape(t)}</a>' for k, (i,t,_) in enumerate(sections,1))
