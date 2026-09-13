@@ -64,18 +64,18 @@ households.                                                                     
                                                                                                                             because the frames differ and a side-by-side would invite a comparison the samples do not support.
                                                                                                                             Each household contributes its observed job and a hundred drawn alternatives, each of which is run
                                                                                                                             through EUROMOD so the consumption argument is a real disposable income, not an approximation.
-
-
+                                                                                                                            The second number on the slide is a different object: the positive-fit diagnostics (POSFIT v2b)
       Estimation frames: corrected criterion-A panels, S11 model of record.
-      Each household: its observed job plus 100 drawn alternatives, every one priced through
-       the tax–benefit system.
+                                                                                                                            integrate over a common panel of two thousand and forty-eight priced quadrature nodes per
+      Estimation frame: each household’s observed job plus 100 drawn alternatives, every one                               household, not over the estimation draws.
+       priced through the tax–benefit system.
+      Fit diagnostics use a separate, larger panel: 2 048 common quadrature nodes per
+       household.
       Weights are the survey weights dwt throughout.
-
 
 
    S11 is the single model of record on these slides. Earlier S8 and R240 frames and their estimates are not shown
    and are not comparable.
-
 
 
                                                                                                                      4/19
@@ -148,61 +148,56 @@ households.                                                                     
 
 
                                                                                                        7/19
-Extensive-margin accuracy is the one fit statistic that passes the quadrature-adequacy                                  I want to be explicit about what this slide does not say. The diagnostics run computes a long list of
-gate.                                                                                                                   classification and calibration statistics. A pre-registered adequacy gate asks, for each one, whether the
+Extensive-margin accuracy, shown only for the groups where it passes the                                                I want to be explicit about what this slide does not say. The diagnostics run computes a long list of
+quadrature-adequacy gate.                                                                                               classification and calibration statistics. A pre-registered adequacy gate asks, for each one, whether the
                                                                                                                         numerical integration error is small relative to the sampling variation the statistic would show anyway.
-                                                                                                                        Most of them fail that gate. I am showing the ones that pass and withholding the ones that do not,
-          single men       withheld: quadrature-limited                                                                 rather than showing them with a caveat attached, because a number that cannot be resolved by the
-                                                                                                                        quadrature is not a weaker finding, it is not a finding. Two of the four groups pass on extensive
-                                                                                                                        accuracy. The male groups do not, and their values are not on this slide for that reason.
-       single women                                                                     86.8%
+                                                                                                                        Many of them fail that gate. I am showing the ones that pass and withholding the ones that do not,
+          single men       withheld: quadrature-limited
+                                                                                                                        rather than showing them with a caveat attached, because a number that cannot be resolved by the
+                                                                                                                        quadrature is not a weaker finding, it is not a finding. These are the v2b diagnostics, on the larger
+                                                                                                                        common support: no household is left with an effective sample size below thirty there, and on that
+       single women                                                                    85.7%                            support three of the four groups pass on weighted extensive accuracy — both groups of women and,
+                                                                                                                        new in v2b, coupled men. Single men still do not pass, so their value is not on this slide. If asked:
+                                                                                                                        coupled men pass the weighted gate and miss the unweighted one by a hair; the deck applies the
+        coupled men                                                                           92.2%
+                                                                                                                        weighted rule throughout. The binding fit verdicts themselves remain open pending Deputy review.
 
 
-
-        coupled men        withheld: quadrature-limited
-
-
-
-
-     coupled women                                                                        89.7%
+     coupled women                                                                        89.8%
 
                        0                  20              40            60               80               100
                                       extensive-margin accuracy (%), G2-adequate groups only
 
-   G2 gate: Monte Carlo s.e. ≤ 0.25× the sampling s.d. 2 of four groups pass; 2 are quadrature-limited and are
-   withheld, not reported at a worse label.
+   G2 gate (weighted): Monte Carlo s.e. ≤ 0.25× the sampling s.d. 3 of four groups pass; 1 quadrature-limited,
+   withheld, not reported at a worse label. Source: POSFIT support-coverage package v2b (commit a2e80a8).
 
                                                                                                                  8/19
 Calibration conditioned on prediction: observed hours against predicted hours, by                                                    Households are sorted into deciles of their own predicted expected hours conditional on working, and
-predicted decile.                                                                                                                    each decile’s mean observed hours is plotted against its mean prediction. The dashed line is the
-                                                                                                                                     forty-five degree line. Conditioning on the prediction rather than on the outcome is the direction that
-                                                                                                                                     does not mechanically manufacture regression to the mean. The caption is the honest status: the
-                                                                                                                                     statistics underlying this picture do not clear the quadrature gate, and the support audit that would
-                                    single men           single women               coupled men         coupled women
-                                                                                                                                     settle whether the node set resolves the hours margin has not been done. So read the shape, not the
-                                                                                                                                     gaps.
+predicted decile.                                                                                                                    each decile’s mean observed hours is plotted against its mean prediction, on the v2b common-node
+                                                                                                                                     support. The dashed line is the forty-five degree line. Conditioning on the prediction rather than on
+                                                                                                                                     the outcome is the direction that does not mechanically manufacture regression to the mean. The
+                                  single men             single women            coupled men            coupled women                caption is the honest status. The support audit has now been done: v2b re-evaluates the fit on a
+                         45                                                                                                          common quadrature panel far larger than the estimation draws, no household has an effective sample
+                                                                                                                                     size below thirty, singles have no unsupported observed bin, and only a handful of couples fall in a
    mean observed hours
 
 
 
 
-                         45
-
-
-                         40
-
-
-                         35
-
-
+                         40                                                                                                          region that finite panel does not represent. But the calibration statistics behind this picture still clear
+                                                                                                                                     the quadrature gate only in part — the calibration slope passes for three groups, the per-bin reliability
+                         35                                                                                                          and PIT statistics mostly do not — and the binding fit verdicts are open pending Deputy review. So
+                                                                                                                                     read the shape, not the gaps.
                          30
 
 
-                               30         40           30        40            30         40           30        40
+
+                         25
+                                30           40         30           40         30           40         30           40
                               predicted E[h | work]   predicted E[h | work]   predicted E[h | work]   predicted E[h | work]
 
-   quadrature-limited; support audit pending
-
+   support coverage audited (POSFIT v2b); calibration statistics partly quadrature-limited; fit verdicts open
+   pending Deputy review
 
 
 
@@ -317,44 +312,45 @@ fact about this domain.                                                         
 Baseline W 1 -F, equivalised, single adults.                                                                            Q&A note — BASELINE-F-1 ruling, E3-EQ, and ruling R6. Equivalised results are primary on this
                                                                                                                         slide: the household-equivalised Gini of WF1 is below the household-equivalised Gini of observed
                                                                                                                         consumption, for singles. I show that as a descriptive dispersion comparison only, not as a welfare-loss
-                                                                                                                        statement — the ratio WF1 /C obs reflects the systematic leisure term at the observed job relative to
-                                                                                                                        home leisure, not a monetary loss, and I am not constructing a loss index on this slide. The
-                                                             C eq        WF1 eq                                         modified-OECD equivalence scale used here is flagged PROVISIONAL, pending an economics review
-                                 households                1 540         1 540                                          that has not yet closed; I show the ratified units only, and I will say so if asked. The unequivalised
-                                                                                                                        construction this equivalises is unchanged and is in the backup appendix.
-                                 weighted mean             1 766         1 302
-                                 weighted median           1 588         1 165
-                                 weighted Gini         0.263292      0.249807
+                                                             C eq        WF1 eq                                         statement — the ratio WF1 /C obs reflects the systematic leisure term at the observed job relative to
+                                                                                                                        home leisure, not a monetary loss, and I am not constructing a loss index on this slide. The equivalence
+                                 households                1 540         1 540                                          scale is the modified-OECD scale, ratified as the primary scale for current JMP distributional reporting
+                                 weighted mean             1 766         1 302                                          by the Deputy ruling “SCALE CLOSED; CHILD-SHIFTER FRAMING”, section 1, on the economics
+                                 weighted median           1 588         1 165                                          review in JMP SCALE REVIEW 1 equivalence scale economics v1.md; the scale question is closed.
+                                 weighted Gini         0.263292      0.249807                                           The unequivalised construction this equivalises is unchanged and is in the backup appendix.
 
 
    Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
-   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
+   comparison, not a welfare-loss index. Equivalence scale: the ratified modified-OECD scale (Deputy ruling
+   “SCALE CLOSED; CHILD-SHIFTER FRAMING”, s1;
+   JMP SCALE REVIEW 1 equivalence scale economics v1.md). Singles and couples equivalised levels are never
+   compared.
 
    Source: docs/results/ JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e, over the verified
    construction (MNL commit 6048c9f, independently verified b5550af). This is a descriptive dispersion
    comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
-
 
                                                                                                                 14/19
 Baseline W 1 -F, equivalised, couples.                                                                                       Q&A note — BASELINE-F-1 ruling, E3-EQ, and ruling R6. Same descriptive comparison, on the
                                                                                                                              couples sample. I am deliberately not placing this table next to the singles one: the two are separate
                                                                                                                              estimation frames, the welfare unit differs, and R6 forbids presenting a singles/couples equivalised-level
                                                                                                                              comparison as a finding. If asked how the couples numbers compare to singles, the honest answer is
-                                                                                                                             that this deck does not draw that comparison, and I would want to see it examined outside a seminar
-                                                                C eq        WF1 eq                                           slide before treating it as informative. The scale-provisional caveat from the singles slide applies here
-                                                                                                                             too.
-                                   households                 2 223         2 223
+                                                                C eq        WF1 eq                                           that this deck does not draw that comparison, and I would want to see it examined outside a seminar
+                                   households                 2 223         2 223                                            slide before treating it as informative. The scale is the same ratified modified-OECD scale as on the
+                                                                                                                             singles slide (Deputy ruling “SCALE CLOSED; CHILD-SHIFTER FRAMING”, section 1); ratifying the
                                    weighted mean              2 245         1 311
+                                                                                                                             scale does not license a cross-sample level comparison.
                                    weighted median            2 063         1 237
                                    weighted Gini          0.226805      0.197403
 
-
    Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
-   comparison, not a welfare-loss index. Equivalence scale: PROVISIONAL, pending economics review.
+   comparison, not a welfare-loss index. Equivalence scale: the ratified modified-OECD scale (Deputy ruling
+   “SCALE CLOSED; CHILD-SHIFTER FRAMING”, s1;
+   JMP SCALE REVIEW 1 equivalence scale economics v1.md). Singles and couples equivalised levels are never
+   compared.
 
    Reported separately from singles: no pooled figure, and no cross-sample level comparison is drawn on this slide
    or elsewhere in this deck. Source: same memo and commits as the singles equivalised slide.
-
 
                                                                                                                      15/19
 Decomposition architecture
@@ -416,8 +412,8 @@ moves it.                                                                       
                                                                                                                       of the measure and the opportunity kernel, which are the parts that are done.
       In design (R5). The counterfactual attainment operator, and the choice between the two
        estimands.
-      Open. The support audit behind the fit statistics, and coverage of the node set at the
-       hours margin.
+      Open. The binding positive-fit verdicts: support coverage is audited (POSFIT v2b),
+       Deputy review of the verdicts is pending.
       Withdrawn. Every welfare share previously reported on this project’s slides. They were
        computed on a different functional.
 
@@ -467,12 +463,12 @@ moves it.                                                                       
     Secondary/verification slide: the equivalised singles slide (§6) is primary. Source:
     MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
     independently verified b5550af.
-B2 — Baseline W 1 -F, unequivalised, couples (verification backup).                                                     The couples backup is on its own slide and there is no pooled row, because pooling would need an
-                                                                                                                        equivalence scale and the scale is a separate normative choice not yet ratified. These are unequivalised
-                                                                                                                        household totals: couples pool two earnings streams, and the non-employment count is small. The
-                                                                                                                        pricing-floor issue that affects the neither-work bundle for a subset of couples does not enter here,
-                                                                                                                        because this baseline is evaluated at the observed bundle and never prices the home state.
-                                           households                   2 223
+B2 — Baseline W 1 -F, unequivalised, couples (verification backup).                                                     The couples backup is on its own slide and there is no pooled row: the two samples are separate
+                                                                                                                        estimation frames with different welfare units, and even on the ratified modified-OECD scale this deck
+                                                                                                                        never compares singles and couples levels. These are unequivalised household totals: couples pool two
+                                                                                                                        earnings streams, and the non-employment count is small. The pricing-floor issue that affects the
+                                                                                                                        neither-work bundle for a subset of couples does not enter here, because this baseline is evaluated at
+                                           households                   2 223                                           the observed bundle and never prices the home state.
                                            weighted mean                2 496
                                            weighted median              2 356
                                            weighted Gini                0.210
@@ -502,36 +498,40 @@ moves it.                                                                       
 
    All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
    explained, never clipped; none occurred.
-B4 — The G2 quadrature-adequacy gate                                                                           The gate was fixed before the statistics were computed. It asks whether numerical integration error is
-                                                                                                               small enough relative to sampling variation for the statistic to be a statement about the model rather
-                                                                                                               than about the quadrature. Withholding rather than downgrading is deliberate: a quadrature-limited
-                                                                                                               number carries no information about fit.
+B4 — The G2 quadrature-adequacy gate                                                                               The gate was fixed before the statistics were computed. It asks whether numerical integration error is
+                                                                                                                   small enough relative to sampling variation for the statistic to be a statement about the model rather
+                                                                                                                   than about the quadrature. Withholding rather than downgrading is deliberate: a quadrature-limited
+                                                                                                                   number carries no information about fit.
 
 
 
-               group                extensive accuracy      G2 label
-               coupled women                      89.7%     ADEQUATE (ratio 0.17)
-               single women                       86.8%     ADEQUATE (ratio 0.24)
-               coupled men                            —     QUADRATURE-LIMITED, withheld
-               single men                             —     QUADRATURE-LIMITED, withheld
+               group               extensive accuracy      G2 label
+               coupled women                     89.8%     ADEQUATE (ratio 0.02)
+               single women                      85.7%     ADEQUATE (ratio 0.15)
+               coupled men                       92.2%     ADEQUATE (ratio 0.24)
+               single men                            —     QUADRATURE-LIMITED, withheld
 
 
 
-   Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap: 200 replicates over 100
-   nodes. Simulated bands: 500 outcome vectors at fixed θ̂.
-B5 — Authority for what is and is not on these slides                                    This backup slide exists so that any question of the form “why is that not here” has a one-line answer
-                                                                                         with a document behind it.
+   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap:
+   200 replicates over 2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws).
+   Simulated bands: 500 outcome vectors at fixed θ̂. POSFIT v2b, commit a2e80a8.
+B5 — Authority for what is and is not on these slides                                                  This backup slide exists so that any question of the form “why is that not here” has a one-line answer
+                                                                                                       with a document behind it.
 
-                 ruling    what it settles here
-                 R1        Mapping F primary; W 1 = W 4 is a domain coincidence
-                 R2        W1-EA retired from the baseline; preserved, not repaired
-                 R4        MEASURE-MAP-1R: the measure-correspondence gate
-                 R5        counterfactual attainment: in design, not executed
-                 R6        what this seminar may present
-                 E1        BASELINE-F-1 authorised, executed, independently verified
-                 E2        C obs is the estimated utility’s own argument
-                 E3        C obs benchmark: not authorised, not produced
-                 E3-EQ     equivalised reporting (§6) is primary; scale PROVISIONAL
+
+              ruling   what it settles here
+              R1       Mapping F primary; W 1 = W 4 is a domain coincidence
+              R2       W1-EA retired from the baseline; preserved, not repaired
+              R4       MEASURE-MAP-1R: the measure-correspondence gate
+              R5       counterfactual attainment: in design, not executed
+              R6       what this seminar may present
+              E1       BASELINE-F-1 authorised, executed, independently verified
+              E2       C obs is the estimated utility’s own argument
+              E3       C obs benchmark: not authorised, not produced
+              E3-EQ    equivalised reporting (§6) primary; modified-OECD ratified (SCALE CLOSED, s1)
+
+
 
     R1–R6: docs/normative/JMP W1 fork ruling v1.md, Appendix A. E1–E3: docs/normative/
     JMP W1 BASELINE F1 authorization and Cobs ruling v1.md. E3-EQ: docs/results/

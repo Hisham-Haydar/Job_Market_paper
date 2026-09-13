@@ -8,8 +8,113 @@
 | Authority | `docs/normative/JMP_W1_fork_ruling_v1.md` Appendix A (R6); `docs/normative/JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md` §5; `docs/JMP_seminar_architecture_freeze_2026-09-17_v1.md` (the seminar freeze, commit `6d441b1`); the Deputy/PI brief implementing items A-G of that freeze (this revision). |
 | Build | `cd beamer && python build_deck_r6.py all` (equivalent to `make r6`) |
 | Log | `beamer/build/JMP_seminar_deck_r6_build_log.txt` |
-| Result | Deck: 0 overfull, 0 underfull. Rehearsal: 32 pages, 0 overfull, 0 underfull. **Gates: 15/15 PASS** (10 inherited R6 gates + 5 new gates added for this revision). |
-| Build commit | HEAD of `docs/seminar-r6-v2` after the commit that carries this file (see `git log -1` on this branch). Branch cut point: `071c5d2`. |
+| Result | Deck: 0 overfull, 0 underfull. Rehearsal: 32 pages, 0 overfull, 0 underfull. **Gates: 16/16 PASS** (10 inherited R6 gates + 5 DECK-2 gates + `G-SCALE` added in DECK-3). |
+| Build commit | DECK-3: HEAD of `docs/seminar-r6-v2` after the commit that carries this file (parent `50b7072`, the DECK-2 commit; see `git log -1`). Branch cut point: `071c5d2`. |
+| Build hashes (DECK-3) | `build/JMP_seminar_deck_r6.pdf` sha256 `5061c21f64d4458049f06050dbc4f3632c9e670ac6fe2d03908c8276d8fad4d5`; `build/JMP_seminar_deck_r6_rehearsal.pdf` sha256 `205574604f8350f6d53c9476a1a5aacb103b2c3c2ede8620a4baad2c06e714f4`; `deck_numbers_r6.tex` sha256 `43290c107317390aa750d5114d77683841c56e79bac9e3a83f77e343f35459aa` (PDF bytes carry a build timestamp, so a rebuild changes the PDF hash but not the numbers file). |
+
+## DECK-3 revision (scale ratified; POSFIT v2b)
+
+### 1. Equivalence scale is ratified
+
+Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING", section 1, verbatim:
+*"Modified-OECD is ratified as the primary equivalence scale for current JMP
+distributional reporting. The provisional economics-review status is
+closed."*
+
+- Every "PROVISIONAL, pending economics review" statement is removed from the
+  deck: the `\wfunitseq` units caveat (both §6 equivalised slides), the
+  singles and couples §6 Q&A notes, the B2 note (which gave "scale not yet
+  ratified" as the no-pooling reason) and the B5 authority table (E3-EQ row).
+  The units caveat now reads "Equivalence scale: the ratified modified-OECD
+  scale (Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING", s1;
+  `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`). Singles and
+  couples equivalised levels are never compared." The no-level-comparison
+  caveat is kept (and `G-NOSIDEBYSIDE` is unchanged).
+- The memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` is cited by
+  name but is **not in the tree** (not under `C:\Users\hisham\Repo`, not in
+  git history) — a filing item, see Open items.
+- **Guard repointed** (`beamer/make_deck_numbers_r6.py`). The old guard refused
+  to emit equivalised numbers unless both artifacts read
+  `PROVISIONAL_PENDING_ECONOMICS_REVIEW`. It now holds the ruling as constants
+  (`SCALE_RULING_ID`, verbatim `SCALE_RULING_QUOTE`, `SCALE_MEMO`) and refuses
+  unless (i) the deck source cites the ruling and the memo
+  (`check_scale_citation`, whitespace/escape-normalised), (ii) every artifact's
+  `scale_name` is `modified_OECD`, and (iii) every artifact's `scale_status` is
+  the pre-ruling provisional label or a ratified label (`RATIFIED`,
+  `RATIFIED_PRIMARY`, or any `RATIFIED*`) (`check_scale_status`). The
+  committed JSONs still carry the provisional label; that is accepted.
+- **Controls** (scratch script, temp copies only, discarded; real files
+  sha-checked unchanged afterwards): current provisional-labelled artifacts →
+  EMITTED; artifacts relabelled `RATIFIED` → EMITTED; relabelled
+  `RATIFIED_PRIMARY` → EMITTED; relabelled `DRAFT_UNREVIEWED` → REFUSED;
+  `scale_name` changed to `square_root` → REFUSED; all three ruling citations
+  removed from the deck → REFUSED; memo citation removed → REFUSED.
+- **New verifier gate `G-SCALE`**: the `\wfunitseq` macro (used on both §6
+  slides) cites the ruling and memo, the rendered deck text carries both, and
+  no `provisional…` / `pending (an) economics review` wording appears in the
+  non-comment source or the rendered text. Controls: committed deck → PASS;
+  "PROVISIONAL, pending economics review" reinserted into a note → FAIL;
+  ruling removed from the macro → FAIL.
+
+### 2. POSFIT sourcing moved from v2 to v2b
+
+Source is now `C:\Users\hisham\Repo\MNL_posfit\outputs\positive_fit_diagnostics_v2b\`,
+MNL_posfit commit **`a2e80a8`** ("diagnostics: add POSFIT support coverage
+v2b"); memo `JMP_positive_fit_diagnostics_memo_v2b_addendum.md`. The files the
+deck reads (`g2_adequacy.csv`, `deciles.csv`, `run_provenance.json`,
+`hard_classification_metrics.csv`, `support_record.csv`,
+`support_record_v2.csv`) are byte-identical at `a2e80a8` and at the worktree
+HEAD `de61d1a` (the later `96b6c88` S12-C commit adds files and touches
+`disclosure_scan.json` only). The package has no README/manifest file; its
+provenance is `run_provenance.json`, `objective_gate_pass.json`,
+`support_file_dependencies.csv` and the addendum memo.
+
+**What changed v2 → v2b.** v2 evaluated fit on the estimation panel's
+household-specific IID draws (criterion-A R100: 100 continuous nodes per
+household plus the exact h=0 atom; coupled men had no short-hours node). v2b
+re-evaluates at the same fixed S11 θ̂ (objectives reproduce exactly, evaluator
+`55bb0d0`) on the S12 common 8×256 Owen-scrambled Sobol panel, **2,048 nodes
+per household**, hours on [5,70] with short-hours nodes for every group. ESS<30
+flags fall from 2072/2072/507/670 (cm/cf/sm/sf) to **0 for every group**
+(median ESS 639/639/983/835); unsupported observed bins fall to 0 for singles
+and 4 (cm) / 5 (cf) for couples (classified by S12-C as unrepresented
+finite-panel region).
+
+**G2 criterion** (addendum §Scope; builder
+`build_positive_fit_diagnostics_v2b.py` l.373-376): "G2 is
+`MCSE <= 0.25 * C5 sampling SD`", i.e. `adequate = monte_carlo_se <=
+0.25*simulated_sd`, label ADEQUATE else QUADRATURE-LIMITED. The deck applies
+it to the weighted, all-household row (the R6 rule it already used).
+
+| group | extensive_accuracy weighted (ratio → label) | unweighted (ratio → label) | v2 weighted label | on slide? |
+|---|---|---|---|---|
+| couples_female | 0.0185 → ADEQUATE (89.8%) | 0.0129 → ADEQUATE | ADEQUATE (0.168) | yes (unchanged) |
+| couples_male | 0.2398 → **ADEQUATE** (92.2%) | 0.2503 → QUADRATURE-LIMITED | QUADRATURE-LIMITED (0.323) | **yes — newly included** |
+| singles_female | 0.1500 → ADEQUATE (85.7%) | 0.2218 → ADEQUATE | ADEQUATE (0.243) | yes (unchanged) |
+| singles_male | 0.2998 → QUADRATURE-LIMITED | 0.3621 → QUADRATURE-LIMITED | QUADRATURE-LIMITED (0.300) | no — still withheld: MCSE 0.00595 exceeds 0.25×SD 0.00496 on the 2,048-node support |
+
+**Node counts.** v2 `run_provenance.json` `predictive_support.full_nodes` = 100;
+v2b `run_provenance.json` `nodes` = 2048 (= `support_record.csv`
+`nodes_per_household` for all four groups). These are different objects. The
+data slide now states both, labelled: the **estimation frame's drawn
+alternatives per household** (`\FrameDraws` = 100, from v2b
+`support_record_v2.csv` `continuous_nodes_per_household`, source panel
+`s10_criterion_a_iid_r100`, which is the panel S11 is estimated on) and the
+**diagnostic panel's common quadrature nodes per household** (`\FitNodes` =
+2,048, from v2b `run_provenance.json`). B4 uses `\FitNodes` with that label.
+Under v2 the single `\FitNodes` macro (100) served both roles.
+
+**Caption decision.** "quadrature-limited; support audit pending" is no
+longer true: v2b *is* the support-coverage audit. Replaced by "support
+coverage audited (POSFIT v2b); calibration statistics partly
+quadrature-limited; fit verdicts open pending Deputy review". Basis: on v2b
+the weighted calibration-slope statistic `mz_slope` is ADEQUATE for cf/cm/sm
+and QUADRATURE-LIMITED for sf (0.2501), and the per-bin reliability χ², PIT χ²
+and outcome-gap statistics are QUADRATURE-LIMITED for nearly every
+group/bin; the S12 alias memo states "The binding fit verdicts remain OPEN
+pending Deputy review." `G-CAPTION` now checks the new caption and the absence
+of "support audit pending". The fit-slide headline ("the one fit statistic
+that passes") is reworded, since on v2b other statistics also pass.
 
 This revision supersedes the v1 status doc that was written at commit `cafe0ba`
 on the sibling branch `docs/seminar-r6`. That file already existed in this
@@ -85,18 +190,18 @@ deck and is stale. This file replaces it in place at the same path.
 |---|---|---|
 | 1 | Two people with the same tastes… | — |
 | 1 | The contribution is a structural opportunity set… | — |
-| 2 | France, EU-SILC priced through EUROMOD | S11 frames via `baseline_f1_full_sample_aggregates_v1.json` (`samples.*.unweighted_n`); node count from `positive_fit_diagnostics_v2/run_provenance.json` |
+| 2 | France, EU-SILC priced through EUROMOD | S11 frames via `baseline_f1_full_sample_aggregates_v1.json` (`samples.*.unweighted_n`); **estimation-frame draws per household** `\FrameDraws`=100 from `positive_fit_diagnostics_v2b/support_record_v2.csv` (`continuous_nodes_per_household`, criterion-A R100 panel); **diagnostic-panel quadrature nodes per household** `\FitNodes`=2,048 from `positive_fit_diagnostics_v2b/run_provenance.json` (`nodes`) — MNL_posfit `a2e80a8` |
 | 2 | A job is a package (TikZ) | — (the 35-hour week is a statutory fact, not an estimate) |
 | 2 | Preferences and the opportunity density in one likelihood | — |
-| 3 | S11 model of record: free parameters | `s11_{singles,couples}_parameter_table_v1.csv` (non-pinned row counts); objectives and evaluator commit from `run_provenance.json` |
-| 3 | Extensive-margin accuracy | `g2_adequacy.csv`, weighted, `extensive_accuracy`, **ADEQUATE rows only** |
-| 3 | Calibration conditioned on prediction | figure from `deciles.csv` (weighted); caption verbatim: *quadrature-limited; support audit pending* |
+| 3 | S11 model of record: free parameters | `s11_{singles,couples}_parameter_table_v1.csv` (non-pinned row counts); objectives (`objectives.*`) and evaluator commit from `positive_fit_diagnostics_v2b/run_provenance.json` (MNL_posfit `a2e80a8`) |
+| 3 | Extensive-margin accuracy, shown only where it passes the gate | `positive_fit_diagnostics_v2b/g2_adequacy.csv` (MNL_posfit `a2e80a8`), weighted, scope `all`, `extensive_accuracy`, **ADEQUATE rows only**: coupled women 89.8%, coupled men 92.2% (**new in v2b**), single women 85.7%; single men withheld. Counts 3/1 from the same file; `\PosfitCommit` |
+| 3 | Calibration conditioned on prediction | figure from `positive_fit_diagnostics_v2b/deciles.csv` (weighted); caption verbatim: *support coverage audited (POSFIT v2b); calibration statistics partly quadrature-limited; fit verdicts open pending Deputy review* |
 | 4 | The access kernel is estimated | `s11_singles_parameter_table_v1.csv`, access block, ±1.96×CR1 |
 | 4 | The earning-opportunity kernel | `s11_singles_parameter_table_v1.csv`, wage block; σ̂ and its z |
 | 5 | Haydar–Maniquet W¹ | — |
 | 5 | W¹ coincides with the staying-home equivalent | — |
-| 6 | **Baseline W¹-F, equivalised, single adults (PRIMARY)** | `docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md`, commit `4c4e07e`, over the verified construction `MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_report_v1.md`, commit `6048c9f`, verified `b5550af`. Machine-readable source read directly by `make_deck_numbers_r6.py`: `MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json`. `C_eq`/`W_F_eq` weighted mean/median/Gini (Gini to 6 d.p.: **0.263292 → 0.249807**) |
-| 6 | **Baseline W¹-F, equivalised, couples (PRIMARY)** | same memo/commits; `MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json`. Gini **0.226805 → 0.197403** |
+| 6 | **Baseline W¹-F, equivalised, single adults (PRIMARY)** | `docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md`, commit `4c4e07e`, over the verified construction `MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_report_v1.md`, commit `6048c9f`, verified `b5550af`. Machine-readable source read directly by `make_deck_numbers_r6.py`: `MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json`. `C_eq`/`W_F_eq` weighted mean/median/Gini (Gini to 6 d.p.: **0.263292 → 0.249807**). Scale: ratified modified-OECD, Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1, memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` (cited; not in tree) |
+| 6 | **Baseline W¹-F, equivalised, couples (PRIMARY)** | same memo/commits; `MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json`. Gini **0.226805 → 0.197403**. Same ratified-scale citation |
 | 7 | Four operators | — (operators only; no magnitude; $P$ label text is hand-authored per the Deputy/PI ruling, not a computed numeral) |
 | 7 | The open problem: observed vs counterfactual bundle | — |
 | 8 | Where the decomposition stands | — |
@@ -104,12 +209,12 @@ deck and is stale. This file replaces it in place at the same path.
 | B1 | **Baseline W¹-F, unequivalised, single adults (backup)** | `MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_report_v1.md`, commit `6048c9f`, verified `b5550af`. N, weighted mean, median, Gini, worker/non-worker counts |
 | B2 | **Baseline W¹-F, unequivalised, couples (backup)** | same file and commits; couples row |
 | B3 | Baseline W¹-F pre-registered checks | `baseline_f1_full_sample_aggregates_v1.json` → `checks.*` (C1, C2, C5) |
-| B4 | The G2 quadrature-adequacy gate | `g2_adequacy.csv` + `run_provenance.json` (bootstrap replicates, nodes, simulated vectors) |
-| B5 | Authority for what is and is not on these slides | — |
+| B4 | The G2 quadrature-adequacy gate | `positive_fit_diagnostics_v2b/g2_adequacy.csv` (three ADEQUATE rows incl. coupled men; single men withheld) + `positive_fit_diagnostics_v2b/run_provenance.json` (`node_bootstrap.replicates`=200, `nodes`=2,048 common quadrature nodes per household, `simulation.draws`=500) — MNL_posfit `a2e80a8` |
+| B5 | Authority for what is and is not on these slides | — (E3-EQ row now also records the scale ratification, SCALE CLOSED s1) |
 
 Units, on every welfare slide: primary (§6) **EUR/month, household-equivalised
-(modified-OECD scale)**, survey weight `dwt`, scale flagged PROVISIONAL
-pending economics review; backup (B1/B2) **household EUR/month,
+(ratified modified-OECD scale, Deputy ruling "SCALE CLOSED; CHILD-SHIFTER
+FRAMING" s1)**, survey weight `dwt`; backup (B1/B2) **household EUR/month,
 unequivalised**, survey weight `dwt`. No pooled figure anywhere; the source
 carries no pooled row and no singles/couples level comparison is drawn.
 
@@ -162,6 +267,23 @@ and are therefore retired with it: access **49.16**, resources and needs
   equivalised welfare (never present in this deck; the claim itself is
   permanently withdrawn and a verifier gate now guards its non-recurrence)
 
+**Retired in DECK-3**
+
+- the **"PROVISIONAL, pending economics review" equivalence-scale label** and
+  every variant (units caveat, §6 notes, B2 note, B5 row), and the generator
+  guard that required the `PROVISIONAL_PENDING_ECONOMICS_REVIEW` string —
+  superseded by the Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1;
+  `G-SCALE` guards non-recurrence
+- **POSFIT v2 sourcing** (`MNL_posfit/outputs/positive_fit_diagnostics_v2/`,
+  R100 support) for the fit slide, calibration figure, data slide, S11 table
+  objectives and B4 — superseded by v2b (`a2e80a8`)
+- the single **`\FitNodes` = 100** macro that conflated estimation draws with
+  diagnostic nodes (now `\FrameDraws` = 100 and `\FitNodes` = 2,048)
+- the calibration caption **"quadrature-limited; support audit pending"** and
+  the §8 "Open: the support audit …" bullet (the audit is done in v2b)
+- the fit-slide headline "the one fit statistic that passes the
+  quadrature-adequacy gate" (false on v2b)
+
 The v4.1 deck itself is not deleted and not rebuilt: it is the historical
 artifact R2 preserves, and `make v41` refuses to build it without an explicit
 command.
@@ -173,25 +295,30 @@ quantitative welfare decomposition stands*: **Settled** (measure, reference
 domain, measure-correspondence audit, the equivalised and unequivalised
 descriptive baselines) / **In design (R5)** (counterfactual attainment
 operator; the choice between the realised-bundle and g-computation estimands)
-/ **Open** (support audit, node coverage at the hours margin; ratification of
-the modified-OECD equivalence scale) / **Withdrawn** (every previously
+/ **Open** (the binding positive-fit verdicts: support coverage audited in
+POSFIT v2b, Deputy review pending — DECK-3 wording) / **Withdrawn** (every previously
 reported welfare share; the singles/couples equivalised "near equality"
 claim). No P/A/B/D share appears anywhere in the deck.
 
 ## Open items
 
-- The modified-OECD equivalence scale used in §6 is flagged
-  `PROVISIONAL_PENDING_ECONOMICS_REVIEW` for both samples in its own source
-  memo (`docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md`).
-  Ratification is an open Deputy/PI item; `make_deck_numbers_r6.py` refuses to
-  emit the equivalised numbers if either sample's status ever drifts from
-  that exact string, so the deck cannot silently go stale on this point.
+- **Filing item (not a scale-status item):** the scale-review memo
+  `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`, cited on the §6
+  slides alongside the Deputy ruling, is not in the tree (absent under
+  `C:\Users\hisham\Repo` and from git history). It should be filed.
+- The committed equivalised JSONs in `MNL/outputs/welfare/baseline_f1_equivalised_v1/`
+  still carry `scale_status = PROVISIONAL_PENDING_ECONOMICS_REVIEW` (they
+  predate the ruling). The generator accepts that label or a `RATIFIED*`
+  label; relabelling the artifacts is optional housekeeping in MNL.
+- POSFIT: the binding fit verdicts remain open pending Deputy review (S12
+  alias memo). Single men stay withheld on extensive accuracy under v2b;
+  coupled men pass the weighted gate (0.2398) but not the unweighted one
+  (0.2503) — the deck applies the weighted rule, disclosed in the fit-slide
+  note.
 - The counterfactual attainment estimand (R5) remains in design; no execution
   before the seminar per the freeze doc.
 - `docs/normative/JMP_counterfactual_attainment_architecture_for_seminar_v1.md`
   does not exist and was not created (see item E above).
-- POSFIT close-out (male-group quadrature adequacy) is unresolved; both male
-  groups remain withheld on the fit slide.
 - Final P/A/B/D decomposition semantics (in particular the interpretation of
   $P$) remain work in progress, as now stated explicitly on the operators
   slide.
@@ -204,11 +331,11 @@ claim). No P/A/B/D share appears anywhere in the deck.
 |---|---|
 | G-RETIRE | none of the retired W1-EA tokens (24 original + 6 new out-of-scope tokens, merged into one map) appears in the source or the rendered text |
 | G-NOSHARE | no Shapley/Owen/share language in the rendered deck |
-| G-CAPTION | the calibration caption appears verbatim |
+| G-CAPTION | the calibration caption appears verbatim — DECK-3: the v2b caption, and "support audit pending" absent |
 | G-UNITS | 2 equivalised (primary) + 2 unequivalised (backup) baseline slides each state units, weight and scale status |
 | G-SOURCE | the baseline slides cite `6048c9f`, `b5550af`, and the E3-EQ memo `4c4e07e` |
 | G-NUMBERS | no hand-typed quantitative numeral; every one comes from `deck_numbers_r6.tex` |
-| G-G2 | only G2-**ADEQUATE** fit statistics reach a slide |
+| G-G2 | only G2-**ADEQUATE** fit statistics reach a slide — DECK-3: reads v2b; every ADEQUATE group's extensive-accuracy macro is on a slide and no limited group's macro exists; every posfit source path is v2b |
 | G-QA | all 8 welfare-section slides carry a Q&A note citing a ruling ID |
 | G-NOCONF | no confusion-matrix headline statistic |
 | G-POOLED | no pooled welfare figure |
@@ -217,12 +344,20 @@ claim). No P/A/B/D share appears anywhere in the deck.
 | **G-CHILDSHIFTER** *(new)* | the child-shifter sentence is present verbatim (whitespace-normalised); the shifter is never called a preference/taste parameter |
 | **G-PLABEL** *(new)* | the $P$ label reads "systematic utility heterogeneity (tastes + reduced-form time constraints)" verbatim, with a "work in progress" caveat, and no P/A/B/D magnitude appears anywhere |
 | **G-NOBAN** *(new)* | the six seminar-freeze out-of-scope tokens (W_EA, finite-offer welfare, finite-market-set welfare, OEC characterisation, OEC-CHAR, SCALE-SENS-1) are individually itemised and absent |
+| **G-SCALE** *(DECK-3)* | the `\wfunitseq` caveat on both §6 slides cites Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING" and `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`; both render; no "provisional…" / "pending economics review" wording in the source or rendered deck |
 
-Result of the last run (recorded in `beamer/build/JMP_seminar_deck_r6_build_log.txt`): **15/15 PASS**.
+Result of the last run (recorded in `beamer/build/JMP_seminar_deck_r6_build_log.txt`): **16/16 PASS**.
 
 ## ID scan (post-build)
 
-Every forbidden token — the original 24 plus the 6 new item-F tokens plus 3
+DECK-3 scan: the 30 `RETIRED_TOKENS` entries (24 + 6), 3 "near equality"
+phrasings, and 6 DECK-3 strings ("provisional", "pending economics review",
+"PROVISIONAL pending economics review", "support audit pending",
+`positive_fit_diagnostics_v2/` in plain and TeX-escaped form) — 39 in all —
+were checked case-insensitively, whitespace-normalised, against the three
+files below: **zero hits in all three.**
+
+Earlier (DECK-2) scan: every forbidden token — the original 24 plus the 6 new item-F tokens plus 3
 "near equality" phrasings — was grepped (case-insensitive) against
 `JMP_seminar_deck_r6.tex`, `build/JMP_seminar_deck_r6_text.txt` and
 `build/JMP_seminar_deck_r6_rehearsal_text.txt`. **Zero hits in all three

@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2"
+POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2b"   # MNL_posfit a2e80a8
 S11 = REPO / "MNL" / "experiments" / "JMP_SEMINAR_SPRINT" / "runs" / "s11_welfare_specs_of_record"
 OUT = HERE / "figures" / "r6"
 
@@ -93,7 +93,8 @@ def fitext(man: dict) -> None:
     p = POSFIT / "g2_adequacy.csv"
     man["g2_adequacy.csv"] = sha256(p)
     d = [r for r in rows(p)
-         if r["weighting"] == "weighted" and r["statistic"] == "extensive_accuracy"]
+         if r["weighting"] == "weighted" and r["statistic"] == "extensive_accuracy"
+         and r.get("scope", "all") == "all"]
     by = {r["group"]: r for r in d}
     fig, ax = plt.subplots(figsize=(13, 5.6))
     ys, labels, colors, texts = [], [], [], []

@@ -28,6 +28,15 @@ require:
              share is stated (item D).
   G-NOBAN    none of the seminar-freeze out-of-scope tokens appear: W_EA,
              finite-offer welfare, OEC characterisation, SCALE-SENS-1 (item F).
+  G-SCALE    (DECK-3) the equivalised slides cite the ratifying Deputy ruling
+             "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1 and the scale-review memo
+             JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md, and no
+             "PROVISIONAL" / "pending economics review" wording reappears.
+
+DECK-3 also repoints G-G2 and G-CAPTION to POSFIT v2b (MNL_posfit a2e80a8):
+G-G2 now ties each group's extensive-accuracy row to its v2b label in both
+directions; G-CAPTION checks the v2b caption and that "support audit pending"
+is gone.
 
 Exit code 0 only if every gate passes.
 """
@@ -45,7 +54,7 @@ BUILD = HERE / "build"
 SRC = HERE / "JMP_seminar_deck_r6.tex"
 NUMBERS = HERE / "deck_numbers_r6.tex"
 TEXT = BUILD / "JMP_seminar_deck_r6_text.txt"
-POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2"
+POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2b"   # MNL_posfit a2e80a8
 
 # Magnitudes that exist only in the retired W1-EA record (R2).  Sources:
 # beamer/check_deck_welfare_current_v1.py and the superseded welfare block of
@@ -90,7 +99,11 @@ OUT_OF_SCOPE_TOKENS = {
     "SCALE-SENS-1": "scale-sensitivity mission, not a seminar deliverable",
 }
 RETIRED_TOKENS.update(OUT_OF_SCOPE_TOKENS)
-CAPTION = "quadrature-limited; support audit pending"
+# DECK-3: v2b IS the support-coverage audit, so "support audit pending" is
+# retired; the caption now states the v2b status.
+CAPTION = ("support coverage audited (POSFIT v2b); calibration statistics "
+           "partly quadrature-limited; fit verdicts open pending Deputy review")
+RETIRED_CAPTION = "support audit pending"
 WELFARE_FRAMES = ["Haydar--Maniquet", "staying-home equivalent",
                   "Baseline $\\Wone$-F, single adults",
                   "Baseline $\\Wone$-F, couples",
@@ -147,8 +160,11 @@ def main() -> int:
          else "share language rendered: " + ", ".join(bad))
 
     # --------------------------------------------------------- G-CAPTION
-    gate("G-CAPTION", CAPTION in src and (not text or CAPTION in text),
-         "calibration caption verbatim: %r" % CAPTION)
+    cap_ok = (CAPTION in flat(src) and (not text or CAPTION in flat(text))
+              and RETIRED_CAPTION not in (src + text).lower())
+    gate("G-CAPTION", cap_ok,
+         "calibration caption verbatim (v2b status): %r; retired %r absent"
+         % (CAPTION, RETIRED_CAPTION))
 
     # ----------------------------------------------------------- G-UNITS
     # Four distribution slides now: 2 equivalised PRIMARY (\S6, \wfunitseq)
@@ -213,8 +229,55 @@ def main() -> int:
             continue
         if "ADEQUATE" not in s and "count of" not in s and "adequacy ratio" not in s:
             bad_fit.append(name)
-    gate("G-G2", (not bad_fit) and bool(adequate),
-         "%d ADEQUATE weighted statistics exist; only those are emitted" % len(adequate))
+    # DECK-3: tie the slide's per-group rows to the source labels in both
+    # directions -- an ADEQUATE group's macro must be on a slide, and a
+    # QUADRATURE-LIMITED group must have no macro at all.
+    tag_of = {"singles_male": "SM", "singles_female": "SF",
+              "couples_male": "CM", "couples_female": "CF"}
+    ext = {r["group"]: r["label"] for r in g2
+           if r["weighting"] == "weighted" and r["statistic"] == "extensive_accuracy"
+           and r.get("scope", "all") == "all"}
+    row_bad = []
+    for grp, lab in ext.items():
+        mname = "FitExt" + tag_of[grp]
+        if lab == "ADEQUATE" and ("\\" + mname + "{}") not in src:
+            row_bad.append("%s ADEQUATE but not on slide" % grp)
+        if lab != "ADEQUATE" and mname in emitted["macros"]:
+            row_bad.append("%s %s but emitted" % (grp, lab))
+    posfit_ok = all("positive_fit_diagnostics_v2b" in v["path"]
+                    for k, v in emitted["sources"].items()
+                    if "MNL_posfit" in v.get("path", ""))
+    gate("G-G2", (not bad_fit) and bool(adequate) and not row_bad and posfit_ok,
+         "%d ADEQUATE weighted statistics exist; only those are emitted; "
+         "extensive-accuracy rows match v2b labels %s; all posfit sources are v2b"
+         % (len(adequate), ext) if not row_bad and posfit_ok
+         else "G2 row mismatch %s / non-v2b posfit source" % row_bad)
+
+    # ----------------------------------------------------------- G-SCALE
+    # DECK-3: the modified-OECD scale is ratified.  Every equivalised welfare
+    # slide must cite the ratifying ruling and the scale-review memo, and no
+    # "PROVISIONAL" scale wording may reappear in the source or rendered deck.
+    ruling = "SCALE CLOSED; CHILD-SHIFTER FRAMING"
+    memo = "JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md"
+    unesc = src.replace("\\_", "_")
+    wfeq_macro = re.search(r"\\newcommand\{\\wfunitseq\}(.*?)\n\n", unesc, re.S)
+    macro_cites = bool(wfeq_macro) and ruling in flat(wfeq_macro.group(1)) \
+        and memo in flat(wfeq_macro.group(1))
+    # pdftotext renders \texttt{\_} as a space, so compare the memo name with
+    # underscores normalised to spaces on both sides.
+    rendered_cites = (not text) or (
+        ruling in flat_text
+        and flat(memo.replace("_", " ")) in flat(text.replace("_", " ")))
+    nocomment = re.sub(r"(?m)%.*$", "", src)
+    prov_hits = sorted(set(m.group(0) for m in re.finditer(
+        r"provisional[^.\n]{0,40}|pending\s+(an\s+)?economics\s+review",
+        (nocomment + "\n" + text), re.I)))
+    scale_ok = macro_cites and ok_eq and rendered_cites and not prov_hits
+    gate("G-SCALE", scale_ok,
+         "both equivalised slides cite %r and %s; no PROVISIONAL scale wording"
+         % (ruling, memo) if scale_ok
+         else "scale citation missing (macro=%s rendered=%s) or provisional "
+              "wording present: %s" % (macro_cites, rendered_cites, prov_hits))
 
     # -------------------------------------------------------------- G-QA
     notes_missing = []

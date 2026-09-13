@@ -3,57 +3,72 @@
     "EvaluatorCommit": {
       "raw": null,
       "rendered": "55bb0d0",
-      "source": "run_provenance.json evaluator_commit"
+      "source": "v2b run_provenance.json evaluator_commit"
     },
     "FitAdequateCount": {
       "raw": null,
-      "rendered": "2",
+      "rendered": "3",
       "source": "g2_adequacy.csv count of ADEQUATE groups"
     },
     "FitBootReps": {
       "raw": null,
       "rendered": "200",
-      "source": "run_provenance.json node_bootstrap.replicates"
+      "source": "v2b run_provenance.json node_bootstrap.replicates"
     },
     "FitExtCF": {
-      "raw": 0.8968568030781313,
-      "rendered": "89.7",
+      "raw": 0.8980054046611116,
+      "rendered": "89.8",
       "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy ADEQUATE"
     },
+    "FitExtCM": {
+      "raw": 0.9219053950877628,
+      "rendered": "92.2",
+      "source": "g2_adequacy.csv couples_male/weighted/extensive_accuracy ADEQUATE"
+    },
     "FitExtRatioCF": {
-      "raw": 0.16830434918743928,
-      "rendered": "0.17",
+      "raw": 0.01852729559092683,
+      "rendered": "0.02",
       "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy adequacy ratio"
     },
-    "FitExtRatioSF": {
-      "raw": 0.24287439764077678,
+    "FitExtRatioCM": {
+      "raw": 0.23975938326040083,
       "rendered": "0.24",
+      "source": "g2_adequacy.csv couples_male/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioSF": {
+      "raw": 0.1500169962202763,
+      "rendered": "0.15",
       "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy adequacy ratio"
     },
     "FitExtSF": {
-      "raw": 0.8680693975279737,
-      "rendered": "86.8",
+      "raw": 0.8574770284194063,
+      "rendered": "85.7",
       "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy ADEQUATE"
     },
     "FitLimitedCount": {
       "raw": null,
-      "rendered": "2",
+      "rendered": "1",
       "source": "g2_adequacy.csv count of limited groups"
     },
     "FitNodes": {
-      "raw": null,
-      "rendered": "100",
-      "source": "run_provenance.json predictive_support.full_nodes"
+      "raw": 2048,
+      "rendered": "2\\,048",
+      "source": "v2b run_provenance.json nodes (diagnostic panel: common quadrature nodes per household; = support_record.csv nodes_per_household)"
     },
     "FitSims": {
       "raw": null,
       "rendered": "500",
-      "source": "run_provenance.json simulation.outcome_vectors"
+      "source": "v2b run_provenance.json simulation.draws (fixed-theta outcome vectors)"
     },
     "FrameCouples": {
       "raw": null,
       "rendered": "2\\,223",
       "source": "baseline_f1 samples.couples.unweighted_n"
+    },
+    "FrameDraws": {
+      "raw": null,
+      "rendered": "100",
+      "source": "v2b support_record_v2.csv continuous_nodes_per_household (estimation frame: criterion-A R100 panel, drawn alternatives per household)"
     },
     "FrameSingles": {
       "raw": null,
@@ -63,12 +78,17 @@
     "ObjCouples": {
       "raw": 10283.034369350758,
       "rendered": "10283.034",
-      "source": "run_provenance.json objective_values.couples"
+      "source": "v2b run_provenance.json objectives.couples"
     },
     "ObjSingles": {
       "raw": 6253.463074379619,
       "rendered": "6253.463",
-      "source": "run_provenance.json objective_values.singles"
+      "source": "v2b run_provenance.json objectives.singles"
+    },
+    "PosfitCommit": {
+      "raw": null,
+      "rendered": "a2e80a8",
+      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v2b"
     },
     "SCoupActive": {
       "raw": 47,
@@ -312,9 +332,15 @@
     }
   },
   "refusals": [
-    "couples_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.3234724308330679); not emitted",
-    "singles_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.30007174905877493); not emitted"
+    "singles_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.299817079016102); not emitted"
   ],
+  "scale_authority": {
+    "memo": "JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md",
+    "memo_in_tree": false,
+    "quote": "Modified-OECD is ratified as the primary equivalence scale for current JMP distributional reporting. The provisional economics-review status is closed.",
+    "ratified_scale": "modified_OECD",
+    "ruling": "Deputy ruling \"SCALE CLOSED; CHILD-SHIFTER FRAMING\", s1"
+  },
   "sources": {
     "baseline_f1_full_sample_aggregates_v1.json": {
       "C_obs_benchmark": "NOT PRODUCED",
@@ -331,20 +357,22 @@
       "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
       "memo_commit": "4c4e07e",
       "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\couples_equivalised_reporting_v1.json",
+      "scale_name": "modified_OECD",
       "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
       "sha256": "8d6d21b127400bee542eae3decb4b3d227904f6e3eed77d26d1305c0867cc4b7"
     },
     "g2_adequacy.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\g2_adequacy.csv",
-      "sha256": "d8fed2193ff7802b7549caea00ef89366e0579e0adfa58197ccc01c0411125aa"
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\g2_adequacy.csv",
+      "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
     },
     "hard_classification_metrics.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\hard_classification_metrics.csv",
-      "sha256": "32adb8a24fcfb9decc6e38658cdbd6bd46f15931f6c737351f9ca13ae73ae38a"
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\hard_classification_metrics.csv",
+      "sha256": "135b5da603a679dee1d2e61847363fedf575ccc8d9233015c4c2425120fedb53"
     },
     "run_provenance.json": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2\\run_provenance.json",
-      "sha256": "f77ccc2a7ff4bb5a2a6e9e1cd5411ccb75f258fc95e861dcf64842c4a1906ffc"
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\run_provenance.json",
+      "posfit_commit": "a2e80a8",
+      "sha256": "9b4075e7d3ebf209688e9f16db6184449f21902bbd129dff8f33e52e4501f35f"
     },
     "s11_couples_parameter_table_v1.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_couples_parameter_table_v1.csv",
@@ -358,8 +386,17 @@
       "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
       "memo_commit": "4c4e07e",
       "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\singles_equivalised_reporting_v1.json",
+      "scale_name": "modified_OECD",
       "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
       "sha256": "e34c3bfa0abe5dc9c1fe00a1c04d022eab280b84111f048d14ef03bdf9f2a9e6"
+    },
+    "support_record.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\support_record.csv",
+      "sha256": "424322986bf9be1f9b782b6b172892a11d389804d64ae46809a2bb85ca7a91c9"
+    },
+    "support_record_v2.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\support_record_v2.csv",
+      "sha256": "ad075a39a1c9819e2abb5252bf7003c8c1e45c4f1c7afe5b7e97367971bbafb2"
     }
   }
 }
