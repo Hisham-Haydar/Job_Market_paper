@@ -32,6 +32,11 @@ require:
              "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1 and the scale-review memo
              JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md, and no
              "PROVISIONAL" / "pending economics review" wording reappears.
+  G-ASSETS   (HAZARD-1) every figure/table asset the compiled deck references
+             resolves to a file the R6 generators actually wrote THIS run
+             under figures/r6/ (an allowlist, not a denylist of names), and no
+             reference anywhere in the deck source touches beamer/_retired_assets
+             or a mock_presentation-named tree.
 
 DECK-3 also repoints G-G2 and G-CAPTION to POSFIT v2b (MNL_posfit a2e80a8):
 G-G2 now ties each group's extensive-accuracy row to its v2b label in both
@@ -413,6 +418,49 @@ def main() -> int:
          "none of the out-of-scope tokens (W_EA, finite-offer welfare, "
          "OEC characterisation, SCALE-SENS-1) appear" if not ban_hits
          else "OUT-OF-SCOPE TOKENS PRESENT: " + ", ".join(ban_hits))
+
+    # --------------------------------------------------------- G-ASSETS
+    # Allowlist = the figure files the R6 generators actually wrote THIS
+    # run under figures/r6/ (build_deck_r6.py always runs
+    # make_slide_figures_r6.py immediately before latexmk, so this is a
+    # live snapshot of the current build, not a hardcoded name list).
+    R6_FIGDIR = HERE / "figures" / "r6"
+    allowlist = {p.name for p in R6_FIGDIR.glob("*.pdf")} if R6_FIGDIR.is_dir() else set()
+
+    # Every call site that can pull in a figure/table asset: \slidefig{name}
+    # (resolves to figures/r6/<name>_slide.pdf), \deckfig{name}{width} and a
+    # bare \includegraphics{name} (both resolve to figures/r6/<name>[.pdf]),
+    # and \input{<file>} naming a non-driver, non-numbers file (a stray table
+    # input would show up here too).
+    refs: list[tuple[str, str]] = []
+    for m in re.finditer(r"\\slidefig\{([^}]+)\}", src):
+        refs.append((m.group(1), m.group(1) + "_slide.pdf"))
+    for m in re.finditer(r"\\deckfig\{([^}]+)\}\{[^}]*\}", src):
+        name = m.group(1)
+        refs.append((name, name if name.endswith(".pdf") else name + ".pdf"))
+    for m in re.finditer(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", src):
+        name = m.group(1)
+        refs.append((name, name if name.endswith(".pdf") else name + ".pdf"))
+
+    unresolved = [(call, fname) for call, fname in refs if fname not in allowlist]
+
+    # No reference anywhere in the deck source (or preamble it pulls in via
+    # \input) may touch the quarantine tree or a mock-presentation tree.
+    preamble_path = HERE / "jmp_beamer_preamble.tex"
+    preamble_src = preamble_path.read_text(encoding="utf-8") if preamble_path.is_file() else ""
+    banned_hits = [tok for tok in ("_retired_assets", "mock_presentation", "Presentation_mock")
+                   if tok in src or tok in preamble_src or tok in text]
+
+    gate("G-ASSETS",
+         bool(allowlist) and not unresolved and not banned_hits,
+         "%d figure asset(s) referenced, all resolve to this run's "
+         "figures/r6/ output %s; no reference to a retired-assets or "
+         "mock-presentation tree"
+         % (len(refs), sorted(allowlist))
+         if not unresolved and not banned_hits and allowlist
+         else "VIOLATION: unresolved asset references %s; banned-tree "
+              "mentions %s; allowlist %s"
+              % (unresolved, banned_hits, sorted(allowlist)))
 
     print("R6 deck verification")
     print("-" * 68)

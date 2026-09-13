@@ -1,0 +1,1187 @@
+{
+  "task": "HAZARD-1",
+  "moved_count": 118,
+  "all_byte_identical": true,
+  "entries": [
+    {
+      "source_path": "Presentation_mock/01_outline/Literature_architecture_v1_reply.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/Literature_architecture_v1_reply.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 11185,
+      "sha256_before": "6e72ca9bee11bc9eaee24f8a4806b60c0c6bdbd99194d06198e5038b3d3051ec",
+      "sha256_after": "6e72ca9bee11bc9eaee24f8a4806b60c0c6bdbd99194d06198e5038b3d3051ec",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/literature_architecture_v1_deep_Report.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/literature_architecture_v1_deep_Report.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 22652,
+      "sha256_before": "5f3cdffe3abd66e10051f2c289cb3b0c8e31e35b7510c5f6117d1e6cc89fdf4c",
+      "sha256_after": "5f3cdffe3abd66e10051f2c289cb3b0c8e31e35b7510c5f6117d1e6cc89fdf4c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v1.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v1.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 12304,
+      "sha256_before": "6148b8c364d24fe1df7e5e07a9c76017b25f0b5501c3d2bee62e8e6deb0a4bbd",
+      "sha256_after": "6148b8c364d24fe1df7e5e07a9c76017b25f0b5501c3d2bee62e8e6deb0a4bbd",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v4.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v4.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 35824,
+      "sha256_before": "f83df5baa0206f318650acff928909ddc6fe943b00724628933914480132e7a5",
+      "sha256_after": "f83df5baa0206f318650acff928909ddc6fe943b00724628933914480132e7a5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v5.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v5.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 18571,
+      "sha256_before": "90ec26c8467e10cc47fa9aa119e0f4c9667db7d94a1a2d5f0a1f361523766e4b",
+      "sha256_after": "90ec26c8467e10cc47fa9aa119e0f4c9667db7d94a1a2d5f0a1f361523766e4b",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v6.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v6.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 5641,
+      "sha256_before": "cd93e5efd04b8d70e766e5df8983afa2022999fbde371b7f0545f95541764e1f",
+      "sha256_after": "cd93e5efd04b8d70e766e5df8983afa2022999fbde371b7f0545f95541764e1f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v7.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v7.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 12697,
+      "sha256_before": "a9e4428de6523673675f570aaede8b05ac1abb8395255ab4fc13ddb03f86a912",
+      "sha256_after": "a9e4428de6523673675f570aaede8b05ac1abb8395255ab4fc13ddb03f86a912",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/01_outline/mock_jmp_slide_outline_v9.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/01_outline/mock_jmp_slide_outline_v9.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 19444,
+      "sha256_before": "db4f080366bbff3f8624f7114ef1479646800c15ae5894563b81af9f62f086f9",
+      "sha256_after": "db4f080366bbff3f8624f7114ef1479646800c15ae5894563b81af9f62f086f9",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/02_results/mock_jmp_completed_results_v1.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/02_results/mock_jmp_completed_results_v1.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17349,
+      "sha256_before": "376c1d47cb534a604a4e468466f46c3474b807f7a3188d2f0590918a705f8d62",
+      "sha256_after": "376c1d47cb534a604a4e468466f46c3474b807f7a3188d2f0590918a705f8d62",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/02_results/mock_jmp_elasticity_addon_v1.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/02_results/mock_jmp_elasticity_addon_v1.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 6212,
+      "sha256_before": "a9928503effb9a3caaf1b06df40804df78862657178c01fa2c4eda5f80924a21",
+      "sha256_after": "a9928503effb9a3caaf1b06df40804df78862657178c01fa2c4eda5f80924a21",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/_make_elasticity_figure.py",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/_make_elasticity_figure.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2213,
+      "sha256_before": "9a9536b62d64946d215b67f48980cbf5f52ca2b979d3b7338460e6f64ec6ba2b",
+      "sha256_after": "9a9536b62d64946d215b67f48980cbf5f52ca2b979d3b7338460e6f64ec6ba2b",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/_make_figures.py",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/_make_figures.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 8029,
+      "sha256_before": "e78ef57a52bacca441f37bb29aebbeb1449712f2f8548a37d06f03530ba2938d",
+      "sha256_after": "e78ef57a52bacca441f37bb29aebbeb1449712f2f8548a37d06f03530ba2938d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/figure_decomposition_shares.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/figure_decomposition_shares.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 77614,
+      "sha256_before": "10accbd48bfb195e0b8303ca18c7d4018302b3d7101bd53995e6530f55fd9352",
+      "sha256_after": "10accbd48bfb195e0b8303ca18c7d4018302b3d7101bd53995e6530f55fd9352",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/figure_elasticities.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/figure_elasticities.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 69257,
+      "sha256_before": "d827f63773b6c8fae0c548706bdaaf1e4c62991553f62e50f130e1128eaf15eb",
+      "sha256_after": "d827f63773b6c8fae0c548706bdaaf1e4c62991553f62e50f130e1128eaf15eb",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/figure_fit.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/figure_fit.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 61223,
+      "sha256_before": "b7ff581eb8fb0371225bd11215de0b8ea018cb9f9bb99ad6734e793b2a0d9185",
+      "sha256_after": "b7ff581eb8fb0371225bd11215de0b8ea018cb9f9bb99ad6734e793b2a0d9185",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/figure_responsibility_sensitivity.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/figure_responsibility_sensitivity.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 99071,
+      "sha256_before": "6c0d0df188e1edcf785bb3683286dd24dc7728969fa58fa6780e24055b08320f",
+      "sha256_after": "6c0d0df188e1edcf785bb3683286dd24dc7728969fa58fa6780e24055b08320f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_elasticities.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_elasticities.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 211,
+      "sha256_before": "1e3eee291e7f5437be5ed78da3bbc4c826af52fec856ff9e2e2476b5c49da339",
+      "sha256_after": "1e3eee291e7f5437be5ed78da3bbc4c826af52fec856ff9e2e2476b5c49da339",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_model_fit.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_model_fit.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1669,
+      "sha256_before": "fe024cc1ba34adc411181dcfbd06131b74cf83213c6a5e52875d8d892eb47098",
+      "sha256_after": "fe024cc1ba34adc411181dcfbd06131b74cf83213c6a5e52875d8d892eb47098",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_opportunity_parameters.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_opportunity_parameters.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1614,
+      "sha256_before": "be36cca9bc26b48fa55b99b87fe3c82ae136280e8b62ae80746a7f9450646121",
+      "sha256_after": "be36cca9bc26b48fa55b99b87fe3c82ae136280e8b62ae80746a7f9450646121",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_preference_parameters.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_preference_parameters.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 380,
+      "sha256_before": "a8a579c0e8eb0ec2a717f25c129dc250056fc7cd37cc69a98cb436f551361495",
+      "sha256_after": "a8a579c0e8eb0ec2a717f25c129dc250056fc7cd37cc69a98cb436f551361495",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_responsibility_sensitivity.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_responsibility_sensitivity.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 340,
+      "sha256_before": "21c01eaa78d6ac366f810b198f2644855e34149317f6cdf1b494841eb3c3e528",
+      "sha256_after": "21c01eaa78d6ac366f810b198f2644855e34149317f6cdf1b494841eb3c3e528",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_sample_setup.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_sample_setup.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1221,
+      "sha256_before": "bd053f92354f25b0e918e54d13b30b085d6d29922b54ba7bf407966183d5c009",
+      "sha256_after": "bd053f92354f25b0e918e54d13b30b085d6d29922b54ba7bf407966183d5c009",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/03_assets/table_welfare_decomposition.csv",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/03_assets/table_welfare_decomposition.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1216,
+      "sha256_before": "5aa5e5bc01d5e0550d3a0e37bc6ef326c9b8258dc97d6a6e778f7a10af4e1c0d",
+      "sha256_after": "5aa5e5bc01d5e0550d3a0e37bc6ef326c9b8258dc97d6a6e778f7a10af4e1c0d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_continuation_script_v3.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_continuation_script_v3.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 15863,
+      "sha256_before": "36c92931b3247b174101ab137a63885c31237f913f504adbe40519d33a26466c",
+      "sha256_after": "36c92931b3247b174101ab137a63885c31237f913f504adbe40519d33a26466c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_continuation_script_v4.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_continuation_script_v4.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 16947,
+      "sha256_before": "b8212b69c2300c55a4afdc5a5a5977ff3b34023654b3ca24f2a5dfee4f13fb56",
+      "sha256_after": "b8212b69c2300c55a4afdc5a5a5977ff3b34023654b3ca24f2a5dfee4f13fb56",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_continuation_script_v5.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_continuation_script_v5.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 10536,
+      "sha256_before": "1d44a8a0e5714511ae515ce0c321041f82974ae6c8600712ffb0a67e7279170d",
+      "sha256_after": "1d44a8a0e5714511ae515ce0c321041f82974ae6c8600712ffb0a67e7279170d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_front15_script_v3.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_front15_script_v3.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 15322,
+      "sha256_before": "f1b50f9853cad1db0f798a90588ba6d0fece0778841e37589d4c3ca25d8872b4",
+      "sha256_after": "f1b50f9853cad1db0f798a90588ba6d0fece0778841e37589d4c3ca25d8872b4",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_front15_script_v4.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_front15_script_v4.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 13094,
+      "sha256_before": "cf78864d2bf48bec8e6dd1170e4c9a938823fe4f469a485fae59d76b4d181be5",
+      "sha256_after": "cf78864d2bf48bec8e6dd1170e4c9a938823fe4f469a485fae59d76b4d181be5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/mock_jmp_front15_script_v6.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/mock_jmp_front15_script_v6.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 20599,
+      "sha256_before": "a7f4a5ef316f4dcddca2cc774ab82ca309d0e3a808f51bde12105ea76dcc5819",
+      "sha256_after": "a7f4a5ef316f4dcddca2cc774ab82ca309d0e3a808f51bde12105ea76dcc5819",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/04_script/responsibility_slide_refine_v2.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/04_script/responsibility_slide_refine_v2.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2531,
+      "sha256_before": "a74ad186e1d127c21c4502cc0593f9e967fcead765593312e34c20c929a467ee",
+      "sha256_after": "a74ad186e1d127c21c4502cc0593f9e967fcead765593312e34c20c929a467ee",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/05_QA/mock_jmp_QA_front15_v3.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/05_QA/mock_jmp_QA_front15_v3.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 14392,
+      "sha256_before": "36794e78dadf6f016e9d3aa7fc1010b9c4cd0ae58ddd93bc53932770bab3b06e",
+      "sha256_after": "36794e78dadf6f016e9d3aa7fc1010b9c4cd0ae58ddd93bc53932770bab3b06e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/05_QA/mock_jmp_QA_front15_v4.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/05_QA/mock_jmp_QA_front15_v4.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 14733,
+      "sha256_before": "847d3831ab44cac03bba6f089f34bf42dc799f8a02894fd92210400fc2548a14",
+      "sha256_after": "847d3831ab44cac03bba6f089f34bf42dc799f8a02894fd92210400fc2548a14",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/05_QA/mock_jmp_QA_fulltalk_v1.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/05_QA/mock_jmp_QA_fulltalk_v1.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 11655,
+      "sha256_before": "6eca626134061f57ed2d6c0012d65543f15de0d28b21be1a2d6fb35474ba346f",
+      "sha256_after": "6eca626134061f57ed2d6c0012d65543f15de0d28b21be1a2d6fb35474ba346f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/Prompting_chat.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/Prompting_chat.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 159282,
+      "sha256_before": "0ae9d34e49ebc11dcaccb4985d4b6b36d26454ae2e6b28decdbb2e1d2b4c62a2",
+      "sha256_after": "0ae9d34e49ebc11dcaccb4985d4b6b36d26454ae2e6b28decdbb2e1d2b4c62a2",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/README_mock_presentation.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/README_mock_presentation.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 348,
+      "sha256_before": "6b746beaa29bd8b200ff377faca4ec2b1679df09d68b11a2fdeb27b0f9bac897",
+      "sha256_after": "6b746beaa29bd8b200ff377faca4ec2b1679df09d68b11a2fdeb27b0f9bac897",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/README_overleaf.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/README_overleaf.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 4874,
+      "sha256_before": "f62e5c341c2e75a56f3ce24e2882a1cc6662002a4d84b8dd3b08d15b6d82b232",
+      "sha256_after": "f62e5c341c2e75a56f3ce24e2882a1cc6662002a4d84b8dd3b08d15b6d82b232",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/TODO_notes.md",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/TODO_notes.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1675,
+      "sha256_before": "1c58213cadc96fcb14736ad904a0af3005580c5783ca14a46440a9f68e6ece34",
+      "sha256_after": "1c58213cadc96fcb14736ad904a0af3005580c5783ca14a46440a9f68e6ece34",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/figures/figure_decomposition_shares.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/figures/figure_decomposition_shares.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 77614,
+      "sha256_before": "10accbd48bfb195e0b8303ca18c7d4018302b3d7101bd53995e6530f55fd9352",
+      "sha256_after": "10accbd48bfb195e0b8303ca18c7d4018302b3d7101bd53995e6530f55fd9352",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/figures/figure_elasticities.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/figures/figure_elasticities.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 69257,
+      "sha256_before": "d827f63773b6c8fae0c548706bdaaf1e4c62991553f62e50f130e1128eaf15eb",
+      "sha256_after": "d827f63773b6c8fae0c548706bdaaf1e4c62991553f62e50f130e1128eaf15eb",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/figures/figure_fit.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/figures/figure_fit.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 61223,
+      "sha256_before": "b7ff581eb8fb0371225bd11215de0b8ea018cb9f9bb99ad6734e793b2a0d9185",
+      "sha256_after": "b7ff581eb8fb0371225bd11215de0b8ea018cb9f9bb99ad6734e793b2a0d9185",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/figures/figure_responsibility_sensitivity.png",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/figures/figure_responsibility_sensitivity.png",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 99071,
+      "sha256_before": "6c0d0df188e1edcf785bb3683286dd24dc7728969fa58fa6780e24055b08320f",
+      "sha256_after": "6c0d0df188e1edcf785bb3683286dd24dc7728969fa58fa6780e24055b08320f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.aux",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.aux",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 7667,
+      "sha256_before": "a0f6391e93a613d9f4076b367111a7280d94ef35cc3d3b1425300e07301ebe05",
+      "sha256_after": "a0f6391e93a613d9f4076b367111a7280d94ef35cc3d3b1425300e07301ebe05",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.log",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.log",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 46964,
+      "sha256_before": "9322c0ec69a138be5e7c320c7988b033a834e40f0135a7529f85acb69a53448c",
+      "sha256_after": "9322c0ec69a138be5e7c320c7988b033a834e40f0135a7529f85acb69a53448c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.nav",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.nav",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 4723,
+      "sha256_before": "14a13abae47b46614584f399c977430f4cb78fe8f51ea1393eec817cc365cb0f",
+      "sha256_after": "14a13abae47b46614584f399c977430f4cb78fe8f51ea1393eec817cc365cb0f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.out",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.out",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 818,
+      "sha256_before": "f19979ebf539cb59c4577d74787bcc1eb455ff99cb7c87be81282ec40c553a2a",
+      "sha256_after": "f19979ebf539cb59c4577d74787bcc1eb455ff99cb7c87be81282ec40c553a2a",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.pdf",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 525788,
+      "sha256_before": "9381ebb55971405599a6d2740b9753d58c32c7352fcc7787391ad0b7124fe0a6",
+      "sha256_after": "9381ebb55971405599a6d2740b9753d58c32c7352fcc7787391ad0b7124fe0a6",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.snm",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.snm",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 0,
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.tex",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 42952,
+      "sha256_before": "76ee722a85d045b60d409d9cf64b48b7d955eee28cd1d7322946862e58525701",
+      "sha256_after": "76ee722a85d045b60d409d9cf64b48b7d955eee28cd1d7322946862e58525701",
+      "byte_identical": true
+    },
+    {
+      "source_path": "Presentation_mock/beamer/main.toc",
+      "dest_path": "beamer/_retired_assets/Presentation_mock/beamer/main.toc",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 346,
+      "sha256_before": "c733a19cd7fec70d91c5adc888018199d468fce25b577cee7ee5f8d0e6b4791c",
+      "sha256_after": "c733a19cd7fec70d91c5adc888018199d468fce25b577cee7ee5f8d0e6b4791c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/DECK_V4_REVIEW.md",
+      "dest_path": "beamer/_retired_assets/beamer/DECK_V4_REVIEW.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 10883,
+      "sha256_before": "f8b0e0cd7de536e0eb64f22b9636413fe468a1620a18c8b94bf1502391d507dd",
+      "sha256_after": "f8b0e0cd7de536e0eb64f22b9636413fe468a1620a18c8b94bf1502391d507dd",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/JMP_seminar_deck_v1.tex",
+      "dest_path": "beamer/_retired_assets/beamer/JMP_seminar_deck_v1.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 43519,
+      "sha256_before": "3a0034ad78c3d3ca2d91af0eab76ef9abccb6dab1e4f6674b160c9a74c2abdb1",
+      "sha256_after": "3a0034ad78c3d3ca2d91af0eab76ef9abccb6dab1e4f6674b160c9a74c2abdb1",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/JMP_seminar_deck_v1_25min.tex",
+      "dest_path": "beamer/_retired_assets/beamer/JMP_seminar_deck_v1_25min.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 194,
+      "sha256_before": "d38d93f9dffd368700e7b077ffc49edd84f2b097dc7178b3879875018db83b4a",
+      "sha256_after": "d38d93f9dffd368700e7b077ffc49edd84f2b097dc7178b3879875018db83b4a",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/JMP_seminar_deck_v1_rehearsal.tex",
+      "dest_path": "beamer/_retired_assets/beamer/JMP_seminar_deck_v1_rehearsal.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 619,
+      "sha256_before": "5f7cf970f28acde491e442115c36530583766ed9cb446de9e463ee35431cf16e",
+      "sha256_after": "5f7cf970f28acde491e442115c36530583766ed9cb446de9e463ee35431cf16e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/README.md",
+      "dest_path": "beamer/_retired_assets/beamer/README.md",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 5510,
+      "sha256_before": "ca215a3c2d09661d840d4d511d5bdb75edac886d3a71c372fb5658a1bcc3fd91",
+      "sha256_after": "ca215a3c2d09661d840d4d511d5bdb75edac886d3a71c372fb5658a1bcc3fd91",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/build_deck_v1.sh",
+      "dest_path": "beamer/_retired_assets/beamer/build_deck_v1.sh",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 181,
+      "sha256_before": "0f9dec6723de57ad666d006ab38c8b2d2def31b3e4d82623fcb077d747c92bba",
+      "sha256_after": "0f9dec6723de57ad666d006ab38c8b2d2def31b3e4d82623fcb077d747c92bba",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/build_deck_v4.py",
+      "dest_path": "beamer/_retired_assets/beamer/build_deck_v4.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2515,
+      "sha256_before": "8367d931bd9d1ce8d9e4f1ae2aa1a79e0bbe6c1b53b5005fb84989cd039e12a1",
+      "sha256_after": "8367d931bd9d1ce8d9e4f1ae2aa1a79e0bbe6c1b53b5005fb84989cd039e12a1",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/check_deck_welfare_current_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/check_deck_welfare_current_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2301,
+      "sha256_before": "0588580aa8098327cf8d596e23567c3bf5d7d5c901f55890eb2d075ad7ef4edf",
+      "sha256_after": "0588580aa8098327cf8d596e23567c3bf5d7d5c901f55890eb2d075ad7ef4edf",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/deck_content_v4.py",
+      "dest_path": "beamer/_retired_assets/beamer/deck_content_v4.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2835,
+      "sha256_before": "722ae3002f240306e704cccb79b6d2d371632f76fd82e58a6930d406c66eb049",
+      "sha256_after": "722ae3002f240306e704cccb79b6d2d371632f76fd82e58a6930d406c66eb049",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/deck_numbers_v1.tex",
+      "dest_path": "beamer/_retired_assets/beamer/deck_numbers_v1.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 6100,
+      "sha256_before": "baf1a563d1a18ca88084ec7d12f598baa0952eeb630d97161312406ac3186d6e",
+      "sha256_after": "baf1a563d1a18ca88084ec7d12f598baa0952eeb630d97161312406ac3186d6e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/fig01_observed_hours_35h_peak.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/fig01_observed_hours_35h_peak.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 20607,
+      "sha256_before": "bf9f3533ab271d09b4c9175c3068600a5eb9b309e298ade82e2976efadf369f6",
+      "sha256_after": "bf9f3533ab271d09b4c9175c3068600a5eb9b309e298ade82e2976efadf369f6",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/fig02_hours_bands_obs_vs_pred.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/fig02_hours_bands_obs_vs_pred.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 20213,
+      "sha256_before": "23785fb271a32400807d64dc64e34982469f0f0f4e1459c986516b607f259eab",
+      "sha256_after": "23785fb271a32400807d64dc64e34982469f0f0f4e1459c986516b607f259eab",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/fig03_employment_obs_vs_pred.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/fig03_employment_obs_vs_pred.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17356,
+      "sha256_before": "af9a93503333dfb7ac055f3550123e5bb850e8f162fccd5fe06b373295c949b6",
+      "sha256_after": "af9a93503333dfb7ac055f3550123e5bb850e8f162fccd5fe06b373295c949b6",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/fig04_occupation_obs_vs_pred.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/fig04_occupation_obs_vs_pred.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17791,
+      "sha256_before": "e9b26042a71094106bfa745905f2a465db3a67a53e4e486065533e56c4fd9a7c",
+      "sha256_after": "e9b26042a71094106bfa745905f2a465db3a67a53e4e486065533e56c4fd9a7c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/fig08_coefficients_by_block.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/fig08_coefficients_by_block.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 30989,
+      "sha256_before": "ab5525dd4c1f84b7de6717bb6b2d8db7bc128c081f115db5e794fc1664c42ad5",
+      "sha256_after": "ab5525dd4c1f84b7de6717bb6b2d8db7bc128c081f115db5e794fc1664c42ad5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figC02_couples_decomposition.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figC02_couples_decomposition.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 30536,
+      "sha256_before": "e85139a6e7570f21212f0004bf41d7f4a18044f49337838dda995a473a2f45c9",
+      "sha256_after": "e85139a6e7570f21212f0004bf41d7f4a18044f49337838dda995a473a2f45c9",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figC03_singles_vs_couples.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figC03_singles_vs_couples.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 24657,
+      "sha256_before": "dfbcb98eaa6544c03fd277696a12393a79712f4778355238ff1164d5696d4a2c",
+      "sha256_after": "dfbcb98eaa6544c03fd277696a12393a79712f4778355238ff1164d5696d4a2c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figE1_matched_pair.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figE1_matched_pair.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 50385,
+      "sha256_before": "53295559ff952c008761687802e79b6ed54b2d5aba77f2aaa72c62f730e1fb86",
+      "sha256_after": "53295559ff952c008761687802e79b6ed54b2d5aba77f2aaa72c62f730e1fb86",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figG01_nested_geographic_access.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figG01_nested_geographic_access.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 33777,
+      "sha256_before": "a6b8584eaaf011f0a7d07fe6d6ba18caafb38d7d44353cf4212620871cd5c194",
+      "sha256_after": "a6b8584eaaf011f0a7d07fe6d6ba18caafb38d7d44353cf4212620871cd5c194",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figG02_regional_access_environments.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figG02_regional_access_environments.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 35227,
+      "sha256_before": "e807f5d9a114b68484dabf7c344836bdee190398d20f02f737540133e259d178",
+      "sha256_after": "e807f5d9a114b68484dabf7c344836bdee190398d20f02f737540133e259d178",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figR01_benchmark_decomposition.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figR01_benchmark_decomposition.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 25845,
+      "sha256_before": "d4ee678eb4a1c883770912f5674cdbfa7bb742193b2d834dc992dce33cf784d5",
+      "sha256_after": "d4ee678eb4a1c883770912f5674cdbfa7bb742193b2d834dc992dce33cf784d5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figS6_05_key_coefficients_vs_R.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figS6_05_key_coefficients_vs_R.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 35734,
+      "sha256_before": "572de498241ec6df3ba18285355713e88a541c117485f888aefe87f372165e45",
+      "sha256_after": "572de498241ec6df3ba18285355713e88a541c117485f888aefe87f372165e45",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figT1_conceptual.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figT1_conceptual.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 65421,
+      "sha256_before": "2153cf562d3bfecab44c52fee3010113aa47b1b1386c23f5835c79840bb115e3",
+      "sha256_after": "2153cf562d3bfecab44c52fee3010113aa47b1b1386c23f5835c79840bb115e3",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figU01_headline_two_intervals.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figU01_headline_two_intervals.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 42991,
+      "sha256_before": "aa2aa3a31e1a668b4e4717895373b94ec7f10e33d58c67d43fa9a5e2336dd4c1",
+      "sha256_after": "aa2aa3a31e1a668b4e4717895373b94ec7f10e33d58c67d43fa9a5e2336dd4c1",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figU02_subgroup_decomposition.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figU02_subgroup_decomposition.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 37321,
+      "sha256_before": "06cc09b9bb3f245e7e32bab7991368a539f83bc1d617e67f8fbc99ae1fde5e26",
+      "sha256_after": "06cc09b9bb3f245e7e32bab7991368a539f83bc1d617e67f8fbc99ae1fde5e26",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figW02_headline_decomposition.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figW02_headline_decomposition.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 23119,
+      "sha256_before": "2961bfd3a3035bd2c99932faec56bade6f9b969c52dd44a0b6666ed1f7b75c34",
+      "sha256_after": "2961bfd3a3035bd2c99932faec56bade6f9b969c52dd44a0b6666ed1f7b75c34",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figW03_nested_environment.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figW03_nested_environment.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 21883,
+      "sha256_before": "bf381adb3132f0dc9c24eb91e2dc24efedbc4af295bb7ca18a0782b56deb434c",
+      "sha256_after": "bf381adb3132f0dc9c24eb91e2dc24efedbc4af295bb7ca18a0782b56deb434c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figW05_welfare_vs_R.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figW05_welfare_vs_R.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 25169,
+      "sha256_before": "225d0a95dd9d87d9ba39a224a82ddef9fd959c3bf2c08aca0151107c70b31a3e",
+      "sha256_after": "225d0a95dd9d87d9ba39a224a82ddef9fd959c3bf2c08aca0151107c70b31a3e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/figX1_external_hours_lfs_validation.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/figX1_external_hours_lfs_validation.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 28833,
+      "sha256_before": "78a38dbc80d783ba8b8cdd2f6ff52e35d71f521c20e8024a377c711dcbbb20fd",
+      "sha256_after": "78a38dbc80d783ba8b8cdd2f6ff52e35d71f521c20e8024a377c711dcbbb20fd",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/benchmark_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/benchmark_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 16804,
+      "sha256_before": "6e0bbe2e210618c9d53b1836636278f50df3d5555af2c969e315797a732a2169",
+      "sha256_after": "6e0bbe2e210618c9d53b1836636278f50df3d5555af2c969e315797a732a2169",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/coefficients_1_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/coefficients_1_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 12446,
+      "sha256_before": "2e2ad13c24ecc6b9979e53c45971c8f274e621900dad944a6655946dba8fb6a3",
+      "sha256_after": "2e2ad13c24ecc6b9979e53c45971c8f274e621900dad944a6655946dba8fb6a3",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/coefficients_2_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/coefficients_2_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17386,
+      "sha256_before": "4b21e0669caf2c61c0d8be36e9b2bf1d6a973b3d12efc0e65c4072578c208547",
+      "sha256_after": "4b21e0669caf2c61c0d8be36e9b2bf1d6a973b3d12efc0e65c4072578c208547",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/coefficients_3_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/coefficients_3_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 13074,
+      "sha256_before": "12e9302754b341d2461b40c2f40a711629344b806495d926d7fb8f851097b747",
+      "sha256_after": "12e9302754b341d2461b40c2f40a711629344b806495d926d7fb8f851097b747",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/compensation_by_age_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/compensation_by_age_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 16646,
+      "sha256_before": "affa83d808050a365f2c10f56b629f12f3a4dce6096d967fcfed52c52d52b9c6",
+      "sha256_after": "affa83d808050a365f2c10f56b629f12f3a4dce6096d967fcfed52c52d52b9c6",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/couples_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/couples_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 16828,
+      "sha256_before": "217ce0bf68e708f1c9e381b0aba219c51b9c32d307be5d8b1b2bb7db786dcac0",
+      "sha256_after": "217ce0bf68e708f1c9e381b0aba219c51b9c32d307be5d8b1b2bb7db786dcac0",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/environment_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/environment_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 18205,
+      "sha256_before": "cd3500fb96f60d6fc61feaad2afe74e12ec6c159ad22d73a52d131ceffc73a77",
+      "sha256_after": "cd3500fb96f60d6fc61feaad2afe74e12ec6c159ad22d73a52d131ceffc73a77",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/external_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/external_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 13300,
+      "sha256_before": "d7af7803ed1d5508647f37abc616b9987d83848a38a23f9047394b7b7f26236d",
+      "sha256_after": "d7af7803ed1d5508647f37abc616b9987d83848a38a23f9047394b7b7f26236d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/headline_references_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/headline_references_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 13766,
+      "sha256_before": "80c5ddae590f78a300ec57638c64ee6983ba0ec59f72b16f4ad4ade7e279ac06",
+      "sha256_after": "80c5ddae590f78a300ec57638c64ee6983ba0ec59f72b16f4ad4ade7e279ac06",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/hours_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/hours_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 15386,
+      "sha256_before": "0f1af3a01fa3619aee5515794f0a8878388edf6b4b7d23db06ac264e68156799",
+      "sha256_after": "0f1af3a01fa3619aee5515794f0a8878388edf6b4b7d23db06ac264e68156799",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/household_a_employment_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/household_a_employment_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 10947,
+      "sha256_before": "043fbc47a4c31ee55958377fd08b940d6da8d751efd59468b2885b6bdc81a915",
+      "sha256_after": "043fbc47a4c31ee55958377fd08b940d6da8d751efd59468b2885b6bdc81a915",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/household_a_hours_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/household_a_hours_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 18894,
+      "sha256_before": "f2732aae514a052bc3ea987ecfadd57354c85a6934a27d85d115eccc903ea4e9",
+      "sha256_after": "f2732aae514a052bc3ea987ecfadd57354c85a6934a27d85d115eccc903ea4e9",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/household_a_occupation_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/household_a_occupation_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 12005,
+      "sha256_before": "e65db2342e8363d2b39a8fc38b3ab1a6b6f69fd3f8cc6091a0278cccb66e6c42",
+      "sha256_after": "e65db2342e8363d2b39a8fc38b3ab1a6b6f69fd3f8cc6091a0278cccb66e6c42",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/household_a_wages_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/household_a_wages_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 24039,
+      "sha256_before": "72bf9c57af4eb8a6a07f70306a5a8f16e696e12bb19aedc21a4cbea4282b0b94",
+      "sha256_after": "72bf9c57af4eb8a6a07f70306a5a8f16e696e12bb19aedc21a4cbea4282b0b94",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/indifference_checks.json",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/indifference_checks.json",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 348,
+      "sha256_before": "a80d61219f7177ca2210b987c21c21c33a4567ddf4aa2b909783bf4c7ec3a5d4",
+      "sha256_after": "a80d61219f7177ca2210b987c21c21c33a4567ddf4aa2b909783bf4c7ec3a5d4",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/indifference_curves_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/indifference_curves_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 24738,
+      "sha256_before": "f2cff3e6b6df11aeaff852f121a85bc19fcb4a85bb237ad03700ca8e1611a975",
+      "sha256_after": "f2cff3e6b6df11aeaff852f121a85bc19fcb4a85bb237ad03700ca8e1611a975",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/nested_needs_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/nested_needs_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 19937,
+      "sha256_before": "5648574db764d09100b66e79aa6fd815f5bb6d9c053cee5af194cb72d3df9a8f",
+      "sha256_after": "5648574db764d09100b66e79aa6fd815f5bb6d9c053cee5af194cb72d3df9a8f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/observed_hours_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/observed_hours_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 12732,
+      "sha256_before": "7d51ed01a2d292e65f0402103fed8c4b35610bbb3daa443884303b2c759f5287",
+      "sha256_after": "7d51ed01a2d292e65f0402103fed8c4b35610bbb3daa443884303b2c759f5287",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/regional_profiles_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/regional_profiles_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 14511,
+      "sha256_before": "541f7876636c24f360acb975482697f06cbcfa45c5fdb6c994e3cbda5b5ba54e",
+      "sha256_after": "541f7876636c24f360acb975482697f06cbcfa45c5fdb6c994e3cbda5b5ba54e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/slide_figure_index.csv",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/slide_figure_index.csv",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 2119,
+      "sha256_before": "b0391f3100f5058932165fc23ac073ace39f30b3a18e4c86a5e31590b42e4815",
+      "sha256_after": "b0391f3100f5058932165fc23ac073ace39f30b3a18e4c86a5e31590b42e4815",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/slide_style_v1.json",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/slide_style_v1.json",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 161,
+      "sha256_before": "621ace37fef5d52a40bd2c1bc721364d665aefccf914ff551a374a0266d977fb",
+      "sha256_after": "621ace37fef5d52a40bd2c1bc721364d665aefccf914ff551a374a0266d977fb",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/subgroup_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/subgroup_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17114,
+      "sha256_before": "f825e93163d1be147f8758a72df5fc9f468cedabb3e25f7e3f0b2d55af709e7e",
+      "sha256_after": "f825e93163d1be147f8758a72df5fc9f468cedabb3e25f7e3f0b2d55af709e7e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/v41_source_manifest.json",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/v41_source_manifest.json",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 1765,
+      "sha256_before": "d995ff9d2b1be0524e22631d4c2e6e95f334b289156ddaef7b9bedb8c8d1dda7",
+      "sha256_after": "d995ff9d2b1be0524e22631d4c2e6e95f334b289156ddaef7b9bedb8c8d1dda7",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/welfare_distribution_checks.json",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/welfare_distribution_checks.json",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 669,
+      "sha256_before": "5d176b27c56aadceff76c33ee5bd51ade07182d8bfa73bd82bc40f95d0de6a32",
+      "sha256_after": "5d176b27c56aadceff76c33ee5bd51ade07182d8bfa73bd82bc40f95d0de6a32",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/slides/welfare_distributions_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/slides/welfare_distributions_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 16480,
+      "sha256_before": "f2e80405488399740a729b536f253560d8b143812b0128b9f893231916e6f97c",
+      "sha256_after": "f2e80405488399740a729b536f253560d8b143812b0128b9f893231916e6f97c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/unused_v3/draws_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/unused_v3/draws_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 20238,
+      "sha256_before": "4f590e741728c9ec0a51021c229c0ce1614097af9a35b84a5c79babbbd6e3354",
+      "sha256_after": "4f590e741728c9ec0a51021c229c0ce1614097af9a35b84a5c79babbbd6e3354",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/unused_v3/fit_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/unused_v3/fit_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 15048,
+      "sha256_before": "a6556a65647b047da7615a11e8aaa0d51ab2703571a44651c6aff869eabb4be8",
+      "sha256_after": "a6556a65647b047da7615a11e8aaa0d51ab2703571a44651c6aff869eabb4be8",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/unused_v3/geographic_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/unused_v3/geographic_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17064,
+      "sha256_before": "cd7fbb19c682bfaf413236d72fd4d57602793239c8a4ac2db4c5de21a53c18a0",
+      "sha256_after": "cd7fbb19c682bfaf413236d72fd4d57602793239c8a4ac2db4c5de21a53c18a0",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/unused_v3/headline_intervals_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/unused_v3/headline_intervals_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 20184,
+      "sha256_before": "91862ea18d904430ff43d2da11d16252e878a731a385112015ee0b7103c31638",
+      "sha256_after": "91862ea18d904430ff43d2da11d16252e878a731a385112015ee0b7103c31638",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/figures/unused_v3/headline_slide.pdf",
+      "dest_path": "beamer/_retired_assets/beamer/figures/unused_v3/headline_slide.pdf",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 17100,
+      "sha256_before": "1054da0e2a5e858693ca19459c3b4b01225a2029d1090c002d71827bdb087935",
+      "sha256_after": "1054da0e2a5e858693ca19459c3b4b01225a2029d1090c002d71827bdb087935",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/make_deck_macros_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/make_deck_macros_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 28599,
+      "sha256_before": "efe607ccdb75bfc922c47e363a5c44a72fda120cbb2977e4d24237e0951a4701",
+      "sha256_after": "efe607ccdb75bfc922c47e363a5c44a72fda120cbb2977e4d24237e0951a4701",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/make_numbers_of_record_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/make_numbers_of_record_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 43120,
+      "sha256_before": "90cc2565e8f5ce4fea6b79c8a268b6a53e00aa043bc8c0fd9db7f808b45df662",
+      "sha256_after": "90cc2565e8f5ce4fea6b79c8a268b6a53e00aa043bc8c0fd9db7f808b45df662",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/make_slide_figures_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/make_slide_figures_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 36492,
+      "sha256_before": "c11fd5dffc7f641920f10130a368b17817cd2d2d22d45807255389e2810572a3",
+      "sha256_after": "c11fd5dffc7f641920f10130a368b17817cd2d2d22d45807255389e2810572a3",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/make_slide_figures_v41.py",
+      "dest_path": "beamer/_retired_assets/beamer/make_slide_figures_v41.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 13674,
+      "sha256_before": "c7853e3a5a4902a50bc6c9046e04bef9acbb06b21733849eea00fd7ef4498ac1",
+      "sha256_after": "c7853e3a5a4902a50bc6c9046e04bef9acbb06b21733849eea00fd7ef4498ac1",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/slide_table_v1.csv",
+      "dest_path": "beamer/_retired_assets/beamer/slide_table_v1.csv",
+      "tracked_in_git": false,
+      "move_method": "mv (untracked)",
+      "size_bytes": 3588,
+      "sha256_before": "adf157d784dfe5970c2c9590a552b32d0d79447e643a1b6a7ecd9e9c89389dcf",
+      "sha256_after": "adf157d784dfe5970c2c9590a552b32d0d79447e643a1b6a7ecd9e9c89389dcf",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/slide_table_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/slide_table_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 994,
+      "sha256_before": "6a664968a70ed08e8888fca8aa1e4f4c97875fc216d464f0c6c9b5992600a3cb",
+      "sha256_after": "6a664968a70ed08e8888fca8aa1e4f4c97875fc216d464f0c6c9b5992600a3cb",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/theory_model_figure.tex",
+      "dest_path": "beamer/_retired_assets/beamer/theory_model_figure.tex",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 15071,
+      "sha256_before": "54112c9b2c12dae90b1f732a4074a95f8e1522c288ef72c18759e8021274a9d8",
+      "sha256_after": "54112c9b2c12dae90b1f732a4074a95f8e1522c288ef72c18759e8021274a9d8",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/verify_content_v4.py",
+      "dest_path": "beamer/_retired_assets/beamer/verify_content_v4.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 19674,
+      "sha256_before": "d3ed39a4155f3da449ceae55bea308c5b217aa1337b4b391ec4d4c6cd6e556e6",
+      "sha256_after": "d3ed39a4155f3da449ceae55bea308c5b217aa1337b4b391ec4d4c6cd6e556e6",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/verify_deck_v1.py",
+      "dest_path": "beamer/_retired_assets/beamer/verify_deck_v1.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 5572,
+      "sha256_before": "e86d33002e9ce980bd17714b11fae63152349dde23587c92aa76d94aa62d7e7e",
+      "sha256_after": "e86d33002e9ce980bd17714b11fae63152349dde23587c92aa76d94aa62d7e7e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "beamer/write_deck_report_v4.py",
+      "dest_path": "beamer/_retired_assets/beamer/write_deck_report_v4.py",
+      "tracked_in_git": true,
+      "move_method": "git mv",
+      "size_bytes": 9280,
+      "sha256_before": "0fb52f0e8eb8e74a6479884d5712e7b6d56b4ff7265261a2dd8787def7130012",
+      "sha256_after": "0fb52f0e8eb8e74a6479884d5712e7b6d56b4ff7265261a2dd8787def7130012",
+      "byte_identical": true
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 R6 seminar deck build log
-started 2026-09-13T08:06:49.295915+00:00
+started 2026-09-13T20:06:41.932656+00:00
 authority: JMP_W1_fork_ruling_v1.md Appendix A (R6); JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md s5
 
 $ C:\Program Files\Python314\python.exe make_deck_numbers_r6.py
@@ -25,13 +25,11 @@ $ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build JMP_seminar
   Latexmk: applying rule 'pdflatex'...
   Rule 'pdflatex':  Reasons for rerun
   Changed files or newly in use/created:
-    JMP_seminar_deck_r6.tex
     figures/r6/calibration_r6_slide.pdf
     figures/r6/fitext_r6_slide.pdf
     figures/r6/kernelacc_r6_slide.pdf
     figures/r6/kernelwage_r6_slide.pdf
   Category 'changed_user':
-    JMP_seminar_deck_r6.tex
     figures/r6/calibration_r6_slide.pdf
     figures/r6/fitext_r6_slide.pdf
     figures/r6/kernelacc_r6_slide.pdf
@@ -496,13 +494,11 @@ $ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build JMP_seminar
   Latexmk: applying rule 'pdflatex'...
   Rule 'pdflatex':  Reasons for rerun
   Changed files or newly in use/created:
-    JMP_seminar_deck_r6.tex
     figures/r6/calibration_r6_slide.pdf
     figures/r6/fitext_r6_slide.pdf
     figures/r6/kernelacc_r6_slide.pdf
     figures/r6/kernelwage_r6_slide.pdf
   Category 'changed_user':
-    JMP_seminar_deck_r6.tex
     figures/r6/calibration_r6_slide.pdf
     figures/r6/fitext_r6_slide.pdf
     figures/r6/kernelacc_r6_slide.pdf
@@ -1438,8 +1434,9 @@ $ C:\Program Files\Python314\python.exe verify_deck_r6.py
     PASS  G-CHILDSHIFTER child-shifter wording verbatim, never called a preference/taste parameter
     PASS  G-PLABEL   P label reads 'systematic utility heterogeneity (tastes + reduced-form time constraints)' verbatim; no P/A/B/D magnitude anywhere
     PASS  G-NOBAN    none of the out-of-scope tokens (W_EA, finite-offer welfare, OEC characterisation, SCALE-SENS-1) appear
+    PASS  G-ASSETS   4 figure asset(s) referenced, all resolve to this run's figures/r6/ output ['calibration_r6_slide.pdf', 'fitext_r6_slide.pdf', 'kernelacc_r6_slide.pdf', 'kernelwage_r6_slide.pdf']; no reference to a retired-assets or mock-presentation tree
   --------------------------------------------------------------------
-  16 passed, 0 failed
+  17 passed, 0 failed
   exit 0
 
-finished 2026-09-13T08:06:58.394205+00:00
+finished 2026-09-13T20:06:50.722537+00:00
