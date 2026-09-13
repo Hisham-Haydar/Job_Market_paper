@@ -30,9 +30,11 @@ closed."*
   `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`). Singles and
   couples equivalised levels are never compared." The no-level-comparison
   caveat is kept (and `G-NOSIDEBYSIDE` is unchanged).
-- The memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` is cited by
-  name but is **not in the tree** (not under `C:\Users\hisham\Repo`, not in
-  git history) — a filing item, see Open items.
+- The memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` is filed at
+  `docs/normative/JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`
+  (commit `307e1a6`), recovered from the Goal 1 chat, SHA-256
+  `7cace61e4476148d05c894729f05ff38f79af803b9e637449ec76f9cb808014e` verified
+  before use, corrected identifier scan run over it with zero hits.
 - **Guard repointed** (`beamer/make_deck_numbers_r6.py`). The old guard refused
   to emit equivalised numbers unless both artifacts read
   `PROVISIONAL_PENDING_ECONOMICS_REVIEW`. It now holds the ruling as constants
@@ -200,7 +202,7 @@ deck and is stale. This file replaces it in place at the same path.
 | 4 | The earning-opportunity kernel | `s11_singles_parameter_table_v1.csv`, wage block; σ̂ and its z |
 | 5 | Haydar–Maniquet W¹ | — |
 | 5 | W¹ coincides with the staying-home equivalent | — |
-| 6 | **Baseline W¹-F, equivalised, single adults (PRIMARY)** | `docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md`, commit `4c4e07e`, over the verified construction `MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_report_v1.md`, commit `6048c9f`, verified `b5550af`. Machine-readable source read directly by `make_deck_numbers_r6.py`: `MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json`. `C_eq`/`W_F_eq` weighted mean/median/Gini (Gini to 6 d.p.: **0.263292 → 0.249807**). Scale: ratified modified-OECD, Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1, memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` (cited; not in tree) |
+| 6 | **Baseline W¹-F, equivalised, single adults (PRIMARY)** | `docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md`, commit `4c4e07e`, over the verified construction `MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_report_v1.md`, commit `6048c9f`, verified `b5550af`. Machine-readable source read directly by `make_deck_numbers_r6.py`: `MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json`. `C_eq`/`W_F_eq` weighted mean/median/Gini (Gini to 6 d.p.: **0.263292 → 0.249807**). Scale: ratified modified-OECD, Deputy ruling "SCALE CLOSED; CHILD-SHIFTER FRAMING" s1, memo `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md` (filed at `docs/normative/`, commit `307e1a6`) |
 | 6 | **Baseline W¹-F, equivalised, couples (PRIMARY)** | same memo/commits; `MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json`. Gini **0.226805 → 0.197403**. Same ratified-scale citation |
 | 7 | Four operators | — (operators only; no magnitude; $P$ label text is hand-authored per the Deputy/PI ruling, not a computed numeral) |
 | 7 | The open problem: observed vs counterfactual bundle | — |
@@ -302,10 +304,6 @@ claim). No P/A/B/D share appears anywhere in the deck.
 
 ## Open items
 
-- **Filing item (not a scale-status item):** the scale-review memo
-  `JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md`, cited on the §6
-  slides alongside the Deputy ruling, is not in the tree (absent under
-  `C:\Users\hisham\Repo` and from git history). It should be filed.
 - The committed equivalised JSONs in `MNL/outputs/welfare/baseline_f1_equivalised_v1/`
   still carry `scale_status = PROVISIONAL_PENDING_ECONOMICS_REVIEW` (they
   predate the ruling). The generator accepts that label or a `RATIFIED*`
