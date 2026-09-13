@@ -59,3 +59,7 @@ The label-to-identifier crosswalk (the H-S1 / H-C1 / H-S2 scheme established by 
 ## 6. Escalation line
 
 Whether the historical exposure documented in DISCLOSURE-LOG-1 requires institutional notification, remediation of already-pushed content, or any other compliance action is a decision for the **PI and the data steward**, not for an agent or a Claude Code session operating unilaterally. This document does not authorize, recommend, or perform any such remediation. Its scope is limited to (a) stating the forward rule in §2, (b) explaining why history is not being rewritten (§3), and (c) defining what a compliant shareable export looks like (§4–5). Any decision to rewrite history, request removal of already-pushed content from GitHub, or notify an oversight body must be escalated to and made by the PI/data steward, and is explicitly out of scope for this card.
+
+## 7. Steward confirmation (PUSH-1)
+
+On 2026-09-13, the PI/data steward confirmed that the applicable data-use agreement permits the pseudonymous keys described in §1 to reside on the private remote, and that no further remediation or notification is required for the historical exposure documented in DISCLOSURE-LOG-1. This confirmation is recorded here by date only; no names are recorded in this document. This entry does not change §2–§5 of this policy: the forward rule, the no-history-rewrite rationale, the shareable-export rule, and restricted-store retention all continue to apply unchanged going forward.
