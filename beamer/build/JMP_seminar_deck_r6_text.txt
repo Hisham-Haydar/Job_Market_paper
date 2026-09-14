@@ -135,29 +135,28 @@ households.
 Extensive-margin accuracy, shown only for the groups where it passes the
 quadrature-adequacy gate.
 
-
           single men       withheld: quadrature-limited
 
 
 
 
-       single women                                                                    85.7%
+       single women                                                                        85.7%
 
 
 
-        coupled men                                                                           92.2%
+        coupled men                                                                               92.2%
 
 
 
-     coupled women                                                                        89.8%
+     coupled women                                                                             89.8%
 
-                       0                  20              40            60               80               100
+                       0                  20              40               60                80                100
                                       extensive-margin accuracy (%), G2-adequate groups only
-
-   G2 gate (weighted): Monte Carlo s.e. ≤ 0.25× the sampling s.d. 3 of four groups pass; 1 quadrature-limited,
-   withheld, not reported at a worse label. Source: POSFIT support-coverage package v2b (commit a2e80a8).
-
-                                                                                                                 8/19
+   Aggregate participation and occupation margins are reproduced reasonably closely, while hours fit is uneven; the
+   group-level fit classification is not used as a headline result. This slide’s gate is narrower: G2 (weighted), Monte
+   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. 3 of four groups clear that
+   specific gate; 1 is quadrature-limited and withheld, not reported at a worse label. Source: POSFIT v3                8/19
+   (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same extensive-margin numbers as v2b (commit
 Calibration conditioned on prediction: observed hours against predicted hours, by
 predicted decile.
 
