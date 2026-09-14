@@ -40,8 +40,8 @@ Signed detailed-table parsing: Story report=PASS, Working paper=PASS, Canonical 
 | Artifact | SHA-256 | Path |
 |---|---|---|
 | Deck PDF | `B36FF0985F37DEEA9CFD08D52FE8B928FE98BE253DC85A180EAF0A0DDC865E35` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` |
-| Story HTML | `8D4A360F1CB56051B9ABF4FBA9DC0CE1373F870E308ED31D28D41E3BD3C4D856` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
-| Working-paper PDF | `5A55272AF672561AA36A487E9C5D32319AA85711D829D39BC2A0FFCFC944CA3C` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
+| Story HTML | `DD95AF9576E56F3BE7AD42C32B33CAC1BC80A8C0175A07296BEBC69D6874FF57` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
+| Working-paper PDF | `FC4CF0DE271EA8D4FEFD58D34286FA134B55D17A8954A1527BE00FB02356E632` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
 | Gallery HTML | `7A0D8E7840C5BCCB271F4C1E16974238EE1E19F50585D5B5093AB996BB3DFB5E` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_results_gallery_current.html` |
 | Notebook | `CE102AD5098E5F5479B306CDF516D8CC7473CCEEBC33714758A1FE5AACE90632` | `C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT\JMP_canonical_AtoZ.ipynb` |
 | Rehearsal script | `246A3943BEE92A82E5F6FE3FE3007490CB2B0DCE2441D7D8E3A5EB18D1E9CE3C` | `C:\Users\hisham\Repo\Job_Market_paper\reports\rehearsal_pack_v1.md` |

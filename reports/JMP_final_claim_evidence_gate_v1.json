@@ -7,11 +7,11 @@
     },
     "story": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
-      "sha256": "8d4a360f1cb56051b9abf4fba9dc0ce1373f870e308ed31d28d41e3bd3c4d856"
+      "sha256": "dd95af9576e56f3be7ad42c32b33cac1bc80a8c0175a07296bebc69d6874ff57"
     },
     "paper": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
-      "sha256": "5a55272af672561aa36a487e9c5d32319aa85711d829d39bc2a0ffcfc944ca3c"
+      "sha256": "fc4cf0de271ea8d4fefd58d34286fa134b55d17a8954a1527be00fb02356e632"
     },
     "gallery": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
@@ -284,12 +284,12 @@
     }
   ],
   "counts": {
-    "occurrences": 6234,
-    "resolved": 6234,
+    "occurrences": 6167,
+    "resolved": 6167,
     "failures": 0,
     "critical_failures": 0,
     "retired_hits": 0,
-    "cross_surface_quantities": 1763,
+    "cross_surface_quantities": 1756,
     "cross_surface_failures": 0
   },
   "fit_table": [
@@ -600,6 +600,12 @@
       "check": "fit observed singles_male",
       "status": "PASS",
       "detail": "single men: withheld (QUADRATURE-LIMITED)"
+    },
+    {
+      "surface": "gate-self-test",
+      "check": "signed parser negative control",
+      "status": "PASS",
+      "detail": "injected -0.006888789 against source +0.006888789; resolver returned FAIL_SIGN"
     }
   ],
   "retired_hits": [],

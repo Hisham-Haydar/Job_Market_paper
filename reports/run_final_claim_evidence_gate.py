@@ -458,7 +458,7 @@ RESULT_WORDS = re.compile(
     r"variance|covariance|elastic|normalizer|lambda|node|objective|criterion|"
     r"replication|sampling s\.d\.|Monte Carlo|attain", re.I)
 FAMILY_RULES = [
-    ("DECOMP", re.compile(r"DECOMP|Shapley|coalition|equalis|Delta|\u0394|PAB|variance|covariance|attain", re.I)),
+    ("DECOMP", re.compile(r"DECOMP|Shapley|coalition|equalis|Delta|\u0394|PAB|variance|covariance|attain|baseline Gini", re.I)),
     ("WS4", re.compile(r"normalizer|lambda|time endowment|leisure.*sensitiv|T\s*=", re.I)),
     ("NODE", re.compile(r"node[- ]convergence|integration[- ]node|fixed-seed|power.of.two", re.I)),
     ("LES", re.compile(r"raw.?LES|unemployed|inactive|employee", re.I)),
@@ -531,12 +531,14 @@ def table_occurrences(surface: str, tables: list[RenderedTable]) -> tuple[list[O
             for col_no, cell in enumerate(row, 1):
                 column = header[col_no - 1] if col_no <= len(header) else ""
                 # Pure ordinal/index/code columns are labels, not results.
-                if re.fullmatch(r"(?:index|row|decile|bin|state|code|year|rank|coalition)",
-                                norm(column), re.I):
+                if (not norm(column) or
+                        re.fullmatch(r"(?:index|row|decile|bin|state|code|year|rank|coalition)",
+                                     norm(column), re.I)):
                     continue
                 for match in TOKEN.finditer(cell):
                     rendered, value, decimals, percent = token_parts(match)
-                    reason = non_result_token(rendered, value, row_context)
+                    cell_context = norm(f"{row_context}; display_column={column}")
+                    reason = non_result_token(rendered, value, cell_context)
                     if reason:
                         continue
                     serial += 1
@@ -544,7 +546,7 @@ def table_occurrences(surface: str, tables: list[RenderedTable]) -> tuple[list[O
                         f"{surface}-{serial:05d}", surface,
                         f"{table.location}:r{row_no}c{col_no}", rendered, value,
                         decimals, percent or "%" in column,
-                        row_context[:600], family))
+                        cell_context[:600], family))
     return out, excluded
 
 
@@ -552,27 +554,32 @@ def prose_occurrences(surface: str, blocks: list[tuple[str, str]]) -> list[Occur
     out: list[Occurrence] = []
     serial = 0
     for location, block in blocks:
-        if not RESULT_WORDS.search(block):
+        if "\x1f" in block:
+            heading, rendered_block = block.split("\x1f", 1)
+            context = norm(f"{heading} | {rendered_block}")
+        else:
+            rendered_block = context = block
+        if not RESULT_WORDS.search(context):
             continue
-        for match in TOKEN.finditer(block):
+        for match in TOKEN.finditer(rendered_block):
             rendered, value, decimals, percent = token_parts(match)
-            if ("," in rendered and match.start() > 0 and match.end() < len(block)
-                    and block[match.start() - 1] in "[("
-                    and block[match.end()] in ")]"
+            if ("," in rendered and match.start() > 0 and match.end() < len(rendered_block)
+                    and rendered_block[match.start() - 1] in "[("
+                    and rendered_block[match.end()] in ")]"
                     and re.fullmatch(r"\d{1,3},\d{1,3}", rendered)):
                 continue
-            reason = non_result_token(rendered, value, block)
+            reason = non_result_token(rendered, value, context)
             if reason:
                 continue
             # Algebraic subscripts/exponents and enumerated result labels are
             # notation, not reported numerical values.
             lo = max(0, match.start() - 3)
-            if re.search(r"[A-Za-z_{}^]$", block[lo:match.start()]):
+            if re.search(r"[A-Za-z_{}^]$", rendered_block[lo:match.start()]):
                 continue
             serial += 1
             out.append(Occurrence(
                 f"{surface}-p-{serial:05d}", surface, location, rendered,
-                value, decimals, percent, block[:600], family_hint(block)))
+                value, decimals, percent, context[:600], family_hint(context)))
     return out
 
 
@@ -595,8 +602,17 @@ def pdf_occurrences(surface: str, text: str) -> list[Occurrence]:
 
 
 def markdown_blocks(text: str) -> list[tuple[str, str]]:
-    return [(f"line-{i}", norm(line)) for i, line in enumerate(text.splitlines(), 1)
-            if line.strip() and not line.lstrip().startswith("#")]
+    blocks: list[tuple[str, str]] = []
+    heading = ""
+    for i, line in enumerate(text.splitlines(), 1):
+        if line.lstrip().startswith("#"):
+            heading = norm(line.lstrip("# "))
+        elif re.match(r"\s*\*\*\d+\s*\[B?\d+\]", line):
+            heading = norm(re.sub(r"^\s*\*\*\d+\s*\[B?\d+\]\s*[^\w]+",
+                                  "", line).strip().strip("*"))
+        elif line.strip():
+            blocks.append((f"line-{i}", f"{heading}\x1f{norm(line)}"))
+    return blocks
 
 
 _MATCH_INDEX: dict[tuple[int, int], dict[int, list[tuple[SourceNumber, float]]]] = {}
@@ -628,8 +644,16 @@ def match_occurrence(occ: Occurrence, catalog: list[SourceNumber]) -> None:
     candidates: list[tuple[int, float, SourceNumber, float]] = []
     sign_candidates: list[tuple[int, float, SourceNumber, float]] = []
     ctx = occ.context.lower()
+    marker = re.search(r"display_column=([^;|]+)", ctx)
+    display_column = marker.group(1).strip() if marker else ""
+    delta_i_claim = (bool(re.search(r"(?:signed\s+)?(?:delta|\u0394)\s*[_ ]?i",
+                                    display_column, re.I))
+                     and not re.search(r"share|percent|%", display_column, re.I)
+                     or ctx.startswith("decomp-2 singles unequivalised signed delta i"))
     for source, scale in pool:
         if scale not in scales:
+            continue
+        if delta_i_claim and source.column.lower() != "delta_i":
             continue
         shown = source.value * scale
         diff = abs(shown - occ.parsed_value)
@@ -674,8 +698,68 @@ def match_occurrence(occ: Occurrence, catalog: list[SourceNumber]) -> None:
     occ.quantity_id, occ.source, occ.source_value = source.quantity_id, source.source, source.value
     occ.source_scale, occ.tolerance = scale, base_tol
     occ.unit, occ.weighting = source.unit, source.weighting
+    ctx = occ.context.lower()
+    source_weight = source.weighting.lower()
+    context_unweighted = bool(re.search(r"\bunweighted\b", ctx))
+    context_weighted = bool(re.search(r"\bweighted\b", ctx))
+    if context_weighted and context_unweighted:
+        context_weighted = context_unweighted = False
+    source_unweighted = "unweighted" in source_weight
+    source_weighted = (source_weight in {"weighted", "dwt", "survey weighted"}
+                       or ("weighted" in source_weight and not source_unweighted))
+    if ((context_unweighted and source_weighted)
+            or (context_weighted and source_unweighted)):
+        occ.status = "FAIL_WEIGHTING"
+        occ.note = (f"surface weighting conflicts with source weighting "
+                    f"{source.weighting!r}")
+        return
+
+    context_uneq = bool(re.search(r"\bunequivali[sz]ed\b", ctx))
+    context_eq = bool(re.search(r"\bequivali[sz]ed\b", ctx)) and not context_uneq
+    qid = source.quantity_id.lower()
+    source_uneq = bool(re.search(r"[:.]unequivali[sz]ed[:.]", qid))
+    source_eq = bool(re.search(r"[:.]equivali[sz]ed[:.]", qid))
+    if ((context_uneq and not context_eq and source_eq)
+            or (context_eq and not context_uneq and source_uneq)):
+        occ.status = "FAIL_UNIT"
+        occ.note = "surface equivalisation basis conflicts with source locator"
+        return
+
+    source_unit = source.unit.lower()
+    if ((re.search(r"(?:eur|euro).{0,15}(?:per hour|/hour)|hourly", ctx)
+         and ("month" in source_unit))
+            or (re.search(r"(?:eur|euro).{0,15}(?:per month|/month)", ctx)
+                and ("hour" in source_unit))):
+        occ.status = "FAIL_UNIT"
+        occ.note = f"surface unit conflicts with source unit {source.unit!r}"
+        return
+
     occ.status = "PASS"
     occ.note = f"parsed signed value; |display-source|={diff:.3g} <= {base_tol:.3g}"
+
+
+def signed_negative_control(catalog: list[SourceNumber]) -> dict[str, str]:
+    """Prove that a sign-flipped Delta-I claim is rejected as a sign error."""
+    source = next(s for s in catalog
+                  if s.quantity_id == "DECOMP:singles:unequivalised:delta_I")
+    rendered = f"{-source.value:+.9f}"
+    match = TOKEN.search(rendered)
+    if match is None:
+        return {"surface": "gate-self-test", "check": "signed parser negative control",
+                "status": "FAIL", "detail": "signed token did not parse"}
+    parsed, value, decimals, percent = token_parts(match)
+    occurrence = Occurrence(
+        "negative-control", "gate-self-test", "in-memory", parsed, value,
+        decimals, percent,
+        "DECOMP-2 singles unequivalised signed Delta I; display_column=signed Delta I", "DECOMP")
+    match_occurrence(occurrence, catalog)
+    ok = occurrence.status == "FAIL_SIGN"
+    return {
+        "surface": "gate-self-test", "check": "signed parser negative control",
+        "status": "PASS" if ok else "FAIL",
+        "detail": (f"injected {rendered} against source {source.value:+.9f}; "
+                   f"resolver returned {occurrence.status}"),
+    }
 
 
 def accepted_decomp_rows() -> list[dict[str, object]]:
@@ -893,6 +977,13 @@ def write_reports(surface_hashes: dict[str, str], source_manifest: list[dict[str
     else:
         lines.append("**PASS: zero retired-welfare content-signature hits across all six rendered surfaces.**")
 
+    lines += ["", "## Critical semantic, unit and sign checks", "",
+              "| surface | check | status | detail |",
+              "|---|---|---|---|"]
+    for row in critical:
+        lines.append("| %s | %s | %s | %s |" % tuple(
+            md_escape(row[key]) for key in ("surface", "check", "status", "detail")))
+
     lines += ["", "## Resolved four-group positive-fit adjudication", "",
               "All values are weighted and use the all-household scope. Accuracy and bands are proportions.", "",
               "| group | G2 gate (ratio) | observed accuracy | simulated 95% band | prediction-conditioned verdict | model-simulated benchmark verdict | supported statement |",
@@ -921,6 +1012,16 @@ def write_reports(surface_hashes: dict[str, str], source_manifest: list[dict[str
             lines.append(f"| {occ.occurrence_id} | {occ.surface} | {md_escape(occ.rendered)} | {occ.status} | {md_escape(occ.source)} | {md_escape(occ.context[:220])} |")
     else:
         lines += ["", "No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was found."]
+
+    lines += ["", "### Unsupported result numerals removed during correction", "",
+              "These reader-visible values had no source in the ruling's accepted-source list. They were removed rather than silently rebound to a numerically similar value elsewhere in the catalog.", "",
+              "| affected surface(s) | former claim | unsupported rendered value(s) | disposition |",
+              "|---|---|---|---|",
+              "| story report | consumption-normalizer table | 1,938.238719; 4,247.875047; 1,774.518218; 3,821.448012; 1,911.108058; 3,821.448012 EUR/month | exact table removed; qualitative invariance statement retained |",
+              "| story report; working paper | non-positive simulated-consumption floor counts | 22,597; 59,821 node-evaluations | counts removed; floor scope retained |",
+              "| story report; technical gallery | sub-ten-hour support-mass explanation | 4.15%; 0.00019%; expected count 0.249 | values removed; positive-mass/zero-realized-draw limitation retained |",
+              "| story report; working paper | predecessor-frame counts | 1,555; 2,275 households | counts removed; screening history and current S11 samples retained |",
+              "| story report; working paper | superseded single-adult curvature estimate | 0.168 | value removed; specification history retained |"]
 
     lines += ["", "## Cross-surface consistency (every resolved quantity on two or more surfaces)", "",
               "| quantity/source locator | per-surface rendered values | status |",
@@ -1022,6 +1123,7 @@ def main() -> int:
     fits = fit_rows()
     decomp = accepted_decomp_rows()
     critical, _ = critical_checks(surface_text, fits, decomp)
+    critical.append(signed_negative_control(catalog))
     retired = retired_hits(surface_text)
 
     consumer = MNL / "experiments/JMP_SEMINAR_SPRINT/discussion_notebook_support.py"

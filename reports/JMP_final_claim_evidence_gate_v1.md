@@ -9,8 +9,8 @@ The gate parsed signed values from the six reader-rendered surfaces. It used PDF
 | surface | exact path | SHA-256 |
 |---|---|---|
 | deck | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` | `b36ff0985f37deea9cfd08d52fe8b928fe98be253dc85a180eaf0a0ddc865e35` |
-| story | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` | `8d4a360f1cb56051b9abf4fba9dc0ce1373f870e308ed31d28d41e3bd3c4d856` |
-| paper | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` | `5a55272af672561aa36a487e9c5d32319aa85711d829d39bc2a0ffcfc944ca3c` |
+| story | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` | `dd95af9576e56f3be7ad42c32b33cac1bc80a8c0175a07296bebc69d6874ff57` |
+| paper | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` | `fc4cf0de271ea8d4fefd58d34286fa134b55d17a8954a1527be00fb02356e632` |
 | gallery | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_results_gallery_current.html` | `7a0d8e7840c5bccb271f4c1e16974238ee1e19f50585d5b5093ab996bb3dfb5e` |
 | notebook | `C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT\JMP_canonical_AtoZ.ipynb` | `ce102ad5098e5f5479b306cdf516d8cc7473cceebc33714758a1fe5aace90632` |
 | rehearsal | `C:\Users\hisham\Repo\Job_Market_paper\reports\rehearsal_pack_v1.md` | `246a3943bee92a82e5f6fe3fe3007490cb2b0dce2441d7d8e3a5eb18d1e9ce3c` |
@@ -18,6 +18,46 @@ The gate parsed signed values from the six reader-rendered surfaces. It used PDF
 ## Retired-welfare content signatures
 
 **PASS: zero retired-welfare content-signature hits across all six rendered surfaces.**
+
+## Critical semantic, unit and sign checks
+
+| surface | check | status | detail |
+|---|---|---|---|
+| deck | DECOMP headline | PASS | expected 1.8-9.9% |
+| deck | variance headline | PASS | expected 100-127% when variance split is claimed |
+| deck | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| paper | DECOMP headline | PASS | expected 1.8-9.9% |
+| paper | variance headline | PASS | expected 100-127% when variance split is claimed |
+| paper | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| story | DECOMP headline | PASS | expected 1.8-9.9% |
+| story | variance headline | PASS | expected 100-127% when variance split is claimed |
+| story | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| gallery | DECOMP headline | PASS | expected 1.8-9.9% |
+| gallery | variance headline | PASS | expected 100-127% when variance split is claimed |
+| gallery | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| notebook | DECOMP headline | PASS | expected 1.8-9.9% |
+| notebook | variance headline | PASS | expected 100-127% when variance split is claimed |
+| notebook | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| rehearsal | DECOMP headline | PASS | expected 1.8-9.9% |
+| rehearsal | variance headline | PASS | expected 100-127% when variance split is claimed |
+| rehearsal | DECOMP denominator | PASS | surface states baseline-Gini denominator |
+| deck | fit observed couples_female | PASS | coupled women: rendered=[89.8, 89.8]; source=89.802242% |
+| deck | fit observed couples_male | PASS | coupled men: rendered=[92.3, 92.3]; source=92.298113% |
+| deck | fit observed singles_female | PASS | single women: rendered=[85.5, 85.5]; source=85.484621% |
+| deck | fit observed singles_male | PASS | single men: withheld (QUADRATURE-LIMITED) |
+| story | fit observed couples_female | PASS | coupled women: rendered=[89.8, 89.8]; source=89.802242% |
+| story | fit observed couples_male | PASS | coupled men: rendered=[92.3, 92.3]; source=92.298113% |
+| story | fit observed singles_female | PASS | single women: rendered=[85.5, 85.5, 86.4]; source=85.484621% |
+| story | fit observed singles_male | PASS | single men: withheld (QUADRATURE-LIMITED) |
+| paper | fit observed couples_female | PASS | coupled women: rendered=[89.8]; source=89.802242% |
+| paper | fit observed couples_male | PASS | coupled men: rendered=[92.3]; source=92.298113% |
+| paper | fit observed singles_female | PASS | single women: rendered=[85.5]; source=85.484621% |
+| paper | fit observed singles_male | PASS | single men: withheld (QUADRATURE-LIMITED) |
+| rehearsal | fit observed couples_female | PASS | coupled women: rendered=[89.8]; source=89.802242% |
+| rehearsal | fit observed couples_male | PASS | coupled men: rendered=[92.3]; source=92.298113% |
+| rehearsal | fit observed singles_female | PASS | single women: rendered=[85.5]; source=85.484621% |
+| rehearsal | fit observed singles_male | PASS | single men: withheld (QUADRATURE-LIMITED) |
+| gate-self-test | signed parser negative control | PASS | injected -0.006888789 against source +0.006888789; resolver returned FAIL_SIGN |
 
 ## Resolved four-group positive-fit adjudication
 
@@ -58,6 +98,18 @@ The pre-correction strings below used `g2_adequacy.csv::node_bootstrap_mean` whi
 
 No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was found.
 
+### Unsupported result numerals removed during correction
+
+These reader-visible values had no source in the ruling's accepted-source list. They were removed rather than silently rebound to a numerically similar value elsewhere in the catalog.
+
+| affected surface(s) | former claim | unsupported rendered value(s) | disposition |
+|---|---|---|---|
+| story report | consumption-normalizer table | 1,938.238719; 4,247.875047; 1,774.518218; 3,821.448012; 1,911.108058; 3,821.448012 EUR/month | exact table removed; qualitative invariance statement retained |
+| story report; working paper | non-positive simulated-consumption floor counts | 22,597; 59,821 node-evaluations | counts removed; floor scope retained |
+| story report; technical gallery | sub-ten-hour support-mass explanation | 4.15%; 0.00019%; expected count 0.249 | values removed; positive-mass/zero-realized-draw limitation retained |
+| story report; working paper | predecessor-frame counts | 1,555; 2,275 households | counts removed; screening history and current S11 samples retained |
+| story report; working paper | superseded single-adult curvature estimate | 0.168 | value removed; specification history retained |
+
 ## Cross-surface consistency (every resolved quantity on two or more surfaces)
 
 | quantity/source locator | per-surface rendered values | status |
@@ -67,7 +119,6 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_gini | deck: 0.197403; notebook: 0.197403; rehearsal: 0.197403; story: 0.1974, 0.1974 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_mean | deck: 1 311; notebook: 1310.614979; rehearsal: 1,311; story: 1,311 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_median | deck: 1 237; notebook: 1237.352468; rehearsal: 1,237; story: 1,237 | PASS |
-| BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:equivalised.scale_m_distribution.dwt_weighted_median | deck: 1.8; notebook: 1.8; paper: 1.8 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:n_households | notebook: 2223, 2223; rehearsal: 2,223, 2,223, 2,223 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:unequivalised.W_F_obs.dwt_weighted_gini | notebook: 0.210354; rehearsal: 0.210 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json:unequivalised.W_F_obs.dwt_weighted_mean | deck: 2 496; notebook: 2495.800866; rehearsal: 2,496 | PASS |
@@ -81,13 +132,11 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_gini | deck: 0.249807; notebook: 0.249807; story: 0.2498, 0.2498 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_mean | deck: 1 302; notebook: 1302.071576; rehearsal: 1,302; story: 1,302 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:equivalised.W_F_eq.dwt_weighted_median | deck: 1 165; notebook: 1165.140857; rehearsal: 1,165; story: 1,165 | PASS |
-| BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:equivalised.scale_m_distribution.dwt_weighted_gini | deck: 9.9%; notebook: 9.9%; paper: 9.9% | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:n_households | notebook: 1540; rehearsal: 1,540, 1,540, 1,540; story: 1,540, 1,540 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:unequivalised.W_F_obs.dwt_weighted_mean | notebook: 1434.811650; rehearsal: 1,435 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:unequivalised.W_F_obs.dwt_weighted_median | deck: 1 320; notebook: 1319.977952; rehearsal: 1,320 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:worker_ratio.n_nonworkers_excluded | rehearsal: 204; story: 204 | PASS |
 | BASELINE:MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json:worker_ratio.n_workers | rehearsal: 1,336; story: 1,336 | PASS |
-| BASELINE:MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_aggregates_v1.json:checks.singles.C4.household_count | notebook: 2; story: 2 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/anchor_attainment_shares_v1.csv:row=14:share_attaining_the_observed_anchor_node | paper: 4, 4; story: 3.9 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/anchor_attainment_shares_v1.csv:row=3:mc_min | deck: 2; rehearsal: 2; story: 2 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/anchor_attainment_shares_v1.csv:row=6:mc_min | gallery: 1.8, 1.8; story: 1.8, 1.8 | PASS |
@@ -211,9 +260,7 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_singles.csv:row=9:change_from_actual | gallery: -0.0069; notebook: -0.006889; story: -0.0069 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv:row=2:share_var_log_C | gallery: 126.8%, 127%; notebook: 127%; paper: 127%; rehearsal: 127%; story: 127%, 127%, 127% | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv:row=2:var_log_W1F | gallery: 0.1905; rehearsal: 19, 19 | PASS |
-| DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv:row=3:var_log_rho | gallery: 0.0722; notebook: 7, 7 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv:row=4:share_var_log_C | gallery: 100.4%, 100; paper: 100; rehearsal: 100; story: 100, 100, 100 | PASS |
-| DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv:row=4:var_log_rho | gallery: 0.0902; notebook: 9, 9 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=10:gini_point_contribution | gallery: 0.0007; paper: +0.0007; story: +0.0007 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=10:second_seed_gini_point | gallery: 0.0008; paper: +0.0008; story: +0.0008 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=10:share_of_delta_I | gallery: 14.6%; paper: 14.6%; story: 14.6% | PASS |
@@ -232,7 +279,7 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=4:gini_point_contribution | gallery: 0.0128; story: +0.0128 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=4:second_seed_gini_point | gallery: 0.0127; story: +0.0127 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=4:share_of_delta_I | gallery: 63.5%; story: 63.5% | PASS |
-| DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=6:second_seed_gini_point | deck: 2, 2; gallery: 0.0201, 0.0201, 2; notebook: 2, 2; paper: 2, 2, 2; rehearsal: 2, 2, 2; story: +0.0201, +0.0201, 2, 2, 2 | PASS |
+| DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=6:second_seed_gini_point | deck: 2, 2; gallery: 0.0201, 0.0201, 2; paper: 2, 2, 2; rehearsal: 2, 2, 2; story: +0.0201, +0.0201, 2, 2, 2 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=7:mc_max_gini_point | gallery: 0.1944, 19.4%; story: 0.1944 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=7:mc_min_gini_point | gallery: 0.1731; story: 0.1731 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv:row=9:second_seed_gini_point | gallery: -0.0019, -0.0019; story: -0.0019, -0.0019 | PASS |
@@ -258,8 +305,8 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv:row=7:mc_min_gini_point | gallery: 0.2127; story: 0.2127 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv:row=9:gini_point_contribution | gallery: -0.0003; story: -0.0003 | PASS |
 | DECOMP:MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv:row=9:second_seed_gini_point | gallery: -0.0004; story: -0.0004 | PASS |
-| DECOMP:couples:unequivalised:delta_I_share_baseline | gallery: 9.9%, 9.9%, 9.9%; notebook: 10, 10, 9.9%; paper: 9.9%, 9.9%, 9.9%; rehearsal: 9.9%, 9.9%, 9.9%; story: 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9% | PASS |
-| DECOMP:singles:equivalised:delta_I_share_baseline | notebook: 1.8; paper: 1.8; rehearsal: 1.8; story: 1.8, 1.8, 1.8 | PASS |
+| DECOMP:couples:unequivalised:delta_I_share_baseline | deck: 9.9%; gallery: 9.9%, 9.9%, 9.9%; notebook: 9.9%; paper: 9.9%, 9.9%, 9.9%, 9.9%; rehearsal: 9.9%, 9.9%, 9.9%; story: 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9%, 9.9% | PASS |
+| DECOMP:singles:equivalised:delta_I_share_baseline | deck: 1.8; notebook: 1.8; paper: 1.8, 1.8, 1.8, 1.8; rehearsal: 1.8; story: 1.8, 1.8, 1.8 | PASS |
 | NODE:MNL_posfit/outputs/posfit_node_convergence_v1/observed_participation.csv:row=2:observed_participation_weighted | gallery: 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231; notebook: 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231, 0.9231 | PASS |
 | NODE:MNL_posfit/outputs/posfit_node_convergence_v1/observed_participation.csv:row=3:observed_participation_weighted | gallery: 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984; notebook: 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984, 0.8984 | PASS |
 | NODE:MNL_posfit/outputs/posfit_node_convergence_v1/observed_participation.csv:row=4:observed_participation_weighted | gallery: 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805; notebook: 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805, 0.8805 | PASS |
@@ -385,22 +432,22 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/convergence.csv:row=29:abs_mean_share_change_unweighted | gallery: 0.2499, 0.2499; notebook: 0.2499, 0.2499 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv:row=11:decile | paper: 10, 1,000, 1,000, 1,000, 1,000, 1,000; rehearsal: 10; story: 1,000, 1,000 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv:row=16:decile | deck: 500; gallery: 500; notebook: 500, 500; paper: 500; rehearsal: 500; story: 500, 500 | PASS |
-| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv:row=19:decile | notebook: 8, 8, 8; rehearsal: 8 | PASS |
+| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv:row=19:decile | notebook: 8; rehearsal: 8 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv:row=53:mean_observed_hours | gallery: 40; notebook: 40 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/ess_summary.csv:row=10:n_households_with_mass | notebook: 2223; paper: 2,223; story: 2,223, 2,223 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=105:g2_threshold_0_25_sampling_sd | paper: 0.1669; story: 0.1669 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=117:adequacy_ratio_mcse_to_sampling_sd | deck: 0.15; rehearsal: 0.15 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=123:monte_carlo_se | gallery: 0.0148; notebook: 0.0148 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=124:monte_carlo_se | gallery: 0.0148; notebook: 0.0148 | PASS |
-| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=125:adequacy_ratio_mcse_to_sampling_sd | paper: 0.25; story: 0.25, 0.25, 0.250 | PASS |
+| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=125:adequacy_ratio_mcse_to_sampling_sd | paper: 0.25; rehearsal: 0.25; story: 0.25, 0.25, 0.250 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=128:monte_carlo_se | gallery: 0.0007; notebook: 0.0007 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=129:monte_carlo_se | gallery: 0.0022; notebook: 0.0022 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=169:monte_carlo_se | gallery: 0.0149; notebook: 0.0149 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=170:monte_carlo_se | gallery: 0.0149; notebook: 0.0149 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=174:monte_carlo_se | gallery: 0.0025; notebook: 0.0025; rehearsal: 0.25 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=175:monte_carlo_se | gallery: 0.0062; notebook: 0.0062 | PASS |
+| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=25:adequacy_ratio_mcse_to_sampling_sd | deck: 0.02; rehearsal: 0.02 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=25:node_bootstrap_mean | deck: 89.8%; gallery: 0.8980; notebook: 0.8980; rehearsal: 89.8% | PASS |
-| POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=29:node_bootstrap_mean | deck: 0.25; rehearsal: 0.25 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=31:monte_carlo_se | gallery: 0.0122; notebook: 0.0122 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=32:monte_carlo_se | gallery: 0.0122; notebook: 0.0122 | PASS |
 | POSFIT:MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv:row=36:monte_carlo_se | gallery: 0.0011; notebook: 0.0011 | PASS |
@@ -1199,7 +1246,7 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=19:estimate | gallery: 2.3801; notebook: 2.3801; paper: 2.38012; story: 2.3801, 2.38012 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=19:se_robust_CR1 | gallery: 0.0866; notebook: 0.0866; paper: 0.0865569; story: 0.0866, 0.0865569 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=19:z_robust | paper: 27.498; story: 27.498 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=20:estimate | gallery: 1.6825; notebook: 1.6825; paper: 1.68251; story: 1.6825, 1.68251, 168 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=20:estimate | gallery: 1.6825; notebook: 1.6825; paper: 1.68251; story: 1.6825, 1.68251 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=20:se_robust_CR1 | gallery: 0.0798; notebook: 0.0798; paper: 0.0798241; story: 0.0798, 0.0798241 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=20:z_robust | paper: 21.078; story: 21.078 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=21:estimate | gallery: 0.6977; notebook: 0.6977; paper: 0.69767; story: 0.6977, 0.69767 | PASS |
@@ -1244,7 +1291,6 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=32:z_robust | paper: -2.243; story: -2.243 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=33:estimate | gallery: -1.5097; notebook: -1.5097; paper: -1.50975; story: -1.5097, -1.50975 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=33:se_robust_CR1 | gallery: 0.0967; notebook: 0.0967; paper: 0.0967347; story: 0.0967, 0.0967347 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=33:upper_bound | notebook: 15; paper: 15, 15 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=33:z_robust | paper: -15.607; story: -15.607 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=34:estimate | gallery: -2.2532; notebook: -2.2532; paper: -2.25319; story: -2.2532, -2.25319 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=34:se_robust_CR1 | gallery: 0.1244; notebook: 0.1244; paper: 0.124405; story: 0.1244, 0.124405 | PASS |
@@ -1259,7 +1305,7 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=37:se_robust_CR1 | gallery: 0.0923; notebook: 0.0923; paper: 0.0923137; story: 0.0923, 0.0923137 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=37:z_robust | paper: -1.954; story: -1.954 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=38:estimate | gallery: 0.8159; notebook: 0.8159; paper: 0.81589; story: 0.8159, 0.81589 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=38:se_robust_CR1 | gallery: 0.0799; notebook: 8, 8, 8, 0.0799; paper: 0.079925; story: 0.0799, 0.079925 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=38:se_robust_CR1 | gallery: 0.0799; notebook: 8, 8, 0.0799; paper: 0.079925; story: 0.0799, 0.079925 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=38:z_robust | paper: 10.208; story: 10.208 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=39:estimate | gallery: 2.0480; notebook: 2.0480; paper: 2.048; story: 2.0480, 2.048 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=39:se_robust_CR1 | paper: 0.0335421; story: 0.0335421 | PASS |
@@ -1276,7 +1322,6 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=41:z_robust | paper: 9.218; story: 9.218 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=42:estimate | gallery: 0.5643; notebook: 0.5643; paper: 0.56435; story: 0.5643, 0.56435 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=42:se_robust_CR1 | gallery: 0.0546; notebook: 0.0546; paper: 0.0545928; story: 0.0546, 0.05, 0.05, 0.05, 0.05, 0.0545928, 0.05 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=42:upper_bound | notebook: 3; paper: 3 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=42:z_robust | paper: 10.337; story: 10.337 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=43:estimate | gallery: -0.1598; notebook: -0.1598; paper: -0.15983; story: -0.1598, -0.15983 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=43:se_robust_CR1 | gallery: 0.0243; paper: 0.0242888; story: 0.0242888 | PASS |
@@ -1314,19 +1359,19 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=9:estimate | gallery: -0.3055; notebook: -0.3055; paper: -0.305471; story: -0.3055, -0.305471, -0.3 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=9:se_robust_CR1 | gallery: 1.1472; notebook: 1.1472; paper: 1.14719; story: 1.1472, 1.14719 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv:row=9:z_robust | paper: -0.266; story: -0.266 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=12:observed | notebook: 7, 7, 7, 7; story: 7, 7 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=12:observed | notebook: 7, 7; story: 7, 7 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=20:predicted | notebook: 0.1335; story: 0.1335 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=22:observed | notebook: 0.0243; story: 0.0243 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=24:observed | notebook: 6, 6, 6, 6; rehearsal: 6; story: 6, 6 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=25:observed | notebook: 3, 3, 3, 3, 3, 3; story: 3, 3, 3, 3 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=26:predicted | notebook: 4, 4, 4, 4; story: 4, 4, 4 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=29:observed | notebook: 5, 5, 5; story: 5, 5 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=24:observed | notebook: 6, 6; rehearsal: 6; story: 6, 6 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=25:observed | notebook: 3, 3, 3, 3; story: 3, 3, 3, 3 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=26:predicted | notebook: 4, 4, 4; story: 4, 4, 4 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=29:observed | notebook: 5, 5; story: 5, 5 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=31:absolute_error | notebook: 0.3631; story: 0.3631 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=40:absolute_error | gallery: 0.0228; notebook: 0.0228; story: 0.0228 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=45:observed | notebook: 0.3274; story: 0.3274 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=49:predicted | notebook: 4, 4; story: 4 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=49:predicted | notebook: 4; story: 4 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=54:predicted | gallery: 0.0335; notebook: 0.0335; story: 0.0335 | PASS |
-| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=5:predicted | notebook: 2, 2, 2, 2, 2, 2, 2; story: 2, 2, 2, 2 | PASS |
+| S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=5:predicted | notebook: 2, 2, 2, 2; story: 2, 2, 2, 2 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=65:predicted | notebook: 0.0894; story: 0.0894 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv:row=95:absolute_error | notebook: 0.0372; story: 0.0372 | PASS |
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_parameter_table_v1.csv:row=10:estimate | gallery: -0.9274; notebook: -0.9274; paper: -0.927353; story: -0.9274, -0.927353 | PASS |
@@ -1469,7 +1514,7 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 | S11:MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_welfare_specs_of_record_v1.json:results.SINGLES.negll | deck: 6253.463; paper: 6253.463 | PASS |
 | S11:couples:criterion_improvement_vs_s10 | paper: 15.659; story: 15.659 | PASS |
 | S11:singles:criterion_improvement_vs_s10 | paper: 23.753; story: 23.753 | PASS |
-| S11:singles:one_nat_consumption_factor | notebook: 2, 2, 2; story: 2, 1.633 | PASS |
+| S11:singles:one_nat_consumption_factor | notebook: 2, 2; story: 2, 1.633 | PASS |
 | WS4:MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionA_run_table_v1.csv:row=10:lambda_key | gallery: 20, 20.000, 20, 20.000, 20.000, 20.000, 20.000; notebook: 20, 20.000, 20, 20.000, 20.000, 20.000, 20.000 | PASS |
 | WS4:MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionA_run_table_v1.csv:row=10:objective_after_refit | gallery: 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369; notebook: 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369, 10,283.034369 | PASS |
 | WS4:MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionA_run_table_v1.csv:row=10:theta_l_estimate | gallery: -0.976110; notebook: -0.976110 | PASS |
@@ -1847,8 +1892,8 @@ No remaining sign, magnitude, unit/weighting, or source-resolution mismatch was 
 
 ## Coverage and machine artifacts
 
-- Result-bearing numeric occurrences extracted: **6234**.
-- Resolved to accepted sources: **6234**.
+- Result-bearing numeric occurrences extracted: **6167**.
+- Resolved to accepted sources: **6167**.
 - Unresolved/mismatched: **0**.
 - Data/method/definition tables explicitly excluded from the result-numeral population: **87**.
 - Accepted source files/blobs hashed: **51**.
