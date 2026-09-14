@@ -55,6 +55,10 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
+
+import sys
+sys.path.insert(0, str(HERE.parent / "reports"))
+import retired_lineage_gate as rlg  # noqa: E402
 BUILD = HERE / "build"
 SRC = HERE / "JMP_seminar_deck_r6.tex"
 NUMBERS = HERE / "deck_numbers_r6.tex"
@@ -461,6 +465,22 @@ def main() -> int:
          else "VIOLATION: unresolved asset references %s; banned-tree "
               "mentions %s; allowlist %s"
               % (unresolved, banned_hits, sorted(allowlist)))
+
+    # ------------------------------------------------------- G-LINEAGE
+    # LINEAGE-SWEEP-1: path-based, not string-based. G-RETIRE/G-NOSHARE
+    # above check RENDERED WORDING (a specific magnitude, a specific share
+    # word) -- a rewrite that keeps reading the same retired file but
+    # phrases the result differently would clear both. This gate instead
+    # scans the number/figure GENERATORS and the deck source for a read of
+    # a retired artifact BY PATH.
+    _lineage_targets = [SRC, HERE / "make_deck_numbers_r6.py",
+                         HERE / "make_slide_figures_r6.py", NUMBERS]
+    _lineage_violations = rlg.scan_files([p for p in _lineage_targets if p.exists()])
+    gate("G-LINEAGE", not _lineage_violations,
+         "no retired-lineage artifact referenced by path in the deck "
+         "source or number/figure generators" if not _lineage_violations
+         else "RETIRED-LINEAGE PATH READ: " +
+              rlg.format_violations(_lineage_violations, REPO))
 
     print("R6 deck verification")
     print("-" * 68)

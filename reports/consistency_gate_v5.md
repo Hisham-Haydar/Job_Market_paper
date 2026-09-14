@@ -22,6 +22,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 14 | The report carries the explanatory apparatus | **PASS** |
 | 15 | The novelty claim is conservative and fully conjoined | **PASS** |
 | 16 | No causal claim; the genuinely unresolved items are retained | **PASS** |
+| 17 | Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) | **FAIL** |
 
 ## 1. SINGLE CURRENT MODEL: one specification, everywhere — PASS
 
@@ -99,4 +100,13 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 - the two open econometric questions and the couples D limitation are all retained
 
-**Overall: PASS**
+## 17. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) — FAIL
+
+- this gate checks the build source and registry for a READ of a retired artifact by its own path/basename, not the rendered prose -- a reworded sentence does not clear this check while the underlying data source is unchanged
+- reports\research_story_build\build_v5.py: s12_*_attributions family, *headline_shares family, s12_welfare_record_report_v1
+- reports\numbers_of_record_v5.json: s12_*_attributions family, *headline_shares family, s12_welfare_record_report_v1
+- supplementary content signature for a forbidden four-factor P/A/B/D decomposition (this signal is not path-based and can be dodged by rewording -- treat a clean result here as weaker evidence than the path check above, and a hit here as strong evidence regardless)
+- manuscript\JMP_working_paper_for_seminar_v5.tex: X_i=(P_i,A_i,B_i,D_i) coalition notation, four structural equalization operators, four-player game / four operators, sixteen coalitions (2^4), co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)
+- reports\JMP_research_story_report_v5.html: X_i=(P_i,A_i,B_i,D_i) coalition notation, four structural equalization operators, four-player game / four operators, sixteen coalitions (2^4), co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)
+
+**Overall: FAIL**

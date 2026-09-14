@@ -1,6 +1,6 @@
 # Consistency gate v2
 
-**Overall: PASS.** Instrument: `reports/run_consistency_gate.py`, implementing `reports/consistency_gate_spec_v1.md`. `reports/consistency_gate_v1.md` is retained unchanged.
+**Overall: FAIL.** Instrument: `reports/run_consistency_gate.py`, implementing `reports/consistency_gate_spec_v1.md`. `reports/consistency_gate_v1.md` is retained unchanged.
 
 Run over the current build of H and the current saved execution of N.
 
@@ -10,21 +10,22 @@ Run over the current build of H and the current saved execution of N.
 |---|---|---|---|---|---|
 | 1 | Notation — canonical symbols (spec §1) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 2 | The W1 statement (spec §2) | **PASS** | **PASS** | **PASS** | **PASS** |
-| 3 | negLL labels (spec §3) | **PASS** | **PASS** | **N/A** | **PASS** |
+| 3 | negLL labels (spec §3) | **PASS** | **PASS** | **N/A** | **FAIL** |
 | 4 | Coverage: RQMC bands and CR1 intervals (spec §4) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 5 | Nested endowments/needs semantics (spec §5) | **PASS** | **PASS** | **PASS** | **N/A** |
 | 6 | Reference labels (spec §6) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 7 | Couples beta_ll (spec §7) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 8 | The RUM block (spec §8) | **PASS** | **PASS** | **PASS** | **N/A** |
-| 9 | Geographic and sex results (spec §9) | **PASS** | **PASS** | **PASS** | **PASS** |
+| 9 | Geographic and sex results (spec §9) | **PASS** | **PASS** | **PASS** | **FAIL** |
 | 10 | Forbidden terms and permitted sites (spec §10) | **PASS** | **PASS** | **PASS** | **PASS** |
 | 11 | Boundary-active coordinates: the age-bound line (spec §11) | **PASS** | **PASS** | **N/A** | **N/A** |
-| 12 | Consumption curvature: maintained, not tested (spec §12) | **PASS** | **PASS** | **N/A** | **N/A** |
+| 12 | Consumption curvature: maintained, not tested (spec §12) | **PASS** | **PASS** | **N/A** | **FAIL** |
 | 13 | The couples coefficient table (spec §13) | **PASS** | **PASS** | **N/A** | **N/A** |
 | 14 | Children: the male term and child age (spec §14) | **PASS** | **PASS** | **N/A** | **N/A** |
-| 15 | Execution profiles and backend parity (spec §15) | **N/A** | **PASS** | **N/A** | **PASS** |
+| 15 | Execution profiles and backend parity (spec §15) | **N/A** | **PASS** | **N/A** | **FAIL** |
+| 16 | Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) | **FAIL** | **FAIL** | **PASS** | **FAIL** |
 
-0 of 60 (item, artifact) cells FAIL.
+7 of 64 (item, artifact) cells FAIL.
 
 ## Evidence
 
@@ -49,14 +50,18 @@ All four artifacts PASS with no exceptions recorded.
 
 **research-lab notebook (markdown) — PASS**
 
-- PARA-3 at cell 18/blk 2
-- PARA-3 at cell 24/blk 4
+- PARA-3 at cell 21/blk 2
+- PARA-3 at cell 27/blk 5
 
 ### 3. negLL labels (spec §3)
 
 **deck content v2.2 — N/A**
 
 - artifact reports neither negLL value
+
+**research-lab notebook (markdown) — FAIL**
+
+- L1: canonical label `singles final model negLL 18022.764617170084` absent
 
 ### 4. Coverage: RQMC bands and CR1 intervals (spec §4)
 
@@ -84,7 +89,10 @@ All four artifacts PASS with no exceptions recorded.
 
 ### 9. Geographic and sex results (spec §9)
 
-All four artifacts PASS with no exceptions recorded.
+**research-lab notebook (markdown) — FAIL**
+
+- GEO-1: 87.6 %% of the access channel absent
+- GEO-1: 13.05 %% of baseline inequality absent
 
 ### 10. Forbidden terms and permitted sites (spec §10)
 
@@ -106,9 +114,13 @@ All four artifacts PASS with no exceptions recorded.
 
 - artifact does not report the consumption curvature
 
-**research-lab notebook (markdown) — N/A**
+**research-lab notebook (markdown) — FAIL**
 
-- artifact does not report the consumption curvature
+- TC-1: the curvature is not stated as maintained common
+- TC-1: `not tested sex-specifically` is not stated
+- TC-1: the scale-numeraire reason is missing
+- TC-1: the parsimony reason is missing
+- TC-3: not named as a candidate money-metric sensitivity
 
 ### 13. The couples coefficient table (spec §13)
 
@@ -139,6 +151,38 @@ All four artifacts PASS with no exceptions recorded.
 **deck content v2.2 — N/A**
 
 - artifact does not carry the profile table, and no obsolete backend claim remains
+
+**research-lab notebook (markdown) — FAIL**
+
+- BP: profile server_jax_cpu is not listed
+- BP: profile laptop_jax_cpu is not listed
+- BP: profile laptop_torch_cuda is not listed
+- BP: the parity clearance is not named (PKG-04B / 1eed2756)
+- BP-1: the exact negLL is not printed with the parity claim
+- BP-1: the parity list omits gradient
+- BP-1: the parity list omits hessian
+- BP-1: the parity list omits covariance/CR1
+- BP-1: the parity list omits standard errors
+- BP-1: the parity list omits active-bound set
+- BP-1: the parity list omits pinned
+- BP-2: the CUDA device caveat is missing
+- BP-4: the default-unchanged statement is missing
+- BP-4: runtime is not disclaimed
+
+### 16. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1)
+
+**paper v2 — FAIL**
+
+- retired-lineage path reference(s): gn_step2_nested_v1, headline_decomposition_v1
+- registry J (numbers_of_record_v1.json) itself carries retired-lineage source paths in its provenance fields: headline_decomposition_v1, ss8_step1_states_v1
+
+**story HTML — FAIL**
+
+- retired-lineage path reference(s): headline_decomposition_v1, ss8_step1_states_v1
+
+**research-lab notebook (markdown) — FAIL**
+
+- retired-lineage path reference(s): *headline_shares family, s12_*_attributions family
 
 ## Inputs
 

@@ -23,6 +23,9 @@ from pathlib import Path
 JMP = Path(__file__).resolve().parent.parent
 MNL = JMP.parent / "MNL"
 
+sys.path.insert(0, str(JMP / "reports"))
+import retired_lineage_gate as rlg  # noqa: E402
+
 PATHS = {
     "J": JMP / "reports/numbers_of_record_v1.json",
     "P": JMP / "manuscript/JMP_working_paper_for_seminar_v2.md",
@@ -1293,6 +1296,39 @@ for a in ARTS:
     for b in dict.fromkeys(bad):
         it15.note(a, b)
 
+
+# --------------------------------------------------------------------------
+# 16. RETIRED WELFARE-DECOMPOSITION LINEAGE (LINEAGE-SWEEP-1) -- path-based
+# --------------------------------------------------------------------------
+# Every other item in this file checks RENDERED WORDING. That is exactly the
+# gate DECOMP-PRESEMINAR-1's own retirement exposed as insufficient: a
+# surface can be reworded to drop a phrase while still reading the retired
+# CSV/JSON that produced it. This item instead scans each artifact's own
+# text for the retired file's PATH/basename, which does not change just
+# because the prose around it does.
+it16 = item(16, "Retired welfare-decomposition lineage: no read by path "
+                "(DECOMP-PRESEMINAR-1)")
+for a in ARTS:
+    p = PATHS[a]
+    if not p.exists():
+        it16.set(a, True, na=True, note="artifact not present on disk")
+        continue
+    violations = rlg.scan_files([p])
+    hits = sorted({h for hs in violations.values() for h in hs})
+    it16.set(a, not violations,
+             note=("retired-lineage path reference(s): " + ", ".join(hits))
+             if violations else None)
+# The registry J is not one of the four ARTS columns (the report table is
+# fixed at P/H/D/N); record its own path-scan result as evidence on item 16
+# rather than silently skipping it, since J is what P/H/D/N are checked
+# against everywhere else in this file.
+if PATHS["J"].exists():
+    _j_violations = rlg.scan_files([PATHS["J"]])
+    if _j_violations:
+        _j_hits = sorted({h for hs in _j_violations.values() for h in hs})
+        it16.note("P", "registry J (%s) itself carries retired-lineage "
+                       "source paths in its provenance fields: %s"
+                       % (PATHS["J"].name, ", ".join(_j_hits)))
 
 
 # ==========================================================================

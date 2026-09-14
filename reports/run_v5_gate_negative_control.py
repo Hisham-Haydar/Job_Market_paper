@@ -38,7 +38,18 @@ FILES = {
 }
 
 
-EXPECTED_ITEMS = 16
+EXPECTED_ITEMS = 17
+
+# LINEAGE-SWEEP-1 added item 17 (retired-lineage path check), and it FAILS
+# on the real v5 artifacts right now -- the surface has not been remediated
+# yet, that is the finding, not a bug in the gate or this control. The temp
+# copy below also carries that same failure (it copies numbers_of_record_v5
+# .json and the rendered HTML verbatim). So item 17 is excluded from the
+# "clean copy must have zero fails" assumption below; it stays counted in
+# EXPECTED_ITEMS and is still exercised by run_gate() on every mutation, so
+# a regression that broke item 17 itself would still show up as a changed
+# item count or a newly-flipped item elsewhere.
+KNOWN_PRE_EXISTING_FAILURES = {17}
 
 
 def run_gate(root: Path):
@@ -72,7 +83,8 @@ def main():
     shutil.copytree(JMP / 'manuscript', root / 'manuscript',
                     ignore=shutil.ignore_patterns('*.pdf~'))
     (root / 'reports').mkdir(parents=True, exist_ok=True)
-    for name in ['run_v5_gate.py', 'JMP_research_story_report_v5.html',
+    for name in ['run_v5_gate.py', 'retired_lineage_gate.py',
+                 'JMP_research_story_report_v5.html',
                  'numbers_of_record_v5.json']:
         shutil.copy2(JMP / 'reports' / name, root / 'reports' / name)
     (root / 'reports/research_story_build').mkdir(parents=True, exist_ok=True)
@@ -90,7 +102,12 @@ def main():
 
     clean, out = run_gate(root)
     print('clean copy fails:', sorted(clean) or 'none')
-    if clean:
+    unexpected_clean_fails = clean - KNOWN_PRE_EXISTING_FAILURES
+    if clean & KNOWN_PRE_EXISTING_FAILURES:
+        print('(item(s) %s are known pre-existing failures -- LINEAGE-SWEEP-1 '
+              'debt, not a control defect -- and are excluded from the check '
+              'below)' % sorted(clean & KNOWN_PRE_EXISTING_FAILURES))
+    if unexpected_clean_fails:
         print(out)
         return 1
 

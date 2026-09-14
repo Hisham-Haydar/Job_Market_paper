@@ -37,6 +37,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import retired_lineage_gate as rlg  # noqa: E402
+
 JMP = Path(__file__).resolve().parent.parent
 PAPER = JMP / 'manuscript/JMP_working_paper_for_seminar_v5.tex'
 HTML = JMP / 'reports/JMP_research_story_report_v5.html'
@@ -670,6 +673,46 @@ for need, label in [
             it.fail('%s: %s has been dropped' % (NAMES[a], label))
 it.note('the two open econometric questions and the couples D limitation are '
         'all retained')
+
+
+# --------------------------------------------------------------------------- #
+# 17.  RETIRED LINEAGE (LINEAGE-SWEEP-1)  --  path-based, not string-based
+# --------------------------------------------------------------------------- #
+it = item(17, 'Retired welfare-decomposition lineage: no read by path '
+              '(DECOMP-PRESEMINAR-1)')
+_LINEAGE_TARGETS = [
+    JMP / 'reports/research_story_build/build_v5.py',
+    JMP / 'reports/research_story_build/v5_sections.py',
+    JMP / 'reports/research_story_build/common.py',
+    REG,
+    PAPER,
+    HTML,
+]
+_violations = rlg.scan_files([p for p in _LINEAGE_TARGETS if p.exists()])
+if _violations:
+    it.fail('this gate checks the build source and registry for a READ of a '
+            'retired artifact by its own path/basename, not the rendered '
+            'prose -- a reworded sentence does not clear this check while '
+            'the underlying data source is unchanged')
+    for p, hits in _violations.items():
+        it.fail('%s: %s' % (p.relative_to(JMP), ', '.join(hits)))
+else:
+    it.note('no retired-lineage path reference found in build_v5.py, '
+            'v5_sections.py, common.py, %s, %s, or %s'
+            % (REG.name, PAPER.name, HTML.name))
+_four_factor = {}
+for p in [PAPER, HTML]:
+    hits = rlg.scan_four_factor(p.read_text(encoding='utf-8', errors='ignore'))
+    if hits:
+        _four_factor[p] = hits
+if _four_factor:
+    it.fail('supplementary content signature for a forbidden four-factor '
+            'P/A/B/D decomposition (this signal is not path-based and can '
+            'be dodged by rewording -- treat a clean result here as weaker '
+            'evidence than the path check above, and a hit here as strong '
+            'evidence regardless)')
+    for p, hits in _four_factor.items():
+        it.fail('%s: %s' % (p.relative_to(JMP), ', '.join(hits)))
 
 
 # --------------------------------------------------------------------------- #

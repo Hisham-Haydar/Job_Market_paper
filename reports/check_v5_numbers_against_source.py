@@ -16,6 +16,9 @@ from pathlib import Path
 
 import pymupdf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import retired_lineage_gate as rlg  # noqa: E402
+
 JMP = Path(__file__).resolve().parent.parent
 PDF = JMP / 'manuscript/JMP_working_paper_for_seminar_v5.pdf'
 S12 = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
@@ -28,6 +31,24 @@ def rows(path: Path):
 
 
 def main() -> int:
+    # LINEAGE-SWEEP-1: this script's OWN ground truth is two retired
+    # welfare-decomposition artifacts (see reports/retired_lineage_gate.py
+    # for the definition). A path-based scan of its own source, not of
+    # rendered prose, is the only honest way to flag that: rewording the
+    # PDF text below would not fix what this checker actually reads.
+    self_violations = rlg.scan_files([Path(__file__)])
+    lineage_rc = 0
+    if self_violations:
+        print('RETIRED-LINEAGE SELF-CHECK: FAIL -- this verifier reads a '
+              'retired artifact by path as its own ground truth:')
+        print(rlg.format_violations(self_violations, JMP))
+        print('This verifier needs repointing at the DECOMP-2 / '
+              'preseminar_pab_v1 lineage before its PASS/FAIL is '
+              'trustworthy; see the LINEAGE-SWEEP-1 report.')
+        lineage_rc = 1
+    else:
+        print('RETIRED-LINEAGE SELF-CHECK: PASS')
+
     text = ' '.join(p.get_text() for p in pymupdf.open(PDF))
     text = ' '.join(text.split())
 
@@ -93,7 +114,7 @@ def main() -> int:
               % (len(bad), len(checks)))
         return 1
     print('NUMBERS: PASS, every recomputed magnitude appears in the PDF')
-    return 0
+    return lineage_rc
 
 
 if __name__ == '__main__':

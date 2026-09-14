@@ -3,11 +3,16 @@
 from __future__ import annotations
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import retired_lineage_gate as rlg  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 P = ROOT / "reports/JMP_results_gallery_current.html"
 NOR = ROOT / "reports/numbers_of_record_v5.json"
+BUILD = Path(__file__).resolve().parent / "build.py"
 
 text = P.read_text(encoding="utf-8")
 without_data = re.sub(r'data:image/png;base64,[A-Za-z0-9+/=]+', 'data:image/png;base64,…', text)
@@ -30,6 +35,13 @@ checks["intervals_separate"] = ("MC range (min" in text and "Second-seed" in tex
                                  and "never confidence intervals" in text)
 checks["no_mae_headline"] = "mean absolute error" not in text.lower() and ">MAE<" not in text
 checks["registry_present"] = "gallery" in nor and bool(nor["gallery"].get("coefficients"))
+# LINEAGE-SWEEP-1: path-based, not string-based -- scans the build script and
+# the rendered HTML for a READ of a retired welfare-decomposition artifact by
+# its own filename, independent of how the surrounding prose is worded.
+_lineage_violations = rlg.scan_files([BUILD, P])
+checks["no_retired_lineage_path_reads"] = not _lineage_violations
+if _lineage_violations:
+    print(rlg.format_violations(_lineage_violations, ROOT))
 failed = [k for k,v in checks.items() if not v]
 for k,v in checks.items(): print(f'{"PASS" if v else "FAIL"}: {k}')
 if failed: raise SystemExit("failed: " + ", ".join(failed))
