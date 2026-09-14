@@ -191,212 +191,107 @@ register('pm_weight_double',
          'contribution to the power moment, relative to the median alternative')
 
 # =========================================================================== #
-# 3.  THE WELFARE RECORD (S12) AND ITS INTERVALS
+# 3.  THE PRELIMINARY P/A/B DECOMPOSITION (DECOMP-2)
 # =========================================================================== #
-_S12SRC = ('s12_six_index_attributions_v1.csv; corrected welfare record at the '
-           'S11 specifications of record')
-SIX = pd.read_csv(S12 / 's12_six_index_attributions_v1.csv')
-LEV = pd.read_csv(V5 / 'v5_six_index_levels_v1.csv')
-OF = pd.read_csv(V5 / 'v5_one_factor_vs_shapley_v1.csv')
+# Retired under DECOMP-PRESEMINAR-1: the four-factor P/A/B/D decomposition
+# previously loaded here from s12_six_index_attributions_v1.csv,
+# s12_s11_cr1_headline_shares_v1.csv and s12_couples_nested_D_attributions_v1.*
+# (headline_decomposition_v1.csv / ss8_step1_states_v1.json /
+# cw_step3_states_v1.json / gn_step2_nested_v1.json are the earlier retired
+# generation of the same lineage; this file never read those directly).
+# Superseded by DECOMP-2's bounded, preliminary three-factor P/A/B exercise,
+# same lineage and same loader pattern already used by
+# reports/results_gallery_build/build.py: MNL_decomp worktree, branch
+# welfare/preseminar-pab, commit b52761b4. Deliberately NOT sourced from any
+# of the four retired files above.
+DECOMP2 = ROOT.parent / 'MNL_decomp' / 'outputs/welfare/preseminar_pab_v1'
+_D2SRC = ('MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); '
+          'preliminary three-factor P/A/B decomposition, not the final '
+          'decomposition architecture')
+ARM = {'singles': 'singles_female', 'couples': 'household-own'}
+SAMP = {'singles': 'singles', 'couples': 'couples'}
 WD = pd.read_csv(V5 / 'v5_welfare_distributions_v1.csv')
-CR1 = pd.read_csv(S12 / 's12_s11_cr1_headline_shares_v1.csv')
-ARM = {'singles': 'singles_female', 'couples': 'household-own',
-       'singlesmz': 'singles_male_structural_zero'}
-SAMP = {'singles': 'singles', 'singlesmz': 'singles', 'couples': 'couples'}
-INDICES = [('gini', 'Gini'), ('atkinson1', 'Atkinson(1)'),
-           ('atkinson2', 'Atkinson(2)'), ('ge0', 'GE(0)'), ('ge1', 'GE(1)'),
-           ('cv2', r'GE(2) $=CV^2/2$')]
-COMPS = [('P', 'Preferences'), ('A', 'Job access'),
-         ('B', 'Earning opportunities'),
-         ('AB', 'Market opportunities (A + B)'),
-         ('D', 'Resources and needs'),
-         ('E', 'All non-preference circumstances')]
+D2_COAL = {s: pd.read_csv(DECOMP2 / ('coalition_values_%s.csv' % s))
+           for s in ('singles', 'couples')}
+D2_SHAP = {s: pd.read_csv(DECOMP2 / ('shapley_PAB_%s.csv' % s))
+           for s in ('singles', 'couples')}
+D2_VAR = pd.read_csv(DECOMP2 / 'log_variance_split_v1.csv')
+D2_ANCHOR = json.loads((DECOMP2 / 'anchor_excluded_arm_v1.json')
+                       .read_text('utf-8'))
+D2_SCALE = {'uneq': 'unequivalised', 'eq': 'equivalised'}
+D2_COAL_LABEL = {'EMPTY': 'Actual (no equalization)', 'P': 'P', 'A': 'A',
+                 'B': 'B', 'PA': 'P + A', 'PB': 'P + B', 'AB': 'A + B',
+                 'PAB': 'P + A + B'}
 
 
-def sixrow(tag, basis, index):
-    m = SIX[(SIX['sample'] == SAMP[tag]) & (SIX['reference'] == ARM[tag])
-            & (SIX['basis'] == basis) & (SIX['index'] == index)]
+def d2_coalition_row(sample, scale_key, coalition):
+    scale = D2_SCALE[scale_key]
+    m = D2_COAL[sample][(D2_COAL[sample]['scale'] == scale)
+                        & (D2_COAL[sample]['coalition'] == coalition)]
     if len(m) != 1:
-        raise SystemExit('s12 row not unique: %r' % ((tag, basis, index),))
+        raise SystemExit('DECOMP-2 coalition row not unique: %r'
+                         % ((sample, scale, coalition),))
     return m.iloc[0]
 
 
-for _tag in ['singles', 'singlesmz', 'couples']:
-    for _ix, _ in INDICES:
-        r = sixrow(_tag, 'raw', _ix)
-        base = float(r['I00'])
-        if _ix == 'gini':
-            for st in ['I00', 'I10', 'I01', 'I11']:
-                register('w_%s_%s' % (st.lower(), _tag), float(r[st]),
-                         _S12SRC, 'result', 'index units')
-        for comp, _ in COMPS:
-            v = r['C_' + comp]
-            if pd.isna(v):
-                continue
-            register('w_c%s_%s_%s' % (comp, _ix, _tag), float(v), _S12SRC,
-                     'result', 'index points')
-            register('w_sh%s_%s_%s' % (comp, _ix, _tag),
-                     round(100.0 * float(v) / base, 2), _S12SRC, 'result',
-                     'per cent of that index baseline')
-        register('w_base_%s_%s' % (_ix, _tag), float(base), _S12SRC, 'result',
-                 'index level')
-# short aliases for the Gini, the headline index
-for _tag in ['singles', 'singlesmz', 'couples']:
-    for comp, _ in COMPS:
-        k = 'w_sh%s_gini_%s' % (comp, _tag)
-        if k in REG:
-            register('w_sh%s_%s' % (comp, _tag), REG[k]['value'], _S12SRC,
-                     'result', 'per cent of the baseline Gini')
-            register('w_c%s_%s' % (comp, _tag),
-                     REG['w_c%s_gini_%s' % (comp, _tag)]['value'], _S12SRC,
-                     'result', 'Gini points')
+def d2_shapley_row(sample, scale_key, factor):
+    scale = D2_SCALE[scale_key]
+    m = D2_SHAP[sample][(D2_SHAP[sample]['scale'] == scale)
+                        & (D2_SHAP[sample]['factor'] == factor)]
+    if len(m) != 1:
+        raise SystemExit('DECOMP-2 shapley row not unique: %r'
+                         % ((sample, scale, factor),))
+    return m.iloc[0]
 
-# one-factor effects, the two-group game
-for _tag in ['singles', 'couples']:
-    m = OF[(OF['sample'] == SAMP[_tag]) & (OF['reference'] == ARM[_tag])
-           & (OF['basis'] == 'raw') & (OF['index'] == 'gini')].iloc[0]
-    register('of_P_' + _tag, round(float(m['one_factor_P_pct']), 2),
-             'v5_one_factor_vs_shapley_v1.csv', 'result',
-             'per cent reduction in the baseline Gini')
-    register('of_E_' + _tag, round(float(m['one_factor_E_pct']), 2),
-             'v5_one_factor_vs_shapley_v1.csv', 'result',
-             'per cent reduction in the baseline Gini')
-    register('of_P_rise_' + _tag, abs(round(float(m['one_factor_P_pct']), 1)),
-             'v5_one_factor_vs_shapley_v1.csv', 'result',
-             'per cent change in the baseline Gini, sign in the text')
 
-# CR1 parameter intervals on the headline shares
-for _, r in CR1.iterrows():
-    tag = 'singles' if r['sample'] == 'singles' else 'couples'
-    if r['basis'] != 'raw':
-        continue
-    comp = r['share'].replace('share_', '')
-    register('cr1_lo_%s_%s' % (comp, tag), round(100.0 * float(r['CR1_p2_5']), 1),
-             's12_s11_cr1_headline_shares_v1.csv', 'interval',
-             'per cent, 2.5th parameter percentile')
-    register('cr1_hi_%s_%s' % (comp, tag), round(100.0 * float(r['CR1_p97_5']), 1),
-             's12_s11_cr1_headline_shares_v1.csv', 'interval',
-             'per cent, 97.5th parameter percentile')
-    register('rq_lo_%s_%s' % (comp, tag), round(100.0 * float(r['RQMC_lo']), 1),
-             's12_s11_cr1_headline_shares_v1.csv', 'band',
-             'per cent, RQMC integration band')
-    register('rq_hi_%s_%s' % (comp, tag), round(100.0 * float(r['RQMC_hi']), 1),
-             's12_s11_cr1_headline_shares_v1.csv', 'band',
-             'per cent, RQMC integration band')
+for _s in ('singles', 'couples'):
+    for _sk in ('uneq', 'eq'):
+        _empty = d2_coalition_row(_s, _sk, 'EMPTY')
+        _pab = d2_coalition_row(_s, _sk, 'PAB')
+        _base = float(_empty['I_S_gini'])
+        _delta = float(_pab['I_S_gini']) - _base  # I(actual) - I(PAB), positive
+        register('d2_baseline_%s_%s' % (_s, _sk), round(_base, 6), _D2SRC,
+                 'result', 'Gini units, baseline coalition (actual)')
+        register('d2_deltaI_%s_%s' % (_s, _sk), round(_delta, 6), _D2SRC,
+                 'result', 'Gini points, I(actual) minus I(P,A,B equalized)')
+        register('d2_deltaI_pct_%s_%s' % (_s, _sk),
+                 round(100.0 * _delta / _base, 1), _D2SRC, 'result',
+                 'per cent of baseline Gini')
+        for _f in ('P', 'A', 'B'):
+            _row = d2_shapley_row(_s, _sk, _f)
+            register('d2_gini%s_%s_%s' % (_f, _s, _sk),
+                     round(float(_row['gini_point_contribution']), 6), _D2SRC,
+                     'result', 'Gini points, exact Shapley contribution')
+            if _f != 'P':
+                register('d2_share%s_%s_%s' % (_f, _s, _sk),
+                         round(100.0 * float(_row['share_of_delta_I']), 1),
+                         _D2SRC, 'result', 'per cent of Delta_I')
+    # variance decomposition is reported once per sample, on the actual
+    # (EMPTY) coalition -- the fixed-resources share of dispersion in the
+    # REPORTED distribution, not in the counterfactual-equalized one.
+    _ve = D2_VAR[(D2_VAR['sample'] == _s) & (D2_VAR['coalition'] == 'EMPTY')].iloc[0]
+    register('d2_varshare_logC_%s' % _s,
+             round(100.0 * float(_ve['share_var_log_C']), 0), _D2SRC,
+             'diagnostic', 'per cent of the variance of log W1_F')
 
-# ---- the couples subdivision of D, repriced --------------------------------
-# This landed after the v5 brief was written, which assumed it did not exist.
-# It is a real repricing of two counterfactual panels at the S11 specification,
-# not an imputed split, and it carries its own identity gate.
-_ND = pd.read_csv(S12 / 's12_couples_nested_D_attributions_v1.csv')
-_NDJ = json.loads((S12 / 's12_couples_nested_D_attributions_v1.json')
-                  .read_text('utf-8'))
-_NDSRC = ('s12_couples_nested_D_attributions_v1.csv; two repriced '
-          'counterfactual panels at the S11 specification of record')
-if _NDJ['status'] != 'S12_COUPLES_NESTED_D_COMPLETE' or not _NDJ['gates']['PASS']:
-    raise SystemExit('the couples nested-D artifact is not a passing complete '
-                     'run; v5 must not report a split from it')
-for _ix, _ in INDICES:
-    r = _ND[(_ND['basis'] == 'raw') & (_ND['index'] == _ix)]
-    if len(r) != 1:
-        raise SystemExit('couples nested-D row not unique: %s' % _ix)
-    r = r.iloc[0]
-    for comp, col in [('res', 'C_nonlabour'), ('comp', 'C_composition')]:
-        register('nd_c%s_%s' % (comp, _ix), float(r[col]), _NDSRC, 'result',
-                 'index points')
-        register('nd_sh%s_%s' % (comp, _ix),
-                 round(100.0 * float(r[col]) / float(r['I00']), 2), _NDSRC,
-                 'result', 'per cent of that index baseline')
-    # the share of the CHANNEL, which is what the two cells divide
-    tot = float(r['C_needs_total'])
-    register('nd_chres_%s' % _ix, round(100.0 * float(r['C_nonlabour']) / tot, 1),
-             _NDSRC, 'result', 'per cent of the resources-and-needs channel')
-    register('nd_chcomp_%s' % _ix,
-             round(100.0 * float(r['C_composition']) / tot, 1), _NDSRC,
-             'result', 'per cent of the resources-and-needs channel')
-    re_ = _ND[(_ND['basis'] == 'modified_OECD_equivalized')
-              & (_ND['index'] == _ix)].iloc[0]
-    tote = float(re_['C_needs_total'])
-    register('nde_chres_%s' % _ix,
-             round(100.0 * float(re_['C_nonlabour']) / tote, 1), _NDSRC,
-             'result', 'per cent of the channel, equivalized')
-    register('nde_chcomp_%s' % _ix,
-             round(100.0 * float(re_['C_composition']) / tote, 1), _NDSRC,
-             'result', 'per cent of the channel, equivalized')
-for comp in ['res', 'comp']:
-    register('nd_c%s' % comp, REG['nd_c%s_gini' % comp]['value'], _NDSRC,
-             'result', 'Gini points')
-    register('nd_sh%s' % comp, REG['nd_sh%s_gini' % comp]['value'], _NDSRC,
-             'result', 'per cent of the baseline Gini')
-    register('nd_ch%s' % comp, REG['nd_ch%s_gini' % comp]['value'], _NDSRC,
-             'result', 'per cent of the resources-and-needs channel')
-    register('nde_ch%s' % comp, REG['nde_ch%s_gini' % comp]['value'], _NDSRC,
-             'result', 'per cent of the channel, equivalized')
-
-# ---- the same subdivision for single adults --------------------------------
-# The current singles record includes the corrected resources/composition split.
-_SD = ('s12_six_index_attributions_v1.csv; corrected singles nested-D '
-       'attribution on repriced partial-D panels')
-for _ix, _ in INDICES:
-    for _bas, _pfx in [('raw', 'sd'), ('equivalized', 'sde')]:
-        r = sixrow('singles', _bas, _ix)
-        tot = float(r['C_D'])
-        for comp, col in [('res', 'C_resources'), ('comp', 'C_composition')]:
-            v = float(r[col])
-            register('%s_c%s_%s' % (_pfx, comp, _ix), v, _SD, 'diagnostic',
-                     'index points')
-            register('%s_sh%s_%s' % (_pfx, comp, _ix),
-                     round(100.0 * v / float(r['I00']), 2), _SD, 'diagnostic',
-                     'per cent of that index baseline')
-            register('%s_ch%s_%s' % (_pfx, comp, _ix),
-                     round(100.0 * v / tot, 1), _SD, 'diagnostic',
-                     'per cent of the resources-and-needs channel')
-for comp in ['res', 'comp']:
-    for _pfx in ['sd', 'sde']:
-        for _kind in ['sh', 'ch']:
-            register('%s_%s%s' % (_pfx, _kind, comp),
-                     REG['%s_%s%s_gini' % (_pfx, _kind, comp)]['value'], _SD,
-                     'diagnostic', 'per cent')
-
-# How robust is each nested statement? Counted, not asserted.
-_nd_res_leads = sum(1 for _ix, _ in INDICES
-                    if REG['nd_chres_%s' % _ix]['value'] > 50)
-_sd_res_leads = sum(1 for _ix, _ in INDICES
-                    if REG['sd_chres_%s' % _ix]['value'] > 50)
-_sde_res_leads = sum(1 for _ix, _ in INDICES
-                     if REG['sde_chres_%s' % _ix]['value'] > 50)
-_nde_res_leads = sum(1 for _ix, _ in INDICES
-                     if REG['nde_chres_%s' % _ix]['value'] > 50)
-_comp_bigger_for_couples = sum(
-    1 for _ix, _ in INDICES
-    if REG['nd_chcomp_%s' % _ix]['value'] > REG['sd_chcomp_%s' % _ix]['value'])
-_equiv_raises_comp = sum(
-    1 for _ix, _ in INDICES
-    if REG['nde_chcomp_%s' % _ix]['value'] > REG['nd_chcomp_%s' % _ix]['value']
-    and REG['sde_chcomp_%s' % _ix]['value'] > REG['sd_chcomp_%s' % _ix]['value'])
-for _k, _v, _u in [('nd_res_leads_couples', _nd_res_leads, 'indices of six'),
-                   ('nd_res_leads_singles', _sd_res_leads, 'indices of six'),
-                   ('nd_res_leads_couples_eq', _nde_res_leads, 'indices of six'),
-                   ('nd_res_leads_singles_eq', _sde_res_leads, 'indices of six'),
-                   ('nd_comp_bigger_couples', _comp_bigger_for_couples,
-                    'indices of six'),
-                   ('nd_equiv_raises_comp', _equiv_raises_comp,
-                    'indices of six')]:
-    register(_k, _v, 'counted over the six index-specific nested attributions',
-             'result', _u)
-register('nd_resid', '1.4e-17', _NDSRC, 'verified identity', 'index units')
-register('nd_vs_cd', '0.0', _NDSRC, 'verified identity', 'index units')
-for _k, _v in [('nd_n_res', _NDJ['partition']['resources']),
-               ('nd_n_comp', _NDJ['partition']['composition']),
-               ('nd_n_geo', _NDJ['partition']['geography'])]:
-    register(_k, int(_v), _NDSRC, 'definition', 'budget fields')
-_r = _ND[(_ND['basis'] == 'raw') & (_ND['index'] == 'gini')].iloc[0]
-register('nd_of_res', round(100.0 * float(_r['one_factor_nonlabour_fall'])
-                            / float(_r['I00']), 2), _NDSRC, 'result',
-         'per cent reduction in the baseline Gini')
-register('nd_of_comp', round(100.0 * float(_r['one_factor_composition_fall'])
-                             / float(_r['I00']), 2), _NDSRC, 'result',
-         'per cent reduction in the baseline Gini')
+# Robustness: the anchor node the estimation panel inserts deterministically
+# in every coalition. Report the worst-case (largest absolute) relative move
+# in Delta_I across the four sample x scale cells, and which cell it is --
+# same selection rule as reports/results_gallery_build/build.py's
+# d2_anchor_line().
+_moves = [(s, sk, D2_ANCHOR[s][D2_SCALE[sk]]['delta_I_relative_move'])
+          for s in ('singles', 'couples') for sk in ('uneq', 'eq')]
+_worst = max(_moves, key=lambda t: abs(t[2]))
+register('d2_anchormove_pct', round(abs(_worst[2]) * 100.0, 1), _D2SRC,
+         'diagnostic', 'per cent, largest absolute relative move in Delta_I')
+register('d2_anchormove_cell', '%s, %s' % (_worst[0], D2_SCALE[_worst[1]]),
+         _D2SRC, 'diagnostic', 'sample and scale of the largest move')
+for _s in ('singles', 'couples'):
+    _share = float(d2_coalition_row(_s, 'uneq', 'EMPTY')
+                   ['share_attaining_the_observed_node'])
+    register('d2_anchorshare_%s' % _s, round(100.0 * _share, 1), _D2SRC,
+             'diagnostic', 'per cent of households attaining the observed '
+             'node under the actual coalition')
 
 # welfare levels
 for _tag in ['singles', 'couples']:
@@ -416,12 +311,16 @@ for _tag in ['singles', 'couples']:
              'v5_step2_welfare_evidence_v1.json::lorenz_observed_income',
              'result', 'Gini units')
 
-# exhaustiveness, neutrality, W3, bridge
-for _k, _v, _u in [('resid_top', '2.8e-17', 'index units'),
-                   ('resid_nested', '5.6e-17', 'index units'),
-                   ('i11_max', '1.3e-15', 'index units')]:
-    register(_k, _v, 's12_welfare_record_report_v1.md::Exhaustiveness',
-             'verified identity', _u)
+# neutrality, W3, bridge -- unrelated to the P/A/B decomposition above.
+# NOTE (LINEAGE-SWEEP-1/REBUILD-1): this block's provenance strings still
+# name s12_welfare_record_report_v1.md, which retired_lineage_gate.py flags
+# on principle (the DECOMP-PRESEMINAR-1 ruling's "any S8/R240-era welfare
+# artifact more broadly" clause). It is NOT part of the retired four-factor
+# P/A/B/D decomposition this pass fixed -- it documents the separate W1
+# pay-neutrality finding and the W1/W4 bridge -- and rebuilding it from an
+# accepted source is out of REBUILD-1's scope (abstract, headline, the five
+# decomposition tables). item 17 / the numbers-against-source self-check will
+# still show this one residual, narrower hit; see the REBUILD-1 report.
 for _k, _v, _s, _u in [
         ('dlogh_singles', '1.8e-15', 'verified identity', 'log units'),
         ('dlogh_couples', '7.1e-15', 'verified identity', 'log units'),
@@ -453,15 +352,6 @@ for _k, _v, _u in [('w3_bracketed_singles', 1540, 'households'),
                    ('w3_bracketed_couples', 9, 'households'),
                    ('w3_negative_couples', 2103, 'households')]:
     register(_k, _v, 's12_welfare_record_report_v1.md::W3', 'diagnostic', _u)
-
-# the exact multi-index counts the review requires
-_RK = _EVID['ranking_statements']
-for _t in ['singles', 'couples']:
-    for _k in ['A_gt_B', 'B_gt_A', 'A_gt_D', 'AB_gt_D', 'D_largest_of_PABD',
-               'P_negative', 'P_positive']:
-        register('rk_%s_%s' % (_k.lower(), _t), len(_RK[_t][_k]),
-                 'v5_step2_welfare_evidence_v1.json::ranking_statements',
-                 'result', 'indices out of six')
 
 for _p in ['jax', 'jaxlib', 'euromod']:
     try:
@@ -811,124 +701,72 @@ TABLES['levels'] = table(
     'not two estimates of one quantity.',
     ['Population', 'Basis', 'Mean', 'p10', 'Median', 'p90', 'Gini'], _rows)
 
-# ---- T11: the four states and the one-factor effects ---------------------- #
-_rows = []
-for lab, st in [('Own preferences, own circumstances', 'I00'),
-                ('Common preferences, own circumstances', 'I10'),
-                ('Own preferences, common circumstances', 'I01'),
-                ('Common preferences, common circumstances', 'I11')]:
-    _rows.append([lab, format(REG['w_%s_singles' % st.lower()]['value'], '.6f'),
-                  format(REG['w_%s_couples' % st.lower()]['value'], '.6f')])
-_rows.append(['*Preferences equalized alone: change in the Gini (per cent)*',
-              format(-REG['of_P_singles']['value'], '+.2f'),
-              format(-REG['of_P_couples']['value'], '+.2f')])
-_rows.append(['*All other circumstances equalized alone: change (per cent)*',
-              format(-REG['of_E_singles']['value'], '+.2f'),
-              format(-REG['of_E_couples']['value'], '+.2f')])
-TABLES['states'] = table(
-    'v5_welfare_states',
-    'Table: The four coalition states of the two-group game and the '
-    'corresponding one-factor effects. Weighted Gini of the money metric on '
-    'the raw household basis, with the female-primary reference for '
-    'single-adult households. The fully common state is zero to the precision '
-    'reported in the text: that is a tested property of the game, not an '
-    'imposed constraint. A positive percentage in the last two rows is a rise '
-    'in inequality.',
-    ['State', 'Single-adult', 'Couple'], _rows)
+# ---- T11: the eight P/A/B coalitions, per sample --------------------------- #
+def _d2_coalition_table(sample, label):
+    _rows = []
+    for scale_key in ('uneq', 'eq'):
+        scale = D2_SCALE[scale_key]
+        for coalition in ('EMPTY', 'P', 'A', 'B', 'PA', 'PB', 'AB', 'PAB'):
+            r = d2_coalition_row(sample, scale_key, coalition)
+            _rows.append([scale, D2_COAL_LABEL[coalition],
+                          format(float(r['I_S_gini']), '.4f'),
+                          format(float(r['change_from_actual']), '+.4f'),
+                          format(float(r['mc_min']), '.4f') + '–'
+                          + format(float(r['mc_max']), '.4f')])
+    return table(
+        'v5_pab_coalition_%s' % sample,
+        'Table: %s, the eight P/A/B coalitions. Weighted Gini of money-metric '
+        'well-being, dwt-weighted, simulated on the accepted model’s '
+        'already-priced estimation panel with no re-estimation and no new '
+        'pricing. "Change from actual" is the one-factor effect of that '
+        'coalition. The Monte Carlo range is the spread of the Gini level '
+        'across 1,000 simulation replications, never a confidence interval.'
+        % label,
+        ['Scale', 'Coalition', 'I(S), Gini', 'Change from actual',
+         'MC range (min–max)'], _rows)
 
-# ---- T12: the grouped attribution with intervals -------------------------- #
-_rows = []
-for comp, lab in COMPS:
-    row = [lab]
-    for tag in ['singles', 'couples']:
-        k = 'w_c%s_%s' % (comp, tag)
-        if k not in REG:
-            row += ['--', '--']
-            continue
-        row.append(format(REG[k]['value'], '.6f'))
-        share = REG['w_sh%s_%s' % (comp, tag)]['value']
-        lo = REG.get('cr1_lo_%s_%s' % (comp, tag))
-        cell = format(share, '.2f')
-        if lo is not None:
-            cell += ' [%s, %s]' % (
-                format(lo['value'], '.1f'),
-                format(REG['cr1_hi_%s_%s' % (comp, tag)]['value'], '.1f'))
-        row.append(cell)
-    _rows.append(row)
-TABLES['attribution'] = table(
-    'v5_attribution',
-    'Table: Grouped attribution of well-being inequality. Contributions in '
-    'Gini points beside the share of the baseline Gini of the same population, '
-    'per cent, with the 95 per cent cluster-robust parameter interval in '
-    'brackets from 100 draws. Shares are taken against the baseline of the '
-    'same population and are not comparable as levels across the two '
-    'populations. The parameter interval and the RQMC integration band measure '
-    'different things and are never combined; the integration band is reported '
-    'separately in the text and in the figure. Resources and needs enter here '
-    'as one component of the four-player game; its subdivision into non-labour '
-    'resources and household composition is a nested attribution and has its '
-    'own table.',
-    ['Component', 'Singles: Gini points', 'Singles: share [95 per cent]',
-     'Couples: Gini points', 'Couples: share [95 per cent]'], _rows)
 
-# ---- T12b: the subdivision of D for couples ------------------------------- #
-_rows = []
-for ix, ixlab in INDICES:
-    _rows.append([ixlab,
-                  format(REG['nd_shres_%s' % ix]['value'], '.2f') + ' / '
-                  + format(REG['nd_shcomp_%s' % ix]['value'], '.2f'),
-                  format(REG['nd_chres_%s' % ix]['value'], '.1f') + ' / '
-                  + format(REG['nd_chcomp_%s' % ix]['value'], '.1f'),
-                  format(REG['nde_chres_%s' % ix]['value'], '.1f') + ' / '
-                  + format(REG['nde_chcomp_%s' % ix]['value'], '.1f'),
-                  format(REG['sd_shres_%s' % ix]['value'], '.2f') + ' / '
-                  + format(REG['sd_shcomp_%s' % ix]['value'], '.2f'),
-                  format(REG['sd_chres_%s' % ix]['value'], '.1f') + ' / '
-                  + format(REG['sd_chcomp_%s' % ix]['value'], '.1f'),
-                  format(REG['sde_chres_%s' % ix]['value'], '.1f') + ' / '
-                  + format(REG['sde_chcomp_%s' % ix]['value'], '.1f')])
-TABLES['nestedD'] = table(
-    'v5_nested_d',
-    'Table: The subdivision of the resources-and-needs contribution into '
-    'non-labour resources and household composition and needs, reported as '
-    '"resources / composition" in every cell. Columns two and five are shares '
-    'of that population’s baseline inequality; the remaining columns are '
-    'shares of the resources-and-needs channel itself, which the two cells '
-    'divide. The couple cells come from two counterfactual panels repriced '
-    'through the tax-benefit system on the corrected partition of '
-    + str(REG['nd_n_res']['value']) + ' resource fields, '
-    + str(REG['nd_n_comp']['value']) + ' composition and needs fields and '
-    + str(REG['nd_n_geo']['value']) + ' geographic fields, and sum to the joint '
-    'contribution to a residual of 1.4e-17 in index units. The single-adult '
-    'cells also report the corrected nested attribution. Both populations use '
-    'their current repriced partial-D panels; raw and equivalized channel '
-    'shares are displayed separately.',
-    ['Index', 'Couples: share of baseline', 'Couples: share of channel',
-     'Couples: channel, equivalized', 'Singles: share of baseline',
-     'Singles: share of channel', 'Singles: channel, equivalized'], _rows)
+TABLES['pabcoalitionsingles'] = _d2_coalition_table('singles', 'Single adults')
+TABLES['pabcoalitioncouples'] = _d2_coalition_table('couples', 'Couples')
 
-# ---- T13: six-index levels and shares ------------------------------------- #
+# ---- T12: the exact three-player Shapley allocation ------------------------ #
 _rows = []
-for tag, pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
-    for ix, ixlab in INDICES:
-        row = [pop + ', ' + ixlab,
-               format(REG['w_base_%s_%s' % (ix, tag)]['value'], '.6f')]
-        for comp in ['P', 'A', 'B', 'D', 'AB']:
-            row.append(format(REG['w_sh%s_%s_%s' % (comp, ix, tag)]['value'],
-                              '.2f'))
-        _rows.append(row)
-TABLES['sixindex'] = table(
-    'v5_six_index',
-    'Table: Baseline level and attribution shares under six inequality '
-    'indices. Every row was recomputed for its own index against its own '
-    'baseline; no coalition value or share is transferred between indices. '
-    'Shares within a row sum to one hundred by exhaustiveness. A negative '
-    'preference share means that equalizing preferences alone would raise that '
-    'index, which is a property of this exhaustive two-group game with a '
-    'nonnegative index and is explained in the text.',
-    ['Population and index', 'Baseline level', 'Preferences (per cent)',
-     'Access', 'Earning opportunities', 'Resources and needs',
-     'Access + earnings'], _rows)
+for _s, _pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
+    for _sk in ('uneq', 'eq'):
+        _scale = D2_SCALE[_sk]
+        for _f, _lab in [('P', 'Preferences (systematic utility '
+                          'heterogeneity)'),
+                         ('A', 'Local labour-market access (region, '
+                          'urban/rural, year)'),
+                         ('B', 'Earning opportunities')]:
+            row = d2_shapley_row(_s, _sk, _f)
+            cell = [_pop, _scale, _f, _lab,
+                    format(float(row['gini_point_contribution']), '+.4f')]
+            if _f == 'P':
+                cell.append('—')  # no directional claim -- see prose
+            else:
+                cell.append(format(float(row['share_of_delta_I']) * 100,
+                                   '.1f') + '%')
+            cell.append(format(float(row['second_seed_gini_point']), '+.4f'))
+            _rows.append(cell)
+        _di = d2_shapley_row(_s, _sk, 'Delta_I')
+        _rows.append([_pop, _scale, r'$\Delta I$', 'I(actual) $-$ I(P,A,B '
+                      'equalized)', format(float(_di['gini_point_contribution']),
+                                           '+.4f'), '100.0%',
+                      format(float(_di['second_seed_gini_point']), '+.4f')])
+TABLES['pabshapley'] = table(
+    'v5_pab_shapley',
+    'Table: The exact three-player Shapley allocation of $\\Delta I$ across '
+    'P, A and B. Gini-point contribution beside the share of $\\Delta I$ '
+    '(not of baseline inequality), and an independent second-seed '
+    'reproduction. No directional claim is made about P: its sign changes '
+    'between unequivalised and equivalised reporting in both samples, so '
+    'its share of $\\Delta I$ is not stated. A Monte Carlo per-replication '
+    'share range, which divides by that replication’s own near-zero '
+    '$\\Delta I$ and is not informative on its own, is reported in the '
+    'technical gallery, not here.',
+    ['Population', 'Scale', 'Factor', 'Label', 'Gini-point contribution',
+     'Share of $\\Delta I$', 'Second-seed Gini-point'], _rows)
 
 # ---- T14: the benchmark comparison ---------------------------------------- #
 TABLES['benchmark'] = table(
@@ -952,40 +790,32 @@ TABLES['benchmark'] = table(
       val('kfree_rumb'), val('negll_rumb', '.3f'),
       format(6395.107857484 - 6253.463074380, '+.2f'), val('mae_rumb', '.4f')]])
 
-# ---- T15: the operators --------------------------------------------------- #
+# ---- T15: the operators of the preliminary decomposition ------------------- #
 TABLES['operators'] = table(
     'v5_operators',
-    'Table: The four structural equalization operators. Each operator replaces '
-    'the arguments of one structural pathway with a common reference profile '
-    'and leaves the estimated coefficients in place; it does not equalize every '
-    'occurrence of a raw characteristic. Education, for example, enters both '
-    'the wage location and the local-market lookup, and only the named pathway '
-    'is substituted. Operators are applied as one simultaneous substitution '
-    'map, not as an ordered product.',
-    ['Operator', 'What is replaced', 'What is retained', 'Repricing'],
-    [[r'$T_P$ preferences',
+    'Table: The three structural equalization operators of the preliminary '
+    'decomposition (Section 5). Each operator replaces the arguments of one '
+    'structural pathway with a common reference profile and leaves the '
+    'estimated coefficients in place; it does not equalize every occurrence '
+    'of a raw characteristic. Operators are applied as one simultaneous '
+    'substitution map, not as an ordered product. Household resources, needs '
+    'and composition are held fixed throughout this exercise -- not a fourth '
+    'operator here -- pending the counterfactual-attainment estimand the '
+    'paper’s final decomposition architecture requires.',
+    ['Operator', 'What is replaced', 'What is retained'],
+    [[r'$T_P$ preferences (systematic utility heterogeneity)',
       'Singles: the arguments of the leisure weight and the complete '
       'reference-sex leisure block. Couples: the medoid spouse arguments, with '
       'own spouse coefficients retained',
-      'Budget roster, resources, access and wage pathways of the same '
-      'characteristics', 'No: pure utility shifters do not change the budget'],
-     [r'$T_A$ job access',
+      'Access and wage pathways of the same characteristics'],
+     [r'$T_A$ local labour-market access',
       'The arguments of the employment index and the occupation access table',
-      'Preferences, wage location, budget inputs; sex-specific occupation '
-      'coefficients', 'No: the priced jobs are unchanged'],
+      'Preferences, wage location; sex-specific occupation coefficients'],
      [r'$T_B$ earning opportunities',
       'The arguments of the offered-wage location: education shares and '
       'experience moments, with squares recomputed rather than averaged',
       'The estimated wage coefficients and dispersion; the preference and '
-      'access pathways of the same characteristics',
-      'No on a common priced node set: the change is in the density over '
-      'nodes'],
-     [r'$T_D$ resources and needs',
-      'The non-labour budget inputs, the household roster and the needs '
-      'profile',
-      'Every non-budget structural pathway',
-      'Yes: the household budget is recomputed through the tax-benefit '
-      'system']])
+      'access pathways of the same characteristics']])
 
 # ---- T16: index definitions ----------------------------------------------- #
 TABLES['indices'] = table(
@@ -1077,6 +907,14 @@ def lfig(key, stem, caption):
     CAPTIONS[key] = (stem, caption)
 
 
+def dfig(key, stem, caption):
+    """Register a figure from the DECOMP-2 preliminary-decomposition run
+    (MNL_decomp, preseminar_pab_v1) -- same source directory as
+    reports/results_gallery_build/build.py's d2fig()."""
+    (FIG / (stem + '.png')).write_bytes((DECOMP2 / (stem + '.png')).read_bytes())
+    CAPTIONS[key] = (stem, caption)
+
+
 lfig('theory', 'theory_w1',
      r'**Own-set equal-consumption equivalents.** The theoretical W1 construction '
      r'from the companion theory paper. Individuals with preferences '
@@ -1113,22 +951,24 @@ mfig('welfdist', 'figV02_welfare_distributions',
      'basis, with weighted medians marked. Levels are not comparable across '
      'the two panels: each household type carries its own reference '
      'construction.')
-mfig('signed', 'figV03_signed_decomposition',
-     'The grouped attribution, signed, in per cent of each population\u2019s '
-     'own baseline Gini. The black bar is the 95 per cent cluster-robust '
-     'parameter interval; the shaded bar is the RQMC integration band. They '
-     'measure different things and are never combined.')
-mfig('onefactor', 'figV04_one_factor_vs_shapley',
-     'Equalizing one group alone against the grouped Shapley share. For '
-     'single-adult households, equalizing preferences alone raises the Gini '
-     'while the preference share is positive; the share averages marginal '
-     'contributions over coalition orders and the one-factor effect does not.')
-mfig('sixindex', 'figV05_six_index_shares',
-     'Attribution shares under six inequality indices. Each index keeps its '
-     'own coalition values and its own allocation. Access exceeds earning '
-     'opportunities for single adults under all six and the ordering reverses '
-     'for couples under all six; the singles preference share changes sign '
-     'outside the Gini.')
+dfig('pabarch', 'fig_preseminar_pab_architecture_v1',
+     'The eight P/A/B counterfactual coalitions, built from the accepted '
+     'model by equalising household-constant covariates within a block. '
+     'Node-level alternative characteristics are preserved in every '
+     'coalition; only household-constant covariates are equalised. '
+     'Preliminary, model-based.')
+dfig('pabdecompsingles', 'fig_preseminar_pab_decomposition_singles_v1',
+     'Single-adult estimation sample: coalition Gini levels and the exact '
+     'Shapley allocation of $\\Delta I$ across P, A and B, with the sign '
+     'instability of P annotated. Modified-OECD-equivalised $W^1_F$; Monte '
+     'Carlo ranges over 1,000 replications, not confidence intervals. '
+     'Preliminary, model-based.')
+dfig('pabdecompcouples', 'fig_preseminar_pab_decomposition_couples_v1',
+     'Couple estimation sample: coalition Gini levels and the exact Shapley '
+     'allocation of $\\Delta I$ across P, A and B, with the sign instability '
+     'of P annotated. Modified-OECD-equivalised $W^1_F$; Monte Carlo ranges '
+     'over 1,000 replications, not confidence intervals. Preliminary, '
+     'model-based.')
 mfig('powermean', 'figV07_power_mean',
      'The consumption coefficient as the order of a power mean. Left: the '
      'contribution an alternative makes to the consumption power moment, '
@@ -1551,7 +1391,16 @@ REGOUT = {'build_date': today,
           'model_of_record': 'S11 specifications of record: tau = 1, '
                              'theta_c = 0, beta_c estimated; welfare at S12 on '
                              'the 1,540 / 2,223 estimation frames',
-          'entries': {**_existing_register.get('entries', {}), **REG}, 'used_keys': sorted(USED),
+          # 'entries' is REG alone, not merged with the predecessor file's
+          # entries: merging silently carried forward orphaned keys from
+          # retired sources (w_i00_singles, cr1_lo_*, resid_top, ...) even
+          # after this script stopped registering them, which is exactly
+          # the "filled with a predecessor value" this module's own
+          # docstring says never happens. REG is a complete, fresh
+          # registration from this run (verified: every {{n:...}} token the
+          # resolve() pass needs is already satisfied from REG alone, or
+          # the build raises "unregistered number" and does not reach here).
+          'entries': dict(REG), 'used_keys': sorted(USED),
           'unused_keys': sorted(set(REG) - USED),
           'gallery': _existing_register.get('gallery'),
           'discussion_tables': _existing_register['discussion_tables']}

@@ -12,9 +12,9 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 4 | The W1 statement: all three clauses, and the power-mean order | **PASS** |
 | 5 | Pay neutrality is stated as the property established | **PASS** |
 | 6 | Shapley wording: attributed to, not removed | **PASS** |
-| 7 | The six-index statement matches the computed counts | **PASS** |
-| 8 | Parameter intervals and integration bands are never merged | **PASS** |
-| 9 | The budget channel: subdivision repriced, never imputed | **PASS** |
+| 7 | The preliminary P/A/B scale statement matches the computed shares (DECOMP-2) | **PASS** |
+| 8 | The two decomposition uncertainty summaries (Monte Carlo range, second-seed check) are never called a confidence interval | **PASS** |
+| 9 | D held fixed: ΔI is small by design, not decomposed, not evidence opportunities are unimportant | **PASS** |
 | 10 | No machine labels, status tokens, private paths or slogans | **PASS** |
 | 11 | Every number is bound to a registered source | **PASS** |
 | 12 | The funnel ends where the estimation begins | **PASS** |
@@ -51,26 +51,18 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 - no findings
 
-## 7. The six-index statement matches the computed counts — PASS
+## 7. The preliminary P/A/B scale statement matches the computed shares (DECOMP-2) — PASS
 
-- A_gt_B singles: 6 of six, as stated
-- B_gt_A couples: 6 of six, as stated
-- A_gt_D singles: 4 of six, as stated
-- AB_gt_D singles: 5 of six, as stated
-- D largest couples: 6 of six, as stated
-- P negative singles: 5 of six, as stated
+- B (earning opportunities) exceeds A (local labour-market access) in all 4 sample x scale cells, recomputed from DECOMP-2
 
-## 8. Parameter intervals and integration bands are never merged — PASS
+## 8. The two decomposition uncertainty summaries (Monte Carlo range, second-seed check) are never called a confidence interval — PASS
 
-- registry: 20 parameter-interval and 20 integration-band entries, separately typed
+- registry: 12 DECOMP-2 Gini-point contributions registered, all sourced from shapley_PAB_*.csv (Monte Carlo simulation, not a parameter draw)
 
-## 9. The budget channel: subdivision repriced, never imputed — PASS
+## 9. D held fixed: ΔI is small by design, not decomposed, not evidence opportunities are unimportant — PASS
 
-- the couples subdivision sums to the joint contribution to 0.0e+00 in index units
-- nd_res_leads_couples = 6, recomputed from the source artifact
-- nd_res_leads_couples_eq = 6, recomputed from the source artifact
-- nd_res_leads_singles = 6, recomputed from the source artifact
-- nd_res_leads_singles_eq = 2, recomputed from the source artifact
+- paper v5 (LaTeX): ΔI-share range -9.9 to -1.8 per cent matches the registry
+- report v5 (markdown source): ΔI-share range -9.9 to -1.8 per cent matches the registry
 
 ## 10. No machine labels, status tokens, private paths or slogans — PASS
 
@@ -78,7 +70,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 609 entries, 126 used by the two documents, every used entry typed and sourced
+- registry: 140 entries, 91 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -86,7 +78,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 13. Figures and tables are present, captioned and rendered — PASS
 
-- paper: 13 figures, 21 tables, 34 captions; report: 16 embedded figures, 21 tables
+- paper: 13 figures, 19 tables, 32 captions; report: 16 embedded figures, 19 tables
 
 ## 14. The report carries the explanatory apparatus — PASS
 
@@ -103,10 +95,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 ## 17. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) — FAIL
 
 - this gate checks the build source and registry for a READ of a retired artifact by its own path/basename, not the rendered prose -- a reworded sentence does not clear this check while the underlying data source is unchanged
-- reports\research_story_build\build_v5.py: s12_*_attributions family, *headline_shares family, s12_welfare_record_report_v1
-- reports\numbers_of_record_v5.json: s12_*_attributions family, *headline_shares family, s12_welfare_record_report_v1
-- supplementary content signature for a forbidden four-factor P/A/B/D decomposition (this signal is not path-based and can be dodged by rewording -- treat a clean result here as weaker evidence than the path check above, and a hit here as strong evidence regardless)
-- manuscript\JMP_working_paper_for_seminar_v5.tex: X_i=(P_i,A_i,B_i,D_i) coalition notation, four structural equalization operators, four-player game / four operators, sixteen coalitions (2^4), co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)
-- reports\JMP_research_story_report_v5.html: X_i=(P_i,A_i,B_i,D_i) coalition notation, four structural equalization operators, four-player game / four operators, sixteen coalitions (2^4), co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)
+- reports\research_story_build\build_v5.py: s12_welfare_record_report_v1
+- reports\numbers_of_record_v5.json: s12_welfare_record_report_v1
 
 **Overall: FAIL**

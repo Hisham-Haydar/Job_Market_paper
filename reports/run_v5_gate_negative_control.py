@@ -20,10 +20,9 @@ MUTATIONS = [
      r'fixed at one at the numeraire beta_c = 1 and so'),
     (2, 'tex', 'g^{E}_{ij}', 'g^{Acc}_{ij}'),
     (5, 'md', 'directly pay-neutral', 'shown to fail Independence of pay'),
-    (9, 'tex', 'repriced through the tax-benefit system',
-     'obtained by splitting the joint cell'),
-    (9, 'tex', 'Corrected nested attribution is available for both populations',
-     'Corrected nested attribution is unavailable for singles'),
+    (7, 'tex', 'earning opportunities dominate local labour-market access',
+     'local labour-market access dominates earning opportunities'),
+    (9, 'tex', 'held fixed', 'left unadjusted'),
     (10, 'tex', 'The estimated model has',
      'The SCALE-1 CERTIFIED estimated model has'),
     (15, 'md', 'We claim no new allocation principle.',
@@ -93,12 +92,20 @@ def main():
     # the gate reads the MNL evidence through JMP.parent
     (base / 'MNL').mkdir(exist_ok=True)
     sprint = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs'
-    for rel in ['v5_evidence/v5_step2_welfare_evidence_v1.json',
-                's12_welfare_record/s12_six_index_attributions_v1.csv',
-                's12_welfare_record/s12_couples_nested_D_attributions_v1.csv']:
+    for rel in ['v5_evidence/v5_step2_welfare_evidence_v1.json']:
         d = base / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs' / rel
         d.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(sprint / rel, d)
+    # item 7/9/17 read the DECOMP-2 preliminary P/A/B decomposition directly
+    # (MNL_decomp, preseminar_pab_v1) -- same lineage the gallery build uses.
+    decomp2 = JMP.parent / 'MNL_decomp/outputs/welfare/preseminar_pab_v1'
+    decomp2_dst = base / 'MNL_decomp/outputs/welfare/preseminar_pab_v1'
+    decomp2_dst.mkdir(parents=True, exist_ok=True)
+    for rel in (['coalition_values_singles.csv', 'coalition_values_couples.csv',
+                 'shapley_PAB_singles.csv', 'shapley_PAB_couples.csv',
+                 'log_variance_split_v1.csv', 'anchor_excluded_arm_v1.json']
+                + [p.name for p in decomp2.glob('fig_preseminar_pab_*.png')]):
+        shutil.copy2(decomp2 / rel, decomp2_dst / rel)
 
     clean, out = run_gate(root)
     print('clean copy fails:', sorted(clean) or 'none')

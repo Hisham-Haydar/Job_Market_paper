@@ -21,8 +21,8 @@ import retired_lineage_gate as rlg  # noqa: E402
 
 JMP = Path(__file__).resolve().parent.parent
 PDF = JMP / 'manuscript/JMP_working_paper_for_seminar_v5.pdf'
-S12 = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
 S11 = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record'
+DECOMP2 = JMP.parent / 'MNL_decomp/outputs/welfare/preseminar_pab_v1'
 
 
 def rows(path: Path):
@@ -52,37 +52,53 @@ def main() -> int:
     text = ' '.join(p.get_text() for p in pymupdf.open(PDF))
     text = ' '.join(text.split())
 
-    six = rows(S12 / 's12_six_index_attributions_v1.csv')
+    # DECOMP-2: preliminary three-factor P/A/B decomposition (superseding the
+    # retired S12 six-index/nested-D lineage this script used to read).
+    d2_scale = {'uneq': 'unequivalised', 'eq': 'equivalised'}
+    d2_coal = {s: rows(DECOMP2 / ('coalition_values_%s.csv' % s))
+               for s in ('singles', 'couples')}
+    d2_shap = {s: rows(DECOMP2 / ('shapley_PAB_%s.csv' % s))
+               for s in ('singles', 'couples')}
 
-    def cell(sample, ref, basis, index):
-        for r in six:
-            if (r['sample'] == sample and r['reference'] == ref
-                    and r['basis'] == basis and r['index'] == index):
+    def coal_row(sample, scale_key, coalition):
+        scale = d2_scale[scale_key]
+        for r in d2_coal[sample]:
+            if r['scale'] == scale and r['coalition'] == coalition:
                 return r
-        raise SystemExit('missing row %r' % ((sample, ref, basis, index),))
+        raise SystemExit('missing coalition row %r' % ((sample, scale, coalition),))
+
+    def shap_row(sample, scale_key, factor):
+        scale = d2_scale[scale_key]
+        for r in d2_shap[sample]:
+            if r['scale'] == scale and r['factor'] == factor:
+                return r
+        raise SystemExit('missing shapley row %r' % ((sample, scale, factor),))
 
     checks = []
-    for tag, sample, ref in [('singles', 'singles', 'singles_female'),
-                             ('couples', 'couples', 'household-own')]:
-        r = cell(sample, ref, 'raw', 'gini')
-        base = float(r['I00'])
-        for comp, col in [('P', 'C_P'), ('A', 'C_A'), ('B', 'C_B'),
-                          ('AB', 'C_AB'), ('D', 'C_D')]:
-            checks.append(('%s share %s' % (tag, comp),
-                           '%.2f' % (100.0 * float(r[col]) / base)))
-        checks.append(('%s baseline Gini' % tag, '%.6f' % base))
-        for st in ['I10', 'I01']:
-            checks.append(('%s %s' % (tag, st), '%.6f' % float(r[st])))
-
-    # the two-group one-factor effects, recomputed here
-    for tag, sample, ref in [('singles', 'singles', 'singles_female'),
-                             ('couples', 'couples', 'household-own')]:
-        r = cell(sample, ref, 'raw', 'gini')
-        i00, i10, i01 = float(r['I00']), float(r['I10']), float(r['I01'])
-        checks.append(('%s one-factor E' % tag,
-                       '%.1f' % (100.0 * (i00 - i01) / i00)))
-        checks.append(('%s one-factor P magnitude' % tag,
-                       '%.1f' % abs(100.0 * (i00 - i10) / i00)))
+    delta_pcts = []
+    for tag in ('singles', 'couples'):
+        for sk in ('uneq', 'eq'):
+            base = float(coal_row(tag, sk, 'EMPTY')['I_S_gini'])
+            pab = float(coal_row(tag, sk, 'PAB')['I_S_gini'])
+            delta = base - pab
+            pct = 100.0 * delta / base
+            delta_pcts.append(pct)
+            checks.append(('%s %s baseline Gini' % (tag, sk), '%.4f' % base))
+            for factor in ('P', 'A', 'B'):
+                g = float(shap_row(tag, sk, factor)['gini_point_contribution'])
+                checks.append(('%s %s share %s (Gini points)' % (tag, sk, factor),
+                               '%.4f' % g))
+    # the abstract/headline state the min and max of that 1.8-9.9 range
+    checks.append(('deltaI pct min', '%.1f' % min(delta_pcts)))
+    checks.append(('deltaI pct max', '%.1f' % max(delta_pcts)))
+    # B dominates A in every cell -- the qualitative ordering the text states
+    for tag in ('singles', 'couples'):
+        for sk in ('uneq', 'eq'):
+            a = float(shap_row(tag, sk, 'A')['share_of_delta_I']) * 100
+            b = float(shap_row(tag, sk, 'B')['share_of_delta_I']) * 100
+            if not b > a:
+                raise SystemExit('B does not exceed A for %s %s: %.2f vs %.2f'
+                                 % (tag, sk, b, a))
 
     # the estimated consumption weights and their standard errors
     for tag, f in [('singles', 's11_singles_parameter_table_v1.csv'),
@@ -92,15 +108,6 @@ def main() -> int:
                 checks.append(('%s beta_c' % tag, '%.4f' % float(r['estimate'])))
                 checks.append(('%s beta_c s.e.' % tag,
                                '%.4f' % float(r['se_robust_CR1'])))
-
-    # the couples budget-channel split
-    for r in rows(S12 / 's12_couples_nested_D_attributions_v1.csv'):
-        if r['basis'] == 'raw' and r['index'] == 'gini':
-            b = float(r['I00'])
-            checks.append(('couples resources share',
-                           '%.2f' % (100.0 * float(r['C_nonlabour']) / b)))
-            checks.append(('couples composition share',
-                           '%.2f' % (100.0 * float(r['C_composition']) / b)))
 
     checks += [('singles sample', '1,540'), ('couples sample', '2,223')]
 

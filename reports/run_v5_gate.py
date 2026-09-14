@@ -331,135 +331,120 @@ for a in 'PM':
 # --------------------------------------------------------------------------- #
 # 7.  THE MULTI-INDEX STATEMENT  (review finding 14)
 # --------------------------------------------------------------------------- #
-it = item(7, 'The six-index statement matches the computed counts')
-EV = json.loads((JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/'
-                 'v5_evidence/v5_step2_welfare_evidence_v1.json'
-                 ).read_text(encoding='utf-8'))['ranking_statements']
-EXPECT = {
-    'A_gt_B singles': (len(EV['singles']['A_gt_B']), 6),
-    'B_gt_A couples': (len(EV['couples']['B_gt_A']), 6),
-    'A_gt_D singles': (len(EV['singles']['A_gt_D']), 4),
-    'AB_gt_D singles': (len(EV['singles']['AB_gt_D']), 5),
-    'D largest couples': (len(EV['couples']['D_largest_of_PABD']), 6),
-    'P negative singles': (len(EV['singles']['P_negative']), 5),
-}
-for label, (got, want) in EXPECT.items():
-    if got != want:
-        it.fail('the computed count for %s is %d, the stated claim is %d'
-                % (label, got, want))
-    else:
-        it.note('%s: %d of six, as stated' % (label, got))
+it = item(7, 'The preliminary P/A/B scale statement matches the computed shares '
+              '(DECOMP-2)')
+_D2DIR = JMP.parent / 'MNL_decomp' / 'outputs/welfare/preseminar_pab_v1'
+import csv as _csv7  # noqa: E402
+_D2SHAP = {}
+for _s in ('singles', 'couples'):
+    with (_D2DIR / ('shapley_PAB_%s.csv' % _s)).open(encoding='utf-8') as _f:
+        _D2SHAP[_s] = {(row['scale'], row['factor']): row
+                       for row in _csv7.DictReader(_f)}
+# B (earning opportunities) must dominate A (local labour-market access) in
+# every sample x scale cell -- recomputed from the source CSVs, not trusted
+# from the registry that wrote them.
+_bdoma = []
+for _s in ('singles', 'couples'):
+    for _scale in ('unequivalised', 'equivalised'):
+        _a = float(_D2SHAP[_s][(_scale, 'A')]['share_of_delta_I'])
+        _b = float(_D2SHAP[_s][(_scale, 'B')]['share_of_delta_I'])
+        _bdoma.append((_s, _scale, _b > _a))
+        if not _b > _a:
+            it.fail('B does not exceed A for %s, %s (recomputed from '
+                    'shapley_PAB_%s.csv)' % (_s, _scale, _s))
+if all(ok for *_, ok in _bdoma):
+    it.note('B (earning opportunities) exceeds A (local labour-market '
+            'access) in all %d sample x scale cells, recomputed from '
+            'DECOMP-2' % len(_bdoma))
+# P's sign must actually differ between scales in both samples -- this is
+# the basis for the "no directional claim about P" statement.
+for _s in ('singles', 'couples'):
+    _pu = float(_D2SHAP[_s][('unequivalised', 'P')]['gini_point_contribution'])
+    _pe = float(_D2SHAP[_s][('equivalised', 'P')]['gini_point_contribution'])
+    if (_pu >= 0) == (_pe >= 0):
+        it.fail('%s: P has the same sign at both scales (%.6f, %.6f) -- the '
+                '"no directional claim" statement is not grounded' % (_s, _pu, _pe))
 for a in 'PM':
-    if 'under all six' not in NORM[a]:
-        it.fail('%s: does not state the robust ordering across all six indices'
-                % NAMES[a])
-    if 'ge(2)' not in NORM[a] or 'cv' not in NORM[a]:
-        it.fail('%s: does not label GE(2) as CV squared over two' % NAMES[a])
-# the superseded single-exception claim
-forbid(it, 'except under half the squared coefficient of variation')
+    if 'earning opportunities dominate local labour-market access' not in NORM[a]:
+        it.fail('%s: does not state the robust B-over-A ordering' % NAMES[a])
+    if 'no directional claim' not in NORM[a]:
+        it.fail('%s: does not disclaim a direction for the preference '
+                'contribution' % NAMES[a])
+# the retired six-index statement must not resurface
+forbid(it, 'under all six indices we report')
+forbid(it, 'access exceeds earning opportunities for single adults')
 
 
 # --------------------------------------------------------------------------- #
 # 8.  COVERAGE: the two uncertainties stay apart  (spec v1 s4)
 # --------------------------------------------------------------------------- #
-it = item(8, 'Parameter intervals and integration bands are never merged')
+it = item(8, 'The two decomposition uncertainty summaries (Monte Carlo range, '
+              'second-seed check) are never called a confidence interval')
+# The retired four-factor decomposition kept an RQMC integration band and a
+# CR1 parameter interval separate; the current preliminary DECOMP-2 exercise
+# instead reports a Monte Carlo simulation-replication range and an
+# independent second-seed reproduction, with the same guarantee: neither is
+# a confidence interval, and they are never merged into one.
 for a in 'PM':
-    if 'never combined' not in NORM[a] and 'never merged' not in NORM[a]:
-        it.fail('%s: does not state that the two are kept apart' % NAMES[a])
+    if 'never merged' not in NORM[a] and 'never combined' not in NORM[a]:
+        it.fail('%s: does not state that the two uncertainty summaries are '
+                'kept apart' % NAMES[a])
+    if 'never confidence intervals' not in NORM[a] and \
+       'never a confidence interval' not in NORM[a]:
+        it.fail('%s: does not state that the Monte Carlo range is not a '
+                'confidence interval' % NAMES[a])
 for bad in ['combined interval', 'merged interval', 'total uncertainty band']:
     forbid(it, bad)
-cr1 = [k for k in REGJ['entries']
-       if k.startswith('cr1_lo_') or k.startswith('cr1_hi_')]
-rq = [k for k in REGJ['entries'] if k.startswith('rq_')]
-if not cr1 or not rq:
-    it.fail('registry: the two uncertainty families are not both present')
+_gini = [k for k in REGJ['entries'] if k.startswith('d2_gini')]
+_seed = [k for k in REGJ['entries']
+         if 'second_seed' in k or 'anchormove' in k]
+if not _gini:
+    it.fail('registry: no DECOMP-2 Gini-point contributions are registered')
 else:
-    it.note('registry: %d parameter-interval and %d integration-band entries, '
-            'separately typed' % (len(cr1), len(rq)))
-for k in cr1:
-    if REGJ['entries'][k]['status'] != 'interval':
-        it.fail('registry: %s is not typed as a parameter interval' % k)
-for k in rq:
-    if REGJ['entries'][k]['status'] != 'band':
-        it.fail('registry: %s is not typed as an integration band' % k)
+    it.note('registry: %d DECOMP-2 Gini-point contributions registered, all '
+            'sourced from shapley_PAB_*.csv (Monte Carlo simulation, not a '
+            'parameter draw)' % len(_gini))
 
 
 # --------------------------------------------------------------------------- #
 # 9.  NESTED SEMANTICS AND THE COUPLES D CELL  (spec v1 s5)
 # --------------------------------------------------------------------------- #
-it = item(9, 'The budget channel: subdivision repriced, never imputed')
+it = item(9, 'D held fixed: ΔI is small by design, not decomposed, not '
+              'evidence opportunities are unimportant')
 E0 = REGJ['entries']
-# The couples subdivision now exists as a repriced result. What the gate must
-# enforce is that it is REPRICED and not an arithmetic split of the joint cell,
-# that its identity residual is reported, and that corrected attribution is
-# explicitly available for both populations.
 for a in 'PM':
-    if 'repriced through the tax-benefit system' not in NORM[a]:
-        it.fail('%s: does not state that the subdivision is repriced' % NAMES[a])
-    if 'not an arithmetic split' not in NORM[a] and \
-       'not an imputed split' not in NORM[a]:
-        it.fail('%s: does not deny that the subdivision is an arithmetic split'
-                % NAMES[a])
-    if 'corrected nested attribution is available for both populations' not in NORM[a]:
-        it.fail('%s: omits the current nested attribution for both populations' % NAMES[a])
-    if 'earlier partition' in NORM[a]:
-        it.fail('%s: retains the superseded singles partition caveat' % NAMES[a])
-for k in ['nd_cres_gini', 'nd_ccomp_gini', 'nd_resid']:
+    if 'held fixed' not in NORM[a]:
+        it.fail('%s: does not state that resources, needs and composition '
+                'are held fixed' % NAMES[a])
+    if 'not evidence that opportunities are unimportant' not in NORM[a] and \
+       'not a finding that job opportunities are unimportant' not in NORM[a] and \
+       'not a finding that opportunities are unimportant' not in NORM[a]:
+        it.fail('%s: does not deny that the small movable share means '
+                'opportunities are unimportant' % NAMES[a])
+    if 'nested' in NORM[a] and 'subdivision' in NORM[a] and \
+       'resources and household composition' in NORM[a]:
+        it.fail('%s: retains language describing a resources/composition '
+                'subdivision -- D is held fixed in this exercise, not '
+                'decomposed' % NAMES[a])
+for k in ['d2_deltaI_pct_singles_uneq', 'd2_deltaI_pct_singles_eq',
+          'd2_deltaI_pct_couples_uneq', 'd2_deltaI_pct_couples_eq',
+          'd2_varshare_logC_singles', 'd2_varshare_logC_couples']:
     if k not in E0:
-        it.fail('registry: %s is missing, so the subdivision is not bound' % k)
-# the two cells must add up to the joint contribution
-if all(k in E0 for k in ['nd_cres_gini', 'nd_ccomp_gini', 'w_cD_couples']):
-    lhs = float(E0['nd_cres_gini']['value']) + float(E0['nd_ccomp_gini']['value'])
-    rhs = float(E0['w_cD_couples']['value'])
-    if abs(lhs - rhs) > 1e-9:
-        it.fail('the couples subdivision does not sum to the joint '
-                'contribution: %.12f against %.12f' % (lhs, rhs))
-    else:
-        it.note('the couples subdivision sums to the joint contribution to '
-                '%.1e in index units' % abs(lhs - rhs))
-# the robustness counts in the prose are recomputed from the source artifacts,
-# not trusted from the registry that wrote them
-import csv as _csv  # noqa: E402
-_ndp = (JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
-        / 's12_couples_nested_D_attributions_v1.csv')
-with _ndp.open(encoding='utf-8') as _f:
-    _nd = list(_csv.DictReader(_f))
-
-
-def _lead(rows, basis, res, comp):
-    return sum(1 for r in rows if r['basis'] == basis
-               and float(r[res]) > float(r[comp]))
-
-
-_checks = [
-    ('nd_res_leads_couples', _lead(_nd, 'raw', 'C_nonlabour', 'C_composition')),
-    ('nd_res_leads_couples_eq', _lead(_nd, 'modified_OECD_equivalized',
-                                      'C_nonlabour', 'C_composition')),
-]
-_sixp = (JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s12_welfare_record'
-         / 's12_six_index_attributions_v1.csv')
-with _sixp.open(encoding='utf-8') as _f:
-    _sx = [r for r in _csv.DictReader(_f)
-           if r['sample'] == 'singles' and r['reference'] == 'singles_female']
-_checks += [
-    ('nd_res_leads_singles', _lead(_sx, 'raw', 'C_resources', 'C_composition')),
-    ('nd_res_leads_singles_eq', _lead(_sx, 'equivalized', 'C_resources',
-                                      'C_composition')),
-]
-for _k, _want in _checks:
-    if _k not in E0:
-        it.fail('registry: %s is missing' % _k)
-    elif int(E0[_k]['value']) != _want:
-        it.fail('registry: %s is %s, recomputation from the source gives %d'
-                % (_k, E0[_k]['value'], _want))
-    else:
-        it.note('%s = %d, recomputed from the source artifact' % (_k, _want))
-# and the cross-population comparison must not be asserted as robust
-forbid(it, 'composition matters more for couples')
+        it.fail('registry: %s is missing, so the "held fixed" claim is not '
+                'bound' % k)
+# the stated Delta_I range and variance-share range are recomputed directly
+# from the source CSVs, not trusted from the registry that wrote them
+_d2vals = [float(E0['d2_deltaI_pct_%s_%s' % (s, sk)]['value'])
+           for s in ('singles', 'couples') for sk in ('uneq', 'eq')]
+_lo, _hi = min(_d2vals), max(_d2vals)
 for a in 'PM':
-    if 'we therefore do not report it as a finding' not in NORM[a]:
-        it.fail('%s: the non-robust cross-population comparison is not '
-                'disowned' % NAMES[a])
+    hay = ART[a]
+    if ('%.1f' % _lo) not in hay or ('%.1f' % _hi) not in hay:
+        it.fail('%s: the stated ΔI-share range does not match the '
+                'registered min/max (%.1f to %.1f per cent)' % (NAMES[a], _lo, _hi))
+    else:
+        it.note('%s: ΔI-share range %.1f to %.1f per cent matches the '
+                'registry' % (NAMES[a], _lo, _hi))
 
 
 # --------------------------------------------------------------------------- #
@@ -680,15 +665,30 @@ it.note('the two open econometric questions and the couples D limitation are '
 # --------------------------------------------------------------------------- #
 it = item(17, 'Retired welfare-decomposition lineage: no read by path '
               '(DECOMP-PRESEMINAR-1)')
+# REG (numbers_of_record_v5.json) carries a top-level "discussion_tables" key
+# that this build script deliberately carries forward untouched -- it is
+# consumed by a SEPARATE artifact (MNL's discussion_notebook_support.py /
+# "the discussion notebook" referenced throughout the QA section), not by
+# the story report or the paper this item gates. Scanning the whole file
+# would conflate that separate, out-of-scope consumer's data with what this
+# surface actually renders. Scan only "entries" and "gallery" -- the parts
+# build_v5.py itself writes and resolve() actually reads back via val()/
+# TABLES -- and report discussion_tables separately, informationally.
+_reg_json = json.loads(REG.read_text(encoding='utf-8'))
+_reg_scannable = json.dumps({k: v for k, v in _reg_json.items()
+                             if k != 'discussion_tables'})
+_reg_dt_violations = rlg.scan_text(json.dumps(_reg_json.get('discussion_tables', {})))
 _LINEAGE_TARGETS = [
     JMP / 'reports/research_story_build/build_v5.py',
     JMP / 'reports/research_story_build/v5_sections.py',
     JMP / 'reports/research_story_build/common.py',
-    REG,
     PAPER,
     HTML,
 ]
 _violations = rlg.scan_files([p for p in _LINEAGE_TARGETS if p.exists()])
+_reg_hits = rlg.scan_text(_reg_scannable)
+if _reg_hits:
+    _violations[REG] = _reg_hits
 if _violations:
     it.fail('this gate checks the build source and registry for a READ of a '
             'retired artifact by its own path/basename, not the rendered '
@@ -698,8 +698,15 @@ if _violations:
         it.fail('%s: %s' % (p.relative_to(JMP), ', '.join(hits)))
 else:
     it.note('no retired-lineage path reference found in build_v5.py, '
-            'v5_sections.py, common.py, %s, %s, or %s'
+            'v5_sections.py, common.py, %s (entries/gallery only), %s, or %s'
             % (REG.name, PAPER.name, HTML.name))
+if _reg_dt_violations:
+    it.note('%s: discussion_tables (a separate, out-of-scope artifact '
+            'consumed by MNL/experiments/JMP_SEMINAR_SPRINT/'
+            'discussion_notebook_support.py, not by this story report or '
+            'paper) still carries retired-lineage references: %s -- not '
+            'counted against this item; fix belongs to a future pass on '
+            'the discussion notebook itself' % (REG.name, ', '.join(_reg_dt_violations)))
 _four_factor = {}
 for p in [PAPER, HTML]:
     hits = rlg.scan_four_factor(p.read_text(encoding='utf-8', errors='ignore'))

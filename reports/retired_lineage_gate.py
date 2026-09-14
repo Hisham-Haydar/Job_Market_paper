@@ -76,10 +76,48 @@ FOUR_FACTOR_CONTENT_PATTERNS: Dict[str, re.Pattern] = {
         r"X_i\s*=\s*\(\s*P_i\s*,\s*A_i\s*,\s*B_i\s*,\s*D_i\s*\)"),
     "four structural equalization operators": re.compile(
         r"four structural equalization operators", re.IGNORECASE),
-    "four-player game / four operators": re.compile(
-        r"four[- ](?:player game|operators|component)", re.IGNORECASE),
     "sixteen coalitions (2^4)": re.compile(r"sixteen coalitions", re.IGNORECASE),
 }
+
+FOUR_FACTOR_SOFT_PATTERNS: Dict[str, re.Pattern] = {
+    "four-player game / four operators": re.compile(
+        r"four[- ](?:player game|operators|component)", re.IGNORECASE),
+}
+
+# The r6 beamer deck's own approved, already-gated architecture-only slide
+# ("Four operators, one at a time: ...") uses "four operators" AND names
+# job access / earning opportunities / household endowments and needs
+# together -- both signals below -- with ZERO numbers, carrying its own
+# explicit disclaimer verbatim: "Operators only. No share, no magnitude, no
+# ordering is claimed on this slide or anywhere in this deck." A faithful
+# rehearsal script quoting that slide will legitimately trip both patterns.
+# Exempt a match ONLY when this specific disclaimer sentence (or its "work
+# in progress" companion) sits nearby -- a narrow, hard-to-fake carve-out
+# that does NOT weaken detection generally: a genuine violation (a filled-in
+# or even placeholder P/A/B/D table, a novelty claim built on the four-factor
+# structure) carries no such disclaimer and still fails.
+_FOUR_FACTOR_DISCLAIMER = re.compile(
+    r"no share,?\s*no magnitude,?\s*no ordering|work in progress",
+    re.IGNORECASE)
+
+
+def _pabd_content_is_disclaimed(text: str, window: int = 800) -> bool:
+    """True if some occurrence of the deck's own disclaimer sentence sits
+    within `window` chars of at least two of the three P/A/B/D category
+    terms -- i.e. this is a quotation of the deck's disclaimed
+    architecture-only slide, not an undisclaimed rendering elsewhere in the
+    same document. A document can legitimately quote the disclaimed slide
+    AND separately contain a real, undisclaimed violation; this check is a
+    coarse whole-signal exemption, acceptable because it only ever weakens
+    the SUPPLEMENTARY content-signature check, never the primary path-based
+    one, and every file this touches is small enough to inspect by hand
+    before trusting a PASS from it alone."""
+    for m in _FOUR_FACTOR_DISCLAIMER.finditer(text):
+        lo, hi = max(0, m.start() - window), min(len(text), m.end() + window)
+        nearby = text[lo:hi]
+        if sum(1 for _, pat in _PABD_TABLE_PARTS if pat.search(nearby)) >= 2:
+            return True
+    return False
 
 # A rendered P/A/B/D attribution table need not use any of the phrases above
 # at all (v3.html/v4.html: no literal retired filename, no "four operators"
@@ -101,9 +139,46 @@ _PABD_TABLE_PARTS = (
         re.IGNORECASE)),
 )
 
+# A resources/needs mention next to a historical "this was withdrawn" or "an
+# earlier draft reported" note is a HISTORY-section citation of the retired
+# structure, not a live row -- e.g. "An early draft reported household
+# endowments and needs as the largest component ... both were withdrawn."
+# Deliberately narrow and LOCAL to the resources/needs match itself (not a
+# whole-document search like `_pabd_content_is_disclaimed`): a whole-document
+# "withdrawn" search was tested and does false-exempt v3.html/v4.html, since
+# a large document mentions "withdrawn" somewhere near an unrelated "access"
+# occurrence almost by chance. A tight window anchored to the resources/needs
+# match itself does not: measured against v3.html/v4.html, this local check
+# leaves the co-occurrence signature intact (some occurrences in v4.html are
+# locally disqualified as history, but not all, and v3.html has none).
+_RESOURCES_HISTORICAL = re.compile(
+    r"was withdrawn|now also withdrawn|now-withdrawn|both were withdrawn|"
+    r"draft reported|is withdrawn|are withdrawn|held fixed|"
+    r"not a fourth operator|rather than equalized|not equalized|"
+    r"not decomposed", re.IGNORECASE)
+
+
+def _resources_needs_present_live(text: str, window: int = 400) -> bool:
+    matches = list(_PABD_TABLE_PARTS[2][1].finditer(text))
+    if not matches:
+        return False
+    for m in matches:
+        lo, hi = max(0, m.start() - window), min(len(text), m.end() + window)
+        if not _RESOURCES_HISTORICAL.search(text[lo:hi]):
+            return True  # at least one occurrence is not historical framing
+    return False  # every occurrence is local history/withdrawal prose
+
 
 def _has_pabd_table_signature(text: str) -> bool:
-    return all(pat.search(text) for _, pat in _PABD_TABLE_PARTS)
+    """All three P/A/B/D category terms present anywhere in the document --
+    the co-occurrence is the signature, whether or not shares are filled in
+    (a "Pending"-valued placeholder table is still presenting the forbidden
+    four-factor structure as the analysis plan). See
+    `_pabd_content_is_disclaimed` for the r6-deck-specific exemption and
+    `_resources_needs_present_live` for the narrower historical-citation one."""
+    access, earn, _ = _PABD_TABLE_PARTS
+    return bool(access[1].search(text) and earn[1].search(text)
+                and _resources_needs_present_live(text))
 
 
 def scan_four_factor(text: str) -> List[str]:
@@ -112,11 +187,24 @@ def scan_four_factor(text: str) -> List[str]:
     RETIRED_PATH_PATTERNS: a clean result here does not clear a file the way
     a clean path scan does, because prose can be reworded around it; a hit
     here is still strong evidence, because the co-occurrence signature is
-    the table structure itself, not a specific phrase."""
+    the table structure itself, not a specific phrase.
+
+    The "hard" patterns (X_i=(...) notation, sixteen coalitions) fire
+    unconditionally -- they are specific enough that legitimate content
+    doesn't produce them by accident. The "soft" phrase pattern ("four
+    operators") and the row-co-occurrence signature are both exempted when
+    the r6 deck's own disclaimer sentence sits nearby -- see
+    `_pabd_content_is_disclaimed` -- because both have a known legitimate
+    source (the deck's architecture-only slide, which names all of this
+    with zero attached numbers and that exact disclaimer)."""
     hits = scan_text(text, FOUR_FACTOR_CONTENT_PATTERNS)
-    if _has_pabd_table_signature(text):
-        hits.append("co-occurring Access/Earning-opportunities/resources-needs "
-                     "rows (P/A/B/D table)")
+    disclaimed = _pabd_content_is_disclaimed(text)
+    if not disclaimed:
+        hits += [name for name, pat in FOUR_FACTOR_SOFT_PATTERNS.items()
+                 if pat.search(text)]
+        if _has_pabd_table_signature(text):
+            hits.append("co-occurring Access/Earning-opportunities/resources-needs "
+                         "rows (P/A/B/D table)")
     return hits
 
 

@@ -14,15 +14,16 @@ Block markers:
 TITLE = ('Unequal Job Opportunities and Well-Being Inequality: '
          'A Latent-Jobs Structural Decomposition')
 
-ABSTRACT = r'''We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. We then introduce and implement a structural decomposition of the resulting inequality: well-being is recomputed under counterfactual equalizations of preferences, job access, earning opportunities, and household resources and needs, and the interactions among them are allocated with a grouped Shapley--Owen--Shorrocks rule. In the baseline Gini decomposition, labour-market opportunities account for {{n:w_shAB_singles|.1f}} per cent of well-being inequality among single-adult households, of which job access alone carries {{n:w_shA_singles|.1f}} per cent, against {{n:w_shP_singles|.1f}} per cent for preferences and {{n:w_shD_singles|.1f}} per cent for household resources and needs. Among couples the balance differs: earning opportunities and resources and needs account for {{n:w_shB_couples|.1f}} and {{n:w_shD_couples|.1f}} per cent, while job access accounts for {{n:w_shA_couples|.1f}} and preferences for {{n:w_shP_couples|.1f}}. Access exceeds earning opportunities for single adults, and the ordering reverses for couples, under all six inequality indices we report; the sign of the single-adult preference contribution is not robust across indices.'''
+ABSTRACT = r'''We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Attributing the resulting inequality to preferences and circumstances in full requires a counterfactual-attainment estimand that is still under design; ahead of it, we introduce and implement a bounded, preliminary structural exercise, holding household resources, needs and composition fixed and simulating each household's attained well-being under counterfactual equalizations of preferences, local labour-market access and earning opportunities, with the interactions allocated by an exact three-player Shapley value. The movable inequality this bounded exercise reaches, $\Delta I$, is a small share of baseline inequality by construction, {{n:d2_deltaI_pct_singles_eq|.1f}} to {{n:d2_deltaI_pct_couples_uneq|.1f}} per cent across samples and scales, because resources, needs and composition are held fixed throughout and those account for the large majority of the variance of log well-being. Within that bounded movable share, earning opportunities dominate local labour-market access for both single-adult and couple households, at every scale we report; the sign of the preference contribution is not robust between the unequivalised and equivalised reporting conventions in either sample, so we make no directional claim about it. This is a preliminary, model-based reading, not the paper's final decomposition architecture.'''
 
-PRELIM_NOTE = ('Preliminary results. Intervals on the headline shares are '
-               'cluster-robust parameter percentiles from 100 draws and are '
-               'reported separately from the integration band, never merged '
-               'with it. The subdivision of couples resources against '
-               'household composition rests on a repricing completed after '
-               'this draft was planned; the joint contribution remains the '
-               'headline component and the subdivision is reported beside it.')
+PRELIM_NOTE = ('Preliminary results throughout. The three-factor '
+               'preferences/access/earnings decomposition in Section 5 is a '
+               'bounded exercise ahead of the paper’s final decomposition '
+               'architecture, which requires a counterfactual-attainment '
+               'estimand still under design; it is reported with Monte Carlo '
+               'simulation ranges and an independent second-seed check, never '
+               'confidence intervals, and household resources, needs and '
+               'composition are held fixed rather than decomposed.')
 
 
 # =========================================================================== #
@@ -47,11 +48,11 @@ One comparative static is worth stating plainly at the outset, because it is eas
 
 **The empirical approach.** The behavioural half is a random-utility, random-opportunity model of job choice. A job is a package: an employment state, an occupation, a weekly hours arrangement and an hourly wage. Households rank packages by consumption and leisure, and the packages differ in how available they are. Both the preferences and the household-specific intensity of availability enter one likelihood and are estimated jointly; neither is observed as a complete schedule. Every package is priced through the French tax-benefit system, so a change of hours or occupation moves disposable income through the actual schedule of taxes and transfers rather than a linear approximation. We estimate the model separately on {{n:n_singles}} single-adult and {{n:n_couples}} couple households drawn from French EU-SILC, with couples choosing jointly under a shared household budget.
 
-The normative half then yields, for each household, an equivalent flat consumption level. To decompose its inequality we do not linearise. We define four structural equalization operators, one for preferences, one for job access, one for earning opportunities and one for household resources and needs; we recompute every household's welfare level, and the inequality of the resulting distribution, under each of the sixteen coalitions of those operators; and we allocate the interactions among them with the grouped Shapley--Owen--Shorrocks rule. The allocation is exhaustive by construction and the closure is verified numerically rather than imposed.
+The normative half then yields, for each household, an equivalent flat consumption level. Attributing its inequality to preferences and to circumstances in full requires a counterfactual-attainment estimand for the bundle a household would attain under a counterfactual environment, and that estimand is still under design. Ahead of it we report a bounded, preliminary exercise: we define three structural equalization operators, one for preferences, one for local labour-market access and one for earning opportunities, holding household resources, needs and composition fixed throughout; we recompute every household's welfare level, and the inequality of the resulting distribution, under each of the eight coalitions of those three operators, reusing the model's own already-priced estimation panel with no re-estimation and no new pricing; and we allocate the interactions among them with an exact three-player Shapley value. The allocation is exhaustive by construction and the closure is verified numerically rather than imposed.
 
-**What we find.** Among single-adult households, labour-market opportunities carry {{n:w_shAB_singles|.2f}} per cent of the inequality in the money metric, of which job access alone carries {{n:w_shA_singles|.2f}} per cent and earning opportunities {{n:w_shB_singles|.2f}}. Preferences carry {{n:w_shP_singles|.2f}} per cent and household resources and needs {{n:w_shD_singles|.2f}}. Among couples the composition is different rather than the total: earning opportunities carry {{n:w_shB_couples|.2f}} per cent and resources and needs {{n:w_shD_couples|.2f}}, while job access carries only {{n:w_shA_couples|.2f}} and preferences {{n:w_shP_couples|.2f}}. Single adults are access-dominated on the labour-market side and couples are earnings- and resource-dominated. We report that contrast as a finding and do not attach a mechanism to it.
+**What we find.** The movable inequality this bounded exercise reaches, $\Delta I=I(\text{actual})-I(\text{P,A,B equalized})$, is small by construction: {{n:d2_deltaI_pct_singles_eq|.1f}} to {{n:d2_deltaI_pct_couples_uneq|.1f}} per cent of baseline inequality across samples and reporting scales. That is a property of the design, not evidence that opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for {{n:d2_varshare_logC_singles|.0f}} to {{n:d2_varshare_logC_couples|.0f}} per cent of the variance of log well-being. Within the movable share, earning opportunities dominate local labour-market access for both household types, at every scale we report, from {{n:d2_shareB_singles_uneq|.1f}} per cent of $\Delta I$ (single adults, unequivalised) to {{n:d2_shareB_couples_eq|.1f}} per cent (couples, equivalised); local labour-market access is second and smaller throughout. We report that ordering as a finding and do not attach a mechanism to it.
 
-Two qualifications belong with the headline. First, the ordering of access against earning opportunities is the robust part: access exceeds earning opportunities for single adults under all six inequality indices we report, and the ordering reverses for couples under all six. The complete ordering of all four components is not robust in that sense, and the sign of the single-adult preference contribution changes outside the Gini. Second, an allocated share is an average of marginal contributions over coalition orders. It is not the reduction that equalizing that group alone would achieve. For single adults the two differ instructively: equalizing preferences alone would *raise* the Gini by {{n:of_P_rise_singles|.1f}} per cent, while the allocated preference share is a positive {{n:w_shP_singles|.2f}} per cent. Section 5 explains why both statements are correct.
+Two qualifications belong with the headline. First, the preference contribution's sign is not robust between the unequivalised and equivalised reporting conventions, in either sample: we therefore make no directional claim about it, only about the ordering of access against earnings. Second, an allocated share is an average of marginal contributions over coalition orders. It is not the reduction that equalizing that factor alone would achieve; Section 5 reports both and explains why they can differ, and reports the exact scale at which excluding the model's anchored-attainment arm moves $\Delta I$, as a robustness check on the design rather than on the estimates. This is a bounded, preliminary reading, reported ahead of the paper's final decomposition architecture, and it should be read as such throughout.
 
 **Relation to existing work.** Every ingredient here has antecedents, and the contribution is the combination and the empirical answer, not any one step.
 
@@ -254,16 +255,17 @@ The level is above his own disposable income, and for the median couple it is be
 
 The measure is defined at the household. Comparing households of different size requires an equivalence scale, which is a normative choice and not an estimate. We report every result on two bases: a raw household basis, and an equivalized basis using the modified OECD scale. We never pool the two household types into one distribution, because the two applications carry different reference constructions and the levels are not comparable; every share below is a share of the baseline inequality of its own population.
 
-## The structural decomposition
+## The preliminary structural decomposition
 
-Let $X_i=(P_i,A_i,B_i,D_i)$ collect the four structural inputs for household $i$:
+A complete attribution of measured inequality to preferences and to circumstances requires a counterfactual-attainment estimand: under a counterfactual environment, which bundle does the household attain? Two candidate estimands are under design -- a realised-bundle route conditioning the behavioural latent state on the observed choice, and an ex-ante route integrating the measure over the model-implied counterfactual choice distribution -- and neither is executed here, because the inequality of expected welfare is not the expected inequality of welfare and the two routes answer different questions. Ahead of that design choice, this section reports a bounded, explicitly preliminary exercise that reuses the model's own already-priced estimation panel, with no re-estimation and no new pricing, and simulates each household's attained bundle under a counterfactual environment by carrying the household's realised draws through it directly.
 
-- $P_i$ the arguments of the preference index: the leisure-weight covariates and the sex- or spouse-specific preference block;
-- $A_i$ the arguments of job access: the employment index covariates and the occupation access table;
-- $B_i$ the arguments of earning opportunities: the covariates entering the offered-wage location;
-- $D_i$ the household budget inputs: non-labour resources, the roster and needs.
+Let $X_i=(P_i,A_i,B_i)$ collect three structural inputs for household $i$:
 
-Let $\mathcal I$ be an inequality index and $W_i(\cdot)$ the money metric of the previous subsection, so that the baseline is $I_\varnothing=\mathcal I\{W_i(X_i)\}_{i=1}^N$. For each factor define a **structural equalization operator** $T_P,T_A,T_B,T_D$, which replaces that factor's arguments across all households by a common reference profile and leaves the estimated coefficients in place. For a coalition $S\subseteq\{P,A,B,D\}$ let $X^S=T_S(X)$ be the state in which exactly the factors in $S$ are equalized, and set
+- $P_i$ systematic utility heterogeneity: the leisure-weight covariates and the sex- or spouse-specific preference block, including the reduced-form time-constraint shifters this pathway also carries;
+- $A_i$ local labour-market access (region, urban/rural, year): the employment index covariates and the occupation access table;
+- $B_i$ earning opportunities: the covariates entering the offered-wage location.
+
+Household resources, needs and composition are held fixed throughout this exercise rather than treated as a fourth operator: they are not equalized in any coalition and no share is attributed to them. Let $\mathcal I$ be the Gini index and $W_i(\cdot)$ the money metric of the previous subsection, so the baseline is $I_\varnothing=\mathcal I\{W_i(X_i)\}_{i=1}^N$. For each factor define a **structural equalization operator** $T_P,T_A,T_B$, which replaces that factor's arguments across all households by a common reference profile and leaves the estimated coefficients in place. For a coalition $S\subseteq\{P,A,B\}$ let $X^S=T_S(X)$ be the state in which exactly the factors in $S$ are equalized, and set
 
 $$
 I_S=\mathcal I\{W_i(T_S X)\}_{i=1}^{N},
@@ -271,22 +273,24 @@ I_S=\mathcal I\{W_i(T_S X)\}_{i=1}^{N},
 v(S)=I_\varnothing-I_S .
 $$
 
-$v$ is a cooperative game on four players: the worth of a coalition is the inequality it removes when its factors are equalized together. Two points about $T_S$ are part of the economics and not of the notation. First, $T_S$ is a single simultaneous substitution map, not an ordered product $\prod_{k\in S}T_k$: a product is not well defined unless the operators commute on the permitted objects, and the budget operator does not commute with the others, since it reprices. Second, an operator changes a *pathway*, not every occurrence of a raw characteristic. Education enters both the offered-wage location and the local-market lookup; $T_B$ substitutes the first and leaves the second in place.
+$v$ is a cooperative game on three players: the worth of a coalition is the inequality it removes when its factors are equalized together. $T_S$ is a single simultaneous substitution map, not an ordered product $\prod_{k\in S}T_k$, and an operator changes a *pathway*, not every occurrence of a raw characteristic.
 
 {{table:operators}}
 
-Welfare and inequality are then recomputed from the model for all sixteen coalitions. There is no linearisation and no re-estimation: coefficients are held at their estimates throughout, and only the arguments move. The budget operator additionally reruns the household through the tax-benefit system, so its counterfactual consumption is priced rather than scaled.
+Welfare and inequality are then recomputed from the model for all eight coalitions of $\{P,A,B\}$. There is no linearisation and no re-estimation: coefficients are held at their estimates throughout, and only the arguments move.
 
-The interactions are allocated with the **grouped Shapley--Owen--Shorrocks** rule for the partition $\{\{P\},\{A,B,D\}\}$: the Owen value [@owen1977] for a game with a priori unions, applied to $v$ in the form @shorrocks2013 sets out for distributional analysis and @audoly2025 document for grouped nonlinear decompositions. The grouping is chosen because the paper's question is first about preferences against circumstances and only then about which circumstance; the lower-level subdivision of $\{A,B,D\}$ is allocated within the union. The allocation is exhaustive: the contributions sum to $I_\varnothing-I_{\{P,A,B,D\}}$, and $I_{\{P,A,B,D\}}$ is zero to numerical precision. We verify that closure rather than imposing it; residuals are reported in Section 5.
+The interactions are allocated with the **exact Shapley value** [@shorrocks2013] on the three-player game $v$: the average of each factor's marginal contribution over all orderings in which the three factors can be equalized. With three players this average has a closed form over $3!=6$ orderings and requires no grouping. The allocation is exhaustive: the contributions sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$, and we report $\Delta I$ itself rather than treat it as identically zero, because household resources, needs and composition remain in the residual $I_{\{P,A,B\}}$ along with sex-block parameter differences and behavioural randomness.
+
+Uncertainty is reported two ways, never merged into a confidence interval: a Monte Carlo range across 1,000 simulation replications at fixed estimates, and an independent check under a second simulation seed. Neither is a parameter-uncertainty interval; propagating the estimation covariance into this exercise is future work.
 
 {{report-only}}
-> **What is new and what is inherited.**
+> **What is new and what is inherited, in this preliminary exercise.**
 >
-> *Inherited.* The latent-jobs model of labour supply and its identifying restrictions; the joint estimation of preferences and offer intensities; the use of a microsimulation model to price alternatives; the money-metric idea and the discipline of stating the reference; the Shapley value and its Owen extension to games with a priori unions; the Shorrocks framework for distributional decomposition and the practitioner recipe for grouped nonlinear allocation; complete recomputation rather than linearisation, which is a requirement rather than an innovation.
+> *Inherited.* The latent-jobs model of labour supply and its identifying restrictions; the joint estimation of preferences and offer intensities; the use of a microsimulation model to price alternatives; the money-metric idea and the discipline of stating the reference; the Shapley value as the allocation rule for a cooperative game with additively separable worth.
 >
-> *Application-specific contribution.* The structural game itself: the four factors $P,A,B,D$ as pathways inside an estimated job-choice model, the operators $T_P,\dots,T_D$ that equalize them, the welfare outcome $W_i$ built on the own-set equal-consumption reference, and the empirical answer for French single-adult and couple households.
+> *Application-specific contribution.* The bounded three-factor game itself: preferences, local labour-market access and earning opportunities as pathways inside an estimated job-choice model, holding resources, needs and composition fixed by design pending a counterfactual-attainment estimand.
 >
-> *Not claimed.* A new Shapley or Owen rule; the first structural labour-supply Shapley decomposition; the first decomposition of money-metric welfare inequality; the first RURO welfare analysis; the first comparison of preferences with opportunities in welfare.
+> *Not claimed.* A new Shapley rule; that this is the paper's final decomposition; that the small movable share, $\Delta I$, means opportunities are unimportant, rather than that most of what determines the money metric's dispersion is held fixed in this exercise by construction.
 {{/report-only}}
 '''
 
@@ -350,74 +354,40 @@ The money metric is less unequal than the priced disposable income it replaces, 
 
 Levels differ from income in opposite directions for the two types, and the levels are not comparable between them: each application carries its own reference construction, with a female-primary reference block for single adults and a medoid-spouse reference for couples, and the couples index adds two leisure terms. We use levels only within type and offer no mechanism for the between-type difference in levels.
 
-## The decomposition
+## The preliminary decomposition
 
-{{table:states}}
+{{table:pabcoalitionsingles}}
 
-The four states are the coalition values of the two-group game. Reading them directly gives the one-factor effects. For single adults, equalizing preferences alone *raises* the Gini by {{n:of_P_rise_singles|.1f}} per cent, from {{n:w_i00_singles|.6f}} to {{n:w_i10_singles|.6f}}; equalizing all non-preference circumstances alone lowers it by {{n:of_E_singles|.1f}} per cent. For couples, equalizing preferences alone lowers the Gini by {{n:of_P_couples|.1f}} per cent and equalizing all other circumstances lowers it by {{n:of_E_couples|.1f}}. The fully common state is zero to {{n:i11_max}} in index units, which is a tested property of the game and not an imposed constraint.
+{{table:pabcoalitioncouples}}
 
-{{figure:onefactor}}
+{{figure:pabarch}}
 
-The allocated shares are not those numbers. An allocated share is an average of marginal contributions over the orders in which coalitions can form; the one-factor effect is the contribution in exactly one order. For single adults the two even differ in sign, and the arithmetic of the game explains why. With four states and $I_{11}=0$, the two-group closure gives
+The eight rows per scale are the coalition values of the three-player game. $\Delta I=I(\varnothing)-I(\{P,A,B\})$ is small in every sample and scale -- {{n:d2_deltaI_pct_singles_eq|.1f}} per cent of baseline inequality for single adults equivalised, up to {{n:d2_deltaI_pct_couples_uneq|.1f}} per cent for couples unequivalised -- and that is a property of what this exercise holds fixed, not a finding that job opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for {{n:d2_varshare_logC_singles|.0f}} to {{n:d2_varshare_logC_couples|.0f}} per cent of the variance of log well-being (variance-decomposition detail in the discussion notebook, Section 8). Sex-block parameter differences and behavioural randomness also remain in the residual and are not attributed to $P$, $A$ or $B$.
 
-$$2\,C_P=I_{00}-I_{10}+I_{01}.$$
+{{table:pabshapley}}
 
-Since $I_{01}\ge 0$ for a nonnegative index, a negative $C_P$ forces $I_{00}-I_{10}<0$, so a negative allocated share does imply that preference-only equalization raises inequality. The converse does not hold, and the single-adult Gini is the counterexample: $C_P>0$ while $I_{10}>I_{00}$. This is a consequence of the closure of *this* exhaustive two-group game with a nonnegative index; it is not a general property of a Shapley allocation.
+{{figure:pabdecompsingles}}
 
-{{table:attribution}}
+{{figure:pabdecompcouples}}
 
-{{figure:signed}}
+Within the movable share $\Delta I$, earning opportunities dominate local labour-market access for both household types, at every scale we report: from {{n:d2_shareB_singles_uneq|.1f}} per cent of $\Delta I$ for single adults unequivalised to {{n:d2_shareB_couples_eq|.1f}} per cent for couples equivalised, against {{n:d2_shareA_couples_uneq|.1f}} to {{n:d2_shareA_singles_eq|.1f}} per cent for local labour-market access. We make no directional claim about the preference contribution's sign: it changes between the unequivalised and equivalised reporting conventions in both samples, from {{n:d2_giniP_singles_uneq|.4f}} to {{n:d2_giniP_singles_eq|.4f}} Gini points for single adults and {{n:d2_giniP_couples_uneq|.4f}} to {{n:d2_giniP_couples_eq|.4f}} for couples.
 
-The headline is the single-adult row. Labour-market opportunities, job access together with earning opportunities, carry {{n:w_shAB_singles|.2f}} per cent of the inequality in the money metric; job access alone carries {{n:w_shA_singles|.2f}} per cent, with a 95 per cent cluster-robust parameter interval of {{n:cr1_lo_A_singles|.1f}} to {{n:cr1_hi_A_singles|.1f}} per cent. Preferences carry {{n:w_shP_singles|.2f}} per cent, earning opportunities {{n:w_shB_singles|.2f}} and household resources and needs {{n:w_shD_singles|.2f}}. For couples the ordering is different: earning opportunities carry {{n:w_shB_couples|.2f}} per cent and resources and needs {{n:w_shD_couples|.2f}}, while job access carries {{n:w_shA_couples|.2f}}. Single adults are access-dominated on the labour-market side; couples are earnings- and resource-dominated, and access matters much less for them.
+The allocated shares are not one-factor effects. An allocated share is an average of marginal contributions over the orders in which coalitions can form; the coalition table above reports the one-factor effect directly, as the change from the actual coalition for the single-letter row. The two can differ, and with three players and an exact Shapley value the difference is fully accounted for by the interaction terms, which the closed form makes explicit.
 
-We report that contrast as a finding and attach no mechanism to it. A second earner is not automatically a buffer: two earnings streams do not mechanically produce less dispersion than one, since that depends on the dependence between them and on how resources pool. Establishing a mechanism would require a separately defined counterfactual, which we have not run. The contrast also cannot be assigned entirely to household type, because the two applications differ in their reference constructions as well; Section 6 reports the reference sensitivity.
+**Robustness.** Every coalition Gini level and every Shapley contribution reproduces closely under an independent second simulation seed, including the sign instability of the preference contribution, which appears in both runs. Excluding the estimation panel's anchor node -- the household's own observed choice, inserted deterministically in every coalition, which mechanically anchors counterfactual attainment toward the observed outcome to a small, roughly common degree ({{n:d2_anchorshare_singles|.1f}} per cent of single adults and {{n:d2_anchorshare_couples|.1f}} per cent of couples attain it under any coalition) -- moves $\Delta I$ by at most {{n:d2_anchormove_pct|.1f}} per cent ({{n:d2_anchormove_cell}}), with no sign flip in any specification.
 
-The parameter interval and the integration band measure different things and are never combined. The integration band on the single-adult access share is {{n:rq_lo_A_singles|.1f}} to {{n:rq_hi_A_singles|.1f}} per cent, an order of magnitude narrower than the parameter interval, which is the expected ordering: the numerical integration is the accurate part and the parameters are the uncertain part.
+{{report-only}}
+A Monte Carlo share range for each factor -- the across-replication spread of one replication's own share, dividing by that replication's own near-zero $\Delta I$ -- is available in the discussion notebook's technical gallery alongside this table, with its own caveat that it is reported for completeness and is not informative on its own. It is not reproduced here: the Gini-point contribution and the second-seed check above are the informative comparison for a reader of this report.
+{{/report-only}}
 
-The allocation is exhaustive. The maximum absolute top-level identity residual is {{n:resid_top}} in index units and the nested residual {{n:resid_nested}}. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model or the normative content of the operators.
-
-## Inside the budget channel: resources against composition and needs
-
-The resources-and-needs contribution is itself two things: the non-labour resources a household has, and the size and composition of the household those resources must cover. Separating them is not an arithmetic split of the joint cell. For each population it requires two further counterfactual panels, each repriced through the tax-benefit system. Corrected nested attribution is available for both populations. The couples split uses the corrected partition of the budget fields into {{n:nd_n_res}} resource fields, {{n:nd_n_comp}} composition and needs fields and {{n:nd_n_geo}} geographic fields, which travel with resources.
-
-{{table:nestedD}}
-
-The current nested resources-and-composition table reports both populations. For couples, the raw Gini identity is $C_D=0.067827=0.043551+0.024276$; on the equivalized basis it is $0.072396=0.041364+0.031032$. Singles also have a corrected geography-within-access attribution, reported in the discussion notebook, Section 8, table *Nested geography for singles*; the corresponding budget split is in *Nested resources and composition for both populations*.
-
-Three statements are supported, and a fourth that suggests itself is not.
-
-First, **non-labour resources lead the channel in both populations on the household basis, under all six indices** — {{n:nd_res_leads_couples}} of six for couples and {{n:nd_res_leads_singles}} of six for single adults. On the Gini the couples channel divides {{n:nd_chres|.1f}} to {{n:nd_chcomp|.1f}}, which is {{n:nd_shres|.2f}} and {{n:nd_shcomp|.2f}} per cent of total inequality; the single-adult channel divides {{n:sd_chres|.1f}} to {{n:sd_chcomp|.1f}}, or {{n:sd_shres|.2f}} and {{n:sd_shcomp|.2f}} per cent of total.
-
-Second, **the resources share of the channel is widest under GE(2) and narrowest under the Gini in both populations.** The Gini is the index least sensitive to the tails, and it is where composition matters most; the squared coefficient of variation is the most tail-sensitive, and it is where resources dominate. The spread is large — for couples, from {{n:nd_chres_gini|.1f}} per cent of the channel under the Gini to {{n:nd_chres_cv2|.1f}} under GE(2) — so the division of this channel is considerably more index-sensitive than the four-way decomposition above it.
-
-Third, **equivalizing raises the composition share in both populations, under all {{n:nd_equiv_raises_comp}} of the six indices.** This is not an artefact and it is not a surprise: the equivalence scale is owned by the composition operator, so a state in which composition is equalized is also a state in which every household is put on a common scale. Equalizing composition therefore removes both the direct effect of household size on the budget and the effect of size on the scale by which the resulting level is deflated. For single adults the effect is strong enough to reverse the ordering: on the equivalized basis resources lead the channel in only {{n:nd_res_leads_singles_eq}} of the six indices, and composition leads under the Gini, both Atkinson indices and GE(0). For couples the ordering survives equivalization, under all {{n:nd_res_leads_couples_eq}} of the six.
-
-The statement that does *not* survive is a comparison between the two populations. On the Gini, composition takes a larger share of the couples channel than of the single-adult channel, {{n:nd_chcomp|.1f}} against {{n:sd_chcomp|.1f}} per cent, which invites the reading that household composition matters more where there is a household to compose. That ordering holds under {{n:nd_comp_bigger_couples}} of the six indices, the Gini, and reverses under the other five; on the equivalized basis it reverses under all six. We therefore do not report it as a finding. The corrected nested tables support these within-population statements; cross-population ordering remains sensitive to the index and equivalization.
-
-## Index sensitivity
-
-{{table:sixindex}}
-
-{{figure:sixindex}}
-
-Each index keeps its own coalition values and its own allocation; nothing is transferred between rows. Read carefully, the table supports the following and not more.
-
-- Job access exceeds earning opportunities for single adults under all {{n:rk_a_gt_b_singles}} indices, and earning opportunities exceed access for couples under all {{n:rk_b_gt_a_couples}}. This is the robust ordering and it is the one we emphasise.
-- Job access alone exceeds resources and needs for single adults under {{n:rk_a_gt_d_singles}} of the six; GE(1) and GE(2) are the exceptions.
-- Access and earning opportunities together exceed resources and needs for single adults under {{n:rk_ab_gt_d_singles}} of the six, with GE(2) the exception.
-- Resources and needs are the largest of the four components for couples under all {{n:rk_d_largest_of_pabd_couples}} indices.
-- The single-adult preference share is positive for the Gini and negative under the other {{n:rk_p_negative_singles}} indices. The preference contribution is therefore *not* a metric-invariant conclusion, and the statement that preferences account for about ten per cent of inequality is a statement about the Gini on the raw basis under the female-primary reference, not a general one.
-
-These are descriptive rankings of point estimates. Parameter intervals are reported for the Gini shares only, and we do not convert any of these orderings into a claim of statistical significance.
+The allocation is exhaustive to numerical precision: the residual after summing $P$, $A$, $B$ and $\Delta I$ back to $I_\varnothing$ is zero to machine precision in every sample and scale, verified rather than imposed. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model, the normative content of the operators, or a resolution of the counterfactual-attainment question this exercise is deliberately bounded around.
 '''
 
 # =========================================================================== #
 SENSITIVITY = r'''
-## The normative reference
+## Equivalization and the preliminary decomposition
 
-The reference is a choice, and the results move with it. The single-adult decomposition uses a female-primary reference block; under the alternative male structural-zero reference the shares become {{n:w_shP_singlesmz|.2f}} per cent for preferences, {{n:w_shA_singlesmz|.2f}} for access, {{n:w_shB_singlesmz|.2f}} for earning opportunities and {{n:w_shD_singlesmz|.2f}} for resources and needs. The ordering is unchanged and the magnitudes move by a few percentage points. That sensitivity is real and belongs with the result; it is a property of the normative construction, not a numerical instability.
-
-Equivalization is a second normative choice of the same kind. On the equivalized basis the single-adult access share falls and the resources-and-needs share rises, and the couples pattern moves in the same direction. Both bases are reported throughout; neither is the correct one, and the choice between them is not settled by the data.
+Equivalization is a normative choice, and the preliminary decomposition of Section 5 moves with it. On the equivalized basis the movable share $\Delta I$ is larger relative to baseline inequality for both household types than on the raw household basis, and the earning-opportunities/local-access ordering is unchanged in every case: earning opportunities dominate at both scales, for both household types. The preference contribution's sign already differs between the two scales at the raw comparison reported in Section 5; equivalization is one of the two axes that sign instability spans, not an independent further concern. Both bases are reported throughout; neither is the correct one, and the choice between them is not settled by the data. We do not report a male-primary or other alternative reference-block variant of this preliminary exercise; that sensitivity, reported for the welfare baseline itself in Section 4, has not been re-run through the bounded decomposition.
 
 ## Two open econometric questions
 
@@ -447,18 +417,18 @@ Three normalizing constants were in circulation between the estimation frames an
 
 ## What is not established
 
-The decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
+The preliminary decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
 
-The parameter intervals cover the Gini shares; the other five indices are reported as point estimates. The subdivision of the couples resources-and-needs component reported in Section 5 rests on two counterfactual panels repriced through the tax-benefit system rather than on any imputation, but it is a nested result within the joint component and the joint component remains what the headline decomposition reports. Corrected nested attributions are reported for both populations in Section 5's resources-and-composition table. For singles, geography is also separated within access in the discussion notebook's Section 8 table *Nested geography for singles*. Their availability is established; the sensitivity of their rankings remains an empirical limitation.
+Section 5's decomposition is bounded and preliminary in three specific ways, stated together here. It holds household resources, needs and composition fixed rather than decomposing them, so no share is attributed to that circumstance and the movable inequality it reaches is correspondingly small. It reuses the model's already-priced estimation panel to simulate counterfactual attainment, which anchors that attainment toward the observed outcome to a small, checked degree, rather than resolving the counterfactual-attainment estimand the paper's final decomposition architecture requires. And its uncertainty is reported as a Monte Carlo simulation range and an independent second-seed check, not as a parameter-uncertainty interval propagated from the estimation covariance. None of the three is a defect in what is reported; together they are why it is reported as preliminary rather than as the paper's decomposition result.
 '''
 
 # =========================================================================== #
 CONCLUSION = r'''
 Observed hours and earnings do not say whether a household chose its position or settled for it, and that ambiguity is not a nuisance for welfare measurement: it is the substance of it. This paper takes the ambiguity seriously in both halves of the problem. On the behavioural side it estimates a model in which the jobs a household can reach and the way it ranks them are identified jointly, with every alternative priced through the tax-benefit system. On the normative side it evaluates well-being with a reference that keeps each household's own preferences and own reachable jobs and removes variation in pay from the reference bundles.
 
-The decomposition then asks how the resulting inequality divides. For French single-adult households, labour-market opportunities carry {{n:w_shAB_singles|.2f}} per cent of it and job access alone {{n:w_shA_singles|.2f}} per cent, more than household resources and needs and far more than preferences. For couples the same accounting gives a different answer: earning opportunities and household circumstances dominate and access matters little. The ordering of access against earnings within each type is the part that survives all six inequality indices we report; the preference contribution is not, and changes sign outside the Gini.
+A complete decomposition of the resulting inequality into preferences and circumstances awaits a counterfactual-attainment estimand still under design. Ahead of it, a bounded preliminary exercise asks how a small, structurally-fixed share of measured inequality divides between preferences, local labour-market access and earning opportunities, holding resources, needs and composition fixed. For both French single-adult and couple households, earning opportunities dominate local labour-market access within that movable share, at every scale reported; the preference contribution's sign is not robust between reporting conventions, so no directional claim is made about it.
 
-Three limits should travel with those numbers. The measure is one member of a family of references and the shares move with the reference, in ways we report rather than resolve. The allocation is exhaustive for the declared game, which validates the accounting and not the identification or the ethics of the operators. And two questions about the observation rule remain genuinely open. What the exercise offers is not a causal account of why opportunities differ, but a disciplined statement of how much of measured well-being inequality is associated with them once preferences, resources and needs are modelled explicitly and the reference is stated.
+Three limits should travel with that reading. It is preliminary and bounded by construction, not the paper's final decomposition. The allocation is exhaustive for the declared three-player game, which validates the accounting and not the identification or the ethics of the operators. And two questions about the observation rule remain genuinely open, unrelated to the decomposition itself. What the exercise offers is not a causal account of why opportunities differ, and not yet a complete attribution of measured inequality, but a disciplined, preliminary statement of which of two circumstance channels dominates, once preferences and a structural model are made explicit and the reference is stated.
 '''
 
 # =========================================================================== #
@@ -473,11 +443,15 @@ One single-adult coordinate, the female age-square term, is at its box endpoint.
 '''
 
 APP_INDEX = r'''
-{{table:indices}}
+The preliminary decomposition of Section 5 uses the Gini index only, on a weighted distribution of strictly positive money-metric levels with mean $\mu$: $\mathcal I=\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert$, for $W,\tilde W$ independent draws from the distribution. Extending the exercise to further indices, as an earlier, retired version of this decomposition did across six indices, is future work and is not reported here.
 
-Two relations are worth stating because they explain apparent puzzles in the six-index table. First, multiplying an index by a positive constant scales its level and every contribution but leaves the shares unchanged, so GE(2) and the squared coefficient of variation define the same allocation game and are not two robustness checks. Second, $A(1)=1-e^{-GE(0)}$, so Atkinson(1) and GE(0) rank any distribution of positive levels identically. Their allocated shares can nevertheless differ, because a nonlinear transformation of the index does not commute with averaging marginal contributions over coalition orders. That is a property of the allocation rule, not an inconsistency.
+The exact Shapley value on the three-player game $v(S)=I_\varnothing-I_S$, $S\subseteq\{P,A,B\}$, allocates to factor $k$ the average of its marginal contribution $v(S\cup\{k\})-v(S)$ over all $3!=6$ orderings in which the three factors can be introduced:
 
-The Owen value for the partition $\{\{P\},\{A,B,D\}\}$ allocates first between the two unions and then within the second, averaging over the orders of unions and, within a union, over the orders of its members. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $I_\varnothing-I_{\{P,A,B,D\}}$ because the game closes, and the closure is verified.
+$$
+C_k=\frac{1}{6}\sum_{\pi}\big[v(S_\pi(k)\cup\{k\})-v(S_\pi(k))\big],
+$$
+
+where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions, unlike the Owen extension for the additional operator an earlier, retired version of this decomposition used. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
 '''
 
 APP_BRIDGE = r'''
@@ -519,7 +493,7 @@ This section records how the reported specifications and results came to be what
 
 **The disposable-income convention.** Single-adult disposable income was previously aggregated over the decider only; it is now aggregated over all resident household members, which is the convention the couples application always used. The two applications are now on the same accounting convention.
 
-**The decomposition result.** An earlier draft reported household endowments and needs as the largest component for single adults, and a one-factor figure of about seventy-seven per cent. Both are withdrawn. The corrected computation gives {{n:w_shA_singles|.2f}} per cent to job access against {{n:w_shD_singles|.2f}} to resources and needs, and the corresponding one-factor effect for all non-preference circumstances is {{n:of_E_singles|.1f}} per cent.
+**The decomposition result.** The decomposition reported in this document has been rewritten twice. An early draft reported household endowments and needs as the largest component for single adults, and a one-factor figure of about seventy-seven per cent; both were withdrawn. A subsequent draft reported a four-factor preferences/access/earnings/resources-and-needs decomposition across six inequality indices, with a grouped Shapley--Owen--Shorrocks allocation; that entire apparatus is now also withdrawn, having been found by a later lineage audit to rest on a generation of run artifacts that an earlier ruling had already retired, reproduced here as a matter of record rather than as a competing result: those numbers are no longer stated as current anywhere in this document, and the retired artifacts themselves are named in the audit record, not here. Section 5 now reports a bounded, explicitly preliminary three-factor exercise (preferences, local labour-market access, earning opportunities, with resources, needs and composition held fixed), sourced from an independent replication run, separate from the retired generation, and reported with Monte Carlo simulation ranges and a second-seed check rather than parameter-uncertainty intervals, ahead of the paper's final decomposition architecture, which awaits a counterfactual-attainment estimand still under design.
 
 **The bridge between references.** The signed gap between the flat-consumption reference and the non-work-bundle reference was previously reported with the wrong sign for couples. The premise audit in Section 6 locates the cause in the normalization of the opportunity kernel on the domain the reference mass uses, and the corrected bridge satisfies the inequality the premises require in both samples.
 
@@ -566,7 +540,7 @@ SECTIONS = [
 # =========================================================================== #
 QA = [
  ('What is the question, in one sentence?',
-  r'''How much well-being inequality is associated with unequal job opportunities once preferences, resources and needs are explicit? See the discussion notebook, Section 0, Scope.'''),
+  r'''How much well-being inequality is associated with unequal job opportunities once preferences and household circumstances are made explicit? See the discussion notebook, Section 0, Scope.'''),
  ('What is a latent job?',
   r'''An employment state, occupation, hours arrangement and wage, priced through the tax-benefit system. Availability and preferences jointly determine choices. See the discussion notebook, Section 4, The estimated model.'''),
  ('Which dates does the data cover?',
@@ -589,26 +563,26 @@ QA = [
   r'''Yes. The long-hours bin includes 70, and observed singles partitions close separately by sex. See the hours-fit table in the discussion notebook, Section 6.'''),
  ('Is the measure independent of pay?',
   r'''The reference mass is directly pay-neutral, but earning opportunities change attained welfare. This does not establish the deterministic axiom for the stochastic functional. See the reference-bridge table in Appendix C.'''),
- ('What do the four operators equalize?',
-  r'''Preferences, job access, earning opportunities, and household resources and needs, each through its named pathway with coefficients fixed. See the four-operator table in Section 4.'''),
- ('Why a grouped Shapley value?',
-  r'''It allocates first between preferences and circumstances, then among circumstance channels. See the discussion notebook, Section 8, Decomposition, and Appendix B's allocation rule.'''),
- ('Does a positive preference share imply that equalizing preferences reduces inequality?',
-  r'''No. Singles have a positive Gini attribution even though preference-only equalization raises the Gini by {{n:of_P_rise_singles|.1f}} per cent. See the One-factor effects versus Shapley attributions table in the discussion notebook, Section 8.'''),
- ('Which rankings survive all six indices?',
-  r'''Access exceeds earnings for singles; earnings exceeds access for couples. The singles preference contribution changes sign. See the six-index attribution table in the discussion notebook, Section 8.'''),
- ('How uncertain are the shares?',
-  r'''The report gives separate RQMC integration bands and cluster-robust parameter intervals. Six-index rankings are point-estimate comparisons. See the Signed contributions: RQMC bands and CR1 intervals table in the discussion notebook, Section 8.'''),
- ('What does exhaustiveness establish?',
-  r'''The contributions close to the declared inequality difference; this checks accounting, not identification. See the discussion notebook, Section 8, Decomposition, and the four-state welfare table.'''),
+ ('What do the three preliminary operators equalize, and why is a fourth one absent?',
+  r'''Preferences, local labour-market access and earning opportunities, each through its named pathway with coefficients fixed. Household resources, needs and composition are held fixed rather than equalized: they are not a fourth operator in this bounded exercise, and no share is attributed to them. See Section 5.'''),
+ ('Why an exact Shapley value, and not the grouped Owen rule an earlier draft used?',
+  r'''With three players the exact Shapley value has a closed form over $3!=6$ orderings and needs no grouping into a priori unions. The Owen rule an earlier, now-withdrawn draft used was needed only because that draft had an additional operator, for resources and needs, to group against preferences. See Appendix B.'''),
+ ('Is the movable share $\\Delta I$ small because job opportunities do not matter?',
+  r'''No. It is small because household resources, needs and composition are held fixed in every coalition of this bounded exercise, and that fixed component accounts for {{n:d2_varshare_logC_singles|.0f}} to {{n:d2_varshare_logC_couples|.0f}} per cent of the variance of log well-being. See Section 5.'''),
+ ('Which ordering is robust across unequivalised and equivalised reporting?',
+  r'''Earning opportunities dominate local labour-market access for both single adults and couples, at both scales. The preference contribution's sign is not robust between the two scales in either sample, so no directional claim is made about it. See Section 5.'''),
+ ('How uncertain are the preliminary shares?',
+  r'''Two ways, never merged into a confidence interval: a Monte Carlo range across 1,000 simulation replications, and an independent check under a second simulation seed. A parameter-uncertainty interval propagated from the estimation covariance is not yet computed for this exercise. See Section 5.'''),
+ ('What does exhaustiveness establish here?',
+  r'''The contributions of $P$, $A$, $B$ and the residual close to the baseline inequality to machine precision; this checks accounting for the declared three-player game, not identification of the model or resolution of the counterfactual-attainment question the game is bounded around. See Section 5.'''),
  ('Can welfare levels be compared across the two populations?',
   r'''Each population has its own preference and opportunity reference. Results are compared within population, with raw and equivalized conventions separate. See the welfare state-level table in the discussion notebook, Section 7.'''),
- ('Are corrected nested attributions available for both populations?',
-  r'''Yes: singles geography within access, and resources versus composition for both populations. Couples' $C_D$ closes as $0.067827=0.043551+0.024276$ raw and $0.072396=0.041364+0.031032$ equivalized. See both nested tables in the discussion notebook, Section 8.'''),
- ('What happened to the earlier singles endowments claim?',
-  r'''The current Gini attribution gives access {{n:w_shA_singles|.2f}} per cent and resources and needs {{n:w_shD_singles|.2f}} per cent. See the signed-contribution table in the discussion notebook, Section 8.'''),
+ ('Is a nested subdivision of resources and needs available, the way an earlier draft reported one?',
+  r'''No. Resources, needs and composition are held fixed rather than decomposed in this bounded preliminary exercise, so there is nothing to subdivide. An earlier, now-withdrawn draft's nested resources-versus-composition split was part of the retired four-factor architecture and is not carried forward.'''),
+ ('What happened to the earlier decomposition numbers entirely?',
+  r'''They are withdrawn, not corrected: the entire four-factor preferences/access/earnings/resources-and-needs architecture they were computed on traced to artifacts retired by the DECOMP-PRESEMINAR-1 ruling. See the Scientific history section for the full record and Section 5 for what is reported in its place.'''),
  ('What remains unresolved?',
-  r'''Outcome-based sample selection and the construction of the labelled-slot sampling law remain open econometric items. Corrected nested attribution is available. See the Robustness ledger and open econometric items table in the discussion notebook, Section 9.'''),
+  r'''Outcome-based sample selection and the construction of the labelled-slot sampling law remain open econometric items, unrelated to the decomposition. Separately, the decomposition itself remains bounded pending a counterfactual-attainment estimand under design; Section 5 and Section 6 state exactly what that bound means for the reported shares.'''),
  ('Is this causal?',
   r'''The decomposition is structural accounting under declared operators; it does not identify causal regional, educational or occupational effects. See the discussion notebook, Section 9, What is robust and what is not.'''),
  ('Can the notebooks reproduce everything?',
