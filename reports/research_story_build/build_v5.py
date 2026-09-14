@@ -311,24 +311,29 @@ for _tag in ['singles', 'couples']:
              'v5_step2_welfare_evidence_v1.json::lorenz_observed_income',
              'result', 'Gini units')
 
-# neutrality, W3, bridge -- unrelated to the P/A/B decomposition above.
-# NOTE (LINEAGE-SWEEP-1/REBUILD-1): this block's provenance strings still
-# name s12_welfare_record_report_v1.md, which retired_lineage_gate.py flags
-# on principle (the DECOMP-PRESEMINAR-1 ruling's "any S8/R240-era welfare
-# artifact more broadly" clause). It is NOT part of the retired four-factor
-# P/A/B/D decomposition this pass fixed -- it documents the separate W1
-# pay-neutrality finding and the W1/W4 bridge -- and rebuilding it from an
-# accepted source is out of REBUILD-1's scope (abstract, headline, the five
-# decomposition tables). item 17 / the numbers-against-source self-check will
-# still show this one residual, narrower hit; see the REBUILD-1 report.
-for _k, _v, _s, _u in [
-        ('dlogh_singles', '1.8e-15', 'verified identity', 'log units'),
-        ('dlogh_couples', '7.1e-15', 'verified identity', 'log units'),
-        ('direct_median', 0, 'result', 'EUR/month'),
-        ('attain_median_singles', -17.43, 'result', 'EUR/month'),
-        ('attain_median_couples', 110.53, 'result', 'EUR/month')]:
-    register(_k, _v, 's12_welfare_record_report_v1.md::Wage-density neutrality',
-             _s, _u)
+# neutrality, bridge -- unrelated to the P/A/B decomposition above.
+# REBUILD-3: closes the LINEAGE-SWEEP-1/REBUILD-1 item-17 residual. The
+# "Wage-density neutrality" numerics (dlogh_*, direct_median, attain_median_*)
+# and the W3 relative-index diagnostic below both cited
+# s12_welfare_record_report_v1.md, a retired-lineage artifact. Repointed
+# against the accepted sources named in REBUILD-3 (JMP_W1_fork_ruling_v1.md
+# R1, JMP_measure_map_v1.md, baseline_f1_verification_v1.md):
+#   - the pay-neutrality claim SURVIVES, more strongly than stated before --
+#     R1: "the opportunity density g, the numerical proposal q, the
+#     behavioural shocks epsilon, and the intensity kappa" do not enter the
+#     accepted W1-F reference at all, an exact property of the construction,
+#     not a numerical residual. The dlogh_*/direct_median numbers were a
+#     redundant numerical check of an already-exact algebraic fact (H has no
+#     wage argument by construction; see v5_sections.py's WELFARE section)
+#     and are dropped as no longer needed, not because the claim failed.
+#   - attain_median_* is dropped: it quantified an earning-opportunity
+#     counterfactual under the retired S12 P/A/B/D simulation. No accepted
+#     source computes this magnitude; Section 4 now states the (still true)
+#     qualitative channel without a number.
+#   - the W3 relative-index diagnostic (below) does NOT survive: MEASURE-MAP-1R
+#     classifies W3 as "DIFFERENT OBJECT... REUSABLE FOR LITERAL: no" and its
+#     R4 final statement lists it under "no current ruling requires". Removed
+#     from v5_sections.py's SENSITIVITY section entirely, not recited.
 _BR = _EVID['w1_w4_bridge']
 for _t in ['singles', 'couples']:
     b = _BR[_t]
@@ -348,10 +353,6 @@ for _t in ['singles', 'couples']:
     register('delta_med_' + _t,
              round(b['unit_mass_corrected_bridge']['Delta_nats']['median'], 4),
              's12_w4_premise_audit_v1.json', 'result', 'nats')
-for _k, _v, _u in [('w3_bracketed_singles', 1540, 'households'),
-                   ('w3_bracketed_couples', 9, 'households'),
-                   ('w3_negative_couples', 2103, 'households')]:
-    register(_k, _v, 's12_welfare_record_report_v1.md::W3', 'diagnostic', _u)
 
 for _p in ['jax', 'jaxlib', 'euromod']:
     try:

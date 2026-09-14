@@ -22,7 +22,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 14 | The report carries the explanatory apparatus | **PASS** |
 | 15 | The novelty claim is conservative and fully conjoined | **PASS** |
 | 16 | No causal claim; the genuinely unresolved items are retained | **PASS** |
-| 17 | Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) | **FAIL** |
+| 17 | Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) | **PASS** |
 
 ## 1. SINGLE CURRENT MODEL: one specification, everywhere — PASS
 
@@ -70,7 +70,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 140 entries, 91 used by the two documents, every used entry typed and sourced
+- registry: 132 entries, 83 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -92,10 +92,8 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 - the two open econometric questions and the couples D limitation are all retained
 
-## 17. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) — FAIL
+## 17. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) — PASS
 
-- this gate checks the build source and registry for a READ of a retired artifact by its own path/basename, not the rendered prose -- a reworded sentence does not clear this check while the underlying data source is unchanged
-- reports\research_story_build\build_v5.py: s12_welfare_record_report_v1
-- reports\numbers_of_record_v5.json: s12_welfare_record_report_v1
+- no retired-lineage path reference found in build_v5.py, v5_sections.py, common.py, numbers_of_record_v5.json (entries/gallery only), JMP_working_paper_for_seminar_v5.tex, or JMP_research_story_report_v5.html
 
-**Overall: FAIL**
+**Overall: PASS**

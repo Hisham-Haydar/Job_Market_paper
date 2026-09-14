@@ -716,36 +716,6 @@
       "status": "result",
       "units": "Gini units"
     },
-    "dlogh_singles": {
-      "value": "1.8e-15",
-      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
-      "status": "verified identity",
-      "units": "log units"
-    },
-    "dlogh_couples": {
-      "value": "7.1e-15",
-      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
-      "status": "verified identity",
-      "units": "log units"
-    },
-    "direct_median": {
-      "value": 0,
-      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "attain_median_singles": {
-      "value": -17.43,
-      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "attain_median_couples": {
-      "value": 110.53,
-      "source": "s12_welfare_record_report_v1.md::Wage-density neutrality",
-      "status": "result",
-      "units": "EUR/month"
-    },
     "gint_med_singles": {
       "value": 0.077283,
       "source": "s12_w4_premise_audit_v1.json",
@@ -806,24 +776,6 @@
       "status": "result",
       "units": "nats"
     },
-    "w3_bracketed_singles": {
-      "value": 1540,
-      "source": "s12_welfare_record_report_v1.md::W3",
-      "status": "diagnostic",
-      "units": "households"
-    },
-    "w3_bracketed_couples": {
-      "value": 9,
-      "source": "s12_welfare_record_report_v1.md::W3",
-      "status": "diagnostic",
-      "units": "households"
-    },
-    "w3_negative_couples": {
-      "value": 2103,
-      "source": "s12_welfare_record_report_v1.md::W3",
-      "status": "diagnostic",
-      "units": "households"
-    },
     "installed_jax": {
       "value": "0.10.1",
       "source": "build environment package metadata",
@@ -845,8 +797,6 @@
   },
   "used_keys": [
     "age_scale",
-    "attain_median_couples",
-    "attain_median_singles",
     "beta_c_couples",
     "beta_c_se_couples",
     "beta_c_se_singles",
@@ -872,9 +822,6 @@
     "d2_varshare_logC_singles",
     "delta_med_couples",
     "delta_med_singles",
-    "direct_median",
-    "dlogh_couples",
-    "dlogh_singles",
     "experience_scale",
     "gain_couples",
     "gain_singles",
@@ -921,9 +868,6 @@
     "spread_couples",
     "spread_singles",
     "time_endowment",
-    "w3_bracketed_couples",
-    "w3_bracketed_singles",
-    "w3_negative_couples",
     "w41_max_couples",
     "w41_max_singles",
     "w41_med_couples",

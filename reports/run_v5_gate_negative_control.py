@@ -39,16 +39,17 @@ FILES = {
 
 EXPECTED_ITEMS = 17
 
-# LINEAGE-SWEEP-1 added item 17 (retired-lineage path check), and it FAILS
-# on the real v5 artifacts right now -- the surface has not been remediated
-# yet, that is the finding, not a bug in the gate or this control. The temp
-# copy below also carries that same failure (it copies numbers_of_record_v5
-# .json and the rendered HTML verbatim). So item 17 is excluded from the
-# "clean copy must have zero fails" assumption below; it stays counted in
-# EXPECTED_ITEMS and is still exercised by run_gate() on every mutation, so
-# a regression that broke item 17 itself would still show up as a changed
-# item count or a newly-flipped item elsewhere.
-KNOWN_PRE_EXISTING_FAILURES = {17}
+# LINEAGE-SWEEP-1 added item 17 (retired-lineage path check); REBUILD-1 left
+# one residual hit (s12_welfare_record_report_v1.md, cited for the separate
+# W1 pay-neutrality/W3 content, out of REBUILD-1's scope) that made a clean
+# copy legitimately show item 17 as failing -- not a control defect. REBUILD-3
+# repointed those citations and removed the W3 content that didn't survive
+# verification (see build_v5.py's REBUILD-3 comment), closing the residual:
+# a clean copy now has zero failures. Kept as an empty set, not deleted, so a
+# future residual of the same kind has an established place to be recorded
+# rather than silently loosening the "clean copy must have zero fails" check
+# below.
+KNOWN_PRE_EXISTING_FAILURES: set[int] = set()
 
 
 def run_gate(root: Path):
