@@ -6,6 +6,8 @@ Accepted corrected POSFIT commit: `cd7247cf9c627b35b6b5b017be214823b77bbd13`
 
 Canonical-notebook surface commit: `e45e36482e5f3f872494d953f4a26a23b88a7f04`
 
+Canonical-notebook remote delivery commit: `eade634505086db7dd0f37b8859e3e3134e343e5`. This isolated delivery contains the same five V7 notebook surfaces on the remote baseline; the local MNL branch's older ahead history was not rewritten.
+
 ## Claim disposition
 
 - Men's extensive accuracy is withheld for both singles and couples because the corrected statistic is quadrature-limited.

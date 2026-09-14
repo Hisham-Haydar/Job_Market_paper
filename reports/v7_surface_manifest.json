@@ -3,6 +3,7 @@
   "accepted_posfit_commit": "cd7247cf9c627b35b6b5b017be214823b77bbd13",
   "job_market_paper_parent_commit": "6d856eb4b5003652eeefb57185dc24ab526b1996",
   "mnl_surface_commit": "e45e36482e5f3f872494d953f4a26a23b88a7f04",
+  "mnl_remote_delivery_commit": "eade634505086db7dd0f37b8859e3e3134e343e5",
   "constraints": {
     "reestimation": false,
     "repricing": false,
