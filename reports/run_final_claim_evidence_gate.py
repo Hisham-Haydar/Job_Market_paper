@@ -37,8 +37,8 @@ MNL_DECOMP = WORKSPACE / "MNL_decomp"
 
 SURFACES = {
     "deck": PAPER_REPO / "beamer/build/JMP_seminar_deck_r6.pdf",
-    "story": HERE / "JMP_research_story_report_v5.html",
-    "paper": PAPER_REPO / "manuscript/JMP_working_paper_for_seminar_v5.pdf",
+    "story": HERE / "JMP_research_story_report_v6.html",
+    "paper": PAPER_REPO / "manuscript/JMP_working_paper_for_seminar_v6.pdf",
     "gallery": HERE / "JMP_results_gallery_current.html",
     "notebook": MNL / "experiments/JMP_SEMINAR_SPRINT/JMP_canonical_AtoZ.ipynb",
     "rehearsal": HERE / "rehearsal_pack_v1.md",
@@ -120,6 +120,7 @@ class Occurrence:
 
 
 SOURCE_FILES: list[tuple[str, Path]] = [
+    ("DECOMP_DIAG", PAPER_REPO / "docs/Decomposition_diag_1.txt"),
     ("S11", S11 / "s11_singles_parameter_table_v1.csv"),
     ("S11", S11 / "s11_couples_parameter_table_v1.csv"),
     ("S11", S11 / "s11_criterion_b_population_moments_v1.csv"),
@@ -211,7 +212,19 @@ def load_catalog() -> tuple[list[SourceNumber], list[dict[str, str]]]:
         data = path.read_text(encoding="utf-8-sig")
         rel = str(path.relative_to(WORKSPACE)).replace("\\", "/")
         manifests.append({"family": family, "path": rel, "sha256": sha256(path)})
-        if path.suffix.lower() == ".csv":
+        if family == "DECOMP_DIAG":
+            for column, pattern in (
+                ("wage_offer_location_log", r"at most about (0\.10) log points"),
+                ("common_offer_spread_log", r"sigma ≈ (0\.37)"),
+            ):
+                match = re.search(pattern, data)
+                if not match:
+                    raise SystemExit("Diagnostic source claim missing: " + column)
+                catalog.append(SourceNumber(
+                    family, f"{family}:{column}", rel + "::5. Verdict", float(match[1]),
+                    column, "offer location; common offer spread; education; experience",
+                    "log points", ""))
+        elif path.suffix.lower() == ".csv":
             catalog.extend(load_csv_catalog(family, rel, data))
         else:
             catalog.extend(load_json_catalog(family, rel, data))
@@ -469,6 +482,8 @@ FAMILY_RULES = [
 
 
 def family_hint(context: str) -> str:
+    if re.search(r"offer locations by at most|common offer spread|wage-offer location only", context, re.I):
+        return "DECOMP_DIAG"
     for family, pattern in FAMILY_RULES:
         if pattern.search(context):
             return family
@@ -845,7 +860,7 @@ def critical_checks(surface_text: dict[str, str], fits: list[dict[str, object]],
                 bool(re.search(fr"{vlo}\s*[-\u2013]\s*{vhi}\s*%", flat)))
         unit_ok = "baseline Gini" in flat
         for name, ok, detail in (
-            ("DECOMP headline", h_ok, f"expected {lo:.1f}-{hi:.1f}%"),
+            ("DECOMP preserved appendix range", h_ok, f"expected {lo:.1f}-{hi:.1f}%"),
             ("variance headline", v_ok,
              f"expected {vlo}-{vhi}% when variance split is claimed"),
             ("DECOMP denominator", unit_ok, "surface states baseline-Gini denominator"),
@@ -1159,7 +1174,7 @@ def main() -> int:
 
     consumer = MNL / "experiments/JMP_SEMINAR_SPRINT/discussion_notebook_support.py"
     consumer_text = consumer.read_text(encoding="utf-8")
-    register = json.loads((PAPER_REPO / "reports/numbers_of_record_v5.json").read_text(
+    register = json.loads((PAPER_REPO / "reports/numbers_of_record_v6.json").read_text(
         encoding="utf-8"))
     retired_states = sorted({str(row.get("state", "")) for row in
                              register["discussion_tables"]["welfare_states"]})

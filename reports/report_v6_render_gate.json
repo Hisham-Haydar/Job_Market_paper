@@ -1,0 +1,17 @@
+{
+  "math": 243,
+  "rendered": 243,
+  "navigation_math": 3,
+  "unrendered_math": 0,
+  "errors": [],
+  "images": true,
+  "details": 2,
+  "javascript_errors": [],
+  "paper_appendix_page": 20,
+  "paper_pages": 30,
+  "paper_unresolved_citations": false,
+  "deck_appendix_page": 27,
+  "deck_pages": 32,
+  "deck_unresolved_citations": false,
+  "status": "PASS"
+}

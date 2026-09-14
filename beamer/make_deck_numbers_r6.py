@@ -419,6 +419,23 @@ def main() -> int:
         "baseline_f1 samples.couples.unweighted_n")
     tex.append("")
 
+    # REPORT-V6: read the two diagnostic magnitudes from the supplied memo.
+    diag_path = HERE.parent / "docs/Decomposition_diag_1.txt"
+    diag_text = diag_path.read_text(encoding="utf-8")
+    prov["sources"][diag_path.name] = {
+        "path": str(diag_path), "sha256": sha256(diag_path)}
+    tex.append("% --- wage-offer location diagnostic (appendix only) ---")
+    for macro, pattern in (
+        ("OfferLocationLog", r"at most about (0\.10) log points"),
+        ("OfferSpreadLog", r"sigma ≈ (0\.37)"),
+    ):
+        match = re.search(pattern, diag_text)
+        if not match:
+            raise SystemExit("Diagnostic source missing: " + macro)
+        value = float(match[1])
+        mac(macro, format(value, ".2f"),
+            "Decomposition_diag_1.txt section 5 Verdict; log points", value)
+
     OUT_JSON.parent.mkdir(exist_ok=True)
     OUT_TEX.write_text("\n".join(tex) + "\n", encoding="utf-8")
     OUT_JSON.write_text(json.dumps(prov, indent=2, sort_keys=True), encoding="utf-8")

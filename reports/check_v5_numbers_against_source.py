@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retired_lineage_gate as rlg  # noqa: E402
 
 JMP = Path(__file__).resolve().parent.parent
-PDF = JMP / 'manuscript/JMP_working_paper_for_seminar_v5.pdf'
+PDF = JMP / 'manuscript/JMP_working_paper_for_seminar_v6.pdf'
 S11 = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record'
 DECOMP2 = JMP.parent / 'MNL_decomp/outputs/welfare/preseminar_pab_v1'
 

@@ -40,9 +40,9 @@ MUTATIONS = [
 ]
 
 FILES = {
-    'tex': 'manuscript/JMP_working_paper_for_seminar_v5.tex',
-    'md': 'reports/research_story_build/story_v5.generated.md',
-    'html': 'reports/JMP_research_story_report_v5.html',
+    'tex': 'manuscript/JMP_working_paper_for_seminar_v6.tex',
+    'md': 'reports/research_story_build/story_v6.generated.md',
+    'html': 'reports/JMP_research_story_report_v6.html',
 }
 
 
@@ -98,12 +98,12 @@ def main():
                     ignore=shutil.ignore_patterns('*.pdf~'))
     (root / 'reports').mkdir(parents=True, exist_ok=True)
     for name in ['run_v5_gate.py', 'retired_lineage_gate.py',
-                 'JMP_research_story_report_v5.html',
-                 'numbers_of_record_v5.json']:
+                 'JMP_research_story_report_v6.html',
+                 'numbers_of_record_v6.json']:
         shutil.copy2(JMP / 'reports' / name, root / 'reports' / name)
     (root / 'reports/research_story_build').mkdir(parents=True, exist_ok=True)
-    shutil.copy2(JMP / 'reports/research_story_build/story_v5.generated.md',
-                 root / 'reports/research_story_build/story_v5.generated.md')
+    shutil.copy2(JMP / 'reports/research_story_build/story_v6.generated.md',
+                 root / 'reports/research_story_build/story_v6.generated.md')
     # the gate reads the MNL evidence through JMP.parent
     (base / 'MNL').mkdir(exist_ok=True)
     sprint = JMP.parent / 'MNL/experiments/JMP_SEMINAR_SPRINT/runs'

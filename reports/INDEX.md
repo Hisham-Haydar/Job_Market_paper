@@ -26,7 +26,10 @@ lineage rules and the result is recorded here.
 | 2 | `JMP_research_story_report_v2.html` | RETIRED-LINEAGE, DO NOT CIRCULATE | Same treatment as v1: banner added, same disclosed debt (retired-path references, four-factor signature). |
 | 3 | `JMP_research_story_report_v3.html` | RETIRED-LINEAGE, DO NOT CIRCULATE | Banner added. Scans clean under the current lineage gate (no retired-path or four-factor hits). |
 | 4 | `JMP_research_story_report_v4.html` | RETIRED-LINEAGE, DO NOT CIRCULATE | Banner added. Known, disclosed debt: a four-factor P/A/B/D content-signature hit. |
-| 5 | `JMP_research_story_report_v5.html` | **CURRENT** | The surface every v1-v4 banner points to. Not modified by QUARANTINE-2. |
+| 5 | `JMP_research_story_report_v5.html` | SUPERSEDED PRESENTATION; preserved unchanged | Numerical evidence retained in v6; the preliminary decomposition has moved to its appendix. The older banners still point to this preserved snapshot. |
+| 6 | `JMP_research_story_report_v6.html` | **CURRENT** | Verified structural estimates, diagnostics and observed-bundle welfare retained. Appendix D: Preliminary restricted-operator decomposition, with the wage-offer-location diagnostic and exact reconstruction-status wording. |
+
+The v6 editable source is `research_story_build/v6_sections.py`; render with `research_story_build/build_v6.py`. The builder reuses frozen v5 tables, figures and registry values without running diagnostics or numerical welfare work. `report_v6_gate_results.md` records the complete current gate set. The v5 report, source, registry and paper remain unchanged.
 
 Nothing was deleted or rebuilt. Each banner is a single `<div id="retired-lineage-banner">` inserted immediately after `<body>`, styled inline (no dependency on the file's own stylesheet), stating the file is superseded, naming `JMP_research_story_report_v5.html` as the current surface, and carrying the words "RETIRED-LINEAGE — DO NOT CIRCULATE". `check_reports_dir_lineage.py` looks for this same marker (`BANNER_MARKER`) and reports any lineage violation inside a marked file as `EXCL` (disclosed, does not fail the gate) rather than `FAIL`; unmarked files are unaffected and keep failing on a violation as before.
 

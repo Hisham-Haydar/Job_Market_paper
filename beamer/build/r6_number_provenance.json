@@ -110,6 +110,16 @@
       "rendered": "6253.463",
       "source": "v3 run_provenance.json objectives.singles"
     },
+    "OfferLocationLog": {
+      "raw": 0.1,
+      "rendered": "0.10",
+      "source": "Decomposition_diag_1.txt section 5 Verdict; log points"
+    },
+    "OfferSpreadLog": {
+      "raw": 0.37,
+      "rendered": "0.37",
+      "source": "Decomposition_diag_1.txt section 5 Verdict; log points"
+    },
     "PosfitCommit": {
       "raw": null,
       "rendered": "96693269",
@@ -372,6 +382,10 @@
     "ruling": "Deputy ruling \"SCALE CLOSED; CHILD-SHIFTER FRAMING\", s1"
   },
   "sources": {
+    "Decomposition_diag_1.txt": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\docs\\Decomposition_diag_1.txt",
+      "sha256": "ead1b7c8243fe1498f00dcf287331beec94165332aa3bb64041a0f645d339a74"
+    },
     "baseline_f1_full_sample_aggregates_v1.json": {
       "C_obs_benchmark": "NOT PRODUCED",
       "executed_commit": "d729cf895e9197716e58875aa1bf13824f022e2e",

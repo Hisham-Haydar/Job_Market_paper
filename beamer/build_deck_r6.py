@@ -30,6 +30,8 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("variant", choices=["all", *JOBS], default="all", nargs="?")
     p.add_argument("--no-verify", action="store_true")
+    p.add_argument("--reuse-assets", action="store_true",
+                   help="Compile presentation edits using existing numerical macros and figures")
     a = p.parse_args()
 
     env = os.environ.copy()
@@ -75,8 +77,9 @@ def main() -> int:
                              % (args[0], r.returncode, LOG))
         return r
 
-    run([sys.executable, "make_deck_numbers_r6.py"])
-    run([sys.executable, "make_slide_figures_r6.py"])
+    if not a.reuse_assets:
+        run([sys.executable, "make_deck_numbers_r6.py"])
+        run([sys.executable, "make_slide_figures_r6.py"])
 
     jobs = list(JOBS.values()) if a.variant == "all" else [JOBS[a.variant]]
     for job in jobs:

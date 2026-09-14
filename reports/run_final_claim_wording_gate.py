@@ -56,6 +56,11 @@ def read_html(path: Path) -> str:
     return " ".join(p.parts)
 
 
+def read_markdown(path: Path) -> str:
+    # Strip only comments here; an HTML parser can swallow Markdown W<C math.
+    return re.sub(r"<!--.*?-->", "", path.read_text(encoding="utf-8"), flags=re.S)
+
+
 def read_pdf(path: Path) -> str:
     with pymupdf.open(path) as doc:
         return "\n".join(page.get_text() for page in doc)
@@ -127,8 +132,8 @@ def sha256(path: Path) -> str:
 
 deck_source = JMP / "beamer/JMP_seminar_deck_r6.tex"
 deck_notes = JMP / "beamer/build/JMP_seminar_deck_r6_rehearsal_text.txt"
-story_html = JMP / "reports/JMP_research_story_report_v5.html"
-paper_tex = JMP / "manuscript/JMP_working_paper_for_seminar_v5.tex"
+story_html = JMP / "reports/JMP_research_story_report_v6.html"
+paper_tex = JMP / "manuscript/JMP_working_paper_for_seminar_v6.tex"
 gallery_html = JMP / "reports/JMP_results_gallery_current.html"
 rehearsal_md = JMP / "reports/rehearsal_pack_v1.md"
 nb_text, nb = notebook_text(NOTEBOOK)
@@ -148,7 +153,7 @@ surface_raw = {
     "Working paper": paper_tex.read_text(encoding="utf-8"),
     "Technical gallery": read_html(gallery_html),
     "Canonical notebook": nb_text,
-    "Rehearsal script": rehearsal_md.read_text(encoding="utf-8"),
+    "Rehearsal script": read_markdown(rehearsal_md),
 }
 surface = {name: normalize(value) for name, value in surface_raw.items()}
 
@@ -195,7 +200,7 @@ failures: list[str] = []
 for name, body in surface.items():
     checks = {label: normalize(needle) in body for label, needle in required.items()
               if label not in {"M4 variance", "M7 welfare reference"}}
-    reader_prose = name in {"Story report", "Working paper"}
+    reader_prose = name in {"Story report", "Working paper", "Rehearsal script"}
     checks["M4 variance"] = normalize(M4_READER if reader_prose else M4) in body
     checks["M7 welfare reference"] = normalize(M7_READER if reader_prose else M7) in body
     checks["M8 -1 nat + cases"] = all(x in body for x in (
@@ -362,7 +367,7 @@ if not fit_wording_ok:
 artifact_paths = {
     "Deck PDF": JMP / "beamer/build/JMP_seminar_deck_r6.pdf",
     "Story HTML": story_html,
-    "Working-paper PDF": JMP / "manuscript/JMP_working_paper_for_seminar_v5.pdf",
+    "Working-paper PDF": JMP / "manuscript/JMP_working_paper_for_seminar_v6.pdf",
     "Gallery HTML": gallery_html,
     "Notebook": NOTEBOOK,
     "Rehearsal script": rehearsal_md,
@@ -378,6 +383,7 @@ reader_surfaces = {
     "Story report": read_html(story_html),
     "Working paper": read_pdf(artifact_paths["Working-paper PDF"]),
     "Deck": read_pdf(artifact_paths["Deck PDF"]),
+    "Rehearsal script": read_markdown(rehearsal_md),
 }
 reader_forbidden = {
     "named internal work item": re.compile(
@@ -424,6 +430,7 @@ provenance_blocks = {
     "Story report": source_provenance(story_html, html_comment=True),
     "Working paper": source_provenance(paper_tex),
     "Deck": source_provenance(deck_source),
+    "Rehearsal script": source_provenance(rehearsal_md, html_comment=True),
 }
 provenance_required = (
     "S11",

@@ -228,26 +228,33 @@
     "rendered_surfaces": [
       "Story report",
       "Working paper",
-      "Deck"
+      "Deck",
+      "Rehearsal script"
     ],
     "forbidden_hits": [],
     "provenance": {
       "Story report": {
         "status": "PASS",
         "blocks": 1,
-        "sha256_values": 7,
+        "sha256_values": 8,
         "missing": []
       },
       "Working paper": {
         "status": "PASS",
         "blocks": 1,
-        "sha256_values": 7,
+        "sha256_values": 8,
         "missing": []
       },
       "Deck": {
         "status": "PASS",
         "blocks": 1,
-        "sha256_values": 7,
+        "sha256_values": 8,
+        "missing": []
+      },
+      "Rehearsal script": {
+        "status": "PASS",
+        "blocks": 1,
+        "sha256_values": 8,
         "missing": []
       }
     }
@@ -255,15 +262,15 @@
   "hashes": {
     "Deck PDF": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6.pdf",
-      "sha256": "0D09FE7B68E5A881A697B0AC116E7F5E58323730A1A2D964E45A3540D9068B41"
+      "sha256": "16897279614CA6D1A28049037430DA8DC49D6FA4E1263C7F0B21DE706906CFF5"
     },
     "Story HTML": {
-      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
-      "sha256": "8897459CE8D1638227E65D4C0680A3D95DFA68A623D44B5A33B0E8BE27B289C1"
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v6.html",
+      "sha256": "A5CB0E23D2B0CC28C88BFBBD85EBAD287B6DC37A78980AB5307207DF4B51F72C"
     },
     "Working-paper PDF": {
-      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
-      "sha256": "A8953B923FC64FC2BEE033A8F680D91EDFC7B99EE7DDEABC2DE2A132288FCB34"
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v6.pdf",
+      "sha256": "C6FE63BDBEA714B61986BC6EA2A8ACDB6E16E734943C61E0C7364F2F7299F0F2"
     },
     "Gallery HTML": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
@@ -275,11 +282,11 @@
     },
     "Rehearsal script": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\rehearsal_pack_v1.md",
-      "sha256": "246A3943BEE92A82E5F6FE3FE3007490CB2B0DCE2441D7D8E3A5EB18D1E9CE3C"
+      "sha256": "F4131AA375A760FE8B3861D3075E2FBE0A129ADC9E8ACB25FC5537D31C72D57A"
     },
     "Rehearsal PDF": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6_rehearsal.pdf",
-      "sha256": "0537C9296F683F376B52FF5B16862CD8715E90ECF6DD1961C90C1E0C80E29E5C"
+      "sha256": "511E335EEF6A7CD4930DF23E27B05387FAB61D88C37F75C52CD72F69F13A4CD2"
     }
   },
   "failures": []

@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "report: verbatim mission wording",
+      "status": "PASS",
+      "detail": "All three mission sentences retained verbatim."
+    },
+    {
+      "check": "report: explicit appendix title",
+      "status": "PASS",
+      "detail": "Preliminary restricted-operator decomposition"
+    },
+    {
+      "check": "paper PDF: verbatim mission wording",
+      "status": "PASS",
+      "detail": "All three mission sentences retained verbatim."
+    },
+    {
+      "check": "paper PDF: explicit appendix title",
+      "status": "PASS",
+      "detail": "Preliminary restricted-operator decomposition"
+    },
+    {
+      "check": "deck PDF: verbatim mission wording",
+      "status": "PASS",
+      "detail": "All three mission sentences retained verbatim."
+    },
+    {
+      "check": "deck PDF: explicit appendix title",
+      "status": "PASS",
+      "detail": "Preliminary restricted-operator decomposition"
+    },
+    {
+      "check": "rehearsal: verbatim mission wording",
+      "status": "PASS",
+      "detail": "All three mission sentences retained verbatim."
+    },
+    {
+      "check": "rehearsal: explicit appendix title",
+      "status": "PASS",
+      "detail": "Preliminary restricted-operator decomposition"
+    },
+    {
+      "check": "report: no headline decomposition result",
+      "status": "PASS",
+      "detail": "Range and channel-ranking result are confined to appendix/backup."
+    },
+    {
+      "check": "paper: no headline decomposition result",
+      "status": "PASS",
+      "detail": "Range and channel-ranking result are confined to appendix/backup."
+    },
+    {
+      "check": "deck: no headline decomposition result",
+      "status": "PASS",
+      "detail": "Range and channel-ranking result are confined to appendix/backup."
+    },
+    {
+      "check": "rehearsal: no headline decomposition result",
+      "status": "PASS",
+      "detail": "Range and channel-ranking result are confined to appendix/backup."
+    },
+    {
+      "check": "deck: every decomposition frame in backup",
+      "status": "PASS",
+      "detail": "Three former main frames moved; scope and diagnostic backup frames added."
+    },
+    {
+      "check": "main text: reconstruction status",
+      "status": "PASS",
+      "detail": "Historical ex-ante percentages explicitly excluded; current welfare evidence unchanged."
+    },
+    {
+      "check": "report: all tables preserved exactly",
+      "status": "PASS",
+      "detail": "18 predecessor tables; 18 current tables."
+    },
+    {
+      "check": "report: all embedded figures preserved exactly",
+      "status": "PASS",
+      "detail": "15 predecessor embedded figures; 15 current embedded figures."
+    },
+    {
+      "check": "registry: all numerical values and provenance retained",
+      "status": "PASS",
+      "detail": "All 125 predecessor entries are unchanged; two diagnostic entries added."
+    },
+    {
+      "check": "decomposition: every distinct numerical token retained",
+      "status": "PASS",
+      "detail": "8 predecessor decomposition quantities; missing: []."
+    },
+    {
+      "check": "protected prose: data",
+      "status": "PASS",
+      "detail": "Inherited without changes."
+    },
+    {
+      "check": "protected prose: model",
+      "status": "PASS",
+      "detail": "Inherited without changes."
+    },
+    {
+      "check": "protected prose: appcoef",
+      "status": "PASS",
+      "detail": "Inherited without changes."
+    },
+    {
+      "check": "protected prose: behavioural estimates, fit and observed-bundle results",
+      "status": "PASS",
+      "detail": "All results before the former decomposition subsection retained verbatim."
+    },
+    {
+      "check": "v5 and accepted assets unchanged",
+      "status": "PASS",
+      "detail": "36 files checked; changed: []."
+    },
+    {
+      "check": "diag1_location_log: parsed diagnostic source",
+      "status": "PASS",
+      "detail": "docs/Decomposition_diag_1.txt::5. Verdict; no new numerical exercise."
+    },
+    {
+      "check": "diag1_sigma: parsed diagnostic source",
+      "status": "PASS",
+      "detail": "docs/Decomposition_diag_1.txt::5. Verdict; no new numerical exercise."
+    },
+    {
+      "check": "placement negative controls",
+      "status": "PASS",
+      "detail": "Injecting the range or channel-ranking headline fails the placement rule."
+    }
+  ],
+  "v6_sha256": "a5cb0e23d2b0cc28c88bfbbd85ebad287b6dc37a78980ab5307207df4b51f72c"
+}

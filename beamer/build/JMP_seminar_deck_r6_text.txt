@@ -8,8 +8,8 @@ LISER and University of Luxembourg
 
 France, EU-SILC priced through EUROMOD.
 
-Seminar of 17 September. The welfare results use the own-set equal-consumption measure; the decomposition
-is preliminary and model-based.
+Seminar of 17 September. The welfare results use the own-set equal-consumption measure. A preliminary
+restricted-operator decomposition is in the backup appendix.
 Question and contribution
 Two people with the same tastes and the same wage need not face the same set of jobs.
 
@@ -29,7 +29,7 @@ is preliminary and model-based.
 
 
 
-                                                                                                   2/19
+                                                                                                   2/16
 The contribution is a structural opportunity set plus a welfare measure defined on it.
 
 
@@ -39,16 +39,15 @@ is preliminary and model-based.
        reach is estimated, not assumed.
       The own-set equal-consumption money metric; in this empirical specification its direct
        reference collapses to universally available non-employment.
-      A bounded three-factor exercise over systematic utility heterogeneity, coarse
-       geographic/temporal access and earning opportunities.
+      Observed-bundle welfare and resource inequality, reported separately for single-adult and
+       couple households.
 
 
-   The three-factor exercise is preliminary model-based accounting, not the final decomposition of total well-being
-   inequality.
+   The computed preliminary restricted-operator decomposition is in the backup appendix.
 
 
 
-                                                                                                                      3/19
+                                                                                                   3/16
 Data and the structural RURO
 model
 France, EU-SILC priced through EUROMOD: 1 540 single-adult and 2 223 couple
@@ -69,7 +68,7 @@ households.
    shown.
 
 
-                                                                                                                 4/19
+                                                                                                                 4/16
 A job is a package; a household draws from its own distribution over packages.
 
 
@@ -93,7 +92,7 @@ households.
 
    Access and capability are not separately identified; the access factor is their product.
 
-                                                                                                                      5/19
+                                                                                                                      5/16
 Preferences and the opportunity density are estimated in one likelihood.
 
 
@@ -112,7 +111,7 @@ households.
 
 
 
-                                                                                                                    6/19
+                                                                                                                    6/16
 Positive estimates and fit
 Estimated model: 41 free parameters for singles, 47 for couples.
 
@@ -132,7 +131,7 @@ households.
 
 
 
-                                                                                     7/19
+                                                                                     7/16
 Extensive-margin accuracy, shown only for the groups where it passes the
 quadrature-adequacy gate.
 
@@ -158,7 +157,7 @@ quadrature-adequacy gate.
    Values are shown only where the pre-registered weighted quadrature-adequacy rule clears for this statistic; single
    men are quadrature-limited and withheld. This is not a group-count result.
 
-                                                                                                                        8/19
+                                                                                                                        8/16
 Calibration conditioned on prediction: observed hours against predicted hours, by
 predicted decile.
 
@@ -191,7 +190,7 @@ predicted decile.
 
 
 
-                                                                                                                              9/19
+                                                                                                                              9/16
 Evidence for heterogeneous
 opportunities
 The access kernel is estimated, and it varies across households.
@@ -225,7 +224,7 @@ opportunities
    Single-adult estimates; horizontal bars are 1.96 × CR1 cluster-robust standard errors. Structural and
    model-conditional; not causal.
 
-                                                                                                                         10/19
+                                                                                                                         10/16
 So is the earning-opportunity kernel: an offer distribution, not a single wage.
 
 
@@ -252,7 +251,7 @@ opportunities
    Single-adult estimates; occupation terms shift the offer location. Dispersion σ̂ = 0.382 (z = 28.7).
 
 
-                                                                                                                      11/19
+                                                                                                                      11/16
 The welfare measure
 Haydar–Maniquet W 1 : the consumption at home that would leave the household exactly
 as well off.
@@ -273,7 +272,7 @@ as well off.
 
 
 
-                                                                                                                       12/19
+                                                                                                                       12/16
 Under the current specification W 1 coincides with the staying-home equivalent — as a
 fact about this domain.
 
@@ -292,7 +291,7 @@ fact about this domain.
    a general theoretical identity.
 
 
-                                                                                                                 13/19
+                                                                                                                 13/16
 Equivalised W 1 -F distribution
 (primary)
 Baseline W 1 -F, equivalised, single adults.
@@ -315,7 +314,7 @@ fact about this domain.
    descriptive dispersion comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
 
 
-                                                                                                                  14/19
+                                                                                                                  14/16
 Baseline W 1 -F, equivalised, couples.
 
 
@@ -335,72 +334,7 @@ fact about this domain.
    or elsewhere in this deck. The same independently reimplemented welfare construction and equivalence scale are
    used as for single adults.
 
-                                                                                                                     15/19
-Decomposition architecture
-This bounded decomposition equalises three channels, not whole job access.
-
-
-
-
-     P systematic utility heterogeneity (tastes + reduced-form time constraints) → common
-       reference
-     A local geographic/temporal access shifters (region, urban/rural, year) → common reference
-     B earning opportunities → common reference offer distribution
-
-
-
-   Household resources, needs and composition are held fixed. Personal occupation access, hours-band access and
-   node-level alternative characteristics are not equalised by A.
-
-
-
-
-                                                                                                                  16/19
-The bounded decomposition is executed; the final attainment estimand remains under
-design.
-
-
-
-
-                               counterfactual        carried realised
-           coalition S                                                        WF1 (ziS )     inequality IS
-                                environment               draws
-
-
-                                                bounded decomposition route
-
-
-
-
-   This exercise reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
-   decomposition’s counterfactual-attainment estimand remains under design.
-
-
-
-                                                                                                                  17/19
-Preliminary decomposition and
-boundary
-Earning opportunities exceed coarse access within the bounded game.
-
-
-
-
-   In a preliminary three-factor structural exercise that holds household resources, needs and composition
-   fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and
-   earning opportunities changes money-metric well-being inequality by 1.8–9.9% of the baseline Gini,
-   depending on household type and reporting scale. Within the Shapley allocation of that movable
-   component, earning-opportunity heterogeneity has a larger contribution than the coarse
-   geographic/temporal access channel in both samples and both reporting conventions. The preference
-   contribution is not sign-robust to equivalisation.
-
-
-
-   These are preliminary model-based accounting results, not causal estimates and not the final decomposition of
-   total well-being inequality.
-
-
-
-                                                                                                                   18/19
+                                                                                                                     15/16
 What I would like from you today.
 
 
@@ -420,7 +354,79 @@ boundary
 
 
 
-                                                                                                   19/19
+                                                                                                   16/16
+Preliminary restricted-operator decomposition
+
+
+
+
+    A preliminary P/A/B decomposition has been computed for the attained-bundle money metric, holding
+    resources, needs and composition fixed. It is a restricted counterfactual exercise, not a comprehensive
+    share of inequality due to all opportunities. A separately defined ex-ante metric is being reconstructed
+    for comparison; neither historical ex-ante percentages nor a settled cross-estimand conclusion are
+    reported here.
+This bounded decomposition equalises three channels, not whole job access.
+
+
+
+
+     P systematic utility heterogeneity (tastes + reduced-form time constraints) → common
+       reference
+     A local geographic/temporal access shifters (region, urban/rural, year) → common reference
+     B wage-offer location → common reference location
+
+
+
+   Household resources, needs and composition are held fixed. Personal occupation access, hours-band access and
+   node-level alternative characteristics are not equalised by A.
+The bounded decomposition is executed; the final attainment estimand remains under design.
+
+
+
+
+                               counterfactual        carried realised
+           coalition S                                                        WF1 (ziS )     inequality IS
+                                environment               draws
+
+
+                                                bounded decomposition route
+
+
+
+
+   This exercise reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
+   decomposition’s counterfactual-attainment estimand remains under design.
+Preliminary restricted-operator decomposition
+
+
+
+
+    In a preliminary three-factor structural exercise that holds household resources, needs and composition
+    fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and
+    earning opportunities changes money-metric well-being inequality by 1.8–9.9% of the baseline Gini,
+    depending on household type and reporting scale. Within the Shapley allocation of that movable
+    component, earning-opportunity heterogeneity has a larger contribution than the coarse
+    geographic/temporal access channel in both samples and both reporting conventions. The preference
+    contribution is not sign-robust to equivalisation.
+
+
+
+    These are preliminary model-based accounting results, not causal estimates and not the final decomposition of
+    total well-being inequality.
+The earnings operator equalises wage-offer location only.
+
+
+
+
+    The earning-opportunity channel equalises wage-offer location only: the systematic differences
+    associated with education and potential experience, which shift offer locations by at most about 0.10
+    log points. The common offer spread (about 0.37 log points), wage-draw luck and selection remain in
+    the residual and are quantitatively larger than the location differences removed by this operator. This
+    is a definitional boundary of the exercise, not a measurement error. Equalising locations can change
+    attained wages; it does not equalise the whole wage distribution. The diagnostic comparison that also
+    compresses the common spread and selection is a bound, not an additional decomposition result. Thin
+    effective support for couples leaves individual wage attainment noisy and remains a numerical
+    limitation.
 Baseline W 1 -F, unequivalised, single adults (verification backup).
 
 

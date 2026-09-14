@@ -19,10 +19,10 @@ guards its own artifacts. `canonical_notation_v5.md` records exactly which of
 its clauses are superseded and which are carried forward here.
 
 Artifacts checked
-    P   manuscript/JMP_working_paper_for_seminar_v5.tex
-    H   reports/JMP_research_story_report_v5.html   (text layer)
-    M   reports/research_story_build/story_v5.generated.md
-    R   reports/numbers_of_record_v5.json
+    P   manuscript/JMP_working_paper_for_seminar_v6.tex
+    H   reports/JMP_research_story_report_v6.html   (text layer)
+    M   reports/research_story_build/story_v6.generated.md
+    R   reports/numbers_of_record_v6.json
 
 Exit code 0 if every item passes, 1 otherwise.
 """
@@ -41,10 +41,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retired_lineage_gate as rlg  # noqa: E402
 
 JMP = Path(__file__).resolve().parent.parent
-PAPER = JMP / 'manuscript/JMP_working_paper_for_seminar_v5.tex'
-HTML = JMP / 'reports/JMP_research_story_report_v5.html'
-MD = JMP / 'reports/research_story_build/story_v5.generated.md'
-REG = JMP / 'reports/numbers_of_record_v5.json'
+PAPER = JMP / 'manuscript/JMP_working_paper_for_seminar_v6.tex'
+HTML = JMP / 'reports/JMP_research_story_report_v6.html'
+MD = JMP / 'reports/research_story_build/story_v6.generated.md'
+REG = JMP / 'reports/numbers_of_record_v6.json'
 
 
 # --------------------------------------------------------------------------- #
@@ -623,8 +623,8 @@ for bad in ['a new Shapley method', 'new Shapley rule',
     forbid(it, bad, permitted=DISOWNED)
 for a in 'PM':
     hay = NORM[a]
-    if 'introduce and implement' not in hay:
-        it.fail('%s: the abstract does not use the conservative wording'
+    if 'a computed restricted-operator decomposition is presented in appendix d as a preliminary exercise' not in hay:
+        it.fail('%s: the abstract does not state the preliminary appendix framing'
                 % NAMES[a])
     k = hay.find('to our knowledge')
     if k < 0:
@@ -691,7 +691,7 @@ it.note('the two open econometric questions and the couples D limitation are '
 # --------------------------------------------------------------------------- #
 it = item(17, 'Retired welfare-decomposition lineage: no read by path '
               '(DECOMP-PRESEMINAR-1)')
-# REG (numbers_of_record_v5.json) carries a top-level "discussion_tables" key
+# REG (numbers_of_record_v6.json) carries a top-level "discussion_tables" key
 # that this build script deliberately carries forward untouched -- it is
 # consumed by a SEPARATE artifact (MNL's discussion_notebook_support.py /
 # "the discussion notebook" referenced throughout the QA section), not by
@@ -824,14 +824,14 @@ def main() -> int:
             lines.append('- no findings')
         lines.append('')
     lines.append('**Overall: %s**' % ('PASS' if rc == 0 else 'FAIL'))
-    (JMP / 'reports/consistency_gate_v5.md').write_text(
+    (JMP / 'reports/consistency_gate_v6.md').write_text(
         '\n'.join(lines) + '\n', encoding='utf-8')
     for x in ITEMS:
         print('%-2d %-62s %s' % (x.num, x.title[:62], x.verdict))
         for d in x.detail:
             if x.verdict == 'FAIL':
                 print('     %s' % d)
-    print('\nwrote reports/consistency_gate_v5.md  (exit %d)' % rc)
+    print('\nwrote reports/consistency_gate_v6.md  (exit %d)' % rc)
     return rc
 
 

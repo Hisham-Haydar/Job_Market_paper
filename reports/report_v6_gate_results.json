@@ -1,0 +1,85 @@
+{
+  "status": "FAIL",
+  "completed_utc": "2026-09-14T18:17:41.340046+00:00",
+  "v6_path": "reports/JMP_research_story_report_v6.html",
+  "v6_sha256": "a5cb0e23d2b0cc28c88bfbbd85ebad287b6dc37a78980ab5307207df4b51f72c",
+  "gates": [
+    {
+      "gate": "reports/run_v5_gate.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "1  SINGLE CURRENT MODEL: one specification, everywhere            PASS\n2  Notation: forbidden symbol variants and the four-factor rule   PASS\n3  The hours density: five bands over one residual reference      PASS\n4  The W1 statement: all three clauses, and the accepted closed f PASS\n5  Pay neutrality is stated as the property established           PASS\n6  Shapley wording: attributed to, not removed                    PASS\n7  The preliminary P/A/B scale statement matches the computed sha PASS\n8  The two decomposition uncertainty summaries (Monte Carlo range PASS\n9  DECOMP-2 is bounded: resources, needs and composition are held PASS\n10 No machine labels, status tokens, private paths or slogans     PASS\n11 Every number is bound to a registered source                   PASS\n12 The funnel ends where the estimation begins                    PASS\n13 Figures and tables are present, captioned and rendered         PASS\n14 The report carries the explanatory apparatus                   PASS\n15 The novelty claim is conservative and fully conjoined          PASS\n16 No causal claim; the genuinely unresolved items are retained   PASS\n17 Retired welfare-decomposition lineage: no read by path (DECOMP PASS\n18 Retired ex-ante inclusive-value welfare construction: not pres PASS\n\nwrote reports/consistency_gate_v6.md  (exit 0)\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/run_v5_gate_negative_control.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "clean copy fails: none\nOK   item 1   mutation caught by [1]\nOK   item 2   mutation caught by [2]\nOK   item 5   mutation caught by [5]\nOK   item 7   mutation caught by [7]\nOK   item 9   mutation caught by [9]\nOK   item 10  mutation caught by [10]\nOK   item 15  mutation caught by [15]\nOK   item 16  mutation caught by [16]\nOK   item 18  mutation caught by [18]\n\nnegative control: PASS\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/check_v5_numbers_against_source.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "RETIRED-LINEAGE SELF-CHECK: PASS\nJMP_working_paper_for_seminar_v6.pdf: 24 headline magnitudes checked against the run artifacts\nNUMBERS: PASS, every recomputed magnitude appears in the PDF\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/check_v5_pdf_layout.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "JMP_working_paper_for_seminar_v6.pdf: 30 pages\nLAYOUT: PASS, no ink outside the print area\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/check_v6_render.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "{\n  \"math\": 243,\n  \"rendered\": 243,\n  \"navigation_math\": 3,\n  \"unrendered_math\": 0,\n  \"errors\": [],\n  \"images\": true,\n  \"details\": 2,\n  \"javascript_errors\": [],\n  \"paper_appendix_page\": 20,\n  \"paper_pages\": 30,\n  \"paper_unresolved_citations\": false,\n  \"deck_appendix_page\": 27,\n  \"deck_pages\": 32,\n  \"deck_unresolved_citations\": false,\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "gate": "beamer/verify_deck_r6.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "R6 deck verification\n--------------------------------------------------------------------\n  PASS  G-RETIRE   no retired W1-EA magnitude present\n  PASS  G-DECOMP   approved M10 claim present; required caveat follows immediately\n  PASS  G-DECOMP-BACKUP computed decomposition and exact scope wording are confined to backup\n  PASS  G-CAPTION  plain-language calibration caption verbatim: 'support coverage audited using individual-level predictive diagnostics; calibration statistics partly quadrature-limited; use the explicit group verdicts'; retired 'support audit pending' absent\n  PASS  G-UNITS    2 equivalised (primary) + 2 unequivalised (backup) baseline slides, each carrying units/weight/scale-status\n  PASS  G-SOURCE   source-only provenance carries the welfare artifacts, recorded 6048c9f7, verified b5550af5, and equivalised-reporting 4c4e07e\n  PASS  G-NUMBERS  no hand-typed quantitative numeral on a slide\n  PASS  G-G2       17 ADEQUATE weighted statistics exist; only those are emitted; extensive-accuracy rows match v3 labels {'couples_female': 'ADEQUATE', 'couples_male': 'ADEQUATE', 'singles_female': 'ADEQUATE', 'singles_male': 'QUADRATURE-LIMITED'} and observed values\n  PASS  G-SCALE    both equivalised slides state the modified-OECD scale; source-only provenance cites 'SCALE CLOSED; CHILD-SHIFTER FRAMING' and JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md; no PROVISIONAL scale wording\n  PASS  G-QA       5/5 welfare slides carry a Q&A note citing a ruling ID\n  PASS  G-NOCONF   no confusion-matrix headline statistic\n  PASS  G-POOLED   source carries no pooled row; deck shows singles and couples separately\n  PASS  G-NOSIDEBYSIDE no frame or paragraph mixes singles- and couples-equivalised levels; withdrawn near-equality claim absent\n  PASS  G-EQPRIMARY equivalised distribution is section 6 (primary, before \\appendix); 2 unequivalised slides demoted into the backup appendix\n  PASS  G-CHILDSHIFTER child-shifter wording verbatim, never called a preference/taste parameter\n  PASS  G-PLABEL   P label retained; A restricted to local geographic/temporal shifters\n  PASS  G-NOBAN    none of the out-of-scope tokens (W_EA, finite-offer welfare, OEC characterisation, SCALE-SENS-1) appear\n  PASS  G-ASSETS   4 figure asset(s) referenced, all resolve to this run's figures/r6/ output ['calibration_r6_slide.pdf', 'fitext_r6_slide.pdf', 'kernelacc_r6_slide.pdf', 'kernelwage_r6_slide.pdf']; no reference to a retired-assets or mock-presentation tree\n  PASS  G-LINEAGE  no retired-lineage artifact referenced by path in the deck source or number/figure generators\n--------------------------------------------------------------------\n19 passed, 0 failed\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/results_gallery_build/verify.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PASS: self_contained\nPASS: nine_sections\nPASS: captions_complete\nPASS: current_samples\nPASS: no_internal_paths_hashes_labels\nPASS: intervals_separate\nPASS: no_mae_headline\nPASS: final_diagnostic_surface\nPASS: node_language_exact\nPASS: registry_present\nPASS: no_retired_welfare_generator_paths\nPASS: zero_retired_welfare_content_signatures\nPASS: no_four_factor_decomposition\nPASS: section06_accepted_formula\nPASS: section06_only_accepted_construction\nPASS: welfare_reference_summary_M7\nPASS: welfare_worked_example_M8\nPASS: variance_language_M4\nPASS: access_definition_M5\nPASS: decomp_figure_language_M4_M5\nPASS: decomp_figures_embedded_from_current_inputs\nPASS: no_retired_lineage_path_reads\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/check_reports_dir_lineage.py",
+      "status": "FAIL",
+      "returncode": 1,
+      "stdout": "LINEAGE-SWEEP-1 surface (d): other reports/ files\n------------------------------------------------------------------------\n  EXCL  JMP_research_story_report_v1.html                                      [RETIRED-LINEAGE, DO NOT CIRCULATE (banner-marked; see INDEX)]\n        banner-marked historical file -- disclosed, known debt; does not fail the gate (QUARANTINE-2)\n        retired-lineage path reference(s): headline_decomposition_v1, ss8_step1_states_v1\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): four-player game / four operators, co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  EXCL  JMP_research_story_report_v2.html                                      [RETIRED-LINEAGE, DO NOT CIRCULATE (banner-marked; see INDEX)]\n        banner-marked historical file -- disclosed, known debt; does not fail the gate (QUARANTINE-2)\n        retired-lineage path reference(s): headline_decomposition_v1, ss8_step1_states_v1\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): four-player game / four operators, co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  EXCL  JMP_research_story_report_v3.html                                      [RETIRED-LINEAGE, DO NOT CIRCULATE (banner-marked; see INDEX)]\n        banner-marked historical file -- disclosed, known debt; does not fail the gate (QUARANTINE-2)\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  EXCL  JMP_research_story_report_v4.html                                      [RETIRED-LINEAGE, DO NOT CIRCULATE (banner-marked; see INDEX)]\n        banner-marked historical file -- disclosed, known debt; does not fail the gate (QUARANTINE-2)\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  PASS  JMP_results_gallery_current.html                                       [LIVE (has its own verify.py; re-checked here for belt-and-suspenders)]\n  PASS  JMP_draft_and_story_report_v2_review_v1.md                             [FROZEN]\n  PASS  JMP_research_story_report_review_v1.md                                 [FROZEN]\n  PASS  JMP_v3_normative_and_scholarly_review_v1.md                            [FROZEN]\n  PASS  JMP_v4_paper_and_report_review_v1.md                                   [FROZEN]\n  FAIL  JMP_v5_review_and_modular_revision_plan_v1.md                          [untracked/retired (quarantined; see INDEX)]\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): four-player game / four operators, co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  PASS  canonical_notation_v1.md                                               [LIVE]\n  PASS  canonical_notation_v5.md                                               [LIVE]\n  FAIL  consistency_gate_v1.md                                                 [FROZEN]\n        retired-lineage path reference(s): ss8_step1_states_v1\n  PASS  consistency_gate_v3.md                                                 [FROZEN]\n  PASS  consistency_gate_v4.md                                                 [FROZEN]\n  FAIL  model_extraction_v1.md                                                 [LIVE, no successor]\n        retired-lineage path reference(s): ss8_step1_states_v1\n  FAIL  novelty-audit-structural-well-being-inequality.md                      [LIVE, no successor]\n        [supplementary, content-signature] four-factor P/A/B/D pattern(s): co-occurring Access/Earning-opportunities/resources-needs rows (P/A/B/D table)\n  FAIL  numbers_of_record_v1.json                                              [LIVE (bound into run_consistency_gate.py)]\n        retired-lineage path reference(s): headline_decomposition_v1, ss8_step1_states_v1\n  FAIL  numbers_of_record_v3.json                                              [FROZEN]\n        retired-lineage path reference(s): headline_decomposition_v1, ss8_step1_states_v1\n  FAIL  numbers_of_record_v4.json                                              [FROZEN]\n        retired-lineage path reference(s): headline_decomposition_v1, s12_*_attributions family, s12_welfare_record_report_v1, ss8_step1_states_v1\n  PASS  paper_expository_carryover_v1.md                                       [LIVE]\n  PASS  rehearsal_pack_v1.md                                                   [LIVE spoken seminar script, no successor]\n  FAIL  JMP_reference_profiles_v1.md                                           [untracked/retired (quarantined; see INDEX)]\n        retired-lineage path reference(s): cw_step3_states_v1, ss8_step1_states_v1\n  PASS  JMP_reference_profiles_v1.csv                                          [untracked/retired (quarantined; see INDEX)]\n  PASS  JMP_reference_profiles_v1.tex                                          [untracked/retired (quarantined; see INDEX)]\n  FAIL  figure_modules/v5_labour_market_opportunity_composition/build_figure.py [orphan (not wired into v5, but reads a retired file directly)]\n        retired-lineage path reference(s): s12_*_attributions family\n  FAIL  figure_modules/v5_labour_market_opportunity_composition/evidence.md    [orphan]\n        retired-lineage path reference(s): s12_*_attributions family\n  VERIFIED novelty-audit-structural-well-being-inequality.docx                 (binary, manually verified 2026-09-14)\n        content-identical twin of novelty-audit-structural-well-being-inequality.md; 0 retired-lineage path hits; same disclosed four-factor content-signature as its .md twin (not new drift)\n------------------------------------------------------------------------\nSURFACE (d): FAIL -- see the LINEAGE-SWEEP-1 report for remediation status\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/run_final_claim_wording_gate.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PASS: 0 failure(s)\nwrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_wording_gate_v1.md\nwrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_wording_gate_v1.json\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/check_report_v6_framing.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "PASS report: verbatim mission wording: All three mission sentences retained verbatim.\nPASS report: explicit appendix title: Preliminary restricted-operator decomposition\nPASS paper PDF: verbatim mission wording: All three mission sentences retained verbatim.\nPASS paper PDF: explicit appendix title: Preliminary restricted-operator decomposition\nPASS deck PDF: verbatim mission wording: All three mission sentences retained verbatim.\nPASS deck PDF: explicit appendix title: Preliminary restricted-operator decomposition\nPASS rehearsal: verbatim mission wording: All three mission sentences retained verbatim.\nPASS rehearsal: explicit appendix title: Preliminary restricted-operator decomposition\nPASS report: no headline decomposition result: Range and channel-ranking result are confined to appendix/backup.\nPASS paper: no headline decomposition result: Range and channel-ranking result are confined to appendix/backup.\nPASS deck: no headline decomposition result: Range and channel-ranking result are confined to appendix/backup.\nPASS rehearsal: no headline decomposition result: Range and channel-ranking result are confined to appendix/backup.\nPASS deck: every decomposition frame in backup: Three former main frames moved; scope and diagnostic backup frames added.\nPASS main text: reconstruction status: Historical ex-ante percentages explicitly excluded; current welfare evidence unchanged.\nPASS report: all tables preserved exactly: 18 predecessor tables; 18 current tables.\nPASS report: all embedded figures preserved exactly: 15 predecessor embedded figures; 15 current embedded figures.\nPASS registry: all numerical values and provenance retained: All 125 predecessor entries are unchanged; two diagnostic entries added.\nPASS decomposition: every distinct numerical token retained: 8 predecessor decomposition quantities; missing: [].\nPASS protected prose: data: Inherited without changes.\nPASS protected prose: model: Inherited without changes.\nPASS protected prose: appcoef: Inherited without changes.\nPASS protected prose: behavioural estimates, fit and observed-bundle results: All results before the former decomposition subsection retained verbatim.\nPASS v5 and accepted assets unchanged: 36 files checked; changed: [].\nPASS diag1_location_log: parsed diagnostic source: docs/Decomposition_diag_1.txt::5. Verdict; no new numerical exercise.\nPASS diag1_sigma: parsed diagnostic source: docs/Decomposition_diag_1.txt::5. Verdict; no new numerical exercise.\nPASS placement negative controls: Injecting the range or channel-ranking headline fails the placement rule.\n",
+      "stderr": ""
+    },
+    {
+      "gate": "reports/run_final_claim_evidence_gate.py",
+      "status": "PASS",
+      "returncode": 0,
+      "stdout": "FINAL-GATE-1: PASS\n  result numerals: 6149; resolved: 6149; unresolved/mismatch: 0\n  retired-welfare hits: 0; notebook errors: 0\n  report: C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_evidence_gate_v1.md\n  full number table: C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_number_to_source_v1.csv\n",
+      "stderr": ""
+    }
+  ]
+}

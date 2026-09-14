@@ -16,7 +16,7 @@ from pathlib import Path
 import pymupdf
 
 PDF = (Path(__file__).resolve().parent.parent
-       / 'manuscript/JMP_working_paper_for_seminar_v5.pdf')
+       / 'manuscript/JMP_working_paper_for_seminar_v6.pdf')
 # 25 mm margins, minus the space the page number legitimately occupies
 MM = 72.0 / 25.4
 TOP = 25.0 * MM - 6.0

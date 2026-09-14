@@ -1,0 +1,78 @@
+DECOMP-DIAG-1: can B move households across the wage distribution?
+Short answer: yes. The reported Delta_I measures the model's opportunity effect; the node support does not cap it. Phi_B is small because the model's estimated differences in wage offers between households are small, not because the nodes run out.
+
+What I ran: a read-only diagnostic on the DECOMP-2 engine (b52761b4). Nothing under outputs/welfare/preseminar_pab_v1 changed. There was no re-estimation, no pricing, and only coalitions that were already recorded (EMPTY, B, PA, PAB).
+
+Checks:
+
+Same simulation: on the same seed and random-number stream, I(S) matches the recorded values to ≤ 8e-17 for all four coalitions, both samples, both scales.
+Same B operator: my rebuilt own and reference wage-offer locations reproduce the engine's V(B) − V(EMPTY) to 2e-14.
+The script and CSVs are in the scratchpad (decomp_diag1.py, decomp_diag1_out/). Only group-level figures are written.
+
+How B works here: B replaces the offer location built from education and potential experience with the sample reference. The occupation term (set per node), sigma, the wages and the priced consumption stay fixed. So the most B can move anyone's offer location is about ±0.10 log points.
+
+1. Support overlap
+Per household: min, median and max wage over its live working nodes (EUR/h). Each column shows the weighted median across households in the group. The last three columns show where the reference offer density's mass falls relative to each household's own drawn wage range (weighted mean).
+
+Sample / earner	Educ	Median nodes	Min	Median	Max	Ref − own location (log)	Own mass inside	Ref mass inside	Ref mass below min / above max	Share of HH with <90% inside
+singles M	L / M / H	88	4.6 / 4.4 / 5.6	12.4 / 12.5 / 15.9	35.5 / 35.9 / 44.0	−.013 / +.048 / −.046	.971 / .968 / .971	.966 / .973 / .963	.031 / .002 (all)	.07 / .03 / .05
+singles F	L / M / H	88	4.4 / 4.3 / 5.7	12.3 / 12.0 / 16.0	36.6 / 35.1 / 43.9	−.011 / +.068 / −.062	.973 / .966 / .972	.968 / .973 / .961	.031 / .002	.07 / .03 / .06
+couples M	L / M / H	93	5.0 / 5.5 / 7.2	13.3 / 14.5 / 19.2	35.1 / 37.3 / 48.8	+.085 / +.054 / −.089	.975 / .970 / .971	.978 / .973 / .948	.033 / .004	.01 / .02 / .14
+couples F	L / M / H	91	4.1 / 4.6 / 5.7	10.8 / 12.2 / 15.7	27.1 / 32.1 / 39.7	+.103 / +.070 / −.074	.982 / .980 / .983	.973 / .979 / .975	.016 / .008	.03 / .00 / .02
+Each household's drawn range spans about 2 log points, roughly 5.5 sigma.
+The reference density puts 95–98% of its mass inside that range, nearly as much as the household's own density does (97–98%).
+The mass that is missing is mostly below the household's lowest drawn wage.
+The weakest cell is high-education men in couples: 14% of them have less than 90% of the reference mass inside their range.
+2. Attained wages (workers, weighted, mean over 1000 replications)
+Earners	S	Mean	p10	Median	p90	Gini	Mean by educ L / M / H
+singles, all	EMPTY	15.24	7.86	13.87	24.35	.2426	15.40 / 14.20 / 16.17
+B	15.12	8.02	13.82	23.85	.2344	15.03 / 15.00 / 15.25
+PAB	15.10	8.01	13.80	23.85	.2348	15.00 / 14.99 / 15.25
+couples, men	EMPTY	16.39	8.63	14.99	25.77	.2366	14.83 / 15.35 / 18.00
+B	16.21	8.99	14.97	24.86	.2215	15.96 / 16.06 / 16.45
+PAB	16.20	8.98	14.96	24.86	.2217	15.93 / 16.05 / 16.47
+couples, women	EMPTY	15.29	8.03	13.87	24.02	.2413	13.23 / 14.23 / 16.45
+B	15.04	8.36	13.78	23.01	.2249	14.22 / 15.04 / 15.20
+PAB	15.03	8.35	13.77	23.01	.2253	14.20 / 15.02 / 15.22
+B moves wages substantially. The gap in mean attained wage by education closes by about 85–90%. For men in couples, the high-minus-low gap falls from 3.17 to 0.49 EUR/h.
+Wage Gini falls 3.4% for singles and about 6.5% for couples. p90 falls by 0.5–1.0 EUR/h and p10 rises by 0.15–0.36 EUR/h.
+For comparison, the offer densities themselves differ little by education: mean offers are 10.5–16.6 EUR/h under own locations and 10.9–15.1 under the reference.
+3. Kish ESS (absolute; out of 100.4 live nodes for singles, 100.9 for couples)
+Sample	S	Mean	Median	p10	Share of HH with ESS <10	<5	<30	Share of HH whose ESS fell vs EMPTY
+singles	EMPTY	32.6	33.1	13.7	4.9%	1.3%	38.5%	—
+B	31.9	32.3	13.2	4.7%	1.5%	42.1%	57%
+PAB	32.0	32.4	13.6	4.5%	1.5%	42.8%	56%
+couples	EMPTY	17.8	17.6	6.9	18.0%	6.5%	92.5%	—
+B	16.6	16.5	5.7	22.8%	8.0%	95.0%	60%
+PAB	16.7	16.7	5.9	23.1%	7.5%	94.8%	58%
+For couples, the baseline of 16–18 becomes 16.6 under B and 16.7 under PAB. The share of couples below 10 effective nodes rises from 18% to 23%. That support is thin, but B makes it only modestly thinner.
+
+4. Ceiling — A BOUND, NOT A RESULT (equivalised Gini; unequivalised in brackets)
+Singles I	Δ vs EMPTY	Couples I	Δ vs EMPTY
+I(EMPTY), recorded	.2451	—	.1971	—
+I(PAB), recorded	.2406	.0045	.1921	.0050
+BOUND R1, local tax retention	.2400	.0051 (1.15×) [1.08×]	.1925	.0046 (0.91×) [0.99×]
+BOUND R1, retention = 1	.2410	.0041 (0.92×) [0.88×]	.1971	.0001 (0.01×) [0.95×]
+BOUND R2, local tax retention	.2248	.0203 (4.6×) [2.6×]	.1862	.0110 (2.2×) [0.91×]
+BOUND R2, retention = 1	.2108	.0343 (7.7×) [3.7×]	.1798	.0173 (3.5×) [1.15×]
+How the bounds are built:
+
+Starting point: attainment under the recorded PA coalition. Starting from PAB would apply B twice; in the smoke test that version raised inequality.
+Wage change: each worker's attained wage is replaced by the reference-density quantile at their rank. Consumption then changes by retention × Δearnings, with hours fixed and no re-choice.
+Retention: "local" is each household's own consumption-on-earnings slope across its already-priced nodes (median 0.60 for singles, 0.64 for couples).
+R1 uses the household's rank within its own offer density. It asks what fully equalising offer locations would do if new nodes could be created. Its Delta lands at 0.9–1.15× the actual Delta_I; the one outlier, couples equivalised at retention = 1, is 0.01×. So the model's reweighting already captures the location effect.
+R2 uses the rank in the pooled attained-wage distribution and maps it onto the pooled reference mixture. This compresses the whole wage distribution, including the common offer spread (sigma) and selection. It gives 2–8× Delta_I, but that is equalising wage luck, which B by definition does not touch.
+The consumption floor was hit on 55 of about 3.8M household-replications, which is negligible.
+5. Verdict
+The reported Delta_I measures the model's opportunity effect. The node support does not set it as a lower bound.
+
+Support is not binding. Each household's nodes cover 95–98% of the reference offer mass.
+B does what its label says. It moves attained wages across education groups and closes most of the education gap.
+The oracle agrees. R1, which equalises offer locations without any support limit, reproduces the actual Delta_I to within about ±15% (one couples variant is the exception above).
+Phi_B is small because the estimated offer heterogeneity B removes is small. Education and experience coefficients shift offer locations by at most about 0.10 log points, against sigma ≈ 0.37. On top of that, about 60% of an earnings change passes through to consumption.
+
+Two caveats should travel with the number:
+
+"Earning opportunities" means offer location only. Wage spread (sigma) and selection stay in the residual, and R2 suggests they are worth 2–8× more.
+Couples support is thin. Mean ESS is about 17 and 23% of couples are below 10 effective nodes. That leaves per-household wage attainment noisy, though it does not cap it.
+Side finding (not fixed): in the recorded coalition_values_{singles,couples}.csv, the EMPTY row's coalition_members reads "systematic utility heterogeneity". It comes from "P" in "EMPTY" in run_preseminar_pab_decomposition_v1.py:465 and again at line 552 for anchor_attainment_shares_v1.csv. It affects only the label, not any number. Separately, the MNL_decomp worktree already had uncommitted figure changes from before this run; I didn't touch them.

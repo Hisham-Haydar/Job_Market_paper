@@ -1,0 +1,76 @@
+{
+  "task_start_commit": "61af387",
+  "findings": [
+    {
+      "path": "reports/JMP_v5_review_and_modular_revision_plan_v1.md",
+      "sha256": "1b02e06c5a978bbb7517b61f58cde51c7800421356d63ff46f49c4e421ea4702",
+      "preexisting": true,
+      "baseline_status": "untracked at task start; left untouched",
+      "tracked_equal": null
+    },
+    {
+      "path": "reports/consistency_gate_v1.md",
+      "sha256": "c54a6ae92f47cd2bf4dd8bde10810935bb071441e7fe52bace6bec04747b202b",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/model_extraction_v1.md",
+      "sha256": "57383828566aa6685d229076dd88857eab036aded46abdc29f40dfa9fd2bb24a",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/novelty-audit-structural-well-being-inequality.md",
+      "sha256": "2022ba3a5e7b6996dfa132c74c22ccdc4ff154aa99109752fd1e5ed852b7c6c0",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/numbers_of_record_v1.json",
+      "sha256": "731e91ce6fa7bbb3bcc5032f48a86ca9246819c094dd2240b4df899c45e986f1",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/numbers_of_record_v3.json",
+      "sha256": "c824507d0724dba019ac6e6cc1329cf6591be5950b4fc14b9face310b9555946",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/numbers_of_record_v4.json",
+      "sha256": "dd79d725768d50da64640e85a744497be8b0b80fe356cd48bdb4fd5821a52068",
+      "preexisting": true,
+      "baseline_status": "tracked, byte-identical to task-start commit",
+      "tracked_equal": true
+    },
+    {
+      "path": "reports/JMP_reference_profiles_v1.md",
+      "sha256": "ba6d37d676783ac685bbe30528aaff79af8fcc8264a737d5a81275cefca426f1",
+      "preexisting": true,
+      "baseline_status": "untracked at task start; left untouched",
+      "tracked_equal": null
+    },
+    {
+      "path": "reports/figure_modules/v5_labour_market_opportunity_composition/build_figure.py",
+      "sha256": "538447bf76bd10f7f10fa00ac671e4d987e87577de74b612cb3747ee588a0466",
+      "preexisting": true,
+      "baseline_status": "untracked at task start; left untouched",
+      "tracked_equal": null
+    },
+    {
+      "path": "reports/figure_modules/v5_labour_market_opportunity_composition/evidence.md",
+      "sha256": "32b6a4d0bee4bdc6defccf92fcee3fa1f786f3211831bf05868e42520b7d3b77",
+      "preexisting": true,
+      "baseline_status": "untracked at task start; left untouched",
+      "tracked_equal": null
+    }
+  ],
+  "policy": "Broad lineage gate still fails; no exclusions or checks were weakened."
+}

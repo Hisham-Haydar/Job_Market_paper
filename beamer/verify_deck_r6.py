@@ -204,6 +204,21 @@ def main() -> int:
          and adjacent else "M10 claim missing, paraphrased, duplicated, or "
                             "detached from its caveat")
 
+    # REPORT-V6 changes the placement, not the accepted numerical evidence.
+    main_src, backup_src = src.split(r"\appendix", 1)
+    mission = ("A preliminary P/A/B decomposition has been computed for the attained-bundle "
+               "money metric, holding resources, needs and composition fixed. It is a "
+               "restricted counterfactual exercise, not a comprehensive share of inequality "
+               "due to all opportunities. A separately defined ex-ante metric is being "
+               "reconstructed for comparison; neither historical ex-ante percentages nor "
+               "a settled cross-estimand conclusion are reported here.")
+    gate("G-DECOMP-BACKUP",
+         r"\DTwoMinPct" not in main_src and r"\DTwoVarMinPct" not in main_src
+         and "earning-opportunity heterogeneity has a larger" not in flat(main_src)
+         and mission in flat(backup_src)
+         and "Preliminary restricted-operator decomposition" in backup_src,
+         "computed decomposition and exact scope wording are confined to backup")
+
     # --------------------------------------------------------- G-CAPTION
     cap_ok = (CAPTION in flat(src) and (not text or CAPTION in flat(text))
               and RETIRED_CAPTION not in (src + text).lower())

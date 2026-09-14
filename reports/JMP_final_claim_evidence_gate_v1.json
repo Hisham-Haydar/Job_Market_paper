@@ -3,15 +3,15 @@
   "surfaces": {
     "deck": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6.pdf",
-      "sha256": "0d09fe7b68e5a881a697b0ac116e7f5e58323730a1a2d964e45a3540d9068b41"
+      "sha256": "16897279614ca6d1a28049037430da8dc49d6fa4e1263c7f0b21de706906cff5"
     },
     "story": {
-      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
-      "sha256": "8897459ce8d1638227e65d4c0680a3d95dfa68a623d44b5a33b0e8be27b289c1"
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v6.html",
+      "sha256": "a5cb0e23d2b0cc28c88bfbbd85ebad287b6dc37a78980ab5307207df4b51f72c"
     },
     "paper": {
-      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
-      "sha256": "a8953b923fc64fc2bee033a8f680d91edfc7b99ee7ddeabc2de2a132288fcb34"
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v6.pdf",
+      "sha256": "c6fe63bdbea714b61986bc6ea2a8acdb6e16e734943c61e0c7364f2f7299f0f2"
     },
     "gallery": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
@@ -23,10 +23,15 @@
     },
     "rehearsal": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\rehearsal_pack_v1.md",
-      "sha256": "246a3943bee92a82e5f6fe3fe3007490cb2b0dce2441d7d8e3a5eb18d1e9ce3c"
+      "sha256": "f4131aa375a760fe8b3861d3075e2fbe0a129adc9e8acb25fc5537d31c72d57a"
     }
   },
   "source_manifest": [
+    {
+      "family": "DECOMP_DIAG",
+      "path": "Job_Market_paper/docs/Decomposition_diag_1.txt",
+      "sha256": "ead1b7c8243fe1498f00dcf287331beec94165332aa3bb64041a0f645d339a74"
+    },
     {
       "family": "S11",
       "path": "MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_parameter_table_v1.csv",
@@ -284,12 +289,12 @@
     }
   ],
   "counts": {
-    "occurrences": 6152,
-    "resolved": 6152,
+    "occurrences": 6149,
+    "resolved": 6149,
     "failures": 0,
     "critical_failures": 0,
     "retired_hits": 0,
-    "cross_surface_quantities": 1755,
+    "cross_surface_quantities": 1746,
     "cross_surface_failures": 0
   },
   "fit_table": [
@@ -399,7 +404,7 @@
   "critical_checks": [
     {
       "surface": "deck",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -417,7 +422,7 @@
     },
     {
       "surface": "paper",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -435,7 +440,7 @@
     },
     {
       "surface": "story",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -453,7 +458,7 @@
     },
     {
       "surface": "gallery",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -471,7 +476,7 @@
     },
     {
       "surface": "notebook",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -489,7 +494,7 @@
     },
     {
       "surface": "rehearsal",
-      "check": "DECOMP headline",
+      "check": "DECOMP preserved appendix range",
       "status": "PASS",
       "detail": "expected 1.8-9.9%"
     },
@@ -581,19 +586,19 @@
       "surface": "rehearsal",
       "check": "fit observed couples_female",
       "status": "PASS",
-      "detail": "coupled women: rendered=[89.8]; source=89.802242%"
+      "detail": "coupled women: rendered=[85.5, 89.8]; source=89.802242%"
     },
     {
       "surface": "rehearsal",
       "check": "fit observed couples_male",
       "status": "PASS",
-      "detail": "coupled men: rendered=[92.3]; source=92.298113%"
+      "detail": "coupled men: rendered=[85.5, 92.3]; source=92.298113%"
     },
     {
       "surface": "rehearsal",
       "check": "fit observed singles_female",
       "status": "PASS",
-      "detail": "single women: rendered=[85.5]; source=85.484621%"
+      "detail": "single women: rendered=[85.5, 85.5]; source=85.484621%"
     },
     {
       "surface": "rehearsal",
@@ -623,7 +628,7 @@
   },
   "commit_rv_reconciliation": {
     "prior_occurrences": 6167,
-    "current_occurrences": 6152,
+    "current_occurrences": 6149,
     "removed_internal_label_digits": 19,
     "rendered_extraction_net_change": 4,
     "lineage_failures": 10,
