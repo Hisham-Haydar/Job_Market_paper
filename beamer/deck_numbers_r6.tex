@@ -3,6 +3,14 @@
 % Sources: S11 parameter tables (model of record);
 %          positive_fit_diagnostics_v2b, MNL_posfit a2e80a8 (G2-ADEQUATE statistics only);
 %          welfare/baseline_f1_v1 (BASELINE-F-1, commit 6048c9f, verified b5550af).
+% Vintage status: every FitExt*/FitAdequateCount/FitLimitedCount macro is
+%          v2b (a2e80a8) and reaches every fit slide/note in the deck. The
+%          three FitExtRatioCM*VThree/PosfitVThreeCommit macros are v3 (96693269,
+%          branch diagnostics/posfit-v3) and are read ONLY by the fit-
+%          verdict slide's speaker note, which cites v3 by name (Deputy M2
+%          fit-verdict correction); v3 reuses v2b's predictive support, so
+%          its extensive-accuracy ratios are verified identical to v2b's
+%          before being emitted -- see the REFUSED check below.
 
 % --- BASELINE-F-1 (E1): household EUR/month, unequivalised, dwt-weighted ---
 \newcommand{\WFSingN}{1\,540}
@@ -46,6 +54,11 @@
 \newcommand{\FitExtRatioSF}{0.15}
 \newcommand{\FitAdequateCount}{3}
 \newcommand{\FitLimitedCount}{1}
+
+% --- fit-verdict slide note only: POSFIT v3 (MNL_posfit diagnostics/posfit-v3, 96693269) ---
+\newcommand{\FitExtRatioCMWeightedVThree}{0.240}
+\newcommand{\FitExtRatioCMUnweightedVThree}{0.250}
+\newcommand{\PosfitVThreeCommit}{96693269}
 
 % --- S11 objectives reproduced by the diagnostics evaluator (POSFIT v2b) ---
 \newcommand{\ObjSingles}{6253.463}

@@ -43,6 +43,14 @@ G-G2 now ties each group's extensive-accuracy row to its v2b label in both
 directions; G-CAPTION checks the v2b caption and that "support audit pending"
 is gone.
 
+DECK-NUMBERS-1 (Deputy M2 fit-verdict correction) narrowly reopens G-G2's
+v2b-only rule: the fit-verdict slide's speaker note cites POSFIT v3
+(MNL_posfit 96693269, diagnostics/posfit-v3) by name, sourcing exactly the
+two coupled-men extensive-accuracy ratio macros and the v3 commit macro from
+it. G-G2 allows ONLY that named g2_adequacy_v3.csv source and ONLY for those
+three macros; any other v3 source, or a v3 source for any other macro, still
+fails the gate.
+
 Exit code 0 only if every gate passes.
 """
 from __future__ import annotations
@@ -253,14 +261,29 @@ def main() -> int:
             row_bad.append("%s ADEQUATE but not on slide" % grp)
         if lab != "ADEQUATE" and mname in emitted["macros"]:
             row_bad.append("%s %s but emitted" % (grp, lab))
-    posfit_ok = all("positive_fit_diagnostics_v2b" in v["path"]
-                    for k, v in emitted["sources"].items()
-                    if "MNL_posfit" in v.get("path", ""))
-    gate("G-G2", (not bad_fit) and bool(adequate) and not row_bad and posfit_ok,
+    # DECK-NUMBERS-1: the ONLY authorised v3 source is g2_adequacy_v3.csv,
+    # and it may source ONLY the fit-verdict note's two ratio macros plus the
+    # v3 commit macro -- everything else MNL_posfit must still be v2b.
+    v3_source_key = "g2_adequacy_v3.csv"
+    v3_source_prefix = "g2_adequacy.csv (v3)"
+    v3_allowed_macros = {"FitExtRatioCMWeightedVThree", "FitExtRatioCMUnweightedVThree"}
+    posfit_ok = all(
+        "positive_fit_diagnostics_v2b" in v["path"]
+        or (k == v3_source_key and "positive_fit_diagnostics_v3" in v["path"])
+        for k, v in emitted["sources"].items() if "MNL_posfit" in v.get("path", ""))
+    v3_macro_sources = {name for name, meta in emitted["macros"].items()
+                        if meta["source"].startswith(v3_source_prefix)}
+    v3_scope_ok = v3_macro_sources == v3_allowed_macros
+    gate("G-G2", (not bad_fit) and bool(adequate) and not row_bad and posfit_ok
+         and v3_scope_ok,
          "%d ADEQUATE weighted statistics exist; only those are emitted; "
-         "extensive-accuracy rows match v2b labels %s; all posfit sources are v2b"
-         % (len(adequate), ext) if not row_bad and posfit_ok
-         else "G2 row mismatch %s / non-v2b posfit source" % row_bad)
+         "extensive-accuracy rows match v2b labels %s; all posfit sources are "
+         "v2b except the fit-verdict note's g2_adequacy_v3.csv (macros %s)"
+         % (len(adequate), ext, sorted(v3_macro_sources))
+         if not row_bad and posfit_ok and v3_scope_ok
+         else "G2 row mismatch %s / non-v2b posfit source outside the "
+              "authorised v3 scope (v3 macros seen: %s)"
+              % (row_bad, sorted(v3_macro_sources)))
 
     # ----------------------------------------------------------- G-SCALE
     # DECK-3: the modified-OECD scale is ratified.  Every equivalised welfare

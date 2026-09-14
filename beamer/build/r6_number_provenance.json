@@ -35,6 +35,16 @@
       "rendered": "0.24",
       "source": "g2_adequacy.csv couples_male/weighted/extensive_accuracy adequacy ratio"
     },
+    "FitExtRatioCMUnweightedVThree": {
+      "raw": 0.25032026429467114,
+      "rendered": "0.250",
+      "source": "g2_adequacy.csv (v3) couples_male/unweighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioCMWeightedVThree": {
+      "raw": 0.23975938326040083,
+      "rendered": "0.240",
+      "source": "g2_adequacy.csv (v3) couples_male/weighted/extensive_accuracy adequacy ratio"
+    },
     "FitExtRatioSF": {
       "raw": 0.1500169962202763,
       "rendered": "0.15",
@@ -89,6 +99,11 @@
       "raw": null,
       "rendered": "a2e80a8",
       "source": "MNL_posfit commit carrying positive_fit_diagnostics_v2b"
+    },
+    "PosfitVThreeCommit": {
+      "raw": null,
+      "rendered": "96693269",
+      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v3 (diagnostics/posfit-v3 branch)"
     },
     "SCoupActive": {
       "raw": 47,
@@ -363,6 +378,10 @@
     },
     "g2_adequacy.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\g2_adequacy.csv",
+      "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
+    },
+    "g2_adequacy_v3.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3\\g2_adequacy.csv",
       "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
     },
     "hard_classification_metrics.csv": {

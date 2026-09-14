@@ -154,9 +154,9 @@ quadrature-adequacy gate.
                                       extensive-margin accuracy (%), G2-adequate groups only
    Aggregate participation and occupation margins are reproduced reasonably closely, while hours fit is uneven; the
    group-level fit classification is not used as a headline result. This slide’s gate is narrower: G2 (weighted), Monte
-   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. 3 of four groups clear that
-   specific gate; 1 is quadrature-limited and withheld, not reported at a worse label. Source: POSFIT v3                8/19
-   (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same extensive-margin numbers as v2b (commit
+   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. Both groups of women
+   and coupled men clear that specific gate; single men are quadrature-limited and withheld, not reported at a          8/19
+   worse label. Source: POSFIT v3 (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same
 Calibration conditioned on prediction: observed hours against predicted hours, by
 predicted decile.
 

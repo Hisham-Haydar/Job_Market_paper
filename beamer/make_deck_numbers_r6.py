@@ -10,6 +10,8 @@ shown.  This script reads ONLY the three authorized sources:
        s11_{singles,couples}_parameter_table_v1.csv  -- model of record
   FIT  MNL_posfit/outputs/positive_fit_diagnostics_v2b/  -- G2 gate, POSFIT
        support-coverage package v2b (MNL_posfit commit a2e80a8)
+  FIT3 MNL_posfit/outputs/positive_fit_diagnostics_v3/  -- fit-verdict slide
+       note only (MNL_posfit commit 96693269, diagnostics/posfit-v3)
   W1F  MNL/outputs/welfare/baseline_f1_v1/                             -- E1 baseline
 
 and writes deck_numbers_r6.tex plus build/r6_number_provenance.json.
@@ -34,6 +36,14 @@ MNL = REPO / "MNL"
 # the deck's fit source (DECK-3).
 POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2b"
 POSFIT_COMMIT = "a2e80a8"
+# POSFIT v3: individual-diagnostics re-run on the SAME v2b_S12 predictive
+# support (see its run_provenance.json), MNL_posfit branch
+# diagnostics/posfit-v3, commit 96693269.  Used ONLY by the fit-verdict
+# slide's speaker note (DECK-NUMBERS-1 / Deputy M2 fit-verdict correction),
+# which cites v3 by name; every other extensive-accuracy statistic on the
+# deck still reads from v2b above, unchanged, and stays v2b-sourced.
+POSFIT_V3 = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v3"
+POSFIT_V3_COMMIT = "96693269"
 S11 = MNL / "experiments" / "JMP_SEMINAR_SPRINT" / "runs" / "s11_welfare_specs_of_record"
 W1F = MNL / "outputs" / "welfare" / "baseline_f1_v1"
 W1FEQ = MNL / "outputs" / "welfare" / "baseline_f1_equivalised_v1"
@@ -147,6 +157,14 @@ def main() -> int:
         "% Sources: S11 parameter tables (model of record);",
         "%          positive_fit_diagnostics_v2b, MNL_posfit a2e80a8 (G2-ADEQUATE statistics only);",
         "%          welfare/baseline_f1_v1 (BASELINE-F-1, commit 6048c9f, verified b5550af).",
+        "% Vintage status: every FitExt*/FitAdequateCount/FitLimitedCount macro is",
+        "%          v2b (a2e80a8) and reaches every fit slide/note in the deck. The",
+        "%          three FitExtRatioCM*VThree/PosfitVThreeCommit macros are v3 (96693269,",
+        "%          branch diagnostics/posfit-v3) and are read ONLY by the fit-",
+        "%          verdict slide's speaker note, which cites v3 by name (Deputy M2",
+        "%          fit-verdict correction); v3 reuses v2b's predictive support, so",
+        "%          its extensive-accuracy ratios are verified identical to v2b's",
+        "%          before being emitted -- see the REFUSED check below.",
         "",
     ]
 
@@ -262,6 +280,53 @@ def main() -> int:
             float(r["adequacy_ratio_mcse_to_sampling_sd"]))
     mac("FitAdequateCount", str(len(adequate_groups)), "g2_adequacy.csv count of ADEQUATE groups")
     mac("FitLimitedCount", str(len(limited_groups)), "g2_adequacy.csv count of limited groups")
+    # The fit-verdict slide names these groups by hand rather than stating a
+    # bare count (DECK-NUMBERS-1: "a bare count reads as a headline even when
+    # disclaimed; named groups cannot").  Refuse silently-stale prose if a
+    # future v2b re-run changes which groups clear the gate.
+    EXPECTED_ADEQUATE_GROUPS = {"couples_female", "couples_male", "singles_female"}
+    EXPECTED_LIMITED_GROUPS = {"singles_male"}
+    if set(adequate_groups) != EXPECTED_ADEQUATE_GROUPS or set(limited_groups) != EXPECTED_LIMITED_GROUPS:
+        raise SystemExit(
+            "REFUSED: G2-ADEQUATE group membership changed (adequate=%s "
+            "limited=%s); the fit-verdict slide names these groups by hand "
+            "in JMP_seminar_deck_r6.tex -- update that wording before "
+            "regenerating" % (sorted(adequate_groups), sorted(limited_groups)))
+    tex.append("")
+
+    # --------------------------------------------------------- fit / G2 (v3)
+    g2v3_path = POSFIT_V3 / "g2_adequacy.csv"
+    g2v3 = rows(g2v3_path)
+    prov["sources"]["g2_adequacy_v3.csv"] = {"path": str(g2v3_path), "sha256": sha256(g2v3_path)}
+
+    def ratio(g2_rows: list[dict], group: str, weighting: str) -> float:
+        for r in g2_rows:
+            if (r["group"] == group and r["weighting"] == weighting
+                    and r["statistic"] == ALLOWED_FIT_STATISTIC
+                    and r.get("scope", "all") == "all"):
+                return float(r["adequacy_ratio_mcse_to_sampling_sd"])
+        raise SystemExit("REFUSED: no %s/%s/%s row in %s"
+                         % (group, weighting, ALLOWED_FIT_STATISTIC, g2v3_path))
+
+    cm_weighted_v2b = ratio(g2, "couples_male", "weighted")
+    cm_weighted_v3 = ratio(g2v3, "couples_male", "weighted")
+    if abs(cm_weighted_v3 - cm_weighted_v2b) > 1e-12:
+        raise SystemExit(
+            "REFUSED: v3 couples_male weighted extensive-accuracy ratio "
+            "%.6f differs from v2b %.6f; the deck's 'same extensive-margin "
+            "numbers as v2b, unchanged' claim would be false"
+            % (cm_weighted_v3, cm_weighted_v2b))
+    cm_unweighted_v3 = ratio(g2v3, "couples_male", "unweighted")
+    tex.append("% --- fit-verdict slide note only: POSFIT v3 (MNL_posfit "
+               "diagnostics/posfit-v3, 96693269) ---")
+    mac("FitExtRatioCMWeightedVThree", num(cm_weighted_v3, 3),
+        "g2_adequacy.csv (v3) couples_male/weighted/extensive_accuracy adequacy ratio",
+        cm_weighted_v3)
+    mac("FitExtRatioCMUnweightedVThree", num(cm_unweighted_v3, 3),
+        "g2_adequacy.csv (v3) couples_male/unweighted/extensive_accuracy adequacy ratio",
+        cm_unweighted_v3)
+    mac("PosfitVThreeCommit", POSFIT_V3_COMMIT,
+        "MNL_posfit commit carrying positive_fit_diagnostics_v3 (diagnostics/posfit-v3 branch)")
     tex.append("")
 
     provp = POSFIT / "run_provenance.json"

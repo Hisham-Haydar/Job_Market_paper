@@ -157,22 +157,22 @@ quadrature-adequacy gate.                                                       
                                                                                                                                that do not, rather than showing them with a caveat attached, because a number that cannot be
                                                                                                                                resolved by the quadrature is not a weaker finding, it is not a finding. On the v2b/v3 common support
                                                                                            85.7%
-                                                                                                                               – no household is left with an effective sample size below thirty there – three of the four groups pass
+                                                                                                                               – no household is left with an effective sample size below thirty there – both groups of women and
        single women
-                                                                                                                               this specific extensive-accuracy gate on the weighted statistic: both groups of women and coupled
-                                                                                                                               men. Single men do not, so their value is not on this slide. If asked: coupled men pass the weighted
-        coupled men                                                                               92.2%                        gate only narrowly (ratio 0.240 against 0.25) and miss the unweighted one (0.250); the deck applies
-                                                                                                                               the weighted rule throughout. This extensive-accuracy gate is a narrower question than the group-level
-                                                                                                                               fit classification: on the broader, pre-registered composite decision rule, couples of both sexes and
-     coupled women                                                                             89.8%                           single men currently carry a misspecification-evidence verdict against the model’s own simulated
-                                                                                                                               variation, while single women’s verdict is inconclusive for reasons unrelated to this slide’s gate – not
-                       0                  20              40               60                80                100             because they fail it, since they clear it on both weighted and unweighted statistics. Those verdicts
-                                      extensive-margin accuracy (%), G2-adequate groups only                                   remain open pending Deputy review and are not a headline result.
+                                                                                                                               coupled men pass this specific extensive-accuracy gate on the weighted statistic. Single men do not, so
+                                                                                                                               their value is not on this slide. If asked: coupled men pass the weighted gate only narrowly (ratio 0.240
+        coupled men                                                                               92.2%                        against 0.25) and miss the unweighted one (0.250); the deck applies the weighted rule throughout.
+                                                                                                                               This extensive-accuracy gate is a narrower question than the group-level fit classification: on the
+                                                                                                                               broader, pre-registered composite decision rule, couples of both sexes and single men currently carry a
+     coupled women                                                                             89.8%                           misspecification-evidence verdict against the model’s own simulated variation, while single women’s
+                                                                                                                               verdict is inconclusive for reasons unrelated to this slide’s gate – not because they fail it, since they
+                       0                  20              40               60                80                100             clear it on both weighted and unweighted statistics. Those verdicts remain open pending Deputy
+                                      extensive-margin accuracy (%), G2-adequate groups only                                   review and are not a headline result.
    Aggregate participation and occupation margins are reproduced reasonably closely, while hours fit is uneven; the
    group-level fit classification is not used as a headline result. This slide’s gate is narrower: G2 (weighted), Monte
-   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. 3 of four groups clear that
-   specific gate; 1 is quadrature-limited and withheld, not reported at a worse label. Source: POSFIT v3                8/19
-   (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same extensive-margin numbers as v2b (commit
+   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. Both groups of women
+   and coupled men clear that specific gate; single men are quadrature-limited and withheld, not reported at a          8/19
+   worse label. Source: POSFIT v3 (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same
 Calibration conditioned on prediction: observed hours against predicted hours, by                                                    Households are sorted into deciles of their own predicted expected hours conditional on working, and
 predicted decile.                                                                                                                    each decile’s mean observed hours is plotted against its mean prediction, on the v2b common-node
                                                                                                                                      support. The dashed line is the forty-five degree line. Conditioning on the prediction rather than on
