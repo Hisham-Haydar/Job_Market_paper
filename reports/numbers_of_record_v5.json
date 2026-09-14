@@ -1,6 +1,6 @@
 {
   "build_date": "14 September 2026",
-  "model_of_record": "S11 specifications of record: tau = 1, theta_c = 0, beta_c estimated; welfare at S12 on the 1,540 / 2,223 estimation frames",
+  "model_of_record": "S11 specifications of record: tau = 1, theta_c = 0, beta_c estimated; accepted literal Mapping-F baseline on the 1,540 / 2,223 frames",
   "entries": {
     "collection_year": {
       "value": 2016,
@@ -763,7 +763,6 @@
     "ceq_gini_singles",
     "child_cutoff",
     "collection_year",
-    "cr1_draws",
     "d2_anchormove_cell",
     "d2_anchormove_pct",
     "d2_anchorshare_couples",
@@ -797,9 +796,7 @@
     "n_alt_rows",
     "n_couples",
     "n_draws",
-    "n_nodes",
     "n_occ",
-    "n_scrambles",
     "n_singles",
     "nat_factor_couples",
     "nat_factor_singles",
@@ -824,6 +821,7 @@
     "ceq_mean_singles",
     "ceq_median_couples",
     "ceq_median_singles",
+    "cr1_draws",
     "d2_baseline_couples_eq",
     "d2_baseline_couples_uneq",
     "d2_baseline_singles_eq",
@@ -861,6 +859,8 @@
     "lambda_c_singles",
     "lambda_c_welfare_panel_couples",
     "lambda_c_welfare_panel_singles",
+    "n_nodes",
+    "n_scrambles",
     "nat_pct_couples",
     "nat_pct_singles",
     "sigma_couples",

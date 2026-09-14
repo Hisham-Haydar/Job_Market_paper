@@ -39,10 +39,10 @@ Signed detailed-table parsing: Story report=PASS, Working paper=PASS, Canonical 
 
 | Artifact | SHA-256 | Path |
 |---|---|---|
-| Deck PDF | `E0C389E56F5854F1E78B10AF31C15B57B71B3AB831B08F49B1D228715CFA5467` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` |
-| Story HTML | `6F9D53079CEA8242715593EA25E8FCF363278435320F5A1D9221DFD040AE7788` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
-| Working-paper PDF | `5CADE822560905A85C94E117144DB8B3B9C868BAF4ADDC4C9FE1028DA954F650` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
-| Gallery HTML | `E754E9C15D50C25D1BE43E113093CED7298025B88504F16FF53AB06EEC86E404` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_results_gallery_current.html` |
-| Notebook | `F9EB38083BC7626F5EE700A8E30A99660C1B4AA424E7ADA45D425B695A7DF500` | `C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT\JMP_canonical_AtoZ.ipynb` |
-| Rehearsal script | `8D0053EE7EADFC7C226EB77E975BF78E1BDA31127AD9B9A3CBD50C2F3587EC19` | `C:\Users\hisham\Repo\Job_Market_paper\reports\rehearsal_pack_v1.md` |
-| Rehearsal PDF | `22EE9CD36842BAABE0C70FD9781A74B69BBA1B120CF51B9B8E256148A087CAC0` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6_rehearsal.pdf` |
+| Deck PDF | `B36FF0985F37DEEA9CFD08D52FE8B928FE98BE253DC85A180EAF0A0DDC865E35` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` |
+| Story HTML | `8D4A360F1CB56051B9ABF4FBA9DC0CE1373F870E308ED31D28D41E3BD3C4D856` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
+| Working-paper PDF | `5A55272AF672561AA36A487E9C5D32319AA85711D829D39BC2A0FFCFC944CA3C` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
+| Gallery HTML | `7A0D8E7840C5BCCB271F4C1E16974238EE1E19F50585D5B5093AB996BB3DFB5E` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_results_gallery_current.html` |
+| Notebook | `CE102AD5098E5F5479B306CDF516D8CC7473CCEEBC33714758A1FE5AACE90632` | `C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT\JMP_canonical_AtoZ.ipynb` |
+| Rehearsal script | `246A3943BEE92A82E5F6FE3FE3007490CB2B0DCE2441D7D8E3A5EB18D1E9CE3C` | `C:\Users\hisham\Repo\Job_Market_paper\reports\rehearsal_pack_v1.md` |
+| Rehearsal PDF | `0537C9296F683F376B52FF5B16862CD8715E90ECF6DD1961C90C1E0C80E29E5C` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6_rehearsal.pdf` |

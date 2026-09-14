@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
 Reallocating 'name_of_file' (item size: 1) to 33 items.
 Database file #1: JMP_working_paper_for_seminar_v5.bib
-You've used 24 entries,
+You've used 22 entries,
             2773 wiz_defined-function locations,
-            756 strings with 8994 characters,
-and the built_in function-call counts, 10787 in all, are:
-= -- 1027
-> -- 545
-< -- 23
-+ -- 185
-- -- 161
-* -- 879
-:= -- 1682
-add.period$ -- 82
-call.type$ -- 24
-change.case$ -- 125
-chr.to.int$ -- 24
-cite$ -- 48
-duplicate$ -- 478
-empty$ -- 884
-format.name$ -- 207
-if$ -- 2235
+            739 strings with 8612 characters,
+and the built_in function-call counts, 9796 in all, are:
+= -- 934
+> -- 488
+< -- 20
++ -- 166
+- -- 144
+* -- 804
+:= -- 1525
+add.period$ -- 74
+call.type$ -- 22
+change.case$ -- 114
+chr.to.int$ -- 22
+cite$ -- 44
+duplicate$ -- 430
+empty$ -- 809
+format.name$ -- 188
+if$ -- 2023
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 19
-newline$ -- 137
-num.names$ -- 98
-pop$ -- 198
+missing$ -- 18
+newline$ -- 126
+num.names$ -- 88
+pop$ -- 177
 preamble$ -- 1
-purify$ -- 101
+purify$ -- 92
 quote$ -- 0
-skip$ -- 363
+skip$ -- 327
 stack$ -- 0
-substring$ -- 507
-swap$ -- 31
-text.length$ -- 6
+substring$ -- 479
+swap$ -- 22
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 264
+type$ -- 242
 warning$ -- 0
-while$ -- 112
+while$ -- 102
 width$ -- 0
-write$ -- 339
+write$ -- 309

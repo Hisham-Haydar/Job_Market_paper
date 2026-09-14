@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -30,11 +30,6 @@ Rolf Aaberge, Ugo Colombino, and Steinar Str{\o}m.
   tax-transfer reform proposals in {I}taly.
 \newblock \emph{Journal of Population Economics}, 17:\penalty0 767--785, 2004.
 \newblock \doi{10.1007/s00148-004-0193-2}.
-
-\bibitem[Audoly et~al.(2025)Audoly, McGee, Ocampo, and Paz-Pardo]{audoly2025}
-Richard Audoly, Rory McGee, Sergio Ocampo, and Gonzalo Paz-Pardo.
-\newblock A practitioner's note on the shapley--owen--shorrocks decomposition.
-\newblock Staff Report 1163, Federal Reserve Bank of New York, 2025.
 
 \bibitem[Bargain(2012)]{bargain2012}
 Olivier Bargain.
@@ -130,13 +125,6 @@ Jannek M{\"u}hlhan.
 \newblock \emph{International Journal of Microsimulation}, 16\penalty0
   (1):\penalty0 28--64, 2023.
 \newblock \doi{10.34196/ijm.00274}.
-
-\bibitem[Owen(1977)]{owen1977}
-Guillermo Owen.
-\newblock Values of games with a priori unions.
-\newblock In Rudolf Henn and Otto Moeschlin, editors, \emph{Mathematical
-  Economics and Game Theory}, pages 76--88. Springer, Berlin, 1977.
-\newblock \doi{10.1007/978-3-642-45494-3_7}.
 
 \bibitem[Sastre and Trannoy(2002)]{sastretrannoy2002}
 Mercedes Sastre and Alain Trannoy.

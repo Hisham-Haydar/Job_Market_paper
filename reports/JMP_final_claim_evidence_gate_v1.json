@@ -1,0 +1,620 @@
+{
+  "verdict": "PASS",
+  "surfaces": {
+    "deck": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6.pdf",
+      "sha256": "b36ff0985f37deea9cfd08d52fe8b928fe98be253dc85a180eaf0a0ddc865e35"
+    },
+    "story": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
+      "sha256": "8d4a360f1cb56051b9abf4fba9dc0ce1373f870e308ed31d28d41e3bd3c4d856"
+    },
+    "paper": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
+      "sha256": "5a55272af672561aa36a487e9c5d32319aa85711d829d39bc2a0ffcfc944ca3c"
+    },
+    "gallery": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
+      "sha256": "7a0d8e7840c5bccb271f4c1e16974238ee1e19f50585d5b5093ab996bb3dfb5e"
+    },
+    "notebook": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\JMP_canonical_AtoZ.ipynb",
+      "sha256": "ce102ad5098e5f5479b306cdf516d8cc7473cceebc33714758a1fe5aace90632"
+    },
+    "rehearsal": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\rehearsal_pack_v1.md",
+      "sha256": "246a3943bee92a82e5f6fe3fe3007490cb2b0dce2441d7d8e3a5eb18d1e9ce3c"
+    }
+  },
+  "source_manifest": [
+    {
+      "family": "S11",
+      "path": "MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_parameter_table_v1.csv",
+      "sha256": "cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab"
+    },
+    {
+      "family": "S11",
+      "path": "MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_couples_parameter_table_v1.csv",
+      "sha256": "fc1794b437c74ac4e6ab240aaa7c71b7c38ee21512395a175b38c785a5e061c9"
+    },
+    {
+      "family": "S11",
+      "path": "MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_criterion_b_population_moments_v1.csv",
+      "sha256": "f2667937378d3e3fa16636cd84cb9a01a97bad2c90cb22d94477c01b151484fb"
+    },
+    {
+      "family": "S11",
+      "path": "MNL/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_welfare_specs_of_record_v1.json",
+      "sha256": "5fdc88502493ce540b088880eecf049bc268392ff3e8790ffe78a16aa6ddc884"
+    },
+    {
+      "family": "BASELINE",
+      "path": "MNL/outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_aggregates_v1.json",
+      "sha256": "6d91bf9e4558c9f658987fc7e696acf9150fb726e0a235d84cd5ca63ff7e56f8"
+    },
+    {
+      "family": "BASELINE",
+      "path": "MNL/outputs/welfare/baseline_f1_equivalised_v1/singles_equivalised_reporting_v1.json",
+      "sha256": "e34c3bfa0abe5dc9c1fe00a1c04d022eab280b84111f048d14ef03bdf9f2a9e6"
+    },
+    {
+      "family": "BASELINE",
+      "path": "MNL/outputs/welfare/baseline_f1_equivalised_v1/couples_equivalised_reporting_v1.json",
+      "sha256": "8d6d21b127400bee542eae3decb4b3d227904f6e3eed77d26d1305c0867cc4b7"
+    },
+    {
+      "family": "NODE",
+      "path": "MNL_posfit/outputs/posfit_node_convergence_v1/secondary_deputy_list_convergence.csv",
+      "sha256": "9ee4f70a4009ef3dce219bed3a24ad1b532183bfe9a2bf96f91d42791e54b21f"
+    },
+    {
+      "family": "NODE",
+      "path": "MNL_posfit/outputs/posfit_node_convergence_v1/primary_power_of_two_convergence.csv",
+      "sha256": "405a28dfcb749b21f5ea6d099edb356aac8b19c8e8781c2cc24536df52365e6b"
+    },
+    {
+      "family": "NODE",
+      "path": "MNL_posfit/outputs/posfit_node_convergence_v1/observed_participation.csv",
+      "sha256": "a171a76e25c77bc0153e9a23f8ba82f48dacc5e4e21a8962a14fdfa4cb39f742"
+    },
+    {
+      "family": "NODE",
+      "path": "MNL_posfit/outputs/posfit_node_convergence_v1/run_provenance.json",
+      "sha256": "3f07f7b1da683a18a01228c2f5e59d71a95daeb464ec701afb40f9ec60b87f8f"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_singles.csv",
+      "sha256": "2f63f5bf3c3118eaf8730cc33e04a253d4709e0570f68d1c37c877ac4ae34c00"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_couples.csv",
+      "sha256": "eb61ecad4a29215a52deae42aeb97dcdc7065dc9751d6881591439b43114cce0"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv",
+      "sha256": "ec130312fe7611b35550825a0756d1089e53d77bf632ad14c13df1e659347b3d"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv",
+      "sha256": "635b347eb78912c1dded412424c892f0fd71b6f355396dbb4d76e9f1f4a7afd4"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/log_variance_split_v1.csv",
+      "sha256": "3731579ee8070fa15e70dca3711bc2813543c130329fd389185e7e61b1547f3c"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/anchor_attainment_shares_v1.csv",
+      "sha256": "c685fa97c6bb3d7854b8b823452c65aefaddb97520d5251fed94ce05643c8996"
+    },
+    {
+      "family": "DECOMP",
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/anchor_excluded_arm_v1.json",
+      "sha256": "ff998f0cc815039cfc0cefed2c182f81eff956428a9af0ec2d239c26ad45266b"
+    },
+    {
+      "family": "LES",
+      "path": "MNL/outputs/obs_activity_v2/JMP_observed_activity_LES_v2.csv",
+      "sha256": "7c31d234bd263d11efa7852799f6edcecbdcaa5761c9d3f6b07401df1cc902e0"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/convergence.csv",
+      "sha256": "b42336709a4024fc9ed0f5938ff878c1a1017ce4080a86e07921ef4a37860b3f"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/deciles.csv",
+      "sha256": "23cc0b24fb6e40fb2bd181727ee59e0043d83f2e012db32ce721506cb1e00510"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/decision_rules_results.csv",
+      "sha256": "c24bf65f0edfbbffb8c47ffa845b505267ced0ad92f77f616f941ec855644340"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/decision_rules_results_original.csv",
+      "sha256": "d05f03ac6240ba587de14f84bc8b3495127da49a751ee195530ec73f8e36cb8c"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/ess_flags.csv",
+      "sha256": "a9b121516825fe517645c06758a213832a30b0b9dc45100a93e5ef57384c2f78"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/ess_summary.csv",
+      "sha256": "2678809f9d2fbc9731ff3dc064d7c94f058281f5e8f521a467dd58cf8daa10bd"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/g2_adequacy.csv",
+      "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/hard_classification_metrics.csv",
+      "sha256": "135b5da603a679dee1d2e61847363fedf575ccc8d9233015c4c2425120fedb53"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/intensive_extended.csv",
+      "sha256": "1ed23fb08b97cdd8442f50b6f56141cb150a27b4cf12d4d8dabaa12ce12701d9"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/intensive_margin_extended.csv",
+      "sha256": "87b1e87c56eef6fecb667d821b263f97ac481e18e88af705edfa05791fee8582"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/joint_and_intensive_extended_benchmark_bands.csv",
+      "sha256": "1593ec5f276f167fcd818b73a25377ef6aaf791d7f68ddf6ca27ee076f125125"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/joint_hours_state_confusion_matrix.csv",
+      "sha256": "dfd9f03f6df003f97ea21cac8c0f39275be4d0df16743e8067e6f7d66d06b055"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/les.csv",
+      "sha256": "f17a50e4be3855b86af265f7c655960983a8be4c7e33db1e576cb064907583e5"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/model_simulated_bands.csv",
+      "sha256": "17470a2d4a784ac46542c0778c1983a5bd2b15ea5b3a368c7746f39184d6563b"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/mz.csv",
+      "sha256": "2b6e784ebe62fb1999986794d2536a522fd1c1f0ccf9948eb15ef2de87196be7"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/node_bootstrap.csv",
+      "sha256": "ae16d48be9164b9fcb89ded8fa7034929a46fdaee4bd260e59ec8b5f7672f224"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/outcome_conditioned_calibration.csv",
+      "sha256": "694f0a5cbc492808b04b0dc9c7a1008f3a9d30af36f0e9c943e8a5a0810c8454"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/participation_reliability.csv",
+      "sha256": "b3724f01fcc2b4d1be3966bb2666315d542758ee83f1350869e20c827c518f00"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/pit.csv",
+      "sha256": "99ff3d517ce6859ade9d3dc5b453140f9aadb1641f03d404ef77a828a0c9b9bc"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/reliability.csv",
+      "sha256": "79d5cab5465c5d36baf749e35b1ff2a656f3102632f626843c7d0d9852b3c6b9"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/s12_unsupported_cases_all_and_supported_only.csv",
+      "sha256": "01883fd1953442ff691be893ca65feb7521c64b8bd0bcbdfa1348c49809ca135"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/scores.csv",
+      "sha256": "8a70eedf65f793182515180e9c7dafe3b7b6b92dc4fc45789c9b529f1ce6e27f"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/scores_with_mcse.csv",
+      "sha256": "bcc9ad17966c33c0d4ec4bf7d22bd09e14e824299ae913436ffc9b7d150039cc"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/standard_mass_concentration.csv",
+      "sha256": "c9a09d799dd6e68edd82afda32de9e33f962f3e5ea90162b8261328f6455dba2"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/support_coverage.csv",
+      "sha256": "bcc07240db0fa339275617c291e560661c21ff26a97a1d862e4da0567cc19e2a"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/support_decisions.csv",
+      "sha256": "116d8b526e8946f84027160dcb8eac4ff2fbe705120592874bd04f898a623ec6"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/disclosure_scan.json",
+      "sha256": "d8a370fc30d3e49328022b8fbf0512b73a2d817fff7a768de828282741c1e388"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/export_checker_disposition.json",
+      "sha256": "36eff43717a38a669101b5d52d133091bb41848a557f9ff6640f26b1cd825746"
+    },
+    {
+      "family": "POSFIT",
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3/run_provenance.json",
+      "sha256": "bdc3722c325ff8a27be719aa52a741df7beef9515b4a63554c65e8769eb7f40b"
+    },
+    {
+      "family": "WS4",
+      "path": "MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionA_run_table_v1.csv",
+      "sha256": "c8a787e0f839350df8fd9cc670fc9118ab529b5bab4f3869be43a80910f8a56c"
+    },
+    {
+      "family": "WS4",
+      "path": "MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionB_run_table_v1.csv",
+      "sha256": "3abad7ea1f9d67a94be70ef2cb8ffe5ab120a044e3ca88cf04a538070e72ea67"
+    },
+    {
+      "family": "WS4",
+      "path": "MNL@5a8e6bba:experiments/JMP_SEMINAR_SPRINT/runs/ws4_leisure_norm_time_sens/outputs/ws4_sectionC_derived_objects_v1.csv",
+      "sha256": "39ef3919065d6a1367639b0694815f43a845f1c48423445d64e85edbfe849d5c"
+    }
+  ],
+  "counts": {
+    "occurrences": 6234,
+    "resolved": 6234,
+    "failures": 0,
+    "critical_failures": 0,
+    "retired_hits": 0,
+    "cross_surface_quantities": 1763,
+    "cross_surface_failures": 0
+  },
+  "fit_table": [
+    {
+      "group": "couples_female",
+      "gate": "ADEQUATE",
+      "ratio": 0.01852729559092683,
+      "observed": 0.8980224215767258,
+      "band_lo": 0.8869111749418817,
+      "band_hi": 0.9161571075527511,
+      "prediction_conditioned": "MECHANICAL_STOCHASTIC_CONDITIONING",
+      "model_simulated": "MISSPECIFICATION_EVIDENCE",
+      "supported": "report observed accuracy with its band and explicit composite verdicts"
+    },
+    {
+      "group": "couples_male",
+      "gate": "ADEQUATE",
+      "ratio": 0.23975938326040083,
+      "observed": 0.9229811267482474,
+      "band_lo": 0.8920702611327989,
+      "band_hi": 0.9210405142788934,
+      "prediction_conditioned": "MECHANICAL_STOCHASTIC_CONDITIONING",
+      "model_simulated": "MISSPECIFICATION_EVIDENCE",
+      "supported": "report observed accuracy with its band and explicit composite verdicts"
+    },
+    {
+      "group": "singles_female",
+      "gate": "ADEQUATE",
+      "ratio": 0.1500169962202763,
+      "observed": 0.8548462114524653,
+      "band_lo": 0.8080017516590106,
+      "band_hi": 0.8655514747786975,
+      "prediction_conditioned": "INCONCLUSIVE_QUADRATURE_LIMITED",
+      "model_simulated": "INCONCLUSIVE_QUADRATURE_LIMITED",
+      "supported": "report observed accuracy with its band and explicit composite verdicts"
+    },
+    {
+      "group": "singles_male",
+      "gate": "QUADRATURE-LIMITED",
+      "ratio": 0.299817079016102,
+      "observed": 0.8712130694144875,
+      "band_lo": 0.7631518459110314,
+      "band_hi": 0.8420378718787758,
+      "prediction_conditioned": "MECHANICAL_STOCHASTIC_CONDITIONING",
+      "model_simulated": "MISSPECIFICATION_EVIDENCE",
+      "supported": "withhold extensive accuracy; other composite rules are distinct"
+    }
+  ],
+  "decomp_table": [
+    {
+      "population": "singles",
+      "scale": "unequivalised",
+      "baseline_gini": 0.23368551207796068,
+      "pab_gini": 0.2267967228408088,
+      "delta_i": 0.006888789237151888,
+      "percent_baseline": 2.947888885321095,
+      "p": 0.0012373883280000265,
+      "a": 0.0016147116922644355,
+      "b": 0.004036689216887425,
+      "p_share": 17.962348467952467,
+      "a_share": 23.439702343572126,
+      "b_share": 58.5979491884754
+    },
+    {
+      "population": "singles",
+      "scale": "equivalised",
+      "baseline_gini": 0.24509171934146293,
+      "pab_gini": 0.24064141058120764,
+      "delta_i": 0.004450308760255289,
+      "percent_baseline": 1.8157727940433184,
+      "p": -0.0003075189893460793,
+      "a": 0.0013151866373604705,
+      "b": 0.0034426411122408978,
+      "p_share": -6.910059636591118,
+      "a_share": 29.552705401164697,
+      "b_share": 77.35735423542641
+    },
+    {
+      "population": "couples",
+      "scale": "unequivalised",
+      "baseline_gini": 0.2035412302367321,
+      "pab_gini": 0.18340120559351533,
+      "delta_i": 0.020140024643216764,
+      "percent_baseline": 9.894813262056324,
+      "p": 0.006427900281239916,
+      "a": 0.0009259117588206975,
+      "b": 0.012786212603156148,
+      "p_share": 31.916049732366425,
+      "a_share": 4.597371528701421,
+      "b_share": 63.486578738932145
+    },
+    {
+      "population": "couples",
+      "scale": "equivalised",
+      "baseline_gini": 0.19711874909515303,
+      "pab_gini": 0.19210887816101974,
+      "delta_i": 0.005009870934133298,
+      "percent_baseline": 2.5415496786228773,
+      "p": -0.0019339485696129215,
+      "a": 0.0007327270395684435,
+      "b": 0.006211092464177776,
+      "p_share": -38.602762327399006,
+      "a_share": 14.625666992261637,
+      "b_share": 123.97709533513736
+    }
+  ],
+  "critical_checks": [
+    {
+      "surface": "deck",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "deck",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "deck",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "paper",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "paper",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "paper",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "story",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "story",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "story",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "gallery",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "gallery",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "gallery",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "notebook",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "notebook",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "notebook",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "DECOMP headline",
+      "status": "PASS",
+      "detail": "expected 1.8-9.9%"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "variance headline",
+      "status": "PASS",
+      "detail": "expected 100-127% when variance split is claimed"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "DECOMP denominator",
+      "status": "PASS",
+      "detail": "surface states baseline-Gini denominator"
+    },
+    {
+      "surface": "deck",
+      "check": "fit observed couples_female",
+      "status": "PASS",
+      "detail": "coupled women: rendered=[89.8, 89.8]; source=89.802242%"
+    },
+    {
+      "surface": "deck",
+      "check": "fit observed couples_male",
+      "status": "PASS",
+      "detail": "coupled men: rendered=[92.3, 92.3]; source=92.298113%"
+    },
+    {
+      "surface": "deck",
+      "check": "fit observed singles_female",
+      "status": "PASS",
+      "detail": "single women: rendered=[85.5, 85.5]; source=85.484621%"
+    },
+    {
+      "surface": "deck",
+      "check": "fit observed singles_male",
+      "status": "PASS",
+      "detail": "single men: withheld (QUADRATURE-LIMITED)"
+    },
+    {
+      "surface": "story",
+      "check": "fit observed couples_female",
+      "status": "PASS",
+      "detail": "coupled women: rendered=[89.8, 89.8]; source=89.802242%"
+    },
+    {
+      "surface": "story",
+      "check": "fit observed couples_male",
+      "status": "PASS",
+      "detail": "coupled men: rendered=[92.3, 92.3]; source=92.298113%"
+    },
+    {
+      "surface": "story",
+      "check": "fit observed singles_female",
+      "status": "PASS",
+      "detail": "single women: rendered=[85.5, 85.5, 86.4]; source=85.484621%"
+    },
+    {
+      "surface": "story",
+      "check": "fit observed singles_male",
+      "status": "PASS",
+      "detail": "single men: withheld (QUADRATURE-LIMITED)"
+    },
+    {
+      "surface": "paper",
+      "check": "fit observed couples_female",
+      "status": "PASS",
+      "detail": "coupled women: rendered=[89.8]; source=89.802242%"
+    },
+    {
+      "surface": "paper",
+      "check": "fit observed couples_male",
+      "status": "PASS",
+      "detail": "coupled men: rendered=[92.3]; source=92.298113%"
+    },
+    {
+      "surface": "paper",
+      "check": "fit observed singles_female",
+      "status": "PASS",
+      "detail": "single women: rendered=[85.5]; source=85.484621%"
+    },
+    {
+      "surface": "paper",
+      "check": "fit observed singles_male",
+      "status": "PASS",
+      "detail": "single men: withheld (QUADRATURE-LIMITED)"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "fit observed couples_female",
+      "status": "PASS",
+      "detail": "coupled women: rendered=[89.8]; source=89.802242%"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "fit observed couples_male",
+      "status": "PASS",
+      "detail": "coupled men: rendered=[92.3]; source=92.298113%"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "fit observed singles_female",
+      "status": "PASS",
+      "detail": "single women: rendered=[85.5]; source=85.484621%"
+    },
+    {
+      "surface": "rehearsal",
+      "check": "fit observed singles_male",
+      "status": "PASS",
+      "detail": "single men: withheld (QUADRATURE-LIMITED)"
+    }
+  ],
+  "retired_hits": [],
+  "notebook_errors": [],
+  "live_consumer": {
+    "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\discussion_notebook_support.py",
+    "sha256": "dcd67843f1f860cb1d783ec1e4e597afdf3e3a347ae9e5caaf257cd7c90e55b4",
+    "retired_states": [
+      "I00",
+      "I01",
+      "I10",
+      "I11"
+    ],
+    "confirmed": true
+  },
+  "number_table": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_number_to_source_v1.csv",
+  "report": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_evidence_gate_v1.md"
+}

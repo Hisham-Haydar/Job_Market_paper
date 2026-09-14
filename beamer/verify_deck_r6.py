@@ -37,18 +37,9 @@ require:
              reference anywhere in the deck source touches beamer/_retired_assets
              or a mock_presentation-named tree.
 
-DECK-3 also repoints G-G2 and G-CAPTION to POSFIT v2b (MNL_posfit a2e80a8):
-G-G2 now ties each group's extensive-accuracy row to its v2b label in both
-directions; G-CAPTION checks the v2b caption and that "support audit pending"
-is gone.
-
-DECK-NUMBERS-1 (Deputy M2 fit-verdict correction) narrowly reopens G-G2's
-v2b-only rule: the fit-verdict slide's speaker note cites POSFIT v3
-(MNL_posfit 96693269, diagnostics/posfit-v3) by name, sourcing exactly the
-two coupled-men extensive-accuracy ratio macros and the v3 commit macro from
-it. G-G2 allows ONLY that named g2_adequacy_v3.csv source and ONLY for those
-three macros; any other v3 source, or a v3 source for any other macro, still
-fails the gate.
+FINAL-GATE-1 repoints G-G2 and G-CAPTION wholly to POSFIT v3. G-G2 binds
+displayed accuracy to the observed column in hard_classification_metrics.csv
+and uses g2_adequacy.csv only for the numerical-adequacy verdict.
 
 Exit code 0 only if every gate passes.
 """
@@ -70,7 +61,7 @@ BUILD = HERE / "build"
 SRC = HERE / "JMP_seminar_deck_r6.tex"
 NUMBERS = HERE / "deck_numbers_r6.tex"
 TEXT = BUILD / "JMP_seminar_deck_r6_text.txt"
-POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2b"   # MNL_posfit a2e80a8
+POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v3"   # MNL_posfit 96693269
 
 # Magnitudes that exist only in the retired W1-EA record (R2).  Sources:
 # beamer/check_deck_welfare_current_v1.py and the superseded welfare block of
@@ -115,10 +106,9 @@ OUT_OF_SCOPE_TOKENS = {
     "SCALE-SENS-1": "scale-sensitivity mission, not a seminar deliverable",
 }
 RETIRED_TOKENS.update(OUT_OF_SCOPE_TOKENS)
-# DECK-3: v2b IS the support-coverage audit, so "support audit pending" is
-# retired; the caption now states the v2b status.
-CAPTION = ("support coverage audited (POSFIT v2b); calibration statistics "
-           "partly quadrature-limited; fit verdicts open pending Deputy review")
+# The caption states the accepted v3 status.
+CAPTION = ("support coverage audited (POSFIT v3); calibration statistics "
+           "partly quadrature-limited; use the explicit group verdicts")
 RETIRED_CAPTION = "support audit pending"
 WELFARE_FRAMES = ["Haydar--Maniquet", "staying-home equivalent",
                   "Baseline $\\Wone$-F, single adults",
@@ -206,7 +196,7 @@ def main() -> int:
     cap_ok = (CAPTION in flat(src) and (not text or CAPTION in flat(text))
               and RETIRED_CAPTION not in (src + text).lower())
     gate("G-CAPTION", cap_ok,
-         "calibration caption verbatim (v2b status): %r; retired %r absent"
+         "calibration caption verbatim (v3 status): %r; retired %r absent"
          % (CAPTION, RETIRED_CAPTION))
 
     # ----------------------------------------------------------- G-UNITS
@@ -287,29 +277,30 @@ def main() -> int:
             row_bad.append("%s ADEQUATE but not on slide" % grp)
         if lab != "ADEQUATE" and mname in emitted["macros"]:
             row_bad.append("%s %s but emitted" % (grp, lab))
-    # DECK-NUMBERS-1: the ONLY authorised v3 source is g2_adequacy_v3.csv,
-    # and it may source ONLY the fit-verdict note's two ratio macros plus the
-    # v3 commit macro -- everything else MNL_posfit must still be v2b.
-    v3_source_key = "g2_adequacy_v3.csv"
-    v3_source_prefix = "g2_adequacy.csv (v3)"
-    v3_allowed_macros = {"FitExtRatioCMWeightedVThree", "FitExtRatioCMUnweightedVThree"}
+    hard = list(csv.DictReader((POSFIT / "hard_classification_metrics.csv").open(
+        newline="", encoding="utf-8")))
+    hard_observed = {r["group"]: float(r["extensive_accuracy"])
+                     for r in hard if r["weighting"] == "weighted"}
+    value_bad = []
+    for grp, lab in ext.items():
+        if lab != "ADEQUATE":
+            continue
+        meta = emitted["macros"]["FitExt" + tag_of[grp]]
+        if not meta["source"].startswith("hard_classification_metrics.csv"):
+            value_bad.append("%s not observed-source bound" % grp)
+        if abs(float(meta["raw"]) - hard_observed[grp]) > 1e-15:
+            value_bad.append("%s observed value mismatch" % grp)
     posfit_ok = all(
-        "positive_fit_diagnostics_v2b" in v["path"]
-        or (k == v3_source_key and "positive_fit_diagnostics_v3" in v["path"])
+        "positive_fit_diagnostics_v3" in v["path"]
         for k, v in emitted["sources"].items() if "MNL_posfit" in v.get("path", ""))
-    v3_macro_sources = {name for name, meta in emitted["macros"].items()
-                        if meta["source"].startswith(v3_source_prefix)}
-    v3_scope_ok = v3_macro_sources == v3_allowed_macros
     gate("G-G2", (not bad_fit) and bool(adequate) and not row_bad and posfit_ok
-         and v3_scope_ok,
+         and not value_bad,
          "%d ADEQUATE weighted statistics exist; only those are emitted; "
-         "extensive-accuracy rows match v2b labels %s; all posfit sources are "
-         "v2b except the fit-verdict note's g2_adequacy_v3.csv (macros %s)"
-         % (len(adequate), ext, sorted(v3_macro_sources))
-         if not row_bad and posfit_ok and v3_scope_ok
-         else "G2 row mismatch %s / non-v2b posfit source outside the "
-              "authorised v3 scope (v3 macros seen: %s)"
-              % (row_bad, sorted(v3_macro_sources)))
+         "extensive-accuracy rows match v3 labels %s and observed values"
+         % (len(adequate), ext)
+         if not row_bad and posfit_ok and not value_bad
+         else "G2 row/source/value mismatch %s %s or non-v3 positive-fit source"
+              % (row_bad, value_bad))
 
     # ----------------------------------------------------------- G-SCALE
     # DECK-3: the modified-OECD scale is ratified.  Every equivalised welfare

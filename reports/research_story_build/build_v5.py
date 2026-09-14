@@ -2,9 +2,9 @@
 numbers, tables and figures.
 
 v5 is a source-reconciled rewrite, not a patch layer over v4.  Every empirical
-token resolves against an artifact produced by the S11 specifications of record
-(tau = 1, exact log consumption, estimated consumption weight) or the S12
-welfare record on the 1,540 / 2,223 estimation frames.  A token with no source
+token resolves against an accepted artifact: the S11 specifications of record,
+the verified Mapping-F baseline, POSFIT v3, the sensitivity packages, or
+DECOMP-2. A token with no source
 fails the build; it is never filled with a predecessor value.
 
 Run with the project's scientific Python environment:
@@ -32,6 +32,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import pypandoc  # noqa: E402
 
 from v5_sections import TITLE, ABSTRACT, PRELIM_NOTE, SECTIONS, QA  # noqa: E402
+from make_fitext_band_v1 import build as build_fitext_band  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -41,7 +42,6 @@ sys.path.insert(0, str(SPRINT))
 import final_diagnostics_surface_v1 as final_surface  # noqa: E402
 
 S11 = SPRINT / 'runs/s11_welfare_specs_of_record'
-S12 = SPRINT / 'runs/s12_welfare_record'
 V5 = SPRINT / 'runs/v5_evidence'
 MFIG = SPRINT / 'figures'
 PAPER = ROOT / 'manuscript'
@@ -1017,14 +1017,16 @@ mfig('resources', 'figV09_resources_panel',
      'tax-benefit output evaluated at the observed choice; panel (c) reports '
      'inputs to that calculation. The two are never added, and stocks are '
      'never summed with monthly flows.')
+build_fitext_band()
 xfig('fitband', 'fitext_band_v1',
      'Weighted extensive-margin accuracy against the model’s own '
      'simulated 95 per cent band (500 outcome vectors at the fitted '
      'estimates), restricted to groups whose statistic clears the pre-registered '
      'numerical-adequacy gate; single men do not clear it and are withheld. '
+     'Observed and band values: coupled women 89.8% [88.7, 91.6]; single '
+     'women 85.5% [80.8, 86.6]; coupled men 92.3% [89.2, 92.1]. '
      'Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit '
-     '96693269), same extensive-margin numbers as v2b, reframed against the '
-     'simulated band.')
+     '96693269).')
 acceptedfig(
     'nodeconvergence',
     'fig_posfit_predictive_integration_node_convergence_v1',
@@ -1506,8 +1508,8 @@ _current_gallery = {k: v for k, v in _current_gallery.items()
 
 REGOUT = {'build_date': today,
           'model_of_record': 'S11 specifications of record: tau = 1, '
-                             'theta_c = 0, beta_c estimated; welfare at S12 on '
-                             'the 1,540 / 2,223 estimation frames',
+                             'theta_c = 0, beta_c estimated; accepted literal '
+                             'Mapping-F baseline on the 1,540 / 2,223 frames',
           # 'entries' is REG alone, not merged with the predecessor file's
           # entries: merging silently carried forward orphaned keys from
           # retired sources (w_i00_singles, cr1_lo_*, resid_top, ...) even

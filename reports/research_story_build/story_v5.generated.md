@@ -52,7 +52,7 @@ The normative half draws on the literature that refuses to resolve interpersonal
 
 The closest decomposition precedents are two. @muehlhan2023 combines a structural labour-supply model with involuntary-unemployment restrictions and a Shapley attribution, decomposing the change in German household *income* inequality into temporal factors and binary restrictions. @creedyherault2011, in the section that constructs money-metric distributions under alternative policy and population states, decompose a change in inequality and social welfare by averaging over the two orders in which policy and population can be changed; theirs is the closest money-metric welfare-inequality decomposition we know. Both are decompositions of a *change* between two situations, with policy, population or temporal factors as the factors. Ours is a decomposition of a cross-sectional *level* of well-being inequality, with the factors defined as structural operators inside an estimated job-choice model: what a household prefers, which jobs it can reach, what those jobs pay, and what its budget and needs are. The wider behavioural-simulation decomposition tradition, @bargain2012 and @jessen2019, decomposes income changes in the same spirit.
 
-The allocation rule is inherited outright. @shorrocks1982 states the accounting requirements a decomposition should satisfy; @shorrocks2013 places the Shapley value at the centre of distributional decomposition; @sastretrannoy2002 documents how much the answer can depend on how the exercise is set up. The preliminary three-operator exercise of Section 5 needs no grouping and uses the plain Shapley value on a three-player game; @owen1977's extension to games with a priori unions, and the grouped nonlinear practitioner's account of @audoly2025, are the tools an earlier, now-withdrawn four-operator version of this exercise required, cited here for completeness rather than as machinery the current preliminary exercise uses. We claim no new allocation principle. Complete recomputation of every coalition, rather than a linear approximation, likewise has precedents and is better described as methodological discipline than as a contribution.
+The allocation rule is inherited outright. @shorrocks1982 states the accounting requirements a decomposition should satisfy; @shorrocks2013 places the Shapley value at the centre of distributional decomposition; @sastretrannoy2002 documents how much the answer can depend on how the exercise is set up. The preliminary three-operator exercise of Section 5 needs no grouping and uses the plain Shapley value on a three-player game. We claim no new allocation principle. Complete recomputation of every coalition, rather than a linear approximation, likewise has precedents and is better described as methodological discipline than as a contribution.
 
 What is new, to our knowledge, is the conjunction: a random-utility random-opportunity model of job choice, an opportunity-sensitive money-metric welfare level built on the own-set equal-consumption principle, and a bounded, preliminary structural game over systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and earning opportunities, with complete recomputation of welfare and inequality under every coalition. The application-specific methodological contribution is the game and its counterfactual operators, reported as preliminary and work in progress pending the counterfactual-attainment estimand of Section 4. Within the bounded DECOMP-2 game, earning-opportunity heterogeneity has a larger Shapley contribution than the model's coarse geographic/temporal access channel. The cooperative-game allocation rule is inherited.
 
@@ -87,7 +87,7 @@ The screens are of three kinds and it is worth separating them. The first two de
 
 The second kind removes households for whom the model does not define an offer set: adults in full-time education, households receiving an old-age, disability or survivor pension, and deciders whose labour-market status lies outside employment, unemployment and inactivity. Together with the pension screen this is why the surviving employment rate is high. The employment share below should be read as a share among people for whom working is a live option, not as a French employment rate.
 
-The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives receive a one-euro consumption floor before utility is evaluated. The floor applies to 22,597 single-adult and 59,821 couple node-evaluations, all of them sampled alternatives entering the estimated choice likelihood. It does not affect the welfare measure of Section 4, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption.
+The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives receive a one-euro consumption floor before utility is evaluated. Those are sampled alternatives entering the estimated choice likelihood. They do not enter the welfare measure of Section 4, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption.
 
 
 Table: The four occupation groups. ISCO-08 major groups are aggregated into four modelled groups; group 1 is the omitted reference in the estimated occupation block. This is a research aggregation adopted for this paper, not an ILO classification. ISCO 0, the armed forces, has no modelled alternative and is a sample screen; that is unsupported occupation, not missing occupation.
@@ -275,12 +275,6 @@ where $C_i^{\mathrm{obs}}$ is the household's own priced disposable consumption 
 
 The construction is independently verified. A reconstruction that does not import the production code reproduces every pre-registered check -- non-workers equal their own observed consumption exactly, workers strictly below it, no route by which $\widehat g$, $q$, the shock, or an intensity parameter can enter -- and reproduces the committed sample aggregates for both populations to machine precision (`baseline_f1_verification_v1.md`, MNL commit `6048c9f7`, independently verified `b5550af5`).
 
-
-## A retired alternative construction
-
-An earlier draft evaluated welfare with a different, model-integrated construction: an ex-ante inclusive-value functional built from two integrals, $J_{i,S}$ and $H_{i,S}$, over the estimated opportunity density and the behavioural shock, equal to a weighted power mean of consumption of order $\beta_c$ under a reference measure derived from that density. The measure-correspondence audit (`JMP_measure_map_v1.md` and its acceptance record) classifies that functional as a DIFFERENT OBJECT from the theoretical own-set equal-consumption criterion, not the literal Measure 1 computation, and Deputy ruling R2 (`JMP_W1_fork_ruling_v1.md`) retired it. It produced no reported number anywhere in this document: every welfare level, Gini and decomposition share reported here and in Section 5 is computed from the verified Mapping-F $W^1_F$ construction above. It is recorded here, retired, as a matter of history, not as an alternative reading of the paper's measure.
-
-
 ## What the reference does and does not do to pay
 
 The money metric is derived from the Measure-1 reference-set principle. Under the current empirical specification its direct reference collapses to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through attained bundles.
@@ -438,7 +432,7 @@ The indifference curves and the marginal rate of substitution are the economics;
 The fit reported here is a population prediction, computed by integrating the estimated model over the opportunity distribution and the taste shocks. It is not a sampled-menu choice probability and it is not an in-sample fitted value. We report it band-referenced: each group's weighted extensive-margin accuracy is compared not to a 100 per cent target -- a correctly specified stochastic-choice model does not attain one -- but to the 95 per cent band that model itself would produce by chance, from 500 outcome vectors simulated at the fitted estimates.
 
 
-![Weighted extensive-margin accuracy against the model’s own simulated 95 per cent band (500 outcome vectors at the fitted estimates), restricted to groups whose statistic clears the pre-registered numerical-adequacy gate; single men do not clear it and are withheld. Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit 96693269), same extensive-margin numbers as v2b, reframed against the simulated band.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fitext_band_v1.png){width=95%}
+![Weighted extensive-margin accuracy against the model’s own simulated 95 per cent band (500 outcome vectors at the fitted estimates), restricted to groups whose statistic clears the pre-registered numerical-adequacy gate; single men do not clear it and are withheld. Observed and band values: coupled women 89.8% [88.7, 91.6]; single women 85.5% [80.8, 86.6]; coupled men 92.3% [89.2, 92.1]. Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit 96693269).](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fitext_band_v1.png){width=95%}
 
 
 
@@ -538,7 +532,7 @@ Table: Observed against model population shares, couples. The model column is a 
 
 
 
-The mean absolute deviation over all population moments is 0.0129 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The sub-ten-hour fit cell is also a genuine prediction error: the realized integration panel predicts zero against observed shares around one per cent. Both the structural hours density and the proposal assign positive mass to $(5,10)$: about 4.15 per cent of normalized structural hours mass and 0.00019 per cent conditional proposal mass. With an expected draw count of only 0.249, the realized panel contains no draw there. This is a tail-coverage limitation of the integration panel, distinct from the adjacent-band fit discrepancy. The long-hours bin closes at 70 inclusive, and the observed singles hours partitions close separately by sex.
+The mean absolute deviation over all population moments is 0.0129 for single adults and 0.0136 for couples, but the informative content is margin by margin. Employment and the joint participation regimes are matched closely; the narrow full-time band around thirty-five hours is matched closely for both sexes; occupation shares given work are matched to within about one percentage point. The largest single discrepancy in both models is the upper full-time band $[36.5,40.5]$, which the model under-predicts by about nine percentage points for single men and seven for women in couples, with the mass appearing in the adjacent bands. The sub-ten-hour fit cell is also a genuine prediction error: the realized integration panel predicts zero against observed shares around one per cent. Both the structural hours density and the proposal assign positive mass to $(5,10)$, but the finite integration panel contains no draw there. This is a tail-coverage limitation of the integration panel, distinct from the adjacent-band fit discrepancy. The long-hours bin closes at 70 inclusive, and the observed singles hours partitions close separately by sex.
 
 
 Table: The estimated model against two re-estimated common-opportunity benchmarks, on the same 1,540 single-adult households, the same sampled alternatives and the same criterion. A better maximized criterion does not by itself establish that a mechanism has been identified; the margin-by-margin comparison in the fit table and figure is the substantive evidence.
@@ -685,25 +679,6 @@ Equivalization is a normative choice, and the preliminary decomposition of Secti
 The sample screens on the observed hours and wage of employed deciders. The estimation sample is therefore selected on an outcome of the process being modelled, and the conditional sampled-set likelihood, which is the right object given a sampled choice set, is not automatically the right object given an outcome-selected sample. We have not established which correction the screen requires, or that none is required. This is an econometric question and not a presentational one, and it is not resolved by the diagnostics reported above.
 
 Separately, the sampled-set probability is derived by conditioning on a labelled collection of slots. Small observed cross-coordinate correlations and a multiplicity distribution consistent with independent draws are diagnostics; they do not by themselves establish the sampling law that the derivation assumes. Both questions are recorded here as open.
-
-
-## The consumption normalizer
-
-
-Table: The consumption normalizer. Three constants were in circulation. Under exact log consumption the normalizer enters utility as the alternative-invariant term $-\beta_c\log\lambda_c$, so it cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all. The paper reports the estimation-frame constant throughout, for the choice-probability role it actually plays.
-
-|Panel|Single-adult (EUR/month)|Couple (EUR/month)|Role|
-|---|---|---|---|
-|Estimation frame, 101 sampled alternatives per household|1,938.238719|4,247.875047|Constant of record|
-|Welfare panel, 2,048 common integration nodes|1,774.518218|3,821.448012|Recomputed over its own rows; inert|
-|Predecessor frames, before the sample correction|1,911.108058|3,821.448012|Superseded|
-
-
-
-Three normalizing constants were in circulation between the estimation frames and the welfare panel, because each panel computes the constant as a mean over its own rows. Under exact log consumption the constant is alternative-invariant, so it cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all (Section 4), so none of the three values changes any reported welfare quantity. The paper reports the estimation-frame constant throughout, for the choice-probability role it actually plays, and the discrepancy across panels is recorded here rather than silently harmonised.
-
-A retired alternative construction that did once carry $\lambda_c$ into a welfare formula, and a bridge comparing it against a second reference, are recorded in the Scientific history section rather than here: both traced to the ex-ante inclusive-value functional Deputy ruling R2 retired, and neither is reported as a result anywhere in this document.
-
 
 ## Limitations
 
@@ -857,7 +832,7 @@ Table: The couples estimated coordinates. Standard errors are cluster-robust on 
 
 # 9. Appendix B. Inequality indices and the allocation rule
 
-The preliminary decomposition of Section 5 uses the Gini index only, on a weighted distribution of strictly positive money-metric levels with mean $\mu$: $\mathcal I=\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert$, for $W,\tilde W$ independent draws from the distribution. Extending the exercise to further indices, as an earlier, retired version of this decomposition did across six indices, is future work and is not reported here.
+The preliminary decomposition of Section 5 uses the Gini index only, on a weighted distribution of strictly positive money-metric levels with mean $\mu$: $\mathcal I=\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert$, for $W,\tilde W$ independent draws from the distribution. Extending the exercise to further indices is future work and is not reported here.
 
 The exact Shapley value on the three-player game $v(S)=I_\varnothing-I_S$, $S\subseteq\{P,A,B\}$, allocates to factor $k$ the average of its marginal contribution $v(S\cup\{k\})-v(S)$ over all $3!=6$ orderings in which the three factors can be introduced:
 
@@ -865,7 +840,7 @@ $$
 C_k=\frac{1}{6}\sum_{\pi}\big[v(S_\pi(k)\cup\{k\})-v(S_\pi(k))\big],
 $$
 
-where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions, unlike the Owen extension for the additional operator an earlier, retired version of this decomposition used. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
+where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
 
 # 10. Appendix C. Data, software and replication
 
@@ -875,7 +850,7 @@ where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With thr
 
 **Estimator and inference.** Conditional likelihood over 100 sampled alternatives per household plus the observed choice, with an out-of-fold proposal correction; cluster-robust standard errors on the household. Optimization is checked by five starts under two polishing contracts and curvature by exact Hessian eigenvalues.
 
-**Welfare computation.** A common integration panel of 2,048 nodes per household, evaluated under all sixteen coalition states. Integration error is measured by 8 randomized quasi-Monte Carlo scrambles; parameter uncertainty by 100 draws from the cluster-robust covariance rebuilt from the Hessian and the household scores, holding maintained restrictions and bound-active coordinates at their values. The two are reported separately and are never combined into one band.
+**Welfare computation.** The accepted literal Mapping-F baseline is reported from its verified aggregate artifacts. The bounded DECOMP-2 exercise recomputes all eight coalitions in the three-player game for each reporting scale. Its uncertainty display is a Monte Carlo range across 1,000 simulation replications plus an independent second-seed check; it is not a parameter-uncertainty interval.
 
 **Software.** Python with JAX (0.10.1) for automatic differentiation, and the EUROMOD connector (0.2.17).
 
@@ -883,11 +858,7 @@ where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With thr
 
 # 11. The research notebook
 
-The project keeps one canonical research notebook, `JMP_research_lab.ipynb`, in the estimation repository. Two things about it need saying precisely, because both have been overstated before.
-
-**It is a replay and refit interface, not a source-to-results interface.** What it exposes, by calling the production functions rather than reimplementing them: loading a frozen engine-ready frame; evaluating the criterion and its gradient at a given parameter vector; refitting from a chosen start; rebuilding the cluster-robust covariance from the Hessian and the household scores; computing population predictions by direct integration; evaluating the money metric and the coalition states on a saved integration panel; and regenerating the figures from their saved plotted-number files. What it does *not* do: reconstruct the raw survey input from source, generate a new set of alternatives, or price alternatives through the tax-benefit model. Those three stages run as separate authorised jobs against the microdata environment and are not callable from the notebook. So the notebook reproduces every stage from the frozen priced frame onwards, and describing it as end-to-end would be inaccurate.
-
-**Its machinery is current; the artifacts it is pointed at are not.** The utility construction in the notebook is specification-driven: it reads the consumption coefficient from the specification and carries an estimated one wherever the specification leaves it free, so nothing in the code assumes the superseded numeraire. But the frames, specification and result files it currently loads are the generation that preceded the specifications of record reported here. Re-pointing it is a mechanical change and re-running it is not, and a notebook that had been re-pointed but not re-run would be worse than one that is honestly labelled. It is therefore left as it stands, and re-binding it to the current specifications and welfare record is the one capability gap this document reports.
+The project keeps one canonical reader-facing results notebook, `experiments/JMP_SEMINAR_SPRINT/JMP_canonical_AtoZ.ipynb`, in the estimation repository. It executes checks and renders the accepted results from frozen, priced inputs. It is not a raw-data end-to-end reproduction system: raw job-set construction and EUROMOD pricing remain separate authorised stages. Unifying those stages is the stated next engineering priority, not a capability the notebook claims today.
 
 # 12. Scientific history of this result
 
@@ -895,15 +866,13 @@ This section records how the reported specifications and results came to be what
 
 **The consumption specification.** Earlier drafts reported a specification in which the consumption coefficient was fixed at one as a numeraire, and one in which the single-adult consumption curvature was estimated at $\theta_c\approx0.168$. Neither is the reported model. The current specification fixes the shock scale, fixes the consumption curvature at exactly zero, and estimates the consumption weight instead. That change improves the criterion by 23.753 log-points for single adults and 15.659 for couples, and it changes how a given non-consumption advantage converts into the money metric: under the closed form of Section 4, that advantage now enters divided by the estimated $\beta_c$ rather than by the fixed numeraire it previously used. Every welfare quantity computed under the earlier convention is superseded, and the corresponding figures were regenerated rather than relabelled.
 
-**The sample.** The predecessor frames contained 1,555 single-adult and 2,275 couple households. Twelve single-adult and fifty-two couple households were removed when the hours support and the occupation mapping were applied to the observed rows, and three further single-adult households were removed because their own observed job prices to non-positive disposable consumption. The current descriptive tables are computed on the resulting 1,540 and 2,223 households, not on the predecessor frames, and the funnel in Section 2 ends where the estimation begins.
+**The sample.** The predecessor frames were screened further when the hours support and occupation mapping were applied to observed rows, with a further exclusion where an observed job prices to non-positive disposable consumption. The current descriptive tables are computed on the resulting 1,540 and 2,223 households, not on the predecessor frames, and the funnel in Section 2 ends where the estimation begins.
 
 **The disposable-income convention.** Single-adult disposable income was previously aggregated over the decider only; it is now aggregated over all resident household members, which is the convention the couples application always used. The two applications are now on the same accounting convention.
 
-**The decomposition result.** The decomposition reported in this document has been rewritten twice. An early draft reported household endowments and needs as the largest component for single adults, and a one-factor figure of about seventy-seven per cent; both were withdrawn. A subsequent draft reported a four-factor preferences/access/earnings/resources-and-needs decomposition across six inequality indices, with a grouped Shapley--Owen--Shorrocks allocation; that entire apparatus is now also withdrawn, having been found by a later lineage audit to rest on a generation of run artifacts that an earlier ruling had already retired, reproduced here as a matter of record rather than as a competing result: those numbers are no longer stated as current anywhere in this document, and the retired artifacts themselves are named in the audit record, not here. Section 5 now reports a bounded, explicitly preliminary three-factor exercise (systematic utility heterogeneity, local geographic/temporal access shifters and earning opportunities, with resources, needs and composition held fixed), sourced from an independent replication run, separate from the retired generation, and reported with Monte Carlo simulation ranges and a second-seed check rather than parameter-uncertainty intervals, ahead of the paper's final decomposition architecture, which awaits a counterfactual-attainment estimand still under design.
+**The decomposition result.** Section 5 reports only the bounded, explicitly preliminary three-factor exercise: systematic utility heterogeneity, coarse geographic/temporal access shifters and earning opportunities, with resources, needs and composition held fixed. It is sourced from the DECOMP-2 replication run and reported with Monte Carlo simulation ranges and a second-seed check rather than parameter-uncertainty intervals. Earlier architectures and their numerical results are absent from every current reader-facing surface and remain only in the audit record.
 
-**The bridge between references, retired.** An earlier draft compared the flat-consumption reference against a second, non-work-bundle reference, both computed from the ex-ante inclusive-value functional ($J_{i,S}$, $H_{i,S}$, integrated over the estimated opportunity density). That comparison went through two states -- a wrong sign for couples, later a premise audit that corrected the normalization of the opportunity kernel -- before the measure-correspondence audit classified the underlying functional itself as a different object from the paper's literal measure and Deputy ruling R2 retired it. The bridge is not reported in this document in any form; both its earlier, incorrect version and its later, corrected version relied on a construction that is no longer the paper's welfare measure.
-
-**The relative-index companion measure and the pay-neutrality diagnostic, removed.** An earlier draft reported bracketing counts for a third, resource-and-pay reference and a numerical wage-density-invariance residual, both cited to a since-retired welfare-record artifact. On repointing the citations, the relative-index measure did not survive: the accepted measure-correspondence audit classifies it as a different object from its theory definition, not reusable for a literal computation and not required by any current ruling, so it is removed rather than recited elsewhere. The pay-neutrality claim survives, more strongly than before: under the accepted reference construction (Mapping F, Deputy ruling R1) the home reference carries no opportunity-density, proposal, shock or intensity argument at all, an exact property of the construction rather than a numerical residual, so Section 4 states it without a magnitude.
+**The welfare reference.** Section 4 reports only the accepted literal Mapping-F construction. Under the current specification the home reference carries no opportunity-density, proposal, shock or intensity argument. Superseded candidates and their numerical results are absent from every current reader-facing surface and remain only in the audit record.
 
 **The consumption normalizer.** Three values of $\lambda_c$ were in circulation because different panels recomputed it over their own rows. Under exact log consumption the constant is alternative-invariant and cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all, so no welfare result is affected by which value is used. The paper now reports one constant per population, for the choice-probability role it actually plays.
 
@@ -939,11 +908,11 @@ Only estimation. The proposal density $q$ corrects the sampled-alternative choic
 
 ## 8. What happens to simulated non-positive consumption?
 
-A one-euro floor is applied before utility evaluation, for the sampled alternatives used in estimation: 22,597 singles and 59,821 couples node-evaluations. None of those alternatives enters the welfare measure, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption. See Section 2 and Section 4.
+A one-euro floor is applied before utility evaluation to non-positive sampled alternatives used in estimation. None of those alternatives enters the welfare measure, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption. See Section 2 and Section 4.
 
 ## 9. Why is predicted mass below ten hours zero?
 
-The panel contains no draw in $(5,10)$ despite positive structural and proposal mass; its expected count is 0.249. This tail-coverage limitation produces a genuine fit error. See the observed-versus-model fit table in the discussion notebook, Section 6.
+The finite integration panel contains no draw in $(5,10)$ despite positive structural and proposal mass. This tail-coverage limitation produces a genuine fit error. See the observed-versus-model fit table in the discussion notebook, Section 6.
 
 ## 10. Do the hours partitions close?
 
@@ -957,9 +926,9 @@ The money metric is derived from the Measure-1 reference-set principle. Under th
 
 Systematic utility heterogeneity, local geographic/temporal access shifters (region, urban/rural, year) and earning opportunities, each through its named pathway with coefficients fixed. Personal occupation access, hours-band access and node-level alternative characteristics remain fixed. Household resources, needs and composition are held fixed rather than equalized: they are not a fourth operator in this bounded exercise, and no share is attributed to them. See Section 5.
 
-## 13. Why an exact Shapley value, and not the grouped Owen rule an earlier draft used?
+## 13. Why an exact Shapley value?
 
-With three players the exact Shapley value has a closed form over $3!=6$ orderings and needs no grouping into a priori unions. The Owen rule an earlier, now-withdrawn draft used was needed only because that draft had an additional operator, for resources and needs, to group against preferences. See Appendix B.
+With three players the exact Shapley value has a closed form over $3!=6$ orderings and needs no grouping into a priori unions. See Appendix B.
 
 ## 14. Is the movable share $\Delta I$ small because job opportunities do not matter?
 
@@ -981,27 +950,23 @@ The contributions of $P$, $A$, $B$ and the residual close to the baseline inequa
 
 Each population has its own preference and opportunity reference. Results are compared within population, with raw and equivalized conventions separate. See the welfare state-level table in the discussion notebook, Section 7.
 
-## 19. Is a nested subdivision of resources and needs available, the way an earlier draft reported one?
+## 19. Is a nested subdivision of resources and needs available?
 
-No. Resources, needs and composition are held fixed rather than decomposed in this bounded preliminary exercise, so there is nothing to subdivide. An earlier, now-withdrawn draft's nested resources-versus-composition split was part of the retired four-factor architecture and is not carried forward.
+No. Resources, needs and composition are held fixed rather than decomposed in this bounded preliminary exercise, so there is nothing to subdivide.
 
-## 20. What happened to the earlier decomposition numbers entirely?
-
-They are withdrawn, not corrected: the entire four-factor preferences/access/earnings/resources-and-needs architecture they were computed on traced to artifacts retired by the DECOMP-PRESEMINAR-1 ruling. See the Scientific history section for the full record and Section 5 for what is reported in its place.
-
-## 21. What remains unresolved?
+## 20. What remains unresolved?
 
 Outcome-based sample selection and the construction of the labelled-slot sampling law remain open econometric items, unrelated to the decomposition. Separately, the decomposition itself remains bounded pending a counterfactual-attainment estimand under design; Section 5 and Section 6 state exactly what that bound means for the reported shares.
 
-## 22. Is this causal?
+## 21. Is this causal?
 
 The decomposition is structural accounting under declared operators; it does not identify causal regional, educational or occupational effects. See the discussion notebook, Section 9, What is robust and what is not.
 
-## 23. Why are wage elasticities omitted?
+## 22. Why are wage elasticities omitted?
 
 A valid gross-wage perturbation requires new tax-benefit repricing over the affected job alternatives, and the current priced support does not contain that counterfactual. Approximate or mock elasticity figures are therefore not reported.
 
-## 24. Can the notebooks reproduce everything?
+## 23. Can the notebooks reproduce everything?
 
 The discussion notebook executes checks and renders current results. The research lab replays from priced inputs, with an artifact-generation caveat; raw-data preparation and pricing are separate. See the report's The research notebook section and the discussion notebook, Section 0.
 

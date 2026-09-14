@@ -153,7 +153,7 @@ support. Each household contributes its observed job and a hundred drawn
 alternatives, each of which is run through EUROMOD so the consumption
 argument is a real disposable income, not an approximation. The second
 number on the slide is a different object: the positive-fit diagnostics
-(POSFIT v2b) integrate over a common panel of two thousand and forty-eight
+(POSFIT v3) integrate over a common panel of two thousand and forty-eight
 priced quadrature nodes per household, not over the estimation draws.}
 \end{frame}
 
@@ -270,22 +270,23 @@ coupled men pass the weighted gate narrowly (ratio
 \FitExtRatioCMWeightedVThree{} against 0.25) and miss the unweighted one
 (\FitExtRatioCMUnweightedVThree{}); the deck applies the weighted rule
 throughout. Source: POSFIT v3 (MNL\_posfit, branch diagnostics/posfit-v3,
-commit \texttt{\PosfitVThreeCommit{}}); the extensive-margin numbers are
-unchanged from v2b (commit \texttt{\PosfitCommit{}}).}
+commit \texttt{\PosfitVThreeCommit{}}). The displayed percentages are the
+observed weighted accuracies; the G2 bootstrap means are used only to assess
+numerical adequacy.}
 \end{frame}
 
 \begin{frame}
 \headlineframe{Calibration conditioned on prediction: observed hours against
 predicted hours, by predicted decile.}
 \slidefig{calibration_r6}
-\caveat{support coverage audited (POSFIT v2b); calibration statistics partly quadrature-limited; fit verdicts open pending Deputy review}
+\caveat{support coverage audited (POSFIT v3); calibration statistics partly quadrature-limited; use the explicit group verdicts}
 \note{Households are sorted into deciles of their own predicted expected
 hours conditional on working, and each decile's mean observed hours is
-plotted against its mean prediction, on the v2b common-node support. The
+plotted against its mean prediction, on the v3 common-node support. The
 dashed line is the forty-five degree line. Conditioning on the prediction
 rather than on the outcome is the direction that does not mechanically
 manufacture regression to the mean. The caption is the honest status. The
-support audit has now been done: v2b re-evaluates the fit on a common
+support audit has now been done: v3 re-evaluates the fit on a common
 quadrature panel far larger than the estimation draws, no household has an
 effective sample size below thirty, singles have no unsupported observed
 bin, and only a handful of couples fall in a region that finite panel does
@@ -374,8 +375,8 @@ staying-home equivalent --- as a fact about this domain.}
 \end{itemize}
 \vfill
 \caveat{This is an \textbf{empirical-domain coincidence} under log
-consumption and universally available non-employment. It is \textbf{not} the
-theorem $\Wone=W^4$ in the Haydar--Maniquet theory.}
+consumption and universally available non-employment, not a general
+theoretical identity.}
 \note{Q\&A note --- ruling R1 and BASELINE-F-1 ruling section 2.
 The most likely question here is whether I have just proved that measure one
 and measure four are the same thing. I have not, and the ruling is explicit
@@ -687,10 +688,10 @@ single men    & ---           & QUADRATURE-LIMITED, withheld \\
 \end{tabular}}
 \vfill
 \caveat{Weighted, all households. Ratio is Monte Carlo s.e. over sampling
-s.d.; the gate is $\le 0.25$. Node bootstrap: \FitBootReps{} replicates over
+s.d.; the gate is $\le 0.25$. Node bootstrap over
 \FitNodes{} common quadrature nodes per household (diagnostic panel, not the
 estimation draws). Simulated bands: \FitSims{} outcome vectors at fixed
-$\hat\theta$. POSFIT v2b, commit \texttt{\PosfitCommit{}}.}
+$\hat\theta$. POSFIT v3, commit \texttt{\PosfitCommit{}}.}
 \note{The gate was fixed before the statistics were computed. It asks
 whether numerical integration error is small enough relative to sampling
 variation for the statistic to be a statement about the model rather than
@@ -705,8 +706,8 @@ a quadrature-limited number carries no information about fit.}
 \toprule
 ruling & what it settles here \\
 \midrule
-R1 & Mapping F primary; $\Wone=W^4$ is a domain coincidence \\
-R2 & W1-EA retired from the baseline; preserved, not repaired \\
+R1 & Mapping F primary; home is the selected reference on this empirical domain \\
+R2 & superseded alternative welfare construction excluded from the baseline \\
 R4 & MEASURE-MAP-1R: the measure-correspondence gate \\
 R5 & counterfactual attainment: in design, not executed \\
 R6 & what this seminar may present \\

@@ -6,7 +6,8 @@ Four panels, each from one authorized source and each carrying no number the
 R6 ruling withholds:
 
   calibration_r6   deciles.csv        calibration CONDITIONED ON PREDICTION
-  fitext_r6        g2_adequacy.csv    extensive accuracy, G2-ADEQUATE groups only
+  fitext_r6        hard_classification_metrics.csv observed accuracy,
+                   screened by g2_adequacy.csv (G2-ADEQUATE groups only)
   kernelacc_r6     s11_singles_parameter_table_v1.csv   access kernel
   kernelwage_r6    s11_singles_parameter_table_v1.csv   wage-offer kernel
 
@@ -27,7 +28,7 @@ import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
-POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v2b"   # MNL_posfit a2e80a8
+POSFIT = REPO / "MNL_posfit" / "outputs" / "positive_fit_diagnostics_v3"   # MNL_posfit 96693269
 S11 = REPO / "MNL" / "experiments" / "JMP_SEMINAR_SPRINT" / "runs" / "s11_welfare_specs_of_record"
 OUT = HERE / "figures" / "r6"
 
@@ -90,19 +91,23 @@ def calibration(man: dict) -> None:
 
 
 def fitext(man: dict) -> None:
-    p = POSFIT / "g2_adequacy.csv"
-    man["g2_adequacy.csv"] = sha256(p)
-    d = [r for r in rows(p)
+    g2_path = POSFIT / "g2_adequacy.csv"
+    hard_path = POSFIT / "hard_classification_metrics.csv"
+    man["g2_adequacy.csv"] = sha256(g2_path)
+    man["hard_classification_metrics.csv"] = sha256(hard_path)
+    d = [r for r in rows(g2_path)
          if r["weighting"] == "weighted" and r["statistic"] == "extensive_accuracy"
          and r.get("scope", "all") == "all"]
     by = {r["group"]: r for r in d}
+    observed = {r["group"]: float(r["extensive_accuracy"])
+                for r in rows(hard_path) if r["weighting"] == "weighted"}
     fig, ax = plt.subplots(figsize=(13, 5.6))
     ys, labels, colors, texts = [], [], [], []
     for g in GROUPS:
         r = by[g]
         labels.append(PRETTY[g])
         if r["label"] == "ADEQUATE":
-            ys.append(100.0 * float(r["node_bootstrap_mean"]))
+            ys.append(100.0 * observed[g])
             colors.append(ACC)
             texts.append("%.1f%%" % ys[-1])
         else:

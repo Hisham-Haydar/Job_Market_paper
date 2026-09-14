@@ -23,27 +23,22 @@
     "EvaluatorCommit": {
       "raw": null,
       "rendered": "55bb0d0",
-      "source": "v2b run_provenance.json evaluator_commit"
+      "source": "v3 run_provenance.json evaluator_commit"
     },
     "FitAdequateCount": {
       "raw": null,
       "rendered": "3",
       "source": "g2_adequacy.csv count of ADEQUATE groups"
     },
-    "FitBootReps": {
-      "raw": null,
-      "rendered": "200",
-      "source": "v2b run_provenance.json node_bootstrap.replicates"
-    },
     "FitExtCF": {
-      "raw": 0.8980054046611116,
+      "raw": 0.8980224215767258,
       "rendered": "89.8",
-      "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy ADEQUATE"
+      "source": "hard_classification_metrics.csv couples_female/weighted/extensive_accuracy observed; g2_adequacy.csv label ADEQUATE"
     },
     "FitExtCM": {
-      "raw": 0.9219053950877628,
-      "rendered": "92.2",
-      "source": "g2_adequacy.csv couples_male/weighted/extensive_accuracy ADEQUATE"
+      "raw": 0.9229811267482474,
+      "rendered": "92.3",
+      "source": "hard_classification_metrics.csv couples_male/weighted/extensive_accuracy observed; g2_adequacy.csv label ADEQUATE"
     },
     "FitExtRatioCF": {
       "raw": 0.01852729559092683,
@@ -71,9 +66,9 @@
       "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy adequacy ratio"
     },
     "FitExtSF": {
-      "raw": 0.8574770284194063,
-      "rendered": "85.7",
-      "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy ADEQUATE"
+      "raw": 0.8548462114524653,
+      "rendered": "85.5",
+      "source": "hard_classification_metrics.csv singles_female/weighted/extensive_accuracy observed; g2_adequacy.csv label ADEQUATE"
     },
     "FitLimitedCount": {
       "raw": null,
@@ -83,12 +78,12 @@
     "FitNodes": {
       "raw": 2048,
       "rendered": "2\\,048",
-      "source": "v2b run_provenance.json nodes (diagnostic panel: common quadrature nodes per household; = support_record.csv nodes_per_household)"
+      "source": "v3 run_provenance.json predictive_support"
     },
     "FitSims": {
       "raw": null,
       "rendered": "500",
-      "source": "v2b run_provenance.json simulation.draws (fixed-theta outcome vectors)"
+      "source": "v3 run_provenance.json c5_simulation.draws (fixed-theta outcome vectors)"
     },
     "FrameCouples": {
       "raw": null,
@@ -98,7 +93,7 @@
     "FrameDraws": {
       "raw": null,
       "rendered": "100",
-      "source": "v2b support_record_v2.csv continuous_nodes_per_household (estimation frame: criterion-A R100 panel, drawn alternatives per household)"
+      "source": "s11_welfare_specs_of_record_v1.json results.*.n_alternatives minus observed alternative"
     },
     "FrameSingles": {
       "raw": null,
@@ -108,17 +103,17 @@
     "ObjCouples": {
       "raw": 10283.034369350758,
       "rendered": "10283.034",
-      "source": "v2b run_provenance.json objectives.couples"
+      "source": "v3 run_provenance.json objectives.couples"
     },
     "ObjSingles": {
       "raw": 6253.463074379619,
       "rendered": "6253.463",
-      "source": "v2b run_provenance.json objectives.singles"
+      "source": "v3 run_provenance.json objectives.singles"
     },
     "PosfitCommit": {
       "raw": null,
-      "rendered": "a2e80a8",
-      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v2b"
+      "rendered": "96693269",
+      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v3"
     },
     "PosfitVThreeCommit": {
       "raw": null,
@@ -405,15 +400,11 @@
       "sha256": "8d6d21b127400bee542eae3decb4b3d227904f6e3eed77d26d1305c0867cc4b7"
     },
     "g2_adequacy.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\g2_adequacy.csv",
-      "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
-    },
-    "g2_adequacy_v3.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3\\g2_adequacy.csv",
       "sha256": "2e70b8eb185ea70591d3e6213b35ceda3a453840fffc2d85988800ec0e0d4abd"
     },
     "hard_classification_metrics.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\hard_classification_metrics.csv",
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3\\hard_classification_metrics.csv",
       "sha256": "135b5da603a679dee1d2e61847363fedf575ccc8d9233015c4c2425120fedb53"
     },
     "log_variance_split_v1.csv": {
@@ -421,9 +412,9 @@
       "sha256": "3731579ee8070fa15e70dca3711bc2813543c130329fd389185e7e61b1547f3c"
     },
     "run_provenance.json": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\run_provenance.json",
-      "posfit_commit": "a2e80a8",
-      "sha256": "9b4075e7d3ebf209688e9f16db6184449f21902bbd129dff8f33e52e4501f35f"
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3\\run_provenance.json",
+      "posfit_commit": "96693269",
+      "sha256": "bdc3722c325ff8a27be719aa52a741df7beef9515b4a63554c65e8769eb7f40b"
     },
     "s11_couples_parameter_table_v1.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_couples_parameter_table_v1.csv",
@@ -433,6 +424,10 @@
       "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_singles_parameter_table_v1.csv",
       "sha256": "cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab"
     },
+    "s11_welfare_specs_of_record_v1.json": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_welfare_specs_of_record_v1.json",
+      "sha256": "5fdc88502493ce540b088880eecf049bc268392ff3e8790ffe78a16aa6ddc884"
+    },
     "singles_equivalised_reporting_v1.json": {
       "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
       "memo_commit": "4c4e07e",
@@ -440,14 +435,6 @@
       "scale_name": "modified_OECD",
       "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
       "sha256": "e34c3bfa0abe5dc9c1fe00a1c04d022eab280b84111f048d14ef03bdf9f2a9e6"
-    },
-    "support_record.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\support_record.csv",
-      "sha256": "424322986bf9be1f9b782b6b172892a11d389804d64ae46809a2bb85ca7a91c9"
-    },
-    "support_record_v2.csv": {
-      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\support_record_v2.csv",
-      "sha256": "ad075a39a1c9819e2abb5252bf7003c8c1e45c4f1c7afe5b7e97367971bbafb2"
     }
   }
 }

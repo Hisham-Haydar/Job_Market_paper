@@ -65,7 +65,7 @@ households.                                                                     
                                                                                                                             because the frames differ and a side-by-side would invite a comparison the samples do not support.
                                                                                                                             Each household contributes its observed job and a hundred drawn alternatives, each of which is run
                                                                                                                             through EUROMOD so the consumption argument is a real disposable income, not an approximation.
-                                                                                                                            The second number on the slide is a different object: the positive-fit diagnostics (POSFIT v2b)
+                                                                                                                            The second number on the slide is a different object: the positive-fit diagnostics (POSFIT v3)
       Estimation frames: corrected criterion-A panels, S11 model of record.
                                                                                                                             integrate over a common panel of two thousand and forty-eight priced quadrature nodes per
       Estimation frame: each household’s observed job plus 100 drawn alternatives, every one                               household, not over the estimation draws.
@@ -158,10 +158,10 @@ quadrature-adequacy gate.                                                       
           single men       withheld: quadrature-limited                                                                 uneven. Individual-level predictive diagnostics raise possible excess stochastic dispersion in some
                                                                                                                         groups; the group-level classification is not used as a headline result. If asked: coupled men pass the
                                                                                                                         weighted gate narrowly (ratio 0.240 against 0.25) and miss the unweighted one (0.250); the deck
-       single women                                                                      85.7%                          applies the weighted rule throughout. Source: POSFIT v3 (MNL posfit, branch diagnostics/posfit-v3,
-                                                                                                                        commit 96693269); the extensive-margin numbers are unchanged from v2b (commit a2e80a8).
-
-        coupled men                                                                             92.2%
+       single women                                                                      85.5%                          applies the weighted rule throughout. Source: POSFIT v3 (MNL posfit, branch diagnostics/posfit-v3,
+                                                                                                                        commit 96693269). The displayed percentages are the observed weighted accuracies; the G2 bootstrap
+                                                                                                                        means are used only to assess numerical adequacy.
+        coupled men                                                                             92.3%
 
 
 
@@ -175,10 +175,10 @@ quadrature-adequacy gate.                                                       
 
                                                                                                                  8/19
 Calibration conditioned on prediction: observed hours against predicted hours, by                                                    Households are sorted into deciles of their own predicted expected hours conditional on working, and
-predicted decile.                                                                                                                    each decile’s mean observed hours is plotted against its mean prediction, on the v2b common-node
+predicted decile.                                                                                                                    each decile’s mean observed hours is plotted against its mean prediction, on the v3 common-node
                                                                                                                                      support. The dashed line is the forty-five degree line. Conditioning on the prediction rather than on
                                                                                                                                      the outcome is the direction that does not mechanically manufacture regression to the mean. The
-                                  single men             single women            coupled men            coupled women                caption is the honest status. The support audit has now been done: v2b re-evaluates the fit on a
+                                  single men             single women            coupled men            coupled women                caption is the honest status. The support audit has now been done: v3 re-evaluates the fit on a
                          45                                                                                                          common quadrature panel far larger than the estimation draws, no household has an effective sample
                                                                                                                                      size below thirty, singles have no unsupported observed bin, and only a handful of couples fall in a
    mean observed hours
@@ -198,8 +198,8 @@ predicted decile.                                                               
                                 30           40         30           40         30           40         30           40
                               predicted E[h | work]   predicted E[h | work]   predicted E[h | work]   predicted E[h | work]
 
-   support coverage audited (POSFIT v2b); calibration statistics partly quadrature-limited; fit verdicts open
-   pending Deputy review
+   support coverage audited (POSFIT v3); calibration statistics partly quadrature-limited; use the explicit group
+   verdicts
 
 
 
@@ -287,27 +287,27 @@ as well off.                                                                    
 
 
                                                                                                                   12/19
-Under the current specification W 1 coincides with the staying-home equivalent — as a                                      Q&A note — ruling R1 and BASELINE-F-1 ruling section 2. The most likely question here is whether I
-fact about this domain.                                                                                                    have just proved that measure one and measure four are the same thing. I have not, and the ruling is
-                                                                                                                           explicit about it. The coincidence has two ingredients, both specific to what is estimated: consumption
-                                                                                                                           enters utility in logs, and non-employment is behaviourally available to every household. Change either
-                                                             h                  i                                          and the two measures separate. If asked about the consumption argument: ruling E2 confirms that
-                                  1                      L (j obs )−L (o)                                                  C obs must be the exact object entering the estimated utility at the observed state, not a re-chosen
-                                Wi,F      =    Ciobs exp i i βc i                                                          normative income concept, and the measure-correspondence audit closed that provenance before the
-                                                                                                                           baseline was allowed to run. The money metric is derived from the Measure-1 reference-set principle.
-                                                                                                                           Under the current empirical specification its direct reference collapses to the universally available
-                                                                                                                           non-employment state; opportunity heterogeneity therefore affects the current welfare measure through
-      Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.                                                             attained bundles. For a one-nat shortfall, Li (jiobs ) − Li (o) = −1, the illustration is
-                                                                                                                           W = Ciobs exp(−1/βc ) < Ciobs .
+Under the current specification W 1 coincides with the staying-home equivalent — as a                                    Q&A note — ruling R1 and BASELINE-F-1 ruling section 2. The most likely question here is whether I
+fact about this domain.                                                                                                  have just proved that measure one and measure four are the same thing. I have not, and the ruling is
+                                                                                                                         explicit about it. The coincidence has two ingredients, both specific to what is estimated: consumption
+                                                                                                                         enters utility in logs, and non-employment is behaviourally available to every household. Change either
+                                                            h                  i                                         and the two measures separate. If asked about the consumption argument: ruling E2 confirms that
+                                  1                     L (j obs )−L (o)                                                 C obs must be the exact object entering the estimated utility at the observed state, not a re-chosen
+                                Wi,F     =    Ciobs exp i i βc i                                                         normative income concept, and the measure-correspondence audit closed that provenance before the
+                                                                                                                         baseline was allowed to run. The money metric is derived from the Measure-1 reference-set principle.
+                                                                                                                         Under the current empirical specification its direct reference collapses to the universally available
+                                                                                                                         non-employment state; opportunity heterogeneity therefore affects the current welfare measure through
+      Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.                                                           attained bundles. For a one-nat shortfall, Li (jiobs ) − Li (o) = −1, the illustration is
+                                                                                                                         W = Ciobs exp(−1/βc ) < Ciobs .
       No opportunity density g , no proposal q, no shock ε, no intensity κ.
       Current nonworkers: W = C ; current workers: W < C under the maintained empirical
        domain.
 
-   This is an empirical-domain coincidence under log consumption and universally available non-employment. It is
-   not the theorem W 1 = W 4 in the Haydar–Maniquet theory.
+   This is an empirical-domain coincidence under log consumption and universally available non-employment, not
+   a general theoretical identity.
 
 
-                                                                                                                   13/19
+                                                                                                                 13/19
 Equivalised W 1 -F distribution
 (primary)
 Baseline W 1 -F, equivalised, single adults.                                                                            Q&A note — BASELINE-F-1 ruling, E3-EQ, and ruling R6. Equivalised results are primary on this
@@ -500,31 +500,31 @@ boundary
 
    All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
    explained, never clipped; none occurred.
-B4 — The G2 quadrature-adequacy gate                                                                               The gate was fixed before the statistics were computed. It asks whether numerical integration error is
-                                                                                                                   small enough relative to sampling variation for the statistic to be a statement about the model rather
-                                                                                                                   than about the quadrature. Withholding rather than downgrading is deliberate: a quadrature-limited
-                                                                                                                   number carries no information about fit.
+B4 — The G2 quadrature-adequacy gate                                                                                 The gate was fixed before the statistics were computed. It asks whether numerical integration error is
+                                                                                                                     small enough relative to sampling variation for the statistic to be a statement about the model rather
+                                                                                                                     than about the quadrature. Withholding rather than downgrading is deliberate: a quadrature-limited
+                                                                                                                     number carries no information about fit.
 
 
 
-               group               extensive accuracy      G2 label
-               coupled women                     89.8%     ADEQUATE (ratio 0.02)
-               single women                      85.7%     ADEQUATE (ratio 0.15)
-               coupled men                       92.2%     ADEQUATE (ratio 0.24)
-               single men                            —     QUADRATURE-LIMITED, withheld
+               group                extensive accuracy      G2 label
+               coupled women                      89.8%     ADEQUATE (ratio 0.02)
+               single women                       85.5%     ADEQUATE (ratio 0.15)
+               coupled men                        92.3%     ADEQUATE (ratio 0.24)
+               single men                             —     QUADRATURE-LIMITED, withheld
 
 
 
-   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap:
-   200 replicates over 2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws).
-   Simulated bands: 500 outcome vectors at fixed θ̂. POSFIT v2b, commit a2e80a8.
+   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap over
+   2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws). Simulated bands:
+   500 outcome vectors at fixed θ̂. POSFIT v3, commit 96693269.
 B5 — Authority for what is and is not on these slides                                                  This backup slide exists so that any question of the form “why is that not here” has a one-line answer
                                                                                                        with a document behind it.
 
 
               ruling   what it settles here
-              R1       Mapping F primary; W 1 = W 4 is a domain coincidence
-              R2       W1-EA retired from the baseline; preserved, not repaired
+              R1       Mapping F primary; home is the selected reference on this empirical domain
+              R2       superseded alternative welfare construction excluded from the baseline
               R4       MEASURE-MAP-1R: the measure-correspondence gate
               R5       counterfactual attainment: in design, not executed
               R6       what this seminar may present

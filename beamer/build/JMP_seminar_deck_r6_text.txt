@@ -142,11 +142,11 @@ quadrature-adequacy gate.
 
 
 
-       single women                                                                      85.7%
+       single women                                                                      85.5%
 
 
 
-        coupled men                                                                             92.2%
+        coupled men                                                                             92.3%
 
 
 
@@ -186,8 +186,8 @@ predicted decile.
                                 30           40         30           40         30           40         30           40
                               predicted E[h | work]   predicted E[h | work]   predicted E[h | work]   predicted E[h | work]
 
-   support coverage audited (POSFIT v2b); calibration statistics partly quadrature-limited; fit verdicts open
-   pending Deputy review
+   support coverage audited (POSFIT v3); calibration statistics partly quadrature-limited; use the explicit group
+   verdicts
 
 
 
@@ -278,9 +278,9 @@ as well off.
 fact about this domain.
 
 
-                                                             h                  i
-                                  1                      L (j obs )−L (o)
-                                Wi,F      =    Ciobs exp i i βc i
+                                                            h                  i
+                                  1                     L (j obs )−L (o)
+                                Wi,F     =    Ciobs exp i i βc i
 
 
       Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.
@@ -288,11 +288,11 @@ fact about this domain.
       Current nonworkers: W = C ; current workers: W < C under the maintained empirical
        domain.
 
-   This is an empirical-domain coincidence under log consumption and universally available non-employment. It is
-   not the theorem W 1 = W 4 in the Haydar–Maniquet theory.
+   This is an empirical-domain coincidence under log consumption and universally available non-employment, not
+   a general theoretical identity.
 
 
-                                                                                                                   13/19
+                                                                                                                 13/19
 Equivalised W 1 -F distribution
 (primary)
 Baseline W 1 -F, equivalised, single adults.
@@ -478,24 +478,24 @@ boundary
 
 
 
-               group               extensive accuracy      G2 label
-               coupled women                     89.8%     ADEQUATE (ratio 0.02)
-               single women                      85.7%     ADEQUATE (ratio 0.15)
-               coupled men                       92.2%     ADEQUATE (ratio 0.24)
-               single men                            —     QUADRATURE-LIMITED, withheld
+               group                extensive accuracy      G2 label
+               coupled women                      89.8%     ADEQUATE (ratio 0.02)
+               single women                       85.5%     ADEQUATE (ratio 0.15)
+               coupled men                        92.3%     ADEQUATE (ratio 0.24)
+               single men                             —     QUADRATURE-LIMITED, withheld
 
 
 
-   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap:
-   200 replicates over 2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws).
-   Simulated bands: 500 outcome vectors at fixed θ̂. POSFIT v2b, commit a2e80a8.
+   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap over
+   2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws). Simulated bands:
+   500 outcome vectors at fixed θ̂. POSFIT v3, commit 96693269.
 B5 — Authority for what is and is not on these slides
 
 
 
               ruling   what it settles here
-              R1       Mapping F primary; W 1 = W 4 is a domain coincidence
-              R2       W1-EA retired from the baseline; preserved, not repaired
+              R1       Mapping F primary; home is the selected reference on this empirical domain
+              R2       superseded alternative welfare construction excluded from the baseline
               R4       MEASURE-MAP-1R: the measure-correspondence gate
               R5       counterfactual attainment: in design, not executed
               R6       what this seminar may present
