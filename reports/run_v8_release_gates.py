@@ -31,6 +31,8 @@ def run(label: str, command: list[str], cwd: Path = ROOT) -> dict:
 def main() -> int:
     py = sys.executable
     results = [
+        run("rendered-text language and negative control",
+            [py, "reports/check_v8_rendered_language.py"]),
         run("reader-language and structure", [py, "reports/check_v8_reader_gates.py"]),
         run("number-to-source", [py, "reports/check_v8_numbers_against_source.py"]),
         run("offline HTML render", [py, "check_v8_render.py"],
@@ -43,6 +45,7 @@ def main() -> int:
             "reports/research_story_build/v8_sections.py",
             "reports/research_story_build/v8_render_inputs.py",
             "reports/results_gallery_build/build_v8.py",
+            "reports/check_v8_rendered_language.py",
             "reports/check_v8_reader_gates.py",
             "reports/check_v8_numbers_against_source.py"]),
     ]

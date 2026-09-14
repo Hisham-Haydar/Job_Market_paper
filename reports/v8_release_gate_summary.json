@@ -3,6 +3,16 @@
   "status": "PASS",
   "gates": [
     {
+      "gate": "rendered-text language and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v8_rendered_language.py"
+      ],
+      "output_tail": "RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL\n"
+    },
+    {
       "gate": "reader-language and structure",
       "status": "PASS",
       "returncode": 0,
@@ -10,7 +20,7 @@
         "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
         "reports/check_v8_reader_gates.py"
       ],
-      "output_tail": "READER GATES PASS: 18 checks, 0 failures\n"
+      "output_tail": "READER GATES PASS: 22 checks, 0 failures\n"
     },
     {
       "gate": "number-to-source",
@@ -74,6 +84,7 @@
         "reports/research_story_build/v8_sections.py",
         "reports/research_story_build/v8_render_inputs.py",
         "reports/results_gallery_build/build_v8.py",
+        "reports/check_v8_rendered_language.py",
         "reports/check_v8_reader_gates.py",
         "reports/check_v8_numbers_against_source.py"
       ],

@@ -3,11 +3,11 @@
   "mapping": [
     {
       "v7_block": "Abstract",
-      "v8_destination": "Replaced by the authorised magnitude paragraph; predecessor retained in the collapsed provenance appendix."
+      "v8_destination": "Replaced by the authorised magnitude paragraph; the predecessor abstract is deliberately omitted."
     },
     {
       "v7_block": "Status note",
-      "v8_destination": "Replaced by the required ongoing-validation language; predecessor retained in the collapsed provenance appendix."
+      "v8_destination": "Deleted; the report uses the required ongoing-validation language and names no predecessor version."
     },
     {
       "v7_block": "Introduction",
@@ -63,7 +63,7 @@
     },
     {
       "v7_block": "Questions for presentation preparation",
-      "v8_destination": "Retained wholesale in the collapsed provenance appendix; replaced by three reader-facing questions after the report."
+      "v8_destination": "Retained wholesale in the collapsed provenance appendix; no questions follow the appendix."
     }
   ]
 }

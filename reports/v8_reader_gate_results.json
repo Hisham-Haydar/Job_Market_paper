@@ -24,12 +24,17 @@
     },
     {
       "check": "banned implementation vocabulary absent from reader-facing report",
-      "evidence": "term-by-term audit",
+      "evidence": "rendered HTML after exact marked-range exclusion",
       "status": "PASS"
     },
     {
       "check": "banned implementation vocabulary absent from reader-facing gallery",
-      "evidence": "term-by-term audit",
+      "evidence": "rendered HTML after exact marked-range exclusion",
+      "status": "PASS"
+    },
+    {
+      "check": "rendered-language audit negative control fires",
+      "evidence": "temporary rendered copy with S11 inserted before the appendix marker",
       "status": "PASS"
     },
     {
@@ -43,13 +48,23 @@
       "status": "PASS"
     },
     {
+      "check": "explicit provenance appendix is the final main-content region",
+      "evidence": "<!-- V8_PROVENANCE_APPENDIX_BEGIN --> \u2026 <!-- V8_PROVENANCE_APPENDIX_END -->",
+      "status": "PASS"
+    },
+    {
       "check": "collapsed provenance headings omitted from reader navigation",
       "evidence": "report table of contents",
       "status": "PASS"
     },
     {
-      "check": "V7 blocks retained wholesale in provenance source",
+      "check": "technical blocks retained wholesale and old abstract/status deleted",
       "evidence": "direct source-string containment",
+      "status": "PASS"
+    },
+    {
+      "check": "no predecessor-version label is rendered",
+      "evidence": "complete rendered report, including the opened appendix",
       "status": "PASS"
     },
     {
@@ -75,6 +90,11 @@
     {
       "check": "required ongoing-work language",
       "evidence": "status note and main section 6",
+      "status": "PASS"
+    },
+    {
+      "check": "household-weighted wording used in every weight caption",
+      "evidence": "rendered report, gallery and editable Markdown captions",
       "status": "PASS"
     },
     {

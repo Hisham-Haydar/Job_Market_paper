@@ -1,7 +1,6 @@
 """Reader-language, structure, preservation, and gallery checks for V8."""
 from __future__ import annotations
 
-import html
 import json
 import re
 import subprocess
@@ -12,7 +11,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "reports/research_story_build"
 sys.path.insert(0, str(BUILD))
+sys.path.insert(0, str(ROOT / "reports"))
 
+import check_v8_rendered_language as rendered_audit  # noqa: E402
 import v7_sections as v7  # noqa: E402
 import v8_sections as v8  # noqa: E402
 
@@ -20,49 +21,18 @@ import v8_sections as v8  # noqa: E402
 REPORT = ROOT / "reports/JMP_research_story_report_v8.html"
 GALLERY = ROOT / "reports/JMP_results_gallery_v8.html"
 SOURCE = BUILD / "story_v8.generated.md"
-V7_REPORT = ROOT / "reports/JMP_research_story_report_v7.html"
 OUT_JSON = ROOT / "reports/v8_reader_gate_results.json"
 OUT_MD = ROOT / "reports/v8_reader_gate_results.md"
-AUDIT_JSON = ROOT / "reports/v8_banned_term_audit.json"
-AUDIT_MD = ROOT / "reports/v8_banned_term_audit.md"
 MAP_JSON = ROOT / "reports/v8_section_map.json"
 MAP_MD = ROOT / "reports/v8_section_map.md"
 
 
-BANNED = [
-    ("S10", "the estimation or already-priced sample"),
-    ("S11", "the preferred specification"),
-    ("S12", "the large predictive integration sample"),
-    ("POSFIT", "the predictive-fit diagnostics"),
-    ("v3b", "the corrected diagnostics"),
-    ("DECOMP-2", "the preliminary structural decomposition"),
-    ("criterion-A", "the estimation sample"),
-    ("Gate 0", "the relevant economic condition"),
-    ("anchor", "the observed-job alternative, where economically relevant"),
-    ("node", "integration point or job alternative"),
-    ("proposal panel", "the numerical integration sample"),
-    ("exact-H", "pre-pricing numerical validation"),
-    ("H-F", "the full opportunity environment with equal consumption across jobs"),
-    ("H-D", "the estimated-domain sensitivity"),
-    ("H-X", "the disclosed sample-restriction sensitivity"),
-    ("NN state", "the neither-partner-works alternative"),
-    ("NN pricing state", "the priced neither-partner-works alternative"),
-    ("SHA", "source provenance in the collapsed appendix"),
-    ("hash", "source provenance in the collapsed appendix"),
-    ("dwt", "household weights"),
-    ("worktree", "source provenance in the collapsed appendix"),
-    ("registry", "numerical source record in the collapsed appendix"),
-    ("G1-G9", "validation checks"),
-    ("adjudication", "diagnostic assessment"),
-    ("gate", "numerical-precision standard or validation check"),
-    ("mission", "omitted from reader-facing prose"),
-    ("ruling", "omitted from reader-facing prose"),
-]
+BANNED = rendered_audit.BANNED
 
 
 SECTION_MAP = [
-    ("Abstract", "Replaced by the authorised magnitude paragraph; predecessor retained in the collapsed provenance appendix."),
-    ("Status note", "Replaced by the required ongoing-validation language; predecessor retained in the collapsed provenance appendix."),
+    ("Abstract", "Replaced by the authorised magnitude paragraph; the predecessor abstract is deliberately omitted."),
+    ("Status note", "Deleted; the report uses the required ongoing-validation language and names no predecessor version."),
     ("Introduction", "Economic motivation moved to main section 1; model, welfare and extension material moved to main sections 2, 3 and 7; full block retained in the provenance appendix."),
     ("Data", "Core sample and institutional facts condensed into main section 2; full tables and screens retained in the provenance appendix."),
     ("A latent-jobs model of household labour supply", "Economic mechanism and maintained restrictions condensed into main section 2; equations and estimation details retained in the provenance appendix."),
@@ -76,7 +46,7 @@ SECTION_MAP = [
     ("Appendix D. Preliminary restricted-operator decomposition", "Numerical headline and complete allocation table moved to main section 5; technical block retained wholesale in the collapsed provenance appendix."),
     ("The research notebook", "Retained wholesale in the collapsed provenance appendix."),
     ("Scientific history of this result", "Retained wholesale in the collapsed provenance appendix."),
-    ("Questions for presentation preparation", "Retained wholesale in the collapsed provenance appendix; replaced by three reader-facing questions after the report."),
+    ("Questions for presentation preparation", "Retained wholesale in the collapsed provenance appendix; no questions follow the appendix."),
 ]
 
 
@@ -85,52 +55,35 @@ def read(path: Path) -> str:
 
 
 def plain_fragment(text: str) -> str:
-    text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", text,
-                  flags=re.S | re.I)
-    text = re.sub(r"<img[^>]*>", " ", text, flags=re.S | re.I)
-    text = re.sub(r"<[^>]+>", " ", text)
-    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+    return rendered_audit.rendered_text(text)
 
 
-def report_main(document: str, appendix_number: int) -> str:
-    start = document.index('<main id="doc">')
-    stop = document.index(f'<h1 id="{appendix_number}-appendix', start)
-    return plain_fragment(document[start:stop])
+def outside_appendix(document: str) -> str:
+    outside, _ = rendered_audit.remove_exact_appendix(document)
+    return rendered_audit.rendered_text(outside)
 
 
-def report_reader_text(document: str) -> str:
-    start = document.index('<main id="doc">')
-    body = document[start:document.index('</main>', start)]
-    body = re.sub(
-        r'<details><summary>Show this section</summary>.*?</details>',
-        ' ',
-        body,
-        flags=re.S,
-    )
-    return plain_fragment(body)
-
-
-def gallery_main(document: str) -> str:
-    start = document.index("<main>")
-    stop = document.index('<section id="provenance">', start)
-    return plain_fragment(document[start:stop])
+def report_main_outside_appendix(document: str) -> str:
+    outside, _ = rendered_audit.remove_exact_appendix(document)
+    main = re.search(r'<main id="doc">(.*?)</main>', outside, flags=re.S)
+    if not main:
+        raise ValueError("rendered report main element not found")
+    return rendered_audit.rendered_text(main.group(1))
 
 
 def term_pattern(term: str) -> re.Pattern:
-    if term == "G1-G9":
-        return re.compile(r"(?<![A-Za-z0-9])G[1-9](?![A-Za-z0-9])", re.I)
-    return re.compile(r"(?<![A-Za-z0-9])" + re.escape(term)
-                      + r"(?![A-Za-z0-9])", re.I)
+    return rendered_audit.term_pattern(term)
 
 
 def main() -> int:
     report_html = read(REPORT)
     gallery_html = read(GALLERY)
     source = read(SOURCE)
-    report_text = report_main(report_html, 8)
-    full_reader_text = report_reader_text(report_html)
-    gallery_text = gallery_main(gallery_html)
-    v7_text = report_main(read(V7_REPORT), 8)
+    report_text = report_main_outside_appendix(report_html)
+    gallery_text = outside_appendix(gallery_html)
+    report_scan = rendered_audit.scan_path(REPORT)
+    gallery_scan = rendered_audit.scan_path(GALLERY)
+    control = rendered_audit.negative_control(REPORT)
     failures: list[str] = []
     checks: list[dict[str, str]] = []
 
@@ -170,30 +123,20 @@ def main() -> int:
           not re.search(r"\bJ_i\b|\bH_i\b|\bH-[FDX]\b|exact-H", report_text, re.I),
           "reader-facing report text")
 
-    audit_rows = []
-    report_hits = 0
-    gallery_hits = 0
-    for term, replacement in BANNED:
-        pattern = term_pattern(term)
-        old_count = len(pattern.findall(v7_text))
-        new_report = len(pattern.findall(full_reader_text))
-        new_gallery = len(pattern.findall(gallery_text))
-        report_hits += new_report
-        gallery_hits += new_gallery
-        audit_rows.append({
-            "term": term,
-            "v7_reader_count": old_count,
-            "v8_report_reader_count": new_report,
-            "v8_gallery_reader_count": new_gallery,
-            "replacement": replacement,
-            "status": "PASS" if new_report == 0 and new_gallery == 0 else "FAIL",
-        })
+    report_hits = report_scan["outside_appendix_total"]
+    gallery_hits = gallery_scan["outside_appendix_total"]
     check("banned implementation vocabulary absent from reader-facing report",
-          report_hits == 0, "term-by-term audit")
+          report_hits == 0, "rendered HTML after exact marked-range exclusion")
     check("banned implementation vocabulary absent from reader-facing gallery",
-          gallery_hits == 0, "term-by-term audit")
+          gallery_hits == 0, "rendered HTML after exact marked-range exclusion")
+    check("rendered-language audit negative control fires",
+          control["status"] == "PASS"
+          and control["observed_audit_result"] == "FAIL"
+          and control["observed_s11_count"] > 0,
+          "temporary rendered copy with S11 inserted before the appendix marker")
     check("household-weight terminology installed",
-          "household weights" in report_text and "household weights" in gallery_text,
+          bool(re.search(r"household(?: weights|-weighted)", report_text, re.I))
+          and bool(re.search(r"household(?: weights|-weighted)", gallery_text, re.I)),
           "decomposition method and welfare-table caption")
 
     details_match = re.search(
@@ -209,6 +152,12 @@ def main() -> int:
     check("technical provenance is collapsed on both surfaces",
           bool(details_match) and bool(gallery_details),
           "HTML details elements")
+    report_after_marker = report_html.split(rendered_audit.END_MARKER, 1)[1]
+    gallery_after_marker = gallery_html.split(rendered_audit.END_MARKER, 1)[1]
+    check("explicit provenance appendix is the final main-content region",
+          not plain_fragment(report_after_marker.split("</main>", 1)[0])
+          and not plain_fragment(gallery_after_marker.split("</main>", 1)[0]),
+          f"{rendered_audit.BEGIN_MARKER} … {rendered_audit.END_MARKER}")
     toc = re.search(r'<nav id="toc">(.*?)</nav>', report_html, flags=re.S)
     collapsed_body = re.search(
         r'<details><summary>Show this section</summary>(.*?)</details>',
@@ -224,13 +173,17 @@ def main() -> int:
 
     provenance = next(s["body"] for s in v8.SECTIONS if s["key"] == "provenance")
     preserved = (
-        v7.ABSTRACT in provenance
-        and v7.PRELIM_NOTE in provenance
+        v7.ABSTRACT not in provenance
+        and v7.PRELIM_NOTE not in provenance
         and all(section["body"] in provenance for section in v7.SECTIONS)
         and all(question in provenance and answer in provenance for question, answer in v7.QA)
     )
-    check("V7 blocks retained wholesale in provenance source", preserved,
-          "direct source-string containment")
+    check("technical blocks retained wholesale and old abstract/status deleted",
+          preserved, "direct source-string containment")
+    check("no predecessor-version label is rendered",
+          not re.search(r"(?<![A-Za-z0-9])V7(?![A-Za-z0-9])",
+                        plain_fragment(report_html), flags=re.I),
+          "complete rendered report, including the opened appendix")
 
     results_start = report_text.index("What the current results say")
     limits_start = report_text.index("What remains preliminary")
@@ -260,13 +213,28 @@ def main() -> int:
     figure_count = len(re.findall(r"<figure(?:\s|>)", gallery_html))
     caption_count = len(re.findall(r"<figcaption(?:\s|>)", gallery_html))
     standalone = gallery_html.count("<figcaption class=standalone>")
+    all_caption_html = " ".join(
+        re.findall(r"<(?:figcaption|caption)\b[^>]*>.*?</(?:figcaption|caption)>",
+                   report_html + gallery_html, flags=re.S | re.I)
+    )
+    all_caption_text = plain_fragment(all_caption_html)
+    source_caption_text = " ".join(
+        line for line in source.splitlines()
+        if line.startswith("Table:") or line.startswith("![")
+    )
+    check("household-weighted wording used in every weight caption",
+          not term_pattern("dwt").search(all_caption_text)
+          and "weighted using household weights" not in all_caption_text.lower()
+          and not term_pattern("dwt").search(source_caption_text)
+          and "weighted using household weights" not in source_caption_text.lower(),
+          "rendered report, gallery and editable Markdown captions")
     heading_text = " ".join(re.findall(r"<h[1-3][^>]*>(.*?)</h[1-3]>",
                                        gallery_html[:gallery_html.index('<section id="provenance">')],
                                        flags=re.S | re.I))
     check("gallery headings and captions are reader-facing",
           figure_count + standalone == caption_count
           and not any(term_pattern(term).search(plain_fragment(heading_text))
-                      for term, _ in BANNED),
+                      for term in BANNED),
           f"{figure_count} figures, {caption_count} captions")
 
     v7_paths = [
@@ -283,26 +251,6 @@ def main() -> int:
     check("no unresolved source tokens", "{{" not in source,
           "generated editable Markdown")
 
-    audit_status = "PASS" if report_hits == 0 and gallery_hits == 0 else "FAIL"
-    audit_payload = {"status": audit_status, "terms": audit_rows}
-    AUDIT_JSON.write_text(json.dumps(audit_payload, indent=2) + "\n", encoding="utf-8",
-                          newline="\n")
-    audit_lines = [
-        "# V8 banned-term deletion/replacement audit", "",
-        f"Overall: **{audit_status}**", "",
-        "Counts exclude the collapsed technical-provenance appendices and image data.", "",
-        "| Banned term | V7 reader count | V8 report | V8 gallery | Reader-facing replacement | Status |",
-        "|---|---:|---:|---:|---|---:|",
-    ]
-    for row in audit_rows:
-        audit_lines.append(
-            f"| `{row['term']}` | {row['v7_reader_count']} | "
-            f"{row['v8_report_reader_count']} | {row['v8_gallery_reader_count']} | "
-            f"{row['replacement']} | **{row['status']}** |"
-        )
-    AUDIT_MD.write_text("\n".join(audit_lines) + "\n", encoding="utf-8",
-                        newline="\n")
-
     map_payload = {"status": "PASS" if preserved else "FAIL",
                    "mapping": [{"v7_block": src, "v8_destination": dst}
                                for src, dst in SECTION_MAP]}
@@ -311,7 +259,7 @@ def main() -> int:
     map_lines = [
         "# V7-to-V8 section map", "",
         f"Overall: **{map_payload['status']}**", "",
-        "Every predecessor block is retained verbatim in the collapsed technical-provenance appendix; the table records where its economic content now appears in the reader-facing sequence.", "",
+        "The predecessor abstract and status note are deliberately omitted. Every detailed section and presentation-preparation block is retained verbatim inside the explicitly marked, collapsed technical-provenance appendix; the table records where its economic content now appears in the reader-facing sequence.", "",
         "| V7 block | V8 destination |", "|---|---|",
     ]
     map_lines.extend(f"| {src} | {dst} |" for src, dst in SECTION_MAP)

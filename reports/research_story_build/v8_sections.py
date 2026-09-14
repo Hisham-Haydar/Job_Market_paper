@@ -1,7 +1,7 @@
 """Editable reader-facing source for the V8 research-story report.
 
-The seven main sections follow the economic sequence specified for V8.  The
-complete V7 record is preserved, without numerical alteration, inside one
+The seven main sections follow the required economic sequence.  Detailed
+predecessor sections are preserved, without numerical alteration, inside one
 collapsed technical-provenance appendix.
 """
 import v7_sections as v7
@@ -246,22 +246,20 @@ inequality decomposition is still preliminary and is not reported here."""
 
 
 def _v7_record():
-    blocks = [
-        "## V7 abstract\n\n" + v7.ABSTRACT,
-        "## V7 status note\n\n" + v7.PRELIM_NOTE,
-    ]
+    blocks = []
     for section in v7.SECTIONS:
-        blocks.append("## V7 block: " + section["title"] + "\n\n" + section["body"])
-    qa = ["## V7 presentation-preparation questions"]
+        blocks.append("## Technical record: " + section["title"] + "\n\n" + section["body"])
+    qa = ["## Technical presentation-preparation questions"]
     for number, (question, answer) in enumerate(v7.QA, 1):
         qa.append("### %d. %s\n\n%s" % (number, question, answer))
     blocks.append("\n\n".join(qa))
     return """
-This collapsed appendix preserves the complete predecessor text and its
+This collapsed appendix preserves the detailed predecessor sections and their
 implementation-level provenance. It is not part of the reader-facing argument.
-Its purpose is to keep every technical definition, numerical table, diagnostic
-qualification and historical note available without interrupting the economic
-sequence of the report.
+Its purpose is to keep the technical definitions, numerical tables, diagnostic
+qualifications and historical notes available without interrupting the economic
+sequence of the report. The predecessor abstract and status note are deliberately
+not reproduced here.
 
 """ + "\n\n".join(blocks) + "\n"
 
@@ -286,11 +284,4 @@ SECTIONS = [
 ]
 
 
-QA = [
-    ("What is the paper's central distinction?",
-     "Observed income combines what households prefer with the jobs and wages they can reach; the structural model separates those components under maintained restrictions."),
-    ("What does the current money metric value?",
-     "It values the bundle actually attained by the consumption level at home that would make the household indifferent to that bundle."),
-    ("How should the decomposition be read?",
-     "As a preliminary restricted structural accounting exercise, not as the total causal share of inequality due to unequal job opportunities."),
-]
+QA = []

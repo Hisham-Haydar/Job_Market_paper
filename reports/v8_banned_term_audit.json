@@ -1,221 +1,222 @@
 {
+  "gate": "V8 rendered-text banned-term audit",
   "status": "PASS",
-  "terms": [
+  "appendix_begin_marker": "<!-- V8_PROVENANCE_APPENDIX_BEGIN -->",
+  "appendix_end_marker": "<!-- V8_PROVENANCE_APPENDIX_END -->",
+  "exclusion_rule": "exclude exactly and only the inclusive rendered-HTML marker range",
+  "pipeline": [
+    "remove only the exact marked appendix range",
+    "strip script elements",
+    "strip style elements",
+    "strip base64/data URLs and image tags",
+    "strip all remaining tags",
+    "decode HTML entities",
+    "scan rendered text"
+  ],
+  "negative_control": {
+    "status": "PASS",
+    "injected_term": "S11",
+    "injection_location": "rendered HTML immediately before the explicit appendix begin marker",
+    "expected_audit_result": "FAIL",
+    "observed_audit_result": "FAIL",
+    "observed_s11_count": 1,
+    "temporary_file_existed_during_scan": true,
+    "temporary_file_removed": true,
+    "original_sha256_unchanged": true,
+    "scanner_pipeline": [
+      "remove only the exact marked appendix range",
+      "strip script elements",
+      "strip style elements",
+      "strip base64/data URLs and image tags",
+      "strip all remaining tags",
+      "decode HTML entities",
+      "scan rendered text"
+    ]
+  },
+  "surfaces": [
     {
-      "term": "S10",
-      "v7_reader_count": 4,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the estimation or already-priced sample",
+      "path": "reports/JMP_research_story_report_v8.html",
+      "marker_begin_count": 1,
+      "marker_end_count": 1,
+      "rendered_character_count": 19530,
+      "appendix_rendered_character_count": 119970,
+      "outside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 0,
+        "v3b": 0,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 0,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 0,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "inside_appendix_counts": {
+        "S10": 0,
+        "S11": 5,
+        "S12": 1,
+        "POSFIT": 1,
+        "v3b": 1,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 3,
+        "node": 7,
+        "proposal panel": 0,
+        "exact-H": 3,
+        "H-F": 3,
+        "H-D": 3,
+        "H-X": 3,
+        "NN state": 3,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 1,
+        "gate": 4,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 3,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 1
+      },
+      "outside_appendix_total": 0,
       "status": "PASS"
     },
     {
-      "term": "S11",
-      "v7_reader_count": 9,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the preferred specification",
+      "path": "reports/JMP_results_gallery_v8.html",
+      "marker_begin_count": 1,
+      "marker_end_count": 1,
+      "rendered_character_count": 32612,
+      "appendix_rendered_character_count": 62670,
+      "outside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 0,
+        "v3b": 0,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 0,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 0,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "inside_appendix_counts": {
+        "S10": 0,
+        "S11": 4,
+        "S12": 0,
+        "POSFIT": 6,
+        "v3b": 3,
+        "DECOMP-2": 2,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 5,
+        "node": 8,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 1,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 1,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "outside_appendix_total": 0,
       "status": "PASS"
+    }
+  ],
+  "replacements": [
+    {
+      "before": "Mapping-F attained-bundle money metric",
+      "after": "attained-bundle money metric"
     },
     {
-      "term": "S12",
-      "v7_reader_count": 1,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the large predictive integration sample",
-      "status": "PASS"
+      "before": "Corrected POSFIT-v3b predictive evidence",
+      "after": "the corrected predictive-fit diagnostics"
     },
     {
-      "term": "POSFIT",
-      "v7_reader_count": 4,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the predictive-fit diagnostics",
-      "status": "PASS"
+      "before": "the corrected S11 evaluation",
+      "after": "the corrected evaluation"
     },
     {
-      "term": "v3b",
-      "v7_reader_count": 4,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the corrected diagnostics",
-      "status": "PASS"
+      "before": "S12-native full employment-hours width",
+      "after": "the full employment-hours range represented in the predictive integration sample"
     },
     {
-      "term": "DECOMP-2",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the preliminary structural decomposition",
-      "status": "PASS"
+      "before": "H-F domain",
+      "after": "the ex-ante reference keeps the full opportunity environment fixed while equalising consumption across jobs"
     },
     {
-      "term": "criterion-A",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the estimation sample",
-      "status": "PASS"
+      "before": "exact-H pre-validation",
+      "after": "additional counterfactual tax-benefit evaluations are required before the ex-ante measure can be reported reliably"
     },
     {
-      "term": "Gate 0",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the relevant economic condition",
-      "status": "PASS"
+      "before": "dwt-weighted",
+      "after": "household-weighted"
     },
     {
-      "term": "anchor",
-      "v7_reader_count": 2,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the observed-job alternative, where economically relevant",
-      "status": "PASS"
+      "before": "the estimation panel's anchor node",
+      "after": "the household's own observed job, which the simulation always includes"
     },
     {
-      "term": "node",
-      "v7_reader_count": 5,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "integration point or job alternative",
-      "status": "PASS"
+      "before": "MECHANICAL_STOCHASTIC_CONDITIONING",
+      "after": "the pattern is a mechanical consequence of conditioning on realised outcomes under stochastic choice"
     },
     {
-      "term": "proposal panel",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the numerical integration sample",
-      "status": "PASS"
-    },
-    {
-      "term": "exact-H",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "pre-pricing numerical validation",
-      "status": "PASS"
-    },
-    {
-      "term": "H-F",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the full opportunity environment with equal consumption across jobs",
-      "status": "PASS"
-    },
-    {
-      "term": "H-D",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the estimated-domain sensitivity",
-      "status": "PASS"
-    },
-    {
-      "term": "H-X",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the disclosed sample-restriction sensitivity",
-      "status": "PASS"
-    },
-    {
-      "term": "NN state",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the neither-partner-works alternative",
-      "status": "PASS"
-    },
-    {
-      "term": "NN pricing state",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "the priced neither-partner-works alternative",
-      "status": "PASS"
-    },
-    {
-      "term": "SHA",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "source provenance in the collapsed appendix",
-      "status": "PASS"
-    },
-    {
-      "term": "hash",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "source provenance in the collapsed appendix",
-      "status": "PASS"
-    },
-    {
-      "term": "dwt",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "household weights",
-      "status": "PASS"
-    },
-    {
-      "term": "worktree",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "source provenance in the collapsed appendix",
-      "status": "PASS"
-    },
-    {
-      "term": "registry",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "numerical source record in the collapsed appendix",
-      "status": "PASS"
-    },
-    {
-      "term": "G1-G9",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "validation checks",
-      "status": "PASS"
-    },
-    {
-      "term": "adjudication",
-      "v7_reader_count": 1,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "diagnostic assessment",
-      "status": "PASS"
-    },
-    {
-      "term": "gate",
-      "v7_reader_count": 3,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "numerical-precision standard or validation check",
-      "status": "PASS"
-    },
-    {
-      "term": "mission",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "omitted from reader-facing prose",
-      "status": "PASS"
-    },
-    {
-      "term": "ruling",
-      "v7_reader_count": 0,
-      "v8_report_reader_count": 0,
-      "v8_gallery_reader_count": 0,
-      "replacement": "omitted from reader-facing prose",
-      "status": "PASS"
+      "before": "V7 status note",
+      "after": "deleted from the report; the status statement uses the required ongoing-validation wording and names no version"
     }
   ]
 }

@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import hashlib
-import html
 import json
 import re
 import sys
@@ -13,7 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 BUILD = ROOT / "reports/research_story_build"
 sys.path.insert(0, str(BUILD))
+sys.path.insert(0, str(ROOT / "reports"))
 
+import check_v8_rendered_language as rendered_audit  # noqa: E402
 import v8_render_inputs as inputs  # noqa: E402
 import v8_sections as sections  # noqa: E402
 
@@ -44,14 +45,9 @@ def squash(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def visible_html(path: Path, stop_id: str) -> str:
-    text = read(path)
-    text = text[text.index("<main"):]
-    stop = text.index(stop_id)
-    text = text[:stop]
-    text = re.sub(r"<img[^>]*>", " ", text, flags=re.S)
-    text = re.sub(r"<[^>]+>", " ", text)
-    return squash(html.unescape(text))
+def visible_html(path: Path) -> str:
+    outside, _ = rendered_audit.remove_exact_appendix(read(path))
+    return rendered_audit.rendered_text(outside)
 
 
 def number_tokens(text: str) -> set[str]:
@@ -123,8 +119,8 @@ def main() -> int:
           old_decomp_numbers == new_decomp_numbers,
           "accepted Shapley allocation table")
 
-    report = visible_html(V8_REPORT, '<h1 id="8-appendix')
-    gallery = visible_html(V8_GALLERY, '<section id="provenance">')
+    report = visible_html(V8_REPORT)
+    gallery = visible_html(V8_GALLERY)
     moments = json.loads(read(MOMENTS))
     expected_mae = [
         f'{moments["summaries"][model]["mean_absolute_error"]:.4f}'

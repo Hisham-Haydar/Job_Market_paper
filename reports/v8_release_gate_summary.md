@@ -4,7 +4,8 @@ Overall: **PASS**
 
 | Gate | Status | Evidence |
 |---|---:|---|
-| reader-language and structure | **PASS** | READER GATES PASS: 18 checks, 0 failures |
+| rendered-text language and negative control | **PASS** | RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL |
+| reader-language and structure | **PASS** | READER GATES PASS: 22 checks, 0 failures |
 | number-to-source | **PASS** | NUMBER-TO-SOURCE PASS: 14 checks, 0 failures |
 | offline HTML render | **PASS** | temporary screenshots captured for visual inspection |
 | V7 decision-suite regression | **PASS** | OVERALL PASS |

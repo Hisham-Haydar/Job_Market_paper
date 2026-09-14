@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "reports/JMP_results_gallery_current.html"
 REPORT = ROOT / "reports/JMP_research_story_report_v8.html"
 OUT = ROOT / "reports/JMP_results_gallery_v8.html"
+BEGIN_MARKER = "<!-- V8_PROVENANCE_APPENDIX_BEGIN -->"
+END_MARKER = "<!-- V8_PROVENANCE_APPENDIX_END -->"
 
 
 def section(document: str, section_id: str) -> str:
@@ -35,7 +37,8 @@ def section(document: str, section_id: str) -> str:
 
 def report_section(document: str, number: int) -> str:
     match = re.search(
-        rf'<h1 id="{number}-[^"]+">.*?</h1>(.*?)(?=<h1 id="{number + 1}-)',
+        rf'<h1 id="{number}-[^"]+">.*?</h1>(.*?)(?=<h1 id="{number + 1}-|'
+        r'<!-- V8_PROVENANCE_APPENDIX_BEGIN -->)',
         document,
         flags=re.S,
     )
@@ -62,7 +65,7 @@ def reader_language(text: str) -> str:
         ("S12", "the large predictive integration sample"),
         ("S11", "the preferred specification"),
         ("criterion-A", "the estimation-sample"),
-        ("dwt-weighted", "weighted using household weights"),
+        ("dwt-weighted", "household-weighted"),
         ("dwt", "household weights"),
         ("node-level", "job-specific"),
         ("proposal panel", "numerical integration sample"),
@@ -176,11 +179,16 @@ def main() -> None:
         f'<a href="#{sid}"><span>{number:02d}</span>{html.escape(title)}</a>'
         for number, (sid, title, _) in enumerate(all_sections, 1)
     )
-    body = "".join(
-        f'<section id="{sid}"><div class="kicker">{number:02d} / evidence</div>'
-        f'<h2>{html.escape(title)}</h2>{content}</section>'
-        for number, (sid, title, content) in enumerate(all_sections, 1)
-    )
+    body_parts = []
+    for number, (sid, title, content) in enumerate(all_sections, 1):
+        rendered_section = (
+            f'<section id="{sid}"><div class="kicker">{number:02d} / evidence</div>'
+            f'<h2>{html.escape(title)}</h2>{content}</section>'
+        )
+        if sid == "provenance":
+            rendered_section = BEGIN_MARKER + rendered_section + END_MARKER
+        body_parts.append(rendered_section)
+    body = "".join(body_parts)
     document = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -194,6 +202,22 @@ def main() -> None:
         'couple households.</p></header>' + body + "</main></body></html>"
     )
     document = re.sub(r"[ \t]+(?=\n)", "", document)
+    # Clean caption and fallback-alt text without touching embedded base64 data.
+    def clean_caption(match: re.Match) -> str:
+        visible = re.sub(r"weighted using household weights",
+                         "household-weighted", match.group(2), flags=re.I)
+        visible = re.sub(r"dwt-weighted", "household-weighted", visible,
+                         flags=re.I)
+        visible = re.sub(r"(?<![A-Za-z0-9])dwt(?![A-Za-z0-9])",
+                         "household weights", visible, flags=re.I)
+        return match.group(1) + visible + match.group(3)
+
+    document = re.sub(r"(<figcaption\b[^>]*>)(.*?)(</figcaption>)",
+                      clean_caption, document, flags=re.S | re.I)
+    document = re.sub(r"(<caption\b[^>]*>)(.*?)(</caption>)",
+                      clean_caption, document, flags=re.S | re.I)
+    document = re.sub(r'(\balt=")([^"]*)(")', clean_caption, document,
+                      flags=re.S | re.I)
     standalone_captions = document.count("<figcaption class=standalone>")
     if document.count("<figure") + standalone_captions != document.count("<figcaption"):
         raise RuntimeError("a gallery figure is missing its caption")

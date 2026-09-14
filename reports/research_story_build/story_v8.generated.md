@@ -280,24 +280,23 @@ implementation requires additional counterfactual tax-benefit evaluations
 to obtain adequate coverage of the hours distribution, so the corresponding
 inequality decomposition is still preliminary and is not reported here.
 
+# Bibliography
+
+::: {#refs}
+:::
+
+<!-- V8_PROVENANCE_APPENDIX_BEGIN -->
 # 8. Appendix. Technical record and provenance
 
 
-This collapsed appendix preserves the complete predecessor text and its
+This collapsed appendix preserves the detailed predecessor sections and their
 implementation-level provenance. It is not part of the reader-facing argument.
-Its purpose is to keep every technical definition, numerical table, diagnostic
-qualification and historical note available without interrupting the economic
-sequence of the report.
+Its purpose is to keep the technical definitions, numerical tables, diagnostic
+qualifications and historical notes available without interrupting the economic
+sequence of the report. The predecessor abstract and status note are deliberately
+not reproduced here.
 
-## V7 abstract
-
-We study how unequal job opportunities contribute to inequality in money-metric well-being. The verified current measure is the Mapping-F attained-bundle money metric: the attained bundle is evaluated against the universally available non-employment reference, so estimated opportunity density affects the measure through attained outcomes rather than through a direct opportunity-prospect term. We model labour supply as a choice among latent jobs on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Preferences and opportunity components are jointly estimated under maintained functional-form and exclusion restrictions. We implement a preliminary restricted structural decomposition of the attained-bundle money metric, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and earning opportunities while holding household resources, needs and composition fixed. Within this restricted game, the earning-opportunity channel has a larger Shapley contribution than the coarse geographic/temporal access channel. The exercise is preliminary and is not interpreted as the total share of well-being inequality due to opportunities.
-
-## V7 status note
-
-Discussion draft. Corrected POSFIT-v3b predictive evidence and the verified Mapping-F results are reported with the preliminary restricted P/A/B decomposition in the main text; Appendix D retains its full technical record. The distinct ex-ante opportunity-prospect metric is defined but numerically blocked.
-
-## V7 block: Introduction
+## Technical record: Introduction
 
 
 Two people can work the same hours for the same hourly pay and be very differently placed. One chose that job from several that were open; the other took the only offer available. Their earnings are identical and their circumstances are not. Income comparisons record the outcome and cannot separate the two cases, and the difference matters for how unequal we should judge well-being to be.
@@ -347,7 +346,7 @@ What is new, to our knowledge, is the conjunction: a random-utility random-oppor
 **Roadmap.** Section 2 describes the data and the household budget construction. Section 3 presents the latent-jobs model, its identifying restrictions and its estimation. Section 4 defines the money-metric welfare measure and the structural decomposition. Section 5 reports the behavioural and welfare results for both household types. Section 6 examines sensitivity and states the limitations. Section 7 concludes.
 
 
-## V7 block: Data
+## Technical record: Data
 
 
 The data are French EU-SILC, collection year 2016, with income reference year 2015. Taxes, benefits and disposable income are computed by EUROMOD [@sutherlandfigari2013] under the French 2015 policy system, which is the system in force over the income reference period. We use the same three dates consistently: the survey is collected in 2016, incomes refer to 2015, and the simulated policy system is 2015.
@@ -457,7 +456,7 @@ Panel (c) of the figure reports the *incidence* of non-labour budget inputs by f
 Local labour-market conditions enter through a group unemployment measure, a population-weighted exposure index for the decider's region and age-education cell, stored as a fraction and entering the employment index multiplied by 10. Regional and urbanisation variation supports the access specification conditional on the exclusion restriction and the functional form; it does not by itself identify access, and no causal effect of geography is claimed anywhere in this paper.
 
 
-## V7 block: A latent-jobs model of household labour supply
+## Technical record: A latent-jobs model of household labour supply
 
 
 A job is a package $j$: an employment state $e\in\{0,1\}$ and, when employed, an occupation $k\in\{1,\dots,4\}$, weekly hours $h\in[5,70]$ and an hourly wage $w\in[2,590]$. The base measure $\nu$ places counting mass on the single non-employment point and, on the employed part, counting measure over occupations with Lebesgue measure over hours and wages. A household chooses one package; a couple chooses one pair of packages under a shared budget.
@@ -548,7 +547,7 @@ Standard errors are cluster-robust on the household. Optimization uses five star
 
 
 
-## V7 block: Money-metric well-being and structural inequality decomposition
+## Technical record: Money-metric well-being and structural inequality decomposition
 
 
 ## The verified own-set equal-consumption $W^1_F$ construction
@@ -594,7 +593,7 @@ The restricted counterfactual operators and allocation rule are set out in Appen
 $W_{EA,\mathrm{flat}}$ is a distinct ex-ante opportunity-prospect metric. Its definition is fixed but it has no numerical result. Write its eventual flat-reference inversion as $H_i^{\mathrm{reference}}(m)=J_i^{\mathrm{actual}}$. The primary H-F domain retains the full opportunity environment: states with $C\leq0$ contribute zero to $J_i^{\mathrm{actual}}$ through the $C\rightarrow0^+$ utility limit, while the reference retains those states and assigns the common consumption $m$. H-D is an estimated-domain sensitivity and H-X is a disclosed sample-restriction sensitivity. No one-euro floor, observed-consumption substitution or silent household deletion is permitted. The 260 couples lacking a priced NN state and the associated support/pricing requirements currently block numerical implementation; the first post-seminar numerical task is exact-H pre-validation before any minimum accepted pricing design is launched.
 
 
-## V7 block: Empirical results
+## Technical record: Empirical results
 
 
 ## Behavioural estimates
@@ -812,7 +811,7 @@ The two re-estimated common-opportunity benchmarks are worse by 141.64 and by a 
 ## Within-sample equivalised results
 
 
-Table: The verified own-set equal-consumption $W^1_F$ construction, modified-OECD equivalised, against equivalised disposable consumption in the same sample. Household EUR/month, dwt-weighted. The sample aggregates are reproduced to machine precision, confirmed by an independent reimplementation. Reported separately by population; no pooled figure and no cross-population level comparison.
+Table: The verified own-set equal-consumption $W^1_F$ construction, modified-OECD equivalised, against equivalised disposable consumption in the same sample. Household EUR/month, household-weighted. The sample aggregates are reproduced to machine precision, confirmed by an independent reimplementation. Reported separately by population; no pooled figure and no cross-population level comparison.
 
 |Population|N|Workers|Non-workers|$C^{eq}$ mean|$C^{eq}$ median|$C^{eq}$ Gini|$W^1_F{}^{eq}$ mean|$W^1_F{}^{eq}$ median|$W^1_F{}^{eq}$ Gini|
 |---|---|---|---|---|---|---|---|---|---|
@@ -829,7 +828,7 @@ The verified $W^1_F$ construction gives, on the modified-OECD-equivalised basis,
 
 
 
-Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, dwt-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
+Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, household-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
 
 |Scale|Coalition|I(S), Gini|Change from actual|MC range (min–max)|
 |---|---|---|---|---|
@@ -853,7 +852,7 @@ Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric 
 
 
 
-Table: Couples, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, dwt-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
+Table: Couples, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, household-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
 
 |Scale|Coalition|I(S), Gini|Change from actual|MC range (min–max)|
 |---|---|---|---|---|
@@ -937,7 +936,7 @@ A Monte Carlo share range for each factor -- the across-replication spread of on
 The allocation is exhaustive to numerical precision: the residual after summing $P$, $A$, $B$ and $\Delta I$ back to $I_\varnothing$ is zero to machine precision in every sample and scale, verified rather than imposed. That is a computational validation of the accounting for the declared game. It does not validate the identification of the model, the normative content of the operators, or a resolution of the counterfactual-attainment question this exercise is deliberately bounded around.
 
 
-## V7 block: Sensitivity and limitations
+## Technical record: Sensitivity and limitations
 
 
 ## Two open econometric questions
@@ -975,7 +974,7 @@ The preliminary decomposition is an accounting of a structural model under decla
 **Numerically blocked opportunity-prospect metric.** $W_{EA,\mathrm{flat}}$ is a distinct ex-ante opportunity-prospect metric. Its definition is fixed but it has no numerical result. Write its eventual flat-reference inversion as $H_i^{\mathrm{reference}}(m)=J_i^{\mathrm{actual}}$. The primary H-F domain retains the full opportunity environment: states with $C\leq0$ contribute zero to $J_i^{\mathrm{actual}}$ through the $C\rightarrow0^+$ utility limit, while the reference retains those states and assigns the common consumption $m$. H-D is an estimated-domain sensitivity and H-X is a disclosed sample-restriction sensitivity. No one-euro floor, observed-consumption substitution or silent household deletion is permitted. The 260 couples lacking a priced NN state and the associated support/pricing requirements currently block numerical implementation; the first post-seminar numerical task is exact-H pre-validation before any minimum accepted pricing design is launched.
 
 
-## V7 block: Conclusion
+## Technical record: Conclusion
 
 
 Observed hours and earnings do not say whether a household chose its position or settled for it, and that ambiguity is not a nuisance for welfare measurement: it is the substance of it. This paper takes the ambiguity seriously in both halves of the problem. On the behavioural side, preferences and opportunity components are jointly estimated, with their separation relying on maintained functional-form and exclusion restrictions; every alternative is priced through the tax-benefit system. On the normative side, the money metric is derived from the own-set equal-consumption principle. Under the current empirical specification its direct reference collapses to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through attained bundles.
@@ -988,7 +987,7 @@ The main results therefore retain the computed preliminary restricted P/A/B exer
 The preliminary attainment exercise is evaluated on the already-priced estimation panel. That panel sparsely represents the lower part of the structural hours support. A separate integration audit shows substantial structural mass in that region. The direct importance of this limitation for the current attained-bundle decomposition has not been fully quantified, so the result remains explicitly preliminary.
 
 
-## V7 block: Appendix A. The estimated parameter vectors
+## Technical record: Appendix A. The estimated parameter vectors
 
 
 The tables below report only coordinates estimated on the reported sample. **Maintained restrictions.** Singles: `theta_c_singles = 0`; the couples preference block (`beta_l0_m`, `beta_l_age_m`, `beta_l_age2_m`, `beta_l0_f`, `beta_l_age_f`, `beta_l_age2_f`, `beta_l_nkids_f`, `theta_l_f`) does not enter the singles likelihood; and `beta_E_y2015` and `beta_E_y2017` are absent because the 2015 and 2017 data are not used. Couples: `theta_c = 0`, the male children leisure effect is structurally zero, and the direct cross-leisure term is fixed at zero. These are restrictions, not estimates.
@@ -1100,7 +1099,7 @@ Table: The couples estimated coordinates. Standard errors are cluster-robust on 
 
 
 
-## V7 block: Appendix B. Inequality indices and the allocation rule
+## Technical record: Appendix B. Inequality indices and the allocation rule
 
 
 The preliminary decomposition in Appendix D uses the Gini index only, on a weighted distribution of strictly positive money-metric levels with mean $\mu$: $\mathcal I=\frac{1}{2\mu}\,\mathbb{E}\lvert W-\tilde W\rvert$, for $W,\tilde W$ independent draws from the distribution. Extending the exercise to further indices is future work and is not reported here.
@@ -1114,7 +1113,7 @@ $$
 where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
 
 
-## V7 block: Appendix C. Data, software and replication
+## Technical record: Appendix C. Data, software and replication
 
 
 **Data.** French EU-SILC, accessed through Eurostat's harmonised release, with 2016 survey collection and a 2015 income reference year. The harmonised survey is transformed into an input file for EUROMOD [@sutherlandfigari2013], which applies the French 2015 policy system. Regional labour-market conditions come from the Eurostat regional labour-force series. Access to EU-SILC microdata is granted by Eurostat under its research-access conditions and the data cannot be redistributed with this document.
@@ -1130,7 +1129,7 @@ where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With thr
 **Replication.** Code and derived, non-confidential intermediate artefacts will be made available in a public replication archive on publication. Confidential microdata remain in their permitted environment, so the replication package reproduces every step conditional on authorised access to EU-SILC.
 
 
-## V7 block: Appendix D. Preliminary restricted-operator decomposition
+## Technical record: Appendix D. Preliminary restricted-operator decomposition
 
 
 A preliminary P/A/B decomposition has been computed for the attained-bundle money metric, holding resources, needs and composition fixed. It is a restricted counterfactual exercise, not a comprehensive share of inequality due to all opportunities. A separately defined ex-ante metric is being reconstructed for comparison; neither historical ex-ante percentages nor a settled cross-estimand conclusion are reported here.
@@ -1190,7 +1189,7 @@ Uncertainty is reported two ways, never merged into a confidence interval: a Mon
 
 
 
-Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, dwt-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
+Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, household-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
 
 |Scale|Coalition|I(S), Gini|Change from actual|MC range (min–max)|
 |---|---|---|---|---|
@@ -1214,7 +1213,7 @@ Table: Single adults, the eight P/A/B coalitions. Weighted Gini of money-metric 
 
 
 
-Table: Couples, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, dwt-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
+Table: Couples, the eight P/A/B coalitions. Weighted Gini of money-metric well-being, household-weighted, simulated on the estimated model’s already-priced estimation panel with no re-estimation and no new pricing. "Change from actual" is the one-factor effect of that coalition. The Monte Carlo range is the spread of the Gini level across 1,000 simulation replications, never a confidence interval.
 
 |Scale|Coalition|I(S), Gini|Change from actual|MC range (min–max)|
 |---|---|---|---|---|
@@ -1320,13 +1319,13 @@ The normative half then yields, for each household, an equivalent consumption at
 
 Two qualifications belong with these appendix results. First, the preference contribution's sign is not robust between the unequivalised and equivalised reporting conventions, in either sample: we therefore make no directional claim about it, only about the ordering of access against earnings. Second, an allocated share is an average of marginal contributions over coalition orders. It is not the reduction that equalizing that factor alone would achieve; Section 5 reports both and explains why they can differ, and reports the exact scale at which excluding the model's anchored-attainment arm moves $\Delta I$, as a robustness check on the design rather than on the estimates. This is a bounded, preliminary reading, reported ahead of the paper's final decomposition architecture, and it should be read as such throughout.
 
-## V7 block: The research notebook
+## Technical record: The research notebook
 
 
 The project keeps one canonical reader-facing reproducibility workflow alongside the estimation code. It executes checks and renders the reported results from frozen, priced inputs. It is not a raw-data end-to-end reproduction system: raw job-set construction and EUROMOD pricing remain separate authorised stages. Unifying those stages is the stated next engineering priority, not a capability the workflow claims today.
 
 
-## V7 block: Scientific history of this result
+## Technical record: Scientific history of this result
 
 
 This section records how the reported specifications and results came to be what they are. It is here so that the argument above does not have to carry it, and so that a reader comparing this version with an earlier one can see what changed and why. Nothing in it is a competing model.
@@ -1344,7 +1343,7 @@ This section records how the reported specifications and results came to be what
 **The consumption normalizer.** Three values of $\lambda_c$ were in circulation because different panels recomputed it over their own rows. Under exact log consumption the constant is alternative-invariant and cancels from every choice probability; it does not enter the $W^1_F$ welfare measure at all, so no welfare result is affected by which value is used. The paper now reports one constant per population, for the choice-probability role it actually plays.
 
 
-## V7 presentation-preparation questions
+## Technical presentation-preparation questions
 
 ### 1. What is the question, in one sentence?
 
@@ -1449,22 +1448,4 @@ The common mismatch is underprediction of the observed 37-hour mass point by 3.8
 ### 26. Is the ex-ante opportunity-prospect metric a result?
 
 $W_{EA,\mathrm{flat}}$ is definition-only and numerically blocked. No number for that metric is reported.
-
-# Questions for presentation preparation
-
-## 1. What is the paper's central distinction?
-
-Observed income combines what households prefer with the jobs and wages they can reach; the structural model separates those components under maintained restrictions.
-
-## 2. What does the current money metric value?
-
-It values the bundle actually attained by the consumption level at home that would make the household indifferent to that bundle.
-
-## 3. How should the decomposition be read?
-
-As a preliminary restricted structural accounting exercise, not as the total causal share of inequality due to unequal job opportunities.
-
-# Bibliography
-
-::: {#refs}
-:::
+<!-- V8_PROVENANCE_APPENDIX_END -->
