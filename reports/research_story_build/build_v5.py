@@ -186,9 +186,11 @@ for _t in ['singles', 'couples']:
              'multiplicative factor on consumption')
     register('nat_pct_' + _t, round(100.0 * (_f - 1.0), 1), _S11SRC, 'derived',
              'per cent increase in consumption')
-register('pm_weight_double',
-         round(2.0 ** REG['beta_c_singles']['value'], 2), _S11SRC, 'derived',
-         'contribution to the power moment, relative to the median alternative')
+# MEASURE-DEF-1: pm_weight_double ("an alternative paying twice the median
+# contributes N times as much") described a contribution to the retired
+# ex-ante power-moment welfare functional; removed together with that
+# functional's prose, not carried forward under the accepted W1_F measure,
+# which has no such power-moment contribution at all.
 
 # =========================================================================== #
 # 3.  THE PRELIMINARY P/A/B DECOMPOSITION (DECOMP-2)
@@ -208,9 +210,6 @@ DECOMP2 = ROOT.parent / 'MNL_decomp' / 'outputs/welfare/preseminar_pab_v1'
 _D2SRC = ('MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); '
           'preliminary three-factor P/A/B decomposition, not the final '
           'decomposition architecture')
-ARM = {'singles': 'singles_female', 'couples': 'household-own'}
-SAMP = {'singles': 'singles', 'couples': 'couples'}
-WD = pd.read_csv(V5 / 'v5_welfare_distributions_v1.csv')
 D2_COAL = {s: pd.read_csv(DECOMP2 / ('coalition_values_%s.csv' % s))
            for s in ('singles', 'couples')}
 D2_SHAP = {s: pd.read_csv(DECOMP2 / ('shapley_PAB_%s.csv' % s))
@@ -299,23 +298,15 @@ for _s in ('singles', 'couples'):
              'diagnostic', 'per cent of households attaining the observed '
              'node under the actual coalition')
 
-# welfare levels
-for _tag in ['singles', 'couples']:
-    for basis in ['raw', 'equivalized']:
-        r = WD[(WD['sample'] == SAMP[_tag]) & (WD['reference'] == ARM[_tag])
-               & (WD['basis'] == basis) & (WD['state'] == 'I00')].iloc[0]
-        for stat in ['mean_weighted', 'median', 'p10', 'p90']:
-            register('wl_%s_%s_%s' % (stat.split('_')[0], basis, _tag),
-                     round(float(r[stat]), 0),
-                     'v5_welfare_distributions_v1.csv', 'result', 'EUR/month')
-        register('wl_gini_%s_%s' % (basis, _tag),
-                 round(float(r['gini_weighted']), 6),
-                 'v5_welfare_distributions_v1.csv', 'result', 'Gini units')
-for _tag in ['singles', 'couples']:
-    o = _EVID['lorenz_observed_income']['%s|raw' % SAMP[_tag]]
-    register('inc_gini_' + _tag, round(float(o['gini_weighted']), 6),
-             'v5_step2_welfare_evidence_v1.json::lorenz_observed_income',
-             'result', 'Gini units')
+# MEASURE-DEF-1: the "welfare levels" registration block that stood here
+# (wl_* from v5_welfare_distributions_v1.csv, inc_gini_* from
+# lorenz_observed_income) fed the report-only "ex-ante measure's levels"
+# subsection and figures (welfdist, lorenz) in RESULTS. That subsection
+# reported the retired ex-ante inclusive-value construction's own levels,
+# a different object from the verified Mapping-F W1_F baseline (below) --
+# removed under MEASURE-DEF-1 rather than relabelled, since it produced a
+# reported number from a construction Deputy ruling R2 retired. Nothing
+# else read WD/ARM/SAMP or these keys; removed together, not left orphaned.
 
 # =========================================================================== #
 # REBUILD-2: the verified Mapping-F W1_F construction (BASELINE-F-1 / E3-EQ).
@@ -395,25 +386,14 @@ register('singlesmale_hours_gap_pp',
 #     classifies W3 as "DIFFERENT OBJECT... REUSABLE FOR LITERAL: no" and its
 #     R4 final statement lists it under "no current ruling requires". Removed
 #     from v5_sections.py's SENSITIVITY section entirely, not recited.
-_BR = _EVID['w1_w4_bridge']
-for _t in ['singles', 'couples']:
-    b = _BR[_t]
-    register('gint_med_' + _t, round(b['ghat_integral_on_H_domain']['median'], 6),
-             's12_w4_premise_audit_v1.json', 'diagnostic',
-             'opportunity mass on the H domain')
-    register('w41_med_' + _t,
-             round(b['unit_mass_corrected_bridge']['W4_over_W1']['median'], 4),
-             's12_w4_premise_audit_v1.json', 'result',
-             'ratio after unit-mass normalization')
-    register('w41_min_' + _t,
-             round(b['unit_mass_corrected_bridge']['W4_over_W1']['min'], 4),
-             's12_w4_premise_audit_v1.json', 'result', 'ratio')
-    register('w41_max_' + _t,
-             round(b['unit_mass_corrected_bridge']['W4_over_W1']['max'], 4),
-             's12_w4_premise_audit_v1.json', 'result', 'ratio')
-    register('delta_med_' + _t,
-             round(b['unit_mass_corrected_bridge']['Delta_nats']['median'], 4),
-             's12_w4_premise_audit_v1.json', 'result', 'nats')
+# MEASURE-DEF-1: the W1/W4 bridge block that stood here (gint_med_*,
+# w41_*, delta_med_* from s12_w4_premise_audit_v1.json) defined W1 itself
+# via the retired ex-ante J/H integrals ("beta_c*log(W1/lambda_c) = log J -
+# log H"), reusing the paper's own "W1" symbol for a different, retired
+# object. Removed together with the SENSITIVITY and appendix prose that
+# read it; the pay-neutrality finding those sections separately supported
+# survives on its own, stronger footing (Section 4, Deputy ruling R1) and
+# needed no bridge to state.
 
 for _p in ['jax', 'jaxlib', 'euromod']:
     try:
@@ -762,31 +742,11 @@ TABLES['baselinef1'] = table(
      '$C^{eq}$ median', '$C^{eq}$ Gini', '$W^1_F{}^{eq}$ mean',
      '$W^1_F{}^{eq}$ median', '$W^1_F{}^{eq}$ Gini'], _rows)
 
-# ---- T10: welfare levels -------------------------------------------------- #
-_rows = []
-for tag in ['singles', 'couples']:
-    for basis in ['raw', 'equivalized']:
-        r = WD[(WD['sample'] == SAMP[tag]) & (WD['reference'] == ARM[tag])
-               & (WD['basis'] == basis) & (WD['state'] == 'I00')].iloc[0]
-        _rows.append([{'singles': 'Single-adult', 'couples': 'Couple'}[tag],
-                      {'raw': 'Household', 'equivalized': 'Equivalized'}[basis],
-                      format(float(r['mean_weighted']), ',.0f'),
-                      format(float(r['p10']), ',.0f'),
-                      format(float(r['median']), ',.0f'),
-                      format(float(r['p90']), ',.0f'),
-                      format(float(r['gini_weighted']), '.4f')])
-    _rows.append([{'singles': 'Single-adult', 'couples': 'Couple'}[tag],
-                  'Priced disposable income', '--', '--', '--', '--',
-                  format(REG['inc_gini_' + tag]['value'], '.4f')])
-TABLES['levels'] = table(
-    'v5_welfare_levels',
-    'Table: The distribution of money-metric well-being, and the priced '
-    'disposable income it replaces. Levels are in euros per month of '
-    'equivalent flat consumption, weighted. Levels are not comparable between '
-    'the two household types: each type carries its own reference '
-    'construction, and the Gini of the money metric and the Gini of income are '
-    'not two estimates of one quantity.',
-    ['Population', 'Basis', 'Mean', 'p10', 'Median', 'p90', 'Gini'], _rows)
+# MEASURE-DEF-1: T10 ("welfare levels", TABLES['levels']) reported the
+# retired ex-ante measure's own levels against priced disposable income,
+# fed by the wl_*/inc_gini_* registrations removed above. Removed together
+# with the report-only "ex-ante measure's levels" subsection that used it;
+# T9b below (TABLES['baselinef1']) is the accepted W1_F equivalent.
 
 # ---- T11: the eight P/A/B coalitions, per sample --------------------------- #
 def _d2_coalition_table(sample, label):
@@ -924,33 +884,9 @@ TABLES['indices'] = table(
      ['GE(1)', r'$\mathbb{E}\big[(W/\mu)\log(W/\mu)\big]$'],
      [r'GE(2) $=CV^2/2$', r'$\tfrac{1}{2}\mathbb{E}\big[(W/\mu)^2-1\big]$']])
 
-# ---- T17: the W1/W4 bridge ------------------------------------------------ #
-_rows = []
-for tag, pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
-    b = _BR[tag]
-    _rows.append([
-        pop,
-        'yes' if b['home_is_argmax_L']['pass'] else 'no',
-        format(b['ghat_integral_on_H_domain']['median'], '.6f'),
-        format(b['unit_mass_corrected_bridge']['W4_over_W1']['median'], '.4f'),
-        '[%s, %s]' % (
-            format(b['unit_mass_corrected_bridge']['W4_over_W1']['min'], '.4f'),
-            format(b['unit_mass_corrected_bridge']['W4_over_W1']['max'], '.4f')),
-        format(b['unit_mass_corrected_bridge']['Delta_nats']['median'], '.4f'),
-        'yes' if b['unit_mass_corrected_bridge']['Delta_nonnegative_everywhere']
-        else 'no'])
-TABLES['bridge'] = table(
-    'v5_bridge',
-    'Table: The bridge between the two monetary references, after the premise '
-    'audit. The second column reports whether non-work maximizes the '
-    'non-consumption index for every household; the third reports the median '
-    'mass of the opportunity kernel on the domain the reference integral uses. '
-    'That mass is not one, which is the premise that failed and the reason the '
-    'earlier signed gaps were scale artefacts. The remaining columns are the '
-    'bridge after normalizing the kernel on exactly that domain.',
-    ['Population', 'Non-work maximizes $L$', 'Median $\\int\\hat g$',
-     'Median $W^4/W^1$', 'Range', 'Median $\\Delta$ (nats)',
-     '$\\Delta\\ge 0$ everywhere'], _rows)
+# MEASURE-DEF-1: T17 (TABLES['bridge']) reported the W1/W4 bridge, defined
+# through the retired ex-ante J/H integrals via `_BR`. Removed together with
+# `_BR` and the SENSITIVITY/appendix prose that read it.
 
 # ---- T18: the lambda_c reconciliation ------------------------------------- #
 TABLES['lambda'] = table(
@@ -958,8 +894,9 @@ TABLES['lambda'] = table(
     'Table: The consumption normalizer. Three constants were in circulation. '
     'Under exact log consumption the normalizer enters utility as the '
     'alternative-invariant term $-\\beta_c\\log\\lambda_c$, so it cancels from '
-    'every choice probability and exactly from the money metric. The paper '
-    'reports the estimation-frame constant throughout.',
+    'every choice probability; it does not enter the accepted $W^1_F$ welfare '
+    'measure at all. The paper reports the estimation-frame constant '
+    'throughout, for the choice-probability role it actually plays.',
     ['Panel', 'Single-adult (EUR/month)', 'Couple (EUR/month)', 'Role'],
     [['Estimation frame, 101 sampled alternatives per household',
       format(REG['lambda_c_singles']['value'], ',.6f'),
@@ -1047,16 +984,9 @@ mfig('fit', 'figV06_fit_by_margin',
      'estimated specifications. Model shares are population predictions '
      'computed by direct integration over the estimated opportunity '
      'distribution, not sampled-menu choice probabilities.')
-mfig('lorenz', 'figV01_welfare_lorenz',
-     'Lorenz curves of money-metric well-being and of the priced disposable '
-     'income it replaces, over the same households and the same weights. The '
-     'two curves answer different questions about the same households; their '
-     'Gini values are not two estimates of one quantity.')
-mfig('welfdist', 'figV02_welfare_distributions',
-     'The distribution of money-metric well-being, by household type and '
-     'basis, with weighted medians marked. Levels are not comparable across '
-     'the two panels: each household type carries its own reference '
-     'construction.')
+# MEASURE-DEF-1: the 'lorenz'/'welfdist' figures (figV01/figV02) plotted the
+# retired ex-ante measure's own distribution, against WD/ARM/SAMP, removed
+# above with the report-only subsection that embedded them.
 dfig('pabarch', 'fig_preseminar_pab_architecture_v1',
      'The eight P/A/B counterfactual coalitions, built from the accepted '
      'model by equalising household-constant covariates within a block. '
@@ -1075,15 +1005,10 @@ dfig('pabdecompcouples', 'fig_preseminar_pab_decomposition_couples_v1',
      'of P annotated. Modified-OECD-equivalised $W^1_F$; Monte Carlo ranges '
      'over 1,000 replications, not confidence intervals. Preliminary, '
      'model-based.')
-mfig('powermean', 'figV07_power_mean',
-     'The consumption coefficient as the order of a power mean. Left: the '
-     'contribution an alternative makes to the consumption power moment, '
-     'relative to the median alternative, against the linear comparison at '
-     '$\\beta_c=1$. Right: the marginal effect of that alternative\u2019s '
-     'consumption on the resulting equivalent amount, which carries exponent '
-     '$\\beta_c-1$, against the flat comparison at $\\beta_c=1$. Neither curve '
-     'is a reference probability weight: holding the reference measure fixed, '
-     'those weights do not vary with consumption at all.')
+# MEASURE-DEF-1: the 'powermean' figure (figV07_power_mean) illustrated the
+# retired ex-ante functional's power-moment contribution and marginal
+# effect; removed with the WELFARE prose that embedded it -- the accepted
+# W1_F closed form has no power-moment contribution to illustrate.
 for _k, _stem, _cap in [
     ('prefsingles', 'figP01_indifference_curves_singles',
      'Indifference curves in consumption and leisure, single-adult '

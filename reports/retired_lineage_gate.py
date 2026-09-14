@@ -208,6 +208,81 @@ def scan_four_factor(text: str) -> List[str]:
     return hits
 
 
+# =========================================================================== #
+# MEASURE-DEF-1: the retired ex-ante inclusive-value welfare construction
+# =========================================================================== #
+# Deputy ruling R2 retired the ex-ante, stochastic inclusive-value functional
+# (J_{i,S}, H_{i,S}, integrated over the estimated opportunity density) as a
+# candidate for the paper's welfare measure: MEASURE-MAP-1R classifies it
+# "DIFFERENT OBJECT" from the accepted literal Mapping-F W1_F construction.
+# There is no separate retired FILE to gate by path here -- the construction
+# lived inline in v5_sections.py's own prose and LaTeX, not in a data file --
+# so, like the four-factor content check above, this is a content/notational
+# signature, not a path check: weaker evidence than a path hit, but a hit
+# here is still strong evidence, because it keys on the construction's own
+# defining algebra (the J/H integrals, the log-J-minus-log-H closed form,
+# the "weighted power mean of consumption" identity), which is far harder to
+# dodge by rewording than a plain string match on a sentence describing it.
+#
+# Deliberately does NOT include a bare \bJ_i\b / \bH_i\b pattern: the wage
+# equation's own education-level dummies are also named $L_i$ and $H_i$
+# (`g^{W}_{ij}` in the MODEL section: "$\mu_i=...+\beta_{wH}H_i+...$"), a
+# genuine, unrelated collision found by testing these patterns against the
+# current file. The patterns below require the ex-ante construction's own
+# multi-character notation (the coalition subscript "_{i,S}", or a "log"
+# prefix on the ratio identity) so they do not fire on that legitimate use.
+EXANTE_CONTENT_PATTERNS: Dict[str, re.Pattern] = {
+    "J_{i,S} attained-value integral notation": re.compile(r"J_\{i,S\}"),
+    "H_{i,S} reference-mass integral notation": re.compile(r"H_\{i,S\}"),
+    "log J minus log H closed form": re.compile(
+        r"\\log\s*J_?\{?i,?S?\}?\s*-\s*\\log\s*H_?\{?i,?S?\}?", re.IGNORECASE),
+    "weighted power mean of consumption of order": re.compile(
+        r"(?:weighted )?power mean of (?:consumption )?order", re.IGNORECASE),
+    "ex-ante estimation-based measure/reference": re.compile(
+        r"ex-ante estimation-based (?:measure|reference)", re.IGNORECASE),
+    "attained/reference integral J and H": re.compile(
+        r"attained integral \$?J\$?|reference integral \$?H\$?", re.IGNORECASE),
+}
+
+_EXANTE_DISCLAIMER = re.compile(r"retired|withdrawn", re.IGNORECASE)
+_EXANTE_R2 = re.compile(r"\bR2\b|Deputy ruling R2", re.IGNORECASE)
+
+
+def _exante_hit_is_disclaimed(text: str, start: int, end: int,
+                               window: int = 550) -> bool:
+    """True only if BOTH an explicit retired/withdrawn word AND an explicit
+    R2 citation sit within `window` chars of this specific occurrence --
+    instruction MEASURE-DEF-1 #2's own requirement for any surviving mention
+    ("explicitly labelled a retired alternative construction ... with R2
+    cited"). Narrow and LOCAL to the hit itself, on the same reasoning as
+    `_resources_needs_present_live` above: a whole-document search would
+    false-exempt a genuine, undisclaimed presentation of the construction
+    elsewhere in a long document that happens to mention "withdrawn" and
+    "R2" somewhere unrelated."""
+    lo, hi = max(0, start - window), min(len(text), end + window)
+    nearby = text[lo:hi]
+    return bool(_EXANTE_DISCLAIMER.search(nearby) and _EXANTE_R2.search(nearby))
+
+
+def scan_exante(text: str) -> List[str]:
+    """Supplementary, non-path content-signature scan for the retired
+    ex-ante inclusive-value welfare construction (MEASURE-DEF-1, Deputy
+    ruling R2). Same status as `scan_four_factor`: a clean result here is
+    not proof of compliance the way a clean path scan is, because prose can
+    be reworded around it; a hit is still strong evidence, because the
+    notation is the construction's own defining algebra, not a specific
+    phrase describing it. Each hit is exempted individually, not the whole
+    document, when it sits near both a retired/withdrawn word and an R2
+    citation -- see `_exante_hit_is_disclaimed`."""
+    hits: List[str] = []
+    for name, pat in EXANTE_CONTENT_PATTERNS.items():
+        for m in pat.finditer(text):
+            if not _exante_hit_is_disclaimed(text, m.start(), m.end()):
+                hits.append("%s at offset %d" % (name, m.start()))
+                break
+    return hits
+
+
 def scan_text(text: str, patterns: Dict[str, re.Pattern] | None = None) -> List[str]:
     """Return the names of every pattern (default: retired paths) found in `text`."""
     patterns = RETIRED_PATH_PATTERNS if patterns is None else patterns

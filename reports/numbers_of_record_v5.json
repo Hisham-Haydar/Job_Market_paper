@@ -350,12 +350,6 @@
       "status": "derived",
       "units": "per cent increase in consumption"
     },
-    "pm_weight_double": {
-      "value": 4.11,
-      "source": "s11_welfare_specs_of_record_v1.json; specifications of record, tau = 1, theta_c = 0, beta_c estimated",
-      "status": "derived",
-      "units": "contribution to the power moment, relative to the median alternative"
-    },
     "d2_baseline_singles_uneq": {
       "value": 0.233686,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
@@ -584,138 +578,6 @@
       "status": "diagnostic",
       "units": "per cent of households attaining the observed node under the actual coalition"
     },
-    "wl_mean_raw_singles": {
-      "value": 4354.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_median_raw_singles": {
-      "value": 4139.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p10_raw_singles": {
-      "value": 2643.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p90_raw_singles": {
-      "value": 6219.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_gini_raw_singles": {
-      "value": 0.193596,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "Gini units"
-    },
-    "wl_mean_equivalized_singles": {
-      "value": 3957.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_median_equivalized_singles": {
-      "value": 3722.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p10_equivalized_singles": {
-      "value": 2286.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p90_equivalized_singles": {
-      "value": 5819.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_gini_equivalized_singles": {
-      "value": 0.208944,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "Gini units"
-    },
-    "wl_mean_raw_couples": {
-      "value": 1839.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_median_raw_couples": {
-      "value": 1767.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p10_raw_couples": {
-      "value": 1353.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p90_raw_couples": {
-      "value": 2326.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_gini_raw_couples": {
-      "value": 0.132465,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "Gini units"
-    },
-    "wl_mean_equivalized_couples": {
-      "value": 972.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_median_equivalized_couples": {
-      "value": 928.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p10_equivalized_couples": {
-      "value": 721.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_p90_equivalized_couples": {
-      "value": 1229.0,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "EUR/month"
-    },
-    "wl_gini_equivalized_couples": {
-      "value": 0.127421,
-      "source": "v5_welfare_distributions_v1.csv",
-      "status": "result",
-      "units": "Gini units"
-    },
-    "inc_gini_singles": {
-      "value": 0.253339,
-      "source": "v5_step2_welfare_evidence_v1.json::lorenz_observed_income",
-      "status": "result",
-      "units": "Gini units"
-    },
-    "inc_gini_couples": {
-      "value": 0.231031,
-      "source": "v5_step2_welfare_evidence_v1.json::lorenz_observed_income",
-      "status": "result",
-      "units": "Gini units"
-    },
     "w1f_n_singles": {
       "value": 1540,
       "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
@@ -872,66 +734,6 @@
       "status": "diagnostic",
       "units": "percentage points, S11 model of record"
     },
-    "gint_med_singles": {
-      "value": 0.077283,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "diagnostic",
-      "units": "opportunity mass on the H domain"
-    },
-    "w41_med_singles": {
-      "value": 0.9843,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio after unit-mass normalization"
-    },
-    "w41_min_singles": {
-      "value": 0.9169,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio"
-    },
-    "w41_max_singles": {
-      "value": 0.999,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio"
-    },
-    "delta_med_singles": {
-      "value": 0.0322,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "nats"
-    },
-    "gint_med_couples": {
-      "value": 147.962795,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "diagnostic",
-      "units": "opportunity mass on the H domain"
-    },
-    "w41_med_couples": {
-      "value": 0.6242,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio after unit-mass normalization"
-    },
-    "w41_min_couples": {
-      "value": 0.5211,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio"
-    },
-    "w41_max_couples": {
-      "value": 0.7171,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "ratio"
-    },
-    "delta_med_couples": {
-      "value": 0.9906,
-      "source": "s12_w4_premise_audit_v1.json",
-      "status": "result",
-      "units": "nats"
-    },
     "installed_jax": {
       "value": "0.10.1",
       "source": "build environment package metadata",
@@ -978,19 +780,13 @@
     "d2_shareB_singles_uneq",
     "d2_varshare_logC_couples",
     "d2_varshare_logC_singles",
-    "delta_med_couples",
-    "delta_med_singles",
     "experience_scale",
     "gain_couples",
     "gain_singles",
-    "gint_med_couples",
-    "gint_med_singles",
     "gsur_scale",
     "hours_cap",
     "hours_floor",
     "hours_reference_width",
-    "inc_gini_couples",
-    "inc_gini_singles",
     "income_year",
     "installed_euromod",
     "installed_jax",
@@ -999,7 +795,6 @@
     "kfree_rumb",
     "kfree_singles",
     "kint_singles",
-    "lambda_c_maxdev",
     "leisure_scale",
     "mae_couples",
     "mae_ruma",
@@ -1020,7 +815,6 @@
     "negll_ruma",
     "negll_rumb",
     "negll_singles",
-    "pm_weight_double",
     "policy_year",
     "rum_gap",
     "singlesmale_emp_gap_pp",
@@ -1030,17 +824,8 @@
     "time_endowment",
     "w1f_eq_gini_couples",
     "w1f_eq_gini_singles",
-    "w41_max_couples",
-    "w41_max_singles",
-    "w41_med_couples",
-    "w41_med_singles",
-    "w41_min_couples",
-    "w41_min_singles",
     "wage_hi",
-    "wage_lo",
-    "wl_gini_raw_couples",
-    "wl_gini_raw_singles",
-    "wl_median_raw_singles"
+    "wage_lo"
   ],
   "unused_keys": [
     "ceq_mean_couples",
@@ -1072,6 +857,7 @@
     "installed_jaxlib",
     "kint_couples",
     "lambda_c_couples",
+    "lambda_c_maxdev",
     "lambda_c_singles",
     "lambda_c_welfare_panel_couples",
     "lambda_c_welfare_panel_singles",
@@ -1094,24 +880,7 @@
     "w1f_nonworkers_couples",
     "w1f_nonworkers_singles",
     "w1f_workers_couples",
-    "w1f_workers_singles",
-    "wl_gini_equivalized_couples",
-    "wl_gini_equivalized_singles",
-    "wl_mean_equivalized_couples",
-    "wl_mean_equivalized_singles",
-    "wl_mean_raw_couples",
-    "wl_mean_raw_singles",
-    "wl_median_equivalized_couples",
-    "wl_median_equivalized_singles",
-    "wl_median_raw_couples",
-    "wl_p10_equivalized_couples",
-    "wl_p10_equivalized_singles",
-    "wl_p10_raw_couples",
-    "wl_p10_raw_singles",
-    "wl_p90_equivalized_couples",
-    "wl_p90_equivalized_singles",
-    "wl_p90_raw_couples",
-    "wl_p90_raw_singles"
+    "w1f_workers_singles"
   ],
   "gallery": {
     "registered_for": "current results gallery",

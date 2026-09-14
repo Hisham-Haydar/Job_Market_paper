@@ -28,6 +28,12 @@ MUTATIONS = [
     (15, 'md', 'We claim no new allocation principle.',
      'This is the first structural labour-supply Shapley decomposition.'),
     (16, 'tex', 'is not a causal analysis', 'is a causal analysis'),
+    (18, 'tex', 'reference is directly pay-neutral, and earning opportunities '
+     'reach the measure through the attained evaluation.',
+     'reference is directly pay-neutral, and earning opportunities reach '
+     'the measure through the attained evaluation. Equivalently, '
+     '$J_{i,S}=\\int e^{L_{i,S}(j)}(C_{i,S}(j)/\\lambda_c)^{\\beta_c}'
+     '\\widehat g_{i,S}(j)\\,d\\nu(j)$ recovers the same amount.'),
 ]
 
 FILES = {
@@ -37,7 +43,7 @@ FILES = {
 }
 
 
-EXPECTED_ITEMS = 17
+EXPECTED_ITEMS = 18
 
 # LINEAGE-SWEEP-1 added item 17 (retired-lineage path check); REBUILD-1 left
 # one residual hit (s12_welfare_record_report_v1.md, cited for the separate
@@ -48,7 +54,9 @@ EXPECTED_ITEMS = 17
 # a clean copy now has zero failures. Kept as an empty set, not deleted, so a
 # future residual of the same kind has an established place to be recorded
 # rather than silently loosening the "clean copy must have zero fails" check
-# below.
+# below. MEASURE-DEF-1 added item 18 (retired ex-ante J/H welfare
+# construction, content-signature check); a clean copy has zero failures on
+# it as well.
 KNOWN_PRE_EXISTING_FAILURES: set[int] = set()
 
 

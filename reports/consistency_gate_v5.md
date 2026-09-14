@@ -9,7 +9,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 1 | SINGLE CURRENT MODEL: one specification, everywhere | **PASS** |
 | 2 | Notation: forbidden symbol variants and the four-factor rule | **PASS** |
 | 3 | The hours density: five bands over one residual reference | **PASS** |
-| 4 | The W1 statement: all three clauses, and the power-mean order | **PASS** |
+| 4 | The W1 statement: all three clauses, and the accepted closed form | **PASS** |
 | 5 | Pay neutrality is stated as the property established | **PASS** |
 | 6 | Shapley wording: attributed to, not removed | **PASS** |
 | 7 | The preliminary P/A/B scale statement matches the computed shares (DECOMP-2) | **PASS** |
@@ -23,6 +23,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 15 | The novelty claim is conservative and fully conjoined | **PASS** |
 | 16 | No causal claim; the genuinely unresolved items are retained | **PASS** |
 | 17 | Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) | **PASS** |
+| 18 | Retired ex-ante inclusive-value welfare construction: not presented as the measure (MEASURE-MAP-1R / Deputy ruling R2) | **PASS** |
 
 ## 1. SINGLE CURRENT MODEL: one specification, everywhere — PASS
 
@@ -39,7 +40,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 - no findings
 
-## 4. The W1 statement: all three clauses, and the power-mean order — PASS
+## 4. The W1 statement: all three clauses, and the accepted closed form — PASS
 
 - no findings
 
@@ -70,7 +71,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 158 entries, 89 used by the two documents, every used entry typed and sourced
+- registry: 125 entries, 72 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -78,11 +79,11 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 13. Figures and tables are present, captioned and rendered — PASS
 
-- paper: 10 figures, 14 tables, 24 captions; report: 17 embedded figures, 20 tables
+- paper: 10 figures, 14 tables, 24 captions; report: 14 embedded figures, 18 tables
 
 ## 14. The report carries the explanatory apparatus — PASS
 
-- report: 24 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
+- report: 23 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
 
 ## 15. The novelty claim is conservative and fully conjoined — PASS
 
@@ -95,5 +96,9 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 ## 17. Retired welfare-decomposition lineage: no read by path (DECOMP-PRESEMINAR-1) — PASS
 
 - no retired-lineage path reference found in build_v5.py, v5_sections.py, common.py, numbers_of_record_v5.json (entries/gallery only), JMP_working_paper_for_seminar_v5.tex, or JMP_research_story_report_v5.html
+
+## 18. Retired ex-ante inclusive-value welfare construction: not presented as the measure (MEASURE-MAP-1R / Deputy ruling R2) — PASS
+
+- no undisclaimed ex-ante J/H construction found in JMP_working_paper_for_seminar_v5.tex or JMP_research_story_report_v5.html
 
 **Overall: PASS**

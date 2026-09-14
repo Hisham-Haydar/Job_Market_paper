@@ -6,7 +6,7 @@ Build date: 14 September 2026.
 
 ## Abstract
 
-We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Attributing the resulting inequality to preferences and circumstances in full requires a counterfactual-attainment estimand that is still under design; ahead of it, we introduce and implement a bounded, preliminary structural exercise, holding household resources, needs and composition fixed and simulating each household's attained well-being under counterfactual equalizations of preferences, local labour-market access and earning opportunities, with the interactions allocated by an exact three-player Shapley value. The movable inequality this bounded exercise reaches, $\Delta I$, is a small share of baseline inequality by construction, 1.8 to 9.9 per cent across samples and scales, because resources, needs and composition are held fixed throughout and those account for the large majority of the variance of log well-being. Within that bounded movable share, earning opportunities dominate local labour-market access for both single-adult and couple households, at every scale we report; the sign of the preference contribution is not robust between the unequivalised and equivalised reporting conventions in either sample, so we make no directional claim about it. The quantitative opportunity decomposition is preliminary and work in progress: this is a bounded, model-based reading, not the paper's final decomposition architecture.
+We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the amount of consumption that, paid at the household's reference job, leaves it exactly as well off as at the situation it actually attains. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Attributing the resulting inequality to preferences and circumstances in full requires a counterfactual-attainment estimand that is still under design; ahead of it, we introduce and implement a bounded, preliminary structural exercise, holding household resources, needs and composition fixed and simulating each household's attained well-being under counterfactual equalizations of preferences, local labour-market access and earning opportunities, with the interactions allocated by an exact three-player Shapley value. The movable inequality this bounded exercise reaches, $\Delta I$, is a small share of baseline inequality by construction, 1.8 to 9.9 per cent across samples and scales, because resources, needs and composition are held fixed throughout and those account for the large majority of the variance of log well-being. Within that bounded movable share, earning opportunities dominate local labour-market access for both single-adult and couple households, at every scale we report; the sign of the preference contribution is not robust between the unequivalised and equivalised reporting conventions in either sample, so we make no directional claim about it. The quantitative opportunity decomposition is preliminary and work in progress: this is a bounded, model-based reading, not the paper's final decomposition architecture.
 
 *Preliminary results throughout. The three-factor preferences/access/earnings decomposition in Section 5 is a bounded exercise ahead of the paper’s final decomposition architecture, which requires a counterfactual-attainment estimand still under design; it is reported with Monte Carlo simulation ranges and an independent second-seed check, never confidence intervals, and household resources, needs and composition are held fixed rather than decomposed.*
 
@@ -28,7 +28,7 @@ The argument being solved for is an amount of consumption, so the measure is mon
 ![**Own-set equal-consumption equivalents.** The theoretical W1 construction from the companion theory paper. Individuals with preferences $R_i,R_h$ and ability sets $A=\{j,k\}$ and $A^{\prime}=\{k,\ell\}$ attain $z_i$ and $z_h$. For each individual, a common consumption level is assigned to every job in their own set; the level at which the preferred reference job becomes indifferent to the attained bundle is the money metric. Adapted from Haydar and Maniquet (2026), work in progress. This is the deterministic construction; the estimated measure is its ex-ante extension, defined in Section 4.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/theory_w1.png){width=95%}
 
 
-The first figure depicts the theoretical W1 construction adapted from the companion theory paper by Haydar and Maniquet (2026). It constructs a deterministic own-set equal-consumption equivalent, using each individual's preferred reference job. We then adapt this principle to an estimated distribution of latent jobs. The empirical object is its stochastic, ex-ante counterpart: the household's evaluation of the reference prospect, integrated over the jobs it may reach, is set equal to its evaluation of the prospect it actually faces. Section 4 states that implementation and derives its closed form; the deterministic figure does not depict an estimated welfare result.
+The first figure depicts the theoretical W1 construction adapted from the companion theory paper by Haydar and Maniquet (2026). It constructs a deterministic own-set equal-consumption equivalent, using each individual's preferred reference job. Section 4 states the empirical implementation on the current estimated model -- Mapping F, an accepted simplification that holds because staying at home maximises the non-consumption index for every household in both samples -- and derives its closed form; the deterministic figure does not depict an estimated welfare result.
 
 One comparative static is worth stating plainly at the outset, because it is easy to misread. Holding the attained situation fixed, a person with a larger reference menu may need less uniform consumption to reach the same satisfaction. When actual opportunities change, however, both the attainment and the reference menu change. The net effect on equivalent consumption depends on both. Measuring attainment against one's own opportunities is therefore not a claim that larger menus are intrinsically better, and we make no such claim.
 
@@ -85,7 +85,7 @@ The screens are of three kinds and it is worth separating them. The first two de
 
 The second kind removes households for whom the model does not define an offer set: adults in full-time education, households receiving an old-age, disability or survivor pension, and deciders whose labour-market status lies outside employment, unemployment and inactivity. Together with the pension screen this is why the surviving employment rate is high. The employment share below should be read as a share among people for whom working is a live option, not as a French employment rate.
 
-The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives receive a one-euro consumption floor before utility is evaluated. The floor applies to 22,597 single-adult and 59,821 couple node-evaluations; these alternatives enter both the attained integral $J$ and the reference integral $H$.
+The third kind is support. An employed decider's observed hours must lie in the closed interval $[5, 70]$ hours per week and the delivered hourly wage in $[2, 590]$ euros per hour, because those are the boundaries of the supports the opportunity densities are defined on. An observed occupation must map into the four modelled groups; ISCO 0, the armed forces, does not, and the resulting exclusion is *unsupported* occupation, not missing occupation. Three single-adult households whose own observed job prices to non-positive disposable consumption are removed, because the log-consumption term is undefined at their observed choice; non-positive *simulated* alternatives receive a one-euro consumption floor before utility is evaluated. The floor applies to 22,597 single-adult and 59,821 couple node-evaluations, all of them sampled alternatives entering the estimated choice likelihood. It does not affect the welfare measure of Section 4, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption.
 
 
 Table: The four occupation groups. ISCO-08 major groups are aggregated into four modelled groups; group 1 is the omitted reference in the estimated occupation block. This is a research aggregation adopted for this paper, not an ILO classification. ISCO 0, the armed forces, has no modelled alternative and is a sample screen; that is unsupported occupation, not missing occupation.
@@ -174,7 +174,7 @@ with consumption the tax-unit sum over all members. We write $L_i(j)$ throughout
 
 Three features of this specification are decisions and are worth naming. The consumption curvature is exactly zero, so the consumption term is $\beta_c\log(C/\lambda_c)$ and the marginal utility of consumption is $\beta_c/C$, independent of the normalizer. The consumption weight $\beta_c$ is **estimated**, not fixed at one. And the random-utility shock is i.i.d. type-I extreme value with scale one, so utility is measured in the natural unit of that scale. Fixing the shock scale is a normalization; additionally fixing $\beta_c$ would be a substantive restriction relative to that normalization, and estimating $\beta_c$ removes it. Neither step identifies an absolute cardinal utility scale, and fixing the consumption functional form is not by itself what identifies the shock scale.
 
-The normalizer $\lambda_c$ is a units convention. Under exact log consumption it enters the index as the alternative-invariant constant $-\beta_c\log\lambda_c$, so it cancels from every choice probability and, as shown below, exactly from the welfare measure.
+The normalizer $\lambda_c$ is a units convention. Under exact log consumption it enters the index as the alternative-invariant constant $-\beta_c\log\lambda_c$, so it cancels from every choice probability; it does not appear in the accepted welfare measure of Section 4 at all.
 
 
 > **Why the leisure coefficients are not the preferences.** A leisure weight is a coordinate in a chosen normalization, not an economic magnitude. Changing the leisure normalizer $\lambda_\ell$ multiplies the weight and its box endpoints by the same factor, and the indifference curves and the marginal rate of substitution are unchanged exactly. The panels below therefore show the invariant objects; the coefficient table is a coordinate readout. Reparameterization also does not bear on whether a bound binds, since the endpoint moves with the coefficient. What settles that is re-estimation with wider bounds, and nothing else.
@@ -194,7 +194,7 @@ $$
 
 **Access**, $g^{E}_{ij}=\exp\{\beta_E+\beta_s s_i+\sum_{r=2}^{8}\beta_r\,\mathrm{reg}_{ir}+\beta_u u_i+\beta_m m_i\}$, carries the local group unemployment measure $s_i$, the region indicators and urbanisation, and is the factor inside which local-market access lives. **Hours**, $g^{H}_{ij}=\exp\{\sum_b \beta_b\mathbb 1\{h_{ij}\in b\}\}$, elevates five bands over a residual reference set of total width 26.5 hours per week, so every band coefficient is read against that residual and none of the five is normalized to zero; the narrow full-time band $[33.5,36.5)$ is a density elevation over an interval, not an atom at thirty-five hours. **Occupation**, $g^{\mathrm{Occ}}_{ij}=\exp\{\beta^{\mathrm{occ}}_{k,g}\}$ with $\beta^{\mathrm{occ}}_{1,g}\equiv 0$. **Wage offer**, $g^{W}_{ij}$, is log-normal with location $\mu_i=\beta_{w0}+\beta_{wL}L_i+\beta_{wH}H_i+\beta_{wx}x_i+\beta_{wx^{2}}x_i^{2}+\delta_{\mathrm{occ}}$ and dispersion $\sigma$, truncated to $[2,590]$ euros per hour and renormalized on that support.
 
-Two properties of the normalization matter later. Write $\widehat g_{ij}=g_{ij}/Z_i$ for the density normalized to unit mass on the whole package space. The wage factor integrates to one *conditional on employment and occupation*, because the truncated density is renormalized on its own support; and the non-consumption index $L_{ij}$ has no wage argument. Together these give the reference the pay-neutrality property established in Section 4.
+Two properties of the normalization matter later, for estimation and for the identification argument below. Write $\widehat g_{ij}=g_{ij}/Z_i$ for the density normalized to unit mass on the whole package space. The wage factor integrates to one *conditional on employment and occupation*, because the truncated density is renormalized on its own support; and the non-consumption index $L_{ij}$ has no wage argument. The pay-neutrality property of the welfare reference established in Section 4 rests on a simpler fact than either of these: the reference job itself, staying at home, carries no opportunity-density argument at all, so none of $g$, the proposal, the shock or an intensity parameter enters the reference.
 
 The four blocks are what the decomposition later separates. Employment and occupation access are one mechanism; the distribution of wages conditional on an occupation is another; neither is the same as non-labour resources or household needs.
 
@@ -233,73 +233,38 @@ Standard errors are cluster-robust on the household. Optimization uses five star
 
 ## The verified Mapping-F $W^1_F$ construction
 
-The theoretical own-set equal-consumption criterion above (Measure 1) compares the household's attained situation to the best uniform-pay alternative in its own reachable set, $u_i(z_i)=\max_{j\in A_i}u_i(W_i,j)$. On the current empirical domain that theoretical object coincides with a much simpler empirical construction, Mapping F: for every household in both samples, staying at home maximises the non-consumption index, so the maximisation over the reachable set collapses to a single evaluation at the household's own observed job against the household's own home state. Under the log-consumption specification of Section 3 this gives the closed form
+The accepted welfare measure (Deputy ruling R1, Mapping F, `JMP_W1_fork_ruling_v1.md`) is the amount of consumption that, paid at a fixed reference job $o$, leaves the household exactly as well off as at its attained situation:
+
+$$
+W^1_{i,F}=m_i(o;z_i), \qquad u_i\big(m_i(o),o\big)=u_i(z_i).
+$$
+
+This is the theoretical own-set equal-consumption criterion above (Measure 1), $u_i(z_i)=\max_{j\in A_i}u_i(W_i,j)$, specialised to the reference job $o$ that the maximisation over the household's own reachable set actually selects. On the current empirical domain the selected reference job is always staying at home: for every household in both samples, non-employment maximises the non-consumption index, so the maximisation collapses to a single evaluation at the household's own observed job against its own home state, $o$. Under the log-consumption specification of Section 3 this gives the closed form
 
 $$
 \boxed{\;W^1_{i,F}=C_i^{\mathrm{obs}}\exp\!\left[\frac{L_i(j_i^{\mathrm{obs}})-L_i(o)}{\beta_c}\right],\;}
 $$
 
-where $C_i^{\mathrm{obs}}$ is the household's own priced disposable consumption at its observed job, $L_i(j_i^{\mathrm{obs}})$ and $L_i(o)$ are the non-consumption index at the observed job and at the home state, and $\beta_c$ is the estimated consumption weight. Four objects do not enter this construction at all: the opportunity density $\widehat g$, the numerical proposal $q$, the behavioural shock, and any latent-set intensity parameter. This is an empirical-domain coincidence, not a general theorem: it depends on log consumption and on non-employment being behaviourally available to every household, and it is stated as such (Deputy ruling R1, `JMP_W1_fork_ruling_v1.md`).
+where $C_i^{\mathrm{obs}}$ is the household's own priced disposable consumption at its observed job, $L_i(j_i^{\mathrm{obs}})$ and $L_i(o)$ are the non-consumption index at the observed job and at the home state, and $\beta_c$ is the estimated consumption weight. Four objects do not enter this construction at all: the opportunity density $\widehat g$, the numerical proposal $q$, the behavioural shock, and any latent-set intensity parameter -- opportunities act on this measure only through the attained bundle $j_i^{\mathrm{obs}}$, never through an average or an integral over jobs the household did not take. That home always maximises the non-consumption index, so that $W^1$ coincides here with the staying-home equivalent, is an empirical-domain property of this specification and this estimated model, verified directly rather than assumed; it is not a theorem of the Haydar-Maniquet framework, which defines the reference job $o$ as whichever job the maximisation selects and does not guarantee it is staying at home.
 
 The construction is independently verified. A reconstruction that does not import the production code reproduces every pre-registered check -- non-workers equal their own observed consumption exactly, workers strictly below it, no route by which $\widehat g$, $q$, the shock, or an intensity parameter can enter -- and reproduces the committed sample aggregates for both populations to machine precision (`baseline_f1_verification_v1.md`, MNL commit `6048c9f7`, independently verified `b5550af5`).
 
 
-## The ex-ante estimation-based measure
+## A retired alternative construction
 
-The behavioural model of Section 3 also supports a second, model-integrated construction, used in the preliminary decomposition of Section 5: fix a household $i$ and a coalition state $S$, which determines the utility index $L_{i,S}$, the normalized opportunity density $\widehat g_{i,S}$ and the priced consumption $C_{i,S}$ at every package. Define the attained ex-ante value and the reference mass
-
-$$
-J_{i,S}=\int e^{L_{i,S}(j)}\left(\frac{C_{i,S}(j)}{\lambda_c}\right)^{\beta_c}\widehat g_{i,S}(j)\,d\nu(j),
-\qquad
-H_{i,S}=\int e^{L_{i,S}(j)}\,\widehat g_{i,S}(j)\,d\nu(j).
-$$
-
-The proposal also enters the finite-node welfare algebra. For singles, write $a_{ir}=\omega_r\exp[L_i(j_r)+\log\widehat g_i(j_r)-\log q_i^W(j_r)]$, where $\omega_r$ is the integration weight. Then $J_i\simeq\sum_r a_{ir}(C_{ir}/\lambda_c)^{\beta_c}$ and $H_i\simeq\sum_r a_{ir}$, with the same nodes and the one-euro floor in the attained consumption. For couples the common-proposal importance terms enter the corresponding joint-regime sums for both integrals. The proposal carries no economic content, but its importance correction is explicit in the welfare calculation as well as in estimation.
-
-The reference offers the same flat monthly amount $m$ at every package while retaining that state's $L$ and $\widehat g$, so the value of the reference is
-
-$$
-\Phi_{i,S}(m)=\beta_c\log(m/\lambda_c)+\log H_{i,S},
-\qquad \Phi_{i,S}'(m)=\beta_c/m>0 .
-$$
-
-The money metric is the amount at which the reference reaches the attained value, $\Phi_{i,S}(W_{i,S})=\log J_{i,S}$, which inverts in closed form:
-
-$$
-\boxed{\;W_{i,S}=\lambda_c\exp\!\left[\frac{\log J_{i,S}-\log H_{i,S}}{\beta_c}\right].\;}
-$$
-
-Writing $r_{i,S}(dj)=e^{L_{i,S}(j)}\widehat g_{i,S}(j)\,d\nu(j)/H_{i,S}$ for the reference probability measure, the same object is
-
-$$
-\boxed{\;W_{i,S}=\left[\int C_{i,S}(j)^{\beta_c}\,r_{i,S}(dj)\right]^{1/\beta_c}.\;}
-$$
-
-The measure is therefore a **weighted power mean of consumption of order $\beta_c$**, taken under a reference measure that weights packages by their non-consumption value and their availability. It is an arithmetic mean only at $\beta_c=1$. The normalizer $\lambda_c$ cancels between the two forms, which is why the constant is a units convention and not a modelling choice; we verify this numerically to a maximum relative deviation of 2.7e-15 across four widely separated values.
-
-
-![The consumption coefficient as the order of a power mean. Left: the contribution an alternative makes to the consumption power moment, relative to the median alternative, against the linear comparison at $\beta_c=1$. Right: the marginal effect of that alternative’s consumption on the resulting equivalent amount, which carries exponent $\beta_c-1$, against the flat comparison at $\beta_c=1$. Neither curve is a reference probability weight: holding the reference measure fixed, those weights do not vary with consumption at all.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV07_power_mean.png){width=95%}
-
-
-Three quantities are easy to conflate and are distinct. The reference probability weight $r_j$ does not vary with consumption at all when the reference measure is held fixed. The *contribution* an alternative makes to the power moment is proportional to $C_j^{\beta_c}$, so an alternative paying twice the median contributes 4.11 times as much at the estimated single-adult coefficient. The *marginal effect* of that alternative's consumption on the resulting amount is $\partial W/\partial C_j=r_jC_j^{\beta_c-1}W^{1-\beta_c}$, with exponent $\beta_c-1$. The figure plots the second and the third and labels each; neither is a statement that the alternative is more available.
-
-$\beta_c$ is simultaneously the order of this power mean, the coefficient on log consumption, and the elasticity of an alternative's implied consumption-dependent weight $C_j^{\beta_c}$ in its own consumption. This elasticity concerns the power-moment contribution, holding $r_j$ fixed, rather than the normalized reference probability. It is not the consumption curvature, which is exactly zero here, and it is not an inequality-aversion parameter across households, which belongs to the index applied in Section 5 and not to the household's own aggregator.
+An earlier draft evaluated welfare with a different, model-integrated construction: an ex-ante inclusive-value functional built from two integrals, $J_{i,S}$ and $H_{i,S}$, over the estimated opportunity density and the behavioural shock, equal to a weighted power mean of consumption of order $\beta_c$ under a reference measure derived from that density. The measure-correspondence audit (`JMP_measure_map_v1.md` and its acceptance record) classifies that functional as a DIFFERENT OBJECT from the theoretical own-set equal-consumption criterion, not the literal Measure 1 computation, and Deputy ruling R2 (`JMP_W1_fork_ruling_v1.md`) retired it. It produced no reported number anywhere in this document: every welfare level, Gini and decomposition share reported here and in Section 5 is computed from the verified Mapping-F $W^1_F$ construction above. It is recorded here, retired, as a matter of history, not as an alternative reading of the paper's measure.
 
 
 ## What the reference does and does not do to pay
 
-Neither construction's reference depends on pay. The accepted literal construction's home reference (Mapping F, Deputy ruling R1) is a fixed singleton state whose systematic utility carries no opportunity-density, proposal, behavioural-shock or intensity argument, so none of those four objects enters it at all. The ex-ante estimation-based reference above has the same property for a different reason: the wage density integrates to one on its support and the non-consumption index has no wage argument, so replacing it leaves the reference mass unchanged exactly, by construction -- not as a numerical approximation.
+The reference does not depend on pay. The accepted construction's home reference (Mapping F, Deputy ruling R1) is a fixed singleton state whose systematic utility carries no opportunity-density, proposal, behavioural-shock or intensity argument, so none of those four objects enters it at all.
 
 Changes in earning opportunities nevertheless change the measure, because they change what the household attains, not the reference it is compared against. The correct statement is therefore narrow and we make only it: *the reference is directly pay-neutral, and earning opportunities reach the measure through the attained evaluation.* We do not report a magnitude for that attained-side channel here: quantifying it under a counterfactual equalization of earning opportunities is a decomposition question, and Section 5 reports only the bounded, preliminary exercise available for that. A qualitative channel existing does not establish that the deterministic independence-of-pay axiom fails for this stochastic functional. That would require fixing the primitives the axiom holds fixed and proving the property, which we have not done and do not claim.
 
 
-### A worked household, in the current model
+### A worked illustration, in the current construction
 
-Take the weighted-median single-adult household of the sample: a man in his early fifties with medium education, no children, employed for eighteen hours a week at a delivered wage near fourteen euros an hour, receiving about 1,259 euros a month of simulated disposable income at that job. His money-metric level is 4,139 euros a month at the sample median, and the closed form is checkable by hand: since $W=\lambda_c\exp[(\log J-\log H)/\beta_c]$, the attained-minus-reference gap is $\log J-\log H=\beta_c\log(W/\lambda_c)$. Equalizing his preferences to the reference profile moves his level by about a quarter of a per cent; equalizing all his non-preference circumstances moves it by about eighteen per cent. That asymmetry, household by household, is what the decomposition adds up.
-
-For a transparent two-alternative calculation with equal reference probabilities and consumption of 1,000 and 2,000 euros, the single-adult estimate gives $W=[(1000^{2.0387}+2000^{2.0387})/2]^{1/2.0387}\approx1,584$ euros. The numerator sums powered consumption and the outer exponent is essential. More generally, $r_{ir}=a_{ir}/\sum_s a_{is}$ gives $W=[\sum_r r_{ir}C_{ir}^{\beta_c}]^{1/\beta_c}$; dividing a plain consumption sum by a plain weight sum would be valid only at $\beta_c=1$.
-
-The level is above his own disposable income, and for the median couple it is below theirs. Two things are happening. The reference measure weights packages by non-consumption value and availability, not by how often they are chosen; and the power mean of order $\beta_c>1$ rewards dispersion in reachable consumption. Levels are therefore not an income concept, and they are not comparable between the two household types, each of which carries its own reference construction. We report the levels, use them only within type, and do not offer a mechanism for the between-type difference.
+Not a description of any real household. Consider a household whose observed job's non-consumption index exceeds the index at staying home by exactly one nat, $L_i(j_i^{\mathrm{obs}})-L_i(o)=1$. The closed form then gives $W^1_{i,F}=C_i^{\mathrm{obs}}\exp(1/\beta_c)$: its welfare equals its own observed consumption scaled up by exactly the same factor the natural-unit conversion above reports, 1.633 for the single-adult specification and 1.609 for couples. A one-nat gap in the other direction scales consumption down by the reciprocal of that factor instead. This is a mechanical property of the closed form, not an empirical claim about any household in the sample; realised gaps and the resulting levels, for the sample households, are in the table above.
 
 
 ## Interpersonal comparison and the unit
@@ -373,7 +338,7 @@ Table: The preference block. Cluster-robust standard errors in parentheses, clus
 
 
 
-The consumption weight is 2.0387 with a cluster-robust standard error of 0.2917 for single adults and 2.1017 with 0.2939 for couples. Two things follow. Because the estimate exceeds one, the money metric of Section 4 is a power mean of order above one rather than an arithmetic mean. And because utility is on the unit-scale shock, one natural unit of the index corresponds to multiplying consumption by $\exp(1/\beta_c)$, a factor of 1.633 for single adults and 1.609 for couples. That is a proportional statement: there is no single euro value of a unit of utility independent of the consumption at which it is evaluated.
+The consumption weight is 2.0387 with a cluster-robust standard error of 0.2917 for single adults and 2.1017 with 0.2939 for couples. Two things follow. In the closed-form welfare measure of Section 4, $\beta_c$ is the rate at which a household's non-consumption advantage at its observed job over staying home, $L_i(j_i^{\mathrm{obs}})-L_i(o)$, converts into a proportional adjustment of its own observed consumption: the same advantage moves the money metric proportionally less, the larger $\beta_c$ is, because the advantage enters the exponent divided by $\beta_c$. And because utility is on the unit-scale shock, one natural unit of the index corresponds to multiplying consumption by $\exp(1/\beta_c)$, a factor of 1.633 for single adults and 1.609 for couples. That is a proportional statement: there is no single euro value of a unit of utility independent of the consumption at which it is evaluated.
 
 
 Table: The opportunity block: employment access, the hours density and occupation access. Cluster-robust standard errors in parentheses. The employment index multiplies the working indicator; the omitted references are region 1, thinly populated areas, the residual hours set of total width 26.5 hours per week, and occupation group 1. The singles occupation column reports the female coordinates; the male coordinates are in the appendix table. Hours coefficients are common across the two singles sex groups and spouse-specific for couples.
@@ -573,36 +538,6 @@ Table: The verified Mapping-F $W^1_F$ construction, modified-OECD equivalised, a
 
 The verified $W^1_F$ construction gives, on the modified-OECD-equivalised basis, a weighted Gini of 0.2498 for single-adult households and 0.1974 for couples, against 0.2633 and 0.2268 for equivalised disposable consumption in the same samples. This is a within-sample descriptive dispersion comparison, not a welfare-loss statement: the ratio $W^1_F/C^{\mathrm{obs}}$ reflects the systematic leisure term at the observed job relative to home leisure, and we do not construct a loss index from it. Singles and couples are reported separately throughout, with no pooled distribution and no cross-sample level comparison: the two are separate estimation frames with different welfare units, and a comparison of the two levels is not drawn here or elsewhere in this paper.
 
-
-### The ex-ante measure's levels
-
-
-Table: The distribution of money-metric well-being, and the priced disposable income it replaces. Levels are in euros per month of equivalent flat consumption, weighted. Levels are not comparable between the two household types: each type carries its own reference construction, and the Gini of the money metric and the Gini of income are not two estimates of one quantity.
-
-|Population|Basis|Mean|p10|Median|p90|Gini|
-|---|---|---|---|---|---|---|
-|Single-adult|Household|4,354|2,643|4,139|6,219|0.1936|
-|Single-adult|Equivalized|3,957|2,286|3,722|5,819|0.2089|
-|Single-adult|Priced disposable income|--|--|--|--|0.2533|
-|Couple|Household|1,839|1,353|1,767|2,326|0.1325|
-|Couple|Equivalized|972|721|928|1,229|0.1274|
-|Couple|Priced disposable income|--|--|--|--|0.2310|
-
-
-
-
-![The distribution of money-metric well-being, by household type and basis, with weighted medians marked. Levels are not comparable across the two panels: each household type carries its own reference construction.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV02_welfare_distributions.png){width=95%}
-
-
-
-![Lorenz curves of money-metric well-being and of the priced disposable income it replaces, over the same households and the same weights. The two curves answer different questions about the same households; their Gini values are not two estimates of one quantity.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV01_welfare_lorenz.png){width=95%}
-
-
-The ex-ante estimation-based measure of the previous section is less unequal than the priced disposable income it replaces, for both household types: the Gini falls from 0.253 to 0.194 for single adults and from 0.231 to 0.132 for couples. This is a different object from the verified $W^1_F$ levels above -- an ex-ante monetary level built from each household's own preferences and own reachable jobs, rather than a closed-form evaluation at the observed bundle -- and the two are not two estimates of one quantity.
-
-Levels differ from income in opposite directions for the two types, and the levels are not comparable between them: each application carries its own reference construction, with a female-primary reference block for single adults and a medoid-spouse reference for couples, and the couples index adds two leisure terms. We use levels only within type and offer no mechanism for the between-type difference in levels.
-
-
 ## The preliminary decomposition
 
 
@@ -716,28 +651,10 @@ The sample screens on the observed hours and wage of employed deciders. The esti
 Separately, the sampled-set probability is derived by conditioning on a labelled collection of slots. Small observed cross-coordinate correlations and a multiplicity distribution consistent with independent draws are diagnostics; they do not by themselves establish the sampling law that the derivation assumes. Both questions are recorded here as open.
 
 
-## The bridge to the compensation-side reference
-
-The flat-consumption reference of Section 4 is one member of a family. A natural comparison is the reference that flattens consumption only at the non-work bundle, which sits on the compensation side of the same family. If non-work maximizes the non-consumption index and the opportunity density integrates to one on the domain the reference mass uses, then $H_i\le e^{L_i(o)}$, so the gap $\Delta_i=L_i(o)-\log H_i$ must be non-negative for every household and the ratio of the two measures is bounded on one side.
-
-The first premise holds for every household in both samples. The second does not: the opportunity object entering the reference mass is an unnormalized index whose median mass on that domain is 0.077283 for single adults and 147.963 for couples. Omitting that mass makes the comparison depend on an arbitrary multiplicative scale, and it is the reason earlier signed gaps had the wrong sign for couples and happened not to reverse for single adults. Both earlier levels are withdrawn.
-
-
-Table: The bridge between the two monetary references, after the premise audit. The second column reports whether non-work maximizes the non-consumption index for every household; the third reports the median mass of the opportunity kernel on the domain the reference integral uses. That mass is not one, which is the premise that failed and the reason the earlier signed gaps were scale artefacts. The remaining columns are the bridge after normalizing the kernel on exactly that domain.
-
-|Population|Non-work maximizes $L$|Median $\int\hat g$|Median $W^4/W^1$|Range|Median $\Delta$ (nats)|$\Delta\ge 0$ everywhere|
-|---|---|---|---|---|---|---|
-|Single-adult|yes|0.077283|0.9843|[0.9169, 0.9990]|0.0322|yes|
-|Couple|yes|147.962795|0.6242|[0.5211, 0.7171]|0.9906|yes|
-
-
-
-After normalizing the kernel on exactly the domain the reference mass uses, the bridge is well behaved: the gap is non-negative for every household in both samples and the ratio is at most one everywhere, as the premises require. The median ratio is 0.9843 for single adults and 0.6242 for couples. We report the reconciled bridge as a property comparison between two references and do not use it as a competing headline distribution.
-
 ## The consumption normalizer
 
 
-Table: The consumption normalizer. Three constants were in circulation. Under exact log consumption the normalizer enters utility as the alternative-invariant term $-\beta_c\log\lambda_c$, so it cancels from every choice probability and exactly from the money metric. The paper reports the estimation-frame constant throughout.
+Table: The consumption normalizer. Three constants were in circulation. Under exact log consumption the normalizer enters utility as the alternative-invariant term $-\beta_c\log\lambda_c$, so it cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all. The paper reports the estimation-frame constant throughout, for the choice-probability role it actually plays.
 
 |Panel|Single-adult (EUR/month)|Couple (EUR/month)|Role|
 |---|---|---|---|
@@ -747,7 +664,9 @@ Table: The consumption normalizer. Three constants were in circulation. Under ex
 
 
 
-Three normalizing constants were in circulation between the estimation frames and the welfare panel, because each panel computes the constant as a mean over its own rows. Under exact log consumption the constant is alternative-invariant, so it cancels from every choice probability and exactly from the money metric; the deviation over four widely separated values is 2.7e-15. No reported quantity changes. The paper reports the estimation-frame constant throughout, and the discrepancy is recorded here rather than silently harmonised.
+Three normalizing constants were in circulation between the estimation frames and the welfare panel, because each panel computes the constant as a mean over its own rows. Under exact log consumption the constant is alternative-invariant, so it cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all (Section 4), so none of the three values changes any reported welfare quantity. The paper reports the estimation-frame constant throughout, for the choice-probability role it actually plays, and the discrepancy across panels is recorded here rather than silently harmonised.
+
+A retired alternative construction that did once carry $\lambda_c$ into a welfare formula, and a bridge comparing it against a second reference, are recorded in the Scientific history section rather than here: both traced to the ex-ante inclusive-value functional Deputy ruling R2 retired, and neither is reported as a result anywhere in this document.
 
 
 ## Limitations
@@ -902,23 +821,7 @@ $$
 
 where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions, unlike the Owen extension for the additional operator an earlier, retired version of this decomposition used. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
 
-# 10. Supplementary appendix. The bridge between the two monetary references
-
-Write $M_i=\int\widehat g_i\,d\nu$ for the mass of the opportunity object on the domain the reference integral uses, and $o$ for the non-work bundle. The two references satisfy
-
-$$
-\beta_c\log(W^{1}_i/\lambda_c)=\log J_i-\log H_i,
-\qquad
-\beta_c\log(W^{4}_i/\lambda_c)=\log J_i-\log M_i-L_i(o),
-$$
-
-so that $\log(W^{4}_i/W^{1}_i)=\big(\log H_i-\log M_i-L_i(o)\big)/\beta_c$ and $\Delta_i=L_i(o)+\log M_i-\log H_i$. Omitting $\log M_i$ is valid only when $M_i=1$, and it is not: the audit reports median mass 0.077283 for single adults and 147.963 for couples. The premise that failed is therefore the unit mass of the kernel on that domain, not the maximality of the non-work bundle, which holds for every household in both samples, and not the orientation of the comparison.
-
-After renormalizing the kernel on exactly that domain, the median gap is 0.0322 nats for single adults and 0.9906 for couples, the gap is non-negative for every household, and the ratio lies in $[0.9169, 0.9990]$ for single adults and $[0.5211, 0.7171]$ for couples. The identity above is satisfied to machine precision at the corrected normalization.
-
-A separate point concerns the low-temperature limit. Attained and reference values must be indexed by the same shock scale for the limit to be meaningful. The statement that survives is that the two consistently indexed measures converge as the scale goes to zero; convergence to the value of staying at home evaluated at a different fixed scale is not the same statement and is not made.
-
-# 11. Appendix C. Data, software and replication
+# 10. Appendix C. Data, software and replication
 
 **Data.** French EU-SILC, accessed through Eurostat's harmonised release, with 2016 survey collection and a 2015 income reference year. The harmonised survey is transformed into an input file for EUROMOD [@sutherlandfigari2013], which applies the French 2015 policy system. Regional labour-market conditions come from the Eurostat regional labour-force series. Access to EU-SILC microdata is granted by Eurostat under its research-access conditions and the data cannot be redistributed with this document.
 
@@ -932,7 +835,7 @@ A separate point concerns the low-temperature limit. Attained and reference valu
 
 **Replication.** Code and derived, non-confidential intermediate artefacts will be made available in a public repository on publication. Confidential microdata remain in their permitted environment, so the replication package reproduces every step conditional on authorised access to EU-SILC.
 
-# 12. The research notebook
+# 11. The research notebook
 
 The project keeps one canonical research notebook, `JMP_research_lab.ipynb`, in the estimation repository. Two things about it need saying precisely, because both have been overstated before.
 
@@ -940,11 +843,11 @@ The project keeps one canonical research notebook, `JMP_research_lab.ipynb`, in 
 
 **Its machinery is current; the artifacts it is pointed at are not.** The utility construction in the notebook is specification-driven: it reads the consumption coefficient from the specification and carries an estimated one wherever the specification leaves it free, so nothing in the code assumes the superseded numeraire. But the frames, specification and result files it currently loads are the generation that preceded the specifications of record reported here. Re-pointing it is a mechanical change and re-running it is not, and a notebook that had been re-pointed but not re-run would be worse than one that is honestly labelled. It is therefore left as it stands, and re-binding it to the current specifications and welfare record is the one capability gap this document reports.
 
-# 13. Scientific history of this result
+# 12. Scientific history of this result
 
 This section records how the reported specifications and results came to be what they are. It is here so that the argument above does not have to carry it, and so that a reader comparing this version with an earlier one can see what changed and why. Nothing in it is a competing model.
 
-**The consumption specification.** Earlier drafts reported a specification in which the consumption coefficient was fixed at one as a numeraire, and one in which the single-adult consumption curvature was estimated at $\theta_c\approx0.168$. Neither is the reported model. The current specification fixes the shock scale, fixes the consumption curvature at exactly zero, and estimates the consumption weight instead. That change improves the criterion by 23.753 log-points for single adults and 15.659 for couples, and it changes the welfare aggregator from an arithmetic mean of reachable consumption to a power mean of order $\beta_c$. Every welfare quantity computed under the earlier convention is superseded, and the corresponding figures were regenerated rather than relabelled.
+**The consumption specification.** Earlier drafts reported a specification in which the consumption coefficient was fixed at one as a numeraire, and one in which the single-adult consumption curvature was estimated at $\theta_c\approx0.168$. Neither is the reported model. The current specification fixes the shock scale, fixes the consumption curvature at exactly zero, and estimates the consumption weight instead. That change improves the criterion by 23.753 log-points for single adults and 15.659 for couples, and it changes how a given non-consumption advantage converts into the money metric: under the closed form of Section 4, that advantage now enters divided by the estimated $\beta_c$ rather than by the fixed numeraire it previously used. Every welfare quantity computed under the earlier convention is superseded, and the corresponding figures were regenerated rather than relabelled.
 
 **The sample.** The predecessor frames contained 1,555 single-adult and 2,275 couple households. Twelve single-adult and fifty-two couple households were removed when the hours support and the occupation mapping were applied to the observed rows, and three further single-adult households were removed because their own observed job prices to non-positive disposable consumption. The current descriptive tables are computed on the resulting 1,540 and 2,223 households, not on the predecessor frames, and the funnel in Section 2 ends where the estimation begins.
 
@@ -952,11 +855,11 @@ This section records how the reported specifications and results came to be what
 
 **The decomposition result.** The decomposition reported in this document has been rewritten twice. An early draft reported household endowments and needs as the largest component for single adults, and a one-factor figure of about seventy-seven per cent; both were withdrawn. A subsequent draft reported a four-factor preferences/access/earnings/resources-and-needs decomposition across six inequality indices, with a grouped Shapley--Owen--Shorrocks allocation; that entire apparatus is now also withdrawn, having been found by a later lineage audit to rest on a generation of run artifacts that an earlier ruling had already retired, reproduced here as a matter of record rather than as a competing result: those numbers are no longer stated as current anywhere in this document, and the retired artifacts themselves are named in the audit record, not here. Section 5 now reports a bounded, explicitly preliminary three-factor exercise (preferences, local labour-market access, earning opportunities, with resources, needs and composition held fixed), sourced from an independent replication run, separate from the retired generation, and reported with Monte Carlo simulation ranges and a second-seed check rather than parameter-uncertainty intervals, ahead of the paper's final decomposition architecture, which awaits a counterfactual-attainment estimand still under design.
 
-**The bridge between references.** The signed gap between the flat-consumption reference and the non-work-bundle reference was previously reported with the wrong sign for couples. The premise audit in Section 6 locates the cause in the normalization of the opportunity kernel on the domain the reference mass uses, and the corrected bridge satisfies the inequality the premises require in both samples.
+**The bridge between references, retired.** An earlier draft compared the flat-consumption reference against a second, non-work-bundle reference, both computed from the ex-ante inclusive-value functional ($J_{i,S}$, $H_{i,S}$, integrated over the estimated opportunity density). That comparison went through two states -- a wrong sign for couples, later a premise audit that corrected the normalization of the opportunity kernel -- before the measure-correspondence audit classified the underlying functional itself as a different object from the paper's literal measure and Deputy ruling R2 retired it. The bridge is not reported in this document in any form; both its earlier, incorrect version and its later, corrected version relied on a construction that is no longer the paper's welfare measure.
 
 **The relative-index companion measure and the pay-neutrality diagnostic, removed.** An earlier draft reported bracketing counts for a third, resource-and-pay reference and a numerical wage-density-invariance residual, both cited to a since-retired welfare-record artifact. On repointing the citations, the relative-index measure did not survive: the accepted measure-correspondence audit classifies it as a different object from its theory definition, not reusable for a literal computation and not required by any current ruling, so it is removed rather than recited elsewhere. The pay-neutrality claim survives, more strongly than before: under the accepted reference construction (Mapping F, Deputy ruling R1) the home reference carries no opportunity-density, proposal, shock or intensity argument at all, an exact property of the construction rather than a numerical residual, so Section 4 states it without a magnitude.
 
-**The consumption normalizer.** Three values of $\lambda_c$ were in circulation because different panels recomputed it over their own rows. Under exact log consumption the constant cancels from the money metric, so no result changed; the paper now reports one constant per population.
+**The consumption normalizer.** Three values of $\lambda_c$ were in circulation because different panels recomputed it over their own rows. Under exact log consumption the constant is alternative-invariant and cancels from every choice probability; it does not enter the accepted $W^1_F$ welfare measure at all, so no welfare result is affected by which value is used. The paper now reports one constant per population, for the choice-probability role it actually plays.
 
 # Questions for presentation preparation
 
@@ -974,85 +877,81 @@ EU-SILC collection year 2016, income reference year 2015, and EUROMOD policy yea
 
 ## 4. What is the first figure showing?
 
-The deterministic W1 construction adapted from the companion theory paper, Haydar and Maniquet (2026). See the figure Own-set equal-consumption equivalents. The stochastic implementation follows in Section 4 and the discussion notebook's Construction and the power-mean identity.
+The deterministic W1 construction adapted from the companion theory paper, Haydar and Maniquet (2026). See the figure Own-set equal-consumption equivalents. Section 4 states the empirical implementation on the current estimated model, Mapping F, and derives its closed form.
 
 ## 5. Does log consumption make welfare an arithmetic mean?
 
-Only at $\beta_c=1$. With $\theta_c=0$ and estimated $\beta_c$, $W=[\sum_r r_{ir}C_{ir}^{\beta_c}]^{1/\beta_c}$. The estimated orders are 2.0387 and 2.1017. See the power-mean figure and the discussion notebook's Construction and the power-mean identity.
+The accepted measure is not an arithmetic mean of anything: $W^1_{i,F}=C_i^{\mathrm{obs}}\exp[(L_i(j_i^{\mathrm{obs}})-L_i(o))/\beta_c]$ evaluates a single observed job against a single home state, with no averaging or integration over jobs. $\beta_c$ sets the rate at which the non-consumption gap between those two states converts into a proportional adjustment of the household's own observed consumption. The estimated values are 2.0387 and 2.1017. See Section 4.
 
-## 6. What does $\beta_c$ mean for an alternative paying twice the median?
+## 6. Does the normalizer $\lambda_c$ affect welfare?
 
-It is both the mean's order and the own-consumption elasticity of the implied weight $C^{\beta_c}$, holding the reference probability fixed. Doubling consumption multiplies that contribution by about 4.1 (singles) or 4.3 (couples). See the power-mean figure.
+No. It cancels under exact log consumption from every choice probability, but it does not appear in the accepted $W^1_F$ closed form at all -- not as a cancelling term, simply absent. See Section 4.
 
-## 7. Does the normalizer $\lambda_c$ affect welfare?
+## 7. Does the proposal enter welfare, or only estimation?
 
-It cancels under exact log consumption; the numerical invariance deviation is 2.7e-15. See the discussion notebook, Section 7, Construction and the power-mean identity.
+Only estimation. The proposal density $q$ corrects the sampled-alternative choice probabilities; it carries no economic content there either. It does not enter the accepted $W^1_F$ welfare measure at all: only the household's own observed job and its home state enter the closed form, and neither involves a proposal correction. See Section 4.
 
-## 8. Does the proposal enter welfare, or only estimation?
+## 8. What happens to simulated non-positive consumption?
 
-It enters both: $-\log q_i^W$ corrects the singles welfare sums, and common-proposal terms correct the couples sums. It carries no economic content. See the discussion notebook, Section 7, Construction and the power-mean identity.
+A one-euro floor is applied before utility evaluation, for the sampled alternatives used in estimation: 22,597 singles and 59,821 couples node-evaluations. None of those alternatives enters the welfare measure, which evaluates only each household's own observed job and its home state, both already screened to strictly positive consumption. See Section 2 and Section 4.
 
-## 9. What happens to simulated non-positive consumption?
-
-A one-euro floor is applied before utility evaluation: 22,597 singles and 59,821 couples node-evaluations. Those alternatives enter $J$ and $H$ alike. See the discussion notebook, Section 7, Construction and the power-mean identity.
-
-## 10. Why is predicted mass below ten hours zero?
+## 9. Why is predicted mass below ten hours zero?
 
 The panel contains no draw in $(5,10)$ despite positive structural and proposal mass; its expected count is 0.249. This tail-coverage limitation produces a genuine fit error. See the observed-versus-model fit table in the discussion notebook, Section 6.
 
-## 11. Do the hours partitions close?
+## 10. Do the hours partitions close?
 
 Yes. The long-hours bin includes 70, and observed singles partitions close separately by sex. See the hours-fit table in the discussion notebook, Section 6.
 
-## 12. Is the measure independent of pay?
+## 11. Is the measure independent of pay?
 
-The reference mass is directly pay-neutral, but earning opportunities change attained welfare. This does not establish the deterministic axiom for the stochastic functional. See the reference-bridge table in Appendix C.
+The reference is directly pay-neutral: the home state carries no opportunity-density, proposal, shock or intensity argument, so none of them enters the reference at all. Earning opportunities nevertheless change attained welfare, because they change what the household attains, not the reference it is compared against. See Section 4, What the reference does and does not do to pay.
 
-## 13. What do the three preliminary operators equalize, and why is a fourth one absent?
+## 12. What do the three preliminary operators equalize, and why is a fourth one absent?
 
 Preferences, local labour-market access and earning opportunities, each through its named pathway with coefficients fixed. Household resources, needs and composition are held fixed rather than equalized: they are not a fourth operator in this bounded exercise, and no share is attributed to them. See Section 5.
 
-## 14. Why an exact Shapley value, and not the grouped Owen rule an earlier draft used?
+## 13. Why an exact Shapley value, and not the grouped Owen rule an earlier draft used?
 
 With three players the exact Shapley value has a closed form over $3!=6$ orderings and needs no grouping into a priori unions. The Owen rule an earlier, now-withdrawn draft used was needed only because that draft had an additional operator, for resources and needs, to group against preferences. See Appendix B.
 
-## 15. Is the movable share $\Delta I$ small because job opportunities do not matter?
+## 14. Is the movable share $\Delta I$ small because job opportunities do not matter?
 
 No. It is small because household resources, needs and composition are held fixed in every coalition of this bounded exercise, and that fixed component accounts for 100 to 127 per cent of the variance of log well-being. See Section 5.
 
-## 16. Which ordering is robust across unequivalised and equivalised reporting?
+## 15. Which ordering is robust across unequivalised and equivalised reporting?
 
 Earning opportunities dominate local labour-market access for both single adults and couples, at both scales. The preference contribution's sign is not robust between the two scales in either sample, so no directional claim is made about it. See Section 5.
 
-## 17. How uncertain are the preliminary shares?
+## 16. How uncertain are the preliminary shares?
 
 Two ways, never merged into a confidence interval: a Monte Carlo range across 1,000 simulation replications, and an independent check under a second simulation seed. A parameter-uncertainty interval propagated from the estimation covariance is not yet computed for this exercise. See Section 5.
 
-## 18. What does exhaustiveness establish here?
+## 17. What does exhaustiveness establish here?
 
 The contributions of $P$, $A$, $B$ and the residual close to the baseline inequality to machine precision; this checks accounting for the declared three-player game, not identification of the model or resolution of the counterfactual-attainment question the game is bounded around. See Section 5.
 
-## 19. Can welfare levels be compared across the two populations?
+## 18. Can welfare levels be compared across the two populations?
 
 Each population has its own preference and opportunity reference. Results are compared within population, with raw and equivalized conventions separate. See the welfare state-level table in the discussion notebook, Section 7.
 
-## 20. Is a nested subdivision of resources and needs available, the way an earlier draft reported one?
+## 19. Is a nested subdivision of resources and needs available, the way an earlier draft reported one?
 
 No. Resources, needs and composition are held fixed rather than decomposed in this bounded preliminary exercise, so there is nothing to subdivide. An earlier, now-withdrawn draft's nested resources-versus-composition split was part of the retired four-factor architecture and is not carried forward.
 
-## 21. What happened to the earlier decomposition numbers entirely?
+## 20. What happened to the earlier decomposition numbers entirely?
 
 They are withdrawn, not corrected: the entire four-factor preferences/access/earnings/resources-and-needs architecture they were computed on traced to artifacts retired by the DECOMP-PRESEMINAR-1 ruling. See the Scientific history section for the full record and Section 5 for what is reported in its place.
 
-## 22. What remains unresolved?
+## 21. What remains unresolved?
 
 Outcome-based sample selection and the construction of the labelled-slot sampling law remain open econometric items, unrelated to the decomposition. Separately, the decomposition itself remains bounded pending a counterfactual-attainment estimand under design; Section 5 and Section 6 state exactly what that bound means for the reported shares.
 
-## 23. Is this causal?
+## 22. Is this causal?
 
 The decomposition is structural accounting under declared operators; it does not identify causal regional, educational or occupational effects. See the discussion notebook, Section 9, What is robust and what is not.
 
-## 24. Can the notebooks reproduce everything?
+## 23. Can the notebooks reproduce everything?
 
 The discussion notebook executes checks and renders current results. The research lab replays from priced inputs, with an artifact-generation caveat; raw-data preparation and pricing are separate. See the report's The research notebook section and the discussion notebook, Section 0.
 

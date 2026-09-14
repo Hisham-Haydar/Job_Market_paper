@@ -266,7 +266,7 @@ forbid(it, '35-hour band is the reference')
 # --------------------------------------------------------------------------- #
 # 4.  THE W1 STATEMENT  (spec v1 s2)
 # --------------------------------------------------------------------------- #
-it = item(4, 'The W1 statement: all three clauses, and the power-mean order')
+it = item(4, 'The W1 statement: all three clauses, and the accepted closed form')
 CLAUSES = [
     ('own preferences retained',
      ['own preferences', "household's own preferences"]),
@@ -282,17 +282,14 @@ for a in 'PM':
         if not any(norm(x) in NORM[a] for x in alts):
             it.fail('%s: the W1 statement is missing the clause %r'
                     % (NAMES[a], name))
+# MEASURE-DEF-1: the accepted measure is the closed-form Mapping-F
+# construction, not a power mean over a reference distribution -- that
+# framing belonged to the retired ex-ante functional (see item 18). The
+# requirement here is the closed form itself, not a word describing it.
 for a in 'PM':
-    if 'power mean' not in NORM[a]:
-        it.fail('%s: does not state that W1 is a power mean' % NAMES[a])
-    if 'arithmetic' not in NORM[a]:
-        it.fail('%s: does not contrast the power mean with the arithmetic mean'
-                % NAMES[a])
-# the arithmetic-mean claim must never stand unconditionally
-forbid(it, 'arithmetic mean of',
-       permitted=('only at', 'beta_c=1', 'beta_c = 1', 'would be',
-                  'changes the welfare aggregator from', 'superseded',
-                  'earlier drafts'))
+    if 'C_i^{\\mathrm{obs}}' not in ART[a]:
+        it.fail('%s: the accepted Mapping-F closed form '
+                '(C_i^{obs} exp[...]) is not stated' % NAMES[a])
 
 
 # --------------------------------------------------------------------------- #
@@ -569,7 +566,7 @@ if 'Questions for presentation preparation' not in MD_RAW:
 nq = len(re.findall(r'^## \d+\. ', MD_RAW, flags=re.M))
 if nq < 15:
     it.fail('report: only %d questions' % nq)
-for need in ['What is new and what is inherited', 'A worked household']:
+for need in ['What is new and what is inherited', 'A worked illustration']:
     if need not in MD_RAW:
         it.fail('report: the block %r is missing' % need)
 if HTML_RAW.count('<details>') < 2:
@@ -731,6 +728,52 @@ if _four_factor:
             'evidence regardless)')
     for p, hits in _four_factor.items():
         it.fail('%s: %s' % (p.relative_to(JMP), ', '.join(hits)))
+
+
+# --------------------------------------------------------------------------- #
+# 18.  RETIRED EX-ANTE WELFARE CONSTRUCTION  (MEASURE-DEF-1, Deputy ruling R2)
+# --------------------------------------------------------------------------- #
+it = item(18, 'Retired ex-ante inclusive-value welfare construction: not '
+              'presented as the measure (MEASURE-MAP-1R / Deputy ruling R2)')
+# REBUILD-2 gated the ex-ante J/H derivation to {{report-only}}, which kept
+# it out of the paper but left it live, undisclaimed, in the discussant-
+# facing HTML report even though every reported number was already literal
+# Mapping-F W1_F. MEASURE-DEF-1 replaced the welfare section's definition
+# with the accepted closed form and either removed the ex-ante derivation or
+# labelled it retired with R2 cited. This item is the standing gate against
+# a regression: it fails if the construction's own defining notation
+# resurfaces in either surface without that label, close enough to be a hit
+# on the same reading. Content signature, not path-based -- see
+# retired_lineage_gate.scan_exante's own docstring for why no retired FILE
+# exists to gate by path here, and why a hit is nonetheless strong evidence.
+_exante = {}
+_exante_sources = {PAPER: PAPER_RAW, HTML: HTML_TXT}
+# HTML is scanned on its parsed text layer (HTML_TXT), not the raw file:
+# the raw HTML interleaves tags, attributes and embedded base64 figure data
+# between a formula and its disclaiming sentence, which can push the two
+# past the local disclaimer window even when they sit in the same rendered
+# paragraph. The text layer is what a reader (and item 4/5/etc. above)
+# actually sees, so it is also the right layer to check disclaiming
+# proximity against.
+for p, txt in _exante_sources.items():
+    hits = rlg.scan_exante(txt)
+    if hits:
+        _exante[p] = hits
+if _exante:
+    it.fail('the ex-ante inclusive-value construction (J/H integrals over '
+            'the estimated opportunity density) is present without an '
+            'explicit retired/withdrawn label and an R2 citation nearby')
+    for p, hits in _exante.items():
+        it.fail('%s: %s' % (p.relative_to(JMP), ', '.join(hits)))
+else:
+    it.note('no undisclaimed ex-ante J/H construction found in %s or %s'
+            % (PAPER.name, HTML.name))
+# the accepted closed form must actually be the one stated (belt-and-braces
+# with item 4, which checks the same thing on the paper/report text layer)
+if 'W^1_{F,i}=C_i^{\\mathrm{obs}}\\exp' not in PAPER_RAW and \
+        'W^1_{i,F}=C_i^{\\mathrm{obs}}\\exp' not in PAPER_RAW:
+    it.fail('paper: the accepted literal W1_F closed form is not stated in '
+            'its boxed form')
 
 
 # --------------------------------------------------------------------------- #
