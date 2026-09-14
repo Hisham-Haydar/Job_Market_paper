@@ -2,9 +2,8 @@
 """Build the self-contained current-results gallery.
 
 Run with --refresh-registry after a reviewed source update.  That mode copies
-the non-S12 cells used by the gallery into numbers_of_record_v5.json.  A normal
-build reads displayed non-S12 numbers only from that registry; S12 tables are
-read from their CSV records, as allowed by the gallery's source contract.
+the registered cells used by the gallery into numbers_of_record_v5.json.  A
+normal build reads displayed registered numbers only from that registry.
 """
 from __future__ import annotations
 
@@ -25,17 +24,24 @@ RUNS = SPRINT / "runs"
 FIG = SPRINT / "figures"
 V5 = RUNS / "v5_evidence"
 S11 = RUNS / "s11_welfare_specs_of_record"
-S12 = RUNS / "s12_welfare_record"
 PREF = FIG / "preferences_final"
-# Preliminary three-factor P/A/B decomposition (supersedes the retired
-# four-factor P/A/B/D decomposition previously read from the S12 tables
-# above). Source: MNL_decomp, branch welfare/preseminar-pab. Deliberately
-# NOT sourced from headline_decomposition_v1.csv or any ss8*/cw_step3*/
-# gn_step2* state file -- those remain excluded pending a separate lineage
-# verdict.
+sys.path.insert(0, str(SPRINT))
+import final_diagnostics_surface_v1 as final_surface  # noqa: E402
+
+# Preliminary three-factor P/A/B decomposition. Source: MNL_decomp, branch
+# welfare/preseminar-pab. Retired decomposition sources remain excluded.
 DECOMP2 = ROOT.parent / "MNL_decomp" / "outputs/welfare/preseminar_pab_v1"
 NOR_PATH = REPORTS / "numbers_of_record_v5.json"
 OUT = REPORTS / "JMP_results_gallery_current.html"
+OPPORTUNITY_PROFILES = {
+    "singles": {
+        "sex of the decider": "man", "age band": "50-54", "education": "medium",
+    },
+    "couples": {
+        "age band, man": "40-44", "age band, woman": "40-44",
+        "education, man": "medium", "education, woman": "high",
+    },
+}
 
 
 def rows(path: Path):
@@ -50,7 +56,7 @@ def num(x):
 
 
 def refresh_registry(nor):
-    """Register the exact non-S12 cells displayed by this document."""
+    """Register the exact cells displayed by this document."""
     full_funnel = rows(RUNS / "final_descriptives/fd_funnel_v1.csv")
     funnel = []
     for r in full_funnel:
@@ -213,16 +219,6 @@ def refresh_registry(nor):
         "weighted_share": num(r.get("share_weighted")),
     } for r in occ]
 
-    worked = json.loads((V5 / "v5_step4_worked_examples_v1.json").read_text(encoding="utf-8"))["examples"]
-    examples = {}
-    for sample, e in worked.items():
-        examples[sample] = {
-            "selection": e["selection"], "profile": e["profile"],
-            "observed_consumption": e["observed_disposable_income_eur_per_month"],
-            "weighted_rank": e["weighted_rank_in_the_distribution"],
-            "states": e["states"],
-        }
-
     # Anonymous component-density examples.  They use S11 parameters and the
     # weighted-median profiles.  Access is shown as the employment/joint-regime
     # margin; hours and occupation are normalized structural intensities; wage
@@ -255,7 +251,7 @@ def refresh_registry(nor):
         return out
 
     ps, pc = pm("singles"), pm("couples")
-    sp = worked["singles"]["profile"]
+    sp = OPPORTUNITY_PROFILES["singles"]
     ssex = "m" if sp["sex of the decider"] == "man" else "f"
     # The access panel is a profile illustration.  The exact current fitted
     # population employment margin is used; it is the registered model-implied
@@ -273,7 +269,7 @@ def refresh_registry(nor):
         "wages": [{"occupation": f"group {k}", "curve": density_curve(mu_s + (0 if k == 1 else ps[f"delta_occ_{k}"]), ps["sigma"])} for k in range(1,5)],
     }}
     regimes = [r for r in fit if r["sample"] == "couples" and r["sex"] == "household"]
-    cp = worked["couples"]["profile"]
+    cp = OPPORTUNITY_PROFILES["couples"]
     wage_curves = []
     for sex, tag in (("man", "m"), ("woman", "f")):
         educ = cp[f"education, {sex}"]
@@ -291,19 +287,12 @@ def refresh_registry(nor):
         "wages": wage_curves,
     }
 
-    w4 = json.loads((S12 / "s12_w4_premise_audit_v1.json").read_text(encoding="utf-8"))
-    w4_corrected = {sample: {
-        "ratio": w4[sample]["unit_mass_corrected_bridge"]["W4_over_W1"],
-        "gap_nats": w4[sample]["unit_mass_corrected_bridge"]["Delta_nats"],
-        "w4_eur": w4[sample]["unit_mass_corrected_bridge"]["W4_EA_eur"],
-    } for sample in ("singles", "couples")}
     nor["gallery"] = {
         "registered_for": "current results gallery",
         "sample_funnel": funnel, "descriptives": descriptives,
         "observed_margins": observed, "occupation": occupation,
-        "coefficients": coef, "fit": fit, "examples": examples,
+        "coefficients": coef, "fit": fit,
         "wage_quantile_fit": wage_quantiles,
-        "w4_corrected": w4_corrected,
         "opportunity_examples": opportunity,
     }
     # Preserve the registry's Windows line-ending convention.
@@ -402,8 +391,6 @@ def build(nor):
     if "gallery" not in nor:
         raise SystemExit("gallery registry missing; run build.py --refresh-registry")
     g, n = nor["gallery"], {k: v["value"] for k, v in nor["entries"].items()}
-    s12_sum = rows(S12 / "s12_principal_welfare_summary_v1.csv")
-
     # --- Preliminary three-factor P/A/B decomposition (DECOMP-2) ---------
     d2_coal = {smp: rows(DECOMP2 / f"coalition_values_{smp}.csv") for smp in ("singles", "couples")}
     d2_shap = {smp: rows(DECOMP2 / f"shapley_PAB_{smp}.csv") for smp in ("singles", "couples")}
@@ -414,11 +401,11 @@ def build(nor):
                            "PA": "P + A", "PB": "P + B", "AB": "A + B", "PAB": "P + A + B"}
     D2_FACTOR_FULL = {
         "P": "systematic utility heterogeneity",
-        "A": "local labour-market access (region, urban/rural, year)",
+        "A": "local geographic/temporal access shifters (region, urban/rural, year)",
         "B": "earning opportunities",
         "Delta_I": "ΔI = I(actual) − I(PAB), the PAB-reducible inequality",
-        "RESIDUAL I(PAB)": "residual inequality with P, A and B equalised: household resources/needs/"
-                            "composition, sex-block parameter differences, and behavioural randomness",
+        "RESIDUAL I(PAB)": "residual inequality with P, A and B equalised: household resources, needs "
+                            "and composition held fixed; sex-block parameter differences and behavioural randomness remain",
     }
     D2_FACTOR_CODE = {"P": "P", "A": "A", "B": "B", "Delta_I": "ΔI", "RESIDUAL I(PAB)": "I(PAB)"}
 
@@ -543,23 +530,6 @@ def build(nor):
             + bar_svg(o["occupation"], "Occupation density")
             + wage_svg(o["wages"], "Conditional wage-offer density") + "</div></div>")
 
-    # Four principal state levels, directly from S12.
-    welfare_rows = []
-    for r in s12_sum:
-        primary = (r["sample"] == "couples" or r["reference"] == "singles_female")
-        if primary and r["state"] in ("I00", "I10", "I01", "I11") and r["basis"] in ("raw", "equivalized"):
-            welfare_rows.append([r["sample"], r["basis"], r["state"], fmt(r["mean"], "eur"), fmt(r["median"], "eur"), f"{fmt(r['p10'],'eur')}–{fmt(r['p90'],'eur')}"])
-    welfare_table = table(["Population", "Basis", "State", "Mean", "Median", "P10–P90"], welfare_rows)
-
-    w4_rows = []
-    for sample in ("singles", "couples"):
-        r = g["w4_corrected"][sample]
-        w4_rows.append([sample, fmt(r["ratio"]["median"]),
-                        f"{fmt(r['ratio']['min'])}–{fmt(r['ratio']['max'])}",
-                        fmt(r["gap_nats"]["median"]), fmt(r["w4_eur"]["median"], "eur"),
-                        f"{fmt(r['w4_eur']['p10'],'eur')}–{fmt(r['w4_eur']['p90'],'eur')}"])
-    w4_table = table(["Population", "Median W4/W1", "Ratio range", "Median gap (nats)", "Median W4", "W4 P10–P90"], w4_rows)
-
     fig = lambda name, title, caption, pref=False: figure((PREF if pref else FIG) / f"{name}_paper.png", title, caption)
     sections = []
     sections.append(("samples", "Samples and screens", f'''<p class=lead>Two estimation populations, followed through the final support and positive-consumption screens.</p>{funnel}<h3>Weighted descriptives</h3>{desc}
@@ -567,29 +537,31 @@ def build(nor):
     {fig("figV09_resources_panel", "The estimation samples: household resources", cap("single-adult and couple estimation samples", "euros per month, counts and weighted shares", "disposable income, children, non-labour resources and urbanisation", "raw household values unless equivalized is stated", "observed"))}'''))
     sections.append(("observed", "Observed behaviour", f'''{obs_table}<h3>Occupation of the observed job</h3>{occ_table}
     {fig("figV08_data_panel", "Continuous hours, structural bands, occupation and wages", cap("employed deciders and spouses in both populations", "weekly hours, weighted shares and euros per hour", "continuous observed work outcomes with the model's support bands overlaid", "population-specific, conditional on employment where stated", "observed"))}
-    {fig("figV09_resources_panel", "Raw and equivalized disposable consumption", cap("households in both populations", "euros per month", "tax-benefit disposable consumption at the observed choice", "raw household and modified-OECD-equivalized conventions shown separately", "observed"))}
-    {fig("figV01_welfare_lorenz", "Observed disposable-consumption Lorenz curves", cap("households in both populations", "cumulative weighted shares", "Lorenz curves for observed disposable consumption, shown beside welfare for orientation", "within-population ordering; raw and equivalized conventions remain distinct", "observed and estimated, explicitly distinguished in the panel"))}'''))
-    sections.append(("model", "The estimated model", f'''<p class=lead>Estimates are grouped by their economic role. Standard errors are household-cluster robust; the dot marks a coordinate at an active bound. The consumption coefficient has its own block.</p><div class=twocol>{''.join(coef_html)}</div>{restriction_note}
+    {fig("figV09_resources_panel", "Raw and equivalized disposable consumption", cap("households in both populations", "euros per month", "tax-benefit disposable consumption at the observed choice", "raw household and modified-OECD-equivalized conventions shown separately", "observed"))}'''))
+    sections.append(("model", "The estimated model", f'''<p class=lead>Estimates are grouped by their economic role. Standard errors are household-cluster robust; the dot marks a coordinate at an active bound. The consumption coefficient has its own block.</p><p>The systematic leisure specification is not age alone: it carries an intercept, age, age squared and group-specific leisure curvature for each of the four adult groups, plus a number-of-children shifter for women; sex and household type are carried by separate parameter blocks.</p><blockquote>&ldquo;The baseline deliberately keeps systematic preference heterogeneity parsimonious: age profiles for all four adult groups and a child-related shifter for women. The child term is interpreted as a reduced-form behavioural/time-constraint shifter, not as pure taste.&rdquo;</blockquote><p>Preferences and opportunity components are jointly estimated, with their separation relying on maintained functional-form and exclusion restrictions. No causal interpretation is attached to that separation.</p><div class=twocol>{''.join(coef_html)}</div>{restriction_note}
     <div class=figuregrid>{fig("figP01_indifference_curves_singles", "Single-adult indifference curves", cap("representative single-adult profiles", "monthly euros and weekly leisure", "estimated level sets", "own characteristics at the stated representative profiles", "illustrative from estimated preferences"), True)}
     {fig("figP02_indifference_curves_couples", "Couple indifference curves", cap("representative couple profile", "monthly euros and weekly leisure", "estimated level sets by spouse", "the other spouse's hours held at the panel convention", "illustrative from estimated preferences"), True)}
     {fig("figP03_marginal_utilities", "Marginal utilities", cap("representative profiles from both populations", "utility-index change per leisure or consumption unit", "estimated marginal utility of leisure and consumption", "evaluation points shown in the panel", "illustrative from estimated preferences"), True)}
     {fig("figP04_mrs_by_age_sex", "Marginal rates of substitution", cap("representative and employed profiles in both populations", "euros per month per weekly hour", "local consumption-for-leisure compensation slope", "own characteristics with the figure's evaluation convention", "illustrative from estimated preferences"), True)}
-    {fig("figP06_normalization_sensitivity", "Normalization sensitivity", cap("representative profiles in both populations", "relative deviations and re-expressed coefficients", "invariance of preferences to leisure-coordinate normalization", "record normalization compared with alternative coordinates", "illustrative sensitivity"), True)}
-    {fig("figP05_euro_value_of_one_nat", "The value of one natural unit", cap("representative consumption levels in both populations", "proportional and euro changes in consumption", "consumption compensation for one natural unit of the utility index", "estimated consumption coefficient, holding the evaluation point fixed", "illustrative from estimated preferences"), True)}
-    {fig("figP07_w1_power_mean_weighting", "The power-mean kernel", cap("both estimated population models", "relative consumption and relative kernel weight", "power-mean weighting implied by the estimated consumption coefficient", "median consumption normalized within population", "illustrative algebraic kernel, not a welfare recomputation"), True)}</div>'''))
+    {fig("figP06_normalization_sensitivity", "Normalization sensitivity", cap("representative profiles in both populations", "relative deviations and re-expressed coefficients", "invariance of preferences to leisure-coordinate normalization", "record normalization compared with alternative coordinates", "illustrative sensitivity"), True)}</div>'''))
     sections.append(("fit", "Fit, margin by margin", f'''<p class=lead>Each row keeps its own deviation. The sub-ten-hour zero prediction is a genuine fit error caused by tail coverage of the integration panel. Both the structural density and proposal put positive mass on (5,10): about 4.15% of normalized structural hours mass and 0.00019% conditional proposal mass. The expected draw count is 0.249; the realized panel contains no draw there. The long-hours bin includes 70, and observed singles partitions close separately by sex.</p><div class=twocol><div class=pop><h3>Singles</h3>{fit_group("singles")}</div><div class=pop><h3>Couples</h3>{fit_group("couples")}</div></div><h3>Worker-conditional wage quantiles</h3>{wageq}
     {fig("figV06_fit_by_margin", "Observed against model-implied margins", cap("both estimation populations", "shares and mean log euros per hour", "employment, participation regimes, hours bands, occupation and wage-location margins", "model population integration against weighted observations", "observed and model-implied"))}'''))
+    sections.append(("final-diagnostics", "Accepted diagnostic surfaces", f'''<p class=lead>These are reader-facing renderings of accepted diagnostic artifacts. They add detail without adding or revising any group-level fit verdict.</p>
+    {final_surface.posfit_html()}
+    {final_surface.node_html()}
+    {final_surface.ws4_html()}'''))
     sections.append(("opportunities", "The opportunity distributions", f'''<p class=lead>One anonymous weighted-median profile per population. These panels show the estimated components of the opportunity kernel—not choice probabilities and not personal identifiers.</p><div class=twocol>{''.join(opportunity)}</div>
     <figcaption class=standalone>{cap("one anonymous weighted-median profile from each population", "probability mass, density mass and density per euro", "employment or joint-regime access, structural hours, occupation and conditional wage-offer components", "each component normalized on its own displayed support", "illustrative from the estimated model")}</figcaption>'''))
-    sections.append(("welfare", "Welfare", f'''<p>With consumption curvature zero and estimated consumption weights {n['beta_c_singles']:.4f} (singles) and {n['beta_c_couples']:.4f} (couples), W = [sum_r r_ir C_ir^beta_c]^(1/beta_c). This is a power mean, arithmetic only at beta_c = 1. The coefficient is both the mean order and the own-consumption elasticity of the implied weight C^beta_c, holding reference probabilities fixed; doubling consumption multiplies the contribution by {2**n['beta_c_singles']:.2f} or {2**n['beta_c_couples']:.2f}. See The power-mean kernel figure.</p>
-    <p>The proposal carries no economic content but enters finite-node welfare through the singles importance correction -log q^W and the couples common-proposal terms in both J and H. Non-positive consumption at simulated nodes receives a one-euro floor before utility evaluation (22,597 singles and 59,821 couples node-evaluations); these alternatives enter J and H alike. See the discussion notebook, Section 7, Construction and the power-mean identity.</p>{welfare_table}
-    <div class=figuregrid>{fig("figV02_welfare_distributions", "W1-EA distributions", cap("households in both populations", "equivalent euros per month and density", "estimated own-set equal-consumption welfare distributions", "raw and modified-OECD-equivalized; populations not pooled", "model-implied"))}
-    {fig("figV01_welfare_lorenz", "W1-EA Lorenz curves", cap("households in both populations", "cumulative weighted shares", "Lorenz curves and Gini comparisons of W1-EA and observed disposable consumption", "within-population, raw and equivalized conventions shown separately", "observed and model-implied"))}</div>
-    <h3>The corrected W4 comparison</h3>{w4_table}<p>The comparison uses the opportunity kernel normalized on exactly the reference domain. The earlier scale-dependent levels are not shown.</p>'''))
+    sections.append(("welfare", "Welfare", '''<div class=notice><strong>Accepted Mapping-F construction.</strong>
+     <code class=formula>W1_F_i = C_obs_i * exp{[L_i(j_obs) - L_i(o)] / beta_c}</code></div>
+    <p>The money metric is derived from the Measure-1 reference-set principle. Under the current empirical specification its direct reference collapses to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through attained bundles.</p>
+    <p>For a one-nat shortfall, L(j_obs)&nbsp;&minus;&nbsp;L(o)&nbsp;=&nbsp;&minus;1, W&nbsp;=&nbsp;C_obs&nbsp;&times;&nbsp;exp(&minus;1/beta_c)&nbsp;&lt;&nbsp;C_obs. Current nonworkers: W=C. Current workers: W&lt;C under the maintained empirical domain.</p>'''))
     sections.append(("decomposition", "The decomposition", f'''<div class=notice><strong>Preliminary structural decomposition of well-being inequality (P/A/B).</strong> This is a bounded three-factor decomposition of a model-simulated distribution of money-metric well-being, presented ahead of the final decomposition architecture. Monte Carlo ranges quoted anywhere in this section are numerical simulation variation, never confidence intervals.</div>
-    <p class=lead>Using the accepted model and the already-priced estimation panel &mdash; no re-estimation, no new pricing &mdash; each household's attained bundle is simulated under eight counterfactual environments, and the dwt-weighted Gini of money-metric well-being W1_F is measured in each. An exact three-factor Shapley allocation splits &Delta;I&nbsp;=&nbsp;I(actual)&nbsp;&minus;&nbsp;I(PAB) across <strong>P&nbsp;=&nbsp;systematic utility heterogeneity</strong>, <strong>A&nbsp;=&nbsp;local labour-market access (region, urban/rural, year)</strong> and <strong>B&nbsp;=&nbsp;earning opportunities</strong>.</p>
-    <p>Earning opportunities dominate (58.6%&ndash;124.0% of &Delta;I across samples and scales). Local labour-market access is second and small (4.6%&ndash;29.6%). {d2_phi_note}</p>
-    <p><strong>&Delta;I is small (1.8%&ndash;9.9% of measured inequality) by design of the decomposition, not because opportunities are unimportant.</strong> Household resources, needs and composition are held fixed in every coalition, and that fixed component carries the consumption-level variation that dominates the variance of log&nbsp;W1_F &mdash; the variance of log consumption alone is 100%&ndash;127% of it. Sex-specific parameter differences also remain in the residual I(PAB) and are not attributed to P, A or B.</p>
+    <p class=lead>Using the accepted model and the already-priced estimation panel &mdash; no re-estimation, no new pricing &mdash; each household's attained bundle is simulated under eight counterfactual environments, and the dwt-weighted Gini of money-metric well-being W1_F is measured in each. An exact three-factor Shapley allocation splits &Delta;I&nbsp;=&nbsp;I(actual)&nbsp;&minus;&nbsp;I(PAB) across <strong>P&nbsp;=&nbsp;systematic utility heterogeneity</strong>, <strong>A&nbsp;=&nbsp;local geographic/temporal access shifters (region, urban/rural, year)</strong> and <strong>B&nbsp;=&nbsp;earning opportunities</strong>. Personal occupation access, hours-band access and node-level alternative characteristics remain fixed.</p>
+    <p>In a preliminary three-factor structural exercise that holds household resources, needs and composition fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and earning opportunities changes money-metric well-being inequality by 1.8&ndash;9.9% of the baseline Gini, depending on household type and reporting scale. Within the Shapley allocation of that movable component, earning-opportunity heterogeneity has a larger contribution than the coarse geographic/temporal access channel in both samples and both reporting conventions. The preference contribution is not sign-robust to equivalisation.</p>
+    <p>These are preliminary model-based accounting results, not causal estimates and not the final decomposition of total well-being inequality.</p>
+    <p>The decomposition is bounded by design because household resources, needs and composition are held fixed. Within that bounded game, equalising P/A/B changes the Gini by 1.8&ndash;9.9% of its baseline level, depending on sample and reporting scale. Sex-specific parameter differences also remain in the residual I(PAB) and are not attributed to P, A or B.</p>
+    <p>Dispersion in consumption is quantitatively large relative to dispersion in log well-being: Var(log C) is roughly 100&ndash;127% of Var(log W), with the excess offset by a large negative covariance between consumption and the leisure valuation. DECOMP-2 holds household resources, needs and composition fixed, leaving important sources of dispersion outside the P/A/B allocation.</p>
     <p class=small>{d2_robust_line} The estimation panel used for this simulation also carries the household's own observed choice as an anchor node in every coalition, so counterfactual attainment is mechanically anchored toward the observed outcome to a small, roughly common, degree across coalitions (about 2.9% of singles and 3.9% of couples attain it under any coalition); the anchor-exclusion check above tests this directly.</p>
     {d2fig("fig_preseminar_pab_architecture_v1", "The eight P/A/B counterfactual coalitions", cap("both estimation populations", "coalition structure, no units", "how each of the eight P/A/B counterfactual environments is built from the accepted model by equalising household-constant covariates within a block", "node-level alternative characteristics are preserved in every coalition; only household-constant covariates are equalised", "preliminary, model-based"))}
     <p class=small>Reading the MC share range: it is the across-replication spread of a single replication's Shapley share, which divides by that replication's own &Delta;I. When a replication's &Delta;I is near zero the ratio can be extreme in either direction; the column is reported for completeness but is not informative on its own. The Gini-point contribution (the mean over 1,000 replications) and the second-seed check are the informative comparison.</p>
@@ -597,17 +569,18 @@ def build(nor):
     {d2fig("fig_preseminar_pab_decomposition_singles_v1", "Singles: P/A/B decomposition of well-being inequality", cap("single-adult estimation sample", "Gini points of money-metric well-being and shares of ΔI", "coalition Gini levels and the exact Shapley allocation of ΔI across P, A and B, with the sign-instability of P annotated", "modified-OECD-equivalised W1_F; Monte Carlo ranges over 1,000 replications, not confidence intervals", "preliminary, model-based"))}
     <h3>Couples &mdash; coalition Gini levels and the exact Shapley allocation</h3>{d2_coalition_table("couples")}{d2_shapley_table("couples")}
     {d2fig("fig_preseminar_pab_decomposition_couples_v1", "Couples: P/A/B decomposition of well-being inequality", cap("couple estimation sample", "Gini points of money-metric well-being and shares of ΔI", "coalition Gini levels and the exact Shapley allocation of ΔI across P, A and B, with the sign-instability of P annotated", "modified-OECD-equivalised W1_F; Monte Carlo ranges over 1,000 replications, not confidence intervals", "preliminary, model-based"))}
-    <h3>Why &Delta;I is small: the variance arithmetic</h3><p class=small>log&nbsp;W1_F splits exactly into a consumption-level term log&nbsp;C, a leisure-valuation term log&nbsp;&rho;, and their covariance. Equalising P, A and B barely moves the dominant consumption term, because none of the three operators can touch a household's tax-benefit position, non-labour income or composition.</p>{d2_variance_table()}'''))
-    sections.append(("robustness", "What is robust and what is not", f'''<div class=verdicts><article><h3>Holds in every sample and scale</h3><p>Earning opportunities are the largest of the three factors everywhere (58.6%&ndash;124.0% of &Delta;I); local labour-market access is second and small (4.6%&ndash;29.6%). {d2_robust_line}</p></article>
+    <h3>Variance accounting within the bounded game</h3><p class=small>The table reports the exact log-variance identity behind the preceding comparison.</p>{d2_variance_table()}'''))
+    sections.append(("robustness", "What is robust and what is not", f'''<div class=verdicts><article><h3>Holds in every sample and scale</h3><p>Within the bounded DECOMP-2 game, earning-opportunity heterogeneity has a larger Shapley contribution than the model&rsquo;s coarse geographic/temporal access channel. Across samples and scales, the corresponding shares of &Delta;I are 58.6%&ndash;124.0% for B and 4.6%&ndash;29.6% for A. {d2_robust_line}</p></article>
     <article><h3>Holds across an independent second simulation run</h3><p>Every coalition Gini level and every Shapley share reproduces closely under an independent second simulation seed, and every sign &mdash; including the sign reversal of P between scales &mdash; agrees across both runs.</p></article>
     <article class=warn><h3>Does not hold</h3><p>{d2_phi_note}</p></article>
-    <article class=warn><h3>Scope of the preliminary decomposition</h3><p>&Delta;I is small by design, not because opportunities are unimportant: household resources, needs and composition are held fixed in every coalition and are not attributed to P, A or B, and nor are sex-specific parameter differences. The estimation panel used to simulate attainment carries the household's observed choice as an anchor node in every coalition; this is a structural feature of reusing an estimation frame as a welfare panel, tested and found small in its consequences here, but not yet replaced by a purpose-built non-anchored support.</p></article></div>
+    <article class=warn><h3>Scope of the preliminary decomposition</h3><p>The decomposition is bounded by design because household resources, needs and composition are held fixed. Within that bounded game, equalising P/A/B changes the Gini by 1.8&ndash;9.9% of its baseline level, depending on sample and reporting scale. Sex-specific parameter differences are likewise not attributed to P, A or B. The estimation panel used to simulate attainment carries the household's observed choice as an anchor node in every coalition; this is a structural feature of reusing an estimation frame as a welfare panel, tested and found small in its consequences here, but not yet replaced by a purpose-built non-anchored support.</p></article>
+    <article class=warn><h3>Wage elasticities</h3><p>Omitted. If asked: a valid gross-wage perturbation requires new tax-benefit repricing over the affected job alternatives, and the current priced support does not contain that counterfactual. No approximate or mock elasticity figure is reported.</p></article></div>
     '''))
 
     nav = "".join(f'<a href="#{i}"><span>{k:02d}</span>{html.escape(t)}</a>' for k, (i,t,_) in enumerate(sections,1))
     body = "".join(f'<section id="{i}"><div class=kicker>{k:02d} / results</div><h2>{html.escape(t)}</h2>{c}</section>' for k,(i,t,c) in enumerate(sections,1))
     css = r'''
-:root{--ink:#14242a;--muted:#607078;--paper:#f7f5ef;--card:#fff;--line:#d9ddd9;--teal:#1d6f78;--orange:#d2793f;--wash:#e8f0ee;--warn:#fff3df}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,Segoe UI,Arial,sans-serif}.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:#102c33;color:#fff;padding:28px 18px;overflow:auto}.brand{font:700 20px/1.15 Georgia,serif;margin:0 8px 28px}.brand small{display:block;color:#a9c7c7;font:11px/1.4 Inter,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-top:8px}.sidebar a{display:flex;gap:12px;color:#d9e6e5;text-decoration:none;padding:9px 8px;border-radius:7px}.sidebar a:hover{background:#1d454c;color:#fff}.sidebar a span{color:#87abae;font-variant-numeric:tabular-nums}main{margin-left:250px}.hero{padding:72px max(6vw,40px) 64px;background:linear-gradient(135deg,#e3eeeb,#f7f5ef)}.hero h1{font:700 clamp(42px,6vw,78px)/.95 Georgia,serif;max-width:900px;margin:12px 0 24px}.eyebrow,.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:700;color:var(--teal)}.hero p{font-size:19px;max-width:760px;color:#3d5259}section{padding:64px max(5vw,34px);border-top:1px solid var(--line);max-width:1500px}h2{font:700 42px/1.05 Georgia,serif;margin:10px 0 34px}h3{font:700 21px/1.2 Georgia,serif;margin:30px 0 12px}.lead{font:20px/1.5 Georgia,serif;max-width:900px}.twocol,.figuregrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}.pop{min-width:0}figure{margin:28px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}figure img{width:100%;display:block;background:#fff}figcaption{padding:14px 18px;color:#506169;font-size:13px;border-top:1px solid var(--line)}.standalone{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;margin-top:18px}.capkey{font-weight:700;color:#243d43}.tablewrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:9px;margin:18px 0 30px}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th{background:#e9efed;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.07em;position:sticky;top:0}th,td{padding:10px 12px;border-bottom:1px solid #e4e7e4;vertical-align:top;white-space:nowrap}td:nth-child(2){white-space:normal}.compact{font-size:12px}.compact th,.compact td{padding:7px 9px}code{font-size:11px}.notice{padding:17px 20px;background:var(--wash);border-left:4px solid var(--teal);margin:25px 0}.small{font-size:13px;color:var(--muted)}.verdicts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.verdicts article{background:#e8f0ee;border-top:4px solid var(--teal);padding:5px 20px 18px}.verdicts .warn{background:var(--warn);border-color:var(--orange)}.minigrid{display:grid;gap:10px}.minigrid svg{width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px}.svgt{font:bold 14px Inter,sans-serif;fill:#14242a}.svgl,.svgv{font:11px Inter,sans-serif;fill:#52636a}.bar{fill:#1d6f78}.axis{stroke:#9ba8aa;stroke-width:1}@media(max-width:950px){.sidebar{position:relative;width:auto}.sidebar a{display:inline-flex}.brand{margin-bottom:12px}main{margin:0}.twocol,.figuregrid,.verdicts{grid-template-columns:1fr}.hero,section{padding:40px 22px}h2{font-size:34px}}@media print{.sidebar{display:none}main{margin:0}section{break-before:page}figure,.tablewrap{break-inside:avoid}}
+:root{--ink:#14242a;--muted:#607078;--paper:#f7f5ef;--card:#fff;--line:#d9ddd9;--teal:#1d6f78;--orange:#d2793f;--wash:#e8f0ee;--warn:#fff3df}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,Segoe UI,Arial,sans-serif}.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:#102c33;color:#fff;padding:28px 18px;overflow:auto}.brand{font:700 20px/1.15 Georgia,serif;margin:0 8px 28px}.brand small{display:block;color:#a9c7c7;font:11px/1.4 Inter,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-top:8px}.sidebar a{display:flex;gap:12px;color:#d9e6e5;text-decoration:none;padding:9px 8px;border-radius:7px}.sidebar a:hover{background:#1d454c;color:#fff}.sidebar a span{color:#87abae;font-variant-numeric:tabular-nums}main{margin-left:250px}.hero{padding:72px max(6vw,40px) 64px;background:linear-gradient(135deg,#e3eeeb,#f7f5ef)}.hero h1{font:700 clamp(42px,6vw,78px)/.95 Georgia,serif;max-width:900px;margin:12px 0 24px}.eyebrow,.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:700;color:var(--teal)}.hero p{font-size:19px;max-width:760px;color:#3d5259}section{padding:64px max(5vw,34px);border-top:1px solid var(--line);max-width:1500px}h2{font:700 42px/1.05 Georgia,serif;margin:10px 0 34px}h3{font:700 21px/1.2 Georgia,serif;margin:30px 0 12px}.lead{font:20px/1.5 Georgia,serif;max-width:900px}.twocol,.figuregrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}.pop{min-width:0}figure{margin:28px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}figure img{width:100%;display:block;background:#fff}figcaption{padding:14px 18px;color:#506169;font-size:13px;border-top:1px solid var(--line)}.standalone{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;margin-top:18px}.capkey{font-weight:700;color:#243d43}.tablewrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:9px;margin:18px 0 30px}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th{background:#e9efed;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.07em;position:sticky;top:0}th,td{padding:10px 12px;border-bottom:1px solid #e4e7e4;vertical-align:top;white-space:nowrap}td:nth-child(2){white-space:normal}.compact{font-size:12px}.compact th,.compact td{padding:7px 9px}code{font-size:11px}.formula{display:block;margin-top:12px;font-size:clamp(15px,2vw,22px);white-space:normal}.notice{padding:17px 20px;background:var(--wash);border-left:4px solid var(--teal);margin:25px 0}.small{font-size:13px;color:var(--muted)}.verdicts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.verdicts article{background:#e8f0ee;border-top:4px solid var(--teal);padding:5px 20px 18px}.verdicts .warn{background:var(--warn);border-color:var(--orange)}.minigrid{display:grid;gap:10px}.minigrid svg{width:100%;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px}.svgt{font:bold 14px Inter,sans-serif;fill:#14242a}.svgl,.svgv{font:11px Inter,sans-serif;fill:#52636a}.bar{fill:#1d6f78}.axis{stroke:#9ba8aa;stroke-width:1}@media(max-width:950px){.sidebar{position:relative;width:auto}.sidebar a{display:inline-flex}.brand{margin-bottom:12px}main{margin:0}.twocol,.figuregrid,.verdicts{grid-template-columns:1fr}.hero,section{padding:40px 22px}h2{font-size:34px}}@media print{.sidebar{display:none}main{margin:0}section{break-before:page}figure,.tablewrap{break-inside:avoid}}
 '''
     doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Current results gallery · singles and couples</title><style>{css}</style></head><body><nav class=sidebar><div class=brand>Results gallery<small>Singles + couples · current state</small></div>{nav}</nav><main><header class=hero><div class=eyebrow>Figure-and-table walkthrough</div><h1>What the current results show</h1><p>Singles and couples, side by side. This gallery reports the samples, observed behaviour, estimates, fit, opportunity distributions, welfare and decomposition. It is a visual record, not a second argument.</p></header>{body}</main></body></html>'''
     with OUT.open("w", encoding="utf-8", newline="\n") as f:

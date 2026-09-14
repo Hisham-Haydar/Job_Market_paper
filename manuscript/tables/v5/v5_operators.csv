@@ -1,4 +1,4 @@
 Operator,What is replaced,What is retained
 $T_P$ preferences (systematic utility heterogeneity),"Singles: the arguments of the leisure weight and the complete reference-sex leisure block. Couples: the medoid spouse arguments, with own spouse coefficients retained",Access and wage pathways of the same characteristics
-$T_A$ local labour-market access,The arguments of the employment index and the occupation access table,"Preferences, wage location; sex-specific occupation coefficients"
+$T_A$ local geographic/temporal access shifters,"Region, urban/rural and year arguments of the employment index","Preferences, wage location, group unemployment, hours-band access, personal occupation access and node-level alternative characteristics"
 $T_B$ earning opportunities,"The arguments of the offered-wage location: education shares and experience moments, with squares recomputed rather than averaged",The estimated wage coefficients and dispersion; the preference and access pathways of the same characteristics

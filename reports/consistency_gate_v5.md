@@ -14,7 +14,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 | 6 | Shapley wording: attributed to, not removed | **PASS** |
 | 7 | The preliminary P/A/B scale statement matches the computed shares (DECOMP-2) | **PASS** |
 | 8 | The two decomposition uncertainty summaries (Monte Carlo range, second-seed check) are never called a confidence interval | **PASS** |
-| 9 | D held fixed: ΔI is small by design, not decomposed, not evidence opportunities are unimportant | **PASS** |
+| 9 | DECOMP-2 is bounded: resources, needs and composition are held fixed; no total-inequality claim | **PASS** |
 | 10 | No machine labels, status tokens, private paths or slogans | **PASS** |
 | 11 | Every number is bound to a registered source | **PASS** |
 | 12 | The funnel ends where the estimation begins | **PASS** |
@@ -54,13 +54,13 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 7. The preliminary P/A/B scale statement matches the computed shares (DECOMP-2) — PASS
 
-- B (earning opportunities) exceeds A (local labour-market access) in all 4 sample x scale cells, recomputed from DECOMP-2
+- B (earning opportunities) exceeds A (coarse geographic/temporal access) in all 4 sample x scale cells, recomputed from DECOMP-2
 
 ## 8. The two decomposition uncertainty summaries (Monte Carlo range, second-seed check) are never called a confidence interval — PASS
 
 - registry: 12 DECOMP-2 Gini-point contributions registered, all sourced from shapley_PAB_*.csv (Monte Carlo simulation, not a parameter draw)
 
-## 9. D held fixed: ΔI is small by design, not decomposed, not evidence opportunities are unimportant — PASS
+## 9. DECOMP-2 is bounded: resources, needs and composition are held fixed; no total-inequality claim — PASS
 
 - paper v5 (LaTeX): ΔI-share range 1.8 to 9.9 per cent matches the registry
 - report v5 (markdown source): ΔI-share range 1.8 to 9.9 per cent matches the registry
@@ -71,7 +71,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 125 entries, 72 used by the two documents, every used entry typed and sourced
+- registry: 125 entries, 64 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -79,11 +79,11 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 13. Figures and tables are present, captioned and rendered — PASS
 
-- paper: 10 figures, 14 tables, 24 captions; report: 14 embedded figures, 18 tables
+- paper: 10 figures, 14 tables, 24 captions; report: 15 embedded figures, 19 tables
 
 ## 14. The report carries the explanatory apparatus — PASS
 
-- report: 23 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
+- report: 24 questions, history and notebook collapsed, worked household present, notebook generation gap disclosed
 
 ## 15. The novelty claim is conservative and fully conjoined — PASS
 

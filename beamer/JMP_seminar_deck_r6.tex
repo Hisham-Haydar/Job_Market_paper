@@ -67,14 +67,15 @@ LISER and University of Luxembourg\par
 {\small France, EU-SILC priced through EUROMOD.\par}
 \vspace{0.6em}
 {\footnotesize Seminar of 17 September. Welfare content is presented under
-ruling R6; the quantitative decomposition is work in progress.\par}
+ruling R6; DECOMP-2 is preliminary model-based accounting.\par}
 \vfill
 \note{Thank you. The question is how much of the inequality in money-metric
 well-being is attributable to unequal job opportunities rather than to
 differences in taste, and what happens to that attribution when a model
 leaves opportunities out. I will show the model, the estimates, the fit, the
-welfare definition and a descriptive welfare baseline. The quantitative
-decomposition is not ready and I will say exactly where it stands.}
+welfare definition, a descriptive welfare baseline and the bounded DECOMP-2
+accounting exercise. The final decomposition of total well-being inequality
+is not ready, and I will say exactly where that boundary lies.}
 \end{frame}
 
 % ================================================================ 1 QUESTION
@@ -109,20 +110,21 @@ welfare measure defined on it.}
 \begin{itemize}\itemsep0.6em
   \item A random-utility, random-opportunity (RURO) model in which
         \emph{which jobs a household can reach} is estimated, not assumed.
-  \item The Haydar--Maniquet money-metric measure $\Wone$, applied on the
-        estimated reachable set rather than on a common grid.
-  \item A decomposition architecture that separates \pref{} from
-        \acc{}, \earn{} and \needs{}.
+  \item The Measure-1 money metric; in this empirical specification its direct
+        reference collapses to universally available non-employment.
+  \item A bounded three-factor exercise over systematic utility heterogeneity,
+        coarse geographic/temporal access and earning opportunities.
 \end{itemize}
 \vfill
-\caveat{Third item: the \emph{architecture} is presented today. Its
-quantitative output is not.}
-\note{The contribution has three parts and today only the first two carry
-numbers. The model estimates the opportunity distribution jointly with
-preferences. The welfare measure is taken from the companion theory paper
-with Francois Maniquet. The decomposition is the part under revision: the
-operators are settled, the estimand for the counterfactual attained bundle is
-not, and I will come back to that at the end.}
+\caveat{The three-factor exercise is preliminary model-based accounting, not
+the final decomposition of total well-being inequality.}
+\note{The contribution has three parts. Preferences and opportunity
+components are jointly estimated, with their separation relying on maintained
+functional-form and exclusion restrictions. The welfare measure is taken from
+the companion theory paper with Francois Maniquet. Within the bounded DECOMP-2
+game, earning-opportunity heterogeneity has a larger Shapley contribution than
+the model's coarse geographic/temporal access channel. The final
+counterfactual-attainment estimand remains under design.}
 \end{frame}
 
 % ================================================================ 2 DATA/MODEL
@@ -209,9 +211,17 @@ simulator for the estimated set rather than the choice set itself.}
 numerical device: the alternatives are drawn from it and it is divided back
 out, so it is not part of the economics. That separation matters later,
 because the welfare measure I am going to define must not depend on the
-proposal density, and I will show that it does not. Estimating preferences
-and opportunities jointly is what stops a taste parameter from quietly
-absorbing an availability parameter.}
+proposal density, and I will show that it does not. Preferences and
+opportunity components are jointly estimated, with their separation relying
+on maintained functional-form and exclusion restrictions. No causal
+interpretation follows from that separation. The baseline deliberately keeps
+systematic preference heterogeneity parsimonious: age profiles for all four
+adult groups and a child-related shifter for women. The child term is
+interpreted as a reduced-form behavioural/time-constraint shifter, not as pure
+taste. More explicitly, systematic leisure heterogeneity contains an
+intercept, age, age squared and group-specific leisure curvature for all four
+groups, plus a child shifter for women; sex and household type are carried by
+separate parameter blocks.}
 \end{frame}
 
 % ================================================================ 3 FIT
@@ -245,40 +255,23 @@ specification pins eleven coefficients by construction.}
 \headlineframe{Extensive-margin accuracy, shown only for the groups where it
 passes the quadrature-adequacy gate.}
 \slidefig{fitext_r6}
-\caveat{Aggregate participation and occupation margins are reproduced
-reasonably closely, while hours fit is uneven; the group-level fit
-classification is not used as a headline result. This slide's gate is
-narrower: G2 (weighted), Monte Carlo s.e. $\le 0.25\times$ the sampling
-s.d., applied to the extensive-accuracy statistic only.
-Both groups of women and coupled men clear that specific gate; single men
-are quadrature-limited and withheld, not reported at a worse label.
-Source: POSFIT v3 (MNL\_posfit, branch diagnostics/posfit-v3, commit
-\texttt{\PosfitVThreeCommit{}}); same extensive-margin numbers as v2b (commit
-\texttt{\PosfitCommit{}}), unchanged.}
-\note{I want to be explicit about what this slide does and does not say.
-The diagnostics run computes a long list of classification and
-calibration statistics. A pre-registered adequacy gate asks, for each
-one, whether the numerical integration error is small relative to the
-sampling variation the statistic would show anyway. Many of them fail
-that gate. I am showing the ones that pass and withholding the ones that
-do not, rather than showing them with a caveat attached, because a
-number that cannot be resolved by the quadrature is not a weaker
-finding, it is not a finding. On the v2b/v3 common support -- no
-household is left with an effective sample size below thirty there --
-both groups of women and coupled men pass this specific extensive-accuracy
-gate on the weighted statistic. Single men do not, so their value is not
-on this slide. If asked: coupled men pass the weighted gate only narrowly
-(ratio \FitExtRatioCMWeightedVThree{} against 0.25) and miss the unweighted
-one (\FitExtRatioCMUnweightedVThree{}); the deck applies the weighted rule
-throughout.
-This extensive-accuracy gate is a narrower question than the group-level
-fit classification: on the broader, pre-registered composite decision
-rule, couples of both sexes and single men currently carry a
-misspecification-evidence verdict against the model's own simulated
-variation, while single women's verdict is inconclusive for reasons
-unrelated to this slide's gate -- not because they fail it, since they
-clear it on both weighted and unweighted statistics. Those verdicts
-remain open pending Deputy review and are not a headline result.}
+\caveat{Values are shown only where the G2 weighted quadrature gate clears
+for this statistic; single men are quadrature-limited and withheld. This is
+not a group-count result.}
+\note{The pre-registered adequacy gate asks whether numerical integration
+error is small relative to sampling variation. I show values only where that
+specific extensive-accuracy statistic clears the gate and withhold the
+single-men value because it is quadrature-limited. This is not a group-count
+result. Aggregate participation and occupation margins are reproduced
+reasonably closely, while hours fit is uneven. Individual-level predictive
+diagnostics raise possible excess stochastic dispersion in some groups; the
+group-level classification is not used as a headline result. If asked:
+coupled men pass the weighted gate narrowly (ratio
+\FitExtRatioCMWeightedVThree{} against 0.25) and miss the unweighted one
+(\FitExtRatioCMUnweightedVThree{}); the deck applies the weighted rule
+throughout. Source: POSFIT v3 (MNL\_posfit, branch diagnostics/posfit-v3,
+commit \texttt{\PosfitVThreeCommit{}}); the extensive-margin numbers are
+unchanged from v2b (commit \texttt{\PosfitCommit{}}).}
 \end{frame}
 
 \begin{frame}
@@ -296,11 +289,10 @@ support audit has now been done: v2b re-evaluates the fit on a common
 quadrature panel far larger than the estimation draws, no household has an
 effective sample size below thirty, singles have no unsupported observed
 bin, and only a handful of couples fall in a region that finite panel does
-not represent. But the calibration statistics behind this picture still
-clear the quadrature gate only in part --- the calibration slope passes for
-three groups, the per-bin reliability and PIT statistics mostly do not ---
-and the binding fit verdicts are open pending Deputy review. So read the
-shape, not the gaps.}
+not represent. The calibration statistics behind this picture remain partly
+quadrature-limited, and the group-level classification is not used as a
+headline result. Aggregate participation and occupation margins are reproduced
+reasonably closely, while hours fit is uneven. So read the shape, not the gaps.}
 \end{frame}
 
 % ================================================================ 4 KERNEL
@@ -377,6 +369,8 @@ staying-home equivalent --- as a fact about this domain.}
         $\beta_c$ --- nothing else.
   \item No opportunity density $\gopp$, no proposal $q$, no shock
         $\varepsilon$, no intensity $\kappa$.
+  \item Current nonworkers: $W=C$; current workers: $W<C$ under the
+        maintained empirical domain.
 \end{itemize}
 \vfill
 \caveat{This is an \textbf{empirical-domain coincidence} under log
@@ -392,7 +386,13 @@ measures separate. If asked about the consumption argument: ruling E2
 confirms that $C^{\mathrm{obs}}$ must be the exact object entering the
 estimated utility at the observed state, not a re-chosen normative income
 concept, and the measure-correspondence audit closed that provenance before
-the baseline was allowed to run.}
+the baseline was allowed to run. The money metric is derived from the
+Measure-1 reference-set principle. Under the current empirical specification
+its direct reference collapses to the universally available non-employment
+state; opportunity heterogeneity therefore affects the current welfare
+measure through attained bundles. For a one-nat shortfall,
+$L_i(j_i^{\mathrm{obs}})-L_i(o)=-1$, the illustration is
+$W=C_i^{\mathrm{obs}}\exp(-1/\beta_c)<C_i^{\mathrm{obs}}$.}
 \end{frame}
 
 % ================================================================ 6 BASELINE
@@ -471,46 +471,36 @@ cross-sample level comparison.}
 \section{Decomposition architecture}
 
 \begin{frame}
-\headlineframe{Four operators, one at a time: systematic utility
-heterogeneity, \acc{}, \earn{}, \needs{}.}
+\headlineframe{DECOMP-2 equalises three bounded channels, not whole job access.}
 \vfill
-\decktable{\begin{tabular}{ll}
-\toprule
-operator & replaces, for every household \\
-\midrule
-$P$ & its systematic utility heterogeneity (tastes + reduced-form time
-      constraints) by the common reference \\
-$A$ & its \acc{} by the common reference access \\
-$B$ & its \earn{} by the common reference offer distribution \\
-$D$ & its \needs{} by the common reference budget \\
-\bottomrule
-\end{tabular}}
+\begin{itemize}\itemsep0.6em
+  \item[$P$] systematic utility heterogeneity (tastes + reduced-form time
+        constraints) $\rightarrow$ common reference
+  \item[$A$] local geographic/temporal access shifters
+        (region, urban/rural, year) $\rightarrow$ common reference
+  \item[$B$] earning opportunities $\rightarrow$ common reference offer
+        distribution
+\end{itemize}
 \vfill
-\caveat{Operators only. No share, no magnitude, no ordering is claimed on
-this slide or anywhere in this deck. Final decomposition semantics are work
-in progress.}
-\note{Q\&A note --- ruling R2 and ruling R6.
-This is the architecture and deliberately nothing else. The earlier version
-of this talk put shares on this slide. Those shares were computed on an
-ex-ante inclusive-value functional, which the measure-correspondence audit
-established is a different object from Haydar--Maniquet measure one. R2
-retires them from the baseline: they are preserved as historical research
-artifacts, they are not called measure one, and I am not presenting them as
-current results. If asked what the shares were, the answer is that I am not
-going to quote a number whose defining functional has been withdrawn.
-On $P$: I no longer call this operator a preference or taste parameter.
-Children enter the current structural specification through a reduced-form
-female time-constraint shifter. In a unitary labour-supply model this term
-may capture both tastes and childcare/home-production constraints; we
-therefore do not interpret it as pure preference heterogeneity. That is why
-$P$ is labelled systematic utility heterogeneity, tastes plus reduced-form
-time constraints, rather than preferences alone, and why the final semantics
-of this decomposition are still work in progress.}
+\caveat{Household resources, needs and composition are held fixed. Personal
+occupation access, hours-band access and node-level alternative
+characteristics are not equalised by $A$.}
+\note{Q\&A note --- ruling R6 and final economics review M5.
+For DECOMP-2, $A$ is local geographic/temporal access shifters (region,
+urban/rural, year). It is not personal occupation access, hours-band access
+or full job access. Children enter the current structural specification
+through a reduced-form female time-constraint shifter. In a unitary
+labour-supply model this term may capture both tastes and
+childcare/home-production constraints; we therefore do not interpret it as
+pure preference heterogeneity. The baseline deliberately keeps systematic
+preference heterogeneity parsimonious: age profiles for all four adult groups
+and a child-related shifter for women. The child term is interpreted as a
+reduced-form behavioural/time-constraint shifter, not as pure taste.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{The open problem: the baseline is evaluated at the
-\emph{observed} bundle, but an operator moves it.}
+\headlineframe{DECOMP-2 is executed; the final attainment estimand remains
+under design.}
 \vfill
 \begin{center}
 \begin{tikzpicture}[>=Stealth,node distance=7mm,
@@ -518,65 +508,63 @@ of this decomposition are still work in progress.}
             inner sep=5pt,minimum height=8mm}]
   \node[b,fill=chenv!8] (s) {coalition $S$};
   \node[b,fill=chenv!8,right=of s] (e) {counterfactual\\environment};
-  \node[b,fill=deepred!10,draw=deepred,right=of e] (z) {attained bundle\\$z_i^{S}$};
+  \node[b,fill=deepred!10,draw=deepred,right=of e] (z) {carried realised\\draws};
   \node[b,fill=chacc!10,right=of z] (w) {$\Wone_F(z_i^{S})$};
   \node[b,fill=chacc!10,right=of w] (i) {inequality $I_S$};
   \draw[->] (s) -- (e); \draw[->] (e) -- (z);
   \draw[->] (z) -- (w); \draw[->] (w) -- (i);
   \node[below=6mm of z,font=\scriptsize,color=deepred,align=center]
-       {this step is the unresolved one};
+       {bounded DECOMP-2 route};
 \end{tikzpicture}
 \end{center}
 \vfill
-\caveat{Two candidate estimands are under design (R5): a realised-bundle
-route with conditioned latent heterogeneity, and an ex-ante
-$g$-computation route. Neither is executed.}
-\note{Q\&A note --- ruling R5.
-Here is the honest statement of where the paper is stuck. The welfare
-measure is evaluated at the bundle the household actually attained. Under a
-counterfactual that equalises access, the household would attain a different
-bundle, and the measure needs that bundle. Two routes are on the table. One
-conditions the behavioural latent state on the observed choice and carries it
-across counterfactual worlds, which raises the question of whether the
-max-stable construction supplies a legitimate cross-world coupling and
-whether it needs the unidentified intensity parameter. The other integrates
-the measure over the model-implied counterfactual choice distribution, which
-is cleaner but answers a different question: the inequality of expected
-welfare is not the expected inequality of welfare, and those two are not
-interchangeable. The design document has to pick one and defend it, and until
-it does there are no shares.}
+\caveat{DECOMP-2 reuses the already-priced estimation panel with no
+re-estimation and no new pricing. The final decomposition's
+counterfactual-attainment estimand remains under design (R5).}
+\note{Q\&A note --- ruling R5 and final economics review M10.
+The preliminary exercise carries the household's realised draws through each
+counterfactual environment. That is an executed, bounded accounting route,
+not the final counterfactual-attainment estimand. The final design still has
+to choose between a realised-bundle route with conditioned latent
+heterogeneity and an ex-ante $g$-computation route; the inequality of expected
+welfare is not the expected inequality of welfare.}
 \end{frame}
 
 % ================================================================ 8 WIP
-\section{Work in progress}
+\section{Preliminary decomposition and boundary}
 
 \begin{frame}
-\headlineframe{Where the quantitative welfare decomposition stands.}
+\headlineframe{Earning opportunities exceed coarse access within the bounded game.}
 \vfill
-\begin{itemize}\itemsep0.55em
-  \item \textbf{Settled.} The measure, its reference domain, the
-        measure-correspondence audit, and the descriptive baseline just shown.
-  \item \textbf{In design (R5).} The counterfactual attainment operator, and
-        the choice between the two estimands.
-  \item \textbf{Open.} The binding positive-fit verdicts: support coverage
-        is audited (POSFIT v2b), Deputy review of the verdicts is pending.
-  \item \textbf{Withdrawn.} Every welfare share previously reported on this
-        project's slides. They were computed on a different functional.
-\end{itemize}
+{\small
+In a preliminary three-factor structural exercise that holds household
+resources, needs and composition fixed, equalising systematic utility
+heterogeneity, coarse geographic/temporal access heterogeneity and earning
+opportunities changes money-metric well-being inequality by
+\DTwoMinPct--\DTwoMaxPct\% of the baseline Gini, depending on household type
+and reporting scale. Within the Shapley allocation of that movable component,
+earning-opportunity heterogeneity has a larger contribution than the coarse
+geographic/temporal access channel in both samples and both reporting
+conventions. The preference contribution is not sign-robust to
+equivalisation.\par}
 \vfill
-\caveat{No P/A/B/D share is presented in this deck. R6 permits shares only
-once the revised F implementation has been executed and independently
-checked; it has not been.}
-\note{Q\&A note --- ruling R6 and ruling R2.
-This slide is the replacement for what used to be the results section of
-this talk, and I would rather state it plainly than let it be discovered in
-questions. The welfare architecture is settled and the descriptive baseline
-is real and checked. The counterfactual machinery is in design. The old
-decomposition numbers are withdrawn, not revised: the object they were
-computed on is an ex-ante inclusive-value welfare functional, not the
-measure this paper now defines, so rescaling them would not repair them.
-What I am asking the audience for today is scrutiny of the measure and the
-opportunity kernel, which are the parts that are done.}
+\caveat{These are preliminary model-based accounting results, not causal
+estimates and not the final decomposition of total well-being inequality.}
+\note{Q\&A note --- ruling R6 and final economics review M3--M11.
+The decomposition is bounded by design because household resources, needs
+and composition are held fixed. Within that bounded game, equalising P/A/B
+changes the Gini by \DTwoMinPct--\DTwoMaxPct\% of its baseline level, depending
+on sample and reporting scale. The restriction is by construction; the
+realised numerical magnitude is a model result under that restriction.
+Dispersion in consumption is quantitatively large relative to dispersion in
+log well-being: Var(log C) is roughly
+\DTwoVarMinPct--\DTwoVarMaxPct\% of Var(log W), with the excess offset by a
+large negative covariance between consumption and the leisure valuation.
+DECOMP-2 holds household resources, needs and composition fixed, leaving
+important sources of dispersion outside the P/A/B allocation. If asked about
+wage elasticities: a valid gross-wage perturbation requires new tax-benefit
+repricing over the affected job alternatives, and the current priced support
+does not contain that counterfactual.}
 \end{frame}
 
 \begin{frame}

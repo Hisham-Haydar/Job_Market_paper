@@ -13,6 +13,7 @@ shown.  This script reads ONLY the three authorized sources:
   FIT3 MNL_posfit/outputs/positive_fit_diagnostics_v3/  -- fit-verdict slide
        note only (MNL_posfit commit 96693269, diagnostics/posfit-v3)
   W1F  MNL/outputs/welfare/baseline_f1_v1/                             -- E1 baseline
+  D2   MNL_decomp/outputs/welfare/preseminar_pab_v1/                   -- DECOMP-2
 
 and writes deck_numbers_r6.tex plus build/r6_number_provenance.json.
 
@@ -47,6 +48,7 @@ POSFIT_V3_COMMIT = "96693269"
 S11 = MNL / "experiments" / "JMP_SEMINAR_SPRINT" / "runs" / "s11_welfare_specs_of_record"
 W1F = MNL / "outputs" / "welfare" / "baseline_f1_v1"
 W1FEQ = MNL / "outputs" / "welfare" / "baseline_f1_equivalised_v1"
+DECOMP2 = REPO / "MNL_decomp" / "outputs" / "welfare" / "preseminar_pab_v1"
 DECK_SRC = HERE / "JMP_seminar_deck_r6.tex"
 
 OUT_TEX = HERE / "deck_numbers_r6.tex"
@@ -157,6 +159,7 @@ def main() -> int:
         "% Sources: S11 parameter tables (model of record);",
         "%          positive_fit_diagnostics_v2b, MNL_posfit a2e80a8 (G2-ADEQUATE statistics only);",
         "%          welfare/baseline_f1_v1 (BASELINE-F-1, commit 6048c9f, verified b5550af).",
+        "%          preseminar_pab_v1 (DECOMP-2, MNL_decomp b52761b4).",
         "% Vintage status: every FitExt*/FitAdequateCount/FitLimitedCount macro is",
         "%          v2b (a2e80a8) and reaches every fit slide/note in the deck. The",
         "%          three FitExtRatioCM*VThree/PosfitVThreeCommit macros are v3 (96693269,",
@@ -206,6 +209,40 @@ def main() -> int:
         mac("WF" + tag + "Cfive", "%.1e" % c["C5"]["max_abs_utility_difference"],
             src.replace("samples", "checks") + " C5",
             c["C5"]["max_abs_utility_difference"])
+    tex.append("")
+
+    # ------------------------------------------------------------- DECOMP-2
+    # The final economics/claim review authorises only the bounded headline
+    # range and the variance-language range on the deck.  Both are derived
+    # from the executed coalition/variance files, never typed into the slide.
+    d2_pcts = []
+    for sample in ("singles", "couples"):
+        p = DECOMP2 / ("coalition_values_%s.csv" % sample)
+        rr = rows(p)
+        prov["sources"][p.name] = {"path": str(p), "sha256": sha256(p)}
+        for scale in ("unequivalised", "equivalised"):
+            base = next(float(r["I_S_gini"]) for r in rr
+                        if r["scale"] == scale and r["coalition"] == "EMPTY")
+            equal = next(float(r["I_S_gini"]) for r in rr
+                         if r["scale"] == scale and r["coalition"] == "PAB")
+            d2_pcts.append(100.0 * (base - equal) / base)
+    var_path = DECOMP2 / "log_variance_split_v1.csv"
+    var_rows = rows(var_path)
+    prov["sources"][var_path.name] = {
+        "path": str(var_path), "sha256": sha256(var_path)}
+    var_pcts = [100.0 * float(r["share_var_log_C"]) for r in var_rows]
+    mac("DTwoMinPct", num(min(d2_pcts), 1),
+        "coalition_values_{singles,couples}.csv minimum Delta-I share of baseline",
+        min(d2_pcts))
+    mac("DTwoMaxPct", num(max(d2_pcts), 1),
+        "coalition_values_{singles,couples}.csv maximum Delta-I share of baseline",
+        max(d2_pcts))
+    mac("DTwoVarMinPct", num(min(var_pcts), 0),
+        "log_variance_split_v1.csv minimum Var(log C)/Var(log W)",
+        min(var_pcts))
+    mac("DTwoVarMaxPct", num(max(var_pcts), 0),
+        "log_variance_split_v1.csv maximum Var(log C)/Var(log W)",
+        max(var_pcts))
     tex.append("")
 
     # ------------------------------------------------------------ W1-F (E3-EQ)

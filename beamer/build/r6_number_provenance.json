@@ -1,5 +1,25 @@
 {
   "macros": {
+    "DTwoMaxPct": {
+      "raw": 9.894813262056324,
+      "rendered": "9.9",
+      "source": "coalition_values_{singles,couples}.csv maximum Delta-I share of baseline"
+    },
+    "DTwoMinPct": {
+      "raw": 1.8157727940433184,
+      "rendered": "1.8",
+      "source": "coalition_values_{singles,couples}.csv minimum Delta-I share of baseline"
+    },
+    "DTwoVarMaxPct": {
+      "raw": 126.8119269268318,
+      "rendered": "127",
+      "source": "log_variance_split_v1.csv maximum Var(log C)/Var(log W)"
+    },
+    "DTwoVarMinPct": {
+      "raw": 100.3827439497987,
+      "rendered": "100",
+      "source": "log_variance_split_v1.csv minimum Var(log C)/Var(log W)"
+    },
     "EvaluatorCommit": {
       "raw": null,
       "rendered": "55bb0d0",
@@ -368,6 +388,14 @@
       "verified_commit": "b5550af5",
       "weight": "dwt"
     },
+    "coalition_values_couples.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\coalition_values_couples.csv",
+      "sha256": "eb61ecad4a29215a52deae42aeb97dcdc7065dc9751d6881591439b43114cce0"
+    },
+    "coalition_values_singles.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\coalition_values_singles.csv",
+      "sha256": "2f63f5bf3c3118eaf8730cc33e04a253d4709e0570f68d1c37c877ac4ae34c00"
+    },
     "couples_equivalised_reporting_v1.json": {
       "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
       "memo_commit": "4c4e07e",
@@ -387,6 +415,10 @@
     "hard_classification_metrics.csv": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\hard_classification_metrics.csv",
       "sha256": "135b5da603a679dee1d2e61847363fedf575ccc8d9233015c4c2425120fedb53"
+    },
+    "log_variance_split_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\log_variance_split_v1.csv",
+      "sha256": "3731579ee8070fa15e70dca3711bc2813543c130329fd389185e7e61b1547f3c"
     },
     "run_provenance.json": {
       "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v2b\\run_provenance.json",

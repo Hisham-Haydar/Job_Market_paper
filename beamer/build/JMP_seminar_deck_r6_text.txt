@@ -8,8 +8,8 @@ LISER and University of Luxembourg
 
 France, EU-SILC priced through EUROMOD.
 
-Seminar of 17 September. Welfare content is presented under ruling R6; the quantitative decomposition is work
-in progress.
+Seminar of 17 September. Welfare content is presented under ruling R6; DECOMP-2 is preliminary model-based
+accounting.
 Question and contribution
 Two people with the same tastes and the same wage need not face the same set of jobs.
 
@@ -37,17 +37,18 @@ in progress.
 
       A random-utility, random-opportunity (RURO) model in which which jobs a household can
        reach is estimated, not assumed.
-      The Haydar–Maniquet money-metric measure W 1 , applied on the estimated reachable set
-       rather than on a common grid.
-      A decomposition architecture that separates preferences from job access, earning
-       opportunities and household endowments and needs.
+      The Measure-1 money metric; in this empirical specification its direct reference collapses
+       to universally available non-employment.
+      A bounded three-factor exercise over systematic utility heterogeneity, coarse
+       geographic/temporal access and earning opportunities.
 
 
-   Third item: the architecture is presented today. Its quantitative output is not.
+   The three-factor exercise is preliminary model-based accounting, not the final decomposition of total well-being
+   inequality.
 
 
 
-                                                                                               3/19
+                                                                                                                      3/19
 Data and the structural RURO
 model
 France, EU-SILC priced through EUROMOD: 1 540 single-adult and 2 223 couple
@@ -135,28 +136,29 @@ households.
 Extensive-margin accuracy, shown only for the groups where it passes the
 quadrature-adequacy gate.
 
+
           single men       withheld: quadrature-limited
 
 
 
 
-       single women                                                                        85.7%
+       single women                                                                      85.7%
 
 
 
-        coupled men                                                                               92.2%
+        coupled men                                                                             92.2%
 
 
 
-     coupled women                                                                             89.8%
+     coupled women                                                                           89.8%
 
-                       0                  20              40               60                80                100
+                       0                  20              40             60                80              100
                                       extensive-margin accuracy (%), G2-adequate groups only
-   Aggregate participation and occupation margins are reproduced reasonably closely, while hours fit is uneven; the
-   group-level fit classification is not used as a headline result. This slide’s gate is narrower: G2 (weighted), Monte
-   Carlo s.e. ≤ 0.25× the sampling s.d., applied to the extensive-accuracy statistic only. Both groups of women
-   and coupled men clear that specific gate; single men are quadrature-limited and withheld, not reported at a          8/19
-   worse label. Source: POSFIT v3 (MNL posfit, branch diagnostics/posfit-v3, commit 96693269); same
+
+   Values are shown only where the G2 weighted quadrature gate clears for this statistic; single men are
+   quadrature-limited and withheld. This is not a group-count result.
+
+                                                                                                                 8/19
 Calibration conditioned on prediction: observed hours against predicted hours, by
 predicted decile.
 
@@ -276,16 +278,15 @@ as well off.
 fact about this domain.
 
 
-
                                                              h                  i
                                   1                      L (j obs )−L (o)
                                 Wi,F      =    Ciobs exp i i βc i
 
 
-
       Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.
       No opportunity density g , no proposal q, no shock ε, no intensity κ.
-
+      Current nonworkers: W = C ; current workers: W < C under the maintained empirical
+       domain.
 
    This is an empirical-domain coincidence under log consumption and universally available non-employment. It is
    not the theorem W 1 = W 4 in the Haydar–Maniquet theory.
@@ -334,70 +335,70 @@ fact about this domain.
 
                                                                                                                      15/19
 Decomposition architecture
-Four operators, one at a time: systematic utility heterogeneity, job access, earning
-opportunities, household endowments and needs.
+DECOMP-2 equalises three bounded channels, not whole job access.
 
 
 
 
-               operator   replaces, for every household
-               P          its systematic utility heterogeneity (tastes + reduced-form time constraints) by the common reference
-               A          its job access by the common reference access
-               B          its earning opportunities by the common reference offer distribution
-               D          its household endowments and needs by the common reference budget
+     P systematic utility heterogeneity (tastes + reduced-form time constraints) → common
+       reference
+     A local geographic/temporal access shifters (region, urban/rural, year) → common reference
+     B earning opportunities → common reference offer distribution
+
+
+
+   Household resources, needs and composition are held fixed. Personal occupation access, hours-band access and
+   node-level alternative characteristics are not equalised by A.
 
 
 
 
-   Operators only. No share, no magnitude, no ordering is claimed on this slide or anywhere in this deck. Final
-   decomposition semantics are work in progress.
+                                                                                                                  16/19
+DECOMP-2 is executed; the final attainment estimand remains under design.
 
 
 
 
-                                                                                                                                  16/19
-The open problem: the baseline is evaluated at the observed bundle, but an operator
-moves it.
+                              counterfactual       carried realised
+           coalition S                                                    WF1 (ziS )      inequality IS
+                               environment              draws
+
+
+                                               bounded DECOMP-2 route
 
 
 
 
-                              counterfactual         attained bundle
-           coalition S                                                           WF1 (ziS )   inequality IS
-                               environment                  ziS
-
-
-
-                                               this step is the unresolved one
+   DECOMP-2 reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
+   decomposition’s counterfactual-attainment estimand remains under design (R5).
 
 
 
 
-   Two candidate estimands are under design (R5): a realised-bundle route with conditioned latent heterogeneity,
-   and an ex-ante g -computation route. Neither is executed.
+                                                                                                             17/19
+Preliminary decomposition and
+boundary
+Earning opportunities exceed coarse access within the bounded game.
 
 
 
-                                                                                                                   17/19
-Work in progress
-Where the quantitative welfare decomposition stands.
+
+   In a preliminary three-factor structural exercise that holds household resources, needs and composition
+   fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and
+   earning opportunities changes money-metric well-being inequality by 1.8–9.9% of the baseline Gini,
+   depending on household type and reporting scale. Within the Shapley allocation of that movable
+   component, earning-opportunity heterogeneity has a larger contribution than the coarse
+   geographic/temporal access channel in both samples and both reporting conventions. The preference
+   contribution is not sign-robust to equivalisation.
 
 
 
-      Settled. The measure, its reference domain, the measure-correspondence audit, and the
-       descriptive baseline just shown.
-      In design (R5). The counterfactual attainment operator, and the choice between the two
-       estimands.
-      Open. The binding positive-fit verdicts: support coverage is audited (POSFIT v2b),
-       Deputy review of the verdicts is pending.
-      Withdrawn. Every welfare share previously reported on this project’s slides. They were
-       computed on a different functional.
-
-   No P/A/B/D share is presented in this deck. R6 permits shares only once the revised F implementation has
-   been executed and independently checked; it has not been.
+   These are preliminary model-based accounting results, not causal estimates and not the final decomposition of
+   total well-being inequality.
 
 
-                                                                                                              18/19
+
+                                                                                                                   18/19
 What I would like from you today.
 
 

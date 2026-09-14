@@ -1,0 +1,257 @@
+{
+  "status": "PASS",
+  "coverage": {
+    "Deck": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    },
+    "Story report": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    },
+    "Working paper": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    },
+    "Technical gallery": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    },
+    "Canonical notebook": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    },
+    "Rehearsal script": {
+      "M3 boundedness": true,
+      "M4 variance": true,
+      "M5 narrow A": true,
+      "M6 identification": true,
+      "M7 welfare reference": true,
+      "Taste shifters": true,
+      "M10 approved claim": true,
+      "M10 immediate caveat": true,
+      "M8 -1 nat + cases": true,
+      "Age is not alone": true,
+      "M11 if-asked reason": true
+    }
+  },
+  "forbidden_hits": [],
+  "m9_notebook": true,
+  "concurrent_notebook_cells_preserved": true,
+  "parsed_ranges": {
+    "Deck": [
+      1.8,
+      9.9
+    ],
+    "Story report": [
+      1.8,
+      9.9
+    ],
+    "Working paper": [
+      1.8,
+      9.9
+    ],
+    "Technical gallery": [
+      1.8,
+      9.9
+    ],
+    "Canonical notebook": [
+      1.8,
+      9.9
+    ],
+    "Rehearsal script": [
+      1.8,
+      9.9
+    ]
+  },
+  "evidence_range": [
+    1.8,
+    9.9
+  ],
+  "range_cells": [
+    {
+      "sample": "singles",
+      "scale": "unequivalised",
+      "percent": 2.947888885321095
+    },
+    {
+      "sample": "singles",
+      "scale": "equivalised",
+      "percent": 1.8157727940433184
+    },
+    {
+      "sample": "couples",
+      "scale": "unequivalised",
+      "percent": 9.894813262056324
+    },
+    {
+      "sample": "couples",
+      "scale": "equivalised",
+      "percent": 2.5415496786228773
+    }
+  ],
+  "shapley": [
+    {
+      "sample": "couples",
+      "scale": "equivalised",
+      "factor": "A",
+      "value": 0.0007327270395684435
+    },
+    {
+      "sample": "couples",
+      "scale": "equivalised",
+      "factor": "B",
+      "value": 0.006211092464177776
+    },
+    {
+      "sample": "couples",
+      "scale": "equivalised",
+      "factor": "P",
+      "value": -0.0019339485696129215
+    },
+    {
+      "sample": "couples",
+      "scale": "unequivalised",
+      "factor": "A",
+      "value": 0.0009259117588206975
+    },
+    {
+      "sample": "couples",
+      "scale": "unequivalised",
+      "factor": "B",
+      "value": 0.012786212603156148
+    },
+    {
+      "sample": "couples",
+      "scale": "unequivalised",
+      "factor": "P",
+      "value": 0.006427900281239916
+    },
+    {
+      "sample": "singles",
+      "scale": "equivalised",
+      "factor": "A",
+      "value": 0.0013151866373604705
+    },
+    {
+      "sample": "singles",
+      "scale": "equivalised",
+      "factor": "B",
+      "value": 0.0034426411122408978
+    },
+    {
+      "sample": "singles",
+      "scale": "equivalised",
+      "factor": "P",
+      "value": -0.0003075189893460793
+    },
+    {
+      "sample": "singles",
+      "scale": "unequivalised",
+      "factor": "A",
+      "value": 0.0016147116922644355
+    },
+    {
+      "sample": "singles",
+      "scale": "unequivalised",
+      "factor": "B",
+      "value": 0.004036689216887425
+    },
+    {
+      "sample": "singles",
+      "scale": "unequivalised",
+      "factor": "P",
+      "value": 0.0012373883280000265
+    }
+  ],
+  "B_gt_A_all_cells": true,
+  "P_sign_switch_both_samples": true,
+  "signed_detail_surfaces": {
+    "Story report": true,
+    "Working paper": true,
+    "Canonical notebook": true,
+    "Technical gallery": true
+  },
+  "variance_range_rounded_percent": [
+    100,
+    127
+  ],
+  "fit_table_preserved": true,
+  "fit_safe_wording": true,
+  "hashes": {
+    "Deck PDF": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6.pdf",
+      "sha256": "E0C389E56F5854F1E78B10AF31C15B57B71B3AB831B08F49B1D228715CFA5467"
+    },
+    "Story HTML": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
+      "sha256": "6F9D53079CEA8242715593EA25E8FCF363278435320F5A1D9221DFD040AE7788"
+    },
+    "Working-paper PDF": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
+      "sha256": "5CADE822560905A85C94E117144DB8B3B9C868BAF4ADDC4C9FE1028DA954F650"
+    },
+    "Gallery HTML": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
+      "sha256": "E754E9C15D50C25D1BE43E113093CED7298025B88504F16FF53AB06EEC86E404"
+    },
+    "Notebook": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\JMP_canonical_AtoZ.ipynb",
+      "sha256": "F9EB38083BC7626F5EE700A8E30A99660C1B4AA424E7ADA45D425B695A7DF500"
+    },
+    "Rehearsal script": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\rehearsal_pack_v1.md",
+      "sha256": "8D0053EE7EADFC7C226EB77E975BF78E1BDA31127AD9B9A3CBD50C2F3587EC19"
+    },
+    "Rehearsal PDF": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6_rehearsal.pdf",
+      "sha256": "22EE9CD36842BAABE0C70FD9781A74B69BBA1B120CF51B9B8E256148A087CAC0"
+    }
+  },
+  "failures": []
+}

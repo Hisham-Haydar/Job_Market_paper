@@ -7,7 +7,7 @@ deck.  These gates enforce what R6 and the BASELINE-F-1 ruling actually
 require:
 
   G-RETIRE   no retired W1-EA magnitude appears anywhere in the PDF text.
-  G-NOSHARE  no P/A/B/D share, no Shapley/Owen magnitude, no access share.
+  G-DECOMP   the M10 DECOMP-2 wording and immediately-following caveat appear.
   G-CAPTION  the calibration figure carries the required caption verbatim.
   G-UNITS    every welfare slide states units, weight and unequivalised.
   G-SOURCE   the welfare slides cite the recorded and verified commits.
@@ -23,9 +23,8 @@ require:
              and the unequivalised slides are demoted to backup (item B).
   G-CHILDSHIFTER  the child-shifter wording is present verbatim and is never
              called a preference/taste parameter (item C).
-  G-PLABEL   the P label reads "systematic utility heterogeneity (tastes +
-             reduced-form time constraints)" and no P/A/B/D magnitude or
-             share is stated (item D).
+  G-PLABEL   the P label is unchanged and A is narrowed to the authorized
+              local geographic/temporal shifters (M5).
   G-NOBAN    none of the seminar-freeze out-of-scope tokens appear: W_EA,
              finite-offer welfare, OEC characterisation, SCALE-SENS-1 (item F).
   G-SCALE    (DECK-3) the equivalised slides cite the ratifying Deputy ruling
@@ -168,13 +167,40 @@ def main() -> int:
          "no retired W1-EA magnitude present" if not hits
          else "RETIRED MATERIAL PRESENT: " + "; ".join(hits))
 
-    # --------------------------------------------------------- G-NOSHARE
-    share_words = ["shapley", "owen", "share of inequality", "of measured inequality",
-                   "decomposition result", "attributed to the environment"]
-    bad = [w for w in share_words if w in text.lower()]
-    gate("G-NOSHARE", not bad,
-         "no decomposition magnitude in the rendered deck" if not bad
-         else "share language rendered: " + ", ".join(bad))
+    # ---------------------------------------------------------- G-DECOMP
+    # M10 authorises one bounded DECOMP-2 claim and requires its caveat to
+    # follow immediately.  The numerical range itself is macro-backed.
+    result_frames = [f for f in frames(src)
+                     if r"\DTwoMinPct--\DTwoMaxPct\%" in f]
+    result = flat(result_frames[0]) if len(result_frames) == 1 else ""
+    approved = [
+        "In a preliminary three-factor structural exercise that holds "
+        "household resources, needs and composition fixed, equalising "
+        "systematic utility heterogeneity, coarse geographic/temporal access "
+        "heterogeneity and earning opportunities changes money-metric "
+        "well-being inequality by",
+        "of the baseline Gini, depending on household type and reporting scale.",
+        "Within the Shapley allocation of that movable component, "
+        "earning-opportunity heterogeneity has a larger contribution than the "
+        "coarse geographic/temporal access channel in both samples and both "
+        "reporting conventions.",
+        "The preference contribution is not sign-robust to equivalisation.",
+    ]
+    caveat = ("These are preliminary model-based accounting results, not "
+              "causal estimates and not the final decomposition of total "
+              "well-being inequality.")
+    pref_ix = result.find(approved[-1])
+    caveat_ix = result.find(caveat)
+    note_ix = result.find(r"\note{")
+    adjacent = pref_ix != -1 and caveat_ix > pref_ix and \
+        (note_ix == -1 or caveat_ix < note_ix)
+    gate("G-DECOMP",
+         len(result_frames) == 1 and all(s in result for s in approved)
+         and adjacent,
+         "approved M10 claim present; required caveat follows immediately"
+         if len(result_frames) == 1 and all(s in result for s in approved)
+         and adjacent else "M10 claim missing, paraphrased, duplicated, or "
+                            "detached from its caveat")
 
     # --------------------------------------------------------- G-CAPTION
     cap_ok = (CAPTION in flat(src) and (not text or CAPTION in flat(text))
@@ -422,20 +448,19 @@ def main() -> int:
          "parameter" if child_ok else "child-shifter wording missing or mislabelled")
 
     # ---------------------------------------------------------- G-PLABEL
-    # Item D: the P label reads systematic utility heterogeneity, and no
-    # P/A/B/D magnitude or share appears anywhere in the deck.
+    # M5: retain the P label and restrict A to geographic/temporal shifters.
     PLABEL = "systematic utility heterogeneity (tastes + reduced-form time constraints)"
-    op_ix = src.find(r"\headlineframe{Four operators")
+    ALABEL = ("local geographic/temporal access shifters "
+              "(region, urban/rural, year)")
+    op_ix = src.find(r"\headlineframe{DECOMP-2 equalises")
     op_table = flat(src[op_ix:op_ix + 2200]) if op_ix != -1 else ""
-    no_pabd_magnitude = not re.search(
-        r"(?<![A-Za-z])[Pp]\s*=\s*\d|[Pp]/A/B/D.{0,40}\d+(\.\d+)?%",
-        flat_src + " " + flat_text)
-    plabel_ok = PLABEL in op_table and "work in progress" in op_table.lower() \
-        and no_pabd_magnitude
+    plabel_ok = (PLABEL in op_table and ALABEL in op_table
+                 and "Personal occupation access, hours-band access" in op_table
+                 and "not equalised by $A$" in op_table)
     gate("G-PLABEL",
          plabel_ok,
-         "P label reads %r verbatim; no P/A/B/D magnitude anywhere" % PLABEL
-         if plabel_ok else "P label wording missing or paraphrased")
+         "P label retained; A restricted to local geographic/temporal shifters"
+         if plabel_ok else "P label or narrowed A-channel wording missing")
 
     # ---------------------------------------------------------- G-NOBAN
     # Item F: the seminar-freeze out-of-scope tokens, checked explicitly

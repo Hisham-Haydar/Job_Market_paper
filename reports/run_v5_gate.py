@@ -337,7 +337,7 @@ for _s in ('singles', 'couples'):
     with (_D2DIR / ('shapley_PAB_%s.csv' % _s)).open(encoding='utf-8') as _f:
         _D2SHAP[_s] = {(row['scale'], row['factor']): row
                        for row in _csv7.DictReader(_f)}
-# B (earning opportunities) must dominate A (local labour-market access) in
+# B (earning opportunities) must exceed A (coarse geographic/temporal access) in
 # every sample x scale cell -- recomputed from the source CSVs, not trusted
 # from the registry that wrote them.
 _bdoma = []
@@ -350,7 +350,7 @@ for _s in ('singles', 'couples'):
             it.fail('B does not exceed A for %s, %s (recomputed from '
                     'shapley_PAB_%s.csv)' % (_s, _scale, _s))
 if all(ok for *_, ok in _bdoma):
-    it.note('B (earning opportunities) exceeds A (local labour-market '
+    it.note('B (earning opportunities) exceeds A (coarse geographic/temporal '
             'access) in all %d sample x scale cells, recomputed from '
             'DECOMP-2' % len(_bdoma))
 # P's sign must actually differ between scales in both samples -- this is
@@ -362,9 +362,11 @@ for _s in ('singles', 'couples'):
         it.fail('%s: P has the same sign at both scales (%.6f, %.6f) -- the '
                 '"no directional claim" statement is not grounded' % (_s, _pu, _pe))
 for a in 'PM':
-    if 'earning opportunities dominate local labour-market access' not in NORM[a]:
+    if ('earning-opportunity heterogeneity has a larger contribution than '
+            'the coarse geographic/temporal access channel') not in NORM[a]:
         it.fail('%s: does not state the robust B-over-A ordering' % NAMES[a])
-    if 'no directional claim' not in NORM[a]:
+    if ('preference contribution is not sign-robust to equivalisation' not in NORM[a]
+            and 'no directional claim' not in NORM[a]):
         it.fail('%s: does not disclaim a direction for the preference '
                 'contribution' % NAMES[a])
 # the retired six-index statement must not resurface
@@ -406,14 +408,16 @@ else:
 # --------------------------------------------------------------------------- #
 # 9.  NESTED SEMANTICS AND THE COUPLES D CELL  (spec v1 s5)
 # --------------------------------------------------------------------------- #
-it = item(9, 'D held fixed: ΔI is small by design, not decomposed, not '
-              'evidence opportunities are unimportant')
+it = item(9, 'DECOMP-2 is bounded: resources, needs and composition are held '
+              'fixed; no total-inequality claim')
 E0 = REGJ['entries']
 for a in 'PM':
-    if 'held fixed' not in NORM[a]:
+    if ('the decomposition is bounded by design because household resources, '
+            'needs and composition are held fixed') not in NORM[a]:
         it.fail('%s: does not state that resources, needs and composition '
-                'are held fixed' % NAMES[a])
-    if 'not evidence that opportunities are unimportant' not in NORM[a] and \
+                'are held fixed using the approved boundedness wording' % NAMES[a])
+    if 'means opportunities are unimportant' not in NORM[a] and \
+       'not evidence that opportunities are unimportant' not in NORM[a] and \
        'not a finding that job opportunities are unimportant' not in NORM[a] and \
        'not a finding that opportunities are unimportant' not in NORM[a]:
         it.fail('%s: does not deny that the small movable share means '
@@ -423,6 +427,9 @@ for a in 'PM':
         it.fail('%s: retains language describing a resources/composition '
                 'subdivision -- D is held fixed in this exercise, not '
                 'decomposed' % NAMES[a])
+    if 'delta i is small by construction' in NORM[a] or \
+       'δi is small by construction' in NORM[a]:
+        it.fail('%s: retains the forbidden small-by-construction claim' % NAMES[a])
 for k in ['d2_deltaI_pct_singles_uneq', 'd2_deltaI_pct_singles_eq',
           'd2_deltaI_pct_couples_uneq', 'd2_deltaI_pct_couples_eq',
           'd2_varshare_logC_singles', 'd2_varshare_logC_couples']:
