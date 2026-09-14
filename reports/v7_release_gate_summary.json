@@ -1,0 +1,129 @@
+{
+  "release": "V7-BUILD",
+  "status": "PASS",
+  "ruling_gates": [
+    {
+      "gate": "G1",
+      "name": "S11 evaluation uses S11/S10 indicators",
+      "status": "PASS",
+      "checks": 12,
+      "failures": []
+    },
+    {
+      "gate": "G2",
+      "name": "POSFIT-dependent objects regenerated",
+      "status": "PASS",
+      "checks": 20,
+      "failures": []
+    },
+    {
+      "gate": "G3",
+      "name": "Population-fit moments regenerated",
+      "status": "PASS",
+      "checks": 7,
+      "failures": []
+    },
+    {
+      "gate": "G4",
+      "name": "Adequacy and four-group adjudication rerun mechanically",
+      "status": "PASS",
+      "checks": 21,
+      "failures": []
+    },
+    {
+      "gate": "G5",
+      "name": "Near-FT claim retired and 37-hour finding installed",
+      "status": "PASS",
+      "checks": 18,
+      "failures": []
+    },
+    {
+      "gate": "G6",
+      "name": "DECOMP-2 no-dependency verification",
+      "status": "PASS",
+      "checks": 4,
+      "failures": []
+    },
+    {
+      "gate": "G7",
+      "name": "All seminar-facing surfaces rebuilt",
+      "status": "PASS",
+      "checks": 17,
+      "failures": []
+    },
+    {
+      "gate": "G8",
+      "name": "Stale text and rendered assets removed",
+      "status": "PASS",
+      "checks": 9,
+      "failures": []
+    },
+    {
+      "gate": "G9",
+      "name": "W1_F, DECOMP-2, WEA, and limitations wording",
+      "status": "PASS",
+      "checks": 11,
+      "failures": []
+    }
+  ],
+  "additional_gates": [
+    {
+      "gate": "number-to-source",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "reports/check_v7_numbers_against_source.py"
+      ],
+      "output_tail": "NUMBER-TO-SOURCE PASS: 19 claim families, 7 surfaces, 0 failures\n"
+    },
+    {
+      "gate": "gallery verifier",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "reports/results_gallery_build/verify.py"
+      ],
+      "output_tail": "PASS: self_contained\nPASS: nine_sections\nPASS: captions_complete\nPASS: current_samples\nPASS: no_internal_paths_hashes_labels\nPASS: intervals_separate\nPASS: no_mae_headline\nPASS: final_diagnostic_surface\nPASS: node_language_exact\nPASS: registry_present\nPASS: no_retired_welfare_generator_paths\nPASS: zero_retired_welfare_content_signatures\nPASS: no_four_factor_decomposition\nPASS: section06_accepted_formula\nPASS: section06_only_accepted_construction\nPASS: welfare_reference_summary_M7\nPASS: corrected_fit_ruling\nPASS: decomp_caveat_exact\nPASS: short_hours_exact\nPASS: wea_definition_only\nPASS: welfare_worked_example_M8\nPASS: variance_language_M4\nPASS: access_definition_M5\nPASS: decomp_figure_language_M4_M5\nPASS: decomp_figures_embedded_from_current_inputs\nPASS: no_retired_lineage_path_reads\n"
+    },
+    {
+      "gate": "deck r7 verifier",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "beamer/verify_deck_r7.py"
+      ],
+      "output_tail": "PASS: pdf_present\nPASS: slide8_withholds_both_men\nPASS: slide8_four_group_adjudication\nPASS: slide9_37_hour_finding\nPASS: corrected_posfit_source\nPASS: only_female_accuracy_macros\nPASS: v7_assets\nPASS: w1_wording\nPASS: decomp_caveat\nPASS: no_retired_fit_claims\nPASS: no_cross_estimand_wording\n"
+    },
+    {
+      "gate": "paper PDF render",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "2367203 bytes"
+    },
+    {
+      "gate": "paper fatal/undefined-reference scan",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "fatal and undefined-reference strings absent"
+    },
+    {
+      "gate": "canonical notebook execution",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "38 non-empty code cells; errors=[]; unexecuted=[]"
+    },
+    {
+      "gate": "version separation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "v6 and v7 both exist; v7 builder redirects all v6 write targets"
+    }
+  ]
+}

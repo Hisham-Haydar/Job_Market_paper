@@ -1,0 +1,321 @@
+{
+  "gate": "number-to-source",
+  "status": "PASS",
+  "source_artifacts": {
+    "POSFIT v3b simulation bands": {
+      "path": "MNL_posfit\\outputs\\positive_fit_diagnostics_v3b\\model_simulated_bands.csv",
+      "sha256": "cbc827e76357503265a315bf1945f53eee51c76f41ac4843634abd7bdd7f418e"
+    },
+    "POSFIT v3b numerical adequacy": {
+      "path": "MNL_posfit\\outputs\\positive_fit_diagnostics_v3b\\g2_adequacy.csv",
+      "sha256": "304b7af652118d64df9f5862d3c1af42fe91dad642d768487d6bcaf03b7369af"
+    },
+    "Band-Fix-2 population moments": {
+      "path": "MNL_posfit\\experiments\\JMP_SEMINAR_SPRINT\\runs\\bandfix2_recompute\\new_results_v1.json",
+      "sha256": "e75ff27c6e324e332231f29a60282b742ab6114bd1f4b6f60afea3fa98977d12"
+    },
+    "RUM edge-scope audit": {
+      "path": "MNL_posfit\\outputs\\band_fix_1\\band_fix_3_rum_edge_scope_v1.json",
+      "sha256": "45702e34f0d99c45332bdc433928f105effb03d600b3f321d2d3e4e4064edda1"
+    },
+    "V7 registered decomposition values": {
+      "path": "Job_Market_paper\\reports\\numbers_of_record_v7.json",
+      "sha256": "d0f22fb2e38ed3097203de12d34bbc3dc686f19b90a1a4ced43467461be40123"
+    }
+  },
+  "claims": [
+    {
+      "claim": "primary population-fit MAEs",
+      "expected_tokens": [
+        "0.0140",
+        "0.0119"
+      ],
+      "source": "Band-Fix-2 population moments::summaries",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "gallery": "PASS",
+        "notebook": "PASS",
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "benchmark population-fit MAEs",
+      "expected_tokens": [
+        "0.0273",
+        "0.0264"
+      ],
+      "source": "Band-Fix-2 population moments::summaries",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single women reportable accuracy/band (headline units)",
+      "expected_tokens": [
+        "85.7",
+        "80.0",
+        "85.9"
+      ],
+      "source": "POSFIT v3b simulation bands + numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single women reportable accuracy/band (raw shares)",
+      "expected_tokens": [
+        "0.8568",
+        "0.8002",
+        "0.8586"
+      ],
+      "source": "POSFIT v3b simulation bands",
+      "surfaces": {
+        "gallery": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single women reportable accuracy headline",
+      "expected_tokens": [
+        "85.7"
+      ],
+      "source": "POSFIT v3b simulation bands",
+      "surfaces": {
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single women adequacy ratio",
+      "expected_tokens": [
+        "0.096"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled women reportable accuracy/band (headline units)",
+      "expected_tokens": [
+        "89.8",
+        "88.1",
+        "91.2"
+      ],
+      "source": "POSFIT v3b simulation bands + numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled women reportable accuracy/band (raw shares)",
+      "expected_tokens": [
+        "0.8980",
+        "0.8812",
+        "0.9123"
+      ],
+      "source": "POSFIT v3b simulation bands",
+      "surfaces": {
+        "gallery": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled women reportable accuracy headline",
+      "expected_tokens": [
+        "89.8"
+      ],
+      "source": "POSFIT v3b simulation bands",
+      "surfaces": {
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled women adequacy ratio",
+      "expected_tokens": [
+        "0.049"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single men withheld accuracy adequacy ratio",
+      "expected_tokens": [
+        "0.361",
+        "quadrature-limited"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "single men withheld accuracy status",
+      "expected_tokens": [
+        "WITHHELD",
+        "quadrature-limited"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "gallery": "PASS",
+        "notebook": "PASS",
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled men withheld accuracy adequacy ratio",
+      "expected_tokens": [
+        "0.353",
+        "quadrature-limited"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "coupled men withheld accuracy status",
+      "expected_tokens": [
+        "WITHHELD",
+        "quadrature-limited"
+      ],
+      "source": "POSFIT v3b numerical adequacy",
+      "surfaces": {
+        "gallery": "PASS",
+        "notebook": "PASS",
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "four-group 37-hour observed-minus-predicted gaps",
+      "expected_tokens": [
+        "5.2",
+        "3.8",
+        "4.4",
+        "6.5"
+      ],
+      "source": "Band-Fix-2 population moments::hours::h_36_5_37_5",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "four-group 37-hour observed/predicted cells",
+      "expected_tokens": [
+        "0.0624",
+        "0.0105",
+        "0.0503",
+        "0.0123",
+        "0.0539",
+        "0.0098",
+        "0.0785",
+        "0.0134"
+      ],
+      "source": "Band-Fix-2 population moments::hours::h_36_5_37_5",
+      "surfaces": {
+        "gallery": "PASS",
+        "notebook": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "corrected structural FT observed/predicted cells",
+      "expected_tokens": [
+        "0.2776",
+        "0.2347",
+        "0.1990",
+        "0.2264",
+        "0.2736",
+        "0.2682",
+        "0.2008",
+        "0.1938"
+      ],
+      "source": "Band-Fix-2 population moments::hours::ft",
+      "surfaces": {
+        "gallery": "PASS",
+        "paper": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "restricted DECOMP-2 Gini-change range",
+      "expected_tokens": [
+        "1.8",
+        "9.9"
+      ],
+      "source": "V7 registry::d2_deltaI_pct_singles_eq/couples_uneq",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS",
+        "gallery": "PASS",
+        "notebook": "PASS",
+        "deck": "PASS",
+        "rehearsal": "PASS"
+      },
+      "status": "PASS"
+    },
+    {
+      "claim": "RUM-A input-width limitation",
+      "expected_tokens": [
+        "26.5",
+        "29.5",
+        "-0.050856"
+      ],
+      "source": "RUM edge-scope audit::RUM-A",
+      "surfaces": {
+        "report": "PASS",
+        "report_source": "PASS",
+        "paper": "PASS"
+      },
+      "status": "PASS"
+    }
+  ],
+  "failures": []
+}

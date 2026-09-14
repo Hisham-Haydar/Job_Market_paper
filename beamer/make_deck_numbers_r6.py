@@ -47,6 +47,8 @@ OUT_JSON = HERE / "build" / "r6_number_provenance.json"
 # Fit statistics the deck may state.  R6 build brief: extensive accuracy only,
 # and only where the G2 quadrature gate labels it ADEQUATE.
 ALLOWED_FIT_STATISTIC = "extensive_accuracy"
+EXPECTED_ADEQUATE_GROUPS = {"couples_female", "couples_male", "singles_female"}
+EXPECTED_LIMITED_GROUPS = {"singles_male"}
 
 # --------------------------------------------------------------------------
 # Equivalence-scale authority (DECK-3).  The scale is RATIFIED; the guard no
@@ -319,14 +321,12 @@ def main() -> int:
     # bare count (DECK-NUMBERS-1: "a bare count reads as a headline even when
     # disclaimed; named groups cannot").  Refuse silently-stale prose if a
     # future v3 re-run changes which groups clear the gate.
-    EXPECTED_ADEQUATE_GROUPS = {"couples_female", "couples_male", "singles_female"}
-    EXPECTED_LIMITED_GROUPS = {"singles_male"}
     if set(adequate_groups) != EXPECTED_ADEQUATE_GROUPS or set(limited_groups) != EXPECTED_LIMITED_GROUPS:
         raise SystemExit(
             "REFUSED: G2-ADEQUATE group membership changed (adequate=%s "
             "limited=%s); the fit-verdict slide names these groups by hand "
-            "in JMP_seminar_deck_r6.tex -- update that wording before "
-            "regenerating" % (sorted(adequate_groups), sorted(limited_groups)))
+            "in %s -- update that wording before regenerating"
+            % (sorted(adequate_groups), sorted(limited_groups), DECK_SRC.name))
     tex.append("")
 
     def ratio(g2_rows: list[dict], group: str, weighting: str) -> float:

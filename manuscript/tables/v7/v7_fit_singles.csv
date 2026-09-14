@@ -1,0 +1,37 @@
+Unit,Moment,Observed,Model,Absolute deviation,Denominator
+Man,Employment,0.8805,0.8675,0.0130,households
+Man,Hours: non-employment,0.1195,0.1325,0.0130,households
+Man,"Hours: [5, 10)",0.0109,0.0000,0.0109,households
+Man,"Hours: [10, 18.5)",0.0080,0.0246,0.0166,households
+Man,"Structural PT1: [18.5, 21.5)",0.0113,0.0167,0.0054,households
+Man,"Hours: [21.5, 29.5)",0.0286,0.0646,0.0360,households
+Man,"Structural PT2: [29.5, 30.5)",0.0032,0.0187,0.0155,households
+Man,"Hours: [30.5, 33.5)",0.0107,0.0315,0.0208,households
+Man,"Hours: [33.5, 36.5)",0.2329,0.2457,0.0128,households
+Man,"Observed 37-hour mass point: [36.5, 37.5)",0.0624,0.0105,0.0519,households
+Man,"Structural FT: [37.5, 40.5]",0.2776,0.2347,0.0429,households
+Man,"Hours: (40.5, 44.5)",0.0691,0.0488,0.0203,households
+Man,"Hours: [44.5, 70]",0.1658,0.1717,0.0059,households
+Man,Occupation group 1,0.3823,0.3774,0.0049,workers
+Man,Occupation group 2,0.1069,0.1014,0.0054,workers
+Man,Occupation group 3,0.0516,0.0545,0.0029,workers
+Man,Occupation group 4,0.4593,0.4667,0.0074,workers
+Man,Mean log wage,2.6876,2.6309,0.0567,workers
+Woman,Employment,0.8642,0.8665,0.0024,households
+Woman,Hours: non-employment,0.1358,0.1335,0.0024,households
+Woman,"Hours: [5, 10)",0.0042,0.0000,0.0042,households
+Woman,"Hours: [10, 18.5)",0.0278,0.0317,0.0038,households
+Woman,"Structural PT1: [18.5, 21.5)",0.0290,0.0283,0.0007,households
+Woman,"Hours: [21.5, 29.5)",0.0612,0.0856,0.0245,households
+Woman,"Structural PT2: [29.5, 30.5)",0.0288,0.0236,0.0052,households
+Woman,"Hours: [30.5, 33.5)",0.0290,0.0367,0.0077,households
+Woman,"Hours: [33.5, 36.5)",0.2672,0.2581,0.0091,households
+Woman,"Observed 37-hour mass point: [36.5, 37.5)",0.0503,0.0123,0.0381,households
+Woman,"Structural FT: [37.5, 40.5]",0.1990,0.2264,0.0274,households
+Woman,"Hours: (40.5, 44.5)",0.0492,0.0446,0.0045,households
+Woman,"Hours: [44.5, 70]",0.1185,0.1192,0.0007,households
+Woman,Occupation group 1,0.1795,0.1832,0.0036,workers
+Woman,Occupation group 2,0.1976,0.1946,0.0031,workers
+Woman,Occupation group 3,0.1349,0.1348,0.0002,workers
+Woman,Occupation group 4,0.4879,0.4875,0.0004,workers
+Woman,Mean log wage,2.5968,2.6207,0.0238,workers

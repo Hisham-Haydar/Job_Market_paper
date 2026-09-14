@@ -1,0 +1,79 @@
+{
+  "release": "V7-BUILD",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "G1",
+      "name": "S11 evaluation uses S11/S10 indicators",
+      "status": "PASS",
+      "checks": 12,
+      "failures": []
+    },
+    {
+      "gate": "G2",
+      "name": "POSFIT-dependent objects regenerated",
+      "status": "PASS",
+      "checks": 20,
+      "failures": []
+    },
+    {
+      "gate": "G3",
+      "name": "Population-fit moments regenerated",
+      "status": "PASS",
+      "checks": 7,
+      "failures": []
+    },
+    {
+      "gate": "G4",
+      "name": "Adequacy and four-group adjudication rerun mechanically",
+      "status": "PASS",
+      "checks": 21,
+      "failures": []
+    },
+    {
+      "gate": "G5",
+      "name": "Near-FT claim retired and 37-hour finding installed",
+      "status": "PASS",
+      "checks": 18,
+      "failures": []
+    },
+    {
+      "gate": "G6",
+      "name": "DECOMP-2 no-dependency verification",
+      "status": "PASS",
+      "checks": 4,
+      "failures": []
+    },
+    {
+      "gate": "G7",
+      "name": "All seminar-facing surfaces rebuilt",
+      "status": "PASS",
+      "checks": 17,
+      "failures": []
+    },
+    {
+      "gate": "G8",
+      "name": "Stale text and rendered assets removed",
+      "status": "PASS",
+      "checks": 9,
+      "failures": []
+    },
+    {
+      "gate": "G9",
+      "name": "W1_F, DECOMP-2, WEA, and limitations wording",
+      "status": "PASS",
+      "checks": 11,
+      "failures": []
+    }
+  ],
+  "surface_sha256": {
+    "story_source": "e49a5804b62724ef16647d748d512ec4654a1945f671ce569fad418ba4bb1ccd",
+    "story_html": "c4b746ad334bef8ea84b117f7a27af415c56c5f81e963475bb6812eace483fd6",
+    "gallery": "091670a78398120ed9fdc4e4738c6c341237bb92c247c5b7faa339c37fdded34",
+    "paper": "9f2f64682657752282b13949289258254beac8114601960f15dc33aa7e775c07",
+    "paper_fit": "28d27d71f9815b4cd83e0a031f8bba0810c75d2cd4c69c2dabaa00abda7b7163",
+    "deck": "ac06377ce1c60cce4053d1ec81a366a2b2caa1caad356a90faae8a921f4f77d9",
+    "rehearsal_versioned": "11033eaad3b7bf3ae413701962f7c8fdcbb11443621a7e2412541789956c4ab5",
+    "rehearsal_current": "11033eaad3b7bf3ae413701962f7c8fdcbb11443621a7e2412541789956c4ab5"
+  }
+}

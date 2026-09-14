@@ -1,0 +1,445 @@
+{
+  "macros": {
+    "DTwoMaxPct": {
+      "raw": 9.894813262056324,
+      "rendered": "9.9",
+      "source": "coalition_values_{singles,couples}.csv maximum Delta-I share of baseline"
+    },
+    "DTwoMinPct": {
+      "raw": 1.8157727940433184,
+      "rendered": "1.8",
+      "source": "coalition_values_{singles,couples}.csv minimum Delta-I share of baseline"
+    },
+    "DTwoVarMaxPct": {
+      "raw": 126.8119269268318,
+      "rendered": "127",
+      "source": "log_variance_split_v1.csv maximum Var(log C)/Var(log W)"
+    },
+    "DTwoVarMinPct": {
+      "raw": 100.3827439497987,
+      "rendered": "100",
+      "source": "log_variance_split_v1.csv minimum Var(log C)/Var(log W)"
+    },
+    "EvaluatorCommit": {
+      "raw": null,
+      "rendered": "55bb0d0",
+      "source": "v3 run_provenance.json evaluator_commit"
+    },
+    "FitAdequateCount": {
+      "raw": null,
+      "rendered": "2",
+      "source": "g2_adequacy.csv count of ADEQUATE groups"
+    },
+    "FitExtCF": {
+      "raw": 0.8980224215767258,
+      "rendered": "89.8",
+      "source": "hard_classification_metrics.csv couples_female/weighted/extensive_accuracy observed; g2_adequacy.csv label ADEQUATE"
+    },
+    "FitExtRatioCF": {
+      "raw": 0.049080431005192354,
+      "rendered": "0.05",
+      "source": "g2_adequacy.csv couples_female/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioCMUnweightedVThree": {
+      "raw": 0.29988853639209406,
+      "rendered": "0.300",
+      "source": "g2_adequacy.csv (v3) couples_male/unweighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioCMWeightedVThree": {
+      "raw": 0.35266875663723635,
+      "rendered": "0.353",
+      "source": "g2_adequacy.csv (v3) couples_male/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtRatioSF": {
+      "raw": 0.09605380600085617,
+      "rendered": "0.10",
+      "source": "g2_adequacy.csv singles_female/weighted/extensive_accuracy adequacy ratio"
+    },
+    "FitExtSF": {
+      "raw": 0.8567913245286843,
+      "rendered": "85.7",
+      "source": "hard_classification_metrics.csv singles_female/weighted/extensive_accuracy observed; g2_adequacy.csv label ADEQUATE"
+    },
+    "FitLimitedCount": {
+      "raw": null,
+      "rendered": "2",
+      "source": "g2_adequacy.csv count of limited groups"
+    },
+    "FitNodes": {
+      "raw": 2048,
+      "rendered": "2\\,048",
+      "source": "v3 run_provenance.json predictive_support"
+    },
+    "FitSims": {
+      "raw": null,
+      "rendered": "500",
+      "source": "v3 run_provenance.json c5_simulation.draws (fixed-theta outcome vectors)"
+    },
+    "FrameCouples": {
+      "raw": null,
+      "rendered": "2\\,223",
+      "source": "baseline_f1 samples.couples.unweighted_n"
+    },
+    "FrameDraws": {
+      "raw": null,
+      "rendered": "100",
+      "source": "s11_welfare_specs_of_record_v1.json results.*.n_alternatives minus observed alternative"
+    },
+    "FrameSingles": {
+      "raw": null,
+      "rendered": "1\\,540",
+      "source": "baseline_f1 samples.singles.unweighted_n"
+    },
+    "ObjCouples": {
+      "raw": 10283.034369350758,
+      "rendered": "10283.034",
+      "source": "v3 run_provenance.json objectives.couples"
+    },
+    "ObjSingles": {
+      "raw": 6253.463074379619,
+      "rendered": "6253.463",
+      "source": "v3 run_provenance.json objectives.singles"
+    },
+    "OfferLocationLog": {
+      "raw": 0.1,
+      "rendered": "0.10",
+      "source": "Decomposition_diag_1.txt section 5 Verdict; log points"
+    },
+    "OfferSpreadLog": {
+      "raw": 0.37,
+      "rendered": "0.37",
+      "source": "Decomposition_diag_1.txt section 5 Verdict; log points"
+    },
+    "PosfitCommit": {
+      "raw": null,
+      "rendered": "cd7247cf",
+      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v3"
+    },
+    "PosfitVThreeCommit": {
+      "raw": null,
+      "rendered": "cd7247cf",
+      "source": "MNL_posfit commit carrying positive_fit_diagnostics_v3 (diagnostics/posfit-v3 branch)"
+    },
+    "SCoupActive": {
+      "raw": 47,
+      "rendered": "47",
+      "source": "s11_couples_parameter_table_v1.csv non-pinned rows"
+    },
+    "SCoupParams": {
+      "raw": 47,
+      "rendered": "47",
+      "source": "s11_couples_parameter_table_v1.csv row count"
+    },
+    "SElevenAccessConst": {
+      "raw": -3.17353431815379,
+      "rendered": "-3.174",
+      "source": "s11_singles_parameter_table_v1.csv beta_E estimate"
+    },
+    "SElevenAccessConstZ": {
+      "raw": -7.8293727555694685,
+      "rendered": "-7.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_E z_robust"
+    },
+    "SElevenAccessSur": {
+      "raw": -1.4422400789318612,
+      "rendered": "-1.442",
+      "source": "s11_singles_parameter_table_v1.csv beta_E_gsur estimate"
+    },
+    "SElevenAccessSurZ": {
+      "raw": -6.121804594329831,
+      "rendered": "-6.1",
+      "source": "s11_singles_parameter_table_v1.csv beta_E_gsur z_robust"
+    },
+    "SElevenBetaC": {
+      "raw": 2.038731824410903,
+      "rendered": "2.039",
+      "source": "s11_singles_parameter_table_v1.csv beta_c estimate"
+    },
+    "SElevenBetaCZ": {
+      "raw": 6.988432856119127,
+      "rendered": "7.0",
+      "source": "s11_singles_parameter_table_v1.csv beta_c z_robust"
+    },
+    "SElevenHoursFThirtyFive": {
+      "raw": 2.0655619308364366,
+      "rendered": "2.066",
+      "source": "s11_singles_parameter_table_v1.csv beta_h_f35 estimate"
+    },
+    "SElevenHoursFThirtyFiveZ": {
+      "raw": 23.09234999861884,
+      "rendered": "23.1",
+      "source": "s11_singles_parameter_table_v1.csv beta_h_f35 z_robust"
+    },
+    "SElevenWageEducH": {
+      "raw": 0.14905427891988668,
+      "rendered": "0.149",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_educH estimate"
+    },
+    "SElevenWageEducHZ": {
+      "raw": 4.8330249099103515,
+      "rendered": "4.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_educH z_robust"
+    },
+    "SElevenWagePexp": {
+      "raw": 0.24077041930177193,
+      "rendered": "0.241",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_pexp estimate"
+    },
+    "SElevenWagePexpZ": {
+      "raw": 2.7924389771251006,
+      "rendered": "2.8",
+      "source": "s11_singles_parameter_table_v1.csv beta_w_pexp z_robust"
+    },
+    "SElevenWageSigma": {
+      "raw": 0.3815052460538545,
+      "rendered": "0.382",
+      "source": "s11_singles_parameter_table_v1.csv sigma estimate"
+    },
+    "SElevenWageSigmaZ": {
+      "raw": 28.7381858888539,
+      "rendered": "28.7",
+      "source": "s11_singles_parameter_table_v1.csv sigma z_robust"
+    },
+    "SSingActive": {
+      "raw": 41,
+      "rendered": "41",
+      "source": "s11_singles_parameter_table_v1.csv non-pinned rows"
+    },
+    "SSingParams": {
+      "raw": 52,
+      "rendered": "52",
+      "source": "s11_singles_parameter_table_v1.csv row count"
+    },
+    "WFCoupCEqGini": {
+      "raw": 0.22680484110413296,
+      "rendered": "0.226805",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFCoupCEqMean": {
+      "raw": 2245.109851790558,
+      "rendered": "2\\,245",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFCoupCEqMedian": {
+      "raw": 2062.837017186632,
+      "rendered": "2\\,063",
+      "source": "couples_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFCoupCfive": {
+      "raw": 1.7763568394002505e-15,
+      "rendered": "1.8e-15",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C5"
+    },
+    "WFCoupCone": {
+      "raw": 0.0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C1"
+    },
+    "WFCoupCtwo": {
+      "raw": 0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.couples C2"
+    },
+    "WFCoupGini": {
+      "raw": 0.21035441022764906,
+      "rendered": "0.210",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupMean": {
+      "raw": 2495.800865909865,
+      "rendered": "2\\,496",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupMedian": {
+      "raw": 2356.493005647621,
+      "rendered": "2\\,356",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupN": {
+      "raw": 2223,
+      "rendered": "2\\,223",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupNonworkers": {
+      "raw": 50,
+      "rendered": "50",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFCoupWEqGini": {
+      "raw": 0.19740312655937733,
+      "rendered": "0.197403",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFCoupWEqMean": {
+      "raw": 1310.6149794922967,
+      "rendered": "1\\,311",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFCoupWEqMedian": {
+      "raw": 1237.3524675746198,
+      "rendered": "1\\,237",
+      "source": "couples_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFCoupWorkers": {
+      "raw": 2173,
+      "rendered": "2\\,173",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.couples"
+    },
+    "WFSingCEqGini": {
+      "raw": 0.26329154083246864,
+      "rendered": "0.263292",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFSingCEqMean": {
+      "raw": 1766.4864931555696,
+      "rendered": "1\\,766",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFSingCEqMedian": {
+      "raw": 1588.2908803476698,
+      "rendered": "1\\,588",
+      "source": "singles_equivalised_reporting_v1.json equivalised.C_eq"
+    },
+    "WFSingCfive": {
+      "raw": 1.7763568394002505e-15,
+      "rendered": "1.8e-15",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C5"
+    },
+    "WFSingCone": {
+      "raw": 0.0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C1"
+    },
+    "WFSingCtwo": {
+      "raw": 0,
+      "rendered": "0",
+      "source": "baseline_f1_full_sample_aggregates_v1.json checks.singles C2"
+    },
+    "WFSingGini": {
+      "raw": 0.23755220907703214,
+      "rendered": "0.238",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingMean": {
+      "raw": 1434.811649926925,
+      "rendered": "1\\,435",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingMedian": {
+      "raw": 1319.977951506895,
+      "rendered": "1\\,320",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingN": {
+      "raw": 1540,
+      "rendered": "1\\,540",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingNonworkers": {
+      "raw": 204,
+      "rendered": "204",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    },
+    "WFSingWEqGini": {
+      "raw": 0.24980721054552937,
+      "rendered": "0.249807",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFSingWEqMean": {
+      "raw": 1302.0715759810155,
+      "rendered": "1\\,302",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFSingWEqMedian": {
+      "raw": 1165.1408573494155,
+      "rendered": "1\\,165",
+      "source": "singles_equivalised_reporting_v1.json equivalised.W_F_eq"
+    },
+    "WFSingWorkers": {
+      "raw": 1336,
+      "rendered": "1\\,336",
+      "source": "baseline_f1_full_sample_aggregates_v1.json samples.singles"
+    }
+  },
+  "refusals": [
+    "couples_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.35266875663723635); not emitted",
+    "singles_male extensive_accuracy is QUADRATURE-LIMITED (ratio 0.3606670631213232); not emitted"
+  ],
+  "scale_authority": {
+    "memo": "JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md",
+    "memo_in_tree": false,
+    "quote": "Modified-OECD is ratified as the primary equivalence scale for current JMP distributional reporting. The provisional economics-review status is closed.",
+    "ratified_scale": "modified_OECD",
+    "ruling": "Deputy ruling \"SCALE CLOSED; CHILD-SHIFTER FRAMING\", s1"
+  },
+  "sources": {
+    "Decomposition_diag_1.txt": {
+      "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\docs\\Decomposition_diag_1.txt",
+      "sha256": "ead1b7c8243fe1498f00dcf287331beec94165332aa3bb64041a0f645d339a74"
+    },
+    "baseline_f1_full_sample_aggregates_v1.json": {
+      "C_obs_benchmark": "NOT PRODUCED",
+      "executed_commit": "d729cf895e9197716e58875aa1bf13824f022e2e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_v1\\baseline_f1_full_sample_aggregates_v1.json",
+      "pooled_row": false,
+      "recorded_commit": "6048c9f7",
+      "sha256": "6d91bf9e4558c9f658987fc7e696acf9150fb726e0a235d84cd5ca63ff7e56f8",
+      "units": "household EUR/month, unequivalised",
+      "verified_commit": "b5550af5",
+      "weight": "dwt"
+    },
+    "coalition_values_couples.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\coalition_values_couples.csv",
+      "sha256": "eb61ecad4a29215a52deae42aeb97dcdc7065dc9751d6881591439b43114cce0"
+    },
+    "coalition_values_singles.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\coalition_values_singles.csv",
+      "sha256": "2f63f5bf3c3118eaf8730cc33e04a253d4709e0570f68d1c37c877ac4ae34c00"
+    },
+    "couples_equivalised_reporting_v1.json": {
+      "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
+      "memo_commit": "4c4e07e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\couples_equivalised_reporting_v1.json",
+      "scale_name": "modified_OECD",
+      "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
+      "sha256": "8d6d21b127400bee542eae3decb4b3d227904f6e3eed77d26d1305c0867cc4b7"
+    },
+    "g2_adequacy.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3b\\g2_adequacy.csv",
+      "sha256": "304b7af652118d64df9f5862d3c1af42fe91dad642d768487d6bcaf03b7369af"
+    },
+    "hard_classification_metrics.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3b\\hard_classification_metrics.csv",
+      "sha256": "8c1b15bc02d945fbc247cbc8a5ce917b470bf4f1c7d620585e6f0a6f5a808f94"
+    },
+    "log_variance_split_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_decomp\\outputs\\welfare\\preseminar_pab_v1\\log_variance_split_v1.csv",
+      "sha256": "3731579ee8070fa15e70dca3711bc2813543c130329fd389185e7e61b1547f3c"
+    },
+    "run_provenance.json": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL_posfit\\outputs\\positive_fit_diagnostics_v3b\\run_provenance.json",
+      "posfit_commit": "cd7247cf",
+      "sha256": "34a4ec87ed1c4218984961bb3493062b4281db2c42437b47da01a78973380e58"
+    },
+    "s11_couples_parameter_table_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_couples_parameter_table_v1.csv",
+      "sha256": "fc1794b437c74ac4e6ab240aaa7c71b7c38ee21512395a175b38c785a5e061c9"
+    },
+    "s11_singles_parameter_table_v1.csv": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_singles_parameter_table_v1.csv",
+      "sha256": "cee4a136f9ce69753965beaa779753bed59e75972490ebb0f2b6114f790413ab"
+    },
+    "s11_welfare_specs_of_record_v1.json": {
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\experiments\\JMP_SEMINAR_SPRINT\\runs\\s11_welfare_specs_of_record\\s11_welfare_specs_of_record_v1.json",
+      "sha256": "5fdc88502493ce540b088880eecf049bc268392ff3e8790ffe78a16aa6ddc884"
+    },
+    "singles_equivalised_reporting_v1.json": {
+      "memo": "docs/results/JMP_BASELINE_F1_equivalised_reporting_v1.md",
+      "memo_commit": "4c4e07e",
+      "path": "C:\\Users\\hisham\\Repo\\MNL\\outputs\\welfare\\baseline_f1_equivalised_v1\\singles_equivalised_reporting_v1.json",
+      "scale_name": "modified_OECD",
+      "scale_status": "PROVISIONAL_PENDING_ECONOMICS_REVIEW",
+      "sha256": "e34c3bfa0abe5dc9c1fe00a1c04d022eab280b84111f048d14ef03bdf9f2a9e6"
+    }
+  }
+}

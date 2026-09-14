@@ -28,10 +28,23 @@ PREF = FIG / "preferences_final"
 sys.path.insert(0, str(SPRINT))
 import final_diagnostics_surface_v1 as final_surface  # noqa: E402
 
+MNL_POSFIT = ROOT.parent / "MNL_posfit"
+BAND_FIX_2 = (MNL_POSFIT / "experiments/JMP_SEMINAR_SPRINT/runs/"
+              "bandfix2_recompute/new_results_v1.json")
+V7_FIG = ROOT / "manuscript/figures/v7"
+final_surface.POSFIT_REV = "cd7247cf"
+final_surface.POSFIT_LABEL = "POSFIT v3b"
+final_surface.POSFIT_COMMIT_LABEL = "cd7247cf"
+final_surface.NODE_LABEL = "POSFIT node-convergence v3b"
+final_surface.POSFIT_OUT = "outputs/positive_fit_diagnostics_v3b"
+final_surface.NODE_OUT = "outputs/posfit_node_convergence_v3b"
+final_surface.WITHHOLD_EXTENSIVE_ACCURACY = ("couples_male", "singles_male")
+final_surface.git_blob.cache_clear()
+
 # Preliminary three-factor P/A/B decomposition. Source: MNL_decomp, branch
 # welfare/preseminar-pab. Retired decomposition sources remain excluded.
 DECOMP2 = ROOT.parent / "MNL_decomp" / "outputs/welfare/preseminar_pab_v1"
-NOR_PATH = REPORTS / "numbers_of_record_v5.json"
+NOR_PATH = REPORTS / "numbers_of_record_v7.json"
 OUT = REPORTS / "JMP_results_gallery_current.html"
 OPPORTUNITY_PROFILES = {
     "singles": {
@@ -390,7 +403,17 @@ def block_of(name):
 def build(nor):
     if "gallery" not in nor:
         raise SystemExit("gallery registry missing; run build.py --refresh-registry")
-    g, n = nor["gallery"], {k: v["value"] for k, v in nor["entries"].items()}
+    g, n = dict(nor["gallery"]), {k: v["value"] for k, v in nor["entries"].items()}
+    corrected = json.loads(BAND_FIX_2.read_text(encoding="utf-8"))
+    g["fit"] = [{
+        "sample": row["sample"], "sex": row["sex"], "margin": row["moment"],
+        "observed": row["observed"], "model": row["predicted"],
+        "deviation": row["predicted"] - row["observed"],
+        "denominator": row["denominator"],
+    } for row in corrected["moments"] if row["sample"] in ("singles", "couples")]
+    nor["gallery"]["fit"] = g["fit"]
+    NOR_PATH.write_text(json.dumps(nor, indent=2, ensure_ascii=False) + "\n",
+                        encoding="utf-8")
     # --- Preliminary three-factor P/A/B decomposition (DECOMP-2) ---------
     d2_coal = {smp: rows(DECOMP2 / f"coalition_values_{smp}.csv") for smp in ("singles", "couples")}
     d2_shap = {smp: rows(DECOMP2 / f"shapley_PAB_{smp}.csv") for smp in ("singles", "couples")}
@@ -513,7 +536,18 @@ def build(nor):
         for r in g["fit"]:
             if r["sample"] != sample:
                 continue
-            label = r["margin"].replace("hours::", "hours · ").replace("occupation::", "occupation · ").replace("quadrant::", "regime · ").replace("mean_log_wage", "mean log wage")
+            labels = {
+                "hours::pt1": "structural PT1 [18.5, 21.5)",
+                "hours::pt2": "structural PT2 [29.5, 30.5)",
+                "hours::ft": "structural FT [37.5, 40.5]",
+                "hours::h_36_5_37_5": "observed 37-hour mass point [36.5, 37.5)",
+            }
+            label = labels.get(
+                r["margin"],
+                r["margin"].replace("hours::", "hours · ")
+                .replace("occupation::", "occupation · ")
+                .replace("quadrant::", "regime · ")
+                .replace("mean_log_wage", "mean log wage"))
             rr.append([r["sex"], label, fmt(r["observed"]), fmt(r["model"]), fmt(r["deviation"])])
         return table(["Unit", "Margin", "Observed", "Model-implied", "Deviation (model − observed)"], rr, "compact")
 
@@ -533,10 +567,10 @@ def build(nor):
     fig = lambda name, title, caption, pref=False: figure((PREF if pref else FIG) / f"{name}_paper.png", title, caption)
     sections = []
     sections.append(("samples", "Samples and screens", f'''<p class=lead>Two estimation populations, followed through the final support and positive-consumption screens.</p>{funnel}<h3>Weighted descriptives</h3>{desc}
-    {fig("figV08_data_panel", "The estimation samples: people and work", cap("single-adult and couple estimation samples", "years, weekly hours, category shares and euros per hour", "weighted observed age, education, hours and delivered wages", "each population is separate; hours bands are structural overlays", "observed"))}
+    {fig("figV08_data_panel", "The estimation samples: people and work", cap("single-adult and couple estimation samples", "years, weekly hours, category shares and euros per hour", "weighted observed age, education, continuous hours and delivered wages", "each population is separate", "observed"))}
     {fig("figV09_resources_panel", "The estimation samples: household resources", cap("single-adult and couple estimation samples", "euros per month, counts and weighted shares", "disposable income, children, non-labour resources and urbanisation", "raw household values unless equivalized is stated", "observed"))}'''))
     sections.append(("observed", "Observed behaviour", f'''{obs_table}<h3>Occupation of the observed job</h3>{occ_table}
-    {fig("figV08_data_panel", "Continuous hours, structural bands, occupation and wages", cap("employed deciders and spouses in both populations", "weekly hours, weighted shares and euros per hour", "continuous observed work outcomes with the model's support bands overlaid", "population-specific, conditional on employment where stated", "observed"))}
+    {fig("figV08_data_panel", "Continuous hours, occupation and wages", cap("employed deciders and spouses in both populations", "weekly hours, weighted shares and euros per hour", "continuous observed work outcomes", "population-specific, conditional on employment where stated", "observed"))}
     {fig("figV09_resources_panel", "Raw and equivalized disposable consumption", cap("households in both populations", "euros per month", "tax-benefit disposable consumption at the observed choice", "raw household and modified-OECD-equivalized conventions shown separately", "observed"))}'''))
     sections.append(("model", "The estimated model", f'''<p class=lead>Estimates are grouped by their economic role. Standard errors are household-cluster robust; the dot marks a coordinate at an active bound. The consumption coefficient has its own block.</p><p>The systematic leisure specification is not age alone: it carries an intercept, age, age squared and group-specific leisure curvature for each of the four adult groups, plus a number-of-children shifter for women; sex and household type are carried by separate parameter blocks.</p><blockquote>&ldquo;The baseline deliberately keeps systematic preference heterogeneity parsimonious: age profiles for all four adult groups and a child-related shifter for women. The child term is interpreted as a reduced-form behavioural/time-constraint shifter, not as pure taste.&rdquo;</blockquote><p>Preferences and opportunity components are jointly estimated, with their separation relying on maintained functional-form and exclusion restrictions. No causal interpretation is attached to that separation.</p><div class=twocol>{''.join(coef_html)}</div>{restriction_note}
     <div class=figuregrid>{fig("figP01_indifference_curves_singles", "Single-adult indifference curves", cap("representative single-adult profiles", "monthly euros and weekly leisure", "estimated level sets", "own characteristics at the stated representative profiles", "illustrative from estimated preferences"), True)}
@@ -544,9 +578,9 @@ def build(nor):
     {fig("figP03_marginal_utilities", "Marginal utilities", cap("representative profiles from both populations", "utility-index change per leisure or consumption unit", "estimated marginal utility of leisure and consumption", "evaluation points shown in the panel", "illustrative from estimated preferences"), True)}
     {fig("figP04_mrs_by_age_sex", "Marginal rates of substitution", cap("representative and employed profiles in both populations", "euros per month per weekly hour", "local consumption-for-leisure compensation slope", "own characteristics with the figure's evaluation convention", "illustrative from estimated preferences"), True)}
     {fig("figP06_normalization_sensitivity", "Normalization sensitivity", cap("representative profiles in both populations", "relative deviations and re-expressed coefficients", "invariance of preferences to leisure-coordinate normalization", "record normalization compared with alternative coordinates", "illustrative sensitivity"), True)}</div>'''))
-    sections.append(("fit", "Fit, margin by margin", f'''<p class=lead>Each row keeps its own deviation. The sub-ten-hour zero prediction is a genuine fit error caused by tail coverage of the integration panel. Both the structural density and proposal put positive mass on (5,10), but the finite integration panel contains no draw there. The long-hours bin includes 70, and observed singles partitions close separately by sex.</p><div class=twocol><div class=pop><h3>Singles</h3>{fit_group("singles")}</div><div class=pop><h3>Couples</h3>{fit_group("couples")}</div></div><h3>Worker-conditional wage quantiles</h3>{wageq}
-    {fig("figV06_fit_by_margin", "Observed against model-implied margins", cap("both estimation populations", "shares and mean log euros per hour", "employment, participation regimes, hours bands, occupation and wage-location margins", "model population integration against weighted observations", "observed and model-implied"))}'''))
-    sections.append(("final-diagnostics", "Accepted diagnostic surfaces", f'''<p class=lead>These are reader-facing renderings of accepted diagnostic artifacts. They add detail without adding or revising any group-level fit verdict.</p>
+    sections.append(("fit", "Fit, margin by margin", f'''<p class=lead>The corrected population moments use the record structural bands. Singles MAE rises slightly after the correction; the correction is not presented as an across-the-board fit improvement. The common remaining mismatch is underprediction of the observed 37-hour mass point by 3.8&ndash;6.5 percentage points across groups. That point lies outside structural FT. The sub-ten-hour zero prediction remains a finite-panel coverage error; the long-hours bin includes 70.</p><div class=twocol><div class=pop><h3>Singles</h3>{fit_group("singles")}</div><div class=pop><h3>Couples</h3>{fit_group("couples")}</div></div><h3>Worker-conditional wage quantiles</h3>{wageq}
+    {figure(V7_FIG / "fit_by_margin_v7.png", "Corrected observed against model-implied margins", cap("both estimation populations", "population shares", "fully re-evaluated population moments", "record structural-band definitions and separate descriptive residual bins", "corrected model-implied"))}'''))
+    sections.append(("final-diagnostics", "Accepted diagnostic surfaces", f'''<p class=lead>All diagnostic objects are from POSFIT v3b. The corrected weighted adjudication is group-specific: conditioning is mechanical stochastic conditioning in all four groups; excess-dispersion evidence is misspecification evidence for coupled men and coupled women, and inconclusive/quadrature-limited for single men and single women. The earlier three-group excess-predictability claim is withdrawn. Extensive accuracy is reportable for women in each sample and withheld for both groups of men. The five-state categories shown below are descriptive reporting bins, not the structural opportunity-shifter bands.</p>
     {final_surface.posfit_html()}
     {final_surface.node_html()}
     {final_surface.ws4_html()}'''))
@@ -554,11 +588,12 @@ def build(nor):
     <figcaption class=standalone>{cap("one anonymous weighted-median profile from each population", "probability mass, density mass and density per euro", "employment or joint-regime access, structural hours, occupation and conditional wage-offer components", "each component normalized on its own displayed support", "illustrative from the estimated model")}</figcaption>'''))
     sections.append(("welfare", "Welfare", '''<div class=notice><strong>Accepted Mapping-F construction.</strong>
      <code class=formula>W1_F_i = C_obs_i * exp{[L_i(j_obs) - L_i(o)] / beta_c}</code></div>
-    <p>The money metric is derived from the Measure-1 reference-set principle. Under the current empirical specification its direct reference collapses to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through attained bundles.</p>
+     <p>The empirical Mapping-F implementation evaluates the attained bundle against the universally available non-employment reference. Under the current specification, estimated opportunity density therefore affects this money metric through attained outcomes rather than through a direct opportunity-prospect term.</p>
     <p>For a one-nat shortfall, L(j_obs)&nbsp;&minus;&nbsp;L(o)&nbsp;=&nbsp;&minus;1, W&nbsp;=&nbsp;C_obs&nbsp;&times;&nbsp;exp(&minus;1/beta_c)&nbsp;&lt;&nbsp;C_obs. Current nonworkers: W=C. Current workers: W&lt;C under the maintained empirical domain.</p>'''))
     sections.append(("decomposition", "The decomposition", f'''<div class=notice><strong>Preliminary structural decomposition of well-being inequality (P/A/B).</strong> This is a bounded three-factor decomposition of a model-simulated distribution of money-metric well-being, presented ahead of the final decomposition architecture. Monte Carlo ranges quoted anywhere in this section are numerical simulation variation, never confidence intervals.</div>
     <p class=lead>Using the accepted model and the already-priced estimation panel &mdash; no re-estimation, no new pricing &mdash; each household's attained bundle is simulated under eight counterfactual environments, and the dwt-weighted Gini of money-metric well-being W1_F is measured in each. An exact three-factor Shapley allocation splits &Delta;I&nbsp;=&nbsp;I(actual)&nbsp;&minus;&nbsp;I(PAB) across <strong>P&nbsp;=&nbsp;systematic utility heterogeneity</strong>, <strong>A&nbsp;=&nbsp;local geographic/temporal access shifters (region, urban/rural, year)</strong> and <strong>B&nbsp;=&nbsp;earning opportunities</strong>. Personal occupation access, hours-band access and node-level alternative characteristics remain fixed.</p>
-    <p>In a preliminary three-factor structural exercise that holds household resources, needs and composition fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and earning opportunities changes money-metric well-being inequality by 1.8&ndash;9.9% of the baseline Gini, depending on household type and reporting scale. Within the Shapley allocation of that movable component, earning-opportunity heterogeneity has a larger contribution than the coarse geographic/temporal access channel in both samples and both reporting conventions. The preference contribution is not sign-robust to equivalisation.</p>
+    <p>In a preliminary three-factor structural exercise that holds household resources, needs and composition fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and earning opportunities changes money-metric well-being inequality by 1.8&ndash;9.9% of the baseline Gini, depending on household type and reporting scale. This percentage is the change generated by the declared restricted P/A/B game. It is not an estimate of the total fraction of inequality caused by unequal job opportunities. Within the Shapley allocation of that movable component, earning-opportunity heterogeneity has a larger contribution than the coarse geographic/temporal access channel in both samples and both reporting conventions. The preference contribution is not sign-robust to equivalisation.</p>
+    <p>The preliminary attainment exercise is evaluated on the already-priced estimation panel. That panel sparsely represents the lower part of the structural hours support. A separate integration audit shows substantial structural mass in that region. The direct importance of this limitation for the current attained-bundle decomposition has not been fully quantified, so the result remains explicitly preliminary.</p>
     <p>These are preliminary model-based accounting results, not causal estimates and not the final decomposition of total well-being inequality.</p>
     <p>The decomposition is bounded by design because household resources, needs and composition are held fixed. Within that bounded game, equalising P/A/B changes the Gini by 1.8&ndash;9.9% of its baseline level, depending on sample and reporting scale. Sex-specific parameter differences also remain in the residual I(PAB) and are not attributed to P, A or B.</p>
     <p>Dispersion in consumption is quantitatively large relative to dispersion in log well-being: Var(log C) is roughly 100&ndash;127% of Var(log W), with the excess offset by a large negative covariance between consumption and the leisure valuation. DECOMP-2 holds household resources, needs and composition fixed, leaving important sources of dispersion outside the P/A/B allocation.</p>
@@ -574,6 +609,9 @@ def build(nor):
     <article><h3>Holds across an independent second simulation run</h3><p>Every coalition Gini level and every Shapley share reproduces closely under an independent second simulation seed, and every sign &mdash; including the sign reversal of P between scales &mdash; agrees across both runs.</p></article>
     <article class=warn><h3>Does not hold</h3><p>{d2_phi_note}</p></article>
     <article class=warn><h3>Scope of the preliminary decomposition</h3><p>The decomposition is bounded by design because household resources, needs and composition are held fixed. Within that bounded game, equalising P/A/B changes the Gini by 1.8&ndash;9.9% of its baseline level, depending on sample and reporting scale. Sex-specific parameter differences are likewise not attributed to P, A or B. The estimation panel used to simulate attainment carries the household's observed choice as an anchor node in every coalition; this is a structural feature of reusing an estimation frame as a welfare panel, tested and found small in its consequences here, but not yet replaced by a purpose-built non-anchored support.</p></article>
+    <article class=warn><h3>Short-hours support</h3><p>The preliminary attainment exercise is evaluated on the already-priced estimation panel. That panel sparsely represents the lower part of the structural hours support. A separate integration audit shows substantial structural mass in that region. The direct importance of this limitation for the current attained-bundle decomposition has not been fully quantified, so the result remains explicitly preliminary.</p></article>
+    <article class=warn><h3>Benchmark input defect</h3><p>RUM-A used a native-panel hours-density width that differs from the record-model width. Its additive log-density shift cancels from the conditional likelihood, leaving estimates, standard errors and criterion comparisons unchanged; RUM-B does not read those rows. Absolute RUM-A opportunity-mass metadata remain a disclosed limitation, and both benchmark population-fit moments have been corrected.</p></article>
+    <article class=warn><h3>Distinct ex-ante metric</h3><p>W_EA_flat is definition-only and numerically blocked. Under the primary full-environment domain, non-positive-consumption states contribute zero to the actual functional through the limiting rule and remain in the flat reference with common consumption. No numerical result is reported.</p></article>
     <article class=warn><h3>Wage elasticities</h3><p>Omitted. If asked: a valid gross-wage perturbation requires new tax-benefit repricing over the affected job alternatives, and the current priced support does not contain that counterfactual. No approximate or mock elasticity figure is reported.</p></article></div>
     '''))
 
