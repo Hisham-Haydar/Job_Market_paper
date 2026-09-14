@@ -1,0 +1,104 @@
+{
+  "release": "V8-READER",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "reader-language and structure",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v8_reader_gates.py"
+      ],
+      "output_tail": "READER GATES PASS: 18 checks, 0 failures\n"
+    },
+    {
+      "gate": "number-to-source",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v8_numbers_against_source.py"
+      ],
+      "output_tail": "NUMBER-TO-SOURCE PASS: 14 checks, 0 failures\n"
+    },
+    {
+      "gate": "offline HTML render",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "check_v8_render.py"
+      ],
+      "output_tail": "PASS: report_images\nPASS: report_math\nPASS: report_javascript\nPASS: report_provenance_collapsed\nPASS: report_viewport\nPASS: gallery_images\nPASS: gallery_captions\nPASS: gallery_provenance_collapsed\nPASS: gallery_javascript\nPASS: gallery_viewport\ntemporary screenshots captured for visual inspection\n"
+    },
+    {
+      "gate": "V7 decision-suite regression",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v7_ruling_gates.py"
+      ],
+      "output_tail": "G1 PASS: S11 evaluation uses S11/S10 indicators (12 checks)\nG2 PASS: POSFIT-dependent objects regenerated (20 checks)\nG3 PASS: Population-fit moments regenerated (7 checks)\nG4 PASS: Adequacy and four-group adjudication rerun mechanically (21 checks)\nG5 PASS: Near-FT claim retired and 37-hour finding installed (18 checks)\nG6 PASS: DECOMP-2 no-dependency verification (4 checks)\nG7 PASS: All seminar-facing surfaces rebuilt (17 checks)\nG8 PASS: Stale text and rendered assets removed (9 checks)\nG9 PASS: W1_F, DECOMP-2, WEA, and limitations wording (11 checks)\nOVERALL PASS\n"
+    },
+    {
+      "gate": "V7 number-lineage regression",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v7_numbers_against_source.py"
+      ],
+      "output_tail": "NUMBER-TO-SOURCE PASS: 19 claim families, 7 surfaces, 0 failures\n"
+    },
+    {
+      "gate": "preserved gallery regression",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/results_gallery_build/verify.py"
+      ],
+      "output_tail": "PASS: self_contained\nPASS: nine_sections\nPASS: captions_complete\nPASS: current_samples\nPASS: no_internal_paths_hashes_labels\nPASS: intervals_separate\nPASS: no_mae_headline\nPASS: final_diagnostic_surface\nPASS: node_language_exact\nPASS: registry_present\nPASS: no_retired_welfare_generator_paths\nPASS: zero_retired_welfare_content_signatures\nPASS: no_four_factor_decomposition\nPASS: section06_accepted_formula\nPASS: section06_only_accepted_construction\nPASS: welfare_reference_summary_M7\nPASS: corrected_fit_ruling\nPASS: decomp_caveat_exact\nPASS: short_hours_exact\nPASS: wea_definition_only\nPASS: welfare_worked_example_M8\nPASS: variance_language_M4\nPASS: access_definition_M5\nPASS: decomp_figure_language_M4_M5\nPASS: decomp_figures_embedded_from_current_inputs\nPASS: no_retired_lineage_path_reads\n"
+    },
+    {
+      "gate": "Python source compilation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "py_compile",
+        "reports/research_story_build/build_v8.py",
+        "reports/research_story_build/v8_sections.py",
+        "reports/research_story_build/v8_render_inputs.py",
+        "reports/results_gallery_build/build_v8.py",
+        "reports/check_v8_reader_gates.py",
+        "reports/check_v8_numbers_against_source.py"
+      ],
+      "output_tail": ""
+    },
+    {
+      "gate": "V7/V8 version separation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "both versioned report files exist"
+    },
+    {
+      "gate": "editable source present",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "section source and generated Markdown exist"
+    },
+    {
+      "gate": "reader-facing gallery present",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "versioned V8 gallery exists"
+    }
+  ]
+}

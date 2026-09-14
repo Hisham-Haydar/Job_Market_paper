@@ -1,0 +1,97 @@
+{
+  "gate": "V8 reader-facing release",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "seven-part economics sequence",
+      "evidence": "V8 main-section headings",
+      "status": "PASS"
+    },
+    {
+      "check": "authorised abstract with 1.8\u20139.9%",
+      "evidence": "section A paragraph, verbatim after whitespace normalization",
+      "status": "PASS"
+    },
+    {
+      "check": "one-paragraph ex-ante section",
+      "evidence": "section E paragraph; no historical percentage",
+      "status": "PASS"
+    },
+    {
+      "check": "J/H formulae and domains confined to provenance",
+      "evidence": "reader-facing report text",
+      "status": "PASS"
+    },
+    {
+      "check": "banned implementation vocabulary absent from reader-facing report",
+      "evidence": "term-by-term audit",
+      "status": "PASS"
+    },
+    {
+      "check": "banned implementation vocabulary absent from reader-facing gallery",
+      "evidence": "term-by-term audit",
+      "status": "PASS"
+    },
+    {
+      "check": "household-weight terminology installed",
+      "evidence": "decomposition method and welfare-table caption",
+      "status": "PASS"
+    },
+    {
+      "check": "technical provenance is collapsed on both surfaces",
+      "evidence": "HTML details elements",
+      "status": "PASS"
+    },
+    {
+      "check": "collapsed provenance headings omitted from reader navigation",
+      "evidence": "report table of contents",
+      "status": "PASS"
+    },
+    {
+      "check": "V7 blocks retained wholesale in provenance source",
+      "evidence": "direct source-string containment",
+      "status": "PASS"
+    },
+    {
+      "check": "full decomposition allocation remains in main results",
+      "evidence": "main section 5 numerical table",
+      "status": "PASS"
+    },
+    {
+      "check": "restricted-exercise caveat accompanies decomposition",
+      "evidence": "main section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "corrected predictive-fit disposition retained",
+      "evidence": "main section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "short-hours limitation retained",
+      "evidence": "main section 6",
+      "status": "PASS"
+    },
+    {
+      "check": "required ongoing-work language",
+      "evidence": "status note and main section 6",
+      "status": "PASS"
+    },
+    {
+      "check": "gallery headings and captions are reader-facing",
+      "evidence": "19 figures, 20 captions",
+      "status": "PASS"
+    },
+    {
+      "check": "V7 report and editable sources untouched",
+      "evidence": "git diff over V7 paths",
+      "status": "PASS"
+    },
+    {
+      "check": "no unresolved source tokens",
+      "evidence": "generated editable Markdown",
+      "status": "PASS"
+    }
+  ],
+  "failures": []
+}

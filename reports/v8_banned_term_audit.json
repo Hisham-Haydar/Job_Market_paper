@@ -1,0 +1,221 @@
+{
+  "status": "PASS",
+  "terms": [
+    {
+      "term": "S10",
+      "v7_reader_count": 4,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the estimation or already-priced sample",
+      "status": "PASS"
+    },
+    {
+      "term": "S11",
+      "v7_reader_count": 9,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the preferred specification",
+      "status": "PASS"
+    },
+    {
+      "term": "S12",
+      "v7_reader_count": 1,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the large predictive integration sample",
+      "status": "PASS"
+    },
+    {
+      "term": "POSFIT",
+      "v7_reader_count": 4,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the predictive-fit diagnostics",
+      "status": "PASS"
+    },
+    {
+      "term": "v3b",
+      "v7_reader_count": 4,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the corrected diagnostics",
+      "status": "PASS"
+    },
+    {
+      "term": "DECOMP-2",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the preliminary structural decomposition",
+      "status": "PASS"
+    },
+    {
+      "term": "criterion-A",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the estimation sample",
+      "status": "PASS"
+    },
+    {
+      "term": "Gate 0",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the relevant economic condition",
+      "status": "PASS"
+    },
+    {
+      "term": "anchor",
+      "v7_reader_count": 2,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the observed-job alternative, where economically relevant",
+      "status": "PASS"
+    },
+    {
+      "term": "node",
+      "v7_reader_count": 5,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "integration point or job alternative",
+      "status": "PASS"
+    },
+    {
+      "term": "proposal panel",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the numerical integration sample",
+      "status": "PASS"
+    },
+    {
+      "term": "exact-H",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "pre-pricing numerical validation",
+      "status": "PASS"
+    },
+    {
+      "term": "H-F",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the full opportunity environment with equal consumption across jobs",
+      "status": "PASS"
+    },
+    {
+      "term": "H-D",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the estimated-domain sensitivity",
+      "status": "PASS"
+    },
+    {
+      "term": "H-X",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the disclosed sample-restriction sensitivity",
+      "status": "PASS"
+    },
+    {
+      "term": "NN state",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the neither-partner-works alternative",
+      "status": "PASS"
+    },
+    {
+      "term": "NN pricing state",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "the priced neither-partner-works alternative",
+      "status": "PASS"
+    },
+    {
+      "term": "SHA",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "source provenance in the collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "term": "hash",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "source provenance in the collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "term": "dwt",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "household weights",
+      "status": "PASS"
+    },
+    {
+      "term": "worktree",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "source provenance in the collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "term": "registry",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "numerical source record in the collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "term": "G1-G9",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "validation checks",
+      "status": "PASS"
+    },
+    {
+      "term": "adjudication",
+      "v7_reader_count": 1,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "diagnostic assessment",
+      "status": "PASS"
+    },
+    {
+      "term": "gate",
+      "v7_reader_count": 3,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "numerical-precision standard or validation check",
+      "status": "PASS"
+    },
+    {
+      "term": "mission",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "omitted from reader-facing prose",
+      "status": "PASS"
+    },
+    {
+      "term": "ruling",
+      "v7_reader_count": 0,
+      "v8_report_reader_count": 0,
+      "v8_gallery_reader_count": 0,
+      "replacement": "omitted from reader-facing prose",
+      "status": "PASS"
+    }
+  ]
+}

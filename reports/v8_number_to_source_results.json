@@ -1,0 +1,180 @@
+{
+  "gate": "V8 number-to-source",
+  "status": "PASS",
+  "reader_numeric_tokens": [
+    "+0.0007",
+    "+0.0008",
+    "+0.0009",
+    "+0.0011",
+    "+0.0012",
+    "+0.0013",
+    "+0.0014",
+    "+0.0016",
+    "+0.0017",
+    "+0.0034",
+    "+0.0038",
+    "+0.0040",
+    "+0.0042",
+    "+0.0045",
+    "+0.0049",
+    "+0.0050",
+    "+0.0061",
+    "+0.0062",
+    "+0.0064",
+    "+0.0065",
+    "+0.0069",
+    "+0.0071",
+    "+0.0127",
+    "+0.0128",
+    "+0.0201",
+    "-0.0003",
+    "-0.0004",
+    "-0.0019",
+    "0.0119",
+    "0.0140",
+    "0.1974",
+    "0.2268",
+    "0.2498",
+    "0.2633",
+    "1,165",
+    "1,237",
+    "1,302",
+    "1,311",
+    "1,336",
+    "1,540",
+    "1,588",
+    "1,766",
+    "1.8",
+    "100.0%",
+    "124.0%",
+    "14.6%",
+    "2,063",
+    "2,173",
+    "2,223",
+    "2,245",
+    "2015",
+    "2016",
+    "204",
+    "23.4%",
+    "29.6%",
+    "3.8",
+    "37",
+    "4.4",
+    "4.6%",
+    "5.2",
+    "50",
+    "58.6%",
+    "6.5",
+    "63.5%",
+    "77.4%",
+    "80.0%",
+    "85.7%",
+    "85.9%",
+    "88.1%",
+    "89.8%",
+    "9.9%",
+    "91.2%"
+  ],
+  "novel_numeric_tokens": [],
+  "placeholder_count": 23,
+  "missing_placeholders": [],
+  "claims": [
+    {
+      "claim": "abstract is verbatim from the authorised paragraph",
+      "source": "reader-facing authorisation, section A",
+      "status": "PASS"
+    },
+    {
+      "claim": "ex-ante paragraph is verbatim from the authorised paragraph",
+      "source": "reader-facing authorisation, section E",
+      "status": "PASS"
+    },
+    {
+      "claim": "every reader-facing scalar placeholder resolves",
+      "source": "V8 number registry entries",
+      "status": "PASS"
+    },
+    {
+      "claim": "no new numerical value was introduced into the main prose",
+      "source": "V7 generated source numerical-token inventory",
+      "status": "PASS"
+    },
+    {
+      "claim": "reader-facing welfare table preserves every numerical cell",
+      "source": "V7 attained-bundle welfare table",
+      "status": "PASS"
+    },
+    {
+      "claim": "reader-facing decomposition table preserves every numerical cell",
+      "source": "accepted Shapley allocation table",
+      "status": "PASS"
+    },
+    {
+      "claim": "corrected population-fit deviations resolve on both surfaces",
+      "source": "Band-Fix-2 population moments",
+      "status": "PASS"
+    },
+    {
+      "claim": "reportable women's accuracy values and ranges resolve",
+      "source": "corrected model-simulated prediction ranges",
+      "status": "PASS"
+    },
+    {
+      "claim": "men's extensive accuracy remains withheld",
+      "source": "corrected numerical-precision assessment",
+      "status": "PASS"
+    },
+    {
+      "claim": "four corrected 37-hour gaps resolve",
+      "source": "Band-Fix-2 37-hour observed and predicted cells",
+      "status": "PASS"
+    },
+    {
+      "claim": "attained-bundle and consumption Ginis resolve",
+      "source": "verified attained-bundle welfare registry",
+      "status": "PASS"
+    },
+    {
+      "claim": "restricted-decomposition magnitude resolves",
+      "source": "accepted counterfactual-decomposition record",
+      "status": "PASS"
+    },
+    {
+      "claim": "full numerical allocation is present on both surfaces",
+      "source": "accepted Shapley allocation table",
+      "status": "PASS"
+    },
+    {
+      "claim": "no historical ex-ante percentage is reported",
+      "source": "reader-facing authorisation, section E",
+      "status": "PASS"
+    }
+  ],
+  "sources": {
+    "reader-facing authorisation": {
+      "path": "Job_Market_paper/docs/JMP_preseminar_reader_facing_and_WEA_pricing_authorization_v1.md",
+      "sha256": "d5fb98c82b0a3a1ab708831a278b1c8cb4d34527010916cd94c3f4511b7f33c0"
+    },
+    "corrected prediction ranges": {
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3b/model_simulated_bands.csv",
+      "sha256": "cbc827e76357503265a315bf1945f53eee51c76f41ac4843634abd7bdd7f418e"
+    },
+    "corrected numerical precision": {
+      "path": "MNL_posfit/outputs/positive_fit_diagnostics_v3b/g2_adequacy.csv",
+      "sha256": "304b7af652118d64df9f5862d3c1af42fe91dad642d768487d6bcaf03b7369af"
+    },
+    "corrected population moments": {
+      "path": "MNL_posfit/experiments/JMP_SEMINAR_SPRINT/runs/bandfix2_recompute/new_results_v1.json",
+      "sha256": "e75ff27c6e324e332231f29a60282b742ab6114bd1f4b6f60afea3fa98977d12"
+    },
+    "decomposition record": {
+      "path": "MNL_decomp/outputs/welfare/preseminar_pab_v1/preseminar_pab_record_v1.json",
+      "sha256": "bcbe4b6fc742daa39535d5c3eb03bda0641055a9f5e851b4f53f62fa3e612011"
+    },
+    "V7 numerical registry": {
+      "path": "Job_Market_paper/reports/numbers_of_record_v7.json",
+      "sha256": "d0f22fb2e38ed3097203de12d34bbc3dc686f19b90a1a4ced43467461be40123"
+    }
+  },
+  "failures": []
+}

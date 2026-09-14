@@ -1,19 +1,21 @@
 # Research-story report builders
 
-The current report is `JMP_research_story_report_v6.html`. Its editable prose is
-`v6_sections.py`, which inherits the unchanged structural and diagnostic sections
-from the preserved v5 source and moves the computed decomposition into Appendix D.
-Run `../../../MNL/.venv/Scripts/python.exe build_v6.py`, then compile
-`manuscript/JMP_working_paper_for_seminar_v6.tex` with `latexmk -pdf`.
-`v6_render_inputs.py` resolves complete frozen tables and figures against the v5
-generated Markdown and reads scalar values from the unchanged v5 registry. The
-two new diagnostic values are parsed from `docs/Decomposition_diag_1.txt`.
-No diagnostic regeneration, estimation, pricing or ex-ante calculation runs.
+The current reader-facing report is `JMP_research_story_report_v8.html`. Its
+editable prose is `v8_sections.py`; `story_v8.generated.md` is the resolved
+editable Markdown. Run `../../../MNL/.venv/Scripts/python.exe build_v8.py` from
+this directory. The builder writes only versioned V8 targets and leaves V7
+untouched. `v8_render_inputs.py` reads the corrected V7 numerical evidence and
+adds no estimation, pricing, decomposition or ex-ante computation.
 
-Run `reports/run_report_v6_gates.py` from the repository root for the full current
-release gates. `beamer/build_deck_r6.py all --reuse-assets` compiles the deck and
-rehearsal PDF with existing assets; `beamer/build_rehearsal_script_v6.py` refreshes
-the standalone script from the deck. Source provenance stays in marked blocks.
+The main text follows a seven-part economics narrative. The complete V7 record
+is retained in a collapsed technical-provenance appendix. Build the versioned
+reader-facing gallery with `../../../MNL/.venv/Scripts/python.exe build_v8.py`
+from `reports/results_gallery_build/`. Run
+`reports/run_v8_release_gates.py` from the repository root for the complete V8
+reader-language, number-to-source, offline-render and V7 regression suite.
+
+V6 and V7 remain preserved predecessors. Their builders and release instructions
+below are historical documentation.
 
 The following documentation describes the historical builders.
 
