@@ -770,14 +770,6 @@
     "d2_anchorshare_singles",
     "d2_deltaI_pct_couples_uneq",
     "d2_deltaI_pct_singles_eq",
-    "d2_giniP_couples_eq",
-    "d2_giniP_couples_uneq",
-    "d2_giniP_singles_eq",
-    "d2_giniP_singles_uneq",
-    "d2_shareA_couples_uneq",
-    "d2_shareA_singles_eq",
-    "d2_shareB_couples_eq",
-    "d2_shareB_singles_uneq",
     "d2_varshare_logC_couples",
     "d2_varshare_logC_singles",
     "experience_scale",
@@ -850,10 +842,18 @@
     "d2_giniB_couples_uneq",
     "d2_giniB_singles_eq",
     "d2_giniB_singles_uneq",
+    "d2_giniP_couples_eq",
+    "d2_giniP_couples_uneq",
+    "d2_giniP_singles_eq",
+    "d2_giniP_singles_uneq",
     "d2_shareA_couples_eq",
+    "d2_shareA_couples_uneq",
+    "d2_shareA_singles_eq",
     "d2_shareA_singles_uneq",
+    "d2_shareB_couples_eq",
     "d2_shareB_couples_uneq",
     "d2_shareB_singles_eq",
+    "d2_shareB_singles_uneq",
     "installed_jaxlib",
     "kint_couples",
     "lambda_c_couples",
@@ -3312,103 +3312,6 @@
         "denominator": "workers"
       }
     ],
-    "examples": {
-      "singles": {
-        "selection": "the weighted-median household of this type in the own-preference own-circumstance state",
-        "profile": {
-          "household type": "one adult",
-          "sex of the decider": "man",
-          "age band": "50-54",
-          "education": "medium",
-          "children under 20": 0,
-          "employed": true,
-          "usual weekly hours": 18.0,
-          "delivered hourly wage (EUR/hour)": 13.632479,
-          "equivalence scale": 1.0
-        },
-        "observed_consumption": 1259.1571739911224,
-        "weighted_rank": 0.5002487134463917,
-        "states": {
-          "I00": {
-            "label": "own preferences, own circumstances (baseline)",
-            "W_eur_per_month": 4139.073645420841,
-            "W_equivalized_eur_per_month": 4139.073645420841,
-            "log_J_minus_log_H": 1.54677018118292,
-            "ratio_to_baseline": 1.0
-          },
-          "I10": {
-            "label": "common preferences, own circumstances",
-            "W_eur_per_month": 4129.391851987987,
-            "W_equivalized_eur_per_month": 4129.391851987987,
-            "log_J_minus_log_H": 1.5419957549205956,
-            "ratio_to_baseline": 0.9976608791574499
-          },
-          "I01": {
-            "label": "own preferences, common circumstances",
-            "W_eur_per_month": 3380.1307375750416,
-            "W_equivalized_eur_per_month": 3380.1307375750416,
-            "log_J_minus_log_H": 1.1338095208176469,
-            "ratio_to_baseline": 0.8166394288042117
-          },
-          "I11": {
-            "label": "common preferences, common circumstances",
-            "W_eur_per_month": 3373.2692400237747,
-            "W_equivalized_eur_per_month": 3373.2692400237747,
-            "log_J_minus_log_H": 1.1296667902580249,
-            "ratio_to_baseline": 0.8149816913153274
-          }
-        }
-      },
-      "couples": {
-        "selection": "the weighted-median household of this type in the own-preference own-circumstance state",
-        "profile": {
-          "household type": "couple",
-          "age band, man": "40-44",
-          "age band, woman": "40-44",
-          "education, man": "medium",
-          "education, woman": "high",
-          "children under 20": 2,
-          "both employed": true,
-          "usual weekly hours, man": 35.0,
-          "usual weekly hours, woman": 35.0,
-          "delivered hourly wage, man (EUR/hour)": 14.082417,
-          "delivered hourly wage, woman (EUR/hour)": 17.956043,
-          "equivalence scale": 2.3
-        },
-        "observed_consumption": 3882.201051980013,
-        "weighted_rank": 0.5003003151023089,
-        "states": {
-          "I00": {
-            "label": "own preferences, own circumstances (baseline)",
-            "W_eur_per_month": 1767.3150784633497,
-            "W_equivalized_eur_per_month": 768.3978602014564,
-            "log_J_minus_log_H": -1.8431190976574128,
-            "ratio_to_baseline": 1.0
-          },
-          "I10": {
-            "label": "common preferences, own circumstances",
-            "W_eur_per_month": 1768.4861032876245,
-            "W_equivalized_eur_per_month": 768.907001429402,
-            "log_J_minus_log_H": -1.8417269567698311,
-            "ratio_to_baseline": 1.0006626010486444
-          },
-          "I01": {
-            "label": "own preferences, common circumstances",
-            "W_eur_per_month": 1711.9228686229653,
-            "W_equivalized_eur_per_month": 1711.9228686229653,
-            "log_J_minus_log_H": -1.9100468385492084,
-            "ratio_to_baseline": 0.9686574224848764
-          },
-          "I11": {
-            "label": "common preferences, common circumstances",
-            "W_eur_per_month": 1713.151490650652,
-            "W_equivalized_eur_per_month": 1713.151490650652,
-            "log_J_minus_log_H": -1.9085390056338039,
-            "ratio_to_baseline": 0.9693526137626846
-          }
-        }
-      }
-    },
     "wage_quantile_fit": [
       {
         "sample": "singles",
@@ -3571,60 +3474,6 @@
         "deviation": 2.018352919947045
       }
     ],
-    "w4_corrected": {
-      "singles": {
-        "ratio": {
-          "mean": 0.976728250809625,
-          "p10": 0.9493773646756574,
-          "median": 0.9843149942062587,
-          "p90": 0.9945970268037536,
-          "min": 0.9168998290717586,
-          "max": 0.9989915889269049
-        },
-        "gap_nats": {
-          "mean": 0.048358958312041345,
-          "p10": 0.011045078892235488,
-          "median": 0.03223095884647678,
-          "p90": 0.10579190307851602,
-          "min": 0.002056917030155425,
-          "max": 0.1768743595324489
-        },
-        "w4_eur": {
-          "mean": 4235.131115143153,
-          "p10": 2615.184723183338,
-          "median": 4040.1020217250393,
-          "p90": 5879.617763096142,
-          "min": 1154.399477644159,
-          "max": 20002.86931376478
-        }
-      },
-      "couples": {
-        "ratio": {
-          "mean": 0.6186650975095511,
-          "p10": 0.5770805794905777,
-          "median": 0.6241603055393485,
-          "p90": 0.6520810798495784,
-          "min": 0.5210826836853262,
-          "max": 0.7171287884405331
-        },
-        "gap_nats": {
-          "mean": 1.0116266860073395,
-          "p10": 0.89866693857484,
-          "median": 0.9906417368632855,
-          "p90": 1.1554698343347203,
-          "min": 0.69882163873039,
-          "max": 1.3699991015433888
-        },
-        "w4_eur": {
-          "mean": 1139.9716658945674,
-          "p10": 803.7821455776362,
-          "median": 1100.2130215793095,
-          "p90": 1461.85683668397,
-          "min": 494.71525664772577,
-          "max": 6414.096383050718
-        }
-      }
-    },
     "opportunity_examples": {
       "singles": {
         "access": [

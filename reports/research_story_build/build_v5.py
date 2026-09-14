@@ -20,6 +20,7 @@ import importlib.metadata
 import json
 import re
 import subprocess
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -36,6 +37,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 MNL = ROOT.parent / 'MNL'
 SPRINT = MNL / 'experiments/JMP_SEMINAR_SPRINT'
+sys.path.insert(0, str(SPRINT))
+import final_diagnostics_surface_v1 as final_surface  # noqa: E402
+
 S11 = SPRINT / 'runs/s11_welfare_specs_of_record'
 S12 = SPRINT / 'runs/s12_welfare_record'
 V5 = SPRINT / 'runs/v5_evidence'
@@ -488,6 +492,41 @@ TABLES['descriptives'] = table(
     'predictions.',
     ['Measure', 'Single-adult decider', 'Couple man', 'Couple woman'], _rows)
 
+# ---- T2b: observed raw LES (LES-FIX, corrected for couples) --------------- #
+# The couples design frame's own les_m/les_f columns are a derived
+# employed/not-employed {3,7} recode that erases raw code 5 (Unemployed);
+# raw LES is recovered by joining idperson_m/idperson_f back to the raw
+# FR 2016 source. See MNL/docs/corr/JMP_observed_activity_LES_v2_audit.md.
+_LES = pd.read_csv(MNL / 'outputs/obs_activity_v2/JMP_observed_activity_LES_v2.csv')
+_LES_GROUP_ORDER = ['single_men', 'single_women', 'couple_men', 'couple_women']
+_LES_GROUP_LABEL = {'single_men': 'Single men', 'single_women': 'Single women',
+                     'couple_men': 'Men in couples', 'couple_women': 'Women in couples'}
+_rows = []
+_lesA = _LES[_LES['figure'] == 'A']
+for g in _LES_GROUP_ORDER:
+    gdf = _lesA[_lesA['group'] == g].set_index('les_code')
+    n_total = int(gdf['n_group_total_unweighted'].iloc[0])
+    cells = []
+    for code in (3, 5, 7):
+        r = gdf.loc[code]
+        cells.append('%.1f%% (n=%d)' % (100 * r['weighted_share'], int(r['n_unweighted'])))
+    _rows.append([_LES_GROUP_LABEL[g]] + cells + [format(n_total, ',d')])
+TABLES['observed_les'] = table(
+    'v5_observed_les',
+    'Table: Observed raw labour-force status (LES), weighted shares with '
+    'unweighted counts in parentheses, by sex and household type, on the '
+    'final accepted estimation samples. For couples this uses raw '
+    'LES recovered by joining idperson_m/idperson_f to the raw FR 2016 '
+    'source, not the design frame’s own les_m/les_f columns, which are a '
+    'derived employed/not-employed recode that omits raw code 5 '
+    '(Unemployed) entirely. **The structural model does not distinguish '
+    'unemployment from inactivity: both LES 5 and LES 7 map to the single '
+    'nonwork alternative.** This table is a descriptive correction to how '
+    'the observed data is displayed, not a change to the model or the '
+    'estimation sample.',
+    ['Group', 'Employee (LES 3)', 'Unemployed (LES 5)', 'Inactive (LES 7)', 'N'],
+    _rows)
+
 # ---- T3: occupation mapping ----------------------------------------------- #
 TABLES['occmap'] = table(
     'v5_occupation_map',
@@ -783,8 +822,8 @@ for _s, _pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
         _scale = D2_SCALE[_sk]
         for _f, _lab in [('P', 'Preferences (systematic utility '
                           'heterogeneity)'),
-                         ('A', 'Local labour-market access (region, '
-                          'urban/rural, year)'),
+                         ('A', 'Local access shifters '
+                               '(region, urban/rural, year)'),
                          ('B', 'Earning opportunities')]:
             row = d2_shapley_row(_s, _sk, _f)
             cell = [_pop, _scale, _f, _lab,
@@ -855,9 +894,10 @@ TABLES['operators'] = table(
       'reference-sex leisure block. Couples: the medoid spouse arguments, with '
       'own spouse coefficients retained',
       'Access and wage pathways of the same characteristics'],
-     [r'$T_A$ local labour-market access',
-      'The arguments of the employment index and the occupation access table',
-      'Preferences, wage location; sex-specific occupation coefficients'],
+     [r'$T_A$ local geographic/temporal access shifters',
+      'Region, urban/rural and year arguments of the employment index',
+      'Preferences, wage location, group unemployment, hours-band access, '
+      'personal occupation access and node-level alternative characteristics'],
      [r'$T_B$ earning opportunities',
       'The arguments of the offered-wage location: education shares and '
       'experience moments, with squares recomputed rather than averaged',
@@ -950,6 +990,12 @@ def xfig(key, stem, caption):
     CAPTIONS[key] = (stem, caption)
 
 
+def acceptedfig(key, stem, caption, data):
+    """Register a reader rendering or accepted committed PNG without analysis."""
+    (FIG / (stem + '.png')).write_bytes(data)
+    CAPTIONS[key] = (stem, caption)
+
+
 lfig('theory', 'theory_w1',
      r'**Own-set equal-consumption equivalents.** The theoretical W1 construction '
      r'from the companion theory paper. Individuals with preferences '
@@ -974,11 +1020,42 @@ mfig('resources', 'figV09_resources_panel',
 xfig('fitband', 'fitext_band_v1',
      'Weighted extensive-margin accuracy against the model’s own '
      'simulated 95 per cent band (500 outcome vectors at the fitted '
-     'estimates), for the three groups that clear the pre-registered '
+     'estimates), restricted to groups whose statistic clears the pre-registered '
      'numerical-adequacy gate; single men do not clear it and are withheld. '
      'Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit '
      '96693269), same extensive-margin numbers as v2b, reframed against the '
      'simulated band.')
+acceptedfig(
+    'nodeconvergence',
+    'fig_posfit_predictive_integration_node_convergence_v1',
+    'predictive/integration-node convergence. Weighted predicted participation '
+    'over the accepted fixed-seed integration-node subsets; the shaded area is '
+    'the numerical 10--90 per cent envelope, and observed participation is the '
+    'horizontal reference line.',
+    final_surface.node_figure_png(),
+)
+acceptedfig(
+    'ws4lambda',
+    'ws4_sectionC_lambda_v1',
+    'Accepted WS4 leisure-normalisation evidence. Analytical reparameterisation '
+    '(zero re-estimation) is distinguished from the subsequent independent '
+    're-estimation of the four non-baseline normalisers.',
+    final_surface.git_blob(
+        final_surface.MNL_REPO, final_surface.WS4_REV,
+        f'{final_surface.WS4_OUT}/ws4_sectionC_lambda_v1.png',
+    ),
+)
+acceptedfig(
+    'ws4time',
+    'ws4_sectionC_T_v1',
+    'Accepted WS4 time-endowment evidence. T=75 and T=90 are independent '
+    're-estimations; T=80 is the certified baseline used as-is and was not '
+    're-estimated.',
+    final_surface.git_blob(
+        final_surface.MNL_REPO, final_surface.WS4_REV,
+        f'{final_surface.WS4_OUT}/ws4_sectionC_T_v1.png',
+    ),
+)
 mfig('fit', 'figV06_fit_by_margin',
      'Observed against model population shares, margin by margin, for both '
      'estimated specifications. Model shares are population predictions '
@@ -1418,6 +1495,15 @@ if ('discussion_tables' not in _existing_register
         text=True, encoding='utf-8')
     _existing_register = json.loads(_baseline)
 
+_gallery_keys = {
+    'registered_for', 'sample_funnel', 'descriptives', 'observed_margins',
+    'occupation', 'coefficients', 'fit', 'wage_quantile_fit',
+    'opportunity_examples',
+}
+_current_gallery = _existing_register.get('gallery') or {}
+_current_gallery = {k: v for k, v in _current_gallery.items()
+                    if k in _gallery_keys}
+
 REGOUT = {'build_date': today,
           'model_of_record': 'S11 specifications of record: tau = 1, '
                              'theta_c = 0, beta_c estimated; welfare at S12 on '
@@ -1433,7 +1519,10 @@ REGOUT = {'build_date': today,
           # the build raises "unregistered number" and does not reach here).
           'entries': dict(REG), 'used_keys': sorted(USED),
           'unused_keys': sorted(set(REG) - USED),
-          'gallery': _existing_register.get('gallery'),
+          # Preserve only the fields consumed by the rebuilt current gallery.
+          # In particular, never carry the retired I00/I10/I01/I11 examples
+          # back into its registry when this shared builder is rerun.
+          'gallery': _current_gallery,
           'discussion_tables': _existing_register['discussion_tables']}
 (ROOT / 'reports/numbers_of_record_v5.json').write_text(
     json.dumps(REGOUT, indent=2, ensure_ascii=False), encoding='utf-8')
