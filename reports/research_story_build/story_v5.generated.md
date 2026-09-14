@@ -6,7 +6,7 @@ Build date: 14 September 2026.
 
 ## Abstract
 
-We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Attributing the resulting inequality to preferences and circumstances in full requires a counterfactual-attainment estimand that is still under design; ahead of it, we introduce and implement a bounded, preliminary structural exercise, holding household resources, needs and composition fixed and simulating each household's attained well-being under counterfactual equalizations of preferences, local labour-market access and earning opportunities, with the interactions allocated by an exact three-player Shapley value. The movable inequality this bounded exercise reaches, $\Delta I$, is a small share of baseline inequality by construction, -1.8 to -9.9 per cent across samples and scales, because resources, needs and composition are held fixed throughout and those account for the large majority of the variance of log well-being. Within that bounded movable share, earning opportunities dominate local labour-market access for both single-adult and couple households, at every scale we report; the sign of the preference contribution is not robust between the unequivalised and equivalised reporting conventions in either sample, so we make no directional claim about it. This is a preliminary, model-based reading, not the paper's final decomposition architecture.
+We study how unequal job opportunities contribute to inequality in money-metric well-being. Our normative reference retains each household's own preferences and its own set of reachable jobs, while assigning the same disposable-consumption level to every job in that reference set; the money metric is the level at which the household's ex-ante evaluation of the reference matches the evaluation of the prospect it actually faces. We model labour supply as a choice among latent jobs and estimate preferences, job access and earning opportunities jointly on French EU-SILC data, with EUROMOD computing taxes, benefits and disposable income at every alternative work arrangement. Attributing the resulting inequality to preferences and circumstances in full requires a counterfactual-attainment estimand that is still under design; ahead of it, we introduce and implement a bounded, preliminary structural exercise, holding household resources, needs and composition fixed and simulating each household's attained well-being under counterfactual equalizations of preferences, local labour-market access and earning opportunities, with the interactions allocated by an exact three-player Shapley value. The movable inequality this bounded exercise reaches, $\Delta I$, is a small share of baseline inequality by construction, 1.8 to 9.9 per cent across samples and scales, because resources, needs and composition are held fixed throughout and those account for the large majority of the variance of log well-being. Within that bounded movable share, earning opportunities dominate local labour-market access for both single-adult and couple households, at every scale we report; the sign of the preference contribution is not robust between the unequivalised and equivalised reporting conventions in either sample, so we make no directional claim about it. The quantitative opportunity decomposition is preliminary and work in progress: this is a bounded, model-based reading, not the paper's final decomposition architecture.
 
 *Preliminary results throughout. The three-factor preferences/access/earnings decomposition in Section 5 is a bounded exercise ahead of the paper’s final decomposition architecture, which requires a counterfactual-attainment estimand still under design; it is reported with Monte Carlo simulation ranges and an independent second-seed check, never confidence intervals, and household resources, needs and composition are held fixed rather than decomposed.*
 
@@ -36,7 +36,7 @@ One comparative static is worth stating plainly at the outset, because it is eas
 
 The normative half then yields, for each household, an equivalent flat consumption level. Attributing its inequality to preferences and to circumstances in full requires a counterfactual-attainment estimand for the bundle a household would attain under a counterfactual environment, and that estimand is still under design. Ahead of it we report a bounded, preliminary exercise: we define three structural equalization operators, one for preferences, one for local labour-market access and one for earning opportunities, holding household resources, needs and composition fixed throughout; we recompute every household's welfare level, and the inequality of the resulting distribution, under each of the eight coalitions of those three operators, reusing the model's own already-priced estimation panel with no re-estimation and no new pricing; and we allocate the interactions among them with an exact three-player Shapley value. The allocation is exhaustive by construction and the closure is verified numerically rather than imposed.
 
-**What we find.** The movable inequality this bounded exercise reaches, $\Delta I=I(\text{actual})-I(\text{P,A,B equalized})$, is small by construction: -1.8 to -9.9 per cent of baseline inequality across samples and reporting scales. That is a property of the design, not evidence that opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for 127 to 100 per cent of the variance of log well-being. Within the movable share, earning opportunities dominate local labour-market access for both household types, at every scale we report, from 58.6 per cent of $\Delta I$ (single adults, unequivalised) to 124.0 per cent (couples, equivalised); local labour-market access is second and smaller throughout. We report that ordering as a finding and do not attach a mechanism to it.
+**What we find.** The movable inequality this bounded exercise reaches, $\Delta I=I(\text{actual})-I(\text{P,A,B equalized})$, is small by construction: 1.8 to 9.9 per cent of baseline inequality across samples and reporting scales. That is a property of the design, not evidence that opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for 100 to 127 per cent of the variance of log well-being. Within the movable share, earning opportunities dominate local labour-market access for both household types, at every scale we report, from 58.6 per cent of $\Delta I$ (single adults, unequivalised) to 124.0 per cent (couples, equivalised); local labour-market access is second and smaller throughout. We report that ordering as a finding and do not attach a mechanism to it.
 
 Two qualifications belong with the headline. First, the preference contribution's sign is not robust between the unequivalised and equivalised reporting conventions, in either sample: we therefore make no directional claim about it, only about the ordering of access against earnings. Second, an allocated share is an average of marginal contributions over coalition orders. It is not the reduction that equalizing that factor alone would achieve; Section 5 reports both and explains why they can differ, and reports the exact scale at which excluding the model's anchored-attainment arm moves $\Delta I$, as a robustness check on the design rather than on the estimates. This is a bounded, preliminary reading, reported ahead of the paper's final decomposition architecture, and it should be read as such throughout.
 
@@ -50,9 +50,9 @@ The normative half draws on the literature that refuses to resolve interpersonal
 
 The closest decomposition precedents are two. @muehlhan2023 combines a structural labour-supply model with involuntary-unemployment restrictions and a Shapley attribution, decomposing the change in German household *income* inequality into temporal factors and binary restrictions. @creedyherault2011, in the section that constructs money-metric distributions under alternative policy and population states, decompose a change in inequality and social welfare by averaging over the two orders in which policy and population can be changed; theirs is the closest money-metric welfare-inequality decomposition we know. Both are decompositions of a *change* between two situations, with policy, population or temporal factors as the factors. Ours is a decomposition of a cross-sectional *level* of well-being inequality, with the factors defined as structural operators inside an estimated job-choice model: what a household prefers, which jobs it can reach, what those jobs pay, and what its budget and needs are. The wider behavioural-simulation decomposition tradition, @bargain2012 and @jessen2019, decomposes income changes in the same spirit.
 
-The allocation rule is inherited outright. @shorrocks1982 states the accounting requirements a decomposition should satisfy; @shorrocks2013 places the Shapley value at the centre of distributional decomposition; @owen1977 supplies the value for games with a priori unions, which is what a grouped allocation requires; @sastretrannoy2002 documents how much the answer can depend on how the exercise is set up; and @audoly2025 give the contemporary practitioner's account of the grouped nonlinear case we use. We claim no new allocation principle. Complete recomputation of every coalition, rather than a linear approximation, likewise has precedents and is better described as methodological discipline than as a contribution.
+The allocation rule is inherited outright. @shorrocks1982 states the accounting requirements a decomposition should satisfy; @shorrocks2013 places the Shapley value at the centre of distributional decomposition; @sastretrannoy2002 documents how much the answer can depend on how the exercise is set up. The preliminary three-operator exercise of Section 5 needs no grouping and uses the plain Shapley value on a three-player game; @owen1977's extension to games with a priori unions, and the grouped nonlinear practitioner's account of @audoly2025, are the tools an earlier, now-withdrawn four-operator version of this exercise required, cited here for completeness rather than as machinery the current preliminary exercise uses. We claim no new allocation principle. Complete recomputation of every coalition, rather than a linear approximation, likewise has precedents and is better described as methodological discipline than as a contribution.
 
-What is new, to our knowledge, is the conjunction: a random-utility random-opportunity model of job choice, an opportunity-sensitive money-metric welfare level built on the own-set equal-consumption reference, a structural preference/access/earnings/resources game whose operators are defined inside that estimated model, complete recomputation of welfare and inequality under every coalition, and a grouped allocation of the result. The application-specific methodological contribution is the game and its counterfactual operators. The cooperative-game allocation rule is inherited.
+What is new, to our knowledge, is the conjunction: a random-utility random-opportunity model of job choice, an opportunity-sensitive money-metric welfare level built on the own-set equal-consumption reference, and a bounded, preliminary structural preference/access/earnings game whose operators are defined inside that estimated model, with complete recomputation of welfare and inequality under every coalition. The application-specific methodological contribution is the game and its counterfactual operators, reported as preliminary and work in progress pending the counterfactual-attainment estimand of Section 4. The cooperative-game allocation rule is inherited.
 
 **Roadmap.** Section 2 describes the data and the household budget construction. Section 3 presents the latent-jobs model, its identifying restrictions and its estimation. Section 4 defines the money-metric welfare measure and the structural decomposition. Section 5 reports the behavioural and welfare results for both household types. Section 6 examines sensitivity and states the limitations. Section 7 concludes.
 
@@ -231,9 +231,22 @@ Standard errors are cluster-robust on the household. Optimization uses five star
 
 # 4. Money-metric well-being and structural inequality decomposition
 
-## The measure
+## The verified Mapping-F $W^1_F$ construction
 
-Fix a household $i$ and a coalition state $S$, which determines the utility index $L_{i,S}$, the normalized opportunity density $\widehat g_{i,S}$ and the priced consumption $C_{i,S}$ at every package. Define the attained ex-ante value and the reference mass
+The theoretical own-set equal-consumption criterion above (Measure 1) compares the household's attained situation to the best uniform-pay alternative in its own reachable set, $u_i(z_i)=\max_{j\in A_i}u_i(W_i,j)$. On the current empirical domain that theoretical object coincides with a much simpler empirical construction, Mapping F: for every household in both samples, staying at home maximises the non-consumption index, so the maximisation over the reachable set collapses to a single evaluation at the household's own observed job against the household's own home state. Under the log-consumption specification of Section 3 this gives the closed form
+
+$$
+\boxed{\;W^1_{i,F}=C_i^{\mathrm{obs}}\exp\!\left[\frac{L_i(j_i^{\mathrm{obs}})-L_i(o)}{\beta_c}\right],\;}
+$$
+
+where $C_i^{\mathrm{obs}}$ is the household's own priced disposable consumption at its observed job, $L_i(j_i^{\mathrm{obs}})$ and $L_i(o)$ are the non-consumption index at the observed job and at the home state, and $\beta_c$ is the estimated consumption weight. Four objects do not enter this construction at all: the opportunity density $\widehat g$, the numerical proposal $q$, the behavioural shock, and any latent-set intensity parameter. This is an empirical-domain coincidence, not a general theorem: it depends on log consumption and on non-employment being behaviourally available to every household, and it is stated as such (Deputy ruling R1, `JMP_W1_fork_ruling_v1.md`).
+
+The construction is independently verified. A reconstruction that does not import the production code reproduces every pre-registered check -- non-workers equal their own observed consumption exactly, workers strictly below it, no route by which $\widehat g$, $q$, the shock, or an intensity parameter can enter -- and reproduces the committed sample aggregates for both populations to machine precision (`baseline_f1_verification_v1.md`, MNL commit `6048c9f7`, independently verified `b5550af5`).
+
+
+## The ex-ante estimation-based measure
+
+The behavioural model of Section 3 also supports a second, model-integrated construction, used in the preliminary decomposition of Section 5: fix a household $i$ and a coalition state $S$, which determines the utility index $L_{i,S}$, the normalized opportunity density $\widehat g_{i,S}$ and the priced consumption $C_{i,S}$ at every package. Define the attained ex-ante value and the reference mass
 
 $$
 J_{i,S}=\int e^{L_{i,S}(j)}\left(\frac{C_{i,S}(j)}{\lambda_c}\right)^{\beta_c}\widehat g_{i,S}(j)\,d\nu(j),
@@ -272,9 +285,10 @@ Three quantities are easy to conflate and are distinct. The reference probabilit
 
 $\beta_c$ is simultaneously the order of this power mean, the coefficient on log consumption, and the elasticity of an alternative's implied consumption-dependent weight $C_j^{\beta_c}$ in its own consumption. This elasticity concerns the power-moment contribution, holding $r_j$ fixed, rather than the normalized reference probability. It is not the consumption curvature, which is exactly zero here, and it is not an inequality-aversion parameter across households, which belongs to the index applied in Section 5 and not to the household's own aggregator.
 
+
 ## What the reference does and does not do to pay
 
-Under the stated factorization the reference is invariant to the conditional wage density: that density integrates to one on its support and the non-consumption index has no wage argument, so replacing it leaves $H_{i}$ unchanged exactly, by construction of the formula above -- not as a numerical approximation. The accepted literal reference construction (Mapping F, Deputy ruling R1) makes the same point even more directly: its home reference is a fixed singleton state whose systematic utility carries no opportunity-density, proposal, behavioural-shock or intensity argument, so none of those four objects enters it at all.
+Neither construction's reference depends on pay. The accepted literal construction's home reference (Mapping F, Deputy ruling R1) is a fixed singleton state whose systematic utility carries no opportunity-density, proposal, behavioural-shock or intensity argument, so none of those four objects enters it at all. The ex-ante estimation-based reference above has the same property for a different reason: the wage density integrates to one on its support and the non-consumption index has no wage argument, so replacing it leaves the reference mass unchanged exactly, by construction -- not as a numerical approximation.
 
 Changes in earning opportunities nevertheless change the measure, because they change what the household attains, not the reference it is compared against. The correct statement is therefore narrow and we make only it: *the reference is directly pay-neutral, and earning opportunities reach the measure through the attained evaluation.* We do not report a magnitude for that attained-side channel here: quantifying it under a counterfactual equalization of earning opportunities is a decomposition question, and Section 5 reports only the bounded, preliminary exercise available for that. A qualitative channel existing does not establish that the deterministic independence-of-pay axiom fails for this stochastic functional. That would require fixing the primitives the axiom holds fixed and proving the property, which we have not done and do not claim.
 
@@ -436,7 +450,16 @@ The euro value of one natural unit of the index is proportional rather than fixe
 
 ## Fit
 
-The fit reported here is a population prediction, computed by integrating the estimated model over the opportunity distribution and the taste shocks. It is not a sampled-menu choice probability and it is not an in-sample fitted value.
+The fit reported here is a population prediction, computed by integrating the estimated model over the opportunity distribution and the taste shocks. It is not a sampled-menu choice probability and it is not an in-sample fitted value. We report it band-referenced: each group's weighted extensive-margin accuracy is compared not to a 100 per cent target -- a correctly specified stochastic-choice model does not attain one -- but to the 95 per cent band that model itself would produce by chance, from 500 outcome vectors simulated at the fitted estimates.
+
+
+![Weighted extensive-margin accuracy against the model’s own simulated 95 per cent band (500 outcome vectors at the fitted estimates), for the three groups that clear the pre-registered numerical-adequacy gate; single men do not clear it and are withheld. Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit 96693269), same extensive-margin numbers as v2b, reframed against the simulated band.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fitext_band_v1.png){width=95%}
+
+
+Three of the four groups clear a pre-registered numerical-adequacy gate (Monte Carlo simulation error small relative to that same sampling variation) and are shown; the fourth, single men, does not and is withheld rather than shown with a caveat, because a statistic the quadrature cannot resolve is not a weaker finding, it is not a finding. Within the three shown, observed accuracy sits at or above the band for single women and coupled men, and inside it for coupled women. Section 6 records where the fuller diagnostic set -- calibration by predicted decile, the joint hours/occupation confusion structure, and the group withheld here -- still has open questions.
+
+
+### The full margin-by-margin comparison
 
 
 ![Observed against model population shares, margin by margin, for both estimated specifications. Model shares are population predictions computed by direct integration over the estimated opportunity distribution, not sampled-menu choice probabilities.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV06_fit_by_margin.png){width=95%}
@@ -535,7 +558,23 @@ Table: The estimated model against two re-estimated common-opportunity benchmark
 
 The two re-estimated common-opportunity benchmarks are worse by 141.64 and by a larger margin, on the same households, the same sampled alternatives and the same criterion. The comparison is a nested one in the sense that the benchmarks restrict the opportunity block and re-estimate everything else, but we do not convert it into a formal test, because the sampled-alternative criterion is not the likelihood of the observed data and the conditions for a likelihood-ratio distribution are not established here. What the table does support is that the deterioration is concentrated where the opportunity block does its work: the population fit worsens from 0.0129 to 0.0270 and 0.0261, and the occupation margins deteriorate by an order of magnitude, from about half a percentage point to eleven. A better criterion does not by itself establish that a mechanism has been identified.
 
-## Money-metric well-being
+
+## Within-sample equivalised results
+
+
+Table: The verified Mapping-F $W^1_F$ construction, modified-OECD equivalised, against equivalised disposable consumption in the same sample. Household EUR/month, dwt-weighted. Source: BASELINE-F-1 (MNL 6048c9f7, independently verified b5550af5) and its equivalised reporting (commit 4c4e07e). Reported separately by population; no pooled figure and no cross-population level comparison.
+
+|Population|N|Workers|Non-workers|$C^{eq}$ mean|$C^{eq}$ median|$C^{eq}$ Gini|$W^1_F{}^{eq}$ mean|$W^1_F{}^{eq}$ median|$W^1_F{}^{eq}$ Gini|
+|---|---|---|---|---|---|---|---|---|---|
+|Single-adult|1,540|1,336|204|1,766|1,588|0.2633|1,302|1,165|0.2498|
+|Couple|2,223|2,173|50|2,245|2,063|0.2268|1,311|1,237|0.1974|
+
+
+
+The verified $W^1_F$ construction gives, on the modified-OECD-equivalised basis, a weighted Gini of 0.2498 for single-adult households and 0.1974 for couples, against 0.2633 and 0.2268 for equivalised disposable consumption in the same samples. This is a within-sample descriptive dispersion comparison, not a welfare-loss statement: the ratio $W^1_F/C^{\mathrm{obs}}$ reflects the systematic leisure term at the observed job relative to home leisure, and we do not construct a loss index from it. Singles and couples are reported separately throughout, with no pooled distribution and no cross-sample level comparison: the two are separate estimation frames with different welfare units, and a comparison of the two levels is not drawn here or elsewhere in this paper.
+
+
+### The ex-ante measure's levels
 
 
 Table: The distribution of money-metric well-being, and the priced disposable income it replaces. Levels are in euros per month of equivalent flat consumption, weighted. Levels are not comparable between the two household types: each type carries its own reference construction, and the Gini of the money metric and the Gini of income are not two estimates of one quantity.
@@ -559,9 +598,10 @@ Table: The distribution of money-metric well-being, and the priced disposable in
 ![Lorenz curves of money-metric well-being and of the priced disposable income it replaces, over the same households and the same weights. The two curves answer different questions about the same households; their Gini values are not two estimates of one quantity.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV01_welfare_lorenz.png){width=95%}
 
 
-The money metric is less unequal than the priced disposable income it replaces, for both household types: the Gini falls from 0.253 to 0.194 for single adults and from 0.231 to 0.132 for couples. The two Ginis are not two estimates of one quantity. The income Gini describes an outcome; the welfare Gini describes an ex-ante monetary level built from each household's own preferences and own reachable jobs, and the difference between them is not a correction but a change of object.
+The ex-ante estimation-based measure of the previous section is less unequal than the priced disposable income it replaces, for both household types: the Gini falls from 0.253 to 0.194 for single adults and from 0.231 to 0.132 for couples. This is a different object from the verified $W^1_F$ levels above -- an ex-ante monetary level built from each household's own preferences and own reachable jobs, rather than a closed-form evaluation at the observed bundle -- and the two are not two estimates of one quantity.
 
 Levels differ from income in opposite directions for the two types, and the levels are not comparable between them: each application carries its own reference construction, with a female-primary reference block for single adults and a medoid-spouse reference for couples, and the couples index adds two leisure terms. We use levels only within type and offer no mechanism for the between-type difference in levels.
+
 
 ## The preliminary decomposition
 
@@ -617,7 +657,7 @@ Table: Couples, the eight P/A/B coalitions. Weighted Gini of money-metric well-b
 ![The eight P/A/B counterfactual coalitions, built from the accepted model by equalising household-constant covariates within a block. Node-level alternative characteristics are preserved in every coalition; only household-constant covariates are equalised. Preliminary, model-based.](C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fig_preseminar_pab_architecture_v1.png){width=95%}
 
 
-The eight rows per scale are the coalition values of the three-player game. $\Delta I=I(\varnothing)-I(\{P,A,B\})$ is small in every sample and scale -- -1.8 per cent of baseline inequality for single adults equivalised, up to -9.9 per cent for couples unequivalised -- and that is a property of what this exercise holds fixed, not a finding that job opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for 127 to 100 per cent of the variance of log well-being (variance-decomposition detail in the discussion notebook, Section 8). Sex-block parameter differences and behavioural randomness also remain in the residual and are not attributed to $P$, $A$ or $B$.
+The eight rows per scale are the coalition values of the three-player game. $\Delta I=I(\varnothing)-I(\{P,A,B\})$ is small in every sample and scale -- 1.8 per cent of baseline inequality for single adults equivalised, up to 9.9 per cent for couples unequivalised -- and that is a property of what this exercise holds fixed, not a finding that job opportunities are unimportant: household resources, needs and composition are held fixed in every coalition, and that fixed component alone accounts for 100 to 127 per cent of the variance of log well-being (variance-decomposition detail in the discussion notebook, Section 8). Sex-block parameter differences and behavioural randomness also remain in the residual and are not attributed to $P$, $A$ or $B$.
 
 
 Table: The exact three-player Shapley allocation of $\Delta I$ across P, A and B. Gini-point contribution beside the share of $\Delta I$ (not of baseline inequality), and an independent second-seed reproduction. No directional claim is made about P: its sign changes between unequivalised and equivalised reporting in both samples, so its share of $\Delta I$ is not stated. A Monte Carlo per-replication share range, which divides by that replication’s own near-zero $\Delta I$ and is not informative on its own, is reported in the technical gallery, not here.
@@ -675,6 +715,7 @@ The sample screens on the observed hours and wage of employed deciders. The esti
 
 Separately, the sampled-set probability is derived by conditioning on a labelled collection of slots. Small observed cross-coordinate correlations and a multiplicity distribution consistent with independent draws are diagnostics; they do not by themselves establish the sampling law that the derivation assumes. Both questions are recorded here as open.
 
+
 ## The bridge to the compensation-side reference
 
 The flat-consumption reference of Section 4 is one member of a family. A natural comparison is the reference that flattens consumption only at the non-work bundle, which sits on the compensation side of the same family. If non-work maximizes the non-consumption index and the opportunity density integrates to one on the domain the reference mass uses, then $H_i\le e^{L_i(o)}$, so the gap $\Delta_i=L_i(o)-\log H_i$ must be non-negative for every household and the ratio of the two measures is bounded on one side.
@@ -708,6 +749,23 @@ Table: The consumption normalizer. Three constants were in circulation. Under ex
 
 Three normalizing constants were in circulation between the estimation frames and the welfare panel, because each panel computes the constant as a mean over its own rows. Under exact log consumption the constant is alternative-invariant, so it cancels from every choice probability and exactly from the money metric; the deviation over four widely separated values is 2.7e-15. No reported quantity changes. The paper reports the estimation-frame constant throughout, and the discrepancy is recorded here rather than silently harmonised.
 
+
+## Limitations
+
+Six limitations travel with the results above, named together here rather than scattered through the text they qualify.
+
+**Local labour-market access runs only through geography and year in this specification.** The operator $A_i$ of Section 4 -- local labour-market access -- carries region, urban/rural status and survey year; it does not carry any individual capability, education-specific or occupation-specific access channel. What the preliminary decomposition attributes to $A$ is therefore the coarse geographic and temporal component of access, not access in the fuller sense of what an individual with particular skills or credentials can reach; a more personal access channel, if identified, would move some inequality currently attributed elsewhere into $A$, in a direction we do not sign.
+
+**$\Delta I$ is bounded by design, because $D$ is held fixed.** Household resources, needs and composition are not equalized in any coalition of the preliminary decomposition; they remain in the residual throughout. The movable inequality the exercise can possibly reach, $\Delta I$, is correspondingly a small share of baseline inequality by construction (1.8 to 9.9 per cent), and that boundedness is a property of what the exercise holds fixed, not a finding that job opportunities are unimportant.
+
+**The preference contribution's sign depends on the reporting scale.** $\phi_P$, the exact Shapley contribution of preferences, changes sign between the unequivalised and equivalised reporting conventions in both samples. We therefore make no directional claim about the preference contribution, only about the ordering of access against earnings, which is scale-robust.
+
+**Single men's fit could not be established to the same standard as the other three groups.** Extensive-margin accuracy for single men fails the pre-registered numerical-adequacy gate and is withheld rather than reported at all (Section 5); the raw employment rate is matched closely (1.3 percentage points), but on the margin where this group's fit is worst, the near-full-time hours band, the record specification under-predicts by 9.5 percentage points, the largest single discrepancy in either sample. This is a genuine, group-specific fit limitation, not a tail-coverage artefact of the kind reported for the sub-ten-hour cell.
+
+**The time endowment, $T=80$ hours a week, is a convention the model is not indifferent to.** A diagnostic re-estimation at $T=75$ and $T=90$, holding the rest of the certified protocol fixed, moves the criterion materially in both directions and changes which coordinates are interior: at $T=90$ a second leisure-curvature coefficient joins the boundary that is interior at $T=80$. $T=80$ is therefore a maintained convention, not a free normalization the results are invariant to, and it has not itself been estimated or justified.
+
+**Observed behaviour is more predictable than the estimated model's own stochasticity implies, in three of the four groups.** Real choices for couples (both sexes) and single men are classified as showing genuine misspecification evidence against the model's own simulated variation, rather than as a mechanical consequence of conditioning on outcomes; single women are the one group left inconclusive, because their fit does not clear the same numerical-adequacy gate as the extensive-margin figures above. This is diagnostic evidence from a composite decision rule, not a single statistic, it is sensitive to unsupported finite-panel regions being floored rather than excluded, and the underlying verdicts remain open pending further review; we report it as an open question about the model's implied stochasticity, not as an established fact about it.
+
 ## What is not established
 
 The preliminary decomposition is an accounting of a structural model under declared operators. It is not a causal analysis. No regional, educational or occupational effect reported here is identified as a causal effect, and the exhaustiveness of the allocation validates the accounting for the declared game, not the identification of the model or the normative content of the operators.
@@ -720,7 +778,7 @@ Observed hours and earnings do not say whether a household chose its position or
 
 A complete decomposition of the resulting inequality into preferences and circumstances awaits a counterfactual-attainment estimand still under design. Ahead of it, a bounded preliminary exercise asks how a small, structurally-fixed share of measured inequality divides between preferences, local labour-market access and earning opportunities, holding resources, needs and composition fixed. For both French single-adult and couple households, earning opportunities dominate local labour-market access within that movable share, at every scale reported; the preference contribution's sign is not robust between reporting conventions, so no directional claim is made about it.
 
-Three limits should travel with that reading. It is preliminary and bounded by construction, not the paper's final decomposition. The allocation is exhaustive for the declared three-player game, which validates the accounting and not the identification or the ethics of the operators. And two questions about the observation rule remain genuinely open, unrelated to the decomposition itself. What the exercise offers is not a causal account of why opportunities differ, and not yet a complete attribution of measured inequality, but a disciplined, preliminary statement of which of two circumstance channels dominates, once preferences and a structural model are made explicit and the reference is stated.
+Three limits should travel with that reading. The quantitative opportunity decomposition is preliminary and work in progress, bounded by construction, not the paper's final decomposition. The allocation is exhaustive for the declared three-player game, which validates the accounting and not the identification or the ethics of the operators. And several questions named in Section 6 -- about the observation rule, about the model's own scope, and about where it under- or over-predicts -- remain genuinely open, unrelated to the decomposition itself. What the exercise offers is not a causal account of why opportunities differ, and not yet a complete attribution of measured inequality, but a disciplined, preliminary statement of which of two circumstance channels dominates, once preferences and a structural model are made explicit and the reference is stated.
 
 # 8. Appendix A. The estimated parameter vectors
 
@@ -844,7 +902,7 @@ $$
 
 where $S_\pi(k)$ is the set of factors preceding $k$ in ordering $\pi$. With three players this has a closed form and requires no grouping into unions, unlike the Owen extension for the additional operator an earlier, retired version of this decomposition used. Contributions are signed and are never renormalised to sum to one hundred by construction: they sum to $\Delta I=I_\varnothing-I_{\{P,A,B\}}$ because the game closes, and the closure is verified.
 
-# 10. Appendix C. The bridge between the two monetary references
+# 10. Supplementary appendix. The bridge between the two monetary references
 
 Write $M_i=\int\widehat g_i\,d\nu$ for the mass of the opportunity object on the domain the reference integral uses, and $o$ for the non-work bundle. The two references satisfy
 
@@ -860,7 +918,7 @@ After renormalizing the kernel on exactly that domain, the median gap is 0.0322 
 
 A separate point concerns the low-temperature limit. Attained and reference values must be indexed by the same shock scale for the limit to be meaningful. The statement that survives is that the two consistently indexed measures converge as the scale goes to zero; convergence to the value of staying at home evaluated at a different fixed scale is not the same statement and is not made.
 
-# 11. Appendix D. Data, software and replication
+# 11. Appendix C. Data, software and replication
 
 **Data.** French EU-SILC, accessed through Eurostat's harmonised release, with 2016 survey collection and a 2015 income reference year. The harmonised survey is transformed into an input file for EUROMOD [@sutherlandfigari2013], which applies the French 2015 policy system. Regional labour-market conditions come from the Eurostat regional labour-force series. Access to EU-SILC microdata is granted by Eurostat under its research-access conditions and the data cannot be redistributed with this document.
 
@@ -960,7 +1018,7 @@ With three players the exact Shapley value has a closed form over $3!=6$ orderin
 
 ## 15. Is the movable share $\Delta I$ small because job opportunities do not matter?
 
-No. It is small because household resources, needs and composition are held fixed in every coalition of this bounded exercise, and that fixed component accounts for 127 to 100 per cent of the variance of log well-being. See Section 5.
+No. It is small because household resources, needs and composition are held fixed in every coalition of this bounded exercise, and that fixed component accounts for 100 to 127 per cent of the variance of log well-being. See Section 5.
 
 ## 16. Which ordering is robust across unequivalised and equivalised reporting?
 

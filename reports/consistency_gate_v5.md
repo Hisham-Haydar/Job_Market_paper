@@ -61,8 +61,8 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 9. D held fixed: ΔI is small by design, not decomposed, not evidence opportunities are unimportant — PASS
 
-- paper v5 (LaTeX): ΔI-share range -9.9 to -1.8 per cent matches the registry
-- report v5 (markdown source): ΔI-share range -9.9 to -1.8 per cent matches the registry
+- paper v5 (LaTeX): ΔI-share range 1.8 to 9.9 per cent matches the registry
+- report v5 (markdown source): ΔI-share range 1.8 to 9.9 per cent matches the registry
 
 ## 10. No machine labels, status tokens, private paths or slogans — PASS
 
@@ -70,7 +70,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 11. Every number is bound to a registered source — PASS
 
-- registry: 132 entries, 83 used by the two documents, every used entry typed and sourced
+- registry: 158 entries, 89 used by the two documents, every used entry typed and sourced
 
 ## 12. The funnel ends where the estimation begins — PASS
 
@@ -78,7 +78,7 @@ Scope note. This gate carries forward the content rules of `consistency_gate_spe
 
 ## 13. Figures and tables are present, captioned and rendered — PASS
 
-- paper: 13 figures, 19 tables, 32 captions; report: 16 embedded figures, 19 tables
+- paper: 10 figures, 14 tables, 24 captions; report: 17 embedded figures, 20 tables
 
 ## 14. The report carries the explanatory apparatus — PASS
 

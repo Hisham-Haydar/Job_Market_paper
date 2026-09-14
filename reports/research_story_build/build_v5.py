@@ -249,7 +249,13 @@ for _s in ('singles', 'couples'):
         _empty = d2_coalition_row(_s, _sk, 'EMPTY')
         _pab = d2_coalition_row(_s, _sk, 'PAB')
         _base = float(_empty['I_S_gini'])
-        _delta = float(_pab['I_S_gini']) - _base  # I(actual) - I(PAB), positive
+        # I(actual) - I(P,A,B equalized): positive, since equalizing reduces
+        # inequality. NOTE: this is the OPPOSITE sign convention from the
+        # coalition CSV's own "change_from_actual" column (I(coalition) -
+        # I(actual), negative for a reduction) -- both are correct in their
+        # own file, this line matches the paper's own stated definition,
+        # Delta I = I(empty) - I({P,A,B}).
+        _delta = _base - float(_pab['I_S_gini'])
         register('d2_baseline_%s_%s' % (_s, _sk), round(_base, 6), _D2SRC,
                  'result', 'Gini units, baseline coalition (actual)')
         register('d2_deltaI_%s_%s' % (_s, _sk), round(_delta, 6), _D2SRC,
@@ -310,6 +316,61 @@ for _tag in ['singles', 'couples']:
     register('inc_gini_' + _tag, round(float(o['gini_weighted']), 6),
              'v5_step2_welfare_evidence_v1.json::lorenz_observed_income',
              'result', 'Gini units')
+
+# =========================================================================== #
+# REBUILD-2: the verified Mapping-F W1_F construction (BASELINE-F-1 / E3-EQ).
+# Unequivalised aggregates: MNL commit 6048c9f7, independently verified
+# b5550af5 (baseline_f1_verification_v1.md). Equivalised reporting: memo
+# 4c4e07e (this repo). Same lineage the r6 deck's own baseline slides use
+# (make_deck_numbers_r6.py) -- deliberately the same source, not a new one.
+_BF1 = MNL / 'outputs/welfare/baseline_f1_v1/baseline_f1_full_sample_aggregates_v1.json'
+_BF1SRC = ('baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, '
+           'verified b5550af5)')
+_bf1 = json.loads(_BF1.read_text('utf-8'))
+for _tag in ['singles', 'couples']:
+    s = _bf1['samples'][_tag]
+    register('w1f_n_' + _tag, int(s['unweighted_n']), _BF1SRC, 'result', 'households')
+    register('w1f_workers_' + _tag, int(s['worker_count']), _BF1SRC, 'result', 'households')
+    register('w1f_nonworkers_' + _tag, int(s['nonworker_count']), _BF1SRC, 'result', 'households')
+    register('w1f_mean_' + _tag, round(float(s['dwt_weighted_mean']), 0), _BF1SRC,
+             'result', 'EUR/month, unequivalised')
+    register('w1f_median_' + _tag, round(float(s['dwt_weighted_median']), 0), _BF1SRC,
+             'result', 'EUR/month, unequivalised')
+    register('w1f_gini_' + _tag, round(float(s['dwt_weighted_gini']), 4), _BF1SRC,
+             'result', 'Gini units, unequivalised')
+
+_BF1EQSRC = ('{sample}_equivalised_reporting_v1.json '
+             '(JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; '
+             'MNL 6048c9f7)')
+for _tag in ['singles', 'couples']:
+    _eq = json.loads((MNL / ('outputs/welfare/baseline_f1_equivalised_v1/'
+                             '%s_equivalised_reporting_v1.json' % _tag))
+                     .read_text('utf-8'))['equivalised']
+    _src = _BF1EQSRC.format(sample=_tag)
+    for _obj, _pfx in [('C_eq', 'ceq'), ('W_F_eq', 'w1f_eq')]:
+        register('%s_mean_%s' % (_pfx, _tag),
+                 round(float(_eq[_obj]['dwt_weighted_mean']), 0), _src,
+                 'result', 'EUR/month, equivalised')
+        register('%s_median_%s' % (_pfx, _tag),
+                 round(float(_eq[_obj]['dwt_weighted_median']), 0), _src,
+                 'result', 'EUR/month, equivalised')
+        register('%s_gini_%s' % (_pfx, _tag),
+                 round(float(_eq[_obj]['dwt_weighted_gini']), 4), _src,
+                 'result', 'Gini units, equivalised')
+
+# REBUILD-2 limitations: the single-men fit gap, recomputed here from the
+# same S11 criterion-B moments table the fit tables above already use, not
+# a new source.
+_MOMSRC = 's11_criterion_b_population_moments_v1.csv'
+_sm = MOM[(MOM['model'] == 'SINGLES') & (MOM['sex'] == 'male')]
+_sm_emp = _sm[_sm['moment'] == 'employment'].iloc[0]
+_sm_ft = _sm[_sm['moment'] == 'hours::ft'].iloc[0]
+register('singlesmale_emp_gap_pp',
+         round(100.0 * abs(float(_sm_emp['observed']) - float(_sm_emp['predicted'])), 1),
+         _MOMSRC, 'diagnostic', 'percentage points, S11 model of record')
+register('singlesmale_hours_gap_pp',
+         round(100.0 * abs(float(_sm_ft['observed']) - float(_sm_ft['predicted'])), 1),
+         _MOMSRC, 'diagnostic', 'percentage points, S11 model of record')
 
 # neutrality, bridge -- unrelated to the P/A/B decomposition above.
 # REBUILD-3: closes the LINEAGE-SWEEP-1/REBUILD-1 item-17 residual. The
@@ -676,6 +737,31 @@ for _tag, _model in [('singles', 'SINGLES'), ('couples', 'COUPLES')]:
         ['Unit', 'Moment', 'Observed', 'Model', 'Absolute deviation',
          'Denominator'], _rows)
 
+# ---- T9b: the verified Mapping-F W1_F baseline, within-sample equivalised - #
+_rows = []
+for tag, pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
+    _rows.append([
+        pop, format(REG['w1f_n_' + tag]['value'], ',d'),
+        format(REG['w1f_workers_' + tag]['value'], ',d'),
+        format(REG['w1f_nonworkers_' + tag]['value'], ',d'),
+        format(REG['ceq_mean_' + tag]['value'], ',.0f'),
+        format(REG['ceq_median_' + tag]['value'], ',.0f'),
+        format(REG['ceq_gini_' + tag]['value'], '.4f'),
+        format(REG['w1f_eq_mean_' + tag]['value'], ',.0f'),
+        format(REG['w1f_eq_median_' + tag]['value'], ',.0f'),
+        format(REG['w1f_eq_gini_' + tag]['value'], '.4f')])
+TABLES['baselinef1'] = table(
+    'v5_baseline_f1',
+    'Table: The verified Mapping-F $W^1_F$ construction, modified-OECD '
+    'equivalised, against equivalised disposable consumption in the same '
+    'sample. Household EUR/month, dwt-weighted. Source: BASELINE-F-1 '
+    '(MNL 6048c9f7, independently verified b5550af5) and its equivalised '
+    'reporting (commit 4c4e07e). Reported separately by population; no '
+    'pooled figure and no cross-population level comparison.',
+    ['Population', 'N', 'Workers', 'Non-workers', '$C^{eq}$ mean',
+     '$C^{eq}$ median', '$C^{eq}$ Gini', '$W^1_F{}^{eq}$ mean',
+     '$W^1_F{}^{eq}$ median', '$W^1_F{}^{eq}$ Gini'], _rows)
+
 # ---- T10: welfare levels -------------------------------------------------- #
 _rows = []
 for tag in ['singles', 'couples']:
@@ -916,6 +1002,17 @@ def dfig(key, stem, caption):
     CAPTIONS[key] = (stem, caption)
 
 
+def xfig(key, stem, caption):
+    """Register a figure already rendered to this build's own assets/
+    directory (REBUILD-2: a static PNG conversion of an existing, gated
+    figure asset -- see reports/research_story_build/assets/README, and
+    beamer/figures/r6/fitext_r6_slide.pdf for the source the deck itself
+    builds this from via make_slide_figures_r6.py)."""
+    src = HERE / 'assets' / (stem + '.png')
+    (FIG / (stem + '.png')).write_bytes(src.read_bytes())
+    CAPTIONS[key] = (stem, caption)
+
+
 lfig('theory', 'theory_w1',
      r'**Own-set equal-consumption equivalents.** The theoretical W1 construction '
      r'from the companion theory paper. Individuals with preferences '
@@ -937,6 +1034,14 @@ mfig('resources', 'figV09_resources_panel',
      'tax-benefit output evaluated at the observed choice; panel (c) reports '
      'inputs to that calculation. The two are never added, and stocks are '
      'never summed with monthly flows.')
+xfig('fitband', 'fitext_band_v1',
+     'Weighted extensive-margin accuracy against the model’s own '
+     'simulated 95 per cent band (500 outcome vectors at the fitted '
+     'estimates), for the three groups that clear the pre-registered '
+     'numerical-adequacy gate; single men do not clear it and are withheld. '
+     'Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit '
+     '96693269), same extensive-margin numbers as v2b, reframed against the '
+     'simulated band.')
 mfig('fit', 'figV06_fit_by_margin',
      'Observed against model population shares, margin by margin, for both '
      'estimated specifications. Model shares are population predictions '

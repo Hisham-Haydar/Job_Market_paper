@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.6)  14 SEP 2026 10:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.6)  14 SEP 2026 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,40 +641,33 @@ Package pdftex.def Info: figures/v5/figV09_resources_panel.png  used on input l
 ine 226.
 (pdftex.def)             Requested size: 432.4909pt x 303.55482pt.
  [9 <./figures/v5/figV09_resources_panel.png>] [10{C:/Users/hisham/AppData/Loca
-l/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [11]
-<figures/v5/figV07_power_mean.png, id=176, 702.10304pt x 281.49165pt>
-File: figures/v5/figV07_power_mean.png Graphic file (type png)
-<use figures/v5/figV07_power_mean.png>
-Package pdftex.def Info: figures/v5/figV07_power_mean.png  used on input line 3
-44.
-(pdftex.def)             Requested size: 432.48181pt x 173.39337pt.
- [12 <./figures/v5/figV07_power_mean.png>]
-Underfull \hbox (badness 1270) in paragraph at lines 364--365
+l/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+17.
+
+(C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [11]
+Underfull \hbox (badness 1270) in paragraph at lines 333--334
 \T1/lmr/m/n/10 A com-plete at-tri-bu-tion of mea-sured in-equal-ity to pref-er-
 ences and to cir-cum-stances re-quires a
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-71.
+40.
 (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [13{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.e
+) [12{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.e
 nc}]
-[14]
-ignored error: Infinite glue shrinkage found in box being split [15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-56.
-
-(C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Underfull \hbox (badness 1881) in paragraph at lines 556--557
+[13]
+ignored error: Infinite glue shrinkage found in box being split [14]
+Underfull \hbox (badness 1881) in paragraph at lines 525--526
 []\T1/lmr/bx/n/10 Maintained re-stric-tions. \T1/lmr/m/n/10 Sin-gles: \T1/lmtt/
 m/n/10 theta_c_singles = 0\T1/lmr/m/n/10 ; the cou-ples pref-er-ence block
  []
 
 
-Overfull \hbox (13.2546pt too wide) in paragraph at lines 556--557
+Overfull \hbox (13.2546pt too wide) in paragraph at lines 525--526
 \T1/lmr/m/n/10 (\T1/lmtt/m/n/10 beta_l0_m\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 beta_
 l_age_m\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 beta_l_age2_m\T1/lmr/m/n/10 , \T1/lmtt/
 m/n/10 beta_l0_f\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 beta_l_age_f\T1/lmr/m/n/10 , \
@@ -682,127 +675,98 @@ T1/lmtt/m/n/10 beta_l_age2_f\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 beta_l_nkids_f\T1/
 lmr/m/n/10 ,
  []
 
-<figures/v5/figP01_indifference_curves_singles.png, id=208, 759.19635pt x 334.6
+<figures/v5/figP01_indifference_curves_singles.png, id=204, 759.19635pt x 334.6
 101pt>
 File: figures/v5/figP01_indifference_curves_singles.png Graphic file (type png)
 
 <use figures/v5/figP01_indifference_curves_singles.png>
 Package pdftex.def Info: figures/v5/figP01_indifference_curves_singles.png  use
-d on input line 560.
+d on input line 529.
 (pdftex.def)             Requested size: 432.47997pt x 190.6123pt.
-<figures/v5/figP02_indifference_curves_couples.png, id=209, 759.19635pt x 334.6
+<figures/v5/figP02_indifference_curves_couples.png, id=205, 759.19635pt x 334.6
 101pt>
 File: figures/v5/figP02_indifference_curves_couples.png Graphic file (type png)
 
 <use figures/v5/figP02_indifference_curves_couples.png>
 Package pdftex.def Info: figures/v5/figP02_indifference_curves_couples.png  use
-d on input line 566.
+d on input line 535.
 (pdftex.def)             Requested size: 432.47997pt x 190.6123pt.
-[16 <./figures/v5/figP01_indifference_curves_singles.png>]
-<figures/v5/figP04_mrs_by_age_sex.png, id=218, 961.9137pt x 318.7107pt>
+[15 <./figures/v5/figP01_indifference_curves_singles.png>]
+<figures/v5/figP04_mrs_by_age_sex.png, id=213, 961.9137pt x 318.7107pt>
 File: figures/v5/figP04_mrs_by_age_sex.png Graphic file (type png)
 <use figures/v5/figP04_mrs_by_age_sex.png>
 Package pdftex.def Info: figures/v5/figP04_mrs_by_age_sex.png  used on input li
-ne 572.
+ne 541.
 (pdftex.def)             Requested size: 432.47556pt x 143.29204pt.
-<figures/v5/figV06_fit_by_margin.png, id=219, 701.7417pt x 318.7107pt>
-File: figures/v5/figV06_fit_by_margin.png Graphic file (type png)
-<use figures/v5/figV06_fit_by_margin.png>
-Package pdftex.def Info: figures/v5/figV06_fit_by_margin.png  used on input lin
-e 584.
-(pdftex.def)             Requested size: 432.4841pt x 196.42169pt.
- [17 <./figures/v5/figP02_indifference_curves_couples.png> <./figures/v5/figP04
+<figures/v5/fitext_band_v1.png, id=214, 892.5345pt x 371.4678pt>
+File: figures/v5/fitext_band_v1.png Graphic file (type png)
+<use figures/v5/fitext_band_v1.png>
+Package pdftex.def Info: figures/v5/fitext_band_v1.png  used on input line 553.
+
+(pdftex.def)             Requested size: 432.47015pt x 179.99162pt.
+ [16 <./figures/v5/figP02_indifference_curves_couples.png> <./figures/v5/figP04
 _mrs_by_age_sex.png>]
-ignored error: Infinite glue shrinkage found in box being split [18 <./figures/
-v5/figV06_fit_by_margin.png>]
-ignored error: Infinite glue shrinkage found in box being split [19] [20]
-ignored error: Infinite glue shrinkage found in box being split [21]
-<figures/v5/figV02_welfare_distributions.png, id=253, 701.7417pt x 289.8027pt>
-File: figures/v5/figV02_welfare_distributions.png Graphic file (type png)
-<use figures/v5/figV02_welfare_distributions.png>
-Package pdftex.def Info: figures/v5/figV02_welfare_distributions.png  used on i
-nput line 748.
-(pdftex.def)             Requested size: 432.4841pt x 178.60568pt.
-<figures/v5/figV01_welfare_lorenz.png, id=254, 701.7417pt x 304.2567pt>
-File: figures/v5/figV01_welfare_lorenz.png Graphic file (type png)
-<use figures/v5/figV01_welfare_lorenz.png>
-Package pdftex.def Info: figures/v5/figV01_welfare_lorenz.png  used on input li
-ne 754.
-(pdftex.def)             Requested size: 432.4841pt x 187.51369pt.
- [22 <./figures/v5/figV02_welfare_distributions.png> <./figures/v5/figV01_welfa
-re_lorenz.png>]
-<figures/v5/fig_preseminar_pab_architecture_v1.png, id=263, 794.97pt x 346.896p
+Overfull \hbox (7.51187pt too wide) in paragraph at lines 575--576
+[]\T1/lmr/m/n/10 Population  
+ []
+
+
+Overfull \hbox (7.51187pt too wide) in paragraph at lines 599--600
+[]\T1/lmr/m/n/10 Population  
+ []
+
+[17 <./figures/v5/fitext_band_v1.png (PNG copy)>]
+<figures/v5/fig_preseminar_pab_architecture_v1.png, id=232, 794.97pt x 346.896p
 t>
 File: figures/v5/fig_preseminar_pab_architecture_v1.png Graphic file (type png)
 
 <use figures/v5/fig_preseminar_pab_architecture_v1.png>
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_architecture_v1.png  use
-d on input line 826.
+d on input line 693.
 (pdftex.def)             Requested size: 432.49193pt x 188.72374pt.
- [23]
-Overfull \hbox (0.12154pt too wide) in alignment at lines 839--858
+ [18]
+Overfull \hbox (0.12154pt too wide) in alignment at lines 706--725
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (0.12154pt too wide) in alignment at lines 858--876
+Overfull \hbox (0.12154pt too wide) in alignment at lines 725--743
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (0.12154pt too wide) in alignment at lines 876--878
+Overfull \hbox (0.12154pt too wide) in alignment at lines 743--745
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (0.12154pt too wide) in alignment at lines 878--895
+Overfull \hbox (0.12154pt too wide) in alignment at lines 745--762
  [] [] [] [] [] [] [] 
  []
 
-ignored error: Infinite glue shrinkage found in box being split [24 <./figures/
+ignored error: Infinite glue shrinkage found in box being split [19 <./figures/
 v5/fig_preseminar_pab_architecture_v1.png>]
-<figures/v5/fig_preseminar_pab_decomposition_singles_v1.png, id=278, 823.878pt 
+<figures/v5/fig_preseminar_pab_decomposition_singles_v1.png, id=247, 823.878pt 
 x 679.338pt>
 File: figures/v5/fig_preseminar_pab_decomposition_singles_v1.png Graphic file (
 type png)
 <use figures/v5/fig_preseminar_pab_decomposition_singles_v1.png>
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_decomposition_singles_v1
-.png  used on input line 899.
+.png  used on input line 766.
 (pdftex.def)             Requested size: 432.47957pt x 356.60596pt.
- [25]
-<figures/v5/fig_preseminar_pab_decomposition_couples_v1.png, id=284, 823.878pt 
+ [20]
+<figures/v5/fig_preseminar_pab_decomposition_couples_v1.png, id=252, 823.878pt 
 x 679.338pt>
 File: figures/v5/fig_preseminar_pab_decomposition_couples_v1.png Graphic file (
 type png)
 <use figures/v5/fig_preseminar_pab_decomposition_couples_v1.png>
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_decomposition_couples_v1
-.png  used on input line 905.
+.png  used on input line 772.
 (pdftex.def)             Requested size: 432.47957pt x 356.60596pt.
- [26 <./figures/v5/fig_preseminar_pab_decomposition_singles_v1.png>] [27 <./fig
-ures/v5/fig_preseminar_pab_decomposition_couples_v1.png>]
-Overfull \hbox (0.12154pt too wide) in alignment at lines 942--961
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (0.12154pt too wide) in alignment at lines 961--979
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (0.12154pt too wide) in alignment at lines 979--981
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (0.12154pt too wide) in alignment at lines 981--984
- [] [] [] [] [] [] [] 
- []
-
-[28] [29]
-ignored error: Infinite glue shrinkage found in box being split [30]
-ignored error: Infinite glue shrinkage found in box being split [31] [32]
-[33] (JMP_working_paper_for_seminar_v5.bbl [34]) [35]
+ [21 <./figures/v5/fig_preseminar_pab_decomposition_singles_v1.png>] [22 <./fig
+ures/v5/fig_preseminar_pab_decomposition_couples_v1.png>] [23] [24] [25] [26] [
+27]
+(JMP_working_paper_for_seminar_v5.bbl [28]) [29]
 (JMP_working_paper_for_seminar_v5.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -810,26 +774,28 @@ L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13566 strings out of 467870
- 219158 string characters out of 5417872
- 689590 words of memory out of 5000000
- 42103 multiletter control sequences out of 15000+600000
- 714057 words of font info for 98 fonts, out of 8000000 for 9000
+ 13526 strings out of 467870
+ 217979 string characters out of 5417872
+ 678095 words of memory out of 5000000
+ 42076 multiletter control sequences out of 15000+600000
+ 722885 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,2037b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,2111b,602s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.p
 fb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.
 pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
 .pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi1
 0.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
-5.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
-6.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
-7.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
-8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
-0.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
-2.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
-7.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5
-.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.
+12.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i5.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i6.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i7.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmm
+i8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+12.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+17.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+5.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7
+.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.
 pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
 .pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy1
 0.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy
@@ -838,10 +804,10 @@ pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
 10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb>
-Output written on JMP_working_paper_for_seminar_v5.pdf (35 pages, 2712161 bytes
+Output written on JMP_working_paper_for_seminar_v5.pdf (29 pages, 2386550 bytes
 ).
 PDF statistics:
- 567 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 322 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 527 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 

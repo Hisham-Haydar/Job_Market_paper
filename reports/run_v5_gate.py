@@ -539,7 +539,11 @@ for f in figs:
     if not p.exists():
         it.fail('paper: figure file missing on disk: %s' % f)
 ntab = PAPER_RAW.count(r'\begin{longtable}')
-if ntab < 15:
+# REBUILD-2 deliberately bounded the paper (old fit/benchmark/bridge/lambda/
+# welfare-levels tables moved report-only), so the threshold that fit the
+# unbounded v5 paper no longer applies; lowered to still catch a real
+# regression without penalizing the intended reduction.
+if ntab < 12:
     it.fail('paper: only %d tables' % ntab)
 ncap = PAPER_RAW.count(r'\caption{')
 if ncap < len(figs) + ntab:
@@ -612,8 +616,15 @@ for a in 'PM':
         it.fail('%s: the qualified priority sentence is absent' % NAMES[a])
     else:
         w = hay[k:k + 900]
+        # REBUILD-2: the preliminary exercise is a plain (ungrouped) exact
+        # Shapley value on three players, not the grouped Owen rule an
+        # earlier, now-withdrawn four-operator version required -- 'grouped
+        # allocation' dropped from the required conjunction because it would
+        # no longer be an accurate claim, not because the check is loosened
+        # for its own sake; 'complete recomputation' replaces it as the
+        # methodological-discipline claim actually made.
         for part in ['random-utility random-opportunity', 'money-metric',
-                     'every coalition', 'grouped allocation']:
+                     'every coalition', 'complete recomputation']:
             if part not in w:
                 it.fail('%s: the "to our knowledge" claim is not fully '
                         'conjoined: %r is missing' % (NAMES[a], part))

@@ -363,13 +363,13 @@
       "units": "Gini units, baseline coalition (actual)"
     },
     "d2_deltaI_singles_uneq": {
-      "value": -0.006889,
+      "value": 0.006889,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "Gini points, I(actual) minus I(P,A,B equalized)"
     },
     "d2_deltaI_pct_singles_uneq": {
-      "value": -2.9,
+      "value": 2.9,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "per cent of baseline Gini"
@@ -411,13 +411,13 @@
       "units": "Gini units, baseline coalition (actual)"
     },
     "d2_deltaI_singles_eq": {
-      "value": -0.00445,
+      "value": 0.00445,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "Gini points, I(actual) minus I(P,A,B equalized)"
     },
     "d2_deltaI_pct_singles_eq": {
-      "value": -1.8,
+      "value": 1.8,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "per cent of baseline Gini"
@@ -465,13 +465,13 @@
       "units": "Gini units, baseline coalition (actual)"
     },
     "d2_deltaI_couples_uneq": {
-      "value": -0.02014,
+      "value": 0.02014,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "Gini points, I(actual) minus I(P,A,B equalized)"
     },
     "d2_deltaI_pct_couples_uneq": {
-      "value": -9.9,
+      "value": 9.9,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "per cent of baseline Gini"
@@ -513,13 +513,13 @@
       "units": "Gini units, baseline coalition (actual)"
     },
     "d2_deltaI_couples_eq": {
-      "value": -0.00501,
+      "value": 0.00501,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "Gini points, I(actual) minus I(P,A,B equalized)"
     },
     "d2_deltaI_pct_couples_eq": {
-      "value": -2.5,
+      "value": 2.5,
       "source": "MNL_decomp preseminar_pab_v1 (welfare/preseminar-pab, b52761b4); preliminary three-factor P/A/B decomposition, not the final decomposition architecture",
       "status": "result",
       "units": "per cent of baseline Gini"
@@ -716,6 +716,162 @@
       "status": "result",
       "units": "Gini units"
     },
+    "w1f_n_singles": {
+      "value": 1540,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_workers_singles": {
+      "value": 1336,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_nonworkers_singles": {
+      "value": 204,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_mean_singles": {
+      "value": 1435.0,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "EUR/month, unequivalised"
+    },
+    "w1f_median_singles": {
+      "value": 1320.0,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "EUR/month, unequivalised"
+    },
+    "w1f_gini_singles": {
+      "value": 0.2376,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "Gini units, unequivalised"
+    },
+    "w1f_n_couples": {
+      "value": 2223,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_workers_couples": {
+      "value": 2173,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_nonworkers_couples": {
+      "value": 50,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "households"
+    },
+    "w1f_mean_couples": {
+      "value": 2496.0,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "EUR/month, unequivalised"
+    },
+    "w1f_median_couples": {
+      "value": 2356.0,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "EUR/month, unequivalised"
+    },
+    "w1f_gini_couples": {
+      "value": 0.2104,
+      "source": "baseline_f1_full_sample_aggregates_v1.json (MNL 6048c9f7, verified b5550af5)",
+      "status": "result",
+      "units": "Gini units, unequivalised"
+    },
+    "ceq_mean_singles": {
+      "value": 1766.0,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "ceq_median_singles": {
+      "value": 1588.0,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "ceq_gini_singles": {
+      "value": 0.2633,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "w1f_eq_mean_singles": {
+      "value": 1302.0,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "w1f_eq_median_singles": {
+      "value": 1165.0,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "w1f_eq_gini_singles": {
+      "value": 0.2498,
+      "source": "singles_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "ceq_mean_couples": {
+      "value": 2245.0,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "ceq_median_couples": {
+      "value": 2063.0,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "ceq_gini_couples": {
+      "value": 0.2268,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "w1f_eq_mean_couples": {
+      "value": 1311.0,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "w1f_eq_median_couples": {
+      "value": 1237.0,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "EUR/month, equivalised"
+    },
+    "w1f_eq_gini_couples": {
+      "value": 0.1974,
+      "source": "couples_equivalised_reporting_v1.json (JMP_BASELINE_F1_equivalised_reporting_v1.md, commit 4c4e07e; MNL 6048c9f7)",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "singlesmale_emp_gap_pp": {
+      "value": 1.3,
+      "source": "s11_criterion_b_population_moments_v1.csv",
+      "status": "diagnostic",
+      "units": "percentage points, S11 model of record"
+    },
+    "singlesmale_hours_gap_pp": {
+      "value": 9.5,
+      "source": "s11_criterion_b_population_moments_v1.csv",
+      "status": "diagnostic",
+      "units": "percentage points, S11 model of record"
+    },
     "gint_med_singles": {
       "value": 0.077283,
       "source": "s12_w4_premise_audit_v1.json",
@@ -801,6 +957,8 @@
     "beta_c_se_couples",
     "beta_c_se_singles",
     "beta_c_singles",
+    "ceq_gini_couples",
+    "ceq_gini_singles",
     "child_cutoff",
     "collection_year",
     "cr1_draws",
@@ -865,9 +1023,13 @@
     "pm_weight_double",
     "policy_year",
     "rum_gap",
+    "singlesmale_emp_gap_pp",
+    "singlesmale_hours_gap_pp",
     "spread_couples",
     "spread_singles",
     "time_endowment",
+    "w1f_eq_gini_couples",
+    "w1f_eq_gini_singles",
     "w41_max_couples",
     "w41_max_singles",
     "w41_med_couples",
@@ -881,6 +1043,10 @@
     "wl_median_raw_singles"
   ],
   "unused_keys": [
+    "ceq_mean_couples",
+    "ceq_mean_singles",
+    "ceq_median_couples",
+    "ceq_median_singles",
     "d2_baseline_couples_eq",
     "d2_baseline_couples_uneq",
     "d2_baseline_singles_eq",
@@ -913,6 +1079,22 @@
     "nat_pct_singles",
     "sigma_couples",
     "sigma_singles",
+    "w1f_eq_mean_couples",
+    "w1f_eq_mean_singles",
+    "w1f_eq_median_couples",
+    "w1f_eq_median_singles",
+    "w1f_gini_couples",
+    "w1f_gini_singles",
+    "w1f_mean_couples",
+    "w1f_mean_singles",
+    "w1f_median_couples",
+    "w1f_median_singles",
+    "w1f_n_couples",
+    "w1f_n_singles",
+    "w1f_nonworkers_couples",
+    "w1f_nonworkers_singles",
+    "w1f_workers_couples",
+    "w1f_workers_singles",
     "wl_gini_equivalized_couples",
     "wl_gini_equivalized_singles",
     "wl_mean_equivalized_couples",
