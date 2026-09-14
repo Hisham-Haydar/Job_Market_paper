@@ -121,7 +121,7 @@ def fitext(man: dict) -> None:
         else:
             ax.text(1.5, i, t, va="center", ha="left", color=GREY, fontsize=16)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("extensive-margin accuracy (%), G2-adequate groups only")
+    ax.set_xlabel("extensive-margin accuracy (%), groups clearing the numerical-adequacy rule")
     ax.invert_yaxis()
     ax.grid(axis="x", alpha=0.25, lw=0.6)
     for s in ("top", "right", "left"):
@@ -185,9 +185,9 @@ def main() -> int:
     calibration(man)
     fitext(man)
     kernel(man, ACCESS_BLOCK, "kernelacc_r6", ACC,
-           "S11 singles, log access index; bars are 1.96 x CR1 robust s.e.")
+           "single-adult estimates, log access index; bars are 1.96 x CR1 robust s.e.")
     kernel(man, WAGE_BLOCK, "kernelwage_r6", EARN,
-           "S11 singles, log wage-offer density; bars are 1.96 x CR1 robust s.e.")
+           "single-adult estimates, log wage-offer density; bars are 1.96 x CR1 robust s.e.")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "r6_source_manifest.json").write_text(
         json.dumps(man, indent=2, sort_keys=True), encoding="utf-8")

@@ -18,6 +18,8 @@ import unicodedata
 from html.parser import HTMLParser
 from pathlib import Path
 
+import pymupdf
+
 
 JMP = Path(__file__).resolve().parents[1]
 REPO = JMP.parent
@@ -52,6 +54,28 @@ def read_html(path: Path) -> str:
     p = _VisibleText()
     p.feed(raw)
     return " ".join(p.parts)
+
+
+def read_pdf(path: Path) -> str:
+    with pymupdf.open(path) as doc:
+        return "\n".join(page.get_text() for page in doc)
+
+
+def source_provenance(path: Path, html_comment: bool = False) -> list[str]:
+    raw = path.read_text(encoding="utf-8")
+    if html_comment:
+        return re.findall(
+            r"<!--\s*BEGIN READER-VOICE PROVENANCE(.*?)"
+            r"END READER-VOICE PROVENANCE\s*-->",
+            raw,
+            re.S,
+        )
+    return re.findall(
+        r"% BEGIN READER-VOICE PROVENANCE(.*?)"
+        r"% END READER-VOICE PROVENANCE",
+        raw,
+        re.S,
+    )
 
 
 def notebook_text(path: Path) -> tuple[str, dict]:
@@ -134,10 +158,16 @@ M3 = ("The decomposition is bounded by design because household resources, needs
 M4 = ("Dispersion in consumption is quantitatively large relative to dispersion in log well-being: Var(log C) is roughly 100-127% of Var(log W), "
       "with the excess offset by a large negative covariance between consumption and the leisure valuation. DECOMP-2 holds household resources, "
       "needs and composition fixed, leaving important sources of dispersion outside the P/A/B allocation.")
+M4_READER = ("Dispersion in consumption is quantitatively large relative to dispersion in log well-being: Var(log C) is roughly 100-127% of Var(log W), "
+             "with the excess offset by a large negative covariance between consumption and the leisure valuation. This bounded decomposition exercise holds "
+             "household resources, needs and composition fixed, leaving important sources of dispersion outside the P/A/B allocation.")
 M5_A = "local geographic/temporal access shifters(region,urban/rural,year)"
 M6 = "preferences and opportunity components are jointly estimated, with their separation relying on maintained functional-form and exclusion restrictions."
 M7 = ("The money metric is derived from the Measure-1 reference-set principle. Under the current empirical specification its direct reference collapses "
       "to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through attained bundles.")
+M7_READER = ("The money metric is derived from the own-set equal-consumption principle. Under the current empirical specification its direct reference "
+             "collapses to the universally available non-employment state; opportunity heterogeneity therefore affects the current welfare measure through "
+             "attained bundles.")
 TASTE = ("The baseline deliberately keeps systematic preference heterogeneity parsimonious: age profiles for all four adult groups and a child-related "
          "shifter for women. The child term is interpreted as a reduced-form behavioural/time-constraint shifter, not as pure taste.")
 M10 = ("In a preliminary three-factor structural exercise that holds household resources, needs and composition fixed, equalising systematic utility "
@@ -163,7 +193,11 @@ required = {
 coverage: dict[str, dict[str, bool]] = {}
 failures: list[str] = []
 for name, body in surface.items():
-    checks = {label: normalize(needle) in body for label, needle in required.items()}
+    checks = {label: normalize(needle) in body for label, needle in required.items()
+              if label not in {"M4 variance", "M7 welfare reference"}}
+    reader_prose = name in {"Story report", "Working paper"}
+    checks["M4 variance"] = normalize(M4_READER if reader_prose else M4) in body
+    checks["M7 welfare reference"] = normalize(M7_READER if reader_prose else M7) in body
     checks["M8 -1 nat + cases"] = all(x in body for x in (
         "one-nat shortfall",
         "-1",
@@ -337,6 +371,98 @@ artifact_paths = {
 hashes = {name: {"path": str(path), "sha256": sha256(path)}
           for name, path in artifact_paths.items()}
 
+# READER-VOICE-1: inspect what an outside reader actually sees. HTML comments,
+# TeX comments and Beamer notes are intentionally excluded; the technical
+# gallery, notebook and rehearsal surfaces remain outside this check.
+reader_surfaces = {
+    "Story report": read_html(story_html),
+    "Working paper": read_pdf(artifact_paths["Working-paper PDF"]),
+    "Deck": read_pdf(artifact_paths["Deck PDF"]),
+}
+reader_forbidden = {
+    "named internal work item": re.compile(
+        r"\b(?:POSFIT(?:[- ]?v(?:2b|3))?|DECOMP-2|WS4|SURFACE-1|"
+        r"BASELINE-F-?1|MEASURE-MAP(?:-1R)?|criterion-A|R-291|v2b|v3)\b",
+        re.I,
+    ),
+    "internal governance role or decision": re.compile(
+        r"\bDeputy\b|\brulings?\b|(?<![A-Za-z0-9_])R(?:[1-6]|240|291)"
+        r"(?![A-Za-z0-9_])|(?<![A-Za-z0-9_])M(?:[1-9]|1[01])"
+        r"(?![A-Za-z0-9_])|\baccepted\b",
+        re.I,
+    ),
+    "similar internal card or gate tag": re.compile(
+        r"(?<![A-Za-z0-9_])(?:B[1-5]|C[1-6]|E[1-3](?:-EQ)?|G2|R240)"
+        r"(?![A-Za-z0-9_])|\b(?:FORK|model of record)\b",
+        re.I,
+    ),
+    "measure label": re.compile(r"\bMapping[- ](?:F|M)\b|\bMeasure[- ]1\b", re.I),
+    "repository or workflow locator": re.compile(
+        r"\b(?:repository|branch|directory|commit|committed|SHA-?256|MNL_posfit|"
+        r"MNL_decomp)\b|[A-Za-z0-9_./\\-]+\.(?:md|csv|json|py|ipynb)\b",
+        re.I,
+    ),
+    "commit or SHA value": re.compile(
+        r"(?<![A-Za-z0-9])(?:96693269|(?=[0-9a-f]{7,40}(?![A-Za-z0-9]))"
+        r"(?=[0-9a-f]*\d)(?=[0-9a-f]*[a-f])[0-9a-f]{7,40})"
+        r"(?![A-Za-z0-9])"
+    ),
+}
+reader_voice_hits: list[dict[str, str]] = []
+for surface_name, rendered_text in reader_surfaces.items():
+    flat_rendered = re.sub(r"\s+", " ", rendered_text)
+    for label, pattern in reader_forbidden.items():
+        for match in pattern.finditer(flat_rendered):
+            reader_voice_hits.append({
+                "surface": surface_name,
+                "category": label,
+                "match": match.group(0),
+                "context": flat_rendered[max(0, match.start() - 90):match.end() + 120],
+            })
+
+provenance_blocks = {
+    "Story report": source_provenance(story_html, html_comment=True),
+    "Working paper": source_provenance(paper_tex),
+    "Deck": source_provenance(deck_source),
+}
+provenance_required = (
+    "S11",
+    "JMP_W1_fork_ruling_v1.md",
+    "JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md",
+    "baseline_f1_verification_v1.md",
+    "6048c9f7",
+    "b5550af5",
+    "JMP_BASELINE_F1_equivalised_reporting_v1.md",
+    "4c4e07e",
+    "POSFIT v3",
+    "96693269",
+    "DECOMP-2",
+    "b52761b4",
+    "SHA-256",
+)
+provenance_checks: dict[str, dict[str, object]] = {}
+for surface_name, blocks in provenance_blocks.items():
+    block = blocks[0] if len(blocks) == 1 else ""
+    missing = [token for token in provenance_required if token not in block]
+    sha_values = re.findall(r"(?<![A-F0-9])[A-F0-9]{64}(?![A-F0-9])", block)
+    ok = len(blocks) == 1 and not missing and len(sha_values) >= 6
+    provenance_checks[surface_name] = {
+        "status": "PASS" if ok else "FAIL",
+        "blocks": len(blocks),
+        "sha256_values": len(sha_values),
+        "missing": missing,
+    }
+    if not ok:
+        failures.append(
+            f"{surface_name}: provenance block count={len(blocks)}, "
+            f"SHA-256 values={len(sha_values)}, missing={missing}"
+        )
+if reader_voice_hits:
+    failures.extend(
+        f"{hit['surface']}: reader-voice {hit['category']} {hit['match']!r}"
+        for hit in reader_voice_hits
+    )
+
 status = "PASS" if not failures else "FAIL"
 payload = {
     "status": status,
@@ -357,6 +483,12 @@ payload = {
     "variance_range_rounded_percent": variance_range,
     "fit_table_preserved": fit_table_ok,
     "fit_safe_wording": fit_wording_ok,
+    "reader_voice": {
+        "status": "PASS" if not reader_voice_hits else "FAIL",
+        "rendered_surfaces": list(reader_surfaces),
+        "forbidden_hits": reader_voice_hits,
+        "provenance": provenance_checks,
+    },
     "hashes": hashes,
     "failures": failures,
 }
@@ -403,6 +535,14 @@ md += [
     f"- POSFIT-v3 four-group/two-weighting table preserved: **{'PASS' if fit_table_ok else 'FAIL'}**.",
     f"- Safe fit wording preserved: **{'PASS' if fit_wording_ok else 'FAIL'}**.",
     f"- Forbidden wording hits: **{len(forbidden_hits)}**.",
+    "",
+    "## Reader-voice and provenance checks",
+    "",
+    f"- Forbidden process-vocabulary hits in rendered story, paper and deck text: **{len(reader_voice_hits)}**.",
+    "- Provenance blocks: " + ", ".join(
+        f"{name}={check['status']} (blocks={check['blocks']}, SHA-256 values={check['sha256_values']})"
+        for name, check in provenance_checks.items()
+    ) + ".",
     "",
     "## Artifact hashes",
     "",

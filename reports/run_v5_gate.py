@@ -93,6 +93,13 @@ REGJ = json.loads(REG.read_text(encoding='utf-8'))
 
 ART: Dict[str, str] = {'P': PAPER_RAW, 'H': HTML_TXT, 'M': MD_RAW}
 NORM: Dict[str, str] = {k: norm(v) for k, v in ART.items()}
+# Source-only provenance is deliberately retained for audit gates, but TeX
+# comments are not reader-visible and must not trip reader-language checks.
+PAPER_READER_RAW = re.sub(
+    r'(?ms)^% BEGIN READER-VOICE PROVENANCE\s*$.*?^% END READER-VOICE PROVENANCE\s*$',
+    '', PAPER_RAW)
+ART_READER: Dict[str, str] = {'P': PAPER_READER_RAW, 'H': HTML_TXT, 'M': MD_RAW}
+NORM_READER: Dict[str, str] = {k: norm(v) for k, v in ART_READER.items()}
 NAMES = {'P': 'paper v5 (LaTeX)', 'H': 'report v5 (rendered text)',
          'M': 'report v5 (markdown source)'}
 
@@ -123,7 +130,8 @@ def item(num: int, title: str) -> Item:
 
 
 def forbid(it: Item, needle: str, arts: str = 'PHM',
-           permitted: Tuple[str, ...] = (), case: bool = False) -> None:
+           permitted: Tuple[str, ...] = (), case: bool = False,
+           reader_only: bool = False) -> None:
     """Fail if `needle` occurs outside its permitted surrounding contexts.
 
     `case=True` searches the raw text and is case-sensitive: the specification
@@ -132,7 +140,9 @@ def forbid(it: Item, needle: str, arts: str = 'PHM',
     earlier drafts" is prose, not a status stamp).
     """
     for a in arts:
-        hay = ART[a] if case else NORM[a]
+        source = ART_READER if reader_only else ART
+        normalized = NORM_READER if reader_only else NORM
+        hay = source[a] if case else normalized[a]
         n = needle if case else norm(needle)
         start = 0
         while True:
@@ -458,18 +468,18 @@ it = item(10, 'No machine labels, status tokens, private paths or slogans')
 for bad in ['SCALE-1', 'S8', 'LOC4', 'PROVISIONAL', 'PENDING', 'CERTIFIED',
             'criterion-A', 'criterion-B', 'S10', 'S11', 'S12', 'RUM-A',
             'RUM-B']:
-    forbid(it, bad, case=True)
-forbid(it, 'beta_ll estimated')
+    forbid(it, bad, case=True, reader_only=True)
+forbid(it, 'beta_ll estimated', reader_only=True)
 for bad in ['companion project', 'one borrowed principle',
             'the normative half is settled next',
             'a retraction, at its exact scope',
             'the licensed statement is therefore',
             'nothing in this section is now awaiting']:
-    forbid(it, bad)
+    forbid(it, bad, reader_only=True)
 for pat in [r'[A-Za-z]:\\\\Users', r'/c/Users/', r'\\\\Users\\\\hisham',
             r'outputs/corr/']:
     for a in 'PH':
-        if re.search(pat, ART[a]):
+        if re.search(pat, ART_READER[a]):
             it.fail('%s: a private path or internal run label is visible (%s)'
                     % (NAMES[a], pat))
 for bad in ['bootstrap']:
@@ -585,7 +595,7 @@ for bad in ['log utility gives an arithmetic consumption average',
     forbid(it, bad, arts='HM')
 # FINAL M9 accepts the canonical notebook as the reader-facing results
 # notebook while retaining the exact raw-job-set/pricing boundary.
-for need in ['canonical reader-facing results notebook',
+for need in ['canonical reader-facing reproducibility workflow',
              'not a raw-data end-to-end reproduction system',
              'raw job-set construction', 'euromod pricing',
              'next engineering priority']:

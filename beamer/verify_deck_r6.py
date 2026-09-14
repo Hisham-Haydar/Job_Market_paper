@@ -106,8 +106,9 @@ OUT_OF_SCOPE_TOKENS = {
     "SCALE-SENS-1": "scale-sensitivity mission, not a seminar deliverable",
 }
 RETIRED_TOKENS.update(OUT_OF_SCOPE_TOKENS)
-# The caption states the accepted v3 status.
-CAPTION = ("support coverage audited (POSFIT v3); calibration statistics "
+# The reader-facing caption states the diagnostic status in plain economics.
+CAPTION = ("support coverage audited using individual-level predictive "
+           "diagnostics; calibration statistics "
            "partly quadrature-limited; use the explicit group verdicts")
 RETIRED_CAPTION = "support audit pending"
 WELFARE_FRAMES = ["Haydar--Maniquet", "staying-home equivalent",
@@ -140,10 +141,21 @@ def headline(frame: str) -> str:
     return flat(m.group(1)) if m else ""
 
 
+def reader_voice_provenance(src: str) -> str:
+    """Return the single source-only provenance block, or an empty string."""
+    blocks = re.findall(
+        r"% BEGIN READER-VOICE PROVENANCE(.*?)% END READER-VOICE PROVENANCE",
+        src,
+        re.S,
+    )
+    return blocks[0] if len(blocks) == 1 else ""
+
+
 def main() -> int:
     src = SRC.read_text(encoding="utf-8")
     nums = NUMBERS.read_text(encoding="utf-8")
     text = TEXT.read_text(encoding="utf-8", errors="replace") if TEXT.exists() else ""
+    provenance = reader_voice_provenance(src)
 
     # ---------------------------------------------------------- G-RETIRE
     hits = []
@@ -196,7 +208,7 @@ def main() -> int:
     cap_ok = (CAPTION in flat(src) and (not text or CAPTION in flat(text))
               and RETIRED_CAPTION not in (src + text).lower())
     gate("G-CAPTION", cap_ok,
-         "calibration caption verbatim (v3 status): %r; retired %r absent"
+         "plain-language calibration caption verbatim: %r; retired %r absent"
          % (CAPTION, RETIRED_CAPTION))
 
     # ----------------------------------------------------------- G-UNITS
@@ -218,10 +230,18 @@ def main() -> int:
          % (len(wf_eq), len(wf_uneq)))
 
     # ---------------------------------------------------------- G-SOURCE
+    source_tokens = (
+        "JMP_W1_fork_ruling_v1.md",
+        "JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md",
+        "JMP_BASELINE_F1_equivalised_reporting_v1.md",
+        "6048c9f7",
+        "b5550af5",
+        "4c4e07e",
+    )
     gate("G-SOURCE",
-         "6048c9f" in src and "b5550af" in src and "4c4e07e" in src,
-         "baseline slides cite recorded 6048c9f, verified b5550af, "
-         "and the E3-EQ equivalised-reporting memo 4c4e07e")
+         bool(provenance) and all(token in provenance for token in source_tokens),
+         "source-only provenance carries the welfare artifacts, recorded "
+         "6048c9f7, verified b5550af5, and equivalised-reporting 4c4e07e")
 
     # --------------------------------------------------------- G-NUMBERS
     body = re.sub(r"(?m)^\s*%.*$", "", src)
@@ -304,29 +324,31 @@ def main() -> int:
 
     # ----------------------------------------------------------- G-SCALE
     # DECK-3: the modified-OECD scale is ratified.  Every equivalised welfare
-    # slide must cite the ratifying ruling and the scale-review memo, and no
-    # "PROVISIONAL" scale wording may reappear in the source or rendered deck.
+    # slide must state the scale in plain language; the source-only provenance
+    # block must carry the ratifying ruling and scale-review memo. No
+    # "PROVISIONAL" scale wording may reappear in the visible source or deck.
     ruling = "SCALE CLOSED; CHILD-SHIFTER FRAMING"
     memo = "JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md"
     unesc = src.replace("\\_", "_")
     wfeq_macro = re.search(r"\\newcommand\{\\wfunitseq\}(.*?)\n\n", unesc, re.S)
-    macro_cites = bool(wfeq_macro) and ruling in flat(wfeq_macro.group(1)) \
-        and memo in flat(wfeq_macro.group(1))
-    # pdftotext renders \texttt{\_} as a space, so compare the memo name with
-    # underscores normalised to spaces on both sides.
-    rendered_cites = (not text) or (
-        ruling in flat_text
-        and flat(memo.replace("_", " ")) in flat(text.replace("_", " ")))
+    macro_plain = bool(wfeq_macro) and "modified-OECD scale" in flat(
+        wfeq_macro.group(1))
+    provenance_cites = bool(provenance) and ruling in provenance \
+        and memo in provenance
+    rendered_plain = (not text) or "modified-OECD scale" in flat_text
     nocomment = re.sub(r"(?m)%.*$", "", src)
     prov_hits = sorted(set(m.group(0) for m in re.finditer(
         r"provisional[^.\n]{0,40}|pending\s+(an\s+)?economics\s+review",
         (nocomment + "\n" + text), re.I)))
-    scale_ok = macro_cites and ok_eq and rendered_cites and not prov_hits
+    scale_ok = (macro_plain and provenance_cites and ok_eq and rendered_plain
+                and not prov_hits)
     gate("G-SCALE", scale_ok,
-         "both equivalised slides cite %r and %s; no PROVISIONAL scale wording"
+         "both equivalised slides state the modified-OECD scale; source-only "
+         "provenance cites %r and %s; no PROVISIONAL scale wording"
          % (ruling, memo) if scale_ok
-         else "scale citation missing (macro=%s rendered=%s) or provisional "
-              "wording present: %s" % (macro_cites, rendered_cites, prov_hits))
+         else "scale statement/citation missing (macro=%s provenance=%s "
+              "rendered=%s) or provisional wording present: %s"
+              % (macro_plain, provenance_cites, rendered_plain, prov_hits))
 
     # -------------------------------------------------------------- G-QA
     notes_missing = []
@@ -443,7 +465,7 @@ def main() -> int:
     PLABEL = "systematic utility heterogeneity (tastes + reduced-form time constraints)"
     ALABEL = ("local geographic/temporal access shifters "
               "(region, urban/rural, year)")
-    op_ix = src.find(r"\headlineframe{DECOMP-2 equalises")
+    op_ix = src.find(r"\headlineframe{This bounded decomposition equalises")
     op_table = flat(src[op_ix:op_ix + 2200]) if op_ix != -1 else ""
     plabel_ok = (PLABEL in op_table and ALABEL in op_table
                  and "Personal occupation access, hours-band access" in op_table

@@ -515,7 +515,7 @@ TABLES['observed_les'] = table(
     'v5_observed_les',
     'Table: Observed raw labour-force status (LES), weighted shares with '
     'unweighted counts in parentheses, by sex and household type, on the '
-    'final accepted estimation samples. For couples this uses raw '
+    'final estimation samples. For couples this uses raw '
     'LES recovered by joining idperson_m/idperson_f to the raw FR 2016 '
     'source, not the design frame’s own les_m/les_f columns, which are a '
     'derived employed/not-employed recode that omits raw code 5 '
@@ -756,7 +756,7 @@ for _tag, _model in [('singles', 'SINGLES'), ('couples', 'COUPLES')]:
         ['Unit', 'Moment', 'Observed', 'Model', 'Absolute deviation',
          'Denominator'], _rows)
 
-# ---- T9b: the verified Mapping-F W1_F baseline, within-sample equivalised - #
+# ---- T9b: the verified own-set equal-consumption baseline, equivalised ---- #
 _rows = []
 for tag, pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
     _rows.append([
@@ -771,11 +771,11 @@ for tag, pop in [('singles', 'Single-adult'), ('couples', 'Couple')]:
         format(REG['w1f_eq_gini_' + tag]['value'], '.4f')])
 TABLES['baselinef1'] = table(
     'v5_baseline_f1',
-    'Table: The verified Mapping-F $W^1_F$ construction, modified-OECD '
+    'Table: The verified own-set equal-consumption $W^1_F$ construction, modified-OECD '
     'equivalised, against equivalised disposable consumption in the same '
-    'sample. Household EUR/month, dwt-weighted. Source: BASELINE-F-1 '
-    '(MNL 6048c9f7, independently verified b5550af5) and its equivalised '
-    'reporting (commit 4c4e07e). Reported separately by population; no '
+    'sample. Household EUR/month, dwt-weighted. The sample aggregates are '
+    'reproduced to machine precision, confirmed by an independent '
+    'reimplementation. Reported separately by population; no '
     'pooled figure and no cross-population level comparison.',
     ['Population', 'N', 'Workers', 'Non-workers', '$C^{eq}$ mean',
      '$C^{eq}$ median', '$C^{eq}$ Gini', '$W^1_F{}^{eq}$ mean',
@@ -802,7 +802,7 @@ def _d2_coalition_table(sample, label):
     return table(
         'v5_pab_coalition_%s' % sample,
         'Table: %s, the eight P/A/B coalitions. Weighted Gini of money-metric '
-        'well-being, dwt-weighted, simulated on the accepted model’s '
+        'well-being, dwt-weighted, simulated on the estimated model’s '
         'already-priced estimation panel with no re-estimation and no new '
         'pricing. "Change from actual" is the one-factor effect of that '
         'coalition. The Monte Carlo range is the spread of the Gini level '
@@ -934,7 +934,7 @@ TABLES['lambda'] = table(
     'Table: The consumption normalizer. Three constants were in circulation. '
     'Under exact log consumption the normalizer enters utility as the '
     'alternative-invariant term $-\\beta_c\\log\\lambda_c$, so it cancels from '
-    'every choice probability; it does not enter the accepted $W^1_F$ welfare '
+    'every choice probability; it does not enter the $W^1_F$ welfare '
     'measure at all. The paper reports the estimation-frame constant '
     'throughout, for the choice-probability role it actually plays.',
     ['Panel', 'Single-adult (EUR/month)', 'Couple (EUR/month)', 'Role'],
@@ -1025,13 +1025,12 @@ xfig('fitband', 'fitext_band_v1',
      'numerical-adequacy gate; single men do not clear it and are withheld. '
      'Observed and band values: coupled women 89.8% [88.7, 91.6]; single '
      'women 85.5% [80.8, 86.6]; coupled men 92.3% [89.2, 92.1]. '
-     'Source: POSFIT v3 (MNL_posfit, branch diagnostics/posfit-v3, commit '
-     '96693269).')
+     'Source: individual-level predictive diagnostics.')
 acceptedfig(
     'nodeconvergence',
     'fig_posfit_predictive_integration_node_convergence_v1',
     'predictive/integration-node convergence. Weighted predicted participation '
-    'over the accepted fixed-seed integration-node subsets; the shaded area is '
+    'over the fixed-seed integration-node subsets; the shaded area is '
     'the numerical 10--90 per cent envelope, and observed participation is the '
     'horizontal reference line.',
     final_surface.node_figure_png(),
@@ -1039,7 +1038,7 @@ acceptedfig(
 acceptedfig(
     'ws4lambda',
     'ws4_sectionC_lambda_v1',
-    'Accepted WS4 leisure-normalisation evidence. Analytical reparameterisation '
+    'Leisure-normalisation evidence. Analytical reparameterisation '
     '(zero re-estimation) is distinguished from the subsequent independent '
     're-estimation of the four non-baseline normalisers.',
     final_surface.git_blob(
@@ -1050,8 +1049,8 @@ acceptedfig(
 acceptedfig(
     'ws4time',
     'ws4_sectionC_T_v1',
-    'Accepted WS4 time-endowment evidence. T=75 and T=90 are independent '
-    're-estimations; T=80 is the certified baseline used as-is and was not '
+    'Time-endowment sensitivity evidence. T=75 and T=90 are independent '
+    're-estimations; T=80 is the baseline used as-is and was not '
     're-estimated.',
     final_surface.git_blob(
         final_surface.MNL_REPO, final_surface.WS4_REV,
@@ -1067,7 +1066,7 @@ mfig('fit', 'figV06_fit_by_margin',
 # retired ex-ante measure's own distribution, against WD/ARM/SAMP, removed
 # above with the report-only subsection that embedded them.
 dfig('pabarch', 'fig_preseminar_pab_architecture_v1',
-     'The eight P/A/B counterfactual coalitions, built from the accepted '
+     'The eight P/A/B counterfactual coalitions, built from the estimated '
      'model by equalising household-constant covariates within a block. '
      'Node-level alternative characteristics are preserved in every '
      'coalition; only household-constant covariates are equalised. '
@@ -1248,6 +1247,39 @@ bib = (PAPER / 'JMP_working_paper_for_seminar_v2.bib').read_text('utf-8') + BIBE
 BIB = PAPER / 'JMP_working_paper_for_seminar_v5.bib'
 BIB.write_text(bib, encoding='utf-8')
 
+# READER-VOICE-1: keep machine provenance in each generated surface without
+# exposing internal workflow vocabulary to readers.  The paper receives TeX
+# comments and the story report receives an HTML comment; both copies are
+# deliberately identical so citation gates can inspect either block.
+READER_VOICE_PROVENANCE = [
+    'BEGIN READER-VOICE PROVENANCE',
+    'Source-only provenance; excluded from rendered reader text.',
+    ('Specifications: S11; artifact '
+     's11_welfare_specs_of_record_v1.json; SHA-256 '
+     '5FDC88502493CE540B088880EECF049BC268392FF3E8790FFE78A16AA6DDC884.'),
+    ('Welfare definition: Mapping F; artifact JMP_W1_fork_ruling_v1.md; '
+     'SHA-256 7F5D26857D8A96174A9924848F65A02611944273D7775FDC52DC82364A818C05.'),
+    ('Welfare authorization: BASELINE-F-1 and E1; artifact '
+     'JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md; SHA-256 '
+     '54DFD886E41D0A89C1056CBEA5FA51E0A1294D3CA0813F938802BDC3DBD9EE0E.'),
+    ('Welfare aggregates: artifact baseline_f1_verification_v1.md; MNL commit '
+     '6048c9f7; independent verification b5550af5; SHA-256 '
+     'DA7BADF639F3D502D47B301558453D76501C9C44033ECE3F17BDE350BFD5E55F.'),
+    ('Equivalised reporting: E3-EQ; artifact '
+     'JMP_BASELINE_F1_equivalised_reporting_v1.md; commit 4c4e07e; SHA-256 '
+     'DACD34B593D0E676AC802779960DBB4F4BDC32A462C26F8852D56C9D4C95A669.'),
+    ('Predictive diagnostics: POSFIT v3; repository MNL_posfit; branch '
+     'diagnostics/posfit-v3; commit 96693269; artifact run_provenance.json; '
+     'SHA-256 BDC3722C325FF8A27BE719AA52A741DF7BEEF9515B4A63554C65E8769EB7F40B.'),
+    ('Bounded decomposition: DECOMP-2; repository MNL_decomp; branch '
+     'welfare/preseminar-pab; commit b52761b4; artifact '
+     'preseminar_pab_record_v1.json; SHA-256 '
+     'BCBE4B6FC742DAA39535D5C3EB03BDA0641055A9F5E851B4F53F62FA3E612011.'),
+    ('Leisure scaling: WS4; commit 5a8e6bba; artifacts '
+     'ws4_sectionC_lambda_v1.png and ws4_sectionC_T_v1.png.'),
+    'END READER-VOICE PROVENANCE',
+]
+
 # =========================================================================== #
 # 8.  ASSEMBLY
 # =========================================================================== #
@@ -1352,8 +1384,10 @@ body = body.replace(
     r'\begin{longtable}',
     r'\Needspace*{12\baselineskip}\small\setlength{\tabcolsep}{3pt}'
     r'\begin{longtable}')
+_tex_provenance = '\n'.join('% ' + line for line in READER_VOICE_PROVENANCE)
 tex = (header + body + '\n\\bibliographystyle{plainnat}\n'
-       '\\bibliography{JMP_working_paper_for_seminar_v5}\n\\end{document}\n')
+       '\\bibliography{JMP_working_paper_for_seminar_v5}\n'
+       + _tex_provenance + '\n\\end{document}\n')
 (PAPER / 'JMP_working_paper_for_seminar_v5.tex').write_text(tex, encoding='utf-8')
 
 # ---- the HTML report ------------------------------------------------------ #
@@ -1465,6 +1499,8 @@ toc_html = '<h2>Contents</h2>' + ''.join(
     '<a class="%s" href="#%s">%s</a>' % ('' if l == '1' else 'sub', sid, txt)
     for l, sid, txt in _nav)
 
+_html_provenance = ('<!--\n' + '\n'.join(READER_VOICE_PROVENANCE)
+                    + '\n-->')
 htmlout = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
            '<meta name="viewport" content="width=device-width,initial-scale=1">'
            '<title>' + TITLE + '</title><style>' + css + '</style>'
@@ -1481,6 +1517,7 @@ htmlout = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
            'if(h&&h.offsetTop<=y)k=i;});ls.forEach(function(a,i){'
            'a.className=a.className.replace(/ ?on/,"")+(i===k?" on":"");});}'
            'addEventListener("scroll",on,{passive:true});on();})();</script>'
+           + _html_provenance +
            '</body></html>')
 (ROOT / 'reports/JMP_research_story_report_v5.html').write_text(
     htmlout, encoding='utf-8')

@@ -43,9 +43,8 @@
   no decomposition, no causal reading.}}
 \newcommand{\wfunitseq}{\caveat{Units: EUR/month, household-equivalised
   (modified-OECD scale); survey weight \texttt{dwt}. A descriptive dispersion
-  comparison, not a welfare-loss index. Equivalence scale: the ratified
-  modified-OECD scale (Deputy ruling ``SCALE CLOSED; CHILD-SHIFTER FRAMING'',
-  s1; \texttt{JMP\_SCALE\_REVIEW\_1\_equivalence\_scale\_economics\_v1.md}).
+  comparison, not a welfare-loss index. The modified-OECD scale is used
+  throughout the equivalised results.
   Singles and couples equivalised levels are never compared.}}
 
 \title{Unequal Job Opportunities and the Measurement of Welfare Inequality}
@@ -66,8 +65,8 @@ LISER and University of Luxembourg\par
 \vspace{1.3em}
 {\small France, EU-SILC priced through EUROMOD.\par}
 \vspace{0.6em}
-{\footnotesize Seminar of 17 September. Welfare content is presented under
-ruling R6; DECOMP-2 is preliminary model-based accounting.\par}
+{\footnotesize Seminar of 17 September. The welfare results use the own-set
+equal-consumption measure; the decomposition is preliminary and model-based.\par}
 \vfill
 \note{Thank you. The question is how much of the inequality in money-metric
 well-being is attributable to unequal job opportunities rather than to
@@ -110,8 +109,9 @@ welfare measure defined on it.}
 \begin{itemize}\itemsep0.6em
   \item A random-utility, random-opportunity (RURO) model in which
         \emph{which jobs a household can reach} is estimated, not assumed.
-  \item The Measure-1 money metric; in this empirical specification its direct
-        reference collapses to universally available non-employment.
+  \item The own-set equal-consumption money metric; in this empirical
+        specification its direct reference collapses to universally available
+        non-employment.
   \item A bounded three-factor exercise over systematic utility heterogeneity,
         coarse geographic/temporal access and earning opportunities.
 \end{itemize}
@@ -135,7 +135,7 @@ counterfactual-attainment estimand remains under design.}
 single-adult and \FrameCouples{} couple households.}
 \vfill
 \begin{itemize}\itemsep0.6em
-  \item Estimation frames: corrected criterion-A panels, S11 model of record.
+  \item Estimation frames: final samples and the current estimated specification.
   \item Estimation frame: each household's observed job plus \FrameDraws{}
         drawn alternatives, every one priced through the tax--benefit system.
   \item Fit diagnostics use a separate, larger panel: \FitNodes{} common
@@ -143,8 +143,8 @@ single-adult and \FrameCouples{} couple households.}
   \item Weights are the survey weights \texttt{dwt} throughout.
 \end{itemize}
 \vfill
-\caveat{S11 is the single model of record on these slides. Earlier S8 and
-R240 frames and their estimates are not shown and are not comparable.}
+\caveat{Results use a single specification throughout. Estimates from earlier,
+non-comparable sample frames are not shown.}
 \note{Two estimation samples, singles and couples, on the corrected
 criterion-A frames. Everything on the slides after this point is S11. I am
 deliberately not showing the older S8 or R240 numbers alongside, because the
@@ -228,7 +228,7 @@ separate parameter blocks.}
 \section{Positive estimates and fit}
 
 \begin{frame}
-\headlineframe{S11 model of record: \SSingActive{} free parameters for
+\headlineframe{Estimated model: \SSingActive{} free parameters for
 singles, \SCoupActive{} for couples.}
 \vfill
 \decktable{\begin{tabular}{lrr}
@@ -241,8 +241,8 @@ objective at $\hat\theta$ & \ObjSingles{} & \ObjCouples{} \\
 \bottomrule
 \end{tabular}}
 \vfill
-\caveat{Objectives reproduce exactly under the independent diagnostics
-evaluator, package commit \texttt{\EvaluatorCommit{}}.}
+\caveat{Objectives reproduce exactly under an independent diagnostics
+reimplementation.}
 \note{The headline fact about the estimates is that they are reproducible:
 an evaluator built separately for the diagnostics work recovers both stored
 objective values to the last digit shown. That is the precondition for
@@ -255,8 +255,9 @@ specification pins eleven coefficients by construction.}
 \headlineframe{Extensive-margin accuracy, shown only for the groups where it
 passes the quadrature-adequacy gate.}
 \slidefig{fitext_r6}
-\caveat{Values are shown only where the G2 weighted quadrature gate clears
-for this statistic; single men are quadrature-limited and withheld. This is
+\caveat{Values are shown only where the pre-registered weighted
+quadrature-adequacy rule clears for this statistic; single men are
+quadrature-limited and withheld. This is
 not a group-count result.}
 \note{The pre-registered adequacy gate asks whether numerical integration
 error is small relative to sampling variation. I show values only where that
@@ -279,7 +280,7 @@ numerical adequacy.}
 \headlineframe{Calibration conditioned on prediction: observed hours against
 predicted hours, by predicted decile.}
 \slidefig{calibration_r6}
-\caveat{support coverage audited (POSFIT v3); calibration statistics partly quadrature-limited; use the explicit group verdicts}
+\caveat{support coverage audited using individual-level predictive diagnostics; calibration statistics partly quadrature-limited; use the explicit group verdicts}
 \note{Households are sorted into deciles of their own predicted expected
 hours conditional on working, and each decile's mean observed hours is
 plotted against its mean prediction, on the v3 common-node support. The
@@ -303,7 +304,7 @@ reasonably closely, while hours fit is uneven. So read the shape, not the gaps.}
 \headlineframe{The access kernel is estimated, and it varies across
 households.}
 \slidefig{kernelacc_r6}
-\caveat{S11 singles; horizontal bars are 1.96 $\times$ CR1 cluster-robust
+\caveat{Single-adult estimates; horizontal bars are 1.96 $\times$ CR1 cluster-robust
 standard errors. Structural and model-conditional; not causal.}
 \note{This is the access block of the estimated opportunity density. The
 point is not any individual coefficient, it is that the block is estimated
@@ -319,7 +320,7 @@ before the measure and not after.}
 \headlineframe{So is the earning-opportunity kernel: an offer distribution,
 not a single wage.}
 \slidefig{kernelwage_r6}
-\caveat{S11 singles; occupation terms shift the offer location.
+\caveat{Single-adult estimates; occupation terms shift the offer location.
 Dispersion $\hat\sigma=\SElevenWageSigma{}$ ($z=\SElevenWageSigmaZ{}$).}
 \note{The wage side is an offer density with an estimated dispersion, not a
 point wage attached to each person. Education and experience shift the
@@ -343,9 +344,9 @@ leave the household exactly as well off.}
 \glossrow{$z_i$ attained bundle \quad $o$ the non-employment state \quad
 $m_i$ the money metric}
 \vfill
-\caveat{Mapping F is the primary empirical implementation (ruling R1).
-Mapping M is sensitivity only and requires an unidentified intensity
-parameter; it is not in the baseline.}
+\caveat{The empirical measure uses the universally available non-employment
+state as its reference. A market-job reference is a sensitivity analysis
+that requires an unidentified intensity parameter; it is not in the baseline.}
 \note{Q\&A note --- ruling R1, JMP\_W1\_fork\_ruling\_v1.md Appendix A.
 If asked why this reference and not the market-job reference: the fork
 analysis compared Mapping F, the full feasible set including
@@ -414,11 +415,9 @@ weighted Gini      & \WFSingCEqGini{}   & \WFSingWEqGini{} \\
 \end{tabular}}
 \vfill
 \wfunitseq
-\caveat{Source: \texttt{docs/results/}
-\texttt{JMP\_BASELINE\_F1\_equivalised\_reporting\_v1.md}, commit
-\texttt{4c4e07e}, over the verified construction (MNL commit
-\texttt{6048c9f}, independently verified \texttt{b5550af}). This is a
-descriptive dispersion comparison ($C^{\mathrm{eq}}$ against
+\caveat{The sample aggregates reproduce to machine precision under an
+independent reimplementation. This is a descriptive dispersion comparison
+($C^{\mathrm{eq}}$ against
 $\Wone_F{}^{\mathrm{eq}}$ within the singles sample), not a welfare-loss
 index.}
 \note{Q\&A note --- BASELINE-F-1 ruling, E3-EQ, and ruling R6.
@@ -454,7 +453,8 @@ weighted Gini      & \WFCoupCEqGini{}   & \WFCoupWEqGini{} \\
 \wfunitseq
 \caveat{Reported separately from singles: no pooled figure, and no
 cross-sample level comparison is drawn on this slide or elsewhere in this
-deck. Source: same memo and commits as the singles equivalised slide.}
+deck. The same independently reimplemented welfare construction and
+equivalence scale are used as for single adults.}
 \note{Q\&A note --- BASELINE-F-1 ruling, E3-EQ, and ruling R6.
 Same descriptive comparison, on the couples sample. I am deliberately not
 placing this table next to the singles one: the two are separate estimation
@@ -472,7 +472,7 @@ cross-sample level comparison.}
 \section{Decomposition architecture}
 
 \begin{frame}
-\headlineframe{DECOMP-2 equalises three bounded channels, not whole job access.}
+\headlineframe{This bounded decomposition equalises three channels, not whole job access.}
 \vfill
 \begin{itemize}\itemsep0.6em
   \item[$P$] systematic utility heterogeneity (tastes + reduced-form time
@@ -500,7 +500,7 @@ reduced-form behavioural/time-constraint shifter, not as pure taste.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{DECOMP-2 is executed; the final attainment estimand remains
+\headlineframe{The bounded decomposition is executed; the final attainment estimand remains
 under design.}
 \vfill
 \begin{center}
@@ -515,13 +515,13 @@ under design.}
   \draw[->] (s) -- (e); \draw[->] (e) -- (z);
   \draw[->] (z) -- (w); \draw[->] (w) -- (i);
   \node[below=6mm of z,font=\scriptsize,color=deepred,align=center]
-       {bounded DECOMP-2 route};
+       {bounded decomposition route};
 \end{tikzpicture}
 \end{center}
 \vfill
-\caveat{DECOMP-2 reuses the already-priced estimation panel with no
+\caveat{This exercise reuses the already-priced estimation panel with no
 re-estimation and no new pricing. The final decomposition's
-counterfactual-attainment estimand remains under design (R5).}
+counterfactual-attainment estimand remains under design.}
 \note{Q\&A note --- ruling R5 and final economics review M10.
 The preliminary exercise carries the household's realised draws through each
 counterfactual environment. That is an executed, bounded accounting route,
@@ -572,7 +572,8 @@ does not contain that counterfactual.}
 \headlineframe{What I would like from you today.}
 \vfill
 \begin{itemize}\itemsep0.7em
-  \item Is Mapping F the reference you would want for this question?
+  \item Is universally available non-employment the reference you would want
+        for this question?
   \item Which counterfactual attainment estimand would you defend?
   \item What would convince you the access kernel is identified, given that
         access and capability are not separated?
@@ -591,7 +592,7 @@ what evidence would settle it than defend the current position.}
 \appendix
 
 \begin{frame}
-\headlineframe{B1 --- Baseline $\Wone$-F, unequivalised, single adults
+\headlineframe{Baseline $\Wone$-F, unequivalised, single adults
 (verification backup).}
 \vfill
 \decktable{\begin{tabular}{lr}
@@ -608,9 +609,8 @@ observed non-workers          & \WFSingNonworkers{} \\
 \vfill
 \wfunits
 \caveat{Secondary/verification slide: the equivalised singles slide (\S6) is
-primary. Source: \texttt{MNL/outputs/welfare/baseline\_f1\_v1/}
-\texttt{baseline\_f1\_full\_sample\_report\_v1.md}, commit
-\texttt{6048c9f}, independently verified \texttt{b5550af}.}
+primary. The sample aggregates reproduce to machine precision under an
+independent reimplementation.}
 \note{This is the literal observed-bundle Mapping-F distribution before
 equivalisation, kept here so any question about the un-scaled level or about
 worker/non-worker counts has a one-slide answer. It is not the headline: the
@@ -619,7 +619,7 @@ consumption exactly by construction; for workers it is strictly below it.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B2 --- Baseline $\Wone$-F, unequivalised, couples
+\headlineframe{Baseline $\Wone$-F, unequivalised, couples
 (verification backup).}
 \vfill
 \decktable{\begin{tabular}{lr}
@@ -649,23 +649,23 @@ observed bundle and never prices the home state.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B3 --- Baseline $\Wone$-F pre-registered checks}
+\headlineframe{Pre-registered checks for the baseline $\Wone$-F measure}
 \vfill
 \decktable{\begin{tabular}{lll}
 \toprule
 check & singles & couples \\
 \midrule
-C1 non-workers, $\max|\Wone-C^{\mathrm{obs}}|$ & \WFSingCone{} & \WFCoupCone{} \\
-C2 workers, ratio outside $(0,1)$              & \WFSingCtwo{} & \WFCoupCtwo{} \\
-C3 dependency test ($\gopp,q,\varepsilon,\kappa$) & PASS & PASS \\
-C4 MEASURE-MAP-1R worked households            & PASS & PASS \\
-C5 indifference identity, $\max|\Delta \uutil|$ & \WFSingCfive{} & \WFCoupCfive{} \\
-C6 guards triggered                            & 0 & 0 \\
+non-workers, $\max|\Wone-C^{\mathrm{obs}}|$ & \WFSingCone{} & \WFCoupCone{} \\
+workers, ratio outside $(0,1)$              & \WFSingCtwo{} & \WFCoupCtwo{} \\
+dependency test ($\gopp,q,\varepsilon,\kappa$) & PASS & PASS \\
+worked-household correspondence test            & PASS & PASS \\
+indifference identity, $\max|\Delta \uutil|$ & \WFSingCfive{} & \WFCoupCfive{} \\
+guards triggered                            & 0 & 0 \\
 \bottomrule
 \end{tabular}}
 \vfill
-\caveat{All six checks were pre-registered in the BASELINE-F-1 ruling before
-execution. C2 violations were to be explained, never clipped; none occurred.}
+\caveat{All six checks were pre-registered before execution. Worker-ratio
+violations were to be explained, never clipped; none occurred.}
 \note{The checks are the reason the baseline is presentable. C1 and C2 are
 the model-implied domain conditions. C3 is the dependency test: the baseline
 API accepts no opportunity density, no proposal, no shock and no intensity,
@@ -674,24 +674,24 @@ confirms the indifference identity to machine precision.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B4 --- The G2 quadrature-adequacy gate}
+\headlineframe{Quadrature adequacy for extensive-margin accuracy}
 \vfill
 \decktable{\begin{tabular}{lrl}
 \toprule
-group & extensive accuracy & G2 label \\
+group & extensive accuracy & status \\
 \midrule
-coupled women & \FitExtCF{}\% & ADEQUATE (ratio \FitExtRatioCF{}) \\
-single women  & \FitExtSF{}\% & ADEQUATE (ratio \FitExtRatioSF{}) \\
-coupled men   & \FitExtCM{}\% & ADEQUATE (ratio \FitExtRatioCM{}) \\
-single men    & ---           & QUADRATURE-LIMITED, withheld \\
+coupled women & \FitExtCF{}\% & reported (ratio \FitExtRatioCF{}) \\
+single women  & \FitExtSF{}\% & reported (ratio \FitExtRatioSF{}) \\
+coupled men   & \FitExtCM{}\% & reported (ratio \FitExtRatioCM{}) \\
+single men    & ---           & quadrature-limited, withheld \\
 \bottomrule
 \end{tabular}}
 \vfill
 \caveat{Weighted, all households. Ratio is Monte Carlo s.e. over sampling
-s.d.; the gate is $\le 0.25$. Node bootstrap over
+s.d.; the pre-registered criterion is $\le 0.25$. Node bootstrap over
 \FitNodes{} common quadrature nodes per household (diagnostic panel, not the
 estimation draws). Simulated bands: \FitSims{} outcome vectors at fixed
-$\hat\theta$. POSFIT v3, commit \texttt{\PosfitCommit{}}.}
+$\hat\theta$. Source: individual-level predictive diagnostics.}
 \note{The gate was fixed before the statistics were computed. It asks
 whether numerical integration error is small enough relative to sampling
 variation for the statistic to be a statement about the model rather than
@@ -700,32 +700,55 @@ a quadrature-limited number carries no information about fit.}
 \end{frame}
 
 \begin{frame}
-\headlineframe{B5 --- Authority for what is and is not on these slides}
+\headlineframe{Scope of the welfare evidence shown here}
 \vfill
 \decktable{\begin{tabular}{ll}
 \toprule
-ruling & what it settles here \\
+question & treatment here \\
 \midrule
-R1 & Mapping F primary; home is the selected reference on this empirical domain \\
-R2 & superseded alternative welfare construction excluded from the baseline \\
-R4 & MEASURE-MAP-1R: the measure-correspondence gate \\
-R5 & counterfactual attainment: in design, not executed \\
-R6 & what this seminar may present \\
-E1 & BASELINE-F-1 authorised, executed, independently verified \\
-E2 & $C^{\mathrm{obs}}$ is the estimated utility's own argument \\
-E3 & $C^{\mathrm{obs}}$ benchmark: not authorised, not produced \\
-E3-EQ & equivalised reporting (\S6) primary; modified-OECD ratified (SCALE CLOSED, s1) \\
+empirical reference & home is selected on this empirical domain \\
+alternative welfare construction & excluded from the baseline \\
+measure correspondence & verified for worked households \\
+counterfactual attainment & in design, not executed \\
+reported scope & descriptive baseline and bounded preliminary decomposition \\
+observed consumption & the estimated utility's own argument \\
+alternative consumption benchmark & not constructed or reported \\
+equivalised reporting & primary (\S6), using the modified-OECD scale \\
 \bottomrule
 \end{tabular}}
 \vfill
-\caveat{R1--R6: \texttt{docs/normative/JMP\_W1\_fork\_ruling\_v1.md},
-Appendix A. E1--E3: \texttt{docs/normative/}
-\texttt{JMP\_W1\_BASELINE\_F1\_authorization\_and\_Cobs\_ruling\_v1.md}.
-E3-EQ: \texttt{docs/results/}
-\texttt{JMP\_BASELINE\_F1\_equivalised\_reporting\_v1.md}, commit
-\texttt{4c4e07e}.}
+\caveat{Supporting technical provenance is retained in the source-only
+provenance block.}
 \note{This backup slide exists so that any question of the form ``why is
 that not here'' has a one-line answer with a document behind it.}
 \end{frame}
+
+% BEGIN READER-VOICE PROVENANCE
+% Source-only provenance; excluded from rendered reader text.
+% Specifications: S11; artifact s11_welfare_specs_of_record_v1.json; SHA-256
+% 5FDC88502493CE540B088880EECF049BC268392FF3E8790FFE78A16AA6DDC884.
+% Welfare definition: Mapping F; artifact JMP_W1_fork_ruling_v1.md; Deputy
+% ruling R1; SHA-256
+% 7F5D26857D8A96174A9924848F65A02611944273D7775FDC52DC82364A818C05.
+% Welfare authorization: BASELINE-F-1 and E1; artifact
+% JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md; SHA-256
+% 54DFD886E41D0A89C1056CBEA5FA51E0A1294D3CA0813F938802BDC3DBD9EE0E.
+% Welfare aggregates: artifact baseline_f1_verification_v1.md; MNL commit
+% 6048c9f7; independent verification b5550af5; SHA-256
+% DA7BADF639F3D502D47B301558453D76501C9C44033ECE3F17BDE350BFD5E55F.
+% Equivalised reporting: E3-EQ; artifact
+% JMP_BASELINE_F1_equivalised_reporting_v1.md; commit 4c4e07e; scale ruling
+% "SCALE CLOSED; CHILD-SHIFTER FRAMING", s1; artifact
+% JMP_SCALE_REVIEW_1_equivalence_scale_economics_v1.md; SHA-256
+% 7CACE61E4476148D05C894729F05FF38F79AF803B9E637449EC76F9CB808014E.
+% Predictive diagnostics: POSFIT v3; repository MNL_posfit; branch
+% diagnostics/posfit-v3; commit 96693269; evaluator commit 55bb0d0; artifact
+% run_provenance.json; SHA-256
+% BDC3722C325FF8A27BE719AA52A741DF7BEEF9515B4A63554C65E8769EB7F40B.
+% Bounded decomposition: DECOMP-2; repository MNL_decomp; branch
+% welfare/preseminar-pab; commit b52761b4; artifact
+% preseminar_pab_record_v1.json; SHA-256
+% BCBE4B6FC742DAA39535D5C3EB03BDA0641055A9F5E851B4F53F62FA3E612011.
+% END READER-VOICE PROVENANCE
 
 \end{document}

@@ -8,8 +8,8 @@ LISER and University of Luxembourg
 
 France, EU-SILC priced through EUROMOD.
 
-Seminar of 17 September. Welfare content is presented under ruling R6; DECOMP-2 is preliminary model-based
-accounting.
+Seminar of 17 September. The welfare results use the own-set equal-consumption measure; the decomposition
+is preliminary and model-based.
 Question and contribution
 Two people with the same tastes and the same wage need not face the same set of jobs.
 
@@ -37,8 +37,8 @@ accounting.
 
       A random-utility, random-opportunity (RURO) model in which which jobs a household can
        reach is estimated, not assumed.
-      The Measure-1 money metric; in this empirical specification its direct reference collapses
-       to universally available non-employment.
+      The own-set equal-consumption money metric; in this empirical specification its direct
+       reference collapses to universally available non-employment.
       A bounded three-factor exercise over systematic utility heterogeneity, coarse
        geographic/temporal access and earning opportunities.
 
@@ -57,7 +57,7 @@ households.
 
 
 
-      Estimation frames: corrected criterion-A panels, S11 model of record.
+      Estimation frames: final samples and the current estimated specification.
       Estimation frame: each household’s observed job plus 100 drawn alternatives, every one
        priced through the tax–benefit system.
       Fit diagnostics use a separate, larger panel: 2 048 common quadrature nodes per
@@ -65,11 +65,11 @@ households.
       Weights are the survey weights dwt throughout.
 
 
-   S11 is the single model of record on these slides. Earlier S8 and R240 frames and their estimates are not shown
-   and are not comparable.
+   Results use a single specification throughout. Estimates from earlier, non-comparable sample frames are not
+   shown.
 
 
-                                                                                                                     4/19
+                                                                                                                 4/19
 A job is a package; a household draws from its own distribution over packages.
 
 
@@ -114,25 +114,25 @@ households.
 
                                                                                                                     6/19
 Positive estimates and fit
-S11 model of record: 41 free parameters for singles, 47 for couples.
+Estimated model: 41 free parameters for singles, 47 for couples.
 
 
 
 
                                                              singles       couples
-                              free parameters                   41            47
-                              estimation households          1 540         2 223
-                              objective at θ̂             6253.463     10283.034
+                              free parameters                   41             47
+                              estimation households          1 540          2 223
+                              objective at θ̂             6253.463      10283.034
 
 
 
 
-   Objectives reproduce exactly under the independent diagnostics evaluator, package commit 55bb0d0.
+   Objectives reproduce exactly under an independent diagnostics reimplementation.
 
 
 
 
-                                                                                                       7/19
+                                                                                     7/19
 Extensive-margin accuracy, shown only for the groups where it passes the
 quadrature-adequacy gate.
 
@@ -142,23 +142,23 @@ quadrature-adequacy gate.
 
 
 
-       single women                                                                      85.5%
+       single women                                                                       85.5%
 
 
 
-        coupled men                                                                             92.3%
+        coupled men                                                                               92.3%
 
 
 
-     coupled women                                                                           89.8%
+     coupled women                                                                            89.8%
 
-                       0                  20              40             60                80              100
-                                      extensive-margin accuracy (%), G2-adequate groups only
+                       0                  20              40               60                80               100
+                           extensive-margin accuracy (%), groups clearing the numerical-adequacy rule
 
-   Values are shown only where the G2 weighted quadrature gate clears for this statistic; single men are
-   quadrature-limited and withheld. This is not a group-count result.
+   Values are shown only where the pre-registered weighted quadrature-adequacy rule clears for this statistic; single
+   men are quadrature-limited and withheld. This is not a group-count result.
 
-                                                                                                                 8/19
+                                                                                                                        8/19
 Calibration conditioned on prediction: observed hours against predicted hours, by
 predicted decile.
 
@@ -186,8 +186,8 @@ predicted decile.
                                 30           40         30           40         30           40         30           40
                               predicted E[h | work]   predicted E[h | work]   predicted E[h | work]   predicted E[h | work]
 
-   support coverage audited (POSFIT v3); calibration statistics partly quadrature-limited; use the explicit group
-   verdicts
+   support coverage audited using individual-level predictive diagnostics; calibration statistics partly
+   quadrature-limited; use the explicit group verdicts
 
 
 
@@ -218,14 +218,14 @@ opportunities
 
                                 region 8
 
-                                            −4           −3              −2              −1              0
-                                                 S11 singles, log access index; bars are 1.96 x CR1 robust s.e.
+                                            −4            −3              −2              −1               0
+                                             single-adult estimates, log access index; bars are 1.96 x CR1 robust s.e.
 
 
-   S11 singles; horizontal bars are 1.96 × CR1 cluster-robust standard errors. Structural and model-conditional;
-   not causal.
+   Single-adult estimates; horizontal bars are 1.96 × CR1 cluster-robust standard errors. Structural and
+   model-conditional; not causal.
 
-                                                                                                                   10/19
+                                                                                                                         10/19
 So is the earning-opportunity kernel: an offer distribution, not a single wage.
 
 
@@ -246,13 +246,13 @@ opportunities
                    occupation 3
 
                    occupation 4
-                                    0.0            0.5              1.0             1.5              2.0
-                                    S11 singles, log wage-offer density; bars are 1.96 x CR1 robust s.e.
+                                        0.0              0.5             1.0              1.5             2.0
+                                    single-adult estimates, log wage-offer density; bars are 1.96 x CR1 robust s.e.
 
-   S11 singles; occupation terms shift the offer location. Dispersion σ̂ = 0.382 (z = 28.7).
+   Single-adult estimates; occupation terms shift the offer location. Dispersion σ̂ = 0.382 (z = 28.7).
 
 
-                                                                                                           11/19
+                                                                                                                      11/19
 The welfare measure
 Haydar–Maniquet W 1 : the consumption at home that would leave the household exactly
 as well off.
@@ -260,20 +260,20 @@ as well off.
 
 
 
-                                                                                
-                 Wi1 = mi (o; zi ) where ui mi (o), o                               = ui (zi )
+                                                                                       
+                  Wi1 = mi (o; zi ) where ui mi (o), o                                     = ui (zi )
 
 
-   zi attained bundle   o the non-employment state    mi the money metric
-
-
-
-   Mapping F is the primary empirical implementation (ruling R1). Mapping M is sensitivity only and requires an
-   unidentified intensity parameter; it is not in the baseline.
+   zi attained bundle    o the non-employment state        mi the money metric
 
 
 
-                                                                                                                  12/19
+   The empirical measure uses the universally available non-employment state as its reference. A market-job
+   reference is a sensitivity analysis that requires an unidentified intensity parameter; it is not in the baseline.
+
+
+
+                                                                                                                       12/19
 Under the current specification W 1 coincides with the staying-home equivalent — as a
 fact about this domain.
 
@@ -298,44 +298,46 @@ fact about this domain.
 Baseline W 1 -F, equivalised, single adults.
 
 
-                                                             C eq        WF1 eq
-                                 households                1 540         1 540
-                                 weighted mean             1 766         1 302
-                                 weighted median           1 588         1 165
-                                 weighted Gini         0.263292      0.249807
+
+
+                                                                 C eq        WF1 eq
+                                   households                  1 540         1 540
+                                   weighted mean               1 766         1 302
+                                   weighted median             1 588         1 165
+                                   weighted Gini           0.263292      0.249807
+
 
    Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
-   comparison, not a welfare-loss index. Equivalence scale: the ratified modified-OECD scale (Deputy ruling
-   “SCALE CLOSED; CHILD-SHIFTER FRAMING”, s1;
-   JMP SCALE REVIEW 1 equivalence scale economics v1.md). Singles and couples equivalised levels are never
-   compared.
+   comparison, not a welfare-loss index. The modified-OECD scale is used throughout the equivalised results.
+   Singles and couples equivalised levels are never compared.
 
-   Source: docs/results/ JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e, over the verified
-   construction (MNL commit 6048c9f, independently verified b5550af). This is a descriptive dispersion
-   comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
+   The sample aggregates reproduce to machine precision under an independent reimplementation. This is a
+   descriptive dispersion comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
 
-                                                                                                                14/19
+
+                                                                                                                  14/19
 Baseline W 1 -F, equivalised, couples.
 
 
-                                                                C eq        WF1 eq
-                                   households                 2 223         2 223
-                                   weighted mean              2 245         1 311
-                                   weighted median            2 063         1 237
-                                   weighted Gini          0.226805      0.197403
+
+                                                               C eq        WF1 eq
+                                  households                 2 223         2 223
+                                  weighted mean              2 245         1 311
+                                  weighted median            2 063         1 237
+                                  weighted Gini          0.226805      0.197403
+
 
    Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
-   comparison, not a welfare-loss index. Equivalence scale: the ratified modified-OECD scale (Deputy ruling
-   “SCALE CLOSED; CHILD-SHIFTER FRAMING”, s1;
-   JMP SCALE REVIEW 1 equivalence scale economics v1.md). Singles and couples equivalised levels are never
-   compared.
+   comparison, not a welfare-loss index. The modified-OECD scale is used throughout the equivalised results.
+   Singles and couples equivalised levels are never compared.
 
    Reported separately from singles: no pooled figure, and no cross-sample level comparison is drawn on this slide
-   or elsewhere in this deck. Source: same memo and commits as the singles equivalised slide.
+   or elsewhere in this deck. The same independently reimplemented welfare construction and equivalence scale are
+   used as for single adults.
 
                                                                                                                      15/19
 Decomposition architecture
-DECOMP-2 equalises three bounded channels, not whole job access.
+This bounded decomposition equalises three channels, not whole job access.
 
 
 
@@ -354,28 +356,28 @@ fact about this domain.
 
 
                                                                                                                   16/19
-DECOMP-2 is executed; the final attainment estimand remains under design.
+The bounded decomposition is executed; the final attainment estimand remains under
+design.
 
 
 
 
-                              counterfactual       carried realised
-           coalition S                                                    WF1 (ziS )      inequality IS
-                               environment              draws
+                               counterfactual        carried realised
+           coalition S                                                        WF1 (ziS )     inequality IS
+                                environment               draws
 
 
-                                               bounded DECOMP-2 route
-
-
-
-
-   DECOMP-2 reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
-   decomposition’s counterfactual-attainment estimand remains under design (R5).
+                                                bounded decomposition route
 
 
 
 
-                                                                                                             17/19
+   This exercise reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
+   decomposition’s counterfactual-attainment estimand remains under design.
+
+
+
+                                                                                                                  17/19
 Preliminary decomposition and
 boundary
 Earning opportunities exceed coarse access within the bounded game.
@@ -404,7 +406,7 @@ boundary
 
 
 
-      Is Mapping F the reference you would want for this question?
+      Is universally available non-employment the reference you would want for this question?
 
       Which counterfactual attainment estimand would you defend?
 
@@ -419,26 +421,25 @@ boundary
 
 
                                                                                                    19/19
-B1 — Baseline W 1 -F, unequivalised, single adults (verification backup).
+Baseline W 1 -F, unequivalised, single adults (verification backup).
 
 
 
 
-                                         households                  1 540
-                                         weighted mean               1 435
-                                         weighted median             1 320
-                                         weighted Gini               0.238
-                                         observed workers            1 336
-                                         observed non-workers          204
+                                           households                  1 540
+                                           weighted mean               1 435
+                                           weighted median             1 320
+                                           weighted Gini               0.238
+                                           observed workers             1 336
+                                           observed non-workers           204
 
 
     Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
     decomposition, no causal reading.
 
-    Secondary/verification slide: the equivalised singles slide (§6) is primary. Source:
-    MNL/outputs/welfare/baseline f1 v1/ baseline f1 full sample report v1.md, commit 6048c9f,
-    independently verified b5550af.
-B2 — Baseline W 1 -F, unequivalised, couples (verification backup).
+    Secondary/verification slide: the equivalised singles slide (§6) is primary. The sample aggregates reproduce to
+    machine precision under an independent reimplementation.
+Baseline W 1 -F, unequivalised, couples (verification backup).
 
 
 
@@ -456,57 +457,57 @@ boundary
 
     Secondary/verification slide: the equivalised couples slide (§6) is primary. Reported separately from singles. No
     pooled figure: the two samples are separate estimation frames and the welfare unit differs.
-B3 — Baseline W 1 -F pre-registered checks
+Pre-registered checks for the baseline W 1 -F measure
 
 
 
 
-                     check                                                 singles     couples
-                     C1 non-workers, max |W 1 − C obs |                    0           0
-                     C2 workers, ratio outside (0, 1)                      0           0
-                     C3 dependency test (g , q, ε, κ)                      PASS        PASS
-                     C4 MEASURE-MAP-1R worked households                   PASS        PASS
-                     C5 indifference identity, max |∆u|                    1.8e-15     1.8e-15
-                     C6 guards triggered                                   0           0
+                          check                                            singles     couples
+                                                   1      obs
+                          non-workers, max |W − C |                        0           0
+                          workers, ratio outside (0, 1)                    0           0
+                          dependency test (g , q, ε, κ)                    PASS        PASS
+                          worked-household correspondence test             PASS        PASS
+                          indifference identity, max |∆u|                  1.8e-15     1.8e-15
+                          guards triggered                                 0           0
 
 
 
-   All six checks were pre-registered in the BASELINE-F-1 ruling before execution. C2 violations were to be
-   explained, never clipped; none occurred.
-B4 — The G2 quadrature-adequacy gate
+    All six checks were pre-registered before execution. Worker-ratio violations were to be explained, never clipped;
+    none occurred.
+Quadrature adequacy for extensive-margin accuracy
 
 
 
 
-               group                extensive accuracy      G2 label
-               coupled women                      89.8%     ADEQUATE (ratio 0.02)
-               single women                       85.5%     ADEQUATE (ratio 0.15)
-               coupled men                        92.3%     ADEQUATE (ratio 0.24)
-               single men                             —     QUADRATURE-LIMITED, withheld
+                   group                 extensive accuracy       status
+                   coupled women                       89.8%      reported (ratio 0.02)
+                   single women                        85.5%      reported (ratio 0.15)
+                   coupled men                         92.3%      reported (ratio 0.24)
+                   single men                              —      quadrature-limited, withheld
 
 
 
-   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the gate is ≤ 0.25. Node bootstrap over
-   2 048 common quadrature nodes per household (diagnostic panel, not the estimation draws). Simulated bands:
-   500 outcome vectors at fixed θ̂. POSFIT v3, commit 96693269.
-B5 — Authority for what is and is not on these slides
+   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the pre-registered criterion is ≤ 0.25.
+   Node bootstrap over 2 048 common quadrature nodes per household (diagnostic panel, not the estimation
+   draws). Simulated bands: 500 outcome vectors at fixed θ̂. Source: individual-level predictive diagnostics.
+Scope of the welfare evidence shown here
 
 
 
-              ruling   what it settles here
-              R1       Mapping F primary; home is the selected reference on this empirical domain
-              R2       superseded alternative welfare construction excluded from the baseline
-              R4       MEASURE-MAP-1R: the measure-correspondence gate
-              R5       counterfactual attainment: in design, not executed
-              R6       what this seminar may present
-              E1       BASELINE-F-1 authorised, executed, independently verified
-              E2       C obs is the estimated utility’s own argument
-              E3       C obs benchmark: not authorised, not produced
-              E3-EQ    equivalised reporting (§6) primary; modified-OECD ratified (SCALE CLOSED, s1)
+
+               question                            treatment here
+               empirical reference                 home is selected on this empirical domain
+               alternative welfare construction    excluded from the baseline
+               measure correspondence              verified for worked households
+               counterfactual attainment           in design, not executed
+               reported scope                      descriptive baseline and bounded preliminary decomposition
+               observed consumption                the estimated utility’s own argument
+               alternative consumption benchmark   not constructed or reported
+               equivalised reporting               primary (§6), using the modified-OECD scale
 
 
 
-    R1–R6: docs/normative/JMP W1 fork ruling v1.md, Appendix A. E1–E3: docs/normative/
-    JMP W1 BASELINE F1 authorization and Cobs ruling v1.md. E3-EQ: docs/results/
-    JMP BASELINE F1 equivalised reporting v1.md, commit 4c4e07e.
+
+   Supporting technical provenance is retained in the source-only provenance block.
 

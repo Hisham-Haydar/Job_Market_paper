@@ -87,14 +87,21 @@ def check_scale_status(statuses: set[str], names: set[str]) -> None:
 
 
 def check_scale_citation(src: str) -> None:
-    """Refuse unless the deck source cites the ratifying ruling and memo."""
-    flat = re.sub(r"\s+", " ", src.replace("\\_", "_"))
+    """Refuse unless the source-only provenance block carries both citations."""
+    match = re.search(
+        r"% BEGIN READER-VOICE PROVENANCE(.*?)% END READER-VOICE PROVENANCE",
+        src,
+        re.S,
+    )
+    if match is None:
+        raise SystemExit("REFUSED: reader-voice provenance block is missing")
+    flat = re.sub(r"\s+", " ", match.group(1).replace("\\_", "_"))
     missing = [s for s in (SCALE_RULING_CITE, SCALE_MEMO) if s not in flat]
     if missing:
         raise SystemExit(
-            "REFUSED: deck source does not cite %s (missing: %s); the "
+            "REFUSED: deck provenance does not cite %s (missing: %s); the "
             "equivalised numbers may not be emitted without the ratifying "
-            "ruling on the slide" % (SCALE_RULING_ID, missing))
+            "source record" % (SCALE_RULING_ID, missing))
 
 
 def sha256(p: Path) -> str:

@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.6)  14 SEP 2026 18:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.6)  14 SEP 2026 18:56
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**./manuscript/JMP_working_paper_for_seminar_v5.tex
-(manuscript/JMP_working_paper_for_seminar_v5.tex
+**./JMP_working_paper_for_seminar_v5.tex
+(JMP_working_paper_for_seminar_v5.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -470,8 +469,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 32
  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-(C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar
-_v5.aux)
+(JMP_working_paper_for_seminar_v5.aux)
 \openout1 = `JMP_working_paper_for_seminar_v5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
@@ -627,55 +625,42 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [2{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
 enc}{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc
 }{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c} <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/theory_w1.png (
-PNG copy)>]
-[3] [4]
-manuscript/JMP_working_paper_for_seminar_v5.tex:134: ignored error: Infinite gl
-ue shrinkage found in box being split [5] [6]
-<figures/v5/figV08_data_panel.png, id=121, 716.1957pt x 499.3857pt>
+c} <./figures/v5/theory_w1.png (PNG copy)>] [3] [4]
+ignored error: Infinite glue shrinkage found in box being split [5]
+<figures/v5/figV08_data_panel.png, id=115, 716.1957pt x 499.3857pt>
 File: figures/v5/figV08_data_panel.png Graphic file (type png)
 <use figures/v5/figV08_data_panel.png>
 Package pdftex.def Info: figures/v5/figV08_data_panel.png  used on input line 1
 98.
 (pdftex.def)             Requested size: 432.47466pt x 301.55397pt.
- [7 <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV08_data_pa
-nel.png>]
-<figures/v5/figV09_resources_panel.png, id=131, 732.0951pt x 513.8397pt>
+ [6]
+[7 <./figures/v5/figV08_data_panel.png>]
+<figures/v5/figV09_resources_panel.png, id=133, 732.0951pt x 513.8397pt>
 File: figures/v5/figV09_resources_panel.png Graphic file (type png)
 <use figures/v5/figV09_resources_panel.png>
 Package pdftex.def Info: figures/v5/figV09_resources_panel.png  used on input l
 ine 228.
 (pdftex.def)             Requested size: 432.4909pt x 303.55482pt.
- [8 <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figV09_resourc
-es_panel.png>] [9{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
-/lm/lm-mathex.enc}]
-[10]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-17.
- (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Underfull \hbox (badness 2050) in paragraph at lines 323--324
-[]\T1/lmr/m/n/10 This is the the-o-ret-i-cal own-set equal-consumption cri-te-r
-ion above (Mea-sure 1), $\OML/lmm/m/it/10 u[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 
-z[]\OT1/lmr/m/n/10 ) =
- []
-
-[11]
+ [8 <./figures/v5/figV09_resources_panel.png>] [9{C:/Users/hisham/AppData/Local
+/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [10]
 Underfull \hbox (badness 1270) in paragraph at lines 351--352
 \T1/lmr/m/n/10 A com-plete at-tri-bu-tion of mea-sured in-equal-ity to pref-er-
 ences and to cir-cum-stances re-quires a
  []
 
+[11]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 58.
-(C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+ (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [12{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.e
-nc}]
-[13]
-manuscript/JMP_working_paper_for_seminar_v5.tex:517: ignored error: Infinite gl
-ue shrinkage found in box being split [14]
+)
+[12{C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc
+}] [13]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+43.
+ (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 Underfull \hbox (badness 1881) in paragraph at lines 543--544
 []\T1/lmr/bx/n/10 Maintained re-stric-tions. \T1/lmr/m/n/10 Sin-gles: \T1/lmtt/
 m/n/10 theta_c_singles = 0\T1/lmr/m/n/10 ; the cou-ples pref-er-ence block
@@ -690,7 +675,8 @@ T1/lmtt/m/n/10 beta_l_age2_f\T1/lmr/m/n/10 , \T1/lmtt/m/n/10 beta_l_nkids_f\T1/
 lmr/m/n/10 ,
  []
 
-<figures/v5/figP01_indifference_curves_singles.png, id=198, 759.19635pt x 334.6
+[14]
+<figures/v5/figP01_indifference_curves_singles.png, id=199, 759.19635pt x 334.6
 101pt>
 File: figures/v5/figP01_indifference_curves_singles.png Graphic file (type png)
 
@@ -698,8 +684,7 @@ File: figures/v5/figP01_indifference_curves_singles.png Graphic file (type png)
 Package pdftex.def Info: figures/v5/figP01_indifference_curves_singles.png  use
 d on input line 547.
 (pdftex.def)             Requested size: 432.47997pt x 190.6123pt.
-[15]
-<figures/v5/figP02_indifference_curves_couples.png, id=204, 759.19635pt x 334.6
+<figures/v5/figP02_indifference_curves_couples.png, id=200, 759.19635pt x 334.6
 101pt>
 File: figures/v5/figP02_indifference_curves_couples.png Graphic file (type png)
 
@@ -707,24 +692,22 @@ File: figures/v5/figP02_indifference_curves_couples.png Graphic file (type png)
 Package pdftex.def Info: figures/v5/figP02_indifference_curves_couples.png  use
 d on input line 553.
 (pdftex.def)             Requested size: 432.47997pt x 190.6123pt.
-<figures/v5/figP04_mrs_by_age_sex.png, id=205, 961.9137pt x 318.7107pt>
+<figures/v5/figP04_mrs_by_age_sex.png, id=201, 961.9137pt x 318.7107pt>
 File: figures/v5/figP04_mrs_by_age_sex.png Graphic file (type png)
 <use figures/v5/figP04_mrs_by_age_sex.png>
 Package pdftex.def Info: figures/v5/figP04_mrs_by_age_sex.png  used on input li
 ne 559.
 (pdftex.def)             Requested size: 432.47556pt x 143.29204pt.
- [16 <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figP01_indiff
-erence_curves_singles.png> <C:/Users/hisham/Repo/Job_Market_paper/manuscript/fi
-gures/v5/figP02_indifference_curves_couples.png>]
-<figures/v5/fitext_band_v1.png, id=214, 773.289pt x 375.35231pt>
+ [15 <./figures/v5/figP01_indifference_curves_singles.png> <./figures/v5/figP02
+_indifference_curves_couples.png>]
+<figures/v5/fitext_band_v1.png, id=210, 773.289pt x 375.35231pt>
 File: figures/v5/fitext_band_v1.png Graphic file (type png)
 <use figures/v5/fitext_band_v1.png>
 Package pdftex.def Info: figures/v5/fitext_band_v1.png  used on input line 571.
 
 (pdftex.def)             Requested size: 432.47252pt x 209.92093pt.
- [17 <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/figP04_mrs_by
-_age_sex.png> <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fite
-xt_band_v1.png>]
+ [16 <./figures/v5/figP04_mrs_by_age_sex.png> <./figures/v5/fitext_band_v1.png>
+]
 Overfull \hbox (7.51187pt too wide) in paragraph at lines 595--596
 []\T1/lmr/m/n/10 Population  
  []
@@ -734,9 +717,8 @@ Overfull \hbox (7.51187pt too wide) in paragraph at lines 619--620
 []\T1/lmr/m/n/10 Population  
  []
 
-manuscript/JMP_working_paper_for_seminar_v5.tex:679: ignored error: Infinite gl
-ue shrinkage found in box being split [18]
-<figures/v5/fig_preseminar_pab_architecture_v1.png, id=232, 794.97pt x 346.896p
+ignored error: Infinite glue shrinkage found in box being split [17]
+<figures/v5/fig_preseminar_pab_architecture_v1.png, id=228, 794.97pt x 346.896p
 t>
 File: figures/v5/fig_preseminar_pab_architecture_v1.png Graphic file (type png)
 
@@ -744,7 +726,7 @@ File: figures/v5/fig_preseminar_pab_architecture_v1.png Graphic file (type png)
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_architecture_v1.png  use
 d on input line 713.
 (pdftex.def)             Requested size: 432.49193pt x 188.72374pt.
- [19]
+ [18]
 Overfull \hbox (0.12154pt too wide) in alignment at lines 730--749
  [] [] [] [] [] [] [] 
  []
@@ -764,10 +746,9 @@ Overfull \hbox (0.12154pt too wide) in alignment at lines 769--786
  [] [] [] [] [] [] [] 
  []
 
-manuscript/JMP_working_paper_for_seminar_v5.tex:786: ignored error: Infinite gl
-ue shrinkage found in box being split [20 <C:/Users/hisham/Repo/Job_Market_pape
-r/manuscript/figures/v5/fig_preseminar_pab_architecture_v1.png>]
-<figures/v5/fig_preseminar_pab_decomposition_singles_v1.png, id=246, 823.878pt 
+ignored error: Infinite glue shrinkage found in box being split [19 <./figures/
+v5/fig_preseminar_pab_architecture_v1.png>]
+<figures/v5/fig_preseminar_pab_decomposition_singles_v1.png, id=242, 823.878pt 
 x 679.338pt>
 File: figures/v5/fig_preseminar_pab_decomposition_singles_v1.png Graphic file (
 type png)
@@ -775,8 +756,8 @@ type png)
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_decomposition_singles_v1
 .png  used on input line 790.
 (pdftex.def)             Requested size: 432.47957pt x 356.60596pt.
- [21]
-<figures/v5/fig_preseminar_pab_decomposition_couples_v1.png, id=251, 823.878pt 
+ [20]
+<figures/v5/fig_preseminar_pab_decomposition_couples_v1.png, id=247, 823.878pt 
 x 679.338pt>
 File: figures/v5/fig_preseminar_pab_decomposition_couples_v1.png Graphic file (
 type png)
@@ -784,31 +765,25 @@ type png)
 Package pdftex.def Info: figures/v5/fig_preseminar_pab_decomposition_couples_v1
 .png  used on input line 796.
 (pdftex.def)             Requested size: 432.47957pt x 356.60596pt.
- [22 <C:/Users/hisham/Repo/Job_Market_paper/manuscript/figures/v5/fig_presemina
-r_pab_decomposition_singles_v1.png>] [23 <C:/Users/hisham/Repo/Job_Market_paper
-/manuscript/figures/v5/fig_preseminar_pab_decomposition_couples_v1.png>] [24] [
-25]
-manuscript/JMP_working_paper_for_seminar_v5.tex:917: ignored error: Infinite gl
-ue shrinkage found in box being split [26]
-manuscript/JMP_working_paper_for_seminar_v5.tex:978: ignored error: Infinite gl
-ue shrinkage found in box being split [27] [28]
-(C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar
-_v5.bbl [29]) [30]
-(C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar
-_v5.aux)
+ [21 <./figures/v5/fig_preseminar_pab_decomposition_singles_v1.png>] [22 <./fig
+ures/v5/fig_preseminar_pab_decomposition_couples_v1.png>] [23] [24]
+ignored error: Infinite glue shrinkage found in box being split [25]
+ignored error: Infinite glue shrinkage found in box being split [26] [27]
+(JMP_working_paper_for_seminar_v5.bbl [28]) [29]
+(JMP_working_paper_for_seminar_v5.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13519 strings out of 467870
- 218163 string characters out of 5417872
- 692089 words of memory out of 5000000
+ 13517 strings out of 467870
+ 217903 string characters out of 5417872
+ 692121 words of memory out of 5000000
  42070 multiletter control sequences out of 15000+600000
  716905 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,1829b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,1820b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.p
 fb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.
 pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10
@@ -832,10 +807,10 @@ pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
 10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb>
-Output written on C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_
-paper_for_seminar_v5.pdf (30 pages, 2343202 bytes).
+Output written on JMP_working_paper_for_seminar_v5.pdf (29 pages, 2340679 bytes
+).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
+ 523 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
  299 words of extra memory for PDF output out of 10000 (max. 10000000)
 

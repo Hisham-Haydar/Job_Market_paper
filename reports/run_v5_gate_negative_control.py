@@ -5,6 +5,7 @@ one violation at a time into a COPY of the artifacts, runs the gate against the
 copy, and checks that the intended item flips to FAIL.
 """
 import re
+import os
 import shutil
 import subprocess
 import sys
@@ -20,8 +21,10 @@ MUTATIONS = [
      r'fixed at one at the numeraire beta_c = 1 and so'),
     (2, 'tex', 'g^{E}_{ij}', 'g^{Acc}_{ij}'),
     (5, 'md', 'directly pay-neutral', 'shown to fail Independence of pay'),
-    (7, 'tex', 'earning opportunities dominate local labour-market access',
-     'local labour-market access dominates earning opportunities'),
+    (7, 'tex', 'earning-opportunity heterogeneity has a larger contribution '
+     'than the coarse geographic/temporal access channel',
+     'coarse geographic/temporal access heterogeneity has a larger '
+     'contribution than the earning-opportunity channel'),
     (9, 'tex', 'held fixed', 'left unadjusted'),
     (10, 'tex', 'The estimated model has',
      'The SCALE-1 CERTIFIED estimated model has'),
@@ -68,8 +71,11 @@ def run_gate(root: Path):
     every mutation look uncaught and, worse, would have made a broken gate look
     like a passing one.
     """
+    env = os.environ.copy()
+    env['PYTHONIOENCODING'] = 'utf-8'
     r = subprocess.run([PY, str(root / 'reports/run_v5_gate.py')],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, env=env,
+                       encoding='utf-8')
     fails, seen = set(), 0
     for line in r.stdout.splitlines():
         m = re.match(r'^(\d+)\s+.*\s(PASS|FAIL)\s*$', line)

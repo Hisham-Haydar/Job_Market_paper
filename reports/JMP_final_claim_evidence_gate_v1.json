@@ -3,15 +3,15 @@
   "surfaces": {
     "deck": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r6.pdf",
-      "sha256": "b36ff0985f37deea9cfd08d52fe8b928fe98be253dc85a180eaf0a0ddc865e35"
+      "sha256": "0d09fe7b68e5a881a697b0ac116e7f5e58323730a1a2d964e45a3540d9068b41"
     },
     "story": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_research_story_report_v5.html",
-      "sha256": "dd95af9576e56f3be7ad42c32b33cac1bc80a8c0175a07296bebc69d6874ff57"
+      "sha256": "8897459ce8d1638227e65d4c0680a3d95dfa68a623d44b5a33b0e8be27b289c1"
     },
     "paper": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\JMP_working_paper_for_seminar_v5.pdf",
-      "sha256": "fc4cf0de271ea8d4fefd58d34286fa134b55d17a8954a1527be00fb02356e632"
+      "sha256": "a8953b923fc64fc2bee033a8f680d91edfc7b99ee7ddeabc2de2a132288fcb34"
     },
     "gallery": {
       "path": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_current.html",
@@ -284,12 +284,12 @@
     }
   ],
   "counts": {
-    "occurrences": 6167,
-    "resolved": 6167,
+    "occurrences": 6152,
+    "resolved": 6152,
     "failures": 0,
     "critical_failures": 0,
     "retired_hits": 0,
-    "cross_surface_quantities": 1756,
+    "cross_surface_quantities": 1755,
     "cross_surface_failures": 0
   },
   "fit_table": [
@@ -621,6 +621,27 @@
     ],
     "confirmed": true
   },
+  "commit_rv_reconciliation": {
+    "prior_occurrences": 6167,
+    "current_occurrences": 6152,
+    "removed_internal_label_digits": 19,
+    "rendered_extraction_net_change": 4,
+    "lineage_failures": 10,
+    "lineage_status": "pre-existing disclosed debt on untouched files",
+    "authorization": "COMMIT-RV; Goal 1 clearance"
+  },
+  "commit_rv_lineage_debt": [
+    "reports/JMP_v5_review_and_modular_revision_plan_v1.md",
+    "reports/consistency_gate_v1.md",
+    "reports/model_extraction_v1.md",
+    "reports/novelty-audit-structural-well-being-inequality.md",
+    "reports/numbers_of_record_v1.json",
+    "reports/numbers_of_record_v3.json",
+    "reports/numbers_of_record_v4.json",
+    "reports/JMP_reference_profiles_v1.md",
+    "reports/figure_modules/v5_labour_market_opportunity_composition/build_figure.py",
+    "reports/figure_modules/v5_labour_market_opportunity_composition/evidence.md"
+  ],
   "number_table": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_number_to_source_v1.csv",
   "report": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_final_claim_evidence_gate_v1.md"
 }

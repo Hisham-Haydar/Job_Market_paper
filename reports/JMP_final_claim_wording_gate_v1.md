@@ -35,13 +35,18 @@ Signed detailed-table parsing: Story report=PASS, Working paper=PASS, Canonical 
 - Safe fit wording preserved: **PASS**.
 - Forbidden wording hits: **0**.
 
+## Reader-voice and provenance checks
+
+- Forbidden process-vocabulary hits in rendered story, paper and deck text: **0**.
+- Provenance blocks: Story report=PASS (blocks=1, SHA-256 values=7), Working paper=PASS (blocks=1, SHA-256 values=7), Deck=PASS (blocks=1, SHA-256 values=7).
+
 ## Artifact hashes
 
 | Artifact | SHA-256 | Path |
 |---|---|---|
-| Deck PDF | `B36FF0985F37DEEA9CFD08D52FE8B928FE98BE253DC85A180EAF0A0DDC865E35` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` |
-| Story HTML | `DD95AF9576E56F3BE7AD42C32B33CAC1BC80A8C0175A07296BEBC69D6874FF57` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
-| Working-paper PDF | `FC4CF0DE271EA8D4FEFD58D34286FA134B55D17A8954A1527BE00FB02356E632` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
+| Deck PDF | `0D09FE7B68E5A881A697B0AC116E7F5E58323730A1A2D964E45A3540D9068B41` | `C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_deck_r6.pdf` |
+| Story HTML | `8897459CE8D1638227E65D4C0680A3D95DFA68A623D44B5A33B0E8BE27B289C1` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_research_story_report_v5.html` |
+| Working-paper PDF | `A8953B923FC64FC2BEE033A8F680D91EDFC7B99EE7DDEABC2DE2A132288FCB34` | `C:\Users\hisham\Repo\Job_Market_paper\manuscript\JMP_working_paper_for_seminar_v5.pdf` |
 | Gallery HTML | `7A0D8E7840C5BCCB271F4C1E16974238EE1E19F50585D5B5093AB996BB3DFB5E` | `C:\Users\hisham\Repo\Job_Market_paper\reports\JMP_results_gallery_current.html` |
 | Notebook | `CE102AD5098E5F5479B306CDF516D8CC7473CCEEBC33714758A1FE5AACE90632` | `C:\Users\hisham\Repo\MNL\experiments\JMP_SEMINAR_SPRINT\JMP_canonical_AtoZ.ipynb` |
 | Rehearsal script | `246A3943BEE92A82E5F6FE3FE3007490CB2B0DCE2441D7D8E3A5EB18D1E9CE3C` | `C:\Users\hisham\Repo\Job_Market_paper\reports\rehearsal_pack_v1.md` |
