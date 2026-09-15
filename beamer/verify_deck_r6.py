@@ -659,6 +659,169 @@ V16_REQUIRED = {
 }
 
 
+V16_PROFILE = {
+    "tag": "V16",
+    "src": V16_SRC, "numbers": V16_NUMBERS, "prov": V16_PROV, "pdf": V16_PDF,
+    "text": V16_TEXT, "reh_text": V16_REH_TEXT, "results": V16_RESULTS,
+    "lineage": [V16_SRC, HERE / "make_deck_numbers_r6.py", V16_NUMBERS,
+                HERE / "build_deck_v16.py"],
+    "caption": None,                        # None -> the verbatim V15 caption
+    "caption_numbers": {"1", "2026", "3"},
+    "caption_reh_end": r"defined in\s*Section 3\.",
+    "anchors": V16_ANCHORS, "main_range": (16, 18),
+    "required": V16_REQUIRED,
+    "central_phrases": ["earning opportunities dominate under ATT",
+                        "access dominates under EA for single adults",
+                        "couples show no reversal"],
+    "primary_phrase": "neither is designated primary",
+    "extra_labels": [],
+    "style": False,
+}
+
+# ==========================================================================
+# DECK-V17 profile:  python verify_deck_r6.py --deck v17
+#
+# The same verifier repointed at the style revision.  Every V16 check runs
+# with V17's own titles, required statements and shortened caption; added
+# are the style check (frame titles <= 6 words; no body paragraph longer than
+# three rendered lines), a caveat-placement check, a backup check and the
+# conflict / theory-figure placement checks.  Four negative controls.
+# ==========================================================================
+V17_SRC = HERE / "JMP_seminar_beamer_v17.tex"
+V17_CAPTION = (
+    "Own-set equal-consumption equivalents: each individual gets a common consumption on "
+    "every job in their own ability set; the level at which the preferred job is indifferent "
+    "to the attained bundle is their money metric, comparable across individuals. Adapted "
+    "from Haydar and Maniquet (2026), work in progress.")
+V17_TITLES = [
+    "Motivation", "The conflict", "Research question", "Literature and gap", "Job packages",
+    "Opportunities: the choice probability", "Data and EUROMOD", "Estimation", "Welfare",
+    "Ex-ante prospect welfare", "Attained-bundle welfare",
+    "Inequality and Shapley decomposition", "Results: prospects versus attained outcomes",
+    "What is not claimed", "Conclusion",
+]
+V17_PROFILE = {
+    "tag": "V17",
+    "src": V17_SRC, "numbers": HERE / "deck_numbers_v17.tex",
+    "prov": BUILD / "v17_number_provenance.json",
+    "pdf": BUILD / "JMP_seminar_beamer_v17.pdf",
+    "text": BUILD / "JMP_seminar_beamer_v17_text.txt",
+    "reh_text": BUILD / "JMP_seminar_beamer_v17_rehearsal_text.txt",
+    "results": BUILD / "v17_verification.json",
+    "lineage": [V17_SRC, HERE / "make_deck_numbers_r6.py", HERE / "deck_numbers_v17.tex",
+                HERE / "build_deck_v17.py"],
+    "caption": V17_CAPTION,
+    "caption_numbers": {"2026"},
+    "caption_reh_end": r"work in\s*progress\.",
+    "anchors": [(t, t) for t in V17_TITLES], "main_range": (15, 16),
+    "required": {
+        "resources/needs/composition held fixed":
+            "Household resources, needs and composition held fixed",
+        "access = local access, defined":
+            "local unemployment exposure, region, urban or rural location, year",
+        "access is local access, not total opportunity": "local access, not total opportunity",
+        "preliminary": "Preliminary decomposition",
+        "not causal": "Not causal",
+        "no parameter uncertainty yet": "No parameter uncertainty yet",
+        "preferences not equated with responsibility": "Preferences are not responsibility",
+        "prospects versus attained outcomes": "prospects versus attained outcomes",
+        "two different welfare questions": "two different welfare questions",
+    },
+    "central_phrases": ["prospects versus attained outcomes", "no reversal",
+                        "single adults: access $>$ earnings", "earnings $>$ access"],
+    "primary_phrase": "neither perspective is designated primary",
+    "extra_labels": [(r"\b[vV]\d{1,2}\b", True), (r"\bfrozen\b", False),
+                     (r"\baccepted\b", False), (r"\bSection\s+\d", False)],
+    "style": True,
+}
+
+
+def split_appendix(src: str) -> tuple[str, str]:
+    """Split at a real \\appendix command line, never at a mention in a comment."""
+    parts = re.split(r"(?m)^[ \t]*\\appendix[ \t]*$", src, maxsplit=1)
+    return (parts[0], parts[1]) if len(parts) == 2 else (src, "")
+
+
+def _title_words(title: str) -> int:
+    t = re.sub(r"\$[^$]*\$", " x ", title)
+    t = re.sub(r"\\[A-Za-z]+\*?", " ", t).replace("{", " ").replace("}", " ")
+    return len([w for w in t.split() if re.search(r"[A-Za-z0-9]", w)])
+
+
+def frame_titles(src: str) -> list[str]:
+    body = src.split(r"\begin{document}", 1)[-1]
+    return [flat(m.group(2)) for m in re.finditer(
+        r"\\(frametitle|headlineframe)\{((?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*)\}", body)]
+
+
+_MATH_FONTS = ("CMMI", "CMSY", "CMEX", "MSBM", "CMR")
+
+
+def paragraph_violations(pdf: Path, skip_pages: set[int], max_lines: int = 3) -> list[str]:
+    """Rendered-body paragraphs longer than max_lines.
+
+    A paragraph is a PyMuPDF text block, minus the frame-title band, the
+    footline, display-math lines (math fonts dominate, fewer than three prose
+    words) and table blocks (any baseline carrying three or more separate text
+    runs).  Consecutive baselines more than 2.2 font sizes apart split a block.
+    """
+    import pymupdf
+    out = []
+    doc = pymupdf.open(pdf)
+    for pno, page in enumerate(doc, 1):
+        if pno in skip_pages:
+            continue
+        height = page.rect.height
+        for block in page.get_text("dict")["blocks"]:
+            if block.get("type") != 0:
+                continue
+            lines = []
+            for ln in block["lines"]:
+                spans = [s for s in ln["spans"] if s["text"].strip()]
+                if not spans:
+                    continue
+                y = spans[0]["origin"][1]
+                if y < 0.11 * height or y > 0.92 * height:
+                    continue
+                prose = sum(len(re.findall(r"[A-Za-z]{3,}", s["text"])) for s in spans
+                            if not s["font"].startswith(_MATH_FONTS) and "SSI" not in s["font"])
+                mathy = any(s["font"].startswith(_MATH_FONTS) or "SSI" in s["font"]
+                            for s in spans)
+                if mathy and prose < 3:
+                    continue
+                lines.append((y, max(s["size"] for s in spans),
+                              " ".join(s["text"] for s in spans)))
+            if not lines:
+                continue
+            rows: dict = {}
+            for y, size, text in lines:
+                key = next((k for k in rows if abs(k - y) <= 2), y)
+                rows.setdefault(key, []).append((size, text))
+            if any(len(v) >= 3 for v in rows.values()):
+                continue                         # a table row
+            ys = sorted(rows)
+            para = [ys[0]]
+            for prev, cur in zip(ys, ys[1:]):
+                size = max(s for s, _ in rows[cur])
+                if cur - prev > 2.2 * size:
+                    para = [cur]
+                else:
+                    para.append(cur)
+                if len(para) > max_lines:
+                    first = " ".join(t for _, t in rows[para[0]])[:60]
+                    out.append("page %d: %d+ lines from %r" % (pno, len(para), first))
+                    break
+    return out
+
+
+def style_violations(src: str, pdf: Path, max_words: int = 6) -> tuple[list, list]:
+    long_titles = ["%r (%d words)" % (t, _title_words(t)) for t in frame_titles(src)
+                   if _title_words(t) > max_words]
+    fr = frames(src)
+    skip = {i for i, f in enumerate(fr, 1) if r"\titlepage" in f}
+    return long_titles, paragraph_violations(pdf, skip)
+
+
 def _norm(s: str) -> str:
     import unicodedata
     s = unicodedata.normalize("NFKC", s)
@@ -679,7 +842,9 @@ def _images_in(html: Path) -> set[str]:
             for m in re.findall(r"data:image/png;base64,([A-Za-z0-9+/=]+)", text)}
 
 
-def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, dict]:
+def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) -> tuple[list, list, dict]:
+    P = V16_PROFILE if P is None else P
+    T = "G-" + P["tag"]
     import hashlib
     sys.path.insert(0, str(HERE))
     sys.path.insert(0, str(HERE.parent / "reports" / "research_story_build"))
@@ -709,7 +874,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
       if not ban else "OUT-OF-SCOPE TOKENS PRESENT: " + ", ".join(ban))
 
     # typed numerals: slides AND notes; dimensions and the verbatim caption removed
-    caption_src = v15.THEORY_CAPTION
+    caption_src = v15.THEORY_CAPTION if P["caption"] is None else P["caption"]
     cap_present = flat(caption_src) in flat(body)
     scan = _strip_comments(body)
     if cap_present:
@@ -721,7 +886,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
     typed = {m.group(0) for m in re.finditer(r"(?<![\\A-Za-z0-9])\d+(?:\.\d+)?", scan)}
     typed -= {"1", "3"}          # the Shapley weight |S|!(3-|S|-1)!/3!
     g("G-NUMBERS", not typed, "no hand-typed numeral on any slide or note "
-      "(Shapley-weight integers and the verbatim V15 caption excepted)"
+      "(Shapley-weight integers and the theory-figure caption excepted)"
       if not typed else "hand-typed numerals: " + ", ".join(sorted(typed)))
 
     # assets: every included image is byte-identical to an image embedded in V15
@@ -746,8 +911,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
       else "VIOLATION: unresolved %s; not a V15 image %s; banned tree %s"
            % (unresolved, not_v15, banned_tree))
 
-    lin = rlg.scan_files([p for p in (V16_SRC, HERE / "make_deck_numbers_r6.py", V16_NUMBERS,
-                                      HERE / "build_deck_v16.py") if p.exists()])
+    lin = rlg.scan_files([p for p in P["lineage"] if p.exists()])
     g("G-LINEAGE", not lin, "no retired-lineage artifact referenced by path"
       if not lin else "RETIRED-LINEAGE PATH READ: " + rlg.format_violations(lin, REPO))
 
@@ -757,7 +921,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
       else "confusion-matrix language: " + ", ".join(conf))
     g("G-POOLED", "pooled" not in proj.lower(), "no pooled figure")
 
-    prov = json.loads(V16_PROV.read_text(encoding="utf-8"))["macros"]
+    prov = json.loads(P["prov"].read_text(encoding="utf-8"))["macros"]
     eur = {m for m, v in prov.items() if "EUR" in str(v.get("units"))}
     mixed = [i + 1 for i, f in enumerate(fr)
              if any(("\\" + m) in f and m.endswith(("Singles", "Sing")) for m in eur)
@@ -772,14 +936,14 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
     stale = [m for m, v in prov.items()
              if v["key"] not in registry
              or numsrc.v16_render(registry[v["key"]]["value"], v["format"]) != v["rendered"]]
-    numtex = V16_NUMBERS.read_text(encoding="utf-8")
+    numtex = P["numbers"].read_text(encoding="utf-8")
     tex_macros = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{(.*)\}", numtex))
     drift = [m for m, v in prov.items() if tex_macros.get(m) != v["rendered"]]
     unresolved_nums = []
     if len(pages) != len(fr):
         unresolved_nums.append("page/frame count mismatch %d vs %d" % (len(pages), len(fr)))
     for i, (f, page) in enumerate(zip(fr, pages), 1):
-        allowed = {prov[m]["rendered"].replace("$-$", "-") for m in prov
+        allowed = {prov[m]["rendered"].replace("$-$", "").lstrip("-") for m in prov
                    if re.search(r"\\%s(?![A-Za-z])" % m, f)}
         if r"\begin{enumerate}" in f:
             allowed |= {"1", "2", "3"}
@@ -787,8 +951,8 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
             allowed |= {"1", "3"}
         text = page
         if flat(caption_src) in flat(f):
-            allowed |= {"1", "2026", "3"}       # verbatim V15 caption only
-        text = re.sub(r"\b%d\s*/\s*%d\s*$" % (i, len(fr)), " ", text.rstrip())  # footer
+            allowed |= P["caption_numbers"]     # the theory-figure caption only
+        text = re.sub(r"\b\d+\s*/\s*\d+\s*$", " ", text.rstrip())  # footline frame counter
         for m in re.finditer(r"(?<![\w.,])-?\d[\d,]*(?:\.\d+)?(?![\w])", _norm(text)):
             tok = m.group(0).lstrip("-").rstrip(",")
             if tok not in allowed:
@@ -800,17 +964,20 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
       else "stale macros %s; tex drift %s; unresolved %s" % (stale, drift, unresolved_nums[:12]))
 
     # ------------------------------------------------ V16 content gates
-    n = len(fr)
-    positions = [(lab, proj_n.find(_norm(a))) for lab, a in V16_ANCHORS]
+    main_fr = frames(split_appendix(src)[0])
+    n = len(main_fr)
+    lo, hi = P["main_range"]
+    positions = [(lab, proj_n.find(_norm(a))) for lab, a in P["anchors"]]
     ordered = all(p >= 0 for _, p in positions) and \
         [p for _, p in positions] == sorted(p for _, p in positions)
-    g("G-V16-STRUCTURE", 16 <= n <= 18 and len(pages) == n and ordered,
-      "%d slides (16-18), PDF pages match, running order %s"
-      % (n, " -> ".join(l for l, _ in positions)) if 16 <= n <= 18 and ordered
+    g(T + "-STRUCTURE", lo <= n <= hi and len(pages) == len(fr) and ordered,
+      "%d main slides (%d-%d), %d pages match %d frames, running order %s"
+      % (n, lo, hi, len(pages), len(fr), " -> ".join(l for l, _ in positions))
+      if lo <= n <= hi and len(pages) == len(fr) and ordered
       else "count %d pages %d order %s" % (n, len(pages), positions))
 
     rq_ok = all(_norm(q) in proj_n for q in (V16_RQ,) + V16_SUBQ)
-    g("G-V16-RQ", rq_ok, "research question and three subquestions rendered verbatim"
+    g(T + "-RQ", rq_ok, "research question and three subquestions rendered verbatim"
       if rq_ok else "research question or a subquestion not verbatim on a slide")
 
     eqs = re.findall(r"\\slideeq\{", body)
@@ -818,7 +985,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
     sig_miss = [k for k, s in V16_EQUATIONS.items() if flat(s) not in flat(body)]
     eq_frames = [f for f in fr if r"\slideeq{" in f]
     notes_ok = all(re.search(r"\\note\{\s*In words:", f) for f in eq_frames)
-    g("G-V16-EQUATIONS", len(eqs) == 5 and not other_display and not sig_miss and notes_ok,
+    g(T + "-EQUATIONS", len(eqs) == 5 and not other_display and not sig_miss and notes_ok,
       "exactly five displayed equations (%s), each frame's note opens with a spoken "
       "interpretation line" % ", ".join(V16_EQUATIONS)
       if len(eqs) == 5 and not other_display and not sig_miss and notes_ok
@@ -829,15 +996,17 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
     cf = flat(central[0]) if len(central) == 1 else ""
     central_ok = (len(central) == 1 and "fig_v13_central_result.png" in used
                   and "fig_v13_central_result.png" not in not_v15
-                  and "earning opportunities dominate under ATT" in cf
-                  and "access dominates under EA for single adults" in cf
-                  and "couples show no reversal" in cf)
-    g("G-V16-CENTRAL", central_ok, "one central-result slide reuses the V15 ATT-versus-EA "
+                  and all(ph in cf for ph in P["central_phrases"]))
+    g(T + "-CENTRAL", central_ok, "one central-result slide reuses the V15 ATT-versus-EA "
       "figure unchanged and states the reversal for single adults, none for couples"
       if central_ok else "central-result slide missing, altered or mis-worded")
 
-    miss = [k for k, s in V16_REQUIRED.items() if _norm(s) not in proj_n]
-    g("G-V16-REQUIRED", not miss, "required statements rendered on slides: " + "; ".join(V16_REQUIRED)
+    import pymupdf
+    reading = _norm(" ".join(pg.get_text() for pg in pymupdf.open(P["pdf"]))).lower() \
+        if P["pdf"].exists() else ""
+    miss = [k for k, s in P["required"].items()
+            if _norm(s).lower() not in proj_n.lower() and _norm(s).lower() not in reading]
+    g(T + "-REQUIRED", not miss, "required statements rendered on slides: " + "; ".join(P["required"])
       if not miss else "missing on slides: " + ", ".join(miss))
 
     notes_all = " ".join(re.findall(r"\\note\{(.*?)\}\s*\\end\{frame\}", body, re.S))
@@ -847,13 +1016,14 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
             and not re.search(r"\b(neither|not|no)\b", s, re.I)]
     ea_rank = re.findall(r"EA[^.]{0,60}\b(is|as) (the )?(primary|preferred|main|headline|better|"
                          r"correct)\b", _norm(proj) + flat(notes_all))
-    g("G-V16-NOPRIMARY", not prim and not ea_rank and "neither is designated primary" in proj_n,
+    g(T + "-NOPRIMARY", not prim and not ea_rank and P["primary_phrase"] in proj_n.lower(),
       "EA foregrounded without being called the primary measure; slides say neither is designated primary"
       if not prim and not ea_rank else "primacy wording: %s %s" % (prim[:3], ea_rank))
 
-    cap_ok = cap_present and "Haydar and Maniquet" in flat(caption_src)
-    g("G-V16-CAPTION", cap_ok, "theory figure carries its V15 caption verbatim"
-      if cap_ok else "V15 theory caption missing or altered")
+    cap_ok = cap_present and "Haydar and Maniquet" in flat(caption_src) and \
+        (P["caption"] is None or "Section" not in caption_src)
+    g(T + "-CAPTION", cap_ok, "theory figure carries its caption verbatim (companion-paper attribution kept)"
+      if cap_ok else "theory caption missing or altered")
 
     lab_src = _strip_comments(body)
     lab_src = re.sub(r"\\(includegraphics|graphicspath|input)(\[[^\]]*\])?\{[^}]*\}", "", lab_src)
@@ -863,17 +1033,17 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
     for p in cap_render:   # excise the caption block on its page only
         lab_proj = lab_proj.replace(_norm(p), _norm(p.split("Own-set equal-consumption")[0]))
     lab_reh = _norm(reh_text)
-    lab_reh = re.sub(r"Own-set equal-consumption equivalents.*?defined in\s*Section 3\.", " ",
+    lab_reh = re.sub(r"Own-set equal-consumption equivalents.*?" + P["caption_reh_end"], " ",
                      lab_reh, flags=re.S)
     lab_hits = []
-    for pat, cs in V16_INTERNAL:
+    for pat, cs in V16_INTERNAL + P["extra_labels"]:
         rx = re.compile(pat, 0 if cs else re.I)
         for where, hay in (("source", lab_src), ("slides", lab_proj), ("notes", lab_reh)):
             m = rx.search(hay)
             if m:
                 lab_hits.append("%s in %s" % (m.group(0), where))
-    g("G-V16-LABELS", not lab_hits, "no internal label or forbidden measure name in source, "
-      "slides or notes (%d patterns)" % len(V16_INTERNAL)
+    g(T + "-LABELS", not lab_hits, "no internal label or forbidden measure name in source, "
+      "slides or notes (%d patterns)" % (len(V16_INTERNAL) + len(P["extra_labels"]))
       if not lab_hits else "INTERNAL LABELS: " + "; ".join(lab_hits))
 
     high = [m.group(0) for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(%|\\%|per ?cent)",
@@ -881,43 +1051,117 @@ def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, di
             if 80 <= float(m.group(1)) <= 100]
     words = re.findall(r"\b(eighty|ninety|near(ly)? 90|80\s*(-|--|to)\s*90)\b",
                        (proj + reh_text + src).lower())
-    g("G-V16-NO8090", not high and not words, "no 80-90% opportunity claim anywhere"
+    g(T + "-NO8090", not high and not words, "no 80-90% opportunity claim anywhere"
       if not high and not words else "high-share claim: %s %s" % (high, words))
 
     return ok_l, bad_l, detail
 
 
-def main_v16() -> int:
+def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
+    """Style-revision checks that only the V17 profile carries."""
+    ok_l: list[str] = []
+    bad_l: list[str] = []
+    detail: dict = {}
+
+    def g(name: str, ok: bool, msg: str) -> None:
+        (ok_l if ok else bad_l).append("%-18s %s" % (name, msg))
+        detail[name] = {"pass": bool(ok), "detail": msg}
+
+    long_titles, long_paras = style_violations(src, pdf)
+    n_titles = len(frame_titles(src))
+    g("G-V17-STYLE", not long_titles and not long_paras,
+      "%d frame titles all <= 6 words; no rendered body paragraph longer than 3 lines"
+      % n_titles if not long_titles and not long_paras
+      else "long titles %s; long paragraphs %s" % (long_titles, long_paras[:8]))
+
+    main_src, backup_src = split_appendix(src)
+    main_fr = frames(main_src)
+    limits = [f for f in main_fr if r"\frametitle{What is not claimed}" in f]
+    scattered = [i + 1 for i, f in enumerate(main_fr)
+                 if f not in limits and re.search(r"\\caveat\{|deepred", re.sub(
+                     r"\{\\color\{deepred\}\\rule\{[^}]*\}\{[^}]*\}\}", "",   # a decorative rule is not text
+                     re.sub(r"\\note\{.*", "", f, flags=re.S)))]
+    g("G-V17-CAVEATS", len(limits) == 1 and not scattered,
+      "caveats on one dedicated slide only; no red caveat text on any other main slide"
+      if len(limits) == 1 and not scattered else "caveat text on main frames %s" % scattered)
+
+    conclusion_ix = main_src.find(r"\frametitle{Conclusion}")
+    tables_main = [m for m in ("VEASingPhiARaw", "VAttSingPhiARaw") if "\\" + m in main_src]
+    tables_backup = all("\\" + m in backup_src for m in ("VEASingPhiARaw", "VAttSingPhiARaw"))
+    g("G-V17-BACKUP", conclusion_ix != -1 and not tables_main and tables_backup
+      and len(frames(backup_src)) >= 2,
+      "EA and ATT results tables are backup slides after the conclusion (%d backup slides)"
+      % len(frames(backup_src)) if not tables_main and tables_backup
+      else "results tables in main deck %s or missing from backup" % tables_main)
+
+    titles = [flat(t) for t in frame_titles(main_src)]
+    conflict = next((f for f in main_fr if r"\frametitle{The conflict}" in f), "")
+    conflict_ok = (len(titles) > 1 and titles[1] == "The conflict"
+                   and titles.index("The conflict") < titles.index("Data and EUROMOD")
+                   and all(k in conflict for k in ("Compensation", "Responsibility", r"\nexists",
+                                                    r"Fleurbaey \& Maniquet")))
+    g("G-V17-CONFLICT", conflict_ok,
+      "compensation-versus-responsibility conflict is slide 3, before the data, with the "
+      "impossibility and the Fleurbaey-Maniquet citation"
+      if conflict_ok else "conflict slide missing, late or incomplete")
+
+    welfare = next((f for f in main_fr if r"\frametitle{Welfare}" in f), "")
+    theory_ok = "theory_w1.png" in welfare and "theory_w1.png" not in backup_src \
+        and "Section" not in welfare.split(r"\note{")[0]
+    g("G-V17-THEORYFIG", theory_ok,
+      "theory figure is the main 'Welfare' slide, with a slide caption that drops the section reference"
+      if theory_ok else "theory figure not central, or caption still names a section")
+    return ok_l, bad_l, detail
+
+
+def main_profile(P: dict) -> int:
     import subprocess
-    src = V16_SRC.read_text(encoding="utf-8")
+    src = P["src"].read_text(encoding="utf-8")
     pdftotext = Path.home() / "AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdftotext.exe"
-    if not V16_TEXT.exists() and V16_PDF.exists():
-        subprocess.run([str(pdftotext), "-layout", str(V16_PDF), str(V16_TEXT)], check=True)
-    text = V16_TEXT.read_text(encoding="utf-8", errors="replace")
+    if not P["text"].exists() and P["pdf"].exists():
+        subprocess.run([str(pdftotext), "-layout", str(P["pdf"]), str(P["text"])], check=True)
+    text = P["text"].read_text(encoding="utf-8", errors="replace")
     pages = text.split("\f")
     if pages and not pages[-1].strip():
         pages = pages[:-1]
-    reh = V16_REH_TEXT.read_text(encoding="utf-8", errors="replace") \
-        if V16_REH_TEXT.exists() else ""
+    reh = P["reh_text"].read_text(encoding="utf-8", errors="replace") \
+        if P["reh_text"].exists() else ""
+    T = "G-" + P["tag"]
 
-    ok_l, bad_l, detail = v16_gates(src, pages, reh)
+    ok_l, bad_l, detail = v16_gates(src, pages, reh, P)
+    if P["style"]:
+        ok2, bad2, det2 = v17_extra_gates(src, P["pdf"])
+        ok_l, bad_l = ok_l + ok2, bad_l + bad2
+        detail.update(det2)
 
     # ---------------- negative controls: in-memory copies, original files untouched
     controls = {}
     inj = list(pages)
     inj[1] = inj[1] + "\nEstimated under S11.\n"
-    _, bad_tok, det_tok = v16_gates(src, inj, reh)
+    _, _, det_tok = v16_gates(src, inj, reh, P)
     controls["NC-LABEL (inject 'S11' on slide 2)"] = {
-        "expected": "G-V16-LABELS FAIL",
-        "fired": not det_tok["G-V16-LABELS"]["pass"]}
+        "expected": T + "-LABELS FAIL",
+        "fired": not det_tok[T + "-LABELS"]["pass"]}
     inj = list(pages)
     inj[1] = inj[1] + "\nA share of 12.34 per cent.\n"
-    _, bad_num, det_num = v16_gates(src, inj, reh)
+    _, _, det_num = v16_gates(src, inj, reh, P)
     controls["NC-REGISTRY (inject unregistered '12.34' on slide 2)"] = {
         "expected": "G-REGISTRY FAIL",
         "fired": not det_num["G-REGISTRY"]["pass"]}
+    if P["style"]:
+        long_src = src.replace(r"\frametitle{Motivation}",
+                               r"\frametitle{Why income inequality mixes several different mechanisms}", 1)
+        titles_bad, _ = style_violations(long_src, P["pdf"])
+        controls["NC-STYLE-TITLE (inject a seven-word title on slide 2)"] = {
+            "expected": "G-V17-STYLE FAIL", "fired": bool(titles_bad), "hits": titles_bad}
+        v16_titles, paras_bad = style_violations(V16_SRC.read_text(encoding="utf-8"), V16_PDF)
+        controls["NC-STYLE-PARAGRAPH (render check on the prose-bodied V16 PDF)"] = {
+            "expected": "paragraph check FAIL", "fired": bool(paras_bad),
+            "hits": paras_bad[:6], "count": len(paras_bad),
+            "v16_long_titles": len(v16_titles)}
 
-    print("V16 deck verification (verify_deck_r6.py --deck v16)")
+    label = "verify_deck_r6.py --deck " + P["tag"].lower()
+    print("%s deck verification (%s)" % (P["tag"], label))
     print("-" * 68)
     for line in ok_l:
         print("  PASS  " + line)
@@ -926,17 +1170,24 @@ def main_v16() -> int:
     print("-" * 68)
     for name, c in controls.items():
         print("  %s  %s -> expected %s" % ("FIRED" if c["fired"] else "SILENT", name, c["expected"]))
+        if c.get("hits"):
+            print("         e.g. %s" % c["hits"][0])
     print("-" * 68)
     fired = all(c["fired"] for c in controls.values())
-    print("%d passed, %d failed; negative controls %s"
-          % (len(ok_l), len(bad_l), "both fired" if fired else "DID NOT FIRE"))
-    V16_RESULTS.write_text(json.dumps({"gates": detail, "negative_controls": controls,
-                                       "passed": len(ok_l), "failed": len(bad_l)},
-                                      indent=2), encoding="utf-8", newline="\n")
+    print("%d passed, %d failed; %d negative controls %s"
+          % (len(ok_l), len(bad_l), len(controls), "all fired" if fired else "DID NOT ALL FIRE"))
+    P["results"].write_text(json.dumps({"gates": detail, "negative_controls": controls,
+                                        "passed": len(ok_l), "failed": len(bad_l)},
+                                       indent=2), encoding="utf-8", newline="\n")
     return 1 if bad_l or not fired else 0
 
 
+def main_v16() -> int:
+    return main_profile(V16_PROFILE)
+
+
 if __name__ == "__main__":
-    if "--deck" in sys.argv[1:] and sys.argv[sys.argv.index("--deck") + 1] == "v16":
-        sys.exit(main_v16())
+    if "--deck" in sys.argv[1:]:
+        deck = sys.argv[sys.argv.index("--deck") + 1]
+        sys.exit(main_profile({"v16": V16_PROFILE, "v17": V17_PROFILE}[deck]))
     sys.exit(main())

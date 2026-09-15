@@ -1,0 +1,323 @@
+Unequal Job Opportunities and Well-Being Inequality
+A Latent-Jobs Structural Decomposition
+
+
+
+Hisham Haydar
+University of Luxembourg and LISER
+Motivation
+
+
+
+                      Observed                                                Well-being
+                          Ci                                                      Mi
+                 Gini of consumption                            Gini of the attained-bundle money metric
+        single adults 0.2633    couples 0.2268                    single adults 0.2498   couples 0.1974
+
+
+
+                   low earnings      ⇐=     tastes     or    opportunities   or    resources
+
+
+
+   equivalised, household-weighted, within each population
+
+
+
+                                                                                                           1/15
+The conflict
+
+
+
+                 Compensation                                         Responsibility
+    unequal job opportunities should not become            preference-based choices should not be
+                unequal well-being                                     compensated
+
+
+
+                           Compensation            vs.     Responsibility
+                          ∄W :       Full Compensation ∧ Full Responsibility
+
+                                                                               [Fleurbaey & Maniquet]
+
+
+
+
+                                                                                                        2/15
+Research question
+
+
+
+   How much inequality in money-metric well-being is associated with unequal job opportunities
+   rather than heterogeneous preferences, once labour supply is modelled as choice among latent
+   jobs?
+
+
+    1. Do observed labour-supply choices reflect preferences alone, or also heterogeneous latent
+       job opportunities?
+    2. How do conclusions differ when welfare evaluates the attained bundle versus the ex-ante
+       opportunity prospect?
+    3. In a restricted P/A/B decomposition, how much welfare inequality is associated with
+       preferences, local access, and earning opportunities?
+
+
+                                                                                                   3/15
+Literature and gap
+
+
+
+
+           Latent jobs                       Money metrics                   Decomposition
+     Aaberge, Dagsvik & Strøm            Fleurbaey & Maniquet                    Shorrocks
+          Dagsvik & Jia                     Decoster & Haan                   Creedy & Hérault
+     Capéau, Decoster & Dekkers        Jacquet, Jia & Thoresen                     Mühlhan
+
+
+
+
+                       reforms and changes    −→ a level of well-being inequality
+                 preferences vs. opportunities, inside an estimated latent-jobs model
+
+
+
+
+                                                                                                  4/15
+Job packages
+
+
+
+           j = (e, k, h, w )             4 occupation groups        Ci (j) priced through EUROMOD
+
+
+                                                                            
+                                                            Ci (j)
+                                   vi (j) = Li (j) + βc log
+                                                             λc
+                   Li                                     βc                              λc
+   value of leisure: age; children for         weight on log consumption,           units convention
+                women                                  estimated
+
+
+
+
+                                                                                                       5/15
+Opportunities: the choice probability
+
+
+
+                                        exp{vi (j)} gi (j)
+                        Pi (j) = Z
+                                      exp{vi (k)} gi (k) dν(k)
+
+          access              hours                occupation       wage offers
+      employment mass         bands                    by sex    education, experience
+
+
+
+                                  valued   or   plentiful
+
+
+
+
+                                                                                         6/15
+Data and EUROMOD
+
+
+
+
+            EU-SILC France                        EUROMOD
+       collected 2016, incomes 2015         French 2015 policy system
+
+       1,540 single-adult households       h ∈ [5, 70]    w ∈ [2, 590]
+         2,223 couple households       100 priced alternatives per household
+
+
+
+
+                                                                               7/15
+Estimation
+
+
+
+       Household-specific opportunities                                   Common opportunities
+                  free coordinates 41                                      free coordinates 10 / 16
+                 population fit 0.0140                                 population fit 0.0273 / 0.0264
+
+
+
+                                        criterion worse by at least 141.64
+                        choices reflect opportunities, not preferences alone
+
+
+   single adults; population fit is the mean absolute deviation of predicted from observed moments
+
+
+
+                                                                                                        8/15
+Welfare
+
+
+
+
+   Own-set equal-consumption equivalents: each individual gets a common consumption on every job in their own
+   ability set; the level at which the preferred job is indifferent to the attained bundle is their money metric,
+   comparable across individuals. Adapted from Haydar and Maniquet (2026), work in progress.
+
+                                                                                                                    9/15
+Ex-ante prospect welfare
+
+
+
+             Z                              βc                                         Z
+                      Li (j)       Ci (j)
+      Ji =       e                  λc             gbi (j) dν(j),             Hi =           e Li (j) gbi (j) dν(j),
+                                                                    n                    o
+                                                                        log Ji −log Hi
+                                            MiEA = λc exp                      βc
+
+
+                 Ji                                            Hi                                      MiEA
+        the actual prospect                            same jobs, equal pay                  flat-consumption equivalent
+
+
+
+
+                                                                                                                           10/15
+Attained-bundle welfare
+
+
+
+
+                                                       obs
+                                                                      
+                                               L i (j      ) − L i (o)
+                            Miatt = Ciobs exp         i
+                                                           βc
+
+                        o                                                jiobs
+         non-employment, reachable by all
+                                                            the only route for opportunities
+
+
+
+
+                                                                                               11/15
+Inequality and Shapley decomposition
+
+
+              P                            A                              B                   held fixed
+   preferences: age, children     local unemployment              wage-offer location      household resources,
+                                exposure, region, urban                                   needs and composition
+                                 or rural location, year
+
+
+                          X            |S|! (3 − |S| − 1)! h p                  i
+         ϕpk =                                                             p
+                                                            v (S ∪ {k}) − v (S)
+                                                3!
+                  S⊆{P,A,B}\{k}
+
+
+
+                     v p (S) = I p (∅) − I p (S)           I p : household-weighted Gini of M p
+
+
+
+                                                                                                                  12/15
+Results: prospects versus attained outcomes
+
+
+
+
+                  EA: prospects                            ATT: attained outcomes
+     access + earnings 7.9–21.3% of baseline Gini    access + earnings 1.9–6.7% of baseline Gini
+     single adults: access > earnings; couples: no    earnings > access, both household types
+                       reversal
+                                                                                                   13/15
+What is not claimed
+
+
+
+                      Scope                                              Not claimed
+    Household resources, needs and composition                             Not causal
+                     held fixed
+                                                                  No parameter uncertainty yet
+     Access: local access, not total opportunity
+                                                                Preferences are not responsibility
+             Preliminary decomposition
+                                                            Neither perspective is designated primary
+
+
+
+                    prospects versus attained outcomes: two different welfare questions
+
+
+
+
+                                                                                                        14/15
+Conclusion
+
+
+
+
+    1. Choices reflect opportunities, not preferences alone.
+
+    2. Prospects: access leads for single adults.   Attained outcomes: earnings lead.       Couples:
+       no reversal.
+
+    3. Restricted P/A/B: a bounded part of well-being inequality; preference sign not robust.
+
+
+
+        next: resources and needs as a fourth channel   ·   parameter uncertainty   ·   validation
+
+
+
+
+                                                                                                       15/15
+Backup: ex-ante decomposition
+
+
+
+                     scale           access       earnings     access + earnings   ordering
+                                   Gini points   Gini points     % of baseline
+     Single adults   raw            0.01812       0.00555            14.8          access > earnings
+                     equivalised    0.02183       0.00673            20.3          access > earnings
+     Couples         raw            0.00667       0.02049            21.3          earnings > access
+                     equivalised    0.00449       0.00504             7.9          earnings > access
+
+
+
+
+                     single adults: access = 3.3 × earnings (raw), 3.2 × (equivalised)
+Backup: attained-bundle decomposition
+
+
+
+
+                     scale           access       earnings     access + earnings   ordering
+                                   Gini points   Gini points     % of baseline
+     Single adults   raw             0.0016        0.0040             2.4          earnings > access
+                     equivalised     0.0013        0.0034             1.9          earnings > access
+     Couples         raw             0.0009        0.0128             6.7          earnings > access
+                     equivalised     0.0007        0.0062             3.5          earnings > access
+Backup: matched households
+
+
+
+
+               access: A = 14.5 × B   wage-offer location: B +11.5 log points
+Backup: equivalisation
+
+
+
+
+    Couples, ex ante: access + earnings                    Couples, ex ante: preferences
+          21.3%        −→ 7.9%                             0.00291       −→ −0.00212
+             raw   →   equivalised                          Gini points, raw   →   equivalised
+
+
+
+
+                       modified-OECD scale: a convention, reported both ways
+
