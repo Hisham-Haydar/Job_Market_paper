@@ -1,0 +1,27 @@
+{
+  "gate": "V12 body/appendix section-title uniqueness",
+  "status": "PASS",
+  "surfaces": {
+    "report": {
+      "body_titles": 41,
+      "appendix_titles": 14,
+      "shared": [],
+      "status": "PASS"
+    },
+    "gallery": {
+      "body_titles": 23,
+      "appendix_titles": 10,
+      "shared": [],
+      "status": "PASS"
+    }
+  },
+  "negative_control": {
+    "injected": "body title 'Behavioural estimates' inside the report appendix",
+    "expected": "FAIL",
+    "observed": "FAIL",
+    "shared": [
+      "behavioural estimates"
+    ],
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "gate": "V12 number-to-source",
+  "status": "PASS",
+  "placeholder_count": 104,
+  "claims": [
+    {
+      "claim": "all certification checks pass",
+      "source": "certified record overall block",
+      "status": "PASS"
+    },
+    {
+      "claim": "every V11 registry value unchanged in V12",
+      "source": "numbers_of_record_v11.json vs v12 (no differences)",
+      "status": "PASS"
+    },
+    {
+      "claim": "V12 adds no registry key",
+      "source": "",
+      "status": "PASS"
+    },
+    {
+      "claim": "every scalar placeholder resolves",
+      "source": "V12 registry",
+      "status": "PASS"
+    },
+    {
+      "claim": "singles unequivalised ex-ante result",
+      "source": "results.singles.unequivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "singles equivalised ex-ante result",
+      "source": "results.singles.equivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples unequivalised ex-ante result",
+      "source": "results.couples.unequivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples equivalised ex-ante result",
+      "source": "results.couples.equivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "attained comparison values from the certified record",
+      "source": "comparison_W1F block",
+      "status": "PASS"
+    },
+    {
+      "claim": "attained A+B range is the sourced minimum and maximum",
+      "source": "derived over four comparison_W1F shares",
+      "status": "PASS"
+    },
+    {
+      "claim": "ex-ante A+B range is the sourced minimum and maximum",
+      "source": "derived over four certified shares",
+      "status": "PASS"
+    },
+    {
+      "claim": "single-adult access about three times earnings",
+      "source": "singles phi.A/phi.B",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples: no reversal, equivalisation and preference sign",
+      "source": "couples rows",
+      "status": "PASS"
+    },
+    {
+      "claim": "singles reversal: ATT earnings > access, EA access > earnings",
+      "source": "singles rows",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_admissible_pairs equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::selection_rule.admissible_pairs",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_leisure_weight_a equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::leisure_weight_A",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_leisure_weight_b equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::leisure_weight_B",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_leisure_distance equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::leisure_profile_distance",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_leisure_cut equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::leisure_profile_distance_p10_cut",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_access_ratio equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::access_mass_ratio_A_over_B",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_employment_share_a equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::opportunity_employment_share_A",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_employment_share_b equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::opportunity_employment_share_B",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_wage_gap equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::wage_location_gap_B_minus_A_logpoints",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_crossing_wage equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::A_more_offers_paying_at_least_w_up_to_eur_per_hour",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_opportunity_distance equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::opportunity_distance",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration mh_opportunity_distance_median equals its record",
+      "source": "Job_Market_paper/reports/v11_matched_households.json::opportunity_distance_admissible_median",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration numbers displayed as sourced",
+      "source": "v11_matched_households.json",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration dominance statements match the record",
+      "source": "v11_matched_households.json",
+      "status": "PASS"
+    },
+    {
+      "claim": "illustration record carries no identifier or record value",
+      "source": "none",
+      "status": "PASS"
+    },
+    {
+      "claim": "pricing count 351,024,407 matches the result memo and report appendix",
+      "source": "result memo table",
+      "status": "PASS"
+    }
+  ],
+  "sources": {
+    "certified ex-ante result record": {
+      "path": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json",
+      "sha256": "5923e62d16cf11f22b2b92608a0f20ceac3fcfcaeb5d44afc8a9c8f8bd021898"
+    },
+    "certified result memo": {
+      "path": "MNL_wea/docs/wea_sprint_1/WEA_SPRINT_1_result_memo_v1.md",
+      "sha256": "c3a52b1b48732faff62f11d07aafcaa79a88e287fed72e6727d00425b47d5e86"
+    },
+    "matched-household record": {
+      "path": "Job_Market_paper/reports/v11_matched_households.json",
+      "sha256": "3f4691f63fdda93123bf156770a8285f95ef91896dd122e480db14c5293c62ba"
+    },
+    "V12 registry": {
+      "path": "Job_Market_paper/reports/numbers_of_record_v11.json",
+      "sha256": "28390ab3703c820dd6c690051ec7d26221828dba01f6d10e912756ea553fd281"
+    }
+  },
+  "failures": []
+}
