@@ -194,3 +194,14 @@ Two small corrections. Nothing was recomputed and nothing restructured.
 - **Deck (v19):** 36/36 pass, 9 negative controls fire, 159 internal PDF links (0 broken).
 - **Deck regression:** r6 19/19, V16 18/18, V17 23/23, V18 32/32.
 - **Report V16 release suite:** 14/14 pass. It covers the correction scope, figure captions, rendered language, ex-ante status, section titles, reader structure, number-to-source, offline render, cross-surface sync, the R11 deck, the V11 notebook, compilation and V9–V15 byte-preservation.
+
+## V19-EA-SCOPE
+
+- **New backup slide, "Backup: scope of the companion theory".** Its heading, "What the companion theory does and does not cover", is the requested title. The frame title is shortened to keep the six-word title rule. The slide:
+  - states what the companion paper characterises axiomatically;
+  - states that the stochastic extension is this paper's own step;
+  - states the systematic-utility versus expected-maximum asymmetry, and that its normative adequacy is open.
+- **Navigation.** The slide is linked from the prospect-welfare slide and from the appendix map.
+- **Speaker note.** The prospect-welfare slide's note gains one sentence.
+- **Main slides.** No main-slide text changed.
+- **Checks.** v19 36/36 pass with all 9 negative controls firing; the three statements are now required on the rendered slides. Regressions pass: r6 19/19, V16 18/18, V17 23/23, V18 32/32.

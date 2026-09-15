@@ -304,30 +304,31 @@ Discussant: Sebastian Dobre
 
  ATT derivation   EA derivation   prospect reference
                                                                                                                      13/21
-Ex-ante prospect welfare                                                                                                                              In words: EA is the constant monthly consumption at which a prospect with the household’s own jobs and availability, but equal
-                                                                                                                                                      pay everywhere, is worth exactly as much as the prospect it actually faces.
-                                                                                                                                                      Every job enters J weighted by how available it is and how much it is valued; H keeps the same jobs, availability and preferences
-                                                                                                                                                      with pay differences removed. Opportunities enter welfare directly: access moves which jobs carry weight, and earning
-         What constant consumption over the household’s own job environment is equivalent to its                                                      opportunities move what they pay. I show this perspective first because the talk is about opportunities.
+Ex-ante prospect welfare                                                                                                                                  In words: EA is the constant monthly consumption at which a prospect with the household’s own jobs and availability, but equal
+                                                                                                                                                          pay everywhere, is worth exactly as much as the prospect it actually faces.
+                                                                                                                                                          Every job enters J weighted by how available it is and how much it is valued; H keeps the same jobs, availability and preferences
+                                                                                                                                                          with pay differences removed. Opportunities enter welfare directly: access moves which jobs carry weight, and earning
+         What constant consumption over the household’s own job environment is equivalent to its                                                          opportunities move what they pay. I show this perspective first because the talk is about opportunities. The deterministic
+                                                                                                                                                          foundation is axiomatic; the extension to a distribution of prospects is ours, and its normative treatment of taste shocks is not
+                                              prospect?                                                                                                   yet characterised.
 
-                                              prospect?
 
 
-                      Z                                  βc                                               Z
+                      Z                                  βc                                                   Z
                                  Li (j)         Ci (j)
-              Ji =           e                   λc             gbi (j) dν(j),                   Hi =           e Li (j) gbi (j) dν(j),
-                                                                                       n                    o
-                                                                                           log Ji −log Hi
-                                                         MiEA = λc exp                            βc
+              Ji =           e                   λc             gbi (j) dν(j),                       Hi =           e Li (j) gbi (j) dν(j),
+                                                                                           n                    o
+                                                                                               log Ji −log Hi
+                                                         MiEA = λc exp                                βc
 
-                            Ji                                                    Hi                                      MiEA
-                the actual prospect                                       same jobs, equal pay                  flat-consumption equivalent
-
-
+                            Ji                                                        Hi                                      MiEA
+                the actual prospect                                       same jobs, equal pay                      flat-consumption equivalent
 
 
- derivation    reference and generalised mean      numerical validation
-                                                                                                                                              14/21
+
+
+ derivation    reference and generalised mean      numerical validation     theory scope
+                                                                                                                                                  14/21
 Attained-bundle welfare                                                                                          In words: ATT is observed consumption, adjusted by the leisure the job costs relative to not working, converted at the rate one
                                                                                                                  over the consumption weight.
                                                                                                                  The reference is non-employment, which every household can reach; on the estimated domain it is also the equal-pay preferred
@@ -507,7 +508,7 @@ Discussant: Sebastian Dobre
         Fit             Extensive margin                Fit by margin              Thirty-seven-hour point   Matched households
                         Marginal rate of substitution
         Welfare         ATT derivation                  EA derivation              EA validation             Equivalisation
-                        Prospect reference              ATT numerical design       Aggregation orders
+                        Prospect reference              ATT numerical design       Aggregation orders        Theory scope
         Decomposition   Central figure                  EA Gini points             ATT Gini points           EA channel shares
                         ATT channel shares              Composition within P/A/B   Shapley vs one-factor     Outside P-A-B
                         Robustness
@@ -652,6 +653,27 @@ Discussant: Sebastian Dobre
 
 
  Back     Appendix map
+Backup: scope of the companion theory                                                                                The companion theory characterises the deterministic own-set equal-consumption construction axiomatically. The step from
+                                                                                                                     that construction to a distribution of job prospects is this paper’s own, and it is not characterised in the companion paper. The
+                                                                                                                     two measures treat the taste component differently: the attained-bundle measure evaluates systematic utility only, whereas the
+                                                                                                                     prospect measure’s expected-maximum construction lets the taste shocks contribute to the value of a prospect. Whether that
+                          What the companion theory does and does not cover                                          asymmetry is the right normative choice is an open question.
+
+
+
+                               Covered                                            Not covered
+        The deterministic own-set equal-consumption                The stochastic extension to a prospect is this
+        construction is characterised axiomatically in            paper’s own step and is not characterised there.
+                          the companion paper.
+
+                                                     The asymmetry
+                The attained-bundle measure uses systematic utility only, while the prospect measure’s
+           expected-maximum construction makes the taste component relevant to the prospect’s value.
+                                Whether that asymmetry is the right normative choice is open.
+
+
+
+ Back      Appendix map
 Backup: parameter uncertainty                                                                                      What is and is not known about uncertainty. Every estimated coordinate has a cluster-robust standard error. Estimation
                                                                                                                    uncertainty has not been propagated through either decomposition, so the shares on the result slides are point estimates without
                                                                                                                    confidence intervals, and differences between them are not statistically established. The seed and repeat-run comparisons

@@ -1501,6 +1501,12 @@ V19_PROFILE = dict(V18_PROFILE, **{
         "EA question": "What constant consumption over the household's own job environment is equivalent to its prospect?",
         "aggregation boundary (V19-C2)": "The two measures also differ in aggregation: the prospect measure inverts within each household; the attained-bundle measure averages inequality across simulated realisations.",
         "aggregation backup (V19-C2)": "the average of realised inequality versus the inequality of household equivalents",
+        "theory scope: covered (V19-EA-SCOPE)":
+            "The deterministic own-set equal-consumption construction is characterised axiomatically in the companion paper.",
+        "theory scope: not covered (V19-EA-SCOPE)":
+            "The stochastic extension to a prospect is this paper's own step and is not characterised there.",
+        "theory scope: asymmetry open (V19-EA-SCOPE)":
+            "Whether that asymmetry is the right normative choice is open.",
     },
     "hundred_phrases": ["Other / outside current P-A-B decomposition", r"1-(\phi_P+\phi_A+\phi_B)/I_0",
                         "A + B alone", "Current decomposition equalises P, A and B only.",

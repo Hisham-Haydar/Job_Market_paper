@@ -270,21 +270,21 @@ Discussant: Sebastian Dobre
                                               prospect?
 
 
-                      Z                                  βc                                               Z
+                      Z                                  βc                                                   Z
                                  Li (j)         Ci (j)
-              Ji =           e                   λc             gbi (j) dν(j),                   Hi =           e Li (j) gbi (j) dν(j),
-                                                                                       n                    o
-                                                                                           log Ji −log Hi
-                                                         MiEA = λc exp                            βc
+              Ji =           e                   λc             gbi (j) dν(j),                       Hi =           e Li (j) gbi (j) dν(j),
+                                                                                           n                    o
+                                                                                               log Ji −log Hi
+                                                         MiEA = λc exp                                βc
 
-                            Ji                                                    Hi                                      MiEA
-                the actual prospect                                       same jobs, equal pay                  flat-consumption equivalent
-
-
+                            Ji                                                        Hi                                      MiEA
+                the actual prospect                                       same jobs, equal pay                      flat-consumption equivalent
 
 
- derivation    reference and generalised mean      numerical validation
-                                                                                                                                              14/21
+
+
+ derivation    reference and generalised mean      numerical validation     theory scope
+                                                                                                                                                  14/21
 Attained-bundle welfare
 
 
@@ -445,7 +445,7 @@ Discussant: Sebastian Dobre
         Fit             Extensive margin                Fit by margin              Thirty-seven-hour point   Matched households
                         Marginal rate of substitution
         Welfare         ATT derivation                  EA derivation              EA validation             Equivalisation
-                        Prospect reference              ATT numerical design       Aggregation orders
+                        Prospect reference              ATT numerical design       Aggregation orders        Theory scope
         Decomposition   Central figure                  EA Gini points             ATT Gini points           EA channel shares
                         ATT channel shares              Composition within P/A/B   Shapley vs one-factor     Outside P-A-B
                         Robustness
@@ -574,6 +574,24 @@ Discussant: Sebastian Dobre
 
 
  Back     Appendix map
+Backup: scope of the companion theory
+
+
+                          What the companion theory does and does not cover
+
+                               Covered                                            Not covered
+        The deterministic own-set equal-consumption                The stochastic extension to a prospect is this
+        construction is characterised axiomatically in            paper’s own step and is not characterised there.
+                          the companion paper.
+
+                                                     The asymmetry
+                The attained-bundle measure uses systematic utility only, while the prospect measure’s
+           expected-maximum construction makes the taste component relevant to the prospect’s value.
+                                Whether that asymmetry is the right normative choice is open.
+
+
+
+ Back      Appendix map
 Backup: parameter uncertainty
 
 

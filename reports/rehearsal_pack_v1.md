@@ -1,6 +1,6 @@
 # Seminar rehearsal script — V19
 
-22 main slides (the title slide plus 21 numbered slides) and 39 backup slides after the conclusion. Slide numbers match the footline of JMP_seminar_beamer_v19.pdf; the title slide is unnumbered.
+22 main slides (the title slide plus 21 numbered slides) and 40 backup slides after the conclusion. Slide numbers match the footline of JMP_seminar_beamer_v19.pdf; the title slide is unnumbered.
 
 EA is presented first, as the prospect perspective; ATT is the attained-outcome benchmark. That is an order of presentation: neither perspective is designated primary.
 
@@ -142,13 +142,13 @@ Both money metrics descend from this construction in the companion theory paper:
 
 ## Slide 14 — Ex-ante prospect welfare
 
-On slide: Ex-ante prospect welfare What constant consumption over the household’s own job environment is equivalent to its prospect? Ji = Z eLi(j) Ci(j) λc βc bgi(j) dν(j), Hi = Z eLi(j) bgi(j) dν(j), MEA i = λc exp n log Ji−log Hi βc o Ji the actual prospect Hi same jobs, equal pay MEA i flat-consumption equivalent derivation reference and generalised mean numerical validation 14/21
+On slide: Ex-ante prospect welfare What constant consumption over the household’s own job environment is equivalent to its prospect? Ji = Z eLi(j) Ci(j) λc βc bgi(j) dν(j), Hi = Z eLi(j) bgi(j) dν(j), MEA i = λc exp n log Ji−log Hi βc o Ji the actual prospect Hi same jobs, equal pay MEA i flat-consumption equivalent derivation reference and generalised mean numerical validation theory scope 14/21
 
 Say:
 
 In words: EA is the constant monthly consumption at which a prospect with the household's own jobs and availability, but equal pay everywhere, is worth exactly as much as the prospect it actually faces.
 
-Every job enters J weighted by how available it is and how much it is valued; H keeps the same jobs, availability and preferences with pay differences removed. Opportunities enter welfare directly: access moves which jobs carry weight, and earning opportunities move what they pay. I show this perspective first because the talk is about opportunities.
+Every job enters J weighted by how available it is and how much it is valued; H keeps the same jobs, availability and preferences with pay differences removed. Opportunities enter welfare directly: access moves which jobs carry weight, and earning opportunities move what they pay. I show this perspective first because the talk is about opportunities. The deterministic foundation is axiomatic; the extension to a distribution of prospects is ours, and its normative treatment of taste shocks is not yet characterised.
 
 ## Slide 15 — Attained-bundle welfare
 
@@ -238,7 +238,7 @@ Next: extend the decomposition to household resources and needs, after fixing th
 
 ## Backup B1 — Appendix map
 
-On slide: Appendix map Literature EOp benchmarks Literature Model Utility specification Opportunity density Likelihood Identification Observational equivalence Estimation Preferences Employment access Hours and occupation Wage offers Common opportunities Inference Parameter uncertainty Fit Extensive margin Fit by margin Thirty-seven-hour point Matched households Marginal rate of substitution Welfare ATT derivation EA derivation EA validation Equivalisation Prospect reference ATT numerical design Aggregation orders Decomposition Central figure EA Gini points ATT Gini points EA channel shares ATT channel shares Composition within P/A/B Shapley vs one-factor Outside P-A-B Robustness Data Sample selection EUROMOD pricing Numerical design Back
+On slide: Appendix map Literature EOp benchmarks Literature Model Utility specification Opportunity density Likelihood Identification Observational equivalence Estimation Preferences Employment access Hours and occupation Wage offers Common opportunities Inference Parameter uncertainty Fit Extensive margin Fit by margin Thirty-seven-hour point Matched households Marginal rate of substitution Welfare ATT derivation EA derivation EA validation Equivalisation Prospect reference ATT numerical design Aggregation orders Theory scope Decomposition Central figure EA Gini points ATT Gini points EA channel shares ATT channel shares Composition within P/A/B Shapley vs one-factor Outside P-A-B Robustness Data Sample selection EUROMOD pricing Numerical design Back
 
 Say:
 
@@ -294,7 +294,15 @@ Say:
 
 Two readings of the ex-ante metric. First, its reference is the household's own opportunity environment with pay equalised, so the reference itself moves when opportunities change: equalising access changes both J and H. Second, dividing J by H shows that the metric is a weighted generalised mean of consumption across jobs, with exponent the consumption weight and weights proportional to the leisure value of each job times its availability. A common rescaling of the density cancels from those weights. Whether the metric is monotone in opportunity expansions is a separate question, not discussed in the main talk.
 
-## Backup B8 — Backup: parameter uncertainty
+## Backup B8 — Backup: scope of the companion theory
+
+On slide: Backup: scope of the companion theory What the companion theory does and does not cover Covered The deterministic own-set equal-consumption construction is characterised axiomatically in the companion paper. Not covered The stochastic extension to a prospect is this paper’s own step and is not characterised there. The asymmetry The attained-bundle measure uses systematic utility only, while the prospect measure’s expected-maximum construction makes the taste component relevant to the prospect’s value. Whether that asymmetry is the right normative choice is open. Back Appendix map
+
+Say:
+
+The companion theory characterises the deterministic own-set equal-consumption construction axiomatically. The step from that construction to a distribution of job prospects is this paper's own, and it is not characterised in the companion paper. The two measures treat the taste component differently: the attained-bundle measure evaluates systematic utility only, whereas the prospect measure's expected-maximum construction lets the taste shocks contribute to the value of a prospect. Whether that asymmetry is the right normative choice is an open question.
+
+## Backup B9 — Backup: parameter uncertainty
 
 On slide: Backup: parameter uncertainty Estimated cluster-robust standard errors for every estimated coordinate, clustered on the household Not yet propagated estimation uncertainty has not been carried through either welfare decomposition Simulation checks second seeds and repeat runs measure numerical noise, not sampling uncertainty the decomposition shares are point estimates without confidence intervals Back Appendix map
 
@@ -302,7 +310,7 @@ Say:
 
 What is and is not known about uncertainty. Every estimated coordinate has a cluster-robust standard error. Estimation uncertainty has not been propagated through either decomposition, so the shares on the result slides are point estimates without confidence intervals, and differences between them are not statistically established. The seed and repeat-run comparisons measure numerical noise in the calculation, not sampling uncertainty. Propagating parameter uncertainty is a next step.
 
-## Backup B9 — Backup: utility specification
+## Backup B10 — Backup: utility specification
 
 On slide: Backup: utility specification vi(j) = Li(j) + βc log Ci(j) λc  , Li(j) = βg ℓ(xi) B ˜ℓi(j); θg ℓ  ˜ℓi(j) = 80 −h 10 , B(z; θ) = zθ −1 θ βg ℓ(xi) intercept, centred age and its square (units of 10 years) ki children under 20, women only couples sum of the two spouses’ leisure terms Back Appendix map
 
@@ -310,7 +318,7 @@ Say:
 
 The full systematic utility. Leisure is weekly time left from a maintained endowment, rescaled, and passed through a Box-Cox transform with a group-specific curvature. The leisure weight varies with centred age and, for women, with the number of children; that child term is a reduced-form time-constraint shifter, not pure taste. The consumption weight is estimated. The shock is extreme value with unit scale.
 
-## Backup B10 — Backup: opportunity density
+## Backup B11 — Backup: opportunity density
 
 On slide: Backup: opportunity density gi(o) = 1, gi(j) = g E i g H i (h) g Occ i (k) g W i (w | k) for market jobs j̸ = o access gE i : local unemployment exposure, region, urban or rural location, year hours gH i : elevated bands over a residual set occupation gOcc i : sex-specific group masses wage offers gW i : log-normal, truncated to [2, 590] wage-offer location µi(k): education, potential experience and its square, occupation Back Appendix map
 
@@ -318,7 +326,7 @@ Say:
 
 Non-employment is the reference state with density one. Every market job carries access, the employment mass, times hours, occupation and wage-offer factors; for couples, each employed spouse's package carries its own factors. This is the form of the executed criterion, where the access index multiplies the working indicator. The unemployment exposure enters access scaled by 10. The wage location depends on education, potential experience in units of 20 years and occupation, with a common dispersion. The hours density is a density elevation over intervals, not an atom at a particular hour.
 
-## Backup B11 — Backup: sampled-alternative likelihood
+## Backup B12 — Backup: sampled-alternative likelihood
 
 On slide: Backup: sampled-alternative likelihood Vij = vi(j) + log gi(j) −log qij Pr y | Ci  = ny exp Viy P s∈Ci exp Vis qij proposal density, fitted out of fold Ci observed job and 100 draws: 101 rows ny multiplicity of a repeated draw Back Appendix map
 
@@ -326,7 +334,7 @@ Say:
 
 The choice set is a continuum, so the likelihood is evaluated over sampled alternatives drawn from a proposal density and corrected by it. The proposal is a computational device: fitted out of fold so a household's own outcome never enters the proposal used to score it, and it enters no welfare measure. For couples the proposal draws the joint participation regime first.
 
-## Backup B12 — Backup: identification
+## Backup B13 — Backup: identification
 
 On slide: Backup: identification Functional form smooth preferences in hours; banded hours opportunities Exclusion local unemployment exposure and geography shift access, not utility Independence wage offers independent of hours, given occupation maintained, not tested · not a causal design Back Appendix map
 
@@ -334,7 +342,7 @@ Say:
 
 Choices alone do not separate a taste for leisure from a scarcity of jobs at that number of hours. Three restrictions do the work: a spike at a band of hours is read as availability rather than a kink in tastes; excluded shifters enter availability and not preferences; and wage offers are independent of hours given occupation. These are the restrictions of the latent-jobs literature, maintained here rather than tested. No causal effect of geography is claimed.
 
-## Backup B13 — Backup: preference parameters
+## Backup B14 — Backup: preference parameters
 
 On slide: Backup: preference parameters Single men Single women Couple men Couple women leisure weight, intercept 8.5199 (3.5480) 5.8683 (2.1346) 3.9814 (0.7466) 13.1029 (4.7760) beta l0 sm beta l0 sf beta l0 m beta l0 f leisure weight, age 1.4820 (1.0236) 0.0678 (0.4792) −0.0080 (0.0287) −0.1228 (0.1260) beta l age sm beta l age sf beta l age m beta l age f leisure weight, age squared 0.7783 (0.7732) 1.0000 (at bound) 0.0065 (0.0030) 0.0073 (0.0103) beta l age2 sm beta l age2 sf beta l age2 m beta l age2 f leisure weight, children — 0.1666 (0.4422) — −0.3055 (1.1472) beta l nkids sf beta l nkids f leisure curvature θℓ −1.6263 (0.3301) −0.9274 (0.2161) −0.9761 (0.1357) −1.6863 (0.2458) theta l sm theta l sf theta l m theta l f consumption weight βc 2.0387 (0.2917) 2.1017 (0.2939) beta c beta c cluster-robust standard errors; parameter identifiers in grey; the male children term in couples is structurally zero Back Appendix map
 
@@ -342,7 +350,7 @@ Say:
 
 The preference block, with the parameter identifiers used in estimation. The consumption weight is common within each population. One single-adult coordinate, the female age-square term, sits at a box endpoint, so its standard error is not reported and it is excluded from the interior curvature. Levels are not comparable across the two separately estimated models.
 
-## Backup B14 — Backup: employment-access parameters
+## Backup B15 — Backup: employment-access parameters
 
 On slide: Backup: employment-access parameters identifier Singles Couples employment constant beta E; beta E m, beta E f −3.1735 (0.4053) men −2.1233 (0.3195) women −2.8148 (0.3021) local unemployment exposure beta E gsur −1.4422 (0.2356) −1.1924 (0.1557) densely populated beta E drgur −0.0288 (0.2209) −0.1823 (0.1657) intermediate density beta E drgmd 0.0641 (0.2614) −0.4174 (0.1861) Region 2 beta E drgn2 −0.3780 (0.3292) −0.1546 (0.2442) Region 3 beta E drgn3 −0.1117 (0.3891) 0.0873 (0.2808) Region 4 beta E drgn4 −0.8218 (0.3810) 0.0150 (0.3068) Region 5 beta E drgn5 −0.5162 (0.3274) −0.1455 (0.2555) Region 6 beta E drgn6 −0.7222 (0.3528) −0.2844 (0.2748) Region 7 beta E drgn7 −0.5374 (0.3503) −0.1396 (0.2651) Region 8 beta E drgn8 −0.4512 (0.3401) −0.1659 (0.2660) references: the first region and thinly populated areas; couples share the shifters across spouses Back Appendix map
 
@@ -350,7 +358,7 @@ Say:
 
 The employment-access block of market jobs, with identifiers. The access index multiplies the working indicator, so non-employment is the reference. Local unemployment exposure lowers employment opportunity mass in both populations. Regional and urbanisation indicators shift access conditional on the exclusion restriction.
 
-## Backup B15 — Backup: hours and occupation opportunities
+## Backup B16 — Backup: hours and occupation opportunities
 
 On slide: Backup: hours and occupation opportunities Hours bands Singles Couple men Couple women part-time lower 0.0298 −1.1094 −0.5173 beta h pt1 beta h pt1 m beta h pt1 f part-time upper 0.7080 0.0835 1.1586 beta h pt2 beta h pt2 m beta h pt2 f narrow full-time 2.0656 2.2888 2.0284 beta h f35 beta h f35 m beta h f35 f full-time upper 1.9387 2.3801 1.6825 beta h ft beta h ft m beta h ft f long hours −0.0834 0.6977 −0.3109 beta h lh beta h lh m beta h lh f Occupation masses Singles Couples men women men women Occupation 2 −1.3737 0.1135 −1.5097 0.2074 beta occ 2 m beta occ 2 f beta occ 2 m beta occ 2 f Occupation 3 −2.1096 −0.4060 −2.2532 −0.1804 beta occ 3 m beta occ 3 f beta occ 3 m beta occ 3 f Occupation 4 −0.3259 0.5632 0.1594 0.8159 beta occ 4 m beta occ 4 f beta occ 4 m beta occ 4 f estimates with identifiers; standard errors in the paper Back Appendix map
 
@@ -358,7 +366,7 @@ Say:
 
 Hours opportunities are elevated densities over five bands relative to a residual set; hours coefficients are common across single men and women and spouse-specific for couples. Occupation masses are sex-specific, relative to the craft, agricultural, operator and elementary group. Identifiers are shown under each estimate.
 
-## Backup B16 — Backup: wage-offer equation
+## Backup B17 — Backup: wage-offer equation
 
 On slide: Backup: wage-offer equation identifier Singles Couples intercept beta w0 2.0138 (0.0561) 2.0480 (0.0335) low education beta w educL 0.0566 (0.0372) −0.0433 (0.0217) high education beta w educH 0.1491 (0.0308) 0.1817 (0.0197) potential experience beta w pexp 0.2408 (0.0862) 0.5643 (0.0546) experience squared beta w pexp2 −0.0282 (0.0390) −0.1598 (0.0243) Occupation 2 delta occ 2 −0.0347 (0.0399) −0.0740 (0.0231) Occupation 3 delta occ 3 0.0622 (0.0383) 0.0394 (0.0228) Occupation 4 delta occ 4 0.2785 (0.0368) 0.2146 (0.0223) log-wage dispersion σ sigma 0.3815 (0.0133) 0.3631 (0.0072) medium education is the reference; experience in units of 20 years Back Appendix map
 
@@ -366,7 +374,7 @@ Say:
 
 The wage-offer equation, with identifiers. The offered log wage is normal with this location and a common dispersion, truncated to the wage support and renormalised. The singles and couples models are estimated separately, so the two experience profiles are not restricted to agree.
 
-## Backup B17 — Backup: common versus household-specific opportunities
+## Backup B18 — Backup: common versus household-specific opportunities
 
 On slide: Backup: common versus household-specific opportunities Single adults free coordinates criterion population fit household-specific opportunities 41 6253.463 0.0140 common opportunity distribution 10 6403.974 0.0273 common shape; employment and hours in utility 16 6395.108 0.0264 same households, sampled alternatives and criterion; not converted into a formal test Back Appendix map
 
@@ -374,7 +382,7 @@ Say:
 
 The two re-estimated common-opportunity benchmarks restrict the opportunity block and re-estimate everything else. Both are worse on the same criterion, and population fit worsens where the opportunity block does its work. A better criterion does not by itself establish that a mechanism has been identified.
 
-## Backup B18 — Backup: curvature and inference
+## Backup B19 — Backup: curvature and inference
 
 On slide: Backup: curvature and inference Single adults free coordinates 41, interior 40 criterion 6253.463 smallest Hessian eigenvalue 0.1669 Couples free coordinates 47, interior 47 criterion 10283.034 smallest Hessian eigenvalue 0.0771 cluster-robust standard errors on the household · eigenvalues on the interior block Back Appendix map
 
@@ -382,7 +390,7 @@ Say:
 
 Curvature and inference. The exact Hessian on the interior block is positive definite for both models. Several terminal paths from different starts agree to numerical precision; that supports a stable local solution from the starts tested, not global uniqueness. One single-adult coordinate at a box endpoint is handled under the active-set convention.
 
-## Backup B19 — Backup: extensive-margin fit
+## Backup B20 — Backup: extensive-margin fit
 
 On slide: Backup: extensive-margin fit weighted accuracy model-simulated range integration ratio single women 85.7% 80.0–85.9% 0.096 coupled women 89.8% 88.1–91.2% 0.049 single men withheld — 0.361 coupled men withheld — 0.353 withheld where numerical integration error is too large relative to sampling variation Back Appendix map
 
@@ -390,7 +398,7 @@ Say:
 
 Extensive-margin accuracy is reportable for women in each sample and withheld for men, because numerical integration error is too large relative to sampling variation. The integration ratio is that comparison; the rule was fixed before the evaluation.
 
-## Backup B20 — Backup: fit by margin
+## Backup B21 — Backup: fit by margin
 
 On slide: Backup: fit by margin Back Appendix map
 
@@ -398,7 +406,7 @@ Say:
 
 Corrected population fit: observed against predicted shares, margin by margin. Participation and occupation margins are reproduced closely in aggregate; the hours fit is uneven. Population predictions integrate the model over opportunities and taste shocks, so this is not an in-sample fitted choice.
 
-## Backup B21 — Backup: the thirty-seven-hour point
+## Backup B22 — Backup: the thirty-seven-hour point
 
 On slide: Backup: the thirty-seven-hour point single men 5.2 pp single women 3.8 pp coupled men 4.4 pp coupled women 6.5 pp observed minus predicted share at the observed thirty-seven-hour mass point Back Appendix map
 
@@ -406,7 +414,7 @@ Say:
 
 The common hours mismatch is underprediction of the observed concentration at exactly thirty-seven hours. It is a finding about that mass point, not about the model's neighbouring full-time range, and it is kept as its own result.
 
-## Backup B22 — Backup: matched households
+## Backup B23 — Backup: matched households
 
 On slide: Backup: matched households access: A = 14.5 × B wage-offer location: B +11.5 log points Back Appendix map
 
@@ -414,7 +422,7 @@ Say:
 
 What unequal opportunity means inside the model. Two employed single men in the same occupation group, hours band and wage quintile, with nearly identical estimated leisure profiles, selected by a stated rule: a teaching example, not causal and not representative. Employment is 0.75 of A's opportunity mass and 0.17 of B's. B's wage offers are better, yet A faces more offers paying at least any given wage over essentially all offer mass. Neither is better placed on every margin.
 
-## Backup B23 — Backup: marginal rate of substitution
+## Backup B24 — Backup: marginal rate of substitution
 
 On slide: Backup: marginal rate of substitution Back Appendix map
 
@@ -422,7 +430,7 @@ Say:
 
 The marginal rate of substitution between leisure and consumption, by age and sex, in euros per month per additional recurring weekly hour of leisure. It is a compensation along an indifference curve, not a behavioural response to a wage change. The coefficients are coordinates; this is the economics.
 
-## Backup B24 — Backup: attained-bundle derivation
+## Backup B25 — Backup: attained-bundle derivation
 
 On slide: Backup: attained-bundle derivation Li(o) + βc log Matt i λc  = Li(jobs i ) + βc log C obs i λc  =⇒ Matt i = C obs i exp nLi(jobs i ) −Li(o) βc o Reference job the preferred job when every job pays the same: here non-employment for every household Staying-home equivalent a verified property of this specification, not a general theorem Back Appendix map
 
@@ -430,7 +438,7 @@ Say:
 
 The attained-bundle money metric solves an indifference condition between the observed job and consumption and the reference state at the unknown consumption. The normaliser cancels. The general construction uses the job the household would most prefer at equal pay; on the current domain non-employment maximises the non-consumption index for every household, so the measure is the staying-home equivalent. With a different leisure specification the two could separate.
 
-## Backup B25 — Backup: ex-ante derivation
+## Backup B26 — Backup: ex-ante derivation
 
 On slide: Backup: ex-ante derivation Ji = Z Ωi eLi(j)Ci(j) λc βc bgi(j) dν(j) Jref i (m) =  m λc βc Hi, Hi = Z Ωi eLi(j) bgi(j) dν(j) Jref i MEA i  = Ji =⇒ MEA i = λc exp nlog Ji −log Hi βc o a common rescaling of bgi cancels · log Ji: expected utility of the best reachable job, up to a constant Back Appendix map
 
@@ -438,7 +446,7 @@ Say:
 
 The reference prospect keeps the household's jobs, availability and preferences and pays the same consumption at every job; its value is the power of that consumption times H. Setting it equal to the actual prospect and solving gives the ex-ante money metric. Under the extreme-value shocks, log J is the expected utility of the best reachable job up to a constant common to J and H, which is why taste-shock variety counts as welfare-relevant: a normative position.
 
-## Backup B26 — Backup: ex-ante numerical validation
+## Backup B27 — Backup: ex-ante numerical validation
 
 On slide: Backup: ex-ante numerical validation Identities constant-consumption identity one-state identity common intensity-rescaling invariance flat-reference inversion exact Shapley adding-up Numerics exact reference integral on the priced set effective sample size and weight concentration two-seed stability of welfare, Gini and Shapley finite positive welfare for every household independent reimplementation all passed for both populations · a correct computation, not causal identification or parameter uncertainty Back Appendix map
 
@@ -446,7 +454,7 @@ Say:
 
 The ex-ante calculation passed every declared check for both populations, including an independent reimplementation, with the integration design fixed before inspecting any welfare level or Shapley value. That certifies the computation given the model and operators. It does not establish causal identification, it does not quantify statistical uncertainty in the estimated parameters, and it does not make either welfare perspective normatively correct. Channel orderings are unchanged across the reported reference-domain sensitivities.
 
-## Backup B27 — Backup: equivalisation
+## Backup B28 — Backup: equivalisation
 
 On slide: Backup: equivalisation Mp,eq i = Mp i ei , ei : modified-OECD scale Couples, ex ante: A + B 21.3% −→ 7.9% raw → equivalised; % of baseline Gini Couples, ex ante: preferences 0.00291 −→ −0.00212 Gini points, raw → equivalised a normative convention, reported both ways; populations never combined or compared Back Appendix map
 
@@ -454,7 +462,7 @@ Say:
 
 Equivalisation is a normative convention and it is consequential for couples under the ex-ante perspective: it moves access plus earnings as a share of baseline inequality and turns the preference contribution negative. A negative Shapley term means that, averaged over orders, equalising preferences raises inequality; it does not show that preference heterogeneity is equalising in any causal or welfare sense. That is why both scales are always reported.
 
-## Backup B28 — Backup: central figure
+## Backup B29 — Backup: central figure
 
 On slide: Backup: central figure Back Appendix map
 
@@ -462,7 +470,7 @@ Say:
 
 The published central figure: access and earning-opportunity contributions, each as a percentage of its own perspective's baseline Gini, under attained-bundle and ex-ante welfare, raw and equivalised. For single adults earning opportunities are larger under the attained bundle and access is larger under the prospect; couples show no reversal. Resources, needs and composition are held fixed.
 
-## Backup B29 — Backup: ex-ante decomposition in Gini points
+## Backup B30 — Backup: ex-ante decomposition in Gini points
 
 On slide: Backup: ex-ante decomposition in Gini points scale baseline Gini P A B A + B, % of baseline ordering Single adults raw 0.1595 0.00157 0.01812 0.00555 14.8 access > earnings equivalised 0.1406 0.00020 0.02183 0.00673 20.3 access > earnings Couples raw 0.1277 0.00291 0.00667 0.02049 21.3 earnings > access equivalised 0.1200 −0.00212 0.00449 0.00504 7.9 earnings > access exact Shapley contributions in Gini points; household-weighted Back Appendix map
 
@@ -470,7 +478,7 @@ Say:
 
 The full ex-ante table. Contributions are signed Gini points; access plus earnings is reported relative to each baseline Gini. The calculation passed its numerical checks, including an independent implementation. For couples the preference contribution changes sign with equivalisation.
 
-## Backup B30 — Backup: attained-bundle decomposition in Gini points
+## Backup B31 — Backup: attained-bundle decomposition in Gini points
 
 On slide: Backup: attained-bundle decomposition in Gini points scale baseline Gini P A B A + B, % of baseline ordering Single adults raw 0.2337 0.0012 0.0016 0.0040 2.4 earnings > access equivalised 0.2451 −0.0003 0.0013 0.0034 1.9 earnings > access Couples raw 0.2035 0.0064 0.0009 0.0128 6.7 earnings > access equivalised 0.1971 −0.0019 0.0007 0.0062 3.5 earnings > access exact Shapley contributions in Gini points; preliminary; household-weighted Back Appendix map
 
@@ -478,7 +486,7 @@ Say:
 
 The attained-bundle table. Earning opportunities are larger than local access for both household types and both scales. The preference contribution changes sign with equivalisation in both samples, so no directional claim is made about it. The lower part of the hours range is sparsely represented in the integration sample, which is why this exercise stays preliminary.
 
-## Backup B31 — Backup: ex-ante channels, \% of baseline
+## Backup B32 — Backup: ex-ante channels, \% of baseline
 
 On slide: Backup: ex-ante channels, % of baseline P A B scale I0 Gini pts % of I0 Gini pts % of I0 Gini pts % of I0 Single adults raw 0.1595 0.00157 0.99 0.01812 11.37 0.00555 3.48 equivalised 0.1406 0.00020 0.14 0.02183 15.52 0.00673 4.79 Couples raw 0.1277 0.00291 2.28 0.00667 5.22 0.02049 16.04 equivalised 0.1200 −0.00212 −1.76 0.00449 3.75 0.00504 4.20 each contribution divided by its own baseline Gini I0; signed; the rows are not forced to sum to one hundred, because the remainder is outside the current P-A-B decomposition Back Appendix map composition within P/A/B
 
@@ -486,7 +494,7 @@ Say:
 
 Each ex-ante Shapley contribution, in Gini points and as a percentage of its own baseline Gini, raw and equivalised. The negative couples preference term is kept. P, A and B do not exhaust baseline inequality: household resources, needs and composition and other dimensions are held fixed or left unallocated.
 
-## Backup B32 — Backup: attained-bundle channels, \% of baseline
+## Backup B33 — Backup: attained-bundle channels, \% of baseline
 
 On slide: Backup: attained-bundle channels, % of baseline P A B scale I0 Gini pts % of I0 Gini pts % of I0 Gini pts % of I0 Single adults raw 0.2337 0.0012 0.53 0.0016 0.69 0.0040 1.73 equivalised 0.2451 −0.0003 −0.13 0.0013 0.54 0.0034 1.40 Couples raw 0.2035 0.0064 3.16 0.0009 0.45 0.0128 6.28 equivalised 0.1971 −0.0019 −0.98 0.0007 0.37 0.0062 3.15 each contribution divided by its own baseline Gini I0; signed; preliminary Back Appendix map
 
@@ -494,7 +502,7 @@ Say:
 
 The same layout for the attained-bundle perspective. Earning opportunities exceed access in every row; the preference contribution changes sign with equivalisation. These percentages are shares of each baseline Gini and are not forced to sum to one hundred.
 
-## Backup B33 — Backup: composition of the explained component
+## Backup B34 — Backup: composition of the explained component
 
 On slide: Backup: composition of the explained component sk = ϕk ϕP + ϕA + ϕB , k ∈{P, A, B} ex-ante prospect, equivalised Single adults Couples Preferences sP 0.7% −28.5% Local access sA 75.9% 60.6% Earning opportunities sB 23.4% 67.9% Total 100.0% 100.0% These are shares of the currently explained P/A/B change, not shares of total inequality. Negative components are possible under Shapley attribution. Back Appendix map
 
@@ -504,7 +512,7 @@ These are shares of the currently explained P/A/B change, not shares of total in
 
 Within that currently explained component, most of the single-adult opportunity effect comes through access rather than earning opportunities. For couples the negative preference share means the access and earning shares together exceed the whole explained change. Only the equivalised scale is shown: on the raw scale the one-decimal couples shares would not close exactly.
 
-## Backup B34 — Backup: Shapley versus one-factor equalisation
+## Backup B35 — Backup: Shapley versus one-factor equalisation
 
 On slide: Backup: Shapley versus one-factor equalisation one-factor: v p({k}) = I p(∅) −I p({k}) Shapley: ϕp k = average over all orders of v p(S ∪{k}) −v p(S) ϕp P + ϕp A + ϕp B = I p(∅) −I p({P, A, B}) one-factor effects need not add up · Shapley contributions do, exactly Back Appendix map
 
@@ -512,7 +520,7 @@ Say:
 
 A one-factor effect equalises one channel from the actual situation. Because the channels interact, those effects need not add up, and the answer would depend on the order chosen. The Shapley contribution averages each channel's marginal effect over every order and adds up exactly to the total change. This is the standard rule from the distributional decomposition literature; no new principle is claimed. Coalition-by-coalition Gini tables are not reproduced in these slides.
 
-## Backup B35 — Backup: outside the current P-A-B decomposition
+## Backup B36 — Backup: outside the current P-A-B decomposition
 
 On slide: Backup: outside the current P-A-B decomposition Held fixed household resources, needs and composition Retained sex-specific and household-type-specific preference and opportunity blocks Not equalised wage-draw luck and the common offer spread wage-offer location differences: at most about 0.10 log points common offer spread: about 0.37 log points next: extend the decomposition to household resources and needs, after fixing the appropriate operator Back Appendix map
 
@@ -520,7 +528,7 @@ Say:
 
 The last row of the percentage display is everything the current decomposition does not equalise. It is not a channel. It holds household resources, needs and composition fixed, it keeps the sex-specific and household-type-specific blocks, and it excludes wage-draw luck and the common offer spread. The location differences that the earning operator equalises are small next to that common spread, so the operator removes only a small part of earnings dispersion by construction. Extending the decomposition to household resources and needs requires fixing the appropriate operator first, because some covariates enter both preferences and needs; until then there is no fourth channel to allocate.
 
-## Backup B36 — Backup: robustness of the attained-bundle decomposition
+## Backup B37 — Backup: robustness of the attained-bundle decomposition
 
 On slide: Backup: robustness of the attained-bundle decomposition Second simulation seed every coalition Gini and contribution reproduces closely, including the preference sign change Observed job in the simulation attained under every coalition by 2.9% of single adults and 3.9% of couples excluding it moves the total change by at most 9.3%, with no sign change simulation checks, not confidence intervals Back Appendix map
 
@@ -528,7 +536,7 @@ Say:
 
 Robustness of the attained-bundle calculation. An independent second seed reproduces every coalition Gini and Shapley contribution closely. The simulation always includes each household's own observed job; excluding it moves the total change by at most the amount shown, in the couples equivalised case, with no sign change. These checks validate the calculation for the stated game, not its maintained assumptions, and they are not confidence intervals.
 
-## Backup B37 — Backup: sample selection
+## Backup B38 — Backup: sample selection
 
 On slide: Backup: sample selection screen single-adult couple the raw France 2016 input file 4,038 5,965 one- or two-adult households (composition screen) 4,038 5,965 every adult aged 20 to 60 2,131 3,662 no adult still in education 2,036 3,521 no old-age, disability or survivor pension receipt 1,755 3,218 labour status in scope 1,598 2,412 no other employable or earning member 1,564 2,323 hours and wage inside the modelled support 1,555 2,275 hours outside [5,70] or unsupported military occupation (ISCO 0) on an employed decider 1,543 2,223 observed chosen alternative priced at non-positive disposable consumption 1,540 2,223 estimation sample 1,540 2,223 Back Appendix map
 
@@ -536,7 +544,7 @@ Say:
 
 Unweighted households remaining after each screen. The largest exclusion is structural: multi-generational households, flat-shares and same-sex couples are outside the estimated population, and no result extends to them. Students and pension recipients are removed because the model does not define an offer set for them; the remaining screens are support restrictions.
 
-## Backup B38 — Backup: EUROMOD pricing
+## Backup B39 — Backup: EUROMOD pricing
 
 On slide: Backup: EUROMOD pricing Inputs a work arrangement: hours, hourly wage, earnings split; household roster and non-labour inputs EUROMOD French 2015 policy system; only deciders receive counterfactual overrides Output Ci(j): household disposable income, summed over all members every sampled alternative and every welfare integration point is priced tax-benefit accounting identity holds to machine precision Back Appendix map
 
@@ -544,7 +552,7 @@ Say:
 
 For a given work arrangement the tax-benefit model receives the implied gross labour inputs together with the household's non-labour inputs and roster, and returns disposable income. Only deciders receive counterfactual overrides; other members keep their baseline values. The accounting identity linking original income, benefits, taxes and contributions to disposable income holds to machine precision at the person and household-alternative level.
 
-## Backup B39 — Backup: numerical design
+## Backup B40 — Backup: numerical design
 
 On slide: Backup: numerical design Estimation 101 rows per household: the observed job and 100 sampled alternatives Predictive fit 2,048 common integration points per household Supports [5, 70] weekly hours; wages in [2, 590] per hour sampling devices are computational: they are not offers and enter no welfare measure Back Appendix map
 
