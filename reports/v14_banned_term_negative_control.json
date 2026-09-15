@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "injected_term": "S11",
+  "injection_location": "rendered HTML immediately before the explicit appendix begin marker",
+  "expected_audit_result": "FAIL",
+  "observed_audit_result": "FAIL",
+  "observed_s11_count": 1,
+  "temporary_file_existed_during_scan": true,
+  "temporary_file_removed": true,
+  "original_sha256_unchanged": true,
+  "scanner_pipeline": [
+    "remove only the exact marked appendix range",
+    "strip script elements",
+    "strip style elements",
+    "strip base64/data URLs and image tags",
+    "strip all remaining tags",
+    "decode HTML entities",
+    "scan rendered text"
+  ]
+}

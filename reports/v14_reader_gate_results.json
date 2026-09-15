@@ -1,0 +1,293 @@
+{
+  "gate": "V14 reader-facing structure, figures and economic derivation",
+  "status": "PASS",
+  "main_words": 13412,
+  "checks": [
+    {
+      "check": "exact unshortened title",
+      "evidence": "report and gallery rendered headings",
+      "status": "PASS"
+    },
+    {
+      "check": "six-part reader sequence",
+      "evidence": "Why welfare inequality is not income inequality / How the latent-jobs model separates preferences from opportunities / From choices to well-being: outcomes versus prospects / From well-being to inequality: counterfactuals and the Shapley allocation / What the current results say / What remains preliminary",
+      "status": "PASS"
+    },
+    {
+      "check": "introduction states the logical chain before methodology",
+      "evidence": "section 1",
+      "status": "PASS"
+    },
+    {
+      "check": "why it matters, without a cost-effectiveness claim",
+      "evidence": "section 1 and all rendered text",
+      "status": "PASS"
+    },
+    {
+      "check": "equation A systematic utility in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation B choice law in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation C opportunity factorisation in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation D attained-bundle metric in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation E ex-ante J, H and inversion in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation F equivalisation in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation G counterfactual inequality in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "equation H Shapley allocation in main text",
+      "evidence": "pre-render source",
+      "status": "PASS"
+    },
+    {
+      "check": "WHY -> OBJECT -> INTERPRETATION -> EMPIRICAL USE rubric",
+      "evidence": "each label appears for every lettered block (A-C, D, E, F, G, H)",
+      "status": "PASS"
+    },
+    {
+      "check": "welfare section organised as outcomes versus prospects",
+      "evidence": "section 3",
+      "status": "PASS"
+    },
+    {
+      "check": "ATT: opportunities act through the attained outcome; staying-home coincidence disclosed",
+      "evidence": "section 3",
+      "status": "PASS"
+    },
+    {
+      "check": "EA: four-point interpretation, shock reading and normative caveat",
+      "evidence": "section 3",
+      "status": "PASS"
+    },
+    {
+      "check": "neither perspective framed as a fix or failure",
+      "evidence": "rendered main text",
+      "status": "PASS"
+    },
+    {
+      "check": "equivalisation substantively consequential for couples",
+      "evidence": "section 3",
+      "status": "PASS"
+    },
+    {
+      "check": "A is geographic/temporal, not all job opportunities",
+      "evidence": "sections 2 and 4",
+      "status": "PASS"
+    },
+    {
+      "check": "D status sentence in abstract, introduction, decomposition, gallery",
+      "evidence": "exact reader-facing wording",
+      "status": "PASS"
+    },
+    {
+      "check": "D recorded as planned extension; A+B+D never an opportunity share",
+      "evidence": "section 4",
+      "status": "PASS"
+    },
+    {
+      "check": "P/A/B never described as exhausting welfare inequality",
+      "evidence": "rendered main text",
+      "status": "PASS"
+    },
+    {
+      "check": "central result prominent: abstract, introduction, results lead and subsection",
+      "evidence": "sections 1 and 5",
+      "status": "PASS"
+    },
+    {
+      "check": "reversal stated as a singles finding; couples no reversal",
+      "evidence": "section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "comparison not claimed to isolate the welfare definition",
+      "evidence": "sections 5 and 6",
+      "status": "PASS"
+    },
+    {
+      "check": "baseline-Gini versus explained-change denominators distinguished",
+      "evidence": "section 4",
+      "status": "PASS"
+    },
+    {
+      "check": "neither measure primary",
+      "evidence": "section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "matched-household illustration present and bounded",
+      "evidence": "section 2",
+      "status": "PASS"
+    },
+    {
+      "check": "implementation detail moved out of the body",
+      "evidence": "absent from body: |\\mathcal C_i|, -\\log q_{ij}, n_{y}, polishing contracts, exact Hessian, idperson, theta_c_singles, beta_E_y2015, out of fold, bitwise equivalent, machine precision",
+      "status": "PASS"
+    },
+    {
+      "check": "implementation detail present in appendix",
+      "evidence": "collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "check": "promoted: observed raw labour-force status in Section 2",
+      "evidence": "section 2",
+      "status": "PASS"
+    },
+    {
+      "check": "promoted: full fit comparison, fit tables and benchmark in Section 5",
+      "evidence": "section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "promoted: within-sample equivalised comparison and coalition values in Section 5",
+      "evidence": "section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "limitations merged into Section 6; no second limitations section",
+      "evidence": "section 6 and every heading in the source",
+      "status": "PASS"
+    },
+    {
+      "check": "inherited predecessor document removed from appendix",
+      "evidence": "generated V14 Markdown",
+      "status": "PASS"
+    },
+    {
+      "check": "appendix about a quarter of the body",
+      "evidence": "appendix 3,009 words / body 13,412 words = 0.22",
+      "status": "PASS"
+    },
+    {
+      "check": "figure: architecture diagram in Section 4",
+      "evidence": "section 4",
+      "status": "PASS"
+    },
+    {
+      "check": "figures: attained-bundle and ex-ante Shapley figures in Section 5",
+      "evidence": "section 5",
+      "status": "PASS"
+    },
+    {
+      "check": "figure: central two-perspective figure under The central result",
+      "evidence": "section 5, central result",
+      "status": "PASS"
+    },
+    {
+      "check": "no old decomposition image embedded",
+      "evidence": "report and gallery",
+      "status": "PASS"
+    },
+    {
+      "check": "figures follow text: only implementation diagnostics in the appendix",
+      "evidence": "appendix images: integration convergence, leisure normalisation",
+      "status": "PASS"
+    },
+    {
+      "check": "defect (a): Shapley table access cell includes local unemployment exposure",
+      "evidence": "Section 5 table and gallery",
+      "status": "PASS"
+    },
+    {
+      "check": "defect (b): both passages missed by Stage A carried forward under the superseded label",
+      "evidence": "historical status statements",
+      "status": "PASS"
+    },
+    {
+      "check": "matched-household illustration exactly as built in V11",
+      "evidence": "V11 manifest hashes",
+      "status": "PASS"
+    },
+    {
+      "check": "no superseded V4 number in main text or gallery",
+      "evidence": "none",
+      "status": "PASS"
+    },
+    {
+      "check": "theory figure caption present once in report and gallery",
+      "evidence": "rendered captions",
+      "status": "PASS"
+    },
+    {
+      "check": "theory figure at the start of Section 3, after the framing and before Perspective 1",
+      "evidence": "section 3 order",
+      "status": "PASS"
+    },
+    {
+      "check": "surrounding text: theoretical illustration and non-employment reference stated",
+      "evidence": "section 3",
+      "status": "PASS"
+    },
+    {
+      "check": "no stale specification label or Haydar-Maniquet defensive language",
+      "evidence": "none",
+      "status": "PASS"
+    },
+    {
+      "check": "banned terms absent from report",
+      "evidence": "rendered-text term list",
+      "status": "PASS"
+    },
+    {
+      "check": "banned terms absent from gallery",
+      "evidence": "rendered-text term list",
+      "status": "PASS"
+    },
+    {
+      "check": "banned-term negative control fires",
+      "evidence": "temporary S11 insertion",
+      "status": "PASS"
+    },
+    {
+      "check": "one final collapsed appendix boundary",
+      "evidence": "marked range",
+      "status": "PASS"
+    },
+    {
+      "check": "Stage A superseded quotations preserved",
+      "evidence": "4 labels",
+      "status": "PASS"
+    },
+    {
+      "check": "gallery synchronised",
+      "evidence": "reader-facing gallery",
+      "status": "PASS"
+    },
+    {
+      "check": "V9 to V13 untouched",
+      "evidence": "git diff over V9-V11 report, gallery and source",
+      "status": "PASS"
+    },
+    {
+      "check": "no unresolved source tokens",
+      "evidence": "generated V14 Markdown",
+      "status": "PASS"
+    }
+  ],
+  "failures": []
+}

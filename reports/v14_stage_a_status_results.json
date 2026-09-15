@@ -1,0 +1,23 @@
+{
+  "gate": "V14 Stage A ex-ante status",
+  "status": "PASS",
+  "report": {
+    "stale_occurrences": 7,
+    "labels": 4,
+    "unlabelled": [],
+    "status": "PASS"
+  },
+  "gallery": {
+    "stale_occurrences": 3,
+    "labels": 1,
+    "unlabelled": [],
+    "status": "PASS"
+  },
+  "negative_control": {
+    "injected": "unlabelled blocked-status sentence before the appendix marker",
+    "expected": "FAIL",
+    "observed": "FAIL",
+    "unlabelled_found": 2,
+    "status": "PASS"
+  }
+}
