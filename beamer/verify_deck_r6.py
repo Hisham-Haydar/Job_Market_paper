@@ -569,5 +569,374 @@ def main() -> int:
     return 1 if fails else 0
 
 
+# ==========================================================================
+# DECK-V16 profile:  python verify_deck_r6.py --deck v16
+#
+# The same verifier, repointed at JMP_seminar_beamer_v16.tex.  The R6 gates
+# above are bound to R6 content (backup-confined decomposition wording, POSFIT
+# fit labels, W1-F units slides) and are not re-run against V16.  Carried over
+# unchanged in substance: the retired-token map (G-RETIRE / G-NOBAN), the
+# typed-numeral scan (G-NUMBERS), the asset allowlist (G-ASSETS, now bound to
+# the images embedded in the V15 report and gallery), the retired-lineage path
+# scan (G-LINEAGE), G-NOCONF, G-POOLED and G-NOSIDEBYSIDE.  Added: G-REGISTRY
+# (every numeral on every slide page resolves to a V15-registry entry through
+# the macros that frame uses) and the V16 content gates.  Two negative
+# controls are run on in-memory copies and must both FAIL their gate.
+# ==========================================================================
+V16_SRC = HERE / "JMP_seminar_beamer_v16.tex"
+V16_NUMBERS = HERE / "deck_numbers_v16.tex"
+V16_PROV = BUILD / "v16_number_provenance.json"
+V16_PDF = BUILD / "JMP_seminar_beamer_v16.pdf"
+V16_TEXT = BUILD / "JMP_seminar_beamer_v16_text.txt"
+V16_REH_TEXT = BUILD / "JMP_seminar_beamer_v16_rehearsal_text.txt"
+V16_RESULTS = BUILD / "v16_verification.json"
+V15_REPORT = HERE.parent / "reports" / "JMP_research_story_report_v15.html"
+V15_GALLERY = HERE.parent / "reports" / "JMP_results_gallery_v15.html"
+
+V16_RQ = ("How much inequality in money-metric well-being is associated with unequal "
+          "job opportunities rather than heterogeneous preferences, once labour supply "
+          "is modelled as choice among latent jobs?")
+V16_SUBQ = (
+    "Do observed labour-supply choices reflect preferences alone, or also "
+    "heterogeneous latent job opportunities?",
+    "How do conclusions differ when welfare evaluates the attained bundle versus the "
+    "ex-ante opportunity prospect?",
+    "In a restricted P/A/B decomposition, how much welfare inequality is associated "
+    "with preferences, local access, and earning opportunities?",
+)
+# Internal labels: the V15 rendered-text banned list, the DECK-V16 brief's list,
+# and the measure names the brief forbids.  (pattern, case-sensitive?)
+V16_INTERNAL = [
+    (r"\bM08\w*", True), (r"\bS(8|9|10|11|12)\b", True), (r"DECOMP", True),
+    (r"POSFIT", True), (r"\bgates?\b", False), (r"\bhash(es)?\b", False),
+    (r"\bSHA\b", True), (r"\bSRC\b", True), (r"CLEAN", True),
+    (r"criterion-A", False), (r"\bv3b\b", False), (r"\banchor\w*", False),
+    (r"\bnodes?\b", False), (r"proposal panel", False), (r"exact-H", False),
+    (r"\bH-[FDX]\b", True), (r"\bNN (pricing )?state", True), (r"\bdwt\b", False),
+    (r"worktree", False), (r"\bregistry\b", False), (r"\bG1-G9\b", True),
+    (r"adjudication", False), (r"\bmissions?\b", False), (r"\brulings?\b", False),
+    (r"Mapping-F", False), (r"MECHANICAL_STOCHASTIC", True), (r"\bW1-?F\b", True),
+    (r"\bW_?EA\b", True), (r"\bRUM-?[AB]\b", True), (r"BASELINE-F", True),
+    (r"\bR240\b", True), (r"\bcommit\b", False), (r"\bRURO\b", True),
+    (r"\bmeasure\s+(1|one)\b", False), (r"Haydar\s*[-\u2013]+\s*Maniquet", False),
+    (r"\bW1\b", True), (r"\\Wone\b", True), (r"W\^\{?1\}?(?!\d)", True),
+]
+# The V15 theory caption is used verbatim; it names the companion paper, its
+# W^1 notation and a year, which the brief explicitly allows.  It is excised
+# (after a verbatim check) before the label and measure-name scans.
+V16_ANCHORS = [  # the brief's running order, as headline phrases
+    ("real-world inequality", "same income"),
+    ("literature gap", "Each ingredient exists"),
+    ("research question", "Research question"),
+    ("latent-jobs model", "The latent-jobs model"),
+    ("welfare: EA", "EA, the opportunity-prospect perspective"),
+    ("welfare: ATT", "ATT, the attained-bundle benchmark"),
+    ("ATT versus EA", "The two measures answer different welfare questions."),
+    ("decomposition", "The decomposition equalises three channels"),
+    ("results", "Central result:"),
+    ("limitations", "What these results are not."),
+    ("conclusion", "Conclusion:"),
+]
+V16_EQUATIONS = {
+    "systematic utility": r"v_i(j)=L_i(j)+\beta_c\log",
+    "choice law with opportunity density": r"P_i(j)=\frac{\exp\{v_i(j)\}\,g_i(j)}",
+    "attained-bundle welfare": r"M^{\mathrm{att}}_i=C^{\mathrm{obs}}_i\exp",
+    "ex-ante welfare": r"M^{\mathrm{EA}}_i=\lambda_c\exp",
+    "Shapley": r"\phi^p_k=\sum_{S\subseteq\{P,A,B\}\setminus\{k\}}",
+}
+V16_REQUIRED = {
+    "resources/needs/composition held fixed":
+        "Household resources, needs and composition are held fixed in the current decomposition.",
+    "access = local access, defined":
+        "local unemployment exposure, region, urban or rural location, year",
+    "access is not total opportunity": "The access channel is local access, not total opportunity.",
+    "preliminary": "The decomposition is preliminary",
+    "no causal claim": "makes no causal claim",
+    "no parameter uncertainty yet": "No parameter uncertainty yet.",
+    "preferences not equated with responsibility":
+        "it is not equated with what households are responsible for",
+    "two different welfare questions": "The two measures answer different welfare questions.",
+}
+
+
+def _norm(s: str) -> str:
+    import unicodedata
+    s = unicodedata.normalize("NFKC", s)
+    s = s.replace("\u2019", "'").replace("\u2013", "--").replace("\u2212", "-")
+    s = re.sub(r"(\w)-\s*\n\s*(\w)", r"\1-\2", s)
+    return flat(s)
+
+
+def _strip_comments(s: str) -> str:
+    return re.sub(r"(?m)(?<!\\)%.*$", "", s)
+
+
+def _images_in(html: Path) -> set[str]:
+    import base64
+    import hashlib
+    text = html.read_text(encoding="utf-8")
+    return {hashlib.sha256(base64.b64decode(m)).hexdigest()
+            for m in re.findall(r"data:image/png;base64,([A-Za-z0-9+/=]+)", text)}
+
+
+def v16_gates(src: str, pages: list[str], reh_text: str) -> tuple[list, list, dict]:
+    import hashlib
+    sys.path.insert(0, str(HERE))
+    sys.path.insert(0, str(HERE.parent / "reports" / "research_story_build"))
+    import make_deck_numbers_r6 as numsrc  # noqa: E402
+    import v15_render_inputs as v15  # noqa: E402
+
+    ok_l: list[str] = []
+    bad_l: list[str] = []
+    detail: dict = {}
+
+    def g(name: str, ok: bool, msg: str) -> None:
+        (ok_l if ok else bad_l).append("%-18s %s" % (name, msg))
+        detail[name] = {"pass": bool(ok), "detail": msg}
+
+    body = src.split(r"\begin{document}", 1)[1]
+    fr = frames(src)
+    proj = "\n".join(pages)
+    proj_n = _norm(proj)
+
+    # ------------------------------------------------ carried over from R6
+    haystack = (src + "\n" + proj + "\n" + reh_text).lower()
+    hits = ["%s (%s)" % (t, w) for t, w in RETIRED_TOKENS.items() if t.lower() in haystack]
+    g("G-RETIRE", not hits, "no retired magnitude or out-of-scope token in source, "
+      "slides or notes" if not hits else "RETIRED MATERIAL PRESENT: " + "; ".join(hits))
+    ban = [t for t in OUT_OF_SCOPE_TOKENS if t.lower() in haystack]
+    g("G-NOBAN", not ban, "no seminar-freeze out-of-scope token"
+      if not ban else "OUT-OF-SCOPE TOKENS PRESENT: " + ", ".join(ban))
+
+    # typed numerals: slides AND notes; dimensions and the verbatim caption removed
+    caption_src = v15.THEORY_CAPTION
+    cap_present = flat(caption_src) in flat(body)
+    scan = _strip_comments(body)
+    if cap_present:
+        scan = flat(scan).replace(flat(caption_src), " ")
+    scan = re.sub(r"\\renewcommand\{\\arraystretch\}\{[\d.]+\}", "", scan)
+    scan = re.sub(r"\d*\.?\d+\s*(em|ex|pt|mm|cm|\\textwidth|\\textheight|\\paperwidth|\\linewidth)",
+                  "", scan)
+    scan = re.sub(r"\\(includegraphics|graphicspath|input)(\[[^\]]*\])?\{[^}]*\}", "", scan)
+    typed = {m.group(0) for m in re.finditer(r"(?<![\\A-Za-z0-9])\d+(?:\.\d+)?", scan)}
+    typed -= {"1", "3"}          # the Shapley weight |S|!(3-|S|-1)!/3!
+    g("G-NUMBERS", not typed, "no hand-typed numeral on any slide or note "
+      "(Shapley-weight integers and the verbatim V15 caption excepted)"
+      if not typed else "hand-typed numerals: " + ", ".join(sorted(typed)))
+
+    # assets: every included image is byte-identical to an image embedded in V15
+    v15_imgs = _images_in(V15_REPORT) | _images_in(V15_GALLERY)
+    gp = re.search(r"\\graphicspath\{((?:\{[^}]*\})+)\}", src)
+    dirs = [HERE / d for d in re.findall(r"\{([^{}]*)\}", gp.group(1))] if gp else []
+    refs = re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", body)
+    unresolved, not_v15, used = [], [], []
+    for name in refs:
+        hit = next((d / name for d in dirs if (d / name).is_file()), None)
+        if hit is None:
+            unresolved.append(name)
+            continue
+        used.append(hit.name)
+        if hashlib.sha256(hit.read_bytes()).hexdigest() not in v15_imgs:
+            not_v15.append(name)
+    banned_tree = [t for t in ("_retired_assets", "mock_presentation", "Presentation_mock")
+                   if t in src]
+    g("G-ASSETS", bool(refs) and not unresolved and not not_v15 and not banned_tree,
+      "%d figure(s) %s, each byte-identical to an image embedded in the V15 report/gallery"
+      % (len(refs), used) if refs and not unresolved and not not_v15 and not banned_tree
+      else "VIOLATION: unresolved %s; not a V15 image %s; banned tree %s"
+           % (unresolved, not_v15, banned_tree))
+
+    lin = rlg.scan_files([p for p in (V16_SRC, HERE / "make_deck_numbers_r6.py", V16_NUMBERS,
+                                      HERE / "build_deck_v16.py") if p.exists()])
+    g("G-LINEAGE", not lin, "no retired-lineage artifact referenced by path"
+      if not lin else "RETIRED-LINEAGE PATH READ: " + rlg.format_violations(lin, REPO))
+
+    conf = [w for w in ("confusion matrix", "balanced accuracy", "specificity",
+                        "true positive", "false positive", "recall rate") if w in proj.lower()]
+    g("G-NOCONF", not conf, "no confusion-matrix statistic" if not conf
+      else "confusion-matrix language: " + ", ".join(conf))
+    g("G-POOLED", "pooled" not in proj.lower(), "no pooled figure")
+
+    prov = json.loads(V16_PROV.read_text(encoding="utf-8"))["macros"]
+    eur = {m for m, v in prov.items() if "EUR" in str(v.get("units"))}
+    mixed = [i + 1 for i, f in enumerate(fr)
+             if any(("\\" + m) in f and m.endswith(("Singles", "Sing")) for m in eur)
+             and any(("\\" + m) in f and m.endswith(("Couples", "Coup")) for m in eur)]
+    near = [p for p in ("near equality", "nearly equal") if p in haystack]
+    g("G-NOSIDEBYSIDE", not mixed and not near,
+      "no frame sets singles and couples euro welfare levels side by side"
+      if not mixed and not near else "VIOLATION frames %s near-equality %s" % (mixed, near))
+
+    # ------------------------------------------------ G-REGISTRY
+    registry = json.loads(numsrc.V15_REGISTRY.read_text(encoding="utf-8"))["entries"]
+    stale = [m for m, v in prov.items()
+             if v["key"] not in registry
+             or numsrc.v16_render(registry[v["key"]]["value"], v["format"]) != v["rendered"]]
+    numtex = V16_NUMBERS.read_text(encoding="utf-8")
+    tex_macros = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{(.*)\}", numtex))
+    drift = [m for m, v in prov.items() if tex_macros.get(m) != v["rendered"]]
+    unresolved_nums = []
+    if len(pages) != len(fr):
+        unresolved_nums.append("page/frame count mismatch %d vs %d" % (len(pages), len(fr)))
+    for i, (f, page) in enumerate(zip(fr, pages), 1):
+        allowed = {prov[m]["rendered"].replace("$-$", "-") for m in prov
+                   if re.search(r"\\%s(?![A-Za-z])" % m, f)}
+        if r"\begin{enumerate}" in f:
+            allowed |= {"1", "2", "3"}
+        if "3!" in f:
+            allowed |= {"1", "3"}
+        text = page
+        if flat(caption_src) in flat(f):
+            allowed |= {"1", "2026", "3"}       # verbatim V15 caption only
+        text = re.sub(r"\b%d\s*/\s*%d\s*$" % (i, len(fr)), " ", text.rstrip())  # footer
+        for m in re.finditer(r"(?<![\w.,])-?\d[\d,]*(?:\.\d+)?(?![\w])", _norm(text)):
+            tok = m.group(0).lstrip("-").rstrip(",")
+            if tok not in allowed:
+                unresolved_nums.append("page %d: %s" % (i, tok))
+    g("G-REGISTRY", not stale and not drift and not unresolved_nums,
+      "every numeral on all %d slide pages resolves, through the macros its frame uses, to a "
+      "V15-registry entry re-read and re-formatted now (%d macros)" % (len(pages), len(prov))
+      if not stale and not drift and not unresolved_nums
+      else "stale macros %s; tex drift %s; unresolved %s" % (stale, drift, unresolved_nums[:12]))
+
+    # ------------------------------------------------ V16 content gates
+    n = len(fr)
+    positions = [(lab, proj_n.find(_norm(a))) for lab, a in V16_ANCHORS]
+    ordered = all(p >= 0 for _, p in positions) and \
+        [p for _, p in positions] == sorted(p for _, p in positions)
+    g("G-V16-STRUCTURE", 16 <= n <= 18 and len(pages) == n and ordered,
+      "%d slides (16-18), PDF pages match, running order %s"
+      % (n, " -> ".join(l for l, _ in positions)) if 16 <= n <= 18 and ordered
+      else "count %d pages %d order %s" % (n, len(pages), positions))
+
+    rq_ok = all(_norm(q) in proj_n for q in (V16_RQ,) + V16_SUBQ)
+    g("G-V16-RQ", rq_ok, "research question and three subquestions rendered verbatim"
+      if rq_ok else "research question or a subquestion not verbatim on a slide")
+
+    eqs = re.findall(r"\\slideeq\{", body)
+    other_display = [m.group(0) for m in re.finditer(r"(?<!\\)\\\[|\$\$|\\begin\{(?:equation|align|multline|eqnarray)", body)]
+    sig_miss = [k for k, s in V16_EQUATIONS.items() if flat(s) not in flat(body)]
+    eq_frames = [f for f in fr if r"\slideeq{" in f]
+    notes_ok = all(re.search(r"\\note\{\s*In words:", f) for f in eq_frames)
+    g("G-V16-EQUATIONS", len(eqs) == 5 and not other_display and not sig_miss and notes_ok,
+      "exactly five displayed equations (%s), each frame's note opens with a spoken "
+      "interpretation line" % ", ".join(V16_EQUATIONS)
+      if len(eqs) == 5 and not other_display and not sig_miss and notes_ok
+      else "count %d, other display %s, missing %s, notes %s"
+           % (len(eqs), other_display, sig_miss, notes_ok))
+
+    central = [f for f in fr if "fig_v13_central_result.png" in f]
+    cf = flat(central[0]) if len(central) == 1 else ""
+    central_ok = (len(central) == 1 and "fig_v13_central_result.png" in used
+                  and "fig_v13_central_result.png" not in not_v15
+                  and "earning opportunities dominate under ATT" in cf
+                  and "access dominates under EA for single adults" in cf
+                  and "couples show no reversal" in cf)
+    g("G-V16-CENTRAL", central_ok, "one central-result slide reuses the V15 ATT-versus-EA "
+      "figure unchanged and states the reversal for single adults, none for couples"
+      if central_ok else "central-result slide missing, altered or mis-worded")
+
+    miss = [k for k, s in V16_REQUIRED.items() if _norm(s) not in proj_n]
+    g("G-V16-REQUIRED", not miss, "required statements rendered on slides: " + "; ".join(V16_REQUIRED)
+      if not miss else "missing on slides: " + ", ".join(miss))
+
+    notes_all = " ".join(re.findall(r"\\note\{(.*?)\}\s*\\end\{frame\}", body, re.S))
+    sentences = re.split(r"(?<=[.;:?])\s+", _norm(proj) + " " + flat(notes_all))
+    prim = [s for s in sentences if re.search(r"\b(primary|preferred measure|headline measure|"
+                                              r"main measure|main welfare measure)\b", s, re.I)
+            and not re.search(r"\b(neither|not|no)\b", s, re.I)]
+    ea_rank = re.findall(r"EA[^.]{0,60}\b(is|as) (the )?(primary|preferred|main|headline|better|"
+                         r"correct)\b", _norm(proj) + flat(notes_all))
+    g("G-V16-NOPRIMARY", not prim and not ea_rank and "neither is designated primary" in proj_n,
+      "EA foregrounded without being called the primary measure; slides say neither is designated primary"
+      if not prim and not ea_rank else "primacy wording: %s %s" % (prim[:3], ea_rank))
+
+    cap_ok = cap_present and "Haydar and Maniquet" in flat(caption_src)
+    g("G-V16-CAPTION", cap_ok, "theory figure carries its V15 caption verbatim"
+      if cap_ok else "V15 theory caption missing or altered")
+
+    lab_src = _strip_comments(body)
+    lab_src = re.sub(r"\\(includegraphics|graphicspath|input)(\[[^\]]*\])?\{[^}]*\}", "", lab_src)
+    lab_src = flat(lab_src).replace(flat(caption_src), " ")
+    lab_proj = _norm(proj)
+    cap_render = [p for p in pages if "Own-set equal-consumption equivalents" in p]
+    for p in cap_render:   # excise the caption block on its page only
+        lab_proj = lab_proj.replace(_norm(p), _norm(p.split("Own-set equal-consumption")[0]))
+    lab_reh = _norm(reh_text)
+    lab_reh = re.sub(r"Own-set equal-consumption equivalents.*?defined in\s*Section 3\.", " ",
+                     lab_reh, flags=re.S)
+    lab_hits = []
+    for pat, cs in V16_INTERNAL:
+        rx = re.compile(pat, 0 if cs else re.I)
+        for where, hay in (("source", lab_src), ("slides", lab_proj), ("notes", lab_reh)):
+            m = rx.search(hay)
+            if m:
+                lab_hits.append("%s in %s" % (m.group(0), where))
+    g("G-V16-LABELS", not lab_hits, "no internal label or forbidden measure name in source, "
+      "slides or notes (%d patterns)" % len(V16_INTERNAL)
+      if not lab_hits else "INTERNAL LABELS: " + "; ".join(lab_hits))
+
+    high = [m.group(0) for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(%|\\%|per ?cent)",
+                                            _norm(proj + reh_text) + " " + flat(src))
+            if 80 <= float(m.group(1)) <= 100]
+    words = re.findall(r"\b(eighty|ninety|near(ly)? 90|80\s*(-|--|to)\s*90)\b",
+                       (proj + reh_text + src).lower())
+    g("G-V16-NO8090", not high and not words, "no 80-90% opportunity claim anywhere"
+      if not high and not words else "high-share claim: %s %s" % (high, words))
+
+    return ok_l, bad_l, detail
+
+
+def main_v16() -> int:
+    import subprocess
+    src = V16_SRC.read_text(encoding="utf-8")
+    pdftotext = Path.home() / "AppData/Local/Programs/MiKTeX/miktex/bin/x64/pdftotext.exe"
+    if not V16_TEXT.exists() and V16_PDF.exists():
+        subprocess.run([str(pdftotext), "-layout", str(V16_PDF), str(V16_TEXT)], check=True)
+    text = V16_TEXT.read_text(encoding="utf-8", errors="replace")
+    pages = text.split("\f")
+    if pages and not pages[-1].strip():
+        pages = pages[:-1]
+    reh = V16_REH_TEXT.read_text(encoding="utf-8", errors="replace") \
+        if V16_REH_TEXT.exists() else ""
+
+    ok_l, bad_l, detail = v16_gates(src, pages, reh)
+
+    # ---------------- negative controls: in-memory copies, original files untouched
+    controls = {}
+    inj = list(pages)
+    inj[1] = inj[1] + "\nEstimated under S11.\n"
+    _, bad_tok, det_tok = v16_gates(src, inj, reh)
+    controls["NC-LABEL (inject 'S11' on slide 2)"] = {
+        "expected": "G-V16-LABELS FAIL",
+        "fired": not det_tok["G-V16-LABELS"]["pass"]}
+    inj = list(pages)
+    inj[1] = inj[1] + "\nA share of 12.34 per cent.\n"
+    _, bad_num, det_num = v16_gates(src, inj, reh)
+    controls["NC-REGISTRY (inject unregistered '12.34' on slide 2)"] = {
+        "expected": "G-REGISTRY FAIL",
+        "fired": not det_num["G-REGISTRY"]["pass"]}
+
+    print("V16 deck verification (verify_deck_r6.py --deck v16)")
+    print("-" * 68)
+    for line in ok_l:
+        print("  PASS  " + line)
+    for line in bad_l:
+        print("  FAIL  " + line)
+    print("-" * 68)
+    for name, c in controls.items():
+        print("  %s  %s -> expected %s" % ("FIRED" if c["fired"] else "SILENT", name, c["expected"]))
+    print("-" * 68)
+    fired = all(c["fired"] for c in controls.values())
+    print("%d passed, %d failed; negative controls %s"
+          % (len(ok_l), len(bad_l), "both fired" if fired else "DID NOT FIRE"))
+    V16_RESULTS.write_text(json.dumps({"gates": detail, "negative_controls": controls,
+                                       "passed": len(ok_l), "failed": len(bad_l)},
+                                      indent=2), encoding="utf-8", newline="\n")
+    return 1 if bad_l or not fired else 0
+
+
 if __name__ == "__main__":
+    if "--deck" in sys.argv[1:] and sys.argv[sys.argv.index("--deck") + 1] == "v16":
+        sys.exit(main_v16())
     sys.exit(main())

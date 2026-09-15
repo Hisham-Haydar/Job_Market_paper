@@ -1,0 +1,334 @@
+Unequal Job Opportunities and Well-Being
+Inequality: A Latent-Jobs Structural
+Decomposition
+
+
+Hisham Haydar
+University of Luxembourg and LISER
+
+
+France: EU-SILC collected in 2016, incomes of 2015, every job priced through EUROMOD.
+
+Discussion draft. The decomposition is preliminary and is not a causal decomposition.
+Two households with the same income can be very differently placed.
+
+
+
+
+      Low earnings can mean a taste for short hours, no well-paid job within reach, or household
+       resources that make another arrangement affordable.
+      An income distribution records outcomes with these explanations already mixed in.
+      In France, well-being inequality differs from consumption inequality:
+            single adults: consumption Gini 0.2633, attained-bundle well-being Gini 0.2498;
+            couples: consumption Gini 0.2268, attained-bundle well-being Gini 0.1974.
+
+
+   Equivalised, household-weighted, within each population. Single-adult and couple households are separate
+   populations and are not compared with each other.
+
+
+
+                                                                                                              2/18
+Each ingredient exists; a decomposition of the level of well-being inequality across them
+does not.
+
+
+
+ Labour supply as choice                 Money-metric welfare with                 Decomposing inequality
+ among latent jobs                       heterogeneous preferences                 Shorrocks; Sastre and Trannoy;
+ Aaberge, Dagsvik and Strøm;             Fleurbaey and Maniquet; Decoster          Creedy and Hérault; Mühlhan.
+ Dagsvik and Strøm; Dagsvik and          and Haan; Bargain et al.; Jia and         Shapley allocation of a change
+ Jia; Capéau, Decoster and Dekkers.     Thoresen; Jacquet, Jia and                between policy, population or time
+ Separates tastes from opportunities;    Thoresen.                                 states.
+ used to evaluate reforms.               A reference encodes a normative
+                                         position; references sit on
+                                         deterministic budget sets, or value
+                                         a change between regimes.
+
+
+   Gap: a cross-sectional level of well-being inequality, decomposed into preferences and job opportunities inside an
+   estimated latent-jobs model, under welfare measures that can value opportunities themselves.
+
+
+                                                                                                                        3/18
+Research question
+
+
+
+
+   How much inequality in money-metric well-being is associated with unequal job
+   opportunities rather than heterogeneous preferences, once labour supply is
+   modelled as choice among latent jobs?
+
+    1. Do observed labour-supply choices reflect preferences alone, or also heterogeneous latent
+       job opportunities?
+    2. How do conclusions differ when welfare evaluates the attained bundle versus the ex-ante
+       opportunity prospect?
+    3. In a restricted P/A/B decomposition, how much welfare inequality is associated with
+       preferences, local access, and earning opportunities?
+
+
+                                                                                                   4/18
+The latent-jobs model: a job is a package, valued through leisure and consumption.
+
+
+
+   A package j: employment, one of four occupation groups, weekly hours and an hourly wage, priced
+   through the French tax–benefit system to monthly disposable consumption Ci (j).
+
+                                                                                
+                                                           Ci (j)
+                                  vi (j) = Li (j) + βc log
+                                                            λc
+
+   Li value of leisure, shifted by age and, for women, children   βc weight on log consumption, estimated   λc a
+   units convention
+
+
+   Estimated separately for 1,540 single-adult and 2,223 couple households. The child term is a reduced-form
+   time-constraint shifter, not pure taste.
+
+
+                                                                                                                   5/18
+A job is chosen because it is valued or because it is plentiful: the choice law carries an
+opportunity density.
+
+
+
+
+                                                      exp{vi (j)} gi (j)
+                               Pi (j) = Z
+                                                  exp{vi (k)} gi (k) dν(k)
+
+   gi : how intensely package j is available to household i before any choice. It has four blocks: access (local
+   unemployment exposure, region, urban or rural location, year), hours bands, occupation, and wage offers
+   (education, experience).
+
+
+   Separation rests on maintained restrictions: smooth preferences against banded hours opportunities; local
+   shifters excluded from preferences; wage offers independent of hours given occupation.
+
+
+                                                                                                                   6/18
+What unequal opportunity means here: two matched men with almost identical tastes.
+
+
+
+
+   Same occupation group, hours band and wage quintile. A has 14.5 times B’s employment mass; B’s wage-offer
+   location is 11.5 log points higher. A stated-rule teaching example: not causal, not representative.
+
+                                                                                                               7/18
+First subquestion: choices reflect opportunities as well as preferences.
+
+
+
+    Single adults                                               free coordinates         population fit
+                                                                                    (mean absolute deviation)
+    Latent jobs, household-specific opportunities                      41                      0.0140
+    Common opportunity distribution                                    10                      0.0273
+    Common opportunity shape; employment and                           16                      0.0264
+    hours moved into utility
+
+
+   Both re-estimated common-opportunity benchmarks are worse by at least 141.64 on the same criterion,
+   households and sampled alternatives; the occupation margins deteriorate by an order of magnitude.
+
+   Not converted into a formal test. A better criterion does not by itself establish that a mechanism has been
+   identified.
+
+                                                                                                                 8/18
+From choices to well-being: give every job the same consumption and ask what is as good
+as the actual situation.
+
+
+
+                                                     Own-set equal-consumption equivalents: the
+                                                     theoretical construction from the companion theory
+                                                     paper. Two individuals, with preferences Ri and Rh
+                                                     and ability sets A = {j, k} and A′ = {k, ℓ}, attain
+                                                     bundles zi and zh . For each individual, a common
+                                                     consumption level is assigned to every job in their
+                                                     own set; the level at which the preferred reference job
+                                                     becomes indifferent to the attained bundle is that
+                                                     individual’s money metric, Wi1 and Wh1 . The two
+                                                     metrics are then directly comparable. Adapted from
+                                                     Haydar and Maniquet (2026), work in progress. This
+                                                     is the deterministic construction; the estimated
+                                                     ex-ante measure is its extension, defined in Section 3.
+
+
+
+
+                                                                                                               9/18
+EA, the opportunity-prospect perspective: what flat consumption makes the whole job
+prospect equally valuable?
+               Z                              βc                                     Z
+                        Li (j)       Ci (j)
+       Ji =         e                 λc             gbi (j) dν(j),         Hi =           e Li (j) gbi (j) dν(j),
+                                                                  n                    o
+                                                                      log Ji −log Hi
+                                              MiEA = λc exp                  βc
+
+      Ji : the actual prospect; every job enters, weighted by how available it is and how much it is
+        valued.
+      Hi : the same jobs, availability and preferences, with pay differences removed.
+      Opportunities enter welfare directly: access moves which jobs carry weight; earning opportunities
+        move what they pay.
+
+   The measure treats taste-shock variety as part of what makes a rich prospect valuable: a normative position,
+   not a consequence of estimation.
+
+                                                                                                                     10/18
+ATT, the attained-bundle benchmark: what consumption without work is as good as the
+job actually held?
+
+
+
+                                                          Li (jiobs ) − Li (o)
+                                                                                 
+                            Miatt = Ciobs exp
+                                                                    βc
+
+      Reference: non-employment o, which every household can reach.
+      Opportunities matter only through which job is attained and what it pays; jobs not taken play no
+        role.
+      For non-workers Miatt = Ciobs ; for workers it lies below observed consumption by the value of the
+        leisure given up.
+
+   On the current empirical domain the equal-consumption reference job is non-employment for every household: a
+   verified property of the estimated specification, not a general theorem.
+
+                                                                                                                  11/18
+The two measures answer different welfare questions.
+
+
+
+
+                              EA: the opportunity prospect               ATT: the attained bundle
+
+     Question                 How valuable is the distribution of        How well off is the household in the
+                              job prospects the household faces?         bundle it actually attains?
+     Reference                The same opportunity environment,          A common non-employment state
+                              with consumption equalised across
+                              jobs
+     How opportunities        Directly, as weights on every job          Only through the realised job
+     enter
+
+
+   Neither perspective corrects the other, and neither is designated primary. The choice between them is a
+   substantive normative decision that is not made here.
+
+                                                                                                                12/18
+The decomposition equalises three channels and allocates the change in the Gini over all
+orders.
+
+  P preferences: age profiles and the child-related              B earning opportunities: systematic wage-offer
+  shifter.                                                       location, not wage dispersion.
+  A local access: local unemployment exposure,                   Held fixed: household resources, needs and
+  region, urban or rural location, year. Not total               composition, in every coalition, with no allocated
+  opportunity.                                                   share.
+
+                          X              |S|! (3 − |S| − 1)! h p                  i
+         ϕpk =                                                               p
+                                                              v (S ∪ {k}) − v (S)
+                                                  3!
+                   S⊆{P,A,B}\{k}
+
+   v p (S) = I p (∅) − I p (S): the fall in the household-weighted Gini of welfare M p , p ∈ {EA, att}, when the
+   channels in S are set to a common reference.
+
+   Household resources, needs and composition are held fixed in the current decomposition. The access channel is
+   local access, not total opportunity. The decomposition is preliminary and makes no causal claim.
+
+                                                                                                                      13/18
+Central result: earning opportunities dominate under ATT; access dominates under EA for
+single adults; couples show no reversal.
+
+
+
+
+   Access and earning-opportunity contributions as a percentage of each perspective’s own baseline Gini. Access is
+   local access, not total opportunity; household resources, needs and composition are held fixed. Neither
+   perspective is designated primary.
+
+                                                                                                                     14/18
+EA: access and earnings account for 7.9–21.3% of baseline inequality; for single adults
+access is about three times earnings.
+
+
+
+                               scale           access       earnings     access + earnings   ordering
+                                             Gini points   Gini points     % of baseline
+               Single adults   raw            0.01812       0.00555            14.8          access > earnings
+                               equivalised    0.02183       0.00673            20.3          access > earnings
+               Couples         raw            0.00667       0.02049            21.3          earnings > access
+                               equivalised    0.00449       0.00504             7.9          earnings > access
+
+
+
+   Single adults: access is 3.3 times earnings before equivalisation and 3.2 times after it.
+
+   Household resources, needs and composition held fixed; access is local access. For couples, equivalisation moves
+   the share from 21.3% to 7.9% and turns the preference term negative, so no directional claim about preferences
+   is made.
+
+
+                                                                                                                      15/18
+ATT benchmark: access and earnings account for 1.9–6.7% of baseline inequality, and
+earning opportunities are larger throughout.
+
+
+
+
+                               scale           access       earnings     access + earnings   ordering
+                                             Gini points   Gini points     % of baseline
+               Single adults   raw             0.0016        0.0040             2.4          earnings > access
+                               equivalised     0.0013        0.0034             1.9          earnings > access
+               Couples         raw             0.0009        0.0128             6.7          earnings > access
+                               equivalised     0.0007        0.0062             3.5          earnings > access
+
+
+
+
+   Preliminary: the attained-bundle counterfactual integration is still being validated and covers short hours
+   sparsely. The preference contribution changes sign with equivalisation in both samples, so no directional claim is
+   made about it. Household resources, needs and composition held fixed.
+
+
+                                                                                                                        16/18
+What these results are not.
+
+      Preliminary. A restricted structural accounting exercise; the attained-bundle
+       counterfactual integration is still being validated.
+      No causal claim. Separation rests on maintained functional-form and exclusion
+       restrictions; no causal effect of geography, education or occupation is estimated.
+      No parameter uncertainty yet. Estimation uncertainty is not propagated through either
+       decomposition; repeat runs are simulation checks, not confidence intervals.
+      Preferences are not responsibility. The preference channel is systematic utility
+       heterogeneity, including a reduced-form child-related shifter; it is not equated with what
+       households are responsible for.
+      Held fixed and narrow. Household resources, needs and composition are held fixed;
+       access is local access, not total opportunity. The shares are not the total share of
+       inequality due to unequal job opportunities.
+
+                                                                                                    17/18
+Conclusion: which labour-market inequality matters depends on the welfare question.
+
+
+
+    1. Choices reflect opportunities, not preferences alone. Common-opportunity
+       benchmarks fit worse on the same households.
+    2. The welfare question changes the answer. Under EA, access and earnings account for
+       7.9–21.3% of baseline inequality and access leads for single adults; under ATT, 1.9–6.7%
+       and earnings lead. Couples show no reversal.
+    3. In the restricted P/A/B decomposition, local access and earning opportunities are a
+       bounded part of well-being inequality; the preference contribution is not sign-robust to
+       equivalisation.
+
+   Next: household resources, needs and composition as a fourth channel; parameter uncertainty; completing
+   validation of the attained-bundle integration.
+
+
+                                                                                                             18/18
+

@@ -19,6 +19,16 @@ build/*
 !build/JMP_seminar_deck_r6_build_log.txt
 !build/r6_number_provenance.json
 
+# V16 seminar deck (rebuilt from V15): built PDFs, text layers, build log,
+# number provenance and gate results are committed.
+!build/JMP_seminar_beamer_v16.pdf
+!build/JMP_seminar_beamer_v16_rehearsal.pdf
+!build/JMP_seminar_beamer_v16_text.txt
+!build/JMP_seminar_beamer_v16_rehearsal_text.txt
+!build/JMP_seminar_beamer_v16_build_log.txt
+!build/v16_number_provenance.json
+!build/v16_verification.json
+
 # stray intermediates if anyone compiles in place
 *.aux
 *.fdb_latexmk

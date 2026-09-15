@@ -1,0 +1,1135 @@
+R6 seminar deck build log
+started 2026-09-15T13:08:10.624797+00:00
+authority: JMP_W1_fork_ruling_v1.md Appendix A (R6); JMP_W1_BASELINE_F1_authorization_and_Cobs_ruling_v1.md s5
+
+$ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build JMP_seminar_beamer_v16.tex
+  Rc files read (in order):
+    NONE
+  Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+  Latexmk: applying rule 'pdflatex'...
+  Rule 'pdflatex':  Reasons for rerun
+  Changed files or newly in use/created:
+    JMP_seminar_beamer_v16.tex
+  Category 'changed_user':
+    JMP_seminar_beamer_v16.tex
+  
+  ------------
+  Run number 1 of rule 'pdflatex'
+  ------------
+  ------------
+  Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "JMP_seminar_beamer_v16.tex"'
+  ------------
+  This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+   restricted \write18 enabled.
+  entering extended mode
+  (JMP_seminar_beamer_v16.tex
+  LaTeX2e <2025-11-01>
+  L3 programming layer <2025-12-24>
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
+  Document Class: beamer 2026/08/20 v3.78 A class for typesetting presentations
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemodes
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasedecod
+  e.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseoptio
+  ns.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+  ) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+  l-common.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+  l-latex.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs
+  .code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex
+  )))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+  s.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+  slibraryfiltered.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.cod
+  e.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil
+  .code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpars
+  er.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.basic.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.trigonometric.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.random.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.comparison.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.base.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.round.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.misc.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.integerarithmetics.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc
+  .code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloa
+  t.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+  cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+  f)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.
+  cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys-pdftex.def
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys-common-pdf.def)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  yssoftpath.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ysprotocol.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+  ))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  re.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code
+  .tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repoints.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathconstruct.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathusage.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rescopes.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  regraphicstate.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  retransformations.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  requick.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reobjects.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathprocessing.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rearrows.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reshade.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reimage.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reexternal.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  relayers.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  retransparency.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repatterns.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rerdf.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\xxcolor.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty)
+   (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+  y)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+  ekeys.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+  s.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+  sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+  tlestring.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+  y)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+  c.sty))
+  
+  Package hyperref Message: Stopped early.
+  
+  ) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+  lecheck.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+  counter.sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaserequi
+  res.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecompa
+  tibility.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefont.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty)
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\sansmat
+  haccent.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-h
+  ook.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.st
+  y)))))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetrans
+  lator.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator.
+  sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemisc.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetwosc
+  reens.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseoverl
+  ay.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetitle
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasesecti
+  on.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseverba
+  tim.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  size.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  components.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecolor
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenotes
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetoc.s
+  ty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetempl
+  ates.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseauxte
+  mplates.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseboxes
+  .sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaselocal
+  structure.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavig
+  ation.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavig
+  ationsymbols.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetheor
+  ems.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+  For additional information on amsmath, use the `?' option.
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetheme
+  s.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemedefa
+  ult.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfonttheme
+  default.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthem
+  edefault.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerthem
+  edefault.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterthem
+  edefault.sty))) (jmp_beamer_preamble.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerinnerthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  eshapes.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  eplot.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+  omp-version-0-65.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+  omp-version-1-18.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
+  .code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz\tikz.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+  raryplothandlers.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  ematrix.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarytopaths.code.tex))))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerouterthememetropolis.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamercolorthememetropolis.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerfontthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty)
+  
+  Package beamerthememetropolis Warning: You need to compile with XeLaTeX or LuaL
+  aTeX to use the Fira fonts on input line 95.
+  
+  ))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/appendixnumberbeamer\a
+  ppendixnumberbeamer.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+  *************************************
+  * Local config file bblopts.cfg used
+  *
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babe
+  l-english.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.
+  ldf))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+   (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/eurosym\eurosym.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarydecorations.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  edecorations.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+  tions\pgflibrarydecorations.pathreplacing.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+  raryarrows.meta.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarypositioning.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibraryfit.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarybackgrounds.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfpages
+  .sty)) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+  ) (deck_numbers_v16.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+  ftex.def)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16.aux)
+  *geometry* driver: auto-detecting
+  *geometry* detected driver: pdftex
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+  kii
+  [Loading MPS to PDF converter (version 2006.09.02).]
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+  base.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+  cfg))
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16.out)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16.out)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  basic-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  bibliography-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  environment-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  months-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  numbers-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  theorem-dictionary-English.dict)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16.nav)
+  [1{C:/Users/hisham/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1math
+  kerncmss.fd) [2] [3] [4] [5] [6] [7 <../manuscript/figures/v11/fig_matched_hous
+  eholds_v11.png>] [8] [9 <../manuscript/figures/v5/theory_w1.png (PNG copy)>]
+  [10] [11] [12] [13] [14 <../manuscript/figures/v13/fig_v13_central_result.png>]
+   [15] [16] [17] [18]
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16.aux)
+   ) <C:\Users\hisham\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcs
+  s0900.pk> <C:\Users\hisham\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+  600\tcss1000.pk><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+  ic/amsfonts/cm/cmex10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/
+  type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/hisham/AppData/Local/Programs/MiK
+  TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/hisham/AppData/Local/Pr
+  ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/hisham/AppData
+  /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/hisha
+  m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
+  ers/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pf
+  b><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+  /cmr8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+  fonts/cm/cmss10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/
+  public/amsfonts/cm/cmss12.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fo
+  nts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/hisham/AppData/Local/Programs/
+  MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/hisham/AppData/Local/
+  Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/hisham/Ap
+  pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/User
+  s/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.p
+  fb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+  m/cmssi8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+  amsfonts/cm/cmssi9.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/typ
+  e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX
+  /fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/hisham/AppData/Local/Progra
+  ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/hisham/AppData/Loc
+  al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/hisham/Ap
+  pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+  Output written on C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_semina
+  r_beamer_v16.pdf (18 pages, 603166 bytes).
+  Transcript written on C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_se
+  minar_beamer_v16.log.
+  Latexmk: Getting log file 'build/JMP_seminar_beamer_v16.log'
+  Latexmk: Examining 'build/JMP_seminar_beamer_v16.fls'
+  Latexmk: Examining 'build/JMP_seminar_beamer_v16.log'
+  Latexmk: Log file says output to 'C:/Users/hisham/Repo/Job_Market_paper/beamer/build/JMP_seminar_beamer_v16.pdf'
+  Latexmk: All targets (build/JMP_seminar_beamer_v16.pdf) are up-to-date
+  ! pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+  ! latexmk: major issue: So far, you have not checked for MiKTeX updates.
+  exit 0
+
+$ pdftotext -layout build/JMP_seminar_beamer_v16.pdf build/JMP_seminar_beamer_v16_text.txt
+  exit 0
+
+  JMP_seminar_beamer_v16: overfull=0 underfull=0 (output-written markers: 1)
+
+$ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build JMP_seminar_beamer_v16_rehearsal.tex
+  Rc files read (in order):
+    NONE
+  Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+  Latexmk: applying rule 'pdflatex'...
+  Rule 'pdflatex':  Reasons for rerun
+  Changed files or newly in use/created:
+    JMP_seminar_beamer_v16.tex
+    JMP_seminar_beamer_v16_rehearsal.tex
+  Category 'changed_user':
+    JMP_seminar_beamer_v16.tex
+    JMP_seminar_beamer_v16_rehearsal.tex
+  
+  ------------
+  Run number 1 of rule 'pdflatex'
+  ------------
+  ------------
+  Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder -output-directory="build"  "JMP_seminar_beamer_v16_rehearsal.tex"'
+  ------------
+  This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+   restricted \write18 enabled.
+  entering extended mode
+  (JMP_seminar_beamer_v16_rehearsal.tex
+  LaTeX2e <2025-11-01>
+  L3 programming layer <2025-12-24>
+  (JMP_seminar_beamer_v16.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
+  Document Class: beamer 2026/08/20 v3.78 A class for typesetting presentations
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemodes
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasedecod
+  e.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseoptio
+  ns.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+  ) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+  l-common.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfuti
+  l-latex.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs
+  .code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex
+  )))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+  s.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkey
+  slibraryfiltered.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.cod
+  e.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil
+  .code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpars
+  er.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.basic.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.trigonometric.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.random.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.comparison.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.base.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.round.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.misc.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunc
+  tions.integerarithmetics.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc
+  .code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloa
+  t.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+  cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+  f)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.
+  cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys-pdftex.def
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ys-common-pdf.def)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  yssoftpath.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfs
+  ysprotocol.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx
+  ))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  re.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code
+  .tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repoints.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathconstruct.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathusage.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rescopes.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  regraphicstate.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  retransformations.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  requick.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reobjects.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repathprocessing.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rearrows.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reshade.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reimage.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  reexternal.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  relayers.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  retransparency.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  repatterns.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfco
+  rerdf.code.tex)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\xxcolor.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty)
+   (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.st
+  y)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+  ekeys.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+  s.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+  sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+  tlestring.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+  y)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+  c.sty))
+  
+  Package hyperref Message: Stopped early.
+  
+  ) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+  lecheck.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+  counter.sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaserequi
+  res.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecompa
+  tibility.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefont.
+  sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty)
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\sansmat
+  haccent.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-h
+  ook.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.st
+  y)))))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetrans
+  lator.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator.
+  sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemisc.
+  sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetwosc
+  reens.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseoverl
+  ay.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetitle
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasesecti
+  on.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseverba
+  tim.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  size.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseframe
+  components.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecolor
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenotes
+  .sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetoc.s
+  ty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetempl
+  ates.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseauxte
+  mplates.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseboxes
+  .sty)))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaselocal
+  structure.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavig
+  ation.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenavig
+  ationsymbols.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetheor
+  ems.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+  For additional information on amsmath, use the `?' option.
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetheme
+  s.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemedefa
+  ult.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfonttheme
+  default.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorthem
+  edefault.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerthem
+  edefault.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterthem
+  edefault.sty))) (jmp_beamer_preamble.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerinnerthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz
+  .sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  eshapes.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  eplot.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+  omp-version-0-65.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfc
+  omp-version-1-18.sty))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.s
+  ty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor
+  .code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz\tikz.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+  raryplothandlers.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  ematrix.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarytopaths.code.tex))))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerouterthememetropolis.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamercolorthememetropolis.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis
+  \beamerfontthememetropolis.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty)
+  
+  Package beamerthememetropolis Warning: You need to compile with XeLaTeX or LuaL
+  aTeX to use the Fira fonts on input line 95.
+  
+  ))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/appendixnumberbeamer\a
+  ppendixnumberbeamer.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+  *************************************
+  * Local config file bblopts.cfg used
+  *
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babe
+  l-english.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.
+  ldf))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+   (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/eurosym\eurosym.sty)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarydecorations.code.tex
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodul
+  edecorations.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decora
+  tions\pgflibrarydecorations.pathreplacing.code.tex))
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflib
+  raryarrows.meta.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarypositioning.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibraryfit.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/ti
+  kz/libraries\tikzlibrarybackgrounds.code.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfpages
+  .sty)) (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+  ) (deck_numbers_v16.tex)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+  ftex.def)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16_rehe
+  arsal.aux)
+  *geometry* driver: auto-detecting
+  *geometry* detected driver: pdftex
+  
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+  kii
+  [Loading MPS to PDF converter (version 2006.09.02).]
+  )
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+  base.sty
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.
+  cfg))
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16_rehe
+  arsal.out)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16_rehe
+  arsal.out)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  basic-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  bibliography-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  environment-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  months-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  numbers-dictionary-English.dict)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-
+  theorem-dictionary-English.dict)
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16_rehe
+  arsal.nav)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+  (C:\Users\hisham\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1math
+  kerncmss.fd) [2{C:/Users/hisham/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.ma
+  p}
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation1})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.108 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.108 \end{frame}
+                   ] [3
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation2})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.150 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.150 \end{frame}
+                   ] [4
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation3})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.178 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.178 \end{frame}
+                   ] [5
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation4})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.203 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.203 \end{frame}
+                   ] [6
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation5})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.226 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.226 \end{frame}
+                   ] [7
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation6})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.248 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.248 \end{frame}
+                   ] [8
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation7})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.282 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.282 \end{frame}
+                    <../manuscript/figures/v11/fig_matched_households_v11.png>]
+  [9
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation8})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.306 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.306 \end{frame}
+                   ] [10
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation9})
+   has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.336 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+  been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.336 \end{frame}
+                    <../manuscript/figures/v5/theory_w1.png (PNG copy)>] [11
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation10}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.358 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.358 \end{frame}
+                   ] [12
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation11}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.389 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.389 \end{frame}
+                   ] [13
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation12}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.425 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.425 \end{frame}
+                   ] [14
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation13}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.449 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.449 \end{frame}
+                   ] [15
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation14}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.484 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.484 \end{frame}
+                    <../manuscript/figures/v13/fig_v13_central_result.png>]
+  [16
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation15}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.515 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.515 \end{frame}
+                   ] [17
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation16}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.550 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.550 \end{frame}
+                   ] [18
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation17}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.579 \end{frame}
+                   
+  pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.579 \end{frame}
+                   ] [19
+  pdfTeX warning (ext4): destination with the same identifier (name{Navigation18}
+  ) has been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.581 \end{document}
+                      
+  pdfTeX warning (ext4): destination with the same identifier (name{page.18}) has
+   been already used, duplicate ignored
+  
+  \pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                    \endgroup 
+  l.581 \end{document}
+                      ]
+  (C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_seminar_beamer_v16_rehe
+  arsal.aux) ) )
+  (see the transcript file for additional information) <C:\Users\hisham\AppData\L
+  ocal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0900.pk> <C:\Users\hisham\Ap
+  pData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk><C:/Users/his
+  ham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+  /Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+  10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+  ts/cm/cmmi12.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+  lic/amsfonts/cm/cmmi7.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/
+  type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKT
+  eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/hisham/AppData/Local/Prog
+  rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/hisham/AppData/Lo
+  cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/hisham/Ap
+  pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users
+  /hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb
+  ><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+  cmss8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+  fonts/cm/cmss9.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/p
+  ublic/amsfonts/cm/cmssbx10.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/f
+  onts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/hisham/AppData/Local/Progra
+  ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Users/hisham/AppData/L
+  ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/hisham
+  /AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Us
+  ers/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
+  pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+  cm/cmsy5.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+  amsfonts/cm/cmsy7.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/fonts/type
+  1/public/amsfonts/cm/cmsy8.pfb><C:/Users/hisham/AppData/Local/Programs/MiKTeX/f
+  onts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/hisham/AppData/Local/Programs
+  /MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+  Output written on C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_semina
+  r_beamer_v16_rehearsal.pdf (18 pages, 623936 bytes).
+  Transcript written on C:\Users\hisham\Repo\Job_Market_paper\beamer\build\JMP_se
+  minar_beamer_v16_rehearsal.log.
+  Latexmk: Getting log file 'build/JMP_seminar_beamer_v16_rehearsal.log'
+  Latexmk: Examining 'build/JMP_seminar_beamer_v16_rehearsal.fls'
+  Latexmk: Examining 'build/JMP_seminar_beamer_v16_rehearsal.log'
+  Latexmk: Log file says output to 'C:/Users/hisham/Repo/Job_Market_paper/beamer/build/JMP_seminar_beamer_v16_rehearsal.pdf'
+  Latexmk: All targets (build/JMP_seminar_beamer_v16_rehearsal.pdf) are up-to-date
+  ! pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+  ! latexmk: major issue: So far, you have not checked for MiKTeX updates.
+  exit 0
+
+$ pdftotext -layout build/JMP_seminar_beamer_v16_rehearsal.pdf build/JMP_seminar_beamer_v16_rehearsal_text.txt
+  exit 0
+
+  JMP_seminar_beamer_v16_rehearsal: overfull=0 underfull=0 (output-written markers: 1)
+
+finished 2026-09-15T13:08:18.262340+00:00

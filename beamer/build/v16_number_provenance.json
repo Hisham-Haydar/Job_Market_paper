@@ -1,0 +1,415 @@
+{
+  "macros": {
+    "VAttCoupOppEq": {
+      "format": ".1f",
+      "key": "att_couples_eq_opportunity_pct",
+      "raw": 3.52265806049438,
+      "rendered": "3.5",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttCoupOppRaw": {
+      "format": ".1f",
+      "key": "att_couples_uneq_opportunity_pct",
+      "raw": 6.736779740413565,
+      "rendered": "6.7",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttCoupPhiAEq": {
+      "format": ".4f",
+      "key": "d2_giniA_couples_eq",
+      "raw": 0.000733,
+      "rendered": "0.0007",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiARaw": {
+      "format": ".4f",
+      "key": "d2_giniA_couples_uneq",
+      "raw": 0.000926,
+      "rendered": "0.0009",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiBEq": {
+      "format": ".4f",
+      "key": "d2_giniB_couples_eq",
+      "raw": 0.006211,
+      "rendered": "0.0062",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiBRaw": {
+      "format": ".4f",
+      "key": "d2_giniB_couples_uneq",
+      "raw": 0.012786,
+      "rendered": "0.0128",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttEqGiniCouples": {
+      "format": ".4f",
+      "key": "w1f_eq_gini_couples",
+      "raw": 0.1974,
+      "rendered": "0.1974",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "VAttEqGiniSingles": {
+      "format": ".4f",
+      "key": "w1f_eq_gini_singles",
+      "raw": 0.2498,
+      "rendered": "0.2498",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "VAttOppMax": {
+      "format": ".1f",
+      "key": "att_opportunity_max_pct",
+      "raw": 6.736779740413565,
+      "rendered": "6.7",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttOppMin": {
+      "format": ".1f",
+      "key": "att_opportunity_min_pct",
+      "raw": 1.9412437769766397,
+      "rendered": "1.9",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingOppEq": {
+      "format": ".1f",
+      "key": "att_singles_eq_opportunity_pct",
+      "raw": 1.9412437769766397,
+      "rendered": "1.9",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingOppRaw": {
+      "format": ".1f",
+      "key": "att_singles_uneq_opportunity_pct",
+      "raw": 2.418378811291655,
+      "rendered": "2.4",
+      "status": "certified comparison record",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingPhiAEq": {
+      "format": ".4f",
+      "key": "d2_giniA_singles_eq",
+      "raw": 0.001315,
+      "rendered": "0.0013",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiARaw": {
+      "format": ".4f",
+      "key": "d2_giniA_singles_uneq",
+      "raw": 0.001615,
+      "rendered": "0.0016",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiBEq": {
+      "format": ".4f",
+      "key": "d2_giniB_singles_eq",
+      "raw": 0.003443,
+      "rendered": "0.0034",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiBRaw": {
+      "format": ".4f",
+      "key": "d2_giniB_singles_uneq",
+      "raw": 0.004037,
+      "rendered": "0.0040",
+      "status": "result",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VCEqGiniCouples": {
+      "format": ".4f",
+      "key": "ceq_gini_couples",
+      "raw": 0.2268,
+      "rendered": "0.2268",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "VCEqGiniSingles": {
+      "format": ".4f",
+      "key": "ceq_gini_singles",
+      "raw": 0.2633,
+      "rendered": "0.2633",
+      "status": "result",
+      "units": "Gini units, equivalised"
+    },
+    "VCollectionYear": {
+      "format": "d",
+      "key": "collection_year",
+      "raw": 2016,
+      "rendered": "2016",
+      "status": "definition",
+      "units": "EU-SILC collection year"
+    },
+    "VEACoupOppEq": {
+      "format": ".1f",
+      "key": "wea_couples_eq_opportunity_pct",
+      "raw": 7.943052490103608,
+      "rendered": "7.9",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEACoupOppRaw": {
+      "format": ".1f",
+      "key": "wea_couples_uneq_opportunity_pct",
+      "raw": 21.260060896986076,
+      "rendered": "21.3",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEACoupPhiAEq": {
+      "format": ".5f",
+      "key": "wea_couples_eq_phi_a",
+      "raw": 0.004494947086497875,
+      "rendered": "0.00449",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEACoupPhiARaw": {
+      "format": ".5f",
+      "key": "wea_couples_uneq_phi_a",
+      "raw": 0.006665026238242224,
+      "rendered": "0.00667",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEACoupPhiBEq": {
+      "format": ".5f",
+      "key": "wea_couples_eq_phi_b",
+      "raw": 0.0050384701278785,
+      "rendered": "0.00504",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEACoupPhiBRaw": {
+      "format": ".5f",
+      "key": "wea_couples_uneq_phi_b",
+      "raw": 0.020486711731163267,
+      "rendered": "0.02049",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEACoupPrefEq": {
+      "format": ".5f",
+      "key": "wea_couples_pref_eq",
+      "raw": -0.0021155503323901322,
+      "rendered": "$-$0.00212",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEACoupPrefRaw": {
+      "format": ".5f",
+      "key": "wea_couples_pref_uneq",
+      "raw": 0.0029075575569848544,
+      "rendered": "0.00291",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEAOppMax": {
+      "format": ".1f",
+      "key": "wea_opportunity_max_pct",
+      "raw": 21.260060896986076,
+      "rendered": "21.3",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEAOppMin": {
+      "format": ".1f",
+      "key": "wea_opportunity_min_pct",
+      "raw": 7.943052490103608,
+      "rendered": "7.9",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingOppEq": {
+      "format": ".1f",
+      "key": "wea_singles_eq_opportunity_pct",
+      "raw": 20.308667331780878,
+      "rendered": "20.3",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingOppRaw": {
+      "format": ".1f",
+      "key": "wea_singles_uneq_opportunity_pct",
+      "raw": 14.846182831555828,
+      "rendered": "14.8",
+      "status": "certified result",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingPhiAEq": {
+      "format": ".5f",
+      "key": "wea_singles_eq_phi_a",
+      "raw": 0.021826457935352248,
+      "rendered": "0.02183",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEASingPhiARaw": {
+      "format": ".5f",
+      "key": "wea_singles_uneq_phi_a",
+      "raw": 0.018124440816126748,
+      "rendered": "0.01812",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEASingPhiBEq": {
+      "format": ".5f",
+      "key": "wea_singles_eq_phi_b",
+      "raw": 0.006730385421605505,
+      "rendered": "0.00673",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEASingPhiBRaw": {
+      "format": ".5f",
+      "key": "wea_singles_uneq_phi_b",
+      "raw": 0.005548589709594884,
+      "rendered": "0.00555",
+      "status": "certified result",
+      "units": "Gini points"
+    },
+    "VEASingRatioEq": {
+      "format": ".1f",
+      "key": "wea_singles_access_earn_ratio_eq",
+      "raw": 3.2429729604022643,
+      "rendered": "3.2",
+      "status": "certified result",
+      "units": "ratio"
+    },
+    "VEASingRatioRaw": {
+      "format": ".1f",
+      "key": "wea_singles_access_earn_ratio_uneq",
+      "raw": 3.2664950491446696,
+      "rendered": "3.3",
+      "status": "certified result",
+      "units": "ratio"
+    },
+    "VIncomeYear": {
+      "format": "d",
+      "key": "income_year",
+      "raw": 2015,
+      "rendered": "2015",
+      "status": "definition",
+      "units": "income reference year"
+    },
+    "VKFreeRumA": {
+      "format": "d",
+      "key": "kfree_ruma",
+      "raw": 10,
+      "rendered": "10",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "VKFreeRumB": {
+      "format": "d",
+      "key": "kfree_rumb",
+      "raw": 16,
+      "rendered": "16",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "VKFreeSingles": {
+      "format": "d",
+      "key": "kfree_singles",
+      "raw": 41,
+      "rendered": "41",
+      "status": "estimated",
+      "units": "free coordinates"
+    },
+    "VMaeRumA": {
+      "format": ".4f",
+      "key": "mae_ruma",
+      "raw": 0.02730064826365704,
+      "rendered": "0.0273",
+      "status": "corrected result",
+      "units": "mean absolute deviation"
+    },
+    "VMaeRumB": {
+      "format": ".4f",
+      "key": "mae_rumb",
+      "raw": 0.026356415274116075,
+      "rendered": "0.0264",
+      "status": "corrected result",
+      "units": "mean absolute deviation"
+    },
+    "VMaeSingles": {
+      "format": ".4f",
+      "key": "mae_singles",
+      "raw": 0.013997497845981723,
+      "rendered": "0.0140",
+      "status": "corrected result",
+      "units": "mean absolute deviation"
+    },
+    "VMatchedAccessRatio": {
+      "format": ".1f",
+      "key": "mh_access_ratio",
+      "raw": 14.5,
+      "rendered": "14.5",
+      "status": "model illustration (rounded)",
+      "units": "ratio"
+    },
+    "VMatchedEmpShareA": {
+      "format": ".2f",
+      "key": "mh_employment_share_a",
+      "raw": 0.75,
+      "rendered": "0.75",
+      "status": "model illustration (rounded)",
+      "units": "share"
+    },
+    "VMatchedEmpShareB": {
+      "format": ".2f",
+      "key": "mh_employment_share_b",
+      "raw": 0.17,
+      "rendered": "0.17",
+      "status": "model illustration (rounded)",
+      "units": "share"
+    },
+    "VMatchedWageGap": {
+      "format": ".1f",
+      "key": "mh_wage_gap",
+      "raw": 11.5,
+      "rendered": "11.5",
+      "status": "model illustration (rounded)",
+      "units": "log points"
+    },
+    "VNCouples": {
+      "format": ",d",
+      "key": "n_couples",
+      "raw": 2223,
+      "rendered": "2,223",
+      "status": "sample",
+      "units": "households"
+    },
+    "VNSingles": {
+      "format": ",d",
+      "key": "n_singles",
+      "raw": 1540,
+      "rendered": "1,540",
+      "status": "sample",
+      "units": "households"
+    },
+    "VRumGap": {
+      "format": ".2f",
+      "key": "rum_gap",
+      "raw": 141.64,
+      "rendered": "141.64",
+      "status": "estimated",
+      "units": "log-points"
+    }
+  },
+  "presentation_version": "v15; numerical evidence identical to v14",
+  "registry": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\numbers_of_record_v15.json",
+  "registry_sha256": "c456e6ecb554bb31c0791824cd4734533274d83fa3f282789cf8caca09c79909"
+}

@@ -1,0 +1,88 @@
+{
+  "gates": {
+    "G-RETIRE": {
+      "pass": true,
+      "detail": "no retired magnitude or out-of-scope token in source, slides or notes"
+    },
+    "G-NOBAN": {
+      "pass": true,
+      "detail": "no seminar-freeze out-of-scope token"
+    },
+    "G-NUMBERS": {
+      "pass": true,
+      "detail": "no hand-typed numeral on any slide or note (Shapley-weight integers and the verbatim V15 caption excepted)"
+    },
+    "G-ASSETS": {
+      "pass": true,
+      "detail": "3 figure(s) ['fig_matched_households_v11.png', 'theory_w1.png', 'fig_v13_central_result.png'], each byte-identical to an image embedded in the V15 report/gallery"
+    },
+    "G-LINEAGE": {
+      "pass": true,
+      "detail": "no retired-lineage artifact referenced by path"
+    },
+    "G-NOCONF": {
+      "pass": true,
+      "detail": "no confusion-matrix statistic"
+    },
+    "G-POOLED": {
+      "pass": true,
+      "detail": "no pooled figure"
+    },
+    "G-NOSIDEBYSIDE": {
+      "pass": true,
+      "detail": "no frame sets singles and couples euro welfare levels side by side"
+    },
+    "G-REGISTRY": {
+      "pass": true,
+      "detail": "every numeral on all 18 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (51 macros)"
+    },
+    "G-V16-STRUCTURE": {
+      "pass": true,
+      "detail": "18 slides (16-18), PDF pages match, running order real-world inequality -> literature gap -> research question -> latent-jobs model -> welfare: EA -> welfare: ATT -> ATT versus EA -> decomposition -> results -> limitations -> conclusion"
+    },
+    "G-V16-RQ": {
+      "pass": true,
+      "detail": "research question and three subquestions rendered verbatim"
+    },
+    "G-V16-EQUATIONS": {
+      "pass": true,
+      "detail": "exactly five displayed equations (systematic utility, choice law with opportunity density, attained-bundle welfare, ex-ante welfare, Shapley), each frame's note opens with a spoken interpretation line"
+    },
+    "G-V16-CENTRAL": {
+      "pass": true,
+      "detail": "one central-result slide reuses the V15 ATT-versus-EA figure unchanged and states the reversal for single adults, none for couples"
+    },
+    "G-V16-REQUIRED": {
+      "pass": true,
+      "detail": "required statements rendered on slides: resources/needs/composition held fixed; access = local access, defined; access is not total opportunity; preliminary; no causal claim; no parameter uncertainty yet; preferences not equated with responsibility; two different welfare questions"
+    },
+    "G-V16-NOPRIMARY": {
+      "pass": true,
+      "detail": "EA foregrounded without being called the primary measure; slides say neither is designated primary"
+    },
+    "G-V16-CAPTION": {
+      "pass": true,
+      "detail": "theory figure carries its V15 caption verbatim"
+    },
+    "G-V16-LABELS": {
+      "pass": true,
+      "detail": "no internal label or forbidden measure name in source, slides or notes (38 patterns)"
+    },
+    "G-V16-NO8090": {
+      "pass": true,
+      "detail": "no 80-90% opportunity claim anywhere"
+    }
+  },
+  "negative_controls": {
+    "NC-LABEL (inject 'S11' on slide 2)": {
+      "expected": "G-V16-LABELS FAIL",
+      "fired": true
+    },
+    "NC-REGISTRY (inject unregistered '12.34' on slide 2)": {
+      "expected": "G-REGISTRY FAIL",
+      "fired": true
+    }
+  },
+  "passed": 18,
+  "failed": 0
+}

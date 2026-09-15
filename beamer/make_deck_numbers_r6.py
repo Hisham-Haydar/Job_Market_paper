@@ -447,5 +447,128 @@ def main() -> int:
     return 0
 
 
+# ==========================================================================
+# DECK-V16: the same number source, repointed at the V15 number registry.
+#
+#   python make_deck_numbers_r6.py --v16
+#
+# writes deck_numbers_v16.tex and build/v16_number_provenance.json.  The R6
+# path above is untouched and remains the default.  V16 reads ONE source,
+# reports/numbers_of_record_v15.json -- the registry behind
+# JMP_research_story_report_v15.html and JMP_results_gallery_v15.html -- and
+# only formats registry values: no arithmetic, no rerun, no second source.
+# Every macro records its registry key, the raw registry value and the format
+# used, so the verifier can re-derive each rendered string from the registry.
+# ==========================================================================
+V15_REGISTRY = HERE.parent / "reports" / "numbers_of_record_v15.json"
+V16_OUT_TEX = HERE / "deck_numbers_v16.tex"
+V16_OUT_JSON = HERE / "build" / "v16_number_provenance.json"
+
+# macro name -> (registry key, format spec).  "," in a spec is Python's
+# thousands separator, rendered as a plain comma exactly as the V15 report does.
+V16_MACROS = {
+    # data and samples
+    "VCollectionYear": ("collection_year", "d"),
+    "VIncomeYear": ("income_year", "d"),
+    "VNSingles": ("n_singles", ",d"),
+    "VNCouples": ("n_couples", ",d"),
+    # real-world inequality: consumption versus attained-bundle money metric
+    "VCEqGiniSingles": ("ceq_gini_singles", ".4f"),
+    "VAttEqGiniSingles": ("w1f_eq_gini_singles", ".4f"),
+    "VCEqGiniCouples": ("ceq_gini_couples", ".4f"),
+    "VAttEqGiniCouples": ("w1f_eq_gini_couples", ".4f"),
+    # do opportunities matter for behaviour: common-opportunity benchmarks
+    "VKFreeSingles": ("kfree_singles", "d"),
+    "VKFreeRumA": ("kfree_ruma", "d"),
+    "VKFreeRumB": ("kfree_rumb", "d"),
+    "VRumGap": ("rum_gap", ".2f"),
+    "VMaeSingles": ("mae_singles", ".4f"),
+    "VMaeRumA": ("mae_ruma", ".4f"),
+    "VMaeRumB": ("mae_rumb", ".4f"),
+    # matched-household illustration
+    "VMatchedAccessRatio": ("mh_access_ratio", ".1f"),
+    "VMatchedWageGap": ("mh_wage_gap", ".1f"),
+    "VMatchedEmpShareA": ("mh_employment_share_a", ".2f"),
+    "VMatchedEmpShareB": ("mh_employment_share_b", ".2f"),
+    # ex-ante (EA) perspective: access + earnings as % of own baseline Gini
+    "VEAOppMin": ("wea_opportunity_min_pct", ".1f"),
+    "VEAOppMax": ("wea_opportunity_max_pct", ".1f"),
+    "VEASingOppRaw": ("wea_singles_uneq_opportunity_pct", ".1f"),
+    "VEASingOppEq": ("wea_singles_eq_opportunity_pct", ".1f"),
+    "VEACoupOppRaw": ("wea_couples_uneq_opportunity_pct", ".1f"),
+    "VEACoupOppEq": ("wea_couples_eq_opportunity_pct", ".1f"),
+    "VEASingRatioRaw": ("wea_singles_access_earn_ratio_uneq", ".1f"),
+    "VEASingRatioEq": ("wea_singles_access_earn_ratio_eq", ".1f"),
+    "VEASingPhiARaw": ("wea_singles_uneq_phi_a", ".5f"),
+    "VEASingPhiBRaw": ("wea_singles_uneq_phi_b", ".5f"),
+    "VEASingPhiAEq": ("wea_singles_eq_phi_a", ".5f"),
+    "VEASingPhiBEq": ("wea_singles_eq_phi_b", ".5f"),
+    "VEACoupPhiARaw": ("wea_couples_uneq_phi_a", ".5f"),
+    "VEACoupPhiBRaw": ("wea_couples_uneq_phi_b", ".5f"),
+    "VEACoupPhiAEq": ("wea_couples_eq_phi_a", ".5f"),
+    "VEACoupPhiBEq": ("wea_couples_eq_phi_b", ".5f"),
+    "VEACoupPrefRaw": ("wea_couples_pref_uneq", ".5f"),
+    "VEACoupPrefEq": ("wea_couples_pref_eq", ".5f"),
+    # attained-bundle (ATT) benchmark
+    "VAttOppMin": ("att_opportunity_min_pct", ".1f"),
+    "VAttOppMax": ("att_opportunity_max_pct", ".1f"),
+    "VAttSingOppRaw": ("att_singles_uneq_opportunity_pct", ".1f"),
+    "VAttSingOppEq": ("att_singles_eq_opportunity_pct", ".1f"),
+    "VAttCoupOppRaw": ("att_couples_uneq_opportunity_pct", ".1f"),
+    "VAttCoupOppEq": ("att_couples_eq_opportunity_pct", ".1f"),
+    "VAttSingPhiARaw": ("d2_giniA_singles_uneq", ".4f"),
+    "VAttSingPhiBRaw": ("d2_giniB_singles_uneq", ".4f"),
+    "VAttSingPhiAEq": ("d2_giniA_singles_eq", ".4f"),
+    "VAttSingPhiBEq": ("d2_giniB_singles_eq", ".4f"),
+    "VAttCoupPhiARaw": ("d2_giniA_couples_uneq", ".4f"),
+    "VAttCoupPhiBRaw": ("d2_giniB_couples_uneq", ".4f"),
+    "VAttCoupPhiAEq": ("d2_giniA_couples_eq", ".4f"),
+    "VAttCoupPhiBEq": ("d2_giniB_couples_eq", ".4f"),
+}
+
+
+def v16_render(value, spec: str) -> str:
+    """Format one registry value; a minus sign becomes LaTeX math minus."""
+    text = format(value, spec)
+    return text.replace("-", "$-$") if text.startswith("-") else text
+
+
+def main_v16() -> int:
+    registry = json.loads(V15_REGISTRY.read_text(encoding="utf-8"))
+    entries = registry["entries"]
+    if "v15" not in str(registry.get("presentation_version", "")):
+        raise SystemExit("REFUSED: %s is not the V15 registry" % V15_REGISTRY.name)
+    prov: dict = {"registry": str(V15_REGISTRY), "registry_sha256": sha256(V15_REGISTRY),
+                  "presentation_version": registry["presentation_version"],
+                  "macros": {}}
+    tex = [
+        "% deck_numbers_v16.tex -- GENERATED by make_deck_numbers_r6.py --v16.",
+        "% Do not edit by hand.  Every numeral on a V16 slide comes from here, and",
+        "% every value here is one entry of reports/numbers_of_record_v15.json,",
+        "% formatted only (no arithmetic).",
+        "",
+    ]
+    for name, (key, spec) in V16_MACROS.items():
+        if key not in entries:
+            raise SystemExit("REFUSED: registry key %r missing from V15 registry" % key)
+        raw = entries[key]["value"]
+        if isinstance(raw, str):
+            raise SystemExit("REFUSED: registry key %r is not numeric" % key)
+        rendered = v16_render(raw, spec)
+        tex.append(r"\newcommand{\%s}{%s}" % (name, rendered))
+        prov["macros"][name] = {"key": key, "raw": raw, "format": spec,
+                                "rendered": rendered,
+                                "units": entries[key].get("units"),
+                                "status": entries[key].get("status")}
+    V16_OUT_JSON.parent.mkdir(exist_ok=True)
+    V16_OUT_TEX.write_text("\n".join(tex) + "\n", encoding="utf-8", newline="\n")
+    V16_OUT_JSON.write_text(json.dumps(prov, indent=2, sort_keys=True), encoding="utf-8",
+                            newline="\n")
+    print("wrote %s (%d macros from %s)" % (V16_OUT_TEX.name, len(prov["macros"]),
+                                           V15_REGISTRY.name))
+    return 0
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    import sys
+    raise SystemExit(main_v16() if "--v16" in sys.argv[1:] else main())
