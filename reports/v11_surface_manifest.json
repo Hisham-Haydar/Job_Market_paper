@@ -1,0 +1,130 @@
+{
+  "release": "V11",
+  "status": "PASS",
+  "constraints": {
+    "reestimation": false,
+    "repricing": false,
+    "welfare_recomputed": false,
+    "decomposition_recomputed": false,
+    "certified_values_changed": false,
+    "v9_overwritten": false,
+    "v10_overwritten": false,
+    "neither_welfare_perspective_designated_primary": true
+  },
+  "surfaces": [
+    {
+      "surface": "report HTML",
+      "path": "Job_Market_paper/reports/JMP_research_story_report_v11.html",
+      "bytes": 10074475,
+      "sha256": "24091eaebfb84d6707d9578347346266816c9fc19f987dfe5e356522991693f8"
+    },
+    {
+      "surface": "reader-facing gallery",
+      "path": "Job_Market_paper/reports/JMP_results_gallery_v11.html",
+      "bytes": 5901116,
+      "sha256": "bed5be97340099edc17f339a672724d8aea3ed6a19c8a1999ed4c6457168d3f8"
+    },
+    {
+      "surface": "editable resolved Markdown",
+      "path": "Job_Market_paper/reports/research_story_build/story_v11.generated.md",
+      "bytes": 216970,
+      "sha256": "db51be486443d9538950995548e66b4f93b9349d231ef55c4dc4956ca453b334"
+    },
+    {
+      "surface": "editable section source",
+      "path": "Job_Market_paper/reports/research_story_build/v11_sections.py",
+      "bytes": 46280,
+      "sha256": "373a43958ab114b0147281b545775c17228a94b90469c74ac8278260b125fb76"
+    },
+    {
+      "surface": "illustration text source",
+      "path": "Job_Market_paper/reports/research_story_build/v11_illustration.py",
+      "bytes": 4761,
+      "sha256": "69ed18a96d01b2866e2a2811ed11eea2ac5bef72256325b40b9b30ccc3512acb"
+    },
+    {
+      "surface": "numerical input adapter",
+      "path": "Job_Market_paper/reports/research_story_build/v11_render_inputs.py",
+      "bytes": 4360,
+      "sha256": "681924d24c07cf5ea640c923975538ee86bd71016b46bc8362ef3e42b998a1f0"
+    },
+    {
+      "surface": "report builder",
+      "path": "Job_Market_paper/reports/research_story_build/build_v11.py",
+      "bytes": 8102,
+      "sha256": "385279c81bf8ba2754a08ce9899dfb3df6db2e2ce10ab1c44f0a812cfbc07864"
+    },
+    {
+      "surface": "gallery builder",
+      "path": "Job_Market_paper/reports/results_gallery_build/build_v11.py",
+      "bytes": 8976,
+      "sha256": "4abd1778ce6add16e5f2f3beb6b741b28924af52965908f589fbf7f6cf760820"
+    },
+    {
+      "surface": "matched-household generator",
+      "path": "Job_Market_paper/reports/research_story_build/make_v11_matched_households.py",
+      "bytes": 12572,
+      "sha256": "5f5792feb3aa8baa655ec90972838f7ce9064074cab8a057cd831057812842b7"
+    },
+    {
+      "surface": "matched-household record",
+      "path": "Job_Market_paper/reports/v11_matched_households.json",
+      "bytes": 2027,
+      "sha256": "3f4691f63fdda93123bf156770a8285f95ef91896dd122e480db14c5293c62ba"
+    },
+    {
+      "surface": "matched-household figure",
+      "path": "Job_Market_paper/manuscript/figures/v11/fig_matched_households_v11.png",
+      "bytes": 203646,
+      "sha256": "47f7ac52d36edde90e976385801ad9b27ea4d53bad8debcc39857164b5f12c14"
+    },
+    {
+      "surface": "V11 numerical registry",
+      "path": "Job_Market_paper/reports/numbers_of_record_v11.json",
+      "bytes": 215357,
+      "sha256": "28390ab3703c820dd6c690051ec7d26221828dba01f6d10e912756ea553fd281"
+    },
+    {
+      "surface": "deck source",
+      "path": "Job_Market_paper/beamer/JMP_seminar_deck_r11.tex",
+      "bytes": 45775,
+      "sha256": "5a2ad2216844732304a78647f696f46cf5ba824439d993f98b63dc418a48b42d"
+    },
+    {
+      "surface": "deck numerical macros",
+      "path": "Job_Market_paper/beamer/deck_numbers_r11.tex",
+      "bytes": 4769,
+      "sha256": "3784023dacc5101b4ae2e302cef22cdd4526a7fc07269c7309b731b37570eab8"
+    },
+    {
+      "surface": "presentation PDF",
+      "path": "Job_Market_paper/beamer/build/JMP_seminar_deck_r11.pdf",
+      "bytes": 517399,
+      "sha256": "3fd52064b866422592b2dd2bd78081dee5f4c9fb56adf90471adf484cdb5d54c"
+    },
+    {
+      "surface": "rehearsal PDF",
+      "path": "Job_Market_paper/beamer/build/JMP_seminar_deck_r11_rehearsal.pdf",
+      "bytes": 566834,
+      "sha256": "390e81d6bd9986fadc09fce636fadf4112b3403416cb71f20faacd05788ddf22"
+    },
+    {
+      "surface": "rehearsal script",
+      "path": "Job_Market_paper/reports/rehearsal_pack_v11.md",
+      "bytes": 38783,
+      "sha256": "6b6b30e6c510ad43078f706369674e898c5332363ef202d144ae79c916fcff53"
+    },
+    {
+      "surface": "executed canonical notebook",
+      "path": "MNL_wea/experiments/JMP_SEMINAR_SPRINT/JMP_canonical_AtoZ.ipynb",
+      "bytes": 3882257,
+      "sha256": "4dac58511bf47168a2b18463aebad196776657542099d0c45138e65e9f61bfc5"
+    },
+    {
+      "surface": "complete gate summary",
+      "path": "Job_Market_paper/reports/v11_release_gate_summary.md",
+      "bytes": 1638,
+      "sha256": "9e6edd89260d50d9c4e82636b9172ba7f33a98ee4e40fb8c76e74e97c795d66f"
+    }
+  ]
+}

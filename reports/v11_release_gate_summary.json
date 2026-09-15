@@ -1,0 +1,200 @@
+{
+  "release": "V11",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "matched-household illustration",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/make_v11_matched_households.py"
+      ],
+      "output_tail": "wrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\manuscript\\figures\\v11\\fig_matched_households_v11.png and C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\v11_matched_households.json\n{\n \"illustration\": \"matched single-adult households, accepted specification\",\n \"selection_rule\": {\n  \"admissible\": \"employed, same sex, same observed occupation group, same model hours band, same observed-wage quintile\",\n  \"preference_filter\": \"leisure-profile distance at or below its 10th percentile\",\n  \"choice\": \"largest total-variation distance between opportunity densities\",\n  \"admissible_pairs\": 9529\n },\n \"shared_by_construction\": [\n  \"sex (both men)\",\n  \"occupation group\",\n  \"hours band\",\n  \"observed-wage quintile\"\n ],\n \"leisure_profile_distance\": 0.019,\n \"leisure_profile_distance_p10_cut\": 0.065,\n \"leisure_weight_A\": 8.22,\n \"leisure_weight_B\": 8.17,\n \"opportunity_distance\": 0.58,\n \"opportunity_distance_admissible_median\": 0.13,\n \"access_mass_ratio_A_over_B\": 14.5,\n \"log_access_gap\": 2.67,\n \"opportunity_employment_share_A\": 0.75,\n \"opportunity_employment_share_B\": 0.17,\n \"wage_location_gap_B_minus_A_logpoints\": 11.5,\n \"hours_density_distance\": 0.0,\n \"occupation_mass_distance\": 0.0,\n \"wage_offer_FOSD_B_over_A\": true,\n \"wage_offer_FOSD_A_over_B\": false,\n \"A_more_offers_paying_at_least_w_up_to_eur_per_hour\": 356,\n \"offer_share_above_that_wage\": 7e-20\n}\n"
+    },
+    {
+      "gate": "report build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/build_v11.py"
+      ],
+      "output_tail": "v6 report, editable Markdown, paper TeX and numerical registry written.\nV11 HTML, editable Markdown and numerical registry written (paper TeX/bib redirected to scratch; not part of this task).\n[WARNING] Deprecated: --mathjax. Use --math-method=mathjax[:URL] instead.\n\n\n"
+    },
+    {
+      "gate": "gallery build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/results_gallery_build/build_v11.py"
+      ],
+      "output_tail": "wrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_v11.html (5,901,116 bytes)\n"
+    },
+    {
+      "gate": "deck build and verification",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/build_deck_r11.py"
+      ],
+      "output_tail": "wrote deck_numbers_r11.tex and figures/r11/fig_matched_households_v11.png\nwrote JMP_seminar_deck_r11.tex and rehearsal driver\nBuilding JMP_seminar_deck_r11\n  JMP_seminar_deck_r11: overfull=0 underfull=0\nBuilding JMP_seminar_deck_r11_rehearsal\n  JMP_seminar_deck_r11_rehearsal: overfull=0 underfull=0\nPASS: pdf_present\nPASS: rehearsal_pdf_present\nPASS: exact_title\nPASS: two_additional_slides_ea_and_matched\nPASS: two_perspective_slides\nPASS: interpretation_sentence\nPASS: d_status_sentence\nPASS: no_haydar_maniquet_defence\nPASS: certified_values\nPASS: no_stale_exante_status\nPASS: rendered_comparison\nbuild log: C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r11_build_log.txt\n"
+    },
+    {
+      "gate": "rehearsal-script build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/build_rehearsal_script_v11.py"
+      ],
+      "output_tail": "Rehearsal script: 19 main + 10 backup slides.\n"
+    },
+    {
+      "gate": "notebook surface refresh",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "experiments/JMP_SEMINAR_SPRINT/refresh_canonical_notebook_v11.py"
+      ],
+      "output_tail": "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\JMP_canonical_AtoZ.ipynb\n"
+    },
+    {
+      "gate": "executed notebook verification",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "experiments/JMP_SEMINAR_SPRINT/verify_canonical_notebook_v11.py"
+      ],
+      "output_tail": "PASS: metadata\nPASS: no_error_outputs\nPASS: comparison_cell_executed\nPASS: comparison_output\nPASS: two_perspectives\nPASS: interpretation\nPASS: d_status\nPASS: att_range_sourced\nPASS: no_measure_one_defence\nPASS: record_certified\n"
+    },
+    {
+      "gate": "rendered-text language and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v11_rendered_language.py"
+      ],
+      "output_tail": "RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL\n"
+    },
+    {
+      "gate": "Stage A ex-ante status and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v11_stage_a_status.py"
+      ],
+      "output_tail": "V11 STAGE A STATUS PASS: report 11 stale / 0 unlabelled; gallery 3 / 0; negative control observed FAIL\n"
+    },
+    {
+      "gate": "reader structure and economic derivation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v11_reader_gates.py"
+      ],
+      "output_tail": "V11 READER GATES PASS: 40 checks, 0 failures\n"
+    },
+    {
+      "gate": "number-to-source",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v11_numbers_against_source.py"
+      ],
+      "output_tail": "V11 NUMBER-TO-SOURCE PASS: 30 checks, 0 failures\n"
+    },
+    {
+      "gate": "offline HTML render",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/check_v11_render.py"
+      ],
+      "output_tail": "PASS: report_images\nPASS: report_math\nPASS: report_javascript\nPASS: report_provenance_collapsed\nPASS: report_viewport\nPASS: gallery_images\nPASS: gallery_captions\nPASS: gallery_provenance_collapsed\nPASS: gallery_javascript\nPASS: gallery_viewport\ntemporary screenshots captured for visual inspection\n"
+    },
+    {
+      "gate": "cross-surface synchronisation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v11_synced_surfaces.py"
+      ],
+      "output_tail": "PASS: exact_title_report_gallery_deck_rehearsal\nPASS: four_exante_shares\nPASS: outcomes_versus_prospects\nPASS: interpretation_sentence\nPASS: couples_no_reversal\nPASS: d_held_fixed\nPASS: neither_primary\nPASS: couples_scale_warning\nPASS: matched_pair_report_gallery_deck_rehearsal\nPASS: no_measure_one_defence\nPASS: notebook_executed\n"
+    },
+    {
+      "gate": "deck verification",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/verify_deck_r11.py"
+      ],
+      "output_tail": "PASS: pdf_present\nPASS: rehearsal_pdf_present\nPASS: exact_title\nPASS: two_additional_slides_ea_and_matched\nPASS: two_perspective_slides\nPASS: interpretation_sentence\nPASS: d_status_sentence\nPASS: no_haydar_maniquet_defence\nPASS: certified_values\nPASS: no_stale_exante_status\nPASS: rendered_comparison\n"
+    },
+    {
+      "gate": "Python source compilation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "py_compile",
+        "reports/research_story_build/build_v11.py",
+        "reports/research_story_build/v11_sections.py",
+        "reports/research_story_build/v11_render_inputs.py",
+        "reports/research_story_build/v11_illustration.py",
+        "reports/research_story_build/make_v11_matched_households.py",
+        "reports/results_gallery_build/build_v11.py",
+        "reports/check_v11_rendered_language.py",
+        "reports/check_v11_stage_a_status.py",
+        "reports/check_v11_reader_gates.py",
+        "reports/check_v11_numbers_against_source.py",
+        "reports/check_v11_synced_surfaces.py",
+        "reports/research_story_build/check_v11_render.py",
+        "reports/write_v11_release_manifest.py",
+        "beamer/make_deck_numbers_r11.py",
+        "beamer/prepare_deck_v11.py",
+        "beamer/build_deck_r11.py",
+        "beamer/verify_deck_r11.py",
+        "beamer/build_rehearsal_script_v11.py",
+        "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\refresh_canonical_notebook_v11.py",
+        "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\verify_canonical_notebook_v11.py"
+      ],
+      "output_tail": ""
+    },
+    {
+      "gate": "V9 and V10 byte-preservation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/JMP_research_story_report_v9.html",
+        "reports/JMP_results_gallery_v9.html",
+        "reports/numbers_of_record_v9.json",
+        "reports/research_story_build/v9_sections.py",
+        "reports/research_story_build/story_v9.generated.md",
+        "beamer/JMP_seminar_deck_r9.tex",
+        "reports/JMP_research_story_report_v10.html",
+        "reports/JMP_results_gallery_v10.html",
+        "reports/numbers_of_record_v10.json",
+        "reports/research_story_build/v10_sections.py",
+        "reports/research_story_build/story_v10.generated.md"
+      ],
+      "output_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "illustration": "matched single-adult households, accepted specification",
+  "selection_rule": {
+    "admissible": "employed, same sex, same observed occupation group, same model hours band, same observed-wage quintile",
+    "preference_filter": "leisure-profile distance at or below its 10th percentile",
+    "choice": "largest total-variation distance between opportunity densities",
+    "admissible_pairs": 9529
+  },
+  "shared_by_construction": [
+    "sex (both men)",
+    "occupation group",
+    "hours band",
+    "observed-wage quintile"
+  ],
+  "leisure_profile_distance": 0.019,
+  "leisure_profile_distance_p10_cut": 0.065,
+  "leisure_weight_A": 8.22,
+  "leisure_weight_B": 8.17,
+  "opportunity_distance": 0.58,
+  "opportunity_distance_admissible_median": 0.13,
+  "access_mass_ratio_A_over_B": 14.5,
+  "log_access_gap": 2.67,
+  "opportunity_employment_share_A": 0.75,
+  "opportunity_employment_share_B": 0.17,
+  "wage_location_gap_B_minus_A_logpoints": 11.5,
+  "hours_density_distance": 0.0,
+  "occupation_mass_distance": 0.0,
+  "wage_offer_FOSD_B_over_A": true,
+  "wage_offer_FOSD_A_over_B": false,
+  "A_more_offers_paying_at_least_w_up_to_eur_per_hour": 356,
+  "offer_share_above_that_wage": 7e-20,
+  "sources": {
+    "parameters": {
+      "path": "MNL_wea/experiments/JMP_SEMINAR_SPRINT/runs/s11_welfare_specs_of_record/s11_singles_theta_hat_v1.npy",
+      "sha256": "8ed736215222265dc2a194df2d77fc92df0707baa21339eb51723b01f49926c9"
+    },
+    "estimation_frame": {
+      "path": "MNL_wea/outputs/corr/s10_criterion_a_iid_r100_v1/singles_engine_ready_criterion_a_v1.parquet",
+      "sha256": "641ceb0ed47b38111c4bac25deb9dd0d1f5942b931a694cd4cc1cec13d429128"
+    },
+    "evaluator": {
+      "path": "MNL_wea/scripts/welfare/wea_sprint1/wea_core.py",
+      "sha256": "6445f0e459eb1fd5840df3f94942c8eba7d6ae414753a9edb1f0fd8ae4763c97"
+    },
+    "loader": {
+      "path": "MNL_wea/scripts/welfare/preseminar_pab_v1.py",
+      "sha256": "1595056d65cb66034d4a1c051247f41e29fa15b62d76f283e2bfb3d13267289e"
+    }
+  }
+}
