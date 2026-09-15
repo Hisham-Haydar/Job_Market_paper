@@ -1,0 +1,270 @@
+{
+  "gates": {
+    "G-RETIRE": {
+      "pass": true,
+      "detail": "no retired magnitude or out-of-scope token in source, slides or notes"
+    },
+    "G-NOBAN": {
+      "pass": true,
+      "detail": "no seminar-freeze out-of-scope token"
+    },
+    "G-NUMBERS": {
+      "pass": true,
+      "detail": "no hand-typed numeral on any slide or note (Shapley-weight integers and the theory-figure caption excepted)"
+    },
+    "G-ASSETS": {
+      "pass": true,
+      "detail": "5 figure(s) ['theory_w1.png', 'fit_by_margin_v7.png', 'fig_matched_households_v11.png', 'figP04_mrs_by_age_sex.png', 'fig_v13_central_result.png'], each byte-identical to an image embedded in the V15 report/gallery"
+    },
+    "G-LINEAGE": {
+      "pass": true,
+      "detail": "no retired-lineage artifact referenced by path"
+    },
+    "G-NOCONF": {
+      "pass": true,
+      "detail": "no confusion-matrix statistic"
+    },
+    "G-POOLED": {
+      "pass": true,
+      "detail": "no pooled figure"
+    },
+    "G-NOSIDEBYSIDE": {
+      "pass": true,
+      "detail": "no frame sets singles and couples euro welfare levels side by side"
+    },
+    "G-REGISTRY": {
+      "pass": true,
+      "detail": "every numeral on all 51 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (415 macros)"
+    },
+    "G-V18-STRUCTURE": {
+      "pass": true,
+      "detail": "19 main slides (17-19), 51 pages match 51 frames, running order Motivation -> The conflict -> Research question -> Literature and gap -> Job packages -> Opportunities: the choice probability -> Data and EUROMOD -> Estimation -> Selected estimates -> Welfare -> Ex-ante prospect welfare -> Attained-bundle welfare -> Inequality and Shapley decomposition -> How much is associated with opportunities? -> Which opportunity channel matters? -> Where does baseline inequality go? -> What is not claimed -> Conclusion"
+    },
+    "G-V18-RQ": {
+      "pass": true,
+      "detail": "research question and three subquestions rendered verbatim"
+    },
+    "G-V18-EQUATIONS": {
+      "pass": true,
+      "detail": "exactly five displayed equations (systematic utility, choice law with opportunity density, attained-bundle welfare, ex-ante welfare, Shapley), each frame's note opens with a spoken interpretation line"
+    },
+    "G-V18-CENTRAL": {
+      "pass": true,
+      "detail": "one central-result slide reuses the V15 ATT-versus-EA figure unchanged and states the reversal for single adults, none for couples"
+    },
+    "G-V18-REQUIRED": {
+      "pass": true,
+      "detail": "required statements rendered on slides: resources/needs/composition held fixed; access = local access, defined; access is local access, not total opportunity; preliminary; not causal; no parameter uncertainty yet; preferences not equated with responsibility; prospects versus attained outcomes; two different welfare questions; neither perspective primary; A is the local-access channel; 2x2 label; 100% display denominator label; X2: remainder label; X2: sex blocks retained; X2: luck and spread excluded; X1: A + B alone"
+    },
+    "G-V18-NOPRIMARY": {
+      "pass": true,
+      "detail": "EA foregrounded without being called the primary measure; slides say neither is designated primary"
+    },
+    "G-V18-CAPTION": {
+      "pass": true,
+      "detail": "theory figure carries its caption verbatim (companion-paper attribution kept)"
+    },
+    "G-V18-LABELS": {
+      "pass": true,
+      "detail": "no internal label or forbidden measure name in source, slides or notes (42 patterns)"
+    },
+    "G-V18-NO8090": {
+      "pass": true,
+      "detail": "no 80-90% opportunity claim anywhere"
+    },
+    "G-V18-STYLE": {
+      "pass": true,
+      "detail": "50 frame titles all <= 6 words; no rendered body paragraph longer than 3 lines"
+    },
+    "G-V18-CAVEATS": {
+      "pass": true,
+      "detail": "caveats on one dedicated slide only; no red caveat text on any other main slide"
+    },
+    "G-V18-BACKUP": {
+      "pass": true,
+      "detail": "EA and ATT results tables are backup slides after the conclusion (32 backup slides)"
+    },
+    "G-V18-CONFLICT": {
+      "pass": true,
+      "detail": "compensation-versus-responsibility conflict is slide 3, before the data, with the impossibility and the Fleurbaey-Maniquet citation"
+    },
+    "G-V18-THEORYFIG": {
+      "pass": true,
+      "detail": "theory figure is the main 'Welfare' slide, with a slide caption that drops the section reference"
+    },
+    "G-V18-DENOMINATORS": {
+      "pass": true,
+      "detail": "no slide, frame or note sentence mixes shares of baseline Gini with shares of the explained change"
+    },
+    "G-V18-LINKS": {
+      "pass": true,
+      "detail": "99 source links to 46 targets; 129 internal links in the PDF, 0 unresolved; every backup has Back and Appendix map; every backup is on the map; 14 main slides carry buttons",
+      "stats": {
+        "source_links": 99,
+        "targets": 46,
+        "backups": 31,
+        "main_slides_with_buttons": 14,
+        "pdf_internal_links": 129,
+        "pdf_broken_links": 0
+      }
+    },
+    "G-V18-HUNDRED": {
+      "pass": true,
+      "detail": "rows close to 100.0 for both populations (singles [0.1, 15.5, 4.8, 79.6], couples [-1.8, 3.7, 4.2, 93.9]); A + B rows equal the headline; couples' negative preference row shown; remainder labelled not allocated, with its qualification on the slide; couples shown as a table"
+    },
+    "G-V18-GOAL1": {
+      "pass": true,
+      "detail": "registry-derived shares agree with the Goal 1 verification within rounding of its inputs (baseline shares within 0.02 pp, explained shares within 0.1)",
+      "differences": {
+        "Sing.P": {
+          "exact": 0.1415,
+          "goal1": 0.14,
+          "abs_diff": 0.0015
+        },
+        "Sing.A": {
+          "exact": 15.5222,
+          "goal1": 15.53,
+          "abs_diff": 0.0078
+        },
+        "Sing.B": {
+          "exact": 4.7864,
+          "goal1": 4.79,
+          "abs_diff": 0.0036
+        },
+        "Sing.sum": {
+          "exact": 20.4501,
+          "goal1": 20.46,
+          "abs_diff": 0.0099
+        },
+        "Sing.rest": {
+          "exact": 79.5499,
+          "goal1": 79.54,
+          "abs_diff": 0.0099
+        },
+        "Sing.sP": {
+          "exact": 0.6917,
+          "goal1": 0.7,
+          "abs_diff": 0.0083
+        },
+        "Sing.sA": {
+          "exact": 75.9029,
+          "goal1": 75.9,
+          "abs_diff": 0.0029
+        },
+        "Sing.sB": {
+          "exact": 23.4054,
+          "goal1": 23.4,
+          "abs_diff": 0.0054
+        },
+        "Coup.P": {
+          "exact": -1.7626,
+          "goal1": -1.77,
+          "abs_diff": 0.0074
+        },
+        "Coup.A": {
+          "exact": 3.7451,
+          "goal1": 3.74,
+          "abs_diff": 0.0051
+        },
+        "Coup.B": {
+          "exact": 4.198,
+          "goal1": 4.2,
+          "abs_diff": 0.002
+        },
+        "Coup.sum": {
+          "exact": 6.1804,
+          "goal1": 6.17,
+          "abs_diff": 0.0104
+        },
+        "Coup.rest": {
+          "exact": 93.8196,
+          "goal1": 93.83,
+          "abs_diff": 0.0104
+        },
+        "Coup.sP": {
+          "exact": -28.5197,
+          "goal1": -28.6,
+          "abs_diff": 0.0803
+        },
+        "Coup.sA": {
+          "exact": 60.5962,
+          "goal1": 60.6,
+          "abs_diff": 0.0038
+        },
+        "Coup.sB": {
+          "exact": 67.9234,
+          "goal1": 68.0,
+          "abs_diff": 0.0766
+        }
+      }
+    },
+    "G-V18-TITLE": {
+      "pass": true,
+      "detail": "title slide carries the six ruling lines and nothing else (23 words)"
+    },
+    "G-V18-ESTIMATES": {
+      "pass": true,
+      "detail": "selected-estimates slide shows exactly beta_c, local unemployment exposure, high education and sigma for both populations, from the V15 gallery, matching the ruling's values"
+    },
+    "G-V18-NOCAUSAL": {
+      "pass": true,
+      "detail": "every sentence that mentions causality negates it"
+    },
+    "G-V18-ELASTICITY": {
+      "pass": true,
+      "detail": "V15 states 'Wage elasticities are not reported.'; the deck adds no elasticity"
+    },
+    "G-V18-APPENDIX": {
+      "pass": true,
+      "detail": "18 substantive main slides (16-18) and 31 backup slides beyond the appendix map (>= 12)"
+    }
+  },
+  "negative_controls": {
+    "NC-LABEL (inject 'S11' on slide 2)": {
+      "expected": "G-V18-LABELS FAIL",
+      "fired": true
+    },
+    "NC-REGISTRY (inject unregistered '12.34' on slide 2)": {
+      "expected": "G-REGISTRY FAIL",
+      "fired": true
+    },
+    "NC-STYLE-TITLE (inject a seven-word title on slide 2)": {
+      "expected": "G-V18-STYLE FAIL",
+      "fired": true,
+      "hits": [
+        "'Why income inequality mixes several different mechanisms' (7 words)"
+      ]
+    },
+    "NC-STYLE-PARAGRAPH (render check on the prose-bodied V16 PDF)": {
+      "expected": "paragraph check FAIL",
+      "fired": true,
+      "hits": [
+        "page 3: 4+ lines from 'Fleurbaey and Maniquet; Decoster'",
+        "page 9: 4+ lines from 'Own-set equal-consumption equivalents: the'",
+        "page 9: 4+ lines from 'metrics are then directly comparable. Adapted from'"
+      ],
+      "count": 3,
+      "v16_long_titles": 15
+    },
+    "NC-DENOMINATORS (inject 'share of explained change' on the 100% slide)": {
+      "expected": "G-V18-DENOMINATORS FAIL",
+      "fired": true,
+      "hits": [
+        "page 17"
+      ]
+    },
+    "NC-LINKS (point one main-slide button at a missing target)": {
+      "expected": "G-V18-LINKS FAIL",
+      "fired": true,
+      "hits": [
+        "missing target b:nowhere"
+      ]
+    },
+    "NC-8090 (inject an 85% opportunity claim on slide 2)": {
+      "expected": "G-V18-NO8090 FAIL",
+      "fired": true
+    }
+  },
+  "passed": 32,
+  "failed": 0
+}

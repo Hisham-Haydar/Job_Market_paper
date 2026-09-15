@@ -1,0 +1,3185 @@
+{
+  "macros": {
+    "VAccCoupledWomen": {
+      "format": ".1f",
+      "key": "coupled_women_accuracy_pct",
+      "kind": "entry",
+      "raw": 89.80224215767258,
+      "rendered": "89.8",
+      "units": "percent"
+    },
+    "VAccCoupledWomenHi": {
+      "format": ".1f",
+      "key": "coupled_women_band_hi_pct",
+      "kind": "entry",
+      "raw": 91.23424775780995,
+      "rendered": "91.2",
+      "units": "percent"
+    },
+    "VAccCoupledWomenLo": {
+      "format": ".1f",
+      "key": "coupled_women_band_lo_pct",
+      "kind": "entry",
+      "raw": 88.11507948639655,
+      "rendered": "88.1",
+      "units": "percent"
+    },
+    "VAccSingleWomen": {
+      "format": ".1f",
+      "key": "single_women_accuracy_pct",
+      "kind": "entry",
+      "raw": 85.67913245286843,
+      "rendered": "85.7",
+      "units": "percent"
+    },
+    "VAccSingleWomenHi": {
+      "format": ".1f",
+      "key": "single_women_band_hi_pct",
+      "kind": "entry",
+      "raw": 85.86031482270393,
+      "rendered": "85.9",
+      "units": "percent"
+    },
+    "VAccSingleWomenLo": {
+      "format": ".1f",
+      "key": "single_women_band_lo_pct",
+      "kind": "entry",
+      "raw": 80.02040566768633,
+      "rendered": "80.0",
+      "units": "percent"
+    },
+    "VAgeScale": {
+      "format": "d",
+      "key": "age_scale",
+      "kind": "entry",
+      "raw": 10,
+      "rendered": "10",
+      "units": "years"
+    },
+    "VAttCoupOppEq": {
+      "format": ".1f",
+      "key": "att_couples_eq_opportunity_pct",
+      "kind": "entry",
+      "raw": 3.52265806049438,
+      "rendered": "3.5",
+      "units": "percent of baseline Gini"
+    },
+    "VAttCoupOppRaw": {
+      "format": ".1f",
+      "key": "att_couples_uneq_opportunity_pct",
+      "kind": "entry",
+      "raw": 6.736779740413565,
+      "rendered": "6.7",
+      "units": "percent of baseline Gini"
+    },
+    "VAttCoupPhiAEq": {
+      "format": ".4f",
+      "key": "d2_giniA_couples_eq",
+      "kind": "entry",
+      "raw": 0.000733,
+      "rendered": "0.0007",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiARaw": {
+      "format": ".4f",
+      "key": "d2_giniA_couples_uneq",
+      "kind": "entry",
+      "raw": 0.000926,
+      "rendered": "0.0009",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiBEq": {
+      "format": ".4f",
+      "key": "d2_giniB_couples_eq",
+      "kind": "entry",
+      "raw": 0.006211,
+      "rendered": "0.0062",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttCoupPhiBRaw": {
+      "format": ".4f",
+      "key": "d2_giniB_couples_uneq",
+      "kind": "entry",
+      "raw": 0.012786,
+      "rendered": "0.0128",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttEqGiniCouples": {
+      "format": ".4f",
+      "key": "w1f_eq_gini_couples",
+      "kind": "entry",
+      "raw": 0.1974,
+      "rendered": "0.1974",
+      "units": "Gini units, equivalised"
+    },
+    "VAttEqGiniSingles": {
+      "format": ".4f",
+      "key": "w1f_eq_gini_singles",
+      "kind": "entry",
+      "raw": 0.2498,
+      "rendered": "0.2498",
+      "units": "Gini units, equivalised"
+    },
+    "VAttFigCoupGiniEq": {
+      "format": ".4f",
+      "key": "fig13_att_couples_equivalised_baseline_gini",
+      "kind": "entry",
+      "raw": 0.19711874909515303,
+      "rendered": "0.1971",
+      "units": "Gini"
+    },
+    "VAttFigCoupGiniRaw": {
+      "format": ".4f",
+      "key": "fig13_att_couples_unequivalised_baseline_gini",
+      "kind": "entry",
+      "raw": 0.2035412302367321,
+      "rendered": "0.2035",
+      "units": "Gini"
+    },
+    "VAttFigCoupPhiAEq": {
+      "format": ".4f",
+      "key": "fig13_att_couples_equivalised_phi_a",
+      "kind": "entry",
+      "raw": 0.0007327270395684435,
+      "rendered": "0.0007",
+      "units": "Gini points"
+    },
+    "VAttFigCoupPhiARaw": {
+      "format": ".4f",
+      "key": "fig13_att_couples_unequivalised_phi_a",
+      "kind": "entry",
+      "raw": 0.0009259117588206975,
+      "rendered": "0.0009",
+      "units": "Gini points"
+    },
+    "VAttFigCoupPhiBEq": {
+      "format": ".4f",
+      "key": "fig13_att_couples_equivalised_phi_b",
+      "kind": "entry",
+      "raw": 0.006211092464177776,
+      "rendered": "0.0062",
+      "units": "Gini points"
+    },
+    "VAttFigCoupPhiBRaw": {
+      "format": ".4f",
+      "key": "fig13_att_couples_unequivalised_phi_b",
+      "kind": "entry",
+      "raw": 0.012786212603156148,
+      "rendered": "0.0128",
+      "units": "Gini points"
+    },
+    "VAttFigCoupPhiPEq": {
+      "format": ".4f",
+      "key": "fig13_att_couples_equivalised_phi_p",
+      "kind": "entry",
+      "raw": -0.0019339485696129215,
+      "rendered": "$-$0.0019",
+      "units": "Gini points"
+    },
+    "VAttFigCoupPhiPRaw": {
+      "format": ".4f",
+      "key": "fig13_att_couples_unequivalised_phi_p",
+      "kind": "entry",
+      "raw": 0.006427900281239916,
+      "rendered": "0.0064",
+      "units": "Gini points"
+    },
+    "VAttFigSingGiniEq": {
+      "format": ".4f",
+      "key": "fig13_att_singles_equivalised_baseline_gini",
+      "kind": "entry",
+      "raw": 0.24509171934146293,
+      "rendered": "0.2451",
+      "units": "Gini"
+    },
+    "VAttFigSingGiniRaw": {
+      "format": ".4f",
+      "key": "fig13_att_singles_unequivalised_baseline_gini",
+      "kind": "entry",
+      "raw": 0.23368551207796068,
+      "rendered": "0.2337",
+      "units": "Gini"
+    },
+    "VAttFigSingPhiAEq": {
+      "format": ".4f",
+      "key": "fig13_att_singles_equivalised_phi_a",
+      "kind": "entry",
+      "raw": 0.0013151866373604705,
+      "rendered": "0.0013",
+      "units": "Gini points"
+    },
+    "VAttFigSingPhiARaw": {
+      "format": ".4f",
+      "key": "fig13_att_singles_unequivalised_phi_a",
+      "kind": "entry",
+      "raw": 0.0016147116922644355,
+      "rendered": "0.0016",
+      "units": "Gini points"
+    },
+    "VAttFigSingPhiBEq": {
+      "format": ".4f",
+      "key": "fig13_att_singles_equivalised_phi_b",
+      "kind": "entry",
+      "raw": 0.0034426411122408978,
+      "rendered": "0.0034",
+      "units": "Gini points"
+    },
+    "VAttFigSingPhiBRaw": {
+      "format": ".4f",
+      "key": "fig13_att_singles_unequivalised_phi_b",
+      "kind": "entry",
+      "raw": 0.004036689216887425,
+      "rendered": "0.0040",
+      "units": "Gini points"
+    },
+    "VAttFigSingPhiPEq": {
+      "format": ".4f",
+      "key": "fig13_att_singles_equivalised_phi_p",
+      "kind": "entry",
+      "raw": -0.0003075189893460793,
+      "rendered": "$-$0.0003",
+      "units": "Gini points"
+    },
+    "VAttFigSingPhiPRaw": {
+      "format": ".4f",
+      "key": "fig13_att_singles_unequivalised_phi_p",
+      "kind": "entry",
+      "raw": 0.0012373883280000265,
+      "rendered": "0.0012",
+      "units": "Gini points"
+    },
+    "VAttOppMax": {
+      "format": ".1f",
+      "key": "att_opportunity_max_pct",
+      "kind": "entry",
+      "raw": 6.736779740413565,
+      "rendered": "6.7",
+      "units": "percent of baseline Gini"
+    },
+    "VAttOppMin": {
+      "format": ".1f",
+      "key": "att_opportunity_min_pct",
+      "kind": "entry",
+      "raw": 1.9412437769766397,
+      "rendered": "1.9",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingOppEq": {
+      "format": ".1f",
+      "key": "att_singles_eq_opportunity_pct",
+      "kind": "entry",
+      "raw": 1.9412437769766397,
+      "rendered": "1.9",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingOppRaw": {
+      "format": ".1f",
+      "key": "att_singles_uneq_opportunity_pct",
+      "kind": "entry",
+      "raw": 2.418378811291655,
+      "rendered": "2.4",
+      "units": "percent of baseline Gini"
+    },
+    "VAttSingPhiAEq": {
+      "format": ".4f",
+      "key": "d2_giniA_singles_eq",
+      "kind": "entry",
+      "raw": 0.001315,
+      "rendered": "0.0013",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiARaw": {
+      "format": ".4f",
+      "key": "d2_giniA_singles_uneq",
+      "kind": "entry",
+      "raw": 0.001615,
+      "rendered": "0.0016",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiBEq": {
+      "format": ".4f",
+      "key": "d2_giniB_singles_eq",
+      "kind": "entry",
+      "raw": 0.003443,
+      "rendered": "0.0034",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VAttSingPhiBRaw": {
+      "format": ".4f",
+      "key": "d2_giniB_singles_uneq",
+      "kind": "entry",
+      "raw": 0.004037,
+      "rendered": "0.0040",
+      "units": "Gini points, exact Shapley contribution"
+    },
+    "VCEqGiniCouples": {
+      "format": ".4f",
+      "key": "ceq_gini_couples",
+      "kind": "entry",
+      "raw": 0.2268,
+      "rendered": "0.2268",
+      "units": "Gini units, equivalised"
+    },
+    "VCEqGiniSingles": {
+      "format": ".4f",
+      "key": "ceq_gini_singles",
+      "kind": "entry",
+      "raw": 0.2633,
+      "rendered": "0.2633",
+      "units": "Gini units, equivalised"
+    },
+    "VChEACoupAEq": {
+      "format": ".1f",
+      "key": "fig13_central_ea_couples_equivalised_a_pct_baseline",
+      "kind": "entry",
+      "raw": 3.745099983083709,
+      "rendered": "3.7",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEACoupARaw": {
+      "format": ".1f",
+      "key": "fig13_central_ea_couples_unequivalised_a_pct_baseline",
+      "kind": "entry",
+      "raw": 5.218776929296594,
+      "rendered": "5.2",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEACoupBEq": {
+      "format": ".1f",
+      "key": "fig13_central_ea_couples_equivalised_b_pct_baseline",
+      "kind": "entry",
+      "raw": 4.197952507019899,
+      "rendered": "4.2",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEACoupBRaw": {
+      "format": ".1f",
+      "key": "fig13_central_ea_couples_unequivalised_b_pct_baseline",
+      "kind": "entry",
+      "raw": 16.041283967689484,
+      "rendered": "16.0",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEASingAEq": {
+      "format": ".1f",
+      "key": "fig13_central_ea_singles_equivalised_a_pct_baseline",
+      "kind": "entry",
+      "raw": 15.522243397121752,
+      "rendered": "15.5",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEASingARaw": {
+      "format": ".1f",
+      "key": "fig13_central_ea_singles_unequivalised_a_pct_baseline",
+      "kind": "entry",
+      "raw": 11.366468766369666,
+      "rendered": "11.4",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEASingBEq": {
+      "format": ".1f",
+      "key": "fig13_central_ea_singles_equivalised_b_pct_baseline",
+      "kind": "entry",
+      "raw": 4.7864239346591235,
+      "rendered": "4.8",
+      "units": "percent of own baseline Gini"
+    },
+    "VChEASingBRaw": {
+      "format": ".1f",
+      "key": "fig13_central_ea_singles_unequivalised_b_pct_baseline",
+      "kind": "entry",
+      "raw": 3.479714065186161,
+      "rendered": "3.5",
+      "units": "percent of own baseline Gini"
+    },
+    "VChildCutoff": {
+      "format": "d",
+      "key": "child_cutoff",
+      "kind": "entry",
+      "raw": 20,
+      "rendered": "20",
+      "units": "years of age"
+    },
+    "VCoefCoupBetaC": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.101720268206207,
+      "rendered": "2.1017",
+      "source": "gallery.coefficients.couples[beta_c].estimate"
+    },
+    "VCoefCoupBetaCSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.29387912594743354,
+      "rendered": "0.2939",
+      "source": "gallery.coefficients.couples[beta_c].cr1_se"
+    },
+    "VCoefCoupBetaEDrgmd": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.41735574708978984,
+      "rendered": "$-$0.4174",
+      "source": "gallery.coefficients.couples[beta_E_drgmd].estimate"
+    },
+    "VCoefCoupBetaEDrgmdSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.18609965446511775,
+      "rendered": "0.1861",
+      "source": "gallery.coefficients.couples[beta_E_drgmd].cr1_se"
+    },
+    "VCoefCoupBetaEDrgur": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.18232235495110682,
+      "rendered": "$-$0.1823",
+      "source": "gallery.coefficients.couples[beta_E_drgur].estimate"
+    },
+    "VCoefCoupBetaEDrgurSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.16566511358925196,
+      "rendered": "0.1657",
+      "source": "gallery.coefficients.couples[beta_E_drgur].cr1_se"
+    },
+    "VCoefCoupBetaEEightDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.1659267117072185,
+      "rendered": "$-$0.1659",
+      "source": "gallery.coefficients.couples[beta_E_drgn8].estimate"
+    },
+    "VCoefCoupBetaEEightDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn8",
+      "rendered": "Region 8",
+      "source": "gallery.coefficients.couples[beta_E_drgn8].parameter"
+    },
+    "VCoefCoupBetaEEightDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2660297824896769,
+      "rendered": "0.2660",
+      "source": "gallery.coefficients.couples[beta_E_drgn8].cr1_se"
+    },
+    "VCoefCoupBetaEF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -2.814758960887359,
+      "rendered": "$-$2.8148",
+      "source": "gallery.coefficients.couples[beta_E_f].estimate"
+    },
+    "VCoefCoupBetaEFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.30207780550200375,
+      "rendered": "0.3021",
+      "source": "gallery.coefficients.couples[beta_E_f].cr1_se"
+    },
+    "VCoefCoupBetaEFiveDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.14547206672154042,
+      "rendered": "$-$0.1455",
+      "source": "gallery.coefficients.couples[beta_E_drgn5].estimate"
+    },
+    "VCoefCoupBetaEFiveDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn5",
+      "rendered": "Region 5",
+      "source": "gallery.coefficients.couples[beta_E_drgn5].parameter"
+    },
+    "VCoefCoupBetaEFiveDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.25545319569531094,
+      "rendered": "0.2555",
+      "source": "gallery.coefficients.couples[beta_E_drgn5].cr1_se"
+    },
+    "VCoefCoupBetaEFourDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.015013587223144713,
+      "rendered": "0.0150",
+      "source": "gallery.coefficients.couples[beta_E_drgn4].estimate"
+    },
+    "VCoefCoupBetaEFourDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn4",
+      "rendered": "Region 4",
+      "source": "gallery.coefficients.couples[beta_E_drgn4].parameter"
+    },
+    "VCoefCoupBetaEFourDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3067534007342949,
+      "rendered": "0.3068",
+      "source": "gallery.coefficients.couples[beta_E_drgn4].cr1_se"
+    },
+    "VCoefCoupBetaEGsur": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.192429066881525,
+      "rendered": "$-$1.1924",
+      "source": "gallery.coefficients.couples[beta_E_gsur].estimate"
+    },
+    "VCoefCoupBetaEGsurSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.15566675624831228,
+      "rendered": "0.1557",
+      "source": "gallery.coefficients.couples[beta_E_gsur].cr1_se"
+    },
+    "VCoefCoupBetaEM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -2.1232617060272134,
+      "rendered": "$-$2.1233",
+      "source": "gallery.coefficients.couples[beta_E_m].estimate"
+    },
+    "VCoefCoupBetaEMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3194568244722536,
+      "rendered": "0.3195",
+      "source": "gallery.coefficients.couples[beta_E_m].cr1_se"
+    },
+    "VCoefCoupBetaESevenDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.13956879760332852,
+      "rendered": "$-$0.1396",
+      "source": "gallery.coefficients.couples[beta_E_drgn7].estimate"
+    },
+    "VCoefCoupBetaESevenDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn7",
+      "rendered": "Region 7",
+      "source": "gallery.coefficients.couples[beta_E_drgn7].parameter"
+    },
+    "VCoefCoupBetaESevenDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.26513346768598767,
+      "rendered": "0.2651",
+      "source": "gallery.coefficients.couples[beta_E_drgn7].cr1_se"
+    },
+    "VCoefCoupBetaESixDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.2843914843392423,
+      "rendered": "$-$0.2844",
+      "source": "gallery.coefficients.couples[beta_E_drgn6].estimate"
+    },
+    "VCoefCoupBetaESixDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn6",
+      "rendered": "Region 6",
+      "source": "gallery.coefficients.couples[beta_E_drgn6].parameter"
+    },
+    "VCoefCoupBetaESixDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.27481384739480413,
+      "rendered": "0.2748",
+      "source": "gallery.coefficients.couples[beta_E_drgn6].cr1_se"
+    },
+    "VCoefCoupBetaEThreeDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08725009875129153,
+      "rendered": "0.0873",
+      "source": "gallery.coefficients.couples[beta_E_drgn3].estimate"
+    },
+    "VCoefCoupBetaEThreeDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn3",
+      "rendered": "Region 3",
+      "source": "gallery.coefficients.couples[beta_E_drgn3].parameter"
+    },
+    "VCoefCoupBetaEThreeDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.28083274353028714,
+      "rendered": "0.2808",
+      "source": "gallery.coefficients.couples[beta_E_drgn3].cr1_se"
+    },
+    "VCoefCoupBetaETwoDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.15461724918506575,
+      "rendered": "$-$0.1546",
+      "source": "gallery.coefficients.couples[beta_E_drgn2].estimate"
+    },
+    "VCoefCoupBetaETwoDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn2",
+      "rendered": "Region 2",
+      "source": "gallery.coefficients.couples[beta_E_drgn2].parameter"
+    },
+    "VCoefCoupBetaETwoDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2442296644978822,
+      "rendered": "0.2442",
+      "source": "gallery.coefficients.couples[beta_E_drgn2].cr1_se"
+    },
+    "VCoefCoupBetaHFtF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.682510734824386,
+      "rendered": "1.6825",
+      "source": "gallery.coefficients.couples[beta_h_ft_f].estimate"
+    },
+    "VCoefCoupBetaHFtFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.07982410440804688,
+      "rendered": "0.0798",
+      "source": "gallery.coefficients.couples[beta_h_ft_f].cr1_se"
+    },
+    "VCoefCoupBetaHFtM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.380124099189779,
+      "rendered": "2.3801",
+      "source": "gallery.coefficients.couples[beta_h_ft_m].estimate"
+    },
+    "VCoefCoupBetaHFtMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08655691005759963,
+      "rendered": "0.0866",
+      "source": "gallery.coefficients.couples[beta_h_ft_m].cr1_se"
+    },
+    "VCoefCoupBetaHLhF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.31087275953194204,
+      "rendered": "$-$0.3109",
+      "source": "gallery.coefficients.couples[beta_h_lh_f].estimate"
+    },
+    "VCoefCoupBetaHLhFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1615327256735109,
+      "rendered": "0.1615",
+      "source": "gallery.coefficients.couples[beta_h_lh_f].cr1_se"
+    },
+    "VCoefCoupBetaHLhM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.6976704985115372,
+      "rendered": "0.6977",
+      "source": "gallery.coefficients.couples[beta_h_lh_m].estimate"
+    },
+    "VCoefCoupBetaHLhMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.13348749315634514,
+      "rendered": "0.1335",
+      "source": "gallery.coefficients.couples[beta_h_lh_m].cr1_se"
+    },
+    "VCoefCoupBetaHOnePtF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.5172756700671339,
+      "rendered": "$-$0.5173",
+      "source": "gallery.coefficients.couples[beta_h_pt1_f].estimate"
+    },
+    "VCoefCoupBetaHOnePtFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.16293164439649477,
+      "rendered": "0.1629",
+      "source": "gallery.coefficients.couples[beta_h_pt1_f].cr1_se"
+    },
+    "VCoefCoupBetaHOnePtM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.1093582286321233,
+      "rendered": "$-$1.1094",
+      "source": "gallery.coefficients.couples[beta_h_pt1_m].estimate"
+    },
+    "VCoefCoupBetaHOnePtMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3790856344639477,
+      "rendered": "0.3791",
+      "source": "gallery.coefficients.couples[beta_h_pt1_m].cr1_se"
+    },
+    "VCoefCoupBetaHThreeFiveFF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.02835054532296,
+      "rendered": "2.0284",
+      "source": "gallery.coefficients.couples[beta_h_f35_f].estimate"
+    },
+    "VCoefCoupBetaHThreeFiveFFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.06823923626771033,
+      "rendered": "0.0682",
+      "source": "gallery.coefficients.couples[beta_h_f35_f].cr1_se"
+    },
+    "VCoefCoupBetaHThreeFiveFM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.288796593457946,
+      "rendered": "2.2888",
+      "source": "gallery.coefficients.couples[beta_h_f35_m].estimate"
+    },
+    "VCoefCoupBetaHThreeFiveFMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08213477525835593,
+      "rendered": "0.0821",
+      "source": "gallery.coefficients.couples[beta_h_f35_m].cr1_se"
+    },
+    "VCoefCoupBetaHTwoPtF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.15858076735164,
+      "rendered": "1.1586",
+      "source": "gallery.coefficients.couples[beta_h_pt2_f].estimate"
+    },
+    "VCoefCoupBetaHTwoPtFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1214379605931325,
+      "rendered": "0.1214",
+      "source": "gallery.coefficients.couples[beta_h_pt2_f].cr1_se"
+    },
+    "VCoefCoupBetaHTwoPtM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08352017133243082,
+      "rendered": "0.0835",
+      "source": "gallery.coefficients.couples[beta_h_pt2_m].estimate"
+    },
+    "VCoefCoupBetaHTwoPtMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2377878345724185,
+      "rendered": "0.2378",
+      "source": "gallery.coefficients.couples[beta_h_pt2_m].cr1_se"
+    },
+    "VCoefCoupBetaLAgeF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.12281310061555684,
+      "rendered": "$-$0.1228",
+      "source": "gallery.coefficients.couples[beta_l_age_f].estimate"
+    },
+    "VCoefCoupBetaLAgeFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.12604805800885696,
+      "rendered": "0.1260",
+      "source": "gallery.coefficients.couples[beta_l_age_f].cr1_se"
+    },
+    "VCoefCoupBetaLAgeM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.007992283078662652,
+      "rendered": "$-$0.0080",
+      "source": "gallery.coefficients.couples[beta_l_age_m].estimate"
+    },
+    "VCoefCoupBetaLAgeMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.02871735219629757,
+      "rendered": "0.0287",
+      "source": "gallery.coefficients.couples[beta_l_age_m].cr1_se"
+    },
+    "VCoefCoupBetaLNkidsF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.3054707904606757,
+      "rendered": "$-$0.3055",
+      "source": "gallery.coefficients.couples[beta_l_nkids_f].estimate"
+    },
+    "VCoefCoupBetaLNkidsFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.14718523902172,
+      "rendered": "1.1472",
+      "source": "gallery.coefficients.couples[beta_l_nkids_f].cr1_se"
+    },
+    "VCoefCoupBetaLTwoAgeF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.007307090946040485,
+      "rendered": "0.0073",
+      "source": "gallery.coefficients.couples[beta_l_age2_f].estimate"
+    },
+    "VCoefCoupBetaLTwoAgeFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.010250327807542306,
+      "rendered": "0.0103",
+      "source": "gallery.coefficients.couples[beta_l_age2_f].cr1_se"
+    },
+    "VCoefCoupBetaLTwoAgeM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.0064833595031074465,
+      "rendered": "0.0065",
+      "source": "gallery.coefficients.couples[beta_l_age2_m].estimate"
+    },
+    "VCoefCoupBetaLTwoAgeMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.0029738810636723376,
+      "rendered": "0.0030",
+      "source": "gallery.coefficients.couples[beta_l_age2_m].cr1_se"
+    },
+    "VCoefCoupBetaOccFourF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.8158897792789481,
+      "rendered": "0.8159",
+      "source": "gallery.coefficients.couples[beta_occ_4_f].estimate"
+    },
+    "VCoefCoupBetaOccFourFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_4_f",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.couples[beta_occ_4_f].parameter"
+    },
+    "VCoefCoupBetaOccFourFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.07992498964860288,
+      "rendered": "0.0799",
+      "source": "gallery.coefficients.couples[beta_occ_4_f].cr1_se"
+    },
+    "VCoefCoupBetaOccFourM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.15936806510007273,
+      "rendered": "0.1594",
+      "source": "gallery.coefficients.couples[beta_occ_4_m].estimate"
+    },
+    "VCoefCoupBetaOccFourMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_4_m",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.couples[beta_occ_4_m].parameter"
+    },
+    "VCoefCoupBetaOccFourMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.061795955208419816,
+      "rendered": "0.0618",
+      "source": "gallery.coefficients.couples[beta_occ_4_m].cr1_se"
+    },
+    "VCoefCoupBetaOccThreeF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.1803808457670314,
+      "rendered": "$-$0.1804",
+      "source": "gallery.coefficients.couples[beta_occ_3_f].estimate"
+    },
+    "VCoefCoupBetaOccThreeFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_3_f",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.couples[beta_occ_3_f].parameter"
+    },
+    "VCoefCoupBetaOccThreeFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.09231367351699477,
+      "rendered": "0.0923",
+      "source": "gallery.coefficients.couples[beta_occ_3_f].cr1_se"
+    },
+    "VCoefCoupBetaOccThreeM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -2.253189157642682,
+      "rendered": "$-$2.2532",
+      "source": "gallery.coefficients.couples[beta_occ_3_m].estimate"
+    },
+    "VCoefCoupBetaOccThreeMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_3_m",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.couples[beta_occ_3_m].parameter"
+    },
+    "VCoefCoupBetaOccThreeMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.12440532361276939,
+      "rendered": "0.1244",
+      "source": "gallery.coefficients.couples[beta_occ_3_m].cr1_se"
+    },
+    "VCoefCoupBetaOccTwoF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.20737945046128572,
+      "rendered": "0.2074",
+      "source": "gallery.coefficients.couples[beta_occ_2_f].estimate"
+    },
+    "VCoefCoupBetaOccTwoFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_2_f",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.couples[beta_occ_2_f].parameter"
+    },
+    "VCoefCoupBetaOccTwoFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08910535492866258,
+      "rendered": "0.0891",
+      "source": "gallery.coefficients.couples[beta_occ_2_f].cr1_se"
+    },
+    "VCoefCoupBetaOccTwoM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.5097459050359534,
+      "rendered": "$-$1.5097",
+      "source": "gallery.coefficients.couples[beta_occ_2_m].estimate"
+    },
+    "VCoefCoupBetaOccTwoMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_2_m",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.couples[beta_occ_2_m].parameter"
+    },
+    "VCoefCoupBetaOccTwoMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.09673473302107176,
+      "rendered": "0.0967",
+      "source": "gallery.coefficients.couples[beta_occ_2_m].cr1_se"
+    },
+    "VCoefCoupBetaWEducH": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1816515051313402,
+      "rendered": "0.1817",
+      "source": "gallery.coefficients.couples[beta_w_educH].estimate"
+    },
+    "VCoefCoupBetaWEducHSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.01970587476511142,
+      "rendered": "0.0197",
+      "source": "gallery.coefficients.couples[beta_w_educH].cr1_se"
+    },
+    "VCoefCoupBetaWEducL": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.04330458957710561,
+      "rendered": "$-$0.0433",
+      "source": "gallery.coefficients.couples[beta_w_educL].estimate"
+    },
+    "VCoefCoupBetaWEducLSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.021664298015825,
+      "rendered": "0.0217",
+      "source": "gallery.coefficients.couples[beta_w_educL].cr1_se"
+    },
+    "VCoefCoupBetaWPexp": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.5643499329119819,
+      "rendered": "0.5643",
+      "source": "gallery.coefficients.couples[beta_w_pexp].estimate"
+    },
+    "VCoefCoupBetaWPexpSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.05459281458633443,
+      "rendered": "0.0546",
+      "source": "gallery.coefficients.couples[beta_w_pexp].cr1_se"
+    },
+    "VCoefCoupBetaWTwoPexp": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.15982989555274882,
+      "rendered": "$-$0.1598",
+      "source": "gallery.coefficients.couples[beta_w_pexp2].estimate"
+    },
+    "VCoefCoupBetaWTwoPexpSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.024288802403502546,
+      "rendered": "0.0243",
+      "source": "gallery.coefficients.couples[beta_w_pexp2].cr1_se"
+    },
+    "VCoefCoupBetaZeroLF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 13.102853735466244,
+      "rendered": "13.1029",
+      "source": "gallery.coefficients.couples[beta_l0_f].estimate"
+    },
+    "VCoefCoupBetaZeroLFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 4.776037648938599,
+      "rendered": "4.7760",
+      "source": "gallery.coefficients.couples[beta_l0_f].cr1_se"
+    },
+    "VCoefCoupBetaZeroLM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 3.9813598674609456,
+      "rendered": "3.9814",
+      "source": "gallery.coefficients.couples[beta_l0_m].estimate"
+    },
+    "VCoefCoupBetaZeroLMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.7465691014900515,
+      "rendered": "0.7466",
+      "source": "gallery.coefficients.couples[beta_l0_m].cr1_se"
+    },
+    "VCoefCoupBetaZeroW": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.047996633732641,
+      "rendered": "2.0480",
+      "source": "gallery.coefficients.couples[beta_w0].estimate"
+    },
+    "VCoefCoupBetaZeroWSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.03354209427009605,
+      "rendered": "0.0335",
+      "source": "gallery.coefficients.couples[beta_w0].cr1_se"
+    },
+    "VCoefCoupDeltaOccFour": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.21455939975237293,
+      "rendered": "0.2146",
+      "source": "gallery.coefficients.couples[delta_occ_4].estimate"
+    },
+    "VCoefCoupDeltaOccFourLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_4",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.couples[delta_occ_4].parameter"
+    },
+    "VCoefCoupDeltaOccFourSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.02233439088367476,
+      "rendered": "0.0223",
+      "source": "gallery.coefficients.couples[delta_occ_4].cr1_se"
+    },
+    "VCoefCoupDeltaOccThree": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.039356598923610556,
+      "rendered": "0.0394",
+      "source": "gallery.coefficients.couples[delta_occ_3].estimate"
+    },
+    "VCoefCoupDeltaOccThreeLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_3",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.couples[delta_occ_3].parameter"
+    },
+    "VCoefCoupDeltaOccThreeSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.02279997477881278,
+      "rendered": "0.0228",
+      "source": "gallery.coefficients.couples[delta_occ_3].cr1_se"
+    },
+    "VCoefCoupDeltaOccTwo": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.07403222575810053,
+      "rendered": "$-$0.0740",
+      "source": "gallery.coefficients.couples[delta_occ_2].estimate"
+    },
+    "VCoefCoupDeltaOccTwoLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_2",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.couples[delta_occ_2].parameter"
+    },
+    "VCoefCoupDeltaOccTwoSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.02313184731323967,
+      "rendered": "0.0231",
+      "source": "gallery.coefficients.couples[delta_occ_2].cr1_se"
+    },
+    "VCoefCoupSigma": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.36307529726189625,
+      "rendered": "0.3631",
+      "source": "gallery.coefficients.couples[sigma].estimate"
+    },
+    "VCoefCoupSigmaSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.00722349841608752,
+      "rendered": "0.0072",
+      "source": "gallery.coefficients.couples[sigma].cr1_se"
+    },
+    "VCoefCoupThetaLF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.6863074228063057,
+      "rendered": "$-$1.6863",
+      "source": "gallery.coefficients.couples[theta_l_f].estimate"
+    },
+    "VCoefCoupThetaLFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2458460240328742,
+      "rendered": "0.2458",
+      "source": "gallery.coefficients.couples[theta_l_f].cr1_se"
+    },
+    "VCoefCoupThetaLM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.9761092135887932,
+      "rendered": "$-$0.9761",
+      "source": "gallery.coefficients.couples[theta_l_m].estimate"
+    },
+    "VCoefCoupThetaLMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1356633016802755,
+      "rendered": "0.1357",
+      "source": "gallery.coefficients.couples[theta_l_m].cr1_se"
+    },
+    "VCoefSingBetaC": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.038731824410903,
+      "rendered": "2.0387",
+      "source": "gallery.coefficients.singles[beta_c].estimate"
+    },
+    "VCoefSingBetaCSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.29172947159759477,
+      "rendered": "0.2917",
+      "source": "gallery.coefficients.singles[beta_c].cr1_se"
+    },
+    "VCoefSingBetaE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -3.17353431815379,
+      "rendered": "$-$3.1735",
+      "source": "gallery.coefficients.singles[beta_E].estimate"
+    },
+    "VCoefSingBetaEDrgmd": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.06413302694771342,
+      "rendered": "0.0641",
+      "source": "gallery.coefficients.singles[beta_E_drgmd].estimate"
+    },
+    "VCoefSingBetaEDrgmdSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.261351895966997,
+      "rendered": "0.2614",
+      "source": "gallery.coefficients.singles[beta_E_drgmd].cr1_se"
+    },
+    "VCoefSingBetaEDrgur": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.028768872651210683,
+      "rendered": "$-$0.0288",
+      "source": "gallery.coefficients.singles[beta_E_drgur].estimate"
+    },
+    "VCoefSingBetaEDrgurSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2209162288567909,
+      "rendered": "0.2209",
+      "source": "gallery.coefficients.singles[beta_E_drgur].cr1_se"
+    },
+    "VCoefSingBetaEEightDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.4511904382714141,
+      "rendered": "$-$0.4512",
+      "source": "gallery.coefficients.singles[beta_E_drgn8].estimate"
+    },
+    "VCoefSingBetaEEightDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn8",
+      "rendered": "Region 8",
+      "source": "gallery.coefficients.singles[beta_E_drgn8].parameter"
+    },
+    "VCoefSingBetaEEightDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3400737693801396,
+      "rendered": "0.3401",
+      "source": "gallery.coefficients.singles[beta_E_drgn8].cr1_se"
+    },
+    "VCoefSingBetaEFiveDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.5161584028789752,
+      "rendered": "$-$0.5162",
+      "source": "gallery.coefficients.singles[beta_E_drgn5].estimate"
+    },
+    "VCoefSingBetaEFiveDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn5",
+      "rendered": "Region 5",
+      "source": "gallery.coefficients.singles[beta_E_drgn5].parameter"
+    },
+    "VCoefSingBetaEFiveDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3273621671049158,
+      "rendered": "0.3274",
+      "source": "gallery.coefficients.singles[beta_E_drgn5].cr1_se"
+    },
+    "VCoefSingBetaEFourDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.8218134623796483,
+      "rendered": "$-$0.8218",
+      "source": "gallery.coefficients.singles[beta_E_drgn4].estimate"
+    },
+    "VCoefSingBetaEFourDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn4",
+      "rendered": "Region 4",
+      "source": "gallery.coefficients.singles[beta_E_drgn4].parameter"
+    },
+    "VCoefSingBetaEFourDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3809631052981876,
+      "rendered": "0.3810",
+      "source": "gallery.coefficients.singles[beta_E_drgn4].cr1_se"
+    },
+    "VCoefSingBetaEGsur": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.4422400789318612,
+      "rendered": "$-$1.4422",
+      "source": "gallery.coefficients.singles[beta_E_gsur].estimate"
+    },
+    "VCoefSingBetaEGsurSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2355906753815207,
+      "rendered": "0.2356",
+      "source": "gallery.coefficients.singles[beta_E_gsur].cr1_se"
+    },
+    "VCoefSingBetaESE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.40533698129218315,
+      "rendered": "0.4053",
+      "source": "gallery.coefficients.singles[beta_E].cr1_se"
+    },
+    "VCoefSingBetaESevenDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.5373689071512885,
+      "rendered": "$-$0.5374",
+      "source": "gallery.coefficients.singles[beta_E_drgn7].estimate"
+    },
+    "VCoefSingBetaESevenDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn7",
+      "rendered": "Region 7",
+      "source": "gallery.coefficients.singles[beta_E_drgn7].parameter"
+    },
+    "VCoefSingBetaESevenDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3503079086588817,
+      "rendered": "0.3503",
+      "source": "gallery.coefficients.singles[beta_E_drgn7].cr1_se"
+    },
+    "VCoefSingBetaESixDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.7221591616567351,
+      "rendered": "$-$0.7222",
+      "source": "gallery.coefficients.singles[beta_E_drgn6].estimate"
+    },
+    "VCoefSingBetaESixDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn6",
+      "rendered": "Region 6",
+      "source": "gallery.coefficients.singles[beta_E_drgn6].parameter"
+    },
+    "VCoefSingBetaESixDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.35278010457366726,
+      "rendered": "0.3528",
+      "source": "gallery.coefficients.singles[beta_E_drgn6].cr1_se"
+    },
+    "VCoefSingBetaEThreeDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.11171312344261321,
+      "rendered": "$-$0.1117",
+      "source": "gallery.coefficients.singles[beta_E_drgn3].estimate"
+    },
+    "VCoefSingBetaEThreeDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn3",
+      "rendered": "Region 3",
+      "source": "gallery.coefficients.singles[beta_E_drgn3].parameter"
+    },
+    "VCoefSingBetaEThreeDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3891204702433624,
+      "rendered": "0.3891",
+      "source": "gallery.coefficients.singles[beta_E_drgn3].cr1_se"
+    },
+    "VCoefSingBetaETwoDrgn": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.3779626571255313,
+      "rendered": "$-$0.3780",
+      "source": "gallery.coefficients.singles[beta_E_drgn2].estimate"
+    },
+    "VCoefSingBetaETwoDrgnLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_E_drgn2",
+      "rendered": "Region 2",
+      "source": "gallery.coefficients.singles[beta_E_drgn2].parameter"
+    },
+    "VCoefSingBetaETwoDrgnSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.32924980332548565,
+      "rendered": "0.3292",
+      "source": "gallery.coefficients.singles[beta_E_drgn2].cr1_se"
+    },
+    "VCoefSingBetaHFt": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.9387295420450394,
+      "rendered": "1.9387",
+      "source": "gallery.coefficients.singles[beta_h_ft].estimate"
+    },
+    "VCoefSingBetaHFtSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.0996968440407979,
+      "rendered": "0.0997",
+      "source": "gallery.coefficients.singles[beta_h_ft].cr1_se"
+    },
+    "VCoefSingBetaHLh": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.08337519224953005,
+      "rendered": "$-$0.0834",
+      "source": "gallery.coefficients.singles[beta_h_lh].estimate"
+    },
+    "VCoefSingBetaHLhSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.17720145525299733,
+      "rendered": "0.1772",
+      "source": "gallery.coefficients.singles[beta_h_lh].cr1_se"
+    },
+    "VCoefSingBetaHOnePt": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.029767150815751348,
+      "rendered": "0.0298",
+      "source": "gallery.coefficients.singles[beta_h_pt1].estimate"
+    },
+    "VCoefSingBetaHOnePtSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.19724722793917396,
+      "rendered": "0.1972",
+      "source": "gallery.coefficients.singles[beta_h_pt1].cr1_se"
+    },
+    "VCoefSingBetaHThreeFiveF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.0655619308364366,
+      "rendered": "2.0656",
+      "source": "gallery.coefficients.singles[beta_h_f35].estimate"
+    },
+    "VCoefSingBetaHThreeFiveFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.08944788776196352,
+      "rendered": "0.0894",
+      "source": "gallery.coefficients.singles[beta_h_f35].cr1_se"
+    },
+    "VCoefSingBetaHTwoPt": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.7079713279184188,
+      "rendered": "0.7080",
+      "source": "gallery.coefficients.singles[beta_h_pt2].estimate"
+    },
+    "VCoefSingBetaHTwoPtSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1927877288119738,
+      "rendered": "0.1928",
+      "source": "gallery.coefficients.singles[beta_h_pt2].cr1_se"
+    },
+    "VCoefSingBetaLAgeSf": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.06776624678895161,
+      "rendered": "0.0678",
+      "source": "gallery.coefficients.singles[beta_l_age_sf].estimate"
+    },
+    "VCoefSingBetaLAgeSfSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.479216708522287,
+      "rendered": "0.4792",
+      "source": "gallery.coefficients.singles[beta_l_age_sf].cr1_se"
+    },
+    "VCoefSingBetaLAgeSm": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.4819524795893202,
+      "rendered": "1.4820",
+      "source": "gallery.coefficients.singles[beta_l_age_sm].estimate"
+    },
+    "VCoefSingBetaLAgeSmSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.02361190585102,
+      "rendered": "1.0236",
+      "source": "gallery.coefficients.singles[beta_l_age_sm].cr1_se"
+    },
+    "VCoefSingBetaLNkidsSf": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.1666358005801744,
+      "rendered": "0.1666",
+      "source": "gallery.coefficients.singles[beta_l_nkids_sf].estimate"
+    },
+    "VCoefSingBetaLNkidsSfSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.4422360882284903,
+      "rendered": "0.4422",
+      "source": "gallery.coefficients.singles[beta_l_nkids_sf].cr1_se"
+    },
+    "VCoefSingBetaLTwoAgeSf": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 1.0,
+      "rendered": "1.0000",
+      "source": "gallery.coefficients.singles[beta_l_age2_sf].estimate"
+    },
+    "VCoefSingBetaLTwoAgeSfSE": {
+      "kind": "coef",
+      "raw": true,
+      "rendered": "at bound",
+      "source": "gallery.coefficients.singles[beta_l_age2_sf].active_bound"
+    },
+    "VCoefSingBetaLTwoAgeSm": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.7782843064353624,
+      "rendered": "0.7783",
+      "source": "gallery.coefficients.singles[beta_l_age2_sm].estimate"
+    },
+    "VCoefSingBetaLTwoAgeSmSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.7731583487915492,
+      "rendered": "0.7732",
+      "source": "gallery.coefficients.singles[beta_l_age2_sm].cr1_se"
+    },
+    "VCoefSingBetaOccFourF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.5632162389317011,
+      "rendered": "0.5632",
+      "source": "gallery.coefficients.singles[beta_occ_4_f].estimate"
+    },
+    "VCoefSingBetaOccFourFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_4_f",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.singles[beta_occ_4_f].parameter"
+    },
+    "VCoefSingBetaOccFourFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.12246698514731899,
+      "rendered": "0.1225",
+      "source": "gallery.coefficients.singles[beta_occ_4_f].cr1_se"
+    },
+    "VCoefSingBetaOccFourM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.3258974646855702,
+      "rendered": "$-$0.3259",
+      "source": "gallery.coefficients.singles[beta_occ_4_m].estimate"
+    },
+    "VCoefSingBetaOccFourMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_4_m",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.singles[beta_occ_4_m].parameter"
+    },
+    "VCoefSingBetaOccFourMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.12134082646444272,
+      "rendered": "0.1213",
+      "source": "gallery.coefficients.singles[beta_occ_4_m].cr1_se"
+    },
+    "VCoefSingBetaOccThreeF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.406008572654042,
+      "rendered": "$-$0.4060",
+      "source": "gallery.coefficients.singles[beta_occ_3_f].estimate"
+    },
+    "VCoefSingBetaOccThreeFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_3_f",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.singles[beta_occ_3_f].parameter"
+    },
+    "VCoefSingBetaOccThreeFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.14404542362105405,
+      "rendered": "0.1440",
+      "source": "gallery.coefficients.singles[beta_occ_3_f].cr1_se"
+    },
+    "VCoefSingBetaOccThreeM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -2.1096286000145317,
+      "rendered": "$-$2.1096",
+      "source": "gallery.coefficients.singles[beta_occ_3_m].estimate"
+    },
+    "VCoefSingBetaOccThreeMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_3_m",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.singles[beta_occ_3_m].parameter"
+    },
+    "VCoefSingBetaOccThreeMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.20224777322865353,
+      "rendered": "0.2022",
+      "source": "gallery.coefficients.singles[beta_occ_3_m].cr1_se"
+    },
+    "VCoefSingBetaOccTwoF": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.11349241739566314,
+      "rendered": "0.1135",
+      "source": "gallery.coefficients.singles[beta_occ_2_f].estimate"
+    },
+    "VCoefSingBetaOccTwoFLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_2_f",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.singles[beta_occ_2_f].parameter"
+    },
+    "VCoefSingBetaOccTwoFSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.137399188993755,
+      "rendered": "0.1374",
+      "source": "gallery.coefficients.singles[beta_occ_2_f].cr1_se"
+    },
+    "VCoefSingBetaOccTwoM": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.3737103023454624,
+      "rendered": "$-$1.3737",
+      "source": "gallery.coefficients.singles[beta_occ_2_m].estimate"
+    },
+    "VCoefSingBetaOccTwoMLabel": {
+      "kind": "coeflabel",
+      "raw": "beta_occ_2_m",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.singles[beta_occ_2_m].parameter"
+    },
+    "VCoefSingBetaOccTwoMSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.15814721822306535,
+      "rendered": "0.1581",
+      "source": "gallery.coefficients.singles[beta_occ_2_m].cr1_se"
+    },
+    "VCoefSingBetaWEducH": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.14905427891988668,
+      "rendered": "0.1491",
+      "source": "gallery.coefficients.singles[beta_w_educH].estimate"
+    },
+    "VCoefSingBetaWEducHSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.03084078433244647,
+      "rendered": "0.0308",
+      "source": "gallery.coefficients.singles[beta_w_educH].cr1_se"
+    },
+    "VCoefSingBetaWEducL": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.056626124614177736,
+      "rendered": "0.0566",
+      "source": "gallery.coefficients.singles[beta_w_educL].estimate"
+    },
+    "VCoefSingBetaWEducLSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.03724849921130789,
+      "rendered": "0.0372",
+      "source": "gallery.coefficients.singles[beta_w_educL].cr1_se"
+    },
+    "VCoefSingBetaWPexp": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.24077041930177193,
+      "rendered": "0.2408",
+      "source": "gallery.coefficients.singles[beta_w_pexp].estimate"
+    },
+    "VCoefSingBetaWPexpSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.0862222670841145,
+      "rendered": "0.0862",
+      "source": "gallery.coefficients.singles[beta_w_pexp].cr1_se"
+    },
+    "VCoefSingBetaWTwoPexp": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.028173940878562485,
+      "rendered": "$-$0.0282",
+      "source": "gallery.coefficients.singles[beta_w_pexp2].estimate"
+    },
+    "VCoefSingBetaWTwoPexpSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.03899050757498881,
+      "rendered": "0.0390",
+      "source": "gallery.coefficients.singles[beta_w_pexp2].cr1_se"
+    },
+    "VCoefSingBetaZeroLSf": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 5.868292421454602,
+      "rendered": "5.8683",
+      "source": "gallery.coefficients.singles[beta_l0_sf].estimate"
+    },
+    "VCoefSingBetaZeroLSfSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.1345874345716207,
+      "rendered": "2.1346",
+      "source": "gallery.coefficients.singles[beta_l0_sf].cr1_se"
+    },
+    "VCoefSingBetaZeroLSm": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 8.519929455035971,
+      "rendered": "8.5199",
+      "source": "gallery.coefficients.singles[beta_l0_sm].estimate"
+    },
+    "VCoefSingBetaZeroLSmSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 3.54798180009809,
+      "rendered": "3.5480",
+      "source": "gallery.coefficients.singles[beta_l0_sm].cr1_se"
+    },
+    "VCoefSingBetaZeroW": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 2.0138235873037567,
+      "rendered": "2.0138",
+      "source": "gallery.coefficients.singles[beta_w0].estimate"
+    },
+    "VCoefSingBetaZeroWSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.05609220394455393,
+      "rendered": "0.0561",
+      "source": "gallery.coefficients.singles[beta_w0].cr1_se"
+    },
+    "VCoefSingDeltaOccFour": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.2784943102158989,
+      "rendered": "0.2785",
+      "source": "gallery.coefficients.singles[delta_occ_4].estimate"
+    },
+    "VCoefSingDeltaOccFourLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_4",
+      "rendered": "Occupation 4",
+      "source": "gallery.coefficients.singles[delta_occ_4].parameter"
+    },
+    "VCoefSingDeltaOccFourSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.036770513129226814,
+      "rendered": "0.0368",
+      "source": "gallery.coefficients.singles[delta_occ_4].cr1_se"
+    },
+    "VCoefSingDeltaOccThree": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.06221392621025183,
+      "rendered": "0.0622",
+      "source": "gallery.coefficients.singles[delta_occ_3].estimate"
+    },
+    "VCoefSingDeltaOccThreeLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_3",
+      "rendered": "Occupation 3",
+      "source": "gallery.coefficients.singles[delta_occ_3].parameter"
+    },
+    "VCoefSingDeltaOccThreeSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.038274918467542905,
+      "rendered": "0.0383",
+      "source": "gallery.coefficients.singles[delta_occ_3].cr1_se"
+    },
+    "VCoefSingDeltaOccTwo": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.034715472635012054,
+      "rendered": "$-$0.0347",
+      "source": "gallery.coefficients.singles[delta_occ_2].estimate"
+    },
+    "VCoefSingDeltaOccTwoLabel": {
+      "kind": "coeflabel",
+      "raw": "delta_occ_2",
+      "rendered": "Occupation 2",
+      "source": "gallery.coefficients.singles[delta_occ_2].parameter"
+    },
+    "VCoefSingDeltaOccTwoSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.03989903760751005,
+      "rendered": "0.0399",
+      "source": "gallery.coefficients.singles[delta_occ_2].cr1_se"
+    },
+    "VCoefSingSigma": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3815052460538545,
+      "rendered": "0.3815",
+      "source": "gallery.coefficients.singles[sigma].estimate"
+    },
+    "VCoefSingSigmaSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.01327520280957683,
+      "rendered": "0.0133",
+      "source": "gallery.coefficients.singles[sigma].cr1_se"
+    },
+    "VCoefSingThetaLSf": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -0.9273534345702061,
+      "rendered": "$-$0.9274",
+      "source": "gallery.coefficients.singles[theta_l_sf].estimate"
+    },
+    "VCoefSingThetaLSfSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.21612841558660498,
+      "rendered": "0.2161",
+      "source": "gallery.coefficients.singles[theta_l_sf].cr1_se"
+    },
+    "VCoefSingThetaLSm": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": -1.6262666488391833,
+      "rendered": "$-$1.6263",
+      "source": "gallery.coefficients.singles[theta_l_sm].estimate"
+    },
+    "VCoefSingThetaLSmSE": {
+      "format": ".4f",
+      "kind": "coef",
+      "raw": 0.3300581092293122,
+      "rendered": "0.3301",
+      "source": "gallery.coefficients.singles[theta_l_sm].cr1_se"
+    },
+    "VCollectionYear": {
+      "format": "d",
+      "key": "collection_year",
+      "kind": "entry",
+      "raw": 2016,
+      "rendered": "2016",
+      "units": "EU-SILC collection year"
+    },
+    "VCrDraws": {
+      "format": "d",
+      "key": "cr1_draws",
+      "kind": "entry",
+      "raw": 100,
+      "rendered": "100",
+      "units": "parameter draws"
+    },
+    "VEACoupGiniEq": {
+      "format": ".4f",
+      "key": "wea_couples_eq_gini",
+      "kind": "entry",
+      "raw": 0.12002208503914875,
+      "rendered": "0.1200",
+      "units": "Gini"
+    },
+    "VEACoupGiniRaw": {
+      "format": ".4f",
+      "key": "wea_couples_uneq_gini",
+      "kind": "entry",
+      "raw": 0.12771241860955648,
+      "rendered": "0.1277",
+      "units": "Gini"
+    },
+    "VEACoupOppEq": {
+      "format": ".1f",
+      "key": "wea_couples_eq_opportunity_pct",
+      "kind": "entry",
+      "raw": 7.943052490103608,
+      "rendered": "7.9",
+      "units": "percent of baseline Gini"
+    },
+    "VEACoupOppRaw": {
+      "format": ".1f",
+      "key": "wea_couples_uneq_opportunity_pct",
+      "kind": "entry",
+      "raw": 21.260060896986076,
+      "rendered": "21.3",
+      "units": "percent of baseline Gini"
+    },
+    "VEACoupPhiAEq": {
+      "format": ".5f",
+      "key": "wea_couples_eq_phi_a",
+      "kind": "entry",
+      "raw": 0.004494947086497875,
+      "rendered": "0.00449",
+      "units": "Gini points"
+    },
+    "VEACoupPhiARaw": {
+      "format": ".5f",
+      "key": "wea_couples_uneq_phi_a",
+      "kind": "entry",
+      "raw": 0.006665026238242224,
+      "rendered": "0.00667",
+      "units": "Gini points"
+    },
+    "VEACoupPhiBEq": {
+      "format": ".5f",
+      "key": "wea_couples_eq_phi_b",
+      "kind": "entry",
+      "raw": 0.0050384701278785,
+      "rendered": "0.00504",
+      "units": "Gini points"
+    },
+    "VEACoupPhiBRaw": {
+      "format": ".5f",
+      "key": "wea_couples_uneq_phi_b",
+      "kind": "entry",
+      "raw": 0.020486711731163267,
+      "rendered": "0.02049",
+      "units": "Gini points"
+    },
+    "VEACoupPhiPEq": {
+      "format": ".5f",
+      "key": "wea_couples_eq_phi_p",
+      "kind": "entry",
+      "raw": -0.0021155503323901322,
+      "rendered": "$-$0.00212",
+      "units": "Gini points"
+    },
+    "VEACoupPhiPRaw": {
+      "format": ".5f",
+      "key": "wea_couples_uneq_phi_p",
+      "kind": "entry",
+      "raw": 0.0029075575569848544,
+      "rendered": "0.00291",
+      "units": "Gini points"
+    },
+    "VEACoupPrefEq": {
+      "format": ".5f",
+      "key": "wea_couples_pref_eq",
+      "kind": "entry",
+      "raw": -0.0021155503323901322,
+      "rendered": "$-$0.00212",
+      "units": "Gini points"
+    },
+    "VEACoupPrefRaw": {
+      "format": ".5f",
+      "key": "wea_couples_pref_uneq",
+      "kind": "entry",
+      "raw": 0.0029075575569848544,
+      "rendered": "0.00291",
+      "units": "Gini points"
+    },
+    "VEAOppMax": {
+      "format": ".1f",
+      "key": "wea_opportunity_max_pct",
+      "kind": "entry",
+      "raw": 21.260060896986076,
+      "rendered": "21.3",
+      "units": "percent of baseline Gini"
+    },
+    "VEAOppMin": {
+      "format": ".1f",
+      "key": "wea_opportunity_min_pct",
+      "kind": "entry",
+      "raw": 7.943052490103608,
+      "rendered": "7.9",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingGiniEq": {
+      "format": ".4f",
+      "key": "wea_singles_eq_gini",
+      "kind": "entry",
+      "raw": 0.14061406832081674,
+      "rendered": "0.1406",
+      "units": "Gini"
+    },
+    "VEASingGiniRaw": {
+      "format": ".4f",
+      "key": "wea_singles_uneq_gini",
+      "kind": "entry",
+      "raw": 0.15945533471003862,
+      "rendered": "0.1595",
+      "units": "Gini"
+    },
+    "VEASingOppEq": {
+      "format": ".1f",
+      "key": "wea_singles_eq_opportunity_pct",
+      "kind": "entry",
+      "raw": 20.308667331780878,
+      "rendered": "20.3",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingOppRaw": {
+      "format": ".1f",
+      "key": "wea_singles_uneq_opportunity_pct",
+      "kind": "entry",
+      "raw": 14.846182831555828,
+      "rendered": "14.8",
+      "units": "percent of baseline Gini"
+    },
+    "VEASingPhiAEq": {
+      "format": ".5f",
+      "key": "wea_singles_eq_phi_a",
+      "kind": "entry",
+      "raw": 0.021826457935352248,
+      "rendered": "0.02183",
+      "units": "Gini points"
+    },
+    "VEASingPhiARaw": {
+      "format": ".5f",
+      "key": "wea_singles_uneq_phi_a",
+      "kind": "entry",
+      "raw": 0.018124440816126748,
+      "rendered": "0.01812",
+      "units": "Gini points"
+    },
+    "VEASingPhiBEq": {
+      "format": ".5f",
+      "key": "wea_singles_eq_phi_b",
+      "kind": "entry",
+      "raw": 0.006730385421605505,
+      "rendered": "0.00673",
+      "units": "Gini points"
+    },
+    "VEASingPhiBRaw": {
+      "format": ".5f",
+      "key": "wea_singles_uneq_phi_b",
+      "kind": "entry",
+      "raw": 0.005548589709594884,
+      "rendered": "0.00555",
+      "units": "Gini points"
+    },
+    "VEASingPhiPEq": {
+      "format": ".5f",
+      "key": "wea_singles_eq_phi_p",
+      "kind": "entry",
+      "raw": 0.00019890509215865493,
+      "rendered": "0.00020",
+      "units": "Gini points"
+    },
+    "VEASingPhiPRaw": {
+      "format": ".5f",
+      "key": "wea_singles_uneq_phi_p",
+      "kind": "entry",
+      "raw": 0.0015709261215140582,
+      "rendered": "0.00157",
+      "units": "Gini points"
+    },
+    "VEASingRatioEq": {
+      "format": ".1f",
+      "key": "wea_singles_access_earn_ratio_eq",
+      "kind": "entry",
+      "raw": 3.2429729604022643,
+      "rendered": "3.2",
+      "units": "ratio"
+    },
+    "VEASingRatioRaw": {
+      "format": ".1f",
+      "key": "wea_singles_access_earn_ratio_uneq",
+      "kind": "entry",
+      "raw": 3.2664950491446696,
+      "rendered": "3.3",
+      "units": "ratio"
+    },
+    "VExpScale": {
+      "format": "d",
+      "key": "experience_scale",
+      "kind": "entry",
+      "raw": 20,
+      "rendered": "20",
+      "units": "years"
+    },
+    "VExplCoupA": {
+      "format": ".1f",
+      "formula": "100 * wea_couples_eq_phi_a / (wea_couples_eq_phi_p + wea_couples_eq_phi_a + wea_couples_eq_phi_b)",
+      "inputs": [
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": 60.59622204078009,
+      "rendered": "60.6"
+    },
+    "VExplCoupB": {
+      "format": ".1f",
+      "formula": "100 * wea_couples_eq_phi_b / (wea_couples_eq_phi_p + wea_couples_eq_phi_a + wea_couples_eq_phi_b)",
+      "inputs": [
+        "wea_couples_eq_phi_b",
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": 67.92343685910653,
+      "rendered": "67.9"
+    },
+    "VExplCoupP": {
+      "format": ".1f",
+      "formula": "100 * wea_couples_eq_phi_p / (wea_couples_eq_phi_p + wea_couples_eq_phi_a + wea_couples_eq_phi_b)",
+      "inputs": [
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": -28.51965889988663,
+      "rendered": "$-$28.5"
+    },
+    "VExplCoupTotal": {
+      "format": ".1f",
+      "formula": "VExplCoupP + VExplCoupA + VExplCoupB   [on the displayed, rounded values]",
+      "inputs": [
+        "VExplCoupP",
+        "VExplCoupA",
+        "VExplCoupB"
+      ],
+      "kind": "roundsum",
+      "raw": 100.0,
+      "rendered": "100.0"
+    },
+    "VExplSingA": {
+      "format": ".1f",
+      "formula": "100 * wea_singles_eq_phi_a / (wea_singles_eq_phi_p + wea_singles_eq_phi_a + wea_singles_eq_phi_b)",
+      "inputs": [
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": 75.90293806462519,
+      "rendered": "75.9"
+    },
+    "VExplSingB": {
+      "format": ".1f",
+      "formula": "100 * wea_singles_eq_phi_b / (wea_singles_eq_phi_p + wea_singles_eq_phi_a + wea_singles_eq_phi_b)",
+      "inputs": [
+        "wea_singles_eq_phi_b",
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": 23.405356440347887,
+      "rendered": "23.4"
+    },
+    "VExplSingP": {
+      "format": ".1f",
+      "formula": "100 * wea_singles_eq_phi_p / (wea_singles_eq_phi_p + wea_singles_eq_phi_a + wea_singles_eq_phi_b)",
+      "inputs": [
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_phi_b"
+      ],
+      "kind": "share",
+      "raw": 0.6917054950269145,
+      "rendered": "0.7"
+    },
+    "VExplSingTotal": {
+      "format": ".1f",
+      "formula": "VExplSingP + VExplSingA + VExplSingB   [on the displayed, rounded values]",
+      "inputs": [
+        "VExplSingP",
+        "VExplSingA",
+        "VExplSingB"
+      ],
+      "kind": "roundsum",
+      "raw": 100.0,
+      "rendered": "100.0"
+    },
+    "VFunnelEightCouples": {
+      "kind": "funnel",
+      "raw": "2223",
+      "rendered": "2,223",
+      "source": "gallery.sample_funnel[8].households_couples"
+    },
+    "VFunnelEightLabel": {
+      "kind": "funnel",
+      "raw": "hours outside [5,70] or unsupported military occupation (ISCO 0) on an employed decider",
+      "rendered": "hours outside [5,70] or unsupported military occupation (ISCO 0) on an employed decider",
+      "source": "gallery.sample_funnel[8].screen"
+    },
+    "VFunnelEightSingles": {
+      "kind": "funnel",
+      "raw": "1543",
+      "rendered": "1,543",
+      "source": "gallery.sample_funnel[8].households_singles"
+    },
+    "VFunnelFiveCouples": {
+      "kind": "funnel",
+      "raw": "2412",
+      "rendered": "2,412",
+      "source": "gallery.sample_funnel[5].households_couples"
+    },
+    "VFunnelFiveLabel": {
+      "kind": "funnel",
+      "raw": "labour status in scope",
+      "rendered": "labour status in scope",
+      "source": "gallery.sample_funnel[5].screen"
+    },
+    "VFunnelFiveSingles": {
+      "kind": "funnel",
+      "raw": "1598",
+      "rendered": "1,598",
+      "source": "gallery.sample_funnel[5].households_singles"
+    },
+    "VFunnelFourCouples": {
+      "kind": "funnel",
+      "raw": "3218",
+      "rendered": "3,218",
+      "source": "gallery.sample_funnel[4].households_couples"
+    },
+    "VFunnelFourLabel": {
+      "kind": "funnel",
+      "raw": "no old-age, disability or survivor pension receipt",
+      "rendered": "no old-age, disability or survivor pension receipt",
+      "source": "gallery.sample_funnel[4].screen"
+    },
+    "VFunnelFourSingles": {
+      "kind": "funnel",
+      "raw": "1755",
+      "rendered": "1,755",
+      "source": "gallery.sample_funnel[4].households_singles"
+    },
+    "VFunnelNineCouples": {
+      "kind": "funnel",
+      "raw": "2223",
+      "rendered": "2,223",
+      "source": "gallery.sample_funnel[9].households_couples"
+    },
+    "VFunnelNineLabel": {
+      "kind": "funnel",
+      "raw": "observed chosen alternative priced at non-positive disposable consumption",
+      "rendered": "observed chosen alternative priced at non-positive disposable consumption",
+      "source": "gallery.sample_funnel[9].screen"
+    },
+    "VFunnelNineSingles": {
+      "kind": "funnel",
+      "raw": "1540",
+      "rendered": "1,540",
+      "source": "gallery.sample_funnel[9].households_singles"
+    },
+    "VFunnelOneCouples": {
+      "kind": "funnel",
+      "raw": "5965",
+      "rendered": "5,965",
+      "source": "gallery.sample_funnel[1].households_couples"
+    },
+    "VFunnelOneLabel": {
+      "kind": "funnel",
+      "raw": "one- or two-adult households (composition screen)",
+      "rendered": "one- or two-adult households (composition screen)",
+      "source": "gallery.sample_funnel[1].screen"
+    },
+    "VFunnelOneSingles": {
+      "kind": "funnel",
+      "raw": "4038",
+      "rendered": "4,038",
+      "source": "gallery.sample_funnel[1].households_singles"
+    },
+    "VFunnelSevenCouples": {
+      "kind": "funnel",
+      "raw": "2275",
+      "rendered": "2,275",
+      "source": "gallery.sample_funnel[7].households_couples"
+    },
+    "VFunnelSevenLabel": {
+      "kind": "funnel",
+      "raw": "hours and wage inside the modelled support",
+      "rendered": "hours and wage inside the modelled support",
+      "source": "gallery.sample_funnel[7].screen"
+    },
+    "VFunnelSevenSingles": {
+      "kind": "funnel",
+      "raw": "1555",
+      "rendered": "1,555",
+      "source": "gallery.sample_funnel[7].households_singles"
+    },
+    "VFunnelSixCouples": {
+      "kind": "funnel",
+      "raw": "2323",
+      "rendered": "2,323",
+      "source": "gallery.sample_funnel[6].households_couples"
+    },
+    "VFunnelSixLabel": {
+      "kind": "funnel",
+      "raw": "no other employable or earning member",
+      "rendered": "no other employable or earning member",
+      "source": "gallery.sample_funnel[6].screen"
+    },
+    "VFunnelSixSingles": {
+      "kind": "funnel",
+      "raw": "1564",
+      "rendered": "1,564",
+      "source": "gallery.sample_funnel[6].households_singles"
+    },
+    "VFunnelThreeCouples": {
+      "kind": "funnel",
+      "raw": "3521",
+      "rendered": "3,521",
+      "source": "gallery.sample_funnel[3].households_couples"
+    },
+    "VFunnelThreeLabel": {
+      "kind": "funnel",
+      "raw": "no adult still in education",
+      "rendered": "no adult still in education",
+      "source": "gallery.sample_funnel[3].screen"
+    },
+    "VFunnelThreeSingles": {
+      "kind": "funnel",
+      "raw": "2036",
+      "rendered": "2,036",
+      "source": "gallery.sample_funnel[3].households_singles"
+    },
+    "VFunnelTwoCouples": {
+      "kind": "funnel",
+      "raw": "3662",
+      "rendered": "3,662",
+      "source": "gallery.sample_funnel[2].households_couples"
+    },
+    "VFunnelTwoLabel": {
+      "kind": "funnel",
+      "raw": "every adult aged 20 to 60",
+      "rendered": "every adult aged 20 to 60",
+      "source": "gallery.sample_funnel[2].screen"
+    },
+    "VFunnelTwoSingles": {
+      "kind": "funnel",
+      "raw": "2131",
+      "rendered": "2,131",
+      "source": "gallery.sample_funnel[2].households_singles"
+    },
+    "VFunnelZeroCouples": {
+      "kind": "funnel",
+      "raw": "5965",
+      "rendered": "5,965",
+      "source": "gallery.sample_funnel[0].households_couples"
+    },
+    "VFunnelZeroLabel": {
+      "kind": "funnel",
+      "raw": "the raw France 2016 input file",
+      "rendered": "the raw France 2016 input file",
+      "source": "gallery.sample_funnel[0].screen"
+    },
+    "VFunnelZeroSingles": {
+      "kind": "funnel",
+      "raw": "4038",
+      "rendered": "4,038",
+      "source": "gallery.sample_funnel[0].households_singles"
+    },
+    "VGapCoupledMen": {
+      "format": ".1f",
+      "key": "gap37_coupled_men",
+      "kind": "entry",
+      "raw": 4.4050394550428775,
+      "rendered": "4.4",
+      "units": "percentage points"
+    },
+    "VGapCoupledWomen": {
+      "format": ".1f",
+      "key": "gap37_coupled_women",
+      "kind": "entry",
+      "raw": 6.513318209233685,
+      "rendered": "6.5",
+      "units": "percentage points"
+    },
+    "VGapSingleMen": {
+      "format": ".1f",
+      "key": "gap37_single_men",
+      "kind": "entry",
+      "raw": 5.190032179776545,
+      "rendered": "5.2",
+      "units": "percentage points"
+    },
+    "VGapSingleWomen": {
+      "format": ".1f",
+      "key": "gap37_single_women",
+      "kind": "entry",
+      "raw": 3.808329186854214,
+      "rendered": "3.8",
+      "units": "percentage points"
+    },
+    "VGsurScale": {
+      "format": "d",
+      "key": "gsur_scale",
+      "kind": "entry",
+      "raw": 10,
+      "rendered": "10",
+      "units": "multiplier on the unemployment fraction"
+    },
+    "VHoursCap": {
+      "format": "d",
+      "key": "hours_cap",
+      "kind": "entry",
+      "raw": 70,
+      "rendered": "70",
+      "units": "hours/week"
+    },
+    "VHoursFloor": {
+      "format": "d",
+      "key": "hours_floor",
+      "kind": "entry",
+      "raw": 5,
+      "rendered": "5",
+      "units": "hours/week"
+    },
+    "VHundredCoupA": {
+      "format": ".1f",
+      "formula": "100 * (wea_couples_eq_phi_a) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 3.745099983083709,
+      "rendered": "3.7"
+    },
+    "VHundredCoupAB": {
+      "format": ".1f",
+      "formula": "VHundredCoupA + VHundredCoupB   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredCoupA",
+        "VHundredCoupB"
+      ],
+      "kind": "roundsum",
+      "raw": 7.9,
+      "rendered": "7.9"
+    },
+    "VHundredCoupB": {
+      "format": ".1f",
+      "formula": "100 * (wea_couples_eq_phi_b) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_b",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 4.197952507019899,
+      "rendered": "4.2"
+    },
+    "VHundredCoupExplained": {
+      "format": ".1f",
+      "formula": "VHundredCoupP + VHundredCoupA + VHundredCoupB   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredCoupP",
+        "VHundredCoupA",
+        "VHundredCoupB"
+      ],
+      "kind": "roundsum",
+      "raw": 6.1,
+      "rendered": "6.1"
+    },
+    "VHundredCoupP": {
+      "format": ".1f",
+      "formula": "100 * (wea_couples_eq_phi_p) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": -1.7626342116120404,
+      "rendered": "$-$1.8"
+    },
+    "VHundredCoupRest": {
+      "format": ".1f",
+      "formula": "100 - (VHundredCoupP + VHundredCoupA + VHundredCoupB)   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredCoupP",
+        "VHundredCoupA",
+        "VHundredCoupB"
+      ],
+      "kind": "rest",
+      "raw": 93.9,
+      "rendered": "93.9"
+    },
+    "VHundredCoupTotal": {
+      "format": ".1f",
+      "formula": "VHundredCoupP + VHundredCoupA + VHundredCoupB + VHundredCoupRest   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredCoupP",
+        "VHundredCoupA",
+        "VHundredCoupB",
+        "VHundredCoupRest"
+      ],
+      "kind": "roundsum",
+      "raw": 100.0,
+      "rendered": "100.0"
+    },
+    "VHundredSingA": {
+      "format": ".1f",
+      "formula": "100 * (wea_singles_eq_phi_a) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 15.522243397121752,
+      "rendered": "15.5"
+    },
+    "VHundredSingAB": {
+      "format": ".1f",
+      "formula": "VHundredSingA + VHundredSingB   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredSingA",
+        "VHundredSingB"
+      ],
+      "kind": "roundsum",
+      "raw": 20.3,
+      "rendered": "20.3"
+    },
+    "VHundredSingB": {
+      "format": ".1f",
+      "formula": "100 * (wea_singles_eq_phi_b) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_b",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 4.7864239346591235,
+      "rendered": "4.8"
+    },
+    "VHundredSingExplained": {
+      "format": ".1f",
+      "formula": "VHundredSingP + VHundredSingA + VHundredSingB   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredSingP",
+        "VHundredSingA",
+        "VHundredSingB"
+      ],
+      "kind": "roundsum",
+      "raw": 20.4,
+      "rendered": "20.4"
+    },
+    "VHundredSingP": {
+      "format": ".1f",
+      "formula": "100 * (wea_singles_eq_phi_p) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.14145461726122938,
+      "rendered": "0.1"
+    },
+    "VHundredSingRest": {
+      "format": ".1f",
+      "formula": "100 - (VHundredSingP + VHundredSingA + VHundredSingB)   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredSingP",
+        "VHundredSingA",
+        "VHundredSingB"
+      ],
+      "kind": "rest",
+      "raw": 79.6,
+      "rendered": "79.6"
+    },
+    "VHundredSingTotal": {
+      "format": ".1f",
+      "formula": "VHundredSingP + VHundredSingA + VHundredSingB + VHundredSingRest   [on the displayed, rounded values]",
+      "inputs": [
+        "VHundredSingP",
+        "VHundredSingA",
+        "VHundredSingB",
+        "VHundredSingRest"
+      ],
+      "kind": "roundsum",
+      "raw": 100.0,
+      "rendered": "100.0"
+    },
+    "VIncomeYear": {
+      "format": "d",
+      "key": "income_year",
+      "kind": "entry",
+      "raw": 2015,
+      "rendered": "2015",
+      "units": "income reference year"
+    },
+    "VIntRatioCoupledMen": {
+      "format": ".3f",
+      "key": "coupled_men_integration_ratio",
+      "kind": "entry",
+      "raw": 0.35266875663723635,
+      "rendered": "0.353",
+      "units": "ratio"
+    },
+    "VIntRatioCoupledWomen": {
+      "format": ".3f",
+      "key": "coupled_women_integration_ratio",
+      "kind": "entry",
+      "raw": 0.049080431005192354,
+      "rendered": "0.049",
+      "units": "ratio"
+    },
+    "VIntRatioSingleMen": {
+      "format": ".3f",
+      "key": "single_men_integration_ratio",
+      "kind": "entry",
+      "raw": 0.3606670631213232,
+      "rendered": "0.361",
+      "units": "ratio"
+    },
+    "VIntRatioSingleWomen": {
+      "format": ".3f",
+      "key": "single_women_integration_ratio",
+      "kind": "entry",
+      "raw": 0.09605380600085617,
+      "rendered": "0.096",
+      "units": "ratio"
+    },
+    "VKFreeCouples": {
+      "format": "d",
+      "key": "kfree_couples",
+      "kind": "entry",
+      "raw": 47,
+      "rendered": "47",
+      "units": "free coordinates"
+    },
+    "VKFreeRumA": {
+      "format": "d",
+      "key": "kfree_ruma",
+      "kind": "entry",
+      "raw": 10,
+      "rendered": "10",
+      "units": "free coordinates"
+    },
+    "VKFreeRumB": {
+      "format": "d",
+      "key": "kfree_rumb",
+      "kind": "entry",
+      "raw": 16,
+      "rendered": "16",
+      "units": "free coordinates"
+    },
+    "VKFreeSingles": {
+      "format": "d",
+      "key": "kfree_singles",
+      "kind": "entry",
+      "raw": 41,
+      "rendered": "41",
+      "units": "free coordinates"
+    },
+    "VKIntCouples": {
+      "format": "d",
+      "key": "kint_couples",
+      "kind": "entry",
+      "raw": 47,
+      "rendered": "47",
+      "units": "interior coordinates"
+    },
+    "VKIntSingles": {
+      "format": "d",
+      "key": "kint_singles",
+      "kind": "entry",
+      "raw": 40,
+      "rendered": "40",
+      "units": "interior coordinates"
+    },
+    "VLeisureScale": {
+      "format": "d",
+      "key": "leisure_scale",
+      "kind": "entry",
+      "raw": 10,
+      "rendered": "10",
+      "units": "hours/week"
+    },
+    "VMaeCouples": {
+      "format": ".4f",
+      "key": "mae_couples",
+      "kind": "entry",
+      "raw": 0.011854418614696214,
+      "rendered": "0.0119",
+      "units": "mean absolute deviation"
+    },
+    "VMaeRumA": {
+      "format": ".4f",
+      "key": "mae_ruma",
+      "kind": "entry",
+      "raw": 0.02730064826365704,
+      "rendered": "0.0273",
+      "units": "mean absolute deviation"
+    },
+    "VMaeRumB": {
+      "format": ".4f",
+      "key": "mae_rumb",
+      "kind": "entry",
+      "raw": 0.026356415274116075,
+      "rendered": "0.0264",
+      "units": "mean absolute deviation"
+    },
+    "VMaeSingles": {
+      "format": ".4f",
+      "key": "mae_singles",
+      "kind": "entry",
+      "raw": 0.013997497845981723,
+      "rendered": "0.0140",
+      "units": "mean absolute deviation"
+    },
+    "VMatchedAccessRatio": {
+      "format": ".1f",
+      "key": "mh_access_ratio",
+      "kind": "entry",
+      "raw": 14.5,
+      "rendered": "14.5",
+      "units": "ratio"
+    },
+    "VMatchedEmpShareA": {
+      "format": ".2f",
+      "key": "mh_employment_share_a",
+      "kind": "entry",
+      "raw": 0.75,
+      "rendered": "0.75",
+      "units": "share"
+    },
+    "VMatchedEmpShareB": {
+      "format": ".2f",
+      "key": "mh_employment_share_b",
+      "kind": "entry",
+      "raw": 0.17,
+      "rendered": "0.17",
+      "units": "share"
+    },
+    "VMatchedWageGap": {
+      "format": ".1f",
+      "key": "mh_wage_gap",
+      "kind": "entry",
+      "raw": 11.5,
+      "rendered": "11.5",
+      "units": "log points"
+    },
+    "VMinEigCouples": {
+      "format": ".4f",
+      "key": "mineig_couples",
+      "kind": "entry",
+      "raw": 0.0770744,
+      "rendered": "0.0771",
+      "units": "smallest Hessian eigenvalue on the interior block"
+    },
+    "VMinEigSingles": {
+      "format": ".4f",
+      "key": "mineig_singles",
+      "kind": "entry",
+      "raw": 0.166893,
+      "rendered": "0.1669",
+      "units": "smallest Hessian eigenvalue on the interior block"
+    },
+    "VNAltRows": {
+      "format": "d",
+      "key": "n_alt_rows",
+      "kind": "entry",
+      "raw": 101,
+      "rendered": "101",
+      "units": "rows per household in the criterion"
+    },
+    "VNCouples": {
+      "format": ",d",
+      "key": "n_couples",
+      "kind": "entry",
+      "raw": 2223,
+      "rendered": "2,223",
+      "units": "households"
+    },
+    "VNDraws": {
+      "format": "d",
+      "key": "n_draws",
+      "kind": "entry",
+      "raw": 100,
+      "rendered": "100",
+      "units": "sampled alternatives per household"
+    },
+    "VNNodes": {
+      "format": ",d",
+      "key": "n_nodes",
+      "kind": "entry",
+      "raw": 2048,
+      "rendered": "2,048",
+      "units": "common integration nodes per household"
+    },
+    "VNOcc": {
+      "format": "d",
+      "key": "n_occ",
+      "kind": "entry",
+      "raw": 4,
+      "rendered": "4",
+      "units": "occupation groups"
+    },
+    "VNScrambles": {
+      "format": "d",
+      "key": "n_scrambles",
+      "kind": "entry",
+      "raw": 8,
+      "rendered": "8",
+      "units": "RQMC scrambles"
+    },
+    "VNSingles": {
+      "format": ",d",
+      "key": "n_singles",
+      "kind": "entry",
+      "raw": 1540,
+      "rendered": "1,540",
+      "units": "households"
+    },
+    "VNatPctCouples": {
+      "format": ".1f",
+      "key": "nat_pct_couples",
+      "kind": "entry",
+      "raw": 60.9,
+      "rendered": "60.9",
+      "units": "per cent increase in consumption"
+    },
+    "VNatPctSingles": {
+      "format": ".1f",
+      "key": "nat_pct_singles",
+      "kind": "entry",
+      "raw": 63.3,
+      "rendered": "63.3",
+      "units": "per cent increase in consumption"
+    },
+    "VNegllCouples": {
+      "format": ".3f",
+      "key": "negll_couples",
+      "kind": "entry",
+      "raw": 10283.034369351,
+      "rendered": "10283.034",
+      "units": "log-likelihood units"
+    },
+    "VNegllRumA": {
+      "format": ".3f",
+      "key": "negll_ruma",
+      "kind": "entry",
+      "raw": 6403.974284931,
+      "rendered": "6403.974",
+      "units": "log-likelihood units"
+    },
+    "VNegllRumB": {
+      "format": ".3f",
+      "key": "negll_rumb",
+      "kind": "entry",
+      "raw": 6395.107857484,
+      "rendered": "6395.108",
+      "units": "log-likelihood units"
+    },
+    "VNegllSingles": {
+      "format": ".3f",
+      "key": "negll_singles",
+      "kind": "entry",
+      "raw": 6253.46307438,
+      "rendered": "6253.463",
+      "units": "log-likelihood units"
+    },
+    "VObsJobMove": {
+      "format": ".1f",
+      "key": "d2_anchormove_pct",
+      "kind": "entry",
+      "raw": 9.3,
+      "rendered": "9.3",
+      "units": "per cent, largest absolute relative move in Delta_I"
+    },
+    "VObsJobShareCouples": {
+      "format": ".1f",
+      "key": "d2_anchorshare_couples",
+      "kind": "entry",
+      "raw": 3.9,
+      "rendered": "3.9",
+      "units": "per cent of households attaining the observed node under the actual coalition"
+    },
+    "VObsJobShareSingles": {
+      "format": ".1f",
+      "key": "d2_anchorshare_singles",
+      "kind": "entry",
+      "raw": 2.9,
+      "rendered": "2.9",
+      "units": "per cent of households attaining the observed node under the actual coalition"
+    },
+    "VOfferLocation": {
+      "format": ".2f",
+      "key": "diag1_location_log",
+      "kind": "entry",
+      "raw": 0.1,
+      "rendered": "0.10",
+      "units": "log points"
+    },
+    "VOfferSpread": {
+      "format": ".2f",
+      "key": "diag1_sigma",
+      "kind": "entry",
+      "raw": 0.37,
+      "rendered": "0.37",
+      "units": "log points"
+    },
+    "VPctAttCoupAEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_equivalised_phi_a) / fig13_att_couples_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_equivalised_phi_a",
+        "fig13_att_couples_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.3717185924382779,
+      "rendered": "0.37"
+    },
+    "VPctAttCoupARaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_unequivalised_phi_a) / fig13_att_couples_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_unequivalised_phi_a",
+        "fig13_att_couples_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.4549013277279498,
+      "rendered": "0.45"
+    },
+    "VPctAttCoupBEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_equivalised_phi_b) / fig13_att_couples_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_equivalised_phi_b",
+        "fig13_att_couples_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 3.150939468056162,
+      "rendered": "3.15"
+    },
+    "VPctAttCoupBRaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_unequivalised_phi_b) / fig13_att_couples_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_unequivalised_phi_b",
+        "fig13_att_couples_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 6.281878412685688,
+      "rendered": "6.28"
+    },
+    "VPctAttCoupPEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_equivalised_phi_p) / fig13_att_couples_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_equivalised_phi_p",
+        "fig13_att_couples_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": -0.9811083818715627,
+      "rendered": "$-$0.98"
+    },
+    "VPctAttCoupPRaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_couples_unequivalised_phi_p) / fig13_att_couples_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_couples_unequivalised_phi_p",
+        "fig13_att_couples_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 3.158033521642685,
+      "rendered": "3.16"
+    },
+    "VPctAttSingAEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_equivalised_phi_a) / fig13_att_singles_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_equivalised_phi_a",
+        "fig13_att_singles_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.5366099845781188,
+      "rendered": "0.54"
+    },
+    "VPctAttSingARaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_unequivalised_phi_a) / fig13_att_singles_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_unequivalised_phi_a",
+        "fig13_att_singles_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.6909763801385109,
+      "rendered": "0.69"
+    },
+    "VPctAttSingBEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_equivalised_phi_b) / fig13_att_singles_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_equivalised_phi_b",
+        "fig13_att_singles_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 1.4046337923985894,
+      "rendered": "1.40"
+    },
+    "VPctAttSingBRaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_unequivalised_phi_b) / fig13_att_singles_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_unequivalised_phi_b",
+        "fig13_att_singles_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 1.727402431153169,
+      "rendered": "1.73"
+    },
+    "VPctAttSingPEq": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_equivalised_phi_p) / fig13_att_singles_equivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_equivalised_phi_p",
+        "fig13_att_singles_equivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": -0.1254709829333901,
+      "rendered": "$-$0.13"
+    },
+    "VPctAttSingPRaw": {
+      "format": ".2f",
+      "formula": "100 * (fig13_att_singles_unequivalised_phi_p) / fig13_att_singles_unequivalised_baseline_gini",
+      "inputs": [
+        "fig13_att_singles_unequivalised_phi_p",
+        "fig13_att_singles_unequivalised_baseline_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.5295100740294147,
+      "rendered": "0.53"
+    },
+    "VPctEACoupAEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_eq_phi_a) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_a",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 3.745099983083709,
+      "rendered": "3.75"
+    },
+    "VPctEACoupARaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_uneq_phi_a) / wea_couples_uneq_gini",
+      "inputs": [
+        "wea_couples_uneq_phi_a",
+        "wea_couples_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 5.218776929296594,
+      "rendered": "5.22"
+    },
+    "VPctEACoupBEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_eq_phi_b) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_b",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 4.197952507019899,
+      "rendered": "4.20"
+    },
+    "VPctEACoupBRaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_uneq_phi_b) / wea_couples_uneq_gini",
+      "inputs": [
+        "wea_couples_uneq_phi_b",
+        "wea_couples_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 16.041283967689484,
+      "rendered": "16.04"
+    },
+    "VPctEACoupPEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_eq_phi_p) / wea_couples_eq_gini",
+      "inputs": [
+        "wea_couples_eq_phi_p",
+        "wea_couples_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": -1.7626342116120404,
+      "rendered": "$-$1.76"
+    },
+    "VPctEACoupPRaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_couples_uneq_phi_p) / wea_couples_uneq_gini",
+      "inputs": [
+        "wea_couples_uneq_phi_p",
+        "wea_couples_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 2.276644345663725,
+      "rendered": "2.28"
+    },
+    "VPctEASingAEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_eq_phi_a) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_a",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 15.522243397121752,
+      "rendered": "15.52"
+    },
+    "VPctEASingARaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_uneq_phi_a) / wea_singles_uneq_gini",
+      "inputs": [
+        "wea_singles_uneq_phi_a",
+        "wea_singles_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 11.366468766369666,
+      "rendered": "11.37"
+    },
+    "VPctEASingBEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_eq_phi_b) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_b",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 4.7864239346591235,
+      "rendered": "4.79"
+    },
+    "VPctEASingBRaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_uneq_phi_b) / wea_singles_uneq_gini",
+      "inputs": [
+        "wea_singles_uneq_phi_b",
+        "wea_singles_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 3.479714065186161,
+      "rendered": "3.48"
+    },
+    "VPctEASingPEq": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_eq_phi_p) / wea_singles_eq_gini",
+      "inputs": [
+        "wea_singles_eq_phi_p",
+        "wea_singles_eq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.14145461726122938,
+      "rendered": "0.14"
+    },
+    "VPctEASingPRaw": {
+      "format": ".2f",
+      "formula": "100 * (wea_singles_uneq_phi_p) / wea_singles_uneq_gini",
+      "inputs": [
+        "wea_singles_uneq_phi_p",
+        "wea_singles_uneq_gini"
+      ],
+      "kind": "ratio",
+      "raw": 0.9851825430429827,
+      "rendered": "0.99"
+    },
+    "VPolicyYear": {
+      "format": "d",
+      "key": "policy_year",
+      "kind": "entry",
+      "raw": 2015,
+      "rendered": "2015",
+      "units": "EUROMOD policy system"
+    },
+    "VRumGap": {
+      "format": ".2f",
+      "key": "rum_gap",
+      "kind": "entry",
+      "raw": 141.64,
+      "rendered": "141.64",
+      "units": "log-points"
+    },
+    "VTimeEndow": {
+      "format": "d",
+      "key": "time_endowment",
+      "kind": "entry",
+      "raw": 80,
+      "rendered": "80",
+      "units": "hours/week"
+    },
+    "VWageHi": {
+      "format": "d",
+      "key": "wage_hi",
+      "kind": "entry",
+      "raw": 590,
+      "rendered": "590",
+      "units": "EUR/hour"
+    },
+    "VWageLo": {
+      "format": "d",
+      "key": "wage_lo",
+      "kind": "entry",
+      "raw": 2,
+      "rendered": "2",
+      "units": "EUR/hour"
+    }
+  },
+  "registry": "C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\numbers_of_record_v15.json",
+  "registry_sha256": "c456e6ecb554bb31c0791824cd4734533274d83fa3f282789cf8caca09c79909"
+}

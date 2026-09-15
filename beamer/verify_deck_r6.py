@@ -776,6 +776,17 @@ def paragraph_violations(pdf: Path, skip_pages: set[int], max_lines: int = 3) ->
             if block.get("type") != 0:
                 continue
             lines = []
+            cells: dict = {}
+            for ln in block["lines"]:
+                spans = [s for s in ln["spans"] if s["text"].strip()]
+                if spans:
+                    y0 = spans[0]["origin"][1]
+                    key0 = next((k for k in cells if abs(k - y0) <= 2), y0)
+                    size0 = max(s["size"] for s in spans)
+                    cells[key0] = cells.get(key0, 0) + 1 + sum(
+                        1 for a, b in zip(spans, spans[1:]) if b["bbox"][0] - a["bbox"][2] > 2.5 * size0)
+            if any(n >= 3 for n in cells.values()):
+                continue                         # a table: some baseline carries three or more cells
             for ln in block["lines"]:
                 spans = [s for s in ln["spans"] if s["text"].strip()]
                 if not spans:
@@ -789,26 +800,31 @@ def paragraph_violations(pdf: Path, skip_pages: set[int], max_lines: int = 3) ->
                             for s in spans)
                 if mathy and prose < 3:
                     continue
-                lines.append((y, max(s["size"] for s in spans),
-                              " ".join(s["text"] for s in spans)))
+                size = max(s["size"] for s in spans)
+                runs = 1 + sum(1 for a, b in zip(spans, spans[1:])
+                               if b["bbox"][0] - a["bbox"][2] > 2.5 * size)
+                lines.append((y, size, " ".join(s["text"] for s in spans), "BX" in spans[0]["font"],
+                              runs))
             if not lines:
                 continue
             rows: dict = {}
-            for y, size, text in lines:
+            for y, size, text, bold, runs in lines:
                 key = next((k for k in rows if abs(k - y) <= 2), y)
-                rows.setdefault(key, []).append((size, text))
-            if any(len(v) >= 3 for v in rows.values()):
+                rows.setdefault(key, []).append((size, text, bold, runs))
+            if any(sum(r[3] for r in v) >= 3 for v in rows.values()):
                 continue                         # a table row
             ys = sorted(rows)
             para = [ys[0]]
             for prev, cur in zip(ys, ys[1:]):
-                size = max(s for s, _ in rows[cur])
-                if cur - prev > 2.2 * size:
+                size = max(r[0] for r in rows[cur])
+                restyled = (abs(size - max(r[0] for r in rows[prev])) > 0.6
+                            or rows[cur][0][2] != rows[prev][0][2])
+                if cur - prev > 2.2 * size or restyled:
                     para = [cur]
                 else:
                     para.append(cur)
                 if len(para) > max_lines:
-                    first = " ".join(t for _, t in rows[para[0]])[:60]
+                    first = " ".join(r[1] for r in rows[para[0]])[:60]
                     out.append("page %d: %d+ lines from %r" % (pno, len(para), first))
                     break
     return out
@@ -883,6 +899,10 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
     scan = re.sub(r"\d*\.?\d+\s*(em|ex|pt|mm|cm|\\textwidth|\\textheight|\\paperwidth|\\linewidth)",
                   "", scan)
     scan = re.sub(r"\\(includegraphics|graphicspath|input)(\[[^\]]*\])?\{[^}]*\}", "", scan)
+    scan = re.sub(r"\\multicolumn\{\d+\}", r"\\multicolumn{}", scan)
+    scan = re.sub(r"_\{?0\}?(?![0-9.])", "_", scan)   # a zero subscript names a symbol (I_0), not a value
+    for literal in P.get("literals", []):       # an event name on the title slide, not a value
+        scan = scan.replace(literal, " ")
     typed = {m.group(0) for m in re.finditer(r"(?<![\\A-Za-z0-9])\d+(?:\.\d+)?", scan)}
     typed -= {"1", "3"}          # the Shapley weight |S|!(3-|S|-1)!/3!
     g("G-NUMBERS", not typed, "no hand-typed numeral on any slide or note "
@@ -933,9 +953,14 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
 
     # ------------------------------------------------ G-REGISTRY
     registry = json.loads(numsrc.V15_REGISTRY.read_text(encoding="utf-8"))["entries"]
-    stale = [m for m, v in prov.items()
-             if v["key"] not in registry
-             or numsrc.v16_render(registry[v["key"]]["value"], v["format"]) != v["rendered"]]
+    if P.get("rebuild"):
+        rebuilt = getattr(numsrc, P["rebuild"])()
+        stale = sorted(m for m in set(prov) | set(rebuilt)
+                       if rebuilt.get(m, {}).get("rendered") != prov.get(m, {}).get("rendered"))
+    else:
+        stale = [m for m, v in prov.items()
+                 if v["key"] not in registry
+                 or numsrc.v16_render(registry[v["key"]]["value"], v["format"]) != v["rendered"]]
     numtex = P["numbers"].read_text(encoding="utf-8")
     tex_macros = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{(.*)\}", numtex))
     drift = [m for m, v in prov.items() if tex_macros.get(m) != v["rendered"]]
@@ -943,8 +968,13 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
     if len(pages) != len(fr):
         unresolved_nums.append("page/frame count mismatch %d vs %d" % (len(pages), len(fr)))
     for i, (f, page) in enumerate(zip(fr, pages), 1):
-        allowed = {prov[m]["rendered"].replace("$-$", "").lstrip("-") for m in prov
-                   if re.search(r"\\%s(?![A-Za-z])" % m, f)}
+        allowed = set()
+        for m in prov:
+            if re.search(r"\\%s(?![A-Za-z])" % m, f):
+                rendered = prov[m]["rendered"].replace("$-$", "-")
+                allowed.add(rendered.lstrip("-"))
+                allowed |= {t.lstrip("-").rstrip(",") for t in re.findall(
+                    r"(?<![\w.,])-?\d[\d,]*(?:\.\d+)?(?![\w])", rendered)}
         if r"\begin{enumerate}" in f:
             allowed |= {"1", "2", "3"}
         if "3!" in f:
@@ -952,7 +982,10 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
         text = page
         if flat(caption_src) in flat(f):
             allowed |= P["caption_numbers"]     # the theory-figure caption only
-        text = re.sub(r"\b\d+\s*/\s*\d+\s*$", " ", text.rstrip())  # footline frame counter
+        counters = {len(fr), len(frames(split_appendix(src)[0])), len(frames(split_appendix(src)[0])) - 1}
+        text = re.sub(r"(?<![\d.])(\d{1,2})\s*/\s*(\d{1,2})(?![\d.])",
+                      lambda mm: " " if int(mm.group(2)) in counters else mm.group(0), text)  # footline counter
+        allowed |= {dg for dg in ("1", "3") if re.search(r"\$[^$]*(?<![\\A-Za-z0-9.])%s(?![0-9.])[^$]*\$" % dg, f)}
         for m in re.finditer(r"(?<![\w.,])-?\d[\d,]*(?:\.\d+)?(?![\w])", _norm(text)):
             tok = m.group(0).lstrip("-").rstrip(",")
             if tok not in allowed:
@@ -992,7 +1025,7 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
       else "count %d, other display %s, missing %s, notes %s"
            % (len(eqs), other_display, sig_miss, notes_ok))
 
-    central = [f for f in fr if "fig_v13_central_result.png" in f]
+    central = [f for f in fr if P.get("central_marker", "fig_v13_central_result.png") in f]
     cf = flat(central[0]) if len(central) == 1 else ""
     central_ok = (len(central) == 1 and "fig_v13_central_result.png" in used
                   and "fig_v13_central_result.png" not in not_v15
@@ -1046,9 +1079,21 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
       "slides or notes (%d patterns)" % (len(V16_INTERNAL) + len(P["extra_labels"]))
       if not lab_hits else "INTERNAL LABELS: " + "; ".join(lab_hits))
 
-    high = [m.group(0) for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(%|\\%|per ?cent)",
-                                            _norm(proj + reh_text) + " " + flat(src))
-            if 80 <= float(m.group(1)) <= 100]
+    if P.get("high_share_context"):
+        # a share in [80, 100] is a violation when its line talks about opportunities,
+        # unless the line is the unallocated remainder, a total or a fit accuracy
+        high = []
+        for line in (proj + "\n" + reh_text).splitlines():
+            ln = _norm(line).lower()
+            for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(%|per ?cent)", ln):
+                if (80 <= float(m.group(1)) <= 100
+                        and re.search(r"opportunit|access|earning|\bjob", ln)
+                        and not re.search(r"not allocated|accuracy|\btotal\b", ln)):
+                    high.append(line.strip()[:90])
+    else:
+        high = [m.group(0) for m in re.finditer(r"(\d+(?:\.\d+)?)\s*(%|\\%|per ?cent)",
+                                                _norm(proj + reh_text) + " " + flat(src))
+                if 80 <= float(m.group(1)) <= 100]
     words = re.findall(r"\b(eighty|ninety|near(ly)? 90|80\s*(-|--|to)\s*90)\b",
                        (proj + reh_text + src).lower())
     g(T + "-NO8090", not high and not words, "no 80-90% opportunity claim anywhere"
@@ -1057,7 +1102,8 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
     return ok_l, bad_l, detail
 
 
-def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
+def v17_extra_gates(src: str, pdf: Path, tag: str = "V17",
+                    table_macros: tuple = ("VEASingPhiARaw", "VAttSingPhiARaw")) -> tuple[list, list, dict]:
     """Style-revision checks that only the V17 profile carries."""
     ok_l: list[str] = []
     bad_l: list[str] = []
@@ -1069,7 +1115,7 @@ def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
 
     long_titles, long_paras = style_violations(src, pdf)
     n_titles = len(frame_titles(src))
-    g("G-V17-STYLE", not long_titles and not long_paras,
+    g("G-" + tag + "-STYLE", not long_titles and not long_paras,
       "%d frame titles all <= 6 words; no rendered body paragraph longer than 3 lines"
       % n_titles if not long_titles and not long_paras
       else "long titles %s; long paragraphs %s" % (long_titles, long_paras[:8]))
@@ -1081,14 +1127,14 @@ def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
                  if f not in limits and re.search(r"\\caveat\{|deepred", re.sub(
                      r"\{\\color\{deepred\}\\rule\{[^}]*\}\{[^}]*\}\}", "",   # a decorative rule is not text
                      re.sub(r"\\note\{.*", "", f, flags=re.S)))]
-    g("G-V17-CAVEATS", len(limits) == 1 and not scattered,
+    g("G-" + tag + "-CAVEATS", len(limits) == 1 and not scattered,
       "caveats on one dedicated slide only; no red caveat text on any other main slide"
       if len(limits) == 1 and not scattered else "caveat text on main frames %s" % scattered)
 
     conclusion_ix = main_src.find(r"\frametitle{Conclusion}")
-    tables_main = [m for m in ("VEASingPhiARaw", "VAttSingPhiARaw") if "\\" + m in main_src]
-    tables_backup = all("\\" + m in backup_src for m in ("VEASingPhiARaw", "VAttSingPhiARaw"))
-    g("G-V17-BACKUP", conclusion_ix != -1 and not tables_main and tables_backup
+    tables_main = [m for m in table_macros if "\\" + m in main_src]
+    tables_backup = all("\\" + m in backup_src for m in table_macros)
+    g("G-" + tag + "-BACKUP", conclusion_ix != -1 and not tables_main and tables_backup
       and len(frames(backup_src)) >= 2,
       "EA and ATT results tables are backup slides after the conclusion (%d backup slides)"
       % len(frames(backup_src)) if not tables_main and tables_backup
@@ -1100,7 +1146,7 @@ def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
                    and titles.index("The conflict") < titles.index("Data and EUROMOD")
                    and all(k in conflict for k in ("Compensation", "Responsibility", r"\nexists",
                                                     r"Fleurbaey \& Maniquet")))
-    g("G-V17-CONFLICT", conflict_ok,
+    g("G-" + tag + "-CONFLICT", conflict_ok,
       "compensation-versus-responsibility conflict is slide 3, before the data, with the "
       "impossibility and the Fleurbaey-Maniquet citation"
       if conflict_ok else "conflict slide missing, late or incomplete")
@@ -1108,9 +1154,281 @@ def v17_extra_gates(src: str, pdf: Path) -> tuple[list, list, dict]:
     welfare = next((f for f in main_fr if r"\frametitle{Welfare}" in f), "")
     theory_ok = "theory_w1.png" in welfare and "theory_w1.png" not in backup_src \
         and "Section" not in welfare.split(r"\note{")[0]
-    g("G-V17-THEORYFIG", theory_ok,
+    g("G-" + tag + "-THEORYFIG", theory_ok,
       "theory figure is the main 'Welfare' slide, with a slide caption that drops the section reference"
       if theory_ok else "theory figure not central, or caption still names a section")
+    return ok_l, bad_l, detail
+
+
+# ==========================================================================
+# DECK-V18 profile:  python verify_deck_r6.py --deck v18
+#
+# Every V17 check and control, repointed.  Added: the mixed-denominator check,
+# the hyperlink check (source targets and resolved destinations in the compiled
+# PDF), the 100%-of-baseline display, the cross-check against the manager's
+# verification of the shares, the title slide, the selected-estimates slide,
+# no causal language, no elasticity, and the appendix structure.
+# ==========================================================================
+V18_SRC = HERE / "JMP_seminar_beamer_v18.tex"
+V18_TITLES = [
+    "Motivation", "The conflict", "Research question", "Literature and gap", "Job packages",
+    "Opportunities: the choice probability", "Data and EUROMOD", "Estimation",
+    "Selected estimates", "Welfare", "Ex-ante prospect welfare", "Attained-bundle welfare",
+    "Inequality and Shapley decomposition", "How much is associated with opportunities?",
+    "Which opportunity channel matters?", "Where does baseline inequality go?",
+    "What is not claimed", "Conclusion",
+]
+V18_PROFILE = dict(V17_PROFILE, **{
+    "tag": "V18",
+    "src": V18_SRC, "numbers": HERE / "deck_numbers_v18.tex",
+    "prov": BUILD / "v18_number_provenance.json",
+    "pdf": BUILD / "JMP_seminar_beamer_v18.pdf",
+    "text": BUILD / "JMP_seminar_beamer_v18_text.txt",
+    "reh_text": BUILD / "JMP_seminar_beamer_v18_rehearsal_text.txt",
+    "results": BUILD / "v18_verification.json",
+    "lineage": [V18_SRC, HERE / "make_deck_numbers_r6.py", HERE / "deck_numbers_v18.tex",
+                HERE / "build_deck_v18.py"],
+    "anchors": [(t, t) for t in V18_TITLES], "main_range": (17, 19),
+    "required": {
+        "resources/needs/composition held fixed":
+            "Household resources, needs and composition held fixed",
+        "access = local access, defined":
+            "local unemployment exposure, region, urban or rural location, year",
+        "access is local access, not total opportunity": "local access, not total opportunity",
+        "preliminary": "Preliminary decomposition",
+        "not causal": "Not causal",
+        "no parameter uncertainty yet": "No parameter uncertainty yet",
+        "preferences not equated with responsibility": "Preferences are not responsibility",
+        "prospects versus attained outcomes": "prospects versus attained outcomes",
+        "two different welfare questions": "two different welfare questions",
+        "neither perspective primary": "Neither perspective is designated primary",
+        "A is the local-access channel": "A is the currently estimated local-access channel",
+        "2x2 label": "A + B as % of the relevant baseline Gini",
+        "100% display denominator label": "shares of baseline Gini",
+        "X2: remainder label": "Not allocated by this exercise",
+        "X2: sex blocks retained": "retains sex-specific preference and opportunity blocks",
+        "X2: luck and spread excluded": "wage-draw luck and the common offer spread",
+        "X1: A + B alone": "A + B alone",
+    },
+    "central_marker": r"\hypertarget{main:howmuch}",
+    "central_phrases": ["Ex-ante prospect", "Attained bundle",
+                        r"A + B as \% of the relevant baseline Gini",
+                        r"\VEASingOppEq", r"\VEACoupOppEq", r"\VAttSingOppEq", r"\VAttCoupOppEq"],
+    "rebuild": "build_v18",
+    "literals": ["4th-Year PhD Workshop"],
+    "high_share_context": True,
+    "table_macros": ("VEASingPhiARaw", "VAttFigSingPhiARaw"),
+    "v18": True,
+})
+
+BASE_RX = re.compile(r"baseline gini|of baseline|% of i ?0|shares? of baseline", re.I)
+EXPL_RX = re.compile(r"explained (p/a/b )?(component|change)|shares? of (the )?(currently )?explained", re.I)
+GOAL1 = {  # the manager's Goal 1 verification (computed from displayed, rounded inputs)
+    "Sing": {"P": 0.14, "A": 15.53, "B": 4.79, "sum": 20.46, "rest": 79.54,
+             "sP": 0.7, "sA": 75.9, "sB": 23.4},
+    "Coup": {"P": -1.77, "A": 3.74, "B": 4.20, "sum": 6.17, "rest": 93.83,
+             "sP": -28.6, "sA": 60.6, "sB": 68.0},
+}
+RULING_ESTIMATES = {  # the values the V18 ruling quotes for the selected-estimates slide
+    "VCoefSingBetaC": "2.0387", "VCoefSingBetaCSE": "0.2917",
+    "VCoefCoupBetaC": "2.1017", "VCoefCoupBetaCSE": "0.2939",
+    "VCoefSingBetaEGsur": "$-$1.4422", "VCoefSingBetaEGsurSE": "0.2356",
+    "VCoefCoupBetaEGsur": "$-$1.1924", "VCoefCoupBetaEGsurSE": "0.1557",
+    "VCoefSingBetaWEducH": "0.1491", "VCoefSingBetaWEducHSE": "0.0308",
+    "VCoefCoupBetaWEducH": "0.1817", "VCoefCoupBetaWEducHSE": "0.0197",
+    "VCoefSingSigma": "0.3815", "VCoefSingSigmaSE": "0.0133",
+    "VCoefCoupSigma": "0.3631", "VCoefCoupSigmaSE": "0.0072",
+}
+TITLE_LINES = ["Unequal Job Opportunities and Well-Being Inequality",
+               "A Latent-Jobs Structural Decomposition", "Hisham Haydar",
+               "University of Luxembourg & LISER", "4th-Year PhD Workshop",
+               "Discussant: Sebastian Dobre"]
+
+
+def _slide_part(frame: str) -> str:
+    return re.sub(r"\\note\{.*", "", frame, flags=re.S)
+
+
+def denominator_mixes(src: str, pages: list[str]) -> list[str]:
+    hits = []
+    for i, page in enumerate(pages, 1):
+        t = _norm(page)
+        if BASE_RX.search(t) and EXPL_RX.search(t):
+            hits.append("page %d" % i)
+    body = src.split(r"\begin{document}", 1)[-1]
+    for i, f in enumerate(frames(body), 1):
+        slide = flat(_slide_part(f)).replace(r"\%", "%").replace("$I_0$", "I0")
+        if BASE_RX.search(slide) and EXPL_RX.search(slide):
+            hits.append("frame %d source" % i)
+        note = re.search(r"\\note\{(.*)\}\s*$", f, re.S)
+        for sentence in re.split(r"(?<=[.;?!])\s+", flat(note.group(1)) if note else ""):
+            if BASE_RX.search(sentence) and EXPL_RX.search(sentence):
+                hits.append("frame %d note: %s" % (i, sentence[:70]))
+    return hits
+
+
+def link_problems(src: str, pdf: Path) -> tuple[list, dict]:
+    import pymupdf
+    body = src.split(r"\begin{document}", 1)[-1]
+    targets = set(re.findall(r"\\hypertarget\{([^}]+)\}", body))
+    used = re.findall(r"\\(?:hyperlink|golink|maplink|backnav)\{([^}]+)\}", body)
+    problems = ["missing target %s" % t for t in sorted(set(used) - targets)]
+    main_src, backup_src = split_appendix(src)
+    backups = frames(backup_src)
+    appmap = [f for f in backups if r"\hypertarget{appmap}" in f]
+    others = [f for f in backups if r"\hypertarget{appmap}" not in f]
+    no_nav = [re.search(r"\\hypertarget\{([^}]+)\}", f).group(1) for f in others
+              if not (r"\backnav{" in f or (r"\beamerreturnbutton{Back}" in f and "{appmap}" in f))]
+    problems += ["backup without Back/Appendix map: %s" % t for t in no_nav]
+    backup_targets = {re.search(r"\\hypertarget\{([^}]+)\}", f).group(1) for f in others}
+    mapped = set(re.findall(r"\\maplink\{([^}]+)\}", appmap[0])) if len(appmap) == 1 else set()
+    problems += ["backup not on the appendix map: %s" % t for t in sorted(backup_targets - mapped)]
+    if len(appmap) != 1:
+        problems.append("appendix map missing")
+    stats = {"source_links": len(used), "targets": len(targets), "backups": len(others),
+             "main_slides_with_buttons": sum(r"\cornerlinks{" in f for f in frames(main_src))}
+    if pdf.exists():
+        doc = pymupdf.open(pdf)
+        names = doc.resolve_names() if hasattr(doc, "resolve_names") else {}
+        internal = broken = 0
+        for page in doc:
+            for link in page.get_links():
+                kind = link.get("kind")
+                if kind == pymupdf.LINK_URI:
+                    continue
+                internal += 1
+                ok = False
+                if kind == pymupdf.LINK_GOTO:
+                    ok = 0 <= link.get("page", -1) < len(doc)
+                elif kind == pymupdf.LINK_NAMED:
+                    dest = link.get("nameddest") or link.get("name")
+                    ok = (0 <= link.get("page", -1) < len(doc)
+                          or (dest in names and 0 <= names[dest].get("page", -1) < len(doc)))
+                if not ok:
+                    broken += 1
+        stats.update({"pdf_internal_links": internal, "pdf_broken_links": broken})
+        if broken:
+            problems.append("%d PDF links do not resolve" % broken)
+        if internal < len(used):
+            problems.append("PDF has %d internal links for %d in the source" % (internal, len(used)))
+    else:
+        problems.append("compiled PDF missing")
+    return problems, stats
+
+
+def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list, dict]:
+    import pymupdf
+    ok_l: list[str] = []
+    bad_l: list[str] = []
+    detail: dict = {}
+
+    def g(name: str, ok: bool, msg: str) -> None:
+        (ok_l if ok else bad_l).append("%-18s %s" % (name, msg))
+        detail[name] = {"pass": bool(ok), "detail": msg}
+
+    prov = json.loads(P["prov"].read_text(encoding="utf-8"))["macros"]
+    body = src.split(r"\begin{document}", 1)[-1]
+    main_src, backup_src = split_appendix(src)
+    main_fr = frames(main_src)
+
+    def frame_with(target: str) -> str:
+        return next((f for f in frames(body) if r"\hypertarget{%s}" % target in f), "")
+
+    mixes = denominator_mixes(src, pages)
+    g("G-V18-DENOMINATORS", not mixes,
+      "no slide, frame or note sentence mixes shares of baseline Gini with shares of the explained change"
+      if not mixes else "MIXED DENOMINATORS: %s" % mixes[:6])
+
+    problems, stats = link_problems(src, P["pdf"])
+    g("G-V18-LINKS", not problems,
+      "%d source links to %d targets; %d internal links in the PDF, %d unresolved; every backup "
+      "has Back and Appendix map; every backup is on the map; %d main slides carry buttons"
+      % (stats["source_links"], stats["targets"], stats.get("pdf_internal_links", 0),
+         stats.get("pdf_broken_links", 0), stats["main_slides_with_buttons"])
+      if not problems else "LINK PROBLEMS: %s" % problems[:8])
+    detail["G-V18-LINKS"]["stats"] = stats
+
+    hundred = frame_with("main:hundred")
+    slide = flat(_slide_part(hundred))
+    sums = {}
+    arith_ok = True
+    for pop in ("Sing", "Coup"):
+        num = lambda n: float(prov[n]["rendered"].replace("$-$", "-"))
+        rows = [num("VHundred%s%s" % (pop, k)) for k in ("P", "A", "B", "Rest")]
+        sums[pop] = rows
+        arith_ok &= (round(sum(rows), 6) == 100.0 and prov["VHundred%sTotal" % pop]["rendered"] == "100.0"
+                     and prov["VHundred%sAB" % pop]["rendered"] == prov["VEA%sOppEq" % pop]["rendered"]
+                     and round(num("VHundred%sExplained" % pop), 6) == round(sum(rows[:3]), 6))
+    phrases = ["Not allocated by this exercise", r"1-(\phi_P+\phi_A+\phi_B)/I_0", "A + B alone",
+               "holds household resources, needs and composition fixed", "sex-specific",
+               "wage-draw luck and the common offer spread", "shares of baseline Gini",
+               r"A $=$ current local-access channel", r"\VHundredCoupP"]
+    missing = [ph for ph in phrases if ph not in slide]
+    negative = prov["VHundredCoupP"]["raw"] < 0 and "$-$" in prov["VHundredCoupP"]["rendered"]
+    table = r"\begin{tabular}" in slide and r"\includegraphics" not in slide
+    g("G-V18-HUNDRED", arith_ok and not missing and negative and table,
+      "rows close to 100.0 for both populations (singles %s, couples %s); A + B rows equal the "
+      "headline; couples' negative preference row shown; remainder labelled not allocated, with its "
+      "qualification on the slide; couples shown as a table" % (sums["Sing"], sums["Coup"])
+      if arith_ok and not missing and negative and table
+      else "arithmetic %s missing %s negative %s table %s" % (arith_ok, missing, negative, table))
+
+    diffs = {}
+    worst = 0.0
+    for pop, ref in GOAL1.items():
+        exact = {k: prov["VPctEA%s%sEq" % (pop, k)]["raw"] for k in "PAB"}
+        exact["sum"] = exact["P"] + exact["A"] + exact["B"]
+        exact["rest"] = 100.0 - exact["sum"]
+        for k in "PAB":
+            exact["s" + k] = prov["VExpl%s%s" % (pop, k)]["raw"]
+        for k, v in ref.items():
+            d = abs(exact[k] - v)
+            diffs["%s.%s" % (pop, k)] = {"exact": round(exact[k], 4), "goal1": v, "abs_diff": round(d, 4)}
+            worst = max(worst, d / (0.1 if k.startswith("s") else 0.02))
+    g("G-V18-GOAL1", worst <= 1.0,
+      "registry-derived shares agree with the Goal 1 verification within rounding of its inputs "
+      "(baseline shares within 0.02 pp, explained shares within 0.1)"
+      if worst <= 1.0 else "disagreement with Goal 1 verification: %s" % diffs)
+    detail["G-V18-GOAL1"]["differences"] = diffs
+
+    page1 = _norm(pages[0]) if pages else ""
+    title_missing = [ln for ln in TITLE_LINES if _norm(ln) not in page1]
+    sparse = len(page1.split()) <= 40
+    g("G-V18-TITLE", not title_missing and sparse,
+      "title slide carries the six ruling lines and nothing else (%d words)" % len(page1.split())
+      if not title_missing and sparse else "title lines missing %s or slide not sparse" % title_missing)
+
+    sel = _slide_part(frame_with("main:sel"))
+    coef_used = set(re.findall(r"\\(VCoef\w+)", sel))
+    est_ok = (coef_used == set(RULING_ESTIMATES)
+              and all(prov[m]["rendered"] == v and prov[m]["kind"] == "coef"
+                      for m, v in RULING_ESTIMATES.items()))
+    g("G-V18-ESTIMATES", est_ok,
+      "selected-estimates slide shows exactly beta_c, local unemployment exposure, high education "
+      "and sigma for both populations, from the V15 gallery, matching the ruling's values"
+      if est_ok else "selected estimates differ: used %s" % sorted(coef_used ^ set(RULING_ESTIMATES)))
+
+    reading = " ".join(pg.get_text() for pg in pymupdf.open(P["pdf"])) if P["pdf"].exists() else ""
+    notes = " ".join(re.findall(r"\\note\{(.*?)\}\s*\\end\{frame\}", body, re.S))
+    causal = [s_ for s_ in re.split(r"(?<=[.;?!])\s+", flat(_norm(reading)) + " " + flat(notes))
+              if re.search(r"\bcaus", s_, re.I)
+              and not re.search(r"\b(not|no|nor|never|nothing|non|none)\b", s_, re.I)]
+    g("G-V18-NOCAUSAL", not causal, "every sentence that mentions causality negates it"
+      if not causal else "causal language: %s" % causal[:4])
+
+    story = (HERE.parent / "reports/research_story_build/story_v15.generated.md").read_text(encoding="utf-8")
+    v15_says = "Wage elasticities are not reported." in story
+    elas = re.search(r"elasticit", src + reading + reh, re.I)
+    g("G-V18-ELASTICITY", v15_says and not elas,
+      "V15 states 'Wage elasticities are not reported.'; the deck adds no elasticity"
+      if v15_says and not elas else "elasticity content present, or V15 statement not found")
+
+    n_backup = len(frames(backup_src)) - 1
+    substantive = len(main_fr) - 1
+    g("G-V18-APPENDIX", n_backup >= 12 and 16 <= substantive <= 18,
+      "%d substantive main slides (16-18) and %d backup slides beyond the appendix map (>= 12)"
+      % (substantive, n_backup) if n_backup >= 12 and 16 <= substantive <= 18
+      else "main %d backup %d" % (substantive, n_backup))
     return ok_l, bad_l, detail
 
 
@@ -1130,9 +1448,14 @@ def main_profile(P: dict) -> int:
 
     ok_l, bad_l, detail = v16_gates(src, pages, reh, P)
     if P["style"]:
-        ok2, bad2, det2 = v17_extra_gates(src, P["pdf"])
+        ok2, bad2, det2 = v17_extra_gates(src, P["pdf"], P["tag"],
+                                          P.get("table_macros", ("VEASingPhiARaw", "VAttSingPhiARaw")))
         ok_l, bad_l = ok_l + ok2, bad_l + bad2
         detail.update(det2)
+    if P.get("v18"):
+        ok3, bad3, det3 = v18_gates(src, pages, reh, P)
+        ok_l, bad_l = ok_l + ok3, bad_l + bad3
+        detail.update(det3)
 
     # ---------------- negative controls: in-memory copies, original files untouched
     controls = {}
@@ -1153,12 +1476,28 @@ def main_profile(P: dict) -> int:
                                r"\frametitle{Why income inequality mixes several different mechanisms}", 1)
         titles_bad, _ = style_violations(long_src, P["pdf"])
         controls["NC-STYLE-TITLE (inject a seven-word title on slide 2)"] = {
-            "expected": "G-V17-STYLE FAIL", "fired": bool(titles_bad), "hits": titles_bad}
+            "expected": T + "-STYLE FAIL", "fired": bool(titles_bad), "hits": titles_bad}
         v16_titles, paras_bad = style_violations(V16_SRC.read_text(encoding="utf-8"), V16_PDF)
         controls["NC-STYLE-PARAGRAPH (render check on the prose-bodied V16 PDF)"] = {
             "expected": "paragraph check FAIL", "fired": bool(paras_bad),
             "hits": paras_bad[:6], "count": len(paras_bad),
             "v16_long_titles": len(v16_titles)}
+    if P.get("v18"):
+        target = next(i for i, pg in enumerate(pages) if "Where does baseline inequality go?" in pg)
+        inj = list(pages)
+        inj[target] = inj[target] + "\nThe access share of explained change is large.\n"
+        mixes = denominator_mixes(src, inj)
+        controls["NC-DENOMINATORS (inject 'share of explained change' on the 100% slide)"] = {
+            "expected": "G-V18-DENOMINATORS FAIL", "fired": bool(mixes), "hits": mixes[:3]}
+        broken_src = src.replace(r"\golink{b:utility}", r"\golink{b:nowhere}", 1)
+        problems, _ = link_problems(broken_src, P["pdf"])
+        controls["NC-LINKS (point one main-slide button at a missing target)"] = {
+            "expected": "G-V18-LINKS FAIL", "fired": bool(problems), "hits": problems[:3]}
+        inj = list(pages)
+        inj[1] = inj[1] + "\nJob opportunities account for 85.0% of inequality.\n"
+        _, _, det_high = v16_gates(src, inj, reh, P)
+        controls["NC-8090 (inject an 85% opportunity claim on slide 2)"] = {
+            "expected": T + "-NO8090 FAIL", "fired": not det_high[T + "-NO8090"]["pass"]}
 
     label = "verify_deck_r6.py --deck " + P["tag"].lower()
     print("%s deck verification (%s)" % (P["tag"], label))
@@ -1189,5 +1528,5 @@ def main_v16() -> int:
 if __name__ == "__main__":
     if "--deck" in sys.argv[1:]:
         deck = sys.argv[sys.argv.index("--deck") + 1]
-        sys.exit(main_profile({"v16": V16_PROFILE, "v17": V17_PROFILE}[deck]))
+        sys.exit(main_profile({"v16": V16_PROFILE, "v17": V17_PROFILE, "v18": V18_PROFILE}[deck]))
     sys.exit(main())

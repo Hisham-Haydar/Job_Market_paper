@@ -590,8 +590,240 @@ def main_v16(macros=None, out_tex=None, out_json=None, tag="v16") -> int:
     return 0
 
 
+# ==========================================================================
+# DECK-V18: V17 values, plus registry-sourced tables and registry ratios.
+#
+#   python make_deck_numbers_r6.py --v18
+#
+# Still ONE source, reports/numbers_of_record_v15.json.  Three kinds of macro:
+#   entry     one scalar of registry["entries"], formatted;
+#   gallery   one field of registry["gallery"] (coefficients, sample funnel),
+#             formatted -- the V15 results gallery's own tables;
+#   derived   a ratio or sum of registry values, for the requested share
+#             displays.  The formula and every input key are recorded; no model
+#             is evaluated and nothing is re-estimated or re-priced.
+# registry["discussion_tables"] is the retired record and is never read.
+# ==========================================================================
+V18_OUT_TEX = HERE / "deck_numbers_v18.tex"
+V18_OUT_JSON = HERE / "build" / "v18_number_provenance.json"
+
+_POP = {"Sing": "singles", "Coup": "couples"}
+_SCALE = {"Raw": "unequivalised", "Eq": "equivalised"}
+_EA_GROUP = {("Sing", "Raw"): "wea_singles_uneq", ("Sing", "Eq"): "wea_singles_eq",
+             ("Coup", "Raw"): "wea_couples_uneq", ("Coup", "Eq"): "wea_couples_eq"}
+_DIGIT_WORDS = {"0": "Zero", "1": "One", "2": "Two", "3": "Three", "4": "Four",
+                "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
+
+
+def _macro_name(prefix: str, text: str) -> str:
+    out = prefix
+    for part in re.split(r"[_\W]+", text):
+        for ch in part:
+            out += _DIGIT_WORDS.get(ch, "")
+        letters = re.sub(r"\d", "", part)
+        out += letters[:1].upper() + letters[1:]
+    return out
+
+
+def _tex_text(s: str) -> str:
+    return (s.replace("\\", r"\textbackslash{}").replace("&", r"\&").replace("%", r"\%")
+            .replace("_", r"\_").replace("#", r"\#"))
+
+
+def v18_specs() -> dict:
+    """name -> spec.  Specs: ('entry', key, fmt) | ('coef', pop, parameter, field, fmt)
+    | ('coeflabel', pop, parameter) | ('funnel', row, field) | ('ratio', [keys], den, fmt)
+    | ('share', key, [keys], fmt) | ('roundsum', [names], fmt) | ('rest', [names], fmt)."""
+    specs: dict = {name: ("entry", key, fmt) for name, (key, fmt) in V17_MACROS.items()}
+    ent = {
+        "VNAltRows": ("n_alt_rows", "d"), "VNNodes": ("n_nodes", ",d"),
+        "VCrDraws": ("cr1_draws", "d"), "VNScrambles": ("n_scrambles", "d"),
+        "VTimeEndow": ("time_endowment", "d"), "VLeisureScale": ("leisure_scale", "d"),
+        "VAgeScale": ("age_scale", "d"), "VChildCutoff": ("child_cutoff", "d"),
+        "VGsurScale": ("gsur_scale", "d"), "VExpScale": ("experience_scale", "d"),
+        "VNegllSingles": ("negll_singles", ".3f"), "VNegllRumA": ("negll_ruma", ".3f"),
+        "VNegllRumB": ("negll_rumb", ".3f"), "VNegllCouples": ("negll_couples", ".3f"),
+        "VKIntSingles": ("kint_singles", "d"), "VKFreeCouples": ("kfree_couples", "d"),
+        "VKIntCouples": ("kint_couples", "d"), "VMaeCouples": ("mae_couples", ".4f"),
+        "VMinEigSingles": ("mineig_singles", ".4f"), "VMinEigCouples": ("mineig_couples", ".4f"),
+        "VGapSingleMen": ("gap37_single_men", ".1f"),
+        "VGapSingleWomen": ("gap37_single_women", ".1f"),
+        "VGapCoupledMen": ("gap37_coupled_men", ".1f"),
+        "VGapCoupledWomen": ("gap37_coupled_women", ".1f"),
+        "VAccSingleWomen": ("single_women_accuracy_pct", ".1f"),
+        "VAccSingleWomenLo": ("single_women_band_lo_pct", ".1f"),
+        "VAccSingleWomenHi": ("single_women_band_hi_pct", ".1f"),
+        "VAccCoupledWomen": ("coupled_women_accuracy_pct", ".1f"),
+        "VAccCoupledWomenLo": ("coupled_women_band_lo_pct", ".1f"),
+        "VAccCoupledWomenHi": ("coupled_women_band_hi_pct", ".1f"),
+        "VIntRatioSingleMen": ("single_men_integration_ratio", ".3f"),
+        "VIntRatioCoupledMen": ("coupled_men_integration_ratio", ".3f"),
+        "VIntRatioSingleWomen": ("single_women_integration_ratio", ".3f"),
+        "VIntRatioCoupledWomen": ("coupled_women_integration_ratio", ".3f"),
+        "VOfferLocation": ("diag1_location_log", ".2f"), "VOfferSpread": ("diag1_sigma", ".2f"),
+        "VObsJobShareSingles": ("d2_anchorshare_singles", ".1f"),
+        "VObsJobShareCouples": ("d2_anchorshare_couples", ".1f"),
+        "VObsJobMove": ("d2_anchormove_pct", ".1f"),
+        "VNatPctSingles": ("nat_pct_singles", ".1f"), "VNatPctCouples": ("nat_pct_couples", ".1f"),
+    }
+    specs.update({n: ("entry", k, f) for n, (k, f) in ent.items()})
+    for pop, p in _POP.items():
+        for sc, s in _SCALE.items():
+            g = _EA_GROUP[(pop, sc)]
+            specs["VEA%sGini%s" % (pop, sc)] = ("entry", g + "_gini", ".4f")
+            specs["VEA%sPhiP%s" % (pop, sc)] = ("entry", g + "_phi_p", ".5f")
+            att = "fig13_att_%s_%s_" % (p, s)
+            specs["VAttFig%sGini%s" % (pop, sc)] = ("entry", att + "baseline_gini", ".4f")
+            for k in "PAB":
+                specs["VAttFig%sPhi%s%s" % (pop, k, sc)] = ("entry", att + "phi_" + k.lower(), ".4f")
+                # channel as % of its own baseline Gini (two decimals, backup tables)
+                specs["VPctEA%s%s%s" % (pop, k, sc)] = ("ratio", [g + "_phi_" + k.lower()],
+                                                         g + "_gini", ".2f")
+                specs["VPctAtt%s%s%s" % (pop, k, sc)] = ("ratio", [att + "phi_" + k.lower()],
+                                                          att + "baseline_gini", ".2f")
+            cen = "fig13_central_ea_%s_%s_" % (p, s)
+            specs["VChEA%sA%s" % (pop, sc)] = ("entry", cen + "a_pct_baseline", ".1f")
+            specs["VChEA%sB%s" % (pop, sc)] = ("entry", cen + "b_pct_baseline", ".1f")
+        # the 100%-of-baseline display (ex-ante, equivalised), one decimal
+        g = _EA_GROUP[(pop, "Eq")]
+        names = []
+        for k in "PAB":
+            name = "VHundred%s%s" % (pop, k)
+            specs[name] = ("ratio", [g + "_phi_" + k.lower()], g + "_gini", ".1f")
+            names.append(name)
+        specs["VHundred%sExplained" % pop] = ("roundsum", names, ".1f")
+        specs["VHundred%sAB" % pop] = ("roundsum", names[1:], ".1f")
+        specs["VHundred%sRest" % pop] = ("rest", names, ".1f")
+        specs["VHundred%sTotal" % pop] = ("roundsum", names + ["VHundred%sRest" % pop], ".1f")
+        # composition of the explained component (backup only), one decimal
+        keys = [g + "_phi_" + k for k in "pab"]
+        for k in "PAB":
+            specs["VExpl%s%s" % (pop, k)] = ("share", g + "_phi_" + k.lower(), keys, ".1f")
+        specs["VExpl%sTotal" % pop] = ("roundsum", ["VExpl%s%s" % (pop, k) for k in "PAB"], ".1f")
+    # selected estimates and full coefficient tables (V15 gallery)
+    reg = json.loads(V15_REGISTRY.read_text(encoding="utf-8"))
+    for pop, p in _POP.items():
+        for row in reg["gallery"]["coefficients"][p]:
+            base = _macro_name("VCoef" + pop, row["parameter"])
+            specs[base] = ("coef", p, row["parameter"], "estimate", ".4f")
+            specs[base + "SE"] = ("coef", p, row["parameter"], "cr1_se", ".4f")
+            if re.search(r"drgn\d|occ_\d", row["parameter"]):
+                specs[base + "Label"] = ("coeflabel", p, row["parameter"])
+    for i, row in enumerate(reg["gallery"]["sample_funnel"]):
+        if row["screen"].startswith("FINAL"):
+            continue
+        tag = "VFunnel" + "".join(_DIGIT_WORDS[c] for c in str(i))
+        specs[tag + "Label"] = ("funnel", i, "screen")
+        specs[tag + "Singles"] = ("funnel", i, "households_singles")
+        specs[tag + "Couples"] = ("funnel", i, "households_couples")
+    return specs
+
+
+def _coef_label(parameter: str) -> str:
+    """Readable label for a digit-bearing code name; the digit is the registry's."""
+    m = re.search(r"drgn(\d)", parameter)
+    if m:
+        return "Region " + m.group(1)
+    m = re.search(r"occ_(\d)", parameter)
+    if m:
+        return "Occupation " + m.group(1)
+    if "age2" in parameter:
+        return "age squared"
+    if "pexp2" in parameter:
+        return "experience squared"
+    m = re.search(r"pt(\d)", parameter)
+    if m:
+        return ("part-time lower", "part-time upper")[int(m.group(1)) - 1]
+    if "f35" in parameter:
+        return "narrow full-time"
+    raise SystemExit("REFUSED: no label rule for %s" % parameter)
+
+
+def build_v18() -> dict:
+    reg = json.loads(V15_REGISTRY.read_text(encoding="utf-8"))
+    entries = reg["entries"]
+    coefs = {p: {r["parameter"]: r for r in reg["gallery"]["coefficients"][p]} for p in _POP.values()}
+    funnel = reg["gallery"]["sample_funnel"]
+    out: dict = {}
+
+    def val(key):
+        v = entries[key]["value"]
+        if isinstance(v, str):
+            raise SystemExit("REFUSED: registry key %r is not numeric" % key)
+        return v
+
+    for name, spec in v18_specs().items():
+        kind = spec[0]
+        if kind == "entry":
+            raw = val(spec[1])
+            rec = {"kind": kind, "key": spec[1], "raw": raw, "format": spec[2],
+                   "rendered": v16_render(raw, spec[2]), "units": entries[spec[1]].get("units")}
+        elif kind == "coef":
+            row = coefs[spec[1]][spec[2]]
+            if spec[3] == "cr1_se" and not row["cr1_se"]:
+                rec = {"kind": kind, "source": "gallery.coefficients.%s[%s].active_bound"
+                       % (spec[1], spec[2]), "raw": row["active_bound"], "rendered": "at bound"}
+            else:
+                raw = float(row[spec[3]])
+                rec = {"kind": kind, "source": "gallery.coefficients.%s[%s].%s"
+                       % (spec[1], spec[2], spec[3]), "raw": raw, "format": spec[4],
+                       "rendered": v16_render(raw, spec[4])}
+        elif kind == "coeflabel":
+            rec = {"kind": kind, "source": "gallery.coefficients.%s[%s].parameter"
+                   % (spec[1], spec[2]), "raw": spec[2], "rendered": _coef_label(spec[2])}
+        elif kind == "funnel":
+            raw = funnel[spec[1]][spec[2]]
+            rendered = _tex_text(raw) if spec[2] == "screen" else format(int(raw), ",d")
+            rec = {"kind": kind, "source": "gallery.sample_funnel[%d].%s" % spec[1:],
+                   "raw": raw, "rendered": rendered}
+        elif kind == "ratio":
+            raw = 100.0 * sum(val(k) for k in spec[1]) / val(spec[2])
+            rec = {"kind": kind, "formula": "100 * (%s) / %s" % (" + ".join(spec[1]), spec[2]),
+                   "inputs": spec[1] + [spec[2]], "raw": raw, "format": spec[3],
+                   "rendered": v16_render(raw, spec[3])}
+        elif kind == "share":
+            raw = 100.0 * val(spec[1]) / sum(val(k) for k in spec[2])
+            rec = {"kind": kind, "formula": "100 * %s / (%s)" % (spec[1], " + ".join(spec[2])),
+                   "inputs": [spec[1]] + spec[2], "raw": raw, "format": spec[3],
+                   "rendered": v16_render(raw, spec[3])}
+        elif kind in ("roundsum", "rest"):
+            shown = [float(out[n]["rendered"].replace("$-$", "-")) for n in spec[1]]
+            raw = round(sum(shown), 6) if kind == "roundsum" else round(100.0 - sum(shown), 6)
+            formula = (" + ".join(spec[1]) if kind == "roundsum"
+                       else "100 - (%s)" % " + ".join(spec[1]))
+            rec = {"kind": kind, "formula": formula + "   [on the displayed, rounded values]",
+                   "inputs": spec[1], "raw": raw, "format": spec[2],
+                   "rendered": v16_render(raw, spec[2])}
+        else:
+            raise SystemExit("unknown spec kind %s" % kind)
+        out[name] = rec
+    return out
+
+
+def main_v18() -> int:
+    reg_sha = sha256(V15_REGISTRY)
+    macros = build_v18()
+    tex = ["% deck_numbers_v18.tex -- GENERATED by make_deck_numbers_r6.py --v18.",
+           "% Do not edit by hand.  Every value is an entry or gallery field of",
+           "% reports/numbers_of_record_v15.json, or a recorded ratio/sum of such values.", ""]
+    for name, rec in macros.items():
+        tex.append(r"\newcommand{\%s}{%s}" % (name, rec["rendered"]))
+    V18_OUT_JSON.parent.mkdir(exist_ok=True)
+    V18_OUT_TEX.write_text("\n".join(tex) + "\n", encoding="utf-8", newline="\n")
+    V18_OUT_JSON.write_text(json.dumps({"registry": str(V15_REGISTRY), "registry_sha256": reg_sha,
+                                        "macros": macros}, indent=2, sort_keys=True),
+                            encoding="utf-8", newline="\n")
+    kinds: dict = {}
+    for rec in macros.values():
+        kinds[rec["kind"]] = kinds.get(rec["kind"], 0) + 1
+    print("wrote %s (%d macros: %s)" % (V18_OUT_TEX.name, len(macros), kinds))
+    return 0
+
+
 if __name__ == "__main__":
     import sys
+    if "--v18" in sys.argv[1:]:
+        raise SystemExit(main_v18())
     if "--v17" in sys.argv[1:]:
         raise SystemExit(main_v17())
     raise SystemExit(main_v16() if "--v16" in sys.argv[1:] else main())
