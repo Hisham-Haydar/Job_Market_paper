@@ -1,0 +1,191 @@
+{
+  "release": "V15",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "report build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/build_v15.py"
+      ],
+      "output_tail": "v6 report, editable Markdown, paper TeX and numerical registry written.\nV15 HTML, editable Markdown and numerical registry written (paper TeX/bib redirected to scratch; not part of this task).\n[WARNING] Deprecated: --mathjax. Use --math-method=mathjax[:URL] instead.\n\n\n"
+    },
+    {
+      "gate": "gallery build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/results_gallery_build/build_v15.py"
+      ],
+      "output_tail": "wrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_v15.html (5,161,479 bytes)\n"
+    },
+    {
+      "gate": "figure captions use the current access definition, negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_figure_captions.py"
+      ],
+      "output_tail": "V15 FIGURE CAPTIONS PASS: report 34 captions (8 naming access), gallery 45 (8); negative control observed FAIL; theory caption alone PASS, with planted violation FAIL\n"
+    },
+    {
+      "gate": "rendered-text language and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_rendered_language.py"
+      ],
+      "output_tail": "RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL\n"
+    },
+    {
+      "gate": "Stage A ex-ante status and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_stage_a_status.py"
+      ],
+      "output_tail": "V15 STAGE A STATUS PASS: report 7 stale / 0 unlabelled; gallery 3 / 0; negative control observed FAIL\n"
+    },
+    {
+      "gate": "body/appendix section-title uniqueness and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_section_titles.py"
+      ],
+      "output_tail": "V15 SECTION TITLES PASS: report shared [], gallery shared []; negative control observed FAIL\n"
+    },
+    {
+      "gate": "reader structure and economic derivation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_reader_gates.py"
+      ],
+      "output_tail": "V15 READER GATES PASS: 61 checks, 0 failures\n"
+    },
+    {
+      "gate": "number-to-source",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_numbers_against_source.py"
+      ],
+      "output_tail": "V15 NUMBER-TO-SOURCE PASS: 41 checks, 0 failures\n"
+    },
+    {
+      "gate": "offline HTML render",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/check_v15_render.py"
+      ],
+      "output_tail": "PASS: report_images\nPASS: report_math\nPASS: report_javascript\nPASS: report_provenance_collapsed\nPASS: report_viewport\nPASS: gallery_images\nPASS: gallery_captions\nPASS: gallery_provenance_collapsed\nPASS: gallery_javascript\nPASS: gallery_viewport\ntemporary screenshots captured for visual inspection\n"
+    },
+    {
+      "gate": "cross-surface synchronisation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v15_synced_surfaces.py"
+      ],
+      "output_tail": "PASS: exact_title_report_gallery_deck_rehearsal\nPASS: four_exante_shares\nPASS: outcomes_versus_prospects\nPASS: interpretation_sentence\nPASS: couples_no_reversal\nPASS: d_held_fixed\nPASS: neither_primary\nPASS: couples_scale_warning\nPASS: matched_pair_report_gallery_deck_rehearsal\nPASS: no_measure_one_defence\nPASS: notebook_executed\n"
+    },
+    {
+      "gate": "deck verification (R11, unchanged)",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/verify_deck_r11.py"
+      ],
+      "output_tail": "PASS: pdf_present\nPASS: rehearsal_pdf_present\nPASS: exact_title\nPASS: two_additional_slides_ea_and_matched\nPASS: two_perspective_slides\nPASS: interpretation_sentence\nPASS: d_status_sentence\nPASS: no_haydar_maniquet_defence\nPASS: certified_values\nPASS: no_stale_exante_status\nPASS: rendered_comparison\n"
+    },
+    {
+      "gate": "executed notebook verification (V11, unchanged)",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "experiments/JMP_SEMINAR_SPRINT/verify_canonical_notebook_v11.py"
+      ],
+      "output_tail": "PASS: metadata\nPASS: no_error_outputs\nPASS: comparison_cell_executed\nPASS: comparison_output\nPASS: two_perspectives\nPASS: interpretation\nPASS: d_status\nPASS: att_range_sourced\nPASS: no_measure_one_defence\nPASS: record_certified\n"
+    },
+    {
+      "gate": "Python source compilation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "py_compile",
+        "reports/research_story_build/build_v15.py",
+        "reports/research_story_build/v15_sections.py",
+        "reports/research_story_build/v15_render_inputs.py",
+        "reports/results_gallery_build/build_v15.py",
+        "reports/check_v15_figure_captions.py",
+        "reports/check_v15_rendered_language.py",
+        "reports/check_v15_stage_a_status.py",
+        "reports/check_v15_section_titles.py",
+        "reports/check_v15_reader_gates.py",
+        "reports/check_v15_numbers_against_source.py",
+        "reports/check_v15_synced_surfaces.py",
+        "reports/research_story_build/check_v15_render.py",
+        "reports/write_v15_release_manifest.py"
+      ],
+      "output_tail": ""
+    },
+    {
+      "gate": "V9 to V14 byte-preservation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/JMP_research_story_report_v9.html",
+        "reports/JMP_results_gallery_v9.html",
+        "reports/JMP_research_story_report_v10.html",
+        "reports/JMP_results_gallery_v10.html",
+        "reports/JMP_research_story_report_v11.html",
+        "reports/JMP_results_gallery_v11.html",
+        "reports/numbers_of_record_v11.json",
+        "reports/research_story_build/v11_sections.py",
+        "reports/research_story_build/story_v11.generated.md",
+        "reports/v11_matched_households.json",
+        "manuscript/figures/v11/fig_matched_households_v11.png",
+        "beamer/JMP_seminar_deck_r11.tex",
+        "reports/JMP_research_story_report_v12.html",
+        "reports/JMP_results_gallery_v12.html",
+        "reports/numbers_of_record_v12.json",
+        "reports/research_story_build/v12_sections.py",
+        "reports/research_story_build/story_v12.generated.md",
+        "reports/JMP_research_story_report_v13.html",
+        "reports/JMP_results_gallery_v13.html",
+        "reports/numbers_of_record_v13.json",
+        "reports/research_story_build/v13_sections.py",
+        "reports/research_story_build/story_v13.generated.md",
+        "manuscript/figures/v13",
+        "reports/JMP_research_story_report_v14.html",
+        "reports/JMP_results_gallery_v14.html",
+        "reports/numbers_of_record_v14.json",
+        "reports/research_story_build/v14_sections.py",
+        "reports/research_story_build/story_v14.generated.md",
+        "manuscript/figures/v14"
+      ],
+      "output_tail": ""
+    }
+  ]
+}
