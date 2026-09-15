@@ -1,0 +1,202 @@
+{
+  "release": "V9-WEA",
+  "status": "PASS",
+  "gates": [
+    {
+      "gate": "report build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/build_v9.py"
+      ],
+      "output_tail": "v6 report, editable Markdown, paper TeX and numerical registry written.\nV9 HTML, editable Markdown, paper source and numerical registry written.\n[WARNING] Deprecated: --mathjax. Use --math-method=mathjax[:URL] instead.\n\n\n"
+    },
+    {
+      "gate": "gallery build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/results_gallery_build/build_v9.py"
+      ],
+      "output_tail": "wrote C:\\Users\\hisham\\Repo\\Job_Market_paper\\reports\\JMP_results_gallery_v9.html (5,621,032 bytes)\n"
+    },
+    {
+      "gate": "deck build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/build_deck_r9.py"
+      ],
+      "output_tail": "wrote deck_numbers_r9.tex\nwrote JMP_seminar_deck_r9.tex and rehearsal driver\nBuilding JMP_seminar_deck_r9\n  JMP_seminar_deck_r9: overfull=0 underfull=0\nBuilding JMP_seminar_deck_r9_rehearsal\n  JMP_seminar_deck_r9_rehearsal: overfull=0 underfull=0\nPASS: pdf_present\nPASS: rehearsal_pdf_present\nPASS: exact_title\nPASS: exactly_one_additional_slide\nPASS: comparison_slide\nPASS: certified_values\nPASS: no_stale_exante_status\nPASS: rendered_comparison\nbuild log: C:\\Users\\hisham\\Repo\\Job_Market_paper\\beamer\\build\\JMP_seminar_deck_r9_build_log.txt\n"
+    },
+    {
+      "gate": "rehearsal-script build",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/build_rehearsal_script_v9.py"
+      ],
+      "output_tail": "Rehearsal script: 17 main + 10 backup slides.\n"
+    },
+    {
+      "gate": "notebook surface refresh",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "experiments/JMP_SEMINAR_SPRINT/refresh_canonical_notebook_v9.py"
+      ],
+      "output_tail": "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\JMP_canonical_AtoZ.ipynb\n"
+    },
+    {
+      "gate": "rendered-text language and negative control",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v9_rendered_language.py"
+      ],
+      "output_tail": "RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL\n"
+    },
+    {
+      "gate": "reader structure and restored economics",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v9_reader_gates.py"
+      ],
+      "output_tail": "V9 READER GATES PASS: 24 checks, 0 failures\n"
+    },
+    {
+      "gate": "number-to-source",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v9_numbers_against_source.py"
+      ],
+      "output_tail": "V9 NUMBER-TO-SOURCE PASS: 11 checks, 0 failures\n"
+    },
+    {
+      "gate": "offline HTML render",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/research_story_build/check_v9_render.py"
+      ],
+      "output_tail": "PASS: report_images\nPASS: report_math\nPASS: report_javascript\nPASS: report_provenance_collapsed\nPASS: report_viewport\nPASS: gallery_images\nPASS: gallery_captions\nPASS: gallery_provenance_collapsed\nPASS: gallery_javascript\nPASS: gallery_viewport\ntemporary screenshots captured for visual inspection\n"
+    },
+    {
+      "gate": "cross-surface synchronization",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/check_v9_synced_surfaces.py"
+      ],
+      "output_tail": "PASS: exact_title_report_gallery_deck_rehearsal\nPASS: four_exante_shares\nPASS: channel_divergence\nPASS: neither_primary\nPASS: couples_scale_warning\nPASS: deck_one_extra_frame\nPASS: notebook_executed\n"
+    },
+    {
+      "gate": "deck verification",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "beamer/verify_deck_r9.py"
+      ],
+      "output_tail": "PASS: pdf_present\nPASS: rehearsal_pdf_present\nPASS: exact_title\nPASS: exactly_one_additional_slide\nPASS: comparison_slide\nPASS: certified_values\nPASS: no_stale_exante_status\nPASS: rendered_comparison\n"
+    },
+    {
+      "gate": "executed notebook verification",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "experiments/JMP_SEMINAR_SPRINT/verify_canonical_notebook_v9.py"
+      ],
+      "output_tail": "PASS: metadata\nPASS: no_error_outputs\nPASS: comparison_cell_executed\nPASS: comparison_output\nPASS: definitions\nPASS: headline_and_scale\nPASS: record_certified\n"
+    },
+    {
+      "gate": "V8 complete-suite regression",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "reports/run_v8_release_gates.py"
+      ],
+      "output_tail": "RENDERED-LANGUAGE AUDIT PASS: 0 outside-appendix hits; negative control observed FAIL\nREADER GATES PASS: 22 checks, 0 failures\nNUMBER-TO-SOURCE PASS: 14 checks, 0 failures\nPASS: report_images\nPASS: report_math\nPASS: report_javascript\nPASS: report_provenance_collapsed\nPASS: report_viewport\nPASS: gallery_images\nPASS: gallery_captions\nPASS: gallery_provenance_collapsed\nPASS: gallery_javascript\nPASS: gallery_viewport\ntemporary screenshots captured for visual inspection\nG1 PASS: S11 evaluation uses S11/S10 indicators (12 checks)\nG2 PASS: POSFIT-dependent objects regenerated (20 checks)\nG3 PASS: Population-fit moments regenerated (7 checks)\nG4 PASS: Adequacy and four-group adjudication rerun mechanically (21 checks)\nG5 PASS: Near-FT claim retired and 37-hour finding installed (18 checks)\nG6 PASS: DECOMP-2 no-dependency verification (4 checks)\nG7 PASS: All seminar-facing surfaces rebuilt (17 checks)\nG8 PASS: Stale text and rendered assets removed (9 checks)\nG9 PASS: W1_F, DECOMP-2, WEA, and limitations wording (11 checks)\nOVERALL PASS\nNUMBER-TO-SOURCE PASS: 19 claim families, 7 surfaces, 0 failures\nPASS: self_contained\nPASS: nine_sections\nPASS: captions_complete\nPASS: current_samples\nPASS: no_internal_paths_hashes_labels\nPASS: intervals_separate\nPASS: no_mae_headline\nPASS: final_diagnostic_surface\nPASS: node_language_exact\nPASS: registry_present\nPASS: no_retired_welfare_generator_paths\nPASS: zero_retired_welfare_content_signatures\nPASS: no_four_factor_decomposition\nPASS: section06_accepted_formula\nPASS: section06_only_accepted_construction\nPASS: welfare_reference_summary_M7\nPASS: corrected_fit_ruling\nPASS: decomp_caveat_exact\nPASS: short_hours_exact\nPASS: wea_definition_only\nPASS: welfare_worked_example_M8\nPASS: variance_language_M4\nPASS: access_definition_M5\nPASS: decomp_figure_language_M4_M5\nPASS: decomp_figures_embedded_from_current_inputs\nPASS: no_retired_lineage_path_reads\nPASS: V7/V8 version separation � both versioned report files exist\nPASS: editable source present � section source and generated Markdown exist\nPASS: reader-facing gallery present � versioned V8 gallery exists\nV8 RELEASE PASS\n"
+    },
+    {
+      "gate": "Python source compilation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "C:\\Users\\hisham\\Repo\\MNL\\.venv\\Scripts\\python.exe",
+        "-m",
+        "py_compile",
+        "reports/research_story_build/build_v9.py",
+        "reports/research_story_build/v9_sections.py",
+        "reports/research_story_build/v9_render_inputs.py",
+        "reports/results_gallery_build/build_v9.py",
+        "reports/check_v9_rendered_language.py",
+        "reports/check_v9_reader_gates.py",
+        "reports/check_v9_numbers_against_source.py",
+        "reports/check_v9_synced_surfaces.py",
+        "reports/research_story_build/check_v9_render.py",
+        "reports/write_v9_release_manifest.py",
+        "beamer/make_deck_numbers_r9.py",
+        "beamer/prepare_deck_v9.py",
+        "beamer/build_deck_r9.py",
+        "beamer/verify_deck_r9.py",
+        "beamer/build_rehearsal_script_v9.py",
+        "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\refresh_canonical_notebook_v9.py",
+        "C:\\Users\\hisham\\Repo\\MNL_wea\\experiments\\JMP_SEMINAR_SPRINT\\verify_canonical_notebook_v9.py"
+      ],
+      "output_tail": ""
+    },
+    {
+      "gate": "V8 byte-preservation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/JMP_research_story_report_v8.html",
+        "reports/JMP_results_gallery_v8.html",
+        "reports/research_story_build/v8_sections.py",
+        "reports/research_story_build/v8_render_inputs.py",
+        "reports/research_story_build/build_v8.py"
+      ],
+      "output_tail": ""
+    },
+    {
+      "gate": "V8/V9 version separation",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "both versioned report files exist"
+    },
+    {
+      "gate": "editable V9 source present",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "section source and resolved Markdown exist"
+    },
+    {
+      "gate": "all synchronized surfaces present",
+      "status": "PASS",
+      "returncode": 0,
+      "command": [],
+      "output_tail": "gallery, deck, rehearsal and notebook exist"
+    }
+  ]
+}

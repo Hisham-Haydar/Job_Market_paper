@@ -1,0 +1,542 @@
+Unequal Job Opportunities and Well-Being
+Inequality: A Latent-Jobs Structural
+Decomposition
+
+
+Hisham Haydar
+LISER and University of Luxembourg
+
+
+France, EU-SILC priced through EUROMOD.
+
+Seminar of 17 September. The welfare results use the own-set equal-consumption measure. Both welfare
+perspectives and their restricted decompositions are reported.
+Question and contribution
+Two people with the same tastes and the same wage need not face the same set of jobs.
+
+
+
+
+      How much of measured welfare inequality is attributable to unequal job access and earning
+       opportunities, rather than to preferences?
+
+      What does a model that assumes a common choice set do to that attribution?
+
+
+
+
+   Both questions are about a measure, not about a policy counterfactual.
+
+
+
+
+                                                                                                   2/17
+The contribution is a structural opportunity set plus a welfare measure defined on it.
+
+
+
+
+      A random-utility, random-opportunity (RURO) model in which which jobs a household can
+       reach is estimated, not assumed.
+      The own-set equal-consumption money metric; in this empirical specification its direct
+       reference collapses to universally available non-employment.
+      Observed-bundle welfare and resource inequality, reported separately for single-adult and
+       couple households.
+
+
+   The computed preliminary restricted-operator decomposition is in the backup appendix.
+
+
+
+                                                                                                   3/17
+Data and the structural RURO
+model
+France, EU-SILC priced through EUROMOD: 1 540 single-adult and 2 223 couple
+households.
+
+
+
+
+      Estimation frames: final samples and the current estimated specification.
+      Estimation frame: each household’s observed job plus 100 drawn alternatives, every one
+       priced through the tax–benefit system.
+      Fit diagnostics use a separate, larger panel: 2 048 common quadrature nodes per
+       household.
+      Weights are the survey weights dwt throughout.
+
+
+   Results use a single specification throughout. Estimates from earlier, non-comparable sample frames are not
+   shown.
+
+
+                                                                                                                 4/17
+A job is a package; a household draws from its own distribution over packages.
+
+
+
+
+         access                     hours                   occupation         wage offer
+    employment mass          piecewise, 35h peak            sex-specific       log-normal
+
+
+
+
+                         opportunity density gi (·) over reachable jobs                       preferences ui (c, ℓ)
+
+
+
+
+                                               observed job = arg max over the drawn set
+
+
+
+
+   Access and capability are not separately identified; the access factor is their product.
+
+                                                                                                                      5/17
+Preferences and the opportunity density are estimated in one likelihood.
+
+
+
+
+                               
+             Pr(ji | xi ) ∝ exp ui (cij , ℓij ) + log gi (j) − log qi (j)
+
+
+   u preferences   g estimated opportunity density   q numerical proposal density, divided out
+
+
+
+   The proposal correction is what makes the drawn alternatives a simulator for the estimated set rather than the
+   choice set itself.
+
+
+
+                                                                                                                    6/17
+Positive estimates and fit
+Estimated model: 41 free parameters for singles, 47 for couples.
+
+
+
+
+                                                             singles       couples
+                              free parameters                   41             47
+                              estimation households          1 540          2 223
+                              objective at θ̂             6253.463      10283.034
+
+
+
+
+   Objectives reproduce exactly under an independent diagnostics reimplementation.
+
+
+
+
+                                                                                     7/17
+Extensive accuracy is reportable for women in each sample; both groups of men are
+withheld.
+
+
+          single men       withheld: quadrature-limited
+
+
+
+
+       single women                                                                  85.7%
+
+
+
+        coupled men        withheld: quadrature-limited
+
+
+
+
+     coupled women                                                                      89.8%
+
+                       0                  20              40          60               80                 100
+                           extensive-margin accuracy (%), groups clearing the numerical-adequacy rule
+
+   The preregistered weighted numerical-adequacy threshold is unchanged. Single men and coupled men are
+   quadrature-limited; their extensive accuracy is not reported.
+
+                                                                                                                8/17
+The remaining common hours mismatch is the observed 37-hour mass point, outside
+structural FT.
+
+
+
+
+                  share at the observed 37-hour mass point (%)
+                                                                          37-hour mass point: observed and corrected prediction
+                                                                                                                           gap 6.5 pp
+                                                                 8
+                                                                                                    observed
+                                                                 7                                  predicted
+                                                                     gap 5.2 pp
+                                                                 6                                         gap 4.4 pp
+                                                                                       gap 3.8 pp
+                                                                 5
+
+                                                                 4
+
+                                                                 3
+
+                                                                 2
+
+                                                                 1
+
+                                                                 0
+                                                                     single men      single women         coupled men    coupled women
+
+
+
+
+   Underprediction of the observed 37-hour mass point is 3.8–6.5 percentage points across groups; this is not a
+   structural full-time-band claim.
+
+                                                                                                                                         9/17
+Evidence for heterogeneous
+opportunities
+The access kernel is estimated, and it varies across households.
+
+                        access constant
+
+                      survey-strata shift
+
+                 regional unemployment
+
+                 regional median income
+
+                                region 2
+
+                                region 3
+
+                                region 4
+
+                                region 5
+
+                                region 6
+
+                                region 7
+
+                                region 8
+
+                                            −4            −3              −2              −1               0
+                                             single-adult estimates, log access index; bars are 1.96 x CR1 robust s.e.
+
+
+   Single-adult estimates; horizontal bars are 1.96 × CR1 cluster-robust standard errors. Structural and
+   model-conditional; not causal.
+
+                                                                                                                         10/17
+So is the earning-opportunity kernel: an offer distribution, not a single wage.
+
+
+                   offer location
+
+                  low education
+
+                 high education
+
+                     experience
+
+             experience squared
+
+                 offer dispersion
+
+                   occupation 2
+
+                   occupation 3
+
+                   occupation 4
+                                        0.0              0.5             1.0              1.5             2.0
+                                    single-adult estimates, log wage-offer density; bars are 1.96 x CR1 robust s.e.
+
+   Single-adult estimates; occupation terms shift the offer location. Dispersion σ̂ = 0.382 (z = 28.7).
+
+
+                                                                                                                      11/17
+The welfare measure
+Haydar–Maniquet W 1 : the consumption at home that would leave the household exactly
+as well off.
+
+
+
+
+                                                                                       
+                  Wi1 = mi (o; zi ) where ui mi (o), o                                     = ui (zi )
+
+
+   zi attained bundle    o the non-employment state        mi the money metric
+
+
+
+   The empirical measure uses the universally available non-employment state as its reference. A market-job
+   reference is a sensitivity analysis that requires an unidentified intensity parameter; it is not in the baseline.
+
+
+
+                                                                                                                       12/17
+Under the current specification W 1 coincides with the staying-home equivalent — as a
+fact about this domain.
+
+
+                                                            h                  i
+                                  1                     L (j obs )−L (o)
+                                Wi,F     =    Ciobs exp i i βc i
+
+
+      Inputs: Ciobs , Li (j obs ), Li (o), βc — nothing else.
+      No opportunity density g , no proposal q, no shock ε, no intensity κ.
+      Current nonworkers: W = C ; current workers: W < C under the maintained empirical
+       domain.
+
+   This is an empirical-domain coincidence under log consumption and universally available non-employment, not
+   a general theoretical identity.
+
+
+                                                                                                                 13/17
+Equivalised W 1 -F distribution
+(primary)
+Baseline W 1 -F, equivalised, single adults.
+
+
+
+
+                                                                 C eq        WF1 eq
+                                   households                  1 540         1 540
+                                   weighted mean               1 766         1 302
+                                   weighted median             1 588         1 165
+                                   weighted Gini           0.263292      0.249807
+
+
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. The modified-OECD scale is used throughout the equivalised results.
+   Singles and couples equivalised levels are never compared.
+
+   The sample aggregates reproduce to machine precision under an independent reimplementation. This is a
+   descriptive dispersion comparison (C eq against WF1 eq within the singles sample), not a welfare-loss index.
+
+
+                                                                                                                  14/17
+Baseline W 1 -F, equivalised, couples.
+
+
+
+                                                               C eq        WF1 eq
+                                  households                 2 223         2 223
+                                  weighted mean              2 245         1 311
+                                  weighted median            2 063         1 237
+                                  weighted Gini          0.226805      0.197403
+
+
+   Units: EUR/month, household-equivalised (modified-OECD scale); survey weight dwt. A descriptive dispersion
+   comparison, not a welfare-loss index. The modified-OECD scale is used throughout the equivalised results.
+   Singles and couples equivalised levels are never compared.
+
+   Reported separately from singles: no pooled figure, and no cross-sample level comparison is drawn on this slide
+   or elsewhere in this deck. The same independently reimplemented welfare construction and equivalence scale are
+   used as for single adults.
+
+                                                                                                                     15/17
+The welfare perspective changes which opportunity channel dominates.
+
+
+
+     Attained bundle: the realised job                         Ex ante: the whole job prospect
+
+                            raw      equivalised                                       raw      equivalised
+          single adult      2.4%        1.9%                        single adult     14.8%         20.3%
+          couple            6.7%        3.5%                        couple           21.3%         7.9%
+
+     Earning opportunities > access                            Singles: access ≃ 3× earnings;
+     in both populations and at both scales.                   couples: earning opportunities > access.
+
+
+   Cells are access plus earning opportunities as a share of each perspective’s own baseline Gini. Neither
+   perspective is designated primary.
+
+
+                                                                                                              16/17
+What I would like from you today.
+
+
+
+
+      Is universally available non-employment the reference you would want for this question?
+
+      Which counterfactual attainment estimand would you defend?
+
+      What would convince you the access kernel is identified, given that access and capability
+       are not separated?
+
+
+
+   Thank you.
+
+
+
+
+                                                                                                   17/17
+Preliminary restricted-operator decomposition
+
+
+
+
+    The attained-bundle and ex-ante decompositions apply the same restricted three-pathway game while
+    holding resources, needs and composition fixed. The ex-ante calculation is numerically certified; the
+    attained-bundle counterfactual remains preliminary. Neither is a comprehensive or causal share of
+    inequality due to all opportunities.
+This bounded decomposition equalises three channels, not whole job access.
+
+
+
+
+     P systematic utility heterogeneity (tastes + reduced-form time constraints) → common
+       reference
+     A local geographic/temporal access shifters (region, urban/rural, year) → common reference
+     B wage-offer location → common reference location
+
+
+
+   Household resources, needs and composition are held fixed. Personal occupation access, hours-band access and
+   node-level alternative characteristics are not equalised by A.
+The bounded decomposition is executed; the final attainment estimand remains under design.
+
+
+
+
+                               counterfactual        carried realised
+           coalition S                                                        WF1 (ziS )     inequality IS
+                                environment               draws
+
+
+                                                bounded decomposition route
+
+
+
+
+   This exercise reuses the already-priced estimation panel with no re-estimation and no new pricing. The final
+   decomposition’s counterfactual-attainment estimand remains under design.
+Preliminary restricted-operator decomposition
+
+
+
+
+    In a preliminary three-factor structural exercise that holds household resources, needs and composition
+    fixed, equalising systematic utility heterogeneity, coarse geographic/temporal access heterogeneity and
+    earning opportunities changes money-metric well-being inequality by 1.8–9.9% of the baseline Gini,
+    depending on household type and reporting scale. Within the Shapley allocation of that movable
+    component, earning-opportunity heterogeneity has a larger contribution than the coarse
+    geographic/temporal access channel in both samples and both reporting conventions. The preference
+    contribution is not sign-robust to equivalisation. This percentage is the change generated by the
+    declared restricted P/A/B game. It is not an estimate of the total fraction of inequality caused by
+    unequal job opportunities.
+
+
+    These are preliminary model-based accounting results, not causal estimates and not the final decomposition of
+    total well-being inequality.
+The earnings operator equalises wage-offer location only.
+
+
+
+
+    The earning-opportunity channel equalises wage-offer location only: the systematic differences
+    associated with education and potential experience, which shift offer locations by at most about 0.10
+    log points. The common offer spread (about 0.37 log points), wage-draw luck and selection remain in
+    the residual and are quantitatively larger than the location differences removed by this operator. This
+    is a definitional boundary of the exercise, not a measurement error. Equalising locations can change
+    attained wages; it does not equalise the whole wage distribution. The diagnostic comparison that also
+    compresses the common spread and selection is a bound, not an additional decomposition result. Thin
+    effective support for couples leaves individual wage attainment noisy and remains a numerical
+    limitation.
+Baseline W 1 -F, unequivalised, single adults (verification backup).
+
+
+
+
+                                           households                  1 540
+                                           weighted mean               1 435
+                                           weighted median             1 320
+                                           weighted Gini               0.238
+                                           observed workers             1 336
+                                           observed non-workers           204
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised singles slide (§6) is primary. The sample aggregates reproduce to
+    machine precision under an independent reimplementation.
+Baseline W 1 -F, unequivalised, couples (verification backup).
+
+
+
+
+                                           households                   2 223
+                                           weighted mean                2 496
+                                           weighted median              2 356
+                                           weighted Gini                0.210
+                                           observed workers             2 173
+                                           observed non-workers            50
+
+
+    Units: household EUR/month, unequivalised; survey weight dwt. Descriptive baseline; no counterfactual, no
+    decomposition, no causal reading.
+
+    Secondary/verification slide: the equivalised couples slide (§6) is primary. Reported separately from singles. No
+    pooled figure: the two samples are separate estimation frames and the welfare unit differs.
+Pre-registered checks for the baseline W 1 -F measure
+
+
+
+
+                          check                                            singles     couples
+                                                   1      obs
+                          non-workers, max |W − C |                        0           0
+                          workers, ratio outside (0, 1)                    0           0
+                          dependency test (g , q, ε, κ)                    PASS        PASS
+                          worked-household correspondence test             PASS        PASS
+                          indifference identity, max |∆u|                  1.8e-15     1.8e-15
+                          guards triggered                                 0           0
+
+
+
+    All six checks were pre-registered before execution. Worker-ratio violations were to be explained, never clipped;
+    none occurred.
+Quadrature adequacy for extensive-margin accuracy
+
+
+
+
+                   group                 extensive accuracy       status
+                   coupled women                       89.8%      reported (ratio 0.05)
+                   single women                        85.7%      reported (ratio 0.10)
+                   coupled men                             —      quadrature-limited, withheld
+                   single men                              —      quadrature-limited, withheld
+
+
+
+   Weighted, all households. Ratio is Monte Carlo s.e. over sampling s.d.; the pre-registered criterion is ≤ 0.25.
+   Node bootstrap over 2 048 common quadrature nodes per household (diagnostic panel, not the estimation
+   draws). Simulated bands: 500 outcome vectors at fixed θ̂. Source: individual-level predictive diagnostics.
+Scope of the welfare evidence shown here
+
+
+
+
+               question                            treatment here
+               empirical reference                 home is selected on this empirical domain
+               alternative welfare construction    excluded from the baseline
+               measure correspondence              verified for worked households
+               counterfactual attainment           in design, not executed
+               reported scope                      descriptive baseline and bounded preliminary decomposition
+               observed consumption                the estimated utility’s own argument
+               alternative consumption benchmark   not constructed or reported
+               equivalised reporting               primary (§6), using the modified-OECD scale
+
+
+
+
+   Supporting technical provenance is retained in the source-only provenance block.
+

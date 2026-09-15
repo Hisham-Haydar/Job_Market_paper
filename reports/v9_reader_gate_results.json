@@ -1,0 +1,129 @@
+{
+  "gate": "V9 reader-facing economics release",
+  "status": "PASS",
+  "v5_comparator_words": 9580,
+  "v9_main_words": 10891,
+  "checks": [
+    {
+      "check": "exact unshortened title",
+      "evidence": "report and gallery rendered headings",
+      "status": "PASS"
+    },
+    {
+      "check": "seven-part reader sequence",
+      "evidence": "seven ordered main headings",
+      "status": "PASS"
+    },
+    {
+      "check": "main-text length restored",
+      "evidence": "V9 10,891 words; full-content comparator 9,580 words",
+      "status": "PASS"
+    },
+    {
+      "check": "abstract contains both perspectives and caveat",
+      "evidence": "rendered abstract",
+      "status": "PASS"
+    },
+    {
+      "check": "utility and Box-Cox",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "four-block opportunity density",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "maximised conditional criterion and proposal correction",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "maintained separation assumptions",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "attained indifference and closed form",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "operator equations and exact allocation",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "ex-ante definition and inversion",
+      "evidence": "main-text equations and rendered interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "both perspectives reported without a primary",
+      "evidence": "main results comparison",
+      "status": "PASS"
+    },
+    {
+      "check": "channel-ordering divergence stated in economics",
+      "evidence": "main results interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "couples equivalisation flag in results and limitations",
+      "evidence": "sections 5 and 6",
+      "status": "PASS"
+    },
+    {
+      "check": "historical context is scoped and non-current",
+      "evidence": "one short historical paragraph",
+      "status": "PASS"
+    },
+    {
+      "check": "ex-ante is never called Measure 1",
+      "evidence": "rendered main text",
+      "status": "PASS"
+    },
+    {
+      "check": "banned terms absent from report",
+      "evidence": "unchanged rendered-text term list",
+      "status": "PASS"
+    },
+    {
+      "check": "banned terms absent from gallery",
+      "evidence": "unchanged rendered-text term list",
+      "status": "PASS"
+    },
+    {
+      "check": "negative control fires",
+      "evidence": "temporary S11 insertion before appendix boundary",
+      "status": "PASS"
+    },
+    {
+      "check": "one final collapsed appendix boundary",
+      "evidence": "exact marked range at end of report main",
+      "status": "PASS"
+    },
+    {
+      "check": "technical ex-ante record is in appendix",
+      "evidence": "collapsed appendix",
+      "status": "PASS"
+    },
+    {
+      "check": "gallery is synchronised",
+      "evidence": "reader-facing gallery",
+      "status": "PASS"
+    },
+    {
+      "check": "V8 is untouched",
+      "evidence": "git diff over V8 report, gallery and source",
+      "status": "PASS"
+    },
+    {
+      "check": "no unresolved source tokens",
+      "evidence": "generated V9 Markdown",
+      "status": "PASS"
+    }
+  ],
+  "failures": []
+}

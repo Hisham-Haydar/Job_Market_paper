@@ -1,0 +1,78 @@
+{
+  "gate": "V9 number-to-source",
+  "status": "PASS",
+  "placeholder_count": 69,
+  "missing_placeholders": [],
+  "claims": [
+    {
+      "claim": "all certification checks pass",
+      "source": "certified Stage 4 JSON overall block",
+      "status": "PASS"
+    },
+    {
+      "claim": "every main scalar placeholder resolves",
+      "source": "V9 number registry",
+      "status": "PASS"
+    },
+    {
+      "claim": "singles unequivalised ex-ante result",
+      "source": "results.singles.unequivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "singles equivalised ex-ante result",
+      "source": "results.singles.equivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples unequivalised ex-ante result",
+      "source": "results.couples.unequivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples equivalised ex-ante result",
+      "source": "results.couples.equivalised",
+      "status": "PASS"
+    },
+    {
+      "claim": "attained comparison values come from the same record",
+      "source": "comparison_W1F block",
+      "status": "PASS"
+    },
+    {
+      "claim": "abstract ex-ante range is the sourced minimum and maximum",
+      "source": "derived over four certified A+B shares",
+      "status": "PASS"
+    },
+    {
+      "claim": "single-adult access is about three times earnings",
+      "source": "singles phi.A / phi.B",
+      "status": "PASS"
+    },
+    {
+      "claim": "couples equivalisation and preference sign",
+      "source": "couples raw/equivalised certified rows",
+      "status": "PASS"
+    },
+    {
+      "claim": "new registry entries point only to the certified record",
+      "source": "V9 numerical registry source fields",
+      "status": "PASS"
+    }
+  ],
+  "sources": {
+    "certified ex-ante result record": {
+      "path": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json",
+      "sha256": "5923e62d16cf11f22b2b92608a0f20ceac3fcfcaeb5d44afc8a9c8f8bd021898"
+    },
+    "certified result memo": {
+      "path": "MNL_wea/docs/wea_sprint_1/WEA_SPRINT_1_result_memo_v1.md",
+      "sha256": "c3a52b1b48732faff62f11d07aafcaa79a88e287fed72e6727d00425b47d5e86"
+    },
+    "attained-bundle predecessor registry": {
+      "path": "Job_Market_paper/reports/numbers_of_record_v8.json",
+      "sha256": "e97ea73d6cf1327fdef3c0a309bcd46e0fa125951ff9d1f46b64a6e6ab645244"
+    }
+  },
+  "failures": []
+}
