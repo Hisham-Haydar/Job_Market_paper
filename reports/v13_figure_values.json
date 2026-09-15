@@ -1,0 +1,346 @@
+{
+  "figures": [
+    "fig_v13_architecture.png",
+    "fig_v13_att_decomposition.png",
+    "fig_v13_central_result.png",
+    "fig_v13_ea_decomposition.png"
+  ],
+  "values": {
+    "att_singles_unequivalised_baseline_gini": {
+      "value": 0.23368551207796068,
+      "format": ".4f",
+      "text": "0.2337",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_singles.csv::scale=unequivalised,coalition=EMPTY,I_S_gini",
+      "units": "Gini"
+    },
+    "att_singles_unequivalised_phi_p": {
+      "value": 0.0012373883280000265,
+      "format": "+.4f",
+      "text": "+0.0012",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=unequivalised,factor=P,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_singles_unequivalised_phi_a": {
+      "value": 0.0016147116922644355,
+      "format": "+.4f",
+      "text": "+0.0016",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=unequivalised,factor=A,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_singles_unequivalised_phi_b": {
+      "value": 0.004036689216887425,
+      "format": "+.4f",
+      "text": "+0.0040",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=unequivalised,factor=B,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_singles_equivalised_baseline_gini": {
+      "value": 0.24509171934146293,
+      "format": ".4f",
+      "text": "0.2451",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_singles.csv::scale=equivalised,coalition=EMPTY,I_S_gini",
+      "units": "Gini"
+    },
+    "att_singles_equivalised_phi_p": {
+      "value": -0.0003075189893460793,
+      "format": "+.4f",
+      "text": "-0.0003",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=equivalised,factor=P,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_singles_equivalised_phi_a": {
+      "value": 0.0013151866373604705,
+      "format": "+.4f",
+      "text": "+0.0013",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=equivalised,factor=A,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_singles_equivalised_phi_b": {
+      "value": 0.0034426411122408978,
+      "format": "+.4f",
+      "text": "+0.0034",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_singles.csv::scale=equivalised,factor=B,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_unequivalised_baseline_gini": {
+      "value": 0.2035412302367321,
+      "format": ".4f",
+      "text": "0.2035",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_couples.csv::scale=unequivalised,coalition=EMPTY,I_S_gini",
+      "units": "Gini"
+    },
+    "att_couples_unequivalised_phi_p": {
+      "value": 0.006427900281239916,
+      "format": "+.4f",
+      "text": "+0.0064",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=unequivalised,factor=P,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_unequivalised_phi_a": {
+      "value": 0.0009259117588206975,
+      "format": "+.4f",
+      "text": "+0.0009",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=unequivalised,factor=A,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_unequivalised_phi_b": {
+      "value": 0.012786212603156148,
+      "format": "+.4f",
+      "text": "+0.0128",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=unequivalised,factor=B,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_equivalised_baseline_gini": {
+      "value": 0.19711874909515303,
+      "format": ".4f",
+      "text": "0.1971",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/coalition_values_couples.csv::scale=equivalised,coalition=EMPTY,I_S_gini",
+      "units": "Gini"
+    },
+    "att_couples_equivalised_phi_p": {
+      "value": -0.0019339485696129215,
+      "format": "+.4f",
+      "text": "-0.0019",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=equivalised,factor=P,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_equivalised_phi_a": {
+      "value": 0.0007327270395684435,
+      "format": "+.4f",
+      "text": "+0.0007",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=equivalised,factor=A,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "att_couples_equivalised_phi_b": {
+      "value": 0.006211092464177776,
+      "format": "+.4f",
+      "text": "+0.0062",
+      "source": "MNL_decomp/outputs/welfare/preseminar_pab_v1/shapley_PAB_couples.csv::scale=equivalised,factor=B,gini_point_contribution",
+      "units": "Gini points"
+    },
+    "ea_singles_unequivalised_baseline_gini": {
+      "value": 0.15945533471003862,
+      "format": ".4f",
+      "text": "0.1595",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.gini_EMPTY",
+      "units": "Gini"
+    },
+    "ea_singles_unequivalised_phi_p": {
+      "value": 0.0015709261215140582,
+      "format": "+.4f",
+      "text": "+0.0016",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.phi.P",
+      "units": "Gini points"
+    },
+    "ea_singles_unequivalised_phi_a": {
+      "value": 0.018124440816126748,
+      "format": "+.4f",
+      "text": "+0.0181",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.phi.A",
+      "units": "Gini points"
+    },
+    "ea_singles_unequivalised_phi_b": {
+      "value": 0.005548589709594884,
+      "format": "+.4f",
+      "text": "+0.0055",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.phi.B",
+      "units": "Gini points"
+    },
+    "ea_singles_equivalised_baseline_gini": {
+      "value": 0.14061406832081674,
+      "format": ".4f",
+      "text": "0.1406",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.gini_EMPTY",
+      "units": "Gini"
+    },
+    "ea_singles_equivalised_phi_p": {
+      "value": 0.00019890509215865493,
+      "format": "+.4f",
+      "text": "+0.0002",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.phi.P",
+      "units": "Gini points"
+    },
+    "ea_singles_equivalised_phi_a": {
+      "value": 0.021826457935352248,
+      "format": "+.4f",
+      "text": "+0.0218",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.phi.A",
+      "units": "Gini points"
+    },
+    "ea_singles_equivalised_phi_b": {
+      "value": 0.006730385421605505,
+      "format": "+.4f",
+      "text": "+0.0067",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.phi.B",
+      "units": "Gini points"
+    },
+    "ea_couples_unequivalised_baseline_gini": {
+      "value": 0.12771241860955648,
+      "format": ".4f",
+      "text": "0.1277",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.gini_EMPTY",
+      "units": "Gini"
+    },
+    "ea_couples_unequivalised_phi_p": {
+      "value": 0.0029075575569848544,
+      "format": "+.4f",
+      "text": "+0.0029",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.phi.P",
+      "units": "Gini points"
+    },
+    "ea_couples_unequivalised_phi_a": {
+      "value": 0.006665026238242224,
+      "format": "+.4f",
+      "text": "+0.0067",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.phi.A",
+      "units": "Gini points"
+    },
+    "ea_couples_unequivalised_phi_b": {
+      "value": 0.020486711731163267,
+      "format": "+.4f",
+      "text": "+0.0205",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.phi.B",
+      "units": "Gini points"
+    },
+    "ea_couples_equivalised_baseline_gini": {
+      "value": 0.12002208503914875,
+      "format": ".4f",
+      "text": "0.1200",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.gini_EMPTY",
+      "units": "Gini"
+    },
+    "ea_couples_equivalised_phi_p": {
+      "value": -0.0021155503323901322,
+      "format": "+.4f",
+      "text": "-0.0021",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.phi.P",
+      "units": "Gini points"
+    },
+    "ea_couples_equivalised_phi_a": {
+      "value": 0.004494947086497875,
+      "format": "+.4f",
+      "text": "+0.0045",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.phi.A",
+      "units": "Gini points"
+    },
+    "ea_couples_equivalised_phi_b": {
+      "value": 0.0050384701278785,
+      "format": "+.4f",
+      "text": "+0.0050",
+      "source": "MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.phi.B",
+      "units": "Gini points"
+    },
+    "central_att_singles_unequivalised_a_pct_baseline": {
+      "value": 0.690976380138496,
+      "format": ".1f",
+      "text": "0.7",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.singles.unequivalised.W1F_phi.A / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_singles_unequivalised_b_pct_baseline": {
+      "value": 1.727402431153159,
+      "format": ".1f",
+      "text": "1.7",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.singles.unequivalised.W1F_phi.B / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_singles_unequivalised_a_pct_baseline": {
+      "value": 11.366468766369666,
+      "format": ".1f",
+      "text": "11.4",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.phi.A / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_singles_unequivalised_b_pct_baseline": {
+      "value": 3.479714065186161,
+      "format": ".1f",
+      "text": "3.5",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.unequivalised.phi.B / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_singles_equivalised_a_pct_baseline": {
+      "value": 0.5366099845780901,
+      "format": ".1f",
+      "text": "0.5",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.singles.equivalised.W1F_phi.A / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_singles_equivalised_b_pct_baseline": {
+      "value": 1.4046337923985497,
+      "format": ".1f",
+      "text": "1.4",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.singles.equivalised.W1F_phi.B / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_singles_equivalised_a_pct_baseline": {
+      "value": 15.522243397121752,
+      "format": ".1f",
+      "text": "15.5",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.phi.A / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_singles_equivalised_b_pct_baseline": {
+      "value": 4.7864239346591235,
+      "format": ".1f",
+      "text": "4.8",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.singles.equivalised.phi.B / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_couples_unequivalised_a_pct_baseline": {
+      "value": 0.45490132772790187,
+      "format": ".1f",
+      "text": "0.5",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.couples.unequivalised.W1F_phi.A / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_couples_unequivalised_b_pct_baseline": {
+      "value": 6.281878412685664,
+      "format": ".1f",
+      "text": "6.3",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.couples.unequivalised.W1F_phi.B / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_couples_unequivalised_a_pct_baseline": {
+      "value": 5.218776929296594,
+      "format": ".1f",
+      "text": "5.2",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.phi.A / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_couples_unequivalised_b_pct_baseline": {
+      "value": 16.041283967689484,
+      "format": ".1f",
+      "text": "16.0",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.unequivalised.phi.B / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_couples_equivalised_a_pct_baseline": {
+      "value": 0.37171859243825583,
+      "format": ".1f",
+      "text": "0.4",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.couples.equivalised.W1F_phi.A / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_att_couples_equivalised_b_pct_baseline": {
+      "value": 3.150939468056124,
+      "format": ".1f",
+      "text": "3.2",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::comparison_W1F.couples.equivalised.W1F_phi.B / W1F_gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_couples_equivalised_a_pct_baseline": {
+      "value": 3.745099983083709,
+      "format": ".1f",
+      "text": "3.7",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.phi.A / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    },
+    "central_ea_couples_equivalised_b_pct_baseline": {
+      "value": 4.197952507019899,
+      "format": ".1f",
+      "text": "4.2",
+      "source": "derived MNL_wea/docs/wea_sprint_1/stage4/stage4_certification_and_results_v1.json::results.couples.equivalised.phi.B / gini_EMPTY * 100",
+      "units": "percent of own baseline Gini"
+    }
+  }
+}

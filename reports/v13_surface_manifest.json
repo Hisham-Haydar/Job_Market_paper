@@ -1,0 +1,168 @@
+{
+  "release": "V13",
+  "status": "PASS",
+  "constraints": {
+    "reestimation": false,
+    "repricing": false,
+    "welfare_recomputed": false,
+    "decomposition_recomputed": false,
+    "certified_values_changed": false,
+    "v9_overwritten": false,
+    "v10_overwritten": false,
+    "v11_overwritten": false,
+    "v12_overwritten": false,
+    "neither_welfare_perspective_designated_primary": true
+  },
+  "surfaces": [
+    {
+      "surface": "report HTML",
+      "path": "Job_Market_paper/reports/JMP_research_story_report_v13.html",
+      "bytes": 5603932,
+      "sha256": "77b0b8c2a78c2e17bea250c50f8a61565e47e116654993725f7e5e00e83b60b5"
+    },
+    {
+      "surface": "reader-facing gallery",
+      "path": "Job_Market_paper/reports/JMP_results_gallery_v13.html",
+      "bytes": 5060150,
+      "sha256": "f417acaeb07f6cb492a2a410275f651f277888a1ff1a899344cdc7501f69683d"
+    },
+    {
+      "surface": "editable resolved Markdown",
+      "path": "Job_Market_paper/reports/research_story_build/story_v13.generated.md",
+      "bytes": 109511,
+      "sha256": "8c73107385c317e864e7dbe9c46fa093916efed53a1133138910bd7ec7a8d4d0"
+    },
+    {
+      "surface": "editable section source",
+      "path": "Job_Market_paper/reports/research_story_build/v13_sections.py",
+      "bytes": 2023,
+      "sha256": "545f3588319cef468771a89fd837235882a769c59634eaa3175d81cb56d0c1bc"
+    },
+    {
+      "surface": "illustration text source",
+      "path": "Job_Market_paper/reports/research_story_build/v11_illustration.py",
+      "bytes": 4761,
+      "sha256": "69ed18a96d01b2866e2a2811ed11eea2ac5bef72256325b40b9b30ccc3512acb"
+    },
+    {
+      "surface": "numerical input adapter",
+      "path": "Job_Market_paper/reports/research_story_build/v13_render_inputs.py",
+      "bytes": 5003,
+      "sha256": "a2a32d9ef8d4e3b1b90c794eeaae32b177d00fe4d6fc4c05a12ac3c393779b19"
+    },
+    {
+      "surface": "report builder",
+      "path": "Job_Market_paper/reports/research_story_build/build_v13.py",
+      "bytes": 7960,
+      "sha256": "ffd1027c53800754871744bd06ff879e2cc6fdd2d7a675718cfe2c09a80b0284"
+    },
+    {
+      "surface": "gallery builder",
+      "path": "Job_Market_paper/reports/results_gallery_build/build_v13.py",
+      "bytes": 3665,
+      "sha256": "86cd212530d3f3e2bfcba59cbfffadb3d8b66c023dbcf9d8b3c19d91c6344f9b"
+    },
+    {
+      "surface": "matched-household generator",
+      "path": "Job_Market_paper/reports/research_story_build/make_v11_matched_households.py",
+      "bytes": 12572,
+      "sha256": "5f5792feb3aa8baa655ec90972838f7ce9064074cab8a057cd831057812842b7"
+    },
+    {
+      "surface": "matched-household record",
+      "path": "Job_Market_paper/reports/v11_matched_households.json",
+      "bytes": 2027,
+      "sha256": "3f4691f63fdda93123bf156770a8285f95ef91896dd122e480db14c5293c62ba"
+    },
+    {
+      "surface": "matched-household figure",
+      "path": "Job_Market_paper/manuscript/figures/v11/fig_matched_households_v11.png",
+      "bytes": 203646,
+      "sha256": "47f7ac52d36edde90e976385801ad9b27ea4d53bad8debcc39857164b5f12c14"
+    },
+    {
+      "surface": "V13 numerical registry",
+      "path": "Job_Market_paper/reports/numbers_of_record_v13.json",
+      "bytes": 233475,
+      "sha256": "12d4db38c75dd448348a764bdba4ed913ab9a86a0e4bfa63c63f22444eabfe71"
+    },
+    {
+      "surface": "figure generator",
+      "path": "Job_Market_paper/reports/research_story_build/make_v13_figures.py",
+      "bytes": 14578,
+      "sha256": "6180e365f2aca1095d7fe2a7b0e2a8cdc2ce80a435828b70a777effc55be2305"
+    },
+    {
+      "surface": "figure values",
+      "path": "Job_Market_paper/reports/v13_figure_values.json",
+      "bytes": 15301,
+      "sha256": "d24df014c9cf1065849c1248952a797fc8d3a0dd6cbbd8ee419f1c06864f5b4f"
+    },
+    {
+      "surface": "architecture figure",
+      "path": "Job_Market_paper/manuscript/figures/v13/fig_v13_architecture.png",
+      "bytes": 79993,
+      "sha256": "cbd6075a114f5194f6af913ee254d3106122b5cce3defaf3c42d84fe8764a393"
+    },
+    {
+      "surface": "attained-bundle decomposition figure",
+      "path": "Job_Market_paper/manuscript/figures/v13/fig_v13_att_decomposition.png",
+      "bytes": 73046,
+      "sha256": "9a95e5c7105fc3e26242c925162eaa6a80e4ca32cfdd19e787c9eeb0c4c7a547"
+    },
+    {
+      "surface": "ex-ante decomposition figure",
+      "path": "Job_Market_paper/manuscript/figures/v13/fig_v13_ea_decomposition.png",
+      "bytes": 77789,
+      "sha256": "3145036e060a1467d1cb4d5ece12bef25344e44252f87d6380c42accd0c7724f"
+    },
+    {
+      "surface": "central result figure",
+      "path": "Job_Market_paper/manuscript/figures/v13/fig_v13_central_result.png",
+      "bytes": 70278,
+      "sha256": "eedc699badd5ec783c5b69a757a93354144b1ef0ad14811b313dcc9ded40120a"
+    },
+    {
+      "surface": "deck source",
+      "path": "Job_Market_paper/beamer/JMP_seminar_deck_r11.tex",
+      "bytes": 45775,
+      "sha256": "5a2ad2216844732304a78647f696f46cf5ba824439d993f98b63dc418a48b42d"
+    },
+    {
+      "surface": "deck numerical macros",
+      "path": "Job_Market_paper/beamer/deck_numbers_r11.tex",
+      "bytes": 4769,
+      "sha256": "3784023dacc5101b4ae2e302cef22cdd4526a7fc07269c7309b731b37570eab8"
+    },
+    {
+      "surface": "presentation PDF",
+      "path": "Job_Market_paper/beamer/build/JMP_seminar_deck_r11.pdf",
+      "bytes": 517399,
+      "sha256": "3fd52064b866422592b2dd2bd78081dee5f4c9fb56adf90471adf484cdb5d54c"
+    },
+    {
+      "surface": "rehearsal PDF",
+      "path": "Job_Market_paper/beamer/build/JMP_seminar_deck_r11_rehearsal.pdf",
+      "bytes": 566834,
+      "sha256": "390e81d6bd9986fadc09fce636fadf4112b3403416cb71f20faacd05788ddf22"
+    },
+    {
+      "surface": "rehearsal script",
+      "path": "Job_Market_paper/reports/rehearsal_pack_v11.md",
+      "bytes": 38783,
+      "sha256": "6b6b30e6c510ad43078f706369674e898c5332363ef202d144ae79c916fcff53"
+    },
+    {
+      "surface": "executed canonical notebook",
+      "path": "MNL_wea/experiments/JMP_SEMINAR_SPRINT/JMP_canonical_AtoZ.ipynb",
+      "bytes": 3882257,
+      "sha256": "4dac58511bf47168a2b18463aebad196776657542099d0c45138e65e9f61bfc5"
+    },
+    {
+      "surface": "complete gate summary",
+      "path": "Job_Market_paper/reports/v13_release_gate_summary.md",
+      "bytes": 1793,
+      "sha256": "8f3ebc025d5620c806c930857e479107f8337fee120f03380123111ad7a87188"
+    }
+  ]
+}

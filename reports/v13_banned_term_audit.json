@@ -1,0 +1,222 @@
+{
+  "gate": "V13 rendered-text banned-term audit",
+  "status": "PASS",
+  "appendix_begin_marker": "<!-- V13_PROVENANCE_APPENDIX_BEGIN -->",
+  "appendix_end_marker": "<!-- V13_PROVENANCE_APPENDIX_END -->",
+  "exclusion_rule": "exclude exactly and only the inclusive rendered-HTML marker range",
+  "pipeline": [
+    "remove only the exact marked appendix range",
+    "strip script elements",
+    "strip style elements",
+    "strip base64/data URLs and image tags",
+    "strip all remaining tags",
+    "decode HTML entities",
+    "scan rendered text"
+  ],
+  "negative_control": {
+    "status": "PASS",
+    "injected_term": "S11",
+    "injection_location": "rendered HTML immediately before the explicit appendix begin marker",
+    "expected_audit_result": "FAIL",
+    "observed_audit_result": "FAIL",
+    "observed_s11_count": 1,
+    "temporary_file_existed_during_scan": true,
+    "temporary_file_removed": true,
+    "original_sha256_unchanged": true,
+    "scanner_pipeline": [
+      "remove only the exact marked appendix range",
+      "strip script elements",
+      "strip style elements",
+      "strip base64/data URLs and image tags",
+      "strip all remaining tags",
+      "decode HTML entities",
+      "scan rendered text"
+    ]
+  },
+  "surfaces": [
+    {
+      "path": "reports/JMP_research_story_report_v13.html",
+      "marker_begin_count": 1,
+      "marker_end_count": 1,
+      "rendered_character_count": 90674,
+      "appendix_rendered_character_count": 19409,
+      "outside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 0,
+        "v3b": 0,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 0,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 0,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "inside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 0,
+        "v3b": 0,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 1,
+        "proposal panel": 0,
+        "exact-H": 1,
+        "H-F": 2,
+        "H-D": 3,
+        "H-X": 3,
+        "NN state": 1,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 0,
+        "gate": 1,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "outside_appendix_total": 0,
+      "status": "PASS"
+    },
+    {
+      "path": "reports/JMP_results_gallery_v13.html",
+      "marker_begin_count": 1,
+      "marker_end_count": 1,
+      "rendered_character_count": 47107,
+      "appendix_rendered_character_count": 46669,
+      "outside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 0,
+        "v3b": 0,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 0,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 0,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "inside_appendix_counts": {
+        "S10": 0,
+        "S11": 0,
+        "S12": 0,
+        "POSFIT": 6,
+        "v3b": 3,
+        "DECOMP-2": 0,
+        "criterion-A": 0,
+        "Gate 0": 0,
+        "anchor": 0,
+        "node": 4,
+        "proposal panel": 0,
+        "exact-H": 0,
+        "H-F": 0,
+        "H-D": 0,
+        "H-X": 0,
+        "NN state": 0,
+        "NN pricing state": 0,
+        "SHA": 0,
+        "hash": 0,
+        "dwt": 0,
+        "worktree": 0,
+        "registry": 0,
+        "G1-G9": 0,
+        "adjudication": 1,
+        "gate": 0,
+        "mission": 0,
+        "ruling": 0,
+        "Mapping-F": 0,
+        "MECHANICAL_STOCHASTIC_CONDITIONING": 0
+      },
+      "outside_appendix_total": 0,
+      "status": "PASS"
+    }
+  ],
+  "replacements": [
+    {
+      "before": "Mapping-F attained-bundle money metric",
+      "after": "attained-bundle money metric"
+    },
+    {
+      "before": "Corrected POSFIT-v3b predictive evidence",
+      "after": "the corrected predictive-fit diagnostics"
+    },
+    {
+      "before": "the corrected S11 evaluation",
+      "after": "the corrected evaluation"
+    },
+    {
+      "before": "S12-native full employment-hours width",
+      "after": "the full employment-hours range represented in the predictive integration sample"
+    },
+    {
+      "before": "H-F domain",
+      "after": "the ex-ante reference keeps the full opportunity environment fixed while equalising consumption across jobs"
+    },
+    {
+      "before": "exact-H pre-validation",
+      "after": "additional counterfactual tax-benefit evaluations are required before the ex-ante measure can be reported reliably"
+    },
+    {
+      "before": "dwt-weighted",
+      "after": "household-weighted"
+    },
+    {
+      "before": "the estimation panel's anchor node",
+      "after": "the household's own observed job, which the simulation always includes"
+    },
+    {
+      "before": "MECHANICAL_STOCHASTIC_CONDITIONING",
+      "after": "the pattern is a mechanical consequence of conditioning on realised outcomes under stochastic choice"
+    },
+    {
+      "before": "V7 status note",
+      "after": "deleted from the report; the status statement uses the required ongoing-validation wording and names no version"
+    }
+  ]
+}
