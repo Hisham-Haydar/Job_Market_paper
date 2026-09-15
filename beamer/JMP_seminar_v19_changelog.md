@@ -168,3 +168,29 @@ Values are unchanged from V18: prospect welfare, singles A + B 20.3% (access > e
 **Regression:** r6 19/19, V16 18/18, V17 23/23, V18 32/32.
 
 **Rehearsal script:** `reports/rehearsal_pack_v1.md` is regenerated to V19 numbering and is identical to `reports/rehearsal_pack_v19.md`.
+
+## V19-C2 corrections
+
+Two small corrections. Nothing was recomputed and nothing restructured.
+
+**1. Aggregation boundary (deck, edited in place).**
+- **Slide 17 line.** Slide 17, "How much is associated with opportunities?", now carries one line under its label: "The two measures also differ in aggregation: the prospect measure inverts within each household; the attained-bundle measure averages inequality across simulated realisations."
+- **Speaker notes.** The slide-17 notes add: the reversal is consistent with the two perspectives valuing different objects, but the aggregation difference is not controlled for, and separating the two is ongoing work.
+- **New backup slide, "Backup: two aggregation orders".** It states both constructions:
+  - attained bundle: I^att(S) = (1/R) sum_r G_w({M^att_{i,r}(T_S x_i)});
+  - prospect: I^EA(S) = G_w({M^EA_i(T_S x_i)}).
+- **Navigation.** The new backup is linked from a corner button on slide 17 and from the appendix map.
+- **Tone ruling.** No other qualifier was added anywhere.
+- **New check.** Both new statements are required on the rendered slides.
+
+**2. Report V16.** V15 is unchanged. `reports/JMP_research_story_report_v16.html` corrects exactly four passages, via `reports/research_story_build/v16_sections.py`:
+- **Opportunity-density equation.** It now reads g_i(j) = (g^E_i g^H_i(h) g^Occ_i(k) g^W_i(w|k))^{E_i(j)}, g_i(o) = 1.
+- **Likelihood floor, two descriptions.** Both "one-euro floor" descriptions, in Section 2 and in the likelihood record, now say that non-positive simulated alternatives lie outside the choice domain and are excluded; no consumption floor is applied.
+- **"Neither route" sentence.** It now says that this simulation is the executed preliminary decomposition, and names the two proposed final routes that are not executed.
+
+`reports/check_v16_correction_scope.py` shows that the V16 Markdown equals V15 plus exactly these replacements. Registry entries and embedded images are identical, and a negative control fires.
+
+**Checks.**
+- **Deck (v19):** 36/36 pass, 9 negative controls fire, 159 internal PDF links (0 broken).
+- **Deck regression:** r6 19/19, V16 18/18, V17 23/23, V18 32/32.
+- **Report V16 release suite:** 14/14 pass. It covers the correction scope, figure captions, rendered language, ex-ante status, section titles, reader structure, number-to-source, offline render, cross-surface sync, the R11 deck, the V11 notebook, compilation and V9–V15 byte-preservation.

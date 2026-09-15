@@ -1,0 +1,34 @@
+{
+  "gate": "V16 figure captions use the current access definition",
+  "status": "PASS",
+  "surfaces": {
+    "report": {
+      "captions_scanned": 34,
+      "captions_naming_access": 8,
+      "failures": [],
+      "old_images": [],
+      "status": "PASS"
+    },
+    "gallery": {
+      "captions_scanned": 45,
+      "captions_naming_access": 8,
+      "failures": [],
+      "old_images": [],
+      "status": "PASS"
+    }
+  },
+  "theory_caption": {
+    "alone": "PASS",
+    "planted_violation": "FAIL",
+    "status": "PASS"
+  },
+  "negative_control": {
+    "injected": "figure caption with the outdated access definition",
+    "expected": "FAIL",
+    "observed": "FAIL",
+    "failures": [
+      "Shapley contributions. Access is local geographic/temporal access shifters (region, urban/rural, year)."
+    ],
+    "status": "PASS"
+  }
+}

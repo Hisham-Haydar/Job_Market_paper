@@ -610,23 +610,22 @@ household under each perspective, and inequality is measured again.}
 \begin{frame}
 \frametitle{How much is associated with opportunities?}
 \hypertarget{main:howmuch}{}
-\vspace{0.2em}
+\vspace{-0.4em}
 \begin{center}
-\renewcommand{\arraystretch}{1.05}
+\renewcommand{\arraystretch}{1.0}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}>{\centering\arraybackslash}p{0.22\textwidth}}
- & \textbf{Single adults} & \textbf{Couples} \\[0.2em]
+ & \textbf{Single adults} & \textbf{Couples} \\
 \textcolor{chacc}{\textbf{Ex-ante prospect}}\newline{\small equivalised} & {\huge \VEASingOppEq\%} & {\huge \VEACoupOppEq\%} \\
- & {\color{gray}\scriptsize raw \VEASingOppRaw\%} & {\color{gray}\scriptsize raw \VEACoupOppRaw\%} \\[0.5em]
+ & {\color{gray}\scriptsize raw \VEASingOppRaw\%} & {\color{gray}\scriptsize raw \VEACoupOppRaw\%} \\[0.1em]
 \textcolor{chearn}{\textbf{Attained bundle}}\newline{\small equivalised} & {\huge \VAttSingOppEq\%} & {\huge \VAttCoupOppEq\%} \\
  & {\color{gray}\scriptsize raw \VAttSingOppRaw\%} & {\color{gray}\scriptsize raw \VAttCoupOppRaw\%} \\
 \end{tabular}
 \end{center}
 \vfill
-\begin{center}
-\textbf{A + B as \% of the relevant baseline Gini}
-\end{center}
+{\centering\textbf{A + B as \% of the relevant baseline Gini}\par\vspace{0.1em}
+{\footnotesize The two measures also differ in aggregation: the prospect measure inverts within each household; the attained-bundle measure averages inequality across simulated realisations.}\par}
 \vfill
-\cornerlinks{\golink{b:eagini}{EA decomposition} \golink{b:attgini}{ATT decomposition} \golink{b:equiv}{equivalisation} \golink{b:central}{figure}}
+\cornerlinks{\golink{b:eagini}{EA decomposition} \golink{b:attgini}{ATT decomposition} \golink{b:equiv}{equivalisation} \golink{b:central}{figure} \golink{b:aggregation}{aggregation}}
 \note{The headline. Each number is local access plus earning opportunities as a
 percentage of that perspective's own baseline Gini, on the equivalised scale.
 
@@ -636,7 +635,11 @@ cent for couples. Under attained-bundle welfare they account for \VAttSingOppEq{
 and \VAttCoupOppEq{} per cent. The small grey numbers are the raw household scale.
 
 The ATT calculation is the less numerically mature of the two and is a useful
-benchmark rather than the sole basis of the paper.}
+benchmark rather than the sole basis of the paper.
+
+The two measures also differ in aggregation. The reversal is consistent with the
+two perspectives valuing different objects, but the aggregation difference is not
+controlled for, and separating the two is ongoing work.}
 \end{frame}
 
 % ==================================================================== which channel
@@ -811,7 +814,7 @@ Estimation & \maplink{b:prefs}{Preferences} & \maplink{b:access}{Employment acce
 Fit & \maplink{b:extensive}{Extensive margin} & \maplink{b:margins}{Fit by margin} & \maplink{b:hours37}{Thirty-seven-hour point} & \maplink{b:matched}{Matched households} \\
  & \maplink{b:mrs}{Marginal rate of substitution} & & & \\
 Welfare & \maplink{b:attderiv}{ATT derivation} & \maplink{b:eaderiv}{EA derivation} & \maplink{b:eavalid}{EA validation} & \maplink{b:equiv}{Equivalisation} \\
- & \maplink{b:prospectref}{Prospect reference} & \maplink{b:attdesign}{ATT numerical design} & & \\
+ & \maplink{b:prospectref}{Prospect reference} & \maplink{b:attdesign}{ATT numerical design} & \maplink{b:aggregation}{Aggregation orders} & \\
 Decomposition & \maplink{b:central}{Central figure} & \maplink{b:eagini}{EA Gini points} & \maplink{b:attgini}{ATT Gini points} & \maplink{b:eapct}{EA channel shares} \\
  & \maplink{b:attpct}{ATT channel shares} & \maplink{b:explained}{Composition within P/A/B} & \maplink{b:shapley}{Shapley vs one-factor} & \maplink{b:residual}{Outside P-A-B} \\
  & \maplink{b:robust}{Robustness} & & & \\
@@ -961,6 +964,41 @@ allocation, which closes exactly. The main open issue is that the panel
 represents short weekly hours sparsely; the effect of that on the attribution has
 not been fully quantified, which is why this calculation is still being
 validated.}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: two aggregation orders}
+\hypertarget{b:aggregation}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}\centering
+\textcolor{chearn}{\textbf{Attained bundle}}\\[0.3em]
+{\small Gini within each simulated realisation, then averaged}
+\backupeq{$\displaystyle I^{\mathrm{att}}(S)=\frac{1}{R}\sum_{r}\mathcal G_w\Big(\big\{M^{\mathrm{att}}_{i,r}(T_Sx_i)\big\}_i\Big)$}
+{\footnotesize $r$: simulated realisation of attained bundles, common random numbers across coalitions}
+\column{0.48\textwidth}\centering
+\textcolor{chacc}{\textbf{Prospect}}\\[0.3em]
+{\small inverted within each household, then one Gini}
+\backupeq{$\displaystyle I^{\mathrm{EA}}(S)=\mathcal G_w\Big(\big\{M^{\mathrm{EA}}_i(T_Sx_i)\big\}_i\Big)$}
+{\footnotesize $M^{\mathrm{EA}}_i=\lambda_c\exp\{(\log J_i-\log H_i)/\beta_c\}$, integrated over the household's prospect}
+\end{columns}
+\vfill
+\begin{center}
+{\small the average of realised inequality versus the inequality of household equivalents}
+\end{center}
+\vfill
+\backnav{main:howmuch}
+\note{The two decompositions apply the same operators and the same Shapley rule,
+but they aggregate in different orders. The attained-bundle object simulates
+attained bundles, computes the household-weighted Gini within each simulated
+realisation, and averages those Ginis over realisations. The prospect object
+integrates over each household's prospect, inverts to a money metric within the
+household, and then takes a single household-weighted Gini. The ex-ante money
+metric is not the expectation of the attained-bundle money metric, so the average
+of inequality and the inequality of household equivalents are different objects.
+The reversal is consistent with the two perspectives valuing different objects,
+but the aggregation difference is not controlled for, and separating the two is
+ongoing work.}
 \end{frame}
 
 \begin{frame}

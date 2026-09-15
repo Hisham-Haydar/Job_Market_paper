@@ -1,0 +1,16 @@
+{
+  "gate": "V16 correction scope",
+  "status": "PASS",
+  "result": {
+    "markdown_equals_v15_plus_corrections": true,
+    "registry_entries_unchanged": true,
+    "embedded_images_identical": true,
+    "corrections_rendered": true,
+    "status": "PASS"
+  },
+  "negative_control": {
+    "planted": "one extra word in Section 2",
+    "observed": "FAIL",
+    "expected": "FAIL"
+  }
+}

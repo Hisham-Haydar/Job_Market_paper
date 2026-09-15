@@ -377,31 +377,32 @@ Discussant: Sebastian Dobre
 
  Shapley vs one-factor       full tables
                                                                                                                                 16/21
-How much is associated with opportunities?                                                                The headline. Each number is local access plus earning opportunities as a percentage of that perspective’s own baseline Gini, on
-                                                                                                          the equivalised scale.
-                                                                                                          Under prospect welfare, the two opportunity channels account for 20.3 per cent of baseline welfare inequality for single adults
-                                                                     Single adults    Couples             and 7.9 per cent for couples. Under attained-bundle welfare they account for 1.9 and 3.5 per cent. The small grey numbers are
-                                                                                                          the raw household scale.
+How much is associated with opportunities?                                                                                 The headline. Each number is local access plus earning opportunities as a percentage of that perspective’s own baseline Gini, on
+                                                                                                                           the equivalised scale.
 
-                    Ex-ante prospect                                 20.3%            7.9%                The ATT calculation is the less numerically mature of the two and is a useful benchmark rather than the sole basis of the paper.
+                                                                            Single adults        Couples                   Under prospect welfare, the two opportunity channels account for 20.3 per cent of baseline welfare inequality for single adults
+                                                                                                                           and 7.9 per cent for couples. Under attained-bundle welfare they account for 1.9 and 3.5 per cent. The small grey numbers are
+                    Ex-ante prospect                                          20.3%              7.9%                      the raw household scale.
+                                                                                                                           The ATT calculation is the less numerically mature of the two and is a useful benchmark rather than the sole basis of the paper.
+                    equivalised
+                                                                                                                           The two measures also differ in aggregation. The reversal is consistent with the two perspectives valuing different objects, but
+                                                                                                                           the aggregation difference is not controlled for, and separating the two is ongoing work.
+                                                                                   raw 14.8%      raw 21.3%
 
+                    Attained bundle                                                1.9%          3.5%
                     equivalised
 
-                                                                       raw 14.8%      raw 21.3%
-
-                    Attained bundle                                   1.9%            3.5%
-                    equivalised
-
-                                                                        raw 2.4%      raw 6.7%
-
+                                                                                   raw 2.4%       raw 6.7%
 
 
                                            A + B as % of the relevant baseline Gini
+            The two measures also differ in aggregation: the prospect measure inverts within each household; the
+                               attained-bundle measure averages inequality across simulated realisations.
 
 
 
- EA decomposition      ATT decomposition   equivalisation   figure
-                                                                                                  17/21
+ EA decomposition      ATT decomposition   equivalisation   figure   aggregation
+                                                                                                                   17/21
 Which opportunity channel matters?                                                                                  Now split the prospect-welfare number into its two channels, each as a percentage of the baseline Gini on the equivalised scale.
                                                                                                                     Under prospect welfare, access contributes more than earning opportunities for single adults; for couples, earning opportunities
                                                                                                                     contribute more than access. Under attained-bundle welfare the ordering for single adults is reversed: earning opportunities are
@@ -506,7 +507,7 @@ Discussant: Sebastian Dobre
         Fit             Extensive margin                Fit by margin              Thirty-seven-hour point   Matched households
                         Marginal rate of substitution
         Welfare         ATT derivation                  EA derivation              EA validation             Equivalisation
-                        Prospect reference              ATT numerical design
+                        Prospect reference              ATT numerical design       Aggregation orders
         Decomposition   Central figure                  EA Gini points             ATT Gini points           EA channel shares
                         ATT channel shares              Composition within P/A/B   Shapley vs one-factor     Outside P-A-B
                         Robustness
@@ -606,6 +607,30 @@ Discussant: Sebastian Dobre
 
 
  Back     Appendix map
+Backup: two aggregation orders                                                                                         The two decompositions apply the same operators and the same Shapley rule, but they aggregate in different orders. The
+                                                                                                                       attained-bundle object simulates attained bundles, computes the household-weighted Gini within each simulated realisation, and
+                                                                                                                       averages those Ginis over realisations. The prospect object integrates over each household’s prospect, inverts to a money metric
+                                                                                                                       within the household, and then takes a single household-weighted Gini. The ex-ante money metric is not the expectation of the
+                                                                                                                       attained-bundle money metric, so the average of inequality and the inequality of household equivalents are different objects.
+                        Attained bundle                                            Prospect                            The reversal is consistent with the two perspectives valuing different objects, but the aggregation difference is not controlled for,
+                                                                                                                       and separating the two is ongoing work.
+        Gini within each simulated realisation, then            inverted within each household, then one Gini
+                            averaged                                                                       
+                                                                      I EA (S) = Gw        MiEA (TS xi ) i
+                        1 X  att             
+         I att (S) =        Gw Mi,r (TS xi ) i
+                        R r                                   MiEA = λc exp{(log Ji − log Hi )/βc }, integrated over
+                                                                            the household’s prospect
+    r : simulated realisation of attained bundles, common
+                random numbers across coalitions
+
+
+                    the average of realised inequality versus the inequality of household equivalents
+
+
+
+
+ Back    Appendix map
 Backup: the prospect reference                                                                                     Two readings of the ex-ante metric. First, its reference is the household’s own opportunity environment with pay equalised, so
                                                                                                                    the reference itself moves when opportunities change: equalising access changes both J and H. Second, dividing J by H shows
                                                                                                                    that the metric is a weighted generalised mean of consumption across jobs, with exponent the consumption weight and weights

@@ -1499,6 +1499,8 @@ V19_PROFILE = dict(V18_PROFILE, **{
         "welfare framing": "attained outcomes versus job prospects",
         "ATT question": "What is the money equivalent of the attained bundle?",
         "EA question": "What constant consumption over the household's own job environment is equivalent to its prospect?",
+        "aggregation boundary (V19-C2)": "The two measures also differ in aggregation: the prospect measure inverts within each household; the attained-bundle measure averages inequality across simulated realisations.",
+        "aggregation backup (V19-C2)": "the average of realised inequality versus the inequality of household equivalents",
     },
     "hundred_phrases": ["Other / outside current P-A-B decomposition", r"1-(\phi_P+\phi_A+\phi_B)/I_0",
                         "A + B alone", "Current decomposition equalises P, A and B only.",

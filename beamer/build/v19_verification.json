@@ -34,11 +34,11 @@
     },
     "G-REGISTRY": {
       "pass": true,
-      "detail": "every numeral on all 60 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (517 macros)"
+      "detail": "every numeral on all 61 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (517 macros)"
     },
     "G-V19-STRUCTURE": {
       "pass": true,
-      "detail": "22 main slides (20-22), 60 pages match 60 frames, running order Motivation -> The conflict -> Research question -> Inequality of opportunity -> From circumstances to job opportunities -> Building blocks -> Job packages -> Opportunities: the choice probability -> How are preferences and opportunities separated? -> Data and EUROMOD -> Estimation -> Selected estimates -> Welfare: attained outcomes versus job prospects -> Ex-ante prospect welfare -> Attained-bundle welfare -> Inequality and Shapley decomposition -> How much is associated with opportunities? -> Which opportunity channel matters? -> Where does baseline inequality go? -> What is not claimed -> Conclusion"
+      "detail": "22 main slides (20-22), 61 pages match 61 frames, running order Motivation -> The conflict -> Research question -> Inequality of opportunity -> From circumstances to job opportunities -> Building blocks -> Job packages -> Opportunities: the choice probability -> How are preferences and opportunities separated? -> Data and EUROMOD -> Estimation -> Selected estimates -> Welfare: attained outcomes versus job prospects -> Ex-ante prospect welfare -> Attained-bundle welfare -> Inequality and Shapley decomposition -> How much is associated with opportunities? -> Which opportunity channel matters? -> Where does baseline inequality go? -> What is not claimed -> Conclusion"
     },
     "G-V19-RQ": {
       "pass": true,
@@ -54,7 +54,7 @@
     },
     "G-V19-REQUIRED": {
       "pass": true,
-      "detail": "required statements rendered on slides: resources/needs/composition held fixed; access = local access, defined; access is local access, not total opportunity; preliminary (scope slide); not causal (scope slide); no parameter uncertainty yet; preferences not equated with responsibility; prospects versus attained outcomes; two different welfare questions; neither perspective primary; 2x2 label; 100% display denominator label; residual label; residual footnote; X1: A + B alone; backup: sex-specific blocks; backup: luck and spread; EOp footer; EOp bottom line; identification bottom line; 8b wording; 8c contribution; conclusion next step; welfare framing; ATT question; EA question"
+      "detail": "required statements rendered on slides: resources/needs/composition held fixed; access = local access, defined; access is local access, not total opportunity; preliminary (scope slide); not causal (scope slide); no parameter uncertainty yet; preferences not equated with responsibility; prospects versus attained outcomes; two different welfare questions; neither perspective primary; 2x2 label; 100% display denominator label; residual label; residual footnote; X1: A + B alone; backup: sex-specific blocks; backup: luck and spread; EOp footer; EOp bottom line; identification bottom line; 8b wording; 8c contribution; conclusion next step; welfare framing; ATT question; EA question; aggregation boundary (V19-C2); aggregation backup (V19-C2)"
     },
     "G-V19-NOPRIMARY": {
       "pass": true,
@@ -74,7 +74,7 @@
     },
     "G-V19-STYLE": {
       "pass": true,
-      "detail": "59 frame titles all <= 6 words; no rendered body paragraph longer than 3 lines"
+      "detail": "60 frame titles all <= 6 words; no rendered body paragraph longer than 3 lines"
     },
     "G-V19-CAVEATS": {
       "pass": true,
@@ -82,7 +82,7 @@
     },
     "G-V19-BACKUP": {
       "pass": true,
-      "detail": "EA and ATT results tables are backup slides after the conclusion (38 backup slides)"
+      "detail": "EA and ATT results tables are backup slides after the conclusion (39 backup slides)"
     },
     "G-V19-CONFLICT": {
       "pass": true,
@@ -98,13 +98,13 @@
     },
     "G-V19-LINKS": {
       "pass": true,
-      "detail": "119 source links to 56 targets; 155 internal links in the PDF, 0 unresolved; every backup has Back and Appendix map; every backup is on the map; 17 main slides carry buttons",
+      "detail": "122 source links to 57 targets; 159 internal links in the PDF, 0 unresolved; every backup has Back and Appendix map; every backup is on the map; 17 main slides carry buttons",
       "stats": {
-        "source_links": 119,
-        "targets": 56,
-        "backups": 37,
+        "source_links": 122,
+        "targets": 57,
+        "backups": 38,
         "main_slides_with_buttons": 17,
-        "pdf_internal_links": 155,
+        "pdf_internal_links": 159,
         "pdf_broken_links": 0
       }
     },
@@ -216,7 +216,7 @@
     },
     "G-V19-APPENDIX": {
       "pass": true,
-      "detail": "21 substantive main slides (19-21) and 37 backup slides beyond the appendix map (>= 12)"
+      "detail": "21 substantive main slides (19-21) and 38 backup slides beyond the appendix map (>= 12)"
     },
     "G-V19-BENCHMARKS": {
       "pass": true,
