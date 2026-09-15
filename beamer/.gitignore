@@ -47,6 +47,15 @@ build/*
 !build/v18_number_provenance.json
 !build/v18_verification.json
 
+# V19 seminar deck (literature and presentation refinement): same committed outputs.
+!build/JMP_seminar_beamer_v19.pdf
+!build/JMP_seminar_beamer_v19_rehearsal.pdf
+!build/JMP_seminar_beamer_v19_text.txt
+!build/JMP_seminar_beamer_v19_rehearsal_text.txt
+!build/JMP_seminar_beamer_v19_build_log.txt
+!build/v19_number_provenance.json
+!build/v19_verification.json
+
 # stray intermediates if anyone compiles in place
 *.aux
 *.fdb_latexmk

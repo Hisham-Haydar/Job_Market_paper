@@ -1103,7 +1103,8 @@ def v16_gates(src: str, pages: list[str], reh_text: str, P: dict | None = None) 
 
 
 def v17_extra_gates(src: str, pdf: Path, tag: str = "V17",
-                    table_macros: tuple = ("VEASingPhiARaw", "VAttSingPhiARaw")) -> tuple[list, list, dict]:
+                    table_macros: tuple = ("VEASingPhiARaw", "VAttSingPhiARaw"),
+                    welfare_title: str = "Welfare") -> tuple[list, list, dict]:
     """Style-revision checks that only the V17 profile carries."""
     ok_l: list[str] = []
     bad_l: list[str] = []
@@ -1151,7 +1152,7 @@ def v17_extra_gates(src: str, pdf: Path, tag: str = "V17",
       "impossibility and the Fleurbaey-Maniquet citation"
       if conflict_ok else "conflict slide missing, late or incomplete")
 
-    welfare = next((f for f in main_fr if r"\frametitle{Welfare}" in f), "")
+    welfare = next((f for f in main_fr if r"\frametitle{%s}" % welfare_title in f), "")
     theory_ok = "theory_w1.png" in welfare and "theory_w1.png" not in backup_src \
         and "Section" not in welfare.split(r"\note{")[0]
     g("G-" + tag + "-THEORYFIG", theory_ok,
@@ -1335,18 +1336,18 @@ def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list
         return next((f for f in frames(body) if r"\hypertarget{%s}" % target in f), "")
 
     mixes = denominator_mixes(src, pages)
-    g("G-V18-DENOMINATORS", not mixes,
+    g("G-" + P["tag"] + "-DENOMINATORS", not mixes,
       "no slide, frame or note sentence mixes shares of baseline Gini with shares of the explained change"
       if not mixes else "MIXED DENOMINATORS: %s" % mixes[:6])
 
     problems, stats = link_problems(src, P["pdf"])
-    g("G-V18-LINKS", not problems,
+    g("G-" + P["tag"] + "-LINKS", not problems,
       "%d source links to %d targets; %d internal links in the PDF, %d unresolved; every backup "
       "has Back and Appendix map; every backup is on the map; %d main slides carry buttons"
       % (stats["source_links"], stats["targets"], stats.get("pdf_internal_links", 0),
          stats.get("pdf_broken_links", 0), stats["main_slides_with_buttons"])
       if not problems else "LINK PROBLEMS: %s" % problems[:8])
-    detail["G-V18-LINKS"]["stats"] = stats
+    detail["G-" + P["tag"] + "-LINKS"]["stats"] = stats
 
     hundred = frame_with("main:hundred")
     slide = flat(_slide_part(hundred))
@@ -1359,14 +1360,14 @@ def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list
         arith_ok &= (round(sum(rows), 6) == 100.0 and prov["VHundred%sTotal" % pop]["rendered"] == "100.0"
                      and prov["VHundred%sAB" % pop]["rendered"] == prov["VEA%sOppEq" % pop]["rendered"]
                      and round(num("VHundred%sExplained" % pop), 6) == round(sum(rows[:3]), 6))
-    phrases = ["Not allocated by this exercise", r"1-(\phi_P+\phi_A+\phi_B)/I_0", "A + B alone",
+    phrases = P.get("hundred_phrases") or ["Not allocated by this exercise", r"1-(\phi_P+\phi_A+\phi_B)/I_0", "A + B alone",
                "holds household resources, needs and composition fixed", "sex-specific",
                "wage-draw luck and the common offer spread", "shares of baseline Gini",
                r"A $=$ current local-access channel", r"\VHundredCoupP"]
     missing = [ph for ph in phrases if ph not in slide]
     negative = prov["VHundredCoupP"]["raw"] < 0 and "$-$" in prov["VHundredCoupP"]["rendered"]
     table = r"\begin{tabular}" in slide and r"\includegraphics" not in slide
-    g("G-V18-HUNDRED", arith_ok and not missing and negative and table,
+    g("G-" + P["tag"] + "-HUNDRED", arith_ok and not missing and negative and table,
       "rows close to 100.0 for both populations (singles %s, couples %s); A + B rows equal the "
       "headline; couples' negative preference row shown; remainder labelled not allocated, with its "
       "qualification on the slide; couples shown as a table" % (sums["Sing"], sums["Coup"])
@@ -1385,16 +1386,16 @@ def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list
             d = abs(exact[k] - v)
             diffs["%s.%s" % (pop, k)] = {"exact": round(exact[k], 4), "goal1": v, "abs_diff": round(d, 4)}
             worst = max(worst, d / (0.1 if k.startswith("s") else 0.02))
-    g("G-V18-GOAL1", worst <= 1.0,
+    g("G-" + P["tag"] + "-GOAL1", worst <= 1.0,
       "registry-derived shares agree with the Goal 1 verification within rounding of its inputs "
       "(baseline shares within 0.02 pp, explained shares within 0.1)"
       if worst <= 1.0 else "disagreement with Goal 1 verification: %s" % diffs)
-    detail["G-V18-GOAL1"]["differences"] = diffs
+    detail["G-" + P["tag"] + "-GOAL1"]["differences"] = diffs
 
     page1 = _norm(pages[0]) if pages else ""
     title_missing = [ln for ln in TITLE_LINES if _norm(ln) not in page1]
     sparse = len(page1.split()) <= 40
-    g("G-V18-TITLE", not title_missing and sparse,
+    g("G-" + P["tag"] + "-TITLE", not title_missing and sparse,
       "title slide carries the six ruling lines and nothing else (%d words)" % len(page1.split())
       if not title_missing and sparse else "title lines missing %s or slide not sparse" % title_missing)
 
@@ -1403,7 +1404,7 @@ def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list
     est_ok = (coef_used == set(RULING_ESTIMATES)
               and all(prov[m]["rendered"] == v and prov[m]["kind"] == "coef"
                       for m, v in RULING_ESTIMATES.items()))
-    g("G-V18-ESTIMATES", est_ok,
+    g("G-" + P["tag"] + "-ESTIMATES", est_ok,
       "selected-estimates slide shows exactly beta_c, local unemployment exposure, high education "
       "and sigma for both populations, from the V15 gallery, matching the ruling's values"
       if est_ok else "selected estimates differ: used %s" % sorted(coef_used ^ set(RULING_ESTIMATES)))
@@ -1413,22 +1414,214 @@ def v18_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list
     causal = [s_ for s_ in re.split(r"(?<=[.;?!])\s+", flat(_norm(reading)) + " " + flat(notes))
               if re.search(r"\bcaus", s_, re.I)
               and not re.search(r"\b(not|no|nor|never|nothing|non|none)\b", s_, re.I)]
-    g("G-V18-NOCAUSAL", not causal, "every sentence that mentions causality negates it"
+    g("G-" + P["tag"] + "-NOCAUSAL", not causal, "every sentence that mentions causality negates it"
       if not causal else "causal language: %s" % causal[:4])
 
     story = (HERE.parent / "reports/research_story_build/story_v15.generated.md").read_text(encoding="utf-8")
     v15_says = "Wage elasticities are not reported." in story
     elas = re.search(r"elasticit", src + reading + reh, re.I)
-    g("G-V18-ELASTICITY", v15_says and not elas,
+    g("G-" + P["tag"] + "-ELASTICITY", v15_says and not elas,
       "V15 states 'Wage elasticities are not reported.'; the deck adds no elasticity"
       if v15_says and not elas else "elasticity content present, or V15 statement not found")
 
     n_backup = len(frames(backup_src)) - 1
     substantive = len(main_fr) - 1
-    g("G-V18-APPENDIX", n_backup >= 12 and 16 <= substantive <= 18,
-      "%d substantive main slides (16-18) and %d backup slides beyond the appendix map (>= 12)"
-      % (substantive, n_backup) if n_backup >= 12 and 16 <= substantive <= 18
+    lo, hi = P.get("substantive_range", (16, 18))
+    g("G-" + P["tag"] + "-APPENDIX", n_backup >= 12 and lo <= substantive <= hi,
+      "%d substantive main slides (%d-%d) and %d backup slides beyond the appendix map (>= 12)"
+      % (substantive, lo, hi, n_backup) if n_backup >= 12 and lo <= substantive <= hi
       else "main %d backup %d" % (substantive, n_backup))
+    return ok_l, bad_l, detail
+
+
+# ==========================================================================
+# DECK-V19 profile:  python verify_deck_r6.py --deck v19
+#
+# Every V18 check and its seven controls, repointed.  Added: G-V19-BENCHMARKS
+# (every literature number on a slide resolves to a corpus citation recorded in
+# literature_benchmarks_v19.json and re-verified against the corpus), G-V19-TONE
+# (scope stated once; hedges moved, not deleted; one spoken line on the
+# attained-bundle calculation), G-V19-DLABEL (the residual is never labelled D)
+# and G-V19-CORRECTIONS (review corrections a, b, c, e; d reported, nothing removed).
+# ==========================================================================
+V19_SRC = HERE / "JMP_seminar_beamer_v19.tex"
+LIT_RECORD_V19 = HERE / "literature_benchmarks_v19.json"
+V19_TITLES = [
+    "Motivation", "The conflict", "Research question", "Inequality of opportunity",
+    "From circumstances to job opportunities", "Building blocks", "Job packages",
+    "Opportunities: the choice probability", "How are preferences and opportunities separated?",
+    "Data and EUROMOD", "Estimation", "Selected estimates",
+    "Welfare: attained outcomes versus job prospects", "Ex-ante prospect welfare",
+    "Attained-bundle welfare", "Inequality and Shapley decomposition",
+    "How much is associated with opportunities?", "Which opportunity channel matters?",
+    "Where does baseline inequality go?", "What is not claimed", "Conclusion",
+]
+V19_PROFILE = dict(V18_PROFILE, **{
+    "tag": "V19",
+    "src": V19_SRC, "numbers": HERE / "deck_numbers_v19.tex",
+    "prov": BUILD / "v19_number_provenance.json",
+    "pdf": BUILD / "JMP_seminar_beamer_v19.pdf",
+    "text": BUILD / "JMP_seminar_beamer_v19_text.txt",
+    "reh_text": BUILD / "JMP_seminar_beamer_v19_rehearsal_text.txt",
+    "results": BUILD / "v19_verification.json",
+    "lineage": [V19_SRC, HERE / "make_deck_numbers_r6.py", HERE / "deck_numbers_v19.tex",
+                HERE / "build_deck_v19.py", LIT_RECORD_V19],
+    "anchors": [(t, t) for t in V19_TITLES], "main_range": (20, 22),
+    "substantive_range": (19, 21),
+    "welfare_title": "Welfare: attained outcomes versus job prospects",
+    "required": {
+        "resources/needs/composition held fixed":
+            "Household resources, needs and composition held fixed",
+        "access = local access, defined":
+            "local unemployment exposure, region, urban or rural location, year",
+        "access is local access, not total opportunity": "local access, not total opportunity",
+        "preliminary (scope slide)": "Preliminary decomposition",
+        "not causal (scope slide)": "Not causal",
+        "no parameter uncertainty yet": "No parameter uncertainty yet",
+        "preferences not equated with responsibility": "Preferences are not responsibility",
+        "prospects versus attained outcomes": "prospects versus attained outcomes",
+        "two different welfare questions": "two different welfare questions",
+        "neither perspective primary": "Neither perspective is designated primary",
+        "2x2 label": "A + B as % of the relevant baseline Gini",
+        "100% display denominator label": "shares of baseline Gini",
+        "residual label": "Other / outside current P-A-B decomposition",
+        "residual footnote": "Current decomposition equalises P, A and B only.",
+        "X1: A + B alone": "A + B alone",
+        "backup: sex-specific blocks": "sex-specific",
+        "backup: luck and spread": "wage-draw luck and the common offer spread",
+        "EOp footer": "Different outcomes, circumstance sets and methods.",
+        "EOp bottom line": "An inequality-of-opportunity question with a structural opportunity object.",
+        "identification bottom line":
+            "These restrictions give different empirical variation to preferences and opportunities.",
+        "8b wording": "If availability heterogeneity is omitted, some of its effects can be absorbed by the estimated utility component.",
+        "8c contribution": "The contribution is the structural equalisation of estimated preferences, access and earning opportunities followed by recomputation of money-metric welfare inequality.",
+        "conclusion next step": "Next: extend the decomposition to household resources and needs.",
+        "welfare framing": "attained outcomes versus job prospects",
+        "ATT question": "What is the money equivalent of the attained bundle?",
+        "EA question": "What constant consumption over the household's own job environment is equivalent to its prospect?",
+    },
+    "hundred_phrases": ["Other / outside current P-A-B decomposition", r"1-(\phi_P+\phi_A+\phi_B)/I_0",
+                        "A + B alone", "Current decomposition equalises P, A and B only.",
+                        "shares of baseline Gini", r"\VHundredCoupP"],
+    "rebuild": "build_v19",
+    "v19": True,
+})
+
+HEDGES = [r"\bnot causal\b", r"\bno causal\b", r"\bcausal", r"\bpreliminary\b", r"\bpoint estimates?\b",
+          r"\bnot statistically\b", r"\bstatistically established\b", r"\bsubject to\b",
+          r"\bcannot claim\b"]
+MATURITY = "less numerically mature"
+EOP_MACROS = {"VLitItaly", "VLitItalyYear", "VLitBrazilLo", "VLitBrazilHi", "VLitBrazilYear",
+              "VLitFrance", "VLitFranceYear"}
+
+
+def benchmark_problems(src: str, record: dict) -> list[str]:
+    sys.path.insert(0, str(HERE))
+    import make_deck_numbers_r6 as numsrc  # noqa: E402
+    problems = []
+    try:
+        verified = numsrc.verify_literature(record)
+    except SystemExit as exc:
+        return ["corpus verification failed: %s" % exc]
+    body = src.split(r"\begin{document}", 1)[-1]
+    used = set(re.findall(r"\\(VLit[A-Za-z]+)", body))
+    problems += ["literature macro without a recorded corpus citation: %s" % m
+                 for m in sorted(used - set(verified))]
+    for bm in record["benchmarks"]:
+        if bm.get("status") != "verified" or not all(bm.get(k) for k in ("country", "outcome", "measure", "paper")):
+            problems.append("benchmark %s incomplete or unverified" % bm.get("id"))
+        if bm["paper"] not in record["papers"]:
+            problems.append("benchmark %s cites an unknown paper" % bm["id"])
+    eop = next((f for f in frames(body) if r"\hypertarget{main:eop}" in f), "")
+    eop_used = set(re.findall(r"\\(VLit[A-Za-z]+)", re.sub(r"\\note\{.*", "", eop, flags=re.S)))
+    if eop_used != EOP_MACROS:
+        problems.append("inequality-of-opportunity slide shows %s, expected %s"
+                        % (sorted(eop_used), sorted(EOP_MACROS)))
+    lit_frames = [i for i, f in enumerate(frames(body), 1)
+                  if re.search(r"\\VLit[A-Za-z]+", re.sub(r"\\note\{.*", "", f, flags=re.S))]
+    allowed = {i for i, f in enumerate(frames(body), 1)
+               if r"\hypertarget{main:eop}" in f or r"\hypertarget{b:eopbench}" in f or r"\hypertarget{b:lit}" in f}
+    problems += ["literature numbers on an unexpected slide %d" % i for i in lit_frames if i not in allowed]
+    return problems
+
+
+def v19_gates(src: str, pages: list[str], reh: str, P: dict) -> tuple[list, list, dict]:
+    ok_l: list[str] = []
+    bad_l: list[str] = []
+    detail: dict = {}
+
+    def g(name: str, ok: bool, msg: str) -> None:
+        (ok_l if ok else bad_l).append("%-18s %s" % (name, msg))
+        detail[name] = {"pass": bool(ok), "detail": msg}
+
+    record = json.loads(LIT_RECORD_V19.read_text(encoding="utf-8"))
+    problems = benchmark_problems(src, record)
+    n_items = len(record["items"])
+    g("G-V19-BENCHMARKS", not problems,
+      "%d literature items and %d benchmarks each resolve to a corpus quote on the recorded page; "
+      "no literature number on a slide without a recorded citation" % (n_items, len(record["benchmarks"]))
+      if not problems else "BENCHMARK PROBLEMS: %s" % problems[:5])
+
+    body = src.split(r"\begin{document}", 1)[-1]
+    main_src, backup_src = split_appendix(src)
+    main_fr = frames(main_src)
+    limits_ix = next(i for i, f in enumerate(main_fr) if r"\hypertarget{main:limits}" in f)
+    hedge_hits = []
+    for i, page in enumerate(pages[:len(main_fr)]):
+        if i == limits_ix:
+            continue
+        t = _norm(page).lower()
+        for h in HEDGES:
+            if re.search(h, t):
+                hedge_hits.append("slide %d: %s" % (i, h))
+    notes = re.findall(r"\\note\{(.*?)\}\s*\\end\{frame\}", body, re.S)
+    maturity_notes = sum(flat(n).count(MATURITY) for n in notes)
+    maturity_slides = sum(_norm(pg).count(MATURITY) for pg in pages)
+    moved = {h: bool(re.search(h, (flat(" ".join(notes)) + " " + _norm(" ".join(pages[len(main_fr):]))).lower()))
+             for h in (r"\bnot causal\b", r"\bpreliminary\b", r"\bpoint estimates?\b", r"\bnot statistically\b")}
+    tone_ok = not hedge_hits and maturity_notes == 1 and maturity_slides == 0 and all(moved.values())
+    g("G-V19-TONE", tone_ok,
+      "no hedge on any main slide except the scope slide; hedges kept in notes and backup; the "
+      "attained-bundle maturity line spoken exactly once"
+      if tone_ok else "hedges %s; maturity in notes %d, on slides %d; moved %s"
+                      % (hedge_hits[:6], maturity_notes, maturity_slides, moved))
+
+    d_hits = [i + 1 for i, pg in enumerate(pages) if re.search(r"(?<![\w-])D(?![\w-])", _norm(pg))]
+    d_src = re.findall(r"channel D|D channel|fourth channel D|\bD\b(?= operator)", body)
+    completes = re.findall(r"complet\w* (the )?decomposition", (flat(" ".join(notes)) + " "
+                                                               + _norm(" ".join(pages))).lower())
+    hundred_page = next((pg for pg in pages if "Where does baseline inequality go?" in pg), "")
+    conclusion = next((pg for pg in pages[:len(main_fr)] if "Conclusion" in pg.split("\n", 3)[0]
+                       or "Next: extend the decomposition" in pg), "")
+    d_ok = (not d_hits and not d_src and not completes
+            and "Other / outside current P-A-B decomposition" in _norm(hundred_page)
+            and "Current decomposition equalises P, A and B only." in _norm(hundred_page)
+            and "Next: extend the decomposition to household resources and needs." in _norm(conclusion))
+    g("G-V19-DLABEL", d_ok,
+      "the residual is labelled 'Other / outside current P-A-B decomposition' with its footnote; no "
+      "slide labels anything D or implies that adding a channel completes the decomposition"
+      if d_ok else "D labels on pages %s, source %s, completion wording %s" % (d_hits, d_src, completes))
+
+    rendered = _norm(" ".join(pages))
+    corr = {
+        "a density equation": r"g_i(o)=1" in body and r"g^{E}_i\cdot\Big(" not in body,
+        "b conventional-model wording": not re.search(
+            r"must be a difference in taste|would have to be a difference in taste|every difference in "
+            r"behaviour (must|would)|must read every difference", flat(body), re.I)
+            and _norm(P["required"]["8b wording"]) in rendered,
+        "c contribution wording": not re.search(r"levels? rather than changes|rather than changes|"
+                                                r"\\emph\{level\}", body)
+            and _norm(P["required"]["8c contribution"]) in rendered,
+        "d fit evidence kept pending verification": (r"\hypertarget{b:extensive}" in body
+                                                     and r"\hypertarget{b:margins}" in body),
+        "e identifiers in parameter tables": all(
+            len(re.findall(r"\\VCoef\w+Id\b", next((f for f in frames(body)
+                                                     if r"\hypertarget{%s}" % t in f), ""))) >= n
+            for t, n in (("b:prefs", 20), ("b:access", 12), ("b:hours", 27), ("b:wage", 9))),
+    }
+    g("G-V19-CORRECTIONS", all(corr.values()),
+      "review corrections applied: " + "; ".join(corr) if all(corr.values())
+      else "corrections missing: %s" % [k for k, v in corr.items() if not v])
     return ok_l, bad_l, detail
 
 
@@ -1449,13 +1642,18 @@ def main_profile(P: dict) -> int:
     ok_l, bad_l, detail = v16_gates(src, pages, reh, P)
     if P["style"]:
         ok2, bad2, det2 = v17_extra_gates(src, P["pdf"], P["tag"],
-                                          P.get("table_macros", ("VEASingPhiARaw", "VAttSingPhiARaw")))
+                                          P.get("table_macros", ("VEASingPhiARaw", "VAttSingPhiARaw")),
+                                          P.get("welfare_title", "Welfare"))
         ok_l, bad_l = ok_l + ok2, bad_l + bad2
         detail.update(det2)
     if P.get("v18"):
         ok3, bad3, det3 = v18_gates(src, pages, reh, P)
         ok_l, bad_l = ok_l + ok3, bad_l + bad3
         detail.update(det3)
+    if P.get("v19"):
+        ok4, bad4, det4 = v19_gates(src, pages, reh, P)
+        ok_l, bad_l = ok_l + ok4, bad_l + bad4
+        detail.update(det4)
 
     # ---------------- negative controls: in-memory copies, original files untouched
     controls = {}
@@ -1488,16 +1686,32 @@ def main_profile(P: dict) -> int:
         inj[target] = inj[target] + "\nThe access share of explained change is large.\n"
         mixes = denominator_mixes(src, inj)
         controls["NC-DENOMINATORS (inject 'share of explained change' on the 100% slide)"] = {
-            "expected": "G-V18-DENOMINATORS FAIL", "fired": bool(mixes), "hits": mixes[:3]}
+            "expected": T + "-DENOMINATORS FAIL", "fired": bool(mixes), "hits": mixes[:3]}
         broken_src = src.replace(r"\golink{b:utility}", r"\golink{b:nowhere}", 1)
         problems, _ = link_problems(broken_src, P["pdf"])
         controls["NC-LINKS (point one main-slide button at a missing target)"] = {
-            "expected": "G-V18-LINKS FAIL", "fired": bool(problems), "hits": problems[:3]}
+            "expected": T + "-LINKS FAIL", "fired": bool(problems), "hits": problems[:3]}
         inj = list(pages)
         inj[1] = inj[1] + "\nJob opportunities account for 85.0% of inequality.\n"
         _, _, det_high = v16_gates(src, inj, reh, P)
         controls["NC-8090 (inject an 85% opportunity claim on slide 2)"] = {
             "expected": T + "-NO8090 FAIL", "fired": not det_high[T + "-NO8090"]["pass"]}
+
+    if P.get("v19"):
+        record = json.loads(LIT_RECORD_V19.read_text(encoding="utf-8"))
+        tampered = json.loads(json.dumps(record))
+        for item in tampered["items"]:
+            if item["macro"] == "VLitItaly":
+                item["display"] = "21.5"
+        bad_record = benchmark_problems(src, tampered)
+        controls["NC-BENCHMARK-RECORD (Italy value changed to 21.5 in the record)"] = {
+            "expected": "G-V19-BENCHMARKS FAIL", "fired": bool(bad_record), "hits": bad_record[:2]}
+        injected = src.replace(r"{\tiny Checchi \& Peragine \VLitItalyYear}",
+                               r"{\tiny Checchi \& Peragine \VLitItalyYear} {\huge \VLitSpain\%}", 1)
+        bad_slide = benchmark_problems(injected, record)
+        controls["NC-BENCHMARK-SLIDE (unrecorded benchmark added to the EOp slide)"] = {
+            "expected": "G-V19-BENCHMARKS FAIL", "fired": bool(bad_slide) and injected != src,
+            "hits": bad_slide[:2]}
 
     label = "verify_deck_r6.py --deck " + P["tag"].lower()
     print("%s deck verification (%s)" % (P["tag"], label))
@@ -1528,5 +1742,6 @@ def main_v16() -> int:
 if __name__ == "__main__":
     if "--deck" in sys.argv[1:]:
         deck = sys.argv[sys.argv.index("--deck") + 1]
-        sys.exit(main_profile({"v16": V16_PROFILE, "v17": V17_PROFILE, "v18": V18_PROFILE}[deck]))
+        sys.exit(main_profile({"v16": V16_PROFILE, "v17": V17_PROFILE, "v18": V18_PROFILE,
+                               "v19": V19_PROFILE}[deck]))
     sys.exit(main())

@@ -1,0 +1,77 @@
+{
+  "purpose": "Literature values and citation details shown on the V19 seminar deck. Authority: the literature corpus at JMP_lit_collection/Markdowns. The number source re-verifies every item at build time: its quote must occur (whitespace- and ligature-normalised) in the paper's canonical Markdown, on the recorded PDF page when one is given, and every numeral in the displayed string must occur in the quote (or, for a formatted value, in the recorded raw value). Benchmark values were also read against the original PDF pages.",
+  "corpus_root": "JMP_lit_collection/Markdowns",
+  "papers": {
+    "checchi2010": {
+      "citation": "Checchi, D. and V. Peragine (2010), Inequality of opportunity in Italy, Journal of Economic Inequality 8: 429-450",
+      "md": "Checchi_Peragine_2010_Inequality_of_opportunity_in_Italy/Checchi_Peragine_2010_Inequality_of_opportunity_in_Italy.md",
+      "pdf_checked": "original PDF page 17 (printed 445) rendered and read"
+    },
+    "bfm2007": {
+      "citation": "Bourguignon, F., F. H. G. Ferreira and M. Menendez (2007), Inequality of opportunity in Brazil, Review of Income and Wealth 53(4)",
+      "md": "Bourguignon_et_al_2007_INEQUALITY_OF_OPPORTUNITY_IN_BRAZIL/Bourguignon_et_al_2007_INEQUALITY_OF_OPPORTUNITY_IN_BRAZIL.md",
+      "pdf_checked": "original PDF page 1 text extracted and read"
+    },
+    "bfp2013": {
+      "citation": "Brunori, P., F. H. G. Ferreira and V. Peragine (2013), Inequality of opportunity, income inequality and economic mobility: some international comparisons, IZA Discussion Paper 7155. The France row reports Checchi, Peragine and Serlenga (2010), which is not in the corpus.",
+      "md": "Brunori_et_al_2013_Inequality_of_Opportunity_Income_Inequality_and_Econo/Brunori_et_al_2013_Inequality_of_Opportunity_Income_Inequality_and_Econo.md",
+      "pdf_checked": "original PDF pages 26 and 27 rendered and read"
+    },
+    "acw2009": {
+      "citation": "Aaberge, R., U. Colombino and T. Wennemo (2009), Evaluating alternative representations of the choice sets in models of labor supply, Journal of Economic Surveys, doi 10.1111/j.1467-6419.2008.00573.x",
+      "md": "Aaberge_et_al_2009_Evaluating_Alternative_Representations_of_the_Choice/Aaberge_et_al_2009_Evaluating_Alternative_Representations_of_the_Choice.md"
+    },
+    "beffy2019": {
+      "citation": "Beffy, M., R. Blundell, A. Bozio, G. Laroque and M. To (2019), Labour supply and taxation with restricted choices, Journal of Econometrics, doi 10.1016/j.jeconom.2018.12.004",
+      "md": "Beffy_et_al_2019_Labour_supply_and_taxation_with_restricted_choices/Beffy_et_al_2019_Labour_supply_and_taxation_with_restricted_choices.md"
+    }
+  },
+  "benchmarks": [
+    {
+      "id": "italy", "country": "Italy", "paper": "checchi2010",
+      "outcome": "individual gross earnings", "measure": "mean log deviation; types by parental education",
+      "share_of": "overall earnings inequality", "status": "verified"
+    },
+    {
+      "id": "brazil", "country": "Brazil (urban)", "paper": "bfm2007",
+      "outcome": "male hourly earnings", "measure": "Theil index; five observed circumstances; range across cohorts",
+      "share_of": "earnings inequality", "status": "verified"
+    },
+    {
+      "id": "france", "country": "France", "paper": "bfp2013",
+      "outcome": "post-tax individual earnings", "measure": "mean log deviation; parametric; parental education and occupation, gender, nationality, location",
+      "share_of": "total earnings inequality (IEO-R)", "status": "verified"
+    }
+  ],
+  "items": [
+    {"macro": "VLitItaly", "paper": "checchi2010", "display": "19.5", "raw": "19.5%", "pdf_page": 17,
+     "quote": "approximately one fifth (19.5%) of the overall inequality"},
+    {"macro": "VLitItalyYear", "paper": "checchi2010", "display": "2010", "pdf_page": 1,
+     "quote": "J Econ Inequal (2010) 8:429"},
+    {"macro": "VLitItalyData", "paper": "checchi2010", "display": "SHIW 1993--2000", "pdf_page": null,
+     "quote": "Italy (SHIW) 1993–2000"},
+    {"macro": "VLitItalyWhere", "paper": "checchi2010", "display": "p.~445", "pdf_page": 17,
+     "quote": "Inequality of opportunity in Italy 445"},
+    {"macro": "VLitBrazilLo", "paper": "bfm2007", "display": "10", "raw": "10", "pdf_page": 1,
+     "quote": "account for between 10 and 37 percent of the Theil index"},
+    {"macro": "VLitBrazilHi", "paper": "bfm2007", "display": "37", "raw": "37", "pdf_page": 1,
+     "quote": "account for between 10 and 37 percent of the Theil index"},
+    {"macro": "VLitBrazilYear", "paper": "bfm2007", "display": "2007", "pdf_page": 1,
+     "quote": "Series 53, Number 4, December 2007"},
+    {"macro": "VLitBrazilData", "paper": "bfm2007", "display": "PNAD 1996", "pdf_page": 1,
+     "quote": "male earnings in urban Brazil, in 1996"},
+    {"macro": "VLitFrance", "paper": "bfp2013", "display": "12.9", "raw": "0.1288",
+     "formatting": "percent of the printed IEO-R ratio, one decimal", "pdf_page": 26,
+     "quote": "France (1) 34,440 0.1630 0.0210 0.1288 parametric"},
+    {"macro": "VLitFranceYear", "paper": "bfp2013", "display": "2013", "pdf_page": 1,
+     "quote": "Peragine, Vito (2013)"},
+    {"macro": "VLitFranceData", "paper": "bfp2013", "display": "EU-SILC 2005", "pdf_page": 27,
+     "quote": "EU-Silc 2005"},
+    {"macro": "VLitFranceWhere", "paper": "bfp2013", "display": "Table 1", "pdf_page": 26,
+     "quote": "Table 1: Inequality of opportunity, income inequality and economic mobility in 41 countries"},
+    {"macro": "VLitAcwYear", "paper": "acw2009", "display": "2009", "pdf_page": null,
+     "quote": "**Year:** 2009"},
+    {"macro": "VLitBeffyYear", "paper": "beffy2019", "display": "2019", "pdf_page": null,
+     "quote": "**Year:** 2019"}
+  ]
+}
