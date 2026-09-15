@@ -1277,7 +1277,7 @@ def link_problems(src: str, pdf: Path) -> tuple[list, dict]:
     main_src, backup_src = split_appendix(src)
     backups = frames(backup_src)
     appmap = [f for f in backups if r"\hypertarget{appmap}" in f]
-    others = [f for f in backups if r"\hypertarget{appmap}" not in f]
+    others = [f for f in backups if r"\hypertarget{appmap}" not in f and not f.startswith("[standout]")]
     no_nav = [re.search(r"\\hypertarget\{([^}]+)\}", f).group(1) for f in others
               if not (r"\backnav{" in f or (r"\beamerreturnbutton{Back}" in f and "{appmap}" in f))]
     problems += ["backup without Back/Appendix map: %s" % t for t in no_nav]

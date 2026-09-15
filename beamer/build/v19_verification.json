@@ -34,11 +34,11 @@
     },
     "G-REGISTRY": {
       "pass": true,
-      "detail": "every numeral on all 62 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (517 macros)"
+      "detail": "every numeral on all 63 slide pages resolves, through the macros its frame uses, to a V15-registry entry re-read and re-formatted now (517 macros)"
     },
     "G-V19-STRUCTURE": {
       "pass": true,
-      "detail": "22 main slides (20-22), 62 pages match 62 frames, running order Motivation -> The conflict -> Research question -> Inequality of opportunity -> From circumstances to job opportunities -> Building blocks -> Job packages -> Opportunities: the choice probability -> How are preferences and opportunities separated? -> Data and EUROMOD -> Estimation -> Selected estimates -> Welfare: attained outcomes versus job prospects -> Ex-ante prospect welfare -> Attained-bundle welfare -> Inequality and Shapley decomposition -> How much is associated with opportunities? -> Which opportunity channel matters? -> Where does baseline inequality go? -> What is not claimed -> Conclusion"
+      "detail": "22 main slides (20-22), 63 pages match 63 frames, running order Motivation -> The conflict -> Research question -> Inequality of opportunity -> From circumstances to job opportunities -> Building blocks -> Job packages -> Opportunities: the choice probability -> How are preferences and opportunities separated? -> Data and EUROMOD -> Estimation -> Selected estimates -> Welfare: attained outcomes versus job prospects -> Ex-ante prospect welfare -> Attained-bundle welfare -> Inequality and Shapley decomposition -> How much is associated with opportunities? -> Which opportunity channel matters? -> Where does baseline inequality go? -> What is not claimed -> Conclusion"
     },
     "G-V19-RQ": {
       "pass": true,
@@ -82,7 +82,7 @@
     },
     "G-V19-BACKUP": {
       "pass": true,
-      "detail": "EA and ATT results tables are backup slides after the conclusion (40 backup slides)"
+      "detail": "EA and ATT results tables are backup slides after the conclusion (41 backup slides)"
     },
     "G-V19-CONFLICT": {
       "pass": true,
@@ -216,7 +216,7 @@
     },
     "G-V19-APPENDIX": {
       "pass": true,
-      "detail": "21 substantive main slides (19-21) and 39 backup slides beyond the appendix map (>= 12)"
+      "detail": "21 substantive main slides (19-21) and 40 backup slides beyond the appendix map (>= 12)"
     },
     "G-V19-BENCHMARKS": {
       "pass": true,
