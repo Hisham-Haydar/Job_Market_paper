@@ -1,0 +1,2871 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\input{jmp_beamer_preamble}
+\definecolor{deepred}{RGB}{150,25,35}
+\setbeamercolor{frametitle}{bg=deepred}
+\setbeamertemplate{navigation symbols}{}
+% metropolis-defined accents (safe: these beamercolors exist in metropolis)
+\setbeamercolor{progress bar}{fg=deepred}
+\setbeamercolor{title separator}{fg=deepred}
+% --- CHANGE 2: frame number as current/total, in deep red ---
+\metroset{numbering=fraction}
+\setbeamercolor{footline}{fg=deepred}
+% --- backup appendix: keep main frame total at /11 ---
+\usepackage{appendixnumberbeamer}
+% --- VISIBLE link colours for rehearsal (internal hyperlinks shown in deep red) ---
+\hypersetup{colorlinks=true,linkcolor=deepred,citecolor=deepred,urlcolor=deepred}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta}
+
+% --- sketch palette: red = agent i / A ; blue = agent h / A' ; green = y' ; cyan = y ---
+\definecolor{agenti}{RGB}{200,30,40}
+\definecolor{agenth}{RGB}{20,80,200}
+% grouped fade for the whole agent-h unit on frame 7 (1 = solid, 0.18 = dimmed)
+% per-agent opacities as PLAIN numbers (default solid). Frames 3 & 11 leave these.
+\newcommand{\iop}{1}   % agent i (red) unit opacity
+\newcommand{\hop}{1}   % agent h (blue) unit opacity
+\newcommand{\hopacity}{\hop}% backward-compatible alias used by the base for blue
+\newcommand{\DimH}{\renewcommand{\hop}{0.12}}
+\newcommand{\ShowH}{\renewcommand{\hop}{1}}
+\newcommand{\DimI}{\renewcommand{\iop}{0.12}}
+\newcommand{\ShowI}{\renewcommand{\iop}{1}}
+% \cmpsign expands to the sign shown between the two W's (default gtrless).
+\newcommand{\cmpsign}{\ \,$\gtrless$\ \,}
+% overlay spec controlling when the base W-comparison label appears
+\newcommand{\LabelOv}{\rH-}
+% overlay spec controlling when pay labels y(.), y'(.) appear
+\newcommand{\PayLabOv}{\rC}
+% convenience switches
+\newcommand{\PayOff}{\renewcommand{\PayLabOv}{0}}% show no pay labels
+\newcommand{\PayOn}{\renewcommand{\PayLabOv}{\rC}}% restore default
+% restore all figure switches to default (frames 3 & 11 call this)
+\newcommand{\ResetFig}{%
+  \renewcommand{\iop}{1}%
+  \renewcommand{\hop}{1}%
+  \renewcommand{\cmpsign}{\ \,$\gtrless$\ \,}%
+  \renewcommand{\LabelOv}{\rH-}%
+  \PayOn%
+}
+
+% --- notes on a second screen (rehearsal view) ---
+\usepackage{pgfpages}
+% \setbeameroption{show notes on second screen=right}
+% --- fix: long notes were overflowing the note column; render them
+%     smaller, ragged-right, with tight paragraph spacing so the full
+%     text stays legible and inside the frame on the second screen. ---
+\setbeamertemplate{note page}{%
+  \vspace{0.3em}\par
+  {\scriptsize\setlength{\parskip}{0.5em}\setlength{\parindent}{0pt}%
+   \raggedright\insertnote\par}%
+}
+
+
+
+% \argmax is sometimes pre-defined; relax it first to avoid redefinition errors.
+\let\argmax\relax
+\DeclareMathOperator*{\argmax}{arg\,max}
+% --- measure box (used in appendix characterizations) ---
+\newtheorem{Measure}{Measure}
+
+% --- table glyphs: satisfied / incompatible (bold visible empty set) / open ---
+\newcommand{\yes}{$+$}
+\newcommand{\no}{\ensuremath{\boldsymbol{\emptyset}}}
+
+% --- CHANGE 4: classification-grid helpers ---
+% measure name -> the single "The measures" backup (b:measures)
+\newcommand{\Wm}[1]{\hyperlink{b:measures}{$W^{#1}$}}
+% FRANCOIS-FIX: bold measure names for singleton cells in the classification table.
+\newcommand{\BWm}[1]{\hyperlink{b:measures}{$\mathbf{W}^{#1}$}}
+\newcommand{\BWmJ}{\hyperlink{b:measures}{$\mathbf{W}^{5,\mathcal J}$}}
+% impossibility cell: bold, deep-red, prominent empty set -> impossibility target
+\newcommand{\wall}[1]{\onslide<2->{\hyperlink{#1}{\textcolor{deepred}{\Large$\boldsymbol{\emptyset}$}}}}
+% measure cell revealed last
+\newcommand{\mset}[1]{\onslide<3->{#1}}
+
+% --- reveal-step switches for the ONE shared figure ---
+% Frame 3 reveals the base over clicks 1..8 (\BaseStaged);
+% frames 7 & 11 show the whole base at once (\BaseAllOn) then add on later clicks.
+\newcommand{\rA}{1}\newcommand{\rB}{1}\newcommand{\rC}{1}\newcommand{\rD}{1}
+\newcommand{\rE}{1}\newcommand{\rF}{1}\newcommand{\rG}{1}\newcommand{\rH}{1}
+\newcommand{\BaseStaged}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{2}\renewcommand{\rC}{3}\renewcommand{\rD}{4}%
+  \renewcommand{\rE}{5}\renewcommand{\rF}{6}\renewcommand{\rG}{7}\renewcommand{\rH}{8}}
+\newcommand{\BaseAllOn}{%
+  \renewcommand{\rA}{1}\renewcommand{\rB}{1}\renewcommand{\rC}{1}\renewcommand{\rD}{1}%
+  \renewcommand{\rE}{1}\renewcommand{\rF}{1}\renewcommand{\rG}{1}\renewcommand{\rH}{1}}
+
+% ====================================================================
+% SINGLE SHARED MODEL FIGURE.
+% Introduced on frame 3 and REUSED (not redrawn) on frames 7 and 11.
+% One source of truth: the base figure cannot drift between slides.
+% Per-frame ADDITIONS are passed as the (mandatory) argument #1 and are
+% overlaid on top of the same base (frame 7: W^1 construction; frame 11: job
+% duplication). The base reveals over clicks 1..8 on frame 3 (\BaseStaged) and
+% appears all at once on frames 7 & 11 (\BaseAllOn).
+% ====================================================================
+\newcommand{\ModelScale}{0.92}
+\newcommand{\ModelFigure}[1]{%
+\begin{center}
+\begin{tikzpicture}[scale=\ModelScale,>=Stealth]
+  % ===== ONE shared general figure (defined once; reused on frames 3,7,11) =====
+  % Discrete jobs j,k,l; indifference levels are LINEAR SEGMENTS joining adjacent
+  % jobs. One segment per agent, through that agent's bundle. Segments CROSS
+  % between j and k (agents rank the jobs oppositely).
+  %   jobs:  j=2.2  k=5.0  l=7.8
+  %   agent i (red):  A={j,k}, at job j, bundle z_i ABOVE y'(j); rank k P l P j
+  %   agent h (blue): A'={k,l}, at job k, bundle z_h;             rank j P l P k
+  % Pay LABELS flash once (\only) then vanish; pay DOTS persist (\onslide).
+  % z_i dashed connector flashes once (\only) then vanishes; z_i dot persists.
+  % (1) axes
+  \onslide<\rA->{%
+    \draw[->,thick] (0,0) -- (0,6.2) node[above] {$c$};
+    \draw[->,thick] (0,0) -- (10.4,0) node[right] {$\mathcal{J}$};}
+  % (2) three discrete jobs on the horizontal axis
+  \onslide<\rB->{%
+    \foreach \xx/\lab in {2.2/j,5.0/k,7.8/\ell}{%
+      \draw[thick] (\xx,0.09) -- (\xx,-0.09);
+      \node[below,font=\small] at (\xx,-0.14) {$\lab$};}}
+  % (3) pay profiles: DOTS persist; LABELS appear only on the reveal step then clear
+  \onslide<\rC->{%
+    \fill[agenti,opacity=\iop] (2.2,2.6) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (5.0,1.7) circle (2.2pt);
+    \fill[agenti,opacity=\iop] (7.8,3.4) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (2.2,1.5) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (5.0,2.3) circle (2.2pt);
+    \fill[agenth,opacity=\hopacity] (7.8,2.6) circle (2.2pt);}
+  \only<\PayLabOv>{%
+    \node[agenti,left,font=\scriptsize,opacity=\iop]  at (2.2,2.6) {$y(j)$};
+    \node[agenti,below,font=\scriptsize,opacity=\iop] at (5.0,1.7) {$y(k)$};
+    \node[agenti,right,font=\scriptsize,opacity=\iop] at (7.8,3.4) {$y(\ell)$};
+    \node[agenth,left,font=\scriptsize,opacity=\hopacity]  at (2.2,1.5) {$y'(j)$};
+    \node[agenth,above,font=\scriptsize,opacity=\hopacity] at (5.0,2.3) {$y'(k)$};
+    \node[agenth,right,font=\scriptsize,opacity=\hopacity] at (7.8,2.6) {$y'(\ell)$};}
+  % (4) bundle z_i at job j, ABOVE y'(j): dashed connector flashes once, dot persists
+  \onslide<\rD->{%
+    \fill[agenti,opacity=\iop] (2.2,4.5) circle (2.6pt);
+    \node[agenti,above right,font=\small,opacity=\iop] at (2.25,4.52) {$z_i$};
+  }
+  % dashed connector should flash ONLY on stage \rD (stage 4 on slide 3)
+  \only<\rD>{\draw[dashed,thick,agenti] (2.2,2.6) -- (2.2,4.52);}
+  % (5) ability sets: A={j,k} (red), A'={k,l} (blue) braces under the axis
+  \onslide<\rE->{%
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenti,thick,opacity=\iop]
+      (2.2,-0.5) -- (5.0,-0.5)
+      node[midway,below,agenti,font=\scriptsize,opacity=\iop] {$A=\{j,k\}$};
+    \draw[decorate,decoration={brace,amplitude=5pt,mirror},agenth,thick,opacity=\hopacity]
+      (5.1,-0.95) -- (7.8,-0.95)
+      node[midway,below,agenth,font=\scriptsize,opacity=\hopacity] {$A'=\{k,\ell\}$};}
+  % (6) agent i indifference segment through z_i: high at j, LOW at k, mid at l
+  %     (rank k P l P j) -- crosses agent h between j and k
+  \onslide<\rF->{%
+    \draw[agenti,thick,opacity=\iop] (2.2,4.5) -- (5.0,1.4) -- (7.8,3.3);
+    \node[agenti,font=\scriptsize,opacity=\iop] at (8.05,3.3) {$R_i$};}
+  % (7) agent h indifference segment: LOW at j, high at k, mid at l
+  %     (rank j P l P k) -- whole unit fades on the measures frame
+  \onslide<\rG->{%
+    \fill[agenth,opacity=\hopacity] (5.0,4.2) circle (2.6pt);
+    \node[agenth,above,font=\small,opacity=\hopacity] at (5.05,4.4) {$z_h$};
+    \draw[agenth,thick,opacity=\hopacity] (2.2,1.0) -- (5.0,4.2) -- (7.8,2.6);
+    \node[agenth,font=\scriptsize,opacity=\hopacity] at (8.05,2.6) {$R_h$};}
+  % (8) the well-being comparison label
+  % (8) well-being label as three nodes: red W (fades with \iop), the sign
+  %     (\cmpsign), and blue W (fades with \hop).
+  \onslide<\LabelOv>{%
+    \node[agenti,opacity=\iop,anchor=west,font=\small] (Wi) at (0.25,5.8)
+      {$W( z_i,R_i,A;\mathbf y)$};
+    \node[anchor=west,font=\small] (Wsgn) at (Wi.east) {\cmpsign};
+    \node[agenth,opacity=\hop,anchor=west,font=\small] at (Wsgn.east)
+      {$W(z_h,R_h,A';\mathbf y')$};}
+ 
+
+  % ===== per-frame additions, overlaid on the identical base (never redrawn) =====
+  #1
+\end{tikzpicture}
+\end{center}
+}
+\usepackage{array}
+\input{deck_numbers_v19}
+\graphicspath{{../manuscript/figures/v13/}{../manuscript/figures/v11/}{../manuscript/figures/v7/}{../manuscript/figures/v5/}}
+\metroset{sectionpage=none}
+\ifdefined\RehearsalDeck
+  \setbeameroption{show notes on second screen=right}
+\fi
+\setbeamertemplate{note page}{%
+  \vspace{0.3em}\par
+  {\scriptsize\setlength{\parskip}{0.5em}\setlength{\parindent}{0pt}%
+   \raggedright\insertnote\par}%
+}
+\setbeamertemplate{frametitle}[default]
+\setbeamerfont{frametitle}{size=\large}
+
+% ---- navigation, in the theory talk's style ---------------------------
+% \golink{target}{label}: a small go-to button.  \cornerlinks{...}: discreet
+% buttons in the bottom-left corner.  \backnav{home}: Back and Appendix map.
+\newcommand{\golink}[2]{\hyperlink{#1}{\beamergotobutton{#2}}}
+\newcommand{\cornerlinks}[2][sw]{%
+  \ifhmode\unskip\par\fi\nointerlineskip\vbox to 0pt{\hbox to 0pt{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \def\clpos{#1}\def\clne{ne}%
+    \ifx\clpos\clne
+      \node[anchor=north east,inner sep=0pt,font=\tiny] at ([xshift=-0.3cm,yshift=-0.22cm]current page.north east) {#2};
+    \else
+      \node[anchor=south west,inner sep=0pt,font=\tiny] at ([xshift=0.35cm,yshift=0.2cm]current page.south west) {#2};
+    \fi
+  \end{tikzpicture}\hss}\vss}\nointerlineskip}
+\newcommand{\backnav}[1]{\cornerlinks{\hyperlink{#1}{\beamerreturnbutton{Back}}\ \hyperlink{appmap}{\beamergotobutton{Appendix map}}}}
+\newcommand{\maplink}[2]{\hyperlink{#1}{#2}}
+\newcommand{\backupeq}[1]{\begin{center}#1\end{center}}
+\newcommand{\se}[1]{{\scriptsize(#1)}}
+
+\title{Unequal Job Opportunities and Well-Being Inequality}
+\subtitle{A Latent-Jobs Structural Decomposition}
+\author{Hisham Haydar}
+\institute{University of Luxembourg \& LISER}
+\date{}
+
+\begin{document}
+\begin{frame}[plain,noframenumbering]
+\vfill
+{\Large\bfseries\inserttitle\par}
+\vspace{0.4em}
+{\large\insertsubtitle\par}
+\vspace{0.9em}
+{\color{deepred}\rule{0.80\textwidth}{1pt}}\par
+\vspace{0.9em}
+\begin{center}
+{\Large\insertauthor\par}
+\vspace{0.3em}
+{\normalsize\insertinstitute\par}
+\vspace{0.6em}
+{\small DSFEM PhD Workshop\par}
+\end{center}
+
+\vspace{0.6em}
+
+\begin{columns}[T,onlytextwidth]
+  \column{0.62\textwidth}
+   \vspace{0.25em}
+  {\footnotesize Supervisor: Fran\c{c}ois Maniquet\\[2pt]
+  CORE (UCLouvain) and LISER\par}
+
+  \column{0.38\textwidth}
+  \begin{flushright}
+    {\small Discussant: Sebastian Dobre\par}
+  \end{flushright}
+\end{columns}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 1 — INTRODUCTION: THREE PILLARS
+% ============================================================
+
+\begin{frame}
+\frametitle{Introduction: three pillars}
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.30\textwidth}
+\centering
+\textbf{1. Normative welfare}\\[0.5em]
+
+{\small
+What should individuals\\
+be compensated for?
+}
+
+\vspace{0.6em}
+
+{\footnotesize
+Why does the \emph{source}\\
+of inequality matter?
+}
+
+
+\column{0.04\textwidth}
+\centering
+\vspace{2em}
+$\Longrightarrow$
+
+
+\column{0.30\textwidth}
+\centering
+\textbf{2. Latent job opportunities}\\[0.5em]
+
+{\small
+Observed choice\\
+$\neq$\\
+observed choice set
+}
+
+\vspace{0.6em}
+
+{\footnotesize
+Preferences +\\
+opportunity environment
+}
+
+
+\column{0.04\textwidth}
+\centering
+\vspace{2em}
+$\Longrightarrow$
+
+
+\column{0.30\textwidth}
+\centering
+\textbf{3. Structural decomposition}\\[0.5em]
+
+{\small
+How much inequality\\
+is associated with\\
+each modelled channel?
+}
+
+\vspace{0.6em}
+
+{\footnotesize
+Shapley attribution
+}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+\boxed{
+\text{Normative welfare}
+\;\longrightarrow\;
+\text{RURO}
+\;\longrightarrow\;
+\text{Shapley decomposition}
+}
+\end{center}
+
+\vfill
+
+\begin{center}
+\small
+\textbf{The data show the realised choice. They do not show the menu behind it.}
+\end{center}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 2 — INEQUALITY OF OPPORTUNITY LITERATURE
+% ============================================================
+
+\begin{frame}
+\frametitle{Inequality of opportunity: an established motivation}
+\hypertarget{main:eop}{}
+
+\begin{center}
+\large
+\textbf{How much inequality is associated with circumstances
+outside individual responsibility?}
+\end{center}
+
+\vfill
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.30\textwidth}
+\centering
+{\LARGE \textbf{$\approx 20\%$}}\\[0.4em]
+\textbf{Italy}\\
+{\footnotesize Checchi \& Peragine (2010)}
+
+\column{0.30\textwidth}
+\centering
+{\LARGE \textbf{$10$--$37\%$}}\\[0.4em]
+\textbf{Brazil}\\
+{\footnotesize Bourguignon et al. (2007)}
+
+\column{0.30\textwidth}
+\centering
+{\LARGE \textbf{$2$--$34\%$}}\\[0.4em]
+\textbf{Cross-country evidence}\\
+{\footnotesize Brunori et al. (2013)}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+\footnotesize
+\emph{Illustrative magnitudes, not a harmonised comparison:
+outcomes, circumstances, samples and inequality indices differ.}
+\end{center}
+
+\vfill
+
+\begin{center}
+\boxed{
+\text{Circumstances can account for an economically important share of inequality.}
+}
+\end{center}
+
+\cornerlinks{\golink{b:eopbench}{benchmark table} \golink{b:lit}{literature}}
+\end{frame}
+
+
+% ============================================================
+% SLIDE 3 — FROM CIRCUMSTANCES TO JOB OPPORTUNITIES
+% ============================================================
+
+\begin{frame}
+\frametitle{From circumstances to job opportunities}
+\hypertarget{main:eopjobs}{}
+
+\begin{center}
+\textbf{Reduced-form inequality-of-opportunity perspective}
+\end{center}
+
+\[
+\boxed{
+\begin{array}{c}
+\text{Circumstances}\\
+\text{family background, gender, race, geography, \ldots}
+\end{array}}
+\quad\longrightarrow\quad
+\boxed{\text{Income / earnings}}
+\]
+
+\vspace{0.8em}
+
+\begin{center}
+\large
+\textbf{But through which labour-market mechanism?}
+\end{center}
+
+\vspace{0.4em}
+
+\[
+\resizebox{\textwidth}{!}{$
+\boxed{\text{Preferences}}
+\quad+\quad
+\boxed{\begin{array}{c}
+\text{Job opportunities}\\[0.15em]
+\text{employment access}\\
+\text{hours}\\
+\text{occupation}\\
+\text{wage offers}
+\end{array}}
+\quad\longrightarrow\quad
+\boxed{\text{Observed job}}
+\quad\longrightarrow\quad
+\boxed{\text{Well-being}}
+$}
+\]
+
+\vspace{0.6em}
+
+\begin{center}
+\textbf{Observed: chosen job}
+\qquad\qquad
+\textbf{Latent: menu of job packages}
+\end{center}
+
+\vspace{0.2em}
+
+\begin{flushright}
+\footnotesize
+Related structural framework: Dagsvik \& Jia (2016)
+\end{flushright}
+
+\cornerlinks{\golink{b:lit}{literature}}
+\end{frame}
+
+
+% ============================================================
+% SLIDE 4 — RESEARCH QUESTIONS
+% ============================================================
+
+\begin{frame}[t]
+\frametitle{Research questions}
+\small
+
+\begin{center}
+\normalsize
+\textbf{Main question}
+\end{center}
+
+\begin{block}{}
+How much inequality in money-metric well-being is associated with
+unequal job opportunities rather than heterogeneous preferences,
+once labour supply is modelled as choice among latent jobs?
+\end{block}
+
+\vspace{0.4em}
+
+\textbf{1. Behaviour}\\[-0.1em]
+{\footnotesize
+Do observed labour-supply choices reflect preferences alone,
+or also heterogeneous latent job opportunities?
+}
+
+\vspace{0.45em}
+
+\textbf{2. Welfare}\\[-0.1em]
+{\footnotesize
+How do conclusions differ between the ex-post attained bundle
+and the ex-ante opportunity prospect?
+}
+
+\vspace{0.45em}
+
+\textbf{3. Decomposition}\\[-0.1em]
+{\footnotesize
+How much welfare inequality is associated with preferences,
+local access, and earning opportunities?
+}
+
+\vspace{0.35em}
+
+\begin{center}
+\scriptsize
+\textbf{Next extension:} household resources, needs and composition
+\end{center}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 5 — PRELIMINARY RESULTS
+% ============================================================
+
+\begin{frame}
+\frametitle{Preview of preliminary results}
+\hypertarget{main:preview}{}
+
+\begin{center}
+\small
+\textbf{Current results are preliminary and remain subject to ongoing revision.}
+\end{center}
+
+\vspace{0.5em}
+
+\begin{block}{1. Welfare perspective changes the magnitude}
+\begin{center}
+\begin{tabular}{lcc}
+ & \textbf{Single adults} & \textbf{Couples} \\
+\hline
+Ex-ante prospect & \textbf{20.3\%} & \textbf{7.9\%} \\
+Attained bundle  & \textbf{1.9\%}  & \textbf{3.5\%}
+\end{tabular}
+\end{center}
+
+\footnotesize
+Local access + earning opportunities as a share of each
+perspective's baseline Gini, equivalised.
+\end{block}
+
+\vspace{0.5em}
+
+\begin{block}{2. For singles, the dominant channel changes}
+\[
+\text{Ex ante:}
+\qquad
+\underbrace{15.5\%}_{\text{local access}}
+>
+\underbrace{4.8\%}_{\text{earnings}}
+\]
+
+\[
+\text{Attained bundle:}
+\qquad
+\text{earnings}
+>
+\text{local access}
+\]
+\end{block}
+
+\vfill
+
+\begin{center}
+\small
+\textbf{Couples, ex ante:}
+access $\approx 3.7\%$,
+earnings $\approx 4.2\%$
+\quad
+{\footnotesize(point estimates are close)}
+\end{center}
+
+\vfill
+
+\begin{center}
+\boxed{
+\text{The welfare object changes what appears quantitatively important.}
+}
+\end{center}
+
+\cornerlinks{\golink{b:eagini}{EA decomposition} \golink{b:attgini}{ATT decomposition} \golink{b:equiv}{equivalisation}}
+\end{frame}
+% ============================================================
+% SLIDE 6 — WELL-BEING: COMPENSATION VS RESPONSIBILITY
+% ============================================================
+
+\begin{frame}
+\frametitle{Well-being: compensation versus responsibility}
+\hypertarget{main:conflict}{}
+
+\vfill
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.46\textwidth}
+\centering
+\textbf{Compensation}\\[0.35em]
+{\small
+Unequal productive circumstances\\
+should not automatically become\\
+unequal well-being
+}
+
+\column{0.46\textwidth}
+\centering
+\textbf{Responsibility}\\[0.35em]
+{\small
+Preference-based choices\\
+should not automatically\\
+be compensated
+}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+{\large
+Compensation
+\qquad vs.\qquad
+Responsibility
+}
+\end{center}
+\[
+\nexists\, W:\quad \text{Full Compensation}\ \wedge\ \text{Full Responsibility}
+\]
+\begin{flushright}\small[Fleurbaey \& Maniquet, \emph{SCW} 2005]\end{flushright}
+
+\vfill
+\begin{center}
+Full Comp.\ $+$ weak Resp.\qquad\textbf{or}\qquad Full Resp.\ $+$ weak Comp.
+\end{center}
+\vfill
+\cornerlinks{\golink{b:measures}{the measures}}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{The measures}
+\hypertarget{main:measures}{}
+% Show only the final comparison (no step-by-step overlays).
+\renewcommand{\LabelOv}{1-}% always show the base comparison label
+\renewcommand{\cmpsign}{\ \,$<$\ \,}% final result only
+\BaseAllOn
+\ModelFigure{%
+  % Final state: keep BOTH W^1 readings; base label shows  W_i < W_h .
+  \draw[dashed,thick,agenti] (2.2,1.4) -- (5.0,1.4);
+  \fill[agenti] (2.2,1.4) circle (1.7pt); \fill[agenti] (5.0,1.4) circle (1.7pt);
+  \draw[agenti,thick] (5.0,1.4) circle (4.5pt);
+  \draw[dotted,thick,agenti] (5.0,1.4) -- (0,1.4);
+  \fill[agenti] (0,1.4) circle (1.7pt);
+  \node[agenti,anchor=east,font=\small] at (-0.08,1.4) {$W^{1}_i$};
+
+  \draw[dashed,thick,agenth] (5.0,2.6) -- (7.8,2.6);
+  \fill[agenth] (5.0,2.6) circle (1.7pt); \fill[agenth] (7.8,2.6) circle (1.7pt);
+  \draw[agenth,thick] (7.8,2.6) circle (4.5pt);
+  \draw[dotted,thick,agenth] (7.8,2.6) -- (0,2.6);
+  \fill[agenth] (0,2.6) circle (1.7pt);
+  \node[agenth,anchor=east,font=\small] at (-0.08,2.6) {$W^{1}_h$};
+}
+\begin{center}\small
+$W^{1}$\ \ (Ind.\ $\mathbf y\ \wedge$ Resp.\ Equal Pay; unique)\qquad $W^{1},\dots,W^{6}$
+\end{center}
+\cornerlinks{\golink{b:measures}{characterisations} \golink{b:theoryfig}{own-set construction} \golink{b:theoryscope}{theory scope}}
+\end{frame}
+% ============================================================
+% SLIDE 7 — THEORY MEASURE AND EMPIRICAL BRIDGE
+% ============================================================
+
+\begin{frame}
+\frametitle{From the theoretical ability set to latent opportunities}
+\hypertarget<2>{main:bridge}{}
+
+% ------------------------------------------------------------
+% THEORY GRAPH HERE
+%
+% Two individuals
+% Heterogeneous preferences
+% Three jobs
+% Possibly disjoint ability sets
+%
+% ------------------------------------------------------------
+
+\begin{center}
+% Insert existing theory graph here
+\end{center}
+
+\vspace{0.3em}
+
+
+    \begin{equation*}
+W(z, R, A;\mathbf{y})=w\Leftrightarrow z\,I\,\max_R\{B\}
+\end{equation*}
+where
+\begin{equation*}
+z'=(c',j')\in B\Leftrightarrow j'\in A \textrm{ and } c'=w.
+\end{equation*}
+
+\begin{center}
+\small
+\textbf{Common consumption} $\times$
+\textbf{own preferences} $\times$
+\textbf{own feasible jobs}
+\end{center}
+
+\vfill
+
+% CLICK / OVERLAY:
+\pause
+
+\[
+\boxed{
+A_i
+\quad\longrightarrow\quad
+\widehat g_i(j)
+}
+\]
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.46\textwidth}
+\centering
+\textbf{Theory}\\
+{\small feasible ability set}
+
+\column{0.46\textwidth}
+\centering
+\textbf{Empirics}\\
+{\small relative opportunity density}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+\small
+\textbf{The exact historical menu is not observed.}
+\end{center}
+
+\cornerlinks{\golink{b:theoryfig}{theory figure} \golink{b:density}{opportunity specification} \golink{b:matched}{matched households}}
+\end{frame}
+
+
+% ============================================================
+% SLIDE 8 — ATTAINED-BUNDLE / STAYING-HOME EQUIVALENT
+% ============================================================
+
+\begin{frame}[t]
+\frametitle{Attained-bundle welfare}
+\hypertarget<2>{main:att}{}
+\small
+
+\begin{center}
+\emph{What consumption while staying home is equivalent
+to the attained bundle?}
+\end{center}
+
+\vspace{0.15em}
+
+% General Box-Cox notation.
+% Current empirical consumption specification fixes theta_c = 0.
+
+{\footnotesize
+\[
+B(x;\theta)=
+\begin{cases}
+\dfrac{x^\theta-1}{\theta}, & \theta\neq 0,\\[0.4em]
+\log x, & \theta=0 .
+\end{cases}
+\]
+}
+
+{\footnotesize
+\[
+v_i(j)
+=
+\beta_\ell\,
+B\!\left(
+\frac{\ell_i(j)}{\lambda_\ell};
+\theta_\ell
+\right)
++
+\beta_c\,
+B\!\left(
+\frac{C_i(j)}{\lambda_c};
+\theta_c
+\right),
+\quad\text{with }\beta_\ell\,B\!\left(\frac{\ell_i(j)}{\lambda_\ell};\theta_\ell\right)= L_i(j).
+\]
+}
+
+\vspace{0.1em}
+
+{\footnotesize
+\[
+W_i^{\mathrm{ATT}}
+=
+\lambda_c
+B^{-1}
+\left[
+B\!\left(
+\frac{C_i^{obs}}{\lambda_c};
+\theta_c
+\right)
++
+\frac{
+L_i(j_i^{obs})-L_i(o)
+}{
+\beta_c
+}
+\,;\theta_c
+\right].
+\]
+}
+
+\pause
+
+{\footnotesize
+\[
+\theta_c=0
+\quad\Longrightarrow\quad
+\boxed{
+W_i^{\mathrm{ATT}}
+=
+C_i^{obs}
+\exp\!\left\{
+\frac{
+L_i(j_i^{obs})-L_i(o)
+}{
+\beta_c
+}
+\right\}
+}
+\]
+}
+
+\vspace{-0.1em}
+
+\begin{center}
+\tiny
+\textbf{Conditional on the attained bundle, $\widehat g_i$ does not enter welfare directly.}
+\end{center}
+
+\cornerlinks{\golink{b:prefs}{estimated parameters} \golink{b:attderiv}{derivation} \golink{b:attdesign}{numerical design}}
+
+\end{frame}
+
+
+% ============================================================
+% SLIDE 9 — EX-ANTE PROSPECT WELFARE
+% ============================================================
+
+\begin{frame}[t]
+\frametitle{Ex-ante prospect welfare}
+\hypertarget{main:ea}{}
+\small
+
+\begin{center}
+\emph{What constant consumption over the household's own
+opportunity environment is equivalent to its actual prospect?}
+\end{center}
+
+\vspace{0.1em}
+
+\slideeq{$\displaystyle
+\begin{gathered}
+J_i=
+\int
+e^{L_i(j)}
+\Big(
+\tfrac{C_i(j)}{\lambda_c}
+\Big)^{\beta_c}
+\widehat g_i(j)
+\,d\nu(j),
+\\[0.2em]
+H_i=
+\int
+e^{L_i(j)}
+\widehat g_i(j)
+\,d\nu(j),
+\\[0.2em]
+W_i^{\mathrm{EA}}
+=
+\lambda_c
+\exp\!\Big\{
+\tfrac{\log J_i-\log H_i}{\beta_c}
+\Big\}.
+\end{gathered}
+$}
+
+\vspace{0.1em}
+
+\begin{columns}[T,onlytextwidth]
+\scriptsize
+
+\column{0.31\textwidth}
+\centering
+$J_i$\\
+actual prospect
+
+\column{0.34\textwidth}
+\centering
+$H_i$\\
+same opportunity env.,\\
+equal cons.
+
+\column{0.31\textwidth}
+\centering
+$W_i^{\mathrm{EA}}$\\
+flat-cons. equiv.
+
+\end{columns}
+
+\vspace{0.05em}
+
+\begin{center}
+\tiny
+$\underbrace{\text{actual prospect}}_{J_i}\;\Longleftrightarrow\;\underbrace{\text{same opportunities + flat consumption}}_{H_i,\;W_i^{EA}}$
+\end{center}
+
+\cornerlinks{
+\golink{b:eaderiv}{derivation}
+\golink{b:prospectref}{reference and generalised mean}
+\golink{b:eavalid}{numerical validation}
+\golink{b:theoryscope}{theory scope}
+}
+
+
+\end{frame}
+
+% ============================================================
+% SLIDE 10 — RURO ESTIMATION AND IDENTIFICATION
+% ============================================================
+
+% --- RURO: choice probabilities / sampled-alternative likelihood (fits as-is)
+\begin{frame}[t]
+\frametitle{RURO estimation: preferences versus opportunities}
+\hypertarget{main:ruro}{}
+
+\begin{center}
+\small
+\emph{Observed choices reflect both how much a job is valued
+and how available that type of job is.}
+\end{center}
+
+\vspace{0.25em}
+
+% Population choice law
+\[
+P_i(j)
+=
+\frac{\exp\{v_i(j)\}\,g_i(j)}
+{\displaystyle \int
+\exp\{v_i(k)\}\,g_i(k)\,d\nu(k)}
+\]
+
+\vspace{0.2em}
+
+% Sampled-alternative likelihood
+\[
+V_{ij}
+=
+v_i(j)
++
+\log g_i(j)
+-
+\log q_{ij},
+\qquad
+\Pr(y_i\mid\mathcal C_i)
+=
+\frac{
+n_{y_i}\exp V_{iy_i}
+}{
+\displaystyle\sum_{s\in\mathcal C_i}\exp V_{is}
+}.
+\]
+
+\begin{center}
+\footnotesize
+$|\mathcal C_i|=101$:
+100 proposal draws + the observed package.
+
+\quad
+$-\log q_{ij}$ corrects for the proposal sampling.
+\end{center}
+
+\cornerlinks{\golink{b:utility}{utility specification} \golink{b:likelihood}{likelihood} \golink{b:mrs}{MRS} \golink{b:inference}{curvature and inference}}
+\end{frame}
+
+% --- RURO: opportunity spec + identification (separate slide instead of shrinking)
+\begin{frame}[t]
+\frametitle{RURO estimation: preferences versus opportunities}
+\hypertarget{main:ident}{}
+\scriptsize
+
+\begin{columns}[T,onlytextwidth]
+
+% LEFT COLUMN — OPPORTUNITY SPECIFICATION
+\column{0.47\textwidth}
+
+\textbf{Opportunity specification}
+
+\vspace{0.1em}
+
+\[
+g_i(o)=1
+\]
+
+\[
+g_i(j\mid E=1)
+=
+g_i^{E}\,
+g_i^{H}(h)\,
+g_i^{\mathrm{Occ}}(k)\,
+g_i^{W}(w\mid k).
+\]
+
+\begin{itemize}
+    \item \textbf{Access:} local unemployment, region, urbanisation
+    \item \textbf{Hours:} five hours bands
+    \item \textbf{Occupation:} occupation-group mass
+    \item \textbf{Wage offers:} log-normal; location shifts with education, experience and occupation
+\end{itemize}
+
+% RIGHT COLUMN — IDENTIFICATION
+\column{0.49\textwidth}
+
+\textbf{What separates preferences from opportunities?}
+
+\vspace{0.1em}
+
+\begin{enumerate}
+    \item \textbf{Functional-form separation}\\
+    preferences smooth in hours; opportunity density is banded
+
+    \item \textbf{Excluded access shifters}\\
+    local unemployment, region and urbanisation shift access but not utility
+
+    \item \textbf{Offer structure}\\
+    wage offers independent of offered hours conditional on occupation
+\end{enumerate}
+
+\end{columns}
+
+\vspace{0.15em}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\scriptsize
+\textbf{Identification is structural and parametric.}\\
+These are maintained restrictions, not a causal design.
+}}
+\end{center}
+
+\vspace{0.1em}
+
+\begin{flushright}
+\tiny
+Capéau, Decoster \& Dekkers (2016); Dagsvik \& Jia (2016)
+\end{flushright}
+
+\cornerlinks{\golink{b:density}{opportunity specification} \golink{b:access}{access} \golink{b:hours}{hours, occupation} \golink{b:wage}{wage offers} \golink{b:ident}{identification} \golink{b:obseq}{observational equivalence}}
+\end{frame}
+
+
+
+% ============================================================
+% SLIDE 11 — DATA, JOB SIMULATION AND EUROMOD
+% ============================================================
+
+% --- Slide 11a: data + job simulation (columns only)
+\begin{frame}[t]
+\frametitle{Data, simulated jobs and EUROMOD}
+\hypertarget{main:data}{}
+\small
+
+% ------------------------------------------------------------
+% TOP: DATA
+% ------------------------------------------------------------
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.46\textwidth}
+
+\textbf{Observed households}
+
+\vspace{0.15em}
+
+\begin{center}
+\textbf{EU-SILC France}\\
+{\footnotesize collection 2016, incomes 2015}
+\end{center}
+
+\vspace{0.1em}
+
+{\footnotesize
+\begin{itemize}\setlength{\itemsep}{0.15em}
+    \item demographics and household composition
+    \item employment status, hours and earnings
+    \item education and occupation
+    \item geography and survey weights
+\end{itemize}
+}
+
+\vspace{0.05em}
+
+\begin{center}
+\footnotesize
+\textbf{1,540} single-adult households\\
+\textbf{2,223} couple households
+\end{center}
+
+\column{0.49\textwidth}
+
+\textbf{Latent job packages}
+
+\vspace{0.15em}
+
+\[
+j=(e,k,h,w)
+\]
+
+{\footnotesize
+\begin{itemize}\setlength{\itemsep}{0.15em}
+    \item employment / non-employment
+    \item occupation
+    \item weekly hours
+    \item hourly wage
+\end{itemize}
+}
+
+\[
+h\in[5,70],\qquad w\in[2,590]
+\]
+
+\begin{center}
+\tiny
+The observed job is retained; alternative jobs are sampled from the proposal distribution.
+\end{center}
+
+\end{columns}
+
+\cornerlinks{\golink{b:sample}{sample selection} \golink{b:numerics}{numerical design}}
+\end{frame}
+
+% --- Slide 11b: EUROMOD pipeline (everything below the columns)
+\begin{frame}[t]
+\frametitle{Data, simulated jobs and EUROMOD (cont.)}
+\hypertarget{main:euromod}{}
+\small
+
+% ------------------------------------------------------------
+% PIPELINE
+% ------------------------------------------------------------
+
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{$
+\boxed{\text{Household } i}
+\;\longrightarrow\;
+\boxed{\text{job package } j}
+\;\longrightarrow\;
+\boxed{\text{EUROMOD}}
+\;\longrightarrow\;
+\boxed{C_i(j)}
+$}
+\end{center}
+
+\vspace{0.2em}
+
+\begin{center}
+\footnotesize\textbf{French 2015 policy system}
+\end{center}
+
+\[
+C_i(j)=\text{disposable income generated by job }j\text{ for household }i.
+\]
+
+\vspace{0.1em}
+
+\begin{center}
+\footnotesize
+Income tax + social contributions + transfers $\;\Rightarrow\;$ exact nonlinear budget mapping
+\end{center}
+
+\vspace{0.2em}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{
+\centering
+\footnotesize
+\textbf{EUROMOD prices the alternatives; RURO models the choice.}\\
+EUROMOD is run before estimation, and the resulting disposable incomes are then used in the likelihood.
+}}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+\footnotesize
+Sutherland \& Figari (2013)
+\end{flushright}
+
+\cornerlinks{\golink{b:pricing}{EUROMOD pricing}}
+\end{frame}
+
+% ============================================================
+% SLIDE 12 — MODEL FIT
+% ============================================================
+
+% --- Slide 12a: model fit figure only
+\begin{frame}[t]
+\frametitle{Does the model reproduce observed labour-market choices?}
+\hypertarget{main:fitfig}{}
+
+\begin{center}
+\small
+\emph{Population predictions: integrating over latent opportunities
+and taste shocks, not in-sample fitted choice probabilities.}
+\end{center}
+
+\vspace{0.25em}
+
+\begin{center}
+\includegraphics[width=0.92\textwidth]{fit_by_margin_v7.png}
+\end{center}
+
+\cornerlinks[ne]{\golink{b:margins}{fit by margin} \golink{b:extensive}{extensive margin}}
+\end{frame}
+
+% --- Slide 12b: text after the figure
+\begin{frame}[t]
+\frametitle{Does the model reproduce observed labour-market choices? (cont.)}
+\hypertarget{main:fit}{}
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.47\textwidth}
+\centering
+\textbf{Single adults}\\[0.2em]
+{\small
+Mean absolute deviation\\
+across reported moments:
+\textbf{0.0140}
+}
+
+\column{0.47\textwidth}
+\centering
+\textbf{Couples}\\[0.2em]
+{\small
+Mean absolute deviation\\
+across reported moments:
+\textbf{0.0119}
+}
+
+\end{columns}
+
+\vspace{0.45em}
+
+\begin{center}
+\small
+\textbf{Participation and occupation fit closely in aggregate;
+hours fit is more uneven.}
+\end{center}
+
+\vspace{0.35em}
+
+\begin{block}{Does heterogeneous opportunity structure matter?}
+\centering
+\small
+Single-adult population fit:
+
+\[
+\underbrace{0.0140}_{\substack{\text{household-specific}\\
+\text{opportunities}}}
+\qquad\text{vs.}\qquad
+\underbrace{0.0273}_{\text{common opportunity A}}
+\qquad
+\underbrace{0.0264}_{\text{common opportunity B}}
+\]
+\end{block}
+
+\vfill
+
+\begin{center}
+\footnotesize
+Main remaining fit issue: underprediction of the exact 37-hour mass point.
+\end{center}
+
+\cornerlinks{\golink{b:benchmarks}{common opportunities} \golink{b:extensive}{extensive margin} \golink{b:hours37}{37-hour point}}
+\end{frame}
+
+% ============================================================
+% SLIDE 13 — INEQUALITY MEASURE
+% ============================================================
+
+% --- Slide 13 (part 1): reporting scale + inequality statistic
+\begin{frame}[t]
+\frametitle{From individual well-being to welfare inequality}
+\hypertarget{main:gini}{}
+
+\begin{center}
+\small
+\emph{For each welfare perspective, I obtain one money-metric
+well-being level for every household.}
+\end{center}
+
+\vspace{0.4em}
+
+\begin{columns}[T,onlytextwidth]
+
+% LEFT: DISTRIBUTIONAL OBJECT
+\column{0.48\textwidth}
+
+\textbf{Primary reporting scale}
+
+\vspace{0.35em}
+
+\[
+\widetilde M_i^p
+=
+\frac{M_i^p}{e_i},
+\qquad
+p\in\{\mathrm{ATT},\mathrm{EA}\}
+\]
+
+\begin{center}
+{\footnotesize
+Modified OECD equivalence scale\\
+household survey weights
+}
+\end{center}
+
+\vspace{0.5em}
+
+\begin{center}
+\textbf{Singles and couples reported separately}
+\end{center}
+
+\vspace{0.3em}
+
+{\footnotesize
+Raw household welfare is retained as a secondary scale.
+}
+
+% RIGHT: GINI
+\column{0.48\textwidth}
+
+\textbf{Inequality statistic: weighted Gini}
+
+\vspace{0.25em}
+
+Let normalized household weights satisfy
+\[
+\sum_i \omega_i=1,
+\qquad
+\mu_M=\sum_i\omega_i M_i .
+\]
+
+\[
+\boxed{
+G(M)
+=
+\frac{
+\displaystyle
+\sum_i\sum_j
+\omega_i\omega_j
+|M_i-M_j|
+}{
+2\mu_M
+}
+}
+\]
+
+\vspace{0.2em}
+
+\begin{center}
+{\footnotesize
+$G=0$: equal well-being\\
+larger $G$: more dispersed well-being
+}
+\end{center}
+
+\end{columns}
+
+\cornerlinks{\golink{b:equiv}{equivalisation} \golink{b:aggregation}{aggregation orders}}
+\end{frame}
+
+
+% ============================================================
+% SLIDE 14 — STRUCTURAL DECOMPOSITION
+% ============================================================
+
+\begin{frame}[t]
+\frametitle{Structural decomposition of welfare inequality}
+\hypertarget{main:decomp}{}
+
+\begin{center}
+\small
+\emph{To attribute inequality to a channel, I equalise that channel
+inside the model and recompute welfare.}
+\end{center}
+
+\vspace{0.35em}
+
+% ------------------------------------------------------------
+% WHAT IS BEING EQUALISED?
+% ------------------------------------------------------------
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.23\textwidth}
+\centering
+\textbf{$P$: Preferences}\\[0.25em]
+{\footnotesize
+preference shifters\\
+$\rightarrow$ common reference
+}
+
+\column{0.23\textwidth}
+\centering
+\textbf{$A$: Local access}\\[0.25em]
+{\footnotesize
+local unemployment,\\
+region, urbanisation\\
+$\rightarrow$ common reference
+}
+
+\column{0.23\textwidth}
+\centering
+\textbf{$B$: Earnings}\\[0.25em]
+{\footnotesize
+wage-offer location\\
+$\rightarrow$ common reference
+}
+
+\column{0.23\textwidth}
+\centering
+\textbf{$D$: Resources / needs}\\[0.25em]
+{\footnotesize
+household composition\\
+and resources\\
+\textbf{held fixed}
+}
+
+\end{columns}
+
+\vspace{0.55em}
+
+% ------------------------------------------------------------
+% COUNTERFACTUAL OPERATOR
+% ------------------------------------------------------------
+
+\[
+x_i=(x_i^P,x_i^A,x_i^B,d_i)
+\]
+
+\[
+\begin{aligned}
+T_Px_i &= (\bar x^P,x_i^A,x_i^B,d_i),\\
+T_Ax_i &= (x_i^P,\bar x^A,x_i^B,d_i),\\
+T_Bx_i &= (x_i^P,x_i^A,\bar x^B,d_i).
+\end{aligned}
+\]
+
+\cornerlinks{\golink{b:shapley}{coalitions} \golink{b:residual}{outside P-A-B}}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Structural decomposition of welfare inequality (cont.)}
+\hypertarget{main:shapley}{}
+
+\vspace{0.2em}
+
+\[
+\boxed{
+I^p(S)
+=
+\mathcal G
+\left(
+\left\{
+M_i^p(T_Sx_i)
+\right\}_{i=1}^N
+\right)
+}
+\]
+
+\[
+\boxed{
+v^p(S)
+=
+I^p(\varnothing)-I^p(S)
+}
+\]
+
+\begin{center}
+\footnotesize
+Baseline Gini
+$\;-\;$
+counterfactual Gini
+$=$
+inequality removed by equalising coalition $S$
+\end{center}
+
+
+\vspace{0.25em}
+
+% ------------------------------------------------------------
+% SHAPLEY ALLOCATION
+% ------------------------------------------------------------
+
+\[
+\phi_k^p
+=
+\sum_{S\subseteq\{P,A,B\}\setminus\{k\}}
+\frac{|S|!(3-|S|-1)!}{3!}
+\left[
+v^p(S\cup\{k\})-v^p(S)
+\right].
+\]
+
+\[
+\phi_P^p+\phi_A^p+\phi_B^p
+=
+I^p(\varnothing)-I^p(\{P,A,B\})
+\equiv
+\Delta I^p.
+\]
+
+\vfill
+
+\begin{center}
+\small
+\textbf{Average each channel's marginal contribution over all $3!=6$ orders.}
+\end{center}
+
+\begin{flushright}
+\footnotesize
+Shorrocks (2013); Audoly et al. (2025)
+\end{flushright}
+
+\cornerlinks{\golink{b:shapley}{Shapley vs one-factor} \golink{b:eagini}{EA table} \golink{b:attgini}{ATT table} \golink{b:aggregation}{aggregation orders}}
+\end{frame}
+
+
+% ============================================================
+% SLIDE 15 — CENTRAL DECOMPOSITION RESULT
+% ============================================================
+
+% --- Slide 15a: central result figure
+\begin{frame}[t]
+\frametitle{How much is associated with job opportunities?}
+\hypertarget{main:results}{}
+
+\vspace{-0.2em}
+
+\begin{center}
+\includegraphics[width=0.90\textwidth]{central_result_v16.png}
+\end{center}
+
+\cornerlinks[ne]{\golink{b:central}{full-size figure} \golink{b:eapct}{EA channels} \golink{b:attpct}{ATT channels}}
+\end{frame}
+
+% --- Slide 15b: headline numbers + interpretation
+\begin{frame}[t]
+\frametitle{How much is associated with job opportunities? (cont.)}
+\hypertarget{main:howmuch}{}
+
+\begin{center}
+\small
+\textbf{Access + earning opportunities, equivalised:}
+\end{center}
+
+\vspace{0.15em}
+
+\begin{columns}[T,onlytextwidth]
+
+\column{0.48\textwidth}
+\centering
+\textbf{Single adults}\\[0.2em]
+
+\textcolor{chacc}{Ex-ante prospect:}
+{\Large \textbf{20.3\%}}\\[0.15em]
+
+\textcolor{chearn}{Attained bundle:}
+{\Large \textbf{1.9\%}}
+
+\column{0.48\textwidth}
+\centering
+\textbf{Couples}\\[0.2em]
+
+\textcolor{chacc}{Ex-ante prospect:}
+{\Large \textbf{7.9\%}}\\[0.15em]
+
+\textcolor{chearn}{Attained bundle:}
+{\Large \textbf{3.5\%}}
+
+\end{columns}
+
+\vspace{0.35em}
+
+\begin{center}
+\small
+\textbf{Singles: the ranking of the opportunity channels reverses}\\
+EA: access $>$ earnings
+\qquad\qquad
+ATT: earnings $>$ access
+\end{center}
+
+\vspace{0.2em}
+
+\begin{center}
+\scriptsize\color{gray}
+Shares are relative to each perspective's own baseline Gini.
+The ATT--EA comparison is not a pure welfare-definition experiment:
+aggregation and numerical support also differ.
+\end{center}
+
+\cornerlinks{
+\golink{b:eagini}{EA decomposition}
+\golink{b:attgini}{ATT decomposition}
+\golink{b:eapct}{channel shares}
+\golink{b:residual}{outside P-A-B}
+}
+
+\end{frame}
+
+% ============================================================
+% SLIDE 16 — INTERPRETING THE CENTRAL RESULT
+% ============================================================
+
+% --- Slide 16a: interpretation (two welfare perspectives)
+\begin{frame}[t]
+\frametitle{How should I interpret these numbers?}
+\hypertarget{main:interp}{}
+
+\vspace{0.2em}
+
+\begin{columns}[T,onlytextwidth]
+
+% LEFT: ATTAINED
+\column{0.46\textwidth}
+
+\begin{block}{\centering Attained-bundle welfare}
+\centering
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Opportunity environment}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{attained job}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{consumption + leisure}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{well-being}
+\end{tabular}
+\end{center}
+\end{block}
+
+\vspace{0.25em}
+
+\begin{center}
+{\small
+Once the attained bundle is fixed,\\
+unchosen opportunities disappear\\
+from the welfare evaluation.
+}
+\end{center}
+
+\vspace{0.25em}
+
+\begin{center}
+\textcolor{chearn}{\textbf{Earning opportunities $>$ access}}
+\end{center}
+
+% RIGHT: EX-ANTE
+\column{0.46\textwidth}
+
+\begin{block}{\centering Ex-ante prospect welfare}
+\centering
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{Whole job environment}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{availability $\times$ value of every job}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{value of the prospect}\\[-0.2em]
+{\Large$\Downarrow$}\\[-0.2em]
+\textbf{well-being}
+\end{tabular}
+\end{center}
+\end{block}
+
+\vspace{0.25em}
+
+\begin{center}
+{\small
+Jobs that are not ultimately chosen\\
+still enter the welfare evaluation\\
+through their opportunity weight.
+}
+\end{center}
+
+\vspace{0.25em}
+
+\begin{center}
+\textcolor{chacc}{\textbf{For singles: access $>$ earnings}}
+\end{center}
+
+\end{columns}
+
+\cornerlinks[ne]{\golink{b:attpct}{ATT channels} \golink{b:eapct}{EA channels} \golink{b:explained}{composition within P-A-B} \golink{b:aggregation}{aggregation orders}}
+\end{frame}
+
+% --- Slide 16b: qualifications / boundaries
+\begin{frame}[t]
+\frametitle{How should I interpret these numbers? (cont.)}
+\hypertarget{main:limits}{}
+
+\begin{center}
+\begin{minipage}{0.94\textwidth}
+\small
+
+\textbf{Three qualifications}
+
+\vspace{0.25em}
+
+\begin{enumerate}
+    \item \textbf{Partial opportunity accounting:}
+    $A$ and $B$ are selected opportunity channels, not the complete opportunity environment.
+
+    \item \textbf{Scale matters:}
+    equivalisation changes the quantitative attribution materially, especially for couples.
+
+    \item \textbf{Structural accounting, not causal shares:}
+    parameter uncertainty has not yet been propagated through the welfare and Shapley calculations.
+\end{enumerate}
+
+\end{minipage}
+\end{center}
+
+\vfill
+
+\begin{center}
+\scriptsize\color{gray}
+ATT--EA differences are consistent with the two welfare perspectives valuing
+different objects, but aggregation and numerical support also differ.
+\end{center}
+
+\cornerlinks{\golink{b:residual}{outside P-A-B} \golink{b:robust}{robustness} \golink{b:uncertainty}{parameter uncertainty} \golink{b:equiv}{equivalisation}}
+\end{frame}
+
+
+
+% ============================================================
+% SLIDE 17 — CONCLUSION
+% ============================================================
+
+% --- Slide 17a: conclusion points
+\begin{frame}[t]
+\frametitle{Conclusion}
+
+\vspace{0.2em}
+
+\begin{enumerate}
+
+\item[\textbf{1.}]
+\textbf{Latent job opportunities matter empirically}
+
+{\small
+Allowing household-specific opportunity heterogeneity improves the
+representation of observed labour-supply choices relative to
+common-opportunity benchmarks.
+}
+
+\vspace{0.6em}
+
+\item[\textbf{2.}]
+\textbf{The welfare perspective matters for the decomposition}
+
+{\small
+On the equivalised scale, access + earning opportunities account for
+about \textbf{20.3\%} of ex-ante welfare inequality for singles and
+\textbf{7.9\%} for couples, compared with only
+\textbf{1.9\%} and \textbf{3.5\%} under attained-bundle welfare.
+}
+
+\vspace{0.6em}
+
+\item[\textbf{3.}]
+\textbf{The opportunity mechanism matters}
+
+{\small
+For singles, local access dominates earning opportunities under
+ex-ante welfare, while the ordering reverses under attained-bundle
+welfare.
+
+For couples, the ex-ante contributions of access and earnings are close.
+}
+
+\end{enumerate}
+
+\end{frame}
+
+% --- Slide 17b: takeaway + next steps
+\begin{frame}[t]
+\frametitle{Conclusion (cont.)}
+\hypertarget{main:conclusion}{}
+
+\vspace{0.2em}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\centering
+\small
+\textbf{Looking only at the job that was attained can miss inequality carried by the opportunity environment behind that choice.}
+}}
+\end{center}
+
+\vspace{0.6em}
+
+{\footnotesize
+\textbf{Next:}
+extend the decomposition to household resources, needs and composition;
+propagate parameter uncertainty;
+strengthen the attained-bundle numerical implementation.
+}
+
+\vspace{0.4em}
+
+{\scriptsize\color{gray}
+Preliminary structural accounting results; not causal attribution.
+}
+
+\cornerlinks{\golink{b:residual}{next steps} \golink{b:uncertainty}{parameter uncertainty} \golink{appmap}{appendix map}}
+\end{frame}
+\begin{frame}[standout]
+  Thank you
+
+  \vspace{1em}
+  
+  {\normalsize\href{ https://hisham-haydar.github.io}
+  {\texttt{hisham-haydar.github.io}}
+  }
+  
+  \vspace{1em}
+  {\normalsize\href{mailto:hisham.hadyar@liser.lu}{\texttt{Hisham.Hadyar@liser.lu}}}
+
+\end{frame}
+
+% ============================================================ BACKUP
+% Backup appendix, built from the V19 backup frames
+% (beamer/JMP_seminar_beamer_v19.tex).  Every numeral is a macro from
+% deck_numbers_v19.tex.  Frames after \appendix do not count toward the main
+% frame total (appendixnumberbeamer).  Every backup carries [Back] to its home
+% main slide and [Appendix map].
+\appendix
+
+% ==================================================================== map
+\begin{frame}
+\frametitle{Appendix map}
+\hypertarget{appmap}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{>{\bfseries}l lll}
+Literature & \maplink{b:eopbench}{EOp benchmarks} & \maplink{b:lit}{Literature} & \\
+Theory & \maplink{b:measures}{The measures} & \maplink{b:theoryfig}{Own-set construction} & \maplink{b:theoryscope}{Companion theory scope} \\
+Model & \maplink{b:utility}{Utility specification} & \maplink{b:density}{Opportunity specification} & \maplink{b:likelihood}{Likelihood} \\
+ & \maplink{b:ident}{Identification} & \maplink{b:obseq}{Observational equivalence} & \\
+Estimation & \maplink{b:prefs}{Preference parameters} & \maplink{b:access}{Access parameters} & \maplink{b:hours}{Hours and occupation} \\
+ & \maplink{b:wage}{Wage offers} & \maplink{b:benchmarks}{Common opportunities} & \maplink{b:inference}{Curvature and inference} \\
+ & \maplink{b:uncertainty}{Parameter uncertainty} & & \\
+Fit & \maplink{b:extensive}{Extensive margin} & \maplink{b:margins}{Fit by margin} & \maplink{b:hours37}{37-hour point} \\
+ & \maplink{b:matched}{Matched households} & \maplink{b:mrs}{Marginal rate of substitution} & \\
+Welfare & \maplink{b:attderiv}{ATT derivation} & \maplink{b:attdesign}{ATT numerical design} & \maplink{b:eaderiv}{EA derivation} \\
+ & \maplink{b:eavalid}{EA validation} & \maplink{b:prospectref}{Prospect reference} & \maplink{b:aggregation}{Two aggregation orders} \\
+ & \maplink{b:equiv}{Equivalisation} & & \\
+Decomposition & \maplink{b:central}{Central figure} & \maplink{b:eagini}{EA, Gini points} & \maplink{b:attgini}{ATT, Gini points} \\
+ & \maplink{b:eapct}{EA, \% of baseline} & \maplink{b:attpct}{ATT, \% of baseline} & \maplink{b:explained}{Composition within P-A-B} \\
+ & \maplink{b:shapley}{Shapley vs one-factor} & \maplink{b:residual}{Outside P-A-B} & \maplink{b:robust}{Robustness} \\
+Data & \maplink{b:sample}{Sample selection} & \maplink{b:pricing}{EUROMOD pricing} & \maplink{b:numerics}{Numerical design} \\
+\end{tabular}
+\end{center}
+\vfill
+\cornerlinks{\hyperlink{main:conclusion}{\beamerreturnbutton{Back}}}
+\end{frame}
+
+% ==================================================================== LITERATURE
+\begin{frame}
+\frametitle{Backup: inequality-of-opportunity benchmarks}
+\hypertarget{b:eopbench}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcll>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.2\textwidth}}
+\toprule
+ & share & outcome & data & measure & source \\
+\midrule
+Italy & \VLitItaly\% & gross earnings & \VLitItalyData & MLD; parental education & Checchi \& Peragine (\VLitItalyYear), \VLitItalyWhere \\
+Brazil, urban & \VLitBrazilLo--\VLitBrazilHi\% & male hourly earnings & \VLitBrazilData & Theil; five circumstances & Bourguignon et al.\ (\VLitBrazilYear), abstract \\
+France & \VLitFrance\% & post-tax earnings & \VLitFranceData & MLD; five circumstances & Brunori et al.\ (\VLitFranceYear), \VLitFranceWhere{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}\centering
+\textbf{These benchmarks}\\ {\footnotesize shares of earnings inequality attributed to observed circumstances}
+\column{0.48\textwidth}\centering
+\textbf{This paper}\\ {\footnotesize a share of welfare inequality from estimated latent opportunity components, resources and needs held fixed}
+\end{columns}
+\vfill
+{\tiny\color{gray}
+Checchi \& Peragine (\VLitItalyYear), Inequality of opportunity in Italy, \emph{Journal of Economic Inequality}.\quad
+Bourguignon, Ferreira \& Men\'endez (\VLitBrazilYear), Inequality of opportunity in Brazil, \emph{Review of Income and Wealth}.\quad
+Brunori, Ferreira \& Peragine (\VLitFranceYear), Inequality of opportunity, income inequality and economic mobility, IZA DP; its France row reports Checchi, Peragine \& Serlenga.\par}
+\vspace{1.2em}
+\backnav{main:eop}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: literature}
+\hypertarget{b:lit}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Choice sets and restrictions}\\[0.4em]
+{\footnotesize Aaberge, Colombino \& Wennemo (\VLitAcwYear): alternative representations of the choice set}\\[0.3em]
+{\footnotesize Beffy, Blundell, Bozio, Laroque \& T\^o (\VLitBeffyYear): labour supply with restricted choices}
+\column{0.31\textwidth}\centering
+\textbf{Latent jobs and welfare}\\[0.4em]
+{\footnotesize Aaberge, Dagsvik \& Str{\o}m; Dagsvik \& Str{\o}m; Dagsvik \& Jia; Cap\'eau, Decoster \& Dekkers}\\[0.3em]
+{\footnotesize Fleurbaey \& Maniquet; Decoster \& Haan; Bargain et al.; Jacquet, Jia \& Thoresen}
+\column{0.31\textwidth}\centering
+\textbf{Inequality of opportunity and decomposition}\\[0.4em]
+{\footnotesize Roemer; Checchi \& Peragine; Bourguignon, Ferreira \& Men\'endez; Brunori, Ferreira \& Peragine}\\[0.3em]
+{\footnotesize Shorrocks; Sastre \& Trannoy; Creedy \& H\'erault; M\"uhlhan}
+\end{columns}
+\vfill
+\backnav{main:eopjobs}
+\end{frame}
+
+% ==================================================================== THEORY
+\begin{frame}
+\frametitle{Backup: the measures}
+\hypertarget{b:measures}{}
+\vspace{-0.3em}
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.4\textwidth}>{\raggedright\arraybackslash}p{0.32\textwidth}}
+\toprule
+measure & definition & characterised by \\
+\midrule
+$W^1$\quad Equal Pay & $W=w\Leftrightarrow z\,I\,\max_R\{B\}$,\ \ $B=\{(w,j'):j'\in A\}$ & Resp.\ for Equal Pay $+$ Ind.\ of $\mathbf y$ \\
+$W^2$ & $W=w\Leftrightarrow z\,I\,\max_R\{B\}$,\ \ $B=\{(\mathbf y(j')-t,j'):j'\in A\}$,\ \ $w=\max_{A}\mathbf y-t$ & Full Resp.\ $+$ Comp.\ for $R^h$ \\
+$W^3$\quad Laissez-Faire & $W=w\Leftrightarrow z\,I\,\max_R\{B\}$,\ \ $B=\{(\mathbf y(j')+w,j'):j'\in A\}$ & Full Resp.\ $+$ Equal Well-Being at Laissez-Faire \\
+$W^4$\quad Staying-Home Equivalent & $W=w\Leftrightarrow z\,I\,(w,o)$ & Full Comp.\ $+$ Ind.\ of Prefs.\ over Infeasible Jobs \\
+$W^5$\quad Reference Ability & $W=w\Leftrightarrow z\,I\,\max_R\{B\}$,\ \ $B=\{(\mathbf y(j')+w,j'):j'\in\bar A\}$ & Ind.\ of $A$ $+$ Resp.\ for Reference Abilities; $\bar A=\mathcal J$: Resp.\ when Preferred Job Possible \\
+$W^6$\quad Min of Equal Pay & $W$ equal whenever $z\,I\,\argmax_{(\mathcal J,\mathbf y^w)}R$ and $z'\,I'\,\argmax_{(\mathcal J,\mathbf y^w)}R'$ & Full Comp.\ $+$ Weak Resp. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\scriptsize maintained throughout: Representation, Job Duplication Invariance, Job Neutrality, continuity and monotonicity in consumption \quad$\cdot$\quad Haydar \& Maniquet, work in progress; proofs in the companion theory talk\par}
+\vspace{1.2em}
+\backnav{main:measures}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: own-set equal-consumption construction}
+\hypertarget{b:theoryfig}{}
+\begin{center}
+\includegraphics[height=0.57\textheight,width=\textwidth,keepaspectratio]{figures/theory_w1.png}
+\end{center}
+{\footnotesize Own-set equal-consumption equivalents: each individual gets a common consumption on every job in their own ability set; the level at which the preferred job is indifferent to the attained bundle is their money metric, comparable across individuals. Adapted from Haydar and Maniquet (2026), work in progress.\par}
+\backnav{main:bridge}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: scope of the companion theory}
+\hypertarget{b:theoryscope}{}
+\begin{center}
+{\large\bfseries What the companion theory does and does not cover}
+\end{center}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}\centering
+\textbf{Covered}\\[0.4em]
+{\small The deterministic own-set equal-consumption construction is characterised axiomatically in the companion paper.}
+\column{0.46\textwidth}\centering
+\textbf{Not covered}\\[0.4em]
+{\small The stochastic extension to a prospect is this paper's own step and is not characterised there.}
+\end{columns}
+\vfill
+\begin{center}
+\textbf{The asymmetry}\\[0.4em]
+{\small The attained-bundle measure uses systematic utility only, while the prospect measure's expected-maximum construction makes the taste component relevant to the prospect's value.}\\[0.4em]
+{\small Whether that asymmetry is the right normative choice is open.}
+\end{center}
+\vfill
+\backnav{main:ea}
+\end{frame}
+
+% ==================================================================== MODEL
+\begin{frame}
+\frametitle{Backup: utility specification}
+\hypertarget{b:utility}{}
+\vfill
+\backupeq{$\displaystyle v_i(j)=L_i(j)+\beta_c\log\!\Big(\frac{C_i(j)}{\lambda_c}\Big),\qquad
+L_i(j)=\beta^g_\ell(\mathbf x_i)\,\mathcal B\big(\tilde\ell_i(j);\theta^g_\ell\big)$}
+\backupeq{$\displaystyle \tilde\ell_i(j)=\frac{\VTimeEndow-h}{\VLeisureScale},\qquad \mathcal B(z;\theta)=\frac{z^\theta-1}{\theta}$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+$\beta^g_\ell(\mathbf x_i)$\\ {\footnotesize intercept, centred age and its square (units of \VAgeScale{} years)}
+\column{0.31\textwidth}\centering
+$k_i$\\ {\footnotesize children under \VChildCutoff, women only}
+\column{0.31\textwidth}\centering
+couples\\ {\footnotesize sum of the two spouses' leisure terms}
+\end{columns}
+\vfill
+\begin{center}
+{\footnotesize current specification: $\theta_c=0$, so $\beta_c\,B(C/\lambda_c;\theta_c)=\beta_c\log(C/\lambda_c)$}
+\end{center}
+\backnav{main:ruro}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: opportunity specification}
+\hypertarget{b:density}{}
+\vfill
+\backupeq{$\displaystyle g_i(o)=1,\qquad g_i(j)=g^{E}_i\;g^{H}_i(h)\;g^{\mathrm{Occ}}_i(k)\;g^{W}_i(w\mid k)\quad\text{for market jobs } j\neq o$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.23\textwidth}\centering
+\textcolor{chacc}{\textbf{access}}\\ {\footnotesize $g^E_i$: local unemployment exposure, region, urban or rural location, year}
+\column{0.23\textwidth}\centering
+\textbf{hours}\\ {\footnotesize $g^H_i$: elevated bands over a residual set}
+\column{0.23\textwidth}\centering
+\textbf{occupation}\\ {\footnotesize $g^{\mathrm{Occ}}_i$: sex-specific group masses}
+\column{0.23\textwidth}\centering
+\textcolor{chearn}{\textbf{wage offers}}\\ {\footnotesize $g^W_i$: log-normal, truncated to $[\VWageLo,\VWageHi]$}
+\end{columns}
+\vfill
+\begin{center}
+{\small wage-offer location $\mu_i(k)$: education, potential experience and its square, occupation}
+\end{center}
+\vfill
+\backnav{main:ident}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: sampled-alternative likelihood}
+\hypertarget{b:likelihood}{}
+\vfill
+\backupeq{$\displaystyle V_{ij}=v_i(j)+\log g_i(j)-\log q_{ij}$}
+\backupeq{$\displaystyle \Pr\!\big(y\mid\mathcal C_i\big)=\frac{n_y\exp V_{iy}}{\sum_{s\in\mathcal C_i}\exp V_{is}}$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+$q_{ij}$\\ {\footnotesize proposal density, fitted out of fold}
+\column{0.31\textwidth}\centering
+$\mathcal C_i$\\ {\footnotesize observed job and \VNDraws{} draws: \VNAltRows{} rows}
+\column{0.31\textwidth}\centering
+$n_y$\\ {\footnotesize multiplicity of a repeated draw}
+\end{columns}
+\vfill
+\backnav{main:ruro}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: what separates preferences from opportunities?}
+\hypertarget{b:ident}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Functional form}\\[0.4em]
+{\footnotesize smooth preferences in hours; banded hours opportunities}
+\column{0.31\textwidth}\centering
+\textbf{Exclusion}\\[0.4em]
+{\footnotesize local unemployment exposure and geography shift access, not utility}
+\column{0.31\textwidth}\centering
+\textbf{Independence}\\[0.4em]
+{\footnotesize wage offers independent of hours, given occupation}
+\end{columns}
+\vfill
+\begin{center}
+{\small maintained, not tested \quad$\cdot$\quad not a causal design}
+\end{center}
+\vfill
+\backnav{main:ident}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: observational equivalence}
+\hypertarget{b:obseq}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}\centering
+\textbf{Without restrictions}\\[0.4em]
+{\small a taste against certain hours and a scarcity of jobs at those hours predict the same choices}
+\column{0.46\textwidth}\centering
+\textbf{With restrictions}\\[0.4em]
+{\small smooth tastes, banded availability and excluded access shifters move different parts of the choice distribution}
+\end{columns}
+\vfill
+\begin{center}
+If availability heterogeneity is omitted, some of its effects can be absorbed by the estimated utility component.
+\end{center}
+\vfill
+\begin{center}
+{\small maintained restrictions, not tested \quad$\cdot$\quad regional variation is not a causal design}
+\end{center}
+\vfill
+\backnav{main:ident}
+\end{frame}
+
+% ==================================================================== ESTIMATION
+\begin{frame}
+\frametitle{Backup: preference parameters}
+\hypertarget{b:prefs}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+ & Single men & Single women & Couple men & Couple women \\
+\midrule
+leisure weight, intercept & \VCoefSingBetaZeroLSm{} \se{\VCoefSingBetaZeroLSmSE} & \VCoefSingBetaZeroLSf{} \se{\VCoefSingBetaZeroLSfSE} & \VCoefCoupBetaZeroLM{} \se{\VCoefCoupBetaZeroLMSE} & \VCoefCoupBetaZeroLF{} \se{\VCoefCoupBetaZeroLFSE} \\
+ & {\tiny\color{gray}\VCoefSingBetaZeroLSmId} & {\tiny\color{gray}\VCoefSingBetaZeroLSfId} & {\tiny\color{gray}\VCoefCoupBetaZeroLMId} & {\tiny\color{gray}\VCoefCoupBetaZeroLFId} \\[0.2em]
+leisure weight, age & \VCoefSingBetaLAgeSm{} \se{\VCoefSingBetaLAgeSmSE} & \VCoefSingBetaLAgeSf{} \se{\VCoefSingBetaLAgeSfSE} & \VCoefCoupBetaLAgeM{} \se{\VCoefCoupBetaLAgeMSE} & \VCoefCoupBetaLAgeF{} \se{\VCoefCoupBetaLAgeFSE} \\
+ & {\tiny\color{gray}\VCoefSingBetaLAgeSmId} & {\tiny\color{gray}\VCoefSingBetaLAgeSfId} & {\tiny\color{gray}\VCoefCoupBetaLAgeMId} & {\tiny\color{gray}\VCoefCoupBetaLAgeFId} \\[0.2em]
+leisure weight, age squared & \VCoefSingBetaLTwoAgeSm{} \se{\VCoefSingBetaLTwoAgeSmSE} & \VCoefSingBetaLTwoAgeSf{} \se{\VCoefSingBetaLTwoAgeSfSE} & \VCoefCoupBetaLTwoAgeM{} \se{\VCoefCoupBetaLTwoAgeMSE} & \VCoefCoupBetaLTwoAgeF{} \se{\VCoefCoupBetaLTwoAgeFSE} \\
+ & {\tiny\color{gray}\VCoefSingBetaLTwoAgeSmId} & {\tiny\color{gray}\VCoefSingBetaLTwoAgeSfId} & {\tiny\color{gray}\VCoefCoupBetaLTwoAgeMId} & {\tiny\color{gray}\VCoefCoupBetaLTwoAgeFId} \\[0.2em]
+leisure weight, children & --- & \VCoefSingBetaLNkidsSf{} \se{\VCoefSingBetaLNkidsSfSE} & --- & \VCoefCoupBetaLNkidsF{} \se{\VCoefCoupBetaLNkidsFSE} \\
+ &  & {\tiny\color{gray}\VCoefSingBetaLNkidsSfId} &  & {\tiny\color{gray}\VCoefCoupBetaLNkidsFId} \\[0.2em]
+leisure curvature $\theta_\ell$ & \VCoefSingThetaLSm{} \se{\VCoefSingThetaLSmSE} & \VCoefSingThetaLSf{} \se{\VCoefSingThetaLSfSE} & \VCoefCoupThetaLM{} \se{\VCoefCoupThetaLMSE} & \VCoefCoupThetaLF{} \se{\VCoefCoupThetaLFSE} \\
+ & {\tiny\color{gray}\VCoefSingThetaLSmId} & {\tiny\color{gray}\VCoefSingThetaLSfId} & {\tiny\color{gray}\VCoefCoupThetaLMId} & {\tiny\color{gray}\VCoefCoupThetaLFId} \\[0.2em]
+consumption weight $\beta_c$ & \multicolumn{2}{c}{\VCoefSingBetaC{} \se{\VCoefSingBetaCSE}} & \multicolumn{2}{c}{\VCoefCoupBetaC{} \se{\VCoefCoupBetaCSE}} \\
+ & \multicolumn{2}{c}{{\tiny\color{gray}\VCoefSingBetaCId}} & \multicolumn{2}{c}{{\tiny\color{gray}\VCoefCoupBetaCId}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize cluster-robust standard errors; parameter identifiers in grey; the male children term in couples is structurally zero}
+\vspace{1.2em}
+\backnav{main:att}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: access parameters}
+\hypertarget{b:access}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{llcc}
+\toprule
+ & identifier & Singles & Couples \\
+\midrule
+employment constant & {\tiny\color{gray}\VCoefSingBetaEId; \VCoefCoupBetaEMId, \VCoefCoupBetaEFId} & \VCoefSingBetaE{} \se{\VCoefSingBetaESE} & men \VCoefCoupBetaEM{} \se{\VCoefCoupBetaEMSE} \\
+ & & & women \VCoefCoupBetaEF{} \se{\VCoefCoupBetaEFSE} \\
+local unemployment exposure & {\tiny\color{gray}\VCoefSingBetaEGsurId} & \VCoefSingBetaEGsur{} \se{\VCoefSingBetaEGsurSE} & \VCoefCoupBetaEGsur{} \se{\VCoefCoupBetaEGsurSE} \\
+densely populated & {\tiny\color{gray}\VCoefSingBetaEDrgurId} & \VCoefSingBetaEDrgur{} \se{\VCoefSingBetaEDrgurSE} & \VCoefCoupBetaEDrgur{} \se{\VCoefCoupBetaEDrgurSE} \\
+intermediate density & {\tiny\color{gray}\VCoefSingBetaEDrgmdId} & \VCoefSingBetaEDrgmd{} \se{\VCoefSingBetaEDrgmdSE} & \VCoefCoupBetaEDrgmd{} \se{\VCoefCoupBetaEDrgmdSE} \\
+\VCoefSingBetaETwoDrgnLabel & {\tiny\color{gray}\VCoefSingBetaETwoDrgnId} & \VCoefSingBetaETwoDrgn{} \se{\VCoefSingBetaETwoDrgnSE} & \VCoefCoupBetaETwoDrgn{} \se{\VCoefCoupBetaETwoDrgnSE} \\
+\VCoefSingBetaEThreeDrgnLabel & {\tiny\color{gray}\VCoefSingBetaEThreeDrgnId} & \VCoefSingBetaEThreeDrgn{} \se{\VCoefSingBetaEThreeDrgnSE} & \VCoefCoupBetaEThreeDrgn{} \se{\VCoefCoupBetaEThreeDrgnSE} \\
+\VCoefSingBetaEFourDrgnLabel & {\tiny\color{gray}\VCoefSingBetaEFourDrgnId} & \VCoefSingBetaEFourDrgn{} \se{\VCoefSingBetaEFourDrgnSE} & \VCoefCoupBetaEFourDrgn{} \se{\VCoefCoupBetaEFourDrgnSE} \\
+\VCoefSingBetaEFiveDrgnLabel & {\tiny\color{gray}\VCoefSingBetaEFiveDrgnId} & \VCoefSingBetaEFiveDrgn{} \se{\VCoefSingBetaEFiveDrgnSE} & \VCoefCoupBetaEFiveDrgn{} \se{\VCoefCoupBetaEFiveDrgnSE} \\
+\VCoefSingBetaESixDrgnLabel & {\tiny\color{gray}\VCoefSingBetaESixDrgnId} & \VCoefSingBetaESixDrgn{} \se{\VCoefSingBetaESixDrgnSE} & \VCoefCoupBetaESixDrgn{} \se{\VCoefCoupBetaESixDrgnSE} \\
+\VCoefSingBetaESevenDrgnLabel & {\tiny\color{gray}\VCoefSingBetaESevenDrgnId} & \VCoefSingBetaESevenDrgn{} \se{\VCoefSingBetaESevenDrgnSE} & \VCoefCoupBetaESevenDrgn{} \se{\VCoefCoupBetaESevenDrgnSE} \\
+\VCoefSingBetaEEightDrgnLabel & {\tiny\color{gray}\VCoefSingBetaEEightDrgnId} & \VCoefSingBetaEEightDrgn{} \se{\VCoefSingBetaEEightDrgnSE} & \VCoefCoupBetaEEightDrgn{} \se{\VCoefCoupBetaEEightDrgnSE} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize references: the first region and thinly populated areas; couples share the shifters across spouses}
+\vspace{1.2em}
+\backnav{main:ident}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: hours and occupation opportunities}
+\hypertarget{b:hours}{}
+\vspace{-0.6em}
+\begin{center}\scriptsize
+\textbf{Hours bands}\\[0.2em]
+\renewcommand{\arraystretch}{0.78}
+\begin{tabular}{lccc}
+\toprule
+ & Singles & Couple men & Couple women \\
+\midrule
+part-time lower & \VCoefSingBetaHOnePt & \VCoefCoupBetaHOnePtM & \VCoefCoupBetaHOnePtF \\
+ & {\tiny\color{gray}\VCoefSingBetaHOnePtId} & {\tiny\color{gray}\VCoefCoupBetaHOnePtMId} & {\tiny\color{gray}\VCoefCoupBetaHOnePtFId} \\
+part-time upper & \VCoefSingBetaHTwoPt & \VCoefCoupBetaHTwoPtM & \VCoefCoupBetaHTwoPtF \\
+ & {\tiny\color{gray}\VCoefSingBetaHTwoPtId} & {\tiny\color{gray}\VCoefCoupBetaHTwoPtMId} & {\tiny\color{gray}\VCoefCoupBetaHTwoPtFId} \\
+narrow full-time & \VCoefSingBetaHThreeFiveF & \VCoefCoupBetaHThreeFiveFM & \VCoefCoupBetaHThreeFiveFF \\
+ & {\tiny\color{gray}\VCoefSingBetaHThreeFiveFId} & {\tiny\color{gray}\VCoefCoupBetaHThreeFiveFMId} & {\tiny\color{gray}\VCoefCoupBetaHThreeFiveFFId} \\
+full-time upper & \VCoefSingBetaHFt & \VCoefCoupBetaHFtM & \VCoefCoupBetaHFtF \\
+ & {\tiny\color{gray}\VCoefSingBetaHFtId} & {\tiny\color{gray}\VCoefCoupBetaHFtMId} & {\tiny\color{gray}\VCoefCoupBetaHFtFId} \\
+long hours & \VCoefSingBetaHLh & \VCoefCoupBetaHLhM & \VCoefCoupBetaHLhF \\
+ & {\tiny\color{gray}\VCoefSingBetaHLhId} & {\tiny\color{gray}\VCoefCoupBetaHLhMId} & {\tiny\color{gray}\VCoefCoupBetaHLhFId} \\
+\bottomrule
+\end{tabular}\\[0.15em]
+\textbf{Occupation masses}\\[0.2em]
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Singles} & \multicolumn{2}{c}{Couples} \\
+ & men & women & men & women \\
+\midrule
+\VCoefSingBetaOccTwoMLabel & \VCoefSingBetaOccTwoM & \VCoefSingBetaOccTwoF & \VCoefCoupBetaOccTwoM & \VCoefCoupBetaOccTwoF \\
+ & {\tiny\color{gray}\VCoefSingBetaOccTwoMId} & {\tiny\color{gray}\VCoefSingBetaOccTwoFId} & {\tiny\color{gray}\VCoefCoupBetaOccTwoMId} & {\tiny\color{gray}\VCoefCoupBetaOccTwoFId} \\
+\VCoefSingBetaOccThreeMLabel & \VCoefSingBetaOccThreeM & \VCoefSingBetaOccThreeF & \VCoefCoupBetaOccThreeM & \VCoefCoupBetaOccThreeF \\
+ & {\tiny\color{gray}\VCoefSingBetaOccThreeMId} & {\tiny\color{gray}\VCoefSingBetaOccThreeFId} & {\tiny\color{gray}\VCoefCoupBetaOccThreeMId} & {\tiny\color{gray}\VCoefCoupBetaOccThreeFId} \\
+\VCoefSingBetaOccFourMLabel & \VCoefSingBetaOccFourM & \VCoefSingBetaOccFourF & \VCoefCoupBetaOccFourM & \VCoefCoupBetaOccFourF \\
+ & {\tiny\color{gray}\VCoefSingBetaOccFourMId} & {\tiny\color{gray}\VCoefSingBetaOccFourFId} & {\tiny\color{gray}\VCoefCoupBetaOccFourMId} & {\tiny\color{gray}\VCoefCoupBetaOccFourFId} \\
+\bottomrule
+\end{tabular}
+\end{center}
+{\scriptsize estimates with identifiers; standard errors in the paper}
+\backnav{main:ident}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: wage-offer equation}
+\hypertarget{b:wage}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{llcc}
+\toprule
+ & identifier & Singles & Couples \\
+\midrule
+intercept & {\tiny\color{gray}\VCoefSingBetaZeroWId} & \VCoefSingBetaZeroW{} \se{\VCoefSingBetaZeroWSE} & \VCoefCoupBetaZeroW{} \se{\VCoefCoupBetaZeroWSE} \\
+low education & {\tiny\color{gray}\VCoefSingBetaWEducLId} & \VCoefSingBetaWEducL{} \se{\VCoefSingBetaWEducLSE} & \VCoefCoupBetaWEducL{} \se{\VCoefCoupBetaWEducLSE} \\
+high education & {\tiny\color{gray}\VCoefSingBetaWEducHId} & \VCoefSingBetaWEducH{} \se{\VCoefSingBetaWEducHSE} & \VCoefCoupBetaWEducH{} \se{\VCoefCoupBetaWEducHSE} \\
+potential experience & {\tiny\color{gray}\VCoefSingBetaWPexpId} & \VCoefSingBetaWPexp{} \se{\VCoefSingBetaWPexpSE} & \VCoefCoupBetaWPexp{} \se{\VCoefCoupBetaWPexpSE} \\
+experience squared & {\tiny\color{gray}\VCoefSingBetaWTwoPexpId} & \VCoefSingBetaWTwoPexp{} \se{\VCoefSingBetaWTwoPexpSE} & \VCoefCoupBetaWTwoPexp{} \se{\VCoefCoupBetaWTwoPexpSE} \\
+\VCoefSingDeltaOccTwoLabel & {\tiny\color{gray}\VCoefSingDeltaOccTwoId} & \VCoefSingDeltaOccTwo{} \se{\VCoefSingDeltaOccTwoSE} & \VCoefCoupDeltaOccTwo{} \se{\VCoefCoupDeltaOccTwoSE} \\
+\VCoefSingDeltaOccThreeLabel & {\tiny\color{gray}\VCoefSingDeltaOccThreeId} & \VCoefSingDeltaOccThree{} \se{\VCoefSingDeltaOccThreeSE} & \VCoefCoupDeltaOccThree{} \se{\VCoefCoupDeltaOccThreeSE} \\
+\VCoefSingDeltaOccFourLabel & {\tiny\color{gray}\VCoefSingDeltaOccFourId} & \VCoefSingDeltaOccFour{} \se{\VCoefSingDeltaOccFourSE} & \VCoefCoupDeltaOccFour{} \se{\VCoefCoupDeltaOccFourSE} \\
+log-wage dispersion $\sigma$ & {\tiny\color{gray}\VCoefSingSigmaId} & \VCoefSingSigma{} \se{\VCoefSingSigmaSE} & \VCoefCoupSigma{} \se{\VCoefCoupSigmaSE} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize medium education is the reference; experience in units of \VExpScale{} years}
+\vspace{1.2em}
+\backnav{main:ident}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: household-specific versus common opportunities}
+\hypertarget{b:benchmarks}{}
+\vfill
+\begin{center}\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.44\textwidth}ccc}
+\toprule
+Single adults & free coordinates & criterion & population fit \\
+\midrule
+household-specific opportunities & \VKFreeSingles{} & \VNegllSingles{} & \VMaeSingles{} \\
+common opportunity A: common distribution & \VKFreeRumA{} & \VNegllRumA{} & \VMaeRumA{} \\
+common opportunity B: common shape; employment and hours in utility & \VKFreeRumB{} & \VNegllRumB{} & \VMaeRumB{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize same households, sampled alternatives and criterion; not converted into a formal test}
+\backnav{main:fit}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: curvature and inference}
+\hypertarget{b:inference}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Single adults}\\[0.5em]
+{\small free coordinates \VKFreeSingles{}, interior \VKIntSingles{}}\\
+{\small criterion \VNegllSingles{}}\\
+{\small smallest Hessian eigenvalue \VMinEigSingles{}}
+\column{0.46\textwidth}
+\centering
+\textbf{Couples}\\[0.5em]
+{\small free coordinates \VKFreeCouples{}, interior \VKIntCouples{}}\\
+{\small criterion \VNegllCouples{}}\\
+{\small smallest Hessian eigenvalue \VMinEigCouples{}}
+\end{columns}
+\vfill
+\begin{center}
+{\small cluster-robust standard errors on the household \quad$\cdot$\quad eigenvalues on the interior block}
+\end{center}
+\vfill
+\backnav{main:ruro}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: parameter uncertainty}
+\hypertarget{b:uncertainty}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Estimated}\\[0.4em]
+{\footnotesize cluster-robust standard errors for every estimated coordinate, clustered on the household}
+\column{0.31\textwidth}\centering
+\textbf{Not yet propagated}\\[0.4em]
+{\footnotesize estimation uncertainty has not been carried through either welfare decomposition}
+\column{0.31\textwidth}\centering
+\textbf{Simulation checks}\\[0.4em]
+{\footnotesize second seeds and repeat runs measure numerical noise, not sampling uncertainty}
+\end{columns}
+\vfill
+\begin{center}
+{\small the decomposition shares are point estimates without confidence intervals}
+\end{center}
+\vfill
+\backnav{main:limits}
+\end{frame}
+
+% ==================================================================== FIT
+\begin{frame}
+\frametitle{Backup: extensive-margin fit}
+\hypertarget{b:extensive}{}
+\vfill
+\begin{center}\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{lccc}
+\toprule
+ & weighted accuracy & model-simulated range & integration ratio \\
+\midrule
+single women & \VAccSingleWomen\% & \VAccSingleWomenLo--\VAccSingleWomenHi\% & \VIntRatioSingleWomen \\
+coupled women & \VAccCoupledWomen\% & \VAccCoupledWomenLo--\VAccCoupledWomenHi\% & \VIntRatioCoupledWomen \\
+single men & withheld & --- & \VIntRatioSingleMen \\
+coupled men & withheld & --- & \VIntRatioCoupledMen \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize withheld where numerical integration error is too large relative to sampling variation}
+\backnav{main:fit}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: fit by margin}
+\hypertarget{b:margins}{}
+\begin{center}
+\includegraphics[height=0.72\textheight,width=\textwidth,keepaspectratio]{figures/fit_by_margin_v7.png}
+\end{center}
+\backnav{main:fitfig}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: the 37-hour mass point}
+\hypertarget{b:hours37}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.23\textwidth}\centering
+\textbf{single men}\\[0.3em]{\Large \VGapSingleMen} \\ {\footnotesize pp}
+\column{0.23\textwidth}\centering
+\textbf{single women}\\[0.3em]{\Large \VGapSingleWomen} \\ {\footnotesize pp}
+\column{0.23\textwidth}\centering
+\textbf{coupled men}\\[0.3em]{\Large \VGapCoupledMen} \\ {\footnotesize pp}
+\column{0.23\textwidth}\centering
+\textbf{coupled women}\\[0.3em]{\Large \VGapCoupledWomen} \\ {\footnotesize pp}
+\end{columns}
+\vfill
+\begin{center}
+{\small observed minus predicted share at the observed 37-hour mass point}
+\end{center}
+\vfill
+\backnav{main:fit}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: matched households}
+\hypertarget{b:matched}{}
+\begin{center}
+\includegraphics[height=0.64\textheight,width=\textwidth,keepaspectratio]{figures/fig_matched_households_v11.png}
+\end{center}
+\begin{center}
+{\footnotesize access: A $=$ \VMatchedAccessRatio{} $\times$ B \qquad wage-offer location: B $+$\VMatchedWageGap{} log points}
+\end{center}
+\backnav{main:bridge}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: marginal rate of substitution}
+\hypertarget{b:mrs}{}
+\begin{center}
+\includegraphics[height=0.72\textheight,width=\textwidth,keepaspectratio]{figures/figP04_mrs_by_age_sex.png}
+\end{center}
+\backnav{main:ruro}
+\end{frame}
+
+% ==================================================================== WELFARE
+\begin{frame}
+\frametitle{Backup: attained-bundle derivation and the staying-home equivalent}
+\hypertarget{b:attderiv}{}
+\vfill
+\backupeq{$\displaystyle L_i(o)+\beta_c\log\!\Big(\frac{W^{\mathrm{ATT}}_i}{\lambda_c}\Big)=L_i(j^{\mathrm{obs}}_i)+\beta_c\log\!\Big(\frac{C^{\mathrm{obs}}_i}{\lambda_c}\Big)$}
+\backupeq{$\displaystyle\Longrightarrow\quad W^{\mathrm{ATT}}_i=C^{\mathrm{obs}}_i\exp\!\Big\{\frac{L_i(j^{\mathrm{obs}}_i)-L_i(o)}{\beta_c}\Big\}$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}\centering
+\textbf{Reference job}\\ {\footnotesize the preferred job when every job pays the same: here non-employment for every household}
+\column{0.46\textwidth}\centering
+\textbf{Staying-home equivalent}\\ {\footnotesize a verified property of this specification, not a general theorem}
+\end{columns}
+\vfill
+\begin{center}
+{\footnotesize on the estimated domain non-employment maximises $L_i$ for every household, so the equal-pay preferred job is $o$ and the measure is the staying-home equivalent ($W^4$)}
+\end{center}
+\backnav{main:att}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: attained-bundle numerical design}
+\hypertarget{b:attdesign}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Sample}\\[0.4em]
+{\footnotesize the already-priced estimation panel; no re-estimation and no new pricing}
+\column{0.31\textwidth}\centering
+\textbf{Counterfactuals}\\[0.4em]
+{\footnotesize equalised covariates set to household-weighted means; attained bundle simulated by Gumbel-max with common random numbers}
+\column{0.31\textwidth}\centering
+\textbf{Checks}\\[0.4em]
+{\footnotesize replications at fixed estimates; an independent second seed; exact Shapley closure}
+\end{columns}
+\vfill
+\begin{center}
+{\small short weekly hours are sparsely represented in the integration panel}\\[0.3em]
+{\small Monte Carlo ranges are simulation spreads, not confidence intervals}
+\end{center}
+\vfill
+\backnav{main:att}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: ex-ante derivation}
+\hypertarget{b:eaderiv}{}
+\vfill
+\backupeq{$\displaystyle J_i=\int_{\Omega_i}e^{L_i(j)}\Big(\frac{C_i(j)}{\lambda_c}\Big)^{\beta_c}\widehat g_i(j)\,d\nu(j)$}
+\backupeq{$\displaystyle J^{\mathrm{ref}}_i(m)=\Big(\frac{m}{\lambda_c}\Big)^{\beta_c}H_i,\qquad H_i=\int_{\Omega_i}e^{L_i(j)}\,\widehat g_i(j)\,d\nu(j)$}
+\backupeq{$\displaystyle J^{\mathrm{ref}}_i\big(W^{\mathrm{EA}}_i\big)=J_i\quad\Longrightarrow\quad W^{\mathrm{EA}}_i=\lambda_c\exp\!\Big\{\frac{\log J_i-\log H_i}{\beta_c}\Big\}$}
+\vfill
+\begin{center}
+{\small a common rescaling of $\widehat g_i$ cancels \quad$\cdot$\quad $\log J_i$: expected utility of the best reachable job, up to a constant}
+\end{center}
+\vfill
+\backnav{main:ea}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: ex-ante numerical validation}
+\hypertarget{b:eavalid}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Identities}\\[0.5em]
+{\small constant-consumption identity}\\
+{\small one-state identity}\\
+{\small common intensity-rescaling invariance}\\
+{\small flat-reference inversion}\\
+{\small exact Shapley adding-up}
+\column{0.46\textwidth}
+\centering
+\textbf{Numerics}\\[0.5em]
+{\small exact reference integral on the priced set}\\
+{\small effective sample size and weight concentration}\\
+{\small two-seed stability of welfare, Gini and Shapley}\\
+{\small finite positive welfare for every household}\\
+{\small independent reimplementation}
+\end{columns}
+\vfill
+\begin{center}
+{\small all passed for both populations \quad$\cdot$\quad a correct computation, not causal identification or parameter uncertainty}
+\end{center}
+\vfill
+\backnav{main:ea}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: the prospect reference}
+\hypertarget{b:prospectref}{}
+\vfill
+\backupeq{$\displaystyle W^{\mathrm{EA}}_i=\Big(\int C_i(j)^{\beta_c}\,\omega_i(j)\,d\nu(j)\Big)^{1/\beta_c},
+\qquad \omega_i(j)=\frac{e^{L_i(j)}\,\widehat g_i(j)}{H_i}$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}\centering
+\textbf{Own-opportunity reference}\\[0.4em]
+{\small the reference prospect keeps the household's own jobs, availability and preferences, and equalises pay}
+\column{0.46\textwidth}\centering
+\textbf{Weighted generalised mean}\\[0.4em]
+{\small the metric is a generalised mean of consumption with exponent $\beta_c$, weighted by leisure value and availability}
+\end{columns}
+\vfill
+\begin{center}
+{\small the reference moves with the household's opportunity environment}
+\end{center}
+\vfill
+\backnav{main:ea}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: two aggregation orders}
+\hypertarget{b:aggregation}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}\centering
+\textcolor{chearn}{\textbf{Attained bundle}}\\[0.3em]
+{\small Gini within each simulated realisation, then averaged}
+\backupeq{$\displaystyle I^{\mathrm{ATT}}(S)=\frac{1}{R}\sum_{r}\mathcal G\Big(\big\{M^{\mathrm{ATT}}_{i,r}(T_Sx_i)\big\}_i\Big)$}
+{\footnotesize $r$: simulated realisation of attained bundles, common random numbers across coalitions}
+\column{0.48\textwidth}\centering
+\textcolor{chacc}{\textbf{Ex-ante prospect}}\\[0.3em]
+{\small inverted within each household, then one Gini}
+\backupeq{$\displaystyle I^{\mathrm{EA}}(S)=\mathcal G\Big(\big\{M^{\mathrm{EA}}_i(T_Sx_i)\big\}_i\Big)$}
+{\footnotesize $M^{\mathrm{EA}}_i=\lambda_c\exp\{(\log J_i-\log H_i)/\beta_c\}$, integrated over the household's prospect}
+\end{columns}
+\vfill
+\begin{center}
+{\small the average of realised inequality versus the inequality of household equivalents}
+\end{center}
+\vfill
+\backnav{main:shapley}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: equivalisation}
+\hypertarget{b:equiv}{}
+\vfill
+\backupeq{$\displaystyle \widetilde M^{p}_i=\frac{M^p_i}{e_i},\qquad e_i:\ \text{modified OECD equivalence scale}$}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Couples, ex ante: access + earnings}\\[0.5em]
+{\large \VEACoupOppRaw{}\% \quad$\longrightarrow$\quad \VEACoupOppEq{}\%}\\[0.3em]
+{\footnotesize raw \quad$\to$\quad equivalised; \% of baseline Gini}
+\column{0.46\textwidth}
+\centering
+\textbf{Couples, ex ante: preferences}\\[0.5em]
+{\large \VEACoupPrefRaw{} \quad$\longrightarrow$\quad \VEACoupPrefEq{}}\\[0.3em]
+{\footnotesize Gini points, raw \quad$\to$\quad equivalised}
+\end{columns}
+\vfill
+\begin{center}
+{\small a normative convention, reported both ways; populations never combined or compared}
+\end{center}
+\vfill
+\backnav{main:gini}
+\end{frame}
+
+% ==================================================================== DECOMPOSITION
+\begin{frame}
+\frametitle{Backup: central figure}
+\hypertarget{b:central}{}
+\begin{center}
+\includegraphics[height=0.72\textheight,width=\textwidth,keepaspectratio]{figures/fig_v13_central_result.png}
+\end{center}
+\backnav{main:results}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: ex-ante decomposition in Gini points}
+\hypertarget{b:eagini}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccccl}
+\toprule
+ & scale & baseline Gini & \textcolor{chpref}{P} & \textcolor{chacc}{A} & \textcolor{chearn}{B} & A + B, \% of baseline & ordering \\
+\midrule
+Single adults & raw & \VEASingGiniRaw & \VEASingPhiPRaw & \VEASingPhiARaw & \VEASingPhiBRaw & \VEASingOppRaw & access $>$ earnings \\
+ & equivalised & \VEASingGiniEq & \VEASingPhiPEq & \VEASingPhiAEq & \VEASingPhiBEq & \VEASingOppEq & access $>$ earnings \\
+\midrule
+Couples & raw & \VEACoupGiniRaw & \VEACoupPhiPRaw & \VEACoupPhiARaw & \VEACoupPhiBRaw & \VEACoupOppRaw & earnings $>$ access \\
+ & equivalised & \VEACoupGiniEq & \VEACoupPhiPEq & \VEACoupPhiAEq & \VEACoupPhiBEq & \VEACoupOppEq & earnings $>$ access \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize exact Shapley contributions in Gini points; household-weighted}
+\backnav{main:howmuch}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: attained-bundle decomposition in Gini points}
+\hypertarget{b:attgini}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccccl}
+\toprule
+ & scale & baseline Gini & \textcolor{chpref}{P} & \textcolor{chacc}{A} & \textcolor{chearn}{B} & A + B, \% of baseline & ordering \\
+\midrule
+Single adults & raw & \VAttFigSingGiniRaw & \VAttFigSingPhiPRaw & \VAttFigSingPhiARaw & \VAttFigSingPhiBRaw & \VAttSingOppRaw & earnings $>$ access \\
+ & equivalised & \VAttFigSingGiniEq & \VAttFigSingPhiPEq & \VAttFigSingPhiAEq & \VAttFigSingPhiBEq & \VAttSingOppEq & earnings $>$ access \\
+\midrule
+Couples & raw & \VAttFigCoupGiniRaw & \VAttFigCoupPhiPRaw & \VAttFigCoupPhiARaw & \VAttFigCoupPhiBRaw & \VAttCoupOppRaw & earnings $>$ access \\
+ & equivalised & \VAttFigCoupGiniEq & \VAttFigCoupPhiPEq & \VAttFigCoupPhiAEq & \VAttFigCoupPhiBEq & \VAttCoupOppEq & earnings $>$ access \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize exact Shapley contributions in Gini points; preliminary; household-weighted}
+\backnav{main:howmuch}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: ex-ante channels, \% of baseline}
+\hypertarget{b:eapct}{}
+\vfill
+\begin{center}\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llc cc cc cc}
+\toprule
+ & & & \multicolumn{2}{c}{\textcolor{chpref}{P}} & \multicolumn{2}{c}{\textcolor{chacc}{A}} & \multicolumn{2}{c}{\textcolor{chearn}{B}} \\
+ & scale & $I_0$ & Gini pts & \% of $I_0$ & Gini pts & \% of $I_0$ & Gini pts & \% of $I_0$ \\
+\midrule
+Single adults & raw & \VEASingGiniRaw & \VEASingPhiPRaw & \VPctEASingPRaw & \VEASingPhiARaw & \VPctEASingARaw & \VEASingPhiBRaw & \VPctEASingBRaw \\
+ & equivalised & \VEASingGiniEq & \VEASingPhiPEq & \VPctEASingPEq & \VEASingPhiAEq & \VPctEASingAEq & \VEASingPhiBEq & \VPctEASingBEq \\
+\midrule
+Couples & raw & \VEACoupGiniRaw & \VEACoupPhiPRaw & \VPctEACoupPRaw & \VEACoupPhiARaw & \VPctEACoupARaw & \VEACoupPhiBRaw & \VPctEACoupBRaw \\
+ & equivalised & \VEACoupGiniEq & \VEACoupPhiPEq & \VPctEACoupPEq & \VEACoupPhiAEq & \VPctEACoupAEq & \VEACoupPhiBEq & \VPctEACoupBEq \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize each contribution divided by its own baseline Gini $I_0$; signed; the rows are not forced to sum to one hundred, because the remainder is outside the current P-A-B decomposition}
+\vspace{1.2em}
+\backnav{main:howmuch}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: attained-bundle channels, \% of baseline}
+\hypertarget{b:attpct}{}
+\vfill
+\begin{center}\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llc cc cc cc}
+\toprule
+ & & & \multicolumn{2}{c}{\textcolor{chpref}{P}} & \multicolumn{2}{c}{\textcolor{chacc}{A}} & \multicolumn{2}{c}{\textcolor{chearn}{B}} \\
+ & scale & $I_0$ & Gini pts & \% of $I_0$ & Gini pts & \% of $I_0$ & Gini pts & \% of $I_0$ \\
+\midrule
+Single adults & raw & \VAttFigSingGiniRaw & \VAttFigSingPhiPRaw & \VPctAttSingPRaw & \VAttFigSingPhiARaw & \VPctAttSingARaw & \VAttFigSingPhiBRaw & \VPctAttSingBRaw \\
+ & equivalised & \VAttFigSingGiniEq & \VAttFigSingPhiPEq & \VPctAttSingPEq & \VAttFigSingPhiAEq & \VPctAttSingAEq & \VAttFigSingPhiBEq & \VPctAttSingBEq \\
+\midrule
+Couples & raw & \VAttFigCoupGiniRaw & \VAttFigCoupPhiPRaw & \VPctAttCoupPRaw & \VAttFigCoupPhiARaw & \VPctAttCoupARaw & \VAttFigCoupPhiBRaw & \VPctAttCoupBRaw \\
+ & equivalised & \VAttFigCoupGiniEq & \VAttFigCoupPhiPEq & \VPctAttCoupPEq & \VAttFigCoupPhiAEq & \VPctAttCoupAEq & \VAttFigCoupPhiBEq & \VPctAttCoupBEq \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize each contribution divided by its own baseline Gini $I_0$; signed; preliminary}
+\backnav{main:interp}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: composition of the explained component}
+\hypertarget{b:explained}{}
+\vfill
+\backupeq{$\displaystyle s_k=\frac{\phi_k}{\phi_P+\phi_A+\phi_B},\qquad k\in\{P,A,B\}$}
+\vfill
+\begin{center}\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{lrr}
+\toprule
+ex-ante prospect, equivalised & Single adults & Couples \\
+\midrule
+\textcolor{chpref}{Preferences} $s_P$ & \VExplSingP\% & \VExplCoupP\% \\
+\textcolor{chacc}{Local access} $s_A$ & \VExplSingA\% & \VExplCoupA\% \\
+\textcolor{chearn}{Earning opportunities} $s_B$ & \VExplSingB\% & \VExplCoupB\% \\
+\midrule
+Total & \VExplSingTotal\% & \VExplCoupTotal\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+{\footnotesize These are shares of the currently explained P-A-B change, not shares of total inequality. Negative components are possible under Shapley attribution.\par}
+\vspace{1.2em}
+\backnav{main:interp}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: Shapley versus one-factor equalisation}
+\hypertarget{b:shapley}{}
+\vfill
+\backupeq{$\displaystyle \text{one-factor:}\quad v^p(\{k\})=I^p(\varnothing)-I^p(\{k\})$}
+\backupeq{$\displaystyle \text{Shapley:}\quad \phi^p_k=\text{average over all orders of } v^p(S\cup\{k\})-v^p(S)$}
+\backupeq{$\displaystyle \phi^p_P+\phi^p_A+\phi^p_B=I^p(\varnothing)-I^p(\{P,A,B\})$}
+\vfill
+\begin{center}
+{\small one-factor effects need not add up \quad$\cdot$\quad Shapley contributions do, exactly}
+\end{center}
+\vfill
+\backnav{main:shapley}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: outside the current P-A-B decomposition}
+\hypertarget{b:residual}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Held fixed}\\[0.4em]
+{\footnotesize household resources, needs and composition}
+\column{0.31\textwidth}\centering
+\textbf{Retained}\\[0.4em]
+{\footnotesize sex-specific and household-type-specific preference and opportunity blocks}
+\column{0.31\textwidth}\centering
+\textbf{Not equalised}\\[0.4em]
+{\footnotesize wage-draw luck and the common offer spread}
+\end{columns}
+\vfill
+\begin{center}
+wage-offer location differences: at most about \VOfferLocation{} log points\\[0.3em]
+common offer spread: about \VOfferSpread{} log points
+\end{center}
+\vfill
+\begin{center}
+{\small next: extend the decomposition to household resources and needs, after fixing the appropriate operator}
+\end{center}
+\backnav{main:limits}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: robustness of the attained-bundle decomposition}
+\hypertarget{b:robust}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.46\textwidth}
+\centering
+\textbf{Second simulation seed}\\[0.5em]
+{\small every coalition Gini and contribution reproduces closely, including the preference sign change}
+\column{0.46\textwidth}
+\centering
+\textbf{Observed job in the simulation}\\[0.5em]
+{\small attained under every coalition by \VObsJobShareSingles\% of single adults and \VObsJobShareCouples\% of couples}\\[0.3em]
+{\small excluding it moves the total change by at most \VObsJobMove\%, with no sign change}
+\end{columns}
+\vfill
+\begin{center}
+{\small simulation checks, not confidence intervals}
+\end{center}
+\vfill
+\backnav{main:limits}
+\end{frame}
+
+% ==================================================================== DATA
+\begin{frame}
+\frametitle{Backup: sample selection}
+\hypertarget{b:sample}{}
+\vfill
+\begin{center}\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.56\textwidth}rr}
+\toprule
+screen & single-adult & couple \\
+\midrule
+\VFunnelZeroLabel & \VFunnelZeroSingles & \VFunnelZeroCouples \\
+\VFunnelOneLabel & \VFunnelOneSingles & \VFunnelOneCouples \\
+\VFunnelTwoLabel & \VFunnelTwoSingles & \VFunnelTwoCouples \\
+\VFunnelThreeLabel & \VFunnelThreeSingles & \VFunnelThreeCouples \\
+\VFunnelFourLabel & \VFunnelFourSingles & \VFunnelFourCouples \\
+\VFunnelFiveLabel & \VFunnelFiveSingles & \VFunnelFiveCouples \\
+\VFunnelSixLabel & \VFunnelSixSingles & \VFunnelSixCouples \\
+\VFunnelSevenLabel & \VFunnelSevenSingles & \VFunnelSevenCouples \\
+\VFunnelEightLabel & \VFunnelEightSingles & \VFunnelEightCouples \\
+\VFunnelNineLabel & \VFunnelNineSingles & \VFunnelNineCouples \\
+\midrule
+\textbf{estimation sample} & \textbf{\VNSingles} & \textbf{\VNCouples} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vfill
+\backnav{main:data}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: EUROMOD pricing}
+\hypertarget{b:pricing}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Inputs}\\[0.4em]
+{\footnotesize a work arrangement: hours, hourly wage, earnings split; household roster and non-labour inputs}
+\column{0.31\textwidth}\centering
+\textbf{EUROMOD}\\[0.4em]
+{\footnotesize French \VPolicyYear{} policy system; only deciders receive counterfactual overrides}
+\column{0.31\textwidth}\centering
+\textbf{Output}\\[0.4em]
+{\footnotesize $C_i(j)$: household disposable income, summed over all members}
+\end{columns}
+\vfill
+\begin{center}
+{\small every sampled alternative and every welfare integration point is priced}\\[0.3em]
+{\small tax-benefit accounting identity holds to machine precision}
+\end{center}
+\vfill
+\backnav{main:euromod}
+\end{frame}
+
+\begin{frame}
+\frametitle{Backup: numerical design}
+\hypertarget{b:numerics}{}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\column{0.31\textwidth}\centering
+\textbf{Estimation}\\[0.4em]
+{\Large \VNAltRows}\\ {\footnotesize rows per household: the observed job and \VNDraws{} sampled alternatives}
+\column{0.31\textwidth}\centering
+\textbf{Predictive fit}\\[0.4em]
+{\Large \VNNodes}\\ {\footnotesize common integration points per household}
+\column{0.31\textwidth}\centering
+\textbf{Supports}\\[0.4em]
+{\Large $[\VHoursFloor,\VHoursCap]$}\\ {\footnotesize weekly hours; wages in $[\VWageLo,\VWageHi]$ per hour}
+\end{columns}
+\vfill
+\begin{center}
+{\small sampling devices are computational: they are not offers and enter no welfare measure}
+\end{center}
+\vfill
+\backnav{main:data}
+\end{frame}
+\end{document}
